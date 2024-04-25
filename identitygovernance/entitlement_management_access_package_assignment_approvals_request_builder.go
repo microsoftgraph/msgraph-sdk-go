@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.In PIM for groups, providing the identifier of the assignment schedule request.
+// EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters approval stages for decisions associated with access package assignment requests.
 type EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,7 +81,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Co
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.In PIM for groups, providing the identifier of the assignment schedule request.
+// Get approval stages for decisions associated with access package assignment requests.
 // returns a ApprovalCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalCollectionResponseable, error) {
@@ -121,7 +121,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Po
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable), nil
 }
-// ToGetRequestInformation retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.In PIM for groups, providing the identifier of the assignment schedule request.
+// ToGetRequestInformation approval stages for decisions associated with access package assignment requests.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

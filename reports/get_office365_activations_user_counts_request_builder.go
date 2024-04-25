@@ -30,9 +30,12 @@ func NewGetOffice365ActivationsUserCountsRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365ActivationsUserCountsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getOffice365ActivationsUserCounts
+// Get get the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computers.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsusercounts?view=graph-rest-1.0
 func (m *GetOffice365ActivationsUserCountsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ActivationsUserCountsRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *GetOffice365ActivationsUserCountsRequestBuilder) Get(ctx context.Contex
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOffice365ActivationsUserCounts
+// ToGetRequestInformation get the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computers.
 // returns a *RequestInformation when successful
 func (m *GetOffice365ActivationsUserCountsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365ActivationsUserCountsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

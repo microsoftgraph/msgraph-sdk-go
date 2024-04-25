@@ -33,9 +33,12 @@ func NewGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getEmailAppUsageAppsUserCounts
+// Get get the count of unique users per email app.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getemailappusageappsusercounts?view=graph-rest-1.0
 func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) Get(ctx context
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getEmailAppUsageAppsUserCounts
+// ToGetRequestInformation get the count of unique users per email app.
 // returns a *RequestInformation when successful
 func (m *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

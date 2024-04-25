@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetQueryParameters get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
+// ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
 type ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,12 +72,9 @@ func NewItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder(raw
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemCalendarPermissionsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
+// Get the permissions of the users with whom the calendar is shared.
 // returns a CalendarPermissionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,12 +92,9 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionCollectionResponseable), nil
 }
-// Post create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+// Post create new navigation property to calendarPermissions for users
 // returns a CalendarPermissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// ToGetRequestInformation get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
+// ToGetRequestInformation the permissions of the users with whom the calendar is shared.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +126,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+// ToPostRequestInformation create new navigation property to calendarPermissions for users
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

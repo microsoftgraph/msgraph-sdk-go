@@ -18,7 +18,7 @@ type PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+// PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 type PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewPeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewPeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
+// Delete delete navigation property profileCardProperties for admin
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/profilecardproperty-delete?view=graph-rest-1.0
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Delet
     }
     return nil
 }
-// Get retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+// Get contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 // returns a ProfileCardPropertyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfileCardPropertyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Get(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfileCardPropertyable), nil
 }
-// Patch update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
+// Patch update the navigation property profileCardProperties in admin
 // returns a ProfileCardPropertyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/profilecardproperty-update?view=graph-rest-1.0
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfileCardPropertyable, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfileCardPropertyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Patch
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfileCardPropertyable), nil
 }
-// ToDeleteRequestInformation delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
+// ToDeleteRequestInformation delete navigation property profileCardProperties for admin
 // returns a *RequestInformation when successful
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToDel
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+// ToGetRequestInformation contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 // returns a *RequestInformation when successful
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToGet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
+// ToPatchRequestInformation update the navigation property profileCardProperties in admin
 // returns a *RequestInformation when successful
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfileCardPropertyable, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

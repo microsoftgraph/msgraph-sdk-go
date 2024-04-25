@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.
+// ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 type ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,12 +40,9 @@ func NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequest
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.
+// Get represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 // returns a PasswordAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/passwordauthenticationmethod-get?view=graph-rest-1.0
 func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordAuthenticationMethodable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +60,7 @@ func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemReques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordAuthenticationMethodable), nil
 }
-// ToGetRequestInformation retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.
+// ToGetRequestInformation represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

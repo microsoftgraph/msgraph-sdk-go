@@ -18,7 +18,7 @@ type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters read the properties and relationships of a taskFileAttachment object.
+// ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters a collection of file attachments for the task.
 type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -50,11 +50,8 @@ func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder(ra
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Content()(*ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a taskFileAttachment object from a todoTask resource.
+// Delete delete navigation property attachments for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,12 +66,9 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of a taskFileAttachment object.
+// Get a collection of file attachments for the task.
 // returns a AttachmentBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +86,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable), nil
 }
-// ToDeleteRequestInformation delete a taskFileAttachment object from a todoTask resource.
+// ToDeleteRequestInformation delete navigation property attachments for users
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -103,7 +97,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a taskFileAttachment object.
+// ToGetRequestInformation a collection of file attachments for the task.
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

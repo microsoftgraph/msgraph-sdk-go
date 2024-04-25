@@ -30,11 +30,8 @@ func NewClassesItemAssignmentsItemCategoriesItemRefRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsItemCategoriesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+// Delete delete ref of navigation property categories for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsItemCategoriesItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ClassesItemAssignmentsItemCategoriesItemRefRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// ToDeleteRequestInformation remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+// ToDeleteRequestInformation delete ref of navigation property categories for education
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsItemCategoriesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

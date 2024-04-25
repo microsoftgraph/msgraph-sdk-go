@@ -11,7 +11,7 @@ import (
 type ItemSchemaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSchemaRequestBuilderGetQueryParameters read the properties and relationships of a schema object.
+// ItemSchemaRequestBuilderGetQueryParameters get schema from connections
 type ItemSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,12 +47,9 @@ func NewItemSchemaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewItemSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties and relationships of a schema object.
+// Get get schema from connections
 // returns a Schemaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
 func (m *ItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSchemaRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,12 +67,9 @@ func (m *ItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable), nil
 }
-// Patch create a new schema object.
+// Patch update the navigation property schema in connections
 // returns a Schemaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
 func (m *ItemSchemaRequestBuilder) Patch(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable, requestConfiguration *ItemSchemaRequestBuilderPatchRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -93,7 +87,7 @@ func (m *ItemSchemaRequestBuilder) Patch(ctx context.Context, body i648e92ed2299
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a schema object.
+// ToGetRequestInformation get schema from connections
 // returns a *RequestInformation when successful
 func (m *ItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +101,7 @@ func (m *ItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation create a new schema object.
+// ToPatchRequestInformation update the navigation property schema in connections
 // returns a *RequestInformation when successful
 func (m *ItemSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable, requestConfiguration *ItemSchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

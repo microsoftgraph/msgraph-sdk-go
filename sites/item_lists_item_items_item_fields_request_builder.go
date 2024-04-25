@@ -90,12 +90,9 @@ func (m *ItemListsItemItemsItemFieldsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FieldValueSetable), nil
 }
-// Patch update the properties on a [listItem][].
+// Patch update the navigation property fields in sites
 // returns a FieldValueSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
 func (m *ItemListsItemItemsItemFieldsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FieldValueSetable, requestConfiguration *ItemListsItemItemsItemFieldsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FieldValueSetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -138,7 +135,7 @@ func (m *ItemListsItemItemsItemFieldsRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties on a [listItem][].
+// ToPatchRequestInformation update the navigation property fields in sites
 // returns a *RequestInformation when successful
 func (m *ItemListsItemItemsItemFieldsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FieldValueSetable, requestConfiguration *ItemListsItemItemsItemFieldsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

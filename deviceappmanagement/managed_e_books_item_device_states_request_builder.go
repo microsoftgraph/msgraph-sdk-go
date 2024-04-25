@@ -11,7 +11,7 @@ import (
 type ManagedEBooksItemDeviceStatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedEBooksItemDeviceStatesRequestBuilderGetQueryParameters list properties and relationships of the deviceInstallState objects.
+// ManagedEBooksItemDeviceStatesRequestBuilderGetQueryParameters the list of installation states for this eBook.
 type ManagedEBooksItemDeviceStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewManagedEBooksItemDeviceStatesRequestBuilder(rawUrl string, requestAdapte
 func (m *ManagedEBooksItemDeviceStatesRequestBuilder) Count()(*ManagedEBooksItemDeviceStatesCountRequestBuilder) {
     return NewManagedEBooksItemDeviceStatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the deviceInstallState objects.
+// Get the list of installation states for this eBook.
 // returns a DeviceInstallStateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-list?view=graph-rest-1.0
 func (m *ManagedEBooksItemDeviceStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ManagedEBooksItemDeviceStatesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateCollectionResponseable), nil
 }
-// Post create a new deviceInstallState object.
+// Post create new navigation property to deviceStates for deviceAppManagement
 // returns a DeviceInstallStateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-create?view=graph-rest-1.0
 func (m *ManagedEBooksItemDeviceStatesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, requestConfiguration *ManagedEBooksItemDeviceStatesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ManagedEBooksItemDeviceStatesRequestBuilder) Post(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable), nil
 }
-// ToGetRequestInformation list properties and relationships of the deviceInstallState objects.
+// ToGetRequestInformation the list of installation states for this eBook.
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksItemDeviceStatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ManagedEBooksItemDeviceStatesRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new deviceInstallState object.
+// ToPostRequestInformation create new navigation property to deviceStates for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksItemDeviceStatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, requestConfiguration *ManagedEBooksItemDeviceStatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

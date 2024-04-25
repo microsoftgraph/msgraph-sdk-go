@@ -11,7 +11,7 @@ import (
 type ItemListsItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListsItemColumnsRequestBuilderGetQueryParameters get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+// ItemListsItemColumnsRequestBuilderGetQueryParameters the collection of field definitions for this list.
 type ItemListsItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemListsItemColumnsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemListsItemColumnsRequestBuilder) Count()(*ItemListsItemColumnsCountRequestBuilder) {
     return NewItemListsItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+// Get the collection of field definitions for this list.
 // returns a ColumnDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
 func (m *ItemListsItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemListsItemColumnsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+// Post create new navigation property to columns for sites
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
 func (m *ItemListsItemColumnsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemListsItemColumnsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemListsItemColumnsRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+// ToGetRequestInformation the collection of field definitions for this list.
 // returns a *RequestInformation when successful
 func (m *ItemListsItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemListsItemColumnsRequestBuilder) ToGetRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+// ToPostRequestInformation create new navigation property to columns for sites
 // returns a *RequestInformation when successful
 func (m *ItemListsItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemListsItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

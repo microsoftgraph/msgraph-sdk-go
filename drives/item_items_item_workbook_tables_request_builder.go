@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookTablesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookTablesRequestBuilderGetQueryParameters retrieve a list of table objects.
+// ItemItemsItemWorkbookTablesRequestBuilderGetQueryParameters represents a collection of tables associated with the workbook. Read-only.
 type ItemItemsItemWorkbookTablesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,12 +81,9 @@ func NewItemItemsItemWorkbookTablesRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Count()(*ItemItemsItemWorkbookTablesCountRequestBuilder) {
     return NewItemItemsItemWorkbookTablesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of table objects.
+// Get represents a collection of tables associated with the workbook. Read-only.
 // returns a WorkbookTableCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-list-tables?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ItemItemsItemWorkbookTablesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable), nil
 }
-// ToGetRequestInformation retrieve a list of table objects.
+// ToGetRequestInformation represents a collection of tables associated with the workbook. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

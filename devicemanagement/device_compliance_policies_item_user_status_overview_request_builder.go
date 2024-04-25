@@ -18,7 +18,7 @@ type DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderGetQueryParameters read properties and relationships of the deviceComplianceUserOverview object.
+// DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderGetQueryParameters device compliance users status overview
 type DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get read properties and relationships of the deviceComplianceUserOverview object.
+// Get device compliance users status overview
 // returns a DeviceComplianceUserOverviewable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuseroverview-get?view=graph-rest-1.0
 func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceUserOverviewable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceUserOverviewable), nil
 }
-// Patch update the properties of a deviceComplianceUserOverview object.
+// Patch update the navigation property userStatusOverview in deviceManagement
 // returns a DeviceComplianceUserOverviewable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuseroverview-update?view=graph-rest-1.0
 func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceUserOverviewable, requestConfiguration *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceUserOverviewable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the deviceComplianceUserOverview object.
+// ToGetRequestInformation device compliance users status overview
 // returns a *RequestInformation when successful
 func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a deviceComplianceUserOverview object.
+// ToPatchRequestInformation update the navigation property userStatusOverview in deviceManagement
 // returns a *RequestInformation when successful
 func (m *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceUserOverviewable, requestConfiguration *DeviceCompliancePoliciesItemUserStatusOverviewRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

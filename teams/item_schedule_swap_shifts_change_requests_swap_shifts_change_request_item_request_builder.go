@@ -18,7 +18,7 @@ type ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a swapShiftsChangeRequest object.
+// ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilderGetQueryParameters the swap requests for shifts in the schedule.
 type ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestB
     }
     return nil
 }
-// Get retrieve the properties and relationships of a swapShiftsChangeRequest object.
+// Get the swap requests for shifts in the schedule.
 // returns a SwapShiftsChangeRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-1.0
 func (m *ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SwapShiftsChangeRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a swapShiftsChangeRequest object.
+// ToGetRequestInformation the swap requests for shifts in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

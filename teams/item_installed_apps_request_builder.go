@@ -11,7 +11,7 @@ import (
 type ItemInstalledAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInstalledAppsRequestBuilderGetQueryParameters retrieve a list of apps installed in the specified team.
+// ItemInstalledAppsRequestBuilderGetQueryParameters the apps installed in this team.
 type ItemInstalledAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemInstalledAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemInstalledAppsRequestBuilder) Count()(*ItemInstalledAppsCountRequestBuilder) {
     return NewItemInstalledAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of apps installed in the specified team.
+// Get the apps installed in this team.
 // returns a TeamsAppInstallationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0
 func (m *ItemInstalledAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInstalledAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemInstalledAppsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationCollectionResponseable), nil
 }
-// Post install an app to the specified team.
+// Post create new navigation property to installedApps for teams
 // returns a TeamsAppInstallationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0
 func (m *ItemInstalledAppsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemInstalledAppsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemInstalledAppsRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable), nil
 }
-// ToGetRequestInformation retrieve a list of apps installed in the specified team.
+// ToGetRequestInformation the apps installed in this team.
 // returns a *RequestInformation when successful
 func (m *ItemInstalledAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInstalledAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemInstalledAppsRequestBuilder) ToGetRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation install an app to the specified team.
+// ToPostRequestInformation create new navigation property to installedApps for teams
 // returns a *RequestInformation when successful
 func (m *ItemInstalledAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemInstalledAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

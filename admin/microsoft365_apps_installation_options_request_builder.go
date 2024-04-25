@@ -18,7 +18,7 @@ type Microsoft365AppsInstallationOptionsRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Microsoft365AppsInstallationOptionsRequestBuilderGetQueryParameters read the properties and relationships of an m365AppsInstallationOptions object.
+// Microsoft365AppsInstallationOptionsRequestBuilderGetQueryParameters a container for tenant-level settings for Microsoft 365 applications.
 type Microsoft365AppsInstallationOptionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get read the properties and relationships of an m365AppsInstallationOptions object.
+// Get a container for tenant-level settings for Microsoft 365 applications.
 // returns a M365AppsInstallationOptionsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/m365appsinstallationoptions-get?view=graph-rest-1.0
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.M365AppsInstallationOptionsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.M365AppsInstallationOptionsable), nil
 }
-// Patch update the properties of an m365AppsInstallationOptions object.
+// Patch update the navigation property installationOptions in admin
 // returns a M365AppsInstallationOptionsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/m365appsinstallationoptions-update?view=graph-rest-1.0
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.M365AppsInstallationOptionsable, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.M365AppsInstallationOptionsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an m365AppsInstallationOptions object.
+// ToGetRequestInformation a container for tenant-level settings for Microsoft 365 applications.
 // returns a *RequestInformation when successful
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToGetRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an m365AppsInstallationOptions object.
+// ToPatchRequestInformation update the navigation property installationOptions in admin
 // returns a *RequestInformation when successful
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.M365AppsInstallationOptionsable, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+// ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetQueryParameters information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 type ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,11 +64,8 @@ func NewItemOnlineMeetingsOnlineMeetingItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an onlineMeeting object.
+// Delete delete navigation property onlineMeetings for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,12 +80,9 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+// Get information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 // returns a OnlineMeetingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,12 +105,9 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Get(ctx context.Cont
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) GetVirtualAppointmentJoinWebUrl()(*ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) {
     return NewItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+// Patch update the navigation property onlineMeetings in users
 // returns a OnlineMeetingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -149,7 +140,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) SendVirtualAppointme
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) SendVirtualAppointmentSms()(*ItemOnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder) {
     return NewItemOnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an onlineMeeting object.
+// ToDeleteRequestInformation delete navigation property onlineMeetings for users
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,7 +151,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+// ToGetRequestInformation information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -174,7 +165,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToGetRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+// ToPatchRequestInformation update the navigation property onlineMeetings in users
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

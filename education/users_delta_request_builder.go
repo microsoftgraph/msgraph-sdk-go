@@ -10,7 +10,7 @@ import (
 type UsersDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersDeltaRequestBuilderGetQueryParameters invoke function delta
+// UsersDeltaRequestBuilderGetQueryParameters get newly created or updated educationUser without having to perform a full read of the entire collection. See Use delta query for details.
 type UsersDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewUsersDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewUsersDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get newly created or updated educationUser without having to perform a full read of the entire collection. See Use delta query for details.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a UsersDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-delta?view=graph-rest-1.0
 func (m *UsersDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersDeltaRequestBuilderGetRequestConfiguration)(UsersDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *UsersDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(UsersDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get newly created or updated educationUser without having to perform a full read of the entire collection. See Use delta query for details.
 // returns a UsersDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-delta?view=graph-rest-1.0
 func (m *UsersDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *UsersDeltaRequestBuilderGetRequestConfiguration)(UsersDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *UsersDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, re
     }
     return res.(UsersDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get newly created or updated educationUser without having to perform a full read of the entire collection. See Use delta query for details.
 // returns a *RequestInformation when successful
 func (m *UsersDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

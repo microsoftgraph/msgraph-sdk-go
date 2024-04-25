@@ -18,7 +18,7 @@ type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single email authentication method object.
+// ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters the email address registered to a user for authentication.
 type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a user's emailAuthenticationMethod object.
+// Delete delete navigation property emailMethods for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/emailauthenticationmethod-delete?view=graph-rest-1.0
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return nil
 }
-// Get retrieve a user's single email authentication method object.
+// Get the email address registered to a user for authentication.
 // returns a EmailAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/emailauthenticationmethod-get?view=graph-rest-1.0
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable), nil
 }
-// Patch update a user's email address represented by an emailAuthenticationMethod object.
+// Patch update the navigation property emailMethods in users
 // returns a EmailAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation deletes a user's emailAuthenticationMethod object.
+// ToDeleteRequestInformation delete navigation property emailMethods for users
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a user's single email authentication method object.
+// ToGetRequestInformation the email address registered to a user for authentication.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a user's email address represented by an emailAuthenticationMethod object.
+// ToPatchRequestInformation update the navigation property emailMethods in users
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

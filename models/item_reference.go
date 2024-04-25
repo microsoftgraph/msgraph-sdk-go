@@ -40,7 +40,7 @@ func (m *ItemReference) GetAdditionalData()(map[string]any) {
 func (m *ItemReference) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDriveId gets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+// GetDriveId gets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
 // returns a *string when successful
 func (m *ItemReference) GetDriveId()(*string) {
     val, err := m.GetBackingStore().Get("driveId")
@@ -52,7 +52,7 @@ func (m *ItemReference) GetDriveId()(*string) {
     }
     return nil
 }
-// GetDriveType gets the driveType property value. Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+// GetDriveType gets the driveType property value. Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
 // returns a *string when successful
 func (m *ItemReference) GetDriveType()(*string) {
     val, err := m.GetBackingStore().Get("driveType")
@@ -208,7 +208,7 @@ func (m *ItemReference) GetPath()(*string) {
     }
     return nil
 }
-// GetShareId gets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
+// GetShareId gets the shareId property value. A unique identifier for a shared resource that can be accessed via the Shares API.
 // returns a *string when successful
 func (m *ItemReference) GetShareId()(*string) {
     val, err := m.GetBackingStore().Get("shareId")
@@ -232,7 +232,7 @@ func (m *ItemReference) GetSharepointIds()(SharepointIdsable) {
     }
     return nil
 }
-// GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+// GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 // returns a *string when successful
 func (m *ItemReference) GetSiteId()(*string) {
     val, err := m.GetBackingStore().Get("siteId")
@@ -319,14 +319,14 @@ func (m *ItemReference) SetAdditionalData(value map[string]any)() {
 func (m *ItemReference) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDriveId sets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+// SetDriveId sets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
 func (m *ItemReference) SetDriveId(value *string)() {
     err := m.GetBackingStore().Set("driveId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDriveType sets the driveType property value. Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+// SetDriveType sets the driveType property value. Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
 func (m *ItemReference) SetDriveType(value *string)() {
     err := m.GetBackingStore().Set("driveType", value)
     if err != nil {
@@ -361,7 +361,7 @@ func (m *ItemReference) SetPath(value *string)() {
         panic(err)
     }
 }
-// SetShareId sets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
+// SetShareId sets the shareId property value. A unique identifier for a shared resource that can be accessed via the Shares API.
 func (m *ItemReference) SetShareId(value *string)() {
     err := m.GetBackingStore().Set("shareId", value)
     if err != nil {
@@ -375,7 +375,7 @@ func (m *ItemReference) SetSharepointIds(value SharepointIdsable)() {
         panic(err)
     }
 }
-// SetSiteId sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+// SetSiteId sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 func (m *ItemReference) SetSiteId(value *string)() {
     err := m.GetBackingStore().Set("siteId", value)
     if err != nil {

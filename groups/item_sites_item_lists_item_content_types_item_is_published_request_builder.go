@@ -30,10 +30,13 @@ func NewItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function isPublished
+// Get check the publishing status of a contentType in a content type hub site.
 // Deprecated: This method is obsolete. Use GetAsIsPublishedGetResponse instead.
 // returns a ItemSitesItemListsItemContentTypesItemIsPublishedResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemSitesItemListsItemContentTypesItemIsPublishedResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,9 +54,12 @@ func (m *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder) Get(ct
     }
     return res.(ItemSitesItemListsItemContentTypesItemIsPublishedResponseable), nil
 }
-// GetAsIsPublishedGetResponse invoke function isPublished
+// GetAsIsPublishedGetResponse check the publishing status of a contentType in a content type hub site.
 // returns a ItemSitesItemListsItemContentTypesItemIsPublishedGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder) GetAsIsPublishedGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemSitesItemListsItemContentTypesItemIsPublishedGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +77,7 @@ func (m *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder) GetAsI
     }
     return res.(ItemSitesItemListsItemContentTypesItemIsPublishedGetResponseable), nil
 }
-// ToGetRequestInformation invoke function isPublished
+// ToGetRequestInformation check the publishing status of a contentType in a content type hub site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

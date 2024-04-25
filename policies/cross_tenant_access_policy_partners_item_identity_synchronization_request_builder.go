@@ -18,7 +18,7 @@ type CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters get the user synchronization policy of a partner-specific configuration.
+// CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
 type CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the user synchronization policy for a partner-specific configuration.
+// Delete delete navigation property identitySynchronization for policies
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) Delete(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     }
     return nil
 }
-// Get get the user synchronization policy of a partner-specific configuration.
+// Get defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
 // returns a CrossTenantIdentitySyncPolicyPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) Get(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantIdentitySyncPolicyPartnerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantIdentitySyncPolicyPartnerable), nil
 }
-// ToDeleteRequestInformation delete the user synchronization policy for a partner-specific configuration.
+// ToDeleteRequestInformation delete navigation property identitySynchronization for policies
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the user synchronization policy of a partner-specific configuration.
+// ToGetRequestInformation defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

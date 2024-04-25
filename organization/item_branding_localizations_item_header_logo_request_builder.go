@@ -40,9 +40,6 @@ func NewItemBrandingLocalizationsItemHeaderLogoRequestBuilder(rawUrl string, req
 // Get a company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
 func (m *ItemBrandingLocalizationsItemHeaderLogoRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemHeaderLogoRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

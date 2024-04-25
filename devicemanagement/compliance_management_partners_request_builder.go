@@ -11,7 +11,7 @@ import (
 type ComplianceManagementPartnersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ComplianceManagementPartnersRequestBuilderGetQueryParameters list properties and relationships of the complianceManagementPartner objects.
+// ComplianceManagementPartnersRequestBuilderGetQueryParameters the list of Compliance Management Partners configured by the tenant.
 type ComplianceManagementPartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewComplianceManagementPartnersRequestBuilder(rawUrl string, requestAdapter
 func (m *ComplianceManagementPartnersRequestBuilder) Count()(*ComplianceManagementPartnersCountRequestBuilder) {
     return NewComplianceManagementPartnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the complianceManagementPartner objects.
+// Get the list of Compliance Management Partners configured by the tenant.
 // returns a ComplianceManagementPartnerCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-list?view=graph-rest-1.0
 func (m *ComplianceManagementPartnersRequestBuilder) Get(ctx context.Context, requestConfiguration *ComplianceManagementPartnersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ComplianceManagementPartnersRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerCollectionResponseable), nil
 }
-// Post create a new complianceManagementPartner object.
+// Post create new navigation property to complianceManagementPartners for deviceManagement
 // returns a ComplianceManagementPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-create?view=graph-rest-1.0
 func (m *ComplianceManagementPartnersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable, requestConfiguration *ComplianceManagementPartnersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ComplianceManagementPartnersRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable), nil
 }
-// ToGetRequestInformation list properties and relationships of the complianceManagementPartner objects.
+// ToGetRequestInformation the list of Compliance Management Partners configured by the tenant.
 // returns a *RequestInformation when successful
 func (m *ComplianceManagementPartnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ComplianceManagementPartnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ComplianceManagementPartnersRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new complianceManagementPartner object.
+// ToPostRequestInformation create new navigation property to complianceManagementPartners for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ComplianceManagementPartnersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable, requestConfiguration *ComplianceManagementPartnersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

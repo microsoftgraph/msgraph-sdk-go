@@ -18,7 +18,7 @@ type ItemSitesItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemListsItemItemsListItemItemRequestBuilderGetQueryParameters returns the metadata for an [item][] in a [list][].
+// ItemSitesItemListsItemItemsListItemItemRequestBuilderGetQueryParameters all items contained in the list.
 type ItemSitesItemListsItemItemsListItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -69,11 +69,8 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) CreatedByUser()(
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) CreateLink()(*ItemSitesItemListsItemItemsItemCreateLinkRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete removes an item from a [list][].
+// Delete delete navigation property items for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,12 +100,9 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) DriveItem()(*Ite
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Fields()(*ItemSitesItemListsItemItemsItemFieldsRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemFieldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns the metadata for an [item][] in a [list][].
+// Get all items contained in the list.
 // returns a ListItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -161,7 +155,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Patch(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// ToDeleteRequestInformation removes an item from a [list][].
+// ToDeleteRequestInformation delete navigation property items for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -172,7 +166,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns the metadata for an [item][] in a [list][].
+// ToGetRequestInformation all items contained in the list.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

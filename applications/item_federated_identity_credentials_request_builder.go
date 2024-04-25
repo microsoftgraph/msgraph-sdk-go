@@ -11,7 +11,7 @@ import (
 type ItemFederatedIdentityCredentialsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFederatedIdentityCredentialsRequestBuilderGetQueryParameters get a list of the federatedIdentityCredential objects and their properties.
+// ItemFederatedIdentityCredentialsRequestBuilderGetQueryParameters federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 type ItemFederatedIdentityCredentialsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemFederatedIdentityCredentialsRequestBuilder(rawUrl string, requestAda
 func (m *ItemFederatedIdentityCredentialsRequestBuilder) Count()(*ItemFederatedIdentityCredentialsCountRequestBuilder) {
     return NewItemFederatedIdentityCredentialsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the federatedIdentityCredential objects and their properties.
+// Get federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 // returns a FederatedIdentityCredentialCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemFederatedIdentityCredentialsRequestBuilder) Get(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialCollectionResponseable), nil
 }
-// Post create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+// Post create new navigation property to federatedIdentityCredentials for applications
 // returns a FederatedIdentityCredentialable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemFederatedIdentityCredentialsRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable), nil
 }
-// ToGetRequestInformation get a list of the federatedIdentityCredential objects and their properties.
+// ToGetRequestInformation federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemFederatedIdentityCredentialsRequestBuilder) ToGetRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+// ToPostRequestInformation create new navigation property to federatedIdentityCredentials for applications
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

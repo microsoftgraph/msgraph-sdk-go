@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesRequestBuilderGetQueryParameters retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
+// EntitlementManagementAccessPackagesRequestBuilderGetQueryParameters access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 type EntitlementManagementAccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,12 +81,9 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Count()(*Entitlement
 func (m *EntitlementManagementAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
+// Get access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 // returns a AccessPackageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackages?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,12 +101,9 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable), nil
 }
-// Post create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
+// Post create new navigation property to accessPackages for identityGovernance
 // returns a AccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-post-accesspackages?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Post(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable), nil
 }
-// ToGetRequestInformation retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
+// ToGetRequestInformation access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) ToGetRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
+// ToPostRequestInformation create new navigation property to accessPackages for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

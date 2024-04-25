@@ -18,7 +18,7 @@ type ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a claimsMappingPolicy object.
+// ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 type ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a claimsMappingPolicy object.
+// Delete delete navigation property claimsMappingPolicies for policies
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/claimsmappingpolicy-delete?view=graph-rest-1.0
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get retrieve the properties and relationships of a claimsMappingPolicy object.
+// Get the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 // returns a ClaimsMappingPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/claimsmappingpolicy-get?view=graph-rest-1.0
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable), nil
 }
-// Patch update the properties of a claimsMappingPolicy object.
+// Patch update the navigation property claimsMappingPolicies in policies
 // returns a ClaimsMappingPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/claimsmappingpolicy-update?view=graph-rest-1.0
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable), nil
 }
-// ToDeleteRequestInformation delete a claimsMappingPolicy object.
+// ToDeleteRequestInformation delete navigation property claimsMappingPolicies for policies
 // returns a *RequestInformation when successful
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a claimsMappingPolicy object.
+// ToGetRequestInformation the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 // returns a *RequestInformation when successful
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a claimsMappingPolicy object.
+// ToPatchRequestInformation update the navigation property claimsMappingPolicies in policies
 // returns a *RequestInformation when successful
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

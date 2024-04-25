@@ -18,7 +18,7 @@ type ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a sectionGroup object.
+// ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetQueryParameters the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 type ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Delete
     }
     return nil
 }
-// Get retrieve the properties and relationships of a sectionGroup object.
+// Get the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 // returns a SectionGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -144,7 +141,7 @@ func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) ToDele
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a sectionGroup object.
+// ToGetRequestInformation the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -30,7 +30,7 @@ func NewItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
+// Post copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *ItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
+// ToPostRequestInformation copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemContentTypesItemCopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *ItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

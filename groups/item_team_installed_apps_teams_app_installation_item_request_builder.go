@@ -18,7 +18,7 @@ type ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the specified team.
+// ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters the apps installed in this team.
 type ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete uninstalls an app from the specified team.
+// Delete delete navigation property installedApps for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get retrieve the app installed in the specified team.
+// Get the apps installed in this team.
 // returns a TeamsAppInstallationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsApp()
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemTeamInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     return NewItemTeamInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation uninstalls an app from the specified team.
+// ToDeleteRequestInformation delete navigation property installedApps for groups
 // returns a *RequestInformation when successful
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,7 +131,7 @@ func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the app installed in the specified team.
+// ToGetRequestInformation the apps installed in this team.
 // returns a *RequestInformation when successful
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

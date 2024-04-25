@@ -59,11 +59,8 @@ func NewTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a tokenIssuancePolicy object.
+// Delete delete navigation property tokenIssuancePolicies for policies
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-delete?view=graph-rest-1.0
 func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,12 +95,9 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable), nil
 }
-// Patch update the properties of a tokenIssuancePolicy object.
+// Patch update the navigation property tokenIssuancePolicies in policies
 // returns a TokenIssuancePolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-update?view=graph-rest-1.0
 func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, requestConfiguration *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +115,7 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable), nil
 }
-// ToDeleteRequestInformation delete a tokenIssuancePolicy object.
+// ToDeleteRequestInformation delete navigation property tokenIssuancePolicies for policies
 // returns a *RequestInformation when successful
 func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +140,7 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a tokenIssuancePolicy object.
+// ToPatchRequestInformation update the navigation property tokenIssuancePolicies in policies
 // returns a *RequestInformation when successful
 func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, requestConfiguration *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

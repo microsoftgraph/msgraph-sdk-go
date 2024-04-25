@@ -34,9 +34,12 @@ func NewGetYammerGroupsActivityDetailWithDateRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getYammerGroupsActivityDetail
+// Get get details about Yammer groups activity by group.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitydetail?view=graph-rest-1.0
 func (m *GetYammerGroupsActivityDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerGroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +57,7 @@ func (m *GetYammerGroupsActivityDetailWithDateRequestBuilder) Get(ctx context.Co
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getYammerGroupsActivityDetail
+// ToGetRequestInformation get details about Yammer groups activity by group.
 // returns a *RequestInformation when successful
 func (m *GetYammerGroupsActivityDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetYammerGroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

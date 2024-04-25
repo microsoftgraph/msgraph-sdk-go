@@ -33,9 +33,12 @@ func NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getOffice365GroupsActivityStorage
+// Get get the total storage used across all group mailboxes and group sites.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitystorage?view=graph-rest-1.0
 func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) Get(ctx cont
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOffice365GroupsActivityStorage
+// ToGetRequestInformation get the total storage used across all group mailboxes and group sites.
 // returns a *RequestInformation when successful
 func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

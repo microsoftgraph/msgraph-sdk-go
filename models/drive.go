@@ -21,7 +21,7 @@ func NewDrive()(*Drive) {
 func CreateDriveFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDrive(), nil
 }
-// GetBundles gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// GetBundles gets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 // returns a []DriveItemable when successful
 func (m *Drive) GetBundles()([]DriveItemable) {
     val, err := m.GetBackingStore().Get("bundles")
@@ -391,7 +391,7 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     return nil
 }
-// SetBundles sets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// SetBundles sets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *Drive) SetBundles(value []DriveItemable)() {
     err := m.GetBackingStore().Set("bundles", value)
     if err != nil {

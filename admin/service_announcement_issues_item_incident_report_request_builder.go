@@ -30,9 +30,12 @@ func NewServiceAnnouncementIssuesItemIncidentReportRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementIssuesItemIncidentReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function incidentReport
+// Get provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
 func (m *ServiceAnnouncementIssuesItemIncidentReportRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementIssuesItemIncidentReportRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ServiceAnnouncementIssuesItemIncidentReportRequestBuilder) Get(ctx cont
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function incidentReport
+// ToGetRequestInformation provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
 // returns a *RequestInformation when successful
 func (m *ServiceAnnouncementIssuesItemIncidentReportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementIssuesItemIncidentReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

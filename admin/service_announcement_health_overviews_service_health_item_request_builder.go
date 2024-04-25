@@ -18,7 +18,7 @@ type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+// ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Dele
     }
     return nil
 }
-// Get retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+// Get a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 // returns a ServiceHealthable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+// ToGetRequestInformation a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 // returns a *RequestInformation when successful
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

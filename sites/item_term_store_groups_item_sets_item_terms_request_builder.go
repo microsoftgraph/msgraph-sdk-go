@@ -11,7 +11,7 @@ import (
 type ItemTermStoreGroupsItemSetsItemTermsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoreGroupsItemSetsItemTermsRequestBuilderGetQueryParameters read the properties and relationships of a term object.
+// ItemTermStoreGroupsItemSetsItemTermsRequestBuilderGetQueryParameters all the terms under the set.
 type ItemTermStoreGroupsItemSetsItemTermsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemTermStoreGroupsItemSetsItemTermsRequestBuilder(rawUrl string, reques
 func (m *ItemTermStoreGroupsItemSetsItemTermsRequestBuilder) Count()(*ItemTermStoreGroupsItemSetsItemTermsCountRequestBuilder) {
     return NewItemTermStoreGroupsItemSetsItemTermsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a term object.
+// Get all the terms under the set.
 // returns a TermCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreGroupsItemSetsItemTermsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreGroupsItemSetsItemTermsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemTermStoreGroupsItemSetsItemTermsRequestBuilder) Post(ctx context.Co
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a term object.
+// ToGetRequestInformation all the terms under the set.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreGroupsItemSetsItemTermsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreGroupsItemSetsItemTermsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

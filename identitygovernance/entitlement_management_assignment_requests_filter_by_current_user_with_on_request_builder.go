@@ -10,7 +10,7 @@ import (
 type EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters invoke function filterByCurrentUser
+// EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters in Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.
 type EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestB
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function filterByCurrentUser
+// Get in Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequest
     }
     return res.(EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse invoke function filterByCurrentUser
+// GetAsFilterByCurrentUserWithOnGetResponse in Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.
 // returns a EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequest
     }
     return res.(EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable), nil
 }
-// ToGetRequestInformation invoke function filterByCurrentUser
+// ToGetRequestInformation in Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

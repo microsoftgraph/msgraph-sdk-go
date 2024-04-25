@@ -40,9 +40,6 @@ func NewItemBrandingSquareLogoDarkRequestBuilder(rawUrl string, requestAdapter i
 // Get a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
 func (m *ItemBrandingSquareLogoDarkRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingSquareLogoDarkRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

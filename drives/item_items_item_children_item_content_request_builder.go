@@ -48,9 +48,6 @@ func NewItemItemsItemChildrenItemContentRequestBuilder(rawUrl string, requestAda
 // Get the content stream, if the item represents a file.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
 func (m *ItemItemsItemChildrenItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemChildrenItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

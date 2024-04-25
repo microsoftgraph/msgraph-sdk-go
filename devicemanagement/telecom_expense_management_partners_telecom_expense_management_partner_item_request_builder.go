@@ -18,7 +18,7 @@ type TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderGetQueryParameters read properties and relationships of the telecomExpenseManagementPartner object.
+// TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderGetQueryParameters the telecom expense management partners.
 type TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewTelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemReque
     urlParams["request-raw-url"] = rawUrl
     return NewTelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a telecomExpenseManagementPartner.
+// Delete delete navigation property telecomExpenseManagementPartners for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-delete?view=graph-rest-1.0
 func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequ
     }
     return nil
 }
-// Get read properties and relationships of the telecomExpenseManagementPartner object.
+// Get the telecom expense management partners.
 // returns a TelecomExpenseManagementPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-get?view=graph-rest-1.0
 func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable), nil
 }
-// Patch update the properties of a telecomExpenseManagementPartner object.
+// Patch update the navigation property telecomExpenseManagementPartners in deviceManagement
 // returns a TelecomExpenseManagementPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-update?view=graph-rest-1.0
 func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, requestConfiguration *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable), nil
 }
-// ToDeleteRequestInformation deletes a telecomExpenseManagementPartner.
+// ToDeleteRequestInformation delete navigation property telecomExpenseManagementPartners for deviceManagement
 // returns a *RequestInformation when successful
 func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the telecomExpenseManagementPartner object.
+// ToGetRequestInformation the telecom expense management partners.
 // returns a *RequestInformation when successful
 func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a telecomExpenseManagementPartner object.
+// ToPatchRequestInformation update the navigation property telecomExpenseManagementPartners in deviceManagement
 // returns a *RequestInformation when successful
 func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TelecomExpenseManagementPartnerable, requestConfiguration *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

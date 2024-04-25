@@ -18,7 +18,7 @@ type UsersEducationUserItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UsersEducationUserItemRequestBuilderGetQueryParameters read the properties and relationships of an educationUser object.
+// UsersEducationUserItemRequestBuilderGetQueryParameters get users from education
 type UsersEducationUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,11 +64,8 @@ func NewUsersEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewUsersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a user.
+// Delete delete navigation property users for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-delete?view=graph-rest-1.0
 func (m *UsersEducationUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,12 +80,9 @@ func (m *UsersEducationUserItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get read the properties and relationships of an educationUser object.
+// Get get users from education
 // returns a EducationUserable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get?view=graph-rest-1.0
 func (m *UsersEducationUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,12 +100,9 @@ func (m *UsersEducationUserItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable), nil
 }
-// Patch update the properties of an educationUser object.
+// Patch update the navigation property users in education
 // returns a EducationUserable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0
 func (m *UsersEducationUserItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, requestConfiguration *UsersEducationUserItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -144,7 +135,7 @@ func (m *UsersEducationUserItemRequestBuilder) Schools()(*UsersItemSchoolsReques
 func (m *UsersEducationUserItemRequestBuilder) TaughtClasses()(*UsersItemTaughtClassesRequestBuilder) {
     return NewUsersItemTaughtClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a user.
+// ToDeleteRequestInformation delete navigation property users for education
 // returns a *RequestInformation when successful
 func (m *UsersEducationUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,7 +146,7 @@ func (m *UsersEducationUserItemRequestBuilder) ToDeleteRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an educationUser object.
+// ToGetRequestInformation get users from education
 // returns a *RequestInformation when successful
 func (m *UsersEducationUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -169,7 +160,7 @@ func (m *UsersEducationUserItemRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an educationUser object.
+// ToPatchRequestInformation update the navigation property users in education
 // returns a *RequestInformation when successful
 func (m *UsersEducationUserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, requestConfiguration *UsersEducationUserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

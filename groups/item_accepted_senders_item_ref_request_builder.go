@@ -30,11 +30,8 @@ func NewItemAcceptedSendersItemRefRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemAcceptedSendersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove acceptedSender
+// Delete delete ref of navigation property acceptedSenders for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
 func (m *ItemAcceptedSendersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAcceptedSendersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemAcceptedSendersItemRefRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// ToDeleteRequestInformation remove acceptedSender
+// ToDeleteRequestInformation delete ref of navigation property acceptedSenders for groups
 // returns a *RequestInformation when successful
 func (m *ItemAcceptedSendersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAcceptedSendersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

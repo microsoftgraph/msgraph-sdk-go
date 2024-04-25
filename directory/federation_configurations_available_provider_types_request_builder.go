@@ -10,7 +10,7 @@ import (
 type FederationConfigurationsAvailableProviderTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FederationConfigurationsAvailableProviderTypesRequestBuilderGetQueryParameters invoke function availableProviderTypes
+// FederationConfigurationsAvailableProviderTypesRequestBuilderGetQueryParameters get all identity providers supported in a directory.
 type FederationConfigurationsAvailableProviderTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewFederationConfigurationsAvailableProviderTypesRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function availableProviderTypes
+// Get get all identity providers supported in a directory.
 // Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 // returns a FederationConfigurationsAvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx c
     }
     return res.(FederationConfigurationsAvailableProviderTypesResponseable), nil
 }
-// GetAsAvailableProviderTypesGetResponse invoke function availableProviderTypes
+// GetAsAvailableProviderTypesGetResponse get all identity providers supported in a directory.
 // returns a FederationConfigurationsAvailableProviderTypesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvai
     }
     return res.(FederationConfigurationsAvailableProviderTypesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function availableProviderTypes
+// ToGetRequestInformation get all identity providers supported in a directory.
 // returns a *RequestInformation when successful
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

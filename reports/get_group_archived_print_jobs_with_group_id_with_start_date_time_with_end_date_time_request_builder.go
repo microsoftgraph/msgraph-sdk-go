@@ -11,7 +11,7 @@ import (
 type GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters invoke function getGroupArchivedPrintJobs
+// GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get a list of archived print jobs for a particular group.
 type GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,13 @@ func NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequ
     urlParams["request-raw-url"] = rawUrl
     return NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil, nil)
 }
-// Get invoke function getGroupArchivedPrintJobs
+// Get get a list of archived print jobs for a particular group.
 // Deprecated: This method is obsolete. Use GetAsGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-1.0
 func (m *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,9 +79,12 @@ func (m *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeReq
     }
     return res.(GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse invoke function getGroupArchivedPrintJobs
+// GetAsGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse get a list of archived print jobs for a particular group.
 // returns a GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-1.0
 func (m *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,7 +102,7 @@ func (m *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeReq
     }
     return res.(GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getGroupArchivedPrintJobs
+// ToGetRequestInformation get a list of archived print jobs for a particular group.
 // returns a *RequestInformation when successful
 func (m *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

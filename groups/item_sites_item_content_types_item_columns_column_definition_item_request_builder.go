@@ -18,7 +18,7 @@ type ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+// ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters the collection of column definitions for this content type.
 type ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
+// Delete delete navigation property columns for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder)
     }
     return nil
 }
-// Get retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+// Get the collection of column definitions for this content type.
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder)
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// Patch update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
+// Patch update the navigation property columns in groups
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder)
 func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) SourceColumn()(*ItemSitesItemContentTypesItemColumnsItemSourceColumnRequestBuilder) {
     return NewItemSitesItemContentTypesItemColumnsItemSourceColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
+// ToDeleteRequestInformation delete navigation property columns for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+// ToGetRequestInformation the collection of column definitions for this content type.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
+// ToPatchRequestInformation update the navigation property columns in groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

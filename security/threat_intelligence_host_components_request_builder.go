@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostComponentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters read the properties and relationships of a hostComponent object.
+// ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
 type ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewThreatIntelligenceHostComponentsRequestBuilder(rawUrl string, requestAda
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) Count()(*ThreatIntelligenceHostComponentsCountRequestBuilder) {
     return NewThreatIntelligenceHostComponentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a hostComponent object.
+// Get retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
 // returns a HostComponentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostComponentCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceHostComponentsRequestBuilder) Post(ctx context.Contex
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostComponentable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a hostComponent object.
+// ToGetRequestInformation retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

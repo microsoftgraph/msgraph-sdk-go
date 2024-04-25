@@ -10,7 +10,7 @@ import (
 type PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters invoke function filterByCurrentUser
+// PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
 type PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewPrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequest
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function filterByCurrentUser
+// Get in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnReques
     }
     return res.(PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse invoke function filterByCurrentUser
+// GetAsFilterByCurrentUserWithOnGetResponse in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
 // returns a PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnReques
     }
     return res.(PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable), nil
 }
-// ToGetRequestInformation invoke function filterByCurrentUser
+// ToGetRequestInformation in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

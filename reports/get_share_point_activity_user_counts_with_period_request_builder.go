@@ -33,9 +33,12 @@ func NewGetSharePointActivityUserCountsWithPeriodRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getSharePointActivityUserCounts
+// Get get the trend in the number of active users. A user is considered active if they have executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityusercounts?view=graph-rest-1.0
 func (m *GetSharePointActivityUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetSharePointActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetSharePointActivityUserCountsWithPeriodRequestBuilder) Get(ctx contex
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getSharePointActivityUserCounts
+// ToGetRequestInformation get the trend in the number of active users. A user is considered active if they have executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.
 // returns a *RequestInformation when successful
 func (m *GetSharePointActivityUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetSharePointActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

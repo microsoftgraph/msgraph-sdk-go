@@ -11,7 +11,7 @@ import (
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteQueryParameters remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+// ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteQueryParameters delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteRequestConfiguration s
     // Request query parameters
     QueryParameters *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteQueryParameters
 }
-// ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,11 +69,8 @@ func NewItemHomeRealmDiscoveryPoliciesRefRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemHomeRealmDiscoveryPoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+// Delete delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// Get the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+// Post create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToDeleteRequestInformation remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+// ToDeleteRequestInformation delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
 // returns a *RequestInformation when successful
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/homeRealmDiscoveryPolicies/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ToGetRequestInformation the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/homeRealmDiscoveryPolicies/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+// ToPostRequestInformation create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
 // returns a *RequestInformation when successful
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/homeRealmDiscoveryPolicies/$ref", m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleOpenShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleOpenShiftsRequestBuilderGetQueryParameters list openShift objects in a team.
+// ItemTeamScheduleOpenShiftsRequestBuilderGetQueryParameters the set of open shifts in a scheduling group in the schedule.
 type ItemTeamScheduleOpenShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemTeamScheduleOpenShiftsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemTeamScheduleOpenShiftsRequestBuilder) Count()(*ItemTeamScheduleOpenShiftsCountRequestBuilder) {
     return NewItemTeamScheduleOpenShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list openShift objects in a team.
+// Get the set of open shifts in a scheduling group in the schedule.
 // returns a OpenShiftCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
 func (m *ItemTeamScheduleOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemTeamScheduleOpenShiftsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftCollectionResponseable), nil
 }
-// Post create an instance of an openShift object.
+// Post create new navigation property to openShifts for groups
 // returns a OpenShiftable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
 func (m *ItemTeamScheduleOpenShiftsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, requestConfiguration *ItemTeamScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemTeamScheduleOpenShiftsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable), nil
 }
-// ToGetRequestInformation list openShift objects in a team.
+// ToGetRequestInformation the set of open shifts in a scheduling group in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemTeamScheduleOpenShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemTeamScheduleOpenShiftsRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create an instance of an openShift object.
+// ToPostRequestInformation create new navigation property to openShifts for groups
 // returns a *RequestInformation when successful
 func (m *ItemTeamScheduleOpenShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, requestConfiguration *ItemTeamScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

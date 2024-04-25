@@ -11,7 +11,7 @@ import (
 type ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderGetQueryParameters get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+// ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 type ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuild
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilder) Count()(*ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilder) {
     return NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+// Get the collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 // returns a ExtensionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionCollectionResponseable, error) {
@@ -114,7 +114,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Extensionable), nil
 }
-// ToGetRequestInformation get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+// ToGetRequestInformation the collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

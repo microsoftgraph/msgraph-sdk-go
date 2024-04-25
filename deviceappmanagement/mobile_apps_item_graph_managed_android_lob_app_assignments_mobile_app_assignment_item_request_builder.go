@@ -18,7 +18,7 @@ type MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetQueryParameters read properties and relationships of the mobileAppAssignment object.
+// MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetQueryParameters the list of group assignments for this mobile app.
 type MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewMobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentIte
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a mobileAppAssignment.
+// Delete delete navigation property assignments for deviceAppManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappassignment-delete?view=graph-rest-1.0
 func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentIt
     }
     return nil
 }
-// Get read properties and relationships of the mobileAppAssignment object.
+// Get the list of group assignments for this mobile app.
 // returns a MobileAppAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappassignment-get?view=graph-rest-1.0
 func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentIt
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppAssignmentable), nil
 }
-// Patch update the properties of a mobileAppAssignment object.
+// Patch update the navigation property assignments in deviceAppManagement
 // returns a MobileAppAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappassignment-update?view=graph-rest-1.0
 func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppAssignmentable, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentIt
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppAssignmentable), nil
 }
-// ToDeleteRequestInformation deletes a mobileAppAssignment.
+// ToDeleteRequestInformation delete navigation property assignments for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentIt
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the mobileAppAssignment object.
+// ToGetRequestInformation the list of group assignments for this mobile app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentIt
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a mobileAppAssignment object.
+// ToPatchRequestInformation update the navigation property assignments in deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppAssignmentable, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppAssignmentsMobileAppAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

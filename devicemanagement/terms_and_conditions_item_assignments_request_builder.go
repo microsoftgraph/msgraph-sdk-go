@@ -11,7 +11,7 @@ import (
 type TermsAndConditionsItemAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TermsAndConditionsItemAssignmentsRequestBuilderGetQueryParameters list properties and relationships of the termsAndConditionsAssignment objects.
+// TermsAndConditionsItemAssignmentsRequestBuilderGetQueryParameters the list of assignments for this T&C policy.
 type TermsAndConditionsItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewTermsAndConditionsItemAssignmentsRequestBuilder(rawUrl string, requestAd
 func (m *TermsAndConditionsItemAssignmentsRequestBuilder) Count()(*TermsAndConditionsItemAssignmentsCountRequestBuilder) {
     return NewTermsAndConditionsItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the termsAndConditionsAssignment objects.
+// Get the list of assignments for this T&C policy.
 // returns a TermsAndConditionsAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-list?view=graph-rest-1.0
 func (m *TermsAndConditionsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsAndConditionsItemAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *TermsAndConditionsItemAssignmentsRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentCollectionResponseable), nil
 }
-// Post create a new termsAndConditionsAssignment object.
+// Post create new navigation property to assignments for deviceManagement
 // returns a TermsAndConditionsAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-create?view=graph-rest-1.0
 func (m *TermsAndConditionsItemAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable, requestConfiguration *TermsAndConditionsItemAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *TermsAndConditionsItemAssignmentsRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable), nil
 }
-// ToGetRequestInformation list properties and relationships of the termsAndConditionsAssignment objects.
+// ToGetRequestInformation the list of assignments for this T&C policy.
 // returns a *RequestInformation when successful
 func (m *TermsAndConditionsItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsAndConditionsItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *TermsAndConditionsItemAssignmentsRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new termsAndConditionsAssignment object.
+// ToPostRequestInformation create new navigation property to assignments for deviceManagement
 // returns a *RequestInformation when successful
 func (m *TermsAndConditionsItemAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable, requestConfiguration *TermsAndConditionsItemAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

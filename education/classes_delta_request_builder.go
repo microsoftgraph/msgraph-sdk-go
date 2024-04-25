@@ -10,7 +10,7 @@ import (
 type ClassesDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesDeltaRequestBuilderGetQueryParameters invoke function delta
+// ClassesDeltaRequestBuilderGetQueryParameters get newly created or updated classes, including membership changes, without having to perform a full read of the entire class collection. See Use delta query for details.
 type ClassesDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewClassesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewClassesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get newly created or updated classes, including membership changes, without having to perform a full read of the entire class collection. See Use delta query for details.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ClassesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delta?view=graph-rest-1.0
 func (m *ClassesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesDeltaRequestBuilderGetRequestConfiguration)(ClassesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ClassesDeltaRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ClassesDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get newly created or updated classes, including membership changes, without having to perform a full read of the entire class collection. See Use delta query for details.
 // returns a ClassesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delta?view=graph-rest-1.0
 func (m *ClassesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ClassesDeltaRequestBuilderGetRequestConfiguration)(ClassesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ClassesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, 
     }
     return res.(ClassesDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get newly created or updated classes, including membership changes, without having to perform a full read of the entire class collection. See Use delta query for details.
 // returns a *RequestInformation when successful
 func (m *ClassesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

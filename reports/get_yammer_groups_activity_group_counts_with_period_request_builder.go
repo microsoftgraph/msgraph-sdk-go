@@ -33,9 +33,12 @@ func NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getYammerGroupsActivityGroupCounts
+// Get get the total number of groups that existed and how many included group conversation activities.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitygroupcounts?view=graph-rest-1.0
 func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) Get(ctx con
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getYammerGroupsActivityGroupCounts
+// ToGetRequestInformation get the total number of groups that existed and how many included group conversation activities.
 // returns a *RequestInformation when successful
 func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

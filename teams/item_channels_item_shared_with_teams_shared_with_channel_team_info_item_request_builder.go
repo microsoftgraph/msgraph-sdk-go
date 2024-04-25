@@ -18,7 +18,7 @@ type ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+// ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters a collection of teams with which a channel is shared.
 type ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
+// Delete delete navigation property sharedWithTeams for teams
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
 func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuil
     }
     return nil
 }
-// Get get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+// Get a collection of teams with which a channel is shared.
 // returns a SharedWithChannelTeamInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
 func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedWithChannelTeamInfoable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuil
 func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) Team()(*ItemChannelsItemSharedWithTeamsItemTeamRequestBuilder) {
     return NewItemChannelsItemSharedWithTeamsItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
+// ToDeleteRequestInformation delete navigation property sharedWithTeams for teams
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,7 +131,7 @@ func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+// ToGetRequestInformation a collection of teams with which a channel is shared.
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

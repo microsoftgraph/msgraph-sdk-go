@@ -18,7 +18,7 @@ type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+// ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+// Get a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 // returns a ServiceHealthIssueable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
 func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) ToDelete
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+// ToGetRequestInformation a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 // returns a *RequestInformation when successful
 func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -33,9 +33,12 @@ func NewGetTeamsUserActivityCountsWithPeriodRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getTeamsUserActivityCounts
+// Get get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivitycounts?view=graph-rest-1.0
 func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) Get(ctx context.Con
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getTeamsUserActivityCounts
+// ToGetRequestInformation get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
 // returns a *RequestInformation when successful
 func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

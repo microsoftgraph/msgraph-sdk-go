@@ -18,7 +18,7 @@ type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters read a directory extension definition represented by an extensionProperty object.
+// ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemExtensionPropertiesExtensionPropertyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
+// Delete delete navigation property extensionProperties for applications
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get read a directory extension definition represented by an extensionProperty object.
+// Get read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 // returns a ExtensionPropertyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Patch(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable), nil
 }
-// ToDeleteRequestInformation delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
+// ToDeleteRequestInformation delete navigation property extensionProperties for applications
 // returns a *RequestInformation when successful
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read a directory extension definition represented by an extensionProperty object.
+// ToGetRequestInformation read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 // returns a *RequestInformation when successful
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

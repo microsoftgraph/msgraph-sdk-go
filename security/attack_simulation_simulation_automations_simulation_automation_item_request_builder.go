@@ -18,7 +18,7 @@ type AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetQueryParameters get an attack simulation automation for a tenant.
+// AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetQueryParameters represents simulation automation created to run on a tenant.
 type AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     }
     return nil
 }
-// Get get an attack simulation automation for a tenant.
+// Get represents simulation automation created to run on a tenant.
 // returns a SimulationAutomationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0
 func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SimulationAutomationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get an attack simulation automation for a tenant.
+// ToGetRequestInformation represents simulation automation created to run on a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

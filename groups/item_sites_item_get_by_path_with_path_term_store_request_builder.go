@@ -18,7 +18,7 @@ type ItemSitesItemGetByPathWithPathTermStoreRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters read the properties and relationships of a store object.
+// ItemSitesItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters the default termStore under this site.
 type ItemSitesItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read the properties and relationships of a store object.
+// Get the default termStore under this site.
 // returns a Storeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
 func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathTermStoreRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) Get(ctx context.
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable), nil
 }
-// Patch update the properties of a store object.
+// Patch update the navigation property termStore in groups
 // returns a Storeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-store-update?view=graph-rest-1.0
 func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, requestConfiguration *ItemSitesItemGetByPathWithPathTermStoreRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a store object.
+// ToGetRequestInformation the default termStore under this site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathTermStoreRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) ToGetRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a store object.
+// ToPatchRequestInformation update the navigation property termStore in groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathTermStoreRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, requestConfiguration *ItemSitesItemGetByPathWithPathTermStoreRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

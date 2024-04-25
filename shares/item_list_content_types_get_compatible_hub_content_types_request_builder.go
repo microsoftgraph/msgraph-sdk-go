@@ -10,7 +10,7 @@ import (
 type ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListContentTypesGetCompatibleHubContentTypesRequestBuilderGetQueryParameters invoke function getCompatibleHubContentTypes
+// ItemListContentTypesGetCompatibleHubContentTypesRequestBuilderGetQueryParameters get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
 type ItemListContentTypesGetCompatibleHubContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemListContentTypesGetCompatibleHubContentTypesRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewItemListContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getCompatibleHubContentTypes
+// Get get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
 // Deprecated: This method is obsolete. Use GetAsGetCompatibleHubContentTypesGetResponse instead.
 // returns a ItemListContentTypesGetCompatibleHubContentTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
 func (m *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(ItemListContentTypesGetCompatibleHubContentTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder) Get(ctx
     }
     return res.(ItemListContentTypesGetCompatibleHubContentTypesResponseable), nil
 }
-// GetAsGetCompatibleHubContentTypesGetResponse invoke function getCompatibleHubContentTypes
+// GetAsGetCompatibleHubContentTypesGetResponse get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
 // returns a ItemListContentTypesGetCompatibleHubContentTypesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
 func (m *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder) GetAsGetCompatibleHubContentTypesGetResponse(ctx context.Context, requestConfiguration *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(ItemListContentTypesGetCompatibleHubContentTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder) GetAsGe
     }
     return res.(ItemListContentTypesGetCompatibleHubContentTypesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getCompatibleHubContentTypes
+// ToGetRequestInformation get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
 // returns a *RequestInformation when successful
 func (m *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

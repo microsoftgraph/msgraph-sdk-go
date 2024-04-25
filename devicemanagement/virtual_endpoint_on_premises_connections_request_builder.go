@@ -11,7 +11,7 @@ import (
 type VirtualEndpointOnPremisesConnectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointOnPremisesConnectionsRequestBuilderGetQueryParameters list properties and relationships of the cloudPcOnPremisesConnection objects.
+// VirtualEndpointOnPremisesConnectionsRequestBuilderGetQueryParameters a defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
 type VirtualEndpointOnPremisesConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewVirtualEndpointOnPremisesConnectionsRequestBuilder(rawUrl string, reques
 func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) Count()(*VirtualEndpointOnPremisesConnectionsCountRequestBuilder) {
     return NewVirtualEndpointOnPremisesConnectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the cloudPcOnPremisesConnection objects.
+// Get a defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
 // returns a CloudPcOnPremisesConnectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0
 func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionCollectionResponseable), nil
 }
-// Post create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+// Post create new navigation property to onPremisesConnections for deviceManagement
 // returns a CloudPcOnPremisesConnectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0
 func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable, requestConfiguration *VirtualEndpointOnPremisesConnectionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) Post(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable), nil
 }
-// ToGetRequestInformation list properties and relationships of the cloudPcOnPremisesConnection objects.
+// ToGetRequestInformation a defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) ToGetRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+// ToPostRequestInformation create new navigation property to onPremisesConnections for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable, requestConfiguration *VirtualEndpointOnPremisesConnectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

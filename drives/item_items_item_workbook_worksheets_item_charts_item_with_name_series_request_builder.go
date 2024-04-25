@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderGetQueryParameters retrieve a list of chartseries objects.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderGetQueryParameters represents either a single series or collection of series in the chart. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,12 +59,9 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of chartseries objects.
+// Get represents either a single series or collection of series in the chart. Read-only.
 // returns a WorkbookChartSeriesCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chart-list-series?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,12 +79,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesCollectionResponseable), nil
 }
-// Post use this API to create a new ChartSeries.
+// Post create new navigation property to series for drives
 // returns a WorkbookChartSeriesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chart-post-series?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -105,7 +99,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesable), nil
 }
-// ToGetRequestInformation retrieve a list of chartseries objects.
+// ToGetRequestInformation represents either a single series or collection of series in the chart. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,7 +113,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new ChartSeries.
+// ToPostRequestInformation create new navigation property to series for drives
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSeriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

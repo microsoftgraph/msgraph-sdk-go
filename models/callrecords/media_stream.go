@@ -60,7 +60,7 @@ func (m *MediaStream) GetAverageAudioDegradation()(*float32) {
     }
     return nil
 }
-// GetAverageAudioNetworkJitter gets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// GetAverageAudioNetworkJitter gets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 // returns a *ISODuration when successful
 func (m *MediaStream) GetAverageAudioNetworkJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("averageAudioNetworkJitter")
@@ -96,7 +96,7 @@ func (m *MediaStream) GetAverageFreezeDuration()(*i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// GetAverageJitter gets the averageJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// GetAverageJitter gets the averageJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 // returns a *ISODuration when successful
 func (m *MediaStream) GetAverageJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("averageJitter")
@@ -144,7 +144,7 @@ func (m *MediaStream) GetAverageReceivedFrameRate()(*float32) {
     }
     return nil
 }
-// GetAverageRoundTripTime gets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// GetAverageRoundTripTime gets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 // returns a *ISODuration when successful
 func (m *MediaStream) GetAverageRoundTripTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("averageRoundTripTime")
@@ -180,7 +180,7 @@ func (m *MediaStream) GetAverageVideoFrameRate()(*float32) {
     }
     return nil
 }
-// GetAverageVideoPacketLossRate gets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
+// GetAverageVideoPacketLossRate gets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in RFC 3550, computed over the duration of the session.
 // returns a *float32 when successful
 func (m *MediaStream) GetAverageVideoPacketLossRate()(*float32) {
     val, err := m.GetBackingStore().Get("averageVideoPacketLossRate")
@@ -561,7 +561,7 @@ func (m *MediaStream) GetLowVideoProcessingCapabilityRatio()(*float32) {
     }
     return nil
 }
-// GetMaxAudioNetworkJitter gets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// GetMaxAudioNetworkJitter gets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 // returns a *ISODuration when successful
 func (m *MediaStream) GetMaxAudioNetworkJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("maxAudioNetworkJitter")
@@ -573,7 +573,7 @@ func (m *MediaStream) GetMaxAudioNetworkJitter()(*i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// GetMaxJitter gets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// GetMaxJitter gets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 // returns a *ISODuration when successful
 func (m *MediaStream) GetMaxJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("maxJitter")
@@ -609,7 +609,7 @@ func (m *MediaStream) GetMaxRatioOfConcealedSamples()(*float32) {
     }
     return nil
 }
-// GetMaxRoundTripTime gets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// GetMaxRoundTripTime gets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 // returns a *ISODuration when successful
 func (m *MediaStream) GetMaxRoundTripTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("maxRoundTripTime")
@@ -949,7 +949,7 @@ func (m *MediaStream) SetAverageAudioDegradation(value *float32)() {
         panic(err)
     }
 }
-// SetAverageAudioNetworkJitter sets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// SetAverageAudioNetworkJitter sets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 func (m *MediaStream) SetAverageAudioNetworkJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("averageAudioNetworkJitter", value)
     if err != nil {
@@ -970,7 +970,7 @@ func (m *MediaStream) SetAverageFreezeDuration(value *i878a80d2330e89d26896388a3
         panic(err)
     }
 }
-// SetAverageJitter sets the averageJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// SetAverageJitter sets the averageJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 func (m *MediaStream) SetAverageJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("averageJitter", value)
     if err != nil {
@@ -998,7 +998,7 @@ func (m *MediaStream) SetAverageReceivedFrameRate(value *float32)() {
         panic(err)
     }
 }
-// SetAverageRoundTripTime sets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// SetAverageRoundTripTime sets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 func (m *MediaStream) SetAverageRoundTripTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("averageRoundTripTime", value)
     if err != nil {
@@ -1019,7 +1019,7 @@ func (m *MediaStream) SetAverageVideoFrameRate(value *float32)() {
         panic(err)
     }
 }
-// SetAverageVideoPacketLossRate sets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
+// SetAverageVideoPacketLossRate sets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in RFC 3550, computed over the duration of the session.
 func (m *MediaStream) SetAverageVideoPacketLossRate(value *float32)() {
     err := m.GetBackingStore().Set("averageVideoPacketLossRate", value)
     if err != nil {
@@ -1058,14 +1058,14 @@ func (m *MediaStream) SetLowVideoProcessingCapabilityRatio(value *float32)() {
         panic(err)
     }
 }
-// SetMaxAudioNetworkJitter sets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// SetMaxAudioNetworkJitter sets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 func (m *MediaStream) SetMaxAudioNetworkJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("maxAudioNetworkJitter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMaxJitter sets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// SetMaxJitter sets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 func (m *MediaStream) SetMaxJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("maxJitter", value)
     if err != nil {
@@ -1086,7 +1086,7 @@ func (m *MediaStream) SetMaxRatioOfConcealedSamples(value *float32)() {
         panic(err)
     }
 }
-// SetMaxRoundTripTime sets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+// SetMaxRoundTripTime sets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 func (m *MediaStream) SetMaxRoundTripTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("maxRoundTripTime", value)
     if err != nil {

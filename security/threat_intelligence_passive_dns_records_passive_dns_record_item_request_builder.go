@@ -18,7 +18,7 @@ type ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters read the properties and relationships of a passiveDnsRecord object.
+// ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
 type ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of a passiveDnsRecord object.
+// Get retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
 // returns a PassiveDnsRecordable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-passivednsrecord-get?view=graph-rest-1.0
 func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.PassiveDnsRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -134,7 +131,7 @@ func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a passiveDnsRecord object.
+// ToGetRequestInformation retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ClassesItemTeachersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemTeachersRequestBuilderGetQueryParameters retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+// ClassesItemTeachersRequestBuilderGetQueryParameters all teachers in the class. Nullable.
 type ClassesItemTeachersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewClassesItemTeachersRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ClassesItemTeachersRequestBuilder) Count()(*ClassesItemTeachersCountRequestBuilder) {
     return NewClassesItemTeachersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+// Get all teachers in the class. Nullable.
 // returns a EducationUserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
 func (m *ClassesItemTeachersRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemTeachersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +94,7 @@ func (m *ClassesItemTeachersRequestBuilder) Get(ctx context.Context, requestConf
 func (m *ClassesItemTeachersRequestBuilder) Ref()(*ClassesItemTeachersRefRequestBuilder) {
     return NewClassesItemTeachersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+// ToGetRequestInformation all teachers in the class. Nullable.
 // returns a *RequestInformation when successful
 func (m *ClassesItemTeachersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemTeachersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

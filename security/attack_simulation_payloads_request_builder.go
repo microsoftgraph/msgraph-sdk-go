@@ -11,7 +11,7 @@ import (
 type AttackSimulationPayloadsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationPayloadsRequestBuilderGetQueryParameters get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
+// AttackSimulationPayloadsRequestBuilderGetQueryParameters represents an attack simulation training campaign payload in a tenant.
 type AttackSimulationPayloadsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewAttackSimulationPayloadsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *AttackSimulationPayloadsRequestBuilder) Count()(*AttackSimulationPayloadsCountRequestBuilder) {
     return NewAttackSimulationPayloadsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
+// Get represents an attack simulation training campaign payload in a tenant.
 // returns a PayloadCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0
 func (m *AttackSimulationPayloadsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationPayloadsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PayloadCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *AttackSimulationPayloadsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Payloadable), nil
 }
-// ToGetRequestInformation get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
+// ToGetRequestInformation represents an attack simulation training campaign payload in a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationPayloadsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationPayloadsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

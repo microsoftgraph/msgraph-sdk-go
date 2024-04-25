@@ -11,7 +11,7 @@ import (
 type MobileAppCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppCategoriesRequestBuilderGetQueryParameters list properties and relationships of the mobileAppCategory objects.
+// MobileAppCategoriesRequestBuilderGetQueryParameters the mobile app categories.
 type MobileAppCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewMobileAppCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *MobileAppCategoriesRequestBuilder) Count()(*MobileAppCategoriesCountRequestBuilder) {
     return NewMobileAppCategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the mobileAppCategory objects.
+// Get the mobile app categories.
 // returns a MobileAppCategoryCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-list?view=graph-rest-1.0
 func (m *MobileAppCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppCategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *MobileAppCategoriesRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryCollectionResponseable), nil
 }
-// Post create a new mobileAppCategory object.
+// Post create new navigation property to mobileAppCategories for deviceAppManagement
 // returns a MobileAppCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-create?view=graph-rest-1.0
 func (m *MobileAppCategoriesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, requestConfiguration *MobileAppCategoriesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *MobileAppCategoriesRequestBuilder) Post(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable), nil
 }
-// ToGetRequestInformation list properties and relationships of the mobileAppCategory objects.
+// ToGetRequestInformation the mobile app categories.
 // returns a *RequestInformation when successful
 func (m *MobileAppCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *MobileAppCategoriesRequestBuilder) ToGetRequestInformation(ctx context.
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new mobileAppCategory object.
+// ToPostRequestInformation create new navigation property to mobileAppCategories for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *MobileAppCategoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, requestConfiguration *MobileAppCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

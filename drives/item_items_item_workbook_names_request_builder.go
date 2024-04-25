@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookNamesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters retrieve a list of nameditem objects.
+// ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 type ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -86,12 +86,9 @@ func NewItemItemsItemWorkbookNamesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Count()(*ItemItemsItemWorkbookNamesCountRequestBuilder) {
     return NewItemItemsItemWorkbookNamesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of nameditem objects.
+// Get represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 // returns a WorkbookNamedItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ItemItemsItemWorkbookNamesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable), nil
 }
-// ToGetRequestInformation retrieve a list of nameditem objects.
+// ToGetRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

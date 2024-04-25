@@ -11,7 +11,7 @@ import (
 type B2xUserFlowsItemLanguagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2xUserFlowsItemLanguagesRequestBuilderGetQueryParameters retrieve a list of languages supported for customization in a B2X user flow.
+// B2xUserFlowsItemLanguagesRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 type B2xUserFlowsItemLanguagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewB2xUserFlowsItemLanguagesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *B2xUserFlowsItemLanguagesRequestBuilder) Count()(*B2xUserFlowsItemLanguagesCountRequestBuilder) {
     return NewB2xUserFlowsItemLanguagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of languages supported for customization in a B2X user flow.
+// Get the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 // returns a UserFlowLanguageConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-languages?view=graph-rest-1.0
 func (m *B2xUserFlowsItemLanguagesRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserFlowLanguageConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *B2xUserFlowsItemLanguagesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserFlowLanguageConfigurationable), nil
 }
-// ToGetRequestInformation retrieve a list of languages supported for customization in a B2X user flow.
+// ToGetRequestInformation the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 // returns a *RequestInformation when successful
 func (m *B2xUserFlowsItemLanguagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

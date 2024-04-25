@@ -18,7 +18,7 @@ type ItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsExternalItemItemRequestBuilderGetQueryParameters read the properties and relationships of an externalItem object.
+// ItemItemsExternalItemItemRequestBuilderGetQueryParameters get items from connections
 type ItemItemsExternalItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewItemItemsExternalItemItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an externalItem object.
+// Delete delete navigation property items for connections
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
 func (m *ItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get read the properties and relationships of an externalItem object.
+// Get get items from connections
 // returns a ExternalItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
 func (m *ItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Put(ctx context.Context, body 
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable), nil
 }
-// ToDeleteRequestInformation delete an externalItem object.
+// ToDeleteRequestInformation delete navigation property items for connections
 // returns a *RequestInformation when successful
 func (m *ItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,7 +131,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an externalItem object.
+// ToGetRequestInformation get items from connections
 // returns a *RequestInformation when successful
 func (m *ItemItemsExternalItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

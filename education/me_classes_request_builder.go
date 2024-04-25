@@ -11,7 +11,7 @@ import (
 type MeClassesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeClassesRequestBuilderGetQueryParameters get the educationClass resources an educationUser is a member of.
+// MeClassesRequestBuilderGetQueryParameters classes to which the user belongs. Nullable.
 type MeClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewMeClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *MeClassesRequestBuilder) Count()(*MeClassesCountRequestBuilder) {
     return NewMeClassesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the educationClass resources an educationUser is a member of.
+// Get classes to which the user belongs. Nullable.
 // returns a EducationClassCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
 func (m *MeClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *MeClassesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *MeClassesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable), nil
 }
-// ToGetRequestInformation get the educationClass resources an educationUser is a member of.
+// ToGetRequestInformation classes to which the user belongs. Nullable.
 // returns a *RequestInformation when successful
 func (m *MeClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

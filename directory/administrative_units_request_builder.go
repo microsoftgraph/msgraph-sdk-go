@@ -11,7 +11,7 @@ import (
 type AdministrativeUnitsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AdministrativeUnitsRequestBuilderGetQueryParameters retrieve a list of administrativeUnit objects.
+// AdministrativeUnitsRequestBuilderGetQueryParameters conceptual container for user and group directory objects.
 type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,12 +81,9 @@ func (m *AdministrativeUnitsRequestBuilder) Count()(*AdministrativeUnitsCountReq
 func (m *AdministrativeUnitsRequestBuilder) Delta()(*AdministrativeUnitsDeltaRequestBuilder) {
     return NewAdministrativeUnitsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of administrativeUnit objects.
+// Get conceptual container for user and group directory objects.
 // returns a AdministrativeUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0
 func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,12 +101,9 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable), nil
 }
-// Post use this API to create a new administrativeUnit.
+// Post create new navigation property to administrativeUnits for directory
 // returns a AdministrativeUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0
 func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable), nil
 }
-// ToGetRequestInformation retrieve a list of administrativeUnit objects.
+// ToGetRequestInformation conceptual container for user and group directory objects.
 // returns a *RequestInformation when successful
 func (m *AdministrativeUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *AdministrativeUnitsRequestBuilder) ToGetRequestInformation(ctx context.
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new administrativeUnit.
+// ToPostRequestInformation create new navigation property to administrativeUnits for directory
 // returns a *RequestInformation when successful
 func (m *AdministrativeUnitsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

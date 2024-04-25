@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemReviewSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+// CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters returns a list of eDiscoveryReviewSet objects in the case.
 type CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewCasesEdiscoveryCasesItemReviewSetsRequestBuilder(rawUrl string, requestA
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Count()(*CasesEdiscoveryCasesItemReviewSetsCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemReviewSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+// Get returns a list of eDiscoveryReviewSet objects in the case.
 // returns a EdiscoveryReviewSetCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-reviewsets?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Conte
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetCollectionResponseable), nil
 }
-// Post create a new ediscoveryReviewSet object.
+// Post create new navigation property to reviewSets for security
 // returns a EdiscoveryReviewSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-reviewsets?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Cont
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetable), nil
 }
-// ToGetRequestInformation get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+// ToGetRequestInformation returns a list of eDiscoveryReviewSet objects in the case.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new ediscoveryReviewSet object.
+// ToPostRequestInformation create new navigation property to reviewSets for security
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

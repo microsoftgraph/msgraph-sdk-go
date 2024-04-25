@@ -33,9 +33,12 @@ func NewGetSharePointActivityFileCountsWithPeriodRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityFileCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getSharePointActivityFileCounts
+// Get get the number of unique, licensed users who interacted with files stored on SharePoint sites.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityfilecounts?view=graph-rest-1.0
 func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetSharePointActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) Get(ctx contex
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getSharePointActivityFileCounts
+// ToGetRequestInformation get the number of unique, licensed users who interacted with files stored on SharePoint sites.
 // returns a *RequestInformation when successful
 func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetSharePointActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

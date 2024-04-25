@@ -10,7 +10,7 @@ import (
 type SecurityGetAttackSimulationRepeatOffendersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters invoke function getAttackSimulationRepeatOffenders
+// SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 type SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewSecurityGetAttackSimulationRepeatOffendersRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityGetAttackSimulationRepeatOffendersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAttackSimulationRepeatOffenders
+// Get list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // Deprecated: This method is obsolete. Use GetAsGetAttackSimulationRepeatOffendersGetResponse instead.
 // returns a SecurityGetAttackSimulationRepeatOffendersResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0
 func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationRepeatOffendersResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) Get(ctx conte
     }
     return res.(SecurityGetAttackSimulationRepeatOffendersResponseable), nil
 }
-// GetAsGetAttackSimulationRepeatOffendersGetResponse invoke function getAttackSimulationRepeatOffenders
+// GetAsGetAttackSimulationRepeatOffendersGetResponse list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // returns a SecurityGetAttackSimulationRepeatOffendersGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0
 func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) GetAsGetAttackSimulationRepeatOffendersGetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationRepeatOffendersGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) GetAsGetAttac
     }
     return res.(SecurityGetAttackSimulationRepeatOffendersGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAttackSimulationRepeatOffenders
+// ToGetRequestInformation list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // returns a *RequestInformation when successful
 func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

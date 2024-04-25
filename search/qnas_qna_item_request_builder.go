@@ -18,7 +18,7 @@ type QnasQnaItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// QnasQnaItemRequestBuilderGetQueryParameters read the properties and relationships of a qna object.
+// QnasQnaItemRequestBuilderGetQueryParameters administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
 type QnasQnaItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewQnasQnaItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewQnasQnaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a qna object.
+// Delete delete navigation property qnas for search
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
 func (m *QnasQnaItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *QnasQnaItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *QnasQnaItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Get read the properties and relationships of a qna object.
+// Get administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
 // returns a Qnaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
 func (m *QnasQnaItemRequestBuilder) Get(ctx context.Context, requestConfiguration *QnasQnaItemRequestBuilderGetRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *QnasQnaItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable), nil
 }
-// Patch update the properties of a qna object.
+// Patch update the navigation property qnas in search
 // returns a Qnaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
 func (m *QnasQnaItemRequestBuilder) Patch(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable, requestConfiguration *QnasQnaItemRequestBuilderPatchRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *QnasQnaItemRequestBuilder) Patch(ctx context.Context, body i517b35a40b7
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable), nil
 }
-// ToDeleteRequestInformation delete a qna object.
+// ToDeleteRequestInformation delete navigation property qnas for search
 // returns a *RequestInformation when successful
 func (m *QnasQnaItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *QnasQnaItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *QnasQnaItemRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a qna object.
+// ToGetRequestInformation administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
 // returns a *RequestInformation when successful
 func (m *QnasQnaItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *QnasQnaItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *QnasQnaItemRequestBuilder) ToGetRequestInformation(ctx context.Context,
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a qna object.
+// ToPatchRequestInformation update the navigation property qnas in search
 // returns a *RequestInformation when successful
 func (m *QnasQnaItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable, requestConfiguration *QnasQnaItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

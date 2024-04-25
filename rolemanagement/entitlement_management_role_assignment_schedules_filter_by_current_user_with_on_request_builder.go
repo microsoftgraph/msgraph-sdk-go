@@ -10,7 +10,7 @@ import (
 type EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters invoke function filterByCurrentUser
+// EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
 type EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewEntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnReq
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function filterByCurrentUser
+// Get retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRe
     }
     return res.(EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse invoke function filterByCurrentUser
+// GetAsFilterByCurrentUserWithOnGetResponse retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
 // returns a EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRe
     }
     return res.(EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable), nil
 }
-// ToGetRequestInformation invoke function filterByCurrentUser
+// ToGetRequestInformation retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

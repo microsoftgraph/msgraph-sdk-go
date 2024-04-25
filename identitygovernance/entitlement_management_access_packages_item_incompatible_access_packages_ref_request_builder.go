@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderDeleteQueryParameters remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderDeleteQueryParameters delete ref of navigation property incompatibleAccessPackages for identityGovernance
 type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequest
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderDeleteQueryParameters
 }
-// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetQueryParameters retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetQueryParameters the access packages whose assigned users are ineligible to be assigned this access package.
 type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,11 +69,8 @@ func NewEntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequ
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// Delete delete ref of navigation property incompatibleAccessPackages for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatibleaccesspackage?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     }
     return nil
 }
-// Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+// Get the access packages whose assigned users are ineligible to be assigned this access package.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.  
+// Post create new navigation property ref to incompatibleAccessPackages for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-post-incompatibleaccesspackage?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     }
     return nil
 }
-// ToDeleteRequestInformation remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// ToDeleteRequestInformation delete ref of navigation property incompatibleAccessPackages for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleAccessPackages/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+// ToGetRequestInformation the access packages whose assigned users are ineligible to be assigned this access package.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleAccessPackages/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.  
+// ToPostRequestInformation create new navigation property ref to incompatibleAccessPackages for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleAccessPackages/$ref", m.BaseRequestBuilder.PathParameters)

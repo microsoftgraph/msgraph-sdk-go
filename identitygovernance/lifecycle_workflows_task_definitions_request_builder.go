@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsTaskDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters get a list of the taskDefinition objects and their properties.
+// LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters the definition of tasks within the lifecycle workflows instance.
 type LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewLifecycleWorkflowsTaskDefinitionsRequestBuilder(rawUrl string, requestAd
 func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) Count()(*LifecycleWorkflowsTaskDefinitionsCountRequestBuilder) {
     return NewLifecycleWorkflowsTaskDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the taskDefinition objects and their properties.
+// Get the definition of tasks within the lifecycle workflows instance.
 // returns a TaskDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-taskdefinitions?view=graph-rest-1.0
 func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsTaskDefinitionsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.TaskDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) Get(ctx context.Contex
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.TaskDefinitionCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the taskDefinition objects and their properties.
+// ToGetRequestInformation the definition of tasks within the lifecycle workflows instance.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsTaskDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

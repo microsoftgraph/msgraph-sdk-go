@@ -11,7 +11,7 @@ import (
 type ItemThreadsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemThreadsRequestBuilderGetQueryParameters get all the threads of a group.
+// ItemThreadsRequestBuilderGetQueryParameters the group's conversation threads. Nullable.
 type ItemThreadsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,12 +72,9 @@ func NewItemThreadsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ItemThreadsRequestBuilder) Count()(*ItemThreadsCountRequestBuilder) {
     return NewItemThreadsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the threads of a group.
+// Get the group's conversation threads. Nullable.
 // returns a ConversationThreadCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0
 func (m *ItemThreadsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,12 +92,9 @@ func (m *ItemThreadsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadCollectionResponseable), nil
 }
-// Post start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group.Use reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation.
+// Post create new navigation property to threads for groups
 // returns a ConversationThreadable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-post-threads?view=graph-rest-1.0
 func (m *ItemThreadsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, requestConfiguration *ItemThreadsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemThreadsRequestBuilder) Post(ctx context.Context, body iadcd81124412
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable), nil
 }
-// ToGetRequestInformation get all the threads of a group.
+// ToGetRequestInformation the group's conversation threads. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemThreadsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +126,7 @@ func (m *ItemThreadsRequestBuilder) ToGetRequestInformation(ctx context.Context,
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group.Use reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation.
+// ToPostRequestInformation create new navigation property to threads for groups
 // returns a *RequestInformation when successful
 func (m *ItemThreadsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, requestConfiguration *ItemThreadsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

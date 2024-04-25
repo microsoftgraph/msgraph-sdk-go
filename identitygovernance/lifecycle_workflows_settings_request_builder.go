@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsSettingsRequestBuilderGetQueryParameters read the properties and relationships of a lifecycleManagementSettings object.
+// LifecycleWorkflowsSettingsRequestBuilderGetQueryParameters the settings of the lifecycle workflows instance.
 type LifecycleWorkflowsSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,12 +47,9 @@ func NewLifecycleWorkflowsSettingsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties and relationships of a lifecycleManagementSettings object.
+// Get the settings of the lifecycle workflows instance.
 // returns a LifecycleManagementSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-get?view=graph-rest-1.0
 func (m *LifecycleWorkflowsSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.LifecycleManagementSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,12 +67,9 @@ func (m *LifecycleWorkflowsSettingsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.LifecycleManagementSettingsable), nil
 }
-// Patch update the properties of a lifecycleManagementSettings object.
+// Patch update the navigation property settings in identityGovernance
 // returns a LifecycleManagementSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-update?view=graph-rest-1.0
 func (m *LifecycleWorkflowsSettingsRequestBuilder) Patch(ctx context.Context, body ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.LifecycleManagementSettingsable, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderPatchRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.LifecycleManagementSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -93,7 +87,7 @@ func (m *LifecycleWorkflowsSettingsRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.LifecycleManagementSettingsable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a lifecycleManagementSettings object.
+// ToGetRequestInformation the settings of the lifecycle workflows instance.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +101,7 @@ func (m *LifecycleWorkflowsSettingsRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a lifecycleManagementSettings object.
+// ToPatchRequestInformation update the navigation property settings in identityGovernance
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.LifecycleManagementSettingsable, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

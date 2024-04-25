@@ -18,7 +18,7 @@ type SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an securescorecontrolprofile object.
+// SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetQueryParameters get secureScoreControlProfiles from security
 type SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     }
     return nil
 }
-// Get retrieve the properties and relationships of an securescorecontrolprofile object.
+// Get get secureScoreControlProfiles from security
 // returns a SecureScoreControlProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/securescorecontrolprofile-get?view=graph-rest-1.0
 func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable), nil
 }
-// Patch update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+// Patch update the navigation property secureScoreControlProfiles in security
 // returns a SecureScoreControlProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0
 func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable, requestConfiguration *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an securescorecontrolprofile object.
+// ToGetRequestInformation get secureScoreControlProfiles from security
 // returns a *RequestInformation when successful
 func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+// ToPatchRequestInformation update the navigation property secureScoreControlProfiles in security
 // returns a *RequestInformation when successful
 func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable, requestConfiguration *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

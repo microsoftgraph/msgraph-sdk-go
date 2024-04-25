@@ -18,7 +18,7 @@ type ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters get an app installed in a chat.
+// ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters a collection of all the apps in the chat. Nullable.
 type ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete uninstall an app installed within a chat.
+// Delete delete navigation property installedApps for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-delete-installedapps?view=graph-rest-1.0
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Delet
     }
     return nil
 }
-// Get get an app installed in a chat.
+// Get a collection of all the apps in the chat. Nullable.
 // returns a TeamsAppInstallationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-get-installedapps?view=graph-rest-1.0
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Teams
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemChatsItemInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     return NewItemChatsItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation uninstall an app installed within a chat.
+// ToDeleteRequestInformation delete navigation property installedApps for users
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,7 +131,7 @@ func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDel
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get an app installed in a chat.
+// ToGetRequestInformation a collection of all the apps in the chat. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

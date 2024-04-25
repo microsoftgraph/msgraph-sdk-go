@@ -10,7 +10,7 @@ import (
 type EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters invoke function filterByCurrentUser
+// EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters get the instances of eligible roles for the calling principal.
 type EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewEntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUser
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function filterByCurrentUser
+// Get get the instances of eligible roles for the calling principal.
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUse
     }
     return res.(EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse invoke function filterByCurrentUser
+// GetAsFilterByCurrentUserWithOnGetResponse get the instances of eligible roles for the calling principal.
 // returns a EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUse
     }
     return res.(EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnGetResponseable), nil
 }
-// ToGetRequestInformation invoke function filterByCurrentUser
+// ToGetRequestInformation get the instances of eligible roles for the calling principal.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

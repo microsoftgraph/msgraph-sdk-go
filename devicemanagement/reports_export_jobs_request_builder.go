@@ -11,7 +11,7 @@ import (
 type ReportsExportJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsExportJobsRequestBuilderGetQueryParameters list properties and relationships of the deviceManagementExportJob objects.
+// ReportsExportJobsRequestBuilderGetQueryParameters entity representing a job to export a report
 type ReportsExportJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewReportsExportJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ReportsExportJobsRequestBuilder) Count()(*ReportsExportJobsCountRequestBuilder) {
     return NewReportsExportJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the deviceManagementExportJob objects.
+// Get entity representing a job to export a report
 // returns a DeviceManagementExportJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-list?view=graph-rest-1.0
 func (m *ReportsExportJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsExportJobsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ReportsExportJobsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobCollectionResponseable), nil
 }
-// Post create a new deviceManagementExportJob object.
+// Post create new navigation property to exportJobs for deviceManagement
 // returns a DeviceManagementExportJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-create?view=graph-rest-1.0
 func (m *ReportsExportJobsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, requestConfiguration *ReportsExportJobsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ReportsExportJobsRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable), nil
 }
-// ToGetRequestInformation list properties and relationships of the deviceManagementExportJob objects.
+// ToGetRequestInformation entity representing a job to export a report
 // returns a *RequestInformation when successful
 func (m *ReportsExportJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsExportJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ReportsExportJobsRequestBuilder) ToGetRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new deviceManagementExportJob object.
+// ToPostRequestInformation create new navigation property to exportJobs for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ReportsExportJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, requestConfiguration *ReportsExportJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

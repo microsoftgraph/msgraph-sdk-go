@@ -11,7 +11,7 @@ import (
 type ItemGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGroupsRequestBuilderGetQueryParameters get an externalGroup object.
+// ItemGroupsRequestBuilderGetQueryParameters get groups from connections
 type ItemGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ItemGroupsRequestBuilder) Count()(*ItemGroupsCountRequestBuilder) {
     return NewItemGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get an externalGroup object.
+// Get get groups from connections
 // returns a ExternalGroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGroupsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupCollectionResponseable, error) {
@@ -96,12 +96,9 @@ func (m *ItemGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupCollectionResponseable), nil
 }
-// Post create a new externalGroup object.
+// Post create new navigation property to groups for connections
 // returns a ExternalGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
 func (m *ItemGroupsRequestBuilder) Post(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, requestConfiguration *ItemGroupsRequestBuilderPostRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemGroupsRequestBuilder) Post(ctx context.Context, body i648e92ed22999
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable), nil
 }
-// ToGetRequestInformation get an externalGroup object.
+// ToGetRequestInformation get groups from connections
 // returns a *RequestInformation when successful
 func (m *ItemGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +130,7 @@ func (m *ItemGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new externalGroup object.
+// ToPostRequestInformation create new navigation property to groups for connections
 // returns a *RequestInformation when successful
 func (m *ItemGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, requestConfiguration *ItemGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

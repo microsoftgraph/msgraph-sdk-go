@@ -10,7 +10,7 @@ import (
 type ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters invoke function getApplicableContentTypesForList
+// ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters get site contentTypes that can be added to a list.
 type ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getApplicableContentTypesForList
+// Get get site contentTypes that can be added to a list.
 // Deprecated: This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdGetResponse instead.
 // returns a ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestB
     }
     return res.(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdResponseable), nil
 }
-// GetAsGetApplicableContentTypesForListWithListIdGetResponse invoke function getApplicableContentTypesForList
+// GetAsGetApplicableContentTypesForListWithListIdGetResponse get site contentTypes that can be added to a list.
 // returns a ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) GetAsGetApplicableContentTypesForListWithListIdGetResponse(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestB
     }
     return res.(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getApplicableContentTypesForList
+// ToGetRequestInformation get site contentTypes that can be added to a list.
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

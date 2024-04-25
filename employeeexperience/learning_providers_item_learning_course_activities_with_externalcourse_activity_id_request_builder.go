@@ -57,11 +57,8 @@ func NewLearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityI
     urlParams["request-raw-url"] = rawUrl
     return NewLearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete a learningCourseActivity object using the course activity ID of either an assignment or a self-initiated activity.
+// Delete delete navigation property learningCourseActivities for employeeExperience
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +93,9 @@ func (m *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivity
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable), nil
 }
-// Patch update the properties of a learningCourseActivity object. 
+// Patch update the navigation property learningCourseActivities in employeeExperience
 // returns a LearningCourseActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable, requestConfiguration *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +113,7 @@ func (m *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivity
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable), nil
 }
-// ToDeleteRequestInformation delete a learningCourseActivity object using the course activity ID of either an assignment or a self-initiated activity.
+// ToDeleteRequestInformation delete navigation property learningCourseActivities for employeeExperience
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +138,7 @@ func (m *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivity
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a learningCourseActivity object. 
+// ToPatchRequestInformation update the navigation property learningCourseActivities in employeeExperience
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable, requestConfiguration *LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

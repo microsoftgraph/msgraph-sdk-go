@@ -11,7 +11,7 @@ import (
 type ItemGetByPathWithPathListsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGetByPathWithPathListsRequestBuilderGetQueryParameters get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
+// ItemGetByPathWithPathListsRequestBuilderGetQueryParameters the collection of lists under this site.
 type ItemGetByPathWithPathListsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,12 +59,9 @@ func NewItemGetByPathWithPathListsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathListsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
+// Get the collection of lists under this site.
 // returns a ListCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathListsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathListsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,12 +79,9 @@ func (m *ItemGetByPathWithPathListsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListCollectionResponseable), nil
 }
-// Post create a new [list][] in a [site][].
+// Post create new navigation property to lists for sites
 // returns a Listable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathListsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, requestConfiguration *ItemGetByPathWithPathListsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -105,7 +99,7 @@ func (m *ItemGetByPathWithPathListsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable), nil
 }
-// ToGetRequestInformation get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
+// ToGetRequestInformation the collection of lists under this site.
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathListsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathListsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,7 +113,7 @@ func (m *ItemGetByPathWithPathListsRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new [list][] in a [site][].
+// ToPostRequestInformation create new navigation property to lists for sites
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathListsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, requestConfiguration *ItemGetByPathWithPathListsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

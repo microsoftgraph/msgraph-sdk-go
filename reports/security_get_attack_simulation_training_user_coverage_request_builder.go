@@ -10,7 +10,7 @@ import (
 type SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters invoke function getAttackSimulationTrainingUserCoverage
+// SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 type SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewSecurityGetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityGetAttackSimulationTrainingUserCoverageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAttackSimulationTrainingUserCoverage
+// Get list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // Deprecated: This method is obsolete. Use GetAsGetAttackSimulationTrainingUserCoverageGetResponse instead.
 // returns a SecurityGetAttackSimulationTrainingUserCoverageResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-1.0
 func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationTrainingUserCoverageResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) Get(ctx 
     }
     return res.(SecurityGetAttackSimulationTrainingUserCoverageResponseable), nil
 }
-// GetAsGetAttackSimulationTrainingUserCoverageGetResponse invoke function getAttackSimulationTrainingUserCoverage
+// GetAsGetAttackSimulationTrainingUserCoverageGetResponse list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // returns a SecurityGetAttackSimulationTrainingUserCoverageGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-1.0
 func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) GetAsGetAttackSimulationTrainingUserCoverageGetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationTrainingUserCoverageGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) GetAsGet
     }
     return res.(SecurityGetAttackSimulationTrainingUserCoverageGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAttackSimulationTrainingUserCoverage
+// ToGetRequestInformation list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // returns a *RequestInformation when successful
 func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

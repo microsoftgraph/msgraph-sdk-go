@@ -11,7 +11,7 @@ import (
 type ItemRegisteredOwnersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters remove a user as a registered owner of the device.
+// ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters delete ref of navigation property registeredOwners for devices
 type ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -69,11 +69,8 @@ func NewItemRegisteredOwnersRefRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemRegisteredOwnersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user as a registered owner of the device.
+// Delete delete ref of navigation property registeredOwners for devices
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
 func (m *ItemRegisteredOwnersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,9 +88,6 @@ func (m *ItemRegisteredOwnersRefRequestBuilder) Delete(ctx context.Context, requ
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
 func (m *ItemRegisteredOwnersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *ItemRegisteredOwnersRefRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add a user as a registered owner of the device.
+// Post create new navigation property ref to registeredOwners for devices
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
 func (m *ItemRegisteredOwnersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *ItemRegisteredOwnersRefRequestBuilder) Post(ctx context.Context, body i
     }
     return nil
 }
-// ToDeleteRequestInformation remove a user as a registered owner of the device.
+// ToDeleteRequestInformation delete ref of navigation property registeredOwners for devices
 // returns a *RequestInformation when successful
 func (m *ItemRegisteredOwnersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/devices/{device%2Did}/registeredOwners/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *ItemRegisteredOwnersRefRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add a user as a registered owner of the device.
+// ToPostRequestInformation create new navigation property ref to registeredOwners for devices
 // returns a *RequestInformation when successful
 func (m *ItemRegisteredOwnersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/devices/{device%2Did}/registeredOwners/$ref", m.BaseRequestBuilder.PathParameters)

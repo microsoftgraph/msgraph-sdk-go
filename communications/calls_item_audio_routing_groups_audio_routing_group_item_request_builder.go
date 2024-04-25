@@ -18,7 +18,7 @@ type CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an audioRoutingGroup object.
+// CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetQueryParameters get audioRoutingGroups from communications
 type CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified audioRoutingGroup.
+// Delete delete navigation property audioRoutingGroups for communications
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get retrieve the properties and relationships of an audioRoutingGroup object.
+// Get get audioRoutingGroups from communications
 // returns a AudioRoutingGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Get(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable), nil
 }
-// Patch modify sources and receivers of an audioRoutingGroup.
+// Patch update the navigation property audioRoutingGroups in communications
 // returns a AudioRoutingGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Patch(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable), nil
 }
-// ToDeleteRequestInformation delete the specified audioRoutingGroup.
+// ToDeleteRequestInformation delete navigation property audioRoutingGroups for communications
 // returns a *RequestInformation when successful
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an audioRoutingGroup object.
+// ToGetRequestInformation get audioRoutingGroups from communications
 // returns a *RequestInformation when successful
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) ToGetRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation modify sources and receivers of an audioRoutingGroup.
+// ToPatchRequestInformation update the navigation property audioRoutingGroups in communications
 // returns a *RequestInformation when successful
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

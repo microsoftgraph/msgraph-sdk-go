@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetQueryParameters retrieve the properties and relationships of chartaxis object.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetQueryParameters represents the value axis in an axis. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilde
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of chartaxis object.
+// Get represents the value axis in an axis. Read-only.
 // returns a WorkbookChartAxisable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chartaxis-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,12 +105,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilde
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) MinorGridlines()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridlinesRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridlinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of chartaxis object.
+// Patch update the navigation property valueAxis in drives
 // returns a WorkbookChartAxisable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chartaxis-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -147,7 +141,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of chartaxis object.
+// ToGetRequestInformation represents the value axis in an axis. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -161,7 +155,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of chartaxis object.
+// ToPatchRequestInformation update the navigation property valueAxis in drives
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

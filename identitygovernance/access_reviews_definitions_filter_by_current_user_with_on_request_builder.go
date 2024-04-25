@@ -10,7 +10,7 @@ import (
 type AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters invoke function filterByCurrentUser
+// AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
 type AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewAccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function filterByCurrentUser
+// Get returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a AccessReviewsDefinitionsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0
 func (m *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AccessReviewsDefinitionsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder) Get(ct
     }
     return res.(AccessReviewsDefinitionsFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse invoke function filterByCurrentUser
+// GetAsFilterByCurrentUserWithOnGetResponse returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
 // returns a AccessReviewsDefinitionsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0
 func (m *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AccessReviewsDefinitionsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder) GetAsF
     }
     return res.(AccessReviewsDefinitionsFilterByCurrentUserWithOnGetResponseable), nil
 }
-// ToGetRequestInformation invoke function filterByCurrentUser
+// ToGetRequestInformation returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

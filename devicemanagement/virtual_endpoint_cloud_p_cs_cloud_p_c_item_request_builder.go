@@ -18,7 +18,7 @@ type VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPC object.
+// VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetQueryParameters a collection of cloud-managed virtual desktops.
 type VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Co
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemEndGracePeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a specific cloudPC object.
+// Get a collection of cloud-managed virtual desktops.
 // returns a CloudPCable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPCable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -144,7 +141,7 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a specific cloudPC object.
+// ToGetRequestInformation a collection of cloud-managed virtual desktops.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

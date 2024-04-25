@@ -18,7 +18,7 @@ type HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
+// HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters the policy to control Microsoft Entra authentication behavior for federated users.
 type HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a homeRealmDiscoveryPolicy object.
+// Delete delete navigation property homeRealmDiscoveryPolicies for policies
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-delete?view=graph-rest-1.0
 func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) D
     }
     return nil
 }
-// Get retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
+// Get the policy to control Microsoft Entra authentication behavior for federated users.
 // returns a HomeRealmDiscoveryPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-get?view=graph-rest-1.0
 func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable), nil
 }
-// Patch update the properties of a homeRealmDiscoveryPolicy object.
+// Patch update the navigation property homeRealmDiscoveryPolicies in policies
 // returns a HomeRealmDiscoveryPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-update?view=graph-rest-1.0
 func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable, requestConfiguration *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable), nil
 }
-// ToDeleteRequestInformation delete a homeRealmDiscoveryPolicy object.
+// ToDeleteRequestInformation delete navigation property homeRealmDiscoveryPolicies for policies
 // returns a *RequestInformation when successful
 func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
+// ToGetRequestInformation the policy to control Microsoft Entra authentication behavior for federated users.
 // returns a *RequestInformation when successful
 func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a homeRealmDiscoveryPolicy object.
+// ToPatchRequestInformation update the navigation property homeRealmDiscoveryPolicies in policies
 // returns a *RequestInformation when successful
 func (m *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable, requestConfiguration *HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

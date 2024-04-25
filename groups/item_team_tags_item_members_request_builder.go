@@ -11,7 +11,7 @@ import (
 type ItemTeamTagsItemMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamTagsItemMembersRequestBuilderGetQueryParameters get a list of the members of a standard tag in a team and their properties.
+// ItemTeamTagsItemMembersRequestBuilderGetQueryParameters users assigned to the tag.
 type ItemTeamTagsItemMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemTeamTagsItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemTeamTagsItemMembersRequestBuilder) Count()(*ItemTeamTagsItemMembersCountRequestBuilder) {
     return NewItemTeamTagsItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the members of a standard tag in a team and their properties.
+// Get users assigned to the tag.
 // returns a TeamworkTagMemberCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
 func (m *ItemTeamTagsItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamTagsItemMembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemTeamTagsItemMembersRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberCollectionResponseable), nil
 }
-// Post create a new teamworkTagMember object in a team.
+// Post create new navigation property to members for groups
 // returns a TeamworkTagMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
 func (m *ItemTeamTagsItemMembersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, requestConfiguration *ItemTeamTagsItemMembersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemTeamTagsItemMembersRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable), nil
 }
-// ToGetRequestInformation get a list of the members of a standard tag in a team and their properties.
+// ToGetRequestInformation users assigned to the tag.
 // returns a *RequestInformation when successful
 func (m *ItemTeamTagsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamTagsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemTeamTagsItemMembersRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new teamworkTagMember object in a team.
+// ToPostRequestInformation create new navigation property to members for groups
 // returns a *RequestInformation when successful
 func (m *ItemTeamTagsItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, requestConfiguration *ItemTeamTagsItemMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

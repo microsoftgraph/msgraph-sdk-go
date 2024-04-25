@@ -10,7 +10,7 @@ import (
 type ItemRecentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRecentRequestBuilderGetQueryParameters invoke function recent
+// ItemRecentRequestBuilderGetQueryParameters list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
 type ItemRecentRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemRecentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewItemRecentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function recent
+// Get list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
 // Deprecated: This method is obsolete. Use GetAsRecentGetResponse instead.
 // returns a ItemRecentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
 func (m *ItemRecentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(ItemRecentResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemRecentRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ItemRecentResponseable), nil
 }
-// GetAsRecentGetResponse invoke function recent
+// GetAsRecentGetResponse list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
 // returns a ItemRecentGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
 func (m *ItemRecentRequestBuilder) GetAsRecentGetResponse(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(ItemRecentGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemRecentRequestBuilder) GetAsRecentGetResponse(ctx context.Context, r
     }
     return res.(ItemRecentGetResponseable), nil
 }
-// ToGetRequestInformation invoke function recent
+// ToGetRequestInformation list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
 // returns a *RequestInformation when successful
 func (m *ItemRecentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

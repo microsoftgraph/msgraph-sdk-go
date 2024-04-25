@@ -18,7 +18,7 @@ type EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters in Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
 type EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -69,11 +69,8 @@ func NewEntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItem
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionStageSettings()(*EntitlementManagementAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) {
     return NewEntitlementManagementAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete in Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
+// Delete delete navigation property assignmentPolicies for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
     }
     return nil
 }
-// Get in Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// Get access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
 // returns a AccessPackageAssignmentPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +130,7 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Questions()(*EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) {
     return NewEntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation in Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
+// ToDeleteRequestInformation delete navigation property assignmentPolicies for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +141,7 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation in Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// ToGetRequestInformation access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

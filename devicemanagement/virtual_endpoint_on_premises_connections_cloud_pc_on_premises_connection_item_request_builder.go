@@ -18,7 +18,7 @@ type VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of the cloudPcOnPremisesConnection object.
+// VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters a defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
 type VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewVirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemReque
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
+// Delete delete navigation property onPremisesConnections for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
     }
     return nil
 }
-// Get read the properties and relationships of the cloudPcOnPremisesConnection object.
+// Get a defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
 // returns a CloudPcOnPremisesConnectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable), nil
 }
-// Patch update the properties of a cloudPcOnPremisesConnection object.
+// Patch update the navigation property onPremisesConnections in deviceManagement
 // returns a CloudPcOnPremisesConnectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable, requestConfiguration *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) RunHealthChecks()(*VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) {
     return NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
+// ToDeleteRequestInformation delete navigation property onPremisesConnections for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of the cloudPcOnPremisesConnection object.
+// ToGetRequestInformation a defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a cloudPcOnPremisesConnection object.
+// ToPatchRequestInformation update the navigation property onPremisesConnections in deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcOnPremisesConnectionable, requestConfiguration *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

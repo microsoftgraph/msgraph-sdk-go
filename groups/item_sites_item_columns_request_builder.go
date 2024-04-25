@@ -11,7 +11,7 @@ import (
 type ItemSitesItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemColumnsRequestBuilderGetQueryParameters get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [site][site].
+// ItemSitesItemColumnsRequestBuilderGetQueryParameters the collection of column definitions reusable across lists under this site.
 type ItemSitesItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemSitesItemColumnsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemSitesItemColumnsRequestBuilder) Count()(*ItemSitesItemColumnsCountRequestBuilder) {
     return NewItemSitesItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [site][site].
+// Get the collection of column definitions reusable across lists under this site.
 // returns a ColumnDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
 func (m *ItemSitesItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemSitesItemColumnsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
+// Post create new navigation property to columns for groups
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
 func (m *ItemSitesItemColumnsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemSitesItemColumnsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemSitesItemColumnsRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [site][site].
+// ToGetRequestInformation the collection of column definitions reusable across lists under this site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemSitesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
+// ToPostRequestInformation create new navigation property to columns for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemSitesItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

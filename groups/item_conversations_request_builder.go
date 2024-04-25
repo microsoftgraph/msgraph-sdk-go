@@ -11,7 +11,7 @@ import (
 type ItemConversationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemConversationsRequestBuilderGetQueryParameters retrieve the list of conversations in this group.
+// ItemConversationsRequestBuilderGetQueryParameters the group's conversations.
 type ItemConversationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,12 +74,9 @@ func NewItemConversationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemConversationsRequestBuilder) Count()(*ItemConversationsCountRequestBuilder) {
     return NewItemConversationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of conversations in this group.
+// Get the group's conversations.
 // returns a ConversationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0
 func (m *ItemConversationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,12 +94,9 @@ func (m *ItemConversationsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationCollectionResponseable), nil
 }
-// Post use reply thread or reply post to further post to that conversation.
+// Post create new navigation property to conversations for groups
 // returns a Conversationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
 func (m *ItemConversationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Conversationable, requestConfiguration *ItemConversationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Conversationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +114,7 @@ func (m *ItemConversationsRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Conversationable), nil
 }
-// ToGetRequestInformation retrieve the list of conversations in this group.
+// ToGetRequestInformation the group's conversations.
 // returns a *RequestInformation when successful
 func (m *ItemConversationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,7 +128,7 @@ func (m *ItemConversationsRequestBuilder) ToGetRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation use reply thread or reply post to further post to that conversation.
+// ToPostRequestInformation create new navigation property to conversations for groups
 // returns a *RequestInformation when successful
 func (m *ItemConversationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Conversationable, requestConfiguration *ItemConversationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

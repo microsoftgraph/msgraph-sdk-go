@@ -33,9 +33,12 @@ func NewGetOffice365ServicesUserCountsWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365ServicesUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getOffice365ServicesUserCounts
+// Get get the count of users by activity type and service.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getoffice365servicesusercounts?view=graph-rest-1.0
 func (m *GetOffice365ServicesUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetOffice365ServicesUserCountsWithPeriodRequestBuilder) Get(ctx context
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOffice365ServicesUserCounts
+// ToGetRequestInformation get the count of users by activity type and service.
 // returns a *RequestInformation when successful
 func (m *GetOffice365ServicesUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

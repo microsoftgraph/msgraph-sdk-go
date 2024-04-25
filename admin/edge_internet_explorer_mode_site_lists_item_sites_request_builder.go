@@ -11,7 +11,7 @@ import (
 type EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetQueryParameters get a list of the browserSite objects and their properties.
+// EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetQueryParameters a collection of sites defined for the site list.
 type EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewEdgeInternetExplorerModeSiteListsItemSitesRequestBuilder(rawUrl string, 
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Count()(*EdgeInternetExplorerModeSiteListsItemSitesCountRequestBuilder) {
     return NewEdgeInternetExplorerModeSiteListsItemSitesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the browserSite objects and their properties.
+// Get a collection of sites defined for the site list.
 // returns a BrowserSiteCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Get(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteCollectionResponseable), nil
 }
-// Post create a new browserSite object in a browserSiteList.
+// Post create new navigation property to sites for admin
 // returns a BrowserSiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Post(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable), nil
 }
-// ToGetRequestInformation get a list of the browserSite objects and their properties.
+// ToGetRequestInformation a collection of sites defined for the site list.
 // returns a *RequestInformation when successful
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ToGetRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new browserSite object in a browserSiteList.
+// ToPostRequestInformation create new navigation property to sites for admin
 // returns a *RequestInformation when successful
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

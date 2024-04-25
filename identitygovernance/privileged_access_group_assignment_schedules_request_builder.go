@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupAssignmentSchedulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetQueryParameters get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
+// PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetQueryParameters the assignment schedules to activate a just-in-time access.
 type PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,12 +81,9 @@ func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Count()(*Privil
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) {
     return NewPrivilegedAccessGroupAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
+// Get the assignment schedules to activate a just-in-time access.
 // returns a PrivilegedAccessGroupAssignmentScheduleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedules?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupAssignmentScheduleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Post(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupAssignmentScheduleable), nil
 }
-// ToGetRequestInformation get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
+// ToGetRequestInformation the assignment schedules to activate a just-in-time access.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ItemSynchronizationJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationJobsRequestBuilderGetQueryParameters list existing jobs for a given application instance (service principal).
+// ItemSynchronizationJobsRequestBuilderGetQueryParameters performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 type ItemSynchronizationJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemSynchronizationJobsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemSynchronizationJobsRequestBuilder) Count()(*ItemSynchronizationJobsCountRequestBuilder) {
     return NewItemSynchronizationJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list existing jobs for a given application instance (service principal).
+// Get performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 // returns a SynchronizationJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemSynchronizationJobsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobCollectionResponseable), nil
 }
-// Post create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+// Post create new navigation property to jobs for applications
 // returns a SynchronizationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobable, requestConfiguration *ItemSynchronizationJobsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemSynchronizationJobsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobable), nil
 }
-// ToGetRequestInformation list existing jobs for a given application instance (service principal).
+// ToGetRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemSynchronizationJobsRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+// ToPostRequestInformation create new navigation property to jobs for applications
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobable, requestConfiguration *ItemSynchronizationJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

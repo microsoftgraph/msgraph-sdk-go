@@ -18,7 +18,7 @@ type DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderGetQueryParameters get a conversationMember from a channel.
+// DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderGetQueryParameters a collection of membership records associated with the channel.
 type DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewDeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// Delete delete navigation property members for teamwork
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder
     }
     return nil
 }
-// Get get a conversationMember from a channel.
+// Get a collection of membership records associated with the channel.
 // returns a ConversationMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// Patch update the role of a conversationMember in a team or channel.
+// Patch update the navigation property members in teamwork
 // returns a ConversationMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// ToDeleteRequestInformation delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// ToDeleteRequestInformation delete navigation property members for teamwork
 // returns a *RequestInformation when successful
 func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a conversationMember from a channel.
+// ToGetRequestInformation a collection of membership records associated with the channel.
 // returns a *RequestInformation when successful
 func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the role of a conversationMember in a team or channel.
+// ToPatchRequestInformation update the navigation property members in teamwork
 // returns a *RequestInformation when successful
 func (m *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

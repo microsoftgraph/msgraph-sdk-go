@@ -49,6 +49,9 @@ func NewItemGetManagedDevicesWithAppFailuresRequestBuilder(rawUrl string, reques
 // Deprecated: This method is obsolete. Use GetAsGetManagedDevicesWithAppFailuresGetResponse instead.
 // returns a ItemGetManagedDevicesWithAppFailuresResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0
 func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithAppFailuresResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,6 +72,9 @@ func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) Get(ctx context.Con
 // GetAsGetManagedDevicesWithAppFailuresGetResponse retrieves the list of devices with failed apps
 // returns a ItemGetManagedDevicesWithAppFailuresGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0
 func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) GetAsGetManagedDevicesWithAppFailuresGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithAppFailuresGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

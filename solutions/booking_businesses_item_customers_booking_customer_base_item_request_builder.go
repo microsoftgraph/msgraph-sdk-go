@@ -18,7 +18,7 @@ type BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingCustomer object.
+// BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetQueryParameters all the customers of this business. Read-only. Nullable.
 type BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewBookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified bookingCustomer object.
+// Delete delete navigation property customers for solutions
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) De
     }
     return nil
 }
-// Get get the properties and relationships of a bookingCustomer object.
+// Get all the customers of this business. Read-only. Nullable.
 // returns a BookingCustomerBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable), nil
 }
-// Patch update the properties of a bookingCustomer object.
+// Patch update the navigation property customers in solutions
 // returns a BookingCustomerBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Pa
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable), nil
 }
-// ToDeleteRequestInformation delete the specified bookingCustomer object.
+// ToDeleteRequestInformation delete navigation property customers for solutions
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a bookingCustomer object.
+// ToGetRequestInformation all the customers of this business. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingCustomer object.
+// ToPatchRequestInformation update the navigation property customers in solutions
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

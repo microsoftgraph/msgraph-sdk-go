@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilderGetQueryParameters retrieve the properties and relationships of chartfont object.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilderGetQueryParameters represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRe
     }
     return nil
 }
-// Get retrieve the properties and relationships of chartfont object.
+// Get represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 // returns a WorkbookChartFontable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chartfont-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRe
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable), nil
 }
-// Patch update the properties of chartfont object.
+// Patch update the navigation property font in drives
 // returns a WorkbookChartFontable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chartfont-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of chartfont object.
+// ToGetRequestInformation represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of chartfont object.
+// ToPatchRequestInformation update the navigation property font in drives
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisFormatFontRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

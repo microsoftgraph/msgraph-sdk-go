@@ -18,7 +18,7 @@ type ItemChatsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChatsItemMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a conversationMember from a chat or channel.
+// ItemChatsItemMembersConversationMemberItemRequestBuilderGetQueryParameters a collection of all the members in the chat. Nullable.
 type ItemChatsItemMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemChatsItemMembersConversationMemberItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a conversationMember from a chat.
+// Delete delete navigation property members for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-delete-members?view=graph-rest-1.0
 func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChatsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get retrieve a conversationMember from a chat or channel.
+// Get a collection of all the members in the chat. Nullable.
 // returns a ConversationMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
 func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) Patch(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// ToDeleteRequestInformation remove a conversationMember from a chat.
+// ToDeleteRequestInformation delete navigation property members for users
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) ToDeleteReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a conversationMember from a chat or channel.
+// ToGetRequestInformation a collection of all the members in the chat. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

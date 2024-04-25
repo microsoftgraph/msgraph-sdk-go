@@ -11,7 +11,7 @@ import (
 type ItemMembersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMembersRefRequestBuilderDeleteQueryParameters remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
+// ItemMembersRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for groups
 type ItemMembersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -69,11 +69,8 @@ func NewItemMembersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
+// Delete delete ref of navigation property members for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
 func (m *ItemMembersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,9 +88,6 @@ func (m *ItemMembersRefRequestBuilder) Delete(ctx context.Context, requestConfig
 // Get the members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
 func (m *ItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *ItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+// Post create new navigation property ref to members for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
 func (m *ItemMembersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemMembersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *ItemMembersRefRequestBuilder) Post(ctx context.Context, body iadcd81124
     }
     return nil
 }
-// ToDeleteRequestInformation remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
+// ToDeleteRequestInformation delete ref of navigation property members for groups
 // returns a *RequestInformation when successful
 func (m *ItemMembersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/members/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *ItemMembersRefRequestBuilder) ToGetRequestInformation(ctx context.Conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+// ToPostRequestInformation create new navigation property ref to members for groups
 // returns a *RequestInformation when successful
 func (m *ItemMembersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemMembersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/members/$ref", m.BaseRequestBuilder.PathParameters)

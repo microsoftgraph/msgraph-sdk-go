@@ -30,9 +30,12 @@ func NewGetOffice365ActivationsUserDetailRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365ActivationsUserDetailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getOffice365ActivationsUserDetail
+// Get get details about users who have activated Microsoft 365.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsuserdetail?view=graph-rest-1.0
 func (m *GetOffice365ActivationsUserDetailRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ActivationsUserDetailRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *GetOffice365ActivationsUserDetailRequestBuilder) Get(ctx context.Contex
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOffice365ActivationsUserDetail
+// ToGetRequestInformation get details about users who have activated Microsoft 365.
 // returns a *RequestInformation when successful
 func (m *GetOffice365ActivationsUserDetailRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365ActivationsUserDetailRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

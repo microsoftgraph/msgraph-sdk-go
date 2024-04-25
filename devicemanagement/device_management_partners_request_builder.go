@@ -11,7 +11,7 @@ import (
 type DeviceManagementPartnersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceManagementPartnersRequestBuilderGetQueryParameters list properties and relationships of the deviceManagementPartner objects.
+// DeviceManagementPartnersRequestBuilderGetQueryParameters the list of Device Management Partners configured by the tenant.
 type DeviceManagementPartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewDeviceManagementPartnersRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *DeviceManagementPartnersRequestBuilder) Count()(*DeviceManagementPartnersCountRequestBuilder) {
     return NewDeviceManagementPartnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the deviceManagementPartner objects.
+// Get the list of Device Management Partners configured by the tenant.
 // returns a DeviceManagementPartnerCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-list?view=graph-rest-1.0
 func (m *DeviceManagementPartnersRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementPartnersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *DeviceManagementPartnersRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerCollectionResponseable), nil
 }
-// Post create a new deviceManagementPartner object.
+// Post create new navigation property to deviceManagementPartners for deviceManagement
 // returns a DeviceManagementPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-create?view=graph-rest-1.0
 func (m *DeviceManagementPartnersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, requestConfiguration *DeviceManagementPartnersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *DeviceManagementPartnersRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable), nil
 }
-// ToGetRequestInformation list properties and relationships of the deviceManagementPartner objects.
+// ToGetRequestInformation the list of Device Management Partners configured by the tenant.
 // returns a *RequestInformation when successful
 func (m *DeviceManagementPartnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementPartnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *DeviceManagementPartnersRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new deviceManagementPartner object.
+// ToPostRequestInformation create new navigation property to deviceManagementPartners for deviceManagement
 // returns a *RequestInformation when successful
 func (m *DeviceManagementPartnersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, requestConfiguration *DeviceManagementPartnersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

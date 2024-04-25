@@ -11,7 +11,7 @@ import (
 type MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetQueryParameters list the educationSubmissionResource objects that were officially submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission can't change the submitted list without resubmitting the assignment. This resource is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
+// MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetQueryParameters get submittedResources from education
 type MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewMeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder(rawUrl 
 func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) Count()(*MeAssignmentsItemSubmissionsItemSubmittedResourcesCountRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsItemSubmittedResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the educationSubmissionResource objects that were officially submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission can't change the submitted list without resubmitting the assignment. This resource is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
+// Get get submittedResources from education
 // returns a EducationSubmissionResourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsubmission-list-submittedresources?view=graph-rest-1.0
 func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionResourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) Post(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionResourceable), nil
 }
-// ToGetRequestInformation list the educationSubmissionResource objects that were officially submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission can't change the submitted list without resubmitting the assignment. This resource is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
+// ToGetRequestInformation get submittedResources from education
 // returns a *RequestInformation when successful
 func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

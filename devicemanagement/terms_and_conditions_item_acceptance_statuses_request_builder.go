@@ -11,7 +11,7 @@ import (
 type TermsAndConditionsItemAcceptanceStatusesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TermsAndConditionsItemAcceptanceStatusesRequestBuilderGetQueryParameters list properties and relationships of the termsAndConditionsAcceptanceStatus objects.
+// TermsAndConditionsItemAcceptanceStatusesRequestBuilderGetQueryParameters the list of acceptance statuses for this T&C policy.
 type TermsAndConditionsItemAcceptanceStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewTermsAndConditionsItemAcceptanceStatusesRequestBuilder(rawUrl string, re
 func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) Count()(*TermsAndConditionsItemAcceptanceStatusesCountRequestBuilder) {
     return NewTermsAndConditionsItemAcceptanceStatusesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the termsAndConditionsAcceptanceStatus objects.
+// Get the list of acceptance statuses for this T&C policy.
 // returns a TermsAndConditionsAcceptanceStatusCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-list?view=graph-rest-1.0
 func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsAndConditionsItemAcceptanceStatusesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusCollectionResponseable), nil
 }
-// Post create a new termsAndConditionsAcceptanceStatus object.
+// Post create new navigation property to acceptanceStatuses for deviceManagement
 // returns a TermsAndConditionsAcceptanceStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-create?view=graph-rest-1.0
 func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, requestConfiguration *TermsAndConditionsItemAcceptanceStatusesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) Post(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable), nil
 }
-// ToGetRequestInformation list properties and relationships of the termsAndConditionsAcceptanceStatus objects.
+// ToGetRequestInformation the list of acceptance statuses for this T&C policy.
 // returns a *RequestInformation when successful
 func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsAndConditionsItemAcceptanceStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ToGetRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new termsAndConditionsAcceptanceStatus object.
+// ToPostRequestInformation create new navigation property to acceptanceStatuses for deviceManagement
 // returns a *RequestInformation when successful
 func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAcceptanceStatusable, requestConfiguration *TermsAndConditionsItemAcceptanceStatusesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

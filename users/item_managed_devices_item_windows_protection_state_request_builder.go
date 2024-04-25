@@ -18,7 +18,7 @@ type ItemManagedDevicesItemWindowsProtectionStateRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetQueryParameters read properties and relationships of the windowsProtectionState object.
+// ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetQueryParameters the device protection status. This property is read-only.
 type ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Delete(ctx 
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) DetectedMalwareState()(*ItemManagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilder) {
     return NewItemManagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read properties and relationships of the windowsProtectionState object.
+// Get the device protection status. This property is read-only.
 // returns a WindowsProtectionStateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-windowsprotectionstate-get?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,12 +95,9 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable), nil
 }
-// Patch update the properties of a windowsProtectionState object.
+// Patch update the navigation property windowsProtectionState in users
 // returns a WindowsProtectionStateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-windowsprotectionstate-update?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -132,7 +126,7 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the windowsProtectionState object.
+// ToGetRequestInformation the device protection status. This property is read-only.
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +140,7 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a windowsProtectionState object.
+// ToPatchRequestInformation update the navigation property windowsProtectionState in users
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

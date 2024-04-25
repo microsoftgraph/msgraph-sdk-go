@@ -11,7 +11,7 @@ import (
 type ItemManagedDevicesItemUsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemManagedDevicesItemUsersRequestBuilderGetQueryParameters list properties and relationships of the user objects.
+// ItemManagedDevicesItemUsersRequestBuilderGetQueryParameters the primary users associated with the managed device.
 type ItemManagedDevicesItemUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,12 +52,9 @@ func NewItemManagedDevicesItemUsersRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list properties and relationships of the user objects.
+// Get the primary users associated with the managed device.
 // returns a UserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-user-list?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemUsersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,7 +72,7 @@ func (m *ItemManagedDevicesItemUsersRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable), nil
 }
-// ToGetRequestInformation list properties and relationships of the user objects.
+// ToGetRequestInformation the primary users associated with the managed device.
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

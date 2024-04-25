@@ -18,7 +18,7 @@ type ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderGetQueryParameters read the properties and relationships of a term object.
+// ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderGetQueryParameters all the terms under the set.
 type ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a term object.
+// Delete delete navigation property terms for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) De
     }
     return nil
 }
-// Get read the properties and relationships of a term object.
+// Get all the terms under the set.
 // returns a Termable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) Ge
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// Patch update the properties of a term object.
+// Patch update the navigation property terms in groups
 // returns a Termable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +125,7 @@ func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) Re
 func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) Set()(*ItemSitesItemTermStoreGroupsItemSetsItemTermsItemSetRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsItemSetsItemTermsItemSetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a term object.
+// ToDeleteRequestInformation delete navigation property terms for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,7 +136,7 @@ func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a term object.
+// ToGetRequestInformation all the terms under the set.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,7 +150,7 @@ func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a term object.
+// ToPatchRequestInformation update the navigation property terms in groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsItemTermsTermItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

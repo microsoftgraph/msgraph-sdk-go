@@ -18,7 +18,7 @@ type ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemPermissionsPermissionItemRequestBuilderGetQueryParameters return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors. Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+// ItemItemsItemPermissionsPermissionItemRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
 type ItemItemsItemPermissionsPermissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemItemsItemPermissionsPermissionItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove access to a DriveItem. Only sharing permissions that are not inherited can be deleted.The inheritedFrom property must be null.
+// Delete delete navigation property permissions for drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-delete?view=graph-rest-1.0
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors. Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+// Get the set of permissions for the item. Read-only. Nullable.
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-get?view=graph-rest-1.0
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Get(ctx context.C
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemItemsItemPermissionsItemGrantRequestBuilder) {
     return NewItemItemsItemPermissionsItemGrantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a sharing permission by patching the permission resource. Only the roles property can be modified this way.
+// Patch update the navigation property permissions in drives
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-update?view=graph-rest-1.0
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// ToDeleteRequestInformation remove access to a DriveItem. Only sharing permissions that are not inherited can be deleted.The inheritedFrom property must be null.
+// ToDeleteRequestInformation delete navigation property permissions for drives
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors. Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+// ToGetRequestInformation the set of permissions for the item. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToGetRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a sharing permission by patching the permission resource. Only the roles property can be modified this way.
+// ToPatchRequestInformation update the navigation property permissions in drives
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

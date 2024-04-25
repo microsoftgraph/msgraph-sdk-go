@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters delete ref of navigation property incompatibleGroups for identityGovernance
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderD
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters
 }
-// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters the groups whose members are ineligible to be assigned this access package.
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,11 +69,8 @@ func NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// Delete delete ref of navigation property incompatibleGroups for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatiblegroup?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     }
     return nil
 }
-// Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// Get the groups whose members are ineligible to be assigned this access package.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add a group to the list of groups that have been marked as incompatible on an accessPackage.  
+// Post create new navigation property ref to incompatibleGroups for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-post-incompatiblegroup?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     }
     return nil
 }
-// ToDeleteRequestInformation remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// ToDeleteRequestInformation delete ref of navigation property incompatibleGroups for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// ToGetRequestInformation the groups whose members are ineligible to be assigned this access package.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add a group to the list of groups that have been marked as incompatible on an accessPackage.  
+// ToPostRequestInformation create new navigation property ref to incompatibleGroups for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/$ref", m.BaseRequestBuilder.PathParameters)

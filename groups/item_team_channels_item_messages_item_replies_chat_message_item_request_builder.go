@@ -18,7 +18,7 @@ type ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderGetQueryParameters retrieve a single message or a message reply in a channel or a chat.
+// ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderGetQueryParameters replies for a specified message. Supports $expand for channel messages.
 type ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) D
     }
     return nil
 }
-// Get retrieve a single message or a message reply in a channel or a chat.
+// Get replies for a specified message. Supports $expand for channel messages.
 // returns a ChatMessageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
 func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -139,7 +136,7 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a single message or a message reply in a channel or a chat.
+// ToGetRequestInformation replies for a specified message. Supports $expand for channel messages.
 // returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

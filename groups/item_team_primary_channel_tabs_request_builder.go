@@ -11,7 +11,7 @@ import (
 type ItemTeamPrimaryChannelTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamPrimaryChannelTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team. 
+// ItemTeamPrimaryChannelTabsRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
 type ItemTeamPrimaryChannelTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemTeamPrimaryChannelTabsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Count()(*ItemTeamPrimaryChannelTabsCountRequestBuilder) {
     return NewItemTeamPrimaryChannelTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of tabs in the specified channel within a team. 
+// Get a collection of all the tabs in the channel. A navigation property.
 // returns a TeamsTabCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelTabsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable), nil
 }
-// Post add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
+// Post create new navigation property to tabs for groups
 // returns a TeamsTabable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemTeamPrimaryChannelTabsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team. 
+// ToGetRequestInformation a collection of all the tabs in the channel. A navigation property.
 // returns a *RequestInformation when successful
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemTeamPrimaryChannelTabsRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
+// ToPostRequestInformation create new navigation property to tabs for groups
 // returns a *RequestInformation when successful
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemTeamPrimaryChannelTabsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

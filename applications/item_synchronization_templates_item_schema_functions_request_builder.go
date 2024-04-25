@@ -10,7 +10,7 @@ import (
 type ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetQueryParameters invoke function functions
+// ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetQueryParameters list all the functions currently supported in the attributeMappingSource.
 type ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function functions
+// Get list all the functions currently supported in the attributeMappingSource.
 // Deprecated: This method is obsolete. Use GetAsFunctionsGetResponse instead.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFunctionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) Get(ctx 
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFunctionsResponseable), nil
 }
-// GetAsFunctionsGetResponse invoke function functions
+// GetAsFunctionsGetResponse list all the functions currently supported in the attributeMappingSource.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) GetAsFunctionsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) GetAsFun
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function functions
+// ToGetRequestInformation list all the functions currently supported in the attributeMappingSource.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

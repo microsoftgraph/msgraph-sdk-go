@@ -10,7 +10,7 @@ import (
 type ItemTodoListsDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTodoListsDeltaRequestBuilderGetQueryParameters invoke function delta
+// ItemTodoListsDeltaRequestBuilderGetQueryParameters get a set of todoTaskList resources that have been added, deleted, or removed in Microsoft To Do. A delta function call for todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTaskList without having to fetch all the todoTaskList from the server every time.
 type ItemTodoListsDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemTodoListsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get a set of todoTaskList resources that have been added, deleted, or removed in Microsoft To Do. A delta function call for todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTaskList without having to fetch all the todoTaskList from the server every time.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemTodoListsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-delta?view=graph-rest-1.0
 func (m *ItemTodoListsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsDeltaRequestBuilderGetRequestConfiguration)(ItemTodoListsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemTodoListsDeltaRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ItemTodoListsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get a set of todoTaskList resources that have been added, deleted, or removed in Microsoft To Do. A delta function call for todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTaskList without having to fetch all the todoTaskList from the server every time.
 // returns a ItemTodoListsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-delta?view=graph-rest-1.0
 func (m *ItemTodoListsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemTodoListsDeltaRequestBuilderGetRequestConfiguration)(ItemTodoListsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemTodoListsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Con
     }
     return res.(ItemTodoListsDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get a set of todoTaskList resources that have been added, deleted, or removed in Microsoft To Do. A delta function call for todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTaskList without having to fetch all the todoTaskList from the server every time.
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type LabelsAuthoritiesAuthorityTemplateItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a authorityTemplate object.
+// LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetQueryParameters specifies the underlying authority that describes the type of content to be retained and its retention schedule.
 type LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a authorityTemplate object.
+// Delete delete navigation property authorities for security
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get read the properties and relationships of a authorityTemplate object.
+// Get specifies the underlying authority that describes the type of content to be retained and its retention schedule.
 // returns a AuthorityTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AuthorityTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Patch(ctx context
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AuthorityTemplateable), nil
 }
-// ToDeleteRequestInformation delete a authorityTemplate object.
+// ToDeleteRequestInformation delete navigation property authorities for security
 // returns a *RequestInformation when successful
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a authorityTemplate object.
+// ToGetRequestInformation specifies the underlying authority that describes the type of content to be retained and its retention schedule.
 // returns a *RequestInformation when successful
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

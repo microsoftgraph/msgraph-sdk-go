@@ -34,9 +34,12 @@ func NewGetOneDriveActivityUserDetailWithDateRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getOneDriveActivityUserDetail
+// Get get details about OneDrive activity by user.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityuserdetail?view=graph-rest-1.0
 func (m *GetOneDriveActivityUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOneDriveActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +57,7 @@ func (m *GetOneDriveActivityUserDetailWithDateRequestBuilder) Get(ctx context.Co
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOneDriveActivityUserDetail
+// ToGetRequestInformation get details about OneDrive activity by user.
 // returns a *RequestInformation when successful
 func (m *GetOneDriveActivityUserDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOneDriveActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -47,11 +47,8 @@ func NewItemCalendarEventsItemInstancesItemAttachmentsAttachmentItemRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarEventsItemInstancesItemAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an attachment from a user calendar event, mail message, or group post.
+// Delete delete navigation property attachments for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
 func (m *ItemCalendarEventsItemInstancesItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarEventsItemInstancesItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +83,7 @@ func (m *ItemCalendarEventsItemInstancesItemAttachmentsAttachmentItemRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable), nil
 }
-// ToDeleteRequestInformation delete an attachment from a user calendar event, mail message, or group post.
+// ToDeleteRequestInformation delete navigation property attachments for groups
 // returns a *RequestInformation when successful
 func (m *ItemCalendarEventsItemInstancesItemAttachmentsAttachmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarEventsItemInstancesItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

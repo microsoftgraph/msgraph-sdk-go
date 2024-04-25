@@ -11,7 +11,7 @@ import (
 type CustomSecurityAttributeDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters get a list of the customSecurityAttributeDefinition objects and their properties.
+// CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters schema of a custom security attributes (key-value pairs).
 type CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewCustomSecurityAttributeDefinitionsRequestBuilder(rawUrl string, requestA
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Count()(*CustomSecurityAttributeDefinitionsCountRequestBuilder) {
     return NewCustomSecurityAttributeDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the customSecurityAttributeDefinition objects and their properties.
+// Get schema of a custom security attributes (key-value pairs).
 // returns a CustomSecurityAttributeDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionCollectionResponseable), nil
 }
-// Post create a new customSecurityAttributeDefinition object.
+// Post create new navigation property to customSecurityAttributeDefinitions for directory
 // returns a CustomSecurityAttributeDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionable, requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Post(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionable), nil
 }
-// ToGetRequestInformation get a list of the customSecurityAttributeDefinition objects and their properties.
+// ToGetRequestInformation schema of a custom security attributes (key-value pairs).
 // returns a *RequestInformation when successful
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) ToGetRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new customSecurityAttributeDefinition object.
+// ToPostRequestInformation create new navigation property to customSecurityAttributeDefinitions for directory
 // returns a *RequestInformation when successful
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionable, requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

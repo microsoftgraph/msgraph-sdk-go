@@ -11,7 +11,7 @@ import (
 type ItemSettingsWindowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSettingsWindowsRequestBuilderGetQueryParameters get a list of windowsSetting objects and their properties for the signed in user.
+// ItemSettingsWindowsRequestBuilderGetQueryParameters get windows from users
 type ItemSettingsWindowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemSettingsWindowsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemSettingsWindowsRequestBuilder) Count()(*ItemSettingsWindowsCountRequestBuilder) {
     return NewItemSettingsWindowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of windowsSetting objects and their properties for the signed in user.
+// Get get windows from users
 // returns a WindowsSettingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/usersettings-list-windows?view=graph-rest-1.0
 func (m *ItemSettingsWindowsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsWindowsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsSettingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemSettingsWindowsRequestBuilder) Post(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsSettingable), nil
 }
-// ToGetRequestInformation get a list of windowsSetting objects and their properties for the signed in user.
+// ToGetRequestInformation get windows from users
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

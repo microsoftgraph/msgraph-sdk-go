@@ -11,7 +11,7 @@ import (
 type ItemFollowedSitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFollowedSitesRequestBuilderGetQueryParameters list the sites that have been followed by the signed in user.
+// ItemFollowedSitesRequestBuilderGetQueryParameters get followedSites from users
 type ItemFollowedSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,12 +74,9 @@ func NewItemFollowedSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemFollowedSitesRequestBuilder) Count()(*ItemFollowedSitesCountRequestBuilder) {
     return NewItemFollowedSitesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the sites that have been followed by the signed in user.
+// Get get followedSites from users
 // returns a SiteCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/sites-list-followed?view=graph-rest-1.0
 func (m *ItemFollowedSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFollowedSitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +99,7 @@ func (m *ItemFollowedSitesRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *ItemFollowedSitesRequestBuilder) Remove()(*ItemFollowedSitesRemoveRequestBuilder) {
     return NewItemFollowedSitesRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation list the sites that have been followed by the signed in user.
+// ToGetRequestInformation get followedSites from users
 // returns a *RequestInformation when successful
 func (m *ItemFollowedSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFollowedSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type SchoolsItemUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemUsersRefRequestBuilderDeleteQueryParameters delete a user from a school.
+// SchoolsItemUsersRefRequestBuilderDeleteQueryParameters delete ref of navigation property users for education
 type SchoolsItemUsersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type SchoolsItemUsersRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SchoolsItemUsersRefRequestBuilderDeleteQueryParameters
 }
-// SchoolsItemUsersRefRequestBuilderGetQueryParameters get the educationUser resources associated with an educationSchool.
+// SchoolsItemUsersRefRequestBuilderGetQueryParameters users in the school. Nullable.
 type SchoolsItemUsersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,11 +69,8 @@ func NewSchoolsItemUsersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a user from a school.
+// Delete delete ref of navigation property users for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0
 func (m *SchoolsItemUsersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *SchoolsItemUsersRefRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get the educationUser resources associated with an educationSchool.
+// Get users in the school. Nullable.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
 func (m *SchoolsItemUsersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *SchoolsItemUsersRefRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add a user to a school.
+// Post create new navigation property ref to users for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-post-users?view=graph-rest-1.0
 func (m *SchoolsItemUsersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *SchoolsItemUsersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) Post(ctx context.Context, body iadcd
     }
     return nil
 }
-// ToDeleteRequestInformation delete a user from a school.
+// ToDeleteRequestInformation delete ref of navigation property users for education
 // returns a *RequestInformation when successful
 func (m *SchoolsItemUsersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/schools/{educationSchool%2Did}/users/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) ToDeleteRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the educationUser resources associated with an educationSchool.
+// ToGetRequestInformation users in the school. Nullable.
 // returns a *RequestInformation when successful
 func (m *SchoolsItemUsersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/education/schools/{educationSchool%2Did}/users/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) ToGetRequestInformation(ctx context.
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add a user to a school.
+// ToPostRequestInformation create new navigation property ref to users for education
 // returns a *RequestInformation when successful
 func (m *SchoolsItemUsersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *SchoolsItemUsersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/education/schools/{educationSchool%2Did}/users/$ref", m.BaseRequestBuilder.PathParameters)

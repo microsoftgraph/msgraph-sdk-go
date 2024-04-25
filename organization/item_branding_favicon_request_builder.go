@@ -40,9 +40,6 @@ func NewItemBrandingFaviconRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Get a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
 func (m *ItemBrandingFaviconRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingFaviconRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

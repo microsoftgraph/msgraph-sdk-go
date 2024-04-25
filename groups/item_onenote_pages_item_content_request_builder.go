@@ -41,9 +41,6 @@ func NewItemOnenotePagesItemContentRequestBuilder(rawUrl string, requestAdapter 
 // Get the page's HTML content.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
 func (m *ItemOnenotePagesItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenotePagesItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

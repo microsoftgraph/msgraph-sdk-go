@@ -18,7 +18,7 @@ type ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetQueryParameters retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
+// ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetQueryParameters all categories associated with this class. Nullable.
 type ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an existing category. Only teachers can perform this operation.
+// Delete delete navigation property assignmentCategories for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delete?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) Del
     }
     return nil
 }
-// Get retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
+// Get all categories associated with this class. Nullable.
 // returns a EducationCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-get?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable), nil
 }
-// ToDeleteRequestInformation delete an existing category. Only teachers can perform this operation.
+// ToDeleteRequestInformation delete navigation property assignmentCategories for education
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation all categories associated with this class. Nullable.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

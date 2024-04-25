@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsWorkflowTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetQueryParameters get a list of the workflowTemplate objects and their properties.
+// LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetQueryParameters the workflow templates in the lifecycle workflow instance.
 type LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewLifecycleWorkflowsWorkflowTemplatesRequestBuilder(rawUrl string, request
 func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) Count()(*LifecycleWorkflowsWorkflowTemplatesCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the workflowTemplate objects and their properties.
+// Get the workflow templates in the lifecycle workflow instance.
 // returns a WorkflowTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflowtemplates?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) Get(ctx context.Cont
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowTemplateCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the workflowTemplate objects and their properties.
+// ToGetRequestInformation the workflow templates in the lifecycle workflow instance.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

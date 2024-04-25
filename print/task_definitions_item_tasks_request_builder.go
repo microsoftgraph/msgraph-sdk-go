@@ -11,7 +11,7 @@ import (
 type TaskDefinitionsItemTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TaskDefinitionsItemTasksRequestBuilderGetQueryParameters retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// TaskDefinitionsItemTasksRequestBuilderGetQueryParameters a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 type TaskDefinitionsItemTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewTaskDefinitionsItemTasksRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *TaskDefinitionsItemTasksRequestBuilder) Count()(*TaskDefinitionsItemTasksCountRequestBuilder) {
     return NewTaskDefinitionsItemTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// Get a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 // returns a PrintTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
 func (m *TaskDefinitionsItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable), nil
 }
-// ToGetRequestInformation retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// ToGetRequestInformation a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 // returns a *RequestInformation when successful
 func (m *TaskDefinitionsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

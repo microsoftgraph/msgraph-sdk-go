@@ -30,7 +30,7 @@ func NewItemPermissionsItemGrantRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemPermissionsItemGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post grant users access to a link represented by a [permission][].
+// Post grant users access to a link represented by a permission.
 // Deprecated: This method is obsolete. Use PostAsGrantPostResponse instead.
 // returns a ItemPermissionsItemGrantResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -54,7 +54,7 @@ func (m *ItemPermissionsItemGrantRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ItemPermissionsItemGrantResponseable), nil
 }
-// PostAsGrantPostResponse grant users access to a link represented by a [permission][].
+// PostAsGrantPostResponse grant users access to a link represented by a permission.
 // returns a ItemPermissionsItemGrantPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -77,7 +77,7 @@ func (m *ItemPermissionsItemGrantRequestBuilder) PostAsGrantPostResponse(ctx con
     }
     return res.(ItemPermissionsItemGrantPostResponseable), nil
 }
-// ToPostRequestInformation grant users access to a link represented by a [permission][].
+// ToPostRequestInformation grant users access to a link represented by a permission.
 // returns a *RequestInformation when successful
 func (m *ItemPermissionsItemGrantRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *ItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ItemListItemsListItemItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListItemsListItemItemRequestBuilderGetQueryParameters returns the metadata for an [item][] in a [list][].
+// ItemListItemsListItemItemRequestBuilderGetQueryParameters all items contained in the list.
 type ItemListItemsListItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -69,11 +69,8 @@ func (m *ItemListItemsListItemItemRequestBuilder) CreatedByUser()(*ItemListItems
 func (m *ItemListItemsListItemItemRequestBuilder) CreateLink()(*ItemListItemsItemCreateLinkRequestBuilder) {
     return NewItemListItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete removes an item from a [list][].
+// Delete delete navigation property items for drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
 func (m *ItemListItemsListItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListItemsListItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,12 +100,9 @@ func (m *ItemListItemsListItemItemRequestBuilder) DriveItem()(*ItemListItemsItem
 func (m *ItemListItemsListItemItemRequestBuilder) Fields()(*ItemListItemsItemFieldsRequestBuilder) {
     return NewItemListItemsItemFieldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns the metadata for an [item][] in a [list][].
+// Get all items contained in the list.
 // returns a ListItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
 func (m *ItemListItemsListItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsListItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -161,7 +155,7 @@ func (m *ItemListItemsListItemItemRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// ToDeleteRequestInformation removes an item from a [list][].
+// ToDeleteRequestInformation delete navigation property items for drives
 // returns a *RequestInformation when successful
 func (m *ItemListItemsListItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsListItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -172,7 +166,7 @@ func (m *ItemListItemsListItemItemRequestBuilder) ToDeleteRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns the metadata for an [item][] in a [list][].
+// ToGetRequestInformation all items contained in the list.
 // returns a *RequestInformation when successful
 func (m *ItemListItemsListItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsListItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

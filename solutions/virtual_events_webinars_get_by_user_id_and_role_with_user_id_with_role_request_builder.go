@@ -10,7 +10,7 @@ import (
 type VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters invoke function getByUserIdAndRole
+// VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
 type VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,10 +57,13 @@ func NewVirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function getByUserIdAndRole
+// Get get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
 // Deprecated: This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.
 // returns a VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder
     }
     return res.(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleResponseable), nil
 }
-// GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse invoke function getByUserIdAndRole
+// GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
 // returns a VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +104,7 @@ func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder
     }
     return res.(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getByUserIdAndRole
+// ToGetRequestInformation get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

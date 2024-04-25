@@ -10,7 +10,7 @@ import (
 type ClassesItemAssignmentCategoriesDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentCategoriesDeltaRequestBuilderGetQueryParameters invoke function delta
+// ClassesItemAssignmentCategoriesDeltaRequestBuilderGetQueryParameters get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
 type ClassesItemAssignmentCategoriesDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewClassesItemAssignmentCategoriesDeltaRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ClassesItemAssignmentCategoriesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentCategoriesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) Get(ctx context.Con
     }
     return res.(ClassesItemAssignmentCategoriesDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
 // returns a ClassesItemAssignmentCategoriesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentCategoriesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) GetAsDeltaGetRespon
     }
     return res.(ClassesItemAssignmentCategoriesDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

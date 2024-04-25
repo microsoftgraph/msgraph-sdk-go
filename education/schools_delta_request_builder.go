@@ -10,7 +10,7 @@ import (
 type SchoolsDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsDeltaRequestBuilderGetQueryParameters invoke function delta
+// SchoolsDeltaRequestBuilderGetQueryParameters get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
 type SchoolsDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewSchoolsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a SchoolsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0
 func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(SchoolsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
 // returns a SchoolsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0
 func (m *SchoolsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *SchoolsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, 
     }
     return res.(SchoolsDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
 // returns a *RequestInformation when successful
 func (m *SchoolsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

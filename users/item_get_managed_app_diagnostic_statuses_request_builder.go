@@ -49,6 +49,9 @@ func NewItemGetManagedAppDiagnosticStatusesRequestBuilder(rawUrl string, request
 // Deprecated: This method is obsolete. Use GetAsGetManagedAppDiagnosticStatusesGetResponse instead.
 // returns a ItemGetManagedAppDiagnosticStatusesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,6 +72,9 @@ func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Cont
 // GetAsGetManagedAppDiagnosticStatusesGetResponse gets diagnostics validation status for a given user.
 // returns a ItemGetManagedAppDiagnosticStatusesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) GetAsGetManagedAppDiagnosticStatusesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

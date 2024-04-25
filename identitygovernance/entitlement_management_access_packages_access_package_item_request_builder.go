@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+// EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 type EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -69,11 +69,8 @@ func NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
+// Delete delete navigation property accessPackages for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Del
     }
     return nil
 }
-// Get retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+// Get access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 // returns a AccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,12 +120,9 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Inc
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) IncompatibleGroups()(*EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update an existing accessPackage object to change one or more of its properties, such as the display name or description.
+// Patch update the navigation property accessPackages in identityGovernance
 // returns a AccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-update?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -154,7 +145,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Pat
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ResourceRoleScopes()(*EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
+// ToDeleteRequestInformation delete navigation property accessPackages for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -165,7 +156,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+// ToGetRequestInformation access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -179,7 +170,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToG
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing accessPackage object to change one or more of its properties, such as the display name or description.
+// ToPatchRequestInformation update the navigation property accessPackages in identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

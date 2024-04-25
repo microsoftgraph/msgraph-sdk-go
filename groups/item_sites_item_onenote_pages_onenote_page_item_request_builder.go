@@ -18,7 +18,7 @@ type ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+// ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderGetQueryParameters the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 type ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,11 +64,8 @@ func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Content()(*Item
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemSitesItemOnenotePagesItemCopyToSectionRequestBuilder) {
     return NewItemSitesItemOnenotePagesItemCopyToSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a OneNote page.
+// Delete delete navigation property pages for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,12 +80,9 @@ func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+// Get the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 // returns a OnenotePageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -146,7 +140,7 @@ func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Patch(ctx conte
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Preview()(*ItemSitesItemOnenotePagesItemPreviewRequestBuilder) {
     return NewItemSitesItemOnenotePagesItemPreviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a OneNote page.
+// ToDeleteRequestInformation delete navigation property pages for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +151,7 @@ func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) ToDeleteRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+// ToGetRequestInformation the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

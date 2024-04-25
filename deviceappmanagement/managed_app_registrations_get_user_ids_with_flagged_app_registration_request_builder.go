@@ -10,7 +10,7 @@ import (
 type ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetQueryParameters invoke function getUserIdsWithFlaggedAppRegistration
+// ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetQueryParameters not yet documented
 type ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getUserIdsWithFlaggedAppRegistration
+// Get not yet documented
 // Deprecated: This method is obsolete. Use GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse instead.
 // returns a ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuild
     }
     return res.(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationResponseable), nil
 }
-// GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse invoke function getUserIdsWithFlaggedAppRegistration
+// GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse not yet documented
 // returns a ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuild
     }
     return res.(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getUserIdsWithFlaggedAppRegistration
+// ToGetRequestInformation not yet documented
 // returns a *RequestInformation when successful
 func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters get the properties and relationships of a member of a standard tag in a team.
+// ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters users assigned to the tag.
 type ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemTagsItemMembersTeamworkTagMemberItemRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a member from a standard tag in a team.
+// Delete delete navigation property members for teams
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0
 func (m *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get get the properties and relationships of a member of a standard tag in a team.
+// Get users assigned to the tag.
 // returns a TeamworkTagMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0
 func (m *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) Patch(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable), nil
 }
-// ToDeleteRequestInformation delete a member from a standard tag in a team.
+// ToDeleteRequestInformation delete navigation property members for teams
 // returns a *RequestInformation when successful
 func (m *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToDeleteRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a member of a standard tag in a team.
+// ToGetRequestInformation users assigned to the tag.
 // returns a *RequestInformation when successful
 func (m *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

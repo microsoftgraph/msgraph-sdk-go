@@ -18,7 +18,7 @@ type BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+// BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 type BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 // returns a PlannerProgressTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
 func (m *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +93,6 @@ func (m *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) Get(ctx cont
 // Patch update the navigation property progressTaskBoardFormat in planner
 // returns a PlannerProgressTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
 func (m *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+// ToGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 // returns a *RequestInformation when successful
 func (m *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

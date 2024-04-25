@@ -10,7 +10,7 @@ import (
 type AvailableProviderTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AvailableProviderTypesRequestBuilderGetQueryParameters invoke function availableProviderTypes
+// AvailableProviderTypesRequestBuilderGetQueryParameters retrieves all identity provider types available in a directory.
 type AvailableProviderTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewAvailableProviderTypesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function availableProviderTypes
+// Get retrieves all identity provider types available in a directory.
 // Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 // returns a AvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0
 func (m *AvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(AvailableProviderTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,10 +69,13 @@ func (m *AvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(AvailableProviderTypesResponseable), nil
 }
-// GetAsAvailableProviderTypesGetResponse invoke function availableProviderTypes
+// GetAsAvailableProviderTypesGetResponse retrieves all identity provider types available in a directory.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a AvailableProviderTypesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0
 func (m *AvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(AvailableProviderTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +93,7 @@ func (m *AvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetRes
     }
     return res.(AvailableProviderTypesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function availableProviderTypes
+// ToGetRequestInformation retrieves all identity provider types available in a directory.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *AvailableProviderTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

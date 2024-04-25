@@ -10,7 +10,7 @@ import (
 type ItemTeamChannelsGetAllMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamChannelsGetAllMessagesRequestBuilderGetQueryParameters invoke function getAllMessages
+// ItemTeamChannelsGetAllMessagesRequestBuilderGetQueryParameters retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 type ItemTeamChannelsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -53,10 +53,13 @@ func NewItemTeamChannelsGetAllMessagesRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamChannelsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAllMessages
+// Get retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 // returns a ItemTeamChannelsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
 func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamChannelsGetAllMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,9 +77,12 @@ func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ItemTeamChannelsGetAllMessagesResponseable), nil
 }
-// GetAsGetAllMessagesGetResponse invoke function getAllMessages
+// GetAsGetAllMessagesGetResponse retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a ItemTeamChannelsGetAllMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
 func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemTeamChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamChannelsGetAllMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +100,7 @@ func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetRes
     }
     return res.(ItemTeamChannelsGetAllMessagesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAllMessages
+// ToGetRequestInformation retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful
 func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

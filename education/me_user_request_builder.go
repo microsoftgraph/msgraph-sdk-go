@@ -11,7 +11,7 @@ import (
 type MeUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser.
+// MeUserRequestBuilderGetQueryParameters the directory user that corresponds to this user.
 type MeUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,12 +40,9 @@ func NewMeUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewMeUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the simple directory user that corresponds to this educationUser.
+// Get the directory user that corresponds to this user.
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
 func (m *MeUserRequestBuilder) Get(ctx context.Context, requestConfiguration *MeUserRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +70,7 @@ func (m *MeUserRequestBuilder) MailboxSettings()(*MeUserMailboxSettingsRequestBu
 func (m *MeUserRequestBuilder) ServiceProvisioningErrors()(*MeUserServiceProvisioningErrorsRequestBuilder) {
     return NewMeUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser.
+// ToGetRequestInformation the directory user that corresponds to this user.
 // returns a *RequestInformation when successful
 func (m *MeUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

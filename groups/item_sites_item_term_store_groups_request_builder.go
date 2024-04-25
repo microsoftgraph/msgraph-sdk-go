@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoreGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoreGroupsRequestBuilderGetQueryParameters get a list of group objects in a term store.
+// ItemSitesItemTermStoreGroupsRequestBuilderGetQueryParameters collection of all groups available in the term store.
 type ItemSitesItemTermStoreGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemSitesItemTermStoreGroupsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Count()(*ItemSitesItemTermStoreGroupsCountRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of group objects in a term store.
+// Get collection of all groups available in the term store.
 // returns a GroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.GroupCollectionResponseable), nil
 }
-// Post create a new group object in a term store.
+// Post create new navigation property to groups for groups
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-post?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Post(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Groupable, requestConfiguration *ItemSitesItemTermStoreGroupsRequestBuilderPostRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Groupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Groupable), nil
 }
-// ToGetRequestInformation get a list of group objects in a term store.
+// ToGetRequestInformation collection of all groups available in the term store.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemSitesItemTermStoreGroupsRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new group object in a term store.
+// ToPostRequestInformation create new navigation property to groups for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Groupable, requestConfiguration *ItemSitesItemTermStoreGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

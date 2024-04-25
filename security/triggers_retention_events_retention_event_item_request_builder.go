@@ -18,7 +18,7 @@ type TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TriggersRetentionEventsRetentionEventItemRequestBuilderGetQueryParameters read the properties and relationships of a retentionEvent object.
+// TriggersRetentionEventsRetentionEventItemRequestBuilderGetQueryParameters get retentionEvents from security
 type TriggersRetentionEventsRetentionEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewTriggersRetentionEventsRetentionEventItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a retentionEvent object.
+// Delete delete navigation property retentionEvents for security
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get read the properties and relationships of a retentionEvent object.
+// Get get retentionEvents from security
 // returns a RetentionEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +115,7 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Patch(ctx cont
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) RetentionEventType()(*TriggersRetentionEventsItemRetentionEventTypeRequestBuilder) {
     return NewTriggersRetentionEventsItemRetentionEventTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a retentionEvent object.
+// ToDeleteRequestInformation delete navigation property retentionEvents for security
 // returns a *RequestInformation when successful
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +126,7 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a retentionEvent object.
+// ToGetRequestInformation get retentionEvents from security
 // returns a *RequestInformation when successful
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

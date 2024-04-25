@@ -18,7 +18,7 @@ type ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared.
+// ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
 type ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,11 +52,8 @@ func NewItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete calendarPermission.
+// Delete delete navigation property calendarPermissions for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,12 +68,9 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return nil
 }
-// Get get the specified permissions object of a user or group calendar that has been shared.
+// Get the permissions of the users with whom the calendar is shared.
 // returns a CalendarPermissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,12 +88,9 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// Patch update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.
+// Patch update the navigation property calendarPermissions in users
 // returns a CalendarPermissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -117,7 +108,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// ToDeleteRequestInformation delete calendarPermission.
+// ToDeleteRequestInformation delete navigation property calendarPermissions for users
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,7 +119,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared.
+// ToGetRequestInformation the permissions of the users with whom the calendar is shared.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,7 +133,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.
+// ToPatchRequestInformation update the navigation property calendarPermissions in users
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

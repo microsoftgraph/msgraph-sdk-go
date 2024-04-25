@@ -18,7 +18,7 @@ type PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
+// PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetQueryParameters a collection of stages in the approval decision.
 type PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     }
     return nil
 }
-// Get retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
+// Get a collection of stages in the approval decision.
 // returns a ApprovalStageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable), nil
 }
-// Patch approve or deny an approvalStage object in an approval.
+// Patch update the navigation property stages in identityGovernance
 // returns a ApprovalStageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
+// ToGetRequestInformation a collection of stages in the approval decision.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation approve or deny an approvalStage object in an approval.
+// ToPatchRequestInformation update the navigation property stages in identityGovernance
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

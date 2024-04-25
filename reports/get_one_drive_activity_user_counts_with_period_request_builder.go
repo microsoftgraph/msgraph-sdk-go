@@ -33,9 +33,12 @@ func NewGetOneDriveActivityUserCountsWithPeriodRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getOneDriveActivityUserCounts
+// Get get the trend in the number of active OneDrive users.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityusercounts?view=graph-rest-1.0
 func (m *GetOneDriveActivityUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOneDriveActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetOneDriveActivityUserCountsWithPeriodRequestBuilder) Get(ctx context.
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOneDriveActivityUserCounts
+// ToGetRequestInformation get the trend in the number of active OneDrive users.
 // returns a *RequestInformation when successful
 func (m *GetOneDriveActivityUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOneDriveActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

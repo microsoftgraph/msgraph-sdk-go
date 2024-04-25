@@ -54,11 +54,8 @@ func NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationI
     urlParams["request-raw-url"] = rawUrl
     return NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
+// Delete delete navigation property delegatedPermissionClassifications for servicePrincipals
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0
 func (m *ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +110,7 @@ func (m *ItemDelegatedPermissionClassificationsDelegatedPermissionClassification
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable), nil
 }
-// ToDeleteRequestInformation deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
+// ToDeleteRequestInformation delete navigation property delegatedPermissionClassifications for servicePrincipals
 // returns a *RequestInformation when successful
 func (m *ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

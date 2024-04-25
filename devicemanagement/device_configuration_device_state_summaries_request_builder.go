@@ -18,7 +18,7 @@ type DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceConfigurationDeviceStateSummariesRequestBuilderGetQueryParameters read properties and relationships of the deviceConfigurationDeviceStateSummary object.
+// DeviceConfigurationDeviceStateSummariesRequestBuilderGetQueryParameters the device configuration device state summary for this account.
 type DeviceConfigurationDeviceStateSummariesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read properties and relationships of the deviceConfigurationDeviceStateSummary object.
+// Get the device configuration device state summary for this account.
 // returns a DeviceConfigurationDeviceStateSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatesummary-get?view=graph-rest-1.0
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationDeviceStateSummariesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStateSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStateSummaryable), nil
 }
-// Patch update the properties of a deviceConfigurationDeviceStateSummary object.
+// Patch update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
 // returns a DeviceConfigurationDeviceStateSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatesummary-update?view=graph-rest-1.0
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStateSummaryable, requestConfiguration *DeviceConfigurationDeviceStateSummariesRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStateSummaryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the deviceConfigurationDeviceStateSummary object.
+// ToGetRequestInformation the device configuration device state summary for this account.
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationDeviceStateSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) ToGetRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a deviceConfigurationDeviceStateSummary object.
+// ToPatchRequestInformation update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStateSummaryable, requestConfiguration *DeviceConfigurationDeviceStateSummariesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type DeletedChatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedChatsRequestBuilderGetQueryParameters read the properties and relationships of a deletedChat object.
+// DeletedChatsRequestBuilderGetQueryParameters a collection of deleted chats.
 type DeletedChatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewDeletedChatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedChatsRequestBuilder) Count()(*DeletedChatsCountRequestBuilder) {
     return NewDeletedChatsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a deletedChat object.
+// Get a collection of deleted chats.
 // returns a DeletedChatCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedChatsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedChatCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *DeletedChatsRequestBuilder) Post(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedChatable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a deletedChat object.
+// ToGetRequestInformation a collection of deleted chats.
 // returns a *RequestInformation when successful
 func (m *DeletedChatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
