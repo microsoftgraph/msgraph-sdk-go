@@ -44,6 +44,54 @@ func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     }
     return nil
 }
+// GetCustomerEmailAddress gets the customerEmailAddress property value. The customerEmailAddress property
+// returns a *string when successful
+func (m *BookingAppointment) GetCustomerEmailAddress()(*string) {
+    val, err := m.GetBackingStore().Get("customerEmailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetCustomerName gets the customerName property value. The customerName property
+// returns a *string when successful
+func (m *BookingAppointment) GetCustomerName()(*string) {
+    val, err := m.GetBackingStore().Get("customerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetCustomerNotes gets the customerNotes property value. Notes from the customer associated with this appointment.
+// returns a *string when successful
+func (m *BookingAppointment) GetCustomerNotes()(*string) {
+    val, err := m.GetBackingStore().Get("customerNotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetCustomerPhone gets the customerPhone property value. The customerPhone property
+// returns a *string when successful
+func (m *BookingAppointment) GetCustomerPhone()(*string) {
+    val, err := m.GetBackingStore().Get("customerPhone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCustomers gets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 // returns a []BookingCustomerInformationBaseable when successful
 func (m *BookingAppointment) GetCustomers()([]BookingCustomerInformationBaseable) {
@@ -113,6 +161,46 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetAnonymousJoinWebUrl(val)
+        }
+        return nil
+    }
+    res["customerEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomerEmailAddress(val)
+        }
+        return nil
+    }
+    res["customerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomerName(val)
+        }
+        return nil
+    }
+    res["customerNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomerNotes(val)
+        }
+        return nil
+    }
+    res["customerPhone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomerPhone(val)
         }
         return nil
     }
@@ -590,6 +678,30 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("customerEmailAddress", m.GetCustomerEmailAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("customerName", m.GetCustomerName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("customerNotes", m.GetCustomerNotes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("customerPhone", m.GetCustomerPhone())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCustomers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomers()))
         for i, v := range m.GetCustomers() {
@@ -735,6 +847,34 @@ func (m *BookingAppointment) SetAdditionalInformation(value *string)() {
 // SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. The URL of the meeting to join anonymously.
 func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
     err := m.GetBackingStore().Set("anonymousJoinWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCustomerEmailAddress sets the customerEmailAddress property value. The customerEmailAddress property
+func (m *BookingAppointment) SetCustomerEmailAddress(value *string)() {
+    err := m.GetBackingStore().Set("customerEmailAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCustomerName sets the customerName property value. The customerName property
+func (m *BookingAppointment) SetCustomerName(value *string)() {
+    err := m.GetBackingStore().Set("customerName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCustomerNotes sets the customerNotes property value. Notes from the customer associated with this appointment.
+func (m *BookingAppointment) SetCustomerNotes(value *string)() {
+    err := m.GetBackingStore().Set("customerNotes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCustomerPhone sets the customerPhone property value. The customerPhone property
+func (m *BookingAppointment) SetCustomerPhone(value *string)() {
+    err := m.GetBackingStore().Set("customerPhone", value)
     if err != nil {
         panic(err)
     }
@@ -898,6 +1038,10 @@ type BookingAppointmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalInformation()(*string)
     GetAnonymousJoinWebUrl()(*string)
+    GetCustomerEmailAddress()(*string)
+    GetCustomerName()(*string)
+    GetCustomerNotes()(*string)
+    GetCustomerPhone()(*string)
     GetCustomers()([]BookingCustomerInformationBaseable)
     GetCustomerTimeZone()(*string)
     GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -922,6 +1066,10 @@ type BookingAppointmentable interface {
     GetStartDateTime()(DateTimeTimeZoneable)
     SetAdditionalInformation(value *string)()
     SetAnonymousJoinWebUrl(value *string)()
+    SetCustomerEmailAddress(value *string)()
+    SetCustomerName(value *string)()
+    SetCustomerNotes(value *string)()
+    SetCustomerPhone(value *string)()
     SetCustomers(value []BookingCustomerInformationBaseable)()
     SetCustomerTimeZone(value *string)()
     SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()

@@ -34,6 +34,8 @@ func CreateCustomExtensionAuthenticationConfigurationFromDiscriminatorValue(pars
                 switch *mappingValue {
                     case "#microsoft.graph.azureAdPopTokenAuthentication":
                         return NewAzureAdPopTokenAuthentication(), nil
+                    case "#microsoft.graph.azureAdTokenAuthentication":
+                        return NewAzureAdTokenAuthentication(), nil
                 }
             }
         }

@@ -39,6 +39,11 @@ type IdentityRequestBuilderPatchRequestConfiguration struct {
 func (m *IdentityRequestBuilder) ApiConnectors()(*ApiConnectorsRequestBuilder) {
     return NewApiConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AuthenticationEventListeners provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
+// returns a *AuthenticationEventListenersRequestBuilder when successful
+func (m *IdentityRequestBuilder) AuthenticationEventListeners()(*AuthenticationEventListenersRequestBuilder) {
+    return NewAuthenticationEventListenersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // B2xUserFlows provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
 // returns a *B2xUserFlowsRequestBuilder when successful
 func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xUserFlowsRequestBuilder) {
@@ -61,6 +66,11 @@ func NewIdentityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CustomAuthenticationExtensions provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
+// returns a *CustomAuthenticationExtensionsRequestBuilder when successful
+func (m *IdentityRequestBuilder) CustomAuthenticationExtensions()(*CustomAuthenticationExtensionsRequestBuilder) {
+    return NewCustomAuthenticationExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get identity
 // returns a IdentityContainerable when successful

@@ -192,6 +192,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthenticationCombinationConfiguration(), nil
                     case "#microsoft.graph.authenticationContextClassReference":
                         return NewAuthenticationContextClassReference(), nil
+                    case "#microsoft.graph.authenticationEventListener":
+                        return NewAuthenticationEventListener(), nil
                     case "#microsoft.graph.authenticationFlowsPolicy":
                         return NewAuthenticationFlowsPolicy(), nil
                     case "#microsoft.graph.authenticationMethod":
@@ -320,6 +322,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewColumnLink(), nil
                     case "#microsoft.graph.commsOperation":
                         return NewCommsOperation(), nil
+                    case "#microsoft.graph.companySubscription":
+                        return NewCompanySubscription(), nil
                     case "#microsoft.graph.complianceManagementPartner":
                         return NewComplianceManagementPartner(), nil
                     case "#microsoft.graph.conditionalAccessPolicy":
@@ -352,6 +356,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault":
                         return NewCrossTenantAccessPolicyConfigurationDefault(), nil
+                    case "#microsoft.graph.customAuthenticationExtension":
+                        return NewCustomAuthenticationExtension(), nil
                     case "#microsoft.graph.customCalloutExtension":
                         return NewCustomCalloutExtension(), nil
                     case "#microsoft.graph.customExtensionStageSetting":
@@ -848,6 +854,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileLobApp(), nil
                     case "#microsoft.graph.mobileThreatDefenseConnector":
                         return NewMobileThreatDefenseConnector(), nil
+                    case "#microsoft.graph.multiTenantOrganization":
+                        return NewMultiTenantOrganization(), nil
+                    case "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate":
+                        return NewMultiTenantOrganizationIdentitySyncPolicyTemplate(), nil
+                    case "#microsoft.graph.multiTenantOrganizationJoinRequestRecord":
+                        return NewMultiTenantOrganizationJoinRequestRecord(), nil
+                    case "#microsoft.graph.multiTenantOrganizationMember":
+                        return NewMultiTenantOrganizationMember(), nil
+                    case "#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate":
+                        return NewMultiTenantOrganizationPartnerConfigurationTemplate(), nil
                     case "#microsoft.graph.multiValueLegacyExtendedProperty":
                         return NewMultiValueLegacyExtendedProperty(), nil
                     case "#microsoft.graph.muteParticipantOperation":
@@ -888,6 +904,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnPremisesConditionalAccessSettings(), nil
                     case "#microsoft.graph.onPremisesDirectorySynchronization":
                         return NewOnPremisesDirectorySynchronization(), nil
+                    case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
+                        return NewOnTokenIssuanceStartCustomExtension(), nil
+                    case "#microsoft.graph.onTokenIssuanceStartListener":
+                        return NewOnTokenIssuanceStartListener(), nil
                     case "#microsoft.graph.openShift":
                         return NewOpenShift(), nil
                     case "#microsoft.graph.openShiftChangeRequest":
@@ -968,6 +988,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPolicyBase(), nil
                     case "#microsoft.graph.policyRoot":
                         return NewPolicyRoot(), nil
+                    case "#microsoft.graph.policyTemplate":
+                        return NewPolicyTemplate(), nil
                     case "#microsoft.graph.post":
                         return NewPost(), nil
                     case "#microsoft.graph.presence":

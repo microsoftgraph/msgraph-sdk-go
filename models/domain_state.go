@@ -111,7 +111,7 @@ func (m *DomainState) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperation gets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification
+// GetOperation gets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification.
 // returns a *string when successful
 func (m *DomainState) GetOperation()(*string) {
     val, err := m.GetBackingStore().Get("operation")
@@ -123,7 +123,7 @@ func (m *DomainState) GetOperation()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
+// GetStatus gets the status property value. Current status of the operation.  Scheduled - Operation is scheduled but hasn't started.  InProgress - Task is in progress.  Failed - The operation failed.
 // returns a *string when successful
 func (m *DomainState) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
@@ -194,14 +194,14 @@ func (m *DomainState) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperation sets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification
+// SetOperation sets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification.
 func (m *DomainState) SetOperation(value *string)() {
     err := m.GetBackingStore().Set("operation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
+// SetStatus sets the status property value. Current status of the operation.  Scheduled - Operation is scheduled but hasn't started.  InProgress - Task is in progress.  Failed - The operation failed.
 func (m *DomainState) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

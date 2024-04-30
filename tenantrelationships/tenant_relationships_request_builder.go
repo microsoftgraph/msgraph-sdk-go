@@ -87,6 +87,11 @@ func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantRelationshipable), nil
 }
+// MultiTenantOrganization provides operations to manage the multiTenantOrganization property of the microsoft.graph.tenantRelationship entity.
+// returns a *MultiTenantOrganizationRequestBuilder when successful
+func (m *TenantRelationshipsRequestBuilder) MultiTenantOrganization()(*MultiTenantOrganizationRequestBuilder) {
+    return NewMultiTenantOrganizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update tenantRelationships
 // returns a TenantRelationshipable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
