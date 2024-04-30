@@ -39,11 +39,12 @@ const (
     SCHEDULEDALERTS_DETECTIONSOURCE
     MICROSOFTDEFENDERTHREATINTELLIGENCEANALYTICS_DETECTIONSOURCE
     BUILTINML_DETECTIONSOURCE
+    MICROSOFTINSIDERRISKMANAGEMENT_DETECTIONSOURCE
     MICROSOFTSENTINEL_DETECTIONSOURCE
 )
 
 func (i DetectionSource) String() string {
-    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue", "microsoftDefenderForCloud", "microsoftDefenderForIoT", "microsoftDefenderForServers", "microsoftDefenderForStorage", "microsoftDefenderForDNS", "microsoftDefenderForDatabases", "microsoftDefenderForContainers", "microsoftDefenderForNetwork", "microsoftDefenderForAppService", "microsoftDefenderForKeyVault", "microsoftDefenderForResourceManager", "microsoftDefenderForApiManagement", "nrtAlerts", "scheduledAlerts", "microsoftDefenderThreatIntelligenceAnalytics", "builtInMl", "microsoftSentinel"}[i]
+    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue", "microsoftDefenderForCloud", "microsoftDefenderForIoT", "microsoftDefenderForServers", "microsoftDefenderForStorage", "microsoftDefenderForDNS", "microsoftDefenderForDatabases", "microsoftDefenderForContainers", "microsoftDefenderForNetwork", "microsoftDefenderForAppService", "microsoftDefenderForKeyVault", "microsoftDefenderForResourceManager", "microsoftDefenderForApiManagement", "nrtAlerts", "scheduledAlerts", "microsoftDefenderThreatIntelligenceAnalytics", "builtInMl", "microsoftInsiderRiskManagement", "microsoftSentinel"}[i]
 }
 func ParseDetectionSource(v string) (any, error) {
     result := UNKNOWN_DETECTIONSOURCE
@@ -116,6 +117,8 @@ func ParseDetectionSource(v string) (any, error) {
             result = MICROSOFTDEFENDERTHREATINTELLIGENCEANALYTICS_DETECTIONSOURCE
         case "builtInMl":
             result = BUILTINML_DETECTIONSOURCE
+        case "microsoftInsiderRiskManagement":
+            result = MICROSOFTINSIDERRISKMANAGEMENT_DETECTIONSOURCE
         case "microsoftSentinel":
             result = MICROSOFTSENTINEL_DETECTIONSOURCE
         default:

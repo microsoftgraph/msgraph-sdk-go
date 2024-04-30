@@ -19,7 +19,7 @@ func NewDomain()(*Domain) {
 func CreateDomainFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDomain(), nil
 }
-// GetAuthenticationType gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
+// GetAuthenticationType gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Directory.AccessAsUser.All delegated permission.
 // returns a *string when successful
 func (m *Domain) GetAuthenticationType()(*string) {
     val, err := m.GetBackingStore().Get("authenticationType")
@@ -43,7 +43,7 @@ func (m *Domain) GetAvailabilityStatus()(*string) {
     }
     return nil
 }
-// GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+// GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 // returns a []DirectoryObjectable when successful
 func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("domainNameReferences")
@@ -273,7 +273,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetIsAdminManaged gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+// GetIsAdminManaged gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable
 // returns a *bool when successful
 func (m *Domain) GetIsAdminManaged()(*bool) {
     val, err := m.GetBackingStore().Get("isAdminManaged")
@@ -285,7 +285,7 @@ func (m *Domain) GetIsAdminManaged()(*bool) {
     }
     return nil
 }
-// GetIsDefault gets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+// GetIsDefault gets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable
 // returns a *bool when successful
 func (m *Domain) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
@@ -297,7 +297,7 @@ func (m *Domain) GetIsDefault()(*bool) {
     }
     return nil
 }
-// GetIsInitial gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There is only one initial domain per company. Not nullable
+// GetIsInitial gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
 // returns a *bool when successful
 func (m *Domain) GetIsInitial()(*bool) {
     val, err := m.GetBackingStore().Get("isInitial")
@@ -357,7 +357,7 @@ func (m *Domain) GetModel()(*string) {
     }
     return nil
 }
-// GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
+// GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property isn't set, a default value of 14 days is used.
 // returns a *int32 when successful
 func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordNotificationWindowInDays")
@@ -369,7 +369,7 @@ func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
     }
     return nil
 }
-// GetPasswordValidityPeriodInDays gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
+// GetPasswordValidityPeriodInDays gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.
 // returns a *int32 when successful
 func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordValidityPeriodInDays")
@@ -405,7 +405,7 @@ func (m *Domain) GetState()(DomainStateable) {
     }
     return nil
 }
-// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
 // returns a []string when successful
 func (m *Domain) GetSupportedServices()([]string) {
     val, err := m.GetBackingStore().Get("supportedServices")
@@ -563,7 +563,7 @@ func (m *Domain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetAuthenticationType sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
+// SetAuthenticationType sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Directory.AccessAsUser.All delegated permission.
 func (m *Domain) SetAuthenticationType(value *string)() {
     err := m.GetBackingStore().Set("authenticationType", value)
     if err != nil {
@@ -577,7 +577,7 @@ func (m *Domain) SetAvailabilityStatus(value *string)() {
         panic(err)
     }
 }
-// SetDomainNameReferences sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+// SetDomainNameReferences sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 func (m *Domain) SetDomainNameReferences(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("domainNameReferences", value)
     if err != nil {
@@ -591,21 +591,21 @@ func (m *Domain) SetFederationConfiguration(value []InternalDomainFederationable
         panic(err)
     }
 }
-// SetIsAdminManaged sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+// SetIsAdminManaged sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable
 func (m *Domain) SetIsAdminManaged(value *bool)() {
     err := m.GetBackingStore().Set("isAdminManaged", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDefault sets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+// SetIsDefault sets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable
 func (m *Domain) SetIsDefault(value *bool)() {
     err := m.GetBackingStore().Set("isDefault", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsInitial sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There is only one initial domain per company. Not nullable
+// SetIsInitial sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
 func (m *Domain) SetIsInitial(value *bool)() {
     err := m.GetBackingStore().Set("isInitial", value)
     if err != nil {
@@ -640,14 +640,14 @@ func (m *Domain) SetModel(value *string)() {
         panic(err)
     }
 }
-// SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
+// SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property isn't set, a default value of 14 days is used.
 func (m *Domain) SetPasswordNotificationWindowInDays(value *int32)() {
     err := m.GetBackingStore().Set("passwordNotificationWindowInDays", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordValidityPeriodInDays sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
+// SetPasswordValidityPeriodInDays sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.
 func (m *Domain) SetPasswordValidityPeriodInDays(value *int32)() {
     err := m.GetBackingStore().Set("passwordValidityPeriodInDays", value)
     if err != nil {
@@ -668,7 +668,7 @@ func (m *Domain) SetState(value DomainStateable)() {
         panic(err)
     }
 }
-// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
 func (m *Domain) SetSupportedServices(value []string)() {
     err := m.GetBackingStore().Set("supportedServices", value)
     if err != nil {

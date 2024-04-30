@@ -120,6 +120,11 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable), nil
 }
+// Templates provides operations to manage the templates property of the microsoft.graph.crossTenantAccessPolicy entity.
+// returns a *CrossTenantAccessPolicyTemplatesRequestBuilder when successful
+func (m *CrossTenantAccessPolicyRequestBuilder) Templates()(*CrossTenantAccessPolicyTemplatesRequestBuilder) {
+    return NewCrossTenantAccessPolicyTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property crossTenantAccessPolicy for policies
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

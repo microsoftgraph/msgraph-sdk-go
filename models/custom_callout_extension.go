@@ -33,6 +33,10 @@ func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e8
                         return NewAccessPackageAssignmentRequestWorkflowExtension(), nil
                     case "#microsoft.graph.accessPackageAssignmentWorkflowExtension":
                         return NewAccessPackageAssignmentWorkflowExtension(), nil
+                    case "#microsoft.graph.customAuthenticationExtension":
+                        return NewCustomAuthenticationExtension(), nil
+                    case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
+                        return NewOnTokenIssuanceStartCustomExtension(), nil
                 }
             }
         }

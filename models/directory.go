@@ -207,6 +207,22 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["subscriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCompanySubscriptionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CompanySubscriptionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CompanySubscriptionable)
+                }
+            }
+            m.SetSubscriptions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetOnPremisesSynchronization gets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
@@ -218,6 +234,18 @@ func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchron
     }
     if val != nil {
         return val.([]OnPremisesDirectorySynchronizationable)
+    }
+    return nil
+}
+// GetSubscriptions gets the subscriptions property value. The subscriptions property
+// returns a []CompanySubscriptionable when successful
+func (m *Directory) GetSubscriptions()([]CompanySubscriptionable) {
+    val, err := m.GetBackingStore().Get("subscriptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CompanySubscriptionable)
     }
     return nil
 }
@@ -311,6 +339,18 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetSubscriptions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubscriptions()))
+        for i, v := range m.GetSubscriptions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subscriptions", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
@@ -362,6 +402,13 @@ func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySync
         panic(err)
     }
 }
+// SetSubscriptions sets the subscriptions property value. The subscriptions property
+func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
+    err := m.GetBackingStore().Set("subscriptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Directoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -372,6 +419,7 @@ type Directoryable interface {
     GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
     GetFederationConfigurations()([]IdentityProviderBaseable)
     GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
+    GetSubscriptions()([]CompanySubscriptionable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
     SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
@@ -379,4 +427,5 @@ type Directoryable interface {
     SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoable)()
     SetFederationConfigurations(value []IdentityProviderBaseable)()
     SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()
+    SetSubscriptions(value []CompanySubscriptionable)()
 }

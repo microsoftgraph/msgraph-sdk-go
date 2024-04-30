@@ -102,6 +102,16 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["membershipStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseBookingStaffMembershipStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipStatus(val.(*BookingStaffMembershipStatus))
+        }
+        return nil
+    }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingStaffRole)
         if err != nil {
@@ -159,6 +169,18 @@ func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetMembershipStatus gets the membershipStatus property value. The membershipStatus property
+// returns a *BookingStaffMembershipStatus when successful
+func (m *BookingStaffMember) GetMembershipStatus()(*BookingStaffMembershipStatus) {
+    val, err := m.GetBackingStore().Get("membershipStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BookingStaffMembershipStatus)
     }
     return nil
 }
@@ -240,6 +262,13 @@ func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetMembershipStatus() != nil {
+        cast := (*m.GetMembershipStatus()).String()
+        err = writer.WriteStringValue("membershipStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRole() != nil {
         cast := (*m.GetRole()).String()
         err = writer.WriteStringValue("role", &cast)
@@ -301,6 +330,13 @@ func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetMembershipStatus sets the membershipStatus property value. The membershipStatus property
+func (m *BookingStaffMember) SetMembershipStatus(value *BookingStaffMembershipStatus)() {
+    err := m.GetBackingStore().Set("membershipStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRole sets the role property value. The role property
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
     err := m.GetBackingStore().Set("role", value)
@@ -336,6 +372,7 @@ type BookingStaffMemberable interface {
     GetDisplayName()(*string)
     GetEmailAddress()(*string)
     GetIsEmailNotificationEnabled()(*bool)
+    GetMembershipStatus()(*BookingStaffMembershipStatus)
     GetRole()(*BookingStaffRole)
     GetTimeZone()(*string)
     GetUseBusinessHours()(*bool)
@@ -344,6 +381,7 @@ type BookingStaffMemberable interface {
     SetDisplayName(value *string)()
     SetEmailAddress(value *string)()
     SetIsEmailNotificationEnabled(value *bool)()
+    SetMembershipStatus(value *BookingStaffMembershipStatus)()
     SetRole(value *BookingStaffRole)()
     SetTimeZone(value *string)()
     SetUseBusinessHours(value *bool)()

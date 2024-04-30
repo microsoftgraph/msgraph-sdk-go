@@ -390,7 +390,7 @@ func (m *LearningContent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetLevel gets the level property value. The level property
+// GetLevel gets the level property value. The difficulty level of the learning content. Possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.
 // returns a *Level when successful
 func (m *LearningContent) GetLevel()(*Level) {
     val, err := m.GetBackingStore().Get("level")
@@ -676,7 +676,7 @@ func (m *LearningContent) SetLastModifiedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetLevel sets the level property value. The level property
+// SetLevel sets the level property value. The difficulty level of the learning content. Possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.
 func (m *LearningContent) SetLevel(value *Level)() {
     err := m.GetBackingStore().Set("level", value)
     if err != nil {

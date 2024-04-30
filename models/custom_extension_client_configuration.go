@@ -44,6 +44,16 @@ func (m *CustomExtensionClientConfiguration) GetBackingStore()(ie8677ce2c7e1b4c2
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["maximumRetries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMaximumRetries(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +75,18 @@ func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetMaximumRetries gets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
+// returns a *int32 when successful
+func (m *CustomExtensionClientConfiguration) GetMaximumRetries()(*int32) {
+    val, err := m.GetBackingStore().Get("maximumRetries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -92,6 +114,12 @@ func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) 
 }
 // Serialize serializes information the current object
 func (m *CustomExtensionClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteInt32Value("maximumRetries", m.GetMaximumRetries())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -123,6 +151,13 @@ func (m *CustomExtensionClientConfiguration) SetAdditionalData(value map[string]
 func (m *CustomExtensionClientConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetMaximumRetries sets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
+func (m *CustomExtensionClientConfiguration) SetMaximumRetries(value *int32)() {
+    err := m.GetBackingStore().Set("maximumRetries", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CustomExtensionClientConfiguration) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -142,9 +177,11 @@ type CustomExtensionClientConfigurationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMaximumRetries()(*int32)
     GetOdataType()(*string)
     GetTimeoutInMilliseconds()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMaximumRetries(value *int32)()
     SetOdataType(value *string)()
     SetTimeoutInMilliseconds(value *int32)()
 }

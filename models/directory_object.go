@@ -68,6 +68,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewHomeRealmDiscoveryPolicy(), nil
                     case "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy":
                         return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
+                    case "#microsoft.graph.multiTenantOrganizationMember":
+                        return NewMultiTenantOrganizationMember(), nil
                     case "#microsoft.graph.organization":
                         return NewOrganization(), nil
                     case "#microsoft.graph.orgContact":
