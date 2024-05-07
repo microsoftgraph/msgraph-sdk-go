@@ -33,7 +33,7 @@ func NewGetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsDeviceUsageUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getTeamsDeviceUsageUserDetail
+// Get get details about Microsoft Teams device usage by user.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -53,7 +53,7 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder) Get(ctx context.
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getTeamsDeviceUsageUserDetail
+// ToGetRequestInformation get details about Microsoft Teams device usage by user.
 // returns a *RequestInformation when successful
 func (m *GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -47,8 +47,11 @@ func NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property fido2Methods for users
+// Delete deletes a user's FIDO2 Security Key Authentication Method object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0
 func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,7 +86,7 @@ func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation delete navigation property fido2Methods for users
+// ToDeleteRequestInformation deletes a user's FIDO2 Security Key Authentication Method object.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

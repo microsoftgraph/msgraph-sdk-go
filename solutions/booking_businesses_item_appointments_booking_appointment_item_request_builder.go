@@ -18,7 +18,7 @@ type BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderGetQueryParameters all the appointments of this business. Read-only. Nullable.
+// BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
 type BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewBookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property appointments for solutions
+// Delete delete a bookingAppointment in the specified bookingBusiness.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     }
     return nil
 }
-// Get all the appointments of this business. Read-only. Nullable.
+// Get get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
 // returns a BookingAppointmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,9 +101,12 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable), nil
 }
-// Patch update the navigation property appointments in solutions
+// Patch update the properties of a bookingAppointment object in the specified bookingBusiness.
 // returns a BookingAppointmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -115,7 +124,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property appointments for solutions
+// ToDeleteRequestInformation delete a bookingAppointment in the specified bookingBusiness.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +135,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation all the appointments of this business. Read-only. Nullable.
+// ToGetRequestInformation get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +149,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property appointments in solutions
+// ToPatchRequestInformation update the properties of a bookingAppointment object in the specified bookingBusiness.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

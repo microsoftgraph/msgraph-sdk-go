@@ -11,7 +11,7 @@ import (
 type MobileAppConfigurationsItemDeviceStatusesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppConfigurationsItemDeviceStatusesRequestBuilderGetQueryParameters list of ManagedDeviceMobileAppConfigurationDeviceStatus.
+// MobileAppConfigurationsItemDeviceStatusesRequestBuilderGetQueryParameters list properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
 type MobileAppConfigurationsItemDeviceStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewMobileAppConfigurationsItemDeviceStatusesRequestBuilder(rawUrl string, r
 func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Count()(*MobileAppConfigurationsItemDeviceStatusesCountRequestBuilder) {
     return NewMobileAppConfigurationsItemDeviceStatusesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of ManagedDeviceMobileAppConfigurationDeviceStatus.
+// Get list properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
 // returns a ManagedDeviceMobileAppConfigurationDeviceStatusCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-list?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemDeviceStatusesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusCollectionResponseable), nil
 }
-// Post create new navigation property to deviceStatuses for deviceAppManagement
+// Post create a new managedDeviceMobileAppConfigurationDeviceStatus object.
 // returns a ManagedDeviceMobileAppConfigurationDeviceStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-create?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusable, requestConfiguration *MobileAppConfigurationsItemDeviceStatusesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusable), nil
 }
-// ToGetRequestInformation list of ManagedDeviceMobileAppConfigurationDeviceStatus.
+// ToGetRequestInformation list properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
 // returns a *RequestInformation when successful
 func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemDeviceStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) ToGetRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to deviceStatuses for deviceAppManagement
+// ToPostRequestInformation create a new managedDeviceMobileAppConfigurationDeviceStatus object.
 // returns a *RequestInformation when successful
 func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusable, requestConfiguration *MobileAppConfigurationsItemDeviceStatusesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

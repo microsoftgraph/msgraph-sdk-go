@@ -18,7 +18,7 @@ type VppTokensVppTokenItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VppTokensVppTokenItemRequestBuilderGetQueryParameters list of Vpp tokens for this organization.
+// VppTokensVppTokenItemRequestBuilderGetQueryParameters read properties and relationships of the vppToken object.
 type VppTokensVppTokenItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewVppTokensVppTokenItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewVppTokensVppTokenItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property vppTokens for deviceAppManagement
+// Delete deletes a vppToken.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-delete?view=graph-rest-1.0
 func (m *VppTokensVppTokenItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *VppTokensVppTokenItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get list of Vpp tokens for this organization.
+// Get read properties and relationships of the vppToken object.
 // returns a VppTokenable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-get?view=graph-rest-1.0
 func (m *VppTokensVppTokenItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *VppTokensVppTokenItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable), nil
 }
-// Patch update the navigation property vppTokens in deviceAppManagement
+// Patch update the properties of a vppToken object.
 // returns a VppTokenable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-update?view=graph-rest-1.0
 func (m *VppTokensVppTokenItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, requestConfiguration *VppTokensVppTokenItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -115,7 +124,7 @@ func (m *VppTokensVppTokenItemRequestBuilder) Patch(ctx context.Context, body ia
 func (m *VppTokensVppTokenItemRequestBuilder) SyncLicenses()(*VppTokensItemSyncLicensesRequestBuilder) {
     return NewVppTokensItemSyncLicensesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property vppTokens for deviceAppManagement
+// ToDeleteRequestInformation deletes a vppToken.
 // returns a *RequestInformation when successful
 func (m *VppTokensVppTokenItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +135,7 @@ func (m *VppTokensVppTokenItemRequestBuilder) ToDeleteRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation list of Vpp tokens for this organization.
+// ToGetRequestInformation read properties and relationships of the vppToken object.
 // returns a *RequestInformation when successful
 func (m *VppTokensVppTokenItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +149,7 @@ func (m *VppTokensVppTokenItemRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property vppTokens in deviceAppManagement
+// ToPatchRequestInformation update the properties of a vppToken object.
 // returns a *RequestInformation when successful
 func (m *VppTokensVppTokenItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, requestConfiguration *VppTokensVppTokenItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

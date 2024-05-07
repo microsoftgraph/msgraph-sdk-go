@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceSubdomainsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceSubdomainsRequestBuilderGetQueryParameters retrieve details about the subdomain.Note: List retrieval is not yet supported.
+// ThreatIntelligenceSubdomainsRequestBuilderGetQueryParameters read the properties and relationships of a subdomain object.
 type ThreatIntelligenceSubdomainsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewThreatIntelligenceSubdomainsRequestBuilder(rawUrl string, requestAdapter
 func (m *ThreatIntelligenceSubdomainsRequestBuilder) Count()(*ThreatIntelligenceSubdomainsCountRequestBuilder) {
     return NewThreatIntelligenceSubdomainsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve details about the subdomain.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a subdomain object.
 // returns a SubdomainCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceSubdomainsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceSubdomainsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubdomainCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceSubdomainsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Subdomainable), nil
 }
-// ToGetRequestInformation retrieve details about the subdomain.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a subdomain object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceSubdomainsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSubdomainsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

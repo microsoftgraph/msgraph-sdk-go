@@ -18,7 +18,7 @@ type LearningProvidersItemLearningContentsWithExternalIdRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LearningProvidersItemLearningContentsWithExternalIdRequestBuilderGetQueryParameters learning catalog items for the provider.
+// LearningProvidersItemLearningContentsWithExternalIdRequestBuilderGetQueryParameters get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
 type LearningProvidersItemLearningContentsWithExternalIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewLearningProvidersItemLearningContentsWithExternalIdRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewLearningProvidersItemLearningContentsWithExternalIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete navigation property learningContents for employeeExperience
+// Delete delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsWithExternalIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) Dele
     }
     return nil
 }
-// Get learning catalog items for the provider.
+// Get get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
 // returns a LearningContentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsWithExternalIdRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningContentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) Patc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningContentable), nil
 }
-// ToDeleteRequestInformation delete navigation property learningContents for employeeExperience
+// ToDeleteRequestInformation delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsWithExternalIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +130,7 @@ func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation learning catalog items for the provider.
+// ToGetRequestInformation get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsWithExternalIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

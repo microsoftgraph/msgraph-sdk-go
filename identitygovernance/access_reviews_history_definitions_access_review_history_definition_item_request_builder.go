@@ -18,7 +18,7 @@ type AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetQueryParameters represents a collection of access review history data and the scopes used to collect that data.
+// AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetQueryParameters retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.
 type AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequest
     }
     return nil
 }
-// Get represents a collection of access review history data and the scopes used to collect that data.
+// Get retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.
 // returns a AccessReviewHistoryDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewhistorydefinition-get?view=graph-rest-1.0
 func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents a collection of access review history data and the scopes used to collect that data.
+// ToGetRequestInformation retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

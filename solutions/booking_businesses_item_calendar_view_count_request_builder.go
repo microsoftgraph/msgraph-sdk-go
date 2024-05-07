@@ -12,10 +12,14 @@ type BookingBusinessesItemCalendarViewCountRequestBuilder struct {
 }
 // BookingBusinessesItemCalendarViewCountRequestBuilderGetQueryParameters get the number of the resource
 type BookingBusinessesItemCalendarViewCountRequestBuilderGetQueryParameters struct {
+    // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+    End *string `uriparametername:"end"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
+    // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+    Start *string `uriparametername:"start"`
 }
 // BookingBusinessesItemCalendarViewCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BookingBusinessesItemCalendarViewCountRequestBuilderGetRequestConfiguration struct {
@@ -29,7 +33,7 @@ type BookingBusinessesItemCalendarViewCountRequestBuilderGetRequestConfiguration
 // NewBookingBusinessesItemCalendarViewCountRequestBuilderInternal instantiates a new BookingBusinessesItemCalendarViewCountRequestBuilder and sets the default values.
 func NewBookingBusinessesItemCalendarViewCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemCalendarViewCountRequestBuilder) {
     m := &BookingBusinessesItemCalendarViewCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/$count{?%24filter,%24search}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/$count?end={end}&start={start}{&%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -19,7 +19,7 @@ func NewFilePlanCitation()(*FilePlanCitation) {
 func CreateFilePlanCitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilePlanCitation(), nil
 }
-// GetCitationJurisdiction gets the citationJurisdiction property value. The citationJurisdiction property
+// GetCitationJurisdiction gets the citationJurisdiction property value. Represents the jurisdiction or agency that published the filePlanCitation.
 // returns a *string when successful
 func (m *FilePlanCitation) GetCitationJurisdiction()(*string) {
     val, err := m.GetBackingStore().Get("citationJurisdiction")
@@ -31,7 +31,7 @@ func (m *FilePlanCitation) GetCitationJurisdiction()(*string) {
     }
     return nil
 }
-// GetCitationUrl gets the citationUrl property value. The citationUrl property
+// GetCitationUrl gets the citationUrl property value. Represents the URL to the published filePlanCitation.
 // returns a *string when successful
 func (m *FilePlanCitation) GetCitationUrl()(*string) {
     val, err := m.GetBackingStore().Get("citationUrl")
@@ -89,14 +89,14 @@ func (m *FilePlanCitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetCitationJurisdiction sets the citationJurisdiction property value. The citationJurisdiction property
+// SetCitationJurisdiction sets the citationJurisdiction property value. Represents the jurisdiction or agency that published the filePlanCitation.
 func (m *FilePlanCitation) SetCitationJurisdiction(value *string)() {
     err := m.GetBackingStore().Set("citationJurisdiction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCitationUrl sets the citationUrl property value. The citationUrl property
+// SetCitationUrl sets the citationUrl property value. Represents the URL to the published filePlanCitation.
 func (m *FilePlanCitation) SetCitationUrl(value *string)() {
     err := m.GetBackingStore().Set("citationUrl", value)
     if err != nil {

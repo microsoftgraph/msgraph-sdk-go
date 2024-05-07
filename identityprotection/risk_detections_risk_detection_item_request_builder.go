@@ -18,7 +18,7 @@ type RiskDetectionsRiskDetectionItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskDetectionsRiskDetectionItemRequestBuilderGetQueryParameters risk detection in Microsoft Entra ID Protection and the associated information about the detection.
+// RiskDetectionsRiskDetectionItemRequestBuilderGetQueryParameters read the properties and relationships of a riskDetection object.
 type RiskDetectionsRiskDetectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *RiskDetectionsRiskDetectionItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get risk detection in Microsoft Entra ID Protection and the associated information about the detection.
+// Get read the properties and relationships of a riskDetection object.
 // returns a RiskDetectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
 func (m *RiskDetectionsRiskDetectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskDetectionsRiskDetectionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *RiskDetectionsRiskDetectionItemRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation risk detection in Microsoft Entra ID Protection and the associated information about the detection.
+// ToGetRequestInformation read the properties and relationships of a riskDetection object.
 // returns a *RequestInformation when successful
 func (m *RiskDetectionsRiskDetectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionsRiskDetectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

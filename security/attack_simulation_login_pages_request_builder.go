@@ -11,7 +11,7 @@ import (
 type AttackSimulationLoginPagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationLoginPagesRequestBuilderGetQueryParameters represents an attack simulation training login page.
+// AttackSimulationLoginPagesRequestBuilderGetQueryParameters get a list of the loginPage objects and their properties.
 type AttackSimulationLoginPagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAttackSimulationLoginPagesRequestBuilder(rawUrl string, requestAdapter i
 func (m *AttackSimulationLoginPagesRequestBuilder) Count()(*AttackSimulationLoginPagesCountRequestBuilder) {
     return NewAttackSimulationLoginPagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents an attack simulation training login page.
+// Get get a list of the loginPage objects and their properties.
 // returns a LoginPageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-loginpage?view=graph-rest-1.0
 func (m *AttackSimulationLoginPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLoginPagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *AttackSimulationLoginPagesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageable), nil
 }
-// ToGetRequestInformation represents an attack simulation training login page.
+// ToGetRequestInformation get a list of the loginPage objects and their properties.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationLoginPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLoginPagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

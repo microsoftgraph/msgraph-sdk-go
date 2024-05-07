@@ -11,7 +11,7 @@ import (
 type ItemTermStoreSetsItemRelationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoreSetsItemRelationsRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
+// ItemTermStoreSetsItemRelationsRequestBuilderGetQueryParameters get the different relation of a [term] or [set] from the relations navigation property.
 type ItemTermStoreSetsItemRelationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewItemTermStoreSetsItemRelationsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemTermStoreSetsItemRelationsRequestBuilder) Count()(*ItemTermStoreSetsItemRelationsCountRequestBuilder) {
     return NewItemTermStoreSetsItemRelationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get indicates which terms have been pinned or reused directly under the set.
+// Get get the different relation of a [term] or [set] from the relations navigation property.
 // returns a RelationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
 func (m *ItemTermStoreSetsItemRelationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemRelationsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.RelationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ItemTermStoreSetsItemRelationsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Relationable), nil
 }
-// ToGetRequestInformation indicates which terms have been pinned or reused directly under the set.
+// ToGetRequestInformation get the different relation of a [term] or [set] from the relations navigation property.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsItemRelationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemRelationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

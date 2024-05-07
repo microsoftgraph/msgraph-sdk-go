@@ -14,6 +14,8 @@ type ItemEventsItemExtensionsCountRequestBuilder struct {
 type ItemEventsItemExtensionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemEventsItemExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemEventsItemExtensionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemEventsItemExtensionsCountRequestBuilderGetRequestConfiguration struct {
 // NewItemEventsItemExtensionsCountRequestBuilderInternal instantiates a new ItemEventsItemExtensionsCountRequestBuilder and sets the default values.
 func NewItemEventsItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemExtensionsCountRequestBuilder) {
     m := &ItemEventsItemExtensionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/extensions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/extensions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

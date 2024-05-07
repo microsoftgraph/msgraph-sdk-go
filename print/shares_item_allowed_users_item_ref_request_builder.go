@@ -30,8 +30,11 @@ func NewSharesItemAllowedUsersItemRefRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedUsersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property allowedUsers for print
+// Delete revoke the specified user's access to submit print jobs to the associated printerShare.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
 func (m *SharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *SharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property allowedUsers for print
+// ToDeleteRequestInformation revoke the specified user's access to submit print jobs to the associated printerShare.
 // returns a *RequestInformation when successful
 func (m *SharesItemAllowedUsersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

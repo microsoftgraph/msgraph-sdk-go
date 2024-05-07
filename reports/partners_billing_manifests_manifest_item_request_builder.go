@@ -18,7 +18,7 @@ type PartnersBillingManifestsManifestItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PartnersBillingManifestsManifestItemRequestBuilderGetQueryParameters represents metadata for the exported data.
+// PartnersBillingManifestsManifestItemRequestBuilderGetQueryParameters read the properties and relationships of a manifest object.
 type PartnersBillingManifestsManifestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *PartnersBillingManifestsManifestItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get represents metadata for the exported data.
+// Get read the properties and relationships of a manifest object.
 // returns a Manifestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/partners-billing-manifest-get?view=graph-rest-1.0
 func (m *PartnersBillingManifestsManifestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnersBillingManifestsManifestItemRequestBuilderGetRequestConfiguration)(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.Manifestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *PartnersBillingManifestsManifestItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents metadata for the exported data.
+// ToGetRequestInformation read the properties and relationships of a manifest object.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingManifestsManifestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnersBillingManifestsManifestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

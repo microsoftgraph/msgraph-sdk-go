@@ -11,7 +11,7 @@ import (
 type AttributeSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttributeSetsRequestBuilderGetQueryParameters group of related custom security attribute definitions.
+// AttributeSetsRequestBuilderGetQueryParameters get a list of the attributeSet objects and their properties.
 type AttributeSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAttributeSetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *AttributeSetsRequestBuilder) Count()(*AttributeSetsCountRequestBuilder) {
     return NewAttributeSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get group of related custom security attribute definitions.
+// Get get a list of the attributeSet objects and their properties.
 // returns a AttributeSetCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
 func (m *AttributeSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttributeSetsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttributeSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *AttributeSetsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttributeSetCollectionResponseable), nil
 }
-// Post create new navigation property to attributeSets for directory
+// Post create a new attributeSet object.
 // returns a AttributeSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
 func (m *AttributeSetsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttributeSetable, requestConfiguration *AttributeSetsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttributeSetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *AttributeSetsRequestBuilder) Post(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttributeSetable), nil
 }
-// ToGetRequestInformation group of related custom security attribute definitions.
+// ToGetRequestInformation get a list of the attributeSet objects and their properties.
 // returns a *RequestInformation when successful
 func (m *AttributeSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttributeSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *AttributeSetsRequestBuilder) ToGetRequestInformation(ctx context.Contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to attributeSets for directory
+// ToPostRequestInformation create a new attributeSet object.
 // returns a *RequestInformation when successful
 func (m *AttributeSetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttributeSetable, requestConfiguration *AttributeSetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -35,7 +35,7 @@ func (m *FilePlanAppliedCategory) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetSubcategory gets the subcategory property value. The subcategory property
+// GetSubcategory gets the subcategory property value. Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.
 // returns a FilePlanSubcategoryable when successful
 func (m *FilePlanAppliedCategory) GetSubcategory()(FilePlanSubcategoryable) {
     val, err := m.GetBackingStore().Get("subcategory")
@@ -61,7 +61,7 @@ func (m *FilePlanAppliedCategory) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetSubcategory sets the subcategory property value. The subcategory property
+// SetSubcategory sets the subcategory property value. Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.
 func (m *FilePlanAppliedCategory) SetSubcategory(value FilePlanSubcategoryable)() {
     err := m.GetBackingStore().Set("subcategory", value)
     if err != nil {

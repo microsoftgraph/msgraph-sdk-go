@@ -11,7 +11,7 @@ import (
 type CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters invoke function getDirectRoutingCalls
+// CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters get a log of direct routing calls as a collection of directRoutingLogRow entries.
 type CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,7 +52,7 @@ func NewCallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTim
     urlParams["request-raw-url"] = rawUrl
     return NewCallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function getDirectRoutingCalls
+// Get get a log of direct routing calls as a collection of directRoutingLogRow entries.
 // Deprecated: This method is obsolete. Use GetAsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse instead.
 // returns a CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -73,7 +73,7 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTi
     }
     return res.(CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseable), nil
 }
-// GetAsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse invoke function getDirectRoutingCalls
+// GetAsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse get a log of direct routing calls as a collection of directRoutingLogRow entries.
 // returns a CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) GetAsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse(ctx context.Context, requestConfiguration *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration)(CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponseable, error) {
@@ -93,7 +93,7 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTi
     }
     return res.(CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getDirectRoutingCalls
+// ToGetRequestInformation get a log of direct routing calls as a collection of directRoutingLogRow entries.
 // returns a *RequestInformation when successful
 func (m *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

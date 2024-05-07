@@ -18,7 +18,7 @@ type AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetQueryParameters the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetQueryParameters read the properties of an appManagementPolicy object.
 type AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property appManagementPolicies for policies
+// Delete delete an appManagementPolicy object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// Get read the properties of an appManagementPolicy object.
 // returns a AppManagementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-get?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,9 +101,12 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable), nil
 }
-// Patch update the navigation property appManagementPolicies in policies
+// Patch update an appManagementPolicy object.
 // returns a AppManagementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-update?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -115,7 +124,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property appManagementPolicies for policies
+// ToDeleteRequestInformation delete an appManagementPolicy object.
 // returns a *RequestInformation when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +135,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// ToGetRequestInformation read the properties of an appManagementPolicy object.
 // returns a *RequestInformation when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +149,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property appManagementPolicies in policies
+// ToPatchRequestInformation update an appManagementPolicy object.
 // returns a *RequestInformation when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

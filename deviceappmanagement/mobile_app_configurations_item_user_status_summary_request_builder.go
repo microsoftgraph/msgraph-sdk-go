@@ -18,7 +18,7 @@ type MobileAppConfigurationsItemUserStatusSummaryRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppConfigurationsItemUserStatusSummaryRequestBuilderGetQueryParameters app configuration user status summary.
+// MobileAppConfigurationsItemUserStatusSummaryRequestBuilderGetQueryParameters read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
 type MobileAppConfigurationsItemUserStatusSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get app configuration user status summary.
+// Get read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
 // returns a ManagedDeviceMobileAppConfigurationUserSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationusersummary-get?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemUserStatusSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationUserSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationUserSummaryable), nil
 }
-// Patch update the navigation property userStatusSummary in deviceAppManagement
+// Patch update the properties of a managedDeviceMobileAppConfigurationUserSummary object.
 // returns a ManagedDeviceMobileAppConfigurationUserSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationusersummary-update?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationUserSummaryable, requestConfiguration *MobileAppConfigurationsItemUserStatusSummaryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationUserSummaryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation app configuration user status summary.
+// ToGetRequestInformation read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
 // returns a *RequestInformation when successful
 func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemUserStatusSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property userStatusSummary in deviceAppManagement
+// ToPatchRequestInformation update the properties of a managedDeviceMobileAppConfigurationUserSummary object.
 // returns a *RequestInformation when successful
 func (m *MobileAppConfigurationsItemUserStatusSummaryRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationUserSummaryable, requestConfiguration *MobileAppConfigurationsItemUserStatusSummaryRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

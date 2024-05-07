@@ -18,7 +18,7 @@ type CallsItemParticipantsParticipantItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CallsItemParticipantsParticipantItemRequestBuilderGetQueryParameters get participants from communications
+// CallsItemParticipantsParticipantItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a participant object.
 type CallsItemParticipantsParticipantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewCallsItemParticipantsParticipantItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemParticipantsParticipantItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property participants for communications
+// Delete delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get get participants from communications
+// Get retrieve the properties and relationships of a participant object.
 // returns a Participantable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/participant-get?view=graph-rest-1.0
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,7 +131,7 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*C
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) StopHoldMusic()(*CallsItemParticipantsItemStopHoldMusicRequestBuilder) {
     return NewCallsItemParticipantsItemStopHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property participants for communications
+// ToDeleteRequestInformation delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
 // returns a *RequestInformation when successful
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +142,7 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get participants from communications
+// ToGetRequestInformation retrieve the properties and relationships of a participant object.
 // returns a *RequestInformation when successful
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

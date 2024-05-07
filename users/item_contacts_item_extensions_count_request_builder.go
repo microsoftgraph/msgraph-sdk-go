@@ -14,6 +14,8 @@ type ItemContactsItemExtensionsCountRequestBuilder struct {
 type ItemContactsItemExtensionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemContactsItemExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactsItemExtensionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemContactsItemExtensionsCountRequestBuilderGetRequestConfiguration struct
 // NewItemContactsItemExtensionsCountRequestBuilderInternal instantiates a new ItemContactsItemExtensionsCountRequestBuilder and sets the default values.
 func NewItemContactsItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactsItemExtensionsCountRequestBuilder) {
     m := &ItemContactsItemExtensionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/extensions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/extensions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

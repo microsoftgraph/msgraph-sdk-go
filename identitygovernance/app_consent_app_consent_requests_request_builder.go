@@ -11,7 +11,7 @@ import (
 type AppConsentAppConsentRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppConsentAppConsentRequestsRequestBuilderGetQueryParameters a collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
+// AppConsentAppConsentRequestsRequestBuilderGetQueryParameters retrieve appConsentRequest objects and their properties.
 type AppConsentAppConsentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,9 +81,12 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Count()(*AppConsentAppConse
 func (m *AppConsentAppConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get a collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
+// Get retrieve appConsentRequest objects and their properties.
 // returns a AppConsentRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0
 func (m *AppConsentAppConsentRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppConsentRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppConsentRequestable), nil
 }
-// ToGetRequestInformation a collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
+// ToGetRequestInformation retrieve appConsentRequest objects and their properties.
 // returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

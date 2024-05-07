@@ -11,7 +11,7 @@ import (
 type WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderGetQueryParameters another way to input exempt apps through xml files
+// WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderGetQueryParameters list properties and relationships of the windowsInformationProtectionAppLockerFile objects.
 type WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuild
 func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) Count()(*WindowsInformationProtectionPoliciesItemExemptAppLockerFilesCountRequestBuilder) {
     return NewWindowsInformationProtectionPoliciesItemExemptAppLockerFilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get another way to input exempt apps through xml files
+// Get list properties and relationships of the windowsInformationProtectionAppLockerFile objects.
 // returns a WindowsInformationProtectionAppLockerFileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotectionapplockerfile-list?view=graph-rest-1.0
 func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLockerFileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLockerFileCollectionResponseable), nil
 }
-// Post create new navigation property to exemptAppLockerFiles for deviceAppManagement
+// Post create a new windowsInformationProtectionAppLockerFile object.
 // returns a WindowsInformationProtectionAppLockerFileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotectionapplockerfile-create?view=graph-rest-1.0
 func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLockerFileable, requestConfiguration *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLockerFileable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLockerFileable), nil
 }
-// ToGetRequestInformation another way to input exempt apps through xml files
+// ToGetRequestInformation list properties and relationships of the windowsInformationProtectionAppLockerFile objects.
 // returns a *RequestInformation when successful
 func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to exemptAppLockerFiles for deviceAppManagement
+// ToPostRequestInformation create a new windowsInformationProtectionAppLockerFile object.
 // returns a *RequestInformation when successful
 func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLockerFileable, requestConfiguration *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

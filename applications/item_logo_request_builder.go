@@ -10,6 +10,13 @@ import (
 type ItemLogoRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemLogoRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemLogoRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ItemLogoRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemLogoRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -36,6 +43,22 @@ func NewItemLogoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemLogoRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete the main logo for the application. Not nullable.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ItemLogoRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemLogoRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get the main logo for the application. Not nullable.
 // returns a []byte when successful
@@ -76,6 +99,17 @@ func (m *ItemLogoRequestBuilder) Put(ctx context.Context, body []byte, requestCo
         return nil, nil
     }
     return res.([]byte), nil
+}
+// ToDeleteRequestInformation the main logo for the application. Not nullable.
+// returns a *RequestInformation when successful
+func (m *ItemLogoRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemLogoRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation the main logo for the application. Not nullable.
 // returns a *RequestInformation when successful

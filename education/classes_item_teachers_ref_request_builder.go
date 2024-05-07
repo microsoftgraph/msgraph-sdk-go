@@ -11,7 +11,7 @@ import (
 type ClassesItemTeachersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemTeachersRefRequestBuilderDeleteQueryParameters delete ref of navigation property teachers for education
+// ClassesItemTeachersRefRequestBuilderDeleteQueryParameters remove a teacher from an educationClass.
 type ClassesItemTeachersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type ClassesItemTeachersRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ClassesItemTeachersRefRequestBuilderDeleteQueryParameters
 }
-// ClassesItemTeachersRefRequestBuilderGetQueryParameters all teachers in the class. Nullable.
+// ClassesItemTeachersRefRequestBuilderGetQueryParameters retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 type ClassesItemTeachersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,8 +69,11 @@ func NewClassesItemTeachersRefRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemTeachersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property teachers for education
+// Delete remove a teacher from an educationClass.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delete-teachers?view=graph-rest-1.0
 func (m *ClassesItemTeachersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemTeachersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *ClassesItemTeachersRefRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get all teachers in the class. Nullable.
+// Get retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
 func (m *ClassesItemTeachersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemTeachersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,8 +111,11 @@ func (m *ClassesItemTeachersRefRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to teachers for education
+// Post add a teacher to a class.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-post-teachers?view=graph-rest-1.0
 func (m *ClassesItemTeachersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ClassesItemTeachersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +130,7 @@ func (m *ClassesItemTeachersRefRequestBuilder) Post(ctx context.Context, body ia
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property teachers for education
+// ToDeleteRequestInformation remove a teacher from an educationClass.
 // returns a *RequestInformation when successful
 func (m *ClassesItemTeachersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemTeachersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/classes/{educationClass%2Did}/teachers/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *ClassesItemTeachersRefRequestBuilder) ToDeleteRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation all teachers in the class. Nullable.
+// ToGetRequestInformation retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 // returns a *RequestInformation when successful
 func (m *ClassesItemTeachersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemTeachersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/education/classes/{educationClass%2Did}/teachers/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -149,7 +158,7 @@ func (m *ClassesItemTeachersRefRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to teachers for education
+// ToPostRequestInformation add a teacher to a class.
 // returns a *RequestInformation when successful
 func (m *ClassesItemTeachersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ClassesItemTeachersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/education/classes/{educationClass%2Did}/teachers/$ref", m.BaseRequestBuilder.PathParameters)

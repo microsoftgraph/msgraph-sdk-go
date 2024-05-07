@@ -11,7 +11,7 @@ import (
 type BookingBusinessesItemCalendarViewRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters the set of appointments of this business in a specified date range. Read-only. Nullable.
+// BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 type BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,9 +80,12 @@ func NewBookingBusinessesItemCalendarViewRequestBuilder(rawUrl string, requestAd
 func (m *BookingBusinessesItemCalendarViewRequestBuilder) Count()(*BookingBusinessesItemCalendarViewCountRequestBuilder) {
     return NewBookingBusinessesItemCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the set of appointments of this business in a specified date range. Read-only. Nullable.
+// Get get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 // returns a BookingAppointmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
 func (m *BookingBusinessesItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCalendarViewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *BookingBusinessesItemCalendarViewRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable), nil
 }
-// ToGetRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
+// ToGetRequestInformation get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

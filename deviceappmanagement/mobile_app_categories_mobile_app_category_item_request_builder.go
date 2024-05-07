@@ -18,7 +18,7 @@ type MobileAppCategoriesMobileAppCategoryItemRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters the mobile app categories.
+// MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters read properties and relationships of the mobileAppCategory object.
 type MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewMobileAppCategoriesMobileAppCategoryItemRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppCategoriesMobileAppCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property mobileAppCategories for deviceAppManagement
+// Delete deletes a mobileAppCategory.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-delete?view=graph-rest-1.0
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get the mobile app categories.
+// Get read properties and relationships of the mobileAppCategory object.
 // returns a MobileAppCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-get?view=graph-rest-1.0
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable), nil
 }
-// Patch update the navigation property mobileAppCategories in deviceAppManagement
+// Patch update the properties of a mobileAppCategory object.
 // returns a MobileAppCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-update?view=graph-rest-1.0
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Patch(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable), nil
 }
-// ToDeleteRequestInformation delete navigation property mobileAppCategories for deviceAppManagement
+// ToDeleteRequestInformation deletes a mobileAppCategory.
 // returns a *RequestInformation when successful
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) ToDeleteRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the mobile app categories.
+// ToGetRequestInformation read properties and relationships of the mobileAppCategory object.
 // returns a *RequestInformation when successful
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) ToGetRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property mobileAppCategories in deviceAppManagement
+// ToPatchRequestInformation update the properties of a mobileAppCategory object.
 // returns a *RequestInformation when successful
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

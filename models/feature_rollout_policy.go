@@ -19,7 +19,7 @@ func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
 func CreateFeatureRolloutPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeatureRolloutPolicy(), nil
 }
-// GetAppliesTo gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
+// GetAppliesTo gets the appliesTo property value. Nullable. Specifies a list of directoryObject resources that feature is enabled for.
 // returns a []DirectoryObjectable when successful
 func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("appliesTo")
@@ -214,7 +214,7 @@ func (m *FeatureRolloutPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
+// SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObject resources that feature is enabled for.
 func (m *FeatureRolloutPolicy) SetAppliesTo(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {

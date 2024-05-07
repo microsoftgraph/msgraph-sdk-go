@@ -30,8 +30,11 @@ func NewClassesItemMembersItemRefRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemMembersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property members for education
+// Delete remove an educationUser from an educationClass.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0
 func (m *ClassesItemMembersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ClassesItemMembersItemRefRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property members for education
+// ToDeleteRequestInformation remove an educationUser from an educationClass.
 // returns a *RequestInformation when successful
 func (m *ClassesItemMembersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

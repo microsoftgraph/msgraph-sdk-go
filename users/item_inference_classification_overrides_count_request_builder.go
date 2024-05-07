@@ -14,6 +14,8 @@ type ItemInferenceClassificationOverridesCountRequestBuilder struct {
 type ItemInferenceClassificationOverridesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemInferenceClassificationOverridesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemInferenceClassificationOverridesCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemInferenceClassificationOverridesCountRequestBuilderGetRequestConfigurat
 // NewItemInferenceClassificationOverridesCountRequestBuilderInternal instantiates a new ItemInferenceClassificationOverridesCountRequestBuilder and sets the default values.
 func NewItemInferenceClassificationOverridesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInferenceClassificationOverridesCountRequestBuilder) {
     m := &ItemInferenceClassificationOverridesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/inferenceClassification/overrides/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/inferenceClassification/overrides/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

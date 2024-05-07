@@ -11,7 +11,7 @@ import (
 type PartnersBillingOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PartnersBillingOperationsRequestBuilderGetQueryParameters represents an operation to export the billing data of a partner.
+// PartnersBillingOperationsRequestBuilderGetQueryParameters read the properties and relationships of an operation object.
 type PartnersBillingOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewPartnersBillingOperationsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *PartnersBillingOperationsRequestBuilder) Count()(*PartnersBillingOperationsCountRequestBuilder) {
     return NewPartnersBillingOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents an operation to export the billing data of a partner.
+// Get read the properties and relationships of an operation object.
 // returns a OperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PartnersBillingOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnersBillingOperationsRequestBuilderGetRequestConfiguration)(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.OperationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *PartnersBillingOperationsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.Operationable), nil
 }
-// ToGetRequestInformation represents an operation to export the billing data of a partner.
+// ToGetRequestInformation read the properties and relationships of an operation object.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnersBillingOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

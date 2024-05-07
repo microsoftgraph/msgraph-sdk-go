@@ -18,7 +18,7 @@ type TaskDefinitionsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TaskDefinitionsItemTasksPrintTaskItemRequestBuilderGetQueryParameters a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+// TaskDefinitionsItemTasksPrintTaskItemRequestBuilderGetQueryParameters get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 type TaskDefinitionsItemTasksPrintTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,9 +75,12 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+// Get get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // returns a PrintTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,9 +98,12 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable), nil
 }
-// Patch update the navigation property tasks in print
+// Patch update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // returns a PrintTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +132,7 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+// ToGetRequestInformation get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // returns a *RequestInformation when successful
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +146,7 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tasks in print
+// ToPatchRequestInformation update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // returns a *RequestInformation when successful
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

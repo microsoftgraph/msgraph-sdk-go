@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsWorkflowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsRequestBuilderGetQueryParameters the workflows in the lifecycle workflows instance.
+// LifecycleWorkflowsWorkflowsRequestBuilderGetQueryParameters get a list of workflow resources that are associated with lifecycle workflows.
 type LifecycleWorkflowsWorkflowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewLifecycleWorkflowsWorkflowsRequestBuilder(rawUrl string, requestAdapter 
 func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the workflows in the lifecycle workflows instance.
+// Get get a list of workflow resources that are associated with lifecycle workflows.
 // returns a WorkflowCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowCollectionResponseable), nil
 }
-// Post create new navigation property to workflows for identityGovernance
+// Post create a new workflow object. You can create up to 100 workflows in a tenant.
 // returns a Workflowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Post(ctx context.Context, body ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Workflowable, requestConfiguration *LifecycleWorkflowsWorkflowsRequestBuilderPostRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Workflowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Workflowable), nil
 }
-// ToGetRequestInformation the workflows in the lifecycle workflows instance.
+// ToGetRequestInformation get a list of workflow resources that are associated with lifecycle workflows.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to workflows for identityGovernance
+// ToPostRequestInformation create a new workflow object. You can create up to 100 workflows in a tenant.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Workflowable, requestConfiguration *LifecycleWorkflowsWorkflowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

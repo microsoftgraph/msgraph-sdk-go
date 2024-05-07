@@ -14,6 +14,8 @@ type ItemThreadsItemPostsCountRequestBuilder struct {
 type ItemThreadsItemPostsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemThreadsItemPostsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemThreadsItemPostsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemThreadsItemPostsCountRequestBuilderGetRequestConfiguration struct {
 // NewItemThreadsItemPostsCountRequestBuilderInternal instantiates a new ItemThreadsItemPostsCountRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsCountRequestBuilder) {
     m := &ItemThreadsItemPostsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

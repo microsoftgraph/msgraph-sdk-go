@@ -11,7 +11,7 @@ import (
 type ItemPagesItemGraphSitePageRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPagesItemGraphSitePageRequestBuilderGetQueryParameters get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
+// ItemPagesItemGraphSitePageRequestBuilderGetQueryParameters returns the metadata for a sitePage in the site pages list in a site.
 type ItemPagesItemGraphSitePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,9 +50,12 @@ func NewItemPagesItemGraphSitePageRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemPagesItemGraphSitePageRequestBuilder) CreatedByUser()(*ItemPagesItemGraphSitePageCreatedByUserRequestBuilder) {
     return NewItemPagesItemGraphSitePageCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
+// Get returns the metadata for a sitePage in the site pages list in a site.
 // returns a SitePageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/sitepage-get?view=graph-rest-1.0
 func (m *ItemPagesItemGraphSitePageRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemGraphSitePageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SitePageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,7 +78,7 @@ func (m *ItemPagesItemGraphSitePageRequestBuilder) Get(ctx context.Context, requ
 func (m *ItemPagesItemGraphSitePageRequestBuilder) LastModifiedByUser()(*ItemPagesItemGraphSitePageLastModifiedByUserRequestBuilder) {
     return NewItemPagesItemGraphSitePageLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
+// ToGetRequestInformation returns the metadata for a sitePage in the site pages list in a site.
 // returns a *RequestInformation when successful
 func (m *ItemPagesItemGraphSitePageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemGraphSitePageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type TriggerTypesRetentionEventTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TriggerTypesRetentionEventTypesRequestBuilderGetQueryParameters get retentionEventTypes from security
+// TriggerTypesRetentionEventTypesRequestBuilderGetQueryParameters get a list of the retentionEventType objects and their properties.
 type TriggerTypesRetentionEventTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewTriggerTypesRetentionEventTypesRequestBuilder(rawUrl string, requestAdap
 func (m *TriggerTypesRetentionEventTypesRequestBuilder) Count()(*TriggerTypesRetentionEventTypesCountRequestBuilder) {
     return NewTriggerTypesRetentionEventTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get retentionEventTypes from security
+// Get get a list of the retentionEventType objects and their properties.
 // returns a RetentionEventTypeCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-1.0
 func (m *TriggerTypesRetentionEventTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventTypeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *TriggerTypesRetentionEventTypesRequestBuilder) Get(ctx context.Context,
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventTypeCollectionResponseable), nil
 }
-// Post create new navigation property to retentionEventTypes for security
+// Post create a new retentionEventType object.
 // returns a RetentionEventTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentioneventtype-post?view=graph-rest-1.0
 func (m *TriggerTypesRetentionEventTypesRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventTypeable, requestConfiguration *TriggerTypesRetentionEventTypesRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *TriggerTypesRetentionEventTypesRequestBuilder) Post(ctx context.Context
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventTypeable), nil
 }
-// ToGetRequestInformation get retentionEventTypes from security
+// ToGetRequestInformation get a list of the retentionEventType objects and their properties.
 // returns a *RequestInformation when successful
 func (m *TriggerTypesRetentionEventTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *TriggerTypesRetentionEventTypesRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to retentionEventTypes for security
+// ToPostRequestInformation create a new retentionEventType object.
 // returns a *RequestInformation when successful
 func (m *TriggerTypesRetentionEventTypesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventTypeable, requestConfiguration *TriggerTypesRetentionEventTypesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

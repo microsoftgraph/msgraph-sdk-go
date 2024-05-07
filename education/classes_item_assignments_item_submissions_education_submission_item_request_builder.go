@@ -70,6 +70,11 @@ func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuil
     }
     return nil
 }
+// Excuse provides operations to call the excuse method.
+// returns a *ClassesItemAssignmentsItemSubmissionsItemExcuseRequestBuilder when successful
+func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Excuse()(*ClassesItemAssignmentsItemSubmissionsItemExcuseRequestBuilder) {
+    return NewClassesItemAssignmentsItemSubmissionsItemExcuseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get once published, there's a submission object for each student representing their work and grade. Read-only. Nullable.
 // returns a EducationSubmissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

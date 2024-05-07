@@ -11,7 +11,7 @@ import (
 type ConnectionsItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectionsItemOperationsRequestBuilderGetQueryParameters get operations from external
+// ConnectionsItemOperationsRequestBuilderGetQueryParameters read the properties and relationships of a connectionOperation object.
 type ConnectionsItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewConnectionsItemOperationsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ConnectionsItemOperationsRequestBuilder) Count()(*ConnectionsItemOperationsCountRequestBuilder) {
     return NewConnectionsItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get operations from external
+// Get read the properties and relationships of a connectionOperation object.
 // returns a ConnectionOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectionsItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemOperationsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ConnectionOperationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ConnectionsItemOperationsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ConnectionOperationable), nil
 }
-// ToGetRequestInformation get operations from external
+// ToGetRequestInformation read the properties and relationships of a connectionOperation object.
 // returns a *RequestInformation when successful
 func (m *ConnectionsItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

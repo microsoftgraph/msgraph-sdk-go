@@ -41,7 +41,7 @@ func (m *CategoryTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetSubcategories gets the subcategories property value. The subcategories property
+// GetSubcategories gets the subcategories property value. Represents all subcategories under a particular category.
 // returns a []SubcategoryTemplateable when successful
 func (m *CategoryTemplate) GetSubcategories()([]SubcategoryTemplateable) {
     val, err := m.GetBackingStore().Get("subcategories")
@@ -73,7 +73,7 @@ func (m *CategoryTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetSubcategories sets the subcategories property value. The subcategories property
+// SetSubcategories sets the subcategories property value. Represents all subcategories under a particular category.
 func (m *CategoryTemplate) SetSubcategories(value []SubcategoryTemplateable)() {
     err := m.GetBackingStore().Set("subcategories", value)
     if err != nil {

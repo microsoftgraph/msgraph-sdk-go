@@ -33,7 +33,7 @@ func NewGetTeamsUserActivityUserDetailWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getTeamsUserActivityUserDetail
+// Get get details about Microsoft Teams user activity by user.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsUserActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -53,7 +53,7 @@ func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) Get(ctx context
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getTeamsUserActivityUserDetail
+// ToGetRequestInformation get details about Microsoft Teams user activity by user.
 // returns a *RequestInformation when successful
 func (m *GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetTeamsUserActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

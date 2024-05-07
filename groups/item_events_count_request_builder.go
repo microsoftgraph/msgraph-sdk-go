@@ -14,6 +14,8 @@ type ItemEventsCountRequestBuilder struct {
 type ItemEventsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemEventsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemEventsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemEventsCountRequestBuilderGetRequestConfiguration struct {
 // NewItemEventsCountRequestBuilderInternal instantiates a new ItemEventsCountRequestBuilder and sets the default values.
 func NewItemEventsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsCountRequestBuilder) {
     m := &ItemEventsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -11,7 +11,7 @@ import (
 type PrintersItemJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrintersItemJobsRequestBuilderGetQueryParameters the list of jobs that are queued for printing by the printer/printerShare.
+// PrintersItemJobsRequestBuilderGetQueryParameters retrieve a list of print jobs associated with the printer.
 type PrintersItemJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewPrintersItemJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *PrintersItemJobsRequestBuilder) Count()(*PrintersItemJobsCountRequestBuilder) {
     return NewPrintersItemJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of jobs that are queued for printing by the printer/printerShare.
+// Get retrieve a list of print jobs associated with the printer.
 // returns a PrintJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-list-jobs?view=graph-rest-1.0
 func (m *PrintersItemJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemJobsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *PrintersItemJobsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobCollectionResponseable), nil
 }
-// Post create new navigation property to jobs for print
+// Post create a new printJob for a printer.  Also creates a new printDocument associated with the printJob.
 // returns a PrintJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-post-jobs?view=graph-rest-1.0
 func (m *PrintersItemJobsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobable, requestConfiguration *PrintersItemJobsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *PrintersItemJobsRequestBuilder) Post(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobable), nil
 }
-// ToGetRequestInformation the list of jobs that are queued for printing by the printer/printerShare.
+// ToGetRequestInformation retrieve a list of print jobs associated with the printer.
 // returns a *RequestInformation when successful
 func (m *PrintersItemJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *PrintersItemJobsRequestBuilder) ToGetRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to jobs for print
+// ToPostRequestInformation create a new printJob for a printer.  Also creates a new printDocument associated with the printJob.
 // returns a *RequestInformation when successful
 func (m *PrintersItemJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobable, requestConfiguration *PrintersItemJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type AccessReviewsHistoryDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AccessReviewsHistoryDefinitionsRequestBuilderGetQueryParameters represents a collection of access review history data and the scopes used to collect that data.
+// AccessReviewsHistoryDefinitionsRequestBuilderGetQueryParameters retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 type AccessReviewsHistoryDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAccessReviewsHistoryDefinitionsRequestBuilder(rawUrl string, requestAdap
 func (m *AccessReviewsHistoryDefinitionsRequestBuilder) Count()(*AccessReviewsHistoryDefinitionsCountRequestBuilder) {
     return NewAccessReviewsHistoryDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents a collection of access review history data and the scopes used to collect that data.
+// Get retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 // returns a AccessReviewHistoryDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-1.0
 func (m *AccessReviewsHistoryDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *AccessReviewsHistoryDefinitionsRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryDefinitionCollectionResponseable), nil
 }
-// Post create new navigation property to historyDefinitions for identityGovernance
+// Post create a new accessReviewHistoryDefinition object.
 // returns a AccessReviewHistoryDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-1.0
 func (m *AccessReviewsHistoryDefinitionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryDefinitionable, requestConfiguration *AccessReviewsHistoryDefinitionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *AccessReviewsHistoryDefinitionsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryDefinitionable), nil
 }
-// ToGetRequestInformation represents a collection of access review history data and the scopes used to collect that data.
+// ToGetRequestInformation retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsHistoryDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *AccessReviewsHistoryDefinitionsRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to historyDefinitions for identityGovernance
+// ToPostRequestInformation create a new accessReviewHistoryDefinition object.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsHistoryDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryDefinitionable, requestConfiguration *AccessReviewsHistoryDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

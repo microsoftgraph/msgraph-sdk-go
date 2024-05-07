@@ -11,7 +11,7 @@ import (
 type BucketsItemTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BucketsItemTasksRequestBuilderGetQueryParameters read-only. Nullable. The collection of tasks in the bucket.
+// BucketsItemTasksRequestBuilderGetQueryParameters retrieve a list of plannerTask objects associated to a plannerBucket object.
 type BucketsItemTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewBucketsItemTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *BucketsItemTasksRequestBuilder) Count()(*BucketsItemTasksCountRequestBuilder) {
     return NewBucketsItemTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read-only. Nullable. The collection of tasks in the bucket.
+// Get retrieve a list of plannerTask objects associated to a plannerBucket object.
 // returns a PlannerTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
 func (m *BucketsItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsItemTasksRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *BucketsItemTasksRequestBuilder) Post(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskable), nil
 }
-// ToGetRequestInformation read-only. Nullable. The collection of tasks in the bucket.
+// ToGetRequestInformation retrieve a list of plannerTask objects associated to a plannerBucket object.
 // returns a *RequestInformation when successful
 func (m *BucketsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

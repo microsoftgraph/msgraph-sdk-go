@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostPairsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostPairsRequestBuilderGetQueryParameters retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
+// ThreatIntelligenceHostPairsRequestBuilderGetQueryParameters read the properties and relationships of a hostPair object.
 type ThreatIntelligenceHostPairsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewThreatIntelligenceHostPairsRequestBuilder(rawUrl string, requestAdapter 
 func (m *ThreatIntelligenceHostPairsRequestBuilder) Count()(*ThreatIntelligenceHostPairsCountRequestBuilder) {
     return NewThreatIntelligenceHostPairsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a hostPair object.
 // returns a HostPairCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostPairsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPairsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPairCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceHostPairsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPairable), nil
 }
-// ToGetRequestInformation retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a hostPair object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostPairsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPairsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

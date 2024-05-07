@@ -11,7 +11,7 @@ import (
 type LabelsCategoriesItemSubcategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LabelsCategoriesItemSubcategoriesRequestBuilderGetQueryParameters get subcategories from security
+// LabelsCategoriesItemSubcategoriesRequestBuilderGetQueryParameters get a list of subcategories subcategoryTemplate associated with a category template.
 type LabelsCategoriesItemSubcategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewLabelsCategoriesItemSubcategoriesRequestBuilder(rawUrl string, requestAd
 func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) Count()(*LabelsCategoriesItemSubcategoriesCountRequestBuilder) {
     return NewLabelsCategoriesItemSubcategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get subcategories from security
+// Get get a list of subcategories subcategoryTemplate associated with a category template.
 // returns a SubcategoryTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-categorytemplate-list-subcategories?view=graph-rest-1.0
 func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsCategoriesItemSubcategoriesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubcategoryTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) Get(ctx context.Contex
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubcategoryTemplateCollectionResponseable), nil
 }
-// Post create new navigation property to subcategories for security
+// Post create a new subcategoryTemplate object.
 // returns a SubcategoryTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-categorytemplate-post-subcategories?view=graph-rest-1.0
 func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubcategoryTemplateable, requestConfiguration *LabelsCategoriesItemSubcategoriesRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubcategoryTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) Post(ctx context.Conte
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubcategoryTemplateable), nil
 }
-// ToGetRequestInformation get subcategories from security
+// ToGetRequestInformation get a list of subcategories subcategoryTemplate associated with a category template.
 // returns a *RequestInformation when successful
 func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsCategoriesItemSubcategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to subcategories for security
+// ToPostRequestInformation create a new subcategoryTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsCategoriesItemSubcategoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubcategoryTemplateable, requestConfiguration *LabelsCategoriesItemSubcategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

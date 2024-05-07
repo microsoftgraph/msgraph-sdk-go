@@ -33,7 +33,7 @@ func NewGetTeamsTeamActivityDetailWithPeriodRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsTeamActivityDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getTeamsTeamActivityDetail
+// Get get details about Microsoft Teams activity by team. The numbers include activities for both licensed and nonlicensed users.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetTeamsTeamActivityDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsTeamActivityDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -53,7 +53,7 @@ func (m *GetTeamsTeamActivityDetailWithPeriodRequestBuilder) Get(ctx context.Con
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getTeamsTeamActivityDetail
+// ToGetRequestInformation get details about Microsoft Teams activity by team. The numbers include activities for both licensed and nonlicensed users.
 // returns a *RequestInformation when successful
 func (m *GetTeamsTeamActivityDetailWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetTeamsTeamActivityDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

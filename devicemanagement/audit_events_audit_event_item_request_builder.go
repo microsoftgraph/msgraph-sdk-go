@@ -18,7 +18,7 @@ type AuditEventsAuditEventItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuditEventsAuditEventItemRequestBuilderGetQueryParameters the Audit Events
+// AuditEventsAuditEventItemRequestBuilderGetQueryParameters read properties and relationships of the auditEvent object.
 type AuditEventsAuditEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewAuditEventsAuditEventItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewAuditEventsAuditEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property auditEvents for deviceManagement
+// Delete deletes a auditEvent.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-delete?view=graph-rest-1.0
 func (m *AuditEventsAuditEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuditEventsAuditEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *AuditEventsAuditEventItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get the Audit Events
+// Get read properties and relationships of the auditEvent object.
 // returns a AuditEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-get?view=graph-rest-1.0
 func (m *AuditEventsAuditEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditEventsAuditEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *AuditEventsAuditEventItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable), nil
 }
-// Patch update the navigation property auditEvents in deviceManagement
+// Patch update the properties of a auditEvent object.
 // returns a AuditEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-update?view=graph-rest-1.0
 func (m *AuditEventsAuditEventItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, requestConfiguration *AuditEventsAuditEventItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *AuditEventsAuditEventItemRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable), nil
 }
-// ToDeleteRequestInformation delete navigation property auditEvents for deviceManagement
+// ToDeleteRequestInformation deletes a auditEvent.
 // returns a *RequestInformation when successful
 func (m *AuditEventsAuditEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuditEventsAuditEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *AuditEventsAuditEventItemRequestBuilder) ToDeleteRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the Audit Events
+// ToGetRequestInformation read properties and relationships of the auditEvent object.
 // returns a *RequestInformation when successful
 func (m *AuditEventsAuditEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditEventsAuditEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *AuditEventsAuditEventItemRequestBuilder) ToGetRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property auditEvents in deviceManagement
+// ToPatchRequestInformation update the properties of a auditEvent object.
 // returns a *RequestInformation when successful
 func (m *AuditEventsAuditEventItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, requestConfiguration *AuditEventsAuditEventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

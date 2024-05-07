@@ -11,7 +11,7 @@ import (
 type QnasRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// QnasRequestBuilderGetQueryParameters administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+// QnasRequestBuilderGetQueryParameters get a list of the qna objects and their properties.
 type QnasRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewQnasRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *QnasRequestBuilder) Count()(*QnasCountRequestBuilder) {
     return NewQnasCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+// Get get a list of the qna objects and their properties.
 // returns a QnaCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
 func (m *QnasRequestBuilder) Get(ctx context.Context, requestConfiguration *QnasRequestBuilderGetRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.QnaCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *QnasRequestBuilder) Get(ctx context.Context, requestConfiguration *Qnas
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.QnaCollectionResponseable), nil
 }
-// Post create new navigation property to qnas for search
+// Post create a new qna object.
 // returns a Qnaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
 func (m *QnasRequestBuilder) Post(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable, requestConfiguration *QnasRequestBuilderPostRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *QnasRequestBuilder) Post(ctx context.Context, body i517b35a40b7cc3c50a0
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable), nil
 }
-// ToGetRequestInformation administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+// ToGetRequestInformation get a list of the qna objects and their properties.
 // returns a *RequestInformation when successful
 func (m *QnasRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *QnasRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *QnasRequestBuilder) ToGetRequestInformation(ctx context.Context, reques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to qnas for search
+// ToPostRequestInformation create a new qna object.
 // returns a *RequestInformation when successful
 func (m *QnasRequestBuilder) ToPostRequestInformation(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Qnaable, requestConfiguration *QnasRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

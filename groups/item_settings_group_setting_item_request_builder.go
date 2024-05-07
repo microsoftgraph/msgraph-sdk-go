@@ -18,7 +18,7 @@ type ItemSettingsGroupSettingItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 type ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 // returns a GroupSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
 func (m *ItemSettingsGroupSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable), nil
 }
-// Patch update the navigation property settings in groups
+// Patch update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
 // returns a GroupSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
 func (m *ItemSettingsGroupSettingItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// ToGetRequestInformation retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsGroupSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property settings in groups
+// ToPatchRequestInformation update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsGroupSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

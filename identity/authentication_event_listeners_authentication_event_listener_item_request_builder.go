@@ -18,7 +18,7 @@ type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters represents listeners for custom authentication extension events in Azure AD for workforce and customers.
+// AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property authenticationEventListeners for identity
+// Delete delete an authenticationEventListener object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     }
     return nil
 }
-// Get represents listeners for custom authentication extension events in Azure AD for workforce and customers.
+// Get read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 // returns a AuthenticationEventListenerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationEventListenerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationEventListenerable), nil
 }
-// Patch update the navigation property authenticationEventListeners in identity
+// Patch update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
 // returns a AuthenticationEventListenerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationEventListenerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationEventListenerable), nil
 }
-// ToDeleteRequestInformation delete navigation property authenticationEventListeners for identity
+// ToDeleteRequestInformation delete an authenticationEventListener object.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents listeners for custom authentication extension events in Azure AD for workforce and customers.
+// ToGetRequestInformation read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property authenticationEventListeners in identity
+// ToPatchRequestInformation update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

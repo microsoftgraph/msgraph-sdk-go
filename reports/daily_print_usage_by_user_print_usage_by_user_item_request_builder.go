@@ -18,7 +18,7 @@ type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters retrieve a list of daily print usage summaries, grouped by user.
+// DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
 type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get retrieve a list of daily print usage summaries, grouped by user.
+// Get retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
 // returns a PrintUsageByUserable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printusagebyuser-get?view=graph-rest-1.0
 func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a list of daily print usage summaries, grouped by user.
+// ToGetRequestInformation retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
 // returns a *RequestInformation when successful
 func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

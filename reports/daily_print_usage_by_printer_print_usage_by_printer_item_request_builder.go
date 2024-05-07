@@ -18,7 +18,7 @@ type DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters retrieve a list of daily print usage summaries, grouped by printer.
+// DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters retrieve a usage summary for a printer for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.
 type DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get retrieve a list of daily print usage summaries, grouped by printer.
+// Get retrieve a usage summary for a printer for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.
 // returns a PrintUsageByPrinterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printusagebyprinter-get?view=graph-rest-1.0
 func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByPrinterable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) ToDelete
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a list of daily print usage summaries, grouped by printer.
+// ToGetRequestInformation retrieve a usage summary for a printer for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.
 // returns a *RequestInformation when successful
 func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
