@@ -18,7 +18,7 @@ type AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationSimulationsSimulationItemRequestBuilderGetQueryParameters represents an attack simulation training campaign in a tenant.
+// AttackSimulationSimulationsSimulationItemRequestBuilderGetQueryParameters get an attack simulation campaign for a tenant.
 type AttackSimulationSimulationsSimulationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewAttackSimulationSimulationsSimulationItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property simulations for security
+// Delete delete an attack simulation campaign for a tenant.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/simulation-delete?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get represents an attack simulation training campaign in a tenant.
+// Get get an attack simulation campaign for a tenant.
 // returns a Simulationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,9 +106,12 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) LandingPage()(
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) LoginPage()(*AttackSimulationSimulationsItemLoginPageRequestBuilder) {
     return NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property simulations in security
+// Patch update an attack simulation campaign for a tenant.
 // returns a Simulationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +134,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Patch(ctx cont
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Payload()(*AttackSimulationSimulationsItemPayloadRequestBuilder) {
     return NewAttackSimulationSimulationsItemPayloadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property simulations for security
+// ToDeleteRequestInformation delete an attack simulation campaign for a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +145,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents an attack simulation training campaign in a tenant.
+// ToGetRequestInformation get an attack simulation campaign for a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +159,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToGetRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property simulations in security
+// ToPatchRequestInformation update an attack simulation campaign for a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

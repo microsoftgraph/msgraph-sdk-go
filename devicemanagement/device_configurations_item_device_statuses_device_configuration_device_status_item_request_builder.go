@@ -18,7 +18,7 @@ type DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetQueryParameters device configuration installation status by device.
+// DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetQueryParameters read properties and relationships of the deviceConfigurationDeviceStatus object.
 type DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewDeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusIte
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property deviceStatuses for deviceManagement
+// Delete deletes a deviceConfigurationDeviceStatus.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-delete?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusIt
     }
     return nil
 }
-// Get device configuration installation status by device.
+// Get read properties and relationships of the deviceConfigurationDeviceStatus object.
 // returns a DeviceConfigurationDeviceStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-get?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusIt
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStatusable), nil
 }
-// Patch update the navigation property deviceStatuses in deviceManagement
+// Patch update the properties of a deviceConfigurationDeviceStatus object.
 // returns a DeviceConfigurationDeviceStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-update?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStatusable, requestConfiguration *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStatusable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusIt
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStatusable), nil
 }
-// ToDeleteRequestInformation delete navigation property deviceStatuses for deviceManagement
+// ToDeleteRequestInformation deletes a deviceConfigurationDeviceStatus.
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusIt
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation device configuration installation status by device.
+// ToGetRequestInformation read properties and relationships of the deviceConfigurationDeviceStatus object.
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusIt
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property deviceStatuses in deviceManagement
+// ToPatchRequestInformation update the properties of a deviceConfigurationDeviceStatus object.
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceStatusable, requestConfiguration *DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -10,6 +10,13 @@ import (
 type ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -37,9 +44,28 @@ func NewServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the zip file that contains all attachments for a message.
+// Delete the zip file that contains all attachments for a message.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) Delete(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get get the list of attachments associated with a service message.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,7 +103,18 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) Put(ct
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation the zip file that contains all attachments for a message.
+// ToDeleteRequestInformation the zip file that contains all attachments for a message.
+// returns a *RequestInformation when successful
+func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToGetRequestInformation get the list of attachments associated with a service message.
 // returns a *RequestInformation when successful
 func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

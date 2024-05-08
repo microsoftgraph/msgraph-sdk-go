@@ -11,7 +11,7 @@ import (
 type OperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OperationsRequestBuilderGetQueryParameters the list of print long running operations.
+// OperationsRequestBuilderGetQueryParameters retrieve the properties and relationships of a printOperation object.
 type OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *OperationsRequestBuilder) Count()(*OperationsCountRequestBuilder) {
     return NewOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of print long running operations.
+// Get retrieve the properties and relationships of a printOperation object.
 // returns a PrintOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintOperationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *OperationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintOperationable), nil
 }
-// ToGetRequestInformation the list of print long running operations.
+// ToGetRequestInformation retrieve the properties and relationships of a printOperation object.
 // returns a *RequestInformation when successful
 func (m *OperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -14,6 +14,8 @@ type ItemCalendarsItemCalendarPermissionsCountRequestBuilder struct {
 type ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetRequestConfigurat
 // NewItemCalendarsItemCalendarPermissionsCountRequestBuilderInternal instantiates a new ItemCalendarsItemCalendarPermissionsCountRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarPermissionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarPermissionsCountRequestBuilder) {
     m := &ItemCalendarsItemCalendarPermissionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarPermissions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarPermissions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

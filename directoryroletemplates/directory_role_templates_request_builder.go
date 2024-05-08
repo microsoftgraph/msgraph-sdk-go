@@ -27,6 +27,8 @@ type DirectoryRoleTemplatesRequestBuilderGetQueryParameters struct {
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
     Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
 }
 // DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration struct {
@@ -59,7 +61,7 @@ func (m *DirectoryRoleTemplatesRequestBuilder) ByDirectoryRoleTemplateId(directo
 // NewDirectoryRoleTemplatesRequestBuilderInternal instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.
 func NewDirectoryRoleTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleTemplatesRequestBuilder) {
     m := &DirectoryRoleTemplatesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directoryRoleTemplates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directoryRoleTemplates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

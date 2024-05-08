@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceArticlesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceArticlesRequestBuilderGetQueryParameters a list of article objects.
+// ThreatIntelligenceArticlesRequestBuilderGetQueryParameters get a list of article objects, including their properties and relationships.
 type ThreatIntelligenceArticlesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewThreatIntelligenceArticlesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ThreatIntelligenceArticlesRequestBuilder) Count()(*ThreatIntelligenceArticlesCountRequestBuilder) {
     return NewThreatIntelligenceArticlesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a list of article objects.
+// Get get a list of article objects, including their properties and relationships.
 // returns a ArticleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-threatintelligence-list-articles?view=graph-rest-1.0
 func (m *ThreatIntelligenceArticlesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.ArticleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ThreatIntelligenceArticlesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Articleable), nil
 }
-// ToGetRequestInformation a list of article objects.
+// ToGetRequestInformation get a list of article objects, including their properties and relationships.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceArticlesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

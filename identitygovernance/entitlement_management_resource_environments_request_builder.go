@@ -11,7 +11,7 @@ import (
 type EntitlementManagementResourceEnvironmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementResourceEnvironmentsRequestBuilderGetQueryParameters a reference to the geolocation environments in which a resource is located.
+// EntitlementManagementResourceEnvironmentsRequestBuilderGetQueryParameters retrieve a list of accessPackageResourceEnvironment objects and their properties.
 type EntitlementManagementResourceEnvironmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewEntitlementManagementResourceEnvironmentsRequestBuilder(rawUrl string, r
 func (m *EntitlementManagementResourceEnvironmentsRequestBuilder) Count()(*EntitlementManagementResourceEnvironmentsCountRequestBuilder) {
     return NewEntitlementManagementResourceEnvironmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a reference to the geolocation environments in which a resource is located.
+// Get retrieve a list of accessPackageResourceEnvironment objects and their properties.
 // returns a AccessPackageResourceEnvironmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-resourceenvironments?view=graph-rest-1.0
 func (m *EntitlementManagementResourceEnvironmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourceEnvironmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceEnvironmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *EntitlementManagementResourceEnvironmentsRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceEnvironmentable), nil
 }
-// ToGetRequestInformation a reference to the geolocation environments in which a resource is located.
+// ToGetRequestInformation retrieve a list of accessPackageResourceEnvironment objects and their properties.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementResourceEnvironmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceEnvironmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ItemTermStoreSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoreSetsRequestBuilderGetQueryParameters collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// ItemTermStoreSetsRequestBuilderGetQueryParameters read the properties and relationships of a set object.
 type ItemTermStoreSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemTermStoreSetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemTermStoreSetsRequestBuilder) Count()(*ItemTermStoreSetsCountRequestBuilder) {
     return NewItemTermStoreSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// Get read the properties and relationships of a set object.
 // returns a SetCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreSetsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.SetCollectionResponseable, error) {
@@ -96,9 +96,12 @@ func (m *ItemTermStoreSetsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.SetCollectionResponseable), nil
 }
-// Post create new navigation property to sets for sites
+// Post create a new set object.
 // returns a Setable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-set-post?view=graph-rest-1.0
 func (m *ItemTermStoreSetsRequestBuilder) Post(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, requestConfiguration *ItemTermStoreSetsRequestBuilderPostRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ItemTermStoreSetsRequestBuilder) Post(ctx context.Context, body ia3c27b
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable), nil
 }
-// ToGetRequestInformation collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// ToGetRequestInformation read the properties and relationships of a set object.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +133,7 @@ func (m *ItemTermStoreSetsRequestBuilder) ToGetRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to sets for sites
+// ToPostRequestInformation create a new set object.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, requestConfiguration *ItemTermStoreSetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

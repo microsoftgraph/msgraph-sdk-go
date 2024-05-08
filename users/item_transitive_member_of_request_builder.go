@@ -11,7 +11,7 @@ import (
 type ItemTransitiveMemberOfRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTransitiveMemberOfRequestBuilderGetQueryParameters the groups, including nested groups, and directory roles that a user is a member of. Nullable.
+// ItemTransitiveMemberOfRequestBuilderGetQueryParameters get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
 type ItemTransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewItemTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemTransitiveMemberOfRequestBuilder) Count()(*ItemTransitiveMemberOfCountRequestBuilder) {
     return NewItemTransitiveMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the groups, including nested groups, and directory roles that a user is a member of. Nullable.
+// Get get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
 func (m *ItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +107,7 @@ func (m *ItemTransitiveMemberOfRequestBuilder) GraphDirectoryRole()(*ItemTransit
 func (m *ItemTransitiveMemberOfRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfGraphGroupRequestBuilder) {
     return NewItemTransitiveMemberOfGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the groups, including nested groups, and directory roles that a user is a member of. Nullable.
+// ToGetRequestInformation get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
 // returns a *RequestInformation when successful
 func (m *ItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

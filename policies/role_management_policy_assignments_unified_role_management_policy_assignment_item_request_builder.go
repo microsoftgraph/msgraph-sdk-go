@@ -18,7 +18,7 @@ type RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters the assignment of a role management policy to a role definition object.
+// RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership.
 type RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentIte
     }
     return nil
 }
-// Get the assignment of a role management policy to a role definition object.
+// Get get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership.
 // returns a UnifiedRoleManagementPolicyAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-1.0
 func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentIte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the assignment of a role management policy to a role definition object.
+// ToGetRequestInformation get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership.
 // returns a *RequestInformation when successful
 func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

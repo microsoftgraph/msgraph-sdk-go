@@ -11,7 +11,7 @@ import (
 type ManagedEBooksItemUserStateSummaryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedEBooksItemUserStateSummaryRequestBuilderGetQueryParameters the list of installation states for this eBook.
+// ManagedEBooksItemUserStateSummaryRequestBuilderGetQueryParameters list properties and relationships of the userInstallStateSummary objects.
 type ManagedEBooksItemUserStateSummaryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewManagedEBooksItemUserStateSummaryRequestBuilder(rawUrl string, requestAd
 func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) Count()(*ManagedEBooksItemUserStateSummaryCountRequestBuilder) {
     return NewManagedEBooksItemUserStateSummaryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of installation states for this eBook.
+// Get list properties and relationships of the userInstallStateSummary objects.
 // returns a UserInstallStateSummaryCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-userinstallstatesummary-list?view=graph-rest-1.0
 func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemUserStateSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserInstallStateSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserInstallStateSummaryCollectionResponseable), nil
 }
-// Post create new navigation property to userStateSummary for deviceAppManagement
+// Post create a new userInstallStateSummary object.
 // returns a UserInstallStateSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-userinstallstatesummary-create?view=graph-rest-1.0
 func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserInstallStateSummaryable, requestConfiguration *ManagedEBooksItemUserStateSummaryRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserInstallStateSummaryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserInstallStateSummaryable), nil
 }
-// ToGetRequestInformation the list of installation states for this eBook.
+// ToGetRequestInformation list properties and relationships of the userInstallStateSummary objects.
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemUserStateSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to userStateSummary for deviceAppManagement
+// ToPostRequestInformation create a new userInstallStateSummary object.
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserInstallStateSummaryable, requestConfiguration *ManagedEBooksItemUserStateSummaryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

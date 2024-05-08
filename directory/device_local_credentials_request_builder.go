@@ -11,7 +11,7 @@ import (
 type DeviceLocalCredentialsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceLocalCredentialsRequestBuilderGetQueryParameters the credentials of the device's local administrator account backed up to Microsoft Entra ID.
+// DeviceLocalCredentialsRequestBuilderGetQueryParameters get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
 type DeviceLocalCredentialsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -23,6 +23,8 @@ type DeviceLocalCredentialsRequestBuilderGetQueryParameters struct {
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -57,7 +59,7 @@ func (m *DeviceLocalCredentialsRequestBuilder) ByDeviceLocalCredentialInfoId(dev
 // NewDeviceLocalCredentialsRequestBuilderInternal instantiates a new DeviceLocalCredentialsRequestBuilder and sets the default values.
 func NewDeviceLocalCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceLocalCredentialsRequestBuilder) {
     m := &DeviceLocalCredentialsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24count,%24filter,%24orderby,%24search,%24select,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -72,9 +74,12 @@ func NewDeviceLocalCredentialsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *DeviceLocalCredentialsRequestBuilder) Count()(*DeviceLocalCredentialsCountRequestBuilder) {
     return NewDeviceLocalCredentialsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the credentials of the device's local administrator account backed up to Microsoft Entra ID.
+// Get get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
 // returns a DeviceLocalCredentialInfoCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-devicelocalcredentials?view=graph-rest-1.0
 func (m *DeviceLocalCredentialsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceLocalCredentialsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +117,7 @@ func (m *DeviceLocalCredentialsRequestBuilder) Post(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoable), nil
 }
-// ToGetRequestInformation the credentials of the device's local administrator account backed up to Microsoft Entra ID.
+// ToGetRequestInformation get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
 // returns a *RequestInformation when successful
 func (m *DeviceLocalCredentialsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceLocalCredentialsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type SubjectRightsRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SubjectRightsRequestsRequestBuilderGetQueryParameters get subjectRightsRequests from privacy
+// SubjectRightsRequestsRequestBuilderGetQueryParameters get a list of subjectRightsRequest objects and their properties.
 type SubjectRightsRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,10 +77,13 @@ func NewSubjectRightsRequestsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *SubjectRightsRequestsRequestBuilder) Count()(*SubjectRightsRequestsCountRequestBuilder) {
     return NewSubjectRightsRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get subjectRightsRequests from privacy
+// Get get a list of subjectRightsRequest objects and their properties.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 // returns a SubjectRightsRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0
 func (m *SubjectRightsRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +101,13 @@ func (m *SubjectRightsRequestsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestCollectionResponseable), nil
 }
-// Post create new navigation property to subjectRightsRequests for privacy
+// Post create a new subjectRightsRequest object.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 // returns a SubjectRightsRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0
 func (m *SubjectRightsRequestsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *SubjectRightsRequestsRequestBuilder) Post(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable), nil
 }
-// ToGetRequestInformation get subjectRightsRequests from privacy
+// ToGetRequestInformation get a list of subjectRightsRequest objects and their properties.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -134,7 +140,7 @@ func (m *SubjectRightsRequestsRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to subjectRightsRequests for privacy
+// ToPostRequestInformation create a new subjectRightsRequest object.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

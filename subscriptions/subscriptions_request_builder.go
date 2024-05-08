@@ -13,10 +13,18 @@ type SubscriptionsRequestBuilder struct {
 }
 // SubscriptionsRequestBuilderGetQueryParameters retrieve the properties and relationships of webhook subscriptions, based on the app ID, the user, and the user's role with a tenant. The content of the response depends on the context in which the app is calling; for details, see the scenarios in the Permissions section.
 type SubscriptionsRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
 }
 // SubscriptionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SubscriptionsRequestBuilderGetRequestConfiguration struct {
@@ -49,7 +57,7 @@ func (m *SubscriptionsRequestBuilder) BySubscriptionId(subscriptionId string)(*S
 // NewSubscriptionsRequestBuilderInternal instantiates a new SubscriptionsRequestBuilder and sets the default values.
 func NewSubscriptionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubscriptionsRequestBuilder) {
     m := &SubscriptionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscriptions{?%24search,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscriptions{?%24count,%24filter,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

@@ -18,7 +18,7 @@ type ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetQueryParameters get threatAssessmentRequests from informationProtection
+// ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
 type ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Dele
     }
     return nil
 }
-// Get get threatAssessmentRequests from informationProtection
+// Get retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
 // returns a ThreatAssessmentRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/threatassessmentrequest-get?view=graph-rest-1.0
 func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ThreatAssessmentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get threatAssessmentRequests from informationProtection
+// ToGetRequestInformation retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
 // returns a *RequestInformation when successful
 func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

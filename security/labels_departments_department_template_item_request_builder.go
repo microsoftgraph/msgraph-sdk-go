@@ -18,7 +18,7 @@ type LabelsDepartmentsDepartmentTemplateItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetQueryParameters specifies the department or business unit of an organization to which a label belongs.
+// LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a departmentTemplate object.
 type LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewLabelsDepartmentsDepartmentTemplateItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsDepartmentsDepartmentTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property departments for security
+// Delete delete a departmentTemplate object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-departments?view=graph-rest-1.0
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get specifies the department or business unit of an organization to which a label belongs.
+// Get read the properties and relationships of a departmentTemplate object.
 // returns a DepartmentTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-1.0
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.DepartmentTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Patch(ctx contex
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.DepartmentTemplateable), nil
 }
-// ToDeleteRequestInformation delete navigation property departments for security
+// ToDeleteRequestInformation delete a departmentTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +127,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation specifies the department or business unit of an organization to which a label belongs.
+// ToGetRequestInformation read the properties and relationships of a departmentTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

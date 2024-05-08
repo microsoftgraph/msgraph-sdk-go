@@ -18,7 +18,7 @@ type ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters get items from external
+// ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters read the properties and relationships of an externalItem object.
 type ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewConnectionsItemItemsExternalItemItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property items for external
+// Delete delete an externalItem object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get get items from external
+// Get read the properties and relationships of an externalItem object.
 // returns a ExternalItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,9 +106,12 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Get(ctx context.Con
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) MicrosoftGraphExternalConnectorsAddActivities()(*ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) {
     return NewConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Put update the navigation property items in external
+// Put update the properties of an externalItem object.
 // returns a ExternalItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Put(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderPutRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +129,7 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Put(ctx context.Con
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable), nil
 }
-// ToDeleteRequestInformation delete navigation property items for external
+// ToDeleteRequestInformation delete an externalItem object.
 // returns a *RequestInformation when successful
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,7 +140,7 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get items from external
+// ToGetRequestInformation read the properties and relationships of an externalItem object.
 // returns a *RequestInformation when successful
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,7 +154,7 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToGetRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update the navigation property items in external
+// ToPutRequestInformation update the properties of an externalItem object.
 // returns a *RequestInformation when successful
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

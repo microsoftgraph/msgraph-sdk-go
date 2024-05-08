@@ -18,7 +18,7 @@ type ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetQueryParameters endpoints that can be used to access the service. Read-only. Nullable.
+// ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a print service endpoint.
 type ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get endpoints that can be used to access the service. Read-only. Nullable.
+// Get retrieve the properties and relationships of a print service endpoint.
 // returns a PrintServiceEndpointable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0
 func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintServiceEndpointable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation endpoints that can be used to access the service. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a print service endpoint.
 // returns a *RequestInformation when successful
 func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

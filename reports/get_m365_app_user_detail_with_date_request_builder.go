@@ -34,7 +34,7 @@ func NewGetM365AppUserDetailWithDateRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewGetM365AppUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getM365AppUserDetail
+// Get get a report that provides the details about which apps and platforms users have used.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetM365AppUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetM365AppUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -54,7 +54,7 @@ func (m *GetM365AppUserDetailWithDateRequestBuilder) Get(ctx context.Context, re
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getM365AppUserDetail
+// ToGetRequestInformation get a report that provides the details about which apps and platforms users have used.
 // returns a *RequestInformation when successful
 func (m *GetM365AppUserDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetM365AppUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

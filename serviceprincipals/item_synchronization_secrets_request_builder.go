@@ -35,10 +35,13 @@ func NewItemSynchronizationSecretsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemSynchronizationSecretsRequestBuilder) Count()(*ItemSynchronizationSecretsCountRequestBuilder) {
     return NewItemSynchronizationSecretsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Put update property secrets value.
+// Put provide credentials for establishing connectivity with the target system.
 // Deprecated: This method is obsolete. Use PutAsSecretsPutResponse instead.
 // returns a ItemSynchronizationSecretsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0
 func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsResponseable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -56,9 +59,12 @@ func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body
     }
     return res.(ItemSynchronizationSecretsResponseable), nil
 }
-// PutAsSecretsPutResponse update property secrets value.
+// PutAsSecretsPutResponse provide credentials for establishing connectivity with the target system.
 // returns a ItemSynchronizationSecretsPutResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0
 func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsPutResponseable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -76,7 +82,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx c
     }
     return res.(ItemSynchronizationSecretsPutResponseable), nil
 }
-// ToPutRequestInformation update property secrets value.
+// ToPutRequestInformation provide credentials for establishing connectivity with the target system.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

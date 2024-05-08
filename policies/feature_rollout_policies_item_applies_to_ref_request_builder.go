@@ -11,7 +11,7 @@ import (
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteQueryParameters delete ref of navigation property appliesTo for policies
+// FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteQueryParameters remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteRequestConfigurat
     // Request query parameters
     QueryParameters *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteQueryParameters
 }
-// FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters nullable. Specifies a list of directoryObjects that feature is enabled for.
+// FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters nullable. Specifies a list of directoryObject resources that feature is enabled for.
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,8 +69,11 @@ func NewFeatureRolloutPoliciesItemAppliesToRefRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPoliciesItemAppliesToRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property appliesTo for policies
+// Delete remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0
 func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,7 +88,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get nullable. Specifies a list of directoryObjects that feature is enabled for.
+// Get nullable. Specifies a list of directoryObject resources that feature is enabled for.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) Get(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
@@ -105,8 +108,11 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) Get(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to appliesTo for policies
+// Post add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
 func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) Post(ctx context.
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property appliesTo for policies
+// ToDeleteRequestInformation remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 // returns a *RequestInformation when successful
 func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation nullable. Specifies a list of directoryObjects that feature is enabled for.
+// ToGetRequestInformation nullable. Specifies a list of directoryObject resources that feature is enabled for.
 // returns a *RequestInformation when successful
 func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -149,7 +155,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToGetRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to appliesTo for policies
+// ToPostRequestInformation add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
 // returns a *RequestInformation when successful
 func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/$ref", m.BaseRequestBuilder.PathParameters)

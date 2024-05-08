@@ -18,7 +18,7 @@ type DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperatio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters the long running operations associated with the delegated admin relationship.
+// DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminRelationshipOperation object.
 type DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOper
     }
     return nil
 }
-// Get the long running operations associated with the delegated admin relationship.
+// Get read the properties of a delegatedAdminRelationshipOperation object.
 // returns a DelegatedAdminRelationshipOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOper
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the long running operations associated with the delegated admin relationship.
+// ToGetRequestInformation read the properties of a delegatedAdminRelationshipOperation object.
 // returns a *RequestInformation when successful
 func (m *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

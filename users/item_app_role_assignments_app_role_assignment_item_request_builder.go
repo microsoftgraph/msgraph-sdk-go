@@ -54,8 +54,11 @@ func NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property appRoleAssignments for users
+// Delete delete an appRoleAssignment that has been granted to a user.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +113,7 @@ func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Patch(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppRoleAssignmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property appRoleAssignments for users
+// ToDeleteRequestInformation delete an appRoleAssignment that has been granted to a user.
 // returns a *RequestInformation when successful
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

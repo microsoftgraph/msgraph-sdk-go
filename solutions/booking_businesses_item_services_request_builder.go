@@ -11,7 +11,7 @@ import (
 type BookingBusinessesItemServicesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingBusinessesItemServicesRequestBuilderGetQueryParameters all the services offered by this business. Read-only. Nullable.
+// BookingBusinessesItemServicesRequestBuilderGetQueryParameters get a list of bookingService objects in the specified bookingBusiness.
 type BookingBusinessesItemServicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewBookingBusinessesItemServicesRequestBuilder(rawUrl string, requestAdapte
 func (m *BookingBusinessesItemServicesRequestBuilder) Count()(*BookingBusinessesItemServicesCountRequestBuilder) {
     return NewBookingBusinessesItemServicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all the services offered by this business. Read-only. Nullable.
+// Get get a list of bookingService objects in the specified bookingBusiness.
 // returns a BookingServiceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
 func (m *BookingBusinessesItemServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *BookingBusinessesItemServicesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceCollectionResponseable), nil
 }
-// Post create new navigation property to services for solutions
+// Post create a new bookingService for the specified bookingBusiness.
 // returns a BookingServiceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
 func (m *BookingBusinessesItemServicesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *BookingBusinessesItemServicesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *BookingBusinessesItemServicesRequestBuilder) Post(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable), nil
 }
-// ToGetRequestInformation all the services offered by this business. Read-only. Nullable.
+// ToGetRequestInformation get a list of bookingService objects in the specified bookingBusiness.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemServicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *BookingBusinessesItemServicesRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to services for solutions
+// ToPostRequestInformation create a new bookingService for the specified bookingBusiness.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemServicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *BookingBusinessesItemServicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

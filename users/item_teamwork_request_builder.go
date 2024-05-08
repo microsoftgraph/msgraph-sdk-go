@@ -18,7 +18,7 @@ type ItemTeamworkRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamworkRequestBuilderGetQueryParameters a container for Microsoft Teams features available for the user. Read-only. Nullable.
+// ItemTeamworkRequestBuilderGetQueryParameters get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
 type ItemTeamworkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,9 +75,12 @@ func (m *ItemTeamworkRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get a container for Microsoft Teams features available for the user. Read-only. Nullable.
+// Get get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
 // returns a UserTeamworkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-get?view=graph-rest-1.0
 func (m *ItemTeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +139,7 @@ func (m *ItemTeamworkRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a container for Microsoft Teams features available for the user. Read-only. Nullable.
+// ToGetRequestInformation get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

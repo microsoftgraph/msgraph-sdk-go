@@ -30,8 +30,11 @@ func NewItemOwnersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemOwnersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property owners for applications
+// Delete remove an owner from an application. As a recommended best practice, apps should have at least two owners.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
 func (m *ItemOwnersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOwnersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemOwnersItemRefRequestBuilder) Delete(ctx context.Context, requestCon
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property owners for applications
+// ToDeleteRequestInformation remove an owner from an application. As a recommended best practice, apps should have at least two owners.
 // returns a *RequestInformation when successful
 func (m *ItemOwnersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOwnersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

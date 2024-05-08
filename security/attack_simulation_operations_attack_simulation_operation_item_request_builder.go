@@ -18,7 +18,7 @@ type AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetQueryParameters represents an attack simulation training operation.
+// AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetQueryParameters get an attack simulation operation to track a long-running operation request for a tenant.
 type AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) 
     }
     return nil
 }
-// Get represents an attack simulation training operation.
+// Get get an attack simulation operation to track a long-running operation request for a tenant.
 // returns a AttackSimulationOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationoperation-get?view=graph-rest-1.0
 func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttackSimulationOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents an attack simulation training operation.
+// ToGetRequestInformation get an attack simulation operation to track a long-running operation request for a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

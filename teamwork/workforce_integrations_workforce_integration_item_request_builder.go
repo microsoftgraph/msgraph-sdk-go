@@ -18,7 +18,7 @@ type WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
+// WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workforceIntegration object.
 type WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property workforceIntegrations for teamwork
+// Delete delete an instance of a workforceIntegration.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get get workforceIntegrations from teamwork
+// Get retrieve the properties and relationships of a workforceIntegration object.
 // returns a WorkforceIntegrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable), nil
 }
-// Patch update the navigation property workforceIntegrations in teamwork
+// Patch update the properties of a workforceIntegration object.
 // returns a WorkforceIntegrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Patch(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable), nil
 }
-// ToDeleteRequestInformation delete navigation property workforceIntegrations for teamwork
+// ToDeleteRequestInformation delete an instance of a workforceIntegration.
 // returns a *RequestInformation when successful
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get workforceIntegrations from teamwork
+// ToGetRequestInformation retrieve the properties and relationships of a workforceIntegration object.
 // returns a *RequestInformation when successful
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToGetReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property workforceIntegrations in teamwork
+// ToPatchRequestInformation update the properties of a workforceIntegration object.
 // returns a *RequestInformation when successful
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilderGetQueryParameters get webinars from solutions
+// VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventWebinar object.
 type VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get get webinars from solutions
+// Get read the properties and relationships of a virtualEventWebinar object.
 // returns a VirtualEventWebinarable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventWebinarable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +134,7 @@ func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get webinars from solutions
+// ToGetRequestInformation read the properties and relationships of a virtualEventWebinar object.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

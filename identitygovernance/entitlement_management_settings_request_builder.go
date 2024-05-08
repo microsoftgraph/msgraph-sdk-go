@@ -18,7 +18,7 @@ type EntitlementManagementSettingsRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementSettingsRequestBuilderGetQueryParameters the settings that control the behavior of Microsoft Entra entitlement management.
+// EntitlementManagementSettingsRequestBuilderGetQueryParameters retrieve the properties of an entitlementManagementSettings object.
 type EntitlementManagementSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *EntitlementManagementSettingsRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get the settings that control the behavior of Microsoft Entra entitlement management.
+// Get retrieve the properties of an entitlementManagementSettings object.
 // returns a EntitlementManagementSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0
 func (m *EntitlementManagementSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementSettingsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *EntitlementManagementSettingsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable), nil
 }
-// Patch update the navigation property settings in identityGovernance
+// Patch update an existing entitlementManagementSettings object to change one or more of its properties.
 // returns a EntitlementManagementSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0
 func (m *EntitlementManagementSettingsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, requestConfiguration *EntitlementManagementSettingsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the settings that control the behavior of Microsoft Entra entitlement management.
+// ToGetRequestInformation retrieve the properties of an entitlementManagementSettings object.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property settings in identityGovernance
+// ToPatchRequestInformation update an existing entitlementManagementSettings object to change one or more of its properties.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, requestConfiguration *EntitlementManagementSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

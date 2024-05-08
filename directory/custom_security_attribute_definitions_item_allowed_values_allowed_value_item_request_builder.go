@@ -18,7 +18,7 @@ type CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderGetQueryParameters values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+// CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderGetQueryParameters read the properties and relationships of an allowedValue object.
 type CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequ
     }
     return nil
 }
-// Get values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+// Get read the properties and relationships of an allowedValue object.
 // returns a AllowedValueable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable), nil
 }
-// Patch update the navigation property allowedValues in directory
+// Patch update the properties of an allowedValue object.
 // returns a AllowedValueable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+// ToGetRequestInformation read the properties and relationships of an allowedValue object.
 // returns a *RequestInformation when successful
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property allowedValues in directory
+// ToPatchRequestInformation update the properties of an allowedValue object.
 // returns a *RequestInformation when successful
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

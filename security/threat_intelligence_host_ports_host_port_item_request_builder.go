@@ -18,7 +18,7 @@ type ThreatIntelligenceHostPortsHostPortItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceHostPortsHostPortItemRequestBuilderGetQueryParameters retrieve details about hostPort objects.Note: List retrieval is not yet supported.
+// ThreatIntelligenceHostPortsHostPortItemRequestBuilderGetQueryParameters read the properties and relationships of a hostPort object.
 type ThreatIntelligenceHostPortsHostPortItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ThreatIntelligenceHostPortsHostPortItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get retrieve details about hostPort objects.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a hostPort object.
 // returns a HostPortable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-hostport-get?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostPortsHostPortItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPortsHostPortItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPortable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +134,7 @@ func (m *ThreatIntelligenceHostPortsHostPortItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve details about hostPort objects.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a hostPort object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostPortsHostPortItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPortsHostPortItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

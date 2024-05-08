@@ -18,7 +18,7 @@ type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters represents custom extensions to authentication flows in Azure AD for workforce and customers.
+// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of a customAuthenticationExtension object.
 type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property customAuthenticationExtensions for identity
+// Delete delete a customAuthenticationExtension object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customauthenticationextension-delete?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return nil
 }
-// Get represents custom extensions to authentication flows in Azure AD for workforce and customers.
+// Get read the properties and relationships of a customAuthenticationExtension object.
 // returns a CustomAuthenticationExtensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable), nil
 }
-// Patch update the navigation property customAuthenticationExtensions in identity
+// Patch update the properties of a customAuthenticationExtension object.
 // returns a CustomAuthenticationExtensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customauthenticationextension-update?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable), nil
 }
-// ToDeleteRequestInformation delete navigation property customAuthenticationExtensions for identity
+// ToDeleteRequestInformation delete a customAuthenticationExtension object.
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents custom extensions to authentication flows in Azure AD for workforce and customers.
+// ToGetRequestInformation read the properties and relationships of a customAuthenticationExtension object.
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property customAuthenticationExtensions in identity
+// ToPatchRequestInformation update the properties of a customAuthenticationExtension object.
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

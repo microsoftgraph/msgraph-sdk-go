@@ -34,7 +34,7 @@ func NewGetEmailActivityUserDetailWithDateRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getEmailActivityUserDetail
+// Get get details about email activity users have performed.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetEmailActivityUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEmailActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -54,7 +54,7 @@ func (m *GetEmailActivityUserDetailWithDateRequestBuilder) Get(ctx context.Conte
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getEmailActivityUserDetail
+// ToGetRequestInformation get details about email activity users have performed.
 // returns a *RequestInformation when successful
 func (m *GetEmailActivityUserDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetEmailActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

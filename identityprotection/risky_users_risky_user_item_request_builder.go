@@ -18,7 +18,7 @@ type RiskyUsersRiskyUserItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskyUsersRiskyUserItemRequestBuilderGetQueryParameters users that are flagged as at-risk by Microsoft Entra ID Protection.
+// RiskyUsersRiskyUserItemRequestBuilderGetQueryParameters read the properties and relationships of a riskyUser object.
 type RiskyUsersRiskyUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *RiskyUsersRiskyUserItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get users that are flagged as at-risk by Microsoft Entra ID Protection.
+// Get read the properties and relationships of a riskyUser object.
 // returns a RiskyUserable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-get?view=graph-rest-1.0
 func (m *RiskyUsersRiskyUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersRiskyUserItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *RiskyUsersRiskyUserItemRequestBuilder) ToDeleteRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation users that are flagged as at-risk by Microsoft Entra ID Protection.
+// ToGetRequestInformation read the properties and relationships of a riskyUser object.
 // returns a *RequestInformation when successful
 func (m *RiskyUsersRiskyUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersRiskyUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

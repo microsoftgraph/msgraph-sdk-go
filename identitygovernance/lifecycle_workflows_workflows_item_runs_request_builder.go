@@ -12,7 +12,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetQueryParameters workflow runs.
+// LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetQueryParameters get a list of the run objects and their properties for a lifecycle workflow.
 type LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,9 +70,12 @@ func NewLifecycleWorkflowsWorkflowsItemRunsRequestBuilder(rawUrl string, request
 func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemRunsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get workflow runs.
+// Get get a list of the run objects and their properties for a lifecycle workflow.
 // returns a RunCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.RunCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +98,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) Get(ctx context.Cont
 func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsWorkflowsItemRunsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, startDateTime)
 }
-// ToGetRequestInformation workflow runs.
+// ToGetRequestInformation get a list of the run objects and their properties for a lifecycle workflow.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

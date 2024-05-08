@@ -11,7 +11,7 @@ import (
 type TokenIssuancePoliciesItemAppliesToRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TokenIssuancePoliciesItemAppliesToRequestBuilderGetQueryParameters get appliesTo from policies
+// TokenIssuancePoliciesItemAppliesToRequestBuilderGetQueryParameters get a list of directoryObject objects that a tokenIssuancePolicy object has been applied to. The tokenIssuancePolicy can only be applied to application.
 type TokenIssuancePoliciesItemAppliesToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewTokenIssuancePoliciesItemAppliesToRequestBuilder(rawUrl string, requestA
 func (m *TokenIssuancePoliciesItemAppliesToRequestBuilder) Count()(*TokenIssuancePoliciesItemAppliesToCountRequestBuilder) {
     return NewTokenIssuancePoliciesItemAppliesToCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get appliesTo from policies
+// Get get a list of directoryObject objects that a tokenIssuancePolicy object has been applied to. The tokenIssuancePolicy can only be applied to application.
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-list-appliesto?view=graph-rest-1.0
 func (m *TokenIssuancePoliciesItemAppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration *TokenIssuancePoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *TokenIssuancePoliciesItemAppliesToRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation get appliesTo from policies
+// ToGetRequestInformation get a list of directoryObject objects that a tokenIssuancePolicy object has been applied to. The tokenIssuancePolicy can only be applied to application.
 // returns a *RequestInformation when successful
 func (m *TokenIssuancePoliciesItemAppliesToRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TokenIssuancePoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

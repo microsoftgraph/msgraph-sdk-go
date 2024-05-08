@@ -18,7 +18,7 @@ type MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderGetQueryParameters the list of Mobile threat Defense connectors configured by the tenant.
+// MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderGetQueryParameters read properties and relationships of the mobileThreatDefenseConnector object.
 type MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property mobileThreatDefenseConnectors for deviceManagement
+// Delete deletes a mobileThreatDefenseConnector.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-delete?view=graph-rest-1.0
 func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBui
     }
     return nil
 }
-// Get the list of Mobile threat Defense connectors configured by the tenant.
+// Get read properties and relationships of the mobileThreatDefenseConnector object.
 // returns a MobileThreatDefenseConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-get?view=graph-rest-1.0
 func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileThreatDefenseConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileThreatDefenseConnectorable), nil
 }
-// Patch update the navigation property mobileThreatDefenseConnectors in deviceManagement
+// Patch update the properties of a mobileThreatDefenseConnector object.
 // returns a MobileThreatDefenseConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-update?view=graph-rest-1.0
 func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileThreatDefenseConnectorable, requestConfiguration *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileThreatDefenseConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileThreatDefenseConnectorable), nil
 }
-// ToDeleteRequestInformation delete navigation property mobileThreatDefenseConnectors for deviceManagement
+// ToDeleteRequestInformation deletes a mobileThreatDefenseConnector.
 // returns a *RequestInformation when successful
 func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of Mobile threat Defense connectors configured by the tenant.
+// ToGetRequestInformation read properties and relationships of the mobileThreatDefenseConnector object.
 // returns a *RequestInformation when successful
 func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property mobileThreatDefenseConnectors in deviceManagement
+// ToPatchRequestInformation update the properties of a mobileThreatDefenseConnector object.
 // returns a *RequestInformation when successful
 func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileThreatDefenseConnectorable, requestConfiguration *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

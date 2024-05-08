@@ -79,6 +79,9 @@ func (m *MonthlyPrintUsageByUserRequestBuilder) Count()(*MonthlyPrintUsageByUser
 // Get retrieve a list of monthly print usage summaries, grouped by user.
 // returns a PrintUsageByUserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0
 func (m *MonthlyPrintUsageByUserRequestBuilder) Get(ctx context.Context, requestConfiguration *MonthlyPrintUsageByUserRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByUserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

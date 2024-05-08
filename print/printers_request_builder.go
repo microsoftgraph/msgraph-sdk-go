@@ -11,7 +11,7 @@ import (
 type PrintersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrintersRequestBuilderGetQueryParameters the list of printers registered in the tenant.
+// PrintersRequestBuilderGetQueryParameters retrieve the list of printers that are registered in the tenant.
 type PrintersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,9 +81,12 @@ func (m *PrintersRequestBuilder) Count()(*PrintersCountRequestBuilder) {
 func (m *PrintersRequestBuilder) Create()(*PrintersCreateRequestBuilder) {
     return NewPrintersCreateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of printers registered in the tenant.
+// Get retrieve the list of printers that are registered in the tenant.
 // returns a PrinterCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0
 func (m *PrintersRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *PrintersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable), nil
 }
-// ToGetRequestInformation the list of printers registered in the tenant.
+// ToGetRequestInformation retrieve the list of printers that are registered in the tenant.
 // returns a *RequestInformation when successful
 func (m *PrintersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

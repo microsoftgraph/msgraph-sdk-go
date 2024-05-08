@@ -11,7 +11,7 @@ import (
 type AdministrativeUnitsItemMembersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AdministrativeUnitsItemMembersRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for directory
+// AdministrativeUnitsItemMembersRefRequestBuilderDeleteQueryParameters use this API to remove a member (user, group, or device) from an administrative unit.
 type AdministrativeUnitsItemMembersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type AdministrativeUnitsItemMembersRefRequestBuilderDeleteRequestConfiguration s
     // Request query parameters
     QueryParameters *AdministrativeUnitsItemMembersRefRequestBuilderDeleteQueryParameters
 }
-// AdministrativeUnitsItemMembersRefRequestBuilderGetQueryParameters users and groups that are members of this administrative unit. Supports $expand.
+// AdministrativeUnitsItemMembersRefRequestBuilderGetQueryParameters use this API to get the members list (users, groups, or devices) in an administrative unit.
 type AdministrativeUnitsItemMembersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,8 +69,11 @@ func NewAdministrativeUnitsItemMembersRefRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsItemMembersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property members for directory
+// Delete use this API to remove a member (user, group, or device) from an administrative unit.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get users and groups that are members of this administrative unit. Supports $expand.
+// Get use this API to get the members list (users, groups, or devices) in an administrative unit.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,8 +111,11 @@ func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to members for directory
+// Post use this API to add a member (user, group, or device) to an administrative unit. Currently it's only possible to add one member at a time to an administrative unit.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +130,7 @@ func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property members for directory
+// ToDeleteRequestInformation use this API to remove a member (user, group, or device) from an administrative unit.
 // returns a *RequestInformation when successful
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *AdministrativeUnitsItemMembersRefRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation users and groups that are members of this administrative unit. Supports $expand.
+// ToGetRequestInformation use this API to get the members list (users, groups, or devices) in an administrative unit.
 // returns a *RequestInformation when successful
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -149,7 +158,7 @@ func (m *AdministrativeUnitsItemMembersRefRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to members for directory
+// ToPostRequestInformation use this API to add a member (user, group, or device) to an administrative unit. Currently it's only possible to add one member at a time to an administrative unit.
 // returns a *RequestInformation when successful
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/$ref", m.BaseRequestBuilder.PathParameters)

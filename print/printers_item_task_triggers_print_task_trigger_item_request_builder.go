@@ -18,7 +18,7 @@ type PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetQueryParameters a list of task triggers that are associated with the printer.
+// PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetQueryParameters get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 type PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder(rawUrl string
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Definition()(*PrintersItemTaskTriggersItemDefinitionRequestBuilder) {
     return NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete navigation property taskTriggers for print
+// Delete delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get a list of task triggers that are associated with the printer.
+// Get get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // returns a PrintTaskTriggerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskTriggerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +121,7 @@ func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Patch(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskTriggerable), nil
 }
-// ToDeleteRequestInformation delete navigation property taskTriggers for print
+// ToDeleteRequestInformation delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
 // returns a *RequestInformation when successful
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +132,7 @@ func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a list of task triggers that are associated with the printer.
+// ToGetRequestInformation get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // returns a *RequestInformation when successful
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

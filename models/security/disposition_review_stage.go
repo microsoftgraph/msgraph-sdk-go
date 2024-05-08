@@ -86,7 +86,7 @@ func (m *DispositionReviewStage) GetReviewersEmailAddresses()([]string) {
     }
     return nil
 }
-// GetStageNumber gets the stageNumber property value. The sequence number for each stage of the disposition review.
+// GetStageNumber gets the stageNumber property value. The unique sequence number for each stage of the disposition review.
 // returns a *string when successful
 func (m *DispositionReviewStage) GetStageNumber()(*string) {
     val, err := m.GetBackingStore().Get("stageNumber")
@@ -138,7 +138,7 @@ func (m *DispositionReviewStage) SetReviewersEmailAddresses(value []string)() {
         panic(err)
     }
 }
-// SetStageNumber sets the stageNumber property value. The sequence number for each stage of the disposition review.
+// SetStageNumber sets the stageNumber property value. The unique sequence number for each stage of the disposition review.
 func (m *DispositionReviewStage) SetStageNumber(value *string)() {
     err := m.GetBackingStore().Set("stageNumber", value)
     if err != nil {

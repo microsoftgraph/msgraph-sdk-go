@@ -11,7 +11,7 @@ import (
 type PrintersItemConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrintersItemConnectorsRequestBuilderGetQueryParameters the connectors that are associated with the printer.
+// PrintersItemConnectorsRequestBuilderGetQueryParameters retrieve a list of printConnectors associated with the printer.
 type PrintersItemConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewPrintersItemConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *PrintersItemConnectorsRequestBuilder) Count()(*PrintersItemConnectorsCountRequestBuilder) {
     return NewPrintersItemConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the connectors that are associated with the printer.
+// Get retrieve a list of printConnectors associated with the printer.
 // returns a PrintConnectorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
 func (m *PrintersItemConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemConnectorsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *PrintersItemConnectorsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorCollectionResponseable), nil
 }
-// ToGetRequestInformation the connectors that are associated with the printer.
+// ToGetRequestInformation retrieve a list of printConnectors associated with the printer.
 // returns a *RequestInformation when successful
 func (m *PrintersItemConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

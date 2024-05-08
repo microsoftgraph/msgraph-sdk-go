@@ -11,7 +11,7 @@ import (
 type BookingCurrenciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingCurrenciesRequestBuilderGetQueryParameters get bookingCurrencies from solutions
+// BookingCurrenciesRequestBuilderGetQueryParameters get a list of bookingCurrency objects available to a Microsoft Bookings business.
 type BookingCurrenciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewBookingCurrenciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *BookingCurrenciesRequestBuilder) Count()(*BookingCurrenciesCountRequestBuilder) {
     return NewBookingCurrenciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get bookingCurrencies from solutions
+// Get get a list of bookingCurrency objects available to a Microsoft Bookings business.
 // returns a BookingCurrencyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
 func (m *BookingCurrenciesRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingCurrenciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCurrencyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *BookingCurrenciesRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCurrencyable), nil
 }
-// ToGetRequestInformation get bookingCurrencies from solutions
+// ToGetRequestInformation get a list of bookingCurrency objects available to a Microsoft Bookings business.
 // returns a *RequestInformation when successful
 func (m *BookingCurrenciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingCurrenciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

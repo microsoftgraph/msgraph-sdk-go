@@ -18,7 +18,7 @@ type ItemTermStoreSetsSetItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTermStoreSetsSetItemRequestBuilderGetQueryParameters collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// ItemTermStoreSetsSetItemRequestBuilderGetQueryParameters read the properties and relationships of a set object.
 type ItemTermStoreSetsSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewItemTermStoreSetsSetItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemTermStoreSetsSetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property sets for sites
+// Delete delete a set object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-set-delete?view=graph-rest-1.0
 func (m *ItemTermStoreSetsSetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTermStoreSetsSetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ItemTermStoreSetsSetItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// Get read the properties and relationships of a set object.
 // returns a Setable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-set-get?view=graph-rest-1.0
 func (m *ItemTermStoreSetsSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreSetsSetItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,9 +106,12 @@ func (m *ItemTermStoreSetsSetItemRequestBuilder) Get(ctx context.Context, reques
 func (m *ItemTermStoreSetsSetItemRequestBuilder) ParentGroup()(*ItemTermStoreSetsItemParentGroupRequestBuilder) {
     return NewItemTermStoreSetsItemParentGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property sets in sites
+// Patch update the properties of a set object.
 // returns a Setable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-set-update?view=graph-rest-1.0
 func (m *ItemTermStoreSetsSetItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, requestConfiguration *ItemTermStoreSetsSetItemRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +139,7 @@ func (m *ItemTermStoreSetsSetItemRequestBuilder) Relations()(*ItemTermStoreSetsI
 func (m *ItemTermStoreSetsSetItemRequestBuilder) Terms()(*ItemTermStoreSetsItemTermsRequestBuilder) {
     return NewItemTermStoreSetsItemTermsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property sets for sites
+// ToDeleteRequestInformation delete a set object.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +150,7 @@ func (m *ItemTermStoreSetsSetItemRequestBuilder) ToDeleteRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// ToGetRequestInformation read the properties and relationships of a set object.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,7 +164,7 @@ func (m *ItemTermStoreSetsSetItemRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property sets in sites
+// ToPatchRequestInformation update the properties of a set object.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsSetItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, requestConfiguration *ItemTermStoreSetsSetItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

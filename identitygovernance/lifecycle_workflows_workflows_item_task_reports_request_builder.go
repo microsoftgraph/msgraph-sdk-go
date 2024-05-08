@@ -12,7 +12,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters represents the aggregation of task execution data for tasks within a workflow object.
+// LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters get a list of the taskReport objects and their properties.
 type LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,9 +70,12 @@ func NewLifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder(rawUrl string, 
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemTaskReportsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the aggregation of task execution data for tasks within a workflow object.
+// Get get a list of the taskReport objects and their properties.
 // returns a TaskReportCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.TaskReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +98,7 @@ func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) Get(ctx conte
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsWorkflowsItemTaskReportsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, startDateTime)
 }
-// ToGetRequestInformation represents the aggregation of task execution data for tasks within a workflow object.
+// ToGetRequestInformation get a list of the taskReport objects and their properties.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

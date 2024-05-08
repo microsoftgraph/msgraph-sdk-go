@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostCookiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostCookiesRequestBuilderGetQueryParameters retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+// ThreatIntelligenceHostCookiesRequestBuilderGetQueryParameters read the properties and relationships of a hostCookie object.
 type ThreatIntelligenceHostCookiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewThreatIntelligenceHostCookiesRequestBuilder(rawUrl string, requestAdapte
 func (m *ThreatIntelligenceHostCookiesRequestBuilder) Count()(*ThreatIntelligenceHostCookiesCountRequestBuilder) {
     return NewThreatIntelligenceHostCookiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a hostCookie object.
 // returns a HostCookieCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostCookiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostCookiesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostCookieCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceHostCookiesRequestBuilder) Post(ctx context.Context, 
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostCookieable), nil
 }
-// ToGetRequestInformation retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a hostCookie object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostCookiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostCookiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+// LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a filePlanReferenceTemplate object.
 type LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewLabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property filePlanReferences for security
+// Delete delete a filePlanReferenceTemplate object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-fileplanreferences?view=graph-rest-1.0
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) De
     }
     return nil
 }
-// Get specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+// Get read the properties and relationships of a filePlanReferenceTemplate object.
 // returns a FilePlanReferenceTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-1.0
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) Pa
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateable), nil
 }
-// ToDeleteRequestInformation delete navigation property filePlanReferences for security
+// ToDeleteRequestInformation delete a filePlanReferenceTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +127,7 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+// ToGetRequestInformation read the properties and relationships of a filePlanReferenceTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

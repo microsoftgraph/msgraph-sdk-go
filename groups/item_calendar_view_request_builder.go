@@ -11,7 +11,7 @@ import (
 type ItemCalendarViewRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarViewRequestBuilderGetQueryParameters the calendar view for the calendar. Read-only.
+// ItemCalendarViewRequestBuilderGetQueryParameters get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range,from the default calendar of a group.
 type ItemCalendarViewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -21,6 +21,8 @@ type ItemCalendarViewRequestBuilderGetQueryParameters struct {
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
@@ -54,7 +56,7 @@ func (m *ItemCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendar
 // NewItemCalendarViewRequestBuilderInternal instantiates a new ItemCalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewRequestBuilder) {
     m := &ItemCalendarViewRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendarView?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendarView?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -74,9 +76,12 @@ func (m *ItemCalendarViewRequestBuilder) Count()(*ItemCalendarViewCountRequestBu
 func (m *ItemCalendarViewRequestBuilder) Delta()(*ItemCalendarViewDeltaRequestBuilder) {
     return NewItemCalendarViewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the calendar view for the calendar. Read-only.
+// Get get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range,from the default calendar of a group.
 // returns a EventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-1.0
 func (m *ItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +99,7 @@ func (m *ItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
 }
-// ToGetRequestInformation the calendar view for the calendar. Read-only.
+// ToGetRequestInformation get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range,from the default calendar of a group.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

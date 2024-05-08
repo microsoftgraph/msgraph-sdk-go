@@ -11,7 +11,7 @@ import (
 type ItemClaimsMappingPoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemClaimsMappingPoliciesRefRequestBuilderDeleteQueryParameters delete ref of navigation property claimsMappingPolicies for servicePrincipals
+// ItemClaimsMappingPoliciesRefRequestBuilderDeleteQueryParameters remove a claimsMappingPolicy from a servicePrincipal.
 type ItemClaimsMappingPoliciesRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type ItemClaimsMappingPoliciesRefRequestBuilderDeleteRequestConfiguration struct
     // Request query parameters
     QueryParameters *ItemClaimsMappingPoliciesRefRequestBuilderDeleteQueryParameters
 }
-// ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters the claimsMappingPolicies assigned to this service principal. Supports $expand.
+// ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 type ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,8 +69,11 @@ func NewItemClaimsMappingPoliciesRefRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemClaimsMappingPoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property claimsMappingPolicies for servicePrincipals
+// Delete remove a claimsMappingPolicy from a servicePrincipal.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get the claimsMappingPolicies assigned to this service principal. Supports $expand.
+// Get list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,8 +111,11 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to claimsMappingPolicies for servicePrincipals
+// Post assign a claimsMappingPolicy to a servicePrincipal.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +130,7 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property claimsMappingPolicies for servicePrincipals
+// ToDeleteRequestInformation remove a claimsMappingPolicy from a servicePrincipal.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the claimsMappingPolicies assigned to this service principal. Supports $expand.
+// ToGetRequestInformation list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -149,7 +158,7 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to claimsMappingPolicies for servicePrincipals
+// ToPostRequestInformation assign a claimsMappingPolicy to a servicePrincipal.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref", m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetQueryParameters a collection of Cloud PC audit events.
+// VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcAuditEvent object.
 type VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get a collection of Cloud PC audit events.
+// Get read the properties and relationships of a cloudPcAuditEvent object.
 // returns a CloudPcAuditEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-1.0
 func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcAuditEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) ToDelete
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of Cloud PC audit events.
+// ToGetRequestInformation read the properties and relationships of a cloudPcAuditEvent object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderGetQueryParameters app role assignment for another app or service, granted to this service principal. Supports $expand.
+// ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderGetQueryParameters read the properties and relationships of an appRoleAssignment object.
 type ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property appRoleAssignments for servicePrincipals
+// Delete deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get app role assignment for another app or service, granted to this service principal. Supports $expand.
+// Get read the properties and relationships of an appRoleAssignment object.
 // returns a AppRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Patch(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppRoleAssignmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property appRoleAssignments for servicePrincipals
+// ToDeleteRequestInformation deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
 // returns a *RequestInformation when successful
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +127,7 @@ func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation app role assignment for another app or service, granted to this service principal. Supports $expand.
+// ToGetRequestInformation read the properties and relationships of an appRoleAssignment object.
 // returns a *RequestInformation when successful
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

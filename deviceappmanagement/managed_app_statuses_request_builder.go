@@ -11,7 +11,7 @@ import (
 type ManagedAppStatusesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedAppStatusesRequestBuilderGetQueryParameters the managed app statuses.
+// ManagedAppStatusesRequestBuilderGetQueryParameters list properties and relationships of the managedAppStatusRaw objects.
 type ManagedAppStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewManagedAppStatusesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ManagedAppStatusesRequestBuilder) Count()(*ManagedAppStatusesCountRequestBuilder) {
     return NewManagedAppStatusesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the managed app statuses.
+// Get list properties and relationships of the managedAppStatusRaw objects.
 // returns a ManagedAppStatusCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-list?view=graph-rest-1.0
 func (m *ManagedAppStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppStatusesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppStatusCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ManagedAppStatusesRequestBuilder) Post(ctx context.Context, body iadcd8
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppStatusable), nil
 }
-// ToGetRequestInformation the managed app statuses.
+// ToGetRequestInformation list properties and relationships of the managedAppStatusRaw objects.
 // returns a *RequestInformation when successful
 func (m *ManagedAppStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

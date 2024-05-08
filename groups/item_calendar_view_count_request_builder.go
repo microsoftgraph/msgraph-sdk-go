@@ -12,8 +12,14 @@ type ItemCalendarViewCountRequestBuilder struct {
 }
 // ItemCalendarViewCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemCalendarViewCountRequestBuilderGetQueryParameters struct {
+    // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+    EndDateTime *string `uriparametername:"endDateTime"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+    StartDateTime *string `uriparametername:"startDateTime"`
 }
 // ItemCalendarViewCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarViewCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +33,7 @@ type ItemCalendarViewCountRequestBuilderGetRequestConfiguration struct {
 // NewItemCalendarViewCountRequestBuilderInternal instantiates a new ItemCalendarViewCountRequestBuilder and sets the default values.
 func NewItemCalendarViewCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewCountRequestBuilder) {
     m := &ItemCalendarViewCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendarView/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendarView/$count?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24filter,%24search}", pathParameters),
     }
     return m
 }

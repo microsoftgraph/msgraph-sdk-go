@@ -14,6 +14,8 @@ type ItemCalendarCalendarViewItemInstancesCountRequestBuilder struct {
 type ItemCalendarCalendarViewItemInstancesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemCalendarCalendarViewItemInstancesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarCalendarViewItemInstancesCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemCalendarCalendarViewItemInstancesCountRequestBuilderGetRequestConfigura
 // NewItemCalendarCalendarViewItemInstancesCountRequestBuilderInternal instantiates a new ItemCalendarCalendarViewItemInstancesCountRequestBuilder and sets the default values.
 func NewItemCalendarCalendarViewItemInstancesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarCalendarViewItemInstancesCountRequestBuilder) {
     m := &ItemCalendarCalendarViewItemInstancesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView/{event%2Did}/instances/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView/{event%2Did}/instances/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

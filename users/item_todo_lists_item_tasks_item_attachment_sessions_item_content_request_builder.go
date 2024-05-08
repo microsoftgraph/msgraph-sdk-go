@@ -11,6 +11,13 @@ import (
 type ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -37,6 +44,22 @@ func NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder(ra
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete the content streams that are uploaded.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get the content streams that are uploaded.
 // returns a []byte when successful
@@ -77,6 +100,17 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentSessionable), nil
+}
+// ToDeleteRequestInformation the content streams that are uploaded.
+// returns a *RequestInformation when successful
+func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation the content streams that are uploaded.
 // returns a *RequestInformation when successful

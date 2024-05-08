@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceVulnerabilitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceVulnerabilitiesRequestBuilderGetQueryParameters retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
+// ThreatIntelligenceVulnerabilitiesRequestBuilderGetQueryParameters read the properties and relationships of a vulnerability object.
 type ThreatIntelligenceVulnerabilitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewThreatIntelligenceVulnerabilitiesRequestBuilder(rawUrl string, requestAd
 func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) Count()(*ThreatIntelligenceVulnerabilitiesCountRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a vulnerability object.
 // returns a VulnerabilityCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.VulnerabilityCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) Post(ctx context.Conte
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Vulnerabilityable), nil
 }
-// ToGetRequestInformation retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a vulnerability object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

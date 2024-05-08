@@ -11,7 +11,7 @@ import (
 type ItemRejectedSendersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRejectedSendersRefRequestBuilderDeleteQueryParameters delete ref of navigation property rejectedSenders for groups
+// ItemRejectedSendersRefRequestBuilderDeleteQueryParameters remove rejectedSender
 type ItemRejectedSendersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type ItemRejectedSendersRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRejectedSendersRefRequestBuilderDeleteQueryParameters
 }
-// ItemRejectedSendersRefRequestBuilderGetQueryParameters the list of users or groups not allowed to create posts or calendar events in this group. Nullable
+// ItemRejectedSendersRefRequestBuilderGetQueryParameters users in the rejected senders list can't post to conversations of the group (identified in the GET request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
 type ItemRejectedSendersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,8 +67,11 @@ func NewItemRejectedSendersRefRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemRejectedSendersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property rejectedSenders for groups
+// Delete remove rejectedSender
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
 func (m *ItemRejectedSendersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRejectedSendersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,9 +86,12 @@ func (m *ItemRejectedSendersRefRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get the list of users or groups not allowed to create posts or calendar events in this group. Nullable
+// Get users in the rejected senders list can't post to conversations of the group (identified in the GET request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
 func (m *ItemRejectedSendersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRejectedSendersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,8 +109,11 @@ func (m *ItemRejectedSendersRefRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to rejectedSenders for groups
+// Post specify the user or group in @odata.id in the request body. Users in the rejected senders list can't post to conversations of the group (identified in the POST request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you'll get an error.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-post-rejectedsenders?view=graph-rest-1.0
 func (m *ItemRejectedSendersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemRejectedSendersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +128,7 @@ func (m *ItemRejectedSendersRefRequestBuilder) Post(ctx context.Context, body ia
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property rejectedSenders for groups
+// ToDeleteRequestInformation remove rejectedSender
 // returns a *RequestInformation when successful
 func (m *ItemRejectedSendersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRejectedSendersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -133,7 +142,7 @@ func (m *ItemRejectedSendersRefRequestBuilder) ToDeleteRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of users or groups not allowed to create posts or calendar events in this group. Nullable
+// ToGetRequestInformation users in the rejected senders list can't post to conversations of the group (identified in the GET request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
 // returns a *RequestInformation when successful
 func (m *ItemRejectedSendersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRejectedSendersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref{?%24count,%24filter,%24orderby,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -147,7 +156,7 @@ func (m *ItemRejectedSendersRefRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to rejectedSenders for groups
+// ToPostRequestInformation specify the user or group in @odata.id in the request body. Users in the rejected senders list can't post to conversations of the group (identified in the POST request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you'll get an error.
 // returns a *RequestInformation when successful
 func (m *ItemRejectedSendersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemRejectedSendersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref", m.BaseRequestBuilder.PathParameters)

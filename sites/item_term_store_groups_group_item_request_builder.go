@@ -18,7 +18,7 @@ type ItemTermStoreGroupsGroupItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTermStoreGroupsGroupItemRequestBuilderGetQueryParameters collection of all groups available in the term store.
+// ItemTermStoreGroupsGroupItemRequestBuilderGetQueryParameters read the properties and relationships of a term store group object.
 type ItemTermStoreGroupsGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewItemTermStoreGroupsGroupItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemTermStoreGroupsGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property groups for sites
+// Delete delete a group object in a term [store].
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0
 func (m *ItemTermStoreGroupsGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTermStoreGroupsGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ItemTermStoreGroupsGroupItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get collection of all groups available in the term store.
+// Get read the properties and relationships of a term store group object.
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0
 func (m *ItemTermStoreGroupsGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreGroupsGroupItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +121,7 @@ func (m *ItemTermStoreGroupsGroupItemRequestBuilder) Patch(ctx context.Context, 
 func (m *ItemTermStoreGroupsGroupItemRequestBuilder) Sets()(*ItemTermStoreGroupsItemSetsRequestBuilder) {
     return NewItemTermStoreGroupsItemSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property groups for sites
+// ToDeleteRequestInformation delete a group object in a term [store].
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreGroupsGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreGroupsGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +132,7 @@ func (m *ItemTermStoreGroupsGroupItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation collection of all groups available in the term store.
+// ToGetRequestInformation read the properties and relationships of a term store group object.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreGroupsGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreGroupsGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

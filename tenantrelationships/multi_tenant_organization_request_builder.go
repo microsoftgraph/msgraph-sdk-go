@@ -11,7 +11,7 @@ import (
 type MultiTenantOrganizationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MultiTenantOrganizationRequestBuilderGetQueryParameters defines an organization with more than one instance of Microsoft Entra ID.
+// MultiTenantOrganizationRequestBuilderGetQueryParameters get properties of the multitenant organization.
 type MultiTenantOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,9 +47,12 @@ func NewMultiTenantOrganizationRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewMultiTenantOrganizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get defines an organization with more than one instance of Microsoft Entra ID.
+// Get get properties of the multitenant organization.
 // returns a MultiTenantOrganizationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0
 func (m *MultiTenantOrganizationRequestBuilder) Get(ctx context.Context, requestConfiguration *MultiTenantOrganizationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *MultiTenantOrganizationRequestBuilder) Get(ctx context.Context, request
 func (m *MultiTenantOrganizationRequestBuilder) JoinRequest()(*MultiTenantOrganizationJoinRequestRequestBuilder) {
     return NewMultiTenantOrganizationJoinRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Put update the navigation property multiTenantOrganization in tenantRelationships
+// Put create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
 // returns a MultiTenantOrganizationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
 func (m *MultiTenantOrganizationRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, requestConfiguration *MultiTenantOrganizationRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -97,7 +103,7 @@ func (m *MultiTenantOrganizationRequestBuilder) Put(ctx context.Context, body ia
 func (m *MultiTenantOrganizationRequestBuilder) Tenants()(*MultiTenantOrganizationTenantsRequestBuilder) {
     return NewMultiTenantOrganizationTenantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation defines an organization with more than one instance of Microsoft Entra ID.
+// ToGetRequestInformation get properties of the multitenant organization.
 // returns a *RequestInformation when successful
 func (m *MultiTenantOrganizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MultiTenantOrganizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -111,7 +117,7 @@ func (m *MultiTenantOrganizationRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update the navigation property multiTenantOrganization in tenantRelationships
+// ToPutRequestInformation create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
 // returns a *RequestInformation when successful
 func (m *MultiTenantOrganizationRequestBuilder) ToPutRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, requestConfiguration *MultiTenantOrganizationRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
