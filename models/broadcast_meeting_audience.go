@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BroadcastMeetingAudience int
 
@@ -26,7 +25,7 @@ func ParseBroadcastMeetingAudience(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROADCASTMEETINGAUDIENCE
         default:
-            return 0, errors.New("Unknown BroadcastMeetingAudience value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

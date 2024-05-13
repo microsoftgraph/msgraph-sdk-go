@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CertificateStatus int
 
@@ -20,7 +19,7 @@ func ParseCertificateStatus(v string) (any, error) {
         case "provisioned":
             result = PROVISIONED_CERTIFICATESTATUS
         default:
-            return 0, errors.New("Unknown CertificateStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

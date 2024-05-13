@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Specifies what level of safe search (filtering adult content) is required
 type SafeSearchFilterType int
@@ -27,7 +26,7 @@ func ParseSafeSearchFilterType(v string) (any, error) {
         case "moderate":
             result = MODERATE_SAFESEARCHFILTERTYPE
         default:
-            return 0, errors.New("Unknown SafeSearchFilterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

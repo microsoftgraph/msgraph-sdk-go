@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type Fido2RestrictionEnforcementType int
 
@@ -23,7 +22,7 @@ func ParseFido2RestrictionEnforcementType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FIDO2RESTRICTIONENFORCEMENTTYPE
         default:
-            return 0, errors.New("Unknown Fido2RestrictionEnforcementType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

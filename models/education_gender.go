@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type EducationGender int
 
@@ -26,7 +25,7 @@ func ParseEducationGender(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONGENDER
         default:
-            return 0, errors.New("Unknown EducationGender value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

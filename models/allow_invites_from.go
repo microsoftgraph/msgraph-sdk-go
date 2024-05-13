@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AllowInvitesFrom int
 
@@ -29,7 +28,7 @@ func ParseAllowInvitesFrom(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALLOWINVITESFROM
         default:
-            return 0, errors.New("Unknown AllowInvitesFrom value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

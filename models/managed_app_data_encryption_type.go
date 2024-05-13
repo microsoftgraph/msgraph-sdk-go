@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Represents the level to which app data is encrypted for managed apps
 type ManagedAppDataEncryptionType int
@@ -31,7 +30,7 @@ func ParseManagedAppDataEncryptionType(v string) (any, error) {
         case "whenDeviceLocked":
             result = WHENDEVICELOCKED_MANAGEDAPPDATAENCRYPTIONTYPE
         default:
-            return 0, errors.New("Unknown ManagedAppDataEncryptionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

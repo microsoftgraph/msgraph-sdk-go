@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type ActionAfterRetentionPeriod int
 
@@ -29,7 +28,7 @@ func ParseActionAfterRetentionPeriod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACTIONAFTERRETENTIONPERIOD
         default:
-            return 0, errors.New("Unknown ActionAfterRetentionPeriod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

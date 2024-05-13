@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values for applicationGuardBlockFileTransfer
 type ApplicationGuardBlockFileTransferType int
@@ -35,7 +34,7 @@ func ParseApplicationGuardBlockFileTransferType(v string) (any, error) {
         case "blockTextFile":
             result = BLOCKTEXTFILE_APPLICATIONGUARDBLOCKFILETRANSFERTYPE
         default:
-            return 0, errors.New("Unknown ApplicationGuardBlockFileTransferType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

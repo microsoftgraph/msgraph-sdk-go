@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TeamsAsyncOperationType int
 
@@ -38,7 +37,7 @@ func ParseTeamsAsyncOperationType(v string) (any, error) {
         case "createChannel":
             result = CREATECHANNEL_TEAMSASYNCOPERATIONTYPE
         default:
-            return 0, errors.New("Unknown TeamsAsyncOperationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

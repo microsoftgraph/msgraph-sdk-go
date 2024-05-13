@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type OnenotePatchActionType int
 
@@ -29,7 +28,7 @@ func ParseOnenotePatchActionType(v string) (any, error) {
         case "Prepend":
             result = PREPEND_ONENOTEPATCHACTIONTYPE
         default:
-            return 0, errors.New("Unknown OnenotePatchActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

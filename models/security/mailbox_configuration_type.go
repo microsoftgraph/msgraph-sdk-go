@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type MailboxConfigurationType int
 
@@ -32,7 +31,7 @@ func ParseMailboxConfigurationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MAILBOXCONFIGURATIONTYPE
         default:
-            return 0, errors.New("Unknown MailboxConfigurationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

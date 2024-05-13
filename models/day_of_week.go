@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type DayOfWeek int
 
@@ -35,7 +34,7 @@ func ParseDayOfWeek(v string) (any, error) {
         case "saturday":
             result = SATURDAY_DAYOFWEEK
         default:
-            return 0, errors.New("Unknown DayOfWeek value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

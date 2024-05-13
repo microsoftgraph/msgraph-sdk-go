@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values of Cloud Block Level
 type DefenderCloudBlockLevelType int
@@ -31,7 +30,7 @@ func ParseDefenderCloudBlockLevelType(v string) (any, error) {
         case "zeroTolerance":
             result = ZEROTOLERANCE_DEFENDERCLOUDBLOCKLEVELTYPE
         default:
-            return 0, errors.New("Unknown DefenderCloudBlockLevelType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

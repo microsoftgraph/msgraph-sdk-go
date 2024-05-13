@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ThreatAssessmentContentType int
 
@@ -23,7 +22,7 @@ func ParseThreatAssessmentContentType(v string) (any, error) {
         case "file":
             result = FILE_THREATASSESSMENTCONTENTTYPE
         default:
-            return 0, errors.New("Unknown ThreatAssessmentContentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

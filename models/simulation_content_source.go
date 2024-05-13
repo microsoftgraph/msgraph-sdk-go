@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type SimulationContentSource int
 
@@ -26,7 +25,7 @@ func ParseSimulationContentSource(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIMULATIONCONTENTSOURCE
         default:
-            return 0, errors.New("Unknown SimulationContentSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

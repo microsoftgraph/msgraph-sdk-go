@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "errors"
 )
 type AclType int
 
@@ -32,7 +31,7 @@ func ParseAclType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACLTYPE
         default:
-            return 0, errors.New("Unknown AclType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type RegistryValueType int
 
@@ -53,7 +52,7 @@ func ParseRegistryValueType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRYVALUETYPE
         default:
-            return 0, errors.New("Unknown RegistryValueType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

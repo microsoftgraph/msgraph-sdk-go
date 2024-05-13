@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // TV content rating labels in United Kingdom
 type RatingUnitedKingdomTelevisionType int
@@ -27,7 +26,7 @@ func ParseRatingUnitedKingdomTelevisionType(v string) (any, error) {
         case "caution":
             result = CAUTION_RATINGUNITEDKINGDOMTELEVISIONTYPE
         default:
-            return 0, errors.New("Unknown RatingUnitedKingdomTelevisionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

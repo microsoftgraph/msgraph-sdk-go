@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type EvidenceRole int
 
@@ -62,7 +61,7 @@ func ParseEvidenceRole(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EVIDENCEROLE
         default:
-            return 0, errors.New("Unknown EvidenceRole value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

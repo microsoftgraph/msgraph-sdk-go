@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PermissionType int
 
@@ -23,7 +22,7 @@ func ParsePermissionType(v string) (any, error) {
         case "application":
             result = APPLICATION_PERMISSIONTYPE
         default:
-            return 0, errors.New("Unknown PermissionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BucketAggregationSortProperty int
 
@@ -26,7 +25,7 @@ func ParseBucketAggregationSortProperty(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BUCKETAGGREGATIONSORTPROPERTY
         default:
-            return 0, errors.New("Unknown BucketAggregationSortProperty value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

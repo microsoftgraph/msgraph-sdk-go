@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AccessReviewExpirationBehavior int
 
@@ -26,7 +25,7 @@ func ParseAccessReviewExpirationBehavior(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSREVIEWEXPIRATIONBEHAVIOR
         default:
-            return 0, errors.New("Unknown AccessReviewExpirationBehavior value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

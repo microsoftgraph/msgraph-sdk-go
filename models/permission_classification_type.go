@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PermissionClassificationType int
 
@@ -26,7 +25,7 @@ func ParsePermissionClassificationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERMISSIONCLASSIFICATIONTYPE
         default:
-            return 0, errors.New("Unknown PermissionClassificationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BookingStaffRole int
 
@@ -35,7 +34,7 @@ func ParseBookingStaffRole(v string) (any, error) {
         case "teamMember":
             result = TEAMMEMBER_BOOKINGSTAFFROLE
         default:
-            return 0, errors.New("Unknown BookingStaffRole value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

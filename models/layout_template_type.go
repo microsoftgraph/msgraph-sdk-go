@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type LayoutTemplateType int
 
@@ -23,7 +22,7 @@ func ParseLayoutTemplateType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LAYOUTTEMPLATETYPE
         default:
-            return 0, errors.New("Unknown LayoutTemplateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ServiceUpdateSeverity int
 
@@ -26,7 +25,7 @@ func ParseServiceUpdateSeverity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEUPDATESEVERITY
         default:
-            return 0, errors.New("Unknown ServiceUpdateSeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

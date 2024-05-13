@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "errors"
 )
 type ExternalActivityType int
 
@@ -29,7 +28,7 @@ func ParseExternalActivityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXTERNALACTIVITYTYPE
         default:
-            return 0, errors.New("Unknown ExternalActivityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

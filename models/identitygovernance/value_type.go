@@ -1,6 +1,5 @@
 package identitygovernance
 import (
-    "errors"
 )
 type ValueType int
 
@@ -29,7 +28,7 @@ func ParseValueType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VALUETYPE
         default:
-            return 0, errors.New("Unknown ValueType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

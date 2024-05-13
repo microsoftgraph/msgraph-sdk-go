@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type MultiTenantOrganizationMemberState int
 
@@ -26,7 +25,7 @@ func ParseMultiTenantOrganizationMemberState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MULTITENANTORGANIZATIONMEMBERSTATE
         default:
-            return 0, errors.New("Unknown MultiTenantOrganizationMemberState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

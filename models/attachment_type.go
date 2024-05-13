@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AttachmentType int
 
@@ -23,7 +22,7 @@ func ParseAttachmentType(v string) (any, error) {
         case "reference":
             result = REFERENCE_ATTACHMENTTYPE
         default:
-            return 0, errors.New("Unknown AttachmentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TeamworkApplicationIdentityType int
 
@@ -32,7 +31,7 @@ func ParseTeamworkApplicationIdentityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKAPPLICATIONIDENTITYTYPE
         default:
-            return 0, errors.New("Unknown TeamworkApplicationIdentityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

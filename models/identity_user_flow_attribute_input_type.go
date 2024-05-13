@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type IdentityUserFlowAttributeInputType int
 
@@ -32,7 +31,7 @@ func ParseIdentityUserFlowAttributeInputType(v string) (any, error) {
         case "checkboxMultiSelect":
             result = CHECKBOXMULTISELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
         default:
-            return 0, errors.New("Unknown IdentityUserFlowAttributeInputType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

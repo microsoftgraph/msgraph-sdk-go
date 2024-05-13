@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Contains properties for detection operator.
 type Win32LobAppRuleOperator int
@@ -43,7 +42,7 @@ func ParseWin32LobAppRuleOperator(v string) (any, error) {
         case "lessThanOrEqual":
             result = LESSTHANOREQUAL_WIN32LOBAPPRULEOPERATOR
         default:
-            return 0, errors.New("Unknown Win32LobAppRuleOperator value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

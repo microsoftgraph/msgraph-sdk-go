@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type OnenoteSourceService int
 
@@ -26,7 +25,7 @@ func ParseOnenoteSourceService(v string) (any, error) {
         case "OnPremOneDriveForBusiness":
             result = ONPREMONEDRIVEFORBUSINESS_ONENOTESOURCESERVICE
         default:
-            return 0, errors.New("Unknown OnenoteSourceService value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CalendarColor int
 
@@ -47,7 +46,7 @@ func ParseCalendarColor(v string) (any, error) {
         case "maxColor":
             result = MAXCOLOR_CALENDARCOLOR
         default:
-            return 0, errors.New("Unknown CalendarColor value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

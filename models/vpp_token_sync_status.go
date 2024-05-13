@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible sync statuses associated with an Apple Volume Purchase Program token.
 type VppTokenSyncStatus int
@@ -31,7 +30,7 @@ func ParseVppTokenSyncStatus(v string) (any, error) {
         case "failed":
             result = FAILED_VPPTOKENSYNCSTATUS
         default:
-            return 0, errors.New("Unknown VppTokenSyncStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

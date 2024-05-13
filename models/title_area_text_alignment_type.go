@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TitleAreaTextAlignmentType int
 
@@ -23,7 +22,7 @@ func ParseTitleAreaTextAlignmentType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TITLEAREATEXTALIGNMENTTYPE
         default:
-            return 0, errors.New("Unknown TitleAreaTextAlignmentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type HostReputationRuleSeverity int
 
@@ -29,7 +28,7 @@ func ParseHostReputationRuleSeverity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HOSTREPUTATIONRULESEVERITY
         default:
-            return 0, errors.New("Unknown HostReputationRuleSeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

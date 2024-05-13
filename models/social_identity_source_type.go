@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type SocialIdentitySourceType int
 
@@ -20,7 +19,7 @@ func ParseSocialIdentitySourceType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SOCIALIDENTITYSOURCETYPE
         default:
-            return 0, errors.New("Unknown SocialIdentitySourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ObjectMappingMetadata int
 
@@ -35,7 +34,7 @@ func ParseObjectMappingMetadata(v string) (any, error) {
         case "Unsynchronized":
             result = UNSYNCHRONIZED_OBJECTMAPPINGMETADATA
         default:
-            return 0, errors.New("Unknown ObjectMappingMetadata value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

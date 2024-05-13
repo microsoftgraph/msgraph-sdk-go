@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type DriveItemSourceApplication int
 
@@ -47,7 +46,7 @@ func ParseDriveItemSourceApplication(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DRIVEITEMSOURCEAPPLICATION
         default:
-            return 0, errors.New("Unknown DriveItemSourceApplication value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

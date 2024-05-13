@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CloudPcOnPremisesConnectionHealthCheckErrorType int
 
@@ -218,7 +217,7 @@ func ParseCloudPcOnPremisesConnectionHealthCheckErrorType(v string) (any, error)
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
         default:
-            return 0, errors.New("Unknown CloudPcOnPremisesConnectionHealthCheckErrorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

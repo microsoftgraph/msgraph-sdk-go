@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AccessReviewHistoryDecisionFilter int
 
@@ -32,7 +31,7 @@ func ParseAccessReviewHistoryDecisionFilter(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYDECISIONFILTER
         default:
-            return 0, errors.New("Unknown AccessReviewHistoryDecisionFilter value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

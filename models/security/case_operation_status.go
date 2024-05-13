@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type CaseOperationStatus int
 
@@ -35,7 +34,7 @@ func ParseCaseOperationStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CASEOPERATIONSTATUS
         default:
-            return 0, errors.New("Unknown CaseOperationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

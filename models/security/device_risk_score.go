@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type DeviceRiskScore int
 
@@ -32,7 +31,7 @@ func ParseDeviceRiskScore(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICERISKSCORE
         default:
-            return 0, errors.New("Unknown DeviceRiskScore value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CrossTenantAccessPolicyTargetConfigurationAccessType int
 
@@ -23,7 +22,7 @@ func ParseCrossTenantAccessPolicyTargetConfigurationAccessType(v string) (any, e
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CROSSTENANTACCESSPOLICYTARGETCONFIGURATIONACCESSTYPE
         default:
-            return 0, errors.New("Unknown CrossTenantAccessPolicyTargetConfigurationAccessType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

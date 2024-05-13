@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Partner state of this tenant.
 type DeviceManagementPartnerTenantState int
@@ -39,7 +38,7 @@ func ParseDeviceManagementPartnerTenantState(v string) (any, error) {
         case "unresponsive":
             result = UNRESPONSIVE_DEVICEMANAGEMENTPARTNERTENANTSTATE
         default:
-            return 0, errors.New("Unknown DeviceManagementPartnerTenantState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

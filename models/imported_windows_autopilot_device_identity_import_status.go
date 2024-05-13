@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ImportedWindowsAutopilotDeviceIdentityImportStatus int
 
@@ -34,7 +33,7 @@ func ParseImportedWindowsAutopilotDeviceIdentityImportStatus(v string) (any, err
         case "error":
             result = ERROR_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
         default:
-            return 0, errors.New("Unknown ImportedWindowsAutopilotDeviceIdentityImportStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

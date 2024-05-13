@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TargettedUserType int
 
@@ -29,7 +28,7 @@ func ParseTargettedUserType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TARGETTEDUSERTYPE
         default:
-            return 0, errors.New("Unknown TargettedUserType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

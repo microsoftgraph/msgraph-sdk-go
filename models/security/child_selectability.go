@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type ChildSelectability int
 
@@ -23,7 +22,7 @@ func ParseChildSelectability(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHILDSELECTABILITY
         default:
-            return 0, errors.New("Unknown ChildSelectability value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

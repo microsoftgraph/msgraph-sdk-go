@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible types of an Apple Volume Purchase Program token.
 type VppTokenAccountType int
@@ -23,7 +22,7 @@ func ParseVppTokenAccountType(v string) (any, error) {
         case "education":
             result = EDUCATION_VPPTOKENACCOUNTTYPE
         default:
-            return 0, errors.New("Unknown VppTokenAccountType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type DelegatedAdminAccessAssignmentStatus int
 
@@ -32,7 +31,7 @@ func ParseDelegatedAdminAccessAssignmentStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINACCESSASSIGNMENTSTATUS
         default:
-            return 0, errors.New("Unknown DelegatedAdminAccessAssignmentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

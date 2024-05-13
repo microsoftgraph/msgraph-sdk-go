@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PrivilegedAccessGroupMemberType int
 
@@ -23,7 +22,7 @@ func ParsePrivilegedAccessGroupMemberType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRIVILEGEDACCESSGROUPMEMBERTYPE
         default:
-            return 0, errors.New("Unknown PrivilegedAccessGroupMemberType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

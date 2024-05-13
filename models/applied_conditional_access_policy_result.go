@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AppliedConditionalAccessPolicyResult int
 
@@ -44,7 +43,7 @@ func ParseAppliedConditionalAccessPolicyResult(v string) (any, error) {
         case "reportOnlyInterrupted":
             result = REPORTONLYINTERRUPTED_APPLIEDCONDITIONALACCESSPOLICYRESULT
         default:
-            return 0, errors.New("Unknown AppliedConditionalAccessPolicyResult value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

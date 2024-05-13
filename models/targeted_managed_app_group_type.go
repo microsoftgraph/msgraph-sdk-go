@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 type TargetedManagedAppGroupType int
@@ -31,7 +30,7 @@ func ParseTargetedManagedAppGroupType(v string) (any, error) {
         case "allApps":
             result = ALLAPPS_TARGETEDMANAGEDAPPGROUPTYPE
         default:
-            return 0, errors.New("Unknown TargetedManagedAppGroupType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

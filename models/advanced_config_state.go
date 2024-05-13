@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AdvancedConfigState int
 
@@ -26,7 +25,7 @@ func ParseAdvancedConfigState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ADVANCEDCONFIGSTATE
         default:
-            return 0, errors.New("Unknown AdvancedConfigState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

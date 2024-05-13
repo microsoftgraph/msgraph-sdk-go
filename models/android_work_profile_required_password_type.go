@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Android Work Profile required password type.
 type AndroidWorkProfileRequiredPasswordType int
@@ -47,7 +46,7 @@ func ParseAndroidWorkProfileRequiredPasswordType(v string) (any, error) {
         case "alphanumericWithSymbols":
             result = ALPHANUMERICWITHSYMBOLS_ANDROIDWORKPROFILEREQUIREDPASSWORDTYPE
         default:
-            return 0, errors.New("Unknown AndroidWorkProfileRequiredPasswordType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

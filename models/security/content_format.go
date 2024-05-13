@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type ContentFormat int
 
@@ -26,7 +25,7 @@ func ParseContentFormat(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONTENTFORMAT
         default:
-            return 0, errors.New("Unknown ContentFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

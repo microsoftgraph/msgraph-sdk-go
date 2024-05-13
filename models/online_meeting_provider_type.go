@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type OnlineMeetingProviderType int
 
@@ -26,7 +25,7 @@ func ParseOnlineMeetingProviderType(v string) (any, error) {
         case "teamsForBusiness":
             result = TEAMSFORBUSINESS_ONLINEMEETINGPROVIDERTYPE
         default:
-            return 0, errors.New("Unknown OnlineMeetingProviderType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

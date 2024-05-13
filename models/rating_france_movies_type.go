@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Movies rating labels in France
 type RatingFranceMoviesType int
@@ -39,7 +38,7 @@ func ParseRatingFranceMoviesType(v string) (any, error) {
         case "agesAbove18":
             result = AGESABOVE18_RATINGFRANCEMOVIESTYPE
         default:
-            return 0, errors.New("Unknown RatingFranceMoviesType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

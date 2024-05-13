@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PageLayoutType int
 
@@ -26,7 +25,7 @@ func ParsePageLayoutType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PAGELAYOUTTYPE
         default:
-            return 0, errors.New("Unknown PageLayoutType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Supported platform types for policies.
 type PolicyPlatformType int
@@ -47,7 +46,7 @@ func ParsePolicyPlatformType(v string) (any, error) {
         case "all":
             result = ALL_POLICYPLATFORMTYPE
         default:
-            return 0, errors.New("Unknown PolicyPlatformType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

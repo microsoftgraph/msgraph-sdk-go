@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type FilterMode int
 
@@ -20,7 +19,7 @@ func ParseFilterMode(v string) (any, error) {
         case "exclude":
             result = EXCLUDE_FILTERMODE
         default:
-            return 0, errors.New("Unknown FilterMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

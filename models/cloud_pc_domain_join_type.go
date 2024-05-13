@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CloudPcDomainJoinType int
 
@@ -23,7 +22,7 @@ func ParseCloudPcDomainJoinType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDOMAINJOINTYPE
         default:
-            return 0, errors.New("Unknown CloudPcDomainJoinType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

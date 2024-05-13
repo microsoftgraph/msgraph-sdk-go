@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ConnectionDirection int
 
@@ -26,7 +25,7 @@ func ParseConnectionDirection(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONDIRECTION
         default:
-            return 0, errors.New("Unknown ConnectionDirection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

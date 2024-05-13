@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Device Exchange Access State.
 type DeviceManagementExchangeAccessState int
@@ -35,7 +34,7 @@ func ParseDeviceManagementExchangeAccessState(v string) (any, error) {
         case "quarantined":
             result = QUARANTINED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
         default:
-            return 0, errors.New("Unknown DeviceManagementExchangeAccessState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values for firewallPreSharedKeyEncodingMethod
 type FirewallPreSharedKeyEncodingMethodType int
@@ -27,7 +26,7 @@ func ParseFirewallPreSharedKeyEncodingMethodType(v string) (any, error) {
         case "utF8":
             result = UTF8_FIREWALLPRESHAREDKEYENCODINGMETHODTYPE
         default:
-            return 0, errors.New("Unknown FirewallPreSharedKeyEncodingMethodType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

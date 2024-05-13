@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type B2bIdentityProvidersType int
 
@@ -35,7 +34,7 @@ func ParseB2bIdentityProvidersType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_B2BIDENTITYPROVIDERSTYPE
         default:
-            return 0, errors.New("Unknown B2bIdentityProvidersType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

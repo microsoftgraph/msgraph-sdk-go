@@ -1,6 +1,5 @@
 package termstore
 import (
-    "errors"
 )
 type TermGroupScope int
 
@@ -26,7 +25,7 @@ func ParseTermGroupScope(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TERMGROUPSCOPE
         default:
-            return 0, errors.New("Unknown TermGroupScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

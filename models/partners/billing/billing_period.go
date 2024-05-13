@@ -1,6 +1,5 @@
 package billing
 import (
-    "errors"
 )
 type BillingPeriod int
 
@@ -23,7 +22,7 @@ func ParseBillingPeriod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BILLINGPERIOD
         default:
-            return 0, errors.New("Unknown BillingPeriod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

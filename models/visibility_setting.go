@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Generic visibility state.
 type VisibilitySetting int
@@ -27,7 +26,7 @@ func ParseVisibilitySetting(v string) (any, error) {
         case "show":
             result = SHOW_VISIBILITYSETTING
         default:
-            return 0, errors.New("Unknown VisibilitySetting value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

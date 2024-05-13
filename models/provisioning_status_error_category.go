@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ProvisioningStatusErrorCategory int
 
@@ -26,7 +25,7 @@ func ParseProvisioningStatusErrorCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROVISIONINGSTATUSERRORCATEGORY
         default:
-            return 0, errors.New("Unknown ProvisioningStatusErrorCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

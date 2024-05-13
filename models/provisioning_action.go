@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ProvisioningAction int
 
@@ -35,7 +34,7 @@ func ParseProvisioningAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROVISIONINGACTION
         default:
-            return 0, errors.New("Unknown ProvisioningAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

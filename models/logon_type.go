@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type LogonType int
 
@@ -35,7 +34,7 @@ func ParseLogonType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LOGONTYPE
         default:
-            return 0, errors.New("Unknown LogonType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Indicates the package type of an MSI Win32LobApp.
 type Win32LobAppMsiPackageType int
@@ -27,7 +26,7 @@ func ParseWin32LobAppMsiPackageType(v string) (any, error) {
         case "dualPurpose":
             result = DUALPURPOSE_WIN32LOBAPPMSIPACKAGETYPE
         default:
-            return 0, errors.New("Unknown Win32LobAppMsiPackageType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

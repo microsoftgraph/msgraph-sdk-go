@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type HostPortProtocol int
 
@@ -23,7 +22,7 @@ func ParseHostPortProtocol(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HOSTPORTPROTOCOL
         default:
-            return 0, errors.New("Unknown HostPortProtocol value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

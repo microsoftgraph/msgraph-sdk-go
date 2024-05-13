@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type ServicePrincipalType int
 
@@ -29,7 +28,7 @@ func ParseServicePrincipalType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEPRINCIPALTYPE
         default:
-            return 0, errors.New("Unknown ServicePrincipalType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

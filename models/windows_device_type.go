@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -51,7 +50,7 @@ func ParseWindowsDeviceType(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_WINDOWSDEVICETYPE
             default:
-                return 0, errors.New("Unknown WindowsDeviceType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

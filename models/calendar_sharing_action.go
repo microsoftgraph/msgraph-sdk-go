@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CalendarSharingAction int
 
@@ -26,7 +25,7 @@ func ParseCalendarSharingAction(v string) (any, error) {
         case "addThisCalendar":
             result = ADDTHISCALENDAR_CALENDARSHARINGACTION
         default:
-            return 0, errors.New("Unknown CalendarSharingAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -41,7 +40,7 @@ func ParseRecipientScopeType(v string) (any, error) {
             case "externalNonPartner":
                 result |= EXTERNALNONPARTNER_RECIPIENTSCOPETYPE
             default:
-                return 0, errors.New("Unknown RecipientScopeType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

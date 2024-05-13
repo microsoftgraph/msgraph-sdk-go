@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AttributeType int
 
@@ -32,7 +31,7 @@ func ParseAttributeType(v string) (any, error) {
         case "DateTime":
             result = DATETIME_ATTRIBUTETYPE
         default:
-            return 0, errors.New("Unknown AttributeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

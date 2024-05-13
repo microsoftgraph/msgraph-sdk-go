@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type EntityType int
 
@@ -53,7 +52,7 @@ func ParseEntityType(v string) (any, error) {
         case "bookmark":
             result = BOOKMARK_ENTITYTYPE
         default:
-            return 0, errors.New("Unknown EntityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

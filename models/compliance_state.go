@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Compliance state.
 type ComplianceState int
@@ -43,7 +42,7 @@ func ParseComplianceState(v string) (any, error) {
         case "configManager":
             result = CONFIGMANAGER_COMPLIANCESTATE
         default:
-            return 0, errors.New("Unknown ComplianceState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

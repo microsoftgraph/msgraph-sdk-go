@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AppKeyCredentialRestrictionType int
 
@@ -20,7 +19,7 @@ func ParseAppKeyCredentialRestrictionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPKEYCREDENTIALRESTRICTIONTYPE
         default:
-            return 0, errors.New("Unknown AppKeyCredentialRestrictionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

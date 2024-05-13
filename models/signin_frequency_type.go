@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type SigninFrequencyType int
 
@@ -20,7 +19,7 @@ func ParseSigninFrequencyType(v string) (any, error) {
         case "hours":
             result = HOURS_SIGNINFREQUENCYTYPE
         default:
-            return 0, errors.New("Unknown SigninFrequencyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

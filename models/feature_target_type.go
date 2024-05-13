@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type FeatureTargetType int
 
@@ -26,7 +25,7 @@ func ParseFeatureTargetType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FEATURETARGETTYPE
         default:
-            return 0, errors.New("Unknown FeatureTargetType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

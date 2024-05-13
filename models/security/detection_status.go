@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type DetectionStatus int
 
@@ -26,7 +25,7 @@ func ParseDetectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DETECTIONSTATUS
         default:
-            return 0, errors.New("Unknown DetectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

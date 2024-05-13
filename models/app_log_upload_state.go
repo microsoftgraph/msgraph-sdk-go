@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // AppLogUploadStatus
 type AppLogUploadState int
@@ -31,7 +30,7 @@ func ParseAppLogUploadState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPLOGUPLOADSTATE
         default:
-            return 0, errors.New("Unknown AppLogUploadState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

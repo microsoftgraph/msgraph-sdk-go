@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Represents the level to which the device's clipboard may be shared between apps
 type ManagedAppClipboardSharingLevel int
@@ -31,7 +30,7 @@ func ParseManagedAppClipboardSharingLevel(v string) (any, error) {
         case "blocked":
             result = BLOCKED_MANAGEDAPPCLIPBOARDSHARINGLEVEL
         default:
-            return 0, errors.New("Unknown ManagedAppClipboardSharingLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

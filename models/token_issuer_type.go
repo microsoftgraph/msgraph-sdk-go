@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TokenIssuerType int
 
@@ -32,7 +31,7 @@ func ParseTokenIssuerType(v string) (any, error) {
         case "NPSExtension":
             result = NPSEXTENSION_TOKENISSUERTYPE
         default:
-            return 0, errors.New("Unknown TokenIssuerType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type VolumeType int
 
@@ -26,7 +25,7 @@ func ParseVolumeType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VOLUMETYPE
         default:
-            return 0, errors.New("Unknown VolumeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

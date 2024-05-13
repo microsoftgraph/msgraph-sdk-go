@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BinaryOperator int
 
@@ -20,7 +19,7 @@ func ParseBinaryOperator(v string) (any, error) {
         case "and":
             result = AND_BINARYOPERATOR
         default:
-            return 0, errors.New("Unknown BinaryOperator value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

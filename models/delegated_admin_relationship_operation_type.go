@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type DelegatedAdminRelationshipOperationType int
 
@@ -23,7 +22,7 @@ func ParseDelegatedAdminRelationshipOperationType(v string) (any, error) {
         case "delegatedAdminRelationshipUpdate":
             result = DELEGATEDADMINRELATIONSHIPUPDATE_DELEGATEDADMINRELATIONSHIPOPERATIONTYPE
         default:
-            return 0, errors.New("Unknown DelegatedAdminRelationshipOperationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

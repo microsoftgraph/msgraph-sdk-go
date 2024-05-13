@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ChatType int
 
@@ -26,7 +25,7 @@ func ParseChatType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHATTYPE
         default:
-            return 0, errors.New("Unknown ChatType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

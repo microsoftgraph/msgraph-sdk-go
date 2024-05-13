@@ -1,6 +1,5 @@
 package identitygovernance
 import (
-    "errors"
 )
 type CustomTaskExtensionOperationStatus int
 
@@ -23,7 +22,7 @@ func ParseCustomTaskExtensionOperationStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CUSTOMTASKEXTENSIONOPERATIONSTATUS
         default:
-            return 0, errors.New("Unknown CustomTaskExtensionOperationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

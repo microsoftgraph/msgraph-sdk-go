@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type FollowupFlagStatus int
 
@@ -23,7 +22,7 @@ func ParseFollowupFlagStatus(v string) (any, error) {
         case "flagged":
             result = FLAGGED_FOLLOWUPFLAGSTATUS
         default:
-            return 0, errors.New("Unknown FollowupFlagStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

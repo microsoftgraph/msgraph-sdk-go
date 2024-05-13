@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type RiskDetectionTimingType int
 
@@ -29,7 +28,7 @@ func ParseRiskDetectionTimingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKDETECTIONTIMINGTYPE
         default:
-            return 0, errors.New("Unknown RiskDetectionTimingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

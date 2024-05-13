@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type DelegatedAdminRelationshipRequestStatus int
 
@@ -29,7 +28,7 @@ func ParseDelegatedAdminRelationshipRequestStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
         default:
-            return 0, errors.New("Unknown DelegatedAdminRelationshipRequestStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

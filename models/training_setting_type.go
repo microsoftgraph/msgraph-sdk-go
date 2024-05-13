@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TrainingSettingType int
 
@@ -29,7 +28,7 @@ func ParseTrainingSettingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRAININGSETTINGTYPE
         default:
-            return 0, errors.New("Unknown TrainingSettingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

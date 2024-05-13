@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ResponseType int
 
@@ -32,7 +31,7 @@ func ParseResponseType(v string) (any, error) {
         case "notResponded":
             result = NOTRESPONDED_RESPONSETYPE
         default:
-            return 0, errors.New("Unknown ResponseType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

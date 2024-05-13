@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type SynchronizationMetadata int
 
@@ -41,7 +40,7 @@ func ParseSynchronizationMetadata(v string) (any, error) {
         case "ConfigurationFields":
             result = CONFIGURATIONFIELDS_SYNCHRONIZATIONMETADATA
         default:
-            return 0, errors.New("Unknown SynchronizationMetadata value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

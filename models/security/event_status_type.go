@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type EventStatusType int
 
@@ -29,7 +28,7 @@ func ParseEventStatusType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EVENTSTATUSTYPE
         default:
-            return 0, errors.New("Unknown EventStatusType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

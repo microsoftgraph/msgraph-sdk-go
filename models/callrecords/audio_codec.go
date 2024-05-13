@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "errors"
 )
 type AudioCodec int
 
@@ -83,7 +82,7 @@ func ParseAudioCodec(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUDIOCODEC
         default:
-            return 0, errors.New("Unknown AudioCodec value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

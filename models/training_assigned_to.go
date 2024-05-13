@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TrainingAssignedTo int
 
@@ -38,7 +37,7 @@ func ParseTrainingAssignedTo(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRAININGASSIGNEDTO
         default:
-            return 0, errors.New("Unknown TrainingAssignedTo value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

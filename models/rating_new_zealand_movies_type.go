@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Movies rating labels in New Zealand
 type RatingNewZealandMoviesType int
@@ -59,7 +58,7 @@ func ParseRatingNewZealandMoviesType(v string) (any, error) {
         case "agesAbove16Restricted":
             result = AGESABOVE16RESTRICTED_RATINGNEWZEALANDMOVIESTYPE
         default:
-            return 0, errors.New("Unknown RatingNewZealandMoviesType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

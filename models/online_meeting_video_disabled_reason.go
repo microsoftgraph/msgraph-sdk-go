@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -32,7 +31,7 @@ func ParseOnlineMeetingVideoDisabledReason(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_ONLINEMEETINGVIDEODISABLEDREASON
             default:
-                return 0, errors.New("Unknown OnlineMeetingVideoDisabledReason value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

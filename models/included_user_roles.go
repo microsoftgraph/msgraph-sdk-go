@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type IncludedUserRoles int
 
@@ -29,7 +28,7 @@ func ParseIncludedUserRoles(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INCLUDEDUSERROLES
         default:
-            return 0, errors.New("Unknown IncludedUserRoles value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

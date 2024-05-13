@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TeamSpecialization int
 
@@ -38,7 +37,7 @@ func ParseTeamSpecialization(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSPECIALIZATION
         default:
-            return 0, errors.New("Unknown TeamSpecialization value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

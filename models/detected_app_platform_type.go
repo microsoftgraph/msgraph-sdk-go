@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).
 type DetectedAppPlatformType int
@@ -63,7 +62,7 @@ func ParseDetectedAppPlatformType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DETECTEDAPPPLATFORMTYPE
         default:
-            return 0, errors.New("Unknown DetectedAppPlatformType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

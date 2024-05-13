@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type OnlineMeetingPresenters int
 
@@ -29,7 +28,7 @@ func ParseOnlineMeetingPresenters(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ONLINEMEETINGPRESENTERS
         default:
-            return 0, errors.New("Unknown OnlineMeetingPresenters value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

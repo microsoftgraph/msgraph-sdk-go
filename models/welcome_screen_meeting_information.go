@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values for welcome screen meeting information.
 type WelcomeScreenMeetingInformation int
@@ -27,7 +26,7 @@ func ParseWelcomeScreenMeetingInformation(v string) (any, error) {
         case "showOrganizerAndTimeAndSubject":
             result = SHOWORGANIZERANDTIMEANDSUBJECT_WELCOMESCREENMEETINGINFORMATION
         default:
-            return 0, errors.New("Unknown WelcomeScreenMeetingInformation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

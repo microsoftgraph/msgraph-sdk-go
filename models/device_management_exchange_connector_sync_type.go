@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // The type of Exchange Connector sync requested.
 type DeviceManagementExchangeConnectorSyncType int
@@ -23,7 +22,7 @@ func ParseDeviceManagementExchangeConnectorSyncType(v string) (any, error) {
         case "deltaSync":
             result = DELTASYNC_DEVICEMANAGEMENTEXCHANGECONNECTORSYNCTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementExchangeConnectorSyncType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

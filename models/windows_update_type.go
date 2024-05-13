@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Which branch devices will receive their updates from
 type WindowsUpdateType int
@@ -39,7 +38,7 @@ func ParseWindowsUpdateType(v string) (any, error) {
         case "windowsInsiderBuildRelease":
             result = WINDOWSINSIDERBUILDRELEASE_WINDOWSUPDATETYPE
         default:
-            return 0, errors.New("Unknown WindowsUpdateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CloudPcDeviceImageErrorCode int
 
@@ -44,7 +43,7 @@ func ParseCloudPcDeviceImageErrorCode(v string) (any, error) {
         case "sourceImageSizeExceedsLimitation":
             result = SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGEERRORCODE
         default:
-            return 0, errors.New("Unknown CloudPcDeviceImageErrorCode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

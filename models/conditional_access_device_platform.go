@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ConditionalAccessDevicePlatform int
 
@@ -38,7 +37,7 @@ func ParseConditionalAccessDevicePlatform(v string) (any, error) {
         case "linux":
             result = LINUX_CONDITIONALACCESSDEVICEPLATFORM
         default:
-            return 0, errors.New("Unknown ConditionalAccessDevicePlatform value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

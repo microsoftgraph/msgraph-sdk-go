@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // State Management Setting.
 type StateManagementSetting int
@@ -27,7 +26,7 @@ func ParseStateManagementSetting(v string) (any, error) {
         case "allowed":
             result = ALLOWED_STATEMANAGEMENTSETTING
         default:
-            return 0, errors.New("Unknown StateManagementSetting value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

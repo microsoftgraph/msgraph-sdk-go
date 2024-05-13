@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Allow the device to send diagnostic and usage telemetry data, such as Watson.
 type DiagnosticDataSubmissionMode int
@@ -35,7 +34,7 @@ func ParseDiagnosticDataSubmissionMode(v string) (any, error) {
         case "full":
             result = FULL_DIAGNOSTICDATASUBMISSIONMODE
         default:
-            return 0, errors.New("Unknown DiagnosticDataSubmissionMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Windows 10 Edition type.
 type Windows10EditionType int
@@ -63,7 +62,7 @@ func ParseWindows10EditionType(v string) (any, error) {
         case "windows10ProfessionalWorkstationN":
             result = WINDOWS10PROFESSIONALWORKSTATIONN_WINDOWS10EDITIONTYPE
         default:
-            return 0, errors.New("Unknown Windows10EditionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

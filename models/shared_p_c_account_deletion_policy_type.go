@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values for when accounts are deleted on a shared PC.
 type SharedPCAccountDeletionPolicyType int
@@ -27,7 +26,7 @@ func ParseSharedPCAccountDeletionPolicyType(v string) (any, error) {
         case "diskSpaceThresholdOrInactiveThreshold":
             result = DISKSPACETHRESHOLDORINACTIVETHRESHOLD_SHAREDPCACCOUNTDELETIONPOLICYTYPE
         default:
-            return 0, errors.New("Unknown SharedPCAccountDeletionPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

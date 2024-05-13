@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type EndUserNotificationSettingType int
 
@@ -29,7 +28,7 @@ func ParseEndUserNotificationSettingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ENDUSERNOTIFICATIONSETTINGTYPE
         default:
-            return 0, errors.New("Unknown EndUserNotificationSettingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

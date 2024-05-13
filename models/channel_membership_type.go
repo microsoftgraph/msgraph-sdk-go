@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ChannelMembershipType int
 
@@ -26,7 +25,7 @@ func ParseChannelMembershipType(v string) (any, error) {
         case "shared":
             result = SHARED_CHANNELMEMBERSHIPTYPE
         default:
-            return 0, errors.New("Unknown ChannelMembershipType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

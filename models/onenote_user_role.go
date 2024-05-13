@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type OnenoteUserRole int
 
@@ -26,7 +25,7 @@ func ParseOnenoteUserRole(v string) (any, error) {
         case "Reader":
             result = READER_ONENOTEUSERROLE
         default:
-            return 0, errors.New("Unknown OnenoteUserRole value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

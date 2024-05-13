@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type SendDtmfCompletionReason int
 
@@ -26,7 +25,7 @@ func ParseSendDtmfCompletionReason(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SENDDTMFCOMPLETIONREASON
         default:
-            return 0, errors.New("Unknown SendDtmfCompletionReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

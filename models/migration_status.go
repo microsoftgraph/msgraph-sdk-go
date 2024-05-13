@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type MigrationStatus int
 
@@ -26,7 +25,7 @@ func ParseMigrationStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MIGRATIONSTATUS
         default:
-            return 0, errors.New("Unknown MigrationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

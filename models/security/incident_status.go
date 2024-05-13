@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type IncidentStatus int
 
@@ -32,7 +31,7 @@ func ParseIncidentStatus(v string) (any, error) {
         case "awaitingAction":
             result = AWAITINGACTION_INCIDENTSTATUS
         default:
-            return 0, errors.New("Unknown IncidentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

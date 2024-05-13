@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CloudPcGalleryImageStatus int
 
@@ -26,7 +25,7 @@ func ParseCloudPcGalleryImageStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCGALLERYIMAGESTATUS
         default:
-            return 0, errors.New("Unknown CloudPcGalleryImageStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

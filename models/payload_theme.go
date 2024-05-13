@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PayloadTheme int
 
@@ -110,7 +109,7 @@ func ParsePayloadTheme(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PAYLOADTHEME
         default:
-            return 0, errors.New("Unknown PayloadTheme value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

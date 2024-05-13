@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type AlertSeverity int
 
@@ -32,7 +31,7 @@ func ParseAlertSeverity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTSEVERITY
         default:
-            return 0, errors.New("Unknown AlertSeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

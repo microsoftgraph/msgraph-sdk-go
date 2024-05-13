@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Indicates the type of restart action.
 type Win32LobAppRestartBehavior int
@@ -31,7 +30,7 @@ func ParseWin32LobAppRestartBehavior(v string) (any, error) {
         case "force":
             result = FORCE_WIN32LOBAPPRESTARTBEHAVIOR
         default:
-            return 0, errors.New("Unknown Win32LobAppRestartBehavior value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CourseStatus int
 
@@ -26,7 +25,7 @@ func ParseCourseStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_COURSESTATUS
         default:
-            return 0, errors.New("Unknown CourseStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

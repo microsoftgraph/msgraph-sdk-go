@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BrowserSiteStatus int
 
@@ -34,7 +33,7 @@ func ParseBrowserSiteStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROWSERSITESTATUS
         default:
-            return 0, errors.New("Unknown BrowserSiteStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

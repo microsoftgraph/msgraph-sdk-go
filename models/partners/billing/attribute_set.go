@@ -1,6 +1,5 @@
 package billing
 import (
-    "errors"
 )
 type AttributeSet int
 
@@ -23,7 +22,7 @@ func ParseAttributeSet(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ATTRIBUTESET
         default:
-            return 0, errors.New("Unknown AttributeSet value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

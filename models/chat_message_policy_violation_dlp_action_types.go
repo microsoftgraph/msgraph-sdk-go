@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseChatMessagePolicyViolationDlpActionTypes(v string) (any, error) {
             case "blockAccessExternal":
                 result |= BLOCKACCESSEXTERNAL_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
             default:
-                return 0, errors.New("Unknown ChatMessagePolicyViolationDlpActionTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

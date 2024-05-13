@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Character set which is to be used for a user's app PIN
 type ManagedAppPinCharacterSet int
@@ -23,7 +22,7 @@ func ParseManagedAppPinCharacterSet(v string) (any, error) {
         case "alphanumericAndSymbol":
             result = ALPHANUMERICANDSYMBOL_MANAGEDAPPPINCHARACTERSET
         default:
-            return 0, errors.New("Unknown ManagedAppPinCharacterSet value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

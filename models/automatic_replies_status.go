@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AutomaticRepliesStatus int
 
@@ -23,7 +22,7 @@ func ParseAutomaticRepliesStatus(v string) (any, error) {
         case "scheduled":
             result = SCHEDULED_AUTOMATICREPLIESSTATUS
         default:
-            return 0, errors.New("Unknown AutomaticRepliesStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

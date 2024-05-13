@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type MicrosoftStoreForBusinessLicenseType int
 
@@ -20,7 +19,7 @@ func ParseMicrosoftStoreForBusinessLicenseType(v string) (any, error) {
         case "online":
             result = ONLINE_MICROSOFTSTOREFORBUSINESSLICENSETYPE
         default:
-            return 0, errors.New("Unknown MicrosoftStoreForBusinessLicenseType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

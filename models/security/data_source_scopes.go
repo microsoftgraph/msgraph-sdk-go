@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -44,7 +43,7 @@ func ParseDataSourceScopes(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DATASOURCESCOPES
             default:
-                return 0, errors.New("Unknown DataSourceScopes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

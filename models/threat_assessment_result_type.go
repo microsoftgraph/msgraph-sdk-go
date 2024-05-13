@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ThreatAssessmentResultType int
 
@@ -23,7 +22,7 @@ func ParseThreatAssessmentResultType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_THREATASSESSMENTRESULTTYPE
         default:
-            return 0, errors.New("Unknown ThreatAssessmentResultType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

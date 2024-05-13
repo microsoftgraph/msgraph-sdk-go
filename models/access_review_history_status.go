@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AccessReviewHistoryStatus int
 
@@ -29,7 +28,7 @@ func ParseAccessReviewHistoryStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYSTATUS
         default:
-            return 0, errors.New("Unknown AccessReviewHistoryStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package search
 import (
-    "errors"
 )
 type AnswerState int
 
@@ -26,7 +25,7 @@ func ParseAnswerState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANSWERSTATE
         default:
-            return 0, errors.New("Unknown AnswerState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

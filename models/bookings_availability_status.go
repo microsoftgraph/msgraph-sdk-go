@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BookingsAvailabilityStatus int
 
@@ -29,7 +28,7 @@ func ParseBookingsAvailabilityStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BOOKINGSAVAILABILITYSTATUS
         default:
-            return 0, errors.New("Unknown BookingsAvailabilityStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TimeOffReasonIconType int
 
@@ -80,7 +79,7 @@ func ParseTimeOffReasonIconType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TIMEOFFREASONICONTYPE
         default:
-            return 0, errors.New("Unknown TimeOffReasonIconType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

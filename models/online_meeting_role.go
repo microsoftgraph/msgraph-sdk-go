@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type OnlineMeetingRole int
 
@@ -29,7 +28,7 @@ func ParseOnlineMeetingRole(v string) (any, error) {
         case "coorganizer":
             result = COORGANIZER_ONLINEMEETINGROLE
         default:
-            return 0, errors.New("Unknown OnlineMeetingRole value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

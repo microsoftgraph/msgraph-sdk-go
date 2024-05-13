@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AuthenticationMethodFeature int
 
@@ -32,7 +31,7 @@ func ParseAuthenticationMethodFeature(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODFEATURE
         default:
-            return 0, errors.New("Unknown AuthenticationMethodFeature value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

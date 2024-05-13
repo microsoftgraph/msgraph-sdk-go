@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type UserExperienceAnalyticsHealthState int
 
@@ -34,7 +33,7 @@ func ParseUserExperienceAnalyticsHealthState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSHEALTHSTATE
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsHealthState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

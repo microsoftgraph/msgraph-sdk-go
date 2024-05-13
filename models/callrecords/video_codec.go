@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "errors"
 )
 type VideoCodec int
 
@@ -50,7 +49,7 @@ func ParseVideoCodec(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VIDEOCODEC
         default:
-            return 0, errors.New("Unknown VideoCodec value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

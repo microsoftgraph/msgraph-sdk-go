@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AccessPackageExternalUserLifecycleAction int
 
@@ -26,7 +25,7 @@ func ParseAccessPackageExternalUserLifecycleAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
         default:
-            return 0, errors.New("Unknown AccessPackageExternalUserLifecycleAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

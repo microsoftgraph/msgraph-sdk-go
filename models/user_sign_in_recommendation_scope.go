@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type UserSignInRecommendationScope int
 
@@ -23,7 +22,7 @@ func ParseUserSignInRecommendationScope(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERSIGNINRECOMMENDATIONSCOPE
         default:
-            return 0, errors.New("Unknown UserSignInRecommendationScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

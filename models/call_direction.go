@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CallDirection int
 
@@ -20,7 +19,7 @@ func ParseCallDirection(v string) (any, error) {
         case "outgoing":
             result = OUTGOING_CALLDIRECTION
         default:
-            return 0, errors.New("Unknown CallDirection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

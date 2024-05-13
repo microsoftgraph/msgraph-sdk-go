@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type EventPropagationStatus int
 
@@ -29,7 +28,7 @@ func ParseEventPropagationStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EVENTPROPAGATIONSTATUS
         default:
-            return 0, errors.New("Unknown EventPropagationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

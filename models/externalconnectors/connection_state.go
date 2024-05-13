@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "errors"
 )
 type ConnectionState int
 
@@ -29,7 +28,7 @@ func ParseConnectionState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONSTATE
         default:
-            return 0, errors.New("Unknown ConnectionState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

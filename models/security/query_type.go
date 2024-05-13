@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type QueryType int
 
@@ -23,7 +22,7 @@ func ParseQueryType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_QUERYTYPE
         default:
-            return 0, errors.New("Unknown QueryType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

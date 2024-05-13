@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ActivityType int
 
@@ -26,7 +25,7 @@ func ParseActivityType(v string) (any, error) {
         case "servicePrincipal":
             result = SERVICEPRINCIPAL_ACTIVITYTYPE
         default:
-            return 0, errors.New("Unknown ActivityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type ExportFileStructure int
 
@@ -26,7 +25,7 @@ func ParseExportFileStructure(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXPORTFILESTRUCTURE
         default:
-            return 0, errors.New("Unknown ExportFileStructure value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

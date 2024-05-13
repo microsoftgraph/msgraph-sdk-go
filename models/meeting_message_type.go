@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type MeetingMessageType int
 
@@ -32,7 +31,7 @@ func ParseMeetingMessageType(v string) (any, error) {
         case "meetingDeclined":
             result = MEETINGDECLINED_MEETINGMESSAGETYPE
         default:
-            return 0, errors.New("Unknown MeetingMessageType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

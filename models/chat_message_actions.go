@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseChatMessageActions(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_CHATMESSAGEACTIONS
             default:
-                return 0, errors.New("Unknown ChatMessageActions value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

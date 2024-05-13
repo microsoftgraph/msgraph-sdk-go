@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AlertStatus int
 
@@ -32,7 +31,7 @@ func ParseAlertStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTSTATUS
         default:
-            return 0, errors.New("Unknown AlertStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

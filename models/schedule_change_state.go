@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ScheduleChangeState int
 
@@ -26,7 +25,7 @@ func ParseScheduleChangeState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULECHANGESTATE
         default:
-            return 0, errors.New("Unknown ScheduleChangeState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

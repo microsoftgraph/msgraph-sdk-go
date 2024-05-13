@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseTemplateScenarios(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_TEMPLATESCENARIOS
             default:
-                return 0, errors.New("Unknown TemplateScenarios value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

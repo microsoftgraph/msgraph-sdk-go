@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values for the install intent chosen by the admin.
 type InstallIntent int
@@ -31,7 +30,7 @@ func ParseInstallIntent(v string) (any, error) {
         case "availableWithoutEnrollment":
             result = AVAILABLEWITHOUTENROLLMENT_INSTALLINTENT
         default:
-            return 0, errors.New("Unknown InstallIntent value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

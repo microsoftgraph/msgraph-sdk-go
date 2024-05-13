@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -131,7 +130,7 @@ func ParseWindowsDefenderProductStatus(v string) (any, error) {
             case "windowsSModeSignaturesInUseOnNonWin10SInstall":
                 result |= WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL_WINDOWSDEFENDERPRODUCTSTATUS
             default:
-                return 0, errors.New("Unknown WindowsDefenderProductStatus value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

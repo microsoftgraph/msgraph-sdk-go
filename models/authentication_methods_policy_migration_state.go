@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AuthenticationMethodsPolicyMigrationState int
 
@@ -26,7 +25,7 @@ func ParseAuthenticationMethodsPolicyMigrationState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODSPOLICYMIGRATIONSTATE
         default:
-            return 0, errors.New("Unknown AuthenticationMethodsPolicyMigrationState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

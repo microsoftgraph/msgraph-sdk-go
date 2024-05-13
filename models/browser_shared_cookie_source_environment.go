@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BrowserSharedCookieSourceEnvironment int
 
@@ -30,7 +29,7 @@ func ParseBrowserSharedCookieSourceEnvironment(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROWSERSHAREDCOOKIESOURCEENVIRONMENT
         default:
-            return 0, errors.New("Unknown BrowserSharedCookieSourceEnvironment value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

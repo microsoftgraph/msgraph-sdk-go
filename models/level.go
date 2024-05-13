@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type Level int
 
@@ -26,7 +25,7 @@ func ParseLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LEVEL
         default:
-            return 0, errors.New("Unknown Level value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AllowedTargetScope int
 
@@ -44,7 +43,7 @@ func ParseAllowedTargetScope(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALLOWEDTARGETSCOPE
         default:
-            return 0, errors.New("Unknown AllowedTargetScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

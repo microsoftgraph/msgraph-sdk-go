@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CloudAppSecuritySessionControlType int
 
@@ -26,7 +25,7 @@ func ParseCloudAppSecuritySessionControlType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDAPPSECURITYSESSIONCONTROLTYPE
         default:
-            return 0, errors.New("Unknown CloudAppSecuritySessionControlType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ThreatAssessmentRequestSource int
 
@@ -23,7 +22,7 @@ func ParseThreatAssessmentRequestSource(v string) (any, error) {
         case "administrator":
             result = ADMINISTRATOR_THREATASSESSMENTREQUESTSOURCE
         default:
-            return 0, errors.New("Unknown ThreatAssessmentRequestSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PrintOrientation int
 
@@ -29,7 +28,7 @@ func ParsePrintOrientation(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTORIENTATION
         default:
-            return 0, errors.New("Unknown PrintOrientation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ScreenSharingRole int
 
@@ -20,7 +19,7 @@ func ParseScreenSharingRole(v string) (any, error) {
         case "sharer":
             result = SHARER_SCREENSHARINGROLE
         default:
-            return 0, errors.New("Unknown ScreenSharingRole value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

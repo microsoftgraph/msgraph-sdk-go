@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type WorkforceIntegrationEncryptionProtocol int
 
@@ -20,7 +19,7 @@ func ParseWorkforceIntegrationEncryptionProtocol(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONENCRYPTIONPROTOCOL
         default:
-            return 0, errors.New("Unknown WorkforceIntegrationEncryptionProtocol value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

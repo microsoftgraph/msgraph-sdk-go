@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type BookingReminderRecipients int
 
@@ -26,7 +25,7 @@ func ParseBookingReminderRecipients(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BOOKINGREMINDERRECIPIENTS
         default:
-            return 0, errors.New("Unknown BookingReminderRecipients value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

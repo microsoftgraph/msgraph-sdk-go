@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PrintFinishing int
 
@@ -74,7 +73,7 @@ func ParsePrintFinishing(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTFINISHING
         default:
-            return 0, errors.New("Unknown PrintFinishing value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

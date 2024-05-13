@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type DefenderAvStatus int
 
@@ -35,7 +34,7 @@ func ParseDefenderAvStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEFENDERAVSTATUS
         default:
-            return 0, errors.New("Unknown DefenderAvStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Windows Hello for Business pin usage options
 type WindowsHelloForBusinessPinUsage int
@@ -27,7 +26,7 @@ func ParseWindowsHelloForBusinessPinUsage(v string) (any, error) {
         case "disallowed":
             result = DISALLOWED_WINDOWSHELLOFORBUSINESSPINUSAGE
         default:
-            return 0, errors.New("Unknown WindowsHelloForBusinessPinUsage value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

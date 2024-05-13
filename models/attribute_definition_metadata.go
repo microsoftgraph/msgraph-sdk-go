@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AttributeDefinitionMetadata int
 
@@ -41,7 +40,7 @@ func ParseAttributeDefinitionMetadata(v string) (any, error) {
         case "ReferencedProperty":
             result = REFERENCEDPROPERTY_ATTRIBUTEDEFINITIONMETADATA
         default:
-            return 0, errors.New("Unknown AttributeDefinitionMetadata value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

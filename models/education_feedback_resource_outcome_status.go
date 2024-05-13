@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type EducationFeedbackResourceOutcomeStatus int
 
@@ -29,7 +28,7 @@ func ParseEducationFeedbackResourceOutcomeStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONFEEDBACKRESOURCEOUTCOMESTATUS
         default:
-            return 0, errors.New("Unknown EducationFeedbackResourceOutcomeStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

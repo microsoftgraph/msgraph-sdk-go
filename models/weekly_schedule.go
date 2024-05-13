@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values for a weekly schedule.
 type WeeklySchedule int
@@ -51,7 +50,7 @@ func ParseWeeklySchedule(v string) (any, error) {
         case "saturday":
             result = SATURDAY_WEEKLYSCHEDULE
         default:
-            return 0, errors.New("Unknown WeeklySchedule value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

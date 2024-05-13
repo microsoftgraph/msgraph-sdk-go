@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type AlertDetermination int
 
@@ -62,7 +61,7 @@ func ParseAlertDetermination(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTDETERMINATION
         default:
-            return 0, errors.New("Unknown AlertDetermination value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

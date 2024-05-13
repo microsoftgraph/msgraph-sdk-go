@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AssignmentType int
 
@@ -23,7 +22,7 @@ func ParseAssignmentType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ASSIGNMENTTYPE
         default:
-            return 0, errors.New("Unknown AssignmentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Auto restart required notification dismissal method
 type AutoRestartNotificationDismissalMethod int
@@ -31,7 +30,7 @@ func ParseAutoRestartNotificationDismissalMethod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
         default:
-            return 0, errors.New("Unknown AutoRestartNotificationDismissalMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type DelegateMeetingMessageDeliveryOptions int
 
@@ -23,7 +22,7 @@ func ParseDelegateMeetingMessageDeliveryOptions(v string) (any, error) {
         case "sendToDelegateOnly":
             result = SENDTODELEGATEONLY_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
         default:
-            return 0, errors.New("Unknown DelegateMeetingMessageDeliveryOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

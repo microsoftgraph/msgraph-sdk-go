@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TeamworkCallEventType int
 
@@ -26,7 +25,7 @@ func ParseTeamworkCallEventType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKCALLEVENTTYPE
         default:
-            return 0, errors.New("Unknown TeamworkCallEventType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

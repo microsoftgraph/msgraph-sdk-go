@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AppsUpdateChannelType int
 
@@ -26,7 +25,7 @@ func ParseAppsUpdateChannelType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPSUPDATECHANNELTYPE
         default:
-            return 0, errors.New("Unknown AppsUpdateChannelType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

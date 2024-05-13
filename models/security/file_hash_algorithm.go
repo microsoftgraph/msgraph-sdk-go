@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type FileHashAlgorithm int
 
@@ -32,7 +31,7 @@ func ParseFileHashAlgorithm(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FILEHASHALGORITHM
         default:
-            return 0, errors.New("Unknown FileHashAlgorithm value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

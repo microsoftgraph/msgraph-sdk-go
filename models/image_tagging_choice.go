@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ImageTaggingChoice int
 
@@ -26,7 +25,7 @@ func ParseImageTaggingChoice(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IMAGETAGGINGCHOICE
         default:
-            return 0, errors.New("Unknown ImageTaggingChoice value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

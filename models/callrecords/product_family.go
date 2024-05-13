@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "errors"
 )
 type ProductFamily int
 
@@ -32,7 +31,7 @@ func ParseProductFamily(v string) (any, error) {
         case "azureCommunicationServices":
             result = AZURECOMMUNICATIONSERVICES_PRODUCTFAMILY
         default:
-            return 0, errors.New("Unknown ProductFamily value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

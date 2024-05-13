@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type WeekIndex int
 
@@ -29,7 +28,7 @@ func ParseWeekIndex(v string) (any, error) {
         case "last":
             result = LAST_WEEKINDEX
         default:
-            return 0, errors.New("Unknown WeekIndex value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

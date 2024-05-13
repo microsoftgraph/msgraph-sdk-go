@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type PurgeType int
 
@@ -23,7 +22,7 @@ func ParsePurgeType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PURGETYPE
         default:
-            return 0, errors.New("Unknown PurgeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

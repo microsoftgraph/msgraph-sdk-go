@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Tenant mobile device management subscription state.
 type DeviceManagementSubscriptionState int
@@ -43,7 +42,7 @@ func ParseDeviceManagementSubscriptionState(v string) (any, error) {
         case "lockedOut":
             result = LOCKEDOUT_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         default:
-            return 0, errors.New("Unknown DeviceManagementSubscriptionState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

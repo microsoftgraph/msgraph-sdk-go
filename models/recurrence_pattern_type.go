@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type RecurrencePatternType int
 
@@ -32,7 +31,7 @@ func ParseRecurrencePatternType(v string) (any, error) {
         case "relativeYearly":
             result = RELATIVEYEARLY_RECURRENCEPATTERNTYPE
         default:
-            return 0, errors.New("Unknown RecurrencePatternType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

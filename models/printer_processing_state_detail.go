@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PrinterProcessingStateDetail int
 
@@ -2492,7 +2491,7 @@ func ParsePrinterProcessingStateDetail(v string) (any, error) {
         case "wrapperWarmingUp":
             result = WRAPPERWARMINGUP_PRINTERPROCESSINGSTATEDETAIL
         default:
-            return 0, errors.New("Unknown PrinterProcessingStateDetail value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

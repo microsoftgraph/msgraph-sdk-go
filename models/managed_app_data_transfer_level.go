@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Data can be transferred from/to these classes of apps
 type ManagedAppDataTransferLevel int
@@ -27,7 +26,7 @@ func ParseManagedAppDataTransferLevel(v string) (any, error) {
         case "none":
             result = NONE_MANAGEDAPPDATATRANSFERLEVEL
         default:
-            return 0, errors.New("Unknown ManagedAppDataTransferLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

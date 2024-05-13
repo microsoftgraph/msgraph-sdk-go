@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type AuthenticationMethodState int
 
@@ -20,7 +19,7 @@ func ParseAuthenticationMethodState(v string) (any, error) {
         case "disabled":
             result = DISABLED_AUTHENTICATIONMETHODSTATE
         default:
-            return 0, errors.New("Unknown AuthenticationMethodState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

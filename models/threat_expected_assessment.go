@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ThreatExpectedAssessment int
 
@@ -20,7 +19,7 @@ func ParseThreatExpectedAssessment(v string) (any, error) {
         case "unblock":
             result = UNBLOCK_THREATEXPECTEDASSESSMENT
         default:
-            return 0, errors.New("Unknown ThreatExpectedAssessment value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

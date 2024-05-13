@@ -1,6 +1,5 @@
 package callrecords
 import (
-    "errors"
 )
 type CallType int
 
@@ -26,7 +25,7 @@ func ParseCallType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CALLTYPE
         default:
-            return 0, errors.New("Unknown CallType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

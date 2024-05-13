@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type LocationType int
 
@@ -44,7 +43,7 @@ func ParseLocationType(v string) (any, error) {
         case "postalAddress":
             result = POSTALADDRESS_LOCATIONTYPE
         default:
-            return 0, errors.New("Unknown LocationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

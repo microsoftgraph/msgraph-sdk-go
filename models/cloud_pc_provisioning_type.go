@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CloudPcProvisioningType int
 
@@ -23,7 +22,7 @@ func ParseCloudPcProvisioningType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGTYPE
         default:
-            return 0, errors.New("Unknown CloudPcProvisioningType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

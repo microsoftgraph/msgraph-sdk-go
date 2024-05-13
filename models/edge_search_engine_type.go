@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Allows IT admind to set a predefined default search engine for MDM-Controlled devices
 type EdgeSearchEngineType int
@@ -23,7 +22,7 @@ func ParseEdgeSearchEngineType(v string) (any, error) {
         case "bing":
             result = BING_EDGESEARCHENGINETYPE
         default:
-            return 0, errors.New("Unknown EdgeSearchEngineType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

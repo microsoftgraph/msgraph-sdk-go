@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
 )
 type IndicatorSource int
 
@@ -26,7 +25,7 @@ func ParseIndicatorSource(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INDICATORSOURCE
         default:
-            return 0, errors.New("Unknown IndicatorSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

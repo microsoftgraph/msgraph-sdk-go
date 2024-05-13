@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Operating System restart category.
 type UserExperienceAnalyticsOperatingSystemRestartCategory int
@@ -55,7 +54,7 @@ func ParseUserExperienceAnalyticsOperatingSystemRestartCategory(v string) (any, 
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsOperatingSystemRestartCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

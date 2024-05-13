@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseSynchronizationJobRestartScope(v string) (any, error) {
             case "ForceDeletes":
                 result |= FORCEDELETES_SYNCHRONIZATIONJOBRESTARTSCOPE
             default:
-                return 0, errors.New("Unknown SynchronizationJobRestartScope value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

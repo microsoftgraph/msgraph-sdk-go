@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type EducationExternalSource int
 
@@ -23,7 +22,7 @@ func ParseEducationExternalSource(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONEXTERNALSOURCE
         default:
-            return 0, errors.New("Unknown EducationExternalSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

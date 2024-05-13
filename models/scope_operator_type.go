@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ScopeOperatorType int
 
@@ -20,7 +19,7 @@ func ParseScopeOperatorType(v string) (any, error) {
         case "Unary":
             result = UNARY_SCOPEOPERATORTYPE
         default:
-            return 0, errors.New("Unknown ScopeOperatorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

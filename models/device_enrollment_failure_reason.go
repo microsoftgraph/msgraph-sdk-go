@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Top level failure categories for enrollment.
 type DeviceEnrollmentFailureReason int
@@ -63,7 +62,7 @@ func ParseDeviceEnrollmentFailureReason(v string) (any, error) {
         case "userAbandonment":
             result = USERABANDONMENT_DEVICEENROLLMENTFAILUREREASON
         default:
-            return 0, errors.New("Unknown DeviceEnrollmentFailureReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

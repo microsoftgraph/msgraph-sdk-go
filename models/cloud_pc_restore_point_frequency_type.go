@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type CloudPcRestorePointFrequencyType int
 
@@ -35,7 +34,7 @@ func ParseCloudPcRestorePointFrequencyType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCRESTOREPOINTFREQUENCYTYPE
         default:
-            return 0, errors.New("Unknown CloudPcRestorePointFrequencyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type MediaDirection int
 
@@ -26,7 +25,7 @@ func ParseMediaDirection(v string) (any, error) {
         case "sendReceive":
             result = SENDRECEIVE_MEDIADIRECTION
         default:
-            return 0, errors.New("Unknown MediaDirection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

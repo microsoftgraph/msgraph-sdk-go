@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible types of Application
 type ApplicationType int
@@ -23,7 +22,7 @@ func ParseApplicationType(v string) (any, error) {
         case "desktop":
             result = DESKTOP_APPLICATIONTYPE
         default:
-            return 0, errors.New("Unknown ApplicationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

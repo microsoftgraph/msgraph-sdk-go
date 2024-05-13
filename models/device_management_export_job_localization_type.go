@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Configures how the requested export job is localized.
 type DeviceManagementExportJobLocalizationType int
@@ -23,7 +22,7 @@ func ParseDeviceManagementExportJobLocalizationType(v string) (any, error) {
         case "replaceLocalizableValues":
             result = REPLACELOCALIZABLEVALUES_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementExportJobLocalizationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Device threat protection levels for the Device Threat Protection API.
 type DeviceThreatProtectionLevel int
@@ -39,7 +38,7 @@ func ParseDeviceThreatProtectionLevel(v string) (any, error) {
         case "notSet":
             result = NOTSET_DEVICETHREATPROTECTIONLEVEL
         default:
-            return 0, errors.New("Unknown DeviceThreatProtectionLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

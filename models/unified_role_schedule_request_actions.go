@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type UnifiedRoleScheduleRequestActions int
 
@@ -44,7 +43,7 @@ func ParseUnifiedRoleScheduleRequestActions(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_UNIFIEDROLESCHEDULEREQUESTACTIONS
         default:
-            return 0, errors.New("Unknown UnifiedRoleScheduleRequestActions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

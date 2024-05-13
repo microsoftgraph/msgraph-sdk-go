@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Possible values for firewallCertificateRevocationListCheckMethod
 type FirewallCertificateRevocationListCheckMethodType int
@@ -31,7 +30,7 @@ func ParseFirewallCertificateRevocationListCheckMethodType(v string) (any, error
         case "require":
             result = REQUIRE_FIREWALLCERTIFICATEREVOCATIONLISTCHECKMETHODTYPE
         default:
-            return 0, errors.New("Unknown FirewallCertificateRevocationListCheckMethodType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

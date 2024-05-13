@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TeamsAppDistributionMethod int
 
@@ -26,7 +25,7 @@ func ParseTeamsAppDistributionMethod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPDISTRIBUTIONMETHOD
         default:
-            return 0, errors.New("Unknown TeamsAppDistributionMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type SensitivityLabelAssignmentMethod int
 
@@ -26,7 +25,7 @@ func ParseSensitivityLabelAssignmentMethod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SENSITIVITYLABELASSIGNMENTMETHOD
         default:
-            return 0, errors.New("Unknown SensitivityLabelAssignmentMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

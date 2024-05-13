@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type ConnectionStatus int
 
@@ -32,7 +31,7 @@ func ParseConnectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONSTATUS
         default:
-            return 0, errors.New("Unknown ConnectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type TeamworkUserIdentityType int
 
@@ -41,7 +40,7 @@ func ParseTeamworkUserIdentityType(v string) (any, error) {
         case "emailUser":
             result = EMAILUSER_TEAMWORKUSERIDENTITYTYPE
         default:
-            return 0, errors.New("Unknown TeamworkUserIdentityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

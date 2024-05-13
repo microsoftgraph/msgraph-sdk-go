@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 // Work From Anywhere windows device upgrade eligibility status.
 type OperatingSystemUpgradeEligibility int
@@ -35,7 +34,7 @@ func ParseOperatingSystemUpgradeEligibility(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATINGSYSTEMUPGRADEELIGIBILITY
         default:
-            return 0, errors.New("Unknown OperatingSystemUpgradeEligibility value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

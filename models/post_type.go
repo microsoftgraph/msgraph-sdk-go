@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PostType int
 
@@ -26,7 +25,7 @@ func ParsePostType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_POSTTYPE
         default:
-            return 0, errors.New("Unknown PostType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

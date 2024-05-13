@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "errors"
 )
 type IdentityType int
 
@@ -26,7 +25,7 @@ func ParseIdentityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IDENTITYTYPE
         default:
-            return 0, errors.New("Unknown IdentityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type PrintJobProcessingState int
 
@@ -41,7 +40,7 @@ func ParsePrintJobProcessingState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTJOBPROCESSINGSTATE
         default:
-            return 0, errors.New("Unknown PrintJobProcessingState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

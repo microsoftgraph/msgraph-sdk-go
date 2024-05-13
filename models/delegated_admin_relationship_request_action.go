@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
 )
 type DelegatedAdminRelationshipRequestAction int
 
@@ -29,7 +28,7 @@ func ParseDelegatedAdminRelationshipRequestAction(v string) (any, error) {
         case "reject":
             result = REJECT_DELEGATEDADMINRELATIONSHIPREQUESTACTION
         default:
-            return 0, errors.New("Unknown DelegatedAdminRelationshipRequestAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }
