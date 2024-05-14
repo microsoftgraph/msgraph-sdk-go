@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MediaSourceContentCategory int
 
 const (
@@ -44,7 +41,7 @@ func ParseMediaSourceContentCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEDIASOURCECONTENTCATEGORY
         default:
-            return 0, errors.New("Unknown MediaSourceContentCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

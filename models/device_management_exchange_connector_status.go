@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The current status of the Exchange Connector.
 type DeviceManagementExchangeConnectorStatus int
 
@@ -35,7 +32,7 @@ func ParseDeviceManagementExchangeConnectorStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
         default:
-            return 0, errors.New("Unknown DeviceManagementExchangeConnectorStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

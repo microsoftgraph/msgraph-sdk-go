@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TrainingAvailabilityStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseTrainingAvailabilityStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRAININGAVAILABILITYSTATUS
         default:
-            return 0, errors.New("Unknown TrainingAvailabilityStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

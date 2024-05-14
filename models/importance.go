@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type Importance int
 
 const (
@@ -23,7 +20,7 @@ func ParseImportance(v string) (any, error) {
         case "high":
             result = HIGH_IMPORTANCE
         default:
-            return 0, errors.New("Unknown Importance value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

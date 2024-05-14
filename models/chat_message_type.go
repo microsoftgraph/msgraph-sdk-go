@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ChatMessageType int
 
 const (
@@ -29,7 +26,7 @@ func ParseChatMessageType(v string) (any, error) {
         case "systemEventMessage":
             result = SYSTEMEVENTMESSAGE_CHATMESSAGETYPE
         default:
-            return 0, errors.New("Unknown ChatMessageType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

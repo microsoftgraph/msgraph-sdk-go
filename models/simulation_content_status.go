@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SimulationContentStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseSimulationContentStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIMULATIONCONTENTSTATUS
         default:
-            return 0, errors.New("Unknown SimulationContentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

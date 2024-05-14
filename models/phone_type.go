@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PhoneType int
 
 const (
@@ -44,7 +41,7 @@ func ParsePhoneType(v string) (any, error) {
         case "radio":
             result = RADIO_PHONETYPE
         default:
-            return 0, errors.New("Unknown PhoneType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

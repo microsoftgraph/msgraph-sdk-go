@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type FailureStage int
 
 const (
@@ -26,7 +23,7 @@ func ParseFailureStage(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FAILURESTAGE
         default:
-            return 0, errors.New("Unknown FailureStage value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

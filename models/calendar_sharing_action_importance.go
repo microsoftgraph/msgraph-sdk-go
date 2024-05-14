@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CalendarSharingActionImportance int
 
 const (
@@ -20,7 +17,7 @@ func ParseCalendarSharingActionImportance(v string) (any, error) {
         case "secondary":
             result = SECONDARY_CALENDARSHARINGACTIONIMPORTANCE
         default:
-            return 0, errors.New("Unknown CalendarSharingActionImportance value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

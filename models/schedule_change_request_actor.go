@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ScheduleChangeRequestActor int
 
 const (
@@ -29,7 +26,7 @@ func ParseScheduleChangeRequestActor(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULECHANGEREQUESTACTOR
         default:
-            return 0, errors.New("Unknown ScheduleChangeRequestActor value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

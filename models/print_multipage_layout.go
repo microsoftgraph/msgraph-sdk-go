@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintMultipageLayout int
 
 const (
@@ -41,7 +38,7 @@ func ParsePrintMultipageLayout(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTMULTIPAGELAYOUT
         default:
-            return 0, errors.New("Unknown PrintMultipageLayout value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

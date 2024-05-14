@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type IntelligenceProfileKind int
 
 const (
@@ -23,7 +20,7 @@ func ParseIntelligenceProfileKind(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INTELLIGENCEPROFILEKIND
         default:
-            return 0, errors.New("Unknown IntelligenceProfileKind value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

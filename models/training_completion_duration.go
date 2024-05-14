@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TrainingCompletionDuration int
 
 const (
@@ -26,7 +23,7 @@ func ParseTrainingCompletionDuration(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRAININGCOMPLETIONDURATION
         default:
-            return 0, errors.New("Unknown TrainingCompletionDuration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

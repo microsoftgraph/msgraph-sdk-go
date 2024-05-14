@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type StagedFeatureName int
 
 const (
@@ -35,7 +32,7 @@ func ParseStagedFeatureName(v string) (any, error) {
         case "multiFactorAuthentication":
             result = MULTIFACTORAUTHENTICATION_STAGEDFEATURENAME
         default:
-            return 0, errors.New("Unknown StagedFeatureName value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

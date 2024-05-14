@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationPhoneType int
 
 const (
@@ -26,7 +23,7 @@ func ParseAuthenticationPhoneType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONPHONETYPE
         default:
-            return 0, errors.New("Unknown AuthenticationPhoneType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

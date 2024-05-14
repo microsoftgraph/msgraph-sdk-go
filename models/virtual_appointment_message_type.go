@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type VirtualAppointmentMessageType int
 
 const (
@@ -26,7 +23,7 @@ func ParseVirtualAppointmentMessageType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VIRTUALAPPOINTMENTMESSAGETYPE
         default:
-            return 0, errors.New("Unknown VirtualAppointmentMessageType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

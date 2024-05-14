@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type ServiceSource int
 
 const (
@@ -53,7 +50,7 @@ func ParseServiceSource(v string) (any, error) {
         case "microsoftInsiderRiskManagement":
             result = MICROSOFTINSIDERRISKMANAGEMENT_SERVICESOURCE
         default:
-            return 0, errors.New("Unknown ServiceSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConditionalAccessPolicyState int
 
 const (
@@ -23,7 +20,7 @@ func ParseConditionalAccessPolicyState(v string) (any, error) {
         case "enabledForReportingButNotEnforced":
             result = ENABLEDFORREPORTINGBUTNOTENFORCED_CONDITIONALACCESSPOLICYSTATE
         default:
-            return 0, errors.New("Unknown ConditionalAccessPolicyState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

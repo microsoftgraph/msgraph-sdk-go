@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for system scan type.
 type DefenderScanType int
 
@@ -31,7 +28,7 @@ func ParseDefenderScanType(v string) (any, error) {
         case "full":
             result = FULL_DEFENDERSCANTYPE
         default:
-            return 0, errors.New("Unknown DefenderScanType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

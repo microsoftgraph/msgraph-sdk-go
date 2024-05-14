@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type InferenceClassificationType int
 
 const (
@@ -20,7 +17,7 @@ func ParseInferenceClassificationType(v string) (any, error) {
         case "other":
             result = OTHER_INFERENCECLASSIFICATIONTYPE
         default:
-            return 0, errors.New("Unknown InferenceClassificationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Web Browser Cookie Settings.
 type WebBrowserCookieSettings int
 
@@ -35,7 +32,7 @@ func ParseWebBrowserCookieSettings(v string) (any, error) {
         case "allowAlways":
             result = ALLOWALWAYS_WEBBROWSERCOOKIESETTINGS
         default:
-            return 0, errors.New("Unknown WebBrowserCookieSettings value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EmailRole int
 
 const (
@@ -26,7 +23,7 @@ func ParseEmailRole(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EMAILROLE
         default:
-            return 0, errors.New("Unknown EmailRole value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

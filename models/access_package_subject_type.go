@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AccessPackageSubjectType int
 
 const (
@@ -26,7 +23,7 @@ func ParseAccessPackageSubjectType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGESUBJECTTYPE
         default:
-            return 0, errors.New("Unknown AccessPackageSubjectType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

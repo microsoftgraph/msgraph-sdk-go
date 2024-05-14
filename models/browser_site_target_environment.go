@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BrowserSiteTargetEnvironment int
 
 const (
@@ -38,7 +35,7 @@ func ParseBrowserSiteTargetEnvironment(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROWSERSITETARGETENVIRONMENT
         default:
-            return 0, errors.New("Unknown BrowserSiteTargetEnvironment value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

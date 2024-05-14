@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device registration status.
 type DeviceRegistrationState int
 
@@ -47,7 +44,7 @@ func ParseDeviceRegistrationState(v string) (any, error) {
         case "unknown":
             result = UNKNOWN_DEVICEREGISTRATIONSTATE
         default:
-            return 0, errors.New("Unknown DeviceRegistrationState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

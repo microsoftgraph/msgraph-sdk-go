@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type CaseStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParseCaseStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CASESTATUS
         default:
-            return 0, errors.New("Unknown CaseStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

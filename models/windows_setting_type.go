@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WindowsSettingType int
 
 const (
@@ -23,7 +20,7 @@ func ParseWindowsSettingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WINDOWSSETTINGTYPE
         default:
-            return 0, errors.New("Unknown WindowsSettingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

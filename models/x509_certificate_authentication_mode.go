@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type X509CertificateAuthenticationMode int
 
 const (
@@ -23,7 +20,7 @@ func ParseX509CertificateAuthenticationMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_X509CERTIFICATEAUTHENTICATIONMODE
         default:
-            return 0, errors.New("Unknown X509CertificateAuthenticationMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

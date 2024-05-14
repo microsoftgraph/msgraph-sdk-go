@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BrowserSharedCookieStatus int
 
 const (
@@ -34,7 +31,7 @@ func ParseBrowserSharedCookieStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROWSERSHAREDCOOKIESTATUS
         default:
-            return 0, errors.New("Unknown BrowserSharedCookieStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

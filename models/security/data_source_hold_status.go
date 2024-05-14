@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type DataSourceHoldStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseDataSourceHoldStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATASOURCEHOLDSTATUS
         default:
-            return 0, errors.New("Unknown DataSourceHoldStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

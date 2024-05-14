@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcDeviceImageStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseCloudPcDeviceImageStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGESTATUS
         default:
-            return 0, errors.New("Unknown CloudPcDeviceImageStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type HostReputationClassification int
 
 const (
@@ -29,7 +26,7 @@ func ParseHostReputationClassification(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HOSTREPUTATIONCLASSIFICATION
         default:
-            return 0, errors.New("Unknown HostReputationClassification value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Delivery optimization mode for peer distribution
 type WindowsDeliveryOptimizationMode int
 
@@ -43,7 +40,7 @@ func ParseWindowsDeliveryOptimizationMode(v string) (any, error) {
         case "bypassMode":
             result = BYPASSMODE_WINDOWSDELIVERYOPTIMIZATIONMODE
         default:
-            return 0, errors.New("Unknown WindowsDeliveryOptimizationMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

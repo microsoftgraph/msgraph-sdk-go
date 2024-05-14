@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Partner state of this tenant.
 type MobileThreatPartnerTenantState int
 
@@ -35,7 +32,7 @@ func ParseMobileThreatPartnerTenantState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MOBILETHREATPARTNERTENANTSTATE
         default:
-            return 0, errors.New("Unknown MobileThreatPartnerTenantState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

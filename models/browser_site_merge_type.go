@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BrowserSiteMergeType int
 
 const (
@@ -26,7 +23,7 @@ func ParseBrowserSiteMergeType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROWSERSITEMERGETYPE
         default:
-            return 0, errors.New("Unknown BrowserSiteMergeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

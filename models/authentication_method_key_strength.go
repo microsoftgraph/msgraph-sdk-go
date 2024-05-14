@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationMethodKeyStrength int
 
 const (
@@ -23,7 +20,7 @@ func ParseAuthenticationMethodKeyStrength(v string) (any, error) {
         case "unknown":
             result = UNKNOWN_AUTHENTICATIONMETHODKEYSTRENGTH
         default:
-            return 0, errors.New("Unknown AuthenticationMethodKeyStrength value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

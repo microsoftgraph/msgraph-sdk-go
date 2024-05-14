@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for pre-release features.
 type PrereleaseFeatures int
 
@@ -31,7 +28,7 @@ func ParsePrereleaseFeatures(v string) (any, error) {
         case "notAllowed":
             result = NOTALLOWED_PRERELEASEFEATURES
         default:
-            return 0, errors.New("Unknown PrereleaseFeatures value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

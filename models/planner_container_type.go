@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlannerContainerType int
 
 const (
@@ -23,7 +20,7 @@ func ParsePlannerContainerType(v string) (any, error) {
         case "roster":
             result = ROSTER_PLANNERCONTAINERTYPE
         default:
-            return 0, errors.New("Unknown PlannerContainerType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

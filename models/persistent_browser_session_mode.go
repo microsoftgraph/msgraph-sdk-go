@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PersistentBrowserSessionMode int
 
 const (
@@ -20,7 +17,7 @@ func ParsePersistentBrowserSessionMode(v string) (any, error) {
         case "never":
             result = NEVER_PERSISTENTBROWSERSESSIONMODE
         default:
-            return 0, errors.New("Unknown PersistentBrowserSessionMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

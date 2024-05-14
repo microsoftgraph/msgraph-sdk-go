@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MessageActionFlag int
 
 const (
@@ -47,7 +44,7 @@ func ParseMessageActionFlag(v string) (any, error) {
         case "review":
             result = REVIEW_MESSAGEACTIONFLAG
         default:
-            return 0, errors.New("Unknown MessageActionFlag value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

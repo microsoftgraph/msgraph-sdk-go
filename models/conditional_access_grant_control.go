@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConditionalAccessGrantControl int
 
 const (
@@ -38,7 +35,7 @@ func ParseConditionalAccessGrantControl(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSGRANTCONTROL
         default:
-            return 0, errors.New("Unknown ConditionalAccessGrantControl value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

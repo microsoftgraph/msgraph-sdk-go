@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ColumnTypes int
 
 const (
@@ -71,7 +68,7 @@ func ParseColumnTypes(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_COLUMNTYPES
         default:
-            return 0, errors.New("Unknown ColumnTypes value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

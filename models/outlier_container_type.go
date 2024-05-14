@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type OutlierContainerType int
 
 const (
@@ -20,7 +17,7 @@ func ParseOutlierContainerType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OUTLIERCONTAINERTYPE
         default:
-            return 0, errors.New("Unknown OutlierContainerType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

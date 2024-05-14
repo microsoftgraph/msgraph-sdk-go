@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConditionalAccessExternalTenantsMembershipKind int
 
 const (
@@ -23,7 +20,7 @@ func ParseConditionalAccessExternalTenantsMembershipKind(v string) (any, error) 
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSEXTERNALTENANTSMEMBERSHIPKIND
         default:
-            return 0, errors.New("Unknown ConditionalAccessExternalTenantsMembershipKind value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

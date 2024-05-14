@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SubjectRightsRequestType int
 
 const (
@@ -29,7 +26,7 @@ func ParseSubjectRightsRequestType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTTYPE
         default:
-            return 0, errors.New("Unknown SubjectRightsRequestType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

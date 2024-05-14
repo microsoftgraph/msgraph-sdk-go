@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SharingCapabilities int
 
 const (
@@ -29,7 +26,7 @@ func ParseSharingCapabilities(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SHARINGCAPABILITIES
         default:
-            return 0, errors.New("Unknown SharingCapabilities value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

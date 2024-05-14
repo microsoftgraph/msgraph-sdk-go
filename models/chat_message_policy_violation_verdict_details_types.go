@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseChatMessagePolicyViolationVerdictDetailsTypes(v string) (any, error) {
             case "allowOverrideWithJustification":
                 result |= ALLOWOVERRIDEWITHJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
             default:
-                return 0, errors.New("Unknown ChatMessagePolicyViolationVerdictDetailsTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SynchronizationTaskExecutionResult int
 
 const (
@@ -23,7 +20,7 @@ func ParseSynchronizationTaskExecutionResult(v string) (any, error) {
         case "EntryLevelErrors":
             result = ENTRYLEVELERRORS_SYNCHRONIZATIONTASKEXECUTIONRESULT
         default:
-            return 0, errors.New("Unknown SynchronizationTaskExecutionResult value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UnifiedRoleManagementPolicyRuleTargetOperations int
 
 const (
@@ -41,7 +38,7 @@ func ParseUnifiedRoleManagementPolicyRuleTargetOperations(v string) (any, error)
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_UNIFIEDROLEMANAGEMENTPOLICYRULETARGETOPERATIONS
         default:
-            return 0, errors.New("Unknown UnifiedRoleManagementPolicyRuleTargetOperations value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

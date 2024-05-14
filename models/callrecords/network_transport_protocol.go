@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type NetworkTransportProtocol int
 
 const (
@@ -26,7 +23,7 @@ func ParseNetworkTransportProtocol(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NETWORKTRANSPORTPROTOCOL
         default:
-            return 0, errors.New("Unknown NetworkTransportProtocol value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

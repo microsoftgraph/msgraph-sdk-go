@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type MediaStreamDirection int
 
 const (
@@ -20,7 +17,7 @@ func ParseMediaStreamDirection(v string) (any, error) {
         case "calleeToCaller":
             result = CALLEETOCALLER_MEDIASTREAMDIRECTION
         default:
-            return 0, errors.New("Unknown MediaStreamDirection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

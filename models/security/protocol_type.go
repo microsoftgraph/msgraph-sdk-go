@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type ProtocolType int
 
 const (
@@ -23,7 +20,7 @@ func ParseProtocolType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROTOCOLTYPE
         default:
-            return 0, errors.New("Unknown ProtocolType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

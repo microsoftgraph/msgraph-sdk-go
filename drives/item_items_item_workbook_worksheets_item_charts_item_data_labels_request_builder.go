@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetQueryParameters represents the datalabels on the chart. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetQueryParameters represents the data labels on the chart. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) 
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the datalabels on the chart. Read-only.
+// Get represents the data labels on the chart. Read-only.
 // returns a WorkbookChartDataLabelsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartDataLabelsable, error) {
@@ -126,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the datalabels on the chart. Read-only.
+// ToGetRequestInformation represents the data labels on the chart. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

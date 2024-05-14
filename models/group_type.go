@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type GroupType int
 
 const (
@@ -23,7 +20,7 @@ func ParseGroupType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GROUPTYPE
         default:
-            return 0, errors.New("Unknown GroupType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

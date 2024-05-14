@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for automatic update mode.
 type AutomaticUpdateMode int
 
@@ -39,7 +36,7 @@ func ParseAutomaticUpdateMode(v string) (any, error) {
         case "autoInstallAndRebootWithoutEndUserControl":
             result = AUTOINSTALLANDREBOOTWITHOUTENDUSERCONTROL_AUTOMATICUPDATEMODE
         default:
-            return 0, errors.New("Unknown AutomaticUpdateMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

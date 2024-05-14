@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintQuality int
 
 const (
@@ -26,7 +23,7 @@ func ParsePrintQuality(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTQUALITY
         default:
-            return 0, errors.New("Unknown PrintQuality value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

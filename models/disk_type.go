@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DiskType int
 
 const (
@@ -30,7 +27,7 @@ func ParseDiskType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DISKTYPE
         default:
-            return 0, errors.New("Unknown DiskType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -51,7 +50,7 @@ func ParseWindowsDeviceHealthState(v string) (any, error) {
             case "critical":
                 result |= CRITICAL_WINDOWSDEVICEHEALTHSTATE
             default:
-                return 0, errors.New("Unknown WindowsDeviceHealthState value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

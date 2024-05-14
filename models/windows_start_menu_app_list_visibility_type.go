@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -43,7 +42,7 @@ func ParseWindowsStartMenuAppListVisibilityType(v string) (any, error) {
             case "disableSettingsApp":
                 result |= DISABLESETTINGSAPP_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
             default:
-                return 0, errors.New("Unknown WindowsStartMenuAppListVisibilityType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

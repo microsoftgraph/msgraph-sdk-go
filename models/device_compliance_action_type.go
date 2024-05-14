@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Scheduled Action Type Enum
 type DeviceComplianceActionType int
 
@@ -43,7 +40,7 @@ func ParseDeviceComplianceActionType(v string) (any, error) {
         case "pushNotification":
             result = PUSHNOTIFICATION_DEVICECOMPLIANCEACTIONTYPE
         default:
-            return 0, errors.New("Unknown DeviceComplianceActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

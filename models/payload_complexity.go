@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PayloadComplexity int
 
 const (
@@ -29,7 +26,7 @@ func ParsePayloadComplexity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PAYLOADCOMPLEXITY
         default:
-            return 0, errors.New("Unknown PayloadComplexity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

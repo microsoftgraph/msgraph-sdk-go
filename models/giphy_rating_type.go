@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type GiphyRatingType int
 
 const (
@@ -23,7 +20,7 @@ func ParseGiphyRatingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GIPHYRATINGTYPE
         default:
-            return 0, errors.New("Unknown GiphyRatingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

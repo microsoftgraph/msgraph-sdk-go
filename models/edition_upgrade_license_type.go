@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Edition Upgrade License type
 type EditionUpgradeLicenseType int
 
@@ -23,7 +20,7 @@ func ParseEditionUpgradeLicenseType(v string) (any, error) {
         case "licenseFile":
             result = LICENSEFILE_EDITIONUPGRADELICENSETYPE
         default:
-            return 0, errors.New("Unknown EditionUpgradeLicenseType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

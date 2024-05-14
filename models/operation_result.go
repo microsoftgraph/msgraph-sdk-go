@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type OperationResult int
 
 const (
@@ -26,7 +23,7 @@ func ParseOperationResult(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATIONRESULT
         default:
-            return 0, errors.New("Unknown OperationResult value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SelectionLikelihoodInfo int
 
 const (
@@ -20,7 +17,7 @@ func ParseSelectionLikelihoodInfo(v string) (any, error) {
         case "high":
             result = HIGH_SELECTIONLIKELIHOODINFO
         default:
-            return 0, errors.New("Unknown SelectionLikelihoodInfo value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

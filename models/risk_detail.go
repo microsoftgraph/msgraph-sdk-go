@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RiskDetail int
 
 const (
@@ -68,7 +65,7 @@ func ParseRiskDetail(v string) (any, error) {
         case "adminConfirmedAccountSafe":
             result = ADMINCONFIRMEDACCOUNTSAFE_RISKDETAIL
         default:
-            return 0, errors.New("Unknown RiskDetail value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

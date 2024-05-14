@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains value for notification status.
 type Win32LobAppNotification int
 
@@ -27,7 +24,7 @@ func ParseWin32LobAppNotification(v string) (any, error) {
         case "hideAll":
             result = HIDEALL_WIN32LOBAPPNOTIFICATION
         default:
-            return 0, errors.New("Unknown Win32LobAppNotification value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

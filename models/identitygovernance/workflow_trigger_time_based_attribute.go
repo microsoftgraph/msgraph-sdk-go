@@ -1,7 +1,4 @@
 package identitygovernance
-import (
-    "errors"
-)
 type WorkflowTriggerTimeBasedAttribute int
 
 const (
@@ -26,7 +23,7 @@ func ParseWorkflowTriggerTimeBasedAttribute(v string) (any, error) {
         case "createdDateTime":
             result = CREATEDDATETIME_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
         default:
-            return 0, errors.New("Unknown WorkflowTriggerTimeBasedAttribute value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DelegatedAdminAccessContainerType int
 
 const (
@@ -20,7 +17,7 @@ func ParseDelegatedAdminAccessContainerType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINACCESSCONTAINERTYPE
         default:
-            return 0, errors.New("Unknown DelegatedAdminAccessContainerType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

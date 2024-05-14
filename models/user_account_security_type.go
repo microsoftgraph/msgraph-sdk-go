@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UserAccountSecurityType int
 
 const (
@@ -29,7 +26,7 @@ func ParseUserAccountSecurityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERACCOUNTSECURITYTYPE
         default:
-            return 0, errors.New("Unknown UserAccountSecurityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

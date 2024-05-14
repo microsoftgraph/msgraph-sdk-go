@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ScheduleEntityTheme int
 
 const (
@@ -53,7 +50,7 @@ func ParseScheduleEntityTheme(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULEENTITYTHEME
         default:
-            return 0, errors.New("Unknown ScheduleEntityTheme value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

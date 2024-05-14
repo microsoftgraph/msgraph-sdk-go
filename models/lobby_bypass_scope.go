@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type LobbyBypassScope int
 
 const (
@@ -35,7 +32,7 @@ func ParseLobbyBypassScope(v string) (any, error) {
         case "organizationExcludingGuests":
             result = ORGANIZATIONEXCLUDINGGUESTS_LOBBYBYPASSSCOPE
         default:
-            return 0, errors.New("Unknown LobbyBypassScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

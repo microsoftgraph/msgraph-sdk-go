@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationProtocol int
 
 const (
@@ -23,7 +20,7 @@ func ParseAuthenticationProtocol(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONPROTOCOL
         default:
-            return 0, errors.New("Unknown AuthenticationProtocol value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

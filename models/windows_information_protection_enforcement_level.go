@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for WIP Protection enforcement levels
 type WindowsInformationProtectionEnforcementLevel int
 
@@ -31,7 +28,7 @@ func ParseWindowsInformationProtectionEnforcementLevel(v string) (any, error) {
         case "encryptAuditAndBlock":
             result = ENCRYPTAUDITANDBLOCK_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
         default:
-            return 0, errors.New("Unknown WindowsInformationProtectionEnforcementLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

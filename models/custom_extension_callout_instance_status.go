@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CustomExtensionCalloutInstanceStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseCustomExtensionCalloutInstanceStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CUSTOMEXTENSIONCALLOUTINSTANCESTATUS
         default:
-            return 0, errors.New("Unknown CustomExtensionCalloutInstanceStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

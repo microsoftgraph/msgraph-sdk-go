@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Defender’s default action to take on detected Malware threats.
 type DefenderThreatAction int
 
@@ -43,7 +40,7 @@ func ParseDefenderThreatAction(v string) (any, error) {
         case "block":
             result = BLOCK_DEFENDERTHREATACTION
         default:
-            return 0, errors.New("Unknown DefenderThreatAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

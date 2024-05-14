@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type DefaultRecordBehavior int
 
 const (
@@ -23,7 +20,7 @@ func ParseDefaultRecordBehavior(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEFAULTRECORDBEHAVIOR
         default:
-            return 0, errors.New("Unknown DefaultRecordBehavior value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

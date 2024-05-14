@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ComplianceStatus int
 
 const (
@@ -38,7 +35,7 @@ func ParseComplianceStatus(v string) (any, error) {
         case "notAssigned":
             result = NOTASSIGNED_COMPLIANCESTATUS
         default:
-            return 0, errors.New("Unknown ComplianceStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

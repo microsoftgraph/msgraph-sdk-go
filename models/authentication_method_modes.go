@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -77,7 +76,7 @@ func ParseAuthenticationMethodModes(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODMODES
             default:
-                return 0, errors.New("Unknown AuthenticationMethodModes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

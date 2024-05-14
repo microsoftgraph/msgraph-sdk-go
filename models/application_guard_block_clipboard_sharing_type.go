@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for applicationGuardBlockClipboardSharingType
 type ApplicationGuardBlockClipboardSharingType int
 
@@ -35,7 +32,7 @@ func ParseApplicationGuardBlockClipboardSharingType(v string) (any, error) {
         case "blockNone":
             result = BLOCKNONE_APPLICATIONGUARDBLOCKCLIPBOARDSHARINGTYPE
         default:
-            return 0, errors.New("Unknown ApplicationGuardBlockClipboardSharingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

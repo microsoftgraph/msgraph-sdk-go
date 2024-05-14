@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type FederatedIdpMfaBehavior int
 
 const (
@@ -26,7 +23,7 @@ func ParseFederatedIdpMfaBehavior(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FEDERATEDIDPMFABEHAVIOR
         default:
-            return 0, errors.New("Unknown FederatedIdpMfaBehavior value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type ContainerPortProtocol int
 
 const (
@@ -26,7 +23,7 @@ func ParseContainerPortProtocol(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONTAINERPORTPROTOCOL
         default:
-            return 0, errors.New("Unknown ContainerPortProtocol value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

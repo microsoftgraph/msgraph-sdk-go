@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BrowserSiteCompatibilityMode int
 
 const (
@@ -54,7 +51,7 @@ func ParseBrowserSiteCompatibilityMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROWSERSITECOMPATIBILITYMODE
         default:
-            return 0, errors.New("Unknown BrowserSiteCompatibilityMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

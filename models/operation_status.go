@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type OperationStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseOperationStatus(v string) (any, error) {
         case "Failed":
             result = FAILED_OPERATIONSTATUS
         default:
-            return 0, errors.New("Unknown OperationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

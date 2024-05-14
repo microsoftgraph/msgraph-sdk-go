@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EducationModuleStatus int
 
 const (
@@ -23,7 +20,7 @@ func ParseEducationModuleStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONMODULESTATUS
         default:
-            return 0, errors.New("Unknown EducationModuleStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RegistryOperation int
 
 const (
@@ -29,7 +26,7 @@ func ParseRegistryOperation(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRYOPERATION
         default:
-            return 0, errors.New("Unknown RegistryOperation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

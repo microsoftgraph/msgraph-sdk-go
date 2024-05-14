@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of required passwords.
 type RequiredPasswordType int
 
@@ -27,7 +24,7 @@ func ParseRequiredPasswordType(v string) (any, error) {
         case "numeric":
             result = NUMERIC_REQUIREDPASSWORDTYPE
         default:
-            return 0, errors.New("Unknown RequiredPasswordType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

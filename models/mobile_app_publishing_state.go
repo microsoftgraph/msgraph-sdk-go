@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the publishing state of an app.
 type MobileAppPublishingState int
 
@@ -27,7 +24,7 @@ func ParseMobileAppPublishingState(v string) (any, error) {
         case "published":
             result = PUBLISHED_MOBILEAPPPUBLISHINGSTATE
         default:
-            return 0, errors.New("Unknown MobileAppPublishingState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

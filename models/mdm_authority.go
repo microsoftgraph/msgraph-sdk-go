@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Mobile device management authority.
 type MdmAuthority int
 
@@ -31,7 +28,7 @@ func ParseMdmAuthority(v string) (any, error) {
         case "office365":
             result = OFFICE365_MDMAUTHORITY
         default:
-            return 0, errors.New("Unknown MdmAuthority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

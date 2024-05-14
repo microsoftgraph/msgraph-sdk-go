@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AppCredentialRestrictionType int
 
 const (
@@ -32,7 +29,7 @@ func ParseAppCredentialRestrictionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPCREDENTIALRESTRICTIONTYPE
         default:
-            return 0, errors.New("Unknown AppCredentialRestrictionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

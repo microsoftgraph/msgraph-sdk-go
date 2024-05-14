@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintOperationProcessingState int
 
 const (
@@ -29,7 +26,7 @@ func ParsePrintOperationProcessingState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTOPERATIONPROCESSINGSTATE
         default:
-            return 0, errors.New("Unknown PrintOperationProcessingState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

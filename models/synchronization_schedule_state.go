@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SynchronizationScheduleState int
 
 const (
@@ -23,7 +20,7 @@ func ParseSynchronizationScheduleState(v string) (any, error) {
         case "Paused":
             result = PAUSED_SYNCHRONIZATIONSCHEDULESTATE
         default:
-            return 0, errors.New("Unknown SynchronizationScheduleState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

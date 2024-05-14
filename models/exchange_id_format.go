@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ExchangeIdFormat int
 
 const (
@@ -29,7 +26,7 @@ func ParseExchangeIdFormat(v string) (any, error) {
         case "restImmutableEntryId":
             result = RESTIMMUTABLEENTRYID_EXCHANGEIDFORMAT
         default:
-            return 0, errors.New("Unknown ExchangeIdFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

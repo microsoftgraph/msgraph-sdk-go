@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CategoryColor int
 
 const (
@@ -92,7 +89,7 @@ func ParseCategoryColor(v string) (any, error) {
         case "preset24":
             result = PRESET24_CATEGORYCOLOR
         default:
-            return 0, errors.New("Unknown CategoryColor value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

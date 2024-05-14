@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AnswerInputType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAnswerInputType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANSWERINPUTTYPE
         default:
-            return 0, errors.New("Unknown AnswerInputType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

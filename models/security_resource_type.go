@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SecurityResourceType int
 
 const (
@@ -26,7 +23,7 @@ func ParseSecurityResourceType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SECURITYRESOURCETYPE
         default:
-            return 0, errors.New("Unknown SecurityResourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

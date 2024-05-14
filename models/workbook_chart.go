@@ -31,7 +31,7 @@ func (m *WorkbookChart) GetAxes()(WorkbookChartAxesable) {
     }
     return nil
 }
-// GetDataLabels gets the dataLabels property value. Represents the datalabels on the chart. Read-only.
+// GetDataLabels gets the dataLabels property value. Represents the data labels on the chart. Read-only.
 // returns a WorkbookChartDataLabelsable when successful
 func (m *WorkbookChart) GetDataLabels()(WorkbookChartDataLabelsable) {
     val, err := m.GetBackingStore().Get("dataLabels")
@@ -247,7 +247,7 @@ func (m *WorkbookChart) GetSeries()([]WorkbookChartSeriesable) {
     }
     return nil
 }
-// GetTitle gets the title property value. Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// GetTitle gets the title property value. Represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
 // returns a WorkbookChartTitleable when successful
 func (m *WorkbookChart) GetTitle()(WorkbookChartTitleable) {
     val, err := m.GetBackingStore().Get("title")
@@ -388,7 +388,7 @@ func (m *WorkbookChart) SetAxes(value WorkbookChartAxesable)() {
         panic(err)
     }
 }
-// SetDataLabels sets the dataLabels property value. Represents the datalabels on the chart. Read-only.
+// SetDataLabels sets the dataLabels property value. Represents the data labels on the chart. Read-only.
 func (m *WorkbookChart) SetDataLabels(value WorkbookChartDataLabelsable)() {
     err := m.GetBackingStore().Set("dataLabels", value)
     if err != nil {
@@ -437,7 +437,7 @@ func (m *WorkbookChart) SetSeries(value []WorkbookChartSeriesable)() {
         panic(err)
     }
 }
-// SetTitle sets the title property value. Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// SetTitle sets the title property value. Represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
 func (m *WorkbookChart) SetTitle(value WorkbookChartTitleable)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

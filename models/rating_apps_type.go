@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Apps rating as in media content
 type RatingAppsType int
 
@@ -39,7 +36,7 @@ func ParseRatingAppsType(v string) (any, error) {
         case "agesAbove17":
             result = AGESABOVE17_RATINGAPPSTYPE
         default:
-            return 0, errors.New("Unknown RatingAppsType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

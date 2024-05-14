@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcAuditActivityOperationType int
 
 const (
@@ -26,7 +23,7 @@ func ParseCloudPcAuditActivityOperationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
         default:
-            return 0, errors.New("Unknown CloudPcAuditActivityOperationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AttendeeType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAttendeeType(v string) (any, error) {
         case "resource":
             result = RESOURCE_ATTENDEETYPE
         default:
-            return 0, errors.New("Unknown AttendeeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

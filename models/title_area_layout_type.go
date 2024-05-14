@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TitleAreaLayoutType int
 
 const (
@@ -29,7 +26,7 @@ func ParseTitleAreaLayoutType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TITLEAREALAYOUTTYPE
         default:
-            return 0, errors.New("Unknown TitleAreaLayoutType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

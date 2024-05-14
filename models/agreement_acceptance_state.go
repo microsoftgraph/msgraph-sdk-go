@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AgreementAcceptanceState int
 
 const (
@@ -23,7 +20,7 @@ func ParseAgreementAcceptanceState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AGREEMENTACCEPTANCESTATE
         default:
-            return 0, errors.New("Unknown AgreementAcceptanceState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

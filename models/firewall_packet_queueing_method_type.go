@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for firewallPacketQueueingMethod
 type FirewallPacketQueueingMethodType int
 
@@ -35,7 +32,7 @@ func ParseFirewallPacketQueueingMethodType(v string) (any, error) {
         case "queueBoth":
             result = QUEUEBOTH_FIREWALLPACKETQUEUEINGMETHODTYPE
         default:
-            return 0, errors.New("Unknown FirewallPacketQueueingMethodType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

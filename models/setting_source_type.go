@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SettingSourceType int
 
 const (
@@ -20,7 +17,7 @@ func ParseSettingSourceType(v string) (any, error) {
         case "deviceIntent":
             result = DEVICEINTENT_SETTINGSOURCETYPE
         default:
-            return 0, errors.New("Unknown SettingSourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

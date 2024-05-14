@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Available health states for the Device Health API
 type ManagedDevicePartnerReportedHealthState int
 
@@ -55,7 +52,7 @@ func ParseManagedDevicePartnerReportedHealthState(v string) (any, error) {
         case "misconfigured":
             result = MISCONFIGURED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         default:
-            return 0, errors.New("Unknown ManagedDevicePartnerReportedHealthState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

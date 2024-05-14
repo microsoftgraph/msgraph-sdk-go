@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamsAppResourceSpecificPermissionType int
 
 const (
@@ -23,7 +20,7 @@ func ParseTeamsAppResourceSpecificPermissionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPRESOURCESPECIFICPERMISSIONTYPE
         default:
-            return 0, errors.New("Unknown TeamsAppResourceSpecificPermissionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

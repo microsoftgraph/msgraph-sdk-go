@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Movies rating labels in Canada
 type RatingCanadaMoviesType int
 
@@ -43,7 +40,7 @@ func ParseRatingCanadaMoviesType(v string) (any, error) {
         case "restricted":
             result = RESTRICTED_RATINGCANADAMOVIESTYPE
         default:
-            return 0, errors.New("Unknown RatingCanadaMoviesType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

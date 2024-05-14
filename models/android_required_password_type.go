@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android required password type.
 type AndroidRequiredPasswordType int
 
@@ -47,7 +44,7 @@ func ParseAndroidRequiredPasswordType(v string) (any, error) {
         case "any":
             result = ANY_ANDROIDREQUIREDPASSWORDTYPE
         default:
-            return 0, errors.New("Unknown AndroidRequiredPasswordType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

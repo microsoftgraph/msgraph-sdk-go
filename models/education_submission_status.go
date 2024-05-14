@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EducationSubmissionStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParseEducationSubmissionStatus(v string) (any, error) {
         case "excused":
             result = EXCUSED_EDUCATIONSUBMISSIONSTATUS
         default:
-            return 0, errors.New("Unknown EducationSubmissionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

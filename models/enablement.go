@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of a property
 type Enablement int
 
@@ -27,7 +24,7 @@ func ParseEnablement(v string) (any, error) {
         case "disabled":
             result = DISABLED_ENABLEMENT
         default:
-            return 0, errors.New("Unknown Enablement value: " + v)
+            return nil, nil
     }
     return &result, nil
 }
