@@ -1,7 +1,4 @@
 package externalconnectors
-import (
-    "errors"
-)
 type ConnectionOperationStatus int
 
 const (
@@ -29,7 +26,7 @@ func ParseConnectionOperationStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIONOPERATIONSTATUS
         default:
-            return 0, errors.New("Unknown ConnectionOperationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

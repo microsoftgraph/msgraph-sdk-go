@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcAuditCategory int
 
 const (
@@ -20,7 +17,7 @@ func ParseCloudPcAuditCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCAUDITCATEGORY
         default:
-            return 0, errors.New("Unknown CloudPcAuditCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // A managed (MAM) application's availability.
 type ManagedAppAvailability int
 
@@ -23,7 +20,7 @@ func ParseManagedAppAvailability(v string) (any, error) {
         case "lineOfBusiness":
             result = LINEOFBUSINESS_MANAGEDAPPAVAILABILITY
         default:
-            return 0, errors.New("Unknown ManagedAppAvailability value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

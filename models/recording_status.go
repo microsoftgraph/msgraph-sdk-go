@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RecordingStatus int
 
 const (
@@ -29,7 +26,7 @@ func ParseRecordingStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECORDINGSTATUS
         default:
-            return 0, errors.New("Unknown RecordingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

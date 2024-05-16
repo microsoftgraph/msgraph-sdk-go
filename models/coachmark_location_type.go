@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CoachmarkLocationType int
 
 const (
@@ -35,7 +32,7 @@ func ParseCoachmarkLocationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_COACHMARKLOCATIONTYPE
         default:
-            return 0, errors.New("Unknown CoachmarkLocationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

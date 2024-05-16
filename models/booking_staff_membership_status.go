@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BookingStaffMembershipStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseBookingStaffMembershipStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BOOKINGSTAFFMEMBERSHIPSTATUS
         default:
-            return 0, errors.New("Unknown BookingStaffMembershipStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Notification Settings Alert Type.
 type IosNotificationAlertType int
 
@@ -31,7 +28,7 @@ func ParseIosNotificationAlertType(v string) (any, error) {
         case "none":
             result = NONE_IOSNOTIFICATIONALERTTYPE
         default:
-            return 0, errors.New("Unknown IosNotificationAlertType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

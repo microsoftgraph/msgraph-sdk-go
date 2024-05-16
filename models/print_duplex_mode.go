@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintDuplexMode int
 
 const (
@@ -26,7 +23,7 @@ func ParsePrintDuplexMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTDUPLEXMODE
         default:
-            return 0, errors.New("Unknown PrintDuplexMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

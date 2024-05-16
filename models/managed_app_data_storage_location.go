@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Storage locations where managed apps can potentially store their data
 type ManagedAppDataStorageLocation int
 
@@ -31,7 +28,7 @@ func ParseManagedAppDataStorageLocation(v string) (any, error) {
         case "localStorage":
             result = LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION
         default:
-            return 0, errors.New("Unknown ManagedAppDataStorageLocation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

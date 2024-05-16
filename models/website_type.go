@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WebsiteType int
 
 const (
@@ -29,7 +26,7 @@ func ParseWebsiteType(v string) (any, error) {
         case "profile":
             result = PROFILE_WEBSITETYPE
         default:
-            return 0, errors.New("Unknown WebsiteType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

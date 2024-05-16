@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamsAppPublishingState int
 
 const (
@@ -26,7 +23,7 @@ func ParseTeamsAppPublishingState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPPUBLISHINGSTATE
         default:
-            return 0, errors.New("Unknown TeamsAppPublishingState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

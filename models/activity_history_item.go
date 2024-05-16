@@ -56,7 +56,7 @@ func (m *ActivityHistoryItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+// GetExpirationDateTime gets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -164,7 +164,7 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLastActiveDateTime gets the lastActiveDateTime property value. Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
+// GetLastActiveDateTime gets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetLastActiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActiveDateTime")
@@ -188,7 +188,7 @@ func (m *ActivityHistoryItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetStartedDateTime gets the startedDateTime property value. Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+// GetStartedDateTime gets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
@@ -308,14 +308,14 @@ func (m *ActivityHistoryItem) SetCreatedDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+// SetExpirationDateTime sets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
 func (m *ActivityHistoryItem) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastActiveDateTime sets the lastActiveDateTime property value. Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
+// SetLastActiveDateTime sets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
 func (m *ActivityHistoryItem) SetLastActiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastActiveDateTime", value)
     if err != nil {
@@ -329,7 +329,7 @@ func (m *ActivityHistoryItem) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// SetStartedDateTime sets the startedDateTime property value. Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+// SetStartedDateTime sets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
 func (m *ActivityHistoryItem) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startedDateTime", value)
     if err != nil {

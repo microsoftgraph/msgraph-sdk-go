@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for site security level.
 type SiteSecurityLevel int
 
@@ -39,7 +36,7 @@ func ParseSiteSecurityLevel(v string) (any, error) {
         case "high":
             result = HIGH_SITESECURITYLEVEL
         default:
-            return 0, errors.New("Unknown SiteSecurityLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

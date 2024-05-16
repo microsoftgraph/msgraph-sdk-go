@@ -87,6 +87,11 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable), nil
 }
+// Identities provides operations to manage the identities property of the microsoft.graph.security entity.
+// returns a *IdentitiesRequestBuilder when successful
+func (m *SecurityRequestBuilder) Identities()(*IdentitiesRequestBuilder) {
+    return NewIdentitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Incidents provides operations to manage the incidents property of the microsoft.graph.security entity.
 // returns a *IncidentsRequestBuilder when successful
 func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {

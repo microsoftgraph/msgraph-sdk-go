@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type Modality int
 
 const (
@@ -29,7 +26,7 @@ func ParseModality(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MODALITY
         default:
-            return 0, errors.New("Unknown Modality value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

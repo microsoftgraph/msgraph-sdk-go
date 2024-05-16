@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EventType int
 
 const (
@@ -26,7 +23,7 @@ func ParseEventType(v string) (any, error) {
         case "seriesMaster":
             result = SERIESMASTER_EVENTTYPE
         default:
-            return 0, errors.New("Unknown EventType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

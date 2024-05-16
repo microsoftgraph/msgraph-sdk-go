@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EducationAddedStudentAction int
 
 const (
@@ -23,7 +20,7 @@ func ParseEducationAddedStudentAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONADDEDSTUDENTACTION
         default:
-            return 0, errors.New("Unknown EducationAddedStudentAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

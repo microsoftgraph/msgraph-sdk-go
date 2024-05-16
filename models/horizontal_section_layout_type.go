@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type HorizontalSectionLayoutType int
 
 const (
@@ -38,7 +35,7 @@ func ParseHorizontalSectionLayoutType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HORIZONTALSECTIONLAYOUTTYPE
         default:
-            return 0, errors.New("Unknown HorizontalSectionLayoutType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

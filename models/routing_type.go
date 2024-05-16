@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RoutingType int
 
 const (
@@ -26,7 +23,7 @@ func ParseRoutingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ROUTINGTYPE
         default:
-            return 0, errors.New("Unknown RoutingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

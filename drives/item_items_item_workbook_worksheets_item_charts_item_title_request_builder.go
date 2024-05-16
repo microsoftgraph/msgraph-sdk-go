@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetQueryParameters represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetQueryParameters represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Delet
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemTitleFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemTitleFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// Get represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
 // returns a WorkbookChartTitleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartTitleable, error) {
@@ -126,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) ToDel
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// ToGetRequestInformation represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

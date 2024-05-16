@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported platform types.
 type DevicePlatformType int
 
@@ -67,7 +64,7 @@ func ParseDevicePlatformType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEPLATFORMTYPE
         default:
-            return 0, errors.New("Unknown DevicePlatformType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

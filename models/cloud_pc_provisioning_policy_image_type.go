@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcProvisioningPolicyImageType int
 
 const (
@@ -23,7 +20,7 @@ func ParseCloudPcProvisioningPolicyImageType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
         default:
-            return 0, errors.New("Unknown CloudPcProvisioningPolicyImageType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

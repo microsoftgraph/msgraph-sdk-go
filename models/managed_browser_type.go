@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseManagedBrowserType(v string) (any, error) {
             case "microsoftEdge":
                 result |= MICROSOFTEDGE_MANAGEDBROWSERTYPE
             default:
-                return 0, errors.New("Unknown ManagedBrowserType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

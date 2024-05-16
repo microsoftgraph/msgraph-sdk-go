@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseSharedPCAllowedAccountType(v string) (any, error) {
             case "domain":
                 result |= DOMAIN_SHAREDPCALLOWEDACCOUNTTYPE
             default:
-                return 0, errors.New("Unknown SharedPCAllowedAccountType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

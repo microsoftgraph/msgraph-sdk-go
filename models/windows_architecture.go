@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseWindowsArchitecture(v string) (any, error) {
             case "neutral":
                 result |= NEUTRAL_WINDOWSARCHITECTURE
             default:
-                return 0, errors.New("Unknown WindowsArchitecture value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

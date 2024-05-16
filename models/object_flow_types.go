@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseObjectFlowTypes(v string) (any, error) {
             case "Delete":
                 result |= DELETE_OBJECTFLOWTYPES
             default:
-                return 0, errors.New("Unknown ObjectFlowTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

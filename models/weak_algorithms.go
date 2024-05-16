@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -32,7 +31,7 @@ func ParseWeakAlgorithms(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_WEAKALGORITHMS
             default:
-                return 0, errors.New("Unknown WeakAlgorithms value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

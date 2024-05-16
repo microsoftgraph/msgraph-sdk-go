@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseChatMessagePolicyViolationUserActionTypes(v string) (any, error) {
             case "reportFalsePositive":
                 result |= REPORTFALSEPOSITIVE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
             default:
-                return 0, errors.New("Unknown ChatMessagePolicyViolationUserActionTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

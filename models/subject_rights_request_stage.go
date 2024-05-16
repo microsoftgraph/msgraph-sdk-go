@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SubjectRightsRequestStage int
 
 const (
@@ -38,7 +35,7 @@ func ParseSubjectRightsRequestStage(v string) (any, error) {
         case "approval":
             result = APPROVAL_SUBJECTRIGHTSREQUESTSTAGE
         default:
-            return 0, errors.New("Unknown SubjectRightsRequestStage value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseSearchContent(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_SEARCHCONTENT
             default:
-                return 0, errors.New("Unknown SearchContent value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

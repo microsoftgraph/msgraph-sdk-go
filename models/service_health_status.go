@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ServiceHealthStatus int
 
 const (
@@ -68,7 +65,7 @@ func ParseServiceHealthStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEHEALTHSTATUS
         default:
-            return 0, errors.New("Unknown ServiceHealthStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

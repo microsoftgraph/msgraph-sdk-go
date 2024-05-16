@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AttributeFlowBehavior int
 
 const (
@@ -20,7 +17,7 @@ func ParseAttributeFlowBehavior(v string) (any, error) {
         case "FlowAlways":
             result = FLOWALWAYS_ATTRIBUTEFLOWBEHAVIOR
         default:
-            return 0, errors.New("Unknown AttributeFlowBehavior value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

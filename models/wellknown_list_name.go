@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WellknownListName int
 
 const (
@@ -26,7 +23,7 @@ func ParseWellknownListName(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WELLKNOWNLISTNAME
         default:
-            return 0, errors.New("Unknown WellknownListName value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type KubernetesPlatform int
 
 const (
@@ -32,7 +29,7 @@ func ParseKubernetesPlatform(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_KUBERNETESPLATFORM
         default:
-            return 0, errors.New("Unknown KubernetesPlatform value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

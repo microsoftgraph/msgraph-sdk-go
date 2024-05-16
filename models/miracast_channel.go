@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for Miracast channel.
 type MiracastChannel int
 
@@ -99,7 +96,7 @@ func ParseMiracastChannel(v string) (any, error) {
         case "oneHundredSixtyFive":
             result = ONEHUNDREDSIXTYFIVE_MIRACASTCHANNEL
         default:
-            return 0, errors.New("Unknown MiracastChannel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

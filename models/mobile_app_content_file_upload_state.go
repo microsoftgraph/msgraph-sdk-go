@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains properties for upload request states.
 type MobileAppContentFileUploadState int
 
@@ -63,7 +60,7 @@ func ParseMobileAppContentFileUploadState(v string) (any, error) {
         case "commitFileTimedOut":
             result = COMMITFILETIMEDOUT_MOBILEAPPCONTENTFILEUPLOADSTATE
         default:
-            return 0, errors.New("Unknown MobileAppContentFileUploadState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

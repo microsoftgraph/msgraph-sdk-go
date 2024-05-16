@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CalendarSharingActionType int
 
 const (
@@ -17,7 +14,7 @@ func ParseCalendarSharingActionType(v string) (any, error) {
         case "accept":
             result = ACCEPT_CALENDARSHARINGACTIONTYPE
         default:
-            return 0, errors.New("Unknown CalendarSharingActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

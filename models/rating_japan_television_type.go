@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // TV content rating labels in Japan
 type RatingJapanTelevisionType int
 
@@ -27,7 +24,7 @@ func ParseRatingJapanTelevisionType(v string) (any, error) {
         case "explicitAllowed":
             result = EXPLICITALLOWED_RATINGJAPANTELEVISIONTYPE
         default:
-            return 0, errors.New("Unknown RatingJapanTelevisionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

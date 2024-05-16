@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type PstnCallDurationSource int
 
 const (
@@ -20,7 +17,7 @@ func ParsePstnCallDurationSource(v string) (any, error) {
         case "operator":
             result = OPERATOR_PSTNCALLDURATIONSOURCE
         default:
-            return 0, errors.New("Unknown PstnCallDurationSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains value for delivery optimization priority.
 type Win32LobAppDeliveryOptimizationPriority int
 
@@ -23,7 +20,7 @@ func ParseWin32LobAppDeliveryOptimizationPriority(v string) (any, error) {
         case "foreground":
             result = FOREGROUND_WIN32LOBAPPDELIVERYOPTIMIZATIONPRIORITY
         default:
-            return 0, errors.New("Unknown Win32LobAppDeliveryOptimizationPriority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

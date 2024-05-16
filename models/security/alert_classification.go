@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type AlertClassification int
 
 const (
@@ -29,7 +26,7 @@ func ParseAlertClassification(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTCLASSIFICATION
         default:
-            return 0, errors.New("Unknown AlertClassification value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

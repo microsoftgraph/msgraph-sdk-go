@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MultiFactorAuthConfiguration int
 
 const (
@@ -23,7 +20,7 @@ func ParseMultiFactorAuthConfiguration(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MULTIFACTORAUTHCONFIGURATION
         default:
-            return 0, errors.New("Unknown MultiFactorAuthConfiguration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // A list of possible operations for rules used to make determinations about an application based on registry keys or values. Unless noted, the values can be used with either detection or requirement rules.
 type Win32LobAppRegistryRuleOperationType int
 
@@ -39,7 +36,7 @@ func ParseWin32LobAppRegistryRuleOperationType(v string) (any, error) {
         case "version":
             result = VERSION_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
         default:
-            return 0, errors.New("Unknown Win32LobAppRegistryRuleOperationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

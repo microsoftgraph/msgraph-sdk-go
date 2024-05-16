@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintEvent int
 
 const (
@@ -20,7 +17,7 @@ func ParsePrintEvent(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTEVENT
         default:
-            return 0, errors.New("Unknown PrintEvent value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

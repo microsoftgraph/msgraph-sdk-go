@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type OutlierMemberType int
 
 const (
@@ -20,7 +17,7 @@ func ParseOutlierMemberType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OUTLIERMEMBERTYPE
         default:
-            return 0, errors.New("Unknown OutlierMemberType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

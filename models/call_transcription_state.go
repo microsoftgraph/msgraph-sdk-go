@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CallTranscriptionState int
 
 const (
@@ -26,7 +23,7 @@ func ParseCallTranscriptionState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CALLTRANSCRIPTIONSTATE
         default:
-            return 0, errors.New("Unknown CallTranscriptionState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UserPurpose int
 
 const (
@@ -35,7 +32,7 @@ func ParseUserPurpose(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERPURPOSE
         default:
-            return 0, errors.New("Unknown UserPurpose value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

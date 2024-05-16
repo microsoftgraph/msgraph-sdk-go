@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type IoTDeviceImportanceType int
 
 const (
@@ -29,7 +26,7 @@ func ParseIoTDeviceImportanceType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IOTDEVICEIMPORTANCETYPE
         default:
-            return 0, errors.New("Unknown IoTDeviceImportanceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

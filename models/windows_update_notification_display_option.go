@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows Update Notification Display Options
 type WindowsUpdateNotificationDisplayOption int
 
@@ -35,7 +32,7 @@ func ParseWindowsUpdateNotificationDisplayOption(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
         default:
-            return 0, errors.New("Unknown WindowsUpdateNotificationDisplayOption value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EducationAssignmentStatus int
 
 const (
@@ -29,7 +26,7 @@ func ParseEducationAssignmentStatus(v string) (any, error) {
         case "inactive":
             result = INACTIVE_EDUCATIONASSIGNMENTSTATUS
         default:
-            return 0, errors.New("Unknown EducationAssignmentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

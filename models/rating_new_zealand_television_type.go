@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // TV content rating labels in New Zealand
 type RatingNewZealandTelevisionType int
 
@@ -35,7 +32,7 @@ func ParseRatingNewZealandTelevisionType(v string) (any, error) {
         case "adults":
             result = ADULTS_RATINGNEWZEALANDTELEVISIONTYPE
         default:
-            return 0, errors.New("Unknown RatingNewZealandTelevisionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

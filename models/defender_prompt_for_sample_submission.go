@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for prompting user for samples submission.
 type DefenderPromptForSampleSubmission int
 
@@ -35,7 +32,7 @@ func ParseDefenderPromptForSampleSubmission(v string) (any, error) {
         case "sendAllDataWithoutPrompting":
             result = SENDALLDATAWITHOUTPROMPTING_DEFENDERPROMPTFORSAMPLESUBMISSION
         default:
-            return 0, errors.New("Unknown DefenderPromptForSampleSubmission value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

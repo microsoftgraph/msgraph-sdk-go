@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type ServiceRole int
 
 const (
@@ -80,7 +77,7 @@ func ParseServiceRole(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICEROLE
         default:
-            return 0, errors.New("Unknown ServiceRole value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

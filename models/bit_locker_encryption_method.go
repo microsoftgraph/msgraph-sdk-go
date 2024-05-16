@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // BitLockerEncryptionMethod types
 type BitLockerEncryptionMethod int
 
@@ -31,7 +28,7 @@ func ParseBitLockerEncryptionMethod(v string) (any, error) {
         case "xtsAes256":
             result = XTSAES256_BITLOCKERENCRYPTIONMETHOD
         default:
-            return 0, errors.New("Unknown BitLockerEncryptionMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

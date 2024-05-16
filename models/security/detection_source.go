@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type DetectionSource int
 
 const (
@@ -122,7 +119,7 @@ func ParseDetectionSource(v string) (any, error) {
         case "microsoftSentinel":
             result = MICROSOFTSENTINEL_DETECTIONSOURCE
         default:
-            return 0, errors.New("Unknown DetectionSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

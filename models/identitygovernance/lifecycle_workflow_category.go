@@ -1,7 +1,4 @@
 package identitygovernance
-import (
-    "errors"
-)
 type LifecycleWorkflowCategory int
 
 const (
@@ -26,7 +23,7 @@ func ParseLifecycleWorkflowCategory(v string) (any, error) {
         case "mover":
             result = MOVER_LIFECYCLEWORKFLOWCATEGORY
         default:
-            return 0, errors.New("Unknown LifecycleWorkflowCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

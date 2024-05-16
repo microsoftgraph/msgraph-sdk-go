@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type WifiBand int
 
 const (
@@ -29,7 +26,7 @@ func ParseWifiBand(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WIFIBAND
         default:
-            return 0, errors.New("Unknown WifiBand value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

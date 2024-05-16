@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
 type UserExperienceAnalyticsInsightSeverity int
 
@@ -35,7 +32,7 @@ func ParseUserExperienceAnalyticsInsightSeverity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsInsightSeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

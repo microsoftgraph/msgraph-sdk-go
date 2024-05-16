@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -44,7 +43,7 @@ func ParseDirectoryDefinitionDiscoverabilities(v string) (any, error) {
             case "UnknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DIRECTORYDEFINITIONDISCOVERABILITIES
             default:
-                return 0, errors.New("Unknown DirectoryDefinitionDiscoverabilities value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

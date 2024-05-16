@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RiskState int
 
 const (
@@ -35,7 +32,7 @@ func ParseRiskState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKSTATE
         default:
-            return 0, errors.New("Unknown RiskState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PagePromotionType int
 
 const (
@@ -26,7 +23,7 @@ func ParsePagePromotionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PAGEPROMOTIONTYPE
         default:
-            return 0, errors.New("Unknown PagePromotionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

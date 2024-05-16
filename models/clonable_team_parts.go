@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -41,7 +40,7 @@ func ParseClonableTeamParts(v string) (any, error) {
             case "members":
                 result |= MEMBERS_CLONABLETEAMPARTS
             default:
-                return 0, errors.New("Unknown ClonableTeamParts value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

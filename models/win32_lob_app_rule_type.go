@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains rule types for Win32 LOB apps.
 type Win32LobAppRuleType int
 
@@ -23,7 +20,7 @@ func ParseWin32LobAppRuleType(v string) (any, error) {
         case "requirement":
             result = REQUIREMENT_WIN32LOBAPPRULETYPE
         default:
-            return 0, errors.New("Unknown Win32LobAppRuleType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

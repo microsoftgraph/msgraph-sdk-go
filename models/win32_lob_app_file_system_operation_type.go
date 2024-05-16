@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.
 type Win32LobAppFileSystemOperationType int
 
@@ -39,7 +36,7 @@ func ParseWin32LobAppFileSystemOperationType(v string) (any, error) {
         case "sizeInMB":
             result = SIZEINMB_WIN32LOBAPPFILESYSTEMOPERATIONTYPE
         default:
-            return 0, errors.New("Unknown Win32LobAppFileSystemOperationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

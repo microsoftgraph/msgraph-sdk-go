@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type KubernetesServiceType int
 
 const (
@@ -32,7 +29,7 @@ func ParseKubernetesServiceType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_KUBERNETESSERVICETYPE
         default:
-            return 0, errors.New("Unknown KubernetesServiceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

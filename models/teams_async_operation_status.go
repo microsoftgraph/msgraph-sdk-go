@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamsAsyncOperationStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseTeamsAsyncOperationStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSASYNCOPERATIONSTATUS
         default:
-            return 0, errors.New("Unknown TeamsAsyncOperationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

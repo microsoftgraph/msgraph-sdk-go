@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamworkActivityTopicSource int
 
 const (
@@ -20,7 +17,7 @@ func ParseTeamworkActivityTopicSource(v string) (any, error) {
         case "text":
             result = TEXT_TEAMWORKACTIVITYTOPICSOURCE
         default:
-            return 0, errors.New("Unknown TeamworkActivityTopicSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

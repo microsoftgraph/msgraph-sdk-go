@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type ClientPlatform int
 
 const (
@@ -47,7 +44,7 @@ func ParseClientPlatform(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLIENTPLATFORM
         default:
-            return 0, errors.New("Unknown ClientPlatform value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

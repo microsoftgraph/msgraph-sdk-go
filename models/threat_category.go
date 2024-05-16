@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ThreatCategory int
 
 const (
@@ -29,7 +26,7 @@ func ParseThreatCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_THREATCATEGORY
         default:
-            return 0, errors.New("Unknown ThreatCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SecurityNetworkProtocol int
 
 const (
@@ -86,7 +83,7 @@ func ParseSecurityNetworkProtocol(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SECURITYNETWORKPROTOCOL
         default:
-            return 0, errors.New("Unknown SecurityNetworkProtocol value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

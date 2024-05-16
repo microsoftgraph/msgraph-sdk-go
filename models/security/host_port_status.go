@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type HostPortStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseHostPortStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HOSTPORTSTATUS
         default:
-            return 0, errors.New("Unknown HostPortStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

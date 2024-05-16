@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type LocationUniqueIdType int
 
 const (
@@ -29,7 +26,7 @@ func ParseLocationUniqueIdType(v string) (any, error) {
         case "bing":
             result = BING_LOCATIONUNIQUEIDTYPE
         default:
-            return 0, errors.New("Unknown LocationUniqueIdType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

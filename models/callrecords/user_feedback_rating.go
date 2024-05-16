@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type UserFeedbackRating int
 
 const (
@@ -35,7 +32,7 @@ func ParseUserFeedbackRating(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERFEEDBACKRATING
         default:
-            return 0, errors.New("Unknown UserFeedbackRating value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

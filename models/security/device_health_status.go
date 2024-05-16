@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type DeviceHealthStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParseDeviceHealthStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEHEALTHSTATUS
         default:
-            return 0, errors.New("Unknown DeviceHealthStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

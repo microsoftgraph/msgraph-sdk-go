@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MeetingChatHistoryDefaultMode int
 
 const (
@@ -23,7 +20,7 @@ func ParseMeetingChatHistoryDefaultMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEETINGCHATHISTORYDEFAULTMODE
         default:
-            return 0, errors.New("Unknown MeetingChatHistoryDefaultMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

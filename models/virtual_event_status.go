@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type VirtualEventStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseVirtualEventStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VIRTUALEVENTSTATUS
         default:
-            return 0, errors.New("Unknown VirtualEventStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

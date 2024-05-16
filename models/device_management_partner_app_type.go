@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Partner App Type.
 type DeviceManagementPartnerAppType int
 
@@ -27,7 +24,7 @@ func ParseDeviceManagementPartnerAppType(v string) (any, error) {
         case "multiTenantApp":
             result = MULTITENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementPartnerAppType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

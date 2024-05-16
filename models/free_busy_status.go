@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type FreeBusyStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseFreeBusyStatus(v string) (any, error) {
         case "workingElsewhere":
             result = WORKINGELSEWHERE_FREEBUSYSTATUS
         default:
-            return 0, errors.New("Unknown FreeBusyStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

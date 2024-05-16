@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EndpointType int
 
 const (
@@ -29,7 +26,7 @@ func ParseEndpointType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ENDPOINTTYPE
         default:
-            return 0, errors.New("Unknown EndpointType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type InitiatorType int
 
 const (
@@ -26,7 +23,7 @@ func ParseInitiatorType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INITIATORTYPE
         default:
-            return 0, errors.New("Unknown InitiatorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

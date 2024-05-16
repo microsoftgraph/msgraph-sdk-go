@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SimulationAutomationRunStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseSimulationAutomationRunStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIMULATIONAUTOMATIONRUNSTATUS
         default:
-            return 0, errors.New("Unknown SimulationAutomationRunStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

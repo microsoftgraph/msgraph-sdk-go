@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SharingDomainRestrictionMode int
 
 const (
@@ -26,7 +23,7 @@ func ParseSharingDomainRestrictionMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SHARINGDOMAINRESTRICTIONMODE
         default:
-            return 0, errors.New("Unknown SharingDomainRestrictionMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

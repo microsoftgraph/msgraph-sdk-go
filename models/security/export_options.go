@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -41,7 +40,7 @@ func ParseExportOptions(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_EXPORTOPTIONS
             default:
-                return 0, errors.New("Unknown ExportOptions value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type NotificationDeliveryFrequency int
 
 const (
@@ -26,7 +23,7 @@ func ParseNotificationDeliveryFrequency(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NOTIFICATIONDELIVERYFREQUENCY
         default:
-            return 0, errors.New("Unknown NotificationDeliveryFrequency value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

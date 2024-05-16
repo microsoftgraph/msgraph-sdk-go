@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Type of display modes for the start menu.
 type WindowsStartMenuModeType int
 
@@ -27,7 +24,7 @@ func ParseWindowsStartMenuModeType(v string) (any, error) {
         case "nonFullScreen":
             result = NONFULLSCREEN_WINDOWSSTARTMENUMODETYPE
         default:
-            return 0, errors.New("Unknown WindowsStartMenuModeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

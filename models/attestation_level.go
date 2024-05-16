@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AttestationLevel int
 
 const (
@@ -23,7 +20,7 @@ func ParseAttestationLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ATTESTATIONLEVEL
         default:
-            return 0, errors.New("Unknown AttestationLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

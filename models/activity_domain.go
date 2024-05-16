@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ActivityDomain int
 
 const (
@@ -26,7 +23,7 @@ func ParseActivityDomain(v string) (any, error) {
         case "unrestricted":
             result = UNRESTRICTED_ACTIVITYDOMAIN
         default:
-            return 0, errors.New("Unknown ActivityDomain value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

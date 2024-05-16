@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseAuthenticationStrengthRequirements(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHREQUIREMENTS
             default:
-                return 0, errors.New("Unknown AuthenticationStrengthRequirements value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcOnPremisesConnectionStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParseCloudPcOnPremisesConnectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONSTATUS
         default:
-            return 0, errors.New("Unknown CloudPcOnPremisesConnectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

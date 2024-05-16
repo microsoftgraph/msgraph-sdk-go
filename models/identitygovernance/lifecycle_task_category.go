@@ -1,6 +1,5 @@
 package identitygovernance
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseLifecycleTaskCategory(v string) (any, error) {
             case "mover":
                 result |= MOVER_LIFECYCLETASKCATEGORY
             default:
-                return 0, errors.New("Unknown LifecycleTaskCategory value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

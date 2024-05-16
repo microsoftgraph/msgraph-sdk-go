@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AttributeMappingSourceType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAttributeMappingSourceType(v string) (any, error) {
         case "Function":
             result = FUNCTION_ATTRIBUTEMAPPINGSOURCETYPE
         default:
-            return 0, errors.New("Unknown AttributeMappingSourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

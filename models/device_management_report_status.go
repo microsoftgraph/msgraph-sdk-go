@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible statuses associated with a generated report.
 type DeviceManagementReportStatus int
 
@@ -35,7 +32,7 @@ func ParseDeviceManagementReportStatus(v string) (any, error) {
         case "failed":
             result = FAILED_DEVICEMANAGEMENTREPORTSTATUS
         default:
-            return 0, errors.New("Unknown DeviceManagementReportStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Allows IT admind to set a predefined default search engine for MDM-Controlled devices
 type WindowsSpotlightEnablementSettings int
 
@@ -27,7 +24,7 @@ func ParseWindowsSpotlightEnablementSettings(v string) (any, error) {
         case "enabled":
             result = ENABLED_WINDOWSSPOTLIGHTENABLEMENTSETTINGS
         default:
-            return 0, errors.New("Unknown WindowsSpotlightEnablementSettings value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

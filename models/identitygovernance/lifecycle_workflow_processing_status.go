@@ -1,7 +1,4 @@
 package identitygovernance
-import (
-    "errors"
-)
 type LifecycleWorkflowProcessingStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParseLifecycleWorkflowProcessingStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LIFECYCLEWORKFLOWPROCESSINGSTATUS
         default:
-            return 0, errors.New("Unknown LifecycleWorkflowProcessingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

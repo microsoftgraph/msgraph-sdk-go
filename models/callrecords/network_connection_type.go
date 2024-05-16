@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type NetworkConnectionType int
 
 const (
@@ -32,7 +29,7 @@ func ParseNetworkConnectionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NETWORKCONNECTIONTYPE
         default:
-            return 0, errors.New("Unknown NetworkConnectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

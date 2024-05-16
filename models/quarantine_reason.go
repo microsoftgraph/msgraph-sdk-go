@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type QuarantineReason int
 
 const (
@@ -38,7 +35,7 @@ func ParseQuarantineReason(v string) (any, error) {
         case "IngestionInterrupted":
             result = INGESTIONINTERRUPTED_QUARANTINEREASON
         default:
-            return 0, errors.New("Unknown QuarantineReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

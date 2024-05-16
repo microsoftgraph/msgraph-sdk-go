@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -56,7 +55,7 @@ func ParseMailTipsType(v string) (any, error) {
             case "recipientSuggestions":
                 result |= RECIPIENTSUGGESTIONS_MAILTIPSTYPE
             default:
-                return 0, errors.New("Unknown MailTipsType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil
