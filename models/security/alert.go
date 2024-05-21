@@ -57,7 +57,7 @@ func (m *Alert) GetAlertPolicyId()(*string) {
     }
     return nil
 }
-// GetAlertWebUrl gets the alertWebUrl property value. The alertWebUrl property
+// GetAlertWebUrl gets the alertWebUrl property value. URL for the Microsoft 365 Defender portal alert page.
 // returns a *string when successful
 func (m *Alert) GetAlertWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("alertWebUrl")
@@ -611,7 +611,7 @@ func (m *Alert) GetMitreTechniques()([]string) {
     }
     return nil
 }
-// GetProductName gets the productName property value. The productName property
+// GetProductName gets the productName property value. The name of the product which published this alert.
 // returns a *string when successful
 func (m *Alert) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
@@ -994,7 +994,7 @@ func (m *Alert) SetAlertPolicyId(value *string)() {
         panic(err)
     }
 }
-// SetAlertWebUrl sets the alertWebUrl property value. The alertWebUrl property
+// SetAlertWebUrl sets the alertWebUrl property value. URL for the Microsoft 365 Defender portal alert page.
 func (m *Alert) SetAlertWebUrl(value *string)() {
     err := m.GetBackingStore().Set("alertWebUrl", value)
     if err != nil {
@@ -1113,7 +1113,7 @@ func (m *Alert) SetMitreTechniques(value []string)() {
         panic(err)
     }
 }
-// SetProductName sets the productName property value. The productName property
+// SetProductName sets the productName property value. The name of the product which published this alert.
 func (m *Alert) SetProductName(value *string)() {
     err := m.GetBackingStore().Set("productName", value)
     if err != nil {

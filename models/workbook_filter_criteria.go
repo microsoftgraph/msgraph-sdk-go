@@ -40,7 +40,7 @@ func (m *WorkbookFilterCriteria) GetAdditionalData()(map[string]any) {
 func (m *WorkbookFilterCriteria) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetColor gets the color property value. The color property
+// GetColor gets the color property value. The color applied to the cell.
 // returns a *string when successful
 func (m *WorkbookFilterCriteria) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
@@ -52,7 +52,7 @@ func (m *WorkbookFilterCriteria) GetColor()(*string) {
     }
     return nil
 }
-// GetCriterion1 gets the criterion1 property value. The criterion1 property
+// GetCriterion1 gets the criterion1 property value. A custom criterion.
 // returns a *string when successful
 func (m *WorkbookFilterCriteria) GetCriterion1()(*string) {
     val, err := m.GetBackingStore().Get("criterion1")
@@ -64,7 +64,7 @@ func (m *WorkbookFilterCriteria) GetCriterion1()(*string) {
     }
     return nil
 }
-// GetCriterion2 gets the criterion2 property value. The criterion2 property
+// GetCriterion2 gets the criterion2 property value. A custom criterion.
 // returns a *string when successful
 func (m *WorkbookFilterCriteria) GetCriterion2()(*string) {
     val, err := m.GetBackingStore().Get("criterion2")
@@ -76,7 +76,7 @@ func (m *WorkbookFilterCriteria) GetCriterion2()(*string) {
     }
     return nil
 }
-// GetDynamicCriteria gets the dynamicCriteria property value. The dynamicCriteria property
+// GetDynamicCriteria gets the dynamicCriteria property value. A dynamic formula specified in a custom filter.
 // returns a *string when successful
 func (m *WorkbookFilterCriteria) GetDynamicCriteria()(*string) {
     val, err := m.GetBackingStore().Get("dynamicCriteria")
@@ -184,7 +184,7 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetFilterOn gets the filterOn property value. The filterOn property
+// GetFilterOn gets the filterOn property value. Indicates whether a filter is applied to a column.
 // returns a *string when successful
 func (m *WorkbookFilterCriteria) GetFilterOn()(*string) {
     val, err := m.GetBackingStore().Get("filterOn")
@@ -196,7 +196,7 @@ func (m *WorkbookFilterCriteria) GetFilterOn()(*string) {
     }
     return nil
 }
-// GetIcon gets the icon property value. The icon property
+// GetIcon gets the icon property value. An icon applied to a cell via conditional formatting.
 // returns a WorkbookIconable when successful
 func (m *WorkbookFilterCriteria) GetIcon()(WorkbookIconable) {
     val, err := m.GetBackingStore().Get("icon")
@@ -220,7 +220,7 @@ func (m *WorkbookFilterCriteria) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperator gets the operator property value. The operator property
+// GetOperator gets the operator property value. An operator in a cell; for example, =, >, <, <=, or <>.
 // returns a *string when successful
 func (m *WorkbookFilterCriteria) GetOperator()(*string) {
     val, err := m.GetBackingStore().Get("operator")
@@ -232,7 +232,7 @@ func (m *WorkbookFilterCriteria) GetOperator()(*string) {
     }
     return nil
 }
-// GetValues gets the values property value. The values property
+// GetValues gets the values property value. The values that appear in the cell.
 // returns a Jsonable when successful
 func (m *WorkbookFilterCriteria) GetValues()(Jsonable) {
     val, err := m.GetBackingStore().Get("values")
@@ -319,42 +319,42 @@ func (m *WorkbookFilterCriteria) SetAdditionalData(value map[string]any)() {
 func (m *WorkbookFilterCriteria) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetColor sets the color property value. The color property
+// SetColor sets the color property value. The color applied to the cell.
 func (m *WorkbookFilterCriteria) SetColor(value *string)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCriterion1 sets the criterion1 property value. The criterion1 property
+// SetCriterion1 sets the criterion1 property value. A custom criterion.
 func (m *WorkbookFilterCriteria) SetCriterion1(value *string)() {
     err := m.GetBackingStore().Set("criterion1", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCriterion2 sets the criterion2 property value. The criterion2 property
+// SetCriterion2 sets the criterion2 property value. A custom criterion.
 func (m *WorkbookFilterCriteria) SetCriterion2(value *string)() {
     err := m.GetBackingStore().Set("criterion2", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDynamicCriteria sets the dynamicCriteria property value. The dynamicCriteria property
+// SetDynamicCriteria sets the dynamicCriteria property value. A dynamic formula specified in a custom filter.
 func (m *WorkbookFilterCriteria) SetDynamicCriteria(value *string)() {
     err := m.GetBackingStore().Set("dynamicCriteria", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilterOn sets the filterOn property value. The filterOn property
+// SetFilterOn sets the filterOn property value. Indicates whether a filter is applied to a column.
 func (m *WorkbookFilterCriteria) SetFilterOn(value *string)() {
     err := m.GetBackingStore().Set("filterOn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIcon sets the icon property value. The icon property
+// SetIcon sets the icon property value. An icon applied to a cell via conditional formatting.
 func (m *WorkbookFilterCriteria) SetIcon(value WorkbookIconable)() {
     err := m.GetBackingStore().Set("icon", value)
     if err != nil {
@@ -368,14 +368,14 @@ func (m *WorkbookFilterCriteria) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperator sets the operator property value. The operator property
+// SetOperator sets the operator property value. An operator in a cell; for example, =, >, <, <=, or <>.
 func (m *WorkbookFilterCriteria) SetOperator(value *string)() {
     err := m.GetBackingStore().Set("operator", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValues sets the values property value. The values property
+// SetValues sets the values property value. The values that appear in the cell.
 func (m *WorkbookFilterCriteria) SetValues(value Jsonable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

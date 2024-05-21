@@ -316,7 +316,7 @@ func (m *PrinterDefaults) GetFitPdfToPage()(*bool) {
     }
     return nil
 }
-// GetInputBin gets the inputBin property value. The inputBin property
+// GetInputBin gets the inputBin property value. The default input bin that serves as the paper source.
 // returns a *string when successful
 func (m *PrinterDefaults) GetInputBin()(*string) {
     val, err := m.GetBackingStore().Get("inputBin")
@@ -632,7 +632,7 @@ func (m *PrinterDefaults) SetFitPdfToPage(value *bool)() {
         panic(err)
     }
 }
-// SetInputBin sets the inputBin property value. The inputBin property
+// SetInputBin sets the inputBin property value. The default input bin that serves as the paper source.
 func (m *PrinterDefaults) SetInputBin(value *string)() {
     err := m.GetBackingStore().Set("inputBin", value)
     if err != nil {

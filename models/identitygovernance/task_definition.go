@@ -32,7 +32,7 @@ func (m *TaskDefinition) GetCategory()(*LifecycleTaskCategory) {
     }
     return nil
 }
-// GetContinueOnError gets the continueOnError property value. The continueOnError property
+// GetContinueOnError gets the continueOnError property value. Defines if the workflow will continue if the task has an error.
 // returns a *bool when successful
 func (m *TaskDefinition) GetContinueOnError()(*bool) {
     val, err := m.GetBackingStore().Get("continueOnError")
@@ -222,7 +222,7 @@ func (m *TaskDefinition) SetCategory(value *LifecycleTaskCategory)() {
         panic(err)
     }
 }
-// SetContinueOnError sets the continueOnError property value. The continueOnError property
+// SetContinueOnError sets the continueOnError property value. Defines if the workflow will continue if the task has an error.
 func (m *TaskDefinition) SetContinueOnError(value *bool)() {
     err := m.GetBackingStore().Set("continueOnError", value)
     if err != nil {

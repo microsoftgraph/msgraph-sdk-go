@@ -35,7 +35,7 @@ func (m *MeetingParticipants) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAttendees gets the attendees property value. The attendees property
+// GetAttendees gets the attendees property value. Information about the meeting attendees.
 // returns a []MeetingParticipantInfoable when successful
 func (m *MeetingParticipants) GetAttendees()([]MeetingParticipantInfoable) {
     val, err := m.GetBackingStore().Get("attendees")
@@ -106,7 +106,7 @@ func (m *MeetingParticipants) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrganizer gets the organizer property value. The organizer property
+// GetOrganizer gets the organizer property value. Information about the meeting organizer.
 // returns a MeetingParticipantInfoable when successful
 func (m *MeetingParticipants) GetOrganizer()(MeetingParticipantInfoable) {
     val, err := m.GetBackingStore().Get("organizer")
@@ -159,7 +159,7 @@ func (m *MeetingParticipants) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAttendees sets the attendees property value. The attendees property
+// SetAttendees sets the attendees property value. Information about the meeting attendees.
 func (m *MeetingParticipants) SetAttendees(value []MeetingParticipantInfoable)() {
     err := m.GetBackingStore().Set("attendees", value)
     if err != nil {
@@ -177,7 +177,7 @@ func (m *MeetingParticipants) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrganizer sets the organizer property value. The organizer property
+// SetOrganizer sets the organizer property value. Information about the meeting organizer.
 func (m *MeetingParticipants) SetOrganizer(value MeetingParticipantInfoable)() {
     err := m.GetBackingStore().Set("organizer", value)
     if err != nil {

@@ -421,7 +421,7 @@ func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
     }
     return nil
 }
-// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
+// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
 // returns a *MeetingChatHistoryDefaultMode when successful
 func (m *OnlineMeetingBase) GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode) {
     val, err := m.GetBackingStore().Get("shareMeetingChatHistoryDefault")
@@ -705,7 +705,7 @@ func (m *OnlineMeetingBase) SetRecordAutomatically(value *bool)() {
         panic(err)
     }
 }
-// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
+// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
 func (m *OnlineMeetingBase) SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)() {
     err := m.GetBackingStore().Set("shareMeetingChatHistoryDefault", value)
     if err != nil {

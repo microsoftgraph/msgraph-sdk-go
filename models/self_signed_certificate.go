@@ -42,7 +42,7 @@ func (m *SelfSignedCertificate) GetAdditionalData()(map[string]any) {
 func (m *SelfSignedCertificate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCustomKeyIdentifier gets the customKeyIdentifier property value. The customKeyIdentifier property
+// GetCustomKeyIdentifier gets the customKeyIdentifier property value. Custom key identifier.
 // returns a []byte when successful
 func (m *SelfSignedCertificate) GetCustomKeyIdentifier()([]byte) {
     val, err := m.GetBackingStore().Get("customKeyIdentifier")
@@ -54,7 +54,7 @@ func (m *SelfSignedCertificate) GetCustomKeyIdentifier()([]byte) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The friendly name for the key.
 // returns a *string when successful
 func (m *SelfSignedCertificate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -66,7 +66,7 @@ func (m *SelfSignedCertificate) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SelfSignedCertificate) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -184,7 +184,7 @@ func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. The value for the key credential. Should be a Base-64 encoded value.
 // returns a []byte when successful
 func (m *SelfSignedCertificate) GetKey()([]byte) {
     val, err := m.GetBackingStore().Get("key")
@@ -196,7 +196,7 @@ func (m *SelfSignedCertificate) GetKey()([]byte) {
     }
     return nil
 }
-// GetKeyId gets the keyId property value. The keyId property
+// GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
 // returns a *UUID when successful
 func (m *SelfSignedCertificate) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("keyId")
@@ -220,7 +220,7 @@ func (m *SelfSignedCertificate) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -232,7 +232,7 @@ func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetThumbprint gets the thumbprint property value. The thumbprint property
+// GetThumbprint gets the thumbprint property value. The thumbprint value for the key.
 // returns a *string when successful
 func (m *SelfSignedCertificate) GetThumbprint()(*string) {
     val, err := m.GetBackingStore().Get("thumbprint")
@@ -244,7 +244,7 @@ func (m *SelfSignedCertificate) GetThumbprint()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of key credential. AsymmetricX509Cert.
 // returns a *string when successful
 func (m *SelfSignedCertificate) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -256,7 +256,7 @@ func (m *SelfSignedCertificate) GetTypeEscaped()(*string) {
     }
     return nil
 }
-// GetUsage gets the usage property value. The usage property
+// GetUsage gets the usage property value. A string that describes the purpose for which the key can be used. The possible value is Verify.
 // returns a *string when successful
 func (m *SelfSignedCertificate) GetUsage()(*string) {
     val, err := m.GetBackingStore().Get("usage")
@@ -349,35 +349,35 @@ func (m *SelfSignedCertificate) SetAdditionalData(value map[string]any)() {
 func (m *SelfSignedCertificate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCustomKeyIdentifier sets the customKeyIdentifier property value. The customKeyIdentifier property
+// SetCustomKeyIdentifier sets the customKeyIdentifier property value. Custom key identifier.
 func (m *SelfSignedCertificate) SetCustomKeyIdentifier(value []byte)() {
     err := m.GetBackingStore().Set("customKeyIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The friendly name for the key.
 func (m *SelfSignedCertificate) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SelfSignedCertificate) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. The value for the key credential. Should be a Base-64 encoded value.
 func (m *SelfSignedCertificate) SetKey(value []byte)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
         panic(err)
     }
 }
-// SetKeyId sets the keyId property value. The keyId property
+// SetKeyId sets the keyId property value. The unique identifier (GUID) for the key.
 func (m *SelfSignedCertificate) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("keyId", value)
     if err != nil {
@@ -391,28 +391,28 @@ func (m *SelfSignedCertificate) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SelfSignedCertificate) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThumbprint sets the thumbprint property value. The thumbprint property
+// SetThumbprint sets the thumbprint property value. The thumbprint value for the key.
 func (m *SelfSignedCertificate) SetThumbprint(value *string)() {
     err := m.GetBackingStore().Set("thumbprint", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of key credential. AsymmetricX509Cert.
 func (m *SelfSignedCertificate) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsage sets the usage property value. The usage property
+// SetUsage sets the usage property value. A string that describes the purpose for which the key can be used. The possible value is Verify.
 func (m *SelfSignedCertificate) SetUsage(value *string)() {
     err := m.GetBackingStore().Set("usage", value)
     if err != nil {

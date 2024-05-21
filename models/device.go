@@ -22,7 +22,7 @@ func NewDevice()(*Device) {
 func CreateDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDevice(), nil
 }
-// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.
 // returns a *bool when successful
 func (m *Device) GetAccountEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accountEnabled")
@@ -1072,7 +1072,7 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.
 func (m *Device) SetAccountEnabled(value *bool)() {
     err := m.GetBackingStore().Set("accountEnabled", value)
     if err != nil {

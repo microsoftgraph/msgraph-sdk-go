@@ -246,7 +246,7 @@ func (m *SubscribedSku) GetSkuPartNumber()(*string) {
     }
     return nil
 }
-// GetSubscriptionIds gets the subscriptionIds property value. The subscriptionIds property
+// GetSubscriptionIds gets the subscriptionIds property value. A list of all subscription IDs associated with this SKU.
 // returns a []string when successful
 func (m *SubscribedSku) GetSubscriptionIds()([]string) {
     val, err := m.GetBackingStore().Get("subscriptionIds")
@@ -395,7 +395,7 @@ func (m *SubscribedSku) SetSkuPartNumber(value *string)() {
         panic(err)
     }
 }
-// SetSubscriptionIds sets the subscriptionIds property value. The subscriptionIds property
+// SetSubscriptionIds sets the subscriptionIds property value. A list of all subscription IDs associated with this SKU.
 func (m *SubscribedSku) SetSubscriptionIds(value []string)() {
     err := m.GetBackingStore().Set("subscriptionIds", value)
     if err != nil {

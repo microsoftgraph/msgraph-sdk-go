@@ -76,7 +76,7 @@ func (m *AttributeDefinition) GetCaseExact()(*bool) {
     }
     return nil
 }
-// GetDefaultValue gets the defaultValue property value. The defaultValue property
+// GetDefaultValue gets the defaultValue property value. The default value of the attribute.
 // returns a *string when successful
 func (m *AttributeDefinition) GetDefaultValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultValue")
@@ -490,7 +490,7 @@ func (m *AttributeDefinition) SetCaseExact(value *bool)() {
         panic(err)
     }
 }
-// SetDefaultValue sets the defaultValue property value. The defaultValue property
+// SetDefaultValue sets the defaultValue property value. The default value of the attribute.
 func (m *AttributeDefinition) SetDefaultValue(value *string)() {
     err := m.GetBackingStore().Set("defaultValue", value)
     if err != nil {
