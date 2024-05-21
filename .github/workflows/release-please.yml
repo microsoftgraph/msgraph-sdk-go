@@ -25,4 +25,7 @@ jobs:
       - name: Release Please
         uses: google-github-actions/release-please-action@v3
         with:
+          release-type: 'go'
+          config-file: release-please-config.json
+        env:
           token: ${{ secrets.GITHUB_TOKEN }}
