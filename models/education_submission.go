@@ -20,7 +20,7 @@ func NewEducationSubmission()(*EducationSubmission) {
 func CreateEducationSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSubmission(), nil
 }
-// GetExcusedBy gets the excusedBy property value. The excusedBy property
+// GetExcusedBy gets the excusedBy property value. The user that marked the submission as excused.
 // returns a IdentitySetable when successful
 func (m *EducationSubmission) GetExcusedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("excusedBy")
@@ -32,7 +32,7 @@ func (m *EducationSubmission) GetExcusedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetExcusedDateTime gets the excusedDateTime property value. The excusedDateTime property
+// GetExcusedDateTime gets the excusedDateTime property value. The time that the submission was excused. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *EducationSubmission) GetExcusedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("excusedDateTime")
@@ -334,7 +334,7 @@ func (m *EducationSubmission) GetReturnedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetStatus gets the status property value. Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned.
+// GetStatus gets the status property value. Read-only. Possible values are: excused, reassigned, returned, submitted and working. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.
 // returns a *EducationSubmissionStatus when successful
 func (m *EducationSubmission) GetStatus()(*EducationSubmissionStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -468,14 +468,14 @@ func (m *EducationSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetExcusedBy sets the excusedBy property value. The excusedBy property
+// SetExcusedBy sets the excusedBy property value. The user that marked the submission as excused.
 func (m *EducationSubmission) SetExcusedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("excusedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcusedDateTime sets the excusedDateTime property value. The excusedDateTime property
+// SetExcusedDateTime sets the excusedDateTime property value. The time that the submission was excused. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EducationSubmission) SetExcusedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("excusedDateTime", value)
     if err != nil {
@@ -538,7 +538,7 @@ func (m *EducationSubmission) SetReturnedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetStatus sets the status property value. Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned.
+// SetStatus sets the status property value. Read-only. Possible values are: excused, reassigned, returned, submitted and working. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.
 func (m *EducationSubmission) SetStatus(value *EducationSubmissionStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

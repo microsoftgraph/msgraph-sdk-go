@@ -178,7 +178,7 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOwner gets the owner property value. The owner property
+// GetOwner gets the owner property value. Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property won't return a valid group ID if the container of the plan isn't a group.
 // returns a *string when successful
 func (m *PlannerPlan) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
@@ -317,7 +317,7 @@ func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
         panic(err)
     }
 }
-// SetOwner sets the owner property value. The owner property
+// SetOwner sets the owner property value. Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property won't return a valid group ID if the container of the plan isn't a group.
 func (m *PlannerPlan) SetOwner(value *string)() {
     err := m.GetBackingStore().Set("owner", value)
     if err != nil {

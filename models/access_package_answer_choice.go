@@ -128,7 +128,7 @@ func (m *AccessPackageAnswerChoice) GetOdataType()(*string) {
     }
     return nil
 }
-// GetText gets the text property value. The text property
+// GetText gets the text property value. The string to display for this answer; if an Accept-Language header is provided, and there is a matching localization in localizations, this string will be the matching localized string; otherwise, this string remains as the default non-localized string. Required.
 // returns a *string when successful
 func (m *AccessPackageAnswerChoice) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
@@ -212,7 +212,7 @@ func (m *AccessPackageAnswerChoice) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetText sets the text property value. The text property
+// SetText sets the text property value. The string to display for this answer; if an Accept-Language header is provided, and there is a matching localization in localizations, this string will be the matching localized string; otherwise, this string remains as the default non-localized string. Required.
 func (m *AccessPackageAnswerChoice) SetText(value *string)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {

@@ -166,7 +166,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetGrantedTo gets the grantedTo property value. The grantedTo property
+// GetGrantedTo gets the grantedTo property value. For user type permissions, the details of the users and applications for this permission. Read-only.
 // returns a IdentitySetable when successful
 func (m *Permission) GetGrantedTo()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("grantedTo")
@@ -178,7 +178,7 @@ func (m *Permission) GetGrantedTo()(IdentitySetable) {
     }
     return nil
 }
-// GetGrantedToIdentities gets the grantedToIdentities property value. The grantedToIdentities property
+// GetGrantedToIdentities gets the grantedToIdentities property value. For type permissions, the details of the users to whom permission was granted. Read-only.
 // returns a []IdentitySetable when successful
 func (m *Permission) GetGrantedToIdentities()([]IdentitySetable) {
     val, err := m.GetBackingStore().Get("grantedToIdentities")
@@ -379,14 +379,14 @@ func (m *Permission) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetGrantedTo sets the grantedTo property value. The grantedTo property
+// SetGrantedTo sets the grantedTo property value. For user type permissions, the details of the users and applications for this permission. Read-only.
 func (m *Permission) SetGrantedTo(value IdentitySetable)() {
     err := m.GetBackingStore().Set("grantedTo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGrantedToIdentities sets the grantedToIdentities property value. The grantedToIdentities property
+// SetGrantedToIdentities sets the grantedToIdentities property value. For type permissions, the details of the users to whom permission was granted. Read-only.
 func (m *Permission) SetGrantedToIdentities(value []IdentitySetable)() {
     err := m.GetBackingStore().Set("grantedToIdentities", value)
     if err != nil {

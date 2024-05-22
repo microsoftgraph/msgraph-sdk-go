@@ -47,7 +47,7 @@ func (m *PrintUsageByPrinter) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetPrinterId gets the printerId property value. The printerId property
+// GetPrinterId gets the printerId property value. The ID of the printer represented by these statistics.
 // returns a *string when successful
 func (m *PrintUsageByPrinter) GetPrinterId()(*string) {
     val, err := m.GetBackingStore().Get("printerId")
@@ -91,7 +91,7 @@ func (m *PrintUsageByPrinter) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetPrinterId sets the printerId property value. The printerId property
+// SetPrinterId sets the printerId property value. The ID of the printer represented by these statistics.
 func (m *PrintUsageByPrinter) SetPrinterId(value *string)() {
     err := m.GetBackingStore().Set("printerId", value)
     if err != nil {

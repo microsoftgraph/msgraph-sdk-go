@@ -22,7 +22,7 @@ func NewOnlineMeeting()(*OnlineMeeting) {
 func CreateOnlineMeetingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnlineMeeting(), nil
 }
-// GetAttendeeReport gets the attendeeReport property value. The attendeeReport property
+// GetAttendeeReport gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // returns a []byte when successful
 func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
     val, err := m.GetBackingStore().Get("attendeeReport")
@@ -34,7 +34,7 @@ func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
     }
     return nil
 }
-// GetBroadcastSettings gets the broadcastSettings property value. The broadcastSettings property
+// GetBroadcastSettings gets the broadcastSettings property value. Settings related to a live event.
 // returns a BroadcastMeetingSettingsable when successful
 func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     val, err := m.GetBackingStore().Get("broadcastSettings")
@@ -200,7 +200,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsBroadcast gets the isBroadcast property value. The isBroadcast property
+// GetIsBroadcast gets the isBroadcast property value. Indicates if this is a Teams live event.
 // returns a *bool when successful
 func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     val, err := m.GetBackingStore().Get("isBroadcast")
@@ -340,14 +340,14 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAttendeeReport sets the attendeeReport property value. The attendeeReport property
+// SetAttendeeReport sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
 func (m *OnlineMeeting) SetAttendeeReport(value []byte)() {
     err := m.GetBackingStore().Set("attendeeReport", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBroadcastSettings sets the broadcastSettings property value. The broadcastSettings property
+// SetBroadcastSettings sets the broadcastSettings property value. Settings related to a live event.
 func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)() {
     err := m.GetBackingStore().Set("broadcastSettings", value)
     if err != nil {
@@ -375,7 +375,7 @@ func (m *OnlineMeeting) SetExternalId(value *string)() {
         panic(err)
     }
 }
-// SetIsBroadcast sets the isBroadcast property value. The isBroadcast property
+// SetIsBroadcast sets the isBroadcast property value. Indicates if this is a Teams live event.
 func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
     err := m.GetBackingStore().Set("isBroadcast", value)
     if err != nil {

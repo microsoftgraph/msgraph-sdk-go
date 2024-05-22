@@ -342,7 +342,7 @@ func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
     }
     return nil
 }
-// GetFitPdfToPage gets the fitPdfToPage property value. The fitPdfToPage property
+// GetFitPdfToPage gets the fitPdfToPage property value. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
 // returns a *bool when successful
 func (m *PrintJobConfiguration) GetFitPdfToPage()(*bool) {
     val, err := m.GetBackingStore().Get("fitPdfToPage")
@@ -378,7 +378,7 @@ func (m *PrintJobConfiguration) GetMargin()(PrintMarginable) {
     }
     return nil
 }
-// GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+// GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
 // returns a *string when successful
 func (m *PrintJobConfiguration) GetMediaSize()(*string) {
     val, err := m.GetBackingStore().Get("mediaSize")
@@ -390,7 +390,7 @@ func (m *PrintJobConfiguration) GetMediaSize()(*string) {
     }
     return nil
 }
-// GetMediaType gets the mediaType property value. The mediaType property
+// GetMediaType gets the mediaType property value. The default media (such as paper) type to print the document on.
 // returns a *string when successful
 func (m *PrintJobConfiguration) GetMediaType()(*string) {
     val, err := m.GetBackingStore().Get("mediaType")
@@ -402,7 +402,7 @@ func (m *PrintJobConfiguration) GetMediaType()(*string) {
     }
     return nil
 }
-// GetMultipageLayout gets the multipageLayout property value. The multipageLayout property
+// GetMultipageLayout gets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
 // returns a *PrintMultipageLayout when successful
 func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
     val, err := m.GetBackingStore().Get("multipageLayout")
@@ -426,7 +426,7 @@ func (m *PrintJobConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrientation gets the orientation property value. The orientation property
+// GetOrientation gets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
 // returns a *PrintOrientation when successful
 func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
     val, err := m.GetBackingStore().Get("orientation")
@@ -438,7 +438,7 @@ func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
     }
     return nil
 }
-// GetOutputBin gets the outputBin property value. The outputBin property
+// GetOutputBin gets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
 // returns a *string when successful
 func (m *PrintJobConfiguration) GetOutputBin()(*string) {
     val, err := m.GetBackingStore().Get("outputBin")
@@ -450,7 +450,7 @@ func (m *PrintJobConfiguration) GetOutputBin()(*string) {
     }
     return nil
 }
-// GetPageRanges gets the pageRanges property value. The pageRanges property
+// GetPageRanges gets the pageRanges property value. The page ranges to print. Read-only.
 // returns a []IntegerRangeable when successful
 func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRangeable) {
     val, err := m.GetBackingStore().Get("pageRanges")
@@ -462,7 +462,7 @@ func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRangeable) {
     }
     return nil
 }
-// GetPagesPerSheet gets the pagesPerSheet property value. The pagesPerSheet property
+// GetPagesPerSheet gets the pagesPerSheet property value. The number of document pages to print on each sheet.
 // returns a *int32 when successful
 func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
     val, err := m.GetBackingStore().Get("pagesPerSheet")
@@ -474,7 +474,7 @@ func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
     }
     return nil
 }
-// GetQuality gets the quality property value. The quality property
+// GetQuality gets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
 // returns a *PrintQuality when successful
 func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
     val, err := m.GetBackingStore().Get("quality")
@@ -486,7 +486,7 @@ func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
     }
     return nil
 }
-// GetScaling gets the scaling property value. The scaling property
+// GetScaling gets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
 // returns a *PrintScaling when successful
 func (m *PrintJobConfiguration) GetScaling()(*PrintScaling) {
     val, err := m.GetBackingStore().Get("scaling")
@@ -701,7 +701,7 @@ func (m *PrintJobConfiguration) SetFinishings(value []PrintFinishing)() {
         panic(err)
     }
 }
-// SetFitPdfToPage sets the fitPdfToPage property value. The fitPdfToPage property
+// SetFitPdfToPage sets the fitPdfToPage property value. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
 func (m *PrintJobConfiguration) SetFitPdfToPage(value *bool)() {
     err := m.GetBackingStore().Set("fitPdfToPage", value)
     if err != nil {
@@ -722,21 +722,21 @@ func (m *PrintJobConfiguration) SetMargin(value PrintMarginable)() {
         panic(err)
     }
 }
-// SetMediaSize sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+// SetMediaSize sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
 func (m *PrintJobConfiguration) SetMediaSize(value *string)() {
     err := m.GetBackingStore().Set("mediaSize", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMediaType sets the mediaType property value. The mediaType property
+// SetMediaType sets the mediaType property value. The default media (such as paper) type to print the document on.
 func (m *PrintJobConfiguration) SetMediaType(value *string)() {
     err := m.GetBackingStore().Set("mediaType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMultipageLayout sets the multipageLayout property value. The multipageLayout property
+// SetMultipageLayout sets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
 func (m *PrintJobConfiguration) SetMultipageLayout(value *PrintMultipageLayout)() {
     err := m.GetBackingStore().Set("multipageLayout", value)
     if err != nil {
@@ -750,42 +750,42 @@ func (m *PrintJobConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrientation sets the orientation property value. The orientation property
+// SetOrientation sets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
 func (m *PrintJobConfiguration) SetOrientation(value *PrintOrientation)() {
     err := m.GetBackingStore().Set("orientation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOutputBin sets the outputBin property value. The outputBin property
+// SetOutputBin sets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
 func (m *PrintJobConfiguration) SetOutputBin(value *string)() {
     err := m.GetBackingStore().Set("outputBin", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPageRanges sets the pageRanges property value. The pageRanges property
+// SetPageRanges sets the pageRanges property value. The page ranges to print. Read-only.
 func (m *PrintJobConfiguration) SetPageRanges(value []IntegerRangeable)() {
     err := m.GetBackingStore().Set("pageRanges", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPagesPerSheet sets the pagesPerSheet property value. The pagesPerSheet property
+// SetPagesPerSheet sets the pagesPerSheet property value. The number of document pages to print on each sheet.
 func (m *PrintJobConfiguration) SetPagesPerSheet(value *int32)() {
     err := m.GetBackingStore().Set("pagesPerSheet", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQuality sets the quality property value. The quality property
+// SetQuality sets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) SetQuality(value *PrintQuality)() {
     err := m.GetBackingStore().Set("quality", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScaling sets the scaling property value. The scaling property
+// SetScaling sets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
 func (m *PrintJobConfiguration) SetScaling(value *PrintScaling)() {
     err := m.GetBackingStore().Set("scaling", value)
     if err != nil {

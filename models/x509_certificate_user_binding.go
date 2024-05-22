@@ -64,6 +64,16 @@ func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["trustAffinityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseX509CertificateAffinityLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrustAffinityLevel(val.(*X509CertificateAffinityLevel))
+        }
+        return nil
+    }
     res["userProperty"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -110,6 +120,18 @@ func (m *X509CertificateUserBinding) GetPriority()(*int32) {
     }
     return nil
 }
+// GetTrustAffinityLevel gets the trustAffinityLevel property value. The trustAffinityLevel property
+// returns a *X509CertificateAffinityLevel when successful
+func (m *X509CertificateUserBinding) GetTrustAffinityLevel()(*X509CertificateAffinityLevel) {
+    val, err := m.GetBackingStore().Get("trustAffinityLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*X509CertificateAffinityLevel)
+    }
+    return nil
+}
 // GetUserProperty gets the userProperty property value. Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
 // returns a *string when successful
 func (m *X509CertificateUserBinding) GetUserProperty()(*string) {
@@ -144,6 +166,13 @@ func (m *X509CertificateUserBinding) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteInt32Value("priority", m.GetPriority())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTrustAffinityLevel() != nil {
+        cast := (*m.GetTrustAffinityLevel()).String()
+        err := writer.WriteStringValue("trustAffinityLevel", &cast)
         if err != nil {
             return err
         }
@@ -193,6 +222,13 @@ func (m *X509CertificateUserBinding) SetPriority(value *int32)() {
         panic(err)
     }
 }
+// SetTrustAffinityLevel sets the trustAffinityLevel property value. The trustAffinityLevel property
+func (m *X509CertificateUserBinding) SetTrustAffinityLevel(value *X509CertificateAffinityLevel)() {
+    err := m.GetBackingStore().Set("trustAffinityLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserProperty sets the userProperty property value. Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
 func (m *X509CertificateUserBinding) SetUserProperty(value *string)() {
     err := m.GetBackingStore().Set("userProperty", value)
@@ -214,11 +250,13 @@ type X509CertificateUserBindingable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetPriority()(*int32)
+    GetTrustAffinityLevel()(*X509CertificateAffinityLevel)
     GetUserProperty()(*string)
     GetX509CertificateField()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetPriority(value *int32)()
+    SetTrustAffinityLevel(value *X509CertificateAffinityLevel)()
     SetUserProperty(value *string)()
     SetX509CertificateField(value *string)()
 }
