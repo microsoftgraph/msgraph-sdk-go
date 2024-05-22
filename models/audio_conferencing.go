@@ -164,7 +164,7 @@ func (m *AudioConferencing) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTollFreeNumber gets the tollFreeNumber property value. The tollFreeNumber property
+// GetTollFreeNumber gets the tollFreeNumber property value. The toll-free number that connects to the Audio Conference Provider.
 // returns a *string when successful
 func (m *AudioConferencing) GetTollFreeNumber()(*string) {
     val, err := m.GetBackingStore().Get("tollFreeNumber")
@@ -188,7 +188,7 @@ func (m *AudioConferencing) GetTollFreeNumbers()([]string) {
     }
     return nil
 }
-// GetTollNumber gets the tollNumber property value. The tollNumber property
+// GetTollNumber gets the tollNumber property value. The toll number that connects to the Audio Conference Provider.
 // returns a *string when successful
 func (m *AudioConferencing) GetTollNumber()(*string) {
     val, err := m.GetBackingStore().Get("tollNumber")
@@ -296,7 +296,7 @@ func (m *AudioConferencing) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTollFreeNumber sets the tollFreeNumber property value. The tollFreeNumber property
+// SetTollFreeNumber sets the tollFreeNumber property value. The toll-free number that connects to the Audio Conference Provider.
 func (m *AudioConferencing) SetTollFreeNumber(value *string)() {
     err := m.GetBackingStore().Set("tollFreeNumber", value)
     if err != nil {
@@ -310,7 +310,7 @@ func (m *AudioConferencing) SetTollFreeNumbers(value []string)() {
         panic(err)
     }
 }
-// SetTollNumber sets the tollNumber property value. The tollNumber property
+// SetTollNumber sets the tollNumber property value. The toll number that connects to the Audio Conference Provider.
 func (m *AudioConferencing) SetTollNumber(value *string)() {
     err := m.GetBackingStore().Set("tollNumber", value)
     if err != nil {

@@ -402,7 +402,7 @@ func (m *SecureScoreControlProfile) GetService()(*string) {
     }
     return nil
 }
-// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
+// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
 // returns a []string when successful
 func (m *SecureScoreControlProfile) GetThreats()([]string) {
     val, err := m.GetBackingStore().Get("threats")
@@ -414,7 +414,7 @@ func (m *SecureScoreControlProfile) GetThreats()([]string) {
     }
     return nil
 }
-// GetTier gets the tier property value. The tier property
+// GetTier gets the tier property value. Control tier (Core, Defense in Depth, Advanced.)
 // returns a *string when successful
 func (m *SecureScoreControlProfile) GetTier()(*string) {
     val, err := m.GetBackingStore().Get("tier")
@@ -426,7 +426,7 @@ func (m *SecureScoreControlProfile) GetTier()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. Title of the control.
 // returns a *string when successful
 func (m *SecureScoreControlProfile) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -438,7 +438,7 @@ func (m *SecureScoreControlProfile) GetTitle()(*string) {
     }
     return nil
 }
-// GetUserImpact gets the userImpact property value. The userImpact property
+// GetUserImpact gets the userImpact property value. User impact of implementing control (low, moderate, high).
 // returns a *string when successful
 func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
     val, err := m.GetBackingStore().Get("userImpact")
@@ -450,7 +450,7 @@ func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
     }
     return nil
 }
-// GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// GetVendorInformation gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 // returns a SecurityVendorInformationable when successful
 func (m *SecureScoreControlProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
@@ -694,35 +694,35 @@ func (m *SecureScoreControlProfile) SetService(value *string)() {
         panic(err)
     }
 }
-// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
+// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
 func (m *SecureScoreControlProfile) SetThreats(value []string)() {
     err := m.GetBackingStore().Set("threats", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTier sets the tier property value. The tier property
+// SetTier sets the tier property value. Control tier (Core, Defense in Depth, Advanced.)
 func (m *SecureScoreControlProfile) SetTier(value *string)() {
     err := m.GetBackingStore().Set("tier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. Title of the control.
 func (m *SecureScoreControlProfile) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserImpact sets the userImpact property value. The userImpact property
+// SetUserImpact sets the userImpact property value. User impact of implementing control (low, moderate, high).
 func (m *SecureScoreControlProfile) SetUserImpact(value *string)() {
     err := m.GetBackingStore().Set("userImpact", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVendorInformation sets the vendorInformation property value. The vendorInformation property
+// SetVendorInformation sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 func (m *SecureScoreControlProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     err := m.GetBackingStore().Set("vendorInformation", value)
     if err != nil {

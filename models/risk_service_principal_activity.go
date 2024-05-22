@@ -106,7 +106,7 @@ func (m *RiskServicePrincipalActivity) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRiskEventTypes gets the riskEventTypes property value. The riskEventTypes property
+// GetRiskEventTypes gets the riskEventTypes property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
 // returns a []string when successful
 func (m *RiskServicePrincipalActivity) GetRiskEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("riskEventTypes")
@@ -172,7 +172,7 @@ func (m *RiskServicePrincipalActivity) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRiskEventTypes sets the riskEventTypes property value. The riskEventTypes property
+// SetRiskEventTypes sets the riskEventTypes property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
 func (m *RiskServicePrincipalActivity) SetRiskEventTypes(value []string)() {
     err := m.GetBackingStore().Set("riskEventTypes", value)
     if err != nil {

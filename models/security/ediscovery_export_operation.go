@@ -31,7 +31,7 @@ func (m *EdiscoveryExportOperation) GetDescription()(*string) {
     }
     return nil
 }
-// GetExportFileMetadata gets the exportFileMetadata property value. The exportFileMetadata property
+// GetExportFileMetadata gets the exportFileMetadata property value. Contains the properties for an export file metadata, including downloadUrl, fileName, and size.
 // returns a []ExportFileMetadataable when successful
 func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadataable) {
     val, err := m.GetBackingStore().Get("exportFileMetadata")
@@ -250,7 +250,7 @@ func (m *EdiscoveryExportOperation) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetExportFileMetadata sets the exportFileMetadata property value. The exportFileMetadata property
+// SetExportFileMetadata sets the exportFileMetadata property value. Contains the properties for an export file metadata, including downloadUrl, fileName, and size.
 func (m *EdiscoveryExportOperation) SetExportFileMetadata(value []ExportFileMetadataable)() {
     err := m.GetBackingStore().Set("exportFileMetadata", value)
     if err != nil {

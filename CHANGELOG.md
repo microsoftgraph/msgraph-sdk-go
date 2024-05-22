@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.43.0]- 2024-05-22
+
+### Changed
+
+- Weekly generation.
+
 ## [1.42.0]- 2024-05-16
 
 ### Changed

@@ -93,7 +93,7 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The unique identifier for the addIn object.
 // returns a *UUID when successful
 func (m *AddIn) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
@@ -117,7 +117,7 @@ func (m *AddIn) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProperties gets the properties property value. The properties property
+// GetProperties gets the properties property value. The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
 // returns a []KeyValueable when successful
 func (m *AddIn) GetProperties()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("properties")
@@ -129,7 +129,7 @@ func (m *AddIn) GetProperties()([]KeyValueable) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The unique name for the functionality exposed by the app.
 // returns a *string when successful
 func (m *AddIn) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -192,7 +192,7 @@ func (m *AddIn) SetAdditionalData(value map[string]any)() {
 func (m *AddIn) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The unique identifier for the addIn object.
 func (m *AddIn) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
@@ -206,14 +206,14 @@ func (m *AddIn) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProperties sets the properties property value. The properties property
+// SetProperties sets the properties property value. The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
 func (m *AddIn) SetProperties(value []KeyValueable)() {
     err := m.GetBackingStore().Set("properties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The unique name for the functionality exposed by the app.
 func (m *AddIn) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

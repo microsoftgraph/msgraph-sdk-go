@@ -58,7 +58,7 @@ func (m *PayloadDetail) GetAdditionalData()(map[string]any) {
 func (m *PayloadDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCoachmarks gets the coachmarks property value. Payload coachmark details.
+// GetCoachmarks gets the coachmarks property value. The coachmarks property
 // returns a []PayloadCoachmarkable when successful
 func (m *PayloadDetail) GetCoachmarks()([]PayloadCoachmarkable) {
     val, err := m.GetBackingStore().Get("coachmarks")
@@ -209,7 +209,7 @@ func (m *PayloadDetail) SetAdditionalData(value map[string]any)() {
 func (m *PayloadDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCoachmarks sets the coachmarks property value. Payload coachmark details.
+// SetCoachmarks sets the coachmarks property value. The coachmarks property
 func (m *PayloadDetail) SetCoachmarks(value []PayloadCoachmarkable)() {
     err := m.GetBackingStore().Set("coachmarks", value)
     if err != nil {

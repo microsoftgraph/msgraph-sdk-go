@@ -44,7 +44,7 @@ func NewOnlineMeetingsItemAttendeeReportRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemAttendeeReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete attendeeReport for the navigation property onlineMeetings in communications
+// Delete the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -60,7 +60,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get get attendeeReport for the navigation property onlineMeetings from communications
+// Get the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -80,7 +80,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Get(ctx context.Context
     }
     return res.([]byte), nil
 }
-// Put update attendeeReport for the navigation property onlineMeetings in communications
+// Put the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -100,7 +100,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Put(ctx context.Context
     }
     return res.([]byte), nil
 }
-// ToDeleteRequestInformation delete attendeeReport for the navigation property onlineMeetings in communications
+// ToDeleteRequestInformation the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -111,7 +111,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToDeleteRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get attendeeReport for the navigation property onlineMeetings from communications
+// ToGetRequestInformation the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,7 +122,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToGetRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update attendeeReport for the navigation property onlineMeetings in communications
+// ToPutRequestInformation the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
