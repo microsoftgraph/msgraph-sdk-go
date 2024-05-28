@@ -100,9 +100,9 @@ func (m *ChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cha
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-// returns a *GetAllMessagesRequestBuilder when successful
-func (m *ChatsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
-    return NewGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetallmessagesGetAllMessagesRequestBuilder when successful
+func (m *ChatsRequestBuilder) GetAllMessages()(*GetallmessagesGetAllMessagesRequestBuilder) {
+    return NewGetallmessagesGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new chat object.
 // returns a Chatable when successful

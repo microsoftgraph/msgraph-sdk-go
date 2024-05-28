@@ -48,24 +48,24 @@ func NewTenantRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewTenantRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DelegatedAdminCustomers provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
-// returns a *DelegatedAdminCustomersRequestBuilder when successful
-func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomers()(*DelegatedAdminCustomersRequestBuilder) {
-    return NewDelegatedAdminCustomersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DelegatedadmincustomersDelegatedAdminCustomersRequestBuilder when successful
+func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomers()(*DelegatedadmincustomersDelegatedAdminCustomersRequestBuilder) {
+    return NewDelegatedadmincustomersDelegatedAdminCustomersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DelegatedAdminRelationships provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
-// returns a *DelegatedAdminRelationshipsRequestBuilder when successful
-func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationships()(*DelegatedAdminRelationshipsRequestBuilder) {
-    return NewDelegatedAdminRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DelegatedadminrelationshipsDelegatedAdminRelationshipsRequestBuilder when successful
+func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationships()(*DelegatedadminrelationshipsDelegatedAdminRelationshipsRequestBuilder) {
+    return NewDelegatedadminrelationshipsDelegatedAdminRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FindTenantInformationByDomainNameWithDomainName provides operations to call the findTenantInformationByDomainName method.
-// returns a *FindTenantInformationByDomainNameWithDomainNameRequestBuilder when successful
-func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByDomainNameWithDomainName(domainName *string)(*FindTenantInformationByDomainNameWithDomainNameRequestBuilder) {
-    return NewFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, domainName)
+// returns a *FindtenantinformationbydomainnamewithdomainnameFindTenantInformationByDomainNameWithDomainNameRequestBuilder when successful
+func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByDomainNameWithDomainName(domainName *string)(*FindtenantinformationbydomainnamewithdomainnameFindTenantInformationByDomainNameWithDomainNameRequestBuilder) {
+    return NewFindtenantinformationbydomainnamewithdomainnameFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, domainName)
 }
 // FindTenantInformationByTenantIdWithTenantId provides operations to call the findTenantInformationByTenantId method.
-// returns a *FindTenantInformationByTenantIdWithTenantIdRequestBuilder when successful
-func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByTenantIdWithTenantId(tenantId *string)(*FindTenantInformationByTenantIdWithTenantIdRequestBuilder) {
-    return NewFindTenantInformationByTenantIdWithTenantIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, tenantId)
+// returns a *FindtenantinformationbytenantidwithtenantidFindTenantInformationByTenantIdWithTenantIdRequestBuilder when successful
+func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByTenantIdWithTenantId(tenantId *string)(*FindtenantinformationbytenantidwithtenantidFindTenantInformationByTenantIdWithTenantIdRequestBuilder) {
+    return NewFindtenantinformationbytenantidwithtenantidFindTenantInformationByTenantIdWithTenantIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, tenantId)
 }
 // Get get tenantRelationships
 // returns a TenantRelationshipable when successful
@@ -88,9 +88,9 @@ func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConf
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantRelationshipable), nil
 }
 // MultiTenantOrganization provides operations to manage the multiTenantOrganization property of the microsoft.graph.tenantRelationship entity.
-// returns a *MultiTenantOrganizationRequestBuilder when successful
-func (m *TenantRelationshipsRequestBuilder) MultiTenantOrganization()(*MultiTenantOrganizationRequestBuilder) {
-    return NewMultiTenantOrganizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MultitenantorganizationMultiTenantOrganizationRequestBuilder when successful
+func (m *TenantRelationshipsRequestBuilder) MultiTenantOrganization()(*MultitenantorganizationMultiTenantOrganizationRequestBuilder) {
+    return NewMultitenantorganizationMultiTenantOrganizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update tenantRelationships
 // returns a TenantRelationshipable when successful

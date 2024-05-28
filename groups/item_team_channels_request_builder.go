@@ -97,9 +97,9 @@ func (m *ItemTeamChannelsRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-// returns a *ItemTeamChannelsGetAllMessagesRequestBuilder when successful
-func (m *ItemTeamChannelsRequestBuilder) GetAllMessages()(*ItemTeamChannelsGetAllMessagesRequestBuilder) {
-    return NewItemTeamChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamChannelsGetallmessagesGetAllMessagesRequestBuilder when successful
+func (m *ItemTeamChannelsRequestBuilder) GetAllMessages()(*ItemTeamChannelsGetallmessagesGetAllMessagesRequestBuilder) {
+    return NewItemTeamChannelsGetallmessagesGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to channels for groups
 // returns a Channelable when successful

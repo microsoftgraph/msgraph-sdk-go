@@ -96,9 +96,9 @@ func (m *ItemCalendarEventsEventItemRequestBuilder) Delete(ctx context.Context, 
     return nil
 }
 // DismissReminder provides operations to call the dismissReminder method.
-// returns a *ItemCalendarEventsItemDismissReminderRequestBuilder when successful
-func (m *ItemCalendarEventsEventItemRequestBuilder) DismissReminder()(*ItemCalendarEventsItemDismissReminderRequestBuilder) {
-    return NewItemCalendarEventsItemDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemDismissreminderDismissReminderRequestBuilder when successful
+func (m *ItemCalendarEventsEventItemRequestBuilder) DismissReminder()(*ItemCalendarEventsItemDismissreminderDismissReminderRequestBuilder) {
+    return NewItemCalendarEventsItemDismissreminderDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 // returns a *ItemCalendarEventsItemExtensionsRequestBuilder when successful
@@ -159,14 +159,14 @@ func (m *ItemCalendarEventsEventItemRequestBuilder) Patch(ctx context.Context, b
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable), nil
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
-// returns a *ItemCalendarEventsItemSnoozeReminderRequestBuilder when successful
-func (m *ItemCalendarEventsEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemSnoozeReminderRequestBuilder) {
-    return NewItemCalendarEventsItemSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemSnoozereminderSnoozeReminderRequestBuilder when successful
+func (m *ItemCalendarEventsEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemSnoozereminderSnoozeReminderRequestBuilder) {
+    return NewItemCalendarEventsItemSnoozereminderSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TentativelyAccept provides operations to call the tentativelyAccept method.
-// returns a *ItemCalendarEventsItemTentativelyAcceptRequestBuilder when successful
-func (m *ItemCalendarEventsEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarEventsItemTentativelyAcceptRequestBuilder) {
-    return NewItemCalendarEventsItemTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemTentativelyacceptTentativelyAcceptRequestBuilder when successful
+func (m *ItemCalendarEventsEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarEventsItemTentativelyacceptTentativelyAcceptRequestBuilder) {
+    return NewItemCalendarEventsItemTentativelyacceptTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property events for groups
 // returns a *RequestInformation when successful

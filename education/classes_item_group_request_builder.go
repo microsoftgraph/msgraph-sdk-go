@@ -61,9 +61,9 @@ func (m *ClassesItemGroupRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable), nil
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *ClassesItemGroupServiceProvisioningErrorsRequestBuilder when successful
-func (m *ClassesItemGroupRequestBuilder) ServiceProvisioningErrors()(*ClassesItemGroupServiceProvisioningErrorsRequestBuilder) {
-    return NewClassesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
+func (m *ClassesItemGroupRequestBuilder) ServiceProvisioningErrors()(*ClassesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
+    return NewClassesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the underlying Microsoft 365 group object.
 // returns a *RequestInformation when successful

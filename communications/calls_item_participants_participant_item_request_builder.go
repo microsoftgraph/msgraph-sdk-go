@@ -122,14 +122,14 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.C
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable), nil
 }
 // StartHoldMusic provides operations to call the startHoldMusic method.
-// returns a *CallsItemParticipantsItemStartHoldMusicRequestBuilder when successful
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*CallsItemParticipantsItemStartHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemStartHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemParticipantsItemStartholdmusicStartHoldMusicRequestBuilder when successful
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*CallsItemParticipantsItemStartholdmusicStartHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemStartholdmusicStartHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // StopHoldMusic provides operations to call the stopHoldMusic method.
-// returns a *CallsItemParticipantsItemStopHoldMusicRequestBuilder when successful
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) StopHoldMusic()(*CallsItemParticipantsItemStopHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemStopHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemParticipantsItemStopholdmusicStopHoldMusicRequestBuilder when successful
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) StopHoldMusic()(*CallsItemParticipantsItemStopholdmusicStopHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemStopholdmusicStopHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
 // returns a *RequestInformation when successful

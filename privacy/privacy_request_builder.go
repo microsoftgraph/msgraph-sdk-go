@@ -88,9 +88,9 @@ func (m *PrivacyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Privacyable), nil
 }
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-// returns a *SubjectRightsRequestsRequestBuilder when successful
-func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
-    return NewSubjectRightsRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SubjectrightsrequestsSubjectRightsRequestsRequestBuilder when successful
+func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*SubjectrightsrequestsSubjectRightsRequestsRequestBuilder) {
+    return NewSubjectrightsrequestsSubjectRightsRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get privacy
 // returns a *RequestInformation when successful

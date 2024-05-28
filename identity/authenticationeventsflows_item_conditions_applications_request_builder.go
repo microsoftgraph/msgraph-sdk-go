@@ -1,0 +1,28 @@
+package identity
+
+import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+)
+
+// AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder builds and executes requests for operations under \identity\authenticationEventsFlows\{authenticationEventsFlow-id}\conditions\applications
+type AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// NewAuthenticationeventsflowsItemConditionsApplicationsRequestBuilderInternal instantiates a new AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder and sets the default values.
+func NewAuthenticationeventsflowsItemConditionsApplicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder) {
+    m := &AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions/applications", pathParameters),
+    }
+    return m
+}
+// NewAuthenticationeventsflowsItemConditionsApplicationsRequestBuilder instantiates a new AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder and sets the default values.
+func NewAuthenticationeventsflowsItemConditionsApplicationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewAuthenticationeventsflowsItemConditionsApplicationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+// IncludeApplications provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.
+// returns a *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder when successful
+func (m *AuthenticationeventsflowsItemConditionsApplicationsRequestBuilder) IncludeApplications()(*AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder) {
+    return NewAuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

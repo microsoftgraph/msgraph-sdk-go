@@ -120,9 +120,9 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.Context, body iad
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
 // TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsTab entity.
-// returns a *ItemTabsItemTeamsAppRequestBuilder when successful
-func (m *ItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemTabsItemTeamsAppRequestBuilder) {
-    return NewItemTabsItemTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTabsItemTeamsappTeamsAppRequestBuilder when successful
+func (m *ItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemTabsItemTeamsappTeamsAppRequestBuilder) {
+    return NewItemTabsItemTeamsappTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation remove (unpin) a tab from the specified chat. 
 // returns a *RequestInformation when successful

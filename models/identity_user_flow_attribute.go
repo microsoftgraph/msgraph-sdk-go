@@ -51,7 +51,7 @@ func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeData
     }
     return nil
 }
-// GetDescription gets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
+// GetDescription gets the description property value. The description of the user flow attribute that's shown to the user at the time of sign up.
 // returns a *string when successful
 func (m *IdentityUserFlowAttribute) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -174,7 +174,7 @@ func (m *IdentityUserFlowAttribute) SetDataType(value *IdentityUserFlowAttribute
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
+// SetDescription sets the description property value. The description of the user flow attribute that's shown to the user at the time of sign up.
 func (m *IdentityUserFlowAttribute) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {

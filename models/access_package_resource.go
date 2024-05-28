@@ -216,7 +216,7 @@ func (m *AccessPackageResource) GetModifiedDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. For a Microsoft Entra group, this is the identifier of the group.
 // returns a *string when successful
 func (m *AccessPackageResource) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
@@ -392,7 +392,7 @@ func (m *AccessPackageResource) SetModifiedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+// SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. For a Microsoft Entra group, this is the identifier of the group.
 func (m *AccessPackageResource) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
     if err != nil {

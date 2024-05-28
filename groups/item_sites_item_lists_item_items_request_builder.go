@@ -75,9 +75,9 @@ func (m *ItemSitesItemListsItemItemsRequestBuilder) Delta()(*ItemSitesItemListsI
     return NewItemSitesItemListsItemItemsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeltaWithToken provides operations to call the delta method.
-// returns a *ItemSitesItemListsItemItemsDeltaWithTokenRequestBuilder when successful
-func (m *ItemSitesItemListsItemItemsRequestBuilder) DeltaWithToken(token *string)(*ItemSitesItemListsItemItemsDeltaWithTokenRequestBuilder) {
-    return NewItemSitesItemListsItemItemsDeltaWithTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, token)
+// returns a *ItemSitesItemListsItemItemsDeltawithtokenDeltaWithTokenRequestBuilder when successful
+func (m *ItemSitesItemListsItemItemsRequestBuilder) DeltaWithToken(token *string)(*ItemSitesItemListsItemItemsDeltawithtokenDeltaWithTokenRequestBuilder) {
+    return NewItemSitesItemListsItemItemsDeltawithtokenDeltaWithTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, token)
 }
 // Get all items contained in the list.
 // returns a ListItemCollectionResponseable when successful

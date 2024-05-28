@@ -106,9 +106,9 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Get(ctx cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable), nil
 }
 // GradingCategory provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.
-// returns a *UsersItemAssignmentsItemGradingCategoryRequestBuilder when successful
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) GradingCategory()(*UsersItemAssignmentsItemGradingCategoryRequestBuilder) {
-    return NewUsersItemAssignmentsItemGradingCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersItemAssignmentsItemGradingcategoryGradingCategoryRequestBuilder when successful
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) GradingCategory()(*UsersItemAssignmentsItemGradingcategoryGradingCategoryRequestBuilder) {
+    return NewUsersItemAssignmentsItemGradingcategoryGradingCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property assignments in education
 // returns a EducationAssignmentable when successful
@@ -146,14 +146,14 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*Us
     return NewUsersItemAssignmentsItemRubricRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
-// returns a *UsersItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder when successful
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*UsersItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder) {
-    return NewUsersItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersItemAssignmentsItemSetupfeedbackresourcesfolderSetUpFeedbackResourcesFolderRequestBuilder when successful
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*UsersItemAssignmentsItemSetupfeedbackresourcesfolderSetUpFeedbackResourcesFolderRequestBuilder) {
+    return NewUsersItemAssignmentsItemSetupfeedbackresourcesfolderSetUpFeedbackResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
-// returns a *UsersItemAssignmentsItemSetUpResourcesFolderRequestBuilder when successful
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*UsersItemAssignmentsItemSetUpResourcesFolderRequestBuilder) {
-    return NewUsersItemAssignmentsItemSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersItemAssignmentsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder when successful
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*UsersItemAssignmentsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder) {
+    return NewUsersItemAssignmentsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 // returns a *UsersItemAssignmentsItemSubmissionsRequestBuilder when successful

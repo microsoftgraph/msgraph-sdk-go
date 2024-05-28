@@ -194,6 +194,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthenticationContextClassReference(), nil
                     case "#microsoft.graph.authenticationEventListener":
                         return NewAuthenticationEventListener(), nil
+                    case "#microsoft.graph.authenticationEventsFlow":
+                        return NewAuthenticationEventsFlow(), nil
                     case "#microsoft.graph.authenticationFlowsPolicy":
                         return NewAuthenticationFlowsPolicy(), nil
                     case "#microsoft.graph.authenticationMethod":
@@ -592,6 +594,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExtensionProperty(), nil
                     case "#microsoft.graph.externalDomainName":
                         return NewExternalDomainName(), nil
+                    case "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow":
+                        return NewExternalUsersSelfServiceSignUpEventsFlow(), nil
                     case "#microsoft.graph.featureRolloutPolicy":
                         return NewFeatureRolloutPolicy(), nil
                     case "#microsoft.graph.federatedIdentityCredential":
@@ -608,6 +612,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFileAssessmentRequest(), nil
                     case "#microsoft.graph.fileAttachment":
                         return NewFileAttachment(), nil
+                    case "#microsoft.graph.fileStorage":
+                        return NewFileStorage(), nil
+                    case "#microsoft.graph.fileStorageContainer":
+                        return NewFileStorageContainer(), nil
                     case "#microsoft.graph.filterOperatorSchema":
                         return NewFilterOperatorSchema(), nil
                     case "#microsoft.graph.governanceInsight":
@@ -880,6 +888,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOfferShiftRequest(), nil
                     case "#microsoft.graph.officeGraphInsights":
                         return NewOfficeGraphInsights(), nil
+                    case "#microsoft.graph.onAttributeCollectionListener":
+                        return NewOnAttributeCollectionListener(), nil
+                    case "#microsoft.graph.onAuthenticationMethodLoadStartListener":
+                        return NewOnAuthenticationMethodLoadStartListener(), nil
                     case "#microsoft.graph.onenote":
                         return NewOnenote(), nil
                     case "#microsoft.graph.onenoteEntityBaseModel":
@@ -896,6 +908,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnenoteResource(), nil
                     case "#microsoft.graph.onenoteSection":
                         return NewOnenoteSection(), nil
+                    case "#microsoft.graph.onInteractiveAuthFlowStartListener":
+                        return NewOnInteractiveAuthFlowStartListener(), nil
                     case "#microsoft.graph.onlineMeeting":
                         return NewOnlineMeeting(), nil
                     case "#microsoft.graph.onlineMeetingBase":
@@ -908,6 +922,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnTokenIssuanceStartCustomExtension(), nil
                     case "#microsoft.graph.onTokenIssuanceStartListener":
                         return NewOnTokenIssuanceStartListener(), nil
+                    case "#microsoft.graph.onUserCreateStartListener":
+                        return NewOnUserCreateStartListener(), nil
                     case "#microsoft.graph.openShift":
                         return NewOpenShift(), nil
                     case "#microsoft.graph.openShiftChangeRequest":

@@ -131,9 +131,9 @@ func (m *ItemOnenoteRequestBuilder) Resources()(*ItemOnenoteResourcesRequestBuil
     return NewItemOnenoteResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
-// returns a *ItemOnenoteSectionGroupsRequestBuilder when successful
-func (m *ItemOnenoteRequestBuilder) SectionGroups()(*ItemOnenoteSectionGroupsRequestBuilder) {
-    return NewItemOnenoteSectionGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenoteSectiongroupsSectionGroupsRequestBuilder when successful
+func (m *ItemOnenoteRequestBuilder) SectionGroups()(*ItemOnenoteSectiongroupsSectionGroupsRequestBuilder) {
+    return NewItemOnenoteSectiongroupsSectionGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.onenote entity.
 // returns a *ItemOnenoteSectionsRequestBuilder when successful

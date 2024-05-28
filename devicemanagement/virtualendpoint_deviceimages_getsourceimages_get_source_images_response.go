@@ -1,0 +1,27 @@
+package devicemanagement
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesGetResponseable instead.
+type VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponse struct {
+    VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesGetResponse
+}
+// NewVirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponse instantiates a new VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponse and sets the default values.
+func NewVirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponse()(*VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponse) {
+    m := &VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponse{
+        VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesGetResponse: *NewVirtualendpointDeviceimagesGetsourceimagesGetSourceImagesGetResponse(),
+    }
+    return m
+}
+// CreateVirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateVirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewVirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponse(), nil
+}
+// Deprecated: This class is obsolete. Use VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesGetResponseable instead.
+type VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesResponseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    VirtualendpointDeviceimagesGetsourceimagesGetSourceImagesGetResponseable
+}

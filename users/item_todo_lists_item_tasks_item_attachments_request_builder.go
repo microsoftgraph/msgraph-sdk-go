@@ -73,9 +73,9 @@ func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) Count()(*ItemTodoL
     return NewItemTodoListsItemTasksItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilder when successful
-func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTodoListsItemTasksItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder when successful
+func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemTodoListsItemTasksItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
+    return NewItemTodoListsItemTasksItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of file attachments for the task.
 // returns a AttachmentBaseCollectionResponseable when successful

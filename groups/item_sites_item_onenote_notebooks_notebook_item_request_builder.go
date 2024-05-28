@@ -55,9 +55,9 @@ func NewItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder(rawUrl string, r
     return NewItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CopyNotebook provides operations to call the copyNotebook method.
-// returns a *ItemSitesItemOnenoteNotebooksItemCopyNotebookRequestBuilder when successful
-func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) CopyNotebook()(*ItemSitesItemOnenoteNotebooksItemCopyNotebookRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksItemCopyNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemOnenoteNotebooksItemCopynotebookCopyNotebookRequestBuilder when successful
+func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) CopyNotebook()(*ItemSitesItemOnenoteNotebooksItemCopynotebookCopyNotebookRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksItemCopynotebookCopyNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property notebooks for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -116,9 +116,9 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Patch(ctx cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable), nil
 }
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.
-// returns a *ItemSitesItemOnenoteNotebooksItemSectionGroupsRequestBuilder when successful
-func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroups()(*ItemSitesItemOnenoteNotebooksItemSectionGroupsRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksItemSectionGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemOnenoteNotebooksItemSectiongroupsSectionGroupsRequestBuilder when successful
+func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroups()(*ItemSitesItemOnenoteNotebooksItemSectiongroupsSectionGroupsRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksItemSectiongroupsSectionGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.notebook entity.
 // returns a *ItemSitesItemOnenoteNotebooksItemSectionsRequestBuilder when successful

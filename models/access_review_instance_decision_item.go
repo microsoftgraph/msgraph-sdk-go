@@ -280,7 +280,7 @@ func (m *AccessReviewInstanceDecisionItem) GetPrincipalLink()(*string) {
     }
     return nil
 }
-// GetRecommendation gets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
+// GetRecommendation gets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. The value is Approve if the sign-in is fewer than 30 days after the start of review, Deny if the sign-in is greater than 30 days after, or NoInfoAvailable. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetRecommendation()(*string) {
     val, err := m.GetBackingStore().Get("recommendation")
@@ -501,7 +501,7 @@ func (m *AccessReviewInstanceDecisionItem) SetPrincipalLink(value *string)() {
         panic(err)
     }
 }
-// SetRecommendation sets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
+// SetRecommendation sets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. The value is Approve if the sign-in is fewer than 30 days after the start of review, Deny if the sign-in is greater than 30 days after, or NoInfoAvailable. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetRecommendation(value *string)() {
     err := m.GetBackingStore().Set("recommendation", value)
     if err != nil {

@@ -1,0 +1,1987 @@
+package storage
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+)
+
+// FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder provides operations to manage the functions property of the microsoft.graph.workbook entity.
+type FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetQueryParameters get functions from storage
+type FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+}
+// FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetQueryParameters
+}
+// FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Abs provides operations to call the abs method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAbsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Abs()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAbsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAbsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AccrInt provides operations to call the accrInt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAccrintAccrIntRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AccrInt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAccrintAccrIntRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAccrintAccrIntRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AccrIntM provides operations to call the accrIntM method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAccrintmAccrIntMRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AccrIntM()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAccrintmAccrIntMRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAccrintmAccrIntMRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acos provides operations to call the acos method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcosRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acos()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcosRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAcosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acosh provides operations to call the acosh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcoshRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acosh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcoshRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAcoshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acot provides operations to call the acot method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcotRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acot()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcotRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAcotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acoth provides operations to call the acoth method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcothRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acoth()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAcothRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAcothRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AmorDegrc provides operations to call the amorDegrc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAmordegrcAmorDegrcRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AmorDegrc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAmordegrcAmorDegrcRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAmordegrcAmorDegrcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AmorLinc provides operations to call the amorLinc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAmorlincAmorLincRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AmorLinc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAmorlincAmorLincRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAmorlincAmorLincRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// And provides operations to call the and method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAndRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) And()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAndRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAndRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Arabic provides operations to call the arabic method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsArabicRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Arabic()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsArabicRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsArabicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Areas provides operations to call the areas method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAreasRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Areas()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAreasRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAreasRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Asc provides operations to call the asc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAscRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Asc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAscRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Asin provides operations to call the asin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAsinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Asin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAsinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAsinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Asinh provides operations to call the asinh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAsinhRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Asinh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAsinhRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAsinhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Atan provides operations to call the atan method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAtanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Atan()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAtanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAtanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Atan2 provides operations to call the atan2 method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAtan2RequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Atan2()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAtan2RequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAtan2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Atanh provides operations to call the atanh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAtanhRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Atanh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAtanhRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAtanhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AveDev provides operations to call the aveDev method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAvedevAveDevRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AveDev()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAvedevAveDevRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAvedevAveDevRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Average provides operations to call the average method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Average()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AverageA provides operations to call the averageA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageaAverageARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AverageA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageaAverageARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageaAverageARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AverageIf provides operations to call the averageIf method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageifAverageIfRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AverageIf()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageifAverageIfRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageifAverageIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AverageIfs provides operations to call the averageIfs method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageifsAverageIfsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AverageIfs()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageifsAverageIfsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsAverageifsAverageIfsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BahtText provides operations to call the bahtText method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBahttextBahtTextRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BahtText()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBahttextBahtTextRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBahttextBahtTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Base provides operations to call the base method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBaseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Base()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBaseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBaseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselI provides operations to call the besselI method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesseliBesselIRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselI()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesseliBesselIRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBesseliBesselIRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselJ provides operations to call the besselJ method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesseljBesselJRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselJ()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesseljBesselJRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBesseljBesselJRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselK provides operations to call the besselK method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesselkBesselKRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselK()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesselkBesselKRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBesselkBesselKRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselY provides operations to call the besselY method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesselyBesselYRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselY()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBesselyBesselYRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBesselyBesselYRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Beta_Dist provides operations to call the beta_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBeta_distBeta_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Beta_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBeta_distBeta_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBeta_distBeta_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Beta_Inv provides operations to call the beta_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBeta_invBeta_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Beta_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBeta_invBeta_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBeta_invBeta_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bin2Dec provides operations to call the bin2Dec method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2decBin2DecRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bin2Dec()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2decBin2DecRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2decBin2DecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bin2Hex provides operations to call the bin2Hex method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2hexBin2HexRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bin2Hex()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2hexBin2HexRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2hexBin2HexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bin2Oct provides operations to call the bin2Oct method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2octBin2OctRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bin2Oct()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2octBin2OctRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBin2octBin2OctRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Binom_Dist provides operations to call the binom_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_distBinom_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Binom_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_distBinom_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_distBinom_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Binom_Dist_Range provides operations to call the binom_Dist_Range method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_dist_rangeBinom_Dist_RangeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Binom_Dist_Range()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_dist_rangeBinom_Dist_RangeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_dist_rangeBinom_Dist_RangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Binom_Inv provides operations to call the binom_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_invBinom_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Binom_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_invBinom_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBinom_invBinom_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitand provides operations to call the bitand method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitandRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitand()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitandRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBitandRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitlshift provides operations to call the bitlshift method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitlshiftRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitlshift()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitlshiftRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBitlshiftRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitor provides operations to call the bitor method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitorRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitor()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitorRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBitorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitrshift provides operations to call the bitrshift method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitrshiftRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitrshift()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitrshiftRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBitrshiftRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitxor provides operations to call the bitxor method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitxorRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitxor()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsBitxorRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsBitxorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ceiling_Math provides operations to call the ceiling_Math method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCeiling_mathCeiling_MathRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ceiling_Math()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCeiling_mathCeiling_MathRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCeiling_mathCeiling_MathRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ceiling_Precise provides operations to call the ceiling_Precise method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCeiling_preciseCeiling_PreciseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ceiling_Precise()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCeiling_preciseCeiling_PreciseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCeiling_preciseCeiling_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Char provides operations to call the char method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCharRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Char()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCharRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCharRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Dist provides operations to call the chiSq_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_distChiSq_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_distChiSq_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_distChiSq_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Dist_RT provides operations to call the chiSq_Dist_RT method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_dist_rtChiSq_Dist_RTRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Dist_RT()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_dist_rtChiSq_Dist_RTRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_dist_rtChiSq_Dist_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Inv provides operations to call the chiSq_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_invChiSq_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_invChiSq_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_invChiSq_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Inv_RT provides operations to call the chiSq_Inv_RT method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_inv_rtChiSq_Inv_RTRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Inv_RT()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_inv_rtChiSq_Inv_RTRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsChisq_inv_rtChiSq_Inv_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Choose provides operations to call the choose method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsChooseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Choose()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsChooseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsChooseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Clean provides operations to call the clean method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCleanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Clean()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCleanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCleanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Code provides operations to call the code method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCodeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Code()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCodeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Columns provides operations to call the columns method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsColumnsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Columns()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsColumnsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Combin provides operations to call the combin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCombinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Combin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCombinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCombinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Combina provides operations to call the combina method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCombinaRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Combina()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCombinaRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCombinaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Complex provides operations to call the complex method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsComplexRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Complex()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsComplexRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsComplexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Concatenate provides operations to call the concatenate method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsConcatenateRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Concatenate()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsConcatenateRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsConcatenateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Confidence_Norm provides operations to call the confidence_Norm method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsConfidence_normConfidence_NormRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Confidence_Norm()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsConfidence_normConfidence_NormRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsConfidence_normConfidence_NormRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Confidence_T provides operations to call the confidence_T method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsConfidence_tConfidence_TRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Confidence_T()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsConfidence_tConfidence_TRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsConfidence_tConfidence_TRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderInternal instantiates a new FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder and sets the default values.
+func NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) {
+    m := &FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/drive/items/{driveItem%2Did}/workbook/functions{?%24expand,%24select}", pathParameters),
+    }
+    return m
+}
+// NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder instantiates a new FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder and sets the default values.
+func NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Convert provides operations to call the convert method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsConvertRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Convert()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsConvertRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsConvertRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Cos provides operations to call the cos method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCosRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Cos()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCosRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Cosh provides operations to call the cosh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoshRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Cosh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoshRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCoshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Cot provides operations to call the cot method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCotRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Cot()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCotRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Coth provides operations to call the coth method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCothRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Coth()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCothRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCothRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Count provides operations to call the count method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Count()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountA provides operations to call the countA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountaCountARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountaCountARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCountaCountARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountBlank provides operations to call the countBlank method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountblankCountBlankRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountBlank()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountblankCountBlankRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCountblankCountBlankRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountIf provides operations to call the countIf method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountifCountIfRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountIf()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountifCountIfRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCountifCountIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountIfs provides operations to call the countIfs method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountifsCountIfsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountIfs()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCountifsCountIfsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCountifsCountIfsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupDayBs provides operations to call the coupDayBs method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaybsCoupDayBsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupDayBs()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaybsCoupDayBsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaybsCoupDayBsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupDays provides operations to call the coupDays method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaysCoupDaysRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupDays()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaysCoupDaysRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaysCoupDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupDaysNc provides operations to call the coupDaysNc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaysncCoupDaysNcRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupDaysNc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaysncCoupDaysNcRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupdaysncCoupDaysNcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupNcd provides operations to call the coupNcd method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupncdCoupNcdRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupNcd()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupncdCoupNcdRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupncdCoupNcdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupNum provides operations to call the coupNum method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupnumCoupNumRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupNum()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupnumCoupNumRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCoupnumCoupNumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupPcd provides operations to call the coupPcd method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCouppcdCoupPcdRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupPcd()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCouppcdCoupPcdRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCouppcdCoupPcdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Csc provides operations to call the csc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCscRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Csc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCscRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Csch provides operations to call the csch method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCschRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Csch()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCschRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCschRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CumIPmt provides operations to call the cumIPmt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCumipmtCumIPmtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CumIPmt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCumipmtCumIPmtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCumipmtCumIPmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CumPrinc provides operations to call the cumPrinc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsCumprincCumPrincRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CumPrinc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsCumprincCumPrincRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsCumprincCumPrincRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Date provides operations to call the date method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDateRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Date()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDateRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Datevalue provides operations to call the datevalue method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDatevalueRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Datevalue()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDatevalueRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDatevalueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Daverage provides operations to call the daverage method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDaverageRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Daverage()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDaverageRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDaverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Day provides operations to call the day method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDayRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Day()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDayRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Days provides operations to call the days method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDaysRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Days()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDaysRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Days360 provides operations to call the days360 method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDays360RequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Days360()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDays360RequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDays360RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Db provides operations to call the db method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDbRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Db()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDbRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dbcs provides operations to call the dbcs method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDbcsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dbcs()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDbcsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDbcsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dcount provides operations to call the dcount method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDcountRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dcount()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDcountRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDcountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DcountA provides operations to call the dcountA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDcountaDcountARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DcountA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDcountaDcountARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDcountaDcountARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ddb provides operations to call the ddb method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDdbRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ddb()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDdbRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDdbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dec2Bin provides operations to call the dec2Bin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2binDec2BinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dec2Bin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2binDec2BinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2binDec2BinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dec2Hex provides operations to call the dec2Hex method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2hexDec2HexRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dec2Hex()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2hexDec2HexRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2hexDec2HexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dec2Oct provides operations to call the dec2Oct method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2octDec2OctRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dec2Oct()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2octDec2OctRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDec2octDec2OctRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Decimal provides operations to call the decimal method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDecimalRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Decimal()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDecimalRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDecimalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Degrees provides operations to call the degrees method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDegreesRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Degrees()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDegreesRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDegreesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Delete delete navigation property functions for storage
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Delete(ctx context.Context, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Delta provides operations to call the delta method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDeltaRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Delta()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDeltaRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DevSq provides operations to call the devSq method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDevsqDevSqRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DevSq()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDevsqDevSqRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDevsqDevSqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dget provides operations to call the dget method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDgetRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dget()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDgetRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDgetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Disc provides operations to call the disc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDiscRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Disc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDiscRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDiscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dmax provides operations to call the dmax method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDmaxRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dmax()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDmaxRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDmaxRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dmin provides operations to call the dmin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDminRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dmin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDminRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDminRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dollar provides operations to call the dollar method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDollarRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dollar()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDollarRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDollarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DollarDe provides operations to call the dollarDe method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDollardeDollarDeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DollarDe()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDollardeDollarDeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDollardeDollarDeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DollarFr provides operations to call the dollarFr method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDollarfrDollarFrRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DollarFr()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDollarfrDollarFrRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDollarfrDollarFrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dproduct provides operations to call the dproduct method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDproductRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dproduct()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDproductRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDproductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DstDev provides operations to call the dstDev method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDstdevDstDevRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DstDev()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDstdevDstDevRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDstdevDstDevRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DstDevP provides operations to call the dstDevP method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDstdevpDstDevPRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DstDevP()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDstdevpDstDevPRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDstdevpDstDevPRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dsum provides operations to call the dsum method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDsumRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dsum()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDsumRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDsumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Duration provides operations to call the duration method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDurationRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Duration()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDurationRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dvar provides operations to call the dvar method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDvarRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dvar()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDvarRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDvarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DvarP provides operations to call the dvarP method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsDvarpDvarPRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DvarP()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsDvarpDvarPRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsDvarpDvarPRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ecma_Ceiling provides operations to call the ecma_Ceiling method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsEcma_ceilingEcma_CeilingRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ecma_Ceiling()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsEcma_ceilingEcma_CeilingRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsEcma_ceilingEcma_CeilingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Edate provides operations to call the edate method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsEdateRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Edate()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsEdateRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsEdateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Effect provides operations to call the effect method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsEffectRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Effect()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsEffectRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsEffectRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// EoMonth provides operations to call the eoMonth method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsEomonthEoMonthRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) EoMonth()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsEomonthEoMonthRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsEomonthEoMonthRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Erf provides operations to call the erf method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsErfRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Erf()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsErfRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsErfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Erf_Precise provides operations to call the erf_Precise method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsErf_preciseErf_PreciseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Erf_Precise()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsErf_preciseErf_PreciseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsErf_preciseErf_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ErfC provides operations to call the erfC method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsErfcErfCRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ErfC()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsErfcErfCRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsErfcErfCRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ErfC_Precise provides operations to call the erfC_Precise method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsErfc_preciseErfC_PreciseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ErfC_Precise()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsErfc_preciseErfC_PreciseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsErfc_preciseErfC_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Error_Type provides operations to call the error_Type method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsError_typeError_TypeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Error_Type()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsError_typeError_TypeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsError_typeError_TypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Even provides operations to call the even method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsEvenRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Even()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsEvenRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsEvenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Exact provides operations to call the exact method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsExactRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Exact()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsExactRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsExactRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Exp provides operations to call the exp method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsExpRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Exp()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsExpRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsExpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Expon_Dist provides operations to call the expon_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsExpon_distExpon_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Expon_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsExpon_distExpon_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsExpon_distExpon_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Dist provides operations to call the f_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_distF_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_distF_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsF_distF_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Dist_RT provides operations to call the f_Dist_RT method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_dist_rtF_Dist_RTRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Dist_RT()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_dist_rtF_Dist_RTRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsF_dist_rtF_Dist_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Inv provides operations to call the f_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_invF_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_invF_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsF_invF_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Inv_RT provides operations to call the f_Inv_RT method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_inv_rtF_Inv_RTRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Inv_RT()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsF_inv_rtF_Inv_RTRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsF_inv_rtF_Inv_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fact provides operations to call the fact method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFactRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fact()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFactRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFactRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FactDouble provides operations to call the factDouble method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFactdoubleFactDoubleRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) FactDouble()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFactdoubleFactDoubleRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFactdoubleFactDoubleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// False provides operations to call the false method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFalseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) False()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFalseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFalseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Find provides operations to call the find method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFindRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Find()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFindRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFindRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FindB provides operations to call the findB method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFindbFindBRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) FindB()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFindbFindBRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFindbFindBRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fisher provides operations to call the fisher method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFisherRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fisher()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFisherRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFisherRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FisherInv provides operations to call the fisherInv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFisherinvFisherInvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) FisherInv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFisherinvFisherInvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFisherinvFisherInvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fixed provides operations to call the fixed method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFixedRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fixed()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFixedRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFixedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Floor_Math provides operations to call the floor_Math method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFloor_mathFloor_MathRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Floor_Math()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFloor_mathFloor_MathRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFloor_mathFloor_MathRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Floor_Precise provides operations to call the floor_Precise method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFloor_preciseFloor_PreciseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Floor_Precise()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFloor_preciseFloor_PreciseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFloor_preciseFloor_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fv provides operations to call the fv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fvschedule provides operations to call the fvschedule method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsFvscheduleRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fvschedule()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsFvscheduleRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsFvscheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gamma provides operations to call the gamma method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGammaRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gamma()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGammaRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGammaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gamma_Dist provides operations to call the gamma_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGamma_distGamma_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gamma_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGamma_distGamma_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGamma_distGamma_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gamma_Inv provides operations to call the gamma_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGamma_invGamma_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gamma_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGamma_invGamma_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGamma_invGamma_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GammaLn provides operations to call the gammaLn method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGammalnGammaLnRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GammaLn()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGammalnGammaLnRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGammalnGammaLnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GammaLn_Precise provides operations to call the gammaLn_Precise method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGammaln_preciseGammaLn_PreciseRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GammaLn_Precise()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGammaln_preciseGammaLn_PreciseRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGammaln_preciseGammaLn_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gauss provides operations to call the gauss method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGaussRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gauss()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGaussRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGaussRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gcd provides operations to call the gcd method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGcdRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gcd()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGcdRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGcdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GeoMean provides operations to call the geoMean method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGeomeanGeoMeanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GeoMean()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGeomeanGeoMeanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGeomeanGeoMeanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GeStep provides operations to call the geStep method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsGestepGeStepRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GeStep()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsGestepGeStepRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsGestepGeStepRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get get functions from storage
+// returns a WorkbookFunctionsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Get(ctx context.Context, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionsable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionsFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionsable), nil
+}
+// HarMean provides operations to call the harMean method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHarmeanHarMeanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) HarMean()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHarmeanHarMeanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHarmeanHarMeanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hex2Bin provides operations to call the hex2Bin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2binHex2BinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hex2Bin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2binHex2BinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2binHex2BinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hex2Dec provides operations to call the hex2Dec method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2decHex2DecRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hex2Dec()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2decHex2DecRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2decHex2DecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hex2Oct provides operations to call the hex2Oct method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2octHex2OctRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hex2Oct()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2octHex2OctRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHex2octHex2OctRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hlookup provides operations to call the hlookup method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHlookupRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hlookup()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHlookupRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHlookupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hour provides operations to call the hour method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHourRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hour()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHourRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHourRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hyperlink provides operations to call the hyperlink method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHyperlinkRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hyperlink()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHyperlinkRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHyperlinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// HypGeom_Dist provides operations to call the hypGeom_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsHypgeom_distHypGeom_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) HypGeom_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsHypgeom_distHypGeom_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsHypgeom_distHypGeom_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IfEscaped provides operations to call the if method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIfRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IfEscaped()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIfRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImAbs provides operations to call the imAbs method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImabsImAbsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImAbs()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImabsImAbsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImabsImAbsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Imaginary provides operations to call the imaginary method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImaginaryRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Imaginary()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImaginaryRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImaginaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImArgument provides operations to call the imArgument method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImargumentImArgumentRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImArgument()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImargumentImArgumentRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImargumentImArgumentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImConjugate provides operations to call the imConjugate method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImconjugateImConjugateRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImConjugate()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImconjugateImConjugateRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImconjugateImConjugateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCos provides operations to call the imCos method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcosImCosRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCos()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcosImCosRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImcosImCosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCosh provides operations to call the imCosh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcoshImCoshRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCosh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcoshImCoshRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImcoshImCoshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCot provides operations to call the imCot method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcotImCotRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCot()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcotImCotRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImcotImCotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCsc provides operations to call the imCsc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcscImCscRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCsc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcscImCscRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImcscImCscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCsch provides operations to call the imCsch method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcschImCschRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCsch()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImcschImCschRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImcschImCschRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImDiv provides operations to call the imDiv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImdivImDivRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImDiv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImdivImDivRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImdivImDivRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImExp provides operations to call the imExp method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImexpImExpRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImExp()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImexpImExpRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImexpImExpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImLn provides operations to call the imLn method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImlnImLnRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImLn()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImlnImLnRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImlnImLnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImLog10 provides operations to call the imLog10 method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImlog10ImLog10RequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImLog10()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImlog10ImLog10RequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImlog10ImLog10RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImLog2 provides operations to call the imLog2 method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImlog2ImLog2RequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImLog2()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImlog2ImLog2RequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImlog2ImLog2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImPower provides operations to call the imPower method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImpowerImPowerRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImPower()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImpowerImPowerRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImpowerImPowerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImProduct provides operations to call the imProduct method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImproductImProductRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImProduct()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImproductImProductRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImproductImProductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImReal provides operations to call the imReal method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImrealImRealRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImReal()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImrealImRealRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImrealImRealRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSec provides operations to call the imSec method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsecImSecRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSec()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsecImSecRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImsecImSecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSech provides operations to call the imSech method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsechImSechRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSech()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsechImSechRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImsechImSechRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSin provides operations to call the imSin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsinImSinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsinImSinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImsinImSinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSinh provides operations to call the imSinh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsinhImSinhRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSinh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsinhImSinhRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImsinhImSinhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSqrt provides operations to call the imSqrt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsqrtImSqrtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSqrt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsqrtImSqrtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImsqrtImSqrtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSub provides operations to call the imSub method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsubImSubRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSub()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsubImSubRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImsubImSubRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSum provides operations to call the imSum method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsumImSumRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSum()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImsumImSumRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImsumImSumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImTan provides operations to call the imTan method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsImtanImTanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImTan()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsImtanImTanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsImtanImTanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Int provides operations to call the int method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIntRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Int()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIntRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIntRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IntRate provides operations to call the intRate method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIntrateIntRateRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IntRate()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIntrateIntRateRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIntrateIntRateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ipmt provides operations to call the ipmt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIpmtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ipmt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIpmtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIpmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Irr provides operations to call the irr method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIrrRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Irr()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIrrRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIrrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsErr provides operations to call the isErr method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIserrIsErrRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsErr()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIserrIsErrRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIserrIsErrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsError provides operations to call the isError method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIserrorIsErrorRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsError()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIserrorIsErrorRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIserrorIsErrorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsEven provides operations to call the isEven method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsevenIsEvenRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsEven()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsevenIsEvenRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsevenIsEvenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsFormula provides operations to call the isFormula method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsformulaIsFormulaRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsFormula()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsformulaIsFormulaRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsformulaIsFormulaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsLogical provides operations to call the isLogical method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIslogicalIsLogicalRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsLogical()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIslogicalIsLogicalRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIslogicalIsLogicalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsNA provides operations to call the isNA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnaIsNARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsNA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnaIsNARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnaIsNARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsNonText provides operations to call the isNonText method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnontextIsNonTextRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsNonText()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnontextIsNonTextRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnontextIsNonTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsNumber provides operations to call the isNumber method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnumberIsNumberRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsNumber()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnumberIsNumberRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsnumberIsNumberRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Iso_Ceiling provides operations to call the iso_Ceiling method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIso_ceilingIso_CeilingRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Iso_Ceiling()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIso_ceilingIso_CeilingRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIso_ceilingIso_CeilingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsOdd provides operations to call the isOdd method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsoddIsOddRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsOdd()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsoddIsOddRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsoddIsOddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsoWeekNum provides operations to call the isoWeekNum method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsoweeknumIsoWeekNumRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsoWeekNum()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsoweeknumIsoWeekNumRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsoweeknumIsoWeekNumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ispmt provides operations to call the ispmt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIspmtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ispmt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIspmtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIspmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Isref provides operations to call the isref method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsrefRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Isref()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIsrefRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIsrefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsText provides operations to call the isText method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsIstextIsTextRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsText()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsIstextIsTextRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsIstextIsTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Kurt provides operations to call the kurt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsKurtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Kurt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsKurtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsKurtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Large provides operations to call the large method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLargeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Large()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLargeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLargeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lcm provides operations to call the lcm method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLcmRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lcm()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLcmRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLcmRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Left provides operations to call the left method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLeftRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Left()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLeftRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLeftRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Leftb provides operations to call the leftb method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLeftbRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Leftb()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLeftbRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLeftbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Len provides operations to call the len method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLenRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Len()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLenRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lenb provides operations to call the lenb method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLenbRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lenb()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLenbRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLenbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ln provides operations to call the ln method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLnRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ln()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLnRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Log provides operations to call the log method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLogRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Log()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLogRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Log10 provides operations to call the log10 method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLog10RequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Log10()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLog10RequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLog10RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LogNorm_Dist provides operations to call the logNorm_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLognorm_distLogNorm_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) LogNorm_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLognorm_distLogNorm_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLognorm_distLogNorm_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LogNorm_Inv provides operations to call the logNorm_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLognorm_invLogNorm_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) LogNorm_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLognorm_invLogNorm_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLognorm_invLogNorm_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lookup provides operations to call the lookup method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLookupRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lookup()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLookupRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLookupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lower provides operations to call the lower method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsLowerRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lower()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsLowerRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsLowerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Match provides operations to call the match method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMatchRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Match()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMatchRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMatchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Max provides operations to call the max method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMaxRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Max()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMaxRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMaxRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MaxA provides operations to call the maxA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMaxaMaxARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) MaxA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMaxaMaxARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMaxaMaxARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mduration provides operations to call the mduration method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMdurationRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mduration()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMdurationRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMdurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Median provides operations to call the median method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMedianRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Median()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMedianRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMedianRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mid provides operations to call the mid method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMidRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mid()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMidRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMidRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Midb provides operations to call the midb method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMidbRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Midb()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMidbRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMidbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Min provides operations to call the min method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Min()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MinA provides operations to call the minA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMinaMinARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) MinA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMinaMinARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMinaMinARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Minute provides operations to call the minute method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMinuteRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Minute()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMinuteRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMinuteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mirr provides operations to call the mirr method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMirrRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mirr()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMirrRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMirrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mod provides operations to call the mod method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsModRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mod()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsModRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsModRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Month provides operations to call the month method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMonthRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Month()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMonthRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMonthRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mround provides operations to call the mround method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMroundRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mround()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMroundRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMroundRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MultiNomial provides operations to call the multiNomial method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsMultinomialMultiNomialRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) MultiNomial()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsMultinomialMultiNomialRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsMultinomialMultiNomialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// N provides operations to call the n method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) N()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Na provides operations to call the na method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNaRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Na()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNaRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NegBinom_Dist provides operations to call the negBinom_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNegbinom_distNegBinom_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NegBinom_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNegbinom_distNegBinom_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNegbinom_distNegBinom_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NetworkDays provides operations to call the networkDays method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNetworkdaysNetworkDaysRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NetworkDays()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNetworkdaysNetworkDaysRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNetworkdaysNetworkDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NetworkDays_Intl provides operations to call the networkDays_Intl method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNetworkdays_intlNetworkDays_IntlRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NetworkDays_Intl()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNetworkdays_intlNetworkDays_IntlRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNetworkdays_intlNetworkDays_IntlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Nominal provides operations to call the nominal method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNominalRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Nominal()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNominalRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNominalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_Dist provides operations to call the norm_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_distNorm_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_distNorm_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_distNorm_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_Inv provides operations to call the norm_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_invNorm_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_invNorm_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_invNorm_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_S_Dist provides operations to call the norm_S_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_s_distNorm_S_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_S_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_s_distNorm_S_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_s_distNorm_S_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_S_Inv provides operations to call the norm_S_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_s_invNorm_S_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_S_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_s_invNorm_S_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNorm_s_invNorm_S_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Not provides operations to call the not method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNotRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Not()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNotRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Now provides operations to call the now method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNowRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Now()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNowRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Nper provides operations to call the nper method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNperRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Nper()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNperRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNperRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Npv provides operations to call the npv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNpvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Npv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNpvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNpvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NumberValue provides operations to call the numberValue method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsNumbervalueNumberValueRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NumberValue()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsNumbervalueNumberValueRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsNumbervalueNumberValueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Oct2Bin provides operations to call the oct2Bin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2binOct2BinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Oct2Bin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2binOct2BinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2binOct2BinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Oct2Dec provides operations to call the oct2Dec method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2decOct2DecRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Oct2Dec()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2decOct2DecRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2decOct2DecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Oct2Hex provides operations to call the oct2Hex method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2hexOct2HexRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Oct2Hex()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2hexOct2HexRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOct2hexOct2HexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Odd provides operations to call the odd method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Odd()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddFPrice provides operations to call the oddFPrice method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddfpriceOddFPriceRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddFPrice()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddfpriceOddFPriceRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOddfpriceOddFPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddFYield provides operations to call the oddFYield method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddfyieldOddFYieldRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddFYield()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddfyieldOddFYieldRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOddfyieldOddFYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddLPrice provides operations to call the oddLPrice method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddlpriceOddLPriceRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddLPrice()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddlpriceOddLPriceRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOddlpriceOddLPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddLYield provides operations to call the oddLYield method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddlyieldOddLYieldRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddLYield()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOddlyieldOddLYieldRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOddlyieldOddLYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Or provides operations to call the or method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsOrRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Or()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsOrRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsOrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Patch update the navigation property functions in storage
+// returns a WorkbookFunctionsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionsable, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionsable, error) {
+    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionsFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionsable), nil
+}
+// Pduration provides operations to call the pduration method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPdurationRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pduration()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPdurationRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPdurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Percentile_Exc provides operations to call the percentile_Exc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentile_excPercentile_ExcRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Percentile_Exc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentile_excPercentile_ExcRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentile_excPercentile_ExcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Percentile_Inc provides operations to call the percentile_Inc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentile_incPercentile_IncRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Percentile_Inc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentile_incPercentile_IncRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentile_incPercentile_IncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PercentRank_Exc provides operations to call the percentRank_Exc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentrank_excPercentRank_ExcRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PercentRank_Exc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentrank_excPercentRank_ExcRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentrank_excPercentRank_ExcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PercentRank_Inc provides operations to call the percentRank_Inc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentrank_incPercentRank_IncRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PercentRank_Inc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentrank_incPercentRank_IncRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPercentrank_incPercentRank_IncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Permut provides operations to call the permut method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPermutRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Permut()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPermutRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPermutRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Permutationa provides operations to call the permutationa method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPermutationaRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Permutationa()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPermutationaRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPermutationaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Phi provides operations to call the phi method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPhiRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Phi()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPhiRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPhiRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Pi provides operations to call the pi method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPiRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pi()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPiRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPiRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Pmt provides operations to call the pmt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPmtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pmt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPmtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Poisson_Dist provides operations to call the poisson_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPoisson_distPoisson_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Poisson_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPoisson_distPoisson_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPoisson_distPoisson_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Power provides operations to call the power method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPowerRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Power()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPowerRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPowerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ppmt provides operations to call the ppmt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPpmtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ppmt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPpmtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPpmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Price provides operations to call the price method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPriceRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Price()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPriceRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PriceDisc provides operations to call the priceDisc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPricediscPriceDiscRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PriceDisc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPricediscPriceDiscRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPricediscPriceDiscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PriceMat provides operations to call the priceMat method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPricematPriceMatRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PriceMat()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPricematPriceMatRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPricematPriceMatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Product provides operations to call the product method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsProductRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Product()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsProductRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsProductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Proper provides operations to call the proper method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsProperRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Proper()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsProperRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsProperRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Pv provides operations to call the pv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsPvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsPvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsPvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Quartile_Exc provides operations to call the quartile_Exc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsQuartile_excQuartile_ExcRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Quartile_Exc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsQuartile_excQuartile_ExcRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsQuartile_excQuartile_ExcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Quartile_Inc provides operations to call the quartile_Inc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsQuartile_incQuartile_IncRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Quartile_Inc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsQuartile_incQuartile_IncRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsQuartile_incQuartile_IncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Quotient provides operations to call the quotient method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsQuotientRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Quotient()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsQuotientRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsQuotientRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Radians provides operations to call the radians method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRadiansRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Radians()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRadiansRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRadiansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rand provides operations to call the rand method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRandRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rand()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRandRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRandRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RandBetween provides operations to call the randBetween method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRandbetweenRandBetweenRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) RandBetween()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRandbetweenRandBetweenRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRandbetweenRandBetweenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rank_Avg provides operations to call the rank_Avg method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRank_avgRank_AvgRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rank_Avg()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRank_avgRank_AvgRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRank_avgRank_AvgRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rank_Eq provides operations to call the rank_Eq method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRank_eqRank_EqRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rank_Eq()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRank_eqRank_EqRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRank_eqRank_EqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rate provides operations to call the rate method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRateRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rate()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRateRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Received provides operations to call the received method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsReceivedRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Received()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsReceivedRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsReceivedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Replace provides operations to call the replace method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsReplaceRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Replace()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsReplaceRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsReplaceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ReplaceB provides operations to call the replaceB method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsReplacebReplaceBRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ReplaceB()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsReplacebReplaceBRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsReplacebReplaceBRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rept provides operations to call the rept method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsReptRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rept()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsReptRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsReptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Right provides operations to call the right method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRightRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Right()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRightRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRightRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rightb provides operations to call the rightb method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRightbRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rightb()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRightbRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRightbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Roman provides operations to call the roman method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRomanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Roman()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRomanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRomanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Round provides operations to call the round method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRoundRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Round()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRoundRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRoundRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RoundDown provides operations to call the roundDown method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRounddownRoundDownRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) RoundDown()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRounddownRoundDownRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRounddownRoundDownRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RoundUp provides operations to call the roundUp method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRoundupRoundUpRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) RoundUp()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRoundupRoundUpRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRoundupRoundUpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rows provides operations to call the rows method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRowsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rows()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRowsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rri provides operations to call the rri method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRriRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rri()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRriRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRriRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sec provides operations to call the sec method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSecRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sec()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSecRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sech provides operations to call the sech method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSechRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sech()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSechRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSechRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Second provides operations to call the second method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSecondRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Second()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSecondRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSecondRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SeriesSum provides operations to call the seriesSum method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSeriessumSeriesSumRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SeriesSum()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSeriessumSeriesSumRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSeriessumSeriesSumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sheet provides operations to call the sheet method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSheetRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sheet()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSheetRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSheetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sheets provides operations to call the sheets method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSheetsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sheets()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSheetsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSheetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sign provides operations to call the sign method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSignRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sign()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSignRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sin provides operations to call the sin method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSinRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sin()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSinRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sinh provides operations to call the sinh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSinhRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sinh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSinhRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSinhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Skew provides operations to call the skew method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSkewRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Skew()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSkewRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSkewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Skew_p provides operations to call the skew_p method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSkew_pRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Skew_p()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSkew_pRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSkew_pRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sln provides operations to call the sln method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSlnRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sln()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSlnRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSlnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Small provides operations to call the small method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSmallRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Small()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSmallRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSmallRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sqrt provides operations to call the sqrt method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSqrtRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sqrt()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSqrtRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSqrtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SqrtPi provides operations to call the sqrtPi method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSqrtpiSqrtPiRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SqrtPi()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSqrtpiSqrtPiRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSqrtpiSqrtPiRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Standardize provides operations to call the standardize method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsStandardizeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Standardize()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsStandardizeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsStandardizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDev_P provides operations to call the stDev_P method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdev_pStDev_PRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDev_P()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdev_pStDev_PRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsStdev_pStDev_PRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDev_S provides operations to call the stDev_S method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdev_sStDev_SRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDev_S()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdev_sStDev_SRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsStdev_sStDev_SRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDevA provides operations to call the stDevA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdevaStDevARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDevA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdevaStDevARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsStdevaStDevARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDevPA provides operations to call the stDevPA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdevpaStDevPARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDevPA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsStdevpaStDevPARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsStdevpaStDevPARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Substitute provides operations to call the substitute method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSubstituteRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Substitute()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSubstituteRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSubstituteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Subtotal provides operations to call the subtotal method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSubtotalRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Subtotal()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSubtotalRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSubtotalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sum provides operations to call the sum method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sum()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SumIf provides operations to call the sumIf method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumifSumIfRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SumIf()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumifSumIfRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSumifSumIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SumIfs provides operations to call the sumIfs method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumifsSumIfsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SumIfs()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumifsSumIfsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSumifsSumIfsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SumSq provides operations to call the sumSq method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumsqSumSqRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SumSq()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSumsqSumSqRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSumsqSumSqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Syd provides operations to call the syd method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsSydRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Syd()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsSydRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsSydRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T provides operations to call the t method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Dist provides operations to call the t_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_distT_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_distT_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsT_distT_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Dist_2T provides operations to call the t_Dist_2T method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_dist_2tT_Dist_2TRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Dist_2T()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_dist_2tT_Dist_2TRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsT_dist_2tT_Dist_2TRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Dist_RT provides operations to call the t_Dist_RT method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_dist_rtT_Dist_RTRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Dist_RT()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_dist_rtT_Dist_RTRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsT_dist_rtT_Dist_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Inv provides operations to call the t_Inv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_invT_InvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Inv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_invT_InvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsT_invT_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Inv_2T provides operations to call the t_Inv_2T method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_inv_2tT_Inv_2TRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Inv_2T()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsT_inv_2tT_Inv_2TRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsT_inv_2tT_Inv_2TRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Tan provides operations to call the tan method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Tan()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Tanh provides operations to call the tanh method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTanhRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Tanh()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTanhRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTanhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TbillEq provides operations to call the tbillEq method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTbilleqTbillEqRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TbillEq()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTbilleqTbillEqRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTbilleqTbillEqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TbillPrice provides operations to call the tbillPrice method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTbillpriceTbillPriceRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TbillPrice()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTbillpriceTbillPriceRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTbillpriceTbillPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TbillYield provides operations to call the tbillYield method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTbillyieldTbillYieldRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TbillYield()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTbillyieldTbillYieldRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTbillyieldTbillYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Text provides operations to call the text method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTextRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Text()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTextRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Time provides operations to call the time method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTimeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Time()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTimeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Timevalue provides operations to call the timevalue method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTimevalueRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Timevalue()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTimevalueRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTimevalueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Today provides operations to call the today method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTodayRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Today()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTodayRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTodayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToDeleteRequestInformation delete navigation property functions for storage
+// returns a *RequestInformation when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToGetRequestInformation get functions from storage
+// returns a *RequestInformation when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToPatchRequestInformation update the navigation property functions in storage
+// returns a *RequestInformation when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionsable, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    return requestInfo, nil
+}
+// Trim provides operations to call the trim method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTrimRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Trim()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTrimRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTrimRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TrimMean provides operations to call the trimMean method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTrimmeanTrimMeanRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TrimMean()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTrimmeanTrimMeanRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTrimmeanTrimMeanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// True provides operations to call the true method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTrueRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) True()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTrueRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTrueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Trunc provides operations to call the trunc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTruncRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Trunc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTruncRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTruncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TypeEscaped provides operations to call the type method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsTypeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TypeEscaped()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsTypeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Unichar provides operations to call the unichar method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsUnicharRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Unichar()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsUnicharRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsUnicharRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Unicode provides operations to call the unicode method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsUnicodeRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Unicode()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsUnicodeRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsUnicodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Upper provides operations to call the upper method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsUpperRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Upper()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsUpperRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsUpperRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Usdollar provides operations to call the usdollar method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsUsdollarRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Usdollar()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsUsdollarRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsUsdollarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Value provides operations to call the value method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsValueRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Value()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsValueRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsValueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Var_P provides operations to call the var_P method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsVar_pVar_PRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Var_P()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsVar_pVar_PRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsVar_pVar_PRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Var_S provides operations to call the var_S method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsVar_sVar_SRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Var_S()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsVar_sVar_SRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsVar_sVar_SRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// VarA provides operations to call the varA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsVaraVarARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) VarA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsVaraVarARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsVaraVarARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// VarPA provides operations to call the varPA method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsVarpaVarPARequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) VarPA()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsVarpaVarPARequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsVarpaVarPARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Vdb provides operations to call the vdb method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsVdbRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Vdb()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsVdbRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsVdbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Vlookup provides operations to call the vlookup method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsVlookupRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Vlookup()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsVlookupRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsVlookupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Weekday provides operations to call the weekday method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsWeekdayRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Weekday()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsWeekdayRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsWeekdayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WeekNum provides operations to call the weekNum method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsWeeknumWeekNumRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WeekNum()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsWeeknumWeekNumRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsWeeknumWeekNumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Weibull_Dist provides operations to call the weibull_Dist method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsWeibull_distWeibull_DistRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Weibull_Dist()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsWeibull_distWeibull_DistRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsWeibull_distWeibull_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WithUrl(rawUrl string)(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// WorkDay provides operations to call the workDay method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsWorkdayWorkDayRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WorkDay()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsWorkdayWorkDayRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsWorkdayWorkDayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WorkDay_Intl provides operations to call the workDay_Intl method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsWorkday_intlWorkDay_IntlRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WorkDay_Intl()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsWorkday_intlWorkDay_IntlRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsWorkday_intlWorkDay_IntlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Xirr provides operations to call the xirr method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsXirrRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Xirr()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsXirrRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsXirrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Xnpv provides operations to call the xnpv method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsXnpvRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Xnpv()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsXnpvRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsXnpvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Xor provides operations to call the xor method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsXorRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Xor()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsXorRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsXorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Year provides operations to call the year method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsYearRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Year()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsYearRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsYearRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// YearFrac provides operations to call the yearFrac method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsYearfracYearFracRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) YearFrac()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsYearfracYearFracRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsYearfracYearFracRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Yield provides operations to call the yield method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsYieldRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Yield()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsYieldRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// YieldDisc provides operations to call the yieldDisc method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsYielddiscYieldDiscRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) YieldDisc()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsYielddiscYieldDiscRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsYielddiscYieldDiscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// YieldMat provides operations to call the yieldMat method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsYieldmatYieldMatRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) YieldMat()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsYieldmatYieldMatRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsYieldmatYieldMatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Z_Test provides operations to call the z_Test method.
+// returns a *FilestorageContainersItemDriveItemsItemWorkbookFunctionsZ_testZ_TestRequestBuilder when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Z_Test()(*FilestorageContainersItemDriveItemsItemWorkbookFunctionsZ_testZ_TestRequestBuilder) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookFunctionsZ_testZ_TestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

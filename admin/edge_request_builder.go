@@ -91,9 +91,9 @@ func (m *EdgeRequestBuilder) Get(ctx context.Context, requestConfiguration *Edge
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Edgeable), nil
 }
 // InternetExplorerMode provides operations to manage the internetExplorerMode property of the microsoft.graph.edge entity.
-// returns a *EdgeInternetExplorerModeRequestBuilder when successful
-func (m *EdgeRequestBuilder) InternetExplorerMode()(*EdgeInternetExplorerModeRequestBuilder) {
-    return NewEdgeInternetExplorerModeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdgeInternetexplorermodeInternetExplorerModeRequestBuilder when successful
+func (m *EdgeRequestBuilder) InternetExplorerMode()(*EdgeInternetexplorermodeInternetExplorerModeRequestBuilder) {
+    return NewEdgeInternetexplorermodeInternetExplorerModeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property edge in admin
 // returns a Edgeable when successful

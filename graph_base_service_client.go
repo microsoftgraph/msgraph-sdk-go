@@ -45,6 +45,7 @@ import (
     i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     i8a94e224d4b14a30028778cb54ce1696f016a1e14d193c4593c6569d5c945b82 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipalswithappid"
+    i8b6ec7ad760ac5f470c53875acab4b511d51f95fd1aef26c4a386f184a390eac "github.com/microsoftgraph/msgraph-sdk-go/storage"
     i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02 "github.com/microsoftgraph/msgraph-sdk-go/applications"
     i9429d7aae2f5c1dabbecc9411e8ad2b733d29338bc0c0436eeccc94605c461b7 "github.com/microsoftgraph/msgraph-sdk-go/print"
     i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12 "github.com/microsoftgraph/msgraph-sdk-go/domains"
@@ -435,6 +436,11 @@ func (m *GraphBaseServiceClient) Sites()(*if5372351befdb652f617b1ee71fbf092fa8dd
 // returns a *SolutionsRequestBuilder when successful
 func (m *GraphBaseServiceClient) Solutions()(*i0906e75d8a44bf92212e084e1d2f62d03887dcec6a5c8535e92ccc04c1e5fdec.SolutionsRequestBuilder) {
     return i0906e75d8a44bf92212e084e1d2f62d03887dcec6a5c8535e92ccc04c1e5fdec.NewSolutionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Storage provides operations to manage the storage singleton.
+// returns a *StorageRequestBuilder when successful
+func (m *GraphBaseServiceClient) Storage()(*i8b6ec7ad760ac5f470c53875acab4b511d51f95fd1aef26c4a386f184a390eac.StorageRequestBuilder) {
+    return i8b6ec7ad760ac5f470c53875acab4b511d51f95fd1aef26c4a386f184a390eac.NewStorageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubscribedSkus provides operations to manage the collection of subscribedSku entities.
 // returns a *SubscribedSkusRequestBuilder when successful
