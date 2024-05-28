@@ -1,0 +1,27 @@
+package groups
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedGetResponseable instead.
+type ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponse struct {
+    ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedGetResponse
+}
+// NewItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponse instantiates a new ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponse and sets the default values.
+func NewItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponse()(*ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponse) {
+    m := &ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponse{
+        ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedGetResponse: *NewItemSitesItemListsItemContenttypesItemIspublishedIsPublishedGetResponse(),
+    }
+    return m
+}
+// CreateItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponse(), nil
+}
+// Deprecated: This class is obsolete. Use ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedGetResponseable instead.
+type ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedResponseable interface {
+    ItemSitesItemListsItemContenttypesItemIspublishedIsPublishedGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

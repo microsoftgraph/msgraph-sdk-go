@@ -1,0 +1,27 @@
+package storage
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable instead.
+type FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponse struct {
+    FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageGetResponse
+}
+// NewFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponse instantiates a new FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponse and sets the default values.
+func NewFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponse()(*FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponse) {
+    m := &FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponse{
+        FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageGetResponse: *NewFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageGetResponse(),
+    }
+    return m
+}
+// CreateFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponse(), nil
+}
+// Deprecated: This class is obsolete. Use FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable instead.
+type FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageResponseable interface {
+    FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

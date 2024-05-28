@@ -42,9 +42,9 @@ type TeamItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllChannels provides operations to manage the allChannels property of the microsoft.graph.team entity.
-// returns a *ItemAllChannelsRequestBuilder when successful
-func (m *TeamItemRequestBuilder) AllChannels()(*ItemAllChannelsRequestBuilder) {
-    return NewItemAllChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAllchannelsAllChannelsRequestBuilder when successful
+func (m *TeamItemRequestBuilder) AllChannels()(*ItemAllchannelsAllChannelsRequestBuilder) {
+    return NewItemAllchannelsAllChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Archive provides operations to call the archive method.
 // returns a *ItemArchiveRequestBuilder when successful
@@ -62,9 +62,9 @@ func (m *TeamItemRequestBuilder) Clone()(*ItemCloneRequestBuilder) {
     return NewItemCloneRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CompleteMigration provides operations to call the completeMigration method.
-// returns a *ItemCompleteMigrationRequestBuilder when successful
-func (m *TeamItemRequestBuilder) CompleteMigration()(*ItemCompleteMigrationRequestBuilder) {
-    return NewItemCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCompletemigrationCompleteMigrationRequestBuilder when successful
+func (m *TeamItemRequestBuilder) CompleteMigration()(*ItemCompletemigrationCompleteMigrationRequestBuilder) {
+    return NewItemCompletemigrationCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewTeamItemRequestBuilderInternal instantiates a new TeamItemRequestBuilder and sets the default values.
 func NewTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamItemRequestBuilder) {
@@ -124,14 +124,14 @@ func (m *TeamItemRequestBuilder) Group()(*ItemGroupRequestBuilder) {
     return NewItemGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // IncomingChannels provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
-// returns a *ItemIncomingChannelsRequestBuilder when successful
-func (m *TeamItemRequestBuilder) IncomingChannels()(*ItemIncomingChannelsRequestBuilder) {
-    return NewItemIncomingChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemIncomingchannelsIncomingChannelsRequestBuilder when successful
+func (m *TeamItemRequestBuilder) IncomingChannels()(*ItemIncomingchannelsIncomingChannelsRequestBuilder) {
+    return NewItemIncomingchannelsIncomingChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.team entity.
-// returns a *ItemInstalledAppsRequestBuilder when successful
-func (m *TeamItemRequestBuilder) InstalledApps()(*ItemInstalledAppsRequestBuilder) {
-    return NewItemInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInstalledappsInstalledAppsRequestBuilder when successful
+func (m *TeamItemRequestBuilder) InstalledApps()(*ItemInstalledappsInstalledAppsRequestBuilder) {
+    return NewItemInstalledappsInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.team entity.
 // returns a *ItemMembersRequestBuilder when successful
@@ -167,9 +167,9 @@ func (m *TeamItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
 // PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
-// returns a *ItemPermissionGrantsRequestBuilder when successful
-func (m *TeamItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequestBuilder) {
-    return NewItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPermissiongrantsPermissionGrantsRequestBuilder when successful
+func (m *TeamItemRequestBuilder) PermissionGrants()(*ItemPermissiongrantsPermissionGrantsRequestBuilder) {
+    return NewItemPermissiongrantsPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Photo provides operations to manage the photo property of the microsoft.graph.team entity.
 // returns a *ItemPhotoRequestBuilder when successful
@@ -177,9 +177,9 @@ func (m *TeamItemRequestBuilder) Photo()(*ItemPhotoRequestBuilder) {
     return NewItemPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PrimaryChannel provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
-// returns a *ItemPrimaryChannelRequestBuilder when successful
-func (m *TeamItemRequestBuilder) PrimaryChannel()(*ItemPrimaryChannelRequestBuilder) {
-    return NewItemPrimaryChannelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPrimarychannelPrimaryChannelRequestBuilder when successful
+func (m *TeamItemRequestBuilder) PrimaryChannel()(*ItemPrimarychannelPrimaryChannelRequestBuilder) {
+    return NewItemPrimarychannelPrimaryChannelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Schedule provides operations to manage the schedule property of the microsoft.graph.team entity.
 // returns a *ItemScheduleRequestBuilder when successful
@@ -187,9 +187,9 @@ func (m *TeamItemRequestBuilder) Schedule()(*ItemScheduleRequestBuilder) {
     return NewItemScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendActivityNotification provides operations to call the sendActivityNotification method.
-// returns a *ItemSendActivityNotificationRequestBuilder when successful
-func (m *TeamItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
-    return NewItemSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSendactivitynotificationSendActivityNotificationRequestBuilder when successful
+func (m *TeamItemRequestBuilder) SendActivityNotification()(*ItemSendactivitynotificationSendActivityNotificationRequestBuilder) {
+    return NewItemSendactivitynotificationSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.team entity.
 // returns a *ItemTagsRequestBuilder when successful

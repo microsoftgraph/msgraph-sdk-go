@@ -42,14 +42,14 @@ type ItemBrandingRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BackgroundImage provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingBackgroundImageRequestBuilder when successful
-func (m *ItemBrandingRequestBuilder) BackgroundImage()(*ItemBrandingBackgroundImageRequestBuilder) {
-    return NewItemBrandingBackgroundImageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingBackgroundimageBackgroundImageRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) BackgroundImage()(*ItemBrandingBackgroundimageBackgroundImageRequestBuilder) {
+    return NewItemBrandingBackgroundimageBackgroundImageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BannerLogo provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingBannerLogoRequestBuilder when successful
-func (m *ItemBrandingRequestBuilder) BannerLogo()(*ItemBrandingBannerLogoRequestBuilder) {
-    return NewItemBrandingBannerLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingBannerlogoBannerLogoRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) BannerLogo()(*ItemBrandingBannerlogoBannerLogoRequestBuilder) {
+    return NewItemBrandingBannerlogoBannerLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemBrandingRequestBuilderInternal instantiates a new ItemBrandingRequestBuilder and sets the default values.
 func NewItemBrandingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingRequestBuilder) {
@@ -65,9 +65,9 @@ func NewItemBrandingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewItemBrandingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CustomCSS provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingCustomCSSRequestBuilder when successful
-func (m *ItemBrandingRequestBuilder) CustomCSS()(*ItemBrandingCustomCSSRequestBuilder) {
-    return NewItemBrandingCustomCSSRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingCustomcssCustomCSSRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) CustomCSS()(*ItemBrandingCustomcssCustomCSSRequestBuilder) {
+    return NewItemBrandingCustomcssCustomCSSRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -117,9 +117,9 @@ func (m *ItemBrandingRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingable), nil
 }
 // HeaderLogo provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingHeaderLogoRequestBuilder when successful
-func (m *ItemBrandingRequestBuilder) HeaderLogo()(*ItemBrandingHeaderLogoRequestBuilder) {
-    return NewItemBrandingHeaderLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingHeaderlogoHeaderLogoRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) HeaderLogo()(*ItemBrandingHeaderlogoHeaderLogoRequestBuilder) {
+    return NewItemBrandingHeaderlogoHeaderLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 // returns a *ItemBrandingLocalizationsRequestBuilder when successful
@@ -150,14 +150,14 @@ func (m *ItemBrandingRequestBuilder) Patch(ctx context.Context, body iadcd811244
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingable), nil
 }
 // SquareLogo provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingSquareLogoRequestBuilder when successful
-func (m *ItemBrandingRequestBuilder) SquareLogo()(*ItemBrandingSquareLogoRequestBuilder) {
-    return NewItemBrandingSquareLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingSquarelogoSquareLogoRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) SquareLogo()(*ItemBrandingSquarelogoSquareLogoRequestBuilder) {
+    return NewItemBrandingSquarelogoSquareLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SquareLogoDark provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingSquareLogoDarkRequestBuilder when successful
-func (m *ItemBrandingRequestBuilder) SquareLogoDark()(*ItemBrandingSquareLogoDarkRequestBuilder) {
-    return NewItemBrandingSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingSquarelogodarkSquareLogoDarkRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) SquareLogoDark()(*ItemBrandingSquarelogodarkSquareLogoDarkRequestBuilder) {
+    return NewItemBrandingSquarelogodarkSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 // returns a *RequestInformation when successful

@@ -43,6 +43,18 @@ func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEv
     }
     return nil
 }
+// GetAuthenticationEventsFlows gets the authenticationEventsFlows property value. Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.
+// returns a []AuthenticationEventsFlowable when successful
+func (m *IdentityContainer) GetAuthenticationEventsFlows()([]AuthenticationEventsFlowable) {
+    val, err := m.GetBackingStore().Get("authenticationEventsFlows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationEventsFlowable)
+    }
+    return nil
+}
 // GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
 // returns a []B2xIdentityUserFlowable when successful
 func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
@@ -112,6 +124,22 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetAuthenticationEventListeners(res)
+        }
+        return nil
+    }
+    res["authenticationEventsFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationEventsFlowFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationEventsFlowable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AuthenticationEventsFlowable)
+                }
+            }
+            m.SetAuthenticationEventsFlows(res)
         }
         return nil
     }
@@ -245,6 +273,18 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetAuthenticationEventsFlows() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationEventsFlows()))
+        for i, v := range m.GetAuthenticationEventsFlows() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("authenticationEventsFlows", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetB2xUserFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2xUserFlows()))
         for i, v := range m.GetB2xUserFlows() {
@@ -315,6 +355,13 @@ func (m *IdentityContainer) SetAuthenticationEventListeners(value []Authenticati
         panic(err)
     }
 }
+// SetAuthenticationEventsFlows sets the authenticationEventsFlows property value. Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.
+func (m *IdentityContainer) SetAuthenticationEventsFlows(value []AuthenticationEventsFlowable)() {
+    err := m.GetBackingStore().Set("authenticationEventsFlows", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetB2xUserFlows sets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
 func (m *IdentityContainer) SetB2xUserFlows(value []B2xIdentityUserFlowable)() {
     err := m.GetBackingStore().Set("b2xUserFlows", value)
@@ -355,6 +402,7 @@ type IdentityContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApiConnectors()([]IdentityApiConnectorable)
     GetAuthenticationEventListeners()([]AuthenticationEventListenerable)
+    GetAuthenticationEventsFlows()([]AuthenticationEventsFlowable)
     GetB2xUserFlows()([]B2xIdentityUserFlowable)
     GetConditionalAccess()(ConditionalAccessRootable)
     GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable)
@@ -362,6 +410,7 @@ type IdentityContainerable interface {
     GetUserFlowAttributes()([]IdentityUserFlowAttributeable)
     SetApiConnectors(value []IdentityApiConnectorable)()
     SetAuthenticationEventListeners(value []AuthenticationEventListenerable)()
+    SetAuthenticationEventsFlows(value []AuthenticationEventsFlowable)()
     SetB2xUserFlows(value []B2xIdentityUserFlowable)()
     SetConditionalAccess(value ConditionalAccessRootable)()
     SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)()

@@ -44,7 +44,7 @@ func (m *AccessPackageAssignmentRequest) GetAnswers()([]AccessPackageAnswerable)
     }
     return nil
 }
-// GetAssignment gets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+// GetAssignment gets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 // returns a AccessPackageAssignmentable when successful
 func (m *AccessPackageAssignmentRequest) GetAssignment()(AccessPackageAssignmentable) {
     val, err := m.GetBackingStore().Get("assignment")
@@ -232,7 +232,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable
     }
     return nil
 }
-// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
+// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
 // returns a *AccessPackageRequestType when successful
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestType) {
     val, err := m.GetBackingStore().Get("requestType")
@@ -382,7 +382,7 @@ func (m *AccessPackageAssignmentRequest) SetAnswers(value []AccessPackageAnswera
         panic(err)
     }
 }
-// SetAssignment sets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+// SetAssignment sets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAssignment(value AccessPackageAssignmentable)() {
     err := m.GetBackingStore().Set("assignment", value)
     if err != nil {
@@ -417,7 +417,7 @@ func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubject
         panic(err)
     }
 }
-// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
+// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageRequestType)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {

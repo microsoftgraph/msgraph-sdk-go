@@ -97,9 +97,9 @@ func (m *CallsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cal
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallCollectionResponseable), nil
 }
 // LogTeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
-// returns a *CallsLogTeleconferenceDeviceQualityRequestBuilder when successful
-func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*CallsLogTeleconferenceDeviceQualityRequestBuilder) {
-    return NewCallsLogTeleconferenceDeviceQualityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsLogteleconferencedevicequalityLogTeleconferenceDeviceQualityRequestBuilder when successful
+func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*CallsLogteleconferencedevicequalityLogTeleconferenceDeviceQualityRequestBuilder) {
+    return NewCallsLogteleconferencedevicequalityLogTeleconferenceDeviceQualityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
 // returns a Callable when successful

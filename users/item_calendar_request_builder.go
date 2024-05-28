@@ -33,19 +33,19 @@ type ItemCalendarRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllowedCalendarSharingRolesWithUser provides operations to call the allowedCalendarSharingRoles method.
-// returns a *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder when successful
-func (m *ItemCalendarRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) {
-    return NewItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, user)
+// returns a *ItemCalendarAllowedcalendarsharingroleswithuserAllowedCalendarSharingRolesWithUserRequestBuilder when successful
+func (m *ItemCalendarRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ItemCalendarAllowedcalendarsharingroleswithuserAllowedCalendarSharingRolesWithUserRequestBuilder) {
+    return NewItemCalendarAllowedcalendarsharingroleswithuserAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, user)
 }
 // CalendarPermissions provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
-// returns a *ItemCalendarCalendarPermissionsRequestBuilder when successful
-func (m *ItemCalendarRequestBuilder) CalendarPermissions()(*ItemCalendarCalendarPermissionsRequestBuilder) {
-    return NewItemCalendarCalendarPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarCalendarpermissionsCalendarPermissionsRequestBuilder when successful
+func (m *ItemCalendarRequestBuilder) CalendarPermissions()(*ItemCalendarCalendarpermissionsCalendarPermissionsRequestBuilder) {
+    return NewItemCalendarCalendarpermissionsCalendarPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CalendarView provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-// returns a *ItemCalendarCalendarViewRequestBuilder when successful
-func (m *ItemCalendarRequestBuilder) CalendarView()(*ItemCalendarCalendarViewRequestBuilder) {
-    return NewItemCalendarCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarCalendarviewCalendarViewRequestBuilder when successful
+func (m *ItemCalendarRequestBuilder) CalendarView()(*ItemCalendarCalendarviewCalendarViewRequestBuilder) {
+    return NewItemCalendarCalendarviewCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemCalendarRequestBuilderInternal instantiates a new ItemCalendarRequestBuilder and sets the default values.
 func NewItemCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarRequestBuilder) {
@@ -86,9 +86,9 @@ func (m *ItemCalendarRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
 // GetSchedule provides operations to call the getSchedule method.
-// returns a *ItemCalendarGetScheduleRequestBuilder when successful
-func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetScheduleRequestBuilder) {
-    return NewItemCalendarGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarGetscheduleGetScheduleRequestBuilder when successful
+func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetscheduleGetScheduleRequestBuilder) {
+    return NewItemCalendarGetscheduleGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property calendar in users
 // returns a Calendarable when successful

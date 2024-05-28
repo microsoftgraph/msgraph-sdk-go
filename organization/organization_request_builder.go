@@ -105,14 +105,14 @@ func (m *OrganizationRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-// returns a *GetAvailableExtensionPropertiesRequestBuilder when successful
-func (m *OrganizationRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
-    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder when successful
+func (m *OrganizationRequestBuilder) GetAvailableExtensionProperties()(*GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetByIds provides operations to call the getByIds method.
-// returns a *GetByIdsRequestBuilder when successful
-func (m *OrganizationRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
-    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetbyidsGetByIdsRequestBuilder when successful
+func (m *OrganizationRequestBuilder) GetByIds()(*GetbyidsGetByIdsRequestBuilder) {
+    return NewGetbyidsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post add new entity to organization
 // returns a Organizationable when successful
@@ -164,9 +164,9 @@ func (m *OrganizationRequestBuilder) ToPostRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ValidatePropertiesRequestBuilder when successful
-func (m *OrganizationRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
-    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatepropertiesValidatePropertiesRequestBuilder when successful
+func (m *OrganizationRequestBuilder) ValidateProperties()(*ValidatepropertiesValidatePropertiesRequestBuilder) {
+    return NewValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *OrganizationRequestBuilder when successful

@@ -35,24 +35,24 @@ type DeviceManagementRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ApplePushNotificationCertificate provides operations to manage the applePushNotificationCertificate property of the microsoft.graph.deviceManagement entity.
-// returns a *ApplePushNotificationCertificateRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ApplePushNotificationCertificate()(*ApplePushNotificationCertificateRequestBuilder) {
-    return NewApplePushNotificationCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ApplepushnotificationcertificateApplePushNotificationCertificateRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ApplePushNotificationCertificate()(*ApplepushnotificationcertificateApplePushNotificationCertificateRequestBuilder) {
+    return NewApplepushnotificationcertificateApplePushNotificationCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuditEvents provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
-// returns a *AuditEventsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) AuditEvents()(*AuditEventsRequestBuilder) {
-    return NewAuditEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuditeventsAuditEventsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) AuditEvents()(*AuditeventsAuditEventsRequestBuilder) {
+    return NewAuditeventsAuditEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ComplianceManagementPartners provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.
-// returns a *ComplianceManagementPartnersRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ComplianceManagementPartners()(*ComplianceManagementPartnersRequestBuilder) {
-    return NewComplianceManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompliancemanagementpartnersComplianceManagementPartnersRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ComplianceManagementPartners()(*CompliancemanagementpartnersComplianceManagementPartnersRequestBuilder) {
+    return NewCompliancemanagementpartnersComplianceManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConditionalAccessSettings provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagement entity.
-// returns a *ConditionalAccessSettingsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ConditionalAccessSettings()(*ConditionalAccessSettingsRequestBuilder) {
-    return NewConditionalAccessSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConditionalaccesssettingsConditionalAccessSettingsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ConditionalAccessSettings()(*ConditionalaccesssettingsConditionalAccessSettingsRequestBuilder) {
+    return NewConditionalaccesssettingsConditionalAccessSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewDeviceManagementRequestBuilderInternal instantiates a new DeviceManagementRequestBuilder and sets the default values.
 func NewDeviceManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRequestBuilder) {
@@ -68,61 +68,61 @@ func NewDeviceManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewDeviceManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DetectedApps provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
-// returns a *DetectedAppsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DetectedApps()(*DetectedAppsRequestBuilder) {
-    return NewDetectedAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DetectedappsDetectedAppsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DetectedApps()(*DetectedappsDetectedAppsRequestBuilder) {
+    return NewDetectedappsDetectedAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceCategories provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceCategoriesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceCategories()(*DeviceCategoriesRequestBuilder) {
-    return NewDeviceCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicecategoriesDeviceCategoriesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceCategories()(*DevicecategoriesDeviceCategoriesRequestBuilder) {
+    return NewDevicecategoriesDeviceCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceCompliancePolicies provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceCompliancePoliciesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicies()(*DeviceCompliancePoliciesRequestBuilder) {
-    return NewDeviceCompliancePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicies()(*DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) {
+    return NewDevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceCompliancePolicyDeviceStateSummary provides operations to manage the deviceCompliancePolicyDeviceStateSummary property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
-    return NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicecompliancepolicydevicestatesummaryDeviceCompliancePolicyDeviceStateSummaryRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicyDeviceStateSummary()(*DevicecompliancepolicydevicestatesummaryDeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
+    return NewDevicecompliancepolicydevicestatesummaryDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceCompliancePolicySettingStateSummaries provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceCompliancePolicySettingStateSummariesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummaries()(*DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
-    return NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicecompliancepolicysettingstatesummariesDeviceCompliancePolicySettingStateSummariesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummaries()(*DevicecompliancepolicysettingstatesummariesDeviceCompliancePolicySettingStateSummariesRequestBuilder) {
+    return NewDevicecompliancepolicysettingstatesummariesDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceConfigurationDeviceStateSummaries provides operations to manage the deviceConfigurationDeviceStateSummaries property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceConfigurationDeviceStateSummariesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries()(*DeviceConfigurationDeviceStateSummariesRequestBuilder) {
-    return NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeviceconfigurationdevicestatesummariesDeviceConfigurationDeviceStateSummariesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries()(*DeviceconfigurationdevicestatesummariesDeviceConfigurationDeviceStateSummariesRequestBuilder) {
+    return NewDeviceconfigurationdevicestatesummariesDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceConfigurations provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceConfigurationsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceConfigurations()(*DeviceConfigurationsRequestBuilder) {
-    return NewDeviceConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeviceconfigurationsDeviceConfigurationsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceConfigurations()(*DeviceconfigurationsDeviceConfigurationsRequestBuilder) {
+    return NewDeviceconfigurationsDeviceConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceEnrollmentConfigurations provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceEnrollmentConfigurationsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurations()(*DeviceEnrollmentConfigurationsRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeviceenrollmentconfigurationsDeviceEnrollmentConfigurationsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurations()(*DeviceenrollmentconfigurationsDeviceEnrollmentConfigurationsRequestBuilder) {
+    return NewDeviceenrollmentconfigurationsDeviceEnrollmentConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceManagementPartners provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceManagementPartnersRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceManagementPartners()(*DeviceManagementPartnersRequestBuilder) {
-    return NewDeviceManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicemanagementpartnersDeviceManagementPartnersRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceManagementPartners()(*DevicemanagementpartnersDeviceManagementPartnersRequestBuilder) {
+    return NewDevicemanagementpartnersDeviceManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExchangeConnectors provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.
-// returns a *ExchangeConnectorsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ExchangeConnectors()(*ExchangeConnectorsRequestBuilder) {
-    return NewExchangeConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ExchangeconnectorsExchangeConnectorsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ExchangeConnectors()(*ExchangeconnectorsExchangeConnectorsRequestBuilder) {
+    return NewExchangeconnectorsExchangeConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read properties and relationships of the deviceManagement object.
 // returns a DeviceManagementable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-devicemanagement-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-gpanalyticsservice-devicemanagement-get?view=graph-rest-1.0
 func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -141,51 +141,51 @@ func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable), nil
 }
 // GetEffectivePermissionsWithScope provides operations to call the getEffectivePermissions method.
-// returns a *GetEffectivePermissionsWithScopeRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*GetEffectivePermissionsWithScopeRequestBuilder) {
-    return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, scope)
+// returns a *GeteffectivepermissionswithscopeGetEffectivePermissionsWithScopeRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*GeteffectivepermissionswithscopeGetEffectivePermissionsWithScopeRequestBuilder) {
+    return NewGeteffectivepermissionswithscopeGetEffectivePermissionsWithScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, scope)
 }
 // ImportedWindowsAutopilotDeviceIdentities provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
-// returns a *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentities()(*ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) {
-    return NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ImportedwindowsautopilotdeviceidentitiesImportedWindowsAutopilotDeviceIdentitiesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentities()(*ImportedwindowsautopilotdeviceidentitiesImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) {
+    return NewImportedwindowsautopilotdeviceidentitiesImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // IosUpdateStatuses provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
-// returns a *IosUpdateStatusesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) IosUpdateStatuses()(*IosUpdateStatusesRequestBuilder) {
-    return NewIosUpdateStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IosupdatestatusesIosUpdateStatusesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) IosUpdateStatuses()(*IosupdatestatusesIosUpdateStatusesRequestBuilder) {
+    return NewIosupdatestatusesIosUpdateStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ManagedDeviceOverview provides operations to manage the managedDeviceOverview property of the microsoft.graph.deviceManagement entity.
-// returns a *ManagedDeviceOverviewRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ManagedDeviceOverview()(*ManagedDeviceOverviewRequestBuilder) {
-    return NewManagedDeviceOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ManageddeviceoverviewManagedDeviceOverviewRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ManagedDeviceOverview()(*ManageddeviceoverviewManagedDeviceOverviewRequestBuilder) {
+    return NewManageddeviceoverviewManagedDeviceOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ManagedDevices provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
-// returns a *ManagedDevicesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ManagedDevices()(*ManagedDevicesRequestBuilder) {
-    return NewManagedDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ManageddevicesManagedDevicesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ManagedDevices()(*ManageddevicesManagedDevicesRequestBuilder) {
+    return NewManageddevicesManagedDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MobileAppTroubleshootingEvents provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.
-// returns a *MobileAppTroubleshootingEventsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEvents()(*MobileAppTroubleshootingEventsRequestBuilder) {
-    return NewMobileAppTroubleshootingEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MobileapptroubleshootingeventsMobileAppTroubleshootingEventsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEvents()(*MobileapptroubleshootingeventsMobileAppTroubleshootingEventsRequestBuilder) {
+    return NewMobileapptroubleshootingeventsMobileAppTroubleshootingEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MobileThreatDefenseConnectors provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
-// returns a *MobileThreatDefenseConnectorsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectors()(*MobileThreatDefenseConnectorsRequestBuilder) {
-    return NewMobileThreatDefenseConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MobilethreatdefenseconnectorsMobileThreatDefenseConnectorsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectors()(*MobilethreatdefenseconnectorsMobileThreatDefenseConnectorsRequestBuilder) {
+    return NewMobilethreatdefenseconnectorsMobileThreatDefenseConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NotificationMessageTemplates provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
-// returns a *NotificationMessageTemplatesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*NotificationMessageTemplatesRequestBuilder) {
-    return NewNotificationMessageTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *NotificationmessagetemplatesNotificationMessageTemplatesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*NotificationmessagetemplatesNotificationMessageTemplatesRequestBuilder) {
+    return NewNotificationmessagetemplatesNotificationMessageTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a deviceManagement object.
 // returns a DeviceManagementable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagement-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-update?view=graph-rest-1.0
 func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -204,9 +204,9 @@ func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body iadcd81
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable), nil
 }
 // RemoteAssistancePartners provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
-// returns a *RemoteAssistancePartnersRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) RemoteAssistancePartners()(*RemoteAssistancePartnersRequestBuilder) {
-    return NewRemoteAssistancePartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RemoteassistancepartnersRemoteAssistancePartnersRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) RemoteAssistancePartners()(*RemoteassistancepartnersRemoteAssistancePartnersRequestBuilder) {
+    return NewRemoteassistancepartnersRemoteAssistancePartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Reports provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
 // returns a *ReportsRequestBuilder when successful
@@ -214,34 +214,34 @@ func (m *DeviceManagementRequestBuilder) Reports()(*ReportsRequestBuilder) {
     return NewReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ResourceOperations provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.
-// returns a *ResourceOperationsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) ResourceOperations()(*ResourceOperationsRequestBuilder) {
-    return NewResourceOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ResourceoperationsResourceOperationsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ResourceOperations()(*ResourceoperationsResourceOperationsRequestBuilder) {
+    return NewResourceoperationsResourceOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
-// returns a *RoleAssignmentsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) RoleAssignments()(*RoleAssignmentsRequestBuilder) {
-    return NewRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RoleassignmentsRoleAssignmentsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) RoleAssignments()(*RoleassignmentsRoleAssignmentsRequestBuilder) {
+    return NewRoleassignmentsRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
-// returns a *RoleDefinitionsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) RoleDefinitions()(*RoleDefinitionsRequestBuilder) {
-    return NewRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RoledefinitionsRoleDefinitionsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) RoleDefinitions()(*RoledefinitionsRoleDefinitionsRequestBuilder) {
+    return NewRoledefinitionsRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftwareUpdateStatusSummary provides operations to manage the softwareUpdateStatusSummary property of the microsoft.graph.deviceManagement entity.
-// returns a *SoftwareUpdateStatusSummaryRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummaryRequestBuilder) {
-    return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SoftwareupdatestatussummarySoftwareUpdateStatusSummaryRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*SoftwareupdatestatussummarySoftwareUpdateStatusSummaryRequestBuilder) {
+    return NewSoftwareupdatestatussummarySoftwareUpdateStatusSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TelecomExpenseManagementPartners provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
-// returns a *TelecomExpenseManagementPartnersRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*TelecomExpenseManagementPartnersRequestBuilder) {
-    return NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TelecomexpensemanagementpartnersTelecomExpenseManagementPartnersRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*TelecomexpensemanagementpartnersTelecomExpenseManagementPartnersRequestBuilder) {
+    return NewTelecomexpensemanagementpartnersTelecomExpenseManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TermsAndConditions provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
-// returns a *TermsAndConditionsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) TermsAndConditions()(*TermsAndConditionsRequestBuilder) {
-    return NewTermsAndConditionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TermsandconditionsTermsAndConditionsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) TermsAndConditions()(*TermsandconditionsTermsAndConditionsRequestBuilder) {
+    return NewTermsandconditionsTermsAndConditionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation read properties and relationships of the deviceManagement object.
 // returns a *RequestInformation when successful
@@ -273,159 +273,159 @@ func (m *DeviceManagementRequestBuilder) ToPatchRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // TroubleshootingEvents provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
-// returns a *TroubleshootingEventsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) TroubleshootingEvents()(*TroubleshootingEventsRequestBuilder) {
-    return NewTroubleshootingEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TroubleshootingeventsTroubleshootingEventsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) TroubleshootingEvents()(*TroubleshootingeventsTroubleshootingEventsRequestBuilder) {
+    return NewTroubleshootingeventsTroubleshootingEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformance provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformance()(*UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthapplicationperformanceUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformance()(*UserexperienceanalyticsapphealthapplicationperformanceUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthapplicationperformanceUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthapplicationperformancebyappversiondetailsUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails()(*UserexperienceanalyticsapphealthapplicationperformancebyappversiondetailsUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthapplicationperformancebyappversiondetailsUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthapplicationperformancebyappversiondeviceidUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId()(*UserexperienceanalyticsapphealthapplicationperformancebyappversiondeviceidUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthapplicationperformancebyappversiondeviceidUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion()(*UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthapplicationperformancebyosversionUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion()(*UserexperienceanalyticsapphealthapplicationperformancebyosversionUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthapplicationperformancebyosversionUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDeviceModelPerformance provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthdevicemodelperformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserexperienceanalyticsapphealthdevicemodelperformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthdevicemodelperformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDevicePerformance provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthdeviceperformanceUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformance()(*UserexperienceanalyticsapphealthdeviceperformanceUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthdeviceperformanceUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthDevicePerformanceDetails provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformanceDetails property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthdeviceperformancedetailsUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserexperienceanalyticsapphealthdeviceperformancedetailsUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthdeviceperformancedetailsUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthOSVersionPerformance provides operations to manage the userExperienceAnalyticsAppHealthOSVersionPerformance property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthosversionperformanceUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserexperienceanalyticsapphealthosversionperformanceUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthosversionperformanceUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsAppHealthOverview provides operations to manage the userExperienceAnalyticsAppHealthOverview property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsAppHealthOverviewRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOverview()(*UserExperienceAnalyticsAppHealthOverviewRequestBuilder) {
-    return NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsapphealthoverviewUserExperienceAnalyticsAppHealthOverviewRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOverview()(*UserexperienceanalyticsapphealthoverviewUserExperienceAnalyticsAppHealthOverviewRequestBuilder) {
+    return NewUserexperienceanalyticsapphealthoverviewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsBaselines provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsBaselinesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselines()(*UserExperienceAnalyticsBaselinesRequestBuilder) {
-    return NewUserExperienceAnalyticsBaselinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsbaselinesUserExperienceAnalyticsBaselinesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselines()(*UserexperienceanalyticsbaselinesUserExperienceAnalyticsBaselinesRequestBuilder) {
+    return NewUserexperienceanalyticsbaselinesUserExperienceAnalyticsBaselinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsCategories provides operations to manage the userExperienceAnalyticsCategories property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsCategoriesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategories()(*UserExperienceAnalyticsCategoriesRequestBuilder) {
-    return NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticscategoriesUserExperienceAnalyticsCategoriesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategories()(*UserexperienceanalyticscategoriesUserExperienceAnalyticsCategoriesRequestBuilder) {
+    return NewUserexperienceanalyticscategoriesUserExperienceAnalyticsCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsDevicePerformance provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsDevicePerformanceRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformance()(*UserExperienceAnalyticsDevicePerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsDevicePerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsdeviceperformanceUserExperienceAnalyticsDevicePerformanceRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformance()(*UserexperienceanalyticsdeviceperformanceUserExperienceAnalyticsDevicePerformanceRequestBuilder) {
+    return NewUserexperienceanalyticsdeviceperformanceUserExperienceAnalyticsDevicePerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsDeviceScores provides operations to manage the userExperienceAnalyticsDeviceScores property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsDeviceScoresRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScores()(*UserExperienceAnalyticsDeviceScoresRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsdevicescoresUserExperienceAnalyticsDeviceScoresRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScores()(*UserexperienceanalyticsdevicescoresUserExperienceAnalyticsDeviceScoresRequestBuilder) {
+    return NewUserexperienceanalyticsdevicescoresUserExperienceAnalyticsDeviceScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupHistory provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsdevicestartuphistoryUserExperienceAnalyticsDeviceStartupHistoryRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHistory()(*UserexperienceanalyticsdevicestartuphistoryUserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) {
+    return NewUserexperienceanalyticsdevicestartuphistoryUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupProcesses provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcesses()(*UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsdevicestartupprocessesUserExperienceAnalyticsDeviceStartupProcessesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcesses()(*UserexperienceanalyticsdevicestartupprocessesUserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) {
+    return NewUserexperienceanalyticsdevicestartupprocessesUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsDeviceStartupProcessPerformance provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsdevicestartupprocessperformanceUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserexperienceanalyticsdevicestartupprocessperformanceUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) {
+    return NewUserexperienceanalyticsdevicestartupprocessperformanceUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsMetricHistory provides operations to manage the userExperienceAnalyticsMetricHistory property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsMetricHistoryRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsmetrichistoryUserExperienceAnalyticsMetricHistoryRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistory()(*UserexperienceanalyticsmetrichistoryUserExperienceAnalyticsMetricHistoryRequestBuilder) {
+    return NewUserexperienceanalyticsmetrichistoryUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsModelScores provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsModelScoresRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScoresRequestBuilder) {
-    return NewUserExperienceAnalyticsModelScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsmodelscoresUserExperienceAnalyticsModelScoresRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScores()(*UserexperienceanalyticsmodelscoresUserExperienceAnalyticsModelScoresRequestBuilder) {
+    return NewUserexperienceanalyticsmodelscoresUserExperienceAnalyticsModelScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsOverview provides operations to manage the userExperienceAnalyticsOverview property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsOverviewRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsOverview()(*UserExperienceAnalyticsOverviewRequestBuilder) {
-    return NewUserExperienceAnalyticsOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsoverviewUserExperienceAnalyticsOverviewRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsOverview()(*UserexperienceanalyticsoverviewUserExperienceAnalyticsOverviewRequestBuilder) {
+    return NewUserexperienceanalyticsoverviewUserExperienceAnalyticsOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsScoreHistory provides operations to manage the userExperienceAnalyticsScoreHistory property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsScoreHistoryRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistory()(*UserExperienceAnalyticsScoreHistoryRequestBuilder) {
-    return NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsscorehistoryUserExperienceAnalyticsScoreHistoryRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistory()(*UserexperienceanalyticsscorehistoryUserExperienceAnalyticsScoreHistoryRequestBuilder) {
+    return NewUserexperienceanalyticsscorehistoryUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
-// returns a *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices()(*UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
-    return NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticssummarizeworkfromanywheredevicesUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices()(*UserexperienceanalyticssummarizeworkfromanywheredevicesUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
+    return NewUserexperienceanalyticssummarizeworkfromanywheredevicesUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric provides operations to manage the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) {
-    return NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsworkfromanywherehardwarereadinessmetricUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserexperienceanalyticsworkfromanywherehardwarereadinessmetricUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) {
+    return NewUserexperienceanalyticsworkfromanywherehardwarereadinessmetricUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereMetrics provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereMetrics()(*UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder) {
-    return NewUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsworkfromanywheremetricsUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereMetrics()(*UserexperienceanalyticsworkfromanywheremetricsUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder) {
+    return NewUserexperienceanalyticsworkfromanywheremetricsUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserExperienceAnalyticsWorkFromAnywhereModelPerformance provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.
-// returns a *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) {
-    return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserexperienceanalyticsworkfromanywheremodelperformanceUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserexperienceanalyticsworkfromanywheremodelperformanceUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) {
+    return NewUserexperienceanalyticsworkfromanywheremodelperformanceUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // VerifyWindowsEnrollmentAutoDiscoveryWithDomainName provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
-// returns a *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
-    return NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, domainName)
+// returns a *VerifywindowsenrollmentautodiscoverywithdomainnameVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*VerifywindowsenrollmentautodiscoverywithdomainnameVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
+    return NewVerifywindowsenrollmentautodiscoverywithdomainnameVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, domainName)
 }
 // VirtualEndpoint provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
-// returns a *VirtualEndpointRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) VirtualEndpoint()(*VirtualEndpointRequestBuilder) {
-    return NewVirtualEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *VirtualendpointVirtualEndpointRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) VirtualEndpoint()(*VirtualendpointVirtualEndpointRequestBuilder) {
+    return NewVirtualendpointVirtualEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsAutopilotDeviceIdentities provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
-// returns a *WindowsAutopilotDeviceIdentitiesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities()(*WindowsAutopilotDeviceIdentitiesRequestBuilder) {
-    return NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsautopilotdeviceidentitiesWindowsAutopilotDeviceIdentitiesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities()(*WindowsautopilotdeviceidentitiesWindowsAutopilotDeviceIdentitiesRequestBuilder) {
+    return NewWindowsautopilotdeviceidentitiesWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsInformationProtectionAppLearningSummaries provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
-// returns a *WindowsInformationProtectionAppLearningSummariesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummaries()(*WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
-    return NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsinformationprotectionapplearningsummariesWindowsInformationProtectionAppLearningSummariesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummaries()(*WindowsinformationprotectionapplearningsummariesWindowsInformationProtectionAppLearningSummariesRequestBuilder) {
+    return NewWindowsinformationprotectionapplearningsummariesWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsInformationProtectionNetworkLearningSummaries provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
-// returns a *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummaries()(*WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) {
-    return NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsinformationprotectionnetworklearningsummariesWindowsInformationProtectionNetworkLearningSummariesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummaries()(*WindowsinformationprotectionnetworklearningsummariesWindowsInformationProtectionNetworkLearningSummariesRequestBuilder) {
+    return NewWindowsinformationprotectionnetworklearningsummariesWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsMalwareInformation provides operations to manage the windowsMalwareInformation property of the microsoft.graph.deviceManagement entity.
-// returns a *WindowsMalwareInformationRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) WindowsMalwareInformation()(*WindowsMalwareInformationRequestBuilder) {
-    return NewWindowsMalwareInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsmalwareinformationWindowsMalwareInformationRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) WindowsMalwareInformation()(*WindowsmalwareinformationWindowsMalwareInformationRequestBuilder) {
+    return NewWindowsmalwareinformationWindowsMalwareInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *DeviceManagementRequestBuilder when successful

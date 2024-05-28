@@ -42,9 +42,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CategoryAxis provides operations to manage the categoryAxis property of the microsoft.graph.workbookChartAxes entity.
-// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) CategoryAxis()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryaxisCategoryAxisRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) CategoryAxis()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryaxisCategoryAxisRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryaxisCategoryAxisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) {
@@ -116,9 +116,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) Patch(
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxesable), nil
 }
 // SeriesAxis provides operations to manage the seriesAxis property of the microsoft.graph.workbookChartAxes entity.
-// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) SeriesAxis()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesaxisSeriesAxisRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) SeriesAxis()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesaxisSeriesAxisRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesaxisSeriesAxisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property axes for drives
 // returns a *RequestInformation when successful
@@ -161,9 +161,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) ToPatc
     return requestInfo, nil
 }
 // ValueAxis provides operations to manage the valueAxis property of the microsoft.graph.workbookChartAxes entity.
-// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) ValueAxis()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueaxisValueAxisRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) ValueAxis()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueaxisValueAxisRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueaxisValueAxisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder when successful

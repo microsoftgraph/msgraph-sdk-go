@@ -52,9 +52,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) Add()(*ItemItem
     return NewItemItemsItemWorkbookWorksheetsItemNamesAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AddFormulaLocal provides operations to call the addFormulaLocal method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) AddFormulaLocal()(*ItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemNamesAddformulalocalAddFormulaLocalRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) AddFormulaLocal()(*ItemItemsItemWorkbookWorksheetsItemNamesAddformulalocalAddFormulaLocalRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemNamesAddformulalocalAddFormulaLocalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByWorkbookNamedItemId provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
 // returns a *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder when successful

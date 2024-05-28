@@ -60,9 +60,9 @@ func (m *PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder) Content()
     return NewPrintersItemJobsItemDocumentsItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *PrintersItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder when successful
-func (m *PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder) CreateUploadSession()(*PrintersItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) {
-    return NewPrintersItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemJobsItemDocumentsItemCreateuploadsessionCreateUploadSessionRequestBuilder when successful
+func (m *PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder) CreateUploadSession()(*PrintersItemJobsItemDocumentsItemCreateuploadsessionCreateUploadSessionRequestBuilder) {
+    return NewPrintersItemJobsItemDocumentsItemCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property documents for print
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -42,9 +42,9 @@ type SchoolsEducationSchoolItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AdministrativeUnit provides operations to manage the administrativeUnit property of the microsoft.graph.educationSchool entity.
-// returns a *SchoolsItemAdministrativeUnitRequestBuilder when successful
-func (m *SchoolsEducationSchoolItemRequestBuilder) AdministrativeUnit()(*SchoolsItemAdministrativeUnitRequestBuilder) {
-    return NewSchoolsItemAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SchoolsItemAdministrativeunitAdministrativeUnitRequestBuilder when successful
+func (m *SchoolsEducationSchoolItemRequestBuilder) AdministrativeUnit()(*SchoolsItemAdministrativeunitAdministrativeUnitRequestBuilder) {
+    return NewSchoolsItemAdministrativeunitAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Classes provides operations to manage the classes property of the microsoft.graph.educationSchool entity.
 // returns a *SchoolsItemClassesRequestBuilder when successful

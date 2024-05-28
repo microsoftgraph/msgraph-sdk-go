@@ -91,9 +91,9 @@ func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) Get(ctx context.C
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
 // HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-// returns a *ItemMessagesItemRepliesItemHostedContentsRequestBuilder when successful
-func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) HostedContents()(*ItemMessagesItemRepliesItemHostedContentsRequestBuilder) {
-    return NewItemMessagesItemRepliesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemRepliesItemHostedcontentsHostedContentsRequestBuilder when successful
+func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) HostedContents()(*ItemMessagesItemRepliesItemHostedcontentsHostedContentsRequestBuilder) {
+    return NewItemMessagesItemRepliesItemHostedcontentsHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property replies in chats
 // returns a ChatMessageable when successful
@@ -116,14 +116,14 @@ func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) Patch(ctx context
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
 // SetReaction provides operations to call the setReaction method.
-// returns a *ItemMessagesItemRepliesItemSetReactionRequestBuilder when successful
-func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) SetReaction()(*ItemMessagesItemRepliesItemSetReactionRequestBuilder) {
-    return NewItemMessagesItemRepliesItemSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemRepliesItemSetreactionSetReactionRequestBuilder when successful
+func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) SetReaction()(*ItemMessagesItemRepliesItemSetreactionSetReactionRequestBuilder) {
+    return NewItemMessagesItemRepliesItemSetreactionSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
-// returns a *ItemMessagesItemRepliesItemSoftDeleteRequestBuilder when successful
-func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) SoftDelete()(*ItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
-    return NewItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemRepliesItemSoftdeleteSoftDeleteRequestBuilder when successful
+func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) SoftDelete()(*ItemMessagesItemRepliesItemSoftdeleteSoftDeleteRequestBuilder) {
+    return NewItemMessagesItemRepliesItemSoftdeleteSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property replies for chats
 // returns a *RequestInformation when successful
@@ -166,14 +166,14 @@ func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) ToPatchRequestInf
     return requestInfo, nil
 }
 // UndoSoftDelete provides operations to call the undoSoftDelete method.
-// returns a *ItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilder when successful
-func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilder) {
-    return NewItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemRepliesItemUndosoftdeleteUndoSoftDeleteRequestBuilder when successful
+func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemMessagesItemRepliesItemUndosoftdeleteUndoSoftDeleteRequestBuilder) {
+    return NewItemMessagesItemRepliesItemUndosoftdeleteUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UnsetReaction provides operations to call the unsetReaction method.
-// returns a *ItemMessagesItemRepliesItemUnsetReactionRequestBuilder when successful
-func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) UnsetReaction()(*ItemMessagesItemRepliesItemUnsetReactionRequestBuilder) {
-    return NewItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemRepliesItemUnsetreactionUnsetReactionRequestBuilder when successful
+func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) UnsetReaction()(*ItemMessagesItemRepliesItemUnsetreactionUnsetReactionRequestBuilder) {
+    return NewItemMessagesItemRepliesItemUnsetreactionUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemMessagesItemRepliesChatMessageItemRequestBuilder when successful

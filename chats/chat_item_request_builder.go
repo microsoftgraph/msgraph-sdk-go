@@ -97,29 +97,29 @@ func (m *ChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
 // HideForUser provides operations to call the hideForUser method.
-// returns a *ItemHideForUserRequestBuilder when successful
-func (m *ChatItemRequestBuilder) HideForUser()(*ItemHideForUserRequestBuilder) {
-    return NewItemHideForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemHideforuserHideForUserRequestBuilder when successful
+func (m *ChatItemRequestBuilder) HideForUser()(*ItemHideforuserHideForUserRequestBuilder) {
+    return NewItemHideforuserHideForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.chat entity.
-// returns a *ItemInstalledAppsRequestBuilder when successful
-func (m *ChatItemRequestBuilder) InstalledApps()(*ItemInstalledAppsRequestBuilder) {
-    return NewItemInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInstalledappsInstalledAppsRequestBuilder when successful
+func (m *ChatItemRequestBuilder) InstalledApps()(*ItemInstalledappsInstalledAppsRequestBuilder) {
+    return NewItemInstalledappsInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastMessagePreview provides operations to manage the lastMessagePreview property of the microsoft.graph.chat entity.
-// returns a *ItemLastMessagePreviewRequestBuilder when successful
-func (m *ChatItemRequestBuilder) LastMessagePreview()(*ItemLastMessagePreviewRequestBuilder) {
-    return NewItemLastMessagePreviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemLastmessagepreviewLastMessagePreviewRequestBuilder when successful
+func (m *ChatItemRequestBuilder) LastMessagePreview()(*ItemLastmessagepreviewLastMessagePreviewRequestBuilder) {
+    return NewItemLastmessagepreviewLastMessagePreviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MarkChatReadForUser provides operations to call the markChatReadForUser method.
-// returns a *ItemMarkChatReadForUserRequestBuilder when successful
-func (m *ChatItemRequestBuilder) MarkChatReadForUser()(*ItemMarkChatReadForUserRequestBuilder) {
-    return NewItemMarkChatReadForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMarkchatreadforuserMarkChatReadForUserRequestBuilder when successful
+func (m *ChatItemRequestBuilder) MarkChatReadForUser()(*ItemMarkchatreadforuserMarkChatReadForUserRequestBuilder) {
+    return NewItemMarkchatreadforuserMarkChatReadForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MarkChatUnreadForUser provides operations to call the markChatUnreadForUser method.
-// returns a *ItemMarkChatUnreadForUserRequestBuilder when successful
-func (m *ChatItemRequestBuilder) MarkChatUnreadForUser()(*ItemMarkChatUnreadForUserRequestBuilder) {
-    return NewItemMarkChatUnreadForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMarkchatunreadforuserMarkChatUnreadForUserRequestBuilder when successful
+func (m *ChatItemRequestBuilder) MarkChatUnreadForUser()(*ItemMarkchatunreadforuserMarkChatUnreadForUserRequestBuilder) {
+    return NewItemMarkchatunreadforuserMarkChatUnreadForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.chat entity.
 // returns a *ItemMembersRequestBuilder when successful
@@ -155,19 +155,19 @@ func (m *ChatItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
 // PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
-// returns a *ItemPermissionGrantsRequestBuilder when successful
-func (m *ChatItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequestBuilder) {
-    return NewItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPermissiongrantsPermissionGrantsRequestBuilder when successful
+func (m *ChatItemRequestBuilder) PermissionGrants()(*ItemPermissiongrantsPermissionGrantsRequestBuilder) {
+    return NewItemPermissiongrantsPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PinnedMessages provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
-// returns a *ItemPinnedMessagesRequestBuilder when successful
-func (m *ChatItemRequestBuilder) PinnedMessages()(*ItemPinnedMessagesRequestBuilder) {
-    return NewItemPinnedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPinnedmessagesPinnedMessagesRequestBuilder when successful
+func (m *ChatItemRequestBuilder) PinnedMessages()(*ItemPinnedmessagesPinnedMessagesRequestBuilder) {
+    return NewItemPinnedmessagesPinnedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendActivityNotification provides operations to call the sendActivityNotification method.
-// returns a *ItemSendActivityNotificationRequestBuilder when successful
-func (m *ChatItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
-    return NewItemSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSendactivitynotificationSendActivityNotificationRequestBuilder when successful
+func (m *ChatItemRequestBuilder) SendActivityNotification()(*ItemSendactivitynotificationSendActivityNotificationRequestBuilder) {
+    return NewItemSendactivitynotificationSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 // returns a *ItemTabsRequestBuilder when successful
@@ -215,9 +215,9 @@ func (m *ChatItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // UnhideForUser provides operations to call the unhideForUser method.
-// returns a *ItemUnhideForUserRequestBuilder when successful
-func (m *ChatItemRequestBuilder) UnhideForUser()(*ItemUnhideForUserRequestBuilder) {
-    return NewItemUnhideForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemUnhideforuserUnhideForUserRequestBuilder when successful
+func (m *ChatItemRequestBuilder) UnhideForUser()(*ItemUnhideforuserUnhideForUserRequestBuilder) {
+    return NewItemUnhideforuserUnhideForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ChatItemRequestBuilder when successful

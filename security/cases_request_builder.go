@@ -71,9 +71,9 @@ func (m *CasesRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     return nil
 }
 // EdiscoveryCases provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
-// returns a *CasesEdiscoveryCasesRequestBuilder when successful
-func (m *CasesRequestBuilder) EdiscoveryCases()(*CasesEdiscoveryCasesRequestBuilder) {
-    return NewCasesEdiscoveryCasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CasesEdiscoverycasesEdiscoveryCasesRequestBuilder when successful
+func (m *CasesRequestBuilder) EdiscoveryCases()(*CasesEdiscoverycasesEdiscoveryCasesRequestBuilder) {
+    return NewCasesEdiscoverycasesEdiscoveryCasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get cases from security
 // returns a CasesRootable when successful

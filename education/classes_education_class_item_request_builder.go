@@ -42,14 +42,14 @@ type ClassesEducationClassItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AssignmentCategories provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
-// returns a *ClassesItemAssignmentCategoriesRequestBuilder when successful
-func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategories()(*ClassesItemAssignmentCategoriesRequestBuilder) {
-    return NewClassesItemAssignmentCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentcategoriesAssignmentCategoriesRequestBuilder when successful
+func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategories()(*ClassesItemAssignmentcategoriesAssignmentCategoriesRequestBuilder) {
+    return NewClassesItemAssignmentcategoriesAssignmentCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignmentDefaults provides operations to manage the assignmentDefaults property of the microsoft.graph.educationClass entity.
-// returns a *ClassesItemAssignmentDefaultsRequestBuilder when successful
-func (m *ClassesEducationClassItemRequestBuilder) AssignmentDefaults()(*ClassesItemAssignmentDefaultsRequestBuilder) {
-    return NewClassesItemAssignmentDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentdefaultsAssignmentDefaultsRequestBuilder when successful
+func (m *ClassesEducationClassItemRequestBuilder) AssignmentDefaults()(*ClassesItemAssignmentdefaultsAssignmentDefaultsRequestBuilder) {
+    return NewClassesItemAssignmentdefaultsAssignmentDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
 // returns a *ClassesItemAssignmentsRequestBuilder when successful
@@ -57,9 +57,9 @@ func (m *ClassesEducationClassItemRequestBuilder) Assignments()(*ClassesItemAssi
     return NewClassesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignmentSettings provides operations to manage the assignmentSettings property of the microsoft.graph.educationClass entity.
-// returns a *ClassesItemAssignmentSettingsRequestBuilder when successful
-func (m *ClassesEducationClassItemRequestBuilder) AssignmentSettings()(*ClassesItemAssignmentSettingsRequestBuilder) {
-    return NewClassesItemAssignmentSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsettingsAssignmentSettingsRequestBuilder when successful
+func (m *ClassesEducationClassItemRequestBuilder) AssignmentSettings()(*ClassesItemAssignmentsettingsAssignmentSettingsRequestBuilder) {
+    return NewClassesItemAssignmentsettingsAssignmentSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewClassesEducationClassItemRequestBuilderInternal instantiates a new ClassesEducationClassItemRequestBuilder and sets the default values.
 func NewClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesEducationClassItemRequestBuilder) {

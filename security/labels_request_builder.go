@@ -91,9 +91,9 @@ func (m *LabelsRequestBuilder) Departments()(*LabelsDepartmentsRequestBuilder) {
     return NewLabelsDepartmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilePlanReferences provides operations to manage the filePlanReferences property of the microsoft.graph.security.labelsRoot entity.
-// returns a *LabelsFilePlanReferencesRequestBuilder when successful
-func (m *LabelsRequestBuilder) FilePlanReferences()(*LabelsFilePlanReferencesRequestBuilder) {
-    return NewLabelsFilePlanReferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *LabelsFileplanreferencesFilePlanReferencesRequestBuilder when successful
+func (m *LabelsRequestBuilder) FilePlanReferences()(*LabelsFileplanreferencesFilePlanReferencesRequestBuilder) {
+    return NewLabelsFileplanreferencesFilePlanReferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get labels from security
 // returns a LabelsRootable when successful
@@ -136,9 +136,9 @@ func (m *LabelsRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a38
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.LabelsRootable), nil
 }
 // RetentionLabels provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
-// returns a *LabelsRetentionLabelsRequestBuilder when successful
-func (m *LabelsRequestBuilder) RetentionLabels()(*LabelsRetentionLabelsRequestBuilder) {
-    return NewLabelsRetentionLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *LabelsRetentionlabelsRetentionLabelsRequestBuilder when successful
+func (m *LabelsRequestBuilder) RetentionLabels()(*LabelsRetentionlabelsRetentionLabelsRequestBuilder) {
+    return NewLabelsRetentionlabelsRetentionLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property labels for security
 // returns a *RequestInformation when successful

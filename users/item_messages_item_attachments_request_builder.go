@@ -77,9 +77,9 @@ func (m *ItemMessagesItemAttachmentsRequestBuilder) Count()(*ItemMessagesItemAtt
     return NewItemMessagesItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder when successful
-func (m *ItemMessagesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemMessagesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder when successful
+func (m *ItemMessagesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemMessagesItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
+    return NewItemMessagesItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the fileAttachment and itemAttachment attachments for the message.
 // returns a AttachmentCollectionResponseable when successful

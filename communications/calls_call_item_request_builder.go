@@ -42,9 +42,9 @@ type CallsCallItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AddLargeGalleryView provides operations to call the addLargeGalleryView method.
-// returns a *CallsItemAddLargeGalleryViewRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) AddLargeGalleryView()(*CallsItemAddLargeGalleryViewRequestBuilder) {
-    return NewCallsItemAddLargeGalleryViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemAddlargegalleryviewAddLargeGalleryViewRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) AddLargeGalleryView()(*CallsItemAddlargegalleryviewAddLargeGalleryViewRequestBuilder) {
+    return NewCallsItemAddlargegalleryviewAddLargeGalleryViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Answer provides operations to call the answer method.
 // returns a *CallsItemAnswerRequestBuilder when successful
@@ -52,19 +52,19 @@ func (m *CallsCallItemRequestBuilder) Answer()(*CallsItemAnswerRequestBuilder) {
     return NewCallsItemAnswerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AudioRoutingGroups provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
-// returns a *CallsItemAudioRoutingGroupsRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) AudioRoutingGroups()(*CallsItemAudioRoutingGroupsRequestBuilder) {
-    return NewCallsItemAudioRoutingGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemAudioroutinggroupsAudioRoutingGroupsRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) AudioRoutingGroups()(*CallsItemAudioroutinggroupsAudioRoutingGroupsRequestBuilder) {
+    return NewCallsItemAudioroutinggroupsAudioRoutingGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CancelMediaProcessing provides operations to call the cancelMediaProcessing method.
-// returns a *CallsItemCancelMediaProcessingRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) CancelMediaProcessing()(*CallsItemCancelMediaProcessingRequestBuilder) {
-    return NewCallsItemCancelMediaProcessingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemCancelmediaprocessingCancelMediaProcessingRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) CancelMediaProcessing()(*CallsItemCancelmediaprocessingCancelMediaProcessingRequestBuilder) {
+    return NewCallsItemCancelmediaprocessingCancelMediaProcessingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ChangeScreenSharingRole provides operations to call the changeScreenSharingRole method.
-// returns a *CallsItemChangeScreenSharingRoleRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) ChangeScreenSharingRole()(*CallsItemChangeScreenSharingRoleRequestBuilder) {
-    return NewCallsItemChangeScreenSharingRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemChangescreensharingroleChangeScreenSharingRoleRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) ChangeScreenSharingRole()(*CallsItemChangescreensharingroleChangeScreenSharingRoleRequestBuilder) {
+    return NewCallsItemChangescreensharingroleChangeScreenSharingRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewCallsCallItemRequestBuilderInternal instantiates a new CallsCallItemRequestBuilder and sets the default values.
 func NewCallsCallItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsCallItemRequestBuilder) {
@@ -80,9 +80,9 @@ func NewCallsCallItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewCallsCallItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContentSharingSessions provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
-// returns a *CallsItemContentSharingSessionsRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) ContentSharingSessions()(*CallsItemContentSharingSessionsRequestBuilder) {
-    return NewCallsItemContentSharingSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemContentsharingsessionsContentSharingSessionsRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) ContentSharingSessions()(*CallsItemContentsharingsessionsContentSharingSessionsRequestBuilder) {
+    return NewCallsItemContentsharingsessionsContentSharingSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -127,9 +127,9 @@ func (m *CallsCallItemRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable), nil
 }
 // KeepAlive provides operations to call the keepAlive method.
-// returns a *CallsItemKeepAliveRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) KeepAlive()(*CallsItemKeepAliveRequestBuilder) {
-    return NewCallsItemKeepAliveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemKeepaliveKeepAliveRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) KeepAlive()(*CallsItemKeepaliveKeepAliveRequestBuilder) {
+    return NewCallsItemKeepaliveKeepAliveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Mute provides operations to call the mute method.
 // returns a *CallsItemMuteRequestBuilder when successful
@@ -167,14 +167,14 @@ func (m *CallsCallItemRequestBuilder) Patch(ctx context.Context, body iadcd81124
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable), nil
 }
 // PlayPrompt provides operations to call the playPrompt method.
-// returns a *CallsItemPlayPromptRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) PlayPrompt()(*CallsItemPlayPromptRequestBuilder) {
-    return NewCallsItemPlayPromptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemPlaypromptPlayPromptRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) PlayPrompt()(*CallsItemPlaypromptPlayPromptRequestBuilder) {
+    return NewCallsItemPlaypromptPlayPromptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RecordResponse provides operations to call the recordResponse method.
-// returns a *CallsItemRecordResponseRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) RecordResponse()(*CallsItemRecordResponseRequestBuilder) {
-    return NewCallsItemRecordResponseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemRecordresponseRecordResponseRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) RecordResponse()(*CallsItemRecordresponseRecordResponseRequestBuilder) {
+    return NewCallsItemRecordresponseRecordResponseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Redirect provides operations to call the redirect method.
 // returns a *CallsItemRedirectRequestBuilder when successful
@@ -187,14 +187,14 @@ func (m *CallsCallItemRequestBuilder) Reject()(*CallsItemRejectRequestBuilder) {
     return NewCallsItemRejectRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendDtmfTones provides operations to call the sendDtmfTones method.
-// returns a *CallsItemSendDtmfTonesRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) SendDtmfTones()(*CallsItemSendDtmfTonesRequestBuilder) {
-    return NewCallsItemSendDtmfTonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemSenddtmftonesSendDtmfTonesRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) SendDtmfTones()(*CallsItemSenddtmftonesSendDtmfTonesRequestBuilder) {
+    return NewCallsItemSenddtmftonesSendDtmfTonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubscribeToTone provides operations to call the subscribeToTone method.
-// returns a *CallsItemSubscribeToToneRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) SubscribeToTone()(*CallsItemSubscribeToToneRequestBuilder) {
-    return NewCallsItemSubscribeToToneRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemSubscribetotoneSubscribeToToneRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) SubscribeToTone()(*CallsItemSubscribetotoneSubscribeToToneRequestBuilder) {
+    return NewCallsItemSubscribetotoneSubscribeToToneRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
 // returns a *RequestInformation when successful
@@ -247,9 +247,9 @@ func (m *CallsCallItemRequestBuilder) Unmute()(*CallsItemUnmuteRequestBuilder) {
     return NewCallsItemUnmuteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UpdateRecordingStatus provides operations to call the updateRecordingStatus method.
-// returns a *CallsItemUpdateRecordingStatusRequestBuilder when successful
-func (m *CallsCallItemRequestBuilder) UpdateRecordingStatus()(*CallsItemUpdateRecordingStatusRequestBuilder) {
-    return NewCallsItemUpdateRecordingStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemUpdaterecordingstatusUpdateRecordingStatusRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) UpdateRecordingStatus()(*CallsItemUpdaterecordingstatusUpdateRecordingStatusRequestBuilder) {
+    return NewCallsItemUpdaterecordingstatusUpdateRecordingStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *CallsCallItemRequestBuilder when successful

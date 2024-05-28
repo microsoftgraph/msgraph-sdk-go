@@ -100,9 +100,9 @@ func (m *ItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageCollectionResponseable), nil
 }
 // GraphSitePage casts the previous resource to sitePage.
-// returns a *ItemPagesGraphSitePageRequestBuilder when successful
-func (m *ItemPagesRequestBuilder) GraphSitePage()(*ItemPagesGraphSitePageRequestBuilder) {
-    return NewItemPagesGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPagesGraphsitepageGraphSitePageRequestBuilder when successful
+func (m *ItemPagesRequestBuilder) GraphSitePage()(*ItemPagesGraphsitepageGraphSitePageRequestBuilder) {
+    return NewItemPagesGraphsitepageGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new sitePage in the site pages list in a site.
 // returns a BaseSitePageable when successful

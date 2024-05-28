@@ -144,7 +144,7 @@ func (m *ContentCustomization) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRegistrationCampaign gets the registrationCampaign property value. The registrationCampaign property
+// GetRegistrationCampaign gets the registrationCampaign property value. Represents content options to customize during MFA proofup interruptions.
 // returns a []KeyValueable when successful
 func (m *ContentCustomization) GetRegistrationCampaign()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("registrationCampaign")
@@ -156,7 +156,7 @@ func (m *ContentCustomization) GetRegistrationCampaign()([]KeyValueable) {
     }
     return nil
 }
-// GetRegistrationCampaignRelativeUrl gets the registrationCampaignRelativeUrl property value. The registrationCampaignRelativeUrl property
+// GetRegistrationCampaignRelativeUrl gets the registrationCampaignRelativeUrl property value. The relative URL of the content options to customize during MFA proofup interruptions.
 // returns a *string when successful
 func (m *ContentCustomization) GetRegistrationCampaignRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("registrationCampaignRelativeUrl")
@@ -252,14 +252,14 @@ func (m *ContentCustomization) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRegistrationCampaign sets the registrationCampaign property value. The registrationCampaign property
+// SetRegistrationCampaign sets the registrationCampaign property value. Represents content options to customize during MFA proofup interruptions.
 func (m *ContentCustomization) SetRegistrationCampaign(value []KeyValueable)() {
     err := m.GetBackingStore().Set("registrationCampaign", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrationCampaignRelativeUrl sets the registrationCampaignRelativeUrl property value. The registrationCampaignRelativeUrl property
+// SetRegistrationCampaignRelativeUrl sets the registrationCampaignRelativeUrl property value. The relative URL of the content options to customize during MFA proofup interruptions.
 func (m *ContentCustomization) SetRegistrationCampaignRelativeUrl(value *string)() {
     err := m.GetBackingStore().Set("registrationCampaignRelativeUrl", value)
     if err != nil {

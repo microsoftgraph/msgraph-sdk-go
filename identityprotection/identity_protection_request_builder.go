@@ -88,24 +88,24 @@ func (m *IdentityProtectionRequestBuilder) Patch(ctx context.Context, body iadcd
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProtectionRootable), nil
 }
 // RiskDetections provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
-// returns a *RiskDetectionsRequestBuilder when successful
-func (m *IdentityProtectionRequestBuilder) RiskDetections()(*RiskDetectionsRequestBuilder) {
-    return NewRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RiskdetectionsRiskDetectionsRequestBuilder when successful
+func (m *IdentityProtectionRequestBuilder) RiskDetections()(*RiskdetectionsRiskDetectionsRequestBuilder) {
+    return NewRiskdetectionsRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RiskyServicePrincipals provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
-// returns a *RiskyServicePrincipalsRequestBuilder when successful
-func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipals()(*RiskyServicePrincipalsRequestBuilder) {
-    return NewRiskyServicePrincipalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RiskyserviceprincipalsRiskyServicePrincipalsRequestBuilder when successful
+func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipals()(*RiskyserviceprincipalsRiskyServicePrincipalsRequestBuilder) {
+    return NewRiskyserviceprincipalsRiskyServicePrincipalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RiskyUsers provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
-// returns a *RiskyUsersRequestBuilder when successful
-func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*RiskyUsersRequestBuilder) {
-    return NewRiskyUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RiskyusersRiskyUsersRequestBuilder when successful
+func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*RiskyusersRiskyUsersRequestBuilder) {
+    return NewRiskyusersRiskyUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServicePrincipalRiskDetections provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
-// returns a *ServicePrincipalRiskDetectionsRequestBuilder when successful
-func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetections()(*ServicePrincipalRiskDetectionsRequestBuilder) {
-    return NewServicePrincipalRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ServiceprincipalriskdetectionsServicePrincipalRiskDetectionsRequestBuilder when successful
+func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetections()(*ServiceprincipalriskdetectionsServicePrincipalRiskDetectionsRequestBuilder) {
+    return NewServiceprincipalriskdetectionsServicePrincipalRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get identityProtection
 // returns a *RequestInformation when successful
