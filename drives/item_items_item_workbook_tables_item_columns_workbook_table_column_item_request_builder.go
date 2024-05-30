@@ -55,9 +55,9 @@ func NewItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuil
     return NewItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DataBodyRange provides operations to call the dataBodyRange method.
-// returns a *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookTablesItemColumnsItemDatabodyrangeDataBodyRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookTablesItemColumnsItemDatabodyrangeDataBodyRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemDatabodyrangeDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property columns for drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -101,9 +101,9 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBui
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
 }
 // HeaderRowRange provides operations to call the headerRowRange method.
-// returns a *ItemItemsItemWorkbookTablesItemColumnsItemHeaderRowRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemHeaderRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookTablesItemColumnsItemHeaderrowrangeHeaderRowRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemHeaderrowrangeHeaderRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemHeaderrowrangeHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property columns in drives
 // returns a WorkbookTableColumnable when successful
@@ -171,9 +171,9 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBui
     return requestInfo, nil
 }
 // TotalRowRange provides operations to call the totalRowRange method.
-// returns a *ItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookTablesItemColumnsItemTotalrowrangeTotalRowRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemTotalrowrangeTotalRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemTotalrowrangeTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder when successful

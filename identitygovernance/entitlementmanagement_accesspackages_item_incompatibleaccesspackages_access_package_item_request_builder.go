@@ -1,0 +1,28 @@
+package identitygovernance
+
+import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+)
+
+// EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleAccessPackages\{accessPackage-id1}
+type EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// NewEntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilderInternal instantiates a new EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder and sets the default values.
+func NewEntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder) {
+    m := &EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleAccessPackages/{accessPackage%2Did1}", pathParameters),
+    }
+    return m
+}
+// NewEntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder instantiates a new EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder and sets the default values.
+func NewEntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewEntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Ref provides operations to manage the collection of identityGovernance entities.
+// returns a *EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesItemRefRequestBuilder when successful
+func (m *EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesAccessPackageItemRequestBuilder) Ref()(*EntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesItemRefRequestBuilder) {
+    return NewEntitlementmanagementAccesspackagesItemIncompatibleaccesspackagesItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

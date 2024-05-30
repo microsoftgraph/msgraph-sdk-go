@@ -1,0 +1,27 @@
+package sites
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesGetResponseable instead.
+type ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponse struct {
+    ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesGetResponse
+}
+// NewItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponse instantiates a new ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponse and sets the default values.
+func NewItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponse()(*ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponse) {
+    m := &ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponse{
+        ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesGetResponse: *NewItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesGetResponse(),
+    }
+    return m
+}
+// CreateItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponse(), nil
+}
+// Deprecated: This class is obsolete. Use ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesGetResponseable instead.
+type ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesResponseable interface {
+    ItemContenttypesGetcompatiblehubcontenttypesGetCompatibleHubContentTypesGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

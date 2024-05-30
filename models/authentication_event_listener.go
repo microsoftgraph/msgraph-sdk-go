@@ -29,8 +29,16 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.onAttributeCollectionListener":
+                        return NewOnAttributeCollectionListener(), nil
+                    case "#microsoft.graph.onAuthenticationMethodLoadStartListener":
+                        return NewOnAuthenticationMethodLoadStartListener(), nil
+                    case "#microsoft.graph.onInteractiveAuthFlowStartListener":
+                        return NewOnInteractiveAuthFlowStartListener(), nil
                     case "#microsoft.graph.onTokenIssuanceStartListener":
                         return NewOnTokenIssuanceStartListener(), nil
+                    case "#microsoft.graph.onUserCreateStartListener":
+                        return NewOnUserCreateStartListener(), nil
                 }
             }
         }

@@ -113,9 +113,9 @@ func (m *PrintRequestBuilder) Shares()(*SharesRequestBuilder) {
     return NewSharesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskDefinitions provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
-// returns a *TaskDefinitionsRequestBuilder when successful
-func (m *PrintRequestBuilder) TaskDefinitions()(*TaskDefinitionsRequestBuilder) {
-    return NewTaskDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TaskdefinitionsTaskDefinitionsRequestBuilder when successful
+func (m *PrintRequestBuilder) TaskDefinitions()(*TaskdefinitionsTaskDefinitionsRequestBuilder) {
+    return NewTaskdefinitionsTaskDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get print
 // returns a *RequestInformation when successful

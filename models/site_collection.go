@@ -35,6 +35,18 @@ func (m *SiteCollection) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetArchivalDetails gets the archivalDetails property value. The archivalDetails property
+// returns a SiteArchivalDetailsable when successful
+func (m *SiteCollection) GetArchivalDetails()(SiteArchivalDetailsable) {
+    val, err := m.GetBackingStore().Get("archivalDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SiteArchivalDetailsable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *SiteCollection) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -56,6 +68,16 @@ func (m *SiteCollection) GetDataLocationCode()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SiteCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["archivalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSiteArchivalDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchivalDetails(val.(SiteArchivalDetailsable))
+        }
+        return nil
+    }
     res["dataLocationCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -137,6 +159,12 @@ func (m *SiteCollection) GetRoot()(Rootable) {
 // Serialize serializes information the current object
 func (m *SiteCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("archivalDetails", m.GetArchivalDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("dataLocationCode", m.GetDataLocationCode())
         if err != nil {
             return err
@@ -171,6 +199,13 @@ func (m *SiteCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteCollection) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetArchivalDetails sets the archivalDetails property value. The archivalDetails property
+func (m *SiteCollection) SetArchivalDetails(value SiteArchivalDetailsable)() {
+    err := m.GetBackingStore().Set("archivalDetails", value)
     if err != nil {
         panic(err)
     }
@@ -211,11 +246,13 @@ type SiteCollectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetArchivalDetails()(SiteArchivalDetailsable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDataLocationCode()(*string)
     GetHostname()(*string)
     GetOdataType()(*string)
     GetRoot()(Rootable)
+    SetArchivalDetails(value SiteArchivalDetailsable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDataLocationCode(value *string)()
     SetHostname(value *string)()

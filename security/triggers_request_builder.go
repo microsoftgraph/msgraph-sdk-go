@@ -111,9 +111,9 @@ func (m *TriggersRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.TriggersRootable), nil
 }
 // RetentionEvents provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
-// returns a *TriggersRetentionEventsRequestBuilder when successful
-func (m *TriggersRequestBuilder) RetentionEvents()(*TriggersRetentionEventsRequestBuilder) {
-    return NewTriggersRetentionEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TriggersRetentioneventsRetentionEventsRequestBuilder when successful
+func (m *TriggersRequestBuilder) RetentionEvents()(*TriggersRetentioneventsRetentionEventsRequestBuilder) {
+    return NewTriggersRetentioneventsRetentionEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property triggers for security
 // returns a *RequestInformation when successful

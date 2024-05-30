@@ -60,9 +60,9 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Content()(*ItemOnenotePa
     return NewItemOnenotePagesItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CopyToSection provides operations to call the copyToSection method.
-// returns a *ItemOnenotePagesItemCopyToSectionRequestBuilder when successful
-func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOnenotePagesItemCopyToSectionRequestBuilder) {
-    return NewItemOnenotePagesItemCopyToSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenotePagesItemCopytosectionCopyToSectionRequestBuilder when successful
+func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOnenotePagesItemCopytosectionCopyToSectionRequestBuilder) {
+    return NewItemOnenotePagesItemCopytosectionCopyToSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property pages for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -101,19 +101,19 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Get(ctx context.Context,
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
 }
 // OnenotePatchContent provides operations to call the onenotePatchContent method.
-// returns a *ItemOnenotePagesItemOnenotePatchContentRequestBuilder when successful
-func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) OnenotePatchContent()(*ItemOnenotePagesItemOnenotePatchContentRequestBuilder) {
-    return NewItemOnenotePagesItemOnenotePatchContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenotePagesItemOnenotepatchcontentOnenotePatchContentRequestBuilder when successful
+func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) OnenotePatchContent()(*ItemOnenotePagesItemOnenotepatchcontentOnenotePatchContentRequestBuilder) {
+    return NewItemOnenotePagesItemOnenotepatchcontentOnenotePatchContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.
-// returns a *ItemOnenotePagesItemParentNotebookRequestBuilder when successful
-func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ParentNotebook()(*ItemOnenotePagesItemParentNotebookRequestBuilder) {
-    return NewItemOnenotePagesItemParentNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenotePagesItemParentnotebookParentNotebookRequestBuilder when successful
+func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ParentNotebook()(*ItemOnenotePagesItemParentnotebookParentNotebookRequestBuilder) {
+    return NewItemOnenotePagesItemParentnotebookParentNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ParentSection provides operations to manage the parentSection property of the microsoft.graph.onenotePage entity.
-// returns a *ItemOnenotePagesItemParentSectionRequestBuilder when successful
-func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ParentSection()(*ItemOnenotePagesItemParentSectionRequestBuilder) {
-    return NewItemOnenotePagesItemParentSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenotePagesItemParentsectionParentSectionRequestBuilder when successful
+func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ParentSection()(*ItemOnenotePagesItemParentsectionParentSectionRequestBuilder) {
+    return NewItemOnenotePagesItemParentsectionParentSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property pages in users
 // returns a OnenotePageable when successful

@@ -91,9 +91,9 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Get(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedInsightable), nil
 }
 // LastSharedMethod provides operations to manage the lastSharedMethod property of the microsoft.graph.sharedInsight entity.
-// returns a *ItemInsightsSharedItemLastSharedMethodRequestBuilder when successful
-func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) LastSharedMethod()(*ItemInsightsSharedItemLastSharedMethodRequestBuilder) {
-    return NewItemInsightsSharedItemLastSharedMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInsightsSharedItemLastsharedmethodLastSharedMethodRequestBuilder when successful
+func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) LastSharedMethod()(*ItemInsightsSharedItemLastsharedmethodLastSharedMethodRequestBuilder) {
+    return NewItemInsightsSharedItemLastsharedmethodLastSharedMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property shared in users
 // returns a SharedInsightable when successful

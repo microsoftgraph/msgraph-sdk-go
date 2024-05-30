@@ -51,7 +51,7 @@ func (m *OrganizationalBrandingProperties) GetBackgroundColor()(*string) {
     }
     return nil
 }
-// GetBackgroundImage gets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+// GetBackgroundImage gets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
 // returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetBackgroundImage()([]byte) {
     val, err := m.GetBackingStore().Get("backgroundImage")
@@ -111,7 +111,7 @@ func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
     }
     return nil
 }
-// GetContentCustomization gets the contentCustomization property value. The contentCustomization property
+// GetContentCustomization gets the contentCustomization property value. Represents the content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra External ID in external tenants only.
 // returns a ContentCustomizationable when successful
 func (m *OrganizationalBrandingProperties) GetContentCustomization()(ContentCustomizationable) {
     val, err := m.GetBackingStore().Get("contentCustomization")
@@ -934,7 +934,7 @@ func (m *OrganizationalBrandingProperties) SetBackgroundColor(value *string)() {
         panic(err)
     }
 }
-// SetBackgroundImage sets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+// SetBackgroundImage sets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
 func (m *OrganizationalBrandingProperties) SetBackgroundImage(value []byte)() {
     err := m.GetBackingStore().Set("backgroundImage", value)
     if err != nil {
@@ -969,7 +969,7 @@ func (m *OrganizationalBrandingProperties) SetCdnList(value []string)() {
         panic(err)
     }
 }
-// SetContentCustomization sets the contentCustomization property value. The contentCustomization property
+// SetContentCustomization sets the contentCustomization property value. Represents the content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra External ID in external tenants only.
 func (m *OrganizationalBrandingProperties) SetContentCustomization(value ContentCustomizationable)() {
     err := m.GetBackingStore().Set("contentCustomization", value)
     if err != nil {

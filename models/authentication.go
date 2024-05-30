@@ -245,7 +245,7 @@ func (m *Authentication) GetOperations()([]LongRunningOperationable) {
     }
     return nil
 }
-// GetPasswordMethods gets the passwordMethods property value. Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+// GetPasswordMethods gets the passwordMethods property value. Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
 // returns a []PasswordAuthenticationMethodable when successful
 func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("passwordMethods")
@@ -269,7 +269,7 @@ func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     }
     return nil
 }
-// GetSoftwareOathMethods gets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.
+// GetSoftwareOathMethods gets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
 // returns a []SoftwareOathAuthenticationMethodable when successful
 func (m *Authentication) GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("softwareOathMethods")
@@ -468,7 +468,7 @@ func (m *Authentication) SetOperations(value []LongRunningOperationable)() {
         panic(err)
     }
 }
-// SetPasswordMethods sets the passwordMethods property value. Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+// SetPasswordMethods sets the passwordMethods property value. Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
 func (m *Authentication) SetPasswordMethods(value []PasswordAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("passwordMethods", value)
     if err != nil {
@@ -482,7 +482,7 @@ func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)(
         panic(err)
     }
 }
-// SetSoftwareOathMethods sets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.
+// SetSoftwareOathMethods sets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
 func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("softwareOathMethods", value)
     if err != nil {

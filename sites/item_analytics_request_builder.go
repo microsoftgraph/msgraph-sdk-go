@@ -42,9 +42,9 @@ type ItemAnalyticsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllTime provides operations to manage the allTime property of the microsoft.graph.itemAnalytics entity.
-// returns a *ItemAnalyticsAllTimeRequestBuilder when successful
-func (m *ItemAnalyticsRequestBuilder) AllTime()(*ItemAnalyticsAllTimeRequestBuilder) {
-    return NewItemAnalyticsAllTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAnalyticsAlltimeAllTimeRequestBuilder when successful
+func (m *ItemAnalyticsRequestBuilder) AllTime()(*ItemAnalyticsAlltimeAllTimeRequestBuilder) {
+    return NewItemAnalyticsAlltimeAllTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemAnalyticsRequestBuilderInternal instantiates a new ItemAnalyticsRequestBuilder and sets the default values.
 func NewItemAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAnalyticsRequestBuilder) {
@@ -96,14 +96,14 @@ func (m *ItemAnalyticsRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemAnalyticsable), nil
 }
 // ItemActivityStats provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.
-// returns a *ItemAnalyticsItemActivityStatsRequestBuilder when successful
-func (m *ItemAnalyticsRequestBuilder) ItemActivityStats()(*ItemAnalyticsItemActivityStatsRequestBuilder) {
-    return NewItemAnalyticsItemActivityStatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAnalyticsItemactivitystatsItemActivityStatsRequestBuilder when successful
+func (m *ItemAnalyticsRequestBuilder) ItemActivityStats()(*ItemAnalyticsItemactivitystatsItemActivityStatsRequestBuilder) {
+    return NewItemAnalyticsItemactivitystatsItemActivityStatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastSevenDays provides operations to manage the lastSevenDays property of the microsoft.graph.itemAnalytics entity.
-// returns a *ItemAnalyticsLastSevenDaysRequestBuilder when successful
-func (m *ItemAnalyticsRequestBuilder) LastSevenDays()(*ItemAnalyticsLastSevenDaysRequestBuilder) {
-    return NewItemAnalyticsLastSevenDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAnalyticsLastsevendaysLastSevenDaysRequestBuilder when successful
+func (m *ItemAnalyticsRequestBuilder) LastSevenDays()(*ItemAnalyticsLastsevendaysLastSevenDaysRequestBuilder) {
+    return NewItemAnalyticsLastsevendaysLastSevenDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property analytics in sites
 // returns a ItemAnalyticsable when successful

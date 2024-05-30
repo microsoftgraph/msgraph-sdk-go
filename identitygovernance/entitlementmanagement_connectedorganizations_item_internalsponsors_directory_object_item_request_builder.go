@@ -1,0 +1,28 @@
+package identitygovernance
+
+import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+)
+
+// EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations\{connectedOrganization-id}\internalSponsors\{directoryObject-id}
+type EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// NewEntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilderInternal instantiates a new EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder and sets the default values.
+func NewEntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder) {
+    m := &EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/internalSponsors/{directoryObject%2Did}", pathParameters),
+    }
+    return m
+}
+// NewEntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder instantiates a new EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder and sets the default values.
+func NewEntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewEntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Ref provides operations to manage the collection of identityGovernance entities.
+// returns a *EntitlementmanagementConnectedorganizationsItemInternalsponsorsItemRefRequestBuilder when successful
+func (m *EntitlementmanagementConnectedorganizationsItemInternalsponsorsDirectoryObjectItemRequestBuilder) Ref()(*EntitlementmanagementConnectedorganizationsItemInternalsponsorsItemRefRequestBuilder) {
+    return NewEntitlementmanagementConnectedorganizationsItemInternalsponsorsItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

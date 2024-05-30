@@ -111,9 +111,9 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body iadcd811244
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserSettingsable), nil
 }
 // ShiftPreferences provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.
-// returns a *ItemSettingsShiftPreferencesRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) ShiftPreferences()(*ItemSettingsShiftPreferencesRequestBuilder) {
-    return NewItemSettingsShiftPreferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsShiftpreferencesShiftPreferencesRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) ShiftPreferences()(*ItemSettingsShiftpreferencesShiftPreferencesRequestBuilder) {
+    return NewItemSettingsShiftpreferencesShiftPreferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for users
 // returns a *RequestInformation when successful

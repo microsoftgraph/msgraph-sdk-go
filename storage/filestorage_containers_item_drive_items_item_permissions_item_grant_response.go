@@ -1,0 +1,27 @@
+package storage
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use FilestorageContainersItemDriveItemsItemPermissionsItemGrantPostResponseable instead.
+type FilestorageContainersItemDriveItemsItemPermissionsItemGrantResponse struct {
+    FilestorageContainersItemDriveItemsItemPermissionsItemGrantPostResponse
+}
+// NewFilestorageContainersItemDriveItemsItemPermissionsItemGrantResponse instantiates a new FilestorageContainersItemDriveItemsItemPermissionsItemGrantResponse and sets the default values.
+func NewFilestorageContainersItemDriveItemsItemPermissionsItemGrantResponse()(*FilestorageContainersItemDriveItemsItemPermissionsItemGrantResponse) {
+    m := &FilestorageContainersItemDriveItemsItemPermissionsItemGrantResponse{
+        FilestorageContainersItemDriveItemsItemPermissionsItemGrantPostResponse: *NewFilestorageContainersItemDriveItemsItemPermissionsItemGrantPostResponse(),
+    }
+    return m
+}
+// CreateFilestorageContainersItemDriveItemsItemPermissionsItemGrantResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateFilestorageContainersItemDriveItemsItemPermissionsItemGrantResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewFilestorageContainersItemDriveItemsItemPermissionsItemGrantResponse(), nil
+}
+// Deprecated: This class is obsolete. Use FilestorageContainersItemDriveItemsItemPermissionsItemGrantPostResponseable instead.
+type FilestorageContainersItemDriveItemsItemPermissionsItemGrantResponseable interface {
+    FilestorageContainersItemDriveItemsItemPermissionsItemGrantPostResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

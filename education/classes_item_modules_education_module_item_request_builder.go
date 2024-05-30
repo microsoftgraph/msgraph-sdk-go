@@ -135,9 +135,9 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Resources()(*Class
     return NewClassesItemModulesItemResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
-// returns a *ClassesItemModulesItemSetUpResourcesFolderRequestBuilder when successful
-func (m *ClassesItemModulesEducationModuleItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemModulesItemSetUpResourcesFolderRequestBuilder) {
-    return NewClassesItemModulesItemSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemModulesItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder when successful
+func (m *ClassesItemModulesEducationModuleItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemModulesItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder) {
+    return NewClassesItemModulesItemSetupresourcesfolderSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete an existing module in a class. Only teachers within a class can delete modules.
 // returns a *RequestInformation when successful

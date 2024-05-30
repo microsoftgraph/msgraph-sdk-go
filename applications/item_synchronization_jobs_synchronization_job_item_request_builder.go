@@ -42,9 +42,9 @@ type ItemSynchronizationJobsSynchronizationJobItemRequestBuilderPatchRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BulkUpload provides operations to manage the bulkUpload property of the microsoft.graph.synchronizationJob entity.
-// returns a *ItemSynchronizationJobsItemBulkUploadRequestBuilder when successful
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) BulkUpload()(*ItemSynchronizationJobsItemBulkUploadRequestBuilder) {
-    return NewItemSynchronizationJobsItemBulkUploadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSynchronizationJobsItemBulkuploadBulkUploadRequestBuilder when successful
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) BulkUpload()(*ItemSynchronizationJobsItemBulkuploadBulkUploadRequestBuilder) {
+    return NewItemSynchronizationJobsItemBulkuploadBulkUploadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal instantiates a new ItemSynchronizationJobsSynchronizationJobItemRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
@@ -121,9 +121,9 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Pause()(*I
     return NewItemSynchronizationJobsItemPauseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ProvisionOnDemand provides operations to call the provisionOnDemand method.
-// returns a *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder when successful
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ProvisionOnDemand()(*ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) {
-    return NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSynchronizationJobsItemProvisionondemandProvisionOnDemandRequestBuilder when successful
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ProvisionOnDemand()(*ItemSynchronizationJobsItemProvisionondemandProvisionOnDemandRequestBuilder) {
+    return NewItemSynchronizationJobsItemProvisionondemandProvisionOnDemandRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Restart provides operations to call the restart method.
 // returns a *ItemSynchronizationJobsItemRestartRequestBuilder when successful
@@ -181,9 +181,9 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToPatchReq
     return requestInfo, nil
 }
 // ValidateCredentials provides operations to call the validateCredentials method.
-// returns a *ItemSynchronizationJobsItemValidateCredentialsRequestBuilder when successful
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ValidateCredentials()(*ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) {
-    return NewItemSynchronizationJobsItemValidateCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSynchronizationJobsItemValidatecredentialsValidateCredentialsRequestBuilder when successful
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ValidateCredentials()(*ItemSynchronizationJobsItemValidatecredentialsValidateCredentialsRequestBuilder) {
+    return NewItemSynchronizationJobsItemValidatecredentialsValidateCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder when successful

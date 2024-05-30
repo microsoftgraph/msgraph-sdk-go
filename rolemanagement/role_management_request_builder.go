@@ -53,9 +53,9 @@ func (m *RoleManagementRequestBuilder) Directory()(*DirectoryRequestBuilder) {
     return NewDirectoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
-// returns a *EntitlementManagementRequestBuilder when successful
-func (m *RoleManagementRequestBuilder) EntitlementManagement()(*EntitlementManagementRequestBuilder) {
-    return NewEntitlementManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EntitlementmanagementEntitlementManagementRequestBuilder when successful
+func (m *RoleManagementRequestBuilder) EntitlementManagement()(*EntitlementmanagementEntitlementManagementRequestBuilder) {
+    return NewEntitlementmanagementEntitlementManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get roleManagement
 // returns a RoleManagementable when successful

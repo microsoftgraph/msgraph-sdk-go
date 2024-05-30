@@ -47,9 +47,9 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Analytics()(*ItemItemsItemAnalyti
     return NewItemItemsItemAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignSensitivityLabel provides operations to call the assignSensitivityLabel method.
-// returns a *ItemItemsItemAssignSensitivityLabelRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) AssignSensitivityLabel()(*ItemItemsItemAssignSensitivityLabelRequestBuilder) {
-    return NewItemItemsItemAssignSensitivityLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemAssignsensitivitylabelAssignSensitivityLabelRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) AssignSensitivityLabel()(*ItemItemsItemAssignsensitivitylabelAssignSensitivityLabelRequestBuilder) {
+    return NewItemItemsItemAssignsensitivitylabelAssignSensitivityLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Checkin provides operations to call the checkin method.
 // returns a *ItemItemsItemCheckinRequestBuilder when successful
@@ -90,19 +90,19 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Copy()(*ItemItemsItemCopyRequestB
     return NewItemItemsItemCopyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemItemsItemCreatedByUserRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) CreatedByUser()(*ItemItemsItemCreatedByUserRequestBuilder) {
-    return NewItemItemsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemCreatedbyuserCreatedByUserRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) CreatedByUser()(*ItemItemsItemCreatedbyuserCreatedByUserRequestBuilder) {
+    return NewItemItemsItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateLink provides operations to call the createLink method.
-// returns a *ItemItemsItemCreateLinkRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) CreateLink()(*ItemItemsItemCreateLinkRequestBuilder) {
-    return NewItemItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemCreatelinkCreateLinkRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) CreateLink()(*ItemItemsItemCreatelinkCreateLinkRequestBuilder) {
+    return NewItemItemsItemCreatelinkCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemItemsItemCreateUploadSessionRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) CreateUploadSession()(*ItemItemsItemCreateUploadSessionRequestBuilder) {
-    return NewItemItemsItemCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemCreateuploadsessionCreateUploadSessionRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) CreateUploadSession()(*ItemItemsItemCreateuploadsessionCreateUploadSessionRequestBuilder) {
+    return NewItemItemsItemCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property items for drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -126,14 +126,14 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Delta()(*ItemItemsItemDeltaReques
     return NewItemItemsItemDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeltaWithToken provides operations to call the delta method.
-// returns a *ItemItemsItemDeltaWithTokenRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) DeltaWithToken(token *string)(*ItemItemsItemDeltaWithTokenRequestBuilder) {
-    return NewItemItemsItemDeltaWithTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, token)
+// returns a *ItemItemsItemDeltawithtokenDeltaWithTokenRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) DeltaWithToken(token *string)(*ItemItemsItemDeltawithtokenDeltaWithTokenRequestBuilder) {
+    return NewItemItemsItemDeltawithtokenDeltaWithTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, token)
 }
 // ExtractSensitivityLabels provides operations to call the extractSensitivityLabels method.
-// returns a *ItemItemsItemExtractSensitivityLabelsRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) ExtractSensitivityLabels()(*ItemItemsItemExtractSensitivityLabelsRequestBuilder) {
-    return NewItemItemsItemExtractSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemExtractsensitivitylabelsExtractSensitivityLabelsRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ExtractSensitivityLabels()(*ItemItemsItemExtractsensitivitylabelsExtractSensitivityLabelsRequestBuilder) {
+    return NewItemItemsItemExtractsensitivitylabelsExtractSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Follow provides operations to call the follow method.
 // returns a *ItemItemsItemFollowRequestBuilder when successful
@@ -161,14 +161,14 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Get(ctx context.Context, requestC
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
 // GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-// returns a *ItemItemsItemGetActivitiesByIntervalRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByInterval()(*ItemItemsItemGetActivitiesByIntervalRequestBuilder) {
-    return NewItemItemsItemGetActivitiesByIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByInterval()(*ItemItemsItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilder) {
+    return NewItemItemsItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-// returns a *ItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, interval, startDateTime)
+// returns a *ItemItemsItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemItemsItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemItemsItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, interval, startDateTime)
 }
 // Invite provides operations to call the invite method.
 // returns a *ItemItemsItemInviteRequestBuilder when successful
@@ -176,14 +176,14 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Invite()(*ItemItemsItemInviteRequ
     return NewItemItemsItemInviteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemItemsItemLastModifiedByUserRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemItemsItemLastModifiedByUserRequestBuilder) {
-    return NewItemItemsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemItemsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
+    return NewItemItemsItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
-// returns a *ItemItemsItemListItemRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListItemRequestBuilder) {
-    return NewItemItemsItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemListitemListItemRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListitemListItemRequestBuilder) {
+    return NewItemItemsItemListitemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property items in drives
 // returns a DriveItemable when successful
@@ -206,9 +206,9 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Patch(ctx context.Context, body i
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
 // PermanentDelete provides operations to call the permanentDelete method.
-// returns a *ItemItemsItemPermanentDeleteRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) PermanentDelete()(*ItemItemsItemPermanentDeleteRequestBuilder) {
-    return NewItemItemsItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemPermanentdeletePermanentDeleteRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) PermanentDelete()(*ItemItemsItemPermanentdeletePermanentDeleteRequestBuilder) {
+    return NewItemItemsItemPermanentdeletePermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Permissions provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
 // returns a *ItemItemsItemPermissionsRequestBuilder when successful
@@ -226,14 +226,14 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Restore()(*ItemItemsItemRestoreRe
     return NewItemItemsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetentionLabel provides operations to manage the retentionLabel property of the microsoft.graph.driveItem entity.
-// returns a *ItemItemsItemRetentionLabelRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) RetentionLabel()(*ItemItemsItemRetentionLabelRequestBuilder) {
-    return NewItemItemsItemRetentionLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemRetentionlabelRetentionLabelRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) RetentionLabel()(*ItemItemsItemRetentionlabelRetentionLabelRequestBuilder) {
+    return NewItemItemsItemRetentionlabelRetentionLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SearchWithQ provides operations to call the search method.
-// returns a *ItemItemsItemSearchWithQRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) SearchWithQ(q *string)(*ItemItemsItemSearchWithQRequestBuilder) {
-    return NewItemItemsItemSearchWithQRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, q)
+// returns a *ItemItemsItemSearchwithqSearchWithQRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) SearchWithQ(q *string)(*ItemItemsItemSearchwithqSearchWithQRequestBuilder) {
+    return NewItemItemsItemSearchwithqSearchWithQRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, q)
 }
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
 // returns a *ItemItemsItemSubscriptionsRequestBuilder when successful
@@ -291,9 +291,9 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Unfollow()(*ItemItemsItemUnfollow
     return NewItemItemsItemUnfollowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ValidatePermission provides operations to call the validatePermission method.
-// returns a *ItemItemsItemValidatePermissionRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) ValidatePermission()(*ItemItemsItemValidatePermissionRequestBuilder) {
-    return NewItemItemsItemValidatePermissionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemValidatepermissionValidatePermissionRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ValidatePermission()(*ItemItemsItemValidatepermissionValidatePermissionRequestBuilder) {
+    return NewItemItemsItemValidatepermissionValidatePermissionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Versions provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 // returns a *ItemItemsItemVersionsRequestBuilder when successful

@@ -55,14 +55,14 @@ func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
     return nil
 }
 // GraphRoom casts the previous resource to room.
-// returns a *ItemGraphRoomRequestBuilder when successful
-func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
-    return NewItemGraphRoomRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGraphroomGraphRoomRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphroomGraphRoomRequestBuilder) {
+    return NewItemGraphroomGraphRoomRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphRoomList casts the previous resource to roomList.
-// returns a *ItemGraphRoomListRequestBuilder when successful
-func (m *PlaceItemRequestBuilder) GraphRoomList()(*ItemGraphRoomListRequestBuilder) {
-    return NewItemGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGraphroomlistGraphRoomListRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphRoomList()(*ItemGraphroomlistGraphRoomListRequestBuilder) {
+    return NewItemGraphroomlistGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
 // returns a Placeable when successful

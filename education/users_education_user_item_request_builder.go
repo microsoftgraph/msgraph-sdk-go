@@ -140,9 +140,9 @@ func (m *UsersEducationUserItemRequestBuilder) Schools()(*UsersItemSchoolsReques
     return NewUsersItemSchoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaughtClasses provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
-// returns a *UsersItemTaughtClassesRequestBuilder when successful
-func (m *UsersEducationUserItemRequestBuilder) TaughtClasses()(*UsersItemTaughtClassesRequestBuilder) {
-    return NewUsersItemTaughtClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersItemTaughtclassesTaughtClassesRequestBuilder when successful
+func (m *UsersEducationUserItemRequestBuilder) TaughtClasses()(*UsersItemTaughtclassesTaughtClassesRequestBuilder) {
+    return NewUsersItemTaughtclassesTaughtClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a user.
 // returns a *RequestInformation when successful

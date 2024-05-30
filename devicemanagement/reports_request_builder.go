@@ -71,9 +71,9 @@ func (m *ReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration
     return nil
 }
 // ExportJobs provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
-// returns a *ReportsExportJobsRequestBuilder when successful
-func (m *ReportsRequestBuilder) ExportJobs()(*ReportsExportJobsRequestBuilder) {
-    return NewReportsExportJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsExportjobsExportJobsRequestBuilder when successful
+func (m *ReportsRequestBuilder) ExportJobs()(*ReportsExportjobsExportJobsRequestBuilder) {
+    return NewReportsExportjobsExportJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read properties and relationships of the deviceManagementReports object.
 // returns a DeviceManagementReportsable when successful
@@ -99,94 +99,94 @@ func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementReportsable), nil
 }
 // GetCachedReport provides operations to call the getCachedReport method.
-// returns a *ReportsGetCachedReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetCachedReport()(*ReportsGetCachedReportRequestBuilder) {
-    return NewReportsGetCachedReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetcachedreportGetCachedReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetCachedReport()(*ReportsGetcachedreportGetCachedReportRequestBuilder) {
+    return NewReportsGetcachedreportGetCachedReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetCompliancePolicyNonComplianceReport provides operations to call the getCompliancePolicyNonComplianceReport method.
-// returns a *ReportsGetCompliancePolicyNonComplianceReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceReport()(*ReportsGetCompliancePolicyNonComplianceReportRequestBuilder) {
-    return NewReportsGetCompliancePolicyNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetcompliancepolicynoncompliancereportGetCompliancePolicyNonComplianceReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceReport()(*ReportsGetcompliancepolicynoncompliancereportGetCompliancePolicyNonComplianceReportRequestBuilder) {
+    return NewReportsGetcompliancepolicynoncompliancereportGetCompliancePolicyNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetCompliancePolicyNonComplianceSummaryReport provides operations to call the getCompliancePolicyNonComplianceSummaryReport method.
-// returns a *ReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceSummaryReport()(*ReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder) {
-    return NewReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetcompliancepolicynoncompliancesummaryreportGetCompliancePolicyNonComplianceSummaryReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceSummaryReport()(*ReportsGetcompliancepolicynoncompliancesummaryreportGetCompliancePolicyNonComplianceSummaryReportRequestBuilder) {
+    return NewReportsGetcompliancepolicynoncompliancesummaryreportGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetComplianceSettingNonComplianceReport provides operations to call the getComplianceSettingNonComplianceReport method.
-// returns a *ReportsGetComplianceSettingNonComplianceReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetComplianceSettingNonComplianceReport()(*ReportsGetComplianceSettingNonComplianceReportRequestBuilder) {
-    return NewReportsGetComplianceSettingNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetcompliancesettingnoncompliancereportGetComplianceSettingNonComplianceReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetComplianceSettingNonComplianceReport()(*ReportsGetcompliancesettingnoncompliancereportGetComplianceSettingNonComplianceReportRequestBuilder) {
+    return NewReportsGetcompliancesettingnoncompliancereportGetComplianceSettingNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetConfigurationPolicyNonComplianceReport provides operations to call the getConfigurationPolicyNonComplianceReport method.
-// returns a *ReportsGetConfigurationPolicyNonComplianceReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetConfigurationPolicyNonComplianceReport()(*ReportsGetConfigurationPolicyNonComplianceReportRequestBuilder) {
-    return NewReportsGetConfigurationPolicyNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetconfigurationpolicynoncompliancereportGetConfigurationPolicyNonComplianceReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetConfigurationPolicyNonComplianceReport()(*ReportsGetconfigurationpolicynoncompliancereportGetConfigurationPolicyNonComplianceReportRequestBuilder) {
+    return NewReportsGetconfigurationpolicynoncompliancereportGetConfigurationPolicyNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetConfigurationPolicyNonComplianceSummaryReport provides operations to call the getConfigurationPolicyNonComplianceSummaryReport method.
-// returns a *ReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetConfigurationPolicyNonComplianceSummaryReport()(*ReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) {
-    return NewReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetconfigurationpolicynoncompliancesummaryreportGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetConfigurationPolicyNonComplianceSummaryReport()(*ReportsGetconfigurationpolicynoncompliancesummaryreportGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder) {
+    return NewReportsGetconfigurationpolicynoncompliancesummaryreportGetConfigurationPolicyNonComplianceSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetConfigurationSettingNonComplianceReport provides operations to call the getConfigurationSettingNonComplianceReport method.
-// returns a *ReportsGetConfigurationSettingNonComplianceReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetConfigurationSettingNonComplianceReport()(*ReportsGetConfigurationSettingNonComplianceReportRequestBuilder) {
-    return NewReportsGetConfigurationSettingNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetconfigurationsettingnoncompliancereportGetConfigurationSettingNonComplianceReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetConfigurationSettingNonComplianceReport()(*ReportsGetconfigurationsettingnoncompliancereportGetConfigurationSettingNonComplianceReportRequestBuilder) {
+    return NewReportsGetconfigurationsettingnoncompliancereportGetConfigurationSettingNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetDeviceManagementIntentPerSettingContributingProfiles provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.
-// returns a *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetDeviceManagementIntentPerSettingContributingProfiles()(*ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
-    return NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetdevicemanagementintentpersettingcontributingprofilesGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetDeviceManagementIntentPerSettingContributingProfiles()(*ReportsGetdevicemanagementintentpersettingcontributingprofilesGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
+    return NewReportsGetdevicemanagementintentpersettingcontributingprofilesGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetDeviceManagementIntentSettingsReport provides operations to call the getDeviceManagementIntentSettingsReport method.
-// returns a *ReportsGetDeviceManagementIntentSettingsReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetDeviceManagementIntentSettingsReport()(*ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) {
-    return NewReportsGetDeviceManagementIntentSettingsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetdevicemanagementintentsettingsreportGetDeviceManagementIntentSettingsReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetDeviceManagementIntentSettingsReport()(*ReportsGetdevicemanagementintentsettingsreportGetDeviceManagementIntentSettingsReportRequestBuilder) {
+    return NewReportsGetdevicemanagementintentsettingsreportGetDeviceManagementIntentSettingsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetDeviceNonComplianceReport provides operations to call the getDeviceNonComplianceReport method.
-// returns a *ReportsGetDeviceNonComplianceReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetDeviceNonComplianceReport()(*ReportsGetDeviceNonComplianceReportRequestBuilder) {
-    return NewReportsGetDeviceNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetdevicenoncompliancereportGetDeviceNonComplianceReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetDeviceNonComplianceReport()(*ReportsGetdevicenoncompliancereportGetDeviceNonComplianceReportRequestBuilder) {
+    return NewReportsGetdevicenoncompliancereportGetDeviceNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetDevicesWithoutCompliancePolicyReport provides operations to call the getDevicesWithoutCompliancePolicyReport method.
-// returns a *ReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetDevicesWithoutCompliancePolicyReport()(*ReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder) {
-    return NewReportsGetDevicesWithoutCompliancePolicyReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetdeviceswithoutcompliancepolicyreportGetDevicesWithoutCompliancePolicyReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetDevicesWithoutCompliancePolicyReport()(*ReportsGetdeviceswithoutcompliancepolicyreportGetDevicesWithoutCompliancePolicyReportRequestBuilder) {
+    return NewReportsGetdeviceswithoutcompliancepolicyreportGetDevicesWithoutCompliancePolicyReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetHistoricalReport provides operations to call the getHistoricalReport method.
-// returns a *ReportsGetHistoricalReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetHistoricalReport()(*ReportsGetHistoricalReportRequestBuilder) {
-    return NewReportsGetHistoricalReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGethistoricalreportGetHistoricalReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetHistoricalReport()(*ReportsGethistoricalreportGetHistoricalReportRequestBuilder) {
+    return NewReportsGethistoricalreportGetHistoricalReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetNoncompliantDevicesAndSettingsReport provides operations to call the getNoncompliantDevicesAndSettingsReport method.
-// returns a *ReportsGetNoncompliantDevicesAndSettingsReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetNoncompliantDevicesAndSettingsReport()(*ReportsGetNoncompliantDevicesAndSettingsReportRequestBuilder) {
-    return NewReportsGetNoncompliantDevicesAndSettingsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetnoncompliantdevicesandsettingsreportGetNoncompliantDevicesAndSettingsReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetNoncompliantDevicesAndSettingsReport()(*ReportsGetnoncompliantdevicesandsettingsreportGetNoncompliantDevicesAndSettingsReportRequestBuilder) {
+    return NewReportsGetnoncompliantdevicesandsettingsreportGetNoncompliantDevicesAndSettingsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetPolicyNonComplianceMetadata provides operations to call the getPolicyNonComplianceMetadata method.
-// returns a *ReportsGetPolicyNonComplianceMetadataRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetPolicyNonComplianceMetadata()(*ReportsGetPolicyNonComplianceMetadataRequestBuilder) {
-    return NewReportsGetPolicyNonComplianceMetadataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetpolicynoncompliancemetadataGetPolicyNonComplianceMetadataRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetPolicyNonComplianceMetadata()(*ReportsGetpolicynoncompliancemetadataGetPolicyNonComplianceMetadataRequestBuilder) {
+    return NewReportsGetpolicynoncompliancemetadataGetPolicyNonComplianceMetadataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetPolicyNonComplianceReport provides operations to call the getPolicyNonComplianceReport method.
-// returns a *ReportsGetPolicyNonComplianceReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetPolicyNonComplianceReport()(*ReportsGetPolicyNonComplianceReportRequestBuilder) {
-    return NewReportsGetPolicyNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetpolicynoncompliancereportGetPolicyNonComplianceReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetPolicyNonComplianceReport()(*ReportsGetpolicynoncompliancereportGetPolicyNonComplianceReportRequestBuilder) {
+    return NewReportsGetpolicynoncompliancereportGetPolicyNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetPolicyNonComplianceSummaryReport provides operations to call the getPolicyNonComplianceSummaryReport method.
-// returns a *ReportsGetPolicyNonComplianceSummaryReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetPolicyNonComplianceSummaryReport()(*ReportsGetPolicyNonComplianceSummaryReportRequestBuilder) {
-    return NewReportsGetPolicyNonComplianceSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetpolicynoncompliancesummaryreportGetPolicyNonComplianceSummaryReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetPolicyNonComplianceSummaryReport()(*ReportsGetpolicynoncompliancesummaryreportGetPolicyNonComplianceSummaryReportRequestBuilder) {
+    return NewReportsGetpolicynoncompliancesummaryreportGetPolicyNonComplianceSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetReportFilters provides operations to call the getReportFilters method.
-// returns a *ReportsGetReportFiltersRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetReportFilters()(*ReportsGetReportFiltersRequestBuilder) {
-    return NewReportsGetReportFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetreportfiltersGetReportFiltersRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetReportFilters()(*ReportsGetreportfiltersGetReportFiltersRequestBuilder) {
+    return NewReportsGetreportfiltersGetReportFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetSettingNonComplianceReport provides operations to call the getSettingNonComplianceReport method.
-// returns a *ReportsGetSettingNonComplianceReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetSettingNonComplianceReport()(*ReportsGetSettingNonComplianceReportRequestBuilder) {
-    return NewReportsGetSettingNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsGetsettingnoncompliancereportGetSettingNonComplianceReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetSettingNonComplianceReport()(*ReportsGetsettingnoncompliancereportGetSettingNonComplianceReportRequestBuilder) {
+    return NewReportsGetsettingnoncompliancereportGetSettingNonComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a deviceManagementReports object.
 // returns a DeviceManagementReportsable when successful

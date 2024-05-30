@@ -1,0 +1,33 @@
+package identitygovernance
+
+import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+)
+
+// EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleGroups\{group-id}
+type EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// NewEntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilderInternal instantiates a new EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder and sets the default values.
+func NewEntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder) {
+    m := &EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/{group%2Did}", pathParameters),
+    }
+    return m
+}
+// NewEntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder instantiates a new EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder and sets the default values.
+func NewEntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewEntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Ref provides operations to manage the collection of identityGovernance entities.
+// returns a *EntitlementmanagementAccesspackagesItemIncompatiblegroupsItemRefRequestBuilder when successful
+func (m *EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder) Ref()(*EntitlementmanagementAccesspackagesItemIncompatiblegroupsItemRefRequestBuilder) {
+    return NewEntitlementmanagementAccesspackagesItemIncompatiblegroupsItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+// returns a *EntitlementmanagementAccesspackagesItemIncompatiblegroupsItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
+func (m *EntitlementmanagementAccesspackagesItemIncompatiblegroupsGroupItemRequestBuilder) ServiceProvisioningErrors()(*EntitlementmanagementAccesspackagesItemIncompatiblegroupsItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
+    return NewEntitlementmanagementAccesspackagesItemIncompatiblegroupsItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

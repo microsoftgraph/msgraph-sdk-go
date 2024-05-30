@@ -77,9 +77,9 @@ func (m *ItemCalendarEventsItemAttachmentsRequestBuilder) Count()(*ItemCalendarE
     return NewItemCalendarEventsItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemCalendarEventsItemAttachmentsCreateUploadSessionRequestBuilder when successful
-func (m *ItemCalendarEventsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarEventsItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemCalendarEventsItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder when successful
+func (m *ItemCalendarEventsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarEventsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
+    return NewItemCalendarEventsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 // returns a AttachmentCollectionResponseable when successful

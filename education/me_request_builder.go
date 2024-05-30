@@ -131,9 +131,9 @@ func (m *MeRequestBuilder) Schools()(*MeSchoolsRequestBuilder) {
     return NewMeSchoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaughtClasses provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
-// returns a *MeTaughtClassesRequestBuilder when successful
-func (m *MeRequestBuilder) TaughtClasses()(*MeTaughtClassesRequestBuilder) {
-    return NewMeTaughtClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MeTaughtclassesTaughtClassesRequestBuilder when successful
+func (m *MeRequestBuilder) TaughtClasses()(*MeTaughtclassesTaughtClassesRequestBuilder) {
+    return NewMeTaughtclassesTaughtClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property me for education
 // returns a *RequestInformation when successful

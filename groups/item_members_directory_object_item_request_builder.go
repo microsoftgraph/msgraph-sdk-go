@@ -22,34 +22,34 @@ func NewItemMembersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapt
     return NewItemMembersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // GraphApplication casts the previous resource to application.
-// returns a *ItemMembersItemGraphApplicationRequestBuilder when successful
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphApplication()(*ItemMembersItemGraphApplicationRequestBuilder) {
-    return NewItemMembersItemGraphApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMembersItemGraphapplicationGraphApplicationRequestBuilder when successful
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphApplication()(*ItemMembersItemGraphapplicationGraphApplicationRequestBuilder) {
+    return NewItemMembersItemGraphapplicationGraphApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphDevice casts the previous resource to device.
-// returns a *ItemMembersItemGraphDeviceRequestBuilder when successful
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphDevice()(*ItemMembersItemGraphDeviceRequestBuilder) {
-    return NewItemMembersItemGraphDeviceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMembersItemGraphdeviceGraphDeviceRequestBuilder when successful
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphDevice()(*ItemMembersItemGraphdeviceGraphDeviceRequestBuilder) {
+    return NewItemMembersItemGraphdeviceGraphDeviceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphGroup casts the previous resource to group.
-// returns a *ItemMembersItemGraphGroupRequestBuilder when successful
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemMembersItemGraphGroupRequestBuilder) {
-    return NewItemMembersItemGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMembersItemGraphgroupGraphGroupRequestBuilder when successful
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemMembersItemGraphgroupGraphGroupRequestBuilder) {
+    return NewItemMembersItemGraphgroupGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphOrgContact casts the previous resource to orgContact.
-// returns a *ItemMembersItemGraphOrgContactRequestBuilder when successful
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphOrgContact()(*ItemMembersItemGraphOrgContactRequestBuilder) {
-    return NewItemMembersItemGraphOrgContactRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMembersItemGraphorgcontactGraphOrgContactRequestBuilder when successful
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphOrgContact()(*ItemMembersItemGraphorgcontactGraphOrgContactRequestBuilder) {
+    return NewItemMembersItemGraphorgcontactGraphOrgContactRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphServicePrincipal casts the previous resource to servicePrincipal.
-// returns a *ItemMembersItemGraphServicePrincipalRequestBuilder when successful
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemMembersItemGraphServicePrincipalRequestBuilder) {
-    return NewItemMembersItemGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMembersItemGraphserviceprincipalGraphServicePrincipalRequestBuilder when successful
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemMembersItemGraphserviceprincipalGraphServicePrincipalRequestBuilder) {
+    return NewItemMembersItemGraphserviceprincipalGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphUser casts the previous resource to user.
-// returns a *ItemMembersItemGraphUserRequestBuilder when successful
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemMembersItemGraphUserRequestBuilder) {
-    return NewItemMembersItemGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMembersItemGraphuserGraphUserRequestBuilder when successful
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemMembersItemGraphuserGraphUserRequestBuilder) {
+    return NewItemMembersItemGraphuserGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Ref provides operations to manage the collection of group entities.
 // returns a *ItemMembersItemRefRequestBuilder when successful

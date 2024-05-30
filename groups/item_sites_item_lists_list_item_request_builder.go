@@ -60,14 +60,14 @@ func NewItemSitesItemListsListItemRequestBuilder(rawUrl string, requestAdapter i
     return NewItemSitesItemListsListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-// returns a *ItemSitesItemListsItemContentTypesRequestBuilder when successful
-func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypes()(*ItemSitesItemListsItemContentTypesRequestBuilder) {
-    return NewItemSitesItemListsItemContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemListsItemContenttypesContentTypesRequestBuilder when successful
+func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypes()(*ItemSitesItemListsItemContenttypesContentTypesRequestBuilder) {
+    return NewItemSitesItemListsItemContenttypesContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemSitesItemListsItemCreatedByUserRequestBuilder when successful
-func (m *ItemSitesItemListsListItemRequestBuilder) CreatedByUser()(*ItemSitesItemListsItemCreatedByUserRequestBuilder) {
-    return NewItemSitesItemListsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemListsItemCreatedbyuserCreatedByUserRequestBuilder when successful
+func (m *ItemSitesItemListsListItemRequestBuilder) CreatedByUser()(*ItemSitesItemListsItemCreatedbyuserCreatedByUserRequestBuilder) {
+    return NewItemSitesItemListsItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property lists for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -116,9 +116,9 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Items()(*ItemSitesItemListsIt
     return NewItemSitesItemListsItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemSitesItemListsItemLastModifiedByUserRequestBuilder when successful
-func (m *ItemSitesItemListsListItemRequestBuilder) LastModifiedByUser()(*ItemSitesItemListsItemLastModifiedByUserRequestBuilder) {
-    return NewItemSitesItemListsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemListsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
+func (m *ItemSitesItemListsListItemRequestBuilder) LastModifiedByUser()(*ItemSitesItemListsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
+    return NewItemSitesItemListsItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 // returns a *ItemSitesItemListsItemOperationsRequestBuilder when successful
