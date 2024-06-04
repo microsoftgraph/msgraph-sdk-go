@@ -14,6 +14,8 @@ type ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilde
 type ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilde
 // NewItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilderInternal instantiates a new ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilder and sets the default values.
 func NewItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilder) {
     m := &ItemMailfoldersItemChildfoldersItemMessagesItemExtensionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/extensions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/extensions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

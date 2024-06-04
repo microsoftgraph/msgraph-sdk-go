@@ -13,6 +13,8 @@ type ItemContactsItemPhotoRequestBuilder struct {
 }
 // ItemContactsItemPhotoRequestBuilderGetQueryParameters optional contact picture. You can get or set a photo for a contact.
 type ItemContactsItemPhotoRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -35,7 +37,7 @@ type ItemContactsItemPhotoRequestBuilderPatchRequestConfiguration struct {
 // NewItemContactsItemPhotoRequestBuilderInternal instantiates a new ItemContactsItemPhotoRequestBuilder and sets the default values.
 func NewItemContactsItemPhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactsItemPhotoRequestBuilder) {
     m := &ItemContactsItemPhotoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo{?%24expand,%24select}", pathParameters),
     }
     return m
 }

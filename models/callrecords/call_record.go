@@ -93,6 +93,16 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["organizer_v2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOrganizerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizerV2(val.(Organizerable))
+        }
+        return nil
+    }
     res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -106,6 +116,22 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
                 }
             }
             m.SetParticipants(res)
+        }
+        return nil
+    }
+    res["participants_v2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateParticipantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Participantable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Participantable)
+                }
+            }
+            m.SetParticipantsV2(res)
         }
         return nil
     }
@@ -193,7 +219,7 @@ func (m *CallRecord) GetModalities()([]Modality) {
     }
     return nil
 }
-// GetOrganizer gets the organizer property value. The organizing party's identity.
+// GetOrganizer gets the organizer property value. The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
 // returns a IdentitySetable when successful
 func (m *CallRecord) GetOrganizer()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("organizer")
@@ -205,7 +231,19 @@ func (m *CallRecord) GetOrganizer()(iadcd81124412c61e647227ecfc4449d8bba17de0380
     }
     return nil
 }
-// GetParticipants gets the participants property value. List of distinct identities involved in the call.
+// GetOrganizerV2 gets the organizer_v2 property value. Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+// returns a Organizerable when successful
+func (m *CallRecord) GetOrganizerV2()(Organizerable) {
+    val, err := m.GetBackingStore().Get("organizer_v2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Organizerable)
+    }
+    return nil
+}
+// GetParticipants gets the participants property value. List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
 // returns a []IdentitySetable when successful
 func (m *CallRecord) GetParticipants()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("participants")
@@ -214,6 +252,18 @@ func (m *CallRecord) GetParticipants()([]iadcd81124412c61e647227ecfc4449d8bba17d
     }
     if val != nil {
         return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
+    }
+    return nil
+}
+// GetParticipantsV2 gets the participants_v2 property value. List of distinct participants in the call.
+// returns a []Participantable when successful
+func (m *CallRecord) GetParticipantsV2()([]Participantable) {
+    val, err := m.GetBackingStore().Get("participants_v2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Participantable)
     }
     return nil
 }
@@ -301,6 +351,12 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("organizer_v2", m.GetOrganizerV2())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetParticipants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
@@ -309,6 +365,18 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             }
         }
         err = writer.WriteCollectionOfObjectValues("participants", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetParticipantsV2() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipantsV2()))
+        for i, v := range m.GetParticipantsV2() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("participants_v2", cast)
         if err != nil {
             return err
         }
@@ -374,16 +442,30 @@ func (m *CallRecord) SetModalities(value []Modality)() {
         panic(err)
     }
 }
-// SetOrganizer sets the organizer property value. The organizing party's identity.
+// SetOrganizer sets the organizer property value. The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
 func (m *CallRecord) SetOrganizer(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
     err := m.GetBackingStore().Set("organizer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. List of distinct identities involved in the call.
+// SetOrganizerV2 sets the organizer_v2 property value. Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+func (m *CallRecord) SetOrganizerV2(value Organizerable)() {
+    err := m.GetBackingStore().Set("organizer_v2", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetParticipants sets the participants property value. List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
 func (m *CallRecord) SetParticipants(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
     err := m.GetBackingStore().Set("participants", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetParticipantsV2 sets the participants_v2 property value. List of distinct participants in the call.
+func (m *CallRecord) SetParticipantsV2(value []Participantable)() {
+    err := m.GetBackingStore().Set("participants_v2", value)
     if err != nil {
         panic(err)
     }
@@ -424,7 +506,9 @@ type CallRecordable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetModalities()([]Modality)
     GetOrganizer()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
+    GetOrganizerV2()(Organizerable)
     GetParticipants()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
+    GetParticipantsV2()([]Participantable)
     GetSessions()([]Sessionable)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTypeEscaped()(*CallType)
@@ -434,7 +518,9 @@ type CallRecordable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetModalities(value []Modality)()
     SetOrganizer(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)()
+    SetOrganizerV2(value Organizerable)()
     SetParticipants(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)()
+    SetParticipantsV2(value []Participantable)()
     SetSessions(value []Sessionable)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTypeEscaped(value *CallType)()

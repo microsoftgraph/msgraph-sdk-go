@@ -34,12 +34,12 @@ func (m *WorkbookChartPoint) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValue(val.(Jsonable))
+            m.SetValue(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -58,14 +58,14 @@ func (m *WorkbookChartPoint) GetFormat()(WorkbookChartPointFormatable) {
     return nil
 }
 // GetValue gets the value property value. Returns the value of a chart point. Read-only.
-// returns a Jsonable when successful
-func (m *WorkbookChartPoint) GetValue()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookChartPoint) GetValue()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -97,7 +97,7 @@ func (m *WorkbookChartPoint) SetFormat(value WorkbookChartPointFormatable)() {
     }
 }
 // SetValue sets the value property value. Returns the value of a chart point. Read-only.
-func (m *WorkbookChartPoint) SetValue(value Jsonable)() {
+func (m *WorkbookChartPoint) SetValue(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
@@ -107,7 +107,7 @@ type WorkbookChartPointable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFormat()(WorkbookChartPointFormatable)
-    GetValue()(Jsonable)
+    GetValue()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     SetFormat(value WorkbookChartPointFormatable)()
-    SetValue(value Jsonable)()
+    SetValue(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

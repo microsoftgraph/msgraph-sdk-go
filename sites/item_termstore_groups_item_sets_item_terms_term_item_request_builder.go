@@ -18,7 +18,7 @@ type ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilderGetQueryParameters all the terms under the set.
+// ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilderGetQueryParameters read the properties and relationships of a term object.
 type ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,9 +75,12 @@ func (m *ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get all the terms under the set.
+// Get read the properties and relationships of a term object.
 // returns a Termable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
 func (m *ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +139,7 @@ func (m *ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation all the terms under the set.
+// ToGetRequestInformation read the properties and relationships of a term object.
 // returns a *RequestInformation when successful
 func (m *ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermstoreGroupsItemSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

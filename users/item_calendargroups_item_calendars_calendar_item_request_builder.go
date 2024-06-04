@@ -20,6 +20,8 @@ type ItemCalendargroupsItemCalendarsCalendarItemRequestBuilderDeleteRequestConfi
 }
 // ItemCalendargroupsItemCalendarsCalendarItemRequestBuilderGetQueryParameters the calendars in the calendar group. Navigation property. Read-only. Nullable.
 type ItemCalendargroupsItemCalendarsCalendarItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -57,7 +59,7 @@ func (m *ItemCalendargroupsItemCalendarsCalendarItemRequestBuilder) CalendarView
 // NewItemCalendargroupsItemCalendarsCalendarItemRequestBuilderInternal instantiates a new ItemCalendargroupsItemCalendarsCalendarItemRequestBuilder and sets the default values.
 func NewItemCalendargroupsItemCalendarsCalendarItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendargroupsItemCalendarsCalendarItemRequestBuilder) {
     m := &ItemCalendargroupsItemCalendarsCalendarItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -20,6 +20,8 @@ type ItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilderD
 }
 // ItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilderGetQueryParameters the time off requests in the schedule.
 type ItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilderP
 // NewItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilderInternal instantiates a new ItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilder and sets the default values.
 func NewItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilder) {
     m := &ItemJoinedteamsItemScheduleTimeoffrequestsTimeOffRequestItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/timeOffRequests/{timeOffRequest%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/timeOffRequests/{timeOffRequest%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

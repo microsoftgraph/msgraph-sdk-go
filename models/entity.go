@@ -1480,6 +1480,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindows81GeneralConfiguration(), nil
                     case "#microsoft.graph.windowsAppX":
                         return NewWindowsAppX(), nil
+                    case "#microsoft.graph.windowsAutopilotDeploymentProfile":
+                        return NewWindowsAutopilotDeploymentProfile(), nil
+                    case "#microsoft.graph.windowsAutopilotDeploymentProfileAssignment":
+                        return NewWindowsAutopilotDeploymentProfileAssignment(), nil
                     case "#microsoft.graph.windowsAutopilotDeviceIdentity":
                         return NewWindowsAutopilotDeviceIdentity(), nil
                     case "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration":

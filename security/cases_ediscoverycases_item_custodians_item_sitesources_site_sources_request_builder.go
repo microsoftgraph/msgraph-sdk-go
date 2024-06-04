@@ -11,7 +11,7 @@ import (
 type CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the custodian.
+// CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderGetQueryParameters get a list of the siteSource objects associated with an ediscoveryCustodian.
 type CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewCasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuild
 func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder) Count()(*CasesEdiscoverycasesItemCustodiansItemSitesourcesCountRequestBuilder) {
     return NewCasesEdiscoverycasesItemCustodiansItemSitesourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get data source entity for SharePoint sites associated with the custodian.
+// Get get a list of the siteSource objects associated with an ediscoveryCustodian.
 // returns a SiteSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0
 func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SiteSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SiteSourceCollectionResponseable), nil
 }
-// Post create new navigation property to siteSources for security
+// Post create a new siteSource object associated with an eDiscovery custodian.
 // returns a SiteSourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-sitesources?view=graph-rest-1.0
 func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SiteSourceable, requestConfiguration *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SiteSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SiteSourceable), nil
 }
-// ToGetRequestInformation data source entity for SharePoint sites associated with the custodian.
+// ToGetRequestInformation get a list of the siteSource objects associated with an ediscoveryCustodian.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to siteSources for security
+// ToPostRequestInformation create a new siteSource object associated with an eDiscovery custodian.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SiteSourceable, requestConfiguration *CasesEdiscoverycasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -590,7 +590,7 @@ func (m *Contact) GetFileAs()(*string) {
     }
     return nil
 }
-// GetGeneration gets the generation property value. The contact's generation.
+// GetGeneration gets the generation property value. The contact's suffix.
 // returns a *string when successful
 func (m *Contact) GetGeneration()(*string) {
     val, err := m.GetBackingStore().Get("generation")
@@ -1228,7 +1228,7 @@ func (m *Contact) SetFileAs(value *string)() {
         panic(err)
     }
 }
-// SetGeneration sets the generation property value. The contact's generation.
+// SetGeneration sets the generation property value. The contact's suffix.
 func (m *Contact) SetGeneration(value *string)() {
     err := m.GetBackingStore().Set("generation", value)
     if err != nil {

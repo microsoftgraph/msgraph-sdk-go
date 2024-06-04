@@ -13,6 +13,8 @@ type DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilder struct {
 }
 // DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilderGetQueryParameters get deviceRegistrationPolicy from policies
 type DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -28,7 +30,7 @@ type DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilderGetRequestCon
 // NewDeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilderInternal instantiates a new DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilder and sets the default values.
 func NewDeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilder) {
     m := &DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/deviceRegistrationPolicy{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/deviceRegistrationPolicy{?%24expand,%24select}", pathParameters),
     }
     return m
 }

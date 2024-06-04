@@ -11,7 +11,7 @@ import (
 type ItemThreadsItemPostsItemAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemThreadsItemPostsItemAttachmentsRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
+// ItemThreadsItemPostsItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a post.
 type ItemThreadsItemPostsItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -21,6 +21,8 @@ type ItemThreadsItemPostsItemAttachmentsRequestBuilderGetQueryParameters struct 
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
@@ -59,7 +61,7 @@ func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) ByAttachmentId(attac
 // NewItemThreadsItemPostsItemAttachmentsRequestBuilderInternal instantiates a new ItemThreadsItemPostsItemAttachmentsRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsItemAttachmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemAttachmentsRequestBuilder) {
     m := &ItemThreadsItemPostsItemAttachmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/attachments{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/attachments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -79,9 +81,12 @@ func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Count()(*ItemThreads
 func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
     return NewItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read-only. Nullable. Supports $expand.
+// Get retrieve a list of attachment objects attached to a post.
 // returns a AttachmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
 func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +124,7 @@ func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Post(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable), nil
 }
-// ToGetRequestInformation read-only. Nullable. Supports $expand.
+// ToGetRequestInformation retrieve a list of attachment objects attached to a post.
 // returns a *RequestInformation when successful
 func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

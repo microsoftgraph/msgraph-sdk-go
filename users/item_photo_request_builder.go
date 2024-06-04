@@ -20,6 +20,8 @@ type ItemPhotoRequestBuilderDeleteRequestConfiguration struct {
 }
 // ItemPhotoRequestBuilderGetQueryParameters the user's profile photo. Read-only.
 type ItemPhotoRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemPhotoRequestBuilderPatchRequestConfiguration struct {
 // NewItemPhotoRequestBuilderInternal instantiates a new ItemPhotoRequestBuilder and sets the default values.
 func NewItemPhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotoRequestBuilder) {
     m := &ItemPhotoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/photo{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/photo{?%24expand,%24select}", pathParameters),
     }
     return m
 }

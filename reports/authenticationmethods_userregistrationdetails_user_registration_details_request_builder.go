@@ -11,7 +11,7 @@ import (
 type AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequestBuilderGetQueryParameters get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+// AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequestBuilderGetQueryParameters get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object. This method doesn't work for disabled users. 
 type AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewAuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsReque
 func (m *AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequestBuilder) Count()(*AuthenticationmethodsUserregistrationdetailsCountRequestBuilder) {
     return NewAuthenticationmethodsUserregistrationdetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+// Get get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object. This method doesn't work for disabled users. 
 // returns a UserRegistrationDetailsCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -119,7 +119,7 @@ func (m *AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserRegistrationDetailsable), nil
 }
-// ToGetRequestInformation get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+// ToGetRequestInformation get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object. This method doesn't work for disabled users. 
 // returns a *RequestInformation when successful
 func (m *AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationmethodsUserregistrationdetailsUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

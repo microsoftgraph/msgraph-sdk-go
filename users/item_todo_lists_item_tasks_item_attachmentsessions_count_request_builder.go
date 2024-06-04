@@ -14,6 +14,8 @@ type ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilder struct {
 type ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilderGetRequestCo
 // NewItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilderInternal instantiates a new ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilder) {
     m := &ItemTodoListsItemTasksItemAttachmentsessionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachmentSessions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachmentSessions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

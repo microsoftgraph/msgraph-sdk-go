@@ -18,7 +18,7 @@ type CallrecordsCallRecordItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CallrecordsCallRecordItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
+// CallrecordsCallRecordItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:* Subscribe to change notifications to the /communications/callRecords endpoint.* Use the callChainId property of a call. The call record is available only after the associated call is completed.
 type CallrecordsCallRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *CallrecordsCallRecordItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
+// Get retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:* Subscribe to change notifications to the /communications/callRecords endpoint.* Use the callChainId property of a call. The call record is available only after the associated call is completed.
 // returns a CallRecordable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -92,6 +92,16 @@ func (m *CallrecordsCallRecordItemRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19.CallRecordable), nil
+}
+// Organizer_v2 provides operations to manage the organizer_v2 property of the microsoft.graph.callRecords.callRecord entity.
+// returns a *CallrecordsItemOrganizer_v2RequestBuilder when successful
+func (m *CallrecordsCallRecordItemRequestBuilder) Organizer_v2()(*CallrecordsItemOrganizer_v2RequestBuilder) {
+    return NewCallrecordsItemOrganizer_v2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Participants_v2 provides operations to manage the participants_v2 property of the microsoft.graph.callRecords.callRecord entity.
+// returns a *CallrecordsItemParticipants_v2RequestBuilder when successful
+func (m *CallrecordsCallRecordItemRequestBuilder) Participants_v2()(*CallrecordsItemParticipants_v2RequestBuilder) {
+    return NewCallrecordsItemParticipants_v2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property callRecords in communications
 // returns a CallRecordable when successful
@@ -129,7 +139,7 @@ func (m *CallrecordsCallRecordItemRequestBuilder) ToDeleteRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
+// ToGetRequestInformation retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:* Subscribe to change notifications to the /communications/callRecords endpoint.* Use the callChainId property of a call. The call record is available only after the associated call is completed.
 // returns a *RequestInformation when successful
 func (m *CallrecordsCallRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallrecordsCallRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

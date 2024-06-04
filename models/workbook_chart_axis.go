@@ -44,32 +44,32 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["majorUnit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMajorUnit(val.(Jsonable))
+            m.SetMajorUnit(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     res["maximum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMaximum(val.(Jsonable))
+            m.SetMaximum(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     res["minimum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMinimum(val.(Jsonable))
+            m.SetMinimum(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -84,12 +84,12 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["minorUnit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMinorUnit(val.(Jsonable))
+            m.SetMinorUnit(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -130,38 +130,38 @@ func (m *WorkbookChartAxis) GetMajorGridlines()(WorkbookChartGridlinesable) {
     return nil
 }
 // GetMajorUnit gets the majorUnit property value. Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-// returns a Jsonable when successful
-func (m *WorkbookChartAxis) GetMajorUnit()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookChartAxis) GetMajorUnit()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("majorUnit")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
 // GetMaximum gets the maximum property value. Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-// returns a Jsonable when successful
-func (m *WorkbookChartAxis) GetMaximum()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookChartAxis) GetMaximum()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("maximum")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
 // GetMinimum gets the minimum property value. Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-// returns a Jsonable when successful
-func (m *WorkbookChartAxis) GetMinimum()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookChartAxis) GetMinimum()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("minimum")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -178,14 +178,14 @@ func (m *WorkbookChartAxis) GetMinorGridlines()(WorkbookChartGridlinesable) {
     return nil
 }
 // GetMinorUnit gets the minorUnit property value. Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-// returns a Jsonable when successful
-func (m *WorkbookChartAxis) GetMinorUnit()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookChartAxis) GetMinorUnit()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("minorUnit")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -272,21 +272,21 @@ func (m *WorkbookChartAxis) SetMajorGridlines(value WorkbookChartGridlinesable)(
     }
 }
 // SetMajorUnit sets the majorUnit property value. Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-func (m *WorkbookChartAxis) SetMajorUnit(value Jsonable)() {
+func (m *WorkbookChartAxis) SetMajorUnit(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("majorUnit", value)
     if err != nil {
         panic(err)
     }
 }
 // SetMaximum sets the maximum property value. Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-func (m *WorkbookChartAxis) SetMaximum(value Jsonable)() {
+func (m *WorkbookChartAxis) SetMaximum(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("maximum", value)
     if err != nil {
         panic(err)
     }
 }
 // SetMinimum sets the minimum property value. Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-func (m *WorkbookChartAxis) SetMinimum(value Jsonable)() {
+func (m *WorkbookChartAxis) SetMinimum(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("minimum", value)
     if err != nil {
         panic(err)
@@ -300,7 +300,7 @@ func (m *WorkbookChartAxis) SetMinorGridlines(value WorkbookChartGridlinesable)(
     }
 }
 // SetMinorUnit sets the minorUnit property value. Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-func (m *WorkbookChartAxis) SetMinorUnit(value Jsonable)() {
+func (m *WorkbookChartAxis) SetMinorUnit(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("minorUnit", value)
     if err != nil {
         panic(err)
@@ -318,18 +318,18 @@ type WorkbookChartAxisable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFormat()(WorkbookChartAxisFormatable)
     GetMajorGridlines()(WorkbookChartGridlinesable)
-    GetMajorUnit()(Jsonable)
-    GetMaximum()(Jsonable)
-    GetMinimum()(Jsonable)
+    GetMajorUnit()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    GetMaximum()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    GetMinimum()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetMinorGridlines()(WorkbookChartGridlinesable)
-    GetMinorUnit()(Jsonable)
+    GetMinorUnit()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetTitle()(WorkbookChartAxisTitleable)
     SetFormat(value WorkbookChartAxisFormatable)()
     SetMajorGridlines(value WorkbookChartGridlinesable)()
-    SetMajorUnit(value Jsonable)()
-    SetMaximum(value Jsonable)()
-    SetMinimum(value Jsonable)()
+    SetMajorUnit(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
+    SetMaximum(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
+    SetMinimum(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetMinorGridlines(value WorkbookChartGridlinesable)()
-    SetMinorUnit(value Jsonable)()
+    SetMinorUnit(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetTitle(value WorkbookChartAxisTitleable)()
 }

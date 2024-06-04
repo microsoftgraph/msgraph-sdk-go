@@ -18,7 +18,7 @@ type TeamsappsItemAppdefinitionsItemBotRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsappsItemAppdefinitionsItemBotRequestBuilderGetQueryParameters the details of the bot specified in the Teams app manifest.
+// TeamsappsItemAppdefinitionsItemBotRequestBuilderGetQueryParameters get the bot associated with a specific definition of the  TeamsApp.
 type TeamsappsItemAppdefinitionsItemBotRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *TeamsappsItemAppdefinitionsItemBotRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get the details of the bot specified in the Teams app manifest.
+// Get get the bot associated with a specific definition of the  TeamsApp.
 // returns a TeamworkBotable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkbot-get?view=graph-rest-1.0
 func (m *TeamsappsItemAppdefinitionsItemBotRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsappsItemAppdefinitionsItemBotRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkBotable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *TeamsappsItemAppdefinitionsItemBotRequestBuilder) ToDeleteRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the details of the bot specified in the Teams app manifest.
+// ToGetRequestInformation get the bot associated with a specific definition of the  TeamsApp.
 // returns a *RequestInformation when successful
 func (m *TeamsappsItemAppdefinitionsItemBotRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsappsItemAppdefinitionsItemBotRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

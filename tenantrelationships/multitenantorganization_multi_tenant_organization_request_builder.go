@@ -27,8 +27,8 @@ type MultitenantorganizationMultiTenantOrganizationRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *MultitenantorganizationMultiTenantOrganizationRequestBuilderGetQueryParameters
 }
-// MultitenantorganizationMultiTenantOrganizationRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type MultitenantorganizationMultiTenantOrganizationRequestBuilderPutRequestConfiguration struct {
+// MultitenantorganizationMultiTenantOrganizationRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type MultitenantorganizationMultiTenantOrganizationRequestBuilderPatchRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
@@ -75,14 +75,14 @@ func (m *MultitenantorganizationMultiTenantOrganizationRequestBuilder) Get(ctx c
 func (m *MultitenantorganizationMultiTenantOrganizationRequestBuilder) JoinRequest()(*MultitenantorganizationJoinrequestJoinRequestRequestBuilder) {
     return NewMultitenantorganizationJoinrequestJoinRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Put create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
+// Patch create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
 // returns a MultiTenantOrganizationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
-func (m *MultitenantorganizationMultiTenantOrganizationRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, requestConfiguration *MultitenantorganizationMultiTenantOrganizationRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+func (m *MultitenantorganizationMultiTenantOrganizationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, requestConfiguration *MultitenantorganizationMultiTenantOrganizationRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, error) {
+    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -117,10 +117,10 @@ func (m *MultitenantorganizationMultiTenantOrganizationRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
+// ToPatchRequestInformation create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
 // returns a *RequestInformation when successful
-func (m *MultitenantorganizationMultiTenantOrganizationRequestBuilder) ToPutRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, requestConfiguration *MultitenantorganizationMultiTenantOrganizationRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+func (m *MultitenantorganizationMultiTenantOrganizationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantOrganizationable, requestConfiguration *MultitenantorganizationMultiTenantOrganizationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

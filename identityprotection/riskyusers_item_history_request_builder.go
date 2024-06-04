@@ -11,7 +11,7 @@ import (
 type RiskyusersItemHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskyusersItemHistoryRequestBuilderGetQueryParameters read the properties and relationships of a riskyUserHistoryItem object.
+// RiskyusersItemHistoryRequestBuilderGetQueryParameters get the riskyUserHistoryItems from the history navigation property.
 type RiskyusersItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,12 @@ func NewRiskyusersItemHistoryRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *RiskyusersItemHistoryRequestBuilder) Count()(*RiskyusersItemHistoryCountRequestBuilder) {
     return NewRiskyusersItemHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a riskyUserHistoryItem object.
+// Get get the riskyUserHistoryItems from the history navigation property.
 // returns a RiskyUserHistoryItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
 func (m *RiskyusersItemHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyusersItemHistoryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *RiskyusersItemHistoryRequestBuilder) Post(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserHistoryItemable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a riskyUserHistoryItem object.
+// ToGetRequestInformation get the riskyUserHistoryItems from the history navigation property.
 // returns a *RequestInformation when successful
 func (m *RiskyusersItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyusersItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

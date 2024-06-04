@@ -47,7 +47,7 @@ func (m *UserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
+// GetIpAddress gets the ipAddress property value. Indicates the client IP address associated with the user performing the activity (audit log only).
 // returns a *string when successful
 func (m *UserIdentity) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
@@ -91,7 +91,7 @@ func (m *UserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetIpAddress sets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
+// SetIpAddress sets the ipAddress property value. Indicates the client IP address associated with the user performing the activity (audit log only).
 func (m *UserIdentity) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {

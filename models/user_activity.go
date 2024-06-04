@@ -69,14 +69,14 @@ func (m *UserActivity) GetAppDisplayName()(*string) {
     return nil
 }
 // GetContentInfo gets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-// returns a Jsonable when successful
-func (m *UserActivity) GetContentInfo()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *UserActivity) GetContentInfo()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("contentInfo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -173,12 +173,12 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["contentInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentInfo(val.(Jsonable))
+            m.SetContentInfo(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -468,7 +468,7 @@ func (m *UserActivity) SetAppDisplayName(value *string)() {
     }
 }
 // SetContentInfo sets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-func (m *UserActivity) SetContentInfo(value Jsonable)() {
+func (m *UserActivity) SetContentInfo(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("contentInfo", value)
     if err != nil {
         panic(err)
@@ -544,7 +544,7 @@ type UserActivityable interface {
     GetActivitySourceHost()(*string)
     GetAppActivityId()(*string)
     GetAppDisplayName()(*string)
-    GetContentInfo()(Jsonable)
+    GetContentInfo()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetContentUrl()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -558,7 +558,7 @@ type UserActivityable interface {
     SetActivitySourceHost(value *string)()
     SetAppActivityId(value *string)()
     SetAppDisplayName(value *string)()
-    SetContentInfo(value Jsonable)()
+    SetContentInfo(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetContentUrl(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

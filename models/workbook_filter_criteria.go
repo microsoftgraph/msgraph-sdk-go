@@ -173,12 +173,12 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValues(val.(Jsonable))
+            m.SetValues(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -233,14 +233,14 @@ func (m *WorkbookFilterCriteria) GetOperator()(*string) {
     return nil
 }
 // GetValues gets the values property value. The values that appear in the cell.
-// returns a Jsonable when successful
-func (m *WorkbookFilterCriteria) GetValues()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookFilterCriteria) GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -376,7 +376,7 @@ func (m *WorkbookFilterCriteria) SetOperator(value *string)() {
     }
 }
 // SetValues sets the values property value. The values that appear in the cell.
-func (m *WorkbookFilterCriteria) SetValues(value Jsonable)() {
+func (m *WorkbookFilterCriteria) SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {
         panic(err)
@@ -395,7 +395,7 @@ type WorkbookFilterCriteriaable interface {
     GetIcon()(WorkbookIconable)
     GetOdataType()(*string)
     GetOperator()(*string)
-    GetValues()(Jsonable)
+    GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetColor(value *string)()
     SetCriterion1(value *string)()
@@ -405,5 +405,5 @@ type WorkbookFilterCriteriaable interface {
     SetIcon(value WorkbookIconable)()
     SetOdataType(value *string)()
     SetOperator(value *string)()
-    SetValues(value Jsonable)()
+    SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

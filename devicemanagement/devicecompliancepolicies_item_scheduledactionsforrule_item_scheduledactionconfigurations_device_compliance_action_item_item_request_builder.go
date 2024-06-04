@@ -18,7 +18,7 @@ type DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderGetQueryParameters the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+// DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderGetQueryParameters read properties and relationships of the deviceComplianceActionItem object.
 type DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewDevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionco
     urlParams["request-raw-url"] = rawUrl
     return NewDevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property scheduledActionConfigurations for deviceManagement
+// Delete deletes a deviceComplianceActionItem.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-delete?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionc
     }
     return nil
 }
-// Get the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+// Get read properties and relationships of the deviceComplianceActionItem object.
 // returns a DeviceComplianceActionItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-get?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceActionItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceActionItemable), nil
 }
-// Patch update the navigation property scheduledActionConfigurations in deviceManagement
+// Patch update the properties of a deviceComplianceActionItem object.
 // returns a DeviceComplianceActionItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-update?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceActionItemable, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceActionItemable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceActionItemable), nil
 }
-// ToDeleteRequestInformation delete navigation property scheduledActionConfigurations for deviceManagement
+// ToDeleteRequestInformation deletes a deviceComplianceActionItem.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionc
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+// ToGetRequestInformation read properties and relationships of the deviceComplianceActionItem object.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionc
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property scheduledActionConfigurations in deviceManagement
+// ToPatchRequestInformation update the properties of a deviceComplianceActionItem object.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceActionItemable, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleItemScheduledactionconfigurationsDeviceComplianceActionItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

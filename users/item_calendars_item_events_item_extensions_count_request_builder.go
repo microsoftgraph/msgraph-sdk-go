@@ -14,6 +14,8 @@ type ItemCalendarsItemEventsItemExtensionsCountRequestBuilder struct {
 type ItemCalendarsItemEventsItemExtensionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemCalendarsItemEventsItemExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemEventsItemExtensionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemCalendarsItemEventsItemExtensionsCountRequestBuilderGetRequestConfigura
 // NewItemCalendarsItemEventsItemExtensionsCountRequestBuilderInternal instantiates a new ItemCalendarsItemEventsItemExtensionsCountRequestBuilder and sets the default values.
 func NewItemCalendarsItemEventsItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemEventsItemExtensionsCountRequestBuilder) {
     m := &ItemCalendarsItemEventsItemExtensionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/extensions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/extensions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
