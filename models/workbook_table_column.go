@@ -54,12 +54,12 @@ func (m *WorkbookTableColumn) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValues(val.(Jsonable))
+            m.SetValues(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -102,14 +102,14 @@ func (m *WorkbookTableColumn) GetName()(*string) {
     return nil
 }
 // GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-// returns a Jsonable when successful
-func (m *WorkbookTableColumn) GetValues()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookTableColumn) GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -167,7 +167,7 @@ func (m *WorkbookTableColumn) SetName(value *string)() {
     }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-func (m *WorkbookTableColumn) SetValues(value Jsonable)() {
+func (m *WorkbookTableColumn) SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {
         panic(err)
@@ -179,9 +179,9 @@ type WorkbookTableColumnable interface {
     GetFilter()(WorkbookFilterable)
     GetIndex()(*int32)
     GetName()(*string)
-    GetValues()(Jsonable)
+    GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     SetFilter(value WorkbookFilterable)()
     SetIndex(value *int32)()
     SetName(value *string)()
-    SetValues(value Jsonable)()
+    SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

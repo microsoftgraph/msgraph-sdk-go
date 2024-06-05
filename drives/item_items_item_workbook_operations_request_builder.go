@@ -13,14 +13,22 @@ type ItemItemsItemWorkbookOperationsRequestBuilder struct {
 }
 // ItemItemsItemWorkbookOperationsRequestBuilderGetQueryParameters the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 type ItemItemsItemWorkbookOperationsRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemItemsItemWorkbookOperationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookOperationsRequestBuilderGetRequestConfiguration struct {
@@ -53,7 +61,7 @@ func (m *ItemItemsItemWorkbookOperationsRequestBuilder) ByWorkbookOperationId(wo
 // NewItemItemsItemWorkbookOperationsRequestBuilderInternal instantiates a new ItemItemsItemWorkbookOperationsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookOperationsRequestBuilder) {
     m := &ItemItemsItemWorkbookOperationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/operations{?%24expand,%24orderby,%24search,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/operations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

@@ -2,7 +2,6 @@ package storage
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -42,14 +41,14 @@ func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItem
     return m.backingStore
 }
 // GetEndCell gets the endCell property value. The endCell property
-// returns a Jsonable when successful
-func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) GetEndCell()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) GetEndCell()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("endCell")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -58,36 +57,36 @@ func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItem
 func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["endCell"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEndCell(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable))
+            m.SetEndCell(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     res["startCell"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStartCell(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable))
+            m.SetStartCell(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     return res
 }
 // GetStartCell gets the startCell property value. The startCell property
-// returns a Jsonable when successful
-func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) GetStartCell()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) GetStartCell()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("startCell")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -125,14 +124,14 @@ func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItem
     m.backingStore = value
 }
 // SetEndCell sets the endCell property value. The endCell property
-func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) SetEndCell(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
+func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) SetEndCell(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("endCell", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStartCell sets the startCell property value. The startCell property
-func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) SetStartCell(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
+func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwithnameSetpositionSetPositionPostRequestBody) SetStartCell(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("startCell", value)
     if err != nil {
         panic(err)
@@ -143,9 +142,9 @@ type FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemChartsItemwith
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetEndCell()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
-    GetStartCell()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetEndCell()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    GetStartCell()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetEndCell(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
-    SetStartCell(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetEndCell(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
+    SetStartCell(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

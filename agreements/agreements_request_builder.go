@@ -15,8 +15,12 @@ type AgreementsRequestBuilder struct {
 type AgreementsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
@@ -57,7 +61,7 @@ func (m *AgreementsRequestBuilder) ByAgreementId(agreementId string)(*AgreementI
 // NewAgreementsRequestBuilderInternal instantiates a new AgreementsRequestBuilder and sets the default values.
 func NewAgreementsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgreementsRequestBuilder) {
     m := &AgreementsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agreements{?%24count,%24filter,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agreements{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

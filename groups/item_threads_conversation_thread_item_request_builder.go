@@ -20,6 +20,8 @@ type ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration s
 }
 // ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
 type ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemThreadsConversationThreadItemRequestBuilderPatchRequestConfiguration st
 // NewItemThreadsConversationThreadItemRequestBuilderInternal instantiates a new ItemThreadsConversationThreadItemRequestBuilder and sets the default values.
 func NewItemThreadsConversationThreadItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsConversationThreadItemRequestBuilder) {
     m := &ItemThreadsConversationThreadItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -23,14 +23,14 @@ func CreateManagedAppStatusRawFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewManagedAppStatusRaw(), nil
 }
 // GetContent gets the content property value. Status report content.
-// returns a Jsonable when successful
-func (m *ManagedAppStatusRaw) GetContent()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *ManagedAppStatusRaw) GetContent()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -39,12 +39,12 @@ func (m *ManagedAppStatusRaw) GetContent()(Jsonable) {
 func (m *ManagedAppStatusRaw) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppStatus.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContent(val.(Jsonable))
+            m.SetContent(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -65,7 +65,7 @@ func (m *ManagedAppStatusRaw) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetContent sets the content property value. Status report content.
-func (m *ManagedAppStatusRaw) SetContent(value Jsonable)() {
+func (m *ManagedAppStatusRaw) SetContent(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
@@ -74,6 +74,6 @@ func (m *ManagedAppStatusRaw) SetContent(value Jsonable)() {
 type ManagedAppStatusRawable interface {
     ManagedAppStatusable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetContent()(Jsonable)
-    SetContent(value Jsonable)()
+    GetContent()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    SetContent(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

@@ -20,6 +20,8 @@ type ItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequ
 }
 // ItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequestBuilderGetQueryParameters a set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 type ItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequ
 // NewItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequestBuilderInternal instantiates a new ItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequestBuilder and sets the default values.
 func NewItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequestBuilder) {
     m := &ItemInferenceclassificationOverridesInferenceClassificationOverrideItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/inferenceClassification/overrides/{inferenceClassificationOverride%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/inferenceClassification/overrides/{inferenceClassificationOverride%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

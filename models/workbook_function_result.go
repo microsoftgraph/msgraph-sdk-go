@@ -46,26 +46,26 @@ func (m *WorkbookFunctionResult) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValue(val.(Jsonable))
+            m.SetValue(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     return res
 }
 // GetValue gets the value property value. The value property
-// returns a Jsonable when successful
-func (m *WorkbookFunctionResult) GetValue()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookFunctionResult) GetValue()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -97,7 +97,7 @@ func (m *WorkbookFunctionResult) SetError(value *string)() {
     }
 }
 // SetValue sets the value property value. The value property
-func (m *WorkbookFunctionResult) SetValue(value Jsonable)() {
+func (m *WorkbookFunctionResult) SetValue(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
@@ -107,7 +107,7 @@ type WorkbookFunctionResultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetError()(*string)
-    GetValue()(Jsonable)
+    GetValue()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     SetError(value *string)()
-    SetValue(value Jsonable)()
+    SetValue(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

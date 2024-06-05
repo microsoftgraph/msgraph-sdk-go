@@ -10,7 +10,7 @@ import (
 type CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters invoke function asHierarchy
+// CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters list eDiscovery review tags with the tag hierarchy shown.
 type CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,7 +51,7 @@ func NewCasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGr
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function asHierarchy
+// Get list eDiscovery review tags with the tag hierarchy shown.
 // Deprecated: This method is obsolete. Use GetAsAsHierarchyGetResponse instead.
 // returns a CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyAsHierarchyResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -72,7 +72,7 @@ func (m *CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftG
     }
     return res.(CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyAsHierarchyResponseable), nil
 }
-// GetAsAsHierarchyGetResponse invoke function asHierarchy
+// GetAsAsHierarchyGetResponse list eDiscovery review tags with the tag hierarchy shown.
 // returns a CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyAsHierarchyGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilder) GetAsAsHierarchyGetResponse(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilderGetRequestConfiguration)(CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyAsHierarchyGetResponseable, error) {
@@ -92,7 +92,7 @@ func (m *CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftG
     }
     return res.(CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyAsHierarchyGetResponseable), nil
 }
-// ToGetRequestInformation invoke function asHierarchy
+// ToGetRequestInformation list eDiscovery review tags with the tag hierarchy shown.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemTagsMicrosoftgraphsecurityashierarchyMicrosoftGraphSecurityAsHierarchyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

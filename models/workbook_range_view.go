@@ -20,14 +20,14 @@ func CreateWorkbookRangeViewFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewWorkbookRangeView(), nil
 }
 // GetCellAddresses gets the cellAddresses property value. Represents the cell addresses
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetCellAddresses()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetCellAddresses()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("cellAddresses")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -48,12 +48,12 @@ func (m *WorkbookRangeView) GetColumnCount()(*int32) {
 func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cellAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCellAddresses(val.(Jsonable))
+            m.SetCellAddresses(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -68,32 +68,32 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["formulas"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFormulas(val.(Jsonable))
+            m.SetFormulas(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     res["formulasLocal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFormulasLocal(val.(Jsonable))
+            m.SetFormulasLocal(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     res["formulasR1C1"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFormulasR1C1(val.(Jsonable))
+            m.SetFormulasR1C1(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -108,12 +108,12 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["numberFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNumberFormat(val.(Jsonable))
+            m.SetNumberFormat(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -144,70 +144,70 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetText(val.(Jsonable))
+            m.SetText(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValues(val.(Jsonable))
+            m.SetValues(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     res["valueTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValueTypes(val.(Jsonable))
+            m.SetValueTypes(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
     return res
 }
 // GetFormulas gets the formulas property value. Represents the formula in A1-style notation.
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetFormulas()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetFormulas()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("formulas")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
 // GetFormulasLocal gets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetFormulasLocal()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetFormulasLocal()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("formulasLocal")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
 // GetFormulasR1C1 gets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetFormulasR1C1()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetFormulasR1C1()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("formulasR1C1")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -224,14 +224,14 @@ func (m *WorkbookRangeView) GetIndex()(*int32) {
     return nil
 }
 // GetNumberFormat gets the numberFormat property value. Represents Excel's number format code for the given cell. Read-only.
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetNumberFormat()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetNumberFormat()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("numberFormat")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -260,38 +260,38 @@ func (m *WorkbookRangeView) GetRows()([]WorkbookRangeViewable) {
     return nil
 }
 // GetText gets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetText()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetText()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
 // GetValues gets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetValues()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
 // GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
-// returns a Jsonable when successful
-func (m *WorkbookRangeView) GetValueTypes()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WorkbookRangeView) GetValueTypes()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("valueTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -382,7 +382,7 @@ func (m *WorkbookRangeView) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetCellAddresses sets the cellAddresses property value. Represents the cell addresses
-func (m *WorkbookRangeView) SetCellAddresses(value Jsonable)() {
+func (m *WorkbookRangeView) SetCellAddresses(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("cellAddresses", value)
     if err != nil {
         panic(err)
@@ -396,21 +396,21 @@ func (m *WorkbookRangeView) SetColumnCount(value *int32)() {
     }
 }
 // SetFormulas sets the formulas property value. Represents the formula in A1-style notation.
-func (m *WorkbookRangeView) SetFormulas(value Jsonable)() {
+func (m *WorkbookRangeView) SetFormulas(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("formulas", value)
     if err != nil {
         panic(err)
     }
 }
 // SetFormulasLocal sets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
-func (m *WorkbookRangeView) SetFormulasLocal(value Jsonable)() {
+func (m *WorkbookRangeView) SetFormulasLocal(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("formulasLocal", value)
     if err != nil {
         panic(err)
     }
 }
 // SetFormulasR1C1 sets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
-func (m *WorkbookRangeView) SetFormulasR1C1(value Jsonable)() {
+func (m *WorkbookRangeView) SetFormulasR1C1(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("formulasR1C1", value)
     if err != nil {
         panic(err)
@@ -424,7 +424,7 @@ func (m *WorkbookRangeView) SetIndex(value *int32)() {
     }
 }
 // SetNumberFormat sets the numberFormat property value. Represents Excel's number format code for the given cell. Read-only.
-func (m *WorkbookRangeView) SetNumberFormat(value Jsonable)() {
+func (m *WorkbookRangeView) SetNumberFormat(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("numberFormat", value)
     if err != nil {
         panic(err)
@@ -445,21 +445,21 @@ func (m *WorkbookRangeView) SetRows(value []WorkbookRangeViewable)() {
     }
 }
 // SetText sets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
-func (m *WorkbookRangeView) SetText(value Jsonable)() {
+func (m *WorkbookRangeView) SetText(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {
         panic(err)
     }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
-func (m *WorkbookRangeView) SetValues(value Jsonable)() {
+func (m *WorkbookRangeView) SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {
         panic(err)
     }
 }
 // SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
-func (m *WorkbookRangeView) SetValueTypes(value Jsonable)() {
+func (m *WorkbookRangeView) SetValueTypes(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("valueTypes", value)
     if err != nil {
         panic(err)
@@ -468,28 +468,28 @@ func (m *WorkbookRangeView) SetValueTypes(value Jsonable)() {
 type WorkbookRangeViewable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCellAddresses()(Jsonable)
+    GetCellAddresses()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetColumnCount()(*int32)
-    GetFormulas()(Jsonable)
-    GetFormulasLocal()(Jsonable)
-    GetFormulasR1C1()(Jsonable)
+    GetFormulas()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    GetFormulasLocal()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    GetFormulasR1C1()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetIndex()(*int32)
-    GetNumberFormat()(Jsonable)
+    GetNumberFormat()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetRowCount()(*int32)
     GetRows()([]WorkbookRangeViewable)
-    GetText()(Jsonable)
-    GetValues()(Jsonable)
-    GetValueTypes()(Jsonable)
-    SetCellAddresses(value Jsonable)()
+    GetText()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    GetValueTypes()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
+    SetCellAddresses(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetColumnCount(value *int32)()
-    SetFormulas(value Jsonable)()
-    SetFormulasLocal(value Jsonable)()
-    SetFormulasR1C1(value Jsonable)()
+    SetFormulas(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
+    SetFormulasLocal(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
+    SetFormulasR1C1(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetIndex(value *int32)()
-    SetNumberFormat(value Jsonable)()
+    SetNumberFormat(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetRowCount(value *int32)()
     SetRows(value []WorkbookRangeViewable)()
-    SetText(value Jsonable)()
-    SetValues(value Jsonable)()
-    SetValueTypes(value Jsonable)()
+    SetText(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
+    SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
+    SetValueTypes(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

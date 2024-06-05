@@ -20,6 +20,8 @@ type ItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilde
 }
 // ItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilderGetQueryParameters the logical grouping of users in the schedule (usually by role).
 type ItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilde
 // NewItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilderInternal instantiates a new ItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilder and sets the default values.
 func NewItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilder) {
     m := &ItemJoinedteamsItemScheduleSchedulinggroupsSchedulingGroupItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/schedulingGroups/{schedulingGroup%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/schedulingGroups/{schedulingGroup%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

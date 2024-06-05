@@ -18,7 +18,7 @@ type DeviceconfigurationsDeviceConfigurationItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceconfigurationsDeviceConfigurationItemRequestBuilderGetQueryParameters read properties and relationships of the windows10GeneralConfiguration object.
+// DeviceconfigurationsDeviceConfigurationItemRequestBuilderGetQueryParameters read properties and relationships of the iosCertificateProfile object.
 type DeviceconfigurationsDeviceConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,11 +64,11 @@ func NewDeviceconfigurationsDeviceConfigurationItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceconfigurationsDeviceConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a iosCustomConfiguration.
+// Delete deletes a windows10GeneralConfiguration.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscustomconfiguration-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-delete?view=graph-rest-1.0
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceconfigurationsDeviceConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,12 +98,12 @@ func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) DeviceStatus
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) DeviceStatusOverview()(*DeviceconfigurationsItemDevicestatusoverviewDeviceStatusOverviewRequestBuilder) {
     return NewDeviceconfigurationsItemDevicestatusoverviewDeviceStatusOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read properties and relationships of the windows10GeneralConfiguration object.
+// Get read properties and relationships of the iosCertificateProfile object.
 // returns a DeviceConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscertificateprofile-get?view=graph-rest-1.0
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceconfigurationsDeviceConfigurationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,12 +126,12 @@ func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) Get(ctx cont
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) GetOmaSettingPlainTextValueWithSecretReferenceValueId(secretReferenceValueId *string)(*DeviceconfigurationsItemGetomasettingplaintextvaluewithsecretreferencevalueidGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) {
     return NewDeviceconfigurationsItemGetomasettingplaintextvaluewithsecretreferencevalueidGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, secretReferenceValueId)
 }
-// Patch update the properties of a windowsDefenderAdvancedThreatProtectionConfiguration object.
+// Patch update the properties of a windowsUpdateForBusinessConfiguration object.
 // returns a DeviceConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsdefenderadvancedthreatprotectionconfiguration-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsupdateforbusinessconfiguration-update?view=graph-rest-1.0
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationable, requestConfiguration *DeviceconfigurationsDeviceConfigurationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -149,7 +149,7 @@ func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) Patch(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationable), nil
 }
-// ToDeleteRequestInformation deletes a iosCustomConfiguration.
+// ToDeleteRequestInformation deletes a windows10GeneralConfiguration.
 // returns a *RequestInformation when successful
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceconfigurationsDeviceConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,7 +160,7 @@ func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the windows10GeneralConfiguration object.
+// ToGetRequestInformation read properties and relationships of the iosCertificateProfile object.
 // returns a *RequestInformation when successful
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceconfigurationsDeviceConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -174,7 +174,7 @@ func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) ToGetRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a windowsDefenderAdvancedThreatProtectionConfiguration object.
+// ToPatchRequestInformation update the properties of a windowsUpdateForBusinessConfiguration object.
 // returns a *RequestInformation when successful
 func (m *DeviceconfigurationsDeviceConfigurationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationable, requestConfiguration *DeviceconfigurationsDeviceConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

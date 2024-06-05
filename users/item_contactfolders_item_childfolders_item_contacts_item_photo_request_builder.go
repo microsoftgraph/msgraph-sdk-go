@@ -13,6 +13,8 @@ type ItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilder struc
 }
 // ItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilderGetQueryParameters optional contact picture. You can get or set a photo for a contact.
 type ItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -35,7 +37,7 @@ type ItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilderPatchR
 // NewItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilderInternal instantiates a new ItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilder and sets the default values.
 func NewItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilder) {
     m := &ItemContactfoldersItemChildfoldersItemContactsItemPhotoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/{contact%2Did}/photo{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/{contact%2Did}/photo{?%24expand,%24select}", pathParameters),
     }
     return m
 }

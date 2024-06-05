@@ -11,7 +11,7 @@ import (
 type AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderGetQueryParameters get includeApplications from identity
+// AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderGetQueryParameters list the applications linked to an authenticationEventsFlow. These are the applications for which the authentication experience defined by the user flow is enabled.
 type AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIn
 func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder) Count()(*AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsCountRequestBuilder) {
     return NewAuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get includeApplications from identity
+// Get list the applications linked to an authenticationEventsFlow. These are the applications for which the authentication experience defined by the user flow is enabled.
 // returns a AuthenticationConditionApplicationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationconditionsapplications-list-includeapplications?view=graph-rest-1.0
 func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionApplicationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsI
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionApplicationCollectionResponseable), nil
 }
-// Post create new navigation property to includeApplications for identity
+// Post add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
 // returns a AuthenticationConditionApplicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationconditionsapplications-post-includeapplications?view=graph-rest-1.0
 func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionApplicationable, requestConfiguration *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionApplicationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsI
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionApplicationable), nil
 }
-// ToGetRequestInformation get includeApplications from identity
+// ToGetRequestInformation list the applications linked to an authenticationEventsFlow. These are the applications for which the authentication experience defined by the user flow is enabled.
 // returns a *RequestInformation when successful
 func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to includeApplications for identity
+// ToPostRequestInformation add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
 // returns a *RequestInformation when successful
 func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionApplicationable, requestConfiguration *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsIncludeApplicationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

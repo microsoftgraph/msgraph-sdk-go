@@ -13,6 +13,8 @@ type ItemInferenceclassificationInferenceClassificationRequestBuilder struct {
 }
 // ItemInferenceclassificationInferenceClassificationRequestBuilderGetQueryParameters relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
 type ItemInferenceclassificationInferenceClassificationRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -35,7 +37,7 @@ type ItemInferenceclassificationInferenceClassificationRequestBuilderPatchReques
 // NewItemInferenceclassificationInferenceClassificationRequestBuilderInternal instantiates a new ItemInferenceclassificationInferenceClassificationRequestBuilder and sets the default values.
 func NewItemInferenceclassificationInferenceClassificationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInferenceclassificationInferenceClassificationRequestBuilder) {
     m := &ItemInferenceclassificationInferenceClassificationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/inferenceClassification{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/inferenceClassification{?%24expand,%24select}", pathParameters),
     }
     return m
 }

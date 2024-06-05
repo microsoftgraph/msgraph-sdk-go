@@ -20,6 +20,8 @@ type ItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionIte
 }
 // ItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionItemRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
 type ItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionIte
 // NewItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionItemRequestBuilderInternal instantiates a new ItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionItemRequestBuilder and sets the default values.
 func NewItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionItemRequestBuilder) {
     m := &ItemCalendargroupsItemCalendarsItemCalendarpermissionsCalendarPermissionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarPermissions/{calendarPermission%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarPermissions/{calendarPermission%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

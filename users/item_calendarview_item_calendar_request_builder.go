@@ -13,6 +13,8 @@ type ItemCalendarviewItemCalendarRequestBuilder struct {
 }
 // ItemCalendarviewItemCalendarRequestBuilderGetQueryParameters the calendar that contains the event. Navigation property. Read-only.
 type ItemCalendarviewItemCalendarRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -28,7 +30,7 @@ type ItemCalendarviewItemCalendarRequestBuilderGetRequestConfiguration struct {
 // NewItemCalendarviewItemCalendarRequestBuilderInternal instantiates a new ItemCalendarviewItemCalendarRequestBuilder and sets the default values.
 func NewItemCalendarviewItemCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarviewItemCalendarRequestBuilder) {
     m := &ItemCalendarviewItemCalendarRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarView/{event%2Did}/calendar{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarView/{event%2Did}/calendar{?%24expand,%24select}", pathParameters),
     }
     return m
 }

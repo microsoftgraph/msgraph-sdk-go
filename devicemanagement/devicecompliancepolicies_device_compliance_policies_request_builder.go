@@ -11,7 +11,7 @@ import (
 type DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderGetQueryParameters list properties and relationships of the windows81CompliancePolicy objects.
+// DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderGetQueryParameters list properties and relationships of the iosCompliancePolicy objects.
 type DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,12 @@ func NewDevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder(rawUrl st
 func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) Count()(*DevicecompliancepoliciesCountRequestBuilder) {
     return NewDevicecompliancepoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the windows81CompliancePolicy objects.
+// Get list properties and relationships of the iosCompliancePolicy objects.
 // returns a DeviceCompliancePolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-list?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +99,12 @@ func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) Get(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyCollectionResponseable), nil
 }
-// Post create a new windows81CompliancePolicy object.
+// Post create a new androidCompliancePolicy object.
 // returns a DeviceCompliancePolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-create?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) Post(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable), nil
 }
-// ToGetRequestInformation list properties and relationships of the windows81CompliancePolicy objects.
+// ToGetRequestInformation list properties and relationships of the iosCompliancePolicy objects.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +136,7 @@ func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) ToGetRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new windows81CompliancePolicy object.
+// ToPostRequestInformation create a new androidCompliancePolicy object.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

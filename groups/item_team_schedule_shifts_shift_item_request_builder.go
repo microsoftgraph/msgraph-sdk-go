@@ -20,6 +20,8 @@ type ItemTeamScheduleShiftsShiftItemRequestBuilderDeleteRequestConfiguration str
 }
 // ItemTeamScheduleShiftsShiftItemRequestBuilderGetQueryParameters the shifts in the schedule.
 type ItemTeamScheduleShiftsShiftItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemTeamScheduleShiftsShiftItemRequestBuilderPatchRequestConfiguration stru
 // NewItemTeamScheduleShiftsShiftItemRequestBuilderInternal instantiates a new ItemTeamScheduleShiftsShiftItemRequestBuilder and sets the default values.
 func NewItemTeamScheduleShiftsShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleShiftsShiftItemRequestBuilder) {
     m := &ItemTeamScheduleShiftsShiftItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/shifts/{shift%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/shifts/{shift%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

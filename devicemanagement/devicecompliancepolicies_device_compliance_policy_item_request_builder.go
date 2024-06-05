@@ -18,7 +18,7 @@ type DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderGetQueryParameters read properties and relationships of the androidWorkProfileCompliancePolicy object.
+// DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderGetQueryParameters read properties and relationships of the windowsPhone81CompliancePolicy object.
 type DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,11 +64,11 @@ func NewDevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewDevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a windows10MobileCompliancePolicy.
+// Delete deletes a iosCompliancePolicy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-delete?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,12 +98,12 @@ func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) Devic
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) DeviceStatusOverview()(*DevicecompliancepoliciesItemDevicestatusoverviewDeviceStatusOverviewRequestBuilder) {
     return NewDevicecompliancepoliciesItemDevicestatusoverviewDeviceStatusOverviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read properties and relationships of the androidWorkProfileCompliancePolicy object.
+// Get read properties and relationships of the windowsPhone81CompliancePolicy object.
 // returns a DeviceCompliancePolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-get?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,12 +121,12 @@ func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) Get(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable), nil
 }
-// Patch update the properties of a windows10MobileCompliancePolicy object.
+// Patch update the properties of a macOSCompliancePolicy object.
 // returns a DeviceCompliancePolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-update?view=graph-rest-1.0
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -154,7 +154,7 @@ func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) Sched
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) ScheduledActionsForRule()(*DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilder) {
     return NewDevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a windows10MobileCompliancePolicy.
+// ToDeleteRequestInformation deletes a iosCompliancePolicy.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -165,7 +165,7 @@ func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) ToDel
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the androidWorkProfileCompliancePolicy object.
+// ToGetRequestInformation read properties and relationships of the windowsPhone81CompliancePolicy object.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -179,7 +179,7 @@ func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) ToGet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a windows10MobileCompliancePolicy object.
+// ToPatchRequestInformation update the properties of a macOSCompliancePolicy object.
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyable, requestConfiguration *DevicecompliancepoliciesDeviceCompliancePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -13,6 +13,8 @@ type ItemCalendarviewItemInstancesItemCalendarRequestBuilder struct {
 }
 // ItemCalendarviewItemInstancesItemCalendarRequestBuilderGetQueryParameters the calendar that contains the event. Navigation property. Read-only.
 type ItemCalendarviewItemInstancesItemCalendarRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -28,7 +30,7 @@ type ItemCalendarviewItemInstancesItemCalendarRequestBuilderGetRequestConfigurat
 // NewItemCalendarviewItemInstancesItemCalendarRequestBuilderInternal instantiates a new ItemCalendarviewItemInstancesItemCalendarRequestBuilder and sets the default values.
 func NewItemCalendarviewItemInstancesItemCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarviewItemInstancesItemCalendarRequestBuilder) {
     m := &ItemCalendarviewItemInstancesItemCalendarRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/calendar{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/calendar{?%24expand,%24select}", pathParameters),
     }
     return m
 }

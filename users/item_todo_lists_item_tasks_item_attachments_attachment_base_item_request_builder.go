@@ -20,6 +20,8 @@ type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDelete
 }
 // ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters a collection of file attachments for the task.
 type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -35,7 +37,7 @@ type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetReq
 // NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal instantiates a new ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     m := &ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments/{attachmentBase%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments/{attachmentBase%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

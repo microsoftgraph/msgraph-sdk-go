@@ -35,7 +35,7 @@ func (m *SiteCollection) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetArchivalDetails gets the archivalDetails property value. The archivalDetails property
+// GetArchivalDetails gets the archivalDetails property value. Represents whether the site collection is recently archived, fully archived, or reactivating. Possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.
 // returns a SiteArchivalDetailsable when successful
 func (m *SiteCollection) GetArchivalDetails()(SiteArchivalDetailsable) {
     val, err := m.GetBackingStore().Get("archivalDetails")
@@ -203,7 +203,7 @@ func (m *SiteCollection) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetArchivalDetails sets the archivalDetails property value. The archivalDetails property
+// SetArchivalDetails sets the archivalDetails property value. Represents whether the site collection is recently archived, fully archived, or reactivating. Possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.
 func (m *SiteCollection) SetArchivalDetails(value SiteArchivalDetailsable)() {
     err := m.GetBackingStore().Set("archivalDetails", value)
     if err != nil {

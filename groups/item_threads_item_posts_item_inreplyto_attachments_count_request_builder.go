@@ -14,6 +14,8 @@ type ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilder struct {
 type ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilderGetRequestCo
 // NewItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilderInternal instantiates a new ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilder) {
     m := &ItemThreadsItemPostsItemInreplytoAttachmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/attachments/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/attachments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

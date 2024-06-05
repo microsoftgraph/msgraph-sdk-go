@@ -11,7 +11,7 @@ import (
 type MobileappsMobileAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileappsMobileAppsRequestBuilderGetQueryParameters list properties and relationships of the macOSLobApp objects.
+// MobileappsMobileAppsRequestBuilderGetQueryParameters list properties and relationships of the androidStoreApp objects.
 type MobileappsMobileAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,12 @@ func NewMobileappsMobileAppsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *MobileappsMobileAppsRequestBuilder) Count()(*MobileappsCountRequestBuilder) {
     return NewMobileappsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the macOSLobApp objects.
+// Get list properties and relationships of the androidStoreApp objects.
 // returns a MobileAppCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-androidstoreapp-list?view=graph-rest-1.0
 func (m *MobileappsMobileAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileappsMobileAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -202,7 +202,7 @@ func (m *MobileappsMobileAppsRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable), nil
 }
-// ToGetRequestInformation list properties and relationships of the macOSLobApp objects.
+// ToGetRequestInformation list properties and relationships of the androidStoreApp objects.
 // returns a *RequestInformation when successful
 func (m *MobileappsMobileAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileappsMobileAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

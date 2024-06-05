@@ -60,9 +60,12 @@ func (m *B2xuserflowsItemLanguagesItemDefaultpagesItemValueContentRequestBuilder
     }
     return nil
 }
-// Get the unique identifier for an entity. Read-only.
+// Get read the values in a userFlowLanguagePage object for a language in a user flow. These values are shown to a user during a user journey defined by a user flow.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguagepage-get?view=graph-rest-1.0
 func (m *B2xuserflowsItemLanguagesItemDefaultpagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xuserflowsItemLanguagesItemDefaultpagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +114,7 @@ func (m *B2xuserflowsItemLanguagesItemDefaultpagesItemValueContentRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the unique identifier for an entity. Read-only.
+// ToGetRequestInformation read the values in a userFlowLanguagePage object for a language in a user flow. These values are shown to a user during a user journey defined by a user flow.
 // returns a *RequestInformation when successful
 func (m *B2xuserflowsItemLanguagesItemDefaultpagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xuserflowsItemLanguagesItemDefaultpagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

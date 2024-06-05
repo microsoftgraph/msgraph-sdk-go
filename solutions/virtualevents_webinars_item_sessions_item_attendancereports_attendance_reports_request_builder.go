@@ -11,7 +11,7 @@ import (
 type VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilderGetQueryParameters the attendance reports of an online meeting. Read-only.
+// VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilderGetQueryParameters get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
 type VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewVirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsR
 func (m *VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilder) Count()(*VirtualeventsWebinarsItemSessionsItemAttendancereportsCountRequestBuilder) {
     return NewVirtualeventsWebinarsItemSessionsItemAttendancereportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the attendance reports of an online meeting. Read-only.
+// Get get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
 // returns a MeetingAttendanceReportCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
 func (m *VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReports
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportable), nil
 }
-// ToGetRequestInformation the attendance reports of an online meeting. Read-only.
+// ToGetRequestInformation get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
 // returns a *RequestInformation when successful
 func (m *VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualeventsWebinarsItemSessionsItemAttendancereportsAttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

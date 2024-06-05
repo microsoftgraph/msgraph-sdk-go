@@ -18,7 +18,7 @@ type ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderGetQueryParameters read properties and relationships of the iosVppEBookAssignment object.
+// ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderGetQueryParameters read properties and relationships of the managedEBookAssignment object.
 type ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,11 @@ func NewManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a managedEBookAssignment.
+// Delete deletes a iosVppEBookAssignment.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-delete?view=graph-rest-1.0
 func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +73,12 @@ func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) D
     }
     return nil
 }
-// Get read properties and relationships of the iosVppEBookAssignment object.
+// Get read properties and relationships of the managedEBookAssignment object.
 // returns a ManagedEBookAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-get?view=graph-rest-1.0
 func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +96,12 @@ func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable), nil
 }
-// Patch update the properties of a iosVppEBookAssignment object.
+// Patch update the properties of a managedEBookAssignment object.
 // returns a ManagedEBookAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-update?view=graph-rest-1.0
 func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, requestConfiguration *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable), nil
 }
-// ToDeleteRequestInformation deletes a managedEBookAssignment.
+// ToDeleteRequestInformation deletes a iosVppEBookAssignment.
 // returns a *RequestInformation when successful
 func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +130,7 @@ func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the iosVppEBookAssignment object.
+// ToGetRequestInformation read properties and relationships of the managedEBookAssignment object.
 // returns a *RequestInformation when successful
 func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +144,7 @@ func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a iosVppEBookAssignment object.
+// ToPatchRequestInformation update the properties of a managedEBookAssignment object.
 // returns a *RequestInformation when successful
 func (m *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, requestConfiguration *ManagedebooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

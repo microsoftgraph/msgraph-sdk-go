@@ -54,8 +54,11 @@ func NewAuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsAu
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsAuthenticationConditionApplicationAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property includeApplications for identity
+// Delete remove or unlink an application from an authenticationEventsFlow object. This disables the customized authentication experience defined for the application.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationconditionapplication-delete?view=graph-rest-1.0
 func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsAuthenticationConditionApplicationAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsAuthenticationConditionApplicationAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +113,7 @@ func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsA
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionApplicationable), nil
 }
-// ToDeleteRequestInformation delete navigation property includeApplications for identity
+// ToDeleteRequestInformation remove or unlink an application from an authenticationEventsFlow object. This disables the customized authentication experience defined for the application.
 // returns a *RequestInformation when successful
 func (m *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsAuthenticationConditionApplicationAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationeventsflowsItemConditionsApplicationsIncludeapplicationsAuthenticationConditionApplicationAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

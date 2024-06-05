@@ -13,6 +13,8 @@ type ItemPhotosProfilePhotoItemRequestBuilder struct {
 }
 // ItemPhotosProfilePhotoItemRequestBuilderGetQueryParameters the profile photos owned by the group. Read-only. Nullable.
 type ItemPhotosProfilePhotoItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -28,7 +30,7 @@ type ItemPhotosProfilePhotoItemRequestBuilderGetRequestConfiguration struct {
 // NewItemPhotosProfilePhotoItemRequestBuilderInternal instantiates a new ItemPhotosProfilePhotoItemRequestBuilder and sets the default values.
 func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     m := &ItemPhotosProfilePhotoItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos/{profilePhoto%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos/{profilePhoto%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

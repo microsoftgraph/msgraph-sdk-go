@@ -14,6 +14,8 @@ type ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilder struct {
 type ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilderGetRequest
 // NewItemContactfoldersItemChildfoldersItemContactsCountRequestBuilderInternal instantiates a new ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilder and sets the default values.
 func NewItemContactfoldersItemChildfoldersItemContactsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilder) {
     m := &ItemContactfoldersItemChildfoldersItemContactsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
