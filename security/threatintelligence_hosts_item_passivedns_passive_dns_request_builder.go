@@ -11,7 +11,7 @@ import (
 type ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilderGetQueryParameters get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+// ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilderGetQueryParameters get a list of passiveDnsRecord resources associated with a host. This method is a forward DNS lookup that queries the IP address of the specified host using its hostname. 
 type ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilder(rawUrl str
 func (m *ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilder) Count()(*ThreatintelligenceHostsItemPassivednsCountRequestBuilder) {
     return NewThreatintelligenceHostsItemPassivednsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+// Get get a list of passiveDnsRecord resources associated with a host. This method is a forward DNS lookup that queries the IP address of the specified host using its hostname. 
 // returns a PassiveDnsRecordCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -92,7 +92,7 @@ func (m *ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilder) Get(ctx 
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.PassiveDnsRecordCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+// ToGetRequestInformation get a list of passiveDnsRecord resources associated with a host. This method is a forward DNS lookup that queries the IP address of the specified host using its hostname. 
 // returns a *RequestInformation when successful
 func (m *ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatintelligenceHostsItemPassivednsPassiveDnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

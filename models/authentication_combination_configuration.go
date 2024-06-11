@@ -31,6 +31,8 @@ func CreateAuthenticationCombinationConfigurationFromDiscriminatorValue(parseNod
                 switch *mappingValue {
                     case "#microsoft.graph.fido2CombinationConfiguration":
                         return NewFido2CombinationConfiguration(), nil
+                    case "#microsoft.graph.x509CertificateCombinationConfiguration":
+                        return NewX509CertificateCombinationConfiguration(), nil
                 }
             }
         }

@@ -11,7 +11,7 @@ import (
 type ItemInviteduserInvitedUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInviteduserInvitedUserRequestBuilderGetQueryParameters the user created as part of the invitation creation. Read-Only
+// ItemInviteduserInvitedUserRequestBuilderGetQueryParameters the user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
 type ItemInviteduserInvitedUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemInviteduserInvitedUserRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemInviteduserInvitedUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the user created as part of the invitation creation. Read-Only
+// Get the user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInviteduserInvitedUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInviteduserInvitedUserRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
@@ -70,7 +70,7 @@ func (m *ItemInviteduserInvitedUserRequestBuilder) MailboxSettings()(*ItemInvite
 func (m *ItemInviteduserInvitedUserRequestBuilder) ServiceProvisioningErrors()(*ItemInviteduserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
     return NewItemInviteduserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the user created as part of the invitation creation. Read-Only
+// ToGetRequestInformation the user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
 // returns a *RequestInformation when successful
 func (m *ItemInviteduserInvitedUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInviteduserInvitedUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

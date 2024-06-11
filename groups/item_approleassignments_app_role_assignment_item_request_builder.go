@@ -18,7 +18,7 @@ type ItemApproleassignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemApproleassignmentsAppRoleAssignmentItemRequestBuilderGetQueryParameters represents the app roles a group has been granted for an application. Supports $expand.
+// ItemApproleassignmentsAppRoleAssignmentItemRequestBuilderGetQueryParameters represents the app roles granted to a group for an application. Supports $expand.
 type ItemApproleassignmentsAppRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemApproleassignmentsAppRoleAssignmentItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get represents the app roles a group has been granted for an application. Supports $expand.
+// Get represents the app roles granted to a group for an application. Supports $expand.
 // returns a AppRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemApproleassignmentsAppRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemApproleassignmentsAppRoleAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppRoleAssignmentable, error) {
@@ -124,7 +124,7 @@ func (m *ItemApproleassignmentsAppRoleAssignmentItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the app roles a group has been granted for an application. Supports $expand.
+// ToGetRequestInformation represents the app roles granted to a group for an application. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *ItemApproleassignmentsAppRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemApproleassignmentsAppRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
