@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/microsoftgraph/msgraph-sdk-go/compare/v1.45.0...v2.0.0) (2024-06-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* replaces project bot token task by official one
+
+### Reverts
+
+* "chore!: replaces project bot token task by official one" ([561c4b8](https://github.com/microsoftgraph/msgraph-sdk-go/commit/561c4b8ee824f3aca3175801c8e5a663455e119d))
+
+
+### Miscellaneous Chores
+
+* replaces project bot token task by official one ([3c8d0ec](https://github.com/microsoftgraph/msgraph-sdk-go/commit/3c8d0ec222394d3e3947613c126f0fb50d075a35))
+
 ## [1.45.0](https://github.com/microsoftgraph/msgraph-sdk-go/compare/v1.44.0...v1.45.0) (2024-06-05)
 
 
