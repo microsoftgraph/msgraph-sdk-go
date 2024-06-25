@@ -31,3 +31,10 @@ require (
 	golang.org/x/text v0.16.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+retract (
+	v1.44.0
+	// release contains a unintentined breaking change in name of classes
+	v1.45.0
+	// release contains a unintentined breaking change in name of classes
+)
