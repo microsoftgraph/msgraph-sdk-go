@@ -94,9 +94,9 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Get(ctx context.
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
 // HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-// returns a *ItemChannelsItemMessagesItemHostedcontentsHostedContentsRequestBuilder when successful
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*ItemChannelsItemMessagesItemHostedcontentsHostedContentsRequestBuilder) {
-    return NewItemChannelsItemMessagesItemHostedcontentsHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemMessagesItemHostedContentsRequestBuilder when successful
+func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*ItemChannelsItemMessagesItemHostedContentsRequestBuilder) {
+    return NewItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update a chatMessage object. Except for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation fails. This method doesn't support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 // returns a ChatMessageable when successful
@@ -127,14 +127,14 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemC
     return NewItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetReaction provides operations to call the setReaction method.
-// returns a *ItemChannelsItemMessagesItemSetreactionSetReactionRequestBuilder when successful
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemChannelsItemMessagesItemSetreactionSetReactionRequestBuilder) {
-    return NewItemChannelsItemMessagesItemSetreactionSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemMessagesItemSetReactionRequestBuilder when successful
+func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemChannelsItemMessagesItemSetReactionRequestBuilder) {
+    return NewItemChannelsItemMessagesItemSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
-// returns a *ItemChannelsItemMessagesItemSoftdeleteSoftDeleteRequestBuilder when successful
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemChannelsItemMessagesItemSoftdeleteSoftDeleteRequestBuilder) {
-    return NewItemChannelsItemMessagesItemSoftdeleteSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemMessagesItemSoftDeleteRequestBuilder when successful
+func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {
+    return NewItemChannelsItemMessagesItemSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property messages for teams
 // returns a *RequestInformation when successful
@@ -177,14 +177,14 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // UndoSoftDelete provides operations to call the undoSoftDelete method.
-// returns a *ItemChannelsItemMessagesItemUndosoftdeleteUndoSoftDeleteRequestBuilder when successful
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemChannelsItemMessagesItemUndosoftdeleteUndoSoftDeleteRequestBuilder) {
-    return NewItemChannelsItemMessagesItemUndosoftdeleteUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder when successful
+func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
+    return NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UnsetReaction provides operations to call the unsetReaction method.
-// returns a *ItemChannelsItemMessagesItemUnsetreactionUnsetReactionRequestBuilder when successful
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) UnsetReaction()(*ItemChannelsItemMessagesItemUnsetreactionUnsetReactionRequestBuilder) {
-    return NewItemChannelsItemMessagesItemUnsetreactionUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemMessagesItemUnsetReactionRequestBuilder when successful
+func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) UnsetReaction()(*ItemChannelsItemMessagesItemUnsetReactionRequestBuilder) {
+    return NewItemChannelsItemMessagesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemChannelsItemMessagesChatMessageItemRequestBuilder when successful

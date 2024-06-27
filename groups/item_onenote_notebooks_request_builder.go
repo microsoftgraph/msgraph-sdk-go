@@ -97,14 +97,14 @@ func (m *ItemOnenoteNotebooksRequestBuilder) Get(ctx context.Context, requestCon
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotebookCollectionResponseable), nil
 }
 // GetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
-// returns a *ItemOnenoteNotebooksGetnotebookfromweburlGetNotebookFromWebUrlRequestBuilder when successful
-func (m *ItemOnenoteNotebooksRequestBuilder) GetNotebookFromWebUrl()(*ItemOnenoteNotebooksGetnotebookfromweburlGetNotebookFromWebUrlRequestBuilder) {
-    return NewItemOnenoteNotebooksGetnotebookfromweburlGetNotebookFromWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilder when successful
+func (m *ItemOnenoteNotebooksRequestBuilder) GetNotebookFromWebUrl()(*ItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilder) {
+    return NewItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
-// returns a *ItemOnenoteNotebooksGetrecentnotebookswithincludepersonalnotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder when successful
-func (m *ItemOnenoteNotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemOnenoteNotebooksGetrecentnotebookswithincludepersonalnotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
-    return NewItemOnenoteNotebooksGetrecentnotebookswithincludepersonalnotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, includePersonalNotebooks)
+// returns a *ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder when successful
+func (m *ItemOnenoteNotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
+    return NewItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, includePersonalNotebooks)
 }
 // Post create new navigation property to notebooks for groups
 // returns a Notebookable when successful

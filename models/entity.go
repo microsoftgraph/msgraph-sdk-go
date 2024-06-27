@@ -1624,6 +1624,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkforceIntegration(), nil
                     case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":
                         return NewX509CertificateAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.x509CertificateCombinationConfiguration":
+                        return NewX509CertificateCombinationConfiguration(), nil
                 }
             }
         }

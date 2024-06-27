@@ -141,7 +141,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetInvitedUser gets the invitedUser property value. The user created as part of the invitation creation. Read-Only
+// GetInvitedUser gets the invitedUser property value. The user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
 // returns a Userable when successful
 func (m *Invitation) GetInvitedUser()(Userable) {
     val, err := m.GetBackingStore().Get("invitedUser")
@@ -177,7 +177,7 @@ func (m *Invitation) GetInvitedUserEmailAddress()(*string) {
     }
     return nil
 }
-// GetInvitedUserMessageInfo gets the invitedUserMessageInfo property value. Additional configuration for the message being sent to the invited user, including customizing message text, language, and cc recipient list.
+// GetInvitedUserMessageInfo gets the invitedUserMessageInfo property value. Contains configuration for the message being sent to the invited user, including customizing message text, language, and cc recipient list.
 // returns a InvitedUserMessageInfoable when successful
 func (m *Invitation) GetInvitedUserMessageInfo()(InvitedUserMessageInfoable) {
     val, err := m.GetBackingStore().Get("invitedUserMessageInfo")
@@ -225,7 +225,7 @@ func (m *Invitation) GetInviteRedeemUrl()(*string) {
     }
     return nil
 }
-// GetInviteRedirectUrl gets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
+// GetInviteRedirectUrl gets the inviteRedirectUrl property value. The URL the user should be redirected to after the invitation is redeemed. Required.
 // returns a *string when successful
 func (m *Invitation) GetInviteRedirectUrl()(*string) {
     val, err := m.GetBackingStore().Get("inviteRedirectUrl")
@@ -237,7 +237,7 @@ func (m *Invitation) GetInviteRedirectUrl()(*string) {
     }
     return nil
 }
-// GetResetRedemption gets the resetRedemption property value. Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.
+// GetResetRedemption gets the resetRedemption property value. Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. When true, the invitedUser/id relationship is required. For more information about using this property, see Reset redemption status for a guest user.
 // returns a *bool when successful
 func (m *Invitation) GetResetRedemption()(*bool) {
     val, err := m.GetBackingStore().Get("resetRedemption")
@@ -353,7 +353,7 @@ func (m *Invitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetInvitedUser sets the invitedUser property value. The user created as part of the invitation creation. Read-Only
+// SetInvitedUser sets the invitedUser property value. The user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
 func (m *Invitation) SetInvitedUser(value Userable)() {
     err := m.GetBackingStore().Set("invitedUser", value)
     if err != nil {
@@ -374,7 +374,7 @@ func (m *Invitation) SetInvitedUserEmailAddress(value *string)() {
         panic(err)
     }
 }
-// SetInvitedUserMessageInfo sets the invitedUserMessageInfo property value. Additional configuration for the message being sent to the invited user, including customizing message text, language, and cc recipient list.
+// SetInvitedUserMessageInfo sets the invitedUserMessageInfo property value. Contains configuration for the message being sent to the invited user, including customizing message text, language, and cc recipient list.
 func (m *Invitation) SetInvitedUserMessageInfo(value InvitedUserMessageInfoable)() {
     err := m.GetBackingStore().Set("invitedUserMessageInfo", value)
     if err != nil {
@@ -402,14 +402,14 @@ func (m *Invitation) SetInviteRedeemUrl(value *string)() {
         panic(err)
     }
 }
-// SetInviteRedirectUrl sets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
+// SetInviteRedirectUrl sets the inviteRedirectUrl property value. The URL the user should be redirected to after the invitation is redeemed. Required.
 func (m *Invitation) SetInviteRedirectUrl(value *string)() {
     err := m.GetBackingStore().Set("inviteRedirectUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResetRedemption sets the resetRedemption property value. Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.
+// SetResetRedemption sets the resetRedemption property value. Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. When true, the invitedUser/id relationship is required. For more information about using this property, see Reset redemption status for a guest user.
 func (m *Invitation) SetResetRedemption(value *bool)() {
     err := m.GetBackingStore().Set("resetRedemption", value)
     if err != nil {

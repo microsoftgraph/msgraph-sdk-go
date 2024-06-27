@@ -102,14 +102,14 @@ func (m *DirectoryObjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-// returns a *GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder when successful
-func (m *DirectoryObjectsRequestBuilder) GetAvailableExtensionProperties()(*GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewGetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetAvailableExtensionPropertiesRequestBuilder when successful
+func (m *DirectoryObjectsRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetByIds provides operations to call the getByIds method.
-// returns a *GetbyidsGetByIdsRequestBuilder when successful
-func (m *DirectoryObjectsRequestBuilder) GetByIds()(*GetbyidsGetByIdsRequestBuilder) {
-    return NewGetbyidsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetByIdsRequestBuilder when successful
+func (m *DirectoryObjectsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post add new entity to directoryObjects
 // returns a DirectoryObjectable when successful
@@ -161,9 +161,9 @@ func (m *DirectoryObjectsRequestBuilder) ToPostRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ValidatepropertiesValidatePropertiesRequestBuilder when successful
-func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*ValidatepropertiesValidatePropertiesRequestBuilder) {
-    return NewValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatePropertiesRequestBuilder when successful
+func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *DirectoryObjectsRequestBuilder when successful

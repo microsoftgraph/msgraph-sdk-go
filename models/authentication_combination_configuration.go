@@ -31,13 +31,15 @@ func CreateAuthenticationCombinationConfigurationFromDiscriminatorValue(parseNod
                 switch *mappingValue {
                     case "#microsoft.graph.fido2CombinationConfiguration":
                         return NewFido2CombinationConfiguration(), nil
+                    case "#microsoft.graph.x509CertificateCombinationConfiguration":
+                        return NewX509CertificateCombinationConfiguration(), nil
                 }
             }
         }
     }
     return NewAuthenticationCombinationConfiguration(), nil
 }
-// GetAppliesToCombinations gets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+// GetAppliesToCombinations gets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object, part of the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 // returns a []AuthenticationMethodModes when successful
 func (m *AuthenticationCombinationConfiguration) GetAppliesToCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("appliesToCombinations")
@@ -85,7 +87,7 @@ func (m *AuthenticationCombinationConfiguration) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetAppliesToCombinations sets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+// SetAppliesToCombinations sets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object, part of the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 func (m *AuthenticationCombinationConfiguration) SetAppliesToCombinations(value []AuthenticationMethodModes)() {
     err := m.GetBackingStore().Set("appliesToCombinations", value)
     if err != nil {

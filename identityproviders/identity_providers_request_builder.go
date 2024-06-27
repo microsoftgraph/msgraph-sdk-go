@@ -47,9 +47,9 @@ type IdentityProvidersRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AvailableProviderTypes provides operations to call the availableProviderTypes method.
-// returns a *AvailableprovidertypesAvailableProviderTypesRequestBuilder when successful
-func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*AvailableprovidertypesAvailableProviderTypesRequestBuilder) {
-    return NewAvailableprovidertypesAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AvailableProviderTypesRequestBuilder when successful
+func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*AvailableProviderTypesRequestBuilder) {
+    return NewAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByIdentityProviderId provides operations to manage the collection of identityProvider entities.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider

@@ -102,9 +102,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsRequestBuilder) Get(ct
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowCollectionResponseable), nil
 }
 // ItemAtWithIndex provides operations to call the itemAt method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItematwithindexItemAtWithIndexRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItematwithindexItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsItematwithindexItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemAtWithIndexRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
 }
 // Post create new navigation property to rows for drives
 // returns a WorkbookTableRowable when successful

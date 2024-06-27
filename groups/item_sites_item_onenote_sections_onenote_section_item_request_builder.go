@@ -55,14 +55,14 @@ func NewItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder(rawUrl stri
     return NewItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CopyToNotebook provides operations to call the copyToNotebook method.
-// returns a *ItemSitesItemOnenoteSectionsItemCopytonotebookCopyToNotebookRequestBuilder when successful
-func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) CopyToNotebook()(*ItemSitesItemOnenoteSectionsItemCopytonotebookCopyToNotebookRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemCopytonotebookCopyToNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilder when successful
+func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) CopyToNotebook()(*ItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilder) {
+    return NewItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CopyToSectionGroup provides operations to call the copyToSectionGroup method.
-// returns a *ItemSitesItemOnenoteSectionsItemCopytosectiongroupCopyToSectionGroupRequestBuilder when successful
-func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) CopyToSectionGroup()(*ItemSitesItemOnenoteSectionsItemCopytosectiongroupCopyToSectionGroupRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemCopytosectiongroupCopyToSectionGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemOnenoteSectionsItemCopyToSectionGroupRequestBuilder when successful
+func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) CopyToSectionGroup()(*ItemSitesItemOnenoteSectionsItemCopyToSectionGroupRequestBuilder) {
+    return NewItemSitesItemOnenoteSectionsItemCopyToSectionGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property sections for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -106,14 +106,14 @@ func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) Pages()(*
     return NewItemSitesItemOnenoteSectionsItemPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenoteSection entity.
-// returns a *ItemSitesItemOnenoteSectionsItemParentnotebookParentNotebookRequestBuilder when successful
-func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) ParentNotebook()(*ItemSitesItemOnenoteSectionsItemParentnotebookParentNotebookRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemParentnotebookParentNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemOnenoteSectionsItemParentNotebookRequestBuilder when successful
+func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) ParentNotebook()(*ItemSitesItemOnenoteSectionsItemParentNotebookRequestBuilder) {
+    return NewItemSitesItemOnenoteSectionsItemParentNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ParentSectionGroup provides operations to manage the parentSectionGroup property of the microsoft.graph.onenoteSection entity.
-// returns a *ItemSitesItemOnenoteSectionsItemParentsectiongroupParentSectionGroupRequestBuilder when successful
-func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) ParentSectionGroup()(*ItemSitesItemOnenoteSectionsItemParentsectiongroupParentSectionGroupRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemParentsectiongroupParentSectionGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemOnenoteSectionsItemParentSectionGroupRequestBuilder when successful
+func (m *ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) ParentSectionGroup()(*ItemSitesItemOnenoteSectionsItemParentSectionGroupRequestBuilder) {
+    return NewItemSitesItemOnenoteSectionsItemParentSectionGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property sections in groups
 // returns a OnenoteSectionable when successful

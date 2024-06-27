@@ -35,49 +35,49 @@ type PoliciesRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ActivityBasedTimeoutPolicies provides operations to manage the activityBasedTimeoutPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *ActivitybasedtimeoutpoliciesActivityBasedTimeoutPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPolicies()(*ActivitybasedtimeoutpoliciesActivityBasedTimeoutPoliciesRequestBuilder) {
-    return NewActivitybasedtimeoutpoliciesActivityBasedTimeoutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ActivityBasedTimeoutPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPolicies()(*ActivityBasedTimeoutPoliciesRequestBuilder) {
+    return NewActivityBasedTimeoutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AdminConsentRequestPolicy provides operations to manage the adminConsentRequestPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *AdminconsentrequestpolicyAdminConsentRequestPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) AdminConsentRequestPolicy()(*AdminconsentrequestpolicyAdminConsentRequestPolicyRequestBuilder) {
-    return NewAdminconsentrequestpolicyAdminConsentRequestPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AdminConsentRequestPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) AdminConsentRequestPolicy()(*AdminConsentRequestPolicyRequestBuilder) {
+    return NewAdminConsentRequestPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AppManagementPolicies provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *AppmanagementpoliciesAppManagementPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) AppManagementPolicies()(*AppmanagementpoliciesAppManagementPoliciesRequestBuilder) {
-    return NewAppmanagementpoliciesAppManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AppManagementPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) AppManagementPolicies()(*AppManagementPoliciesRequestBuilder) {
+    return NewAppManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuthenticationFlowsPolicy provides operations to manage the authenticationFlowsPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *AuthenticationflowspolicyAuthenticationFlowsPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) AuthenticationFlowsPolicy()(*AuthenticationflowspolicyAuthenticationFlowsPolicyRequestBuilder) {
-    return NewAuthenticationflowspolicyAuthenticationFlowsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuthenticationFlowsPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) AuthenticationFlowsPolicy()(*AuthenticationFlowsPolicyRequestBuilder) {
+    return NewAuthenticationFlowsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuthenticationMethodsPolicy provides operations to manage the authenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *AuthenticationmethodspolicyAuthenticationMethodsPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) AuthenticationMethodsPolicy()(*AuthenticationmethodspolicyAuthenticationMethodsPolicyRequestBuilder) {
-    return NewAuthenticationmethodspolicyAuthenticationMethodsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuthenticationMethodsPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) AuthenticationMethodsPolicy()(*AuthenticationMethodsPolicyRequestBuilder) {
+    return NewAuthenticationMethodsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuthenticationStrengthPolicies provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *AuthenticationstrengthpoliciesAuthenticationStrengthPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) AuthenticationStrengthPolicies()(*AuthenticationstrengthpoliciesAuthenticationStrengthPoliciesRequestBuilder) {
-    return NewAuthenticationstrengthpoliciesAuthenticationStrengthPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuthenticationStrengthPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) AuthenticationStrengthPolicies()(*AuthenticationStrengthPoliciesRequestBuilder) {
+    return NewAuthenticationStrengthPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuthorizationPolicy provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *AuthorizationpolicyAuthorizationPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*AuthorizationpolicyAuthorizationPolicyRequestBuilder) {
-    return NewAuthorizationpolicyAuthorizationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuthorizationPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*AuthorizationPolicyRequestBuilder) {
+    return NewAuthorizationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ClaimsMappingPolicies provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *ClaimsmappingpoliciesClaimsMappingPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) ClaimsMappingPolicies()(*ClaimsmappingpoliciesClaimsMappingPoliciesRequestBuilder) {
-    return NewClaimsmappingpoliciesClaimsMappingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClaimsMappingPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) ClaimsMappingPolicies()(*ClaimsMappingPoliciesRequestBuilder) {
+    return NewClaimsMappingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConditionalAccessPolicies provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *ConditionalaccesspoliciesConditionalAccessPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) ConditionalAccessPolicies()(*ConditionalaccesspoliciesConditionalAccessPoliciesRequestBuilder) {
-    return NewConditionalaccesspoliciesConditionalAccessPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConditionalAccessPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) ConditionalAccessPolicies()(*ConditionalAccessPoliciesRequestBuilder) {
+    return NewConditionalAccessPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PoliciesRequestBuilder) {
@@ -93,24 +93,24 @@ func NewPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CrossTenantAccessPolicy provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *CrosstenantaccesspolicyCrossTenantAccessPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) CrossTenantAccessPolicy()(*CrosstenantaccesspolicyCrossTenantAccessPolicyRequestBuilder) {
-    return NewCrosstenantaccesspolicyCrossTenantAccessPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CrossTenantAccessPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) CrossTenantAccessPolicy()(*CrossTenantAccessPolicyRequestBuilder) {
+    return NewCrossTenantAccessPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DefaultAppManagementPolicy provides operations to manage the defaultAppManagementPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *DefaultappmanagementpolicyDefaultAppManagementPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) DefaultAppManagementPolicy()(*DefaultappmanagementpolicyDefaultAppManagementPolicyRequestBuilder) {
-    return NewDefaultappmanagementpolicyDefaultAppManagementPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DefaultAppManagementPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) DefaultAppManagementPolicy()(*DefaultAppManagementPolicyRequestBuilder) {
+    return NewDefaultAppManagementPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceRegistrationPolicy provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) DeviceRegistrationPolicy()(*DeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilder) {
-    return NewDeviceregistrationpolicyDeviceRegistrationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeviceRegistrationPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) DeviceRegistrationPolicy()(*DeviceRegistrationPolicyRequestBuilder) {
+    return NewDeviceRegistrationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FeatureRolloutPolicies provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *FeaturerolloutpoliciesFeatureRolloutPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*FeaturerolloutpoliciesFeatureRolloutPoliciesRequestBuilder) {
-    return NewFeaturerolloutpoliciesFeatureRolloutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FeatureRolloutPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPoliciesRequestBuilder) {
+    return NewFeatureRolloutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get policies
 // returns a PolicyRootable when successful
@@ -133,14 +133,14 @@ func (m *PoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PolicyRootable), nil
 }
 // HomeRealmDiscoveryPolicies provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *HomerealmdiscoverypoliciesHomeRealmDiscoveryPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*HomerealmdiscoverypoliciesHomeRealmDiscoveryPoliciesRequestBuilder) {
-    return NewHomerealmdiscoverypoliciesHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *HomeRealmDiscoveryPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*HomeRealmDiscoveryPoliciesRequestBuilder) {
+    return NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // IdentitySecurityDefaultsEnforcementPolicy provides operations to manage the identitySecurityDefaultsEnforcementPolicy property of the microsoft.graph.policyRoot entity.
-// returns a *IdentitysecuritydefaultsenforcementpolicyIdentitySecurityDefaultsEnforcementPolicyRequestBuilder when successful
-func (m *PoliciesRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy()(*IdentitysecuritydefaultsenforcementpolicyIdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
-    return NewIdentitysecuritydefaultsenforcementpolicyIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
+    return NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update policies
 // returns a PolicyRootable when successful
@@ -163,19 +163,19 @@ func (m *PoliciesRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PolicyRootable), nil
 }
 // PermissionGrantPolicies provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *PermissiongrantpoliciesPermissionGrantPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) PermissionGrantPolicies()(*PermissiongrantpoliciesPermissionGrantPoliciesRequestBuilder) {
-    return NewPermissiongrantpoliciesPermissionGrantPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PermissionGrantPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) PermissionGrantPolicies()(*PermissionGrantPoliciesRequestBuilder) {
+    return NewPermissionGrantPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleManagementPolicies provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *RolemanagementpoliciesRoleManagementPoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) RoleManagementPolicies()(*RolemanagementpoliciesRoleManagementPoliciesRequestBuilder) {
-    return NewRolemanagementpoliciesRoleManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RoleManagementPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) RoleManagementPolicies()(*RoleManagementPoliciesRequestBuilder) {
+    return NewRoleManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleManagementPolicyAssignments provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.
-// returns a *RolemanagementpolicyassignmentsRoleManagementPolicyAssignmentsRequestBuilder when successful
-func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignments()(*RolemanagementpolicyassignmentsRoleManagementPolicyAssignmentsRequestBuilder) {
-    return NewRolemanagementpolicyassignmentsRoleManagementPolicyAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RoleManagementPolicyAssignmentsRequestBuilder when successful
+func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignments()(*RoleManagementPolicyAssignmentsRequestBuilder) {
+    return NewRoleManagementPolicyAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get policies
 // returns a *RequestInformation when successful
@@ -192,14 +192,14 @@ func (m *PoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     return requestInfo, nil
 }
 // TokenIssuancePolicies provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.
-// returns a *TokenissuancepoliciesTokenIssuancePoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) TokenIssuancePolicies()(*TokenissuancepoliciesTokenIssuancePoliciesRequestBuilder) {
-    return NewTokenissuancepoliciesTokenIssuancePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TokenIssuancePoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) TokenIssuancePolicies()(*TokenIssuancePoliciesRequestBuilder) {
+    return NewTokenIssuancePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TokenLifetimePolicies provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.
-// returns a *TokenlifetimepoliciesTokenLifetimePoliciesRequestBuilder when successful
-func (m *PoliciesRequestBuilder) TokenLifetimePolicies()(*TokenlifetimepoliciesTokenLifetimePoliciesRequestBuilder) {
-    return NewTokenlifetimepoliciesTokenLifetimePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TokenLifetimePoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) TokenLifetimePolicies()(*TokenLifetimePoliciesRequestBuilder) {
+    return NewTokenLifetimePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToPatchRequestInformation update policies
 // returns a *RequestInformation when successful

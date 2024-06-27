@@ -195,7 +195,7 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetPermissions gets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are 'reader', 'writer', 'manager', and 'owner'. Read-write.
+// GetPermissions gets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 // returns a []Permissionable when successful
 func (m *FileStorageContainer) GetPermissions()([]Permissionable) {
     val, err := m.GetBackingStore().Get("permissions")
@@ -342,7 +342,7 @@ func (m *FileStorageContainer) SetDrive(value Driveable)() {
         panic(err)
     }
 }
-// SetPermissions sets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are 'reader', 'writer', 'manager', and 'owner'. Read-write.
+// SetPermissions sets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 func (m *FileStorageContainer) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
     if err != nil {

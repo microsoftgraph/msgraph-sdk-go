@@ -22,7 +22,7 @@ func NewGroup()(*Group) {
 func CreateGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroup(), nil
 }
-// GetAcceptedSenders gets the acceptedSenders property value. The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
+// GetAcceptedSenders gets the acceptedSenders property value. The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.
 // returns a []DirectoryObjectable when successful
 func (m *Group) GetAcceptedSenders()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("acceptedSenders")
@@ -46,7 +46,7 @@ func (m *Group) GetAllowExternalSenders()(*bool) {
     }
     return nil
 }
-// GetAppRoleAssignments gets the appRoleAssignments property value. Represents the app roles a group has been granted for an application. Supports $expand.
+// GetAppRoleAssignments gets the appRoleAssignments property value. Represents the app roles granted to a group for an application. Supports $expand.
 // returns a []AppRoleAssignmentable when successful
 func (m *Group) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("appRoleAssignments")
@@ -82,7 +82,7 @@ func (m *Group) GetAssignedLicenses()([]AssignedLicenseable) {
     }
     return nil
 }
-// GetAutoSubscribeNewMembers gets the autoSubscribeNewMembers property value. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetAutoSubscribeNewMembers gets the autoSubscribeNewMembers property value. Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetAutoSubscribeNewMembers()(*bool) {
     val, err := m.GetBackingStore().Get("autoSubscribeNewMembers")
@@ -118,7 +118,7 @@ func (m *Group) GetCalendarView()([]Eventable) {
     }
     return nil
 }
-// GetClassification gets the classification property value. Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
+// GetClassification gets the classification property value. Describes a classification for the group (such as low, medium, or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
 // returns a *string when successful
 func (m *Group) GetClassification()(*string) {
     val, err := m.GetBackingStore().Get("classification")
@@ -142,7 +142,7 @@ func (m *Group) GetConversations()([]Conversationable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
 // returns a *Time when successful
 func (m *Group) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -154,7 +154,7 @@ func (m *Group) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     return nil
 }
-// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This property isn't set if the user is an administrator. Read-only.
 // returns a DirectoryObjectable when successful
 func (m *Group) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("createdOnBehalfOf")
@@ -178,7 +178,7 @@ func (m *Group) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// GetDisplayName gets the displayName property value. The display name for the group. This property is required when a group is created and can't be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 // returns a *string when successful
 func (m *Group) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -226,7 +226,7 @@ func (m *Group) GetEvents()([]Eventable) {
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+// GetExpirationDateTime gets the expirationDateTime property value. Timestamp of when the group is set to expire. It's null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
 // returns a *Time when successful
 func (m *Group) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -1118,7 +1118,7 @@ func (m *Group) GetHasMembersWithLicenseErrors()(*bool) {
     }
     return nil
 }
-// GetHideFromAddressLists gets the hideFromAddressLists property value. True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetHideFromAddressLists gets the hideFromAddressLists property value. True if the group isn't displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetHideFromAddressLists()(*bool) {
     val, err := m.GetBackingStore().Get("hideFromAddressLists")
@@ -1130,7 +1130,7 @@ func (m *Group) GetHideFromAddressLists()(*bool) {
     }
     return nil
 }
-// GetHideFromOutlookClients gets the hideFromOutlookClients property value. True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetHideFromOutlookClients gets the hideFromOutlookClients property value. True if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetHideFromOutlookClients()(*bool) {
     val, err := m.GetBackingStore().Get("hideFromOutlookClients")
@@ -1154,7 +1154,7 @@ func (m *Group) GetIsArchived()(*bool) {
     }
     return nil
 }
-// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
+// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can't be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
 // returns a *bool when successful
 func (m *Group) GetIsAssignableToRole()(*bool) {
     val, err := m.GetBackingStore().Get("isAssignableToRole")
@@ -1214,7 +1214,7 @@ func (m *Group) GetMailEnabled()(*bool) {
     }
     return nil
 }
-// GetMailNickname gets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetMailNickname gets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following characters: @ () / [] ' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *Group) GetMailNickname()(*string) {
     val, err := m.GetBackingStore().Get("mailNickname")
@@ -1310,7 +1310,7 @@ func (m *Group) GetOnPremisesDomainName()(*string) {
     }
     return nil
 }
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
 // returns a *Time when successful
 func (m *Group) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("onPremisesLastSyncDateTime")
@@ -1358,7 +1358,7 @@ func (m *Group) GetOnPremisesSamAccountName()(*string) {
     }
     return nil
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
 // returns a *string when successful
 func (m *Group) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
@@ -1370,7 +1370,7 @@ func (m *Group) GetOnPremisesSecurityIdentifier()(*string) {
     }
     return nil
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 // returns a *bool when successful
 func (m *Group) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
@@ -1382,7 +1382,7 @@ func (m *Group) GetOnPremisesSyncEnabled()(*bool) {
     }
     return nil
 }
-// GetOwners gets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+// GetOwners gets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 // returns a []DirectoryObjectable when successful
 func (m *Group) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
@@ -1490,7 +1490,7 @@ func (m *Group) GetRejectedSenders()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetRenewedDateTime gets the renewedDateTime property value. Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+// GetRenewedDateTime gets the renewedDateTime property value. Timestamp of when the group was last renewed. This value can't be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
 // returns a *Time when successful
 func (m *Group) GetRenewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("renewedDateTime")
@@ -1514,7 +1514,7 @@ func (m *Group) GetSecurityEnabled()(*bool) {
     }
     return nil
 }
-// GetSecurityIdentifier gets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Returned by default.
+// GetSecurityIdentifier gets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.
 // returns a *string when successful
 func (m *Group) GetSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("securityIdentifier")
@@ -1526,7 +1526,7 @@ func (m *Group) GetSecurityIdentifier()(*string) {
     }
     return nil
 }
-// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).
 // returns a []ServiceProvisioningErrorable when successful
 func (m *Group) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
     val, err := m.GetBackingStore().Get("serviceProvisioningErrors")
@@ -1538,7 +1538,7 @@ func (m *Group) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
     }
     return nil
 }
-// GetSettings gets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// GetSettings gets the settings property value. Settings that can govern this group's behavior, like whether members can invite guests to the group. Nullable.
 // returns a []GroupSettingable when successful
 func (m *Group) GetSettings()([]GroupSettingable) {
     val, err := m.GetBackingStore().Get("settings")
@@ -1574,7 +1574,7 @@ func (m *Group) GetTeam()(Teamable) {
     }
     return nil
 }
-// GetTheme gets the theme property value. Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
+// GetTheme gets the theme property value. Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange, or Red. Returned by default.
 // returns a *string when successful
 func (m *Group) GetTheme()(*string) {
     val, err := m.GetBackingStore().Get("theme")
@@ -1634,7 +1634,7 @@ func (m *Group) GetUniqueName()(*string) {
     }
     return nil
 }
-// GetUnseenCount gets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetUnseenCount gets the unseenCount property value. Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *int32 when successful
 func (m *Group) GetUnseenCount()(*int32) {
     val, err := m.GetBackingStore().Get("unseenCount")
@@ -1646,7 +1646,7 @@ func (m *Group) GetUnseenCount()(*int32) {
     }
     return nil
 }
-// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
+// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value isn't specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
 // returns a *string when successful
 func (m *Group) GetVisibility()(*string) {
     val, err := m.GetBackingStore().Get("visibility")
@@ -2212,7 +2212,7 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     return nil
 }
-// SetAcceptedSenders sets the acceptedSenders property value. The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
+// SetAcceptedSenders sets the acceptedSenders property value. The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.
 func (m *Group) SetAcceptedSenders(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("acceptedSenders", value)
     if err != nil {
@@ -2226,7 +2226,7 @@ func (m *Group) SetAllowExternalSenders(value *bool)() {
         panic(err)
     }
 }
-// SetAppRoleAssignments sets the appRoleAssignments property value. Represents the app roles a group has been granted for an application. Supports $expand.
+// SetAppRoleAssignments sets the appRoleAssignments property value. Represents the app roles granted to a group for an application. Supports $expand.
 func (m *Group) SetAppRoleAssignments(value []AppRoleAssignmentable)() {
     err := m.GetBackingStore().Set("appRoleAssignments", value)
     if err != nil {
@@ -2247,7 +2247,7 @@ func (m *Group) SetAssignedLicenses(value []AssignedLicenseable)() {
         panic(err)
     }
 }
-// SetAutoSubscribeNewMembers sets the autoSubscribeNewMembers property value. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetAutoSubscribeNewMembers sets the autoSubscribeNewMembers property value. Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetAutoSubscribeNewMembers(value *bool)() {
     err := m.GetBackingStore().Set("autoSubscribeNewMembers", value)
     if err != nil {
@@ -2268,7 +2268,7 @@ func (m *Group) SetCalendarView(value []Eventable)() {
         panic(err)
     }
 }
-// SetClassification sets the classification property value. Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
+// SetClassification sets the classification property value. Describes a classification for the group (such as low, medium, or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
 func (m *Group) SetClassification(value *string)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
@@ -2282,14 +2282,14 @@ func (m *Group) SetConversations(value []Conversationable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
 func (m *Group) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This property isn't set if the user is an administrator. Read-only.
 func (m *Group) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("createdOnBehalfOf", value)
     if err != nil {
@@ -2303,7 +2303,7 @@ func (m *Group) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// SetDisplayName sets the displayName property value. The display name for the group. This property is required when a group is created and can't be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 func (m *Group) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -2331,7 +2331,7 @@ func (m *Group) SetEvents(value []Eventable)() {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+// SetExpirationDateTime sets the expirationDateTime property value. Timestamp of when the group is set to expire. It's null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
 func (m *Group) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
@@ -2366,14 +2366,14 @@ func (m *Group) SetHasMembersWithLicenseErrors(value *bool)() {
         panic(err)
     }
 }
-// SetHideFromAddressLists sets the hideFromAddressLists property value. True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetHideFromAddressLists sets the hideFromAddressLists property value. True if the group isn't displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromAddressLists(value *bool)() {
     err := m.GetBackingStore().Set("hideFromAddressLists", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHideFromOutlookClients sets the hideFromOutlookClients property value. True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetHideFromOutlookClients sets the hideFromOutlookClients property value. True if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromOutlookClients(value *bool)() {
     err := m.GetBackingStore().Set("hideFromOutlookClients", value)
     if err != nil {
@@ -2387,7 +2387,7 @@ func (m *Group) SetIsArchived(value *bool)() {
         panic(err)
     }
 }
-// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
+// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can't be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
 func (m *Group) SetIsAssignableToRole(value *bool)() {
     err := m.GetBackingStore().Set("isAssignableToRole", value)
     if err != nil {
@@ -2422,7 +2422,7 @@ func (m *Group) SetMailEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetMailNickname sets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetMailNickname sets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following characters: @ () / [] ' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *Group) SetMailNickname(value *string)() {
     err := m.GetBackingStore().Set("mailNickname", value)
     if err != nil {
@@ -2478,7 +2478,7 @@ func (m *Group) SetOnPremisesDomainName(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *Group) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("onPremisesLastSyncDateTime", value)
     if err != nil {
@@ -2506,21 +2506,21 @@ func (m *Group) SetOnPremisesSamAccountName(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
 func (m *Group) SetOnPremisesSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+// SetOwners sets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 func (m *Group) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {
@@ -2583,7 +2583,7 @@ func (m *Group) SetRejectedSenders(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetRenewedDateTime sets the renewedDateTime property value. Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+// SetRenewedDateTime sets the renewedDateTime property value. Timestamp of when the group was last renewed. This value can't be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
 func (m *Group) SetRenewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("renewedDateTime", value)
     if err != nil {
@@ -2597,21 +2597,21 @@ func (m *Group) SetSecurityEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetSecurityIdentifier sets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Returned by default.
+// SetSecurityIdentifier sets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.
 func (m *Group) SetSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("securityIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).
 func (m *Group) SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)() {
     err := m.GetBackingStore().Set("serviceProvisioningErrors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSettings sets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// SetSettings sets the settings property value. Settings that can govern this group's behavior, like whether members can invite guests to the group. Nullable.
 func (m *Group) SetSettings(value []GroupSettingable)() {
     err := m.GetBackingStore().Set("settings", value)
     if err != nil {
@@ -2632,7 +2632,7 @@ func (m *Group) SetTeam(value Teamable)() {
         panic(err)
     }
 }
-// SetTheme sets the theme property value. Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
+// SetTheme sets the theme property value. Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange, or Red. Returned by default.
 func (m *Group) SetTheme(value *string)() {
     err := m.GetBackingStore().Set("theme", value)
     if err != nil {
@@ -2667,14 +2667,14 @@ func (m *Group) SetUniqueName(value *string)() {
         panic(err)
     }
 }
-// SetUnseenCount sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetUnseenCount sets the unseenCount property value. Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetUnseenCount(value *int32)() {
     err := m.GetBackingStore().Set("unseenCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
+// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value isn't specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
 func (m *Group) SetVisibility(value *string)() {
     err := m.GetBackingStore().Set("visibility", value)
     if err != nil {

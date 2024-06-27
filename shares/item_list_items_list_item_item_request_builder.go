@@ -60,14 +60,14 @@ func NewItemListItemsListItemItemRequestBuilder(rawUrl string, requestAdapter i2
     return NewItemListItemsListItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemListItemsItemCreatedbyuserCreatedByUserRequestBuilder when successful
-func (m *ItemListItemsListItemItemRequestBuilder) CreatedByUser()(*ItemListItemsItemCreatedbyuserCreatedByUserRequestBuilder) {
-    return NewItemListItemsItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListItemsItemCreatedByUserRequestBuilder when successful
+func (m *ItemListItemsListItemItemRequestBuilder) CreatedByUser()(*ItemListItemsItemCreatedByUserRequestBuilder) {
+    return NewItemListItemsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateLink provides operations to call the createLink method.
-// returns a *ItemListItemsItemCreatelinkCreateLinkRequestBuilder when successful
-func (m *ItemListItemsListItemItemRequestBuilder) CreateLink()(*ItemListItemsItemCreatelinkCreateLinkRequestBuilder) {
-    return NewItemListItemsItemCreatelinkCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListItemsItemCreateLinkRequestBuilder when successful
+func (m *ItemListItemsListItemItemRequestBuilder) CreateLink()(*ItemListItemsItemCreateLinkRequestBuilder) {
+    return NewItemListItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property items for shares
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -86,14 +86,14 @@ func (m *ItemListItemsListItemItemRequestBuilder) Delete(ctx context.Context, re
     return nil
 }
 // DocumentSetVersions provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-// returns a *ItemListItemsItemDocumentsetversionsDocumentSetVersionsRequestBuilder when successful
-func (m *ItemListItemsListItemItemRequestBuilder) DocumentSetVersions()(*ItemListItemsItemDocumentsetversionsDocumentSetVersionsRequestBuilder) {
-    return NewItemListItemsItemDocumentsetversionsDocumentSetVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListItemsItemDocumentSetVersionsRequestBuilder when successful
+func (m *ItemListItemsListItemItemRequestBuilder) DocumentSetVersions()(*ItemListItemsItemDocumentSetVersionsRequestBuilder) {
+    return NewItemListItemsItemDocumentSetVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
-// returns a *ItemListItemsItemDriveitemDriveItemRequestBuilder when successful
-func (m *ItemListItemsListItemItemRequestBuilder) DriveItem()(*ItemListItemsItemDriveitemDriveItemRequestBuilder) {
-    return NewItemListItemsItemDriveitemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListItemsItemDriveItemRequestBuilder when successful
+func (m *ItemListItemsListItemItemRequestBuilder) DriveItem()(*ItemListItemsItemDriveItemRequestBuilder) {
+    return NewItemListItemsItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Fields provides operations to manage the fields property of the microsoft.graph.listItem entity.
 // returns a *ItemListItemsItemFieldsRequestBuilder when successful
@@ -121,19 +121,19 @@ func (m *ItemListItemsListItemItemRequestBuilder) Get(ctx context.Context, reque
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
 // GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-// returns a *ItemListItemsItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilder when successful
-func (m *ItemListItemsListItemItemRequestBuilder) GetActivitiesByInterval()(*ItemListItemsItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilder) {
-    return NewItemListItemsItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListItemsItemGetActivitiesByIntervalRequestBuilder when successful
+func (m *ItemListItemsListItemItemRequestBuilder) GetActivitiesByInterval()(*ItemListItemsItemGetActivitiesByIntervalRequestBuilder) {
+    return NewItemListItemsItemGetActivitiesByIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-// returns a *ItemListItemsItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder when successful
-func (m *ItemListItemsListItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemListItemsItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemListItemsItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, interval, startDateTime)
+// returns a *ItemListItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder when successful
+func (m *ItemListItemsListItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemListItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemListItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, interval, startDateTime)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemListItemsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
-func (m *ItemListItemsListItemItemRequestBuilder) LastModifiedByUser()(*ItemListItemsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
-    return NewItemListItemsItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListItemsItemLastModifiedByUserRequestBuilder when successful
+func (m *ItemListItemsListItemItemRequestBuilder) LastModifiedByUser()(*ItemListItemsItemLastModifiedByUserRequestBuilder) {
+    return NewItemListItemsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property items in shares
 // returns a ListItemable when successful

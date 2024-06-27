@@ -102,14 +102,14 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) Get(ctx contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartCollectionResponseable), nil
 }
 // ItemAtWithIndex provides operations to call the itemAt method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItematwithindexItemAtWithIndexRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItematwithindexItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItematwithindexItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
 }
 // ItemWithName provides operations to call the item method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemwithnameItemWithNameRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) ItemWithName(name *string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemwithnameItemWithNameRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemwithnameItemWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) ItemWithName(name *string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
 }
 // Post create new navigation property to charts for drives
 // returns a WorkbookChartable when successful

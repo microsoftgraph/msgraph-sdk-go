@@ -116,9 +116,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillRequestBui
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFillable), nil
 }
 // SetSolidColor provides operations to call the setSolidColor method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillSetsolidcolorSetSolidColorRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillRequestBuilder) SetSolidColor()(*ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillSetsolidcolorSetSolidColorRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillSetsolidcolorSetSolidColorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillSetSolidColorRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillRequestBuilder) SetSolidColor()(*ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillSetSolidColorRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillSetSolidColorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property fill for drives
 // returns a *RequestInformation when successful

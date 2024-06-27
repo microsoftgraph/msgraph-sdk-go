@@ -72,19 +72,19 @@ func (m *ItemMessagesMessageItemRequestBuilder) Copy()(*ItemMessagesItemCopyRequ
     return NewItemMessagesItemCopyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateForward provides operations to call the createForward method.
-// returns a *ItemMessagesItemCreateforwardCreateForwardRequestBuilder when successful
-func (m *ItemMessagesMessageItemRequestBuilder) CreateForward()(*ItemMessagesItemCreateforwardCreateForwardRequestBuilder) {
-    return NewItemMessagesItemCreateforwardCreateForwardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemCreateForwardRequestBuilder when successful
+func (m *ItemMessagesMessageItemRequestBuilder) CreateForward()(*ItemMessagesItemCreateForwardRequestBuilder) {
+    return NewItemMessagesItemCreateForwardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateReply provides operations to call the createReply method.
-// returns a *ItemMessagesItemCreatereplyCreateReplyRequestBuilder when successful
-func (m *ItemMessagesMessageItemRequestBuilder) CreateReply()(*ItemMessagesItemCreatereplyCreateReplyRequestBuilder) {
-    return NewItemMessagesItemCreatereplyCreateReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemCreateReplyRequestBuilder when successful
+func (m *ItemMessagesMessageItemRequestBuilder) CreateReply()(*ItemMessagesItemCreateReplyRequestBuilder) {
+    return NewItemMessagesItemCreateReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateReplyAll provides operations to call the createReplyAll method.
-// returns a *ItemMessagesItemCreatereplyallCreateReplyAllRequestBuilder when successful
-func (m *ItemMessagesMessageItemRequestBuilder) CreateReplyAll()(*ItemMessagesItemCreatereplyallCreateReplyAllRequestBuilder) {
-    return NewItemMessagesItemCreatereplyallCreateReplyAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemCreateReplyAllRequestBuilder when successful
+func (m *ItemMessagesMessageItemRequestBuilder) CreateReplyAll()(*ItemMessagesItemCreateReplyAllRequestBuilder) {
+    return NewItemMessagesItemCreateReplyAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property messages for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -163,9 +163,9 @@ func (m *ItemMessagesMessageItemRequestBuilder) Reply()(*ItemMessagesItemReplyRe
     return NewItemMessagesItemReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ReplyAll provides operations to call the replyAll method.
-// returns a *ItemMessagesItemReplyallReplyAllRequestBuilder when successful
-func (m *ItemMessagesMessageItemRequestBuilder) ReplyAll()(*ItemMessagesItemReplyallReplyAllRequestBuilder) {
-    return NewItemMessagesItemReplyallReplyAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMessagesItemReplyAllRequestBuilder when successful
+func (m *ItemMessagesMessageItemRequestBuilder) ReplyAll()(*ItemMessagesItemReplyAllRequestBuilder) {
+    return NewItemMessagesItemReplyAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Send provides operations to call the send method.
 // returns a *ItemMessagesItemSendRequestBuilder when successful

@@ -111,9 +111,9 @@ func (m *ItemColumnsColumnDefinitionItemRequestBuilder) Patch(ctx context.Contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
 // SourceColumn provides operations to manage the sourceColumn property of the microsoft.graph.columnDefinition entity.
-// returns a *ItemColumnsItemSourcecolumnSourceColumnRequestBuilder when successful
-func (m *ItemColumnsColumnDefinitionItemRequestBuilder) SourceColumn()(*ItemColumnsItemSourcecolumnSourceColumnRequestBuilder) {
-    return NewItemColumnsItemSourcecolumnSourceColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemColumnsItemSourceColumnRequestBuilder when successful
+func (m *ItemColumnsColumnDefinitionItemRequestBuilder) SourceColumn()(*ItemColumnsItemSourceColumnRequestBuilder) {
+    return NewItemColumnsItemSourceColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property columns for sites
 // returns a *RequestInformation when successful

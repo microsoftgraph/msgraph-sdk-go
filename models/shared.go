@@ -121,7 +121,7 @@ func (m *Shared) GetOwner()(IdentitySetable) {
     }
     return nil
 }
-// GetScope gets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
+// GetScope gets the scope property value. Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.
 // returns a *string when successful
 func (m *Shared) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
@@ -222,7 +222,7 @@ func (m *Shared) SetOwner(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetScope sets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
+// SetScope sets the scope property value. Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.
 func (m *Shared) SetScope(value *string)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {

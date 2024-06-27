@@ -105,14 +105,14 @@ func (m *DirectoryRolesRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-// returns a *GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder when successful
-func (m *DirectoryRolesRequestBuilder) GetAvailableExtensionProperties()(*GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewGetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetAvailableExtensionPropertiesRequestBuilder when successful
+func (m *DirectoryRolesRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetByIds provides operations to call the getByIds method.
-// returns a *GetbyidsGetByIdsRequestBuilder when successful
-func (m *DirectoryRolesRequestBuilder) GetByIds()(*GetbyidsGetByIdsRequestBuilder) {
-    return NewGetbyidsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetByIdsRequestBuilder when successful
+func (m *DirectoryRolesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
 // returns a DirectoryRoleable when successful
@@ -167,9 +167,9 @@ func (m *DirectoryRolesRequestBuilder) ToPostRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ValidatepropertiesValidatePropertiesRequestBuilder when successful
-func (m *DirectoryRolesRequestBuilder) ValidateProperties()(*ValidatepropertiesValidatePropertiesRequestBuilder) {
-    return NewValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatePropertiesRequestBuilder when successful
+func (m *DirectoryRolesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *DirectoryRolesRequestBuilder when successful

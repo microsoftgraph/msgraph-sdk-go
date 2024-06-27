@@ -76,9 +76,9 @@ func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) Get(ctx co
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable), nil
 }
 // InReplyTo provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
-// returns a *ItemConversationsItemThreadsItemPostsItemInreplytoInReplyToRequestBuilder when successful
-func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) InReplyTo()(*ItemConversationsItemThreadsItemPostsItemInreplytoInReplyToRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsItemInreplytoInReplyToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder when successful
+func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) InReplyTo()(*ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Reply provides operations to call the reply method.
 // returns a *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder when successful
