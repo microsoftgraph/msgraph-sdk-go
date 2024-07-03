@@ -105,14 +105,14 @@ func (m *GroupSettingTemplatesRequestBuilder) Get(ctx context.Context, requestCo
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-// returns a *GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder when successful
-func (m *GroupSettingTemplatesRequestBuilder) GetAvailableExtensionProperties()(*GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewGetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetAvailableExtensionPropertiesRequestBuilder when successful
+func (m *GroupSettingTemplatesRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetByIds provides operations to call the getByIds method.
-// returns a *GetbyidsGetByIdsRequestBuilder when successful
-func (m *GroupSettingTemplatesRequestBuilder) GetByIds()(*GetbyidsGetByIdsRequestBuilder) {
-    return NewGetbyidsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetByIdsRequestBuilder when successful
+func (m *GroupSettingTemplatesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post add new entity to groupSettingTemplates
 // returns a GroupSettingTemplateable when successful
@@ -164,9 +164,9 @@ func (m *GroupSettingTemplatesRequestBuilder) ToPostRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ValidatepropertiesValidatePropertiesRequestBuilder when successful
-func (m *GroupSettingTemplatesRequestBuilder) ValidateProperties()(*ValidatepropertiesValidatePropertiesRequestBuilder) {
-    return NewValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatePropertiesRequestBuilder when successful
+func (m *GroupSettingTemplatesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *GroupSettingTemplatesRequestBuilder when successful

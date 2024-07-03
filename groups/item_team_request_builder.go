@@ -42,9 +42,9 @@ type ItemTeamRequestBuilderPutRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllChannels provides operations to manage the allChannels property of the microsoft.graph.team entity.
-// returns a *ItemTeamAllchannelsAllChannelsRequestBuilder when successful
-func (m *ItemTeamRequestBuilder) AllChannels()(*ItemTeamAllchannelsAllChannelsRequestBuilder) {
-    return NewItemTeamAllchannelsAllChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamAllChannelsRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) AllChannels()(*ItemTeamAllChannelsRequestBuilder) {
+    return NewItemTeamAllChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Archive provides operations to call the archive method.
 // returns a *ItemTeamArchiveRequestBuilder when successful
@@ -62,9 +62,9 @@ func (m *ItemTeamRequestBuilder) Clone()(*ItemTeamCloneRequestBuilder) {
     return NewItemTeamCloneRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CompleteMigration provides operations to call the completeMigration method.
-// returns a *ItemTeamCompletemigrationCompleteMigrationRequestBuilder when successful
-func (m *ItemTeamRequestBuilder) CompleteMigration()(*ItemTeamCompletemigrationCompleteMigrationRequestBuilder) {
-    return NewItemTeamCompletemigrationCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamCompleteMigrationRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) CompleteMigration()(*ItemTeamCompleteMigrationRequestBuilder) {
+    return NewItemTeamCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemTeamRequestBuilderInternal instantiates a new ItemTeamRequestBuilder and sets the default values.
 func NewItemTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamRequestBuilder) {
@@ -121,14 +121,14 @@ func (m *ItemTeamRequestBuilder) Group()(*ItemTeamGroupRequestBuilder) {
     return NewItemTeamGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // IncomingChannels provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
-// returns a *ItemTeamIncomingchannelsIncomingChannelsRequestBuilder when successful
-func (m *ItemTeamRequestBuilder) IncomingChannels()(*ItemTeamIncomingchannelsIncomingChannelsRequestBuilder) {
-    return NewItemTeamIncomingchannelsIncomingChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamIncomingChannelsRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) IncomingChannels()(*ItemTeamIncomingChannelsRequestBuilder) {
+    return NewItemTeamIncomingChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.team entity.
-// returns a *ItemTeamInstalledappsInstalledAppsRequestBuilder when successful
-func (m *ItemTeamRequestBuilder) InstalledApps()(*ItemTeamInstalledappsInstalledAppsRequestBuilder) {
-    return NewItemTeamInstalledappsInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamInstalledAppsRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) InstalledApps()(*ItemTeamInstalledAppsRequestBuilder) {
+    return NewItemTeamInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.team entity.
 // returns a *ItemTeamMembersRequestBuilder when successful
@@ -141,9 +141,9 @@ func (m *ItemTeamRequestBuilder) Operations()(*ItemTeamOperationsRequestBuilder)
     return NewItemTeamOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
-// returns a *ItemTeamPermissiongrantsPermissionGrantsRequestBuilder when successful
-func (m *ItemTeamRequestBuilder) PermissionGrants()(*ItemTeamPermissiongrantsPermissionGrantsRequestBuilder) {
-    return NewItemTeamPermissiongrantsPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamPermissionGrantsRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) PermissionGrants()(*ItemTeamPermissionGrantsRequestBuilder) {
+    return NewItemTeamPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Photo provides operations to manage the photo property of the microsoft.graph.team entity.
 // returns a *ItemTeamPhotoRequestBuilder when successful
@@ -151,9 +151,9 @@ func (m *ItemTeamRequestBuilder) Photo()(*ItemTeamPhotoRequestBuilder) {
     return NewItemTeamPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PrimaryChannel provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
-// returns a *ItemTeamPrimarychannelPrimaryChannelRequestBuilder when successful
-func (m *ItemTeamRequestBuilder) PrimaryChannel()(*ItemTeamPrimarychannelPrimaryChannelRequestBuilder) {
-    return NewItemTeamPrimarychannelPrimaryChannelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamPrimaryChannelRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) PrimaryChannel()(*ItemTeamPrimaryChannelRequestBuilder) {
+    return NewItemTeamPrimaryChannelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put create a new team under a group. In order to create a team, the group must have a least one owner. If the creation of the team call is delayed, you can retry the call up to three times before you have to wait for 15 minutes due to a propagation delay. If the group was created less than 15 minutes ago, the call might fail with a 404 error code due to replication delays. If the group was created less than 15 minutes ago, it's possible for a call to create a team to fail with a 404 error code, due to ongoing replication delays.The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
 // returns a Teamable when successful
@@ -184,9 +184,9 @@ func (m *ItemTeamRequestBuilder) Schedule()(*ItemTeamScheduleRequestBuilder) {
     return NewItemTeamScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendActivityNotification provides operations to call the sendActivityNotification method.
-// returns a *ItemTeamSendactivitynotificationSendActivityNotificationRequestBuilder when successful
-func (m *ItemTeamRequestBuilder) SendActivityNotification()(*ItemTeamSendactivitynotificationSendActivityNotificationRequestBuilder) {
-    return NewItemTeamSendactivitynotificationSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamSendActivityNotificationRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) SendActivityNotification()(*ItemTeamSendActivityNotificationRequestBuilder) {
+    return NewItemTeamSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.team entity.
 // returns a *ItemTeamTagsRequestBuilder when successful

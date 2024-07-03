@@ -47,14 +47,14 @@ func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Attachments()(*ItemTo
     return NewItemTodoListsItemTasksItemAttachmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AttachmentSessions provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-// returns a *ItemTodoListsItemTasksItemAttachmentsessionsAttachmentSessionsRequestBuilder when successful
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessions()(*ItemTodoListsItemTasksItemAttachmentsessionsAttachmentSessionsRequestBuilder) {
-    return NewItemTodoListsItemTasksItemAttachmentsessionsAttachmentSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder when successful
+func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessions()(*ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) {
+    return NewItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ChecklistItems provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
-// returns a *ItemTodoListsItemTasksItemChecklistitemsChecklistItemsRequestBuilder when successful
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItems()(*ItemTodoListsItemTasksItemChecklistitemsChecklistItemsRequestBuilder) {
-    return NewItemTodoListsItemTasksItemChecklistitemsChecklistItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder when successful
+func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItems()(*ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) {
+    return NewItemTodoListsItemTasksItemChecklistItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemTodoListsItemTasksTodoTaskItemRequestBuilderInternal instantiates a new ItemTodoListsItemTasksTodoTaskItemRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksTodoTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksTodoTaskItemRequestBuilder) {
@@ -111,9 +111,9 @@ func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Get(ctx context.Conte
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable), nil
 }
 // LinkedResources provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
-// returns a *ItemTodoListsItemTasksItemLinkedresourcesLinkedResourcesRequestBuilder when successful
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResources()(*ItemTodoListsItemTasksItemLinkedresourcesLinkedResourcesRequestBuilder) {
-    return NewItemTodoListsItemTasksItemLinkedresourcesLinkedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder when successful
+func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResources()(*ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) {
+    return NewItemTodoListsItemTasksItemLinkedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property tasks in users
 // returns a TodoTaskable when successful

@@ -18,7 +18,7 @@ type ItemInsightsUsedUsedInsightItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemInsightsUsedUsedInsightItemRequestBuilderGetQueryParameters calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
+// ItemInsightsUsedUsedInsightItemRequestBuilderGetQueryParameters calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.
 type ItemInsightsUsedUsedInsightItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemInsightsUsedUsedInsightItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
+// Get calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.
 // returns a UsedInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsUsedUsedInsightItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsUsedUsedInsightItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UsedInsightable, error) {
@@ -126,7 +126,7 @@ func (m *ItemInsightsUsedUsedInsightItemRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
+// ToGetRequestInformation calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.
 // returns a *RequestInformation when successful
 func (m *ItemInsightsUsedUsedInsightItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsUsedUsedInsightItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

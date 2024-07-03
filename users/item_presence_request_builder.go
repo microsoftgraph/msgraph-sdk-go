@@ -42,14 +42,14 @@ type ItemPresenceRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ClearPresence provides operations to call the clearPresence method.
-// returns a *ItemPresenceClearpresenceClearPresenceRequestBuilder when successful
-func (m *ItemPresenceRequestBuilder) ClearPresence()(*ItemPresenceClearpresenceClearPresenceRequestBuilder) {
-    return NewItemPresenceClearpresenceClearPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPresenceClearPresenceRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) ClearPresence()(*ItemPresenceClearPresenceRequestBuilder) {
+    return NewItemPresenceClearPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
-// returns a *ItemPresenceClearuserpreferredpresenceClearUserPreferredPresenceRequestBuilder when successful
-func (m *ItemPresenceRequestBuilder) ClearUserPreferredPresence()(*ItemPresenceClearuserpreferredpresenceClearUserPreferredPresenceRequestBuilder) {
-    return NewItemPresenceClearuserpreferredpresenceClearUserPreferredPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPresenceClearUserPreferredPresenceRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) ClearUserPreferredPresence()(*ItemPresenceClearUserPreferredPresenceRequestBuilder) {
+    return NewItemPresenceClearUserPreferredPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemPresenceRequestBuilderInternal instantiates a new ItemPresenceRequestBuilder and sets the default values.
 func NewItemPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPresenceRequestBuilder) {
@@ -124,19 +124,19 @@ func (m *ItemPresenceRequestBuilder) Patch(ctx context.Context, body iadcd811244
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable), nil
 }
 // SetPresence provides operations to call the setPresence method.
-// returns a *ItemPresenceSetpresenceSetPresenceRequestBuilder when successful
-func (m *ItemPresenceRequestBuilder) SetPresence()(*ItemPresenceSetpresenceSetPresenceRequestBuilder) {
-    return NewItemPresenceSetpresenceSetPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPresenceSetPresenceRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) SetPresence()(*ItemPresenceSetPresenceRequestBuilder) {
+    return NewItemPresenceSetPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetStatusMessage provides operations to call the setStatusMessage method.
-// returns a *ItemPresenceSetstatusmessageSetStatusMessageRequestBuilder when successful
-func (m *ItemPresenceRequestBuilder) SetStatusMessage()(*ItemPresenceSetstatusmessageSetStatusMessageRequestBuilder) {
-    return NewItemPresenceSetstatusmessageSetStatusMessageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPresenceSetStatusMessageRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) SetStatusMessage()(*ItemPresenceSetStatusMessageRequestBuilder) {
+    return NewItemPresenceSetStatusMessageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
-// returns a *ItemPresenceSetuserpreferredpresenceSetUserPreferredPresenceRequestBuilder when successful
-func (m *ItemPresenceRequestBuilder) SetUserPreferredPresence()(*ItemPresenceSetuserpreferredpresenceSetUserPreferredPresenceRequestBuilder) {
-    return NewItemPresenceSetuserpreferredpresenceSetUserPreferredPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPresenceSetUserPreferredPresenceRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) SetUserPreferredPresence()(*ItemPresenceSetUserPreferredPresenceRequestBuilder) {
+    return NewItemPresenceSetUserPreferredPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property presence for users
 // returns a *RequestInformation when successful

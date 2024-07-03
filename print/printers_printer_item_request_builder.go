@@ -130,9 +130,9 @@ func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body iadc
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable), nil
 }
 // RestoreFactoryDefaults provides operations to call the restoreFactoryDefaults method.
-// returns a *PrintersItemRestorefactorydefaultsRestoreFactoryDefaultsRequestBuilder when successful
-func (m *PrintersPrinterItemRequestBuilder) RestoreFactoryDefaults()(*PrintersItemRestorefactorydefaultsRestoreFactoryDefaultsRequestBuilder) {
-    return NewPrintersItemRestorefactorydefaultsRestoreFactoryDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemRestoreFactoryDefaultsRequestBuilder when successful
+func (m *PrintersPrinterItemRequestBuilder) RestoreFactoryDefaults()(*PrintersItemRestoreFactoryDefaultsRequestBuilder) {
+    return NewPrintersItemRestoreFactoryDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Shares provides operations to manage the shares property of the microsoft.graph.printer entity.
 // returns a *PrintersItemSharesRequestBuilder when successful
@@ -140,9 +140,9 @@ func (m *PrintersPrinterItemRequestBuilder) Shares()(*PrintersItemSharesRequestB
     return NewPrintersItemSharesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskTriggers provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
-// returns a *PrintersItemTasktriggersTaskTriggersRequestBuilder when successful
-func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTasktriggersTaskTriggersRequestBuilder) {
-    return NewPrintersItemTasktriggersTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemTaskTriggersRequestBuilder when successful
+func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTaskTriggersRequestBuilder) {
+    return NewPrintersItemTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete (unregister) a printer.
 // returns a *RequestInformation when successful

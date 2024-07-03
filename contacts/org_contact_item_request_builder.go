@@ -42,14 +42,14 @@ type OrgContactItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
-// returns a *ItemCheckmembergroupsCheckMemberGroupsRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) CheckMemberGroups()(*ItemCheckmembergroupsCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckmembergroupsCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberGroupsRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
-// returns a *ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) CheckMemberObjects()(*ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckmemberobjectsCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberObjectsRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewOrgContactItemRequestBuilderInternal instantiates a new OrgContactItemRequestBuilder and sets the default values.
 func NewOrgContactItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrgContactItemRequestBuilder) {
@@ -81,9 +81,9 @@ func (m *OrgContactItemRequestBuilder) Delete(ctx context.Context, requestConfig
     return nil
 }
 // DirectReports provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
-// returns a *ItemDirectreportsDirectReportsRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) DirectReports()(*ItemDirectreportsDirectReportsRequestBuilder) {
-    return NewItemDirectreportsDirectReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDirectReportsRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) DirectReports()(*ItemDirectReportsRequestBuilder) {
+    return NewItemDirectReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the properties and relationships of an organizational contact.
 // returns a OrgContactable when successful
@@ -109,14 +109,14 @@ func (m *OrgContactItemRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactable), nil
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
-// returns a *ItemGetmembergroupsGetMemberGroupsRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) GetMemberGroups()(*ItemGetmembergroupsGetMemberGroupsRequestBuilder) {
-    return NewItemGetmembergroupsGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberGroupsRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
-// returns a *ItemGetmemberobjectsGetMemberObjectsRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) GetMemberObjects()(*ItemGetmemberobjectsGetMemberObjectsRequestBuilder) {
-    return NewItemGetmemberobjectsGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberObjectsRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Manager provides operations to manage the manager property of the microsoft.graph.orgContact entity.
 // returns a *ItemManagerRequestBuilder when successful
@@ -124,9 +124,9 @@ func (m *OrgContactItemRequestBuilder) Manager()(*ItemManagerRequestBuilder) {
     return NewItemManagerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.orgContact entity.
-// returns a *ItemMemberofMemberOfRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) MemberOf()(*ItemMemberofMemberOfRequestBuilder) {
-    return NewItemMemberofMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMemberOfRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
+    return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in contacts
 // returns a OrgContactable when successful
@@ -154,14 +154,14 @@ func (m *OrgContactItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetryServiceProvisioning provides operations to call the retryServiceProvisioning method.
-// returns a *ItemRetryserviceprovisioningRetryServiceProvisioningRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) RetryServiceProvisioning()(*ItemRetryserviceprovisioningRetryServiceProvisioningRequestBuilder) {
-    return NewItemRetryserviceprovisioningRetryServiceProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRetryServiceProvisioningRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) RetryServiceProvisioning()(*ItemRetryServiceProvisioningRequestBuilder) {
+    return NewItemRetryServiceProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *ItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) ServiceProvisioningErrors()(*ItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
-    return NewItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemServiceProvisioningErrorsRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) ServiceProvisioningErrors()(*ItemServiceProvisioningErrorsRequestBuilder) {
+    return NewItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from contacts
 // returns a *RequestInformation when successful
@@ -204,9 +204,9 @@ func (m *OrgContactItemRequestBuilder) ToPatchRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // TransitiveMemberOf provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
-// returns a *ItemTransitivememberofTransitiveMemberOfRequestBuilder when successful
-func (m *OrgContactItemRequestBuilder) TransitiveMemberOf()(*ItemTransitivememberofTransitiveMemberOfRequestBuilder) {
-    return NewItemTransitivememberofTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTransitiveMemberOfRequestBuilder when successful
+func (m *OrgContactItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMemberOfRequestBuilder) {
+    return NewItemTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *OrgContactItemRequestBuilder when successful

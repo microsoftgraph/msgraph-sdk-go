@@ -18,7 +18,7 @@ type OrganizationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OrganizationItemRequestBuilderGetQueryParameters get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+// OrganizationItemRequestBuilderGetQueryParameters read properties and relationships of the organization object.
 type OrganizationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,19 +47,19 @@ func (m *OrganizationItemRequestBuilder) Branding()(*ItemBrandingRequestBuilder)
     return NewItemBrandingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CertificateBasedAuthConfiguration provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
-// returns a *ItemCertificatebasedauthconfigurationCertificateBasedAuthConfigurationRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfiguration()(*ItemCertificatebasedauthconfigurationCertificateBasedAuthConfigurationRequestBuilder) {
-    return NewItemCertificatebasedauthconfigurationCertificateBasedAuthConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCertificateBasedAuthConfigurationRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfiguration()(*ItemCertificateBasedAuthConfigurationRequestBuilder) {
+    return NewItemCertificateBasedAuthConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
-// returns a *ItemCheckmembergroupsCheckMemberGroupsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) CheckMemberGroups()(*ItemCheckmembergroupsCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckmembergroupsCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberGroupsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
-// returns a *ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) CheckMemberObjects()(*ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckmemberobjectsCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberObjectsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewOrganizationItemRequestBuilderInternal instantiates a new OrganizationItemRequestBuilder and sets the default values.
 func NewOrganizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrganizationItemRequestBuilder) {
@@ -95,12 +95,12 @@ func (m *OrganizationItemRequestBuilder) Delete(ctx context.Context, requestConf
 func (m *OrganizationItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+// Get read properties and relationships of the organization object.
 // returns a Organizationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
 func (m *OrganizationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OrganizationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,14 +119,14 @@ func (m *OrganizationItemRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable), nil
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
-// returns a *ItemGetmembergroupsGetMemberGroupsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) GetMemberGroups()(*ItemGetmembergroupsGetMemberGroupsRequestBuilder) {
-    return NewItemGetmembergroupsGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberGroupsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
-// returns a *ItemGetmemberobjectsGetMemberObjectsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) GetMemberObjects()(*ItemGetmemberobjectsGetMemberObjectsRequestBuilder) {
-    return NewItemGetmemberobjectsGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberObjectsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a organization object.
 // returns a Organizationable when successful
@@ -157,9 +157,9 @@ func (m *OrganizationItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetMobileDeviceManagementAuthority provides operations to call the setMobileDeviceManagementAuthority method.
-// returns a *ItemSetmobiledevicemanagementauthoritySetMobileDeviceManagementAuthorityRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) SetMobileDeviceManagementAuthority()(*ItemSetmobiledevicemanagementauthoritySetMobileDeviceManagementAuthorityRequestBuilder) {
-    return NewItemSetmobiledevicemanagementauthoritySetMobileDeviceManagementAuthorityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSetMobileDeviceManagementAuthorityRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) SetMobileDeviceManagementAuthority()(*ItemSetMobileDeviceManagementAuthorityRequestBuilder) {
+    return NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from organization
 // returns a *RequestInformation when successful
@@ -172,7 +172,7 @@ func (m *OrganizationItemRequestBuilder) ToDeleteRequestInformation(ctx context.
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+// ToGetRequestInformation read properties and relationships of the organization object.
 // returns a *RequestInformation when successful
 func (m *OrganizationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OrganizationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -55,9 +55,9 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnI
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DataBodyRange provides operations to call the dataBodyRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemDatabodyrangeDataBodyRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemDatabodyrangeDataBodyRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemDatabodyrangeDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemDataBodyRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemDataBodyRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property columns for drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -101,9 +101,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumn
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
 }
 // HeaderRowRange provides operations to call the headerRowRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemHeaderrowrangeHeaderRowRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemHeaderrowrangeHeaderRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemHeaderrowrangeHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemHeaderRowRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemHeaderRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property columns in drives
 // returns a WorkbookTableColumnable when successful
@@ -171,9 +171,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumn
     return requestInfo, nil
 }
 // TotalRowRange provides operations to call the totalRowRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemTotalrowrangeTotalRowRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemTotalrowrangeTotalRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemTotalrowrangeTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemTotalRowRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemTotalRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder when successful

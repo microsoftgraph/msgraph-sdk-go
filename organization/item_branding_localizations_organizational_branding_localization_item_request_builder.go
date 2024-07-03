@@ -42,14 +42,14 @@ type ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuild
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BackgroundImage provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingLocalizationsItemBackgroundimageBackgroundImageRequestBuilder when successful
-func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) BackgroundImage()(*ItemBrandingLocalizationsItemBackgroundimageBackgroundImageRequestBuilder) {
-    return NewItemBrandingLocalizationsItemBackgroundimageBackgroundImageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingLocalizationsItemBackgroundImageRequestBuilder when successful
+func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) BackgroundImage()(*ItemBrandingLocalizationsItemBackgroundImageRequestBuilder) {
+    return NewItemBrandingLocalizationsItemBackgroundImageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BannerLogo provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingLocalizationsItemBannerlogoBannerLogoRequestBuilder when successful
-func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) BannerLogo()(*ItemBrandingLocalizationsItemBannerlogoBannerLogoRequestBuilder) {
-    return NewItemBrandingLocalizationsItemBannerlogoBannerLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingLocalizationsItemBannerLogoRequestBuilder when successful
+func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) BannerLogo()(*ItemBrandingLocalizationsItemBannerLogoRequestBuilder) {
+    return NewItemBrandingLocalizationsItemBannerLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal instantiates a new ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
 func NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
@@ -65,9 +65,9 @@ func NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBu
     return NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CustomCSS provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingLocalizationsItemCustomcssCustomCSSRequestBuilder when successful
-func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) CustomCSS()(*ItemBrandingLocalizationsItemCustomcssCustomCSSRequestBuilder) {
-    return NewItemBrandingLocalizationsItemCustomcssCustomCSSRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingLocalizationsItemCustomCSSRequestBuilder when successful
+func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) CustomCSS()(*ItemBrandingLocalizationsItemCustomCSSRequestBuilder) {
+    return NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -117,9 +117,9 @@ func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestB
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingLocalizationable), nil
 }
 // HeaderLogo provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingLocalizationsItemHeaderlogoHeaderLogoRequestBuilder when successful
-func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) HeaderLogo()(*ItemBrandingLocalizationsItemHeaderlogoHeaderLogoRequestBuilder) {
-    return NewItemBrandingLocalizationsItemHeaderlogoHeaderLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingLocalizationsItemHeaderLogoRequestBuilder when successful
+func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) HeaderLogo()(*ItemBrandingLocalizationsItemHeaderLogoRequestBuilder) {
+    return NewItemBrandingLocalizationsItemHeaderLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of an organizationalBrandingLocalization object for a specific localization.
 // returns a OrganizationalBrandingLocalizationable when successful
@@ -145,14 +145,14 @@ func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestB
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingLocalizationable), nil
 }
 // SquareLogo provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingLocalizationsItemSquarelogoSquareLogoRequestBuilder when successful
-func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*ItemBrandingLocalizationsItemSquarelogoSquareLogoRequestBuilder) {
-    return NewItemBrandingLocalizationsItemSquarelogoSquareLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingLocalizationsItemSquareLogoRequestBuilder when successful
+func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*ItemBrandingLocalizationsItemSquareLogoRequestBuilder) {
+    return NewItemBrandingLocalizationsItemSquareLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SquareLogoDark provides operations to manage the media for the organization entity.
-// returns a *ItemBrandingLocalizationsItemSquarelogodarkSquareLogoDarkRequestBuilder when successful
-func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) SquareLogoDark()(*ItemBrandingLocalizationsItemSquarelogodarkSquareLogoDarkRequestBuilder) {
-    return NewItemBrandingLocalizationsItemSquarelogodarkSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder when successful
+func (m *ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) SquareLogoDark()(*ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) {
+    return NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
 // returns a *RequestInformation when successful

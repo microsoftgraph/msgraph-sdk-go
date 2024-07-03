@@ -237,7 +237,7 @@ func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchron
     }
     return nil
 }
-// GetSubscriptions gets the subscriptions property value. The subscriptions property
+// GetSubscriptions gets the subscriptions property value. List of commercial subscriptions that an organization acquired.
 // returns a []CompanySubscriptionable when successful
 func (m *Directory) GetSubscriptions()([]CompanySubscriptionable) {
     val, err := m.GetBackingStore().Get("subscriptions")
@@ -402,7 +402,7 @@ func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySync
         panic(err)
     }
 }
-// SetSubscriptions sets the subscriptions property value. The subscriptions property
+// SetSubscriptions sets the subscriptions property value. List of commercial subscriptions that an organization acquired.
 func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
     err := m.GetBackingStore().Set("subscriptions", value)
     if err != nil {

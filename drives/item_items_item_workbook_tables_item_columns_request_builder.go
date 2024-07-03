@@ -102,9 +102,9 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Get(ctx context.C
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable), nil
 }
 // ItemAtWithIndex provides operations to call the itemAt method.
-// returns a *ItemItemsItemWorkbookTablesItemColumnsItematwithindexItemAtWithIndexRequestBuilder when successful
-func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemColumnsItematwithindexItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItematwithindexItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
+// returns a *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder when successful
+func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
 }
 // Post create new navigation property to columns for drives
 // returns a WorkbookTableColumnable when successful

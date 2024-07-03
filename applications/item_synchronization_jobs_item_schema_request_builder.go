@@ -76,9 +76,9 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Directories()(*ItemSyn
     return NewItemSynchronizationJobsItemSchemaDirectoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterOperators provides operations to call the filterOperators method.
-// returns a *ItemSynchronizationJobsItemSchemaFilteroperatorsFilterOperatorsRequestBuilder when successful
-func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) FilterOperators()(*ItemSynchronizationJobsItemSchemaFilteroperatorsFilterOperatorsRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaFilteroperatorsFilterOperatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder when successful
+func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) FilterOperators()(*ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) {
+    return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Functions provides operations to call the functions method.
 // returns a *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder when successful
@@ -106,9 +106,9 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Get(ctx context.Contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSchemaable), nil
 }
 // ParseExpression provides operations to call the parseExpression method.
-// returns a *ItemSynchronizationJobsItemSchemaParseexpressionParseExpressionRequestBuilder when successful
-func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ParseExpression()(*ItemSynchronizationJobsItemSchemaParseexpressionParseExpressionRequestBuilder) {
-    return NewItemSynchronizationJobsItemSchemaParseexpressionParseExpressionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSynchronizationJobsItemSchemaParseExpressionRequestBuilder when successful
+func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ParseExpression()(*ItemSynchronizationJobsItemSchemaParseExpressionRequestBuilder) {
+    return NewItemSynchronizationJobsItemSchemaParseExpressionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property schema in applications
 // returns a SynchronizationSchemaable when successful

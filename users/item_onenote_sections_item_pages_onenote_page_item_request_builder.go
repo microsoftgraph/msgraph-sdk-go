@@ -60,9 +60,9 @@ func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Content()(*I
     return NewItemOnenoteSectionsItemPagesItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CopyToSection provides operations to call the copyToSection method.
-// returns a *ItemOnenoteSectionsItemPagesItemCopytosectionCopyToSectionRequestBuilder when successful
-func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOnenoteSectionsItemPagesItemCopytosectionCopyToSectionRequestBuilder) {
-    return NewItemOnenoteSectionsItemPagesItemCopytosectionCopyToSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenoteSectionsItemPagesItemCopyToSectionRequestBuilder when successful
+func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOnenoteSectionsItemPagesItemCopyToSectionRequestBuilder) {
+    return NewItemOnenoteSectionsItemPagesItemCopyToSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property pages for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -101,19 +101,19 @@ func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Get(ctx cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
 }
 // OnenotePatchContent provides operations to call the onenotePatchContent method.
-// returns a *ItemOnenoteSectionsItemPagesItemOnenotepatchcontentOnenotePatchContentRequestBuilder when successful
-func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) OnenotePatchContent()(*ItemOnenoteSectionsItemPagesItemOnenotepatchcontentOnenotePatchContentRequestBuilder) {
-    return NewItemOnenoteSectionsItemPagesItemOnenotepatchcontentOnenotePatchContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenoteSectionsItemPagesItemOnenotePatchContentRequestBuilder when successful
+func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) OnenotePatchContent()(*ItemOnenoteSectionsItemPagesItemOnenotePatchContentRequestBuilder) {
+    return NewItemOnenoteSectionsItemPagesItemOnenotePatchContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.
-// returns a *ItemOnenoteSectionsItemPagesItemParentnotebookParentNotebookRequestBuilder when successful
-func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ParentNotebook()(*ItemOnenoteSectionsItemPagesItemParentnotebookParentNotebookRequestBuilder) {
-    return NewItemOnenoteSectionsItemPagesItemParentnotebookParentNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenoteSectionsItemPagesItemParentNotebookRequestBuilder when successful
+func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ParentNotebook()(*ItemOnenoteSectionsItemPagesItemParentNotebookRequestBuilder) {
+    return NewItemOnenoteSectionsItemPagesItemParentNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ParentSection provides operations to manage the parentSection property of the microsoft.graph.onenotePage entity.
-// returns a *ItemOnenoteSectionsItemPagesItemParentsectionParentSectionRequestBuilder when successful
-func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ParentSection()(*ItemOnenoteSectionsItemPagesItemParentsectionParentSectionRequestBuilder) {
-    return NewItemOnenoteSectionsItemPagesItemParentsectionParentSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOnenoteSectionsItemPagesItemParentSectionRequestBuilder when successful
+func (m *ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ParentSection()(*ItemOnenoteSectionsItemPagesItemParentSectionRequestBuilder) {
+    return NewItemOnenoteSectionsItemPagesItemParentSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property pages in users
 // returns a OnenotePageable when successful

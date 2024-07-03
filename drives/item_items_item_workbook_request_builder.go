@@ -47,9 +47,9 @@ func (m *ItemItemsItemWorkbookRequestBuilder) Application()(*ItemItemsItemWorkbo
     return NewItemItemsItemWorkbookApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CloseSession provides operations to call the closeSession method.
-// returns a *ItemItemsItemWorkbookClosesessionCloseSessionRequestBuilder when successful
-func (m *ItemItemsItemWorkbookRequestBuilder) CloseSession()(*ItemItemsItemWorkbookClosesessionCloseSessionRequestBuilder) {
-    return NewItemItemsItemWorkbookClosesessionCloseSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookCloseSessionRequestBuilder when successful
+func (m *ItemItemsItemWorkbookRequestBuilder) CloseSession()(*ItemItemsItemWorkbookCloseSessionRequestBuilder) {
+    return NewItemItemsItemWorkbookCloseSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Comments provides operations to manage the comments property of the microsoft.graph.workbook entity.
 // returns a *ItemItemsItemWorkbookCommentsRequestBuilder when successful
@@ -70,9 +70,9 @@ func NewItemItemsItemWorkbookRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewItemItemsItemWorkbookRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateSession provides operations to call the createSession method.
-// returns a *ItemItemsItemWorkbookCreatesessionCreateSessionRequestBuilder when successful
-func (m *ItemItemsItemWorkbookRequestBuilder) CreateSession()(*ItemItemsItemWorkbookCreatesessionCreateSessionRequestBuilder) {
-    return NewItemItemsItemWorkbookCreatesessionCreateSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookCreateSessionRequestBuilder when successful
+func (m *ItemItemsItemWorkbookRequestBuilder) CreateSession()(*ItemItemsItemWorkbookCreateSessionRequestBuilder) {
+    return NewItemItemsItemWorkbookCreateSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property workbook for drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -146,19 +146,19 @@ func (m *ItemItemsItemWorkbookRequestBuilder) Patch(ctx context.Context, body ia
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Workbookable), nil
 }
 // RefreshSession provides operations to call the refreshSession method.
-// returns a *ItemItemsItemWorkbookRefreshsessionRefreshSessionRequestBuilder when successful
-func (m *ItemItemsItemWorkbookRequestBuilder) RefreshSession()(*ItemItemsItemWorkbookRefreshsessionRefreshSessionRequestBuilder) {
-    return NewItemItemsItemWorkbookRefreshsessionRefreshSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookRefreshSessionRequestBuilder when successful
+func (m *ItemItemsItemWorkbookRequestBuilder) RefreshSession()(*ItemItemsItemWorkbookRefreshSessionRequestBuilder) {
+    return NewItemItemsItemWorkbookRefreshSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SessionInfoResourceWithKey provides operations to call the sessionInfoResource method.
-// returns a *ItemItemsItemWorkbookSessioninforesourcewithkeySessionInfoResourceWithKeyRequestBuilder when successful
-func (m *ItemItemsItemWorkbookRequestBuilder) SessionInfoResourceWithKey(key *string)(*ItemItemsItemWorkbookSessioninforesourcewithkeySessionInfoResourceWithKeyRequestBuilder) {
-    return NewItemItemsItemWorkbookSessioninforesourcewithkeySessionInfoResourceWithKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, key)
+// returns a *ItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilder when successful
+func (m *ItemItemsItemWorkbookRequestBuilder) SessionInfoResourceWithKey(key *string)(*ItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilder) {
+    return NewItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, key)
 }
 // TableRowOperationResultWithKey provides operations to call the tableRowOperationResult method.
-// returns a *ItemItemsItemWorkbookTablerowoperationresultwithkeyTableRowOperationResultWithKeyRequestBuilder when successful
-func (m *ItemItemsItemWorkbookRequestBuilder) TableRowOperationResultWithKey(key *string)(*ItemItemsItemWorkbookTablerowoperationresultwithkeyTableRowOperationResultWithKeyRequestBuilder) {
-    return NewItemItemsItemWorkbookTablerowoperationresultwithkeyTableRowOperationResultWithKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, key)
+// returns a *ItemItemsItemWorkbookTableRowOperationResultWithKeyRequestBuilder when successful
+func (m *ItemItemsItemWorkbookRequestBuilder) TableRowOperationResultWithKey(key *string)(*ItemItemsItemWorkbookTableRowOperationResultWithKeyRequestBuilder) {
+    return NewItemItemsItemWorkbookTableRowOperationResultWithKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, key)
 }
 // Tables provides operations to manage the tables property of the microsoft.graph.workbook entity.
 // returns a *ItemItemsItemWorkbookTablesRequestBuilder when successful

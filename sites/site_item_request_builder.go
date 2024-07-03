@@ -58,14 +58,14 @@ func NewSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.site entity.
-// returns a *ItemContenttypesContentTypesRequestBuilder when successful
-func (m *SiteItemRequestBuilder) ContentTypes()(*ItemContenttypesContentTypesRequestBuilder) {
-    return NewItemContenttypesContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemContentTypesRequestBuilder when successful
+func (m *SiteItemRequestBuilder) ContentTypes()(*ItemContentTypesRequestBuilder) {
+    return NewItemContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemCreatedbyuserCreatedByUserRequestBuilder when successful
-func (m *SiteItemRequestBuilder) CreatedByUser()(*ItemCreatedbyuserCreatedByUserRequestBuilder) {
-    return NewItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCreatedByUserRequestBuilder when successful
+func (m *SiteItemRequestBuilder) CreatedByUser()(*ItemCreatedByUserRequestBuilder) {
+    return NewItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Drive provides operations to manage the drive property of the microsoft.graph.site entity.
 // returns a *ItemDriveRequestBuilder when successful
@@ -78,9 +78,9 @@ func (m *SiteItemRequestBuilder) Drives()(*ItemDrivesRequestBuilder) {
     return NewItemDrivesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExternalColumns provides operations to manage the externalColumns property of the microsoft.graph.site entity.
-// returns a *ItemExternalcolumnsExternalColumnsRequestBuilder when successful
-func (m *SiteItemRequestBuilder) ExternalColumns()(*ItemExternalcolumnsExternalColumnsRequestBuilder) {
-    return NewItemExternalcolumnsExternalColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemExternalColumnsRequestBuilder when successful
+func (m *SiteItemRequestBuilder) ExternalColumns()(*ItemExternalColumnsRequestBuilder) {
+    return NewItemExternalColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
 // returns a Siteable when successful
@@ -106,24 +106,24 @@ func (m *SiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
 }
 // GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-// returns a *ItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilder when successful
-func (m *SiteItemRequestBuilder) GetActivitiesByInterval()(*ItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilder) {
-    return NewItemGetactivitiesbyintervalGetActivitiesByIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetActivitiesByIntervalRequestBuilder when successful
+func (m *SiteItemRequestBuilder) GetActivitiesByInterval()(*ItemGetActivitiesByIntervalRequestBuilder) {
+    return NewItemGetActivitiesByIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-// returns a *ItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder when successful
-func (m *SiteItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemGetactivitiesbyintervalwithstartdatetimewithenddatetimewithintervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, interval, startDateTime)
+// returns a *ItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder when successful
+func (m *SiteItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, interval, startDateTime)
 }
 // GetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
-// returns a *ItemGetapplicablecontenttypesforlistwithlistidGetApplicableContentTypesForListWithListIdRequestBuilder when successful
-func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemGetapplicablecontenttypesforlistwithlistidGetApplicableContentTypesForListWithListIdRequestBuilder) {
-    return NewItemGetapplicablecontenttypesforlistwithlistidGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, listId)
+// returns a *ItemGetApplicableContentTypesForListWithListIdRequestBuilder when successful
+func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemGetApplicableContentTypesForListWithListIdRequestBuilder) {
+    return NewItemGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, listId)
 }
 // GetByPathWithPath provides operations to call the getByPath method.
-// returns a *ItemGetbypathwithpathGetByPathWithPathRequestBuilder when successful
-func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemGetbypathwithpathGetByPathWithPathRequestBuilder) {
-    return NewItemGetbypathwithpathGetByPathWithPathRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, path)
+// returns a *ItemGetByPathWithPathRequestBuilder when successful
+func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemGetByPathWithPathRequestBuilder) {
+    return NewItemGetByPathWithPathRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, path)
 }
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 // returns a *ItemItemsRequestBuilder when successful
@@ -131,9 +131,9 @@ func (m *SiteItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
-func (m *SiteItemRequestBuilder) LastModifiedByUser()(*ItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
-    return NewItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemLastModifiedByUserRequestBuilder when successful
+func (m *SiteItemRequestBuilder) LastModifiedByUser()(*ItemLastModifiedByUserRequestBuilder) {
+    return NewItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Lists provides operations to manage the lists property of the microsoft.graph.site entity.
 // returns a *ItemListsRequestBuilder when successful
@@ -186,14 +186,14 @@ func (m *SiteItemRequestBuilder) Sites()(*ItemSitesRequestBuilder) {
     return NewItemSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TermStore provides operations to manage the termStore property of the microsoft.graph.site entity.
-// returns a *ItemTermstoreTermStoreRequestBuilder when successful
-func (m *SiteItemRequestBuilder) TermStore()(*ItemTermstoreTermStoreRequestBuilder) {
-    return NewItemTermstoreTermStoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTermStoreRequestBuilder when successful
+func (m *SiteItemRequestBuilder) TermStore()(*ItemTermStoreRequestBuilder) {
+    return NewItemTermStoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TermStores provides operations to manage the termStores property of the microsoft.graph.site entity.
-// returns a *ItemTermstoresTermStoresRequestBuilder when successful
-func (m *SiteItemRequestBuilder) TermStores()(*ItemTermstoresTermStoresRequestBuilder) {
-    return NewItemTermstoresTermStoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTermStoresRequestBuilder when successful
+func (m *SiteItemRequestBuilder) TermStores()(*ItemTermStoresRequestBuilder) {
+    return NewItemTermStoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
 // returns a *RequestInformation when successful

@@ -64,14 +64,14 @@ func (m *MeUserRequestBuilder) Get(ctx context.Context, requestConfiguration *Me
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
-// returns a *MeUserMailboxsettingsMailboxSettingsRequestBuilder when successful
-func (m *MeUserRequestBuilder) MailboxSettings()(*MeUserMailboxsettingsMailboxSettingsRequestBuilder) {
-    return NewMeUserMailboxsettingsMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MeUserMailboxSettingsRequestBuilder when successful
+func (m *MeUserRequestBuilder) MailboxSettings()(*MeUserMailboxSettingsRequestBuilder) {
+    return NewMeUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *MeUserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
-func (m *MeUserRequestBuilder) ServiceProvisioningErrors()(*MeUserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
-    return NewMeUserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MeUserServiceProvisioningErrorsRequestBuilder when successful
+func (m *MeUserRequestBuilder) ServiceProvisioningErrors()(*MeUserServiceProvisioningErrorsRequestBuilder) {
+    return NewMeUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser.
 // returns a *RequestInformation when successful

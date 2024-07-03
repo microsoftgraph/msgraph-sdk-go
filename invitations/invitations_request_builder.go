@@ -46,18 +46,6 @@ type InvitationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByInvitationId provides operations to manage the collection of invitation entities.
-// returns a *InvitationItemRequestBuilder when successful
-func (m *InvitationsRequestBuilder) ByInvitationId(invitationId string)(*InvitationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if invitationId != "" {
-        urlTplParams["invitation%2Did"] = invitationId
-    }
-    return NewInvitationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewInvitationsRequestBuilderInternal instantiates a new InvitationsRequestBuilder and sets the default values.
 func NewInvitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InvitationsRequestBuilder) {
     m := &InvitationsRequestBuilder{
@@ -96,7 +84,17 @@ func (m *InvitationsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InvitationCollectionResponseable), nil
 }
-// Post use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
+// InvitedUser provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
+// returns a *InvitedUserRequestBuilder when successful
+func (m *InvitationsRequestBuilder) InvitedUser()(*InvitedUserRequestBuilder) {
+    return NewInvitedUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// InvitedUserSponsors provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
+// returns a *InvitedUserSponsorsRequestBuilder when successful
+func (m *InvitationsRequestBuilder) InvitedUserSponsors()(*InvitedUserSponsorsRequestBuilder) {
+    return NewInvitedUserSponsorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Post use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
 // returns a Invitationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -133,7 +131,7 @@ func (m *InvitationsRequestBuilder) ToGetRequestInformation(ctx context.Context,
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
+// ToPostRequestInformation use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
 // returns a *RequestInformation when successful
 func (m *InvitationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, requestConfiguration *InvitationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

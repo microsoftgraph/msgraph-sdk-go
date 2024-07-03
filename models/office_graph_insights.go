@@ -73,7 +73,7 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetShared gets the shared property value. Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// GetShared gets the shared property value. Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 // returns a []SharedInsightable when successful
 func (m *OfficeGraphInsights) GetShared()([]SharedInsightable) {
     val, err := m.GetBackingStore().Get("shared")
@@ -85,7 +85,7 @@ func (m *OfficeGraphInsights) GetShared()([]SharedInsightable) {
     }
     return nil
 }
-// GetTrending gets the trending property value. Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+// GetTrending gets the trending property value. Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 // returns a []Trendingable when successful
 func (m *OfficeGraphInsights) GetTrending()([]Trendingable) {
     val, err := m.GetBackingStore().Get("trending")
@@ -97,7 +97,7 @@ func (m *OfficeGraphInsights) GetTrending()([]Trendingable) {
     }
     return nil
 }
-// GetUsed gets the used property value. Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
+// GetUsed gets the used property value. Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.
 // returns a []UsedInsightable when successful
 func (m *OfficeGraphInsights) GetUsed()([]UsedInsightable) {
     val, err := m.GetBackingStore().Get("used")
@@ -153,21 +153,21 @@ func (m *OfficeGraphInsights) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetShared sets the shared property value. Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// SetShared sets the shared property value. Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *OfficeGraphInsights) SetShared(value []SharedInsightable)() {
     err := m.GetBackingStore().Set("shared", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrending sets the trending property value. Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+// SetTrending sets the trending property value. Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *OfficeGraphInsights) SetTrending(value []Trendingable)() {
     err := m.GetBackingStore().Set("trending", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsed sets the used property value. Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
+// SetUsed sets the used property value. Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.
 func (m *OfficeGraphInsights) SetUsed(value []UsedInsightable)() {
     err := m.GetBackingStore().Set("used", value)
     if err != nil {

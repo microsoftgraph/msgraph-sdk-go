@@ -105,14 +105,14 @@ func (m *GroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *Gr
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-// returns a *GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder when successful
-func (m *GroupsRequestBuilder) GetAvailableExtensionProperties()(*GetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewGetavailableextensionpropertiesGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetAvailableExtensionPropertiesRequestBuilder when successful
+func (m *GroupsRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetByIds provides operations to call the getByIds method.
-// returns a *GetbyidsGetByIdsRequestBuilder when successful
-func (m *GroupsRequestBuilder) GetByIds()(*GetbyidsGetByIdsRequestBuilder) {
-    return NewGetbyidsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetByIdsRequestBuilder when successful
+func (m *GroupsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new group object if it doesn't exist, or update the properties of an existing group object.You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
 // returns a Groupable when successful
@@ -167,9 +167,9 @@ func (m *GroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, bod
     return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ValidatepropertiesValidatePropertiesRequestBuilder when successful
-func (m *GroupsRequestBuilder) ValidateProperties()(*ValidatepropertiesValidatePropertiesRequestBuilder) {
-    return NewValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatePropertiesRequestBuilder when successful
+func (m *GroupsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *GroupsRequestBuilder when successful

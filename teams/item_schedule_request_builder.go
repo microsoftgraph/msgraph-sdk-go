@@ -94,19 +94,19 @@ func (m *ItemScheduleRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable), nil
 }
 // OfferShiftRequests provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleOffershiftrequestsOfferShiftRequestsRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) OfferShiftRequests()(*ItemScheduleOffershiftrequestsOfferShiftRequestsRequestBuilder) {
-    return NewItemScheduleOffershiftrequestsOfferShiftRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleOfferShiftRequestsRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) OfferShiftRequests()(*ItemScheduleOfferShiftRequestsRequestBuilder) {
+    return NewItemScheduleOfferShiftRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OpenShiftChangeRequests provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleOpenshiftchangerequestsOpenShiftChangeRequestsRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) OpenShiftChangeRequests()(*ItemScheduleOpenshiftchangerequestsOpenShiftChangeRequestsRequestBuilder) {
-    return NewItemScheduleOpenshiftchangerequestsOpenShiftChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleOpenShiftChangeRequestsRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) OpenShiftChangeRequests()(*ItemScheduleOpenShiftChangeRequestsRequestBuilder) {
+    return NewItemScheduleOpenShiftChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OpenShifts provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleOpenshiftsOpenShiftsRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) OpenShifts()(*ItemScheduleOpenshiftsOpenShiftsRequestBuilder) {
-    return NewItemScheduleOpenshiftsOpenShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleOpenShiftsRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) OpenShifts()(*ItemScheduleOpenShiftsRequestBuilder) {
+    return NewItemScheduleOpenShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put create or replace a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule.
 // returns a Scheduleable when successful
@@ -132,9 +132,9 @@ func (m *ItemScheduleRequestBuilder) Put(ctx context.Context, body iadcd81124412
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable), nil
 }
 // SchedulingGroups provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleSchedulinggroupsSchedulingGroupsRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) SchedulingGroups()(*ItemScheduleSchedulinggroupsSchedulingGroupsRequestBuilder) {
-    return NewItemScheduleSchedulinggroupsSchedulingGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleSchedulingGroupsRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) SchedulingGroups()(*ItemScheduleSchedulingGroupsRequestBuilder) {
+    return NewItemScheduleSchedulingGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Share provides operations to call the share method.
 // returns a *ItemScheduleShareRequestBuilder when successful
@@ -147,24 +147,24 @@ func (m *ItemScheduleRequestBuilder) Shifts()(*ItemScheduleShiftsRequestBuilder)
     return NewItemScheduleShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SwapShiftsChangeRequests provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleSwapshiftschangerequestsSwapShiftsChangeRequestsRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) SwapShiftsChangeRequests()(*ItemScheduleSwapshiftschangerequestsSwapShiftsChangeRequestsRequestBuilder) {
-    return NewItemScheduleSwapshiftschangerequestsSwapShiftsChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleSwapShiftsChangeRequestsRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) SwapShiftsChangeRequests()(*ItemScheduleSwapShiftsChangeRequestsRequestBuilder) {
+    return NewItemScheduleSwapShiftsChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TimeOffReasons provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleTimeoffreasonsTimeOffReasonsRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) TimeOffReasons()(*ItemScheduleTimeoffreasonsTimeOffReasonsRequestBuilder) {
-    return NewItemScheduleTimeoffreasonsTimeOffReasonsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleTimeOffReasonsRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) TimeOffReasons()(*ItemScheduleTimeOffReasonsRequestBuilder) {
+    return NewItemScheduleTimeOffReasonsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TimeOffRequests provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleTimeoffrequestsTimeOffRequestsRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) TimeOffRequests()(*ItemScheduleTimeoffrequestsTimeOffRequestsRequestBuilder) {
-    return NewItemScheduleTimeoffrequestsTimeOffRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleTimeOffRequestsRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) TimeOffRequests()(*ItemScheduleTimeOffRequestsRequestBuilder) {
+    return NewItemScheduleTimeOffRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TimesOff provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
-// returns a *ItemScheduleTimesoffTimesOffRequestBuilder when successful
-func (m *ItemScheduleRequestBuilder) TimesOff()(*ItemScheduleTimesoffTimesOffRequestBuilder) {
-    return NewItemScheduleTimesoffTimesOffRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemScheduleTimesOffRequestBuilder when successful
+func (m *ItemScheduleRequestBuilder) TimesOff()(*ItemScheduleTimesOffRequestBuilder) {
+    return NewItemScheduleTimesOffRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property schedule for teams
 // returns a *RequestInformation when successful

@@ -42,24 +42,24 @@ type GroupItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AcceptedSenders provides operations to manage the acceptedSenders property of the microsoft.graph.group entity.
-// returns a *ItemAcceptedsendersAcceptedSendersRequestBuilder when successful
-func (m *GroupItemRequestBuilder) AcceptedSenders()(*ItemAcceptedsendersAcceptedSendersRequestBuilder) {
-    return NewItemAcceptedsendersAcceptedSendersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAcceptedSendersRequestBuilder when successful
+func (m *GroupItemRequestBuilder) AcceptedSenders()(*ItemAcceptedSendersRequestBuilder) {
+    return NewItemAcceptedSendersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AddFavorite provides operations to call the addFavorite method.
-// returns a *ItemAddfavoriteAddFavoriteRequestBuilder when successful
-func (m *GroupItemRequestBuilder) AddFavorite()(*ItemAddfavoriteAddFavoriteRequestBuilder) {
-    return NewItemAddfavoriteAddFavoriteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAddFavoriteRequestBuilder when successful
+func (m *GroupItemRequestBuilder) AddFavorite()(*ItemAddFavoriteRequestBuilder) {
+    return NewItemAddFavoriteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AppRoleAssignments provides operations to manage the appRoleAssignments property of the microsoft.graph.group entity.
-// returns a *ItemApproleassignmentsAppRoleAssignmentsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) AppRoleAssignments()(*ItemApproleassignmentsAppRoleAssignmentsRequestBuilder) {
-    return NewItemApproleassignmentsAppRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAppRoleAssignmentsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) AppRoleAssignments()(*ItemAppRoleAssignmentsRequestBuilder) {
+    return NewItemAppRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignLicense provides operations to call the assignLicense method.
-// returns a *ItemAssignlicenseAssignLicenseRequestBuilder when successful
-func (m *GroupItemRequestBuilder) AssignLicense()(*ItemAssignlicenseAssignLicenseRequestBuilder) {
-    return NewItemAssignlicenseAssignLicenseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAssignLicenseRequestBuilder when successful
+func (m *GroupItemRequestBuilder) AssignLicense()(*ItemAssignLicenseRequestBuilder) {
+    return NewItemAssignLicenseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Calendar provides operations to manage the calendar property of the microsoft.graph.group entity.
 // returns a *ItemCalendarRequestBuilder when successful
@@ -67,24 +67,24 @@ func (m *GroupItemRequestBuilder) Calendar()(*ItemCalendarRequestBuilder) {
     return NewItemCalendarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CalendarView provides operations to manage the calendarView property of the microsoft.graph.group entity.
-// returns a *ItemCalendarviewCalendarViewRequestBuilder when successful
-func (m *GroupItemRequestBuilder) CalendarView()(*ItemCalendarviewCalendarViewRequestBuilder) {
-    return NewItemCalendarviewCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarViewRequestBuilder when successful
+func (m *GroupItemRequestBuilder) CalendarView()(*ItemCalendarViewRequestBuilder) {
+    return NewItemCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckGrantedPermissionsForApp provides operations to call the checkGrantedPermissionsForApp method.
-// returns a *ItemCheckgrantedpermissionsforappCheckGrantedPermissionsForAppRequestBuilder when successful
-func (m *GroupItemRequestBuilder) CheckGrantedPermissionsForApp()(*ItemCheckgrantedpermissionsforappCheckGrantedPermissionsForAppRequestBuilder) {
-    return NewItemCheckgrantedpermissionsforappCheckGrantedPermissionsForAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckGrantedPermissionsForAppRequestBuilder when successful
+func (m *GroupItemRequestBuilder) CheckGrantedPermissionsForApp()(*ItemCheckGrantedPermissionsForAppRequestBuilder) {
+    return NewItemCheckGrantedPermissionsForAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
-// returns a *ItemCheckmembergroupsCheckMemberGroupsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) CheckMemberGroups()(*ItemCheckmembergroupsCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckmembergroupsCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberGroupsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
-// returns a *ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) CheckMemberObjects()(*ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckmemberobjectsCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberObjectsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewGroupItemRequestBuilderInternal instantiates a new GroupItemRequestBuilder and sets the default values.
 func NewGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupItemRequestBuilder) {
@@ -105,9 +105,9 @@ func (m *GroupItemRequestBuilder) Conversations()(*ItemConversationsRequestBuild
     return NewItemConversationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreatedOnBehalfOf provides operations to manage the createdOnBehalfOf property of the microsoft.graph.group entity.
-// returns a *ItemCreatedonbehalfofCreatedOnBehalfOfRequestBuilder when successful
-func (m *GroupItemRequestBuilder) CreatedOnBehalfOf()(*ItemCreatedonbehalfofCreatedOnBehalfOfRequestBuilder) {
-    return NewItemCreatedonbehalfofCreatedOnBehalfOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCreatedOnBehalfOfRequestBuilder when successful
+func (m *GroupItemRequestBuilder) CreatedOnBehalfOf()(*ItemCreatedOnBehalfOfRequestBuilder) {
+    return NewItemCreatedOnBehalfOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they're permanently deleted. This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -172,24 +172,24 @@ func (m *GroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable), nil
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
-// returns a *ItemGetmembergroupsGetMemberGroupsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) GetMemberGroups()(*ItemGetmembergroupsGetMemberGroupsRequestBuilder) {
-    return NewItemGetmembergroupsGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberGroupsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
-// returns a *ItemGetmemberobjectsGetMemberObjectsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) GetMemberObjects()(*ItemGetmemberobjectsGetMemberObjectsRequestBuilder) {
-    return NewItemGetmemberobjectsGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberObjectsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GroupLifecyclePolicies provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
-// returns a *ItemGrouplifecyclepoliciesGroupLifecyclePoliciesRequestBuilder when successful
-func (m *GroupItemRequestBuilder) GroupLifecyclePolicies()(*ItemGrouplifecyclepoliciesGroupLifecyclePoliciesRequestBuilder) {
-    return NewItemGrouplifecyclepoliciesGroupLifecyclePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGroupLifecyclePoliciesRequestBuilder when successful
+func (m *GroupItemRequestBuilder) GroupLifecyclePolicies()(*ItemGroupLifecyclePoliciesRequestBuilder) {
+    return NewItemGroupLifecyclePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.group entity.
-// returns a *ItemMemberofMemberOfRequestBuilder when successful
-func (m *GroupItemRequestBuilder) MemberOf()(*ItemMemberofMemberOfRequestBuilder) {
-    return NewItemMemberofMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMemberOfRequestBuilder when successful
+func (m *GroupItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
+    return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.group entity.
 // returns a *ItemMembersRequestBuilder when successful
@@ -197,9 +197,9 @@ func (m *GroupItemRequestBuilder) Members()(*ItemMembersRequestBuilder) {
     return NewItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MembersWithLicenseErrors provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
-// returns a *ItemMemberswithlicenseerrorsMembersWithLicenseErrorsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) MembersWithLicenseErrors()(*ItemMemberswithlicenseerrorsMembersWithLicenseErrorsRequestBuilder) {
-    return NewItemMemberswithlicenseerrorsMembersWithLicenseErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMembersWithLicenseErrorsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) MembersWithLicenseErrors()(*ItemMembersWithLicenseErrorsRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Onenote provides operations to manage the onenote property of the microsoft.graph.group entity.
 // returns a *ItemOnenoteRequestBuilder when successful
@@ -235,9 +235,9 @@ func (m *GroupItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable), nil
 }
 // PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.group entity.
-// returns a *ItemPermissiongrantsPermissionGrantsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) PermissionGrants()(*ItemPermissiongrantsPermissionGrantsRequestBuilder) {
-    return NewItemPermissiongrantsPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPermissionGrantsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequestBuilder) {
+    return NewItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Photo provides operations to manage the photo property of the microsoft.graph.group entity.
 // returns a *ItemPhotoRequestBuilder when successful
@@ -255,14 +255,14 @@ func (m *GroupItemRequestBuilder) Planner()(*ItemPlannerRequestBuilder) {
     return NewItemPlannerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RejectedSenders provides operations to manage the rejectedSenders property of the microsoft.graph.group entity.
-// returns a *ItemRejectedsendersRejectedSendersRequestBuilder when successful
-func (m *GroupItemRequestBuilder) RejectedSenders()(*ItemRejectedsendersRejectedSendersRequestBuilder) {
-    return NewItemRejectedsendersRejectedSendersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRejectedSendersRequestBuilder when successful
+func (m *GroupItemRequestBuilder) RejectedSenders()(*ItemRejectedSendersRequestBuilder) {
+    return NewItemRejectedSendersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RemoveFavorite provides operations to call the removeFavorite method.
-// returns a *ItemRemovefavoriteRemoveFavoriteRequestBuilder when successful
-func (m *GroupItemRequestBuilder) RemoveFavorite()(*ItemRemovefavoriteRemoveFavoriteRequestBuilder) {
-    return NewItemRemovefavoriteRemoveFavoriteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRemoveFavoriteRequestBuilder when successful
+func (m *GroupItemRequestBuilder) RemoveFavorite()(*ItemRemoveFavoriteRequestBuilder) {
+    return NewItemRemoveFavoriteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Renew provides operations to call the renew method.
 // returns a *ItemRenewRequestBuilder when successful
@@ -270,9 +270,9 @@ func (m *GroupItemRequestBuilder) Renew()(*ItemRenewRequestBuilder) {
     return NewItemRenewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ResetUnseenCount provides operations to call the resetUnseenCount method.
-// returns a *ItemResetunseencountResetUnseenCountRequestBuilder when successful
-func (m *GroupItemRequestBuilder) ResetUnseenCount()(*ItemResetunseencountResetUnseenCountRequestBuilder) {
-    return NewItemResetunseencountResetUnseenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemResetUnseenCountRequestBuilder when successful
+func (m *GroupItemRequestBuilder) ResetUnseenCount()(*ItemResetUnseenCountRequestBuilder) {
+    return NewItemResetUnseenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Restore provides operations to call the restore method.
 // returns a *ItemRestoreRequestBuilder when successful
@@ -280,14 +280,14 @@ func (m *GroupItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetryServiceProvisioning provides operations to call the retryServiceProvisioning method.
-// returns a *ItemRetryserviceprovisioningRetryServiceProvisioningRequestBuilder when successful
-func (m *GroupItemRequestBuilder) RetryServiceProvisioning()(*ItemRetryserviceprovisioningRetryServiceProvisioningRequestBuilder) {
-    return NewItemRetryserviceprovisioningRetryServiceProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRetryServiceProvisioningRequestBuilder when successful
+func (m *GroupItemRequestBuilder) RetryServiceProvisioning()(*ItemRetryServiceProvisioningRequestBuilder) {
+    return NewItemRetryServiceProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *ItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
-func (m *GroupItemRequestBuilder) ServiceProvisioningErrors()(*ItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
-    return NewItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemServiceProvisioningErrorsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) ServiceProvisioningErrors()(*ItemServiceProvisioningErrorsRequestBuilder) {
+    return NewItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.group entity.
 // returns a *ItemSettingsRequestBuilder when successful
@@ -300,9 +300,9 @@ func (m *GroupItemRequestBuilder) Sites()(*ItemSitesRequestBuilder) {
     return NewItemSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubscribeByMail provides operations to call the subscribeByMail method.
-// returns a *ItemSubscribebymailSubscribeByMailRequestBuilder when successful
-func (m *GroupItemRequestBuilder) SubscribeByMail()(*ItemSubscribebymailSubscribeByMailRequestBuilder) {
-    return NewItemSubscribebymailSubscribeByMailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSubscribeByMailRequestBuilder when successful
+func (m *GroupItemRequestBuilder) SubscribeByMail()(*ItemSubscribeByMailRequestBuilder) {
+    return NewItemSubscribeByMailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Team provides operations to manage the team property of the microsoft.graph.group entity.
 // returns a *ItemTeamRequestBuilder when successful
@@ -355,24 +355,24 @@ func (m *GroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // TransitiveMemberOf provides operations to manage the transitiveMemberOf property of the microsoft.graph.group entity.
-// returns a *ItemTransitivememberofTransitiveMemberOfRequestBuilder when successful
-func (m *GroupItemRequestBuilder) TransitiveMemberOf()(*ItemTransitivememberofTransitiveMemberOfRequestBuilder) {
-    return NewItemTransitivememberofTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTransitiveMemberOfRequestBuilder when successful
+func (m *GroupItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMemberOfRequestBuilder) {
+    return NewItemTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TransitiveMembers provides operations to manage the transitiveMembers property of the microsoft.graph.group entity.
-// returns a *ItemTransitivemembersTransitiveMembersRequestBuilder when successful
-func (m *GroupItemRequestBuilder) TransitiveMembers()(*ItemTransitivemembersTransitiveMembersRequestBuilder) {
-    return NewItemTransitivemembersTransitiveMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTransitiveMembersRequestBuilder when successful
+func (m *GroupItemRequestBuilder) TransitiveMembers()(*ItemTransitiveMembersRequestBuilder) {
+    return NewItemTransitiveMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UnsubscribeByMail provides operations to call the unsubscribeByMail method.
-// returns a *ItemUnsubscribebymailUnsubscribeByMailRequestBuilder when successful
-func (m *GroupItemRequestBuilder) UnsubscribeByMail()(*ItemUnsubscribebymailUnsubscribeByMailRequestBuilder) {
-    return NewItemUnsubscribebymailUnsubscribeByMailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemUnsubscribeByMailRequestBuilder when successful
+func (m *GroupItemRequestBuilder) UnsubscribeByMail()(*ItemUnsubscribeByMailRequestBuilder) {
+    return NewItemUnsubscribeByMailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ItemValidatepropertiesValidatePropertiesRequestBuilder when successful
-func (m *GroupItemRequestBuilder) ValidateProperties()(*ItemValidatepropertiesValidatePropertiesRequestBuilder) {
-    return NewItemValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemValidatePropertiesRequestBuilder when successful
+func (m *GroupItemRequestBuilder) ValidateProperties()(*ItemValidatePropertiesRequestBuilder) {
+    return NewItemValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *GroupItemRequestBuilder when successful

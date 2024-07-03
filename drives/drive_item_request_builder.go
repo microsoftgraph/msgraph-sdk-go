@@ -60,9 +60,9 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewDriveItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemCreatedbyuserCreatedByUserRequestBuilder when successful
-func (m *DriveItemRequestBuilder) CreatedByUser()(*ItemCreatedbyuserCreatedByUserRequestBuilder) {
-    return NewItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCreatedByUserRequestBuilder when successful
+func (m *DriveItemRequestBuilder) CreatedByUser()(*ItemCreatedByUserRequestBuilder) {
+    return NewItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete entity from drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -111,9 +111,9 @@ func (m *DriveItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
-func (m *DriveItemRequestBuilder) LastModifiedByUser()(*ItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
-    return NewItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemLastModifiedByUserRequestBuilder when successful
+func (m *DriveItemRequestBuilder) LastModifiedByUser()(*ItemLastModifiedByUserRequestBuilder) {
+    return NewItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // List provides operations to manage the list property of the microsoft.graph.drive entity.
 // returns a *ItemListRequestBuilder when successful
@@ -151,14 +151,14 @@ func (m *DriveItemRequestBuilder) Root()(*ItemRootRequestBuilder) {
     return NewItemRootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SearchWithQ provides operations to call the search method.
-// returns a *ItemSearchwithqSearchWithQRequestBuilder when successful
-func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*ItemSearchwithqSearchWithQRequestBuilder) {
-    return NewItemSearchwithqSearchWithQRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, q)
+// returns a *ItemSearchWithQRequestBuilder when successful
+func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*ItemSearchWithQRequestBuilder) {
+    return NewItemSearchWithQRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, q)
 }
 // SharedWithMe provides operations to call the sharedWithMe method.
-// returns a *ItemSharedwithmeSharedWithMeRequestBuilder when successful
-func (m *DriveItemRequestBuilder) SharedWithMe()(*ItemSharedwithmeSharedWithMeRequestBuilder) {
-    return NewItemSharedwithmeSharedWithMeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSharedWithMeRequestBuilder when successful
+func (m *DriveItemRequestBuilder) SharedWithMe()(*ItemSharedWithMeRequestBuilder) {
+    return NewItemSharedWithMeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Special provides operations to manage the special property of the microsoft.graph.drive entity.
 // returns a *ItemSpecialRequestBuilder when successful

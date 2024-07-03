@@ -42,9 +42,9 @@ type ItemChannelsChannelItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CompleteMigration provides operations to call the completeMigration method.
-// returns a *ItemChannelsItemCompletemigrationCompleteMigrationRequestBuilder when successful
-func (m *ItemChannelsChannelItemRequestBuilder) CompleteMigration()(*ItemChannelsItemCompletemigrationCompleteMigrationRequestBuilder) {
-    return NewItemChannelsItemCompletemigrationCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemCompleteMigrationRequestBuilder when successful
+func (m *ItemChannelsChannelItemRequestBuilder) CompleteMigration()(*ItemChannelsItemCompleteMigrationRequestBuilder) {
+    return NewItemChannelsItemCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemChannelsChannelItemRequestBuilderInternal instantiates a new ItemChannelsChannelItemRequestBuilder and sets the default values.
 func NewItemChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsChannelItemRequestBuilder) {
@@ -79,14 +79,14 @@ func (m *ItemChannelsChannelItemRequestBuilder) Delete(ctx context.Context, requ
     return nil
 }
 // DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
-// returns a *ItemChannelsItemDoesuserhaveaccessuseriduseridtenantidtenantiduserprincipalnameuserprincipalnameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder when successful
-func (m *ItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemChannelsItemDoesuserhaveaccessuseriduseridtenantidtenantiduserprincipalnameuserprincipalnameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
-    return NewItemChannelsItemDoesuserhaveaccessuseriduseridtenantidtenantiduserprincipalnameuserprincipalnameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder when successful
+func (m *ItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return NewItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
-// returns a *ItemChannelsItemFilesfolderFilesFolderRequestBuilder when successful
-func (m *ItemChannelsChannelItemRequestBuilder) FilesFolder()(*ItemChannelsItemFilesfolderFilesFolderRequestBuilder) {
-    return NewItemChannelsItemFilesfolderFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemFilesFolderRequestBuilder when successful
+func (m *ItemChannelsChannelItemRequestBuilder) FilesFolder()(*ItemChannelsItemFilesFolderRequestBuilder) {
+    return NewItemChannelsItemFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
 // returns a Channelable when successful
@@ -145,19 +145,19 @@ func (m *ItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
 }
 // ProvisionEmail provides operations to call the provisionEmail method.
-// returns a *ItemChannelsItemProvisionemailProvisionEmailRequestBuilder when successful
-func (m *ItemChannelsChannelItemRequestBuilder) ProvisionEmail()(*ItemChannelsItemProvisionemailProvisionEmailRequestBuilder) {
-    return NewItemChannelsItemProvisionemailProvisionEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemProvisionEmailRequestBuilder when successful
+func (m *ItemChannelsChannelItemRequestBuilder) ProvisionEmail()(*ItemChannelsItemProvisionEmailRequestBuilder) {
+    return NewItemChannelsItemProvisionEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RemoveEmail provides operations to call the removeEmail method.
-// returns a *ItemChannelsItemRemoveemailRemoveEmailRequestBuilder when successful
-func (m *ItemChannelsChannelItemRequestBuilder) RemoveEmail()(*ItemChannelsItemRemoveemailRemoveEmailRequestBuilder) {
-    return NewItemChannelsItemRemoveemailRemoveEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemRemoveEmailRequestBuilder when successful
+func (m *ItemChannelsChannelItemRequestBuilder) RemoveEmail()(*ItemChannelsItemRemoveEmailRequestBuilder) {
+    return NewItemChannelsItemRemoveEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SharedWithTeams provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-// returns a *ItemChannelsItemSharedwithteamsSharedWithTeamsRequestBuilder when successful
-func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemChannelsItemSharedwithteamsSharedWithTeamsRequestBuilder) {
-    return NewItemChannelsItemSharedwithteamsSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsItemSharedWithTeamsRequestBuilder when successful
+func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemChannelsItemSharedWithTeamsRequestBuilder) {
+    return NewItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *ItemChannelsItemTabsRequestBuilder when successful
