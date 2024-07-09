@@ -200,7 +200,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsBroadcast gets the isBroadcast property value. Indicates if this is a Teams live event.
+// GetIsBroadcast gets the isBroadcast property value. Indicates whether this meeting is a Teams live event.
 // returns a *bool when successful
 func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     val, err := m.GetBackingStore().Get("isBroadcast")
@@ -212,7 +212,7 @@ func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     }
     return nil
 }
-// GetParticipants gets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
+// GetParticipants gets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
 // returns a MeetingParticipantsable when successful
 func (m *OnlineMeeting) GetParticipants()(MeetingParticipantsable) {
     val, err := m.GetBackingStore().Get("participants")
@@ -236,7 +236,7 @@ func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC. Required when you create an online meeting.
+// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
 // returns a *Time when successful
 func (m *OnlineMeeting) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -375,14 +375,14 @@ func (m *OnlineMeeting) SetExternalId(value *string)() {
         panic(err)
     }
 }
-// SetIsBroadcast sets the isBroadcast property value. Indicates if this is a Teams live event.
+// SetIsBroadcast sets the isBroadcast property value. Indicates whether this meeting is a Teams live event.
 func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
     err := m.GetBackingStore().Set("isBroadcast", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
+// SetParticipants sets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
 func (m *OnlineMeeting) SetParticipants(value MeetingParticipantsable)() {
     err := m.GetBackingStore().Set("participants", value)
     if err != nil {
@@ -396,7 +396,7 @@ func (m *OnlineMeeting) SetRecordings(value []CallRecordingable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The meeting start time in UTC. Required when you create an online meeting.
+// SetStartDateTime sets the startDateTime property value. The meeting start time in UTC.
 func (m *OnlineMeeting) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

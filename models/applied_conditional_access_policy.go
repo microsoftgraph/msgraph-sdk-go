@@ -40,7 +40,7 @@ func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]any) {
 func (m *AppliedConditionalAccessPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
+// GetDisplayName gets the displayName property value. Refers to the name of the conditional access policy (example: 'Require MFA for Salesforce').
 // returns a *string when successful
 func (m *AppliedConditionalAccessPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -178,7 +178,7 @@ func (m *AppliedConditionalAccessPolicy) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn't applied because policy conditions weren't met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.  You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
+// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn't applied because policy conditions weren't met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
 // returns a *AppliedConditionalAccessPolicyResult when successful
 func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
     val, err := m.GetBackingStore().Get("result")
@@ -248,7 +248,7 @@ func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]any)
 func (m *AppliedConditionalAccessPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
+// SetDisplayName sets the displayName property value. Refers to the name of the conditional access policy (example: 'Require MFA for Salesforce').
 func (m *AppliedConditionalAccessPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -283,7 +283,7 @@ func (m *AppliedConditionalAccessPolicy) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn't applied because policy conditions weren't met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.  You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
+// SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn't applied because policy conditions weren't met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
 func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicyResult)() {
     err := m.GetBackingStore().Set("result", value)
     if err != nil {

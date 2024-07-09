@@ -35,14 +35,14 @@ type DirectoryRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AdministrativeUnits provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
-// returns a *AdministrativeunitsAdministrativeUnitsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeunitsAdministrativeUnitsRequestBuilder) {
-    return NewAdministrativeunitsAdministrativeUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AdministrativeUnitsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeUnitsRequestBuilder) {
+    return NewAdministrativeUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AttributeSets provides operations to manage the attributeSets property of the microsoft.graph.directory entity.
-// returns a *AttributesetsAttributeSetsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) AttributeSets()(*AttributesetsAttributeSetsRequestBuilder) {
-    return NewAttributesetsAttributeSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AttributeSetsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) AttributeSets()(*AttributeSetsRequestBuilder) {
+    return NewAttributeSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
@@ -58,24 +58,24 @@ func NewDirectoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewDirectoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CustomSecurityAttributeDefinitions provides operations to manage the customSecurityAttributeDefinitions property of the microsoft.graph.directory entity.
-// returns a *CustomsecurityattributedefinitionsCustomSecurityAttributeDefinitionsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitions()(*CustomsecurityattributedefinitionsCustomSecurityAttributeDefinitionsRequestBuilder) {
-    return NewCustomsecurityattributedefinitionsCustomSecurityAttributeDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CustomSecurityAttributeDefinitionsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitions()(*CustomSecurityAttributeDefinitionsRequestBuilder) {
+    return NewCustomSecurityAttributeDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
-// returns a *DeleteditemsDeletedItemsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) DeletedItems()(*DeleteditemsDeletedItemsRequestBuilder) {
-    return NewDeleteditemsDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeletedItemsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) DeletedItems()(*DeletedItemsRequestBuilder) {
+    return NewDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceLocalCredentials provides operations to manage the deviceLocalCredentials property of the microsoft.graph.directory entity.
-// returns a *DevicelocalcredentialsDeviceLocalCredentialsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) DeviceLocalCredentials()(*DevicelocalcredentialsDeviceLocalCredentialsRequestBuilder) {
-    return NewDevicelocalcredentialsDeviceLocalCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeviceLocalCredentialsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) DeviceLocalCredentials()(*DeviceLocalCredentialsRequestBuilder) {
+    return NewDeviceLocalCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FederationConfigurations provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
-// returns a *FederationconfigurationsFederationConfigurationsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) FederationConfigurations()(*FederationconfigurationsFederationConfigurationsRequestBuilder) {
-    return NewFederationconfigurationsFederationConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FederationConfigurationsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) FederationConfigurations()(*FederationConfigurationsRequestBuilder) {
+    return NewFederationConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get directory
 // returns a Directoryable when successful
@@ -98,9 +98,9 @@ func (m *DirectoryRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable), nil
 }
 // OnPremisesSynchronization provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
-// returns a *OnpremisessynchronizationOnPremisesSynchronizationRequestBuilder when successful
-func (m *DirectoryRequestBuilder) OnPremisesSynchronization()(*OnpremisessynchronizationOnPremisesSynchronizationRequestBuilder) {
-    return NewOnpremisessynchronizationOnPremisesSynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *OnPremisesSynchronizationRequestBuilder when successful
+func (m *DirectoryRequestBuilder) OnPremisesSynchronization()(*OnPremisesSynchronizationRequestBuilder) {
+    return NewOnPremisesSynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update directory
 // returns a Directoryable when successful
@@ -128,9 +128,9 @@ func (m *DirectoryRequestBuilder) Subscriptions()(*SubscriptionsRequestBuilder) 
     return NewSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubscriptionsWithCommerceSubscriptionId provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
-// returns a *SubscriptionswithcommercesubscriptionidSubscriptionsWithCommerceSubscriptionIdRequestBuilder when successful
-func (m *DirectoryRequestBuilder) SubscriptionsWithCommerceSubscriptionId(commerceSubscriptionId *string)(*SubscriptionswithcommercesubscriptionidSubscriptionsWithCommerceSubscriptionIdRequestBuilder) {
-    return NewSubscriptionswithcommercesubscriptionidSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, commerceSubscriptionId)
+// returns a *SubscriptionsWithCommerceSubscriptionIdRequestBuilder when successful
+func (m *DirectoryRequestBuilder) SubscriptionsWithCommerceSubscriptionId(commerceSubscriptionId *string)(*SubscriptionsWithCommerceSubscriptionIdRequestBuilder) {
+    return NewSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, commerceSubscriptionId)
 }
 // ToGetRequestInformation get directory
 // returns a *RequestInformation when successful

@@ -42,19 +42,19 @@ type ItemCalendarsCalendarItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllowedCalendarSharingRolesWithUser provides operations to call the allowedCalendarSharingRoles method.
-// returns a *ItemCalendarsItemAllowedcalendarsharingroleswithuserAllowedCalendarSharingRolesWithUserRequestBuilder when successful
-func (m *ItemCalendarsCalendarItemRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ItemCalendarsItemAllowedcalendarsharingroleswithuserAllowedCalendarSharingRolesWithUserRequestBuilder) {
-    return NewItemCalendarsItemAllowedcalendarsharingroleswithuserAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, user)
+// returns a *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder when successful
+func (m *ItemCalendarsCalendarItemRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) {
+    return NewItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, user)
 }
 // CalendarPermissions provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
-// returns a *ItemCalendarsItemCalendarpermissionsCalendarPermissionsRequestBuilder when successful
-func (m *ItemCalendarsCalendarItemRequestBuilder) CalendarPermissions()(*ItemCalendarsItemCalendarpermissionsCalendarPermissionsRequestBuilder) {
-    return NewItemCalendarsItemCalendarpermissionsCalendarPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarsItemCalendarPermissionsRequestBuilder when successful
+func (m *ItemCalendarsCalendarItemRequestBuilder) CalendarPermissions()(*ItemCalendarsItemCalendarPermissionsRequestBuilder) {
+    return NewItemCalendarsItemCalendarPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CalendarView provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-// returns a *ItemCalendarsItemCalendarviewCalendarViewRequestBuilder when successful
-func (m *ItemCalendarsCalendarItemRequestBuilder) CalendarView()(*ItemCalendarsItemCalendarviewCalendarViewRequestBuilder) {
-    return NewItemCalendarsItemCalendarviewCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarsItemCalendarViewRequestBuilder when successful
+func (m *ItemCalendarsCalendarItemRequestBuilder) CalendarView()(*ItemCalendarsItemCalendarViewRequestBuilder) {
+    return NewItemCalendarsItemCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemCalendarsCalendarItemRequestBuilderInternal instantiates a new ItemCalendarsCalendarItemRequestBuilder and sets the default values.
 func NewItemCalendarsCalendarItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsCalendarItemRequestBuilder) {
@@ -111,9 +111,9 @@ func (m *ItemCalendarsCalendarItemRequestBuilder) Get(ctx context.Context, reque
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
 // GetSchedule provides operations to call the getSchedule method.
-// returns a *ItemCalendarsItemGetscheduleGetScheduleRequestBuilder when successful
-func (m *ItemCalendarsCalendarItemRequestBuilder) GetSchedule()(*ItemCalendarsItemGetscheduleGetScheduleRequestBuilder) {
-    return NewItemCalendarsItemGetscheduleGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarsItemGetScheduleRequestBuilder when successful
+func (m *ItemCalendarsCalendarItemRequestBuilder) GetSchedule()(*ItemCalendarsItemGetScheduleRequestBuilder) {
+    return NewItemCalendarsItemGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property calendars in users
 // returns a Calendarable when successful

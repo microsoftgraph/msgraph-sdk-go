@@ -64,9 +64,9 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PeopleAdminSettingsable), nil
 }
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
-// returns a *PeopleProfilecardpropertiesProfileCardPropertiesRequestBuilder when successful
-func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfilecardpropertiesProfileCardPropertiesRequestBuilder) {
-    return NewPeopleProfilecardpropertiesProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PeopleProfileCardPropertiesRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {
+    return NewPeopleProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
 // returns a *PeoplePronounsRequestBuilder when successful

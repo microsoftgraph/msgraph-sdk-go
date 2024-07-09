@@ -42,14 +42,14 @@ type ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilderPatchRequestConfigura
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AssignedToTaskBoardFormat provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-// returns a *ItemPlannerPlansItemTasksItemAssignedtotaskboardformatAssignedToTaskBoardFormatRequestBuilder when successful
-func (m *ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) AssignedToTaskBoardFormat()(*ItemPlannerPlansItemTasksItemAssignedtotaskboardformatAssignedToTaskBoardFormatRequestBuilder) {
-    return NewItemPlannerPlansItemTasksItemAssignedtotaskboardformatAssignedToTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder when successful
+func (m *ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) AssignedToTaskBoardFormat()(*ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) {
+    return NewItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BucketTaskBoardFormat provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-// returns a *ItemPlannerPlansItemTasksItemBuckettaskboardformatBucketTaskBoardFormatRequestBuilder when successful
-func (m *ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) BucketTaskBoardFormat()(*ItemPlannerPlansItemTasksItemBuckettaskboardformatBucketTaskBoardFormatRequestBuilder) {
-    return NewItemPlannerPlansItemTasksItemBuckettaskboardformatBucketTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder when successful
+func (m *ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) BucketTaskBoardFormat()(*ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder) {
+    return NewItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemPlannerPlansItemTasksPlannerTaskItemRequestBuilderInternal instantiates a new ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder and sets the default values.
 func NewItemPlannerPlansItemTasksPlannerTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) {
@@ -126,9 +126,9 @@ func (m *ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) Patch(ctx conte
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskable), nil
 }
 // ProgressTaskBoardFormat provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-// returns a *ItemPlannerPlansItemTasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilder when successful
-func (m *ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) ProgressTaskBoardFormat()(*ItemPlannerPlansItemTasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilder) {
-    return NewItemPlannerPlansItemTasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder when successful
+func (m *ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) ProgressTaskBoardFormat()(*ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) {
+    return NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tasks for users
 // returns a *RequestInformation when successful

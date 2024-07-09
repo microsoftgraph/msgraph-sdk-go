@@ -42,14 +42,14 @@ type SharesPrinterShareItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllowedGroups provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
-// returns a *SharesItemAllowedgroupsAllowedGroupsRequestBuilder when successful
-func (m *SharesPrinterShareItemRequestBuilder) AllowedGroups()(*SharesItemAllowedgroupsAllowedGroupsRequestBuilder) {
-    return NewSharesItemAllowedgroupsAllowedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SharesItemAllowedGroupsRequestBuilder when successful
+func (m *SharesPrinterShareItemRequestBuilder) AllowedGroups()(*SharesItemAllowedGroupsRequestBuilder) {
+    return NewSharesItemAllowedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AllowedUsers provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.
-// returns a *SharesItemAllowedusersAllowedUsersRequestBuilder when successful
-func (m *SharesPrinterShareItemRequestBuilder) AllowedUsers()(*SharesItemAllowedusersAllowedUsersRequestBuilder) {
-    return NewSharesItemAllowedusersAllowedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SharesItemAllowedUsersRequestBuilder when successful
+func (m *SharesPrinterShareItemRequestBuilder) AllowedUsers()(*SharesItemAllowedUsersRequestBuilder) {
+    return NewSharesItemAllowedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSharesPrinterShareItemRequestBuilderInternal instantiates a new SharesPrinterShareItemRequestBuilder and sets the default values.
 func NewSharesPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesPrinterShareItemRequestBuilder) {

@@ -48,9 +48,9 @@ func NewStorageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewStorageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // FileStorage provides operations to manage the fileStorage property of the microsoft.graph.storage entity.
-// returns a *FilestorageFileStorageRequestBuilder when successful
-func (m *StorageRequestBuilder) FileStorage()(*FilestorageFileStorageRequestBuilder) {
-    return NewFilestorageFileStorageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FileStorageRequestBuilder when successful
+func (m *StorageRequestBuilder) FileStorage()(*FileStorageRequestBuilder) {
+    return NewFileStorageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get storage
 // returns a Storageable when successful

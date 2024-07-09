@@ -139,9 +139,9 @@ func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuil
     return NewClassesItemAssignmentsItemSubmissionsItemReturnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
-// returns a *ClassesItemAssignmentsItemSubmissionsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder when successful
-func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemAssignmentsItemSubmissionsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder) {
-    return NewClassesItemAssignmentsItemSubmissionsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsItemSubmissionsItemSetUpResourcesFolderRequestBuilder when successful
+func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemAssignmentsItemSubmissionsItemSetUpResourcesFolderRequestBuilder) {
+    return NewClassesItemAssignmentsItemSubmissionsItemSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Submit provides operations to call the submit method.
 // returns a *ClassesItemAssignmentsItemSubmissionsItemSubmitRequestBuilder when successful
@@ -149,9 +149,9 @@ func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuil
     return NewClassesItemAssignmentsItemSubmissionsItemSubmitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubmittedResources provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
-// returns a *ClassesItemAssignmentsItemSubmissionsItemSubmittedresourcesSubmittedResourcesRequestBuilder when successful
-func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) SubmittedResources()(*ClassesItemAssignmentsItemSubmissionsItemSubmittedresourcesSubmittedResourcesRequestBuilder) {
-    return NewClassesItemAssignmentsItemSubmissionsItemSubmittedresourcesSubmittedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder when successful
+func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) SubmittedResources()(*ClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) {
+    return NewClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property submissions for education
 // returns a *RequestInformation when successful

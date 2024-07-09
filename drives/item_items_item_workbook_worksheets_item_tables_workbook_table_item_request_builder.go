@@ -42,9 +42,9 @@ type ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilderPat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ClearFilters provides operations to call the clearFilters method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemClearfiltersClearFiltersRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) ClearFilters()(*ItemItemsItemWorkbookWorksheetsItemTablesItemClearfiltersClearFiltersRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemClearfiltersClearFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) ClearFilters()(*ItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Columns provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
 // returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder when successful
@@ -65,14 +65,14 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder
     return NewItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ConvertToRange provides operations to call the convertToRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemConverttorangeConvertToRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) ConvertToRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemConverttorangeConvertToRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemConverttorangeConvertToRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) ConvertToRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DataBodyRange provides operations to call the dataBodyRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemDatabodyrangeDataBodyRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemDatabodyrangeDataBodyRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemDatabodyrangeDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property tables for drives
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -111,9 +111,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilde
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable), nil
 }
 // HeaderRowRange provides operations to call the headerRowRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemHeaderrowrangeHeaderRowRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemHeaderrowrangeHeaderRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemHeaderrowrangeHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemHeaderRowRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemHeaderRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property tables in drives
 // returns a WorkbookTableable when successful
@@ -141,9 +141,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilde
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ReapplyFilters provides operations to call the reapplyFilters method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyfiltersReapplyFiltersRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) ReapplyFilters()(*ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyfiltersReapplyFiltersRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemReapplyfiltersReapplyFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) ReapplyFilters()(*ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Rows provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
 // returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsRequestBuilder when successful
@@ -196,9 +196,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilde
     return requestInfo, nil
 }
 // TotalRowRange provides operations to call the totalRowRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemTotalrowrangeTotalRowRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemTotalrowrangeTotalRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemTotalrowrangeTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder when successful

@@ -44,7 +44,7 @@ func (m *SubscribedSku) GetAccountName()(*string) {
     }
     return nil
 }
-// GetAppliesTo gets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: 'User', 'Company'.
+// GetAppliesTo gets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: User, Company.
 // returns a *string when successful
 func (m *SubscribedSku) GetAppliesTo()(*string) {
     val, err := m.GetBackingStore().Get("appliesTo")
@@ -234,7 +234,7 @@ func (m *SubscribedSku) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf67
     }
     return nil
 }
-// GetSkuPartNumber gets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
+// GetSkuPartNumber gets the skuPartNumber property value. The SKU part number; for example: AAD_PREMIUM or RMSBASIC. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
 // returns a *string when successful
 func (m *SubscribedSku) GetSkuPartNumber()(*string) {
     val, err := m.GetBackingStore().Get("skuPartNumber")
@@ -346,7 +346,7 @@ func (m *SubscribedSku) SetAccountName(value *string)() {
         panic(err)
     }
 }
-// SetAppliesTo sets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: 'User', 'Company'.
+// SetAppliesTo sets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: User, Company.
 func (m *SubscribedSku) SetAppliesTo(value *string)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {
@@ -388,7 +388,7 @@ func (m *SubscribedSku) SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0
         panic(err)
     }
 }
-// SetSkuPartNumber sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
+// SetSkuPartNumber sets the skuPartNumber property value. The SKU part number; for example: AAD_PREMIUM or RMSBASIC. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
 func (m *SubscribedSku) SetSkuPartNumber(value *string)() {
     err := m.GetBackingStore().Set("skuPartNumber", value)
     if err != nil {

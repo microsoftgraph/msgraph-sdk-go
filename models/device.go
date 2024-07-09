@@ -596,7 +596,7 @@ func (m *Device) GetIsManaged()(*bool) {
     }
     return nil
 }
-// GetIsRooted gets the isRooted property value. true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
+// GetIsRooted gets the isRooted property value. true if the device is rooted or jail-broken. This property can only be updated by Intune.
 // returns a *bool when successful
 func (m *Device) GetIsRooted()(*bool) {
     val, err := m.GetBackingStore().Get("isRooted")
@@ -1177,7 +1177,7 @@ func (m *Device) SetIsManaged(value *bool)() {
         panic(err)
     }
 }
-// SetIsRooted sets the isRooted property value. true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
+// SetIsRooted sets the isRooted property value. true if the device is rooted or jail-broken. This property can only be updated by Intune.
 func (m *Device) SetIsRooted(value *bool)() {
     err := m.GetBackingStore().Set("isRooted", value)
     if err != nil {

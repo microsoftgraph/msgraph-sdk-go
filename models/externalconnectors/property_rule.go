@@ -139,7 +139,7 @@ func (m *PropertyRule) GetProperty()(*string) {
     }
     return nil
 }
-// GetValues gets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+// GetValues gets the values property value. A collection with one or many strings. One or more specified strings are matched with the specified property using the specified operation. Required.
 // returns a []string when successful
 func (m *PropertyRule) GetValues()([]string) {
     val, err := m.GetBackingStore().Get("values")
@@ -237,7 +237,7 @@ func (m *PropertyRule) SetProperty(value *string)() {
         panic(err)
     }
 }
-// SetValues sets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+// SetValues sets the values property value. A collection with one or many strings. One or more specified strings are matched with the specified property using the specified operation. Required.
 func (m *PropertyRule) SetValues(value []string)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

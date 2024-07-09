@@ -61,24 +61,24 @@ func (m *ItemOutlookRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookUserable), nil
 }
 // MasterCategories provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
-// returns a *ItemOutlookMastercategoriesMasterCategoriesRequestBuilder when successful
-func (m *ItemOutlookRequestBuilder) MasterCategories()(*ItemOutlookMastercategoriesMasterCategoriesRequestBuilder) {
-    return NewItemOutlookMastercategoriesMasterCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOutlookMasterCategoriesRequestBuilder when successful
+func (m *ItemOutlookRequestBuilder) MasterCategories()(*ItemOutlookMasterCategoriesRequestBuilder) {
+    return NewItemOutlookMasterCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SupportedLanguages provides operations to call the supportedLanguages method.
-// returns a *ItemOutlookSupportedlanguagesSupportedLanguagesRequestBuilder when successful
-func (m *ItemOutlookRequestBuilder) SupportedLanguages()(*ItemOutlookSupportedlanguagesSupportedLanguagesRequestBuilder) {
-    return NewItemOutlookSupportedlanguagesSupportedLanguagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOutlookSupportedLanguagesRequestBuilder when successful
+func (m *ItemOutlookRequestBuilder) SupportedLanguages()(*ItemOutlookSupportedLanguagesRequestBuilder) {
+    return NewItemOutlookSupportedLanguagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SupportedTimeZones provides operations to call the supportedTimeZones method.
-// returns a *ItemOutlookSupportedtimezonesSupportedTimeZonesRequestBuilder when successful
-func (m *ItemOutlookRequestBuilder) SupportedTimeZones()(*ItemOutlookSupportedtimezonesSupportedTimeZonesRequestBuilder) {
-    return NewItemOutlookSupportedtimezonesSupportedTimeZonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOutlookSupportedTimeZonesRequestBuilder when successful
+func (m *ItemOutlookRequestBuilder) SupportedTimeZones()(*ItemOutlookSupportedTimeZonesRequestBuilder) {
+    return NewItemOutlookSupportedTimeZonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SupportedTimeZonesWithTimeZoneStandard provides operations to call the supportedTimeZones method.
-// returns a *ItemOutlookSupportedtimezoneswithtimezonestandardSupportedTimeZonesWithTimeZoneStandardRequestBuilder when successful
-func (m *ItemOutlookRequestBuilder) SupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*ItemOutlookSupportedtimezoneswithtimezonestandardSupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
-    return NewItemOutlookSupportedtimezoneswithtimezonestandardSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, timeZoneStandard)
+// returns a *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder when successful
+func (m *ItemOutlookRequestBuilder) SupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
+    return NewItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, timeZoneStandard)
 }
 // ToGetRequestInformation get outlook from users
 // returns a *RequestInformation when successful

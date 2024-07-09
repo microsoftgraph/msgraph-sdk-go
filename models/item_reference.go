@@ -196,7 +196,7 @@ func (m *ItemReference) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPath gets the path property value. Path that can be used to navigate to the item. Read-only.
+// GetPath gets the path property value. Percent-encoded path that can be used to navigate to the item. Read-only.
 // returns a *string when successful
 func (m *ItemReference) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
@@ -354,7 +354,7 @@ func (m *ItemReference) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPath sets the path property value. Path that can be used to navigate to the item. Read-only.
+// SetPath sets the path property value. Percent-encoded path that can be used to navigate to the item. Read-only.
 func (m *ItemReference) SetPath(value *string)() {
     err := m.GetBackingStore().Set("path", value)
     if err != nil {

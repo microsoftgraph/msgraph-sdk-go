@@ -206,7 +206,7 @@ func (m *SslCertificate) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetRelatedHosts gets the relatedHosts property value. The hosts related with this sslCertificate.
+// GetRelatedHosts gets the relatedHosts property value. The host resources related with this sslCertificate.
 // returns a []Hostable when successful
 func (m *SslCertificate) GetRelatedHosts()([]Hostable) {
     val, err := m.GetBackingStore().Get("relatedHosts")
@@ -370,7 +370,7 @@ func (m *SslCertificate) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3a
         panic(err)
     }
 }
-// SetRelatedHosts sets the relatedHosts property value. The hosts related with this sslCertificate.
+// SetRelatedHosts sets the relatedHosts property value. The host resources related with this sslCertificate.
 func (m *SslCertificate) SetRelatedHosts(value []Hostable)() {
     err := m.GetBackingStore().Set("relatedHosts", value)
     if err != nil {

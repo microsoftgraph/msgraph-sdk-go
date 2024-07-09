@@ -77,9 +77,9 @@ func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Count()(*ItemThreads
     return NewItemThreadsItemPostsItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder when successful
-func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
-    return NewItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilder when successful
+func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of attachment objects attached to a post.
 // returns a AttachmentCollectionResponseable when successful

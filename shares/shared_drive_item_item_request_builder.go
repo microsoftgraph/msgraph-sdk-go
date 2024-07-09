@@ -55,9 +55,9 @@ func NewSharedDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewSharedDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemCreatedbyuserCreatedByUserRequestBuilder when successful
-func (m *SharedDriveItemItemRequestBuilder) CreatedByUser()(*ItemCreatedbyuserCreatedByUserRequestBuilder) {
-    return NewItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCreatedByUserRequestBuilder when successful
+func (m *SharedDriveItemItemRequestBuilder) CreatedByUser()(*ItemCreatedByUserRequestBuilder) {
+    return NewItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete entity from shares
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -76,9 +76,9 @@ func (m *SharedDriveItemItemRequestBuilder) Delete(ctx context.Context, requestC
     return nil
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.
-// returns a *ItemDriveitemDriveItemRequestBuilder when successful
-func (m *SharedDriveItemItemRequestBuilder) DriveItem()(*ItemDriveitemDriveItemRequestBuilder) {
-    return NewItemDriveitemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDriveItemRequestBuilder when successful
+func (m *SharedDriveItemItemRequestBuilder) DriveItem()(*ItemDriveItemRequestBuilder) {
+    return NewItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 // returns a SharedDriveItemable when successful
@@ -109,9 +109,9 @@ func (m *SharedDriveItemItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
-func (m *SharedDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
-    return NewItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemLastModifiedByUserRequestBuilder when successful
+func (m *SharedDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemLastModifiedByUserRequestBuilder) {
+    return NewItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // List provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.
 // returns a *ItemListRequestBuilder when successful
@@ -119,9 +119,9 @@ func (m *SharedDriveItemItemRequestBuilder) List()(*ItemListRequestBuilder) {
     return NewItemListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.sharedDriveItem entity.
-// returns a *ItemListitemListItemRequestBuilder when successful
-func (m *SharedDriveItemItemRequestBuilder) ListItem()(*ItemListitemListItemRequestBuilder) {
-    return NewItemListitemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListItemRequestBuilder when successful
+func (m *SharedDriveItemItemRequestBuilder) ListItem()(*ItemListItemRequestBuilder) {
+    return NewItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in shares
 // returns a SharedDriveItemable when successful
