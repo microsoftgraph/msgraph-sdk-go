@@ -102,9 +102,9 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Get(ctx context.Con
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable), nil
 }
 // MicrosoftGraphExternalConnectorsAddActivities provides operations to call the addActivities method.
-// returns a *ConnectionsItemItemsItemMicrosoftgraphexternalconnectorsaddactivitiesMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder when successful
-func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) MicrosoftGraphExternalConnectorsAddActivities()(*ConnectionsItemItemsItemMicrosoftgraphexternalconnectorsaddactivitiesMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) {
-    return NewConnectionsItemItemsItemMicrosoftgraphexternalconnectorsaddactivitiesMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder when successful
+func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) MicrosoftGraphExternalConnectorsAddActivities()(*ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) {
+    return NewConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put create a new externalItem object.
 // returns a ExternalItemable when successful

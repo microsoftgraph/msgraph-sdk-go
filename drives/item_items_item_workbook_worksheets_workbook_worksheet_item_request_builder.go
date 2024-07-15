@@ -42,9 +42,9 @@ type ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CellWithRowWithColumn provides operations to call the cell method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemCellwithrowwithcolumnCellWithRowWithColumnRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) CellWithRowWithColumn(column *int32, row *int32)(*ItemItemsItemWorkbookWorksheetsItemCellwithrowwithcolumnCellWithRowWithColumnRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemCellwithrowwithcolumnCellWithRowWithColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, column, row)
+// returns a *ItemItemsItemWorkbookWorksheetsItemCellWithRowWithColumnRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) CellWithRowWithColumn(column *int32, row *int32)(*ItemItemsItemWorkbookWorksheetsItemCellWithRowWithColumnRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemCellWithRowWithColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, column, row)
 }
 // Charts provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
 // returns a *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder when successful
@@ -126,9 +126,9 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Pat
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable), nil
 }
 // PivotTables provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
-// returns a *ItemItemsItemWorkbookWorksheetsItemPivottablesPivotTablesRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) PivotTables()(*ItemItemsItemWorkbookWorksheetsItemPivottablesPivotTablesRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemPivottablesPivotTablesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) PivotTables()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Protection provides operations to manage the protection property of the microsoft.graph.workbookWorksheet entity.
 // returns a *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder when successful
@@ -141,9 +141,9 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Ran
     return NewItemItemsItemWorkbookWorksheetsItemRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RangeWithAddress provides operations to call the range method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemRangewithaddressRangeWithAddressRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) RangeWithAddress(address *string)(*ItemItemsItemWorkbookWorksheetsItemRangewithaddressRangeWithAddressRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemRangewithaddressRangeWithAddressRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, address)
+// returns a *ItemItemsItemWorkbookWorksheetsItemRangeWithAddressRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) RangeWithAddress(address *string)(*ItemItemsItemWorkbookWorksheetsItemRangeWithAddressRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemRangeWithAddressRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, address)
 }
 // Tables provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.
 // returns a *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder when successful
@@ -191,14 +191,14 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToP
     return requestInfo, nil
 }
 // UsedRange provides operations to call the usedRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemUsedrangeUsedRangeRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) UsedRange()(*ItemItemsItemWorkbookWorksheetsItemUsedrangeUsedRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemUsedrangeUsedRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemWorkbookWorksheetsItemUsedRangeRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) UsedRange()(*ItemItemsItemWorkbookWorksheetsItemUsedRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemUsedRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UsedRangeWithValuesOnly provides operations to call the usedRange method.
-// returns a *ItemItemsItemWorkbookWorksheetsItemUsedrangewithvaluesonlyUsedRangeWithValuesOnlyRequestBuilder when successful
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) UsedRangeWithValuesOnly(valuesOnly *bool)(*ItemItemsItemWorkbookWorksheetsItemUsedrangewithvaluesonlyUsedRangeWithValuesOnlyRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemUsedrangewithvaluesonlyUsedRangeWithValuesOnlyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, valuesOnly)
+// returns a *ItemItemsItemWorkbookWorksheetsItemUsedRangeWithValuesOnlyRequestBuilder when successful
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) UsedRangeWithValuesOnly(valuesOnly *bool)(*ItemItemsItemWorkbookWorksheetsItemUsedRangeWithValuesOnlyRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemUsedRangeWithValuesOnlyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, valuesOnly)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder when successful

@@ -55,9 +55,9 @@ func NewItemPagesBaseSitePageItemRequestBuilder(rawUrl string, requestAdapter i2
     return NewItemPagesBaseSitePageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemPagesItemCreatedbyuserCreatedByUserRequestBuilder when successful
-func (m *ItemPagesBaseSitePageItemRequestBuilder) CreatedByUser()(*ItemPagesItemCreatedbyuserCreatedByUserRequestBuilder) {
-    return NewItemPagesItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPagesItemCreatedByUserRequestBuilder when successful
+func (m *ItemPagesBaseSitePageItemRequestBuilder) CreatedByUser()(*ItemPagesItemCreatedByUserRequestBuilder) {
+    return NewItemPagesItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete a baseSitePage from the site pages list in a site.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -102,14 +102,14 @@ func (m *ItemPagesBaseSitePageItemRequestBuilder) Get(ctx context.Context, reque
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable), nil
 }
 // GraphSitePage casts the previous resource to sitePage.
-// returns a *ItemPagesItemGraphsitepageGraphSitePageRequestBuilder when successful
-func (m *ItemPagesBaseSitePageItemRequestBuilder) GraphSitePage()(*ItemPagesItemGraphsitepageGraphSitePageRequestBuilder) {
-    return NewItemPagesItemGraphsitepageGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPagesItemGraphSitePageRequestBuilder when successful
+func (m *ItemPagesBaseSitePageItemRequestBuilder) GraphSitePage()(*ItemPagesItemGraphSitePageRequestBuilder) {
+    return NewItemPagesItemGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemPagesItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
-func (m *ItemPagesBaseSitePageItemRequestBuilder) LastModifiedByUser()(*ItemPagesItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
-    return NewItemPagesItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPagesItemLastModifiedByUserRequestBuilder when successful
+func (m *ItemPagesBaseSitePageItemRequestBuilder) LastModifiedByUser()(*ItemPagesItemLastModifiedByUserRequestBuilder) {
+    return NewItemPagesItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property pages in sites
 // returns a BaseSitePageable when successful

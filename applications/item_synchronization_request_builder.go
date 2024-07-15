@@ -42,9 +42,9 @@ type ItemSynchronizationRequestBuilderPutRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AcquireAccessToken provides operations to call the acquireAccessToken method.
-// returns a *ItemSynchronizationAcquireaccesstokenAcquireAccessTokenRequestBuilder when successful
-func (m *ItemSynchronizationRequestBuilder) AcquireAccessToken()(*ItemSynchronizationAcquireaccesstokenAcquireAccessTokenRequestBuilder) {
-    return NewItemSynchronizationAcquireaccesstokenAcquireAccessTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSynchronizationAcquireAccessTokenRequestBuilder when successful
+func (m *ItemSynchronizationRequestBuilder) AcquireAccessToken()(*ItemSynchronizationAcquireAccessTokenRequestBuilder) {
+    return NewItemSynchronizationAcquireAccessTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemSynchronizationRequestBuilderInternal instantiates a new ItemSynchronizationRequestBuilder and sets the default values.
 func NewItemSynchronizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationRequestBuilder) {

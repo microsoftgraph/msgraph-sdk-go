@@ -22,24 +22,24 @@ func NewItemOwnersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapte
     return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
-// returns a *ItemOwnersItemGraphapproleassignmentGraphAppRoleAssignmentRequestBuilder when successful
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemOwnersItemGraphapproleassignmentGraphAppRoleAssignmentRequestBuilder) {
-    return NewItemOwnersItemGraphapproleassignmentGraphAppRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOwnersItemGraphAppRoleAssignmentRequestBuilder when successful
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemOwnersItemGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemOwnersItemGraphAppRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphEndpoint casts the previous resource to endpoint.
-// returns a *ItemOwnersItemGraphendpointGraphEndpointRequestBuilder when successful
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemOwnersItemGraphendpointGraphEndpointRequestBuilder) {
-    return NewItemOwnersItemGraphendpointGraphEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOwnersItemGraphEndpointRequestBuilder when successful
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemOwnersItemGraphEndpointRequestBuilder) {
+    return NewItemOwnersItemGraphEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphServicePrincipal casts the previous resource to servicePrincipal.
-// returns a *ItemOwnersItemGraphserviceprincipalGraphServicePrincipalRequestBuilder when successful
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemOwnersItemGraphserviceprincipalGraphServicePrincipalRequestBuilder) {
-    return NewItemOwnersItemGraphserviceprincipalGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOwnersItemGraphServicePrincipalRequestBuilder when successful
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemOwnersItemGraphServicePrincipalRequestBuilder) {
+    return NewItemOwnersItemGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphUser casts the previous resource to user.
-// returns a *ItemOwnersItemGraphuserGraphUserRequestBuilder when successful
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemOwnersItemGraphuserGraphUserRequestBuilder) {
-    return NewItemOwnersItemGraphuserGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOwnersItemGraphUserRequestBuilder when successful
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemOwnersItemGraphUserRequestBuilder) {
+    return NewItemOwnersItemGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Ref provides operations to manage the collection of application entities.
 // returns a *ItemOwnersItemRefRequestBuilder when successful

@@ -73,9 +73,9 @@ func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *Adm
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Adminable), nil
 }
 // Microsoft365Apps provides operations to manage the microsoft365Apps property of the microsoft.graph.admin entity.
-// returns a *Microsoft365appsMicrosoft365AppsRequestBuilder when successful
-func (m *AdminRequestBuilder) Microsoft365Apps()(*Microsoft365appsMicrosoft365AppsRequestBuilder) {
-    return NewMicrosoft365appsMicrosoft365AppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *Microsoft365AppsRequestBuilder when successful
+func (m *AdminRequestBuilder) Microsoft365Apps()(*Microsoft365AppsRequestBuilder) {
+    return NewMicrosoft365AppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update admin
 // returns a Adminable when successful
@@ -103,9 +103,9 @@ func (m *AdminRequestBuilder) People()(*PeopleRequestBuilder) {
     return NewPeopleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceAnnouncement provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
-// returns a *ServiceannouncementServiceAnnouncementRequestBuilder when successful
-func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceannouncementServiceAnnouncementRequestBuilder) {
-    return NewServiceannouncementServiceAnnouncementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ServiceAnnouncementRequestBuilder when successful
+func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestBuilder) {
+    return NewServiceAnnouncementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sharepoint provides operations to manage the sharepoint property of the microsoft.graph.admin entity.
 // returns a *SharepointRequestBuilder when successful

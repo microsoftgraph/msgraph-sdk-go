@@ -39,12 +39,12 @@ func (m *PlacesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphRoom casts the previous resource to room.
-// returns a *GraphroomGraphRoomRequestBuilder when successful
-func (m *PlacesRequestBuilder) GraphRoom()(*GraphroomGraphRoomRequestBuilder) {
-    return NewGraphroomGraphRoomRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GraphRoomRequestBuilder when successful
+func (m *PlacesRequestBuilder) GraphRoom()(*GraphRoomRequestBuilder) {
+    return NewGraphRoomRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphRoomList casts the previous resource to roomList.
-// returns a *GraphroomlistGraphRoomListRequestBuilder when successful
-func (m *PlacesRequestBuilder) GraphRoomList()(*GraphroomlistGraphRoomListRequestBuilder) {
-    return NewGraphroomlistGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GraphRoomListRequestBuilder when successful
+func (m *PlacesRequestBuilder) GraphRoomList()(*GraphRoomListRequestBuilder) {
+    return NewGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

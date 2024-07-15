@@ -88,9 +88,9 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodable), nil
 }
 // ResetPassword provides operations to call the resetPassword method.
-// returns a *ItemAuthenticationMethodsItemResetpasswordResetPasswordRequestBuilder when successful
-func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetpasswordResetPasswordRequestBuilder) {
-    return NewItemAuthenticationMethodsItemResetpasswordResetPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationMethodsItemResetPasswordRequestBuilder when successful
+func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetPasswordRequestBuilder) {
+    return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation represents all authentication methods registered to a user.
 // returns a *RequestInformation when successful

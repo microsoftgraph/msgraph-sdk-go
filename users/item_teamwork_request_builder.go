@@ -42,9 +42,9 @@ type ItemTeamworkRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AssociatedTeams provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
-// returns a *ItemTeamworkAssociatedteamsAssociatedTeamsRequestBuilder when successful
-func (m *ItemTeamworkRequestBuilder) AssociatedTeams()(*ItemTeamworkAssociatedteamsAssociatedTeamsRequestBuilder) {
-    return NewItemTeamworkAssociatedteamsAssociatedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamworkAssociatedTeamsRequestBuilder when successful
+func (m *ItemTeamworkRequestBuilder) AssociatedTeams()(*ItemTeamworkAssociatedTeamsRequestBuilder) {
+    return NewItemTeamworkAssociatedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemTeamworkRequestBuilderInternal instantiates a new ItemTeamworkRequestBuilder and sets the default values.
 func NewItemTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkRequestBuilder) {
@@ -99,9 +99,9 @@ func (m *ItemTeamworkRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable), nil
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
-// returns a *ItemTeamworkInstalledappsInstalledAppsRequestBuilder when successful
-func (m *ItemTeamworkRequestBuilder) InstalledApps()(*ItemTeamworkInstalledappsInstalledAppsRequestBuilder) {
-    return NewItemTeamworkInstalledappsInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamworkInstalledAppsRequestBuilder when successful
+func (m *ItemTeamworkRequestBuilder) InstalledApps()(*ItemTeamworkInstalledAppsRequestBuilder) {
+    return NewItemTeamworkInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property teamwork in users
 // returns a UserTeamworkable when successful
@@ -124,9 +124,9 @@ func (m *ItemTeamworkRequestBuilder) Patch(ctx context.Context, body iadcd811244
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable), nil
 }
 // SendActivityNotification provides operations to call the sendActivityNotification method.
-// returns a *ItemTeamworkSendactivitynotificationSendActivityNotificationRequestBuilder when successful
-func (m *ItemTeamworkRequestBuilder) SendActivityNotification()(*ItemTeamworkSendactivitynotificationSendActivityNotificationRequestBuilder) {
-    return NewItemTeamworkSendactivitynotificationSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamworkSendActivityNotificationRequestBuilder when successful
+func (m *ItemTeamworkRequestBuilder) SendActivityNotification()(*ItemTeamworkSendActivityNotificationRequestBuilder) {
+    return NewItemTeamworkSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property teamwork for users
 // returns a *RequestInformation when successful

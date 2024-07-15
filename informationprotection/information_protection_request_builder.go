@@ -93,9 +93,9 @@ func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body ia
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InformationProtectionable), nil
 }
 // ThreatAssessmentRequests provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-// returns a *ThreatassessmentrequestsThreatAssessmentRequestsRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ThreatassessmentrequestsThreatAssessmentRequestsRequestBuilder) {
-    return NewThreatassessmentrequestsThreatAssessmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ThreatAssessmentRequestsRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ThreatAssessmentRequestsRequestBuilder) {
+    return NewThreatAssessmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get informationProtection
 // returns a *RequestInformation when successful

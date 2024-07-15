@@ -77,9 +77,9 @@ func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) Coun
     return NewItemCalendarsItemEventsItemInstancesItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemCalendarsItemEventsItemInstancesItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder when successful
-func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarsItemEventsItemInstancesItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
-    return NewItemCalendarsItemEventsItemInstancesItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarsItemEventsItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder when successful
+func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarsItemEventsItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemCalendarsItemEventsItemInstancesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 // returns a AttachmentCollectionResponseable when successful

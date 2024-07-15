@@ -18,7 +18,7 @@ type ItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListsListItemRequestBuilderGetQueryParameters get a list of rich long-running operations associated with a list.
+// ItemListsListItemRequestBuilderGetQueryParameters returns the metadata for a list.
 type ItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -60,14 +60,14 @@ func NewItemListsListItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewItemListsListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-// returns a *ItemListsItemContenttypesContentTypesRequestBuilder when successful
-func (m *ItemListsListItemRequestBuilder) ContentTypes()(*ItemListsItemContenttypesContentTypesRequestBuilder) {
-    return NewItemListsItemContenttypesContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListsItemContentTypesRequestBuilder when successful
+func (m *ItemListsListItemRequestBuilder) ContentTypes()(*ItemListsItemContentTypesRequestBuilder) {
+    return NewItemListsItemContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemListsItemCreatedbyuserCreatedByUserRequestBuilder when successful
-func (m *ItemListsListItemRequestBuilder) CreatedByUser()(*ItemListsItemCreatedbyuserCreatedByUserRequestBuilder) {
-    return NewItemListsItemCreatedbyuserCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListsItemCreatedByUserRequestBuilder when successful
+func (m *ItemListsListItemRequestBuilder) CreatedByUser()(*ItemListsItemCreatedByUserRequestBuilder) {
+    return NewItemListsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property lists for sites
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -90,12 +90,12 @@ func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestCon
 func (m *ItemListsListItemRequestBuilder) Drive()(*ItemListsItemDriveRequestBuilder) {
     return NewItemListsItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of rich long-running operations associated with a list.
+// Get returns the metadata for a list.
 // returns a Listable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0
 func (m *ItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,9 +119,9 @@ func (m *ItemListsListItemRequestBuilder) Items()(*ItemListsItemItemsRequestBuil
     return NewItemListsItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
-// returns a *ItemListsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder when successful
-func (m *ItemListsListItemRequestBuilder) LastModifiedByUser()(*ItemListsItemLastmodifiedbyuserLastModifiedByUserRequestBuilder) {
-    return NewItemListsItemLastmodifiedbyuserLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListsItemLastModifiedByUserRequestBuilder when successful
+func (m *ItemListsListItemRequestBuilder) LastModifiedByUser()(*ItemListsItemLastModifiedByUserRequestBuilder) {
+    return NewItemListsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 // returns a *ItemListsItemOperationsRequestBuilder when successful
@@ -164,7 +164,7 @@ func (m *ItemListsListItemRequestBuilder) ToDeleteRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a list of rich long-running operations associated with a list.
+// ToGetRequestInformation returns the metadata for a list.
 // returns a *RequestInformation when successful
 func (m *ItemListsListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

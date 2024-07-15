@@ -111,49 +111,49 @@ func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable), nil
 }
 // ResourceNamespaces provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryResourcenamespacesResourceNamespacesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) ResourceNamespaces()(*DirectoryResourcenamespacesResourceNamespacesRequestBuilder) {
-    return NewDirectoryResourcenamespacesResourceNamespacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryResourceNamespacesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) ResourceNamespaces()(*DirectoryResourceNamespacesRequestBuilder) {
+    return NewDirectoryResourceNamespacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoleassignmentsRoleAssignmentsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleAssignments()(*DirectoryRoleassignmentsRoleAssignmentsRequestBuilder) {
-    return NewDirectoryRoleassignmentsRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleAssignmentsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleAssignments()(*DirectoryRoleAssignmentsRequestBuilder) {
+    return NewDirectoryRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignmentScheduleInstances provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoleassignmentscheduleinstancesRoleAssignmentScheduleInstancesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstances()(*DirectoryRoleassignmentscheduleinstancesRoleAssignmentScheduleInstancesRequestBuilder) {
-    return NewDirectoryRoleassignmentscheduleinstancesRoleAssignmentScheduleInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleAssignmentScheduleInstancesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstances()(*DirectoryRoleAssignmentScheduleInstancesRequestBuilder) {
+    return NewDirectoryRoleAssignmentScheduleInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignmentScheduleRequests provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoleassignmentschedulerequestsRoleAssignmentScheduleRequestsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequests()(*DirectoryRoleassignmentschedulerequestsRoleAssignmentScheduleRequestsRequestBuilder) {
-    return NewDirectoryRoleassignmentschedulerequestsRoleAssignmentScheduleRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleAssignmentScheduleRequestsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequests()(*DirectoryRoleAssignmentScheduleRequestsRequestBuilder) {
+    return NewDirectoryRoleAssignmentScheduleRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignmentSchedules provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoleassignmentschedulesRoleAssignmentSchedulesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleAssignmentSchedules()(*DirectoryRoleassignmentschedulesRoleAssignmentSchedulesRequestBuilder) {
-    return NewDirectoryRoleassignmentschedulesRoleAssignmentSchedulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleAssignmentSchedulesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleAssignmentSchedules()(*DirectoryRoleAssignmentSchedulesRequestBuilder) {
+    return NewDirectoryRoleAssignmentSchedulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoledefinitionsRoleDefinitionsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleDefinitions()(*DirectoryRoledefinitionsRoleDefinitionsRequestBuilder) {
-    return NewDirectoryRoledefinitionsRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleDefinitionsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleDefinitions()(*DirectoryRoleDefinitionsRequestBuilder) {
+    return NewDirectoryRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleEligibilityScheduleInstances provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoleeligibilityscheduleinstancesRoleEligibilityScheduleInstancesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstances()(*DirectoryRoleeligibilityscheduleinstancesRoleEligibilityScheduleInstancesRequestBuilder) {
-    return NewDirectoryRoleeligibilityscheduleinstancesRoleEligibilityScheduleInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleEligibilityScheduleInstancesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstances()(*DirectoryRoleEligibilityScheduleInstancesRequestBuilder) {
+    return NewDirectoryRoleEligibilityScheduleInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleEligibilityScheduleRequests provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoleeligibilityschedulerequestsRoleEligibilityScheduleRequestsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequests()(*DirectoryRoleeligibilityschedulerequestsRoleEligibilityScheduleRequestsRequestBuilder) {
-    return NewDirectoryRoleeligibilityschedulerequestsRoleEligibilityScheduleRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleEligibilityScheduleRequestsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequests()(*DirectoryRoleEligibilityScheduleRequestsRequestBuilder) {
+    return NewDirectoryRoleEligibilityScheduleRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleEligibilitySchedules provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
-// returns a *DirectoryRoleeligibilityschedulesRoleEligibilitySchedulesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) RoleEligibilitySchedules()(*DirectoryRoleeligibilityschedulesRoleEligibilitySchedulesRequestBuilder) {
-    return NewDirectoryRoleeligibilityschedulesRoleEligibilitySchedulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryRoleEligibilitySchedulesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RoleEligibilitySchedules()(*DirectoryRoleEligibilitySchedulesRequestBuilder) {
+    return NewDirectoryRoleEligibilitySchedulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property directory for roleManagement
 // returns a *RequestInformation when successful

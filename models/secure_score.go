@@ -68,7 +68,7 @@ func (m *SecureScore) GetControlScores()([]ControlScoreable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date when the entity is created.
+// GetCreatedDateTime gets the createdDateTime property value. When the report was created.
 // returns a *Time when successful
 func (m *SecureScore) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -372,7 +372,7 @@ func (m *SecureScore) SetControlScores(value []ControlScoreable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date when the entity is created.
+// SetCreatedDateTime sets the createdDateTime property value. When the report was created.
 func (m *SecureScore) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {

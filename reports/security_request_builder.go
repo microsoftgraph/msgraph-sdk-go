@@ -91,19 +91,19 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecurityReportsRootable), nil
 }
 // GetAttackSimulationRepeatOffenders provides operations to call the getAttackSimulationRepeatOffenders method.
-// returns a *SecurityGetattacksimulationrepeatoffendersGetAttackSimulationRepeatOffendersRequestBuilder when successful
-func (m *SecurityRequestBuilder) GetAttackSimulationRepeatOffenders()(*SecurityGetattacksimulationrepeatoffendersGetAttackSimulationRepeatOffendersRequestBuilder) {
-    return NewSecurityGetattacksimulationrepeatoffendersGetAttackSimulationRepeatOffendersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SecurityGetAttackSimulationRepeatOffendersRequestBuilder when successful
+func (m *SecurityRequestBuilder) GetAttackSimulationRepeatOffenders()(*SecurityGetAttackSimulationRepeatOffendersRequestBuilder) {
+    return NewSecurityGetAttackSimulationRepeatOffendersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetAttackSimulationSimulationUserCoverage provides operations to call the getAttackSimulationSimulationUserCoverage method.
-// returns a *SecurityGetattacksimulationsimulationusercoverageGetAttackSimulationSimulationUserCoverageRequestBuilder when successful
-func (m *SecurityRequestBuilder) GetAttackSimulationSimulationUserCoverage()(*SecurityGetattacksimulationsimulationusercoverageGetAttackSimulationSimulationUserCoverageRequestBuilder) {
-    return NewSecurityGetattacksimulationsimulationusercoverageGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder when successful
+func (m *SecurityRequestBuilder) GetAttackSimulationSimulationUserCoverage()(*SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) {
+    return NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetAttackSimulationTrainingUserCoverage provides operations to call the getAttackSimulationTrainingUserCoverage method.
-// returns a *SecurityGetattacksimulationtrainingusercoverageGetAttackSimulationTrainingUserCoverageRequestBuilder when successful
-func (m *SecurityRequestBuilder) GetAttackSimulationTrainingUserCoverage()(*SecurityGetattacksimulationtrainingusercoverageGetAttackSimulationTrainingUserCoverageRequestBuilder) {
-    return NewSecurityGetattacksimulationtrainingusercoverageGetAttackSimulationTrainingUserCoverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder when successful
+func (m *SecurityRequestBuilder) GetAttackSimulationTrainingUserCoverage()(*SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) {
+    return NewSecurityGetAttackSimulationTrainingUserCoverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property security in reports
 // returns a SecurityReportsRootable when successful

@@ -35,7 +35,7 @@ func (m *ScheduleInformation) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAvailabilityView gets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
+// GetAvailabilityView gets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free or working elswhere, 1= tentative, 2= busy, 3= out of office.Note: Working elsewhere is set to 0 instead of 4 for backward compatibility. For details, see the Q&A.
 // returns a *string when successful
 func (m *ScheduleInformation) GetAvailabilityView()(*string) {
     val, err := m.GetBackingStore().Get("availabilityView")
@@ -243,7 +243,7 @@ func (m *ScheduleInformation) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAvailabilityView sets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
+// SetAvailabilityView sets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free or working elswhere, 1= tentative, 2= busy, 3= out of office.Note: Working elsewhere is set to 0 instead of 4 for backward compatibility. For details, see the Q&A.
 func (m *ScheduleInformation) SetAvailabilityView(value *string)() {
     err := m.GetBackingStore().Set("availabilityView", value)
     if err != nil {
