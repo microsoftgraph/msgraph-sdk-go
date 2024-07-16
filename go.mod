@@ -10,7 +10,7 @@ require (
 	github.com/microsoft/kiota-serialization-json-go v1.0.7
 	github.com/microsoft/kiota-serialization-multipart-go v1.0.0
 	github.com/microsoft/kiota-serialization-text-go v1.0.0
-	github.com/microsoftgraph/msgraph-sdk-go-core v1.1.0
+	github.com/microsoftgraph/msgraph-sdk-go-core v1.2.0
 	github.com/stretchr/testify v1.9.0
 )
 
@@ -21,7 +21,7 @@ require (
 	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/microsoft/kiota-authentication-azure-go v1.0.2 // indirect
-	github.com/microsoft/kiota-http-go v1.3.1 // indirect
+	github.com/microsoft/kiota-http-go v1.4.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/std-uritemplate/std-uritemplate/go v0.0.57 // indirect
 	go.opentelemetry.io/otel v1.24.0 // indirect
@@ -33,8 +33,8 @@ require (
 )
 
 retract (
-	v1.44.0
 	// release contains a unintentined breaking change in name of classes
 	v1.45.0
-	// release contains a unintentined breaking change in name of classes
+	v1.44.0
+// release contains a unintentined breaking change in name of classes
 )
