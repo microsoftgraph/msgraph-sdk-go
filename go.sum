@@ -20,8 +20,8 @@ github.com/microsoft/kiota-abstractions-go v1.6.1 h1:NXK50S3BwJn9Wj6bO0YFuAig7y2
 github.com/microsoft/kiota-abstractions-go v1.6.1/go.mod h1:FI1I2OHg0E7bK5t8DPnw+9C/CHVyLP6XeqDBT+95pTE=
 github.com/microsoft/kiota-authentication-azure-go v1.0.2 h1:tClGeyFZJ+4Bakf8u0euPM4wqy4ethycdOgx3jyH3pI=
 github.com/microsoft/kiota-authentication-azure-go v1.0.2/go.mod h1:aTcti0bUJEcq7kBfQG4Sr4ElvRNuaalXcFEu4iEyQ6M=
-github.com/microsoft/kiota-http-go v1.3.1 h1:S+ZDxE7Pc/Z06hbfqpFHkoq5xiC8/7d12iNovcgl+7o=
-github.com/microsoft/kiota-http-go v1.3.1/go.mod h1:4QjB+as08swnZXZLx5I+ZHZ8U/tVy7Zu49RNTmWgw48=
+github.com/microsoft/kiota-http-go v1.4.1 h1:zR54JahUOcu8h9C5z00fcQChzX8d01+BwhkTS8H16Ro=
+github.com/microsoft/kiota-http-go v1.4.1/go.mod h1:Kup5nMDD3a9sjdgRKHCqZWqtrv3FbprjcPaGjLR6FzM=
 github.com/microsoft/kiota-serialization-form-go v1.0.0 h1:UNdrkMnLFqUCccQZerKjblsyVgifS11b3WCx+eFEsAI=
 github.com/microsoft/kiota-serialization-form-go v1.0.0/go.mod h1:h4mQOO6KVTNciMF6azi1J9QB19ujSw3ULKcSNyXXOMA=
 github.com/microsoft/kiota-serialization-json-go v1.0.7 h1:yMbckSTPrjZdM4EMXgzLZSA3CtDaUBI350u0VoYRz7Y=
@@ -30,8 +30,8 @@ github.com/microsoft/kiota-serialization-multipart-go v1.0.0 h1:3O5sb5Zj+moLBiJy
 github.com/microsoft/kiota-serialization-multipart-go v1.0.0/go.mod h1:yauLeBTpANk4L03XD985akNysG24SnRJGaveZf+p4so=
 github.com/microsoft/kiota-serialization-text-go v1.0.0 h1:XOaRhAXy+g8ZVpcq7x7a0jlETWnWrEum0RhmbYrTFnA=
 github.com/microsoft/kiota-serialization-text-go v1.0.0/go.mod h1:sM1/C6ecnQ7IquQOGUrUldaO5wj+9+v7G2W3sQ3fy6M=
-github.com/microsoftgraph/msgraph-sdk-go-core v1.1.0 h1:NB7c/n4Knj+TLaLfjsahhSqoUqoN/CtyNB0XIe/nJnM=
-github.com/microsoftgraph/msgraph-sdk-go-core v1.1.0/go.mod h1:M3w/5IFJ1u/DpwOyjsjNSVEA43y1rLOeX58suyfBhGk=
+github.com/microsoftgraph/msgraph-sdk-go-core v1.2.0 h1:vHvUKVnk0FkLSJv+aUvxIsM5kLNqWlu/WzUM8S4XOy4=
+github.com/microsoftgraph/msgraph-sdk-go-core v1.2.0/go.mod h1:armKxoJybX70GBpd748K2e+1AySPYRbhvYW7EBplujw=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/rogpeppe/go-internal v1.12.0 h1:exVL4IDcn6na9z1rAb56Vxr+CgyK3nn3O+epU5NdKM8=
