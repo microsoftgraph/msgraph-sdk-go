@@ -10,10 +10,12 @@ const (
     UNKNOWNFUTUREVALUE_TEAMSASYNCOPERATIONTYPE
     TEAMIFYGROUP_TEAMSASYNCOPERATIONTYPE
     CREATECHANNEL_TEAMSASYNCOPERATIONTYPE
+    ARCHIVECHANNEL_TEAMSASYNCOPERATIONTYPE
+    UNARCHIVECHANNEL_TEAMSASYNCOPERATIONTYPE
 )
 
 func (i TeamsAsyncOperationType) String() string {
-    return []string{"invalid", "cloneTeam", "archiveTeam", "unarchiveTeam", "createTeam", "unknownFutureValue", "teamifyGroup", "createChannel"}[i]
+    return []string{"invalid", "cloneTeam", "archiveTeam", "unarchiveTeam", "createTeam", "unknownFutureValue", "teamifyGroup", "createChannel", "archiveChannel", "unarchiveChannel"}[i]
 }
 func ParseTeamsAsyncOperationType(v string) (any, error) {
     result := INVALID_TEAMSASYNCOPERATIONTYPE
@@ -34,6 +36,10 @@ func ParseTeamsAsyncOperationType(v string) (any, error) {
             result = TEAMIFYGROUP_TEAMSASYNCOPERATIONTYPE
         case "createChannel":
             result = CREATECHANNEL_TEAMSASYNCOPERATIONTYPE
+        case "archiveChannel":
+            result = ARCHIVECHANNEL_TEAMSASYNCOPERATIONTYPE
+        case "unarchiveChannel":
+            result = UNARCHIVECHANNEL_TEAMSASYNCOPERATIONTYPE
         default:
             return nil, nil
     }

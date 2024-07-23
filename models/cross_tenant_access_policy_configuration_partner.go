@@ -214,6 +214,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["tenantRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantRestrictions(val.(CrossTenantAccessPolicyTenantRestrictionsable))
+        }
+        return nil
+    }
     return res
 }
 // GetIdentitySynchronization gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
@@ -288,6 +298,18 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
     }
     return nil
 }
+// GetTenantRestrictions gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
+// returns a CrossTenantAccessPolicyTenantRestrictionsable when successful
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable) {
+    val, err := m.GetBackingStore().Get("tenantRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantAccessPolicyTenantRestrictionsable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -352,6 +374,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteStringValue("tenantId", m.GetTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("tenantRestrictions", m.GetTenantRestrictions())
         if err != nil {
             return err
         }
@@ -452,6 +480,13 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantId(value *string)
         panic(err)
     }
 }
+// SetTenantRestrictions sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
+    err := m.GetBackingStore().Set("tenantRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CrossTenantAccessPolicyConfigurationPartnerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -468,6 +503,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetIsServiceProvider()(*bool)
     GetOdataType()(*string)
     GetTenantId()(*string)
+    GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
     SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
@@ -480,4 +516,5 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     SetIsServiceProvider(value *bool)()
     SetOdataType(value *string)()
     SetTenantId(value *string)()
+    SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()
 }

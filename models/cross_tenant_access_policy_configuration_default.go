@@ -163,6 +163,16 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["tenantRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantRestrictions(val.(CrossTenantAccessPolicyTenantRestrictionsable))
+        }
+        return nil
+    }
     return res
 }
 // GetInboundTrust gets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
@@ -198,6 +208,18 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*boo
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetTenantRestrictions gets the tenantRestrictions property value. Defines the default tenant restrictions configuration for users in your organization who access an external organization on your network or devices.
+// returns a CrossTenantAccessPolicyTenantRestrictionsable when successful
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable) {
+    val, err := m.GetBackingStore().Get("tenantRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantAccessPolicyTenantRestrictionsable)
     }
     return nil
 }
@@ -251,6 +273,12 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
     }
     {
         err = writer.WriteBoolValue("isServiceDefault", m.GetIsServiceDefault())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("tenantRestrictions", m.GetTenantRestrictions())
         if err != nil {
             return err
         }
@@ -313,6 +341,13 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) SetIsServiceDefault(value 
         panic(err)
     }
 }
+// SetTenantRestrictions sets the tenantRestrictions property value. Defines the default tenant restrictions configuration for users in your organization who access an external organization on your network or devices.
+func (m *CrossTenantAccessPolicyConfigurationDefault) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
+    err := m.GetBackingStore().Set("tenantRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CrossTenantAccessPolicyConfigurationDefaultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -324,6 +359,7 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetInvitationRedemptionIdentityProviderConfiguration()(DefaultInvitationRedemptionIdentityProviderConfigurationable)
     GetIsServiceDefault()(*bool)
+    GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
     SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
@@ -332,4 +368,5 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetInvitationRedemptionIdentityProviderConfiguration(value DefaultInvitationRedemptionIdentityProviderConfigurationable)()
     SetIsServiceDefault(value *bool)()
+    SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()
 }

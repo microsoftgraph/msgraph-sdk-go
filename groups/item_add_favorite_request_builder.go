@@ -30,7 +30,7 @@ func NewItemAddFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemAddFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
+// Post add the group to the list of the current user's favorite groups.  The group shows up in Outlook and Teams favorites. Supported for Microsoft 365 groups only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *ItemAddFavoriteRequestBuilder) Post(ctx context.Context, requestConfigu
     }
     return nil
 }
-// ToPostRequestInformation add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
+// ToPostRequestInformation add the group to the list of the current user's favorite groups.  The group shows up in Outlook and Teams favorites. Supported for Microsoft 365 groups only.
 // returns a *RequestInformation when successful
 func (m *ItemAddFavoriteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemAddFavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

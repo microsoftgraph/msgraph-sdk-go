@@ -5,10 +5,11 @@ const (
     REQUIRED_ASSIGNMENTTYPE AssignmentType = iota
     RECOMMENDED_ASSIGNMENTTYPE
     UNKNOWNFUTUREVALUE_ASSIGNMENTTYPE
+    PEERRECOMMENDED_ASSIGNMENTTYPE
 )
 
 func (i AssignmentType) String() string {
-    return []string{"required", "recommended", "unknownFutureValue"}[i]
+    return []string{"required", "recommended", "unknownFutureValue", "peerRecommended"}[i]
 }
 func ParseAssignmentType(v string) (any, error) {
     result := REQUIRED_ASSIGNMENTTYPE
@@ -19,6 +20,8 @@ func ParseAssignmentType(v string) (any, error) {
             result = RECOMMENDED_ASSIGNMENTTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ASSIGNMENTTYPE
+        case "peerRecommended":
+            result = PEERRECOMMENDED_ASSIGNMENTTYPE
         default:
             return nil, nil
     }

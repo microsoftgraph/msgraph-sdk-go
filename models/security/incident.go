@@ -311,6 +311,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSummary(val)
+        }
+        return nil
+    }
     res["systemTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -420,6 +430,18 @@ func (m *Incident) GetStatus()(*IncidentStatus) {
     }
     if val != nil {
         return val.(*IncidentStatus)
+    }
+    return nil
+}
+// GetSummary gets the summary property value. The overview of an attack. When applicable, the summary contains details of what occurred, impacted assets, and the type of attack.
+// returns a *string when successful
+func (m *Incident) GetSummary()(*string) {
+    val, err := m.GetBackingStore().Get("summary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -565,6 +587,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("summary", m.GetSummary())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSystemTags() != nil {
         err = writer.WriteCollectionOfStringValues("systemTags", m.GetSystemTags())
         if err != nil {
@@ -691,6 +719,13 @@ func (m *Incident) SetStatus(value *IncidentStatus)() {
         panic(err)
     }
 }
+// SetSummary sets the summary property value. The overview of an attack. When applicable, the summary contains details of what occurred, impacted assets, and the type of attack.
+func (m *Incident) SetSummary(value *string)() {
+    err := m.GetBackingStore().Set("summary", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSystemTags sets the systemTags property value. The system tags associated with the incident.
 func (m *Incident) SetSystemTags(value []string)() {
     err := m.GetBackingStore().Set("systemTags", value)
@@ -724,6 +759,7 @@ type Incidentable interface {
     GetResolvingComment()(*string)
     GetSeverity()(*AlertSeverity)
     GetStatus()(*IncidentStatus)
+    GetSummary()(*string)
     GetSystemTags()([]string)
     GetTenantId()(*string)
     SetAlerts(value []Alertable)()
@@ -742,6 +778,7 @@ type Incidentable interface {
     SetResolvingComment(value *string)()
     SetSeverity(value *AlertSeverity)()
     SetStatus(value *IncidentStatus)()
+    SetSummary(value *string)()
     SetSystemTags(value []string)()
     SetTenantId(value *string)()
 }

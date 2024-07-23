@@ -233,7 +233,7 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
     }
     return nil
 }
-// GetOperations gets the operations property value. Represents the status of a long-running operation.
+// GetOperations gets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
 // returns a []LongRunningOperationable when successful
 func (m *Authentication) GetOperations()([]LongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
@@ -461,7 +461,7 @@ func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthe
         panic(err)
     }
 }
-// SetOperations sets the operations property value. Represents the status of a long-running operation.
+// SetOperations sets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
 func (m *Authentication) SetOperations(value []LongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
     if err != nil {

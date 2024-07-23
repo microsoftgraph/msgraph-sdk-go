@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -29,6 +30,18 @@ func (m *BookingService) GetAdditionalInformation()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
+func (m *BookingService) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -142,6 +155,16 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
     res["customQuestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingQuestionAssignmentFromDiscriminatorValue)
         if err != nil {
@@ -244,6 +267,16 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["isCustomerAllowedToManageBooking"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCustomerAllowedToManageBooking(val)
+        }
+        return nil
+    }
     res["isHiddenFromCustomers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -271,6 +304,16 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetLanguageTag(val)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
         }
         return nil
     }
@@ -374,6 +417,18 @@ func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
     }
     return nil
 }
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// returns a *bool when successful
+func (m *BookingService) GetIsCustomerAllowedToManageBooking()(*bool) {
+    val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
 // returns a *bool when successful
 func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
@@ -407,6 +462,18 @@ func (m *BookingService) GetLanguageTag()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// returns a *Time when successful
+func (m *BookingService) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -518,6 +585,12 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCustomQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
@@ -586,6 +659,12 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteBoolValue("isCustomerAllowedToManageBooking", m.GetIsCustomerAllowedToManageBooking())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isHiddenFromCustomers", m.GetIsHiddenFromCustomers())
         if err != nil {
             return err
@@ -599,6 +678,12 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err = writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
         if err != nil {
             return err
         }
@@ -650,6 +735,13 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 // SetAdditionalInformation sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingService) SetAdditionalInformation(value *string)() {
     err := m.GetBackingStore().Set("additionalInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+func (m *BookingService) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -717,6 +809,13 @@ func (m *BookingService) SetIsAnonymousJoinEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+func (m *BookingService) SetIsCustomerAllowedToManageBooking(value *bool)() {
+    err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
 func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
     err := m.GetBackingStore().Set("isHiddenFromCustomers", value)
@@ -734,6 +833,13 @@ func (m *BookingService) SetIsLocationOnline(value *bool)() {
 // SetLanguageTag sets the languageTag property value. The language of the self-service booking page.
 func (m *BookingService) SetLanguageTag(value *string)() {
     err := m.GetBackingStore().Set("languageTag", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingService) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -798,6 +904,7 @@ type BookingServiceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalInformation()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomQuestions()([]BookingQuestionAssignmentable)
     GetDefaultDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetDefaultLocation()(Locationable)
@@ -807,9 +914,11 @@ type BookingServiceable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsAnonymousJoinEnabled()(*bool)
+    GetIsCustomerAllowedToManageBooking()(*bool)
     GetIsHiddenFromCustomers()(*bool)
     GetIsLocationOnline()(*bool)
     GetLanguageTag()(*string)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMaximumAttendeesCount()(*int32)
     GetNotes()(*string)
     GetPostBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -819,6 +928,7 @@ type BookingServiceable interface {
     GetStaffMemberIds()([]string)
     GetWebUrl()(*string)
     SetAdditionalInformation(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomQuestions(value []BookingQuestionAssignmentable)()
     SetDefaultDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetDefaultLocation(value Locationable)()
@@ -828,9 +938,11 @@ type BookingServiceable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsAnonymousJoinEnabled(value *bool)()
+    SetIsCustomerAllowedToManageBooking(value *bool)()
     SetIsHiddenFromCustomers(value *bool)()
     SetIsLocationOnline(value *bool)()
     SetLanguageTag(value *string)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMaximumAttendeesCount(value *int32)()
     SetNotes(value *string)()
     SetPostBuffer(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()

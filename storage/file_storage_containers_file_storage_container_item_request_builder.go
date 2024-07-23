@@ -120,6 +120,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Patch(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FileStorageContainerable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *FileStorageContainersItemPermanentDeleteRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) PermanentDelete()(*FileStorageContainersItemPermanentDeleteRequestBuilder) {
+    return NewFileStorageContainersItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Permissions provides operations to manage the permissions property of the microsoft.graph.fileStorageContainer entity.
 // returns a *FileStorageContainersItemPermissionsRequestBuilder when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Permissions()(*FileStorageContainersItemPermissionsRequestBuilder) {

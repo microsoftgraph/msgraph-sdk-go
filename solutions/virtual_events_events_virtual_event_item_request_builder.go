@@ -41,6 +41,11 @@ type VirtualEventsEventsVirtualEventItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Cancel provides operations to call the cancel method.
+// returns a *VirtualEventsEventsItemCancelRequestBuilder when successful
+func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) Cancel()(*VirtualEventsEventsItemCancelRequestBuilder) {
+    return NewVirtualEventsEventsItemCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEventsEventsVirtualEventItemRequestBuilderInternal instantiates a new VirtualEventsEventsVirtualEventItemRequestBuilder and sets the default values.
 func NewVirtualEventsEventsVirtualEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsVirtualEventItemRequestBuilder) {
     m := &VirtualEventsEventsVirtualEventItemRequestBuilder{
@@ -109,6 +114,16 @@ func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) Patch(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventable), nil
+}
+// Presenters provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.
+// returns a *VirtualEventsEventsItemPresentersRequestBuilder when successful
+func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) Presenters()(*VirtualEventsEventsItemPresentersRequestBuilder) {
+    return NewVirtualEventsEventsItemPresentersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Publish provides operations to call the publish method.
+// returns a *VirtualEventsEventsItemPublishRequestBuilder when successful
+func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) Publish()(*VirtualEventsEventsItemPublishRequestBuilder) {
+    return NewVirtualEventsEventsItemPublishRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sessions provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
 // returns a *VirtualEventsEventsItemSessionsRequestBuilder when successful

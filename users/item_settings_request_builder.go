@@ -90,6 +90,11 @@ func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserSettingsable), nil
 }
+// ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.
+// returns a *ItemSettingsItemInsightsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) ItemInsights()(*ItemSettingsItemInsightsRequestBuilder) {
+    return NewItemSettingsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property settings in users
 // returns a UserSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -114,6 +119,11 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body iadcd811244
 // returns a *ItemSettingsShiftPreferencesRequestBuilder when successful
 func (m *ItemSettingsRequestBuilder) ShiftPreferences()(*ItemSettingsShiftPreferencesRequestBuilder) {
     return NewItemSettingsShiftPreferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Storage provides operations to manage the storage property of the microsoft.graph.userSettings entity.
+// returns a *ItemSettingsStorageRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) Storage()(*ItemSettingsStorageRequestBuilder) {
+    return NewItemSettingsStorageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for users
 // returns a *RequestInformation when successful

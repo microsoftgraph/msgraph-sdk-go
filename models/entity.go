@@ -662,6 +662,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewInferenceClassification(), nil
                     case "#microsoft.graph.inferenceClassificationOverride":
                         return NewInferenceClassificationOverride(), nil
+                    case "#microsoft.graph.insightsSettings":
+                        return NewInsightsSettings(), nil
                     case "#microsoft.graph.internalDomainFederation":
                         return NewInternalDomainFederation(), nil
                     case "#microsoft.graph.internetExplorerMode":
@@ -714,6 +716,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewItemAnalytics(), nil
                     case "#microsoft.graph.itemAttachment":
                         return NewItemAttachment(), nil
+                    case "#microsoft.graph.itemInsights":
+                        return NewItemInsights(), nil
                     case "#microsoft.graph.itemRetentionLabel":
                         return NewItemRetentionLabel(), nil
                     case "#microsoft.graph.landingPage":
@@ -1154,6 +1158,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServicePrincipal(), nil
                     case "#microsoft.graph.servicePrincipalRiskDetection":
                         return NewServicePrincipalRiskDetection(), nil
+                    case "#microsoft.graph.serviceStorageQuotaBreakdown":
+                        return NewServiceStorageQuotaBreakdown(), nil
                     case "#microsoft.graph.serviceUpdateMessage":
                         return NewServiceUpdateMessage(), nil
                     case "#microsoft.graph.settingStateDeviceSummary":
@@ -1210,6 +1216,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewStartHoldMusicOperation(), nil
                     case "#microsoft.graph.stopHoldMusicOperation":
                         return NewStopHoldMusicOperation(), nil
+                    case "#microsoft.graph.storageQuotaBreakdown":
+                        return NewStorageQuotaBreakdown(), nil
+                    case "#microsoft.graph.storageSettings":
+                        return NewStorageSettings(), nil
                     case "#microsoft.graph.stsPolicy":
                         return NewStsPolicy(), nil
                     case "#microsoft.graph.subjectRightsRequest":
@@ -1354,6 +1364,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUnifiedRoleScheduleBase(), nil
                     case "#microsoft.graph.unifiedRoleScheduleInstanceBase":
                         return NewUnifiedRoleScheduleInstanceBase(), nil
+                    case "#microsoft.graph.unifiedStorageQuota":
+                        return NewUnifiedStorageQuota(), nil
                     case "#microsoft.graph.unmuteParticipantOperation":
                         return NewUnmuteParticipantOperation(), nil
                     case "#microsoft.graph.updateRecordingStatusOperation":
@@ -1420,6 +1432,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserFlowLanguageConfiguration(), nil
                     case "#microsoft.graph.userFlowLanguagePage":
                         return NewUserFlowLanguagePage(), nil
+                    case "#microsoft.graph.userInsightsSettings":
+                        return NewUserInsightsSettings(), nil
                     case "#microsoft.graph.userInstallStateSummary":
                         return NewUserInstallStateSummary(), nil
                     case "#microsoft.graph.userRegistrationDetails":
@@ -1430,6 +1444,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSettings(), nil
                     case "#microsoft.graph.userSignInInsight":
                         return NewUserSignInInsight(), nil
+                    case "#microsoft.graph.userStorage":
+                        return NewUserStorage(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.verticalSection":
@@ -1438,14 +1454,28 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVirtualEndpoint(), nil
                     case "#microsoft.graph.virtualEvent":
                         return NewVirtualEvent(), nil
+                    case "#microsoft.graph.virtualEventPresenter":
+                        return NewVirtualEventPresenter(), nil
                     case "#microsoft.graph.virtualEventRegistration":
                         return NewVirtualEventRegistration(), nil
+                    case "#microsoft.graph.virtualEventRegistrationConfiguration":
+                        return NewVirtualEventRegistrationConfiguration(), nil
+                    case "#microsoft.graph.virtualEventRegistrationCustomQuestion":
+                        return NewVirtualEventRegistrationCustomQuestion(), nil
+                    case "#microsoft.graph.virtualEventRegistrationPredefinedQuestion":
+                        return NewVirtualEventRegistrationPredefinedQuestion(), nil
+                    case "#microsoft.graph.virtualEventRegistrationQuestionBase":
+                        return NewVirtualEventRegistrationQuestionBase(), nil
                     case "#microsoft.graph.virtualEventSession":
                         return NewVirtualEventSession(), nil
                     case "#microsoft.graph.virtualEventsRoot":
                         return NewVirtualEventsRoot(), nil
+                    case "#microsoft.graph.virtualEventTownhall":
+                        return NewVirtualEventTownhall(), nil
                     case "#microsoft.graph.virtualEventWebinar":
                         return NewVirtualEventWebinar(), nil
+                    case "#microsoft.graph.virtualEventWebinarRegistrationConfiguration":
+                        return NewVirtualEventWebinarRegistrationConfiguration(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
                         return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.vppToken":
