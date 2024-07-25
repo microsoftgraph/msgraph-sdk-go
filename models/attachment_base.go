@@ -1,8 +1,8 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type AttachmentBase struct {
@@ -47,6 +47,17 @@ func (m *AttachmentBase) GetContentType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetContentBytes gets the contentBytes property value. The content of the attachment in bytes.
+func (m *AttachmentBase) GetContentBytes() *[]byte {
+    val, err := m.GetBackingStore().Get("contentBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*[]byte)
     }
     return nil
 }
@@ -171,6 +182,13 @@ func (m *AttachmentBase) SetContentType(value *string)() {
         panic(err)
     }
 }
+// SetContentBytes sets the contentBytes property value. The content of the attachment in bytes.
+func (m *AttachmentBase) SetContentBytes(value *[]byte)() {
+    err := m.GetBackingStore().Set("contentBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AttachmentBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -196,10 +214,12 @@ type AttachmentBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentType()(*string)
+    GetContentBytes() *[]byte
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetSize()(*int32)
     SetContentType(value *string)()
+    SetContentBytes(value *[]byte)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetSize(value *int32)()

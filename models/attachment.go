@@ -1,8 +1,8 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type Attachment struct {
@@ -54,6 +54,19 @@ func (m *Attachment) GetContentType()(*string) {
     }
     return nil
 }
+
+// GetContentBytes gets the contentBytes property value. The content of the attachment in bytes.
+func (m *Attachment) GetContentBytes() *[]byte {
+    val, err := m.GetBackingStore().Get("contentBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*[]byte)
+    }
+    return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Attachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -203,6 +216,13 @@ func (m *Attachment) SetContentType(value *string)() {
         panic(err)
     }
 }
+// SetContentBytes sets the contentBytes property value. The content of the attachment in bytes.
+func (m *Attachment) SetContentBytes(value *[]byte)() {
+    err := m.GetBackingStore().Set("contentBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsInline sets the isInline property value. true if the attachment is an inline attachment; otherwise, false.
 func (m *Attachment) SetIsInline(value *bool)() {
     err := m.GetBackingStore().Set("isInline", value)
@@ -235,11 +255,13 @@ type Attachmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentType()(*string)
+	GetContentBytes() *[]byte
     GetIsInline()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetSize()(*int32)
     SetContentType(value *string)()
+	SetContentBytes(value *[]byte)()
     SetIsInline(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()

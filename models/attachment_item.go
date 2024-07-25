@@ -76,6 +76,17 @@ func (m *AttachmentItem) GetContentType()(*string) {
     }
     return nil
 }
+// GetContentBytes gets the contentBytes property value. The content of the attachment in bytes.
+func (m *AttachmentItem) GetContentBytes() *[]byte {
+    val, err := m.GetBackingStore().Get("contentBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*[]byte)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -285,6 +296,13 @@ func (m *AttachmentItem) SetContentType(value *string)() {
         panic(err)
     }
 }
+// SetContentBytes sets the contentBytes property value. The content of the attachment in bytes.
+func (m *AttachmentItem) SetContentBytes(value *[]byte)() {
+    err := m.GetBackingStore().Set("contentBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsInline sets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
 func (m *AttachmentItem) SetIsInline(value *bool)() {
     err := m.GetBackingStore().Set("isInline", value)
@@ -321,6 +339,7 @@ type AttachmentItemable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContentId()(*string)
     GetContentType()(*string)
+    GetContentBytes() *[]byte
     GetIsInline()(*bool)
     GetName()(*string)
     GetOdataType()(*string)
@@ -329,6 +348,7 @@ type AttachmentItemable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContentId(value *string)()
     SetContentType(value *string)()
+    SetContentBytes(value *[]byte)()
     SetIsInline(value *bool)()
     SetName(value *string)()
     SetOdataType(value *string)()

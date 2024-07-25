@@ -64,6 +64,17 @@ func (m *AttachmentInfo) GetContentType()(*string) {
     }
     return nil
 }
+// GetContentBytes gets the contentBytes property value. The content of the attachment in bytes.
+func (m *AttachmentInfo) GetContentBytes() *[]byte {
+    val, err := m.GetBackingStore().Get("contentBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*[]byte)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttachmentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -222,6 +233,13 @@ func (m *AttachmentInfo) SetContentType(value *string)() {
         panic(err)
     }
 }
+// SetContentBytes sets the contentBytes property value. The content of the attachment in bytes.
+func (m *AttachmentInfo) SetContentBytes(value *[]byte)() {
+    err := m.GetBackingStore().Set("contentBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
 func (m *AttachmentInfo) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
@@ -250,12 +268,14 @@ type AttachmentInfoable interface {
     GetAttachmentType()(*AttachmentType)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContentType()(*string)
+    GetContentBytes() *[]byte
     GetName()(*string)
     GetOdataType()(*string)
     GetSize()(*int64)
     SetAttachmentType(value *AttachmentType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContentType(value *string)()
+    SetContentBytes(value *[]byte)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetSize(value *int64)()
