@@ -22,14 +22,14 @@ func CreateTenantAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d233
     return NewTenantAppManagementPolicy(), nil
 }
 // GetApplicationRestrictions gets the applicationRestrictions property value. Restrictions that apply as default to all application objects in the tenant.
-// returns a AppManagementConfigurationable when successful
-func (m *TenantAppManagementPolicy) GetApplicationRestrictions()(AppManagementConfigurationable) {
+// returns a AppManagementApplicationConfigurationable when successful
+func (m *TenantAppManagementPolicy) GetApplicationRestrictions()(AppManagementApplicationConfigurationable) {
     val, err := m.GetBackingStore().Get("applicationRestrictions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(AppManagementConfigurationable)
+        return val.(AppManagementApplicationConfigurationable)
     }
     return nil
 }
@@ -38,12 +38,12 @@ func (m *TenantAppManagementPolicy) GetApplicationRestrictions()(AppManagementCo
 func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["applicationRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAppManagementConfigurationFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateAppManagementApplicationConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicationRestrictions(val.(AppManagementConfigurationable))
+            m.SetApplicationRestrictions(val.(AppManagementApplicationConfigurationable))
         }
         return nil
     }
@@ -58,12 +58,12 @@ func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["servicePrincipalRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAppManagementConfigurationFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateAppManagementServicePrincipalConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetServicePrincipalRestrictions(val.(AppManagementConfigurationable))
+            m.SetServicePrincipalRestrictions(val.(AppManagementServicePrincipalConfigurationable))
         }
         return nil
     }
@@ -82,14 +82,14 @@ func (m *TenantAppManagementPolicy) GetIsEnabled()(*bool) {
     return nil
 }
 // GetServicePrincipalRestrictions gets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.
-// returns a AppManagementConfigurationable when successful
-func (m *TenantAppManagementPolicy) GetServicePrincipalRestrictions()(AppManagementConfigurationable) {
+// returns a AppManagementServicePrincipalConfigurationable when successful
+func (m *TenantAppManagementPolicy) GetServicePrincipalRestrictions()(AppManagementServicePrincipalConfigurationable) {
     val, err := m.GetBackingStore().Get("servicePrincipalRestrictions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(AppManagementConfigurationable)
+        return val.(AppManagementServicePrincipalConfigurationable)
     }
     return nil
 }
@@ -120,7 +120,7 @@ func (m *TenantAppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetApplicationRestrictions sets the applicationRestrictions property value. Restrictions that apply as default to all application objects in the tenant.
-func (m *TenantAppManagementPolicy) SetApplicationRestrictions(value AppManagementConfigurationable)() {
+func (m *TenantAppManagementPolicy) SetApplicationRestrictions(value AppManagementApplicationConfigurationable)() {
     err := m.GetBackingStore().Set("applicationRestrictions", value)
     if err != nil {
         panic(err)
@@ -134,7 +134,7 @@ func (m *TenantAppManagementPolicy) SetIsEnabled(value *bool)() {
     }
 }
 // SetServicePrincipalRestrictions sets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.
-func (m *TenantAppManagementPolicy) SetServicePrincipalRestrictions(value AppManagementConfigurationable)() {
+func (m *TenantAppManagementPolicy) SetServicePrincipalRestrictions(value AppManagementServicePrincipalConfigurationable)() {
     err := m.GetBackingStore().Set("servicePrincipalRestrictions", value)
     if err != nil {
         panic(err)
@@ -143,10 +143,10 @@ func (m *TenantAppManagementPolicy) SetServicePrincipalRestrictions(value AppMan
 type TenantAppManagementPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable
-    GetApplicationRestrictions()(AppManagementConfigurationable)
+    GetApplicationRestrictions()(AppManagementApplicationConfigurationable)
     GetIsEnabled()(*bool)
-    GetServicePrincipalRestrictions()(AppManagementConfigurationable)
-    SetApplicationRestrictions(value AppManagementConfigurationable)()
+    GetServicePrincipalRestrictions()(AppManagementServicePrincipalConfigurationable)
+    SetApplicationRestrictions(value AppManagementApplicationConfigurationable)()
     SetIsEnabled(value *bool)()
-    SetServicePrincipalRestrictions(value AppManagementConfigurationable)()
+    SetServicePrincipalRestrictions(value AppManagementServicePrincipalConfigurationable)()
 }

@@ -104,6 +104,11 @@ func (m *ChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cha
 func (m *ChatsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
     return NewGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
+// returns a *GetAllRetainedMessagesRequestBuilder when successful
+func (m *ChatsRequestBuilder) GetAllRetainedMessages()(*GetAllRetainedMessagesRequestBuilder) {
+    return NewGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new chat object.
 // returns a Chatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -51,6 +51,22 @@ func (m *VirtualEventsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["townhalls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventTownhallFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VirtualEventTownhallable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(VirtualEventTownhallable)
+                }
+            }
+            m.SetTownhalls(res)
+        }
+        return nil
+    }
     res["webinars"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVirtualEventWebinarFromDiscriminatorValue)
         if err != nil {
@@ -68,6 +84,18 @@ func (m *VirtualEventsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetTownhalls gets the townhalls property value. The townhalls property
+// returns a []VirtualEventTownhallable when successful
+func (m *VirtualEventsRoot) GetTownhalls()([]VirtualEventTownhallable) {
+    val, err := m.GetBackingStore().Get("townhalls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VirtualEventTownhallable)
+    }
+    return nil
 }
 // GetWebinars gets the webinars property value. The webinars property
 // returns a []VirtualEventWebinarable when successful
@@ -99,6 +127,18 @@ func (m *VirtualEventsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetTownhalls() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTownhalls()))
+        for i, v := range m.GetTownhalls() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("townhalls", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWebinars() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebinars()))
         for i, v := range m.GetWebinars() {
@@ -120,6 +160,13 @@ func (m *VirtualEventsRoot) SetEvents(value []VirtualEventable)() {
         panic(err)
     }
 }
+// SetTownhalls sets the townhalls property value. The townhalls property
+func (m *VirtualEventsRoot) SetTownhalls(value []VirtualEventTownhallable)() {
+    err := m.GetBackingStore().Set("townhalls", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWebinars sets the webinars property value. The webinars property
 func (m *VirtualEventsRoot) SetWebinars(value []VirtualEventWebinarable)() {
     err := m.GetBackingStore().Set("webinars", value)
@@ -131,7 +178,9 @@ type VirtualEventsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEvents()([]VirtualEventable)
+    GetTownhalls()([]VirtualEventTownhallable)
     GetWebinars()([]VirtualEventWebinarable)
     SetEvents(value []VirtualEventable)()
+    SetTownhalls(value []VirtualEventTownhallable)()
     SetWebinars(value []VirtualEventWebinarable)()
 }

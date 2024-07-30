@@ -41,6 +41,11 @@ type ItemJoinedTeamsItemPrimaryChannelRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Archive provides operations to call the archive method.
+// returns a *ItemJoinedTeamsItemPrimaryChannelArchiveRequestBuilder when successful
+func (m *ItemJoinedTeamsItemPrimaryChannelRequestBuilder) Archive()(*ItemJoinedTeamsItemPrimaryChannelArchiveRequestBuilder) {
+    return NewItemJoinedTeamsItemPrimaryChannelArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CompleteMigration provides operations to call the completeMigration method.
 // returns a *ItemJoinedTeamsItemPrimaryChannelCompleteMigrationRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelRequestBuilder) CompleteMigration()(*ItemJoinedTeamsItemPrimaryChannelCompleteMigrationRequestBuilder) {
@@ -194,6 +199,11 @@ func (m *ItemJoinedTeamsItemPrimaryChannelRequestBuilder) ToPatchRequestInformat
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *ItemJoinedTeamsItemPrimaryChannelUnarchiveRequestBuilder when successful
+func (m *ItemJoinedTeamsItemPrimaryChannelRequestBuilder) Unarchive()(*ItemJoinedTeamsItemPrimaryChannelUnarchiveRequestBuilder) {
+    return NewItemJoinedTeamsItemPrimaryChannelUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemJoinedTeamsItemPrimaryChannelRequestBuilder when successful

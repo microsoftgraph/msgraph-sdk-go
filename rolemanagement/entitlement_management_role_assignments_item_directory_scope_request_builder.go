@@ -11,7 +11,7 @@ import (
 type EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderGetQueryParameters the directory object that is the scope of the assignment. Read-only. Supports $expand.
+// EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderGetQueryParameters the directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
 type EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewEntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the directory object that is the scope of the assignment. Read-only. Supports $expand.
+// Get the directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -60,7 +60,7 @@ func (m *EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// ToGetRequestInformation the directory object that is the scope of the assignment. Read-only. Supports $expand.
+// ToGetRequestInformation the directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -45,6 +45,10 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewBlobEvidence(), nil
                     case "#microsoft.graph.security.cloudApplicationEvidence":
                         return NewCloudApplicationEvidence(), nil
+                    case "#microsoft.graph.security.cloudLogonRequestEvidence":
+                        return NewCloudLogonRequestEvidence(), nil
+                    case "#microsoft.graph.security.cloudLogonSessionEvidence":
+                        return NewCloudLogonSessionEvidence(), nil
                     case "#microsoft.graph.security.containerEvidence":
                         return NewContainerEvidence(), nil
                     case "#microsoft.graph.security.containerImageEvidence":

@@ -67,6 +67,16 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["itemInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserInsightsSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetItemInsights(val.(UserInsightsSettingsable))
+        }
+        return nil
+    }
     res["shiftPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateShiftPreferencesFromDiscriminatorValue)
         if err != nil {
@@ -74,6 +84,16 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetShiftPreferences(val.(ShiftPreferencesable))
+        }
+        return nil
+    }
+    res["storage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserStorageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStorage(val.(UserStorageable))
         }
         return nil
     }
@@ -95,6 +115,18 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
+// GetItemInsights gets the itemInsights property value. The itemInsights property
+// returns a UserInsightsSettingsable when successful
+func (m *UserSettings) GetItemInsights()(UserInsightsSettingsable) {
+    val, err := m.GetBackingStore().Get("itemInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserInsightsSettingsable)
+    }
+    return nil
+}
 // GetShiftPreferences gets the shiftPreferences property value. The shiftPreferences property
 // returns a ShiftPreferencesable when successful
 func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
@@ -104,6 +136,18 @@ func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     }
     if val != nil {
         return val.(ShiftPreferencesable)
+    }
+    return nil
+}
+// GetStorage gets the storage property value. The storage property
+// returns a UserStorageable when successful
+func (m *UserSettings) GetStorage()(UserStorageable) {
+    val, err := m.GetBackingStore().Get("storage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserStorageable)
     }
     return nil
 }
@@ -138,7 +182,19 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteObjectValue("itemInsights", m.GetItemInsights())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("shiftPreferences", m.GetShiftPreferences())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("storage", m.GetStorage())
         if err != nil {
             return err
         }
@@ -171,9 +227,23 @@ func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() 
         panic(err)
     }
 }
+// SetItemInsights sets the itemInsights property value. The itemInsights property
+func (m *UserSettings) SetItemInsights(value UserInsightsSettingsable)() {
+    err := m.GetBackingStore().Set("itemInsights", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetShiftPreferences sets the shiftPreferences property value. The shiftPreferences property
 func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
     err := m.GetBackingStore().Set("shiftPreferences", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetStorage sets the storage property value. The storage property
+func (m *UserSettings) SetStorage(value UserStorageable)() {
+    err := m.GetBackingStore().Set("storage", value)
     if err != nil {
         panic(err)
     }
@@ -190,10 +260,14 @@ type UserSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool)
     GetContributionToContentDiscoveryDisabled()(*bool)
+    GetItemInsights()(UserInsightsSettingsable)
     GetShiftPreferences()(ShiftPreferencesable)
+    GetStorage()(UserStorageable)
     GetWindows()([]WindowsSettingable)
     SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)()
     SetContributionToContentDiscoveryDisabled(value *bool)()
+    SetItemInsights(value UserInsightsSettingsable)()
     SetShiftPreferences(value ShiftPreferencesable)()
+    SetStorage(value UserStorageable)()
     SetWindows(value []WindowsSettingable)()
 }

@@ -99,7 +99,7 @@ func (m *SynchronizationSchedule) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetInterval gets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of one month.
+// GetInterval gets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.
 // returns a *ISODuration when successful
 func (m *SynchronizationSchedule) GetInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("interval")
@@ -188,7 +188,7 @@ func (m *SynchronizationSchedule) SetExpiration(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
-// SetInterval sets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of one month.
+// SetInterval sets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.
 func (m *SynchronizationSchedule) SetInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("interval", value)
     if err != nil {

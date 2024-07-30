@@ -101,6 +101,11 @@ func (m *DeletedTeamsItemChannelsRequestBuilder) Get(ctx context.Context, reques
 func (m *DeletedTeamsItemChannelsRequestBuilder) GetAllMessages()(*DeletedTeamsItemChannelsGetAllMessagesRequestBuilder) {
     return NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
+// returns a *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsRequestBuilder) GetAllRetainedMessages()(*DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) {
+    return NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to channels for teamwork
 // returns a Channelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

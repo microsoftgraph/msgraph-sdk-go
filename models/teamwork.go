@@ -139,7 +139,7 @@ func (m *Teamwork) GetIsTeamsEnabled()(*bool) {
     }
     return nil
 }
-// GetRegion gets the region property value. Represents the region of the organization. > The region property contains the organization's or the user's region. The property contains the user's region (if available) for users who have a valid multigeo license. For users without multigeo licenses, the region property contains the organization's region.
+// GetRegion gets the region property value. Represents the region of the organization or the tenant. The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.
 // returns a *string when successful
 func (m *Teamwork) GetRegion()(*string) {
     val, err := m.GetBackingStore().Get("region")
@@ -258,7 +258,7 @@ func (m *Teamwork) SetIsTeamsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetRegion sets the region property value. Represents the region of the organization. > The region property contains the organization's or the user's region. The property contains the user's region (if available) for users who have a valid multigeo license. For users without multigeo licenses, the region property contains the organization's region.
+// SetRegion sets the region property value. Represents the region of the organization or the tenant. The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.
 func (m *Teamwork) SetRegion(value *string)() {
     err := m.GetBackingStore().Set("region", value)
     if err != nil {

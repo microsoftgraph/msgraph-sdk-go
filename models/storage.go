@@ -64,6 +64,16 @@ func (m *Storage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateStorageSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(StorageSettingsable))
+        }
+        return nil
+    }
     return res
 }
 // GetFileStorage gets the fileStorage property value. The fileStorage property
@@ -90,6 +100,18 @@ func (m *Storage) GetOdataType()(*string) {
     }
     return nil
 }
+// GetSettings gets the settings property value. The settings property
+// returns a StorageSettingsable when successful
+func (m *Storage) GetSettings()(StorageSettingsable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(StorageSettingsable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Storage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -100,6 +122,12 @@ func (m *Storage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
         }
@@ -137,6 +165,13 @@ func (m *Storage) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetSettings sets the settings property value. The settings property
+func (m *Storage) SetSettings(value StorageSettingsable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Storageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -144,7 +179,9 @@ type Storageable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetFileStorage()(FileStorageable)
     GetOdataType()(*string)
+    GetSettings()(StorageSettingsable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFileStorage(value FileStorageable)()
     SetOdataType(value *string)()
+    SetSettings(value StorageSettingsable)()
 }

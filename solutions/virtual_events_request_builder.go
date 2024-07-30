@@ -155,6 +155,11 @@ func (m *VirtualEventsRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
+// Townhalls provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
+// returns a *VirtualEventsTownhallsRequestBuilder when successful
+func (m *VirtualEventsRequestBuilder) Townhalls()(*VirtualEventsTownhallsRequestBuilder) {
+    return NewVirtualEventsTownhallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Webinars provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.
 // returns a *VirtualEventsWebinarsRequestBuilder when successful
 func (m *VirtualEventsRequestBuilder) Webinars()(*VirtualEventsWebinarsRequestBuilder) {

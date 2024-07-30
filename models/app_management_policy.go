@@ -64,12 +64,12 @@ func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["restrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAppManagementConfigurationFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateCustomAppManagementConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRestrictions(val.(AppManagementConfigurationable))
+            m.SetRestrictions(val.(CustomAppManagementConfigurationable))
         }
         return nil
     }
@@ -88,14 +88,14 @@ func (m *AppManagementPolicy) GetIsEnabled()(*bool) {
     return nil
 }
 // GetRestrictions gets the restrictions property value. Restrictions that apply to an application or service principal object.
-// returns a AppManagementConfigurationable when successful
-func (m *AppManagementPolicy) GetRestrictions()(AppManagementConfigurationable) {
+// returns a CustomAppManagementConfigurationable when successful
+func (m *AppManagementPolicy) GetRestrictions()(CustomAppManagementConfigurationable) {
     val, err := m.GetBackingStore().Get("restrictions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(AppManagementConfigurationable)
+        return val.(CustomAppManagementConfigurationable)
     }
     return nil
 }
@@ -146,7 +146,7 @@ func (m *AppManagementPolicy) SetIsEnabled(value *bool)() {
     }
 }
 // SetRestrictions sets the restrictions property value. Restrictions that apply to an application or service principal object.
-func (m *AppManagementPolicy) SetRestrictions(value AppManagementConfigurationable)() {
+func (m *AppManagementPolicy) SetRestrictions(value CustomAppManagementConfigurationable)() {
     err := m.GetBackingStore().Set("restrictions", value)
     if err != nil {
         panic(err)
@@ -157,8 +157,8 @@ type AppManagementPolicyable interface {
     PolicyBaseable
     GetAppliesTo()([]DirectoryObjectable)
     GetIsEnabled()(*bool)
-    GetRestrictions()(AppManagementConfigurationable)
+    GetRestrictions()(CustomAppManagementConfigurationable)
     SetAppliesTo(value []DirectoryObjectable)()
     SetIsEnabled(value *bool)()
-    SetRestrictions(value AppManagementConfigurationable)()
+    SetRestrictions(value CustomAppManagementConfigurationable)()
 }

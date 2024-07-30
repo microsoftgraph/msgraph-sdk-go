@@ -63,6 +63,11 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PeopleAdminSettingsable), nil
 }
+// ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleItemInsightsRequestBuilder when successful
+func (m *PeopleRequestBuilder) ItemInsights()(*PeopleItemInsightsRequestBuilder) {
+    return NewPeopleItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
 // returns a *PeopleProfileCardPropertiesRequestBuilder when successful
 func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {

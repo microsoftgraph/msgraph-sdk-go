@@ -1225,12 +1225,12 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateOfficeGraphInsightsFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateItemInsightsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInsights(val.(OfficeGraphInsightsable))
+            m.SetInsights(val.(ItemInsightsable))
         }
         return nil
     }
@@ -2223,14 +2223,14 @@ func (m *User) GetInferenceClassification()(InferenceClassificationable) {
     return nil
 }
 // GetInsights gets the insights property value. The insights property
-// returns a OfficeGraphInsightsable when successful
-func (m *User) GetInsights()(OfficeGraphInsightsable) {
+// returns a ItemInsightsable when successful
+func (m *User) GetInsights()(ItemInsightsable) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(OfficeGraphInsightsable)
+        return val.(ItemInsightsable)
     }
     return nil
 }
@@ -4503,7 +4503,7 @@ func (m *User) SetInferenceClassification(value InferenceClassificationable)() {
     }
 }
 // SetInsights sets the insights property value. The insights property
-func (m *User) SetInsights(value OfficeGraphInsightsable)() {
+func (m *User) SetInsights(value ItemInsightsable)() {
     err := m.GetBackingStore().Set("insights", value)
     if err != nil {
         panic(err)
@@ -5082,7 +5082,7 @@ type Userable interface {
     GetIdentities()([]ObjectIdentityable)
     GetImAddresses()([]string)
     GetInferenceClassification()(InferenceClassificationable)
-    GetInsights()(OfficeGraphInsightsable)
+    GetInsights()(ItemInsightsable)
     GetInterests()([]string)
     GetIsResourceAccount()(*bool)
     GetJobTitle()(*string)
@@ -5209,7 +5209,7 @@ type Userable interface {
     SetIdentities(value []ObjectIdentityable)()
     SetImAddresses(value []string)()
     SetInferenceClassification(value InferenceClassificationable)()
-    SetInsights(value OfficeGraphInsightsable)()
+    SetInsights(value ItemInsightsable)()
     SetInterests(value []string)()
     SetIsResourceAccount(value *bool)()
     SetJobTitle(value *string)()

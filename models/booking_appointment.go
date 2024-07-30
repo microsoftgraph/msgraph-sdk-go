@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -41,6 +42,30 @@ func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetAppointmentLabel gets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+// returns a *string when successful
+func (m *BookingAppointment) GetAppointmentLabel()(*string) {
+    val, err := m.GetBackingStore().Get("appointmentLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
+func (m *BookingAppointment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -164,6 +189,26 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["appointmentLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppointmentLabel(val)
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
     res["customerEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -260,6 +305,16 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["isCustomerAllowedToManageBooking"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCustomerAllowedToManageBooking(val)
+        }
+        return nil
+    }
     res["isLocationOnline"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -277,6 +332,16 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetJoinWebUrl(val)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
         }
         return nil
     }
@@ -456,6 +521,18 @@ func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
     }
     return nil
 }
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// returns a *bool when successful
+func (m *BookingAppointment) GetIsCustomerAllowedToManageBooking()(*bool) {
+    val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsLocationOnline gets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
 // returns a *bool when successful
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
@@ -477,6 +554,18 @@ func (m *BookingAppointment) GetJoinWebUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// returns a *Time when successful
+func (m *BookingAppointment) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -679,6 +768,18 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("appointmentLabel", m.GetAppointmentLabel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("customerEmailAddress", m.GetCustomerEmailAddress())
         if err != nil {
             return err
@@ -727,6 +828,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteBoolValue("isCustomerAllowedToManageBooking", m.GetIsCustomerAllowedToManageBooking())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isLocationOnline", m.GetIsLocationOnline())
         if err != nil {
             return err
@@ -734,6 +841,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("joinWebUrl", m.GetJoinWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
         if err != nil {
             return err
         }
@@ -851,6 +964,20 @@ func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
         panic(err)
     }
 }
+// SetAppointmentLabel sets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+func (m *BookingAppointment) SetAppointmentLabel(value *string)() {
+    err := m.GetBackingStore().Set("appointmentLabel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+func (m *BookingAppointment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCustomerEmailAddress sets the customerEmailAddress property value. The customerEmailAddress property
 func (m *BookingAppointment) SetCustomerEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("customerEmailAddress", value)
@@ -914,6 +1041,13 @@ func (m *BookingAppointment) SetFilledAttendeesCount(value *int32)() {
         panic(err)
     }
 }
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+func (m *BookingAppointment) SetIsCustomerAllowedToManageBooking(value *bool)() {
+    err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsLocationOnline sets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
     err := m.GetBackingStore().Set("isLocationOnline", value)
@@ -924,6 +1058,13 @@ func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
 // SetJoinWebUrl sets the joinWebUrl property value. The URL of the online meeting for the appointment.
 func (m *BookingAppointment) SetJoinWebUrl(value *string)() {
     err := m.GetBackingStore().Set("joinWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingAppointment) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -1038,6 +1179,8 @@ type BookingAppointmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalInformation()(*string)
     GetAnonymousJoinWebUrl()(*string)
+    GetAppointmentLabel()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomerEmailAddress()(*string)
     GetCustomerName()(*string)
     GetCustomerNotes()(*string)
@@ -1047,8 +1190,10 @@ type BookingAppointmentable interface {
     GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetEndDateTime()(DateTimeTimeZoneable)
     GetFilledAttendeesCount()(*int32)
+    GetIsCustomerAllowedToManageBooking()(*bool)
     GetIsLocationOnline()(*bool)
     GetJoinWebUrl()(*string)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMaximumAttendeesCount()(*int32)
     GetOptOutOfCustomerEmail()(*bool)
     GetPostBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -1066,6 +1211,8 @@ type BookingAppointmentable interface {
     GetStartDateTime()(DateTimeTimeZoneable)
     SetAdditionalInformation(value *string)()
     SetAnonymousJoinWebUrl(value *string)()
+    SetAppointmentLabel(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomerEmailAddress(value *string)()
     SetCustomerName(value *string)()
     SetCustomerNotes(value *string)()
@@ -1075,8 +1222,10 @@ type BookingAppointmentable interface {
     SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetFilledAttendeesCount(value *int32)()
+    SetIsCustomerAllowedToManageBooking(value *bool)()
     SetIsLocationOnline(value *bool)()
     SetJoinWebUrl(value *string)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMaximumAttendeesCount(value *int32)()
     SetOptOutOfCustomerEmail(value *bool)()
     SetPostBuffer(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
