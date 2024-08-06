@@ -104,6 +104,11 @@ func (m *ItemChannelsRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemChannelsRequestBuilder) GetAllMessages()(*ItemChannelsGetAllMessagesRequestBuilder) {
     return NewItemChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
+// returns a *ItemChannelsGetAllRetainedMessagesRequestBuilder when successful
+func (m *ItemChannelsRequestBuilder) GetAllRetainedMessages()(*ItemChannelsGetAllRetainedMessagesRequestBuilder) {
+    return NewItemChannelsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. If you're creating a private channel, you can add a maximum of 200 members.
 // returns a Channelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

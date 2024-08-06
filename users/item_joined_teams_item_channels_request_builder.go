@@ -101,6 +101,11 @@ func (m *ItemJoinedTeamsItemChannelsRequestBuilder) Get(ctx context.Context, req
 func (m *ItemJoinedTeamsItemChannelsRequestBuilder) GetAllMessages()(*ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
+// returns a *ItemJoinedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder when successful
+func (m *ItemJoinedTeamsItemChannelsRequestBuilder) GetAllRetainedMessages()(*ItemJoinedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to channels for users
 // returns a Channelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

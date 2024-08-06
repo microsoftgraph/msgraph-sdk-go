@@ -262,7 +262,7 @@ func (m *AccessPackage) GetIncompatibleGroups()([]Groupable) {
     }
     return nil
 }
-// GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
+// GetIsHidden gets the isHidden property value. Indicates whether the access package is hidden from the requestor.
 // returns a *bool when successful
 func (m *AccessPackage) GetIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("isHidden")
@@ -458,7 +458,7 @@ func (m *AccessPackage) SetIncompatibleGroups(value []Groupable)() {
         panic(err)
     }
 }
-// SetIsHidden sets the isHidden property value. Whether the access package is hidden from the requestor.
+// SetIsHidden sets the isHidden property value. Indicates whether the access package is hidden from the requestor.
 func (m *AccessPackage) SetIsHidden(value *bool)() {
     err := m.GetBackingStore().Set("isHidden", value)
     if err != nil {

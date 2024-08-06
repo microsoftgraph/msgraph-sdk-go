@@ -41,7 +41,7 @@ func (m *AssignedLicense) GetAdditionalData()(map[string]any) {
 func (m *AssignedLicense) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisabledPlans gets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
+// GetDisabledPlans gets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
 // returns a []UUID when successful
 func (m *AssignedLicense) GetDisabledPlans()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("disabledPlans")
@@ -107,7 +107,7 @@ func (m *AssignedLicense) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSkuId gets the skuId property value. The unique identifier for the SKU.
+// GetSkuId gets the skuId property value. The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
 // returns a *UUID when successful
 func (m *AssignedLicense) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("skuId")
@@ -158,7 +158,7 @@ func (m *AssignedLicense) SetAdditionalData(value map[string]any)() {
 func (m *AssignedLicense) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisabledPlans sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
+// SetDisabledPlans sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
 func (m *AssignedLicense) SetDisabledPlans(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("disabledPlans", value)
     if err != nil {
@@ -172,7 +172,7 @@ func (m *AssignedLicense) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSkuId sets the skuId property value. The unique identifier for the SKU.
+// SetSkuId sets the skuId property value. The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
 func (m *AssignedLicense) SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("skuId", value)
     if err != nil {

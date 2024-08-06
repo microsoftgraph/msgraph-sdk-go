@@ -41,6 +41,11 @@ type ItemPrimaryChannelRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Archive provides operations to call the archive method.
+// returns a *ItemPrimaryChannelArchiveRequestBuilder when successful
+func (m *ItemPrimaryChannelRequestBuilder) Archive()(*ItemPrimaryChannelArchiveRequestBuilder) {
+    return NewItemPrimaryChannelArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CompleteMigration provides operations to call the completeMigration method.
 // returns a *ItemPrimaryChannelCompleteMigrationRequestBuilder when successful
 func (m *ItemPrimaryChannelRequestBuilder) CompleteMigration()(*ItemPrimaryChannelCompleteMigrationRequestBuilder) {
@@ -197,6 +202,11 @@ func (m *ItemPrimaryChannelRequestBuilder) ToPatchRequestInformation(ctx context
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *ItemPrimaryChannelUnarchiveRequestBuilder when successful
+func (m *ItemPrimaryChannelRequestBuilder) Unarchive()(*ItemPrimaryChannelUnarchiveRequestBuilder) {
+    return NewItemPrimaryChannelUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemPrimaryChannelRequestBuilder when successful

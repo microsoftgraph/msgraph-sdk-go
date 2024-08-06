@@ -485,6 +485,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["nativeAuthenticationApisEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseNativeAuthenticationApisEnabled)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNativeAuthenticationApisEnabled(val.(*NativeAuthenticationApisEnabled))
+        }
+        return nil
+    }
     res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -846,6 +856,18 @@ func (m *Application) GetLogo()([]byte) {
     }
     if val != nil {
         return val.([]byte)
+    }
+    return nil
+}
+// GetNativeAuthenticationApisEnabled gets the nativeAuthenticationApisEnabled property value. Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: none and all. Default is none. For more information, see Native Authentication.
+// returns a *NativeAuthenticationApisEnabled when successful
+func (m *Application) GetNativeAuthenticationApisEnabled()(*NativeAuthenticationApisEnabled) {
+    val, err := m.GetBackingStore().Get("nativeAuthenticationApisEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*NativeAuthenticationApisEnabled)
     }
     return nil
 }
@@ -1311,6 +1333,13 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetNativeAuthenticationApisEnabled() != nil {
+        cast := (*m.GetNativeAuthenticationApisEnabled()).String()
+        err = writer.WriteStringValue("nativeAuthenticationApisEnabled", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("notes", m.GetNotes())
         if err != nil {
@@ -1642,6 +1671,13 @@ func (m *Application) SetLogo(value []byte)() {
         panic(err)
     }
 }
+// SetNativeAuthenticationApisEnabled sets the nativeAuthenticationApisEnabled property value. Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: none and all. Default is none. For more information, see Native Authentication.
+func (m *Application) SetNativeAuthenticationApisEnabled(value *NativeAuthenticationApisEnabled)() {
+    err := m.GetBackingStore().Set("nativeAuthenticationApisEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNotes sets the notes property value. Notes relevant for the management of the application.
 func (m *Application) SetNotes(value *string)() {
     err := m.GetBackingStore().Set("notes", value)
@@ -1829,6 +1865,7 @@ type Applicationable interface {
     GetIsFallbackPublicClient()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLogo()([]byte)
+    GetNativeAuthenticationApisEnabled()(*NativeAuthenticationApisEnabled)
     GetNotes()(*string)
     GetOauth2RequirePostResponse()(*bool)
     GetOptionalClaims()(OptionalClaimsable)
@@ -1875,6 +1912,7 @@ type Applicationable interface {
     SetIsFallbackPublicClient(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLogo(value []byte)()
+    SetNativeAuthenticationApisEnabled(value *NativeAuthenticationApisEnabled)()
     SetNotes(value *string)()
     SetOauth2RequirePostResponse(value *bool)()
     SetOptionalClaims(value OptionalClaimsable)()

@@ -11,7 +11,7 @@ import (
 type DirectoryRoleAssignmentsItemPrincipalRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DirectoryRoleAssignmentsItemPrincipalRequestBuilderGetQueryParameters referencing the assigned principal. Read-only. Supports $expand.
+// DirectoryRoleAssignmentsItemPrincipalRequestBuilderGetQueryParameters referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 type DirectoryRoleAssignmentsItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewDirectoryRoleAssignmentsItemPrincipalRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAssignmentsItemPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get referencing the assigned principal. Read-only. Supports $expand.
+// Get referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleAssignmentsItemPrincipalRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsItemPrincipalRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -60,7 +60,7 @@ func (m *DirectoryRoleAssignmentsItemPrincipalRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// ToGetRequestInformation referencing the assigned principal. Read-only. Supports $expand.
+// ToGetRequestInformation referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 // returns a *RequestInformation when successful
 func (m *DirectoryRoleAssignmentsItemPrincipalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsItemPrincipalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

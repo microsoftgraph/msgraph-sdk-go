@@ -92,6 +92,11 @@ func (m *StorageRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Storageable), nil
 }
+// Settings provides operations to manage the settings property of the microsoft.graph.storage entity.
+// returns a *SettingsRequestBuilder when successful
+func (m *StorageRequestBuilder) Settings()(*SettingsRequestBuilder) {
+    return NewSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get storage
 // returns a *RequestInformation when successful
 func (m *StorageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *StorageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

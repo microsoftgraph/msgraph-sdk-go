@@ -41,6 +41,11 @@ type DeletedTeamsItemChannelsChannelItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Archive provides operations to call the archive method.
+// returns a *DeletedTeamsItemChannelsItemArchiveRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Archive()(*DeletedTeamsItemChannelsItemArchiveRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CompleteMigration provides operations to call the completeMigration method.
 // returns a *DeletedTeamsItemChannelsItemCompleteMigrationRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) CompleteMigration()(*DeletedTeamsItemChannelsItemCompleteMigrationRequestBuilder) {
@@ -194,6 +199,11 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) ToPatchRequestInform
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *DeletedTeamsItemChannelsItemUnarchiveRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Unarchive()(*DeletedTeamsItemChannelsItemUnarchiveRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *DeletedTeamsItemChannelsChannelItemRequestBuilder when successful

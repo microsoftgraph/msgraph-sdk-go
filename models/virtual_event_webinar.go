@@ -12,6 +12,8 @@ func NewVirtualEventWebinar()(*VirtualEventWebinar) {
     m := &VirtualEventWebinar{
         VirtualEvent: *NewVirtualEvent(),
     }
+    odataTypeValue := "#microsoft.graph.virtualEventWebinar"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateVirtualEventWebinarFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +75,16 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["registrationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVirtualEventWebinarRegistrationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrationConfiguration(val.(VirtualEventWebinarRegistrationConfigurationable))
+        }
+        return nil
+    }
     res["registrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVirtualEventRegistrationFromDiscriminatorValue)
         if err != nil {
@@ -90,6 +102,18 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetRegistrationConfiguration gets the registrationConfiguration property value. The registrationConfiguration property
+// returns a VirtualEventWebinarRegistrationConfigurationable when successful
+func (m *VirtualEventWebinar) GetRegistrationConfiguration()(VirtualEventWebinarRegistrationConfigurationable) {
+    val, err := m.GetBackingStore().Get("registrationConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VirtualEventWebinarRegistrationConfigurationable)
+    }
+    return nil
 }
 // GetRegistrations gets the registrations property value. Registration records of the webinar.
 // returns a []VirtualEventRegistrationable when successful
@@ -128,6 +152,12 @@ func (m *VirtualEventWebinar) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("registrationConfiguration", m.GetRegistrationConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRegistrations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrations()))
         for i, v := range m.GetRegistrations() {
@@ -156,6 +186,13 @@ func (m *VirtualEventWebinar) SetCoOrganizers(value []CommunicationsUserIdentity
         panic(err)
     }
 }
+// SetRegistrationConfiguration sets the registrationConfiguration property value. The registrationConfiguration property
+func (m *VirtualEventWebinar) SetRegistrationConfiguration(value VirtualEventWebinarRegistrationConfigurationable)() {
+    err := m.GetBackingStore().Set("registrationConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegistrations sets the registrations property value. Registration records of the webinar.
 func (m *VirtualEventWebinar) SetRegistrations(value []VirtualEventRegistrationable)() {
     err := m.GetBackingStore().Set("registrations", value)
@@ -168,8 +205,10 @@ type VirtualEventWebinarable interface {
     VirtualEventable
     GetAudience()(*MeetingAudience)
     GetCoOrganizers()([]CommunicationsUserIdentityable)
+    GetRegistrationConfiguration()(VirtualEventWebinarRegistrationConfigurationable)
     GetRegistrations()([]VirtualEventRegistrationable)
     SetAudience(value *MeetingAudience)()
     SetCoOrganizers(value []CommunicationsUserIdentityable)()
+    SetRegistrationConfiguration(value VirtualEventWebinarRegistrationConfigurationable)()
     SetRegistrations(value []VirtualEventRegistrationable)()
 }

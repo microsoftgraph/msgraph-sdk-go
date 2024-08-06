@@ -104,11 +104,6 @@ func (m *ItemGetByPathWithPathRequestBuilder) GetActivitiesByIntervalWithStartDa
 func (m *ItemGetByPathWithPathRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) {
     return NewItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, listId)
 }
-// GetByPathWithPath1 provides operations to call the getByPath method.
-// returns a *ItemGetByPathWithPathGetByPathWithPath1RequestBuilder when successful
-func (m *ItemGetByPathWithPathRequestBuilder) GetByPathWithPath1(path1 *string)(*ItemGetByPathWithPathGetByPathWithPath1RequestBuilder) {
-    return NewItemGetByPathWithPathGetByPathWithPath1RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, path1)
-}
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 // returns a *ItemGetByPathWithPathItemsRequestBuilder when successful
 func (m *ItemGetByPathWithPathRequestBuilder) Items()(*ItemGetByPathWithPathItemsRequestBuilder) {

@@ -29,6 +29,8 @@ func CreateVirtualEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.virtualEventTownhall":
+                        return NewVirtualEventTownhall(), nil
                     case "#microsoft.graph.virtualEventWebinar":
                         return NewVirtualEventWebinar(), nil
                 }
@@ -129,6 +131,22 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["presenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventPresenterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VirtualEventPresenterable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(VirtualEventPresenterable)
+                }
+            }
+            m.SetPresenters(res)
+        }
+        return nil
+    }
     res["sessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVirtualEventSessionFromDiscriminatorValue)
         if err != nil {
@@ -166,6 +184,18 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetPresenters gets the presenters property value. The presenters property
+// returns a []VirtualEventPresenterable when successful
+func (m *VirtualEvent) GetPresenters()([]VirtualEventPresenterable) {
+    val, err := m.GetBackingStore().Get("presenters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VirtualEventPresenterable)
+    }
+    return nil
 }
 // GetSessions gets the sessions property value. Sessions for the virtual event.
 // returns a []VirtualEventSessionable when successful
@@ -233,6 +263,18 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetPresenters() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPresenters()))
+        for i, v := range m.GetPresenters() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("presenters", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSessions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSessions()))
         for i, v := range m.GetSessions() {
@@ -288,6 +330,13 @@ func (m *VirtualEvent) SetEndDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
+// SetPresenters sets the presenters property value. The presenters property
+func (m *VirtualEvent) SetPresenters(value []VirtualEventPresenterable)() {
+    err := m.GetBackingStore().Set("presenters", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSessions sets the sessions property value. Sessions for the virtual event.
 func (m *VirtualEvent) SetSessions(value []VirtualEventSessionable)() {
     err := m.GetBackingStore().Set("sessions", value)
@@ -316,6 +365,7 @@ type VirtualEventable interface {
     GetDescription()(ItemBodyable)
     GetDisplayName()(*string)
     GetEndDateTime()(DateTimeTimeZoneable)
+    GetPresenters()([]VirtualEventPresenterable)
     GetSessions()([]VirtualEventSessionable)
     GetStartDateTime()(DateTimeTimeZoneable)
     GetStatus()(*VirtualEventStatus)
@@ -323,6 +373,7 @@ type VirtualEventable interface {
     SetDescription(value ItemBodyable)()
     SetDisplayName(value *string)()
     SetEndDateTime(value DateTimeTimeZoneable)()
+    SetPresenters(value []VirtualEventPresenterable)()
     SetSessions(value []VirtualEventSessionable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
     SetStatus(value *VirtualEventStatus)()
