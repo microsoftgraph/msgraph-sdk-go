@@ -21,7 +21,7 @@ func NewVirtualEventRegistrationCustomQuestion()(*VirtualEventRegistrationCustom
 func CreateVirtualEventRegistrationCustomQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventRegistrationCustomQuestion(), nil
 }
-// GetAnswerChoices gets the answerChoices property value. The answerChoices property
+// GetAnswerChoices gets the answerChoices property value. Answer choices when answerInputType is singleChoice or multiChoice.
 // returns a []string when successful
 func (m *VirtualEventRegistrationCustomQuestion) GetAnswerChoices()([]string) {
     val, err := m.GetBackingStore().Get("answerChoices")
@@ -33,7 +33,7 @@ func (m *VirtualEventRegistrationCustomQuestion) GetAnswerChoices()([]string) {
     }
     return nil
 }
-// GetAnswerInputType gets the answerInputType property value. The answerInputType property
+// GetAnswerInputType gets the answerInputType property value. Input type of the registration question answer. Possible values are text, multilineText, singleChoice, multiChoice, boolean, and unknownFutureValue.
 // returns a *VirtualEventRegistrationQuestionAnswerInputType when successful
 func (m *VirtualEventRegistrationCustomQuestion) GetAnswerInputType()(*VirtualEventRegistrationQuestionAnswerInputType) {
     val, err := m.GetBackingStore().Get("answerInputType")
@@ -98,14 +98,14 @@ func (m *VirtualEventRegistrationCustomQuestion) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetAnswerChoices sets the answerChoices property value. The answerChoices property
+// SetAnswerChoices sets the answerChoices property value. Answer choices when answerInputType is singleChoice or multiChoice.
 func (m *VirtualEventRegistrationCustomQuestion) SetAnswerChoices(value []string)() {
     err := m.GetBackingStore().Set("answerChoices", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAnswerInputType sets the answerInputType property value. The answerInputType property
+// SetAnswerInputType sets the answerInputType property value. Input type of the registration question answer. Possible values are text, multilineText, singleChoice, multiChoice, boolean, and unknownFutureValue.
 func (m *VirtualEventRegistrationCustomQuestion) SetAnswerInputType(value *VirtualEventRegistrationQuestionAnswerInputType)() {
     err := m.GetBackingStore().Set("answerInputType", value)
     if err != nil {

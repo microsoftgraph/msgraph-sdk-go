@@ -52,7 +52,7 @@ func (m *BookingPageSettings) GetAdditionalData()(map[string]any) {
 func (m *BookingPageSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBookingPageColorCode gets the bookingPageColorCode property value. Custom color for bookings page. Value should be in Hex format. Example: `#123456`.
+// GetBookingPageColorCode gets the bookingPageColorCode property value. Custom color for the booking page. The value should be in Hex format. For example, #123456.
 // returns a *string when successful
 func (m *BookingPageSettings) GetBookingPageColorCode()(*string) {
     val, err := m.GetBackingStore().Get("bookingPageColorCode")
@@ -64,7 +64,7 @@ func (m *BookingPageSettings) GetBookingPageColorCode()(*string) {
     }
     return nil
 }
-// GetBusinessTimeZone gets the businessTimeZone property value. The time zone of the customer. For a list of possible values, see [dateTimeTimeZone](https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-beta).
+// GetBusinessTimeZone gets the businessTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
 // returns a *string when successful
 func (m *BookingPageSettings) GetBusinessTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("businessTimeZone")
@@ -76,7 +76,7 @@ func (m *BookingPageSettings) GetBusinessTimeZone()(*string) {
     }
     return nil
 }
-// GetCustomerConsentMessage gets the customerConsentMessage property value. Customer consent message that is displayed in the Booking page.
+// GetCustomerConsentMessage gets the customerConsentMessage property value. The personal data collection and usage consent message in the booking page.
 // returns a *string when successful
 func (m *BookingPageSettings) GetCustomerConsentMessage()(*string) {
     val, err := m.GetBackingStore().Get("customerConsentMessage")
@@ -88,7 +88,7 @@ func (m *BookingPageSettings) GetCustomerConsentMessage()(*string) {
     }
     return nil
 }
-// GetEnforceOneTimePassword gets the enforceOneTimePassword property value. Enforcing One Time Password (OTP) during appointment creation.
+// GetEnforceOneTimePassword gets the enforceOneTimePassword property value. Determines whether the one-time password is required to create an appointment. The default value is false.
 // returns a *bool when successful
 func (m *BookingPageSettings) GetEnforceOneTimePassword()(*bool) {
     val, err := m.GetBackingStore().Get("enforceOneTimePassword")
@@ -226,7 +226,7 @@ func (m *BookingPageSettings) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIsBusinessLogoDisplayEnabled gets the isBusinessLogoDisplayEnabled property value. Enable display of business logo display on the Bookings page.
+// GetIsBusinessLogoDisplayEnabled gets the isBusinessLogoDisplayEnabled property value. Indicates whether the business logo is displayed on the booking page. The default value is false.
 // returns a *bool when successful
 func (m *BookingPageSettings) GetIsBusinessLogoDisplayEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBusinessLogoDisplayEnabled")
@@ -238,7 +238,7 @@ func (m *BookingPageSettings) GetIsBusinessLogoDisplayEnabled()(*bool) {
     }
     return nil
 }
-// GetIsCustomerConsentEnabled gets the isCustomerConsentEnabled property value. Enforces customer consent on the customer consent message before appointment is booked.
+// GetIsCustomerConsentEnabled gets the isCustomerConsentEnabled property value. Enables personal data collection and the usage consent toggle on the booking page. The default value is false.
 // returns a *bool when successful
 func (m *BookingPageSettings) GetIsCustomerConsentEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomerConsentEnabled")
@@ -250,7 +250,7 @@ func (m *BookingPageSettings) GetIsCustomerConsentEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSearchEngineIndexabilityDisabled gets the isSearchEngineIndexabilityDisabled property value. Disable booking page to be indexed by search engines. False by default.
+// GetIsSearchEngineIndexabilityDisabled gets the isSearchEngineIndexabilityDisabled property value. Indicates whether web crawlers index this page. The defaults value is false.
 // returns a *bool when successful
 func (m *BookingPageSettings) GetIsSearchEngineIndexabilityDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSearchEngineIndexabilityDisabled")
@@ -262,7 +262,7 @@ func (m *BookingPageSettings) GetIsSearchEngineIndexabilityDisabled()(*bool) {
     }
     return nil
 }
-// GetIsTimeSlotTimeZoneSetToBusinessTimeZone gets the isTimeSlotTimeZoneSetToBusinessTimeZone property value. If business time zone the default value for the time slots that we show in the bookings page. False by default.
+// GetIsTimeSlotTimeZoneSetToBusinessTimeZone gets the isTimeSlotTimeZoneSetToBusinessTimeZone property value. Indicates whether the time zone of the time slot is set to the time zone of the business. The default value is false.
 // returns a *bool when successful
 func (m *BookingPageSettings) GetIsTimeSlotTimeZoneSetToBusinessTimeZone()(*bool) {
     val, err := m.GetBackingStore().Get("isTimeSlotTimeZoneSetToBusinessTimeZone")
@@ -286,7 +286,7 @@ func (m *BookingPageSettings) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPrivacyPolicyWebUrl gets the privacyPolicyWebUrl property value. The URL of the business' Privacy Policy.
+// GetPrivacyPolicyWebUrl gets the privacyPolicyWebUrl property value. URL of a webpage that provides the terms and conditions of the business. If a privacy policy isn't included, the following text appears on the booking page as default: 'The policies and practices of {bookingbusinessname} apply to the use of your data.'
 // returns a *string when successful
 func (m *BookingPageSettings) GetPrivacyPolicyWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("privacyPolicyWebUrl")
@@ -298,7 +298,7 @@ func (m *BookingPageSettings) GetPrivacyPolicyWebUrl()(*string) {
     }
     return nil
 }
-// GetTermsAndConditionsWebUrl gets the termsAndConditionsWebUrl property value. The URL of the business' Terms and Conditions.
+// GetTermsAndConditionsWebUrl gets the termsAndConditionsWebUrl property value. URL of a webpage that provides the terms and conditions of the business.
 // returns a *string when successful
 func (m *BookingPageSettings) GetTermsAndConditionsWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("termsAndConditionsWebUrl")
@@ -411,56 +411,56 @@ func (m *BookingPageSettings) SetAdditionalData(value map[string]any)() {
 func (m *BookingPageSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBookingPageColorCode sets the bookingPageColorCode property value. Custom color for bookings page. Value should be in Hex format. Example: `#123456`.
+// SetBookingPageColorCode sets the bookingPageColorCode property value. Custom color for the booking page. The value should be in Hex format. For example, #123456.
 func (m *BookingPageSettings) SetBookingPageColorCode(value *string)() {
     err := m.GetBackingStore().Set("bookingPageColorCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBusinessTimeZone sets the businessTimeZone property value. The time zone of the customer. For a list of possible values, see [dateTimeTimeZone](https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-beta).
+// SetBusinessTimeZone sets the businessTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
 func (m *BookingPageSettings) SetBusinessTimeZone(value *string)() {
     err := m.GetBackingStore().Set("businessTimeZone", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomerConsentMessage sets the customerConsentMessage property value. Customer consent message that is displayed in the Booking page.
+// SetCustomerConsentMessage sets the customerConsentMessage property value. The personal data collection and usage consent message in the booking page.
 func (m *BookingPageSettings) SetCustomerConsentMessage(value *string)() {
     err := m.GetBackingStore().Set("customerConsentMessage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnforceOneTimePassword sets the enforceOneTimePassword property value. Enforcing One Time Password (OTP) during appointment creation.
+// SetEnforceOneTimePassword sets the enforceOneTimePassword property value. Determines whether the one-time password is required to create an appointment. The default value is false.
 func (m *BookingPageSettings) SetEnforceOneTimePassword(value *bool)() {
     err := m.GetBackingStore().Set("enforceOneTimePassword", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsBusinessLogoDisplayEnabled sets the isBusinessLogoDisplayEnabled property value. Enable display of business logo display on the Bookings page.
+// SetIsBusinessLogoDisplayEnabled sets the isBusinessLogoDisplayEnabled property value. Indicates whether the business logo is displayed on the booking page. The default value is false.
 func (m *BookingPageSettings) SetIsBusinessLogoDisplayEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isBusinessLogoDisplayEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCustomerConsentEnabled sets the isCustomerConsentEnabled property value. Enforces customer consent on the customer consent message before appointment is booked.
+// SetIsCustomerConsentEnabled sets the isCustomerConsentEnabled property value. Enables personal data collection and the usage consent toggle on the booking page. The default value is false.
 func (m *BookingPageSettings) SetIsCustomerConsentEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isCustomerConsentEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSearchEngineIndexabilityDisabled sets the isSearchEngineIndexabilityDisabled property value. Disable booking page to be indexed by search engines. False by default.
+// SetIsSearchEngineIndexabilityDisabled sets the isSearchEngineIndexabilityDisabled property value. Indicates whether web crawlers index this page. The defaults value is false.
 func (m *BookingPageSettings) SetIsSearchEngineIndexabilityDisabled(value *bool)() {
     err := m.GetBackingStore().Set("isSearchEngineIndexabilityDisabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsTimeSlotTimeZoneSetToBusinessTimeZone sets the isTimeSlotTimeZoneSetToBusinessTimeZone property value. If business time zone the default value for the time slots that we show in the bookings page. False by default.
+// SetIsTimeSlotTimeZoneSetToBusinessTimeZone sets the isTimeSlotTimeZoneSetToBusinessTimeZone property value. Indicates whether the time zone of the time slot is set to the time zone of the business. The default value is false.
 func (m *BookingPageSettings) SetIsTimeSlotTimeZoneSetToBusinessTimeZone(value *bool)() {
     err := m.GetBackingStore().Set("isTimeSlotTimeZoneSetToBusinessTimeZone", value)
     if err != nil {
@@ -474,14 +474,14 @@ func (m *BookingPageSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPrivacyPolicyWebUrl sets the privacyPolicyWebUrl property value. The URL of the business' Privacy Policy.
+// SetPrivacyPolicyWebUrl sets the privacyPolicyWebUrl property value. URL of a webpage that provides the terms and conditions of the business. If a privacy policy isn't included, the following text appears on the booking page as default: 'The policies and practices of {bookingbusinessname} apply to the use of your data.'
 func (m *BookingPageSettings) SetPrivacyPolicyWebUrl(value *string)() {
     err := m.GetBackingStore().Set("privacyPolicyWebUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTermsAndConditionsWebUrl sets the termsAndConditionsWebUrl property value. The URL of the business' Terms and Conditions.
+// SetTermsAndConditionsWebUrl sets the termsAndConditionsWebUrl property value. URL of a webpage that provides the terms and conditions of the business.
 func (m *BookingPageSettings) SetTermsAndConditionsWebUrl(value *string)() {
     err := m.GetBackingStore().Set("termsAndConditionsWebUrl", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetQueryParameters returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetQueryParameters returns the worksheet to which the named item is scoped. Available only if the item is scoped to the worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+// Get returns the worksheet to which the named item is scoped. Available only if the item is scoped to the worksheet. Read-only.
 // returns a WorkbookWorksheetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, error) {
@@ -60,7 +60,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable), nil
 }
-// ToGetRequestInformation returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+// ToGetRequestInformation returns the worksheet to which the named item is scoped. Available only if the item is scoped to the worksheet. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

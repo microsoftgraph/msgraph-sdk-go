@@ -45,7 +45,7 @@ func (m *WorkbookTableRow) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIndex gets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
+// GetIndex gets the index property value. The index of the row within the rows collection of the table. Zero-based. Read-only.
 // returns a *int32 when successful
 func (m *WorkbookTableRow) GetIndex()(*int32) {
     val, err := m.GetBackingStore().Get("index")
@@ -57,7 +57,7 @@ func (m *WorkbookTableRow) GetIndex()(*int32) {
     }
     return nil
 }
-// GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+// GetValues gets the values property value. The raw values of the specified range. The data returned could be of type string, number, or a Boolean. Any cell that contain an error will return the error string.
 // returns a UntypedNodeable when successful
 func (m *WorkbookTableRow) GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("values")
@@ -89,14 +89,14 @@ func (m *WorkbookTableRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetIndex sets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
+// SetIndex sets the index property value. The index of the row within the rows collection of the table. Zero-based. Read-only.
 func (m *WorkbookTableRow) SetIndex(value *int32)() {
     err := m.GetBackingStore().Set("index", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+// SetValues sets the values property value. The raw values of the specified range. The data returned could be of type string, number, or a Boolean. Any cell that contain an error will return the error string.
 func (m *WorkbookTableRow) SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

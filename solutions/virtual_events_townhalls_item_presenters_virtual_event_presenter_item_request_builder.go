@@ -18,7 +18,7 @@ type VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters get presenters from solutions
+// VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: - virtualEventTownhall- virtualEventWebinar
 type VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewVirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property presenters for solutions
+// Delete delete a virtualEventPresenter from a virtual event. Currently the supported virtual event types are:- virtualEventTownhall- virtualEventWebinar
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventpresenter-delete?view=graph-rest-1.0
 func (m *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBui
     }
     return nil
 }
-// Get get presenters from solutions
+// Get read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: - virtualEventTownhall- virtualEventWebinar
 // returns a VirtualEventPresenterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventpresenter-get?view=graph-rest-1.0
 func (m *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable), nil
 }
-// ToDeleteRequestInformation delete navigation property presenters for solutions
+// ToDeleteRequestInformation delete a virtualEventPresenter from a virtual event. Currently the supported virtual event types are:- virtualEventTownhall- virtualEventWebinar
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +127,7 @@ func (m *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get presenters from solutions
+// ToGetRequestInformation read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: - virtualEventTownhall- virtualEventWebinar
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

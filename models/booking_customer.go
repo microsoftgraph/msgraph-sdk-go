@@ -23,7 +23,7 @@ func NewBookingCustomer()(*BookingCustomer) {
 func CreateBookingCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingCustomer(), nil
 }
-// GetAddresses gets the addresses property value. Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+// GetAddresses gets the addresses property value. Addresses associated with the customer. The attribute type of physicalAddress isn't supported in v1.0. Internally we map the addresses to the type others.
 // returns a []PhysicalAddressable when successful
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("addresses")
@@ -35,7 +35,7 @@ func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time, and time zone when the customer was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingCustomer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -149,7 +149,7 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time, and time zone when the customer was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingCustomer) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -161,7 +161,7 @@ func (m *BookingCustomer) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
+// GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business, and mobile numbers.
 // returns a []Phoneable when successful
 func (m *BookingCustomer) GetPhones()([]Phoneable) {
     val, err := m.GetBackingStore().Get("phones")
@@ -229,14 +229,14 @@ func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetAddresses sets the addresses property value. Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+// SetAddresses sets the addresses property value. Addresses associated with the customer. The attribute type of physicalAddress isn't supported in v1.0. Internally we map the addresses to the type others.
 func (m *BookingCustomer) SetAddresses(value []PhysicalAddressable)() {
     err := m.GetBackingStore().Set("addresses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time, and time zone when the customer was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingCustomer) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -257,14 +257,14 @@ func (m *BookingCustomer) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time, and time zone when the customer was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingCustomer) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPhones sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
+// SetPhones sets the phones property value. Phone numbers associated with the customer, including home, business, and mobile numbers.
 func (m *BookingCustomer) SetPhones(value []Phoneable)() {
     err := m.GetBackingStore().Set("phones", value)
     if err != nil {

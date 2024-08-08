@@ -79,7 +79,7 @@ func (m *WorkbookChartAxisTitle) GetText()(*string) {
     }
     return nil
 }
-// GetVisible gets the visible property value. A boolean that specifies the visibility of an axis title.
+// GetVisible gets the visible property value. A Boolean that specifies the visibility of an axis title.
 // returns a *bool when successful
 func (m *WorkbookChartAxisTitle) GetVisible()(*bool) {
     val, err := m.GetBackingStore().Get("visible")
@@ -131,7 +131,7 @@ func (m *WorkbookChartAxisTitle) SetText(value *string)() {
         panic(err)
     }
 }
-// SetVisible sets the visible property value. A boolean that specifies the visibility of an axis title.
+// SetVisible sets the visible property value. A Boolean that specifies the visibility of an axis title.
 func (m *WorkbookChartAxisTitle) SetVisible(value *bool)() {
     err := m.GetBackingStore().Set("visible", value)
     if err != nil {

@@ -85,7 +85,7 @@ func (m *VirtualEventsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetTownhalls gets the townhalls property value. The townhalls property
+// GetTownhalls gets the townhalls property value. A collection of town halls. Nullable.
 // returns a []VirtualEventTownhallable when successful
 func (m *VirtualEventsRoot) GetTownhalls()([]VirtualEventTownhallable) {
     val, err := m.GetBackingStore().Get("townhalls")
@@ -97,7 +97,7 @@ func (m *VirtualEventsRoot) GetTownhalls()([]VirtualEventTownhallable) {
     }
     return nil
 }
-// GetWebinars gets the webinars property value. The webinars property
+// GetWebinars gets the webinars property value. A collection of webinars. Nullable.
 // returns a []VirtualEventWebinarable when successful
 func (m *VirtualEventsRoot) GetWebinars()([]VirtualEventWebinarable) {
     val, err := m.GetBackingStore().Get("webinars")
@@ -160,14 +160,14 @@ func (m *VirtualEventsRoot) SetEvents(value []VirtualEventable)() {
         panic(err)
     }
 }
-// SetTownhalls sets the townhalls property value. The townhalls property
+// SetTownhalls sets the townhalls property value. A collection of town halls. Nullable.
 func (m *VirtualEventsRoot) SetTownhalls(value []VirtualEventTownhallable)() {
     err := m.GetBackingStore().Set("townhalls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebinars sets the webinars property value. The webinars property
+// SetWebinars sets the webinars property value. A collection of webinars. Nullable.
 func (m *VirtualEventsRoot) SetWebinars(value []VirtualEventWebinarable)() {
     err := m.GetBackingStore().Set("webinars", value)
     if err != nil {

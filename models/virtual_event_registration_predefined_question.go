@@ -37,7 +37,7 @@ func (m *VirtualEventRegistrationPredefinedQuestion) GetFieldDeserializers()(map
     }
     return res
 }
-// GetLabel gets the label property value. The label property
+// GetLabel gets the label property value. Label of the predefined registration question. It accepts a single line of text: street, city, state, postalCode, countryOrRegion, industry, jobTitle, organization, and unknownFutureValue.
 // returns a *VirtualEventRegistrationPredefinedQuestionLabel when successful
 func (m *VirtualEventRegistrationPredefinedQuestion) GetLabel()(*VirtualEventRegistrationPredefinedQuestionLabel) {
     val, err := m.GetBackingStore().Get("label")
@@ -64,7 +64,7 @@ func (m *VirtualEventRegistrationPredefinedQuestion) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetLabel sets the label property value. The label property
+// SetLabel sets the label property value. Label of the predefined registration question. It accepts a single line of text: street, city, state, postalCode, countryOrRegion, industry, jobTitle, organization, and unknownFutureValue.
 func (m *VirtualEventRegistrationPredefinedQuestion) SetLabel(value *VirtualEventRegistrationPredefinedQuestionLabel)() {
     err := m.GetBackingStore().Set("label", value)
     if err != nil {

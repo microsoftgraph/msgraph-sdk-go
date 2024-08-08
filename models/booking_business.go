@@ -45,7 +45,7 @@ func (m *BookingBusiness) GetAppointments()([]BookingAppointmentable) {
     }
     return nil
 }
-// GetBookingPageSettings gets the bookingPageSettings property value. The bookingPageSettings property
+// GetBookingPageSettings gets the bookingPageSettings property value. Settings for the published booking page.
 // returns a BookingPageSettingsable when successful
 func (m *BookingBusiness) GetBookingPageSettings()(BookingPageSettingsable) {
     val, err := m.GetBackingStore().Get("bookingPageSettings")
@@ -93,7 +93,7 @@ func (m *BookingBusiness) GetCalendarView()([]BookingAppointmentable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time, and time zone when the booking business was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingBusiness) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -447,7 +447,7 @@ func (m *BookingBusiness) GetLanguageTag()(*string) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingBusiness) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -709,7 +709,7 @@ func (m *BookingBusiness) SetAppointments(value []BookingAppointmentable)() {
         panic(err)
     }
 }
-// SetBookingPageSettings sets the bookingPageSettings property value. The bookingPageSettings property
+// SetBookingPageSettings sets the bookingPageSettings property value. Settings for the published booking page.
 func (m *BookingBusiness) SetBookingPageSettings(value BookingPageSettingsable)() {
     err := m.GetBackingStore().Set("bookingPageSettings", value)
     if err != nil {
@@ -737,7 +737,7 @@ func (m *BookingBusiness) SetCalendarView(value []BookingAppointmentable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time, and time zone when the booking business was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingBusiness) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -793,7 +793,7 @@ func (m *BookingBusiness) SetLanguageTag(value *string)() {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingBusiness) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {

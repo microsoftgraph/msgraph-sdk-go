@@ -19,7 +19,7 @@ func NewWorkbookRangeFont()(*WorkbookRangeFont) {
 func CreateWorkbookRangeFontFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRangeFont(), nil
 }
-// GetBold gets the bold property value. Represents the bold status of font.
+// GetBold gets the bold property value. Inidicates whether the font is bold.
 // returns a *bool when successful
 func (m *WorkbookRangeFont) GetBold()(*bool) {
     val, err := m.GetBackingStore().Get("bold")
@@ -31,7 +31,7 @@ func (m *WorkbookRangeFont) GetBold()(*bool) {
     }
     return nil
 }
-// GetColor gets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
+// GetColor gets the color property value. The HTML color code representation of the text color. For example, #FF0000 represents the color red.
 // returns a *string when successful
 func (m *WorkbookRangeFont) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
@@ -109,7 +109,7 @@ func (m *WorkbookRangeFont) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetItalic gets the italic property value. Represents the italic status of the font.
+// GetItalic gets the italic property value. Inidicates whether the font is italic.
 // returns a *bool when successful
 func (m *WorkbookRangeFont) GetItalic()(*bool) {
     val, err := m.GetBackingStore().Get("italic")
@@ -121,7 +121,7 @@ func (m *WorkbookRangeFont) GetItalic()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. Font name (for example 'Calibri')
+// GetName gets the name property value. The font name. For example, 'Calibri'.
 // returns a *string when successful
 func (m *WorkbookRangeFont) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -133,7 +133,7 @@ func (m *WorkbookRangeFont) GetName()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. Font size.
+// GetSize gets the size property value. The font size.
 // returns a *float64 when successful
 func (m *WorkbookRangeFont) GetSize()(*float64) {
     val, err := m.GetBackingStore().Get("size")
@@ -145,7 +145,7 @@ func (m *WorkbookRangeFont) GetSize()(*float64) {
     }
     return nil
 }
-// GetUnderline gets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+// GetUnderline gets the underline property value. The type of underlining applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
 // returns a *string when successful
 func (m *WorkbookRangeFont) GetUnderline()(*string) {
     val, err := m.GetBackingStore().Get("underline")
@@ -201,42 +201,42 @@ func (m *WorkbookRangeFont) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetBold sets the bold property value. Represents the bold status of font.
+// SetBold sets the bold property value. Inidicates whether the font is bold.
 func (m *WorkbookRangeFont) SetBold(value *bool)() {
     err := m.GetBackingStore().Set("bold", value)
     if err != nil {
         panic(err)
     }
 }
-// SetColor sets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
+// SetColor sets the color property value. The HTML color code representation of the text color. For example, #FF0000 represents the color red.
 func (m *WorkbookRangeFont) SetColor(value *string)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItalic sets the italic property value. Represents the italic status of the font.
+// SetItalic sets the italic property value. Inidicates whether the font is italic.
 func (m *WorkbookRangeFont) SetItalic(value *bool)() {
     err := m.GetBackingStore().Set("italic", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. Font name (for example 'Calibri')
+// SetName sets the name property value. The font name. For example, 'Calibri'.
 func (m *WorkbookRangeFont) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. Font size.
+// SetSize sets the size property value. The font size.
 func (m *WorkbookRangeFont) SetSize(value *float64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUnderline sets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+// SetUnderline sets the underline property value. The type of underlining applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
 func (m *WorkbookRangeFont) SetUnderline(value *string)() {
     err := m.GetBackingStore().Set("underline", value)
     if err != nil {

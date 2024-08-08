@@ -30,7 +30,7 @@ func NewVirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action cancel
+// Post cancel a registrant's registration record for a webinar. 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -46,7 +46,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilder) Po
     }
     return nil
 }
-// ToPostRequestInformation invoke action cancel
+// ToPostRequestInformation cancel a registrant's registration record for a webinar. 
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

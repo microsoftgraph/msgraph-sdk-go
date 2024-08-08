@@ -18,7 +18,7 @@ type VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderGetQueryParameters get questions from solutions
+// VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderGetQueryParameters registration questions.
 type VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewVirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventR
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property questions for solutions
+// Delete delete a registration question from a webinar. The question can either be a predefined registration question or a custom registration question. 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventregistrationquestionbase-delete?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEvent
     }
     return nil
 }
-// Get get questions from solutions
+// Get registration questions.
 // returns a VirtualEventRegistrationQuestionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventRegistrationQuestionBaseable, error) {
@@ -110,7 +113,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEvent
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventRegistrationQuestionBaseable), nil
 }
-// ToDeleteRequestInformation delete navigation property questions for solutions
+// ToDeleteRequestInformation delete a registration question from a webinar. The question can either be a predefined registration question or a custom registration question. 
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +124,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEvent
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get questions from solutions
+// ToGetRequestInformation registration questions.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

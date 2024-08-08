@@ -19,7 +19,7 @@ func NewColumnDefinition()(*ColumnDefinition) {
 func CreateColumnDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewColumnDefinition(), nil
 }
-// GetBoolean gets the boolean property value. This column stores boolean values.
+// GetBoolean gets the boolean property value. This column stores Boolean values.
 // returns a BooleanColumnable when successful
 func (m *ColumnDefinition) GetBoolean()(BooleanColumnable) {
     val, err := m.GetBackingStore().Get("boolean")
@@ -930,7 +930,7 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetBoolean sets the boolean property value. This column stores boolean values.
+// SetBoolean sets the boolean property value. This column stores Boolean values.
 func (m *ColumnDefinition) SetBoolean(value BooleanColumnable)() {
     err := m.GetBackingStore().Set("boolean", value)
     if err != nil {

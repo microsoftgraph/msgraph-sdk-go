@@ -45,7 +45,7 @@ func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetName gets the name property value. Name of the PivotTable.
+// GetName gets the name property value. The name of the pivot table.
 // returns a *string when successful
 func (m *WorkbookPivotTable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -57,7 +57,7 @@ func (m *WorkbookPivotTable) GetName()(*string) {
     }
     return nil
 }
-// GetWorksheet gets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
+// GetWorksheet gets the worksheet property value. The worksheet that contains the current pivot table. Read-only.
 // returns a WorkbookWorksheetable when successful
 func (m *WorkbookPivotTable) GetWorksheet()(WorkbookWorksheetable) {
     val, err := m.GetBackingStore().Get("worksheet")
@@ -89,14 +89,14 @@ func (m *WorkbookPivotTable) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetName sets the name property value. Name of the PivotTable.
+// SetName sets the name property value. The name of the pivot table.
 func (m *WorkbookPivotTable) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWorksheet sets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
+// SetWorksheet sets the worksheet property value. The worksheet that contains the current pivot table. Read-only.
 func (m *WorkbookPivotTable) SetWorksheet(value WorkbookWorksheetable)() {
     err := m.GetBackingStore().Set("worksheet", value)
     if err != nil {

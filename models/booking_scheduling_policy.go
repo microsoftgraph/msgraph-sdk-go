@@ -36,7 +36,7 @@ func (m *BookingSchedulingPolicy) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowStaffSelection gets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
+// GetAllowStaffSelection gets the allowStaffSelection property value. True to allow customers to choose a specific person for the booking.
 // returns a *bool when successful
 func (m *BookingSchedulingPolicy) GetAllowStaffSelection()(*bool) {
     val, err := m.GetBackingStore().Get("allowStaffSelection")
@@ -53,7 +53,7 @@ func (m *BookingSchedulingPolicy) GetAllowStaffSelection()(*bool) {
 func (m *BookingSchedulingPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCustomAvailabilities gets the customAvailabilities property value. collection of custom availabilities for a given time range.
+// GetCustomAvailabilities gets the customAvailabilities property value. Custom availability of the service in a given time frame.
 // returns a []BookingsAvailabilityWindowable when successful
 func (m *BookingSchedulingPolicy) GetCustomAvailabilities()([]BookingsAvailabilityWindowable) {
     val, err := m.GetBackingStore().Get("customAvailabilities")
@@ -167,7 +167,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetGeneralAvailability gets the generalAvailability property value. General availability 
+// GetGeneralAvailability gets the generalAvailability property value. General availability of the service defined by the scheduling policy.
 // returns a BookingsAvailabilityable when successful
 func (m *BookingSchedulingPolicy) GetGeneralAvailability()(BookingsAvailabilityable) {
     val, err := m.GetBackingStore().Get("generalAvailability")
@@ -179,7 +179,7 @@ func (m *BookingSchedulingPolicy) GetGeneralAvailability()(BookingsAvailabilitya
     }
     return nil
 }
-// GetIsMeetingInviteToCustomersEnabled gets the isMeetingInviteToCustomersEnabled property value. Enable sending meeting invite to customers. False by default.
+// GetIsMeetingInviteToCustomersEnabled gets the isMeetingInviteToCustomersEnabled property value. Indicates whether the meeting invite is sent to the customers. The default value is false.
 // returns a *bool when successful
 func (m *BookingSchedulingPolicy) GetIsMeetingInviteToCustomersEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isMeetingInviteToCustomersEnabled")
@@ -328,7 +328,7 @@ func (m *BookingSchedulingPolicy) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowStaffSelection sets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
+// SetAllowStaffSelection sets the allowStaffSelection property value. True to allow customers to choose a specific person for the booking.
 func (m *BookingSchedulingPolicy) SetAllowStaffSelection(value *bool)() {
     err := m.GetBackingStore().Set("allowStaffSelection", value)
     if err != nil {
@@ -339,21 +339,21 @@ func (m *BookingSchedulingPolicy) SetAllowStaffSelection(value *bool)() {
 func (m *BookingSchedulingPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCustomAvailabilities sets the customAvailabilities property value. collection of custom availabilities for a given time range.
+// SetCustomAvailabilities sets the customAvailabilities property value. Custom availability of the service in a given time frame.
 func (m *BookingSchedulingPolicy) SetCustomAvailabilities(value []BookingsAvailabilityWindowable)() {
     err := m.GetBackingStore().Set("customAvailabilities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGeneralAvailability sets the generalAvailability property value. General availability 
+// SetGeneralAvailability sets the generalAvailability property value. General availability of the service defined by the scheduling policy.
 func (m *BookingSchedulingPolicy) SetGeneralAvailability(value BookingsAvailabilityable)() {
     err := m.GetBackingStore().Set("generalAvailability", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMeetingInviteToCustomersEnabled sets the isMeetingInviteToCustomersEnabled property value. Enable sending meeting invite to customers. False by default.
+// SetIsMeetingInviteToCustomersEnabled sets the isMeetingInviteToCustomersEnabled property value. Indicates whether the meeting invite is sent to the customers. The default value is false.
 func (m *BookingSchedulingPolicy) SetIsMeetingInviteToCustomersEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isMeetingInviteToCustomersEnabled", value)
     if err != nil {

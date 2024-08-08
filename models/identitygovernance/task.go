@@ -44,7 +44,7 @@ func (m *Task) GetCategory()(*LifecycleTaskCategory) {
     }
     return nil
 }
-// GetContinueOnError gets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
+// GetContinueOnError gets the continueOnError property value. A Boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
 // returns a *bool when successful
 func (m *Task) GetContinueOnError()(*bool) {
     val, err := m.GetBackingStore().Get("continueOnError")
@@ -200,7 +200,7 @@ func (m *Task) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+// GetIsEnabled gets the isEnabled property value. A Boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
 // returns a *bool when successful
 func (m *Task) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -325,7 +325,7 @@ func (m *Task) SetCategory(value *LifecycleTaskCategory)() {
         panic(err)
     }
 }
-// SetContinueOnError sets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
+// SetContinueOnError sets the continueOnError property value. A Boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
 func (m *Task) SetContinueOnError(value *bool)() {
     err := m.GetBackingStore().Set("continueOnError", value)
     if err != nil {
@@ -353,7 +353,7 @@ func (m *Task) SetExecutionSequence(value *int32)() {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+// SetIsEnabled sets the isEnabled property value. A Boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
 func (m *Task) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

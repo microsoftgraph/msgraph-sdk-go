@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters returns collection of names that are associated with the worksheet. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters the list of names that are associated with the worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBui
     }
     return nil
 }
-// Get returns collection of names that are associated with the worksheet. Read-only.
+// Get the list of names that are associated with the worksheet. Read-only.
 // returns a WorkbookNamedItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable, error) {
@@ -126,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns collection of names that are associated with the worksheet. Read-only.
+// ToGetRequestInformation the list of names that are associated with the worksheet. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type VirtualEventsWebinarsItemPresentersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemPresentersRequestBuilderGetQueryParameters get presenters from solutions
+// VirtualEventsWebinarsItemPresentersRequestBuilderGetQueryParameters the virtual event presenters.
 type VirtualEventsWebinarsItemPresentersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewVirtualEventsWebinarsItemPresentersRequestBuilder(rawUrl string, request
 func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) Count()(*VirtualEventsWebinarsItemPresentersCountRequestBuilder) {
     return NewVirtualEventsWebinarsItemPresentersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get presenters from solutions
+// Get the virtual event presenters.
 // returns a VirtualEventPresenterCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemPresentersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterCollectionResponseable, error) {
@@ -96,9 +96,12 @@ func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterCollectionResponseable), nil
 }
-// Post create new navigation property to presenters for solutions
+// Post create a new virtualEventPresenter object on a virtual event. Currently, the following types of virtual events are supported: - virtualEventTownhall- virtualEventWebinar
 // returns a VirtualEventPresenterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualevent-post-presenters?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, requestConfiguration *VirtualEventsWebinarsItemPresentersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) Post(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable), nil
 }
-// ToGetRequestInformation get presenters from solutions
+// ToGetRequestInformation the virtual event presenters.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemPresentersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +133,7 @@ func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) ToGetRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to presenters for solutions
+// ToPostRequestInformation create a new virtualEventPresenter object on a virtual event. Currently, the following types of virtual events are supported: - virtualEventTownhall- virtualEventWebinar
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemPresentersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, requestConfiguration *VirtualEventsWebinarsItemPresentersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

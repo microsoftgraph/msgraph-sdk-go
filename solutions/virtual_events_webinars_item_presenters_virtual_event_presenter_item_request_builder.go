@@ -18,7 +18,7 @@ type VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters get presenters from solutions
+// VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters the virtual event presenters.
 type VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuil
     }
     return nil
 }
-// Get get presenters from solutions
+// Get the virtual event presenters.
 // returns a VirtualEventPresenterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, error) {
@@ -90,9 +90,12 @@ func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable), nil
 }
-// Patch update the navigation property presenters in solutions
+// Patch update the properties of a virtualEventPresenter object. Currently the supported virtual event types are:- virtualEventWebinar.
 // returns a VirtualEventPresenterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventpresenter-update?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, requestConfiguration *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get presenters from solutions
+// ToGetRequestInformation the virtual event presenters.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +138,7 @@ func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property presenters in solutions
+// ToPatchRequestInformation update the properties of a virtualEventPresenter object. Currently the supported virtual event types are:- virtualEventWebinar.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, requestConfiguration *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

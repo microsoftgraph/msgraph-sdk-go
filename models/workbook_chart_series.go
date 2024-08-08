@@ -61,7 +61,7 @@ func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetFormat gets the format property value. Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+// GetFormat gets the format property value. The formatting of a chart series, which includes fill and line formatting. Read-only.
 // returns a WorkbookChartSeriesFormatable when successful
 func (m *WorkbookChartSeries) GetFormat()(WorkbookChartSeriesFormatable) {
     val, err := m.GetBackingStore().Get("format")
@@ -73,7 +73,7 @@ func (m *WorkbookChartSeries) GetFormat()(WorkbookChartSeriesFormatable) {
     }
     return nil
 }
-// GetName gets the name property value. Represents the name of a series in a chart.
+// GetName gets the name property value. The name of a series in a chart.
 // returns a *string when successful
 func (m *WorkbookChartSeries) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -85,7 +85,7 @@ func (m *WorkbookChartSeries) GetName()(*string) {
     }
     return nil
 }
-// GetPoints gets the points property value. Represents a collection of all points in the series. Read-only.
+// GetPoints gets the points property value. A collection of all points in the series. Read-only.
 // returns a []WorkbookChartPointable when successful
 func (m *WorkbookChartSeries) GetPoints()([]WorkbookChartPointable) {
     val, err := m.GetBackingStore().Get("points")
@@ -129,21 +129,21 @@ func (m *WorkbookChartSeries) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetFormat sets the format property value. Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+// SetFormat sets the format property value. The formatting of a chart series, which includes fill and line formatting. Read-only.
 func (m *WorkbookChartSeries) SetFormat(value WorkbookChartSeriesFormatable)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. Represents the name of a series in a chart.
+// SetName sets the name property value. The name of a series in a chart.
 func (m *WorkbookChartSeries) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPoints sets the points property value. Represents a collection of all points in the series. Read-only.
+// SetPoints sets the points property value. A collection of all points in the series. Read-only.
 func (m *WorkbookChartSeries) SetPoints(value []WorkbookChartPointable)() {
     err := m.GetBackingStore().Set("points", value)
     if err != nil {

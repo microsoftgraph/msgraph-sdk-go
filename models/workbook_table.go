@@ -19,7 +19,7 @@ func NewWorkbookTable()(*WorkbookTable) {
 func CreateWorkbookTableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookTable(), nil
 }
-// GetColumns gets the columns property value. Represents a collection of all the columns in the table. Read-only.
+// GetColumns gets the columns property value. The list of all the columns in the table. Read-only.
 // returns a []WorkbookTableColumnable when successful
 func (m *WorkbookTable) GetColumns()([]WorkbookTableColumnable) {
     val, err := m.GetBackingStore().Get("columns")
@@ -213,7 +213,7 @@ func (m *WorkbookTable) GetHighlightLastColumn()(*bool) {
     }
     return nil
 }
-// GetLegacyId gets the legacyId property value. Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
+// GetLegacyId gets the legacyId property value. A legacy identifier used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
 // returns a *string when successful
 func (m *WorkbookTable) GetLegacyId()(*string) {
     val, err := m.GetBackingStore().Get("legacyId")
@@ -225,7 +225,7 @@ func (m *WorkbookTable) GetLegacyId()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. Name of the table.
+// GetName gets the name property value. The name of the table.
 // returns a *string when successful
 func (m *WorkbookTable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -237,7 +237,7 @@ func (m *WorkbookTable) GetName()(*string) {
     }
     return nil
 }
-// GetRows gets the rows property value. Represents a collection of all the rows in the table. Read-only.
+// GetRows gets the rows property value. The list of all the rows in the table. Read-only.
 // returns a []WorkbookTableRowable when successful
 func (m *WorkbookTable) GetRows()([]WorkbookTableRowable) {
     val, err := m.GetBackingStore().Get("rows")
@@ -309,7 +309,7 @@ func (m *WorkbookTable) GetShowTotals()(*bool) {
     }
     return nil
 }
-// GetSort gets the sort property value. Represents the sorting for the table. Read-only.
+// GetSort gets the sort property value. The sorting for the table. Read-only.
 // returns a WorkbookTableSortable when successful
 func (m *WorkbookTable) GetSort()(WorkbookTableSortable) {
     val, err := m.GetBackingStore().Get("sort")
@@ -321,7 +321,7 @@ func (m *WorkbookTable) GetSort()(WorkbookTableSortable) {
     }
     return nil
 }
-// GetStyle gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// GetStyle gets the style property value. A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 // returns a *string when successful
 func (m *WorkbookTable) GetStyle()(*string) {
     val, err := m.GetBackingStore().Get("style")
@@ -449,7 +449,7 @@ func (m *WorkbookTable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetColumns sets the columns property value. Represents a collection of all the columns in the table. Read-only.
+// SetColumns sets the columns property value. The list of all the columns in the table. Read-only.
 func (m *WorkbookTable) SetColumns(value []WorkbookTableColumnable)() {
     err := m.GetBackingStore().Set("columns", value)
     if err != nil {
@@ -470,21 +470,21 @@ func (m *WorkbookTable) SetHighlightLastColumn(value *bool)() {
         panic(err)
     }
 }
-// SetLegacyId sets the legacyId property value. Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
+// SetLegacyId sets the legacyId property value. A legacy identifier used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
 func (m *WorkbookTable) SetLegacyId(value *string)() {
     err := m.GetBackingStore().Set("legacyId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. Name of the table.
+// SetName sets the name property value. The name of the table.
 func (m *WorkbookTable) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRows sets the rows property value. Represents a collection of all the rows in the table. Read-only.
+// SetRows sets the rows property value. The list of all the rows in the table. Read-only.
 func (m *WorkbookTable) SetRows(value []WorkbookTableRowable)() {
     err := m.GetBackingStore().Set("rows", value)
     if err != nil {
@@ -526,14 +526,14 @@ func (m *WorkbookTable) SetShowTotals(value *bool)() {
         panic(err)
     }
 }
-// SetSort sets the sort property value. Represents the sorting for the table. Read-only.
+// SetSort sets the sort property value. The sorting for the table. Read-only.
 func (m *WorkbookTable) SetSort(value WorkbookTableSortable)() {
     err := m.GetBackingStore().Set("sort", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStyle sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// SetStyle sets the style property value. A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) SetStyle(value *string)() {
     err := m.GetBackingStore().Set("style", value)
     if err != nil {

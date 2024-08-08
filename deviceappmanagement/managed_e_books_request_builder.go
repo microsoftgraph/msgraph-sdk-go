@@ -11,7 +11,7 @@ import (
 type ManagedEBooksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedEBooksRequestBuilderGetQueryParameters list properties and relationships of the managedEBook objects.
+// ManagedEBooksRequestBuilderGetQueryParameters list properties and relationships of the iosVppEBook objects.
 type ManagedEBooksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,12 @@ func NewManagedEBooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ManagedEBooksRequestBuilder) Count()(*ManagedEBooksCountRequestBuilder) {
     return NewManagedEBooksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the managedEBook objects.
+// Get list properties and relationships of the iosVppEBook objects.
 // returns a ManagedEBookCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
 func (m *ManagedEBooksRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *ManagedEBooksRequestBuilder) Post(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookable), nil
 }
-// ToGetRequestInformation list properties and relationships of the managedEBook objects.
+// ToGetRequestInformation list properties and relationships of the iosVppEBook objects.
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

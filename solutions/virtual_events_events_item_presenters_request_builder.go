@@ -11,7 +11,7 @@ import (
 type VirtualEventsEventsItemPresentersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsEventsItemPresentersRequestBuilderGetQueryParameters get presenters from solutions
+// VirtualEventsEventsItemPresentersRequestBuilderGetQueryParameters the virtual event presenters.
 type VirtualEventsEventsItemPresentersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewVirtualEventsEventsItemPresentersRequestBuilder(rawUrl string, requestAd
 func (m *VirtualEventsEventsItemPresentersRequestBuilder) Count()(*VirtualEventsEventsItemPresentersCountRequestBuilder) {
     return NewVirtualEventsEventsItemPresentersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get presenters from solutions
+// Get the virtual event presenters.
 // returns a VirtualEventPresenterCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemPresentersRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *VirtualEventsEventsItemPresentersRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable), nil
 }
-// ToGetRequestInformation get presenters from solutions
+// ToGetRequestInformation the virtual event presenters.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemPresentersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

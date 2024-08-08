@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilderGetQueryParameters encapsulates the format properties chart point. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilderGetQueryParameters the format properties of the chart point. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormat
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilder) Fill()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatFillRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatFillRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get encapsulates the format properties chart point. Read-only.
+// Get the format properties of the chart point. Read-only.
 // returns a WorkbookChartPointFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartPointFormatable, error) {
@@ -126,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation encapsulates the format properties chart point. Read-only.
+// ToGetRequestInformation the format properties of the chart point. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

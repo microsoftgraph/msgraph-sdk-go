@@ -37,7 +37,7 @@ func CreateVirtualEventRegistrationConfigurationFromDiscriminatorValue(parseNode
     }
     return NewVirtualEventRegistrationConfiguration(), nil
 }
-// GetCapacity gets the capacity property value. The capacity property
+// GetCapacity gets the capacity property value. Total capacity of the virtual event.
 // returns a *int32 when successful
 func (m *VirtualEventRegistrationConfiguration) GetCapacity()(*int32) {
     val, err := m.GetBackingStore().Get("capacity")
@@ -91,7 +91,7 @@ func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetQuestions gets the questions property value. The questions property
+// GetQuestions gets the questions property value. Registration questions.
 // returns a []VirtualEventRegistrationQuestionBaseable when successful
 func (m *VirtualEventRegistrationConfiguration) GetQuestions()([]VirtualEventRegistrationQuestionBaseable) {
     val, err := m.GetBackingStore().Get("questions")
@@ -103,7 +103,7 @@ func (m *VirtualEventRegistrationConfiguration) GetQuestions()([]VirtualEventReg
     }
     return nil
 }
-// GetRegistrationWebUrl gets the registrationWebUrl property value. The registrationWebUrl property
+// GetRegistrationWebUrl gets the registrationWebUrl property value. Registration URL of the virtual event.
 // returns a *string when successful
 func (m *VirtualEventRegistrationConfiguration) GetRegistrationWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("registrationWebUrl")
@@ -147,21 +147,21 @@ func (m *VirtualEventRegistrationConfiguration) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetCapacity sets the capacity property value. The capacity property
+// SetCapacity sets the capacity property value. Total capacity of the virtual event.
 func (m *VirtualEventRegistrationConfiguration) SetCapacity(value *int32)() {
     err := m.GetBackingStore().Set("capacity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQuestions sets the questions property value. The questions property
+// SetQuestions sets the questions property value. Registration questions.
 func (m *VirtualEventRegistrationConfiguration) SetQuestions(value []VirtualEventRegistrationQuestionBaseable)() {
     err := m.GetBackingStore().Set("questions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrationWebUrl sets the registrationWebUrl property value. The registrationWebUrl property
+// SetRegistrationWebUrl sets the registrationWebUrl property value. Registration URL of the virtual event.
 func (m *VirtualEventRegistrationConfiguration) SetRegistrationWebUrl(value *string)() {
     err := m.GetBackingStore().Set("registrationWebUrl", value)
     if err != nil {

@@ -19,7 +19,7 @@ func NewWorkbookRangeFill()(*WorkbookRangeFill) {
 func CreateWorkbookRangeFillFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRangeFill(), nil
 }
-// GetColor gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (for example 'FFA500') or as a named HTML color (for example 'orange')
+// GetColor gets the color property value. HTML color code representing the color of the border line. Can either be of the form #RRGGBB, for example 'FFA500', or be a named HTML color, for example 'orange'.
 // returns a *string when successful
 func (m *WorkbookRangeFill) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
@@ -61,7 +61,7 @@ func (m *WorkbookRangeFill) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetColor sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (for example 'FFA500') or as a named HTML color (for example 'orange')
+// SetColor sets the color property value. HTML color code representing the color of the border line. Can either be of the form #RRGGBB, for example 'FFA500', or be a named HTML color, for example 'orange'.
 func (m *WorkbookRangeFill) SetColor(value *string)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {

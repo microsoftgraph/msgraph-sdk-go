@@ -19,7 +19,7 @@ func NewWorkbookComment()(*WorkbookComment) {
 func CreateWorkbookCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookComment(), nil
 }
-// GetContent gets the content property value. The content of comment.
+// GetContent gets the content property value. The content of the comment.
 // returns a *string when successful
 func (m *WorkbookComment) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
@@ -31,7 +31,7 @@ func (m *WorkbookComment) GetContent()(*string) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. Indicates the type for the comment.
+// GetContentType gets the contentType property value. The content type of the comment.
 // returns a *string when successful
 func (m *WorkbookComment) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
@@ -85,7 +85,7 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetReplies gets the replies property value. The replies property
+// GetReplies gets the replies property value. The list of replies to the comment. Read-only. Nullable.
 // returns a []WorkbookCommentReplyable when successful
 func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
     val, err := m.GetBackingStore().Get("replies")
@@ -129,21 +129,21 @@ func (m *WorkbookComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetContent sets the content property value. The content of comment.
+// SetContent sets the content property value. The content of the comment.
 func (m *WorkbookComment) SetContent(value *string)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. Indicates the type for the comment.
+// SetContentType sets the contentType property value. The content type of the comment.
 func (m *WorkbookComment) SetContentType(value *string)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReplies sets the replies property value. The replies property
+// SetReplies sets the replies property value. The list of replies to the comment. Read-only. Nullable.
 func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
     err := m.GetBackingStore().Set("replies", value)
     if err != nil {

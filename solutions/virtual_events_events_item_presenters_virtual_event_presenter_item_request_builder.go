@@ -18,7 +18,7 @@ type VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters get presenters from solutions
+// VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters the virtual event presenters.
 type VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     }
     return nil
 }
-// Get get presenters from solutions
+// Get the virtual event presenters.
 // returns a VirtualEventPresenterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventPresenterable, error) {
@@ -121,7 +121,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get presenters from solutions
+// ToGetRequestInformation the virtual event presenters.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

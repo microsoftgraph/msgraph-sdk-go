@@ -39,7 +39,7 @@ func CreateVirtualEventRegistrationQuestionBaseFromDiscriminatorValue(parseNode 
     }
     return NewVirtualEventRegistrationQuestionBase(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the registration question.
 // returns a *string when successful
 func (m *VirtualEventRegistrationQuestionBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -77,7 +77,7 @@ func (m *VirtualEventRegistrationQuestionBase) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetIsRequired gets the isRequired property value. The isRequired property
+// GetIsRequired gets the isRequired property value. Indicates whether an answer to the question is required. The default value is false.
 // returns a *bool when successful
 func (m *VirtualEventRegistrationQuestionBase) GetIsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isRequired")
@@ -109,14 +109,14 @@ func (m *VirtualEventRegistrationQuestionBase) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the registration question.
 func (m *VirtualEventRegistrationQuestionBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRequired sets the isRequired property value. The isRequired property
+// SetIsRequired sets the isRequired property value. Indicates whether an answer to the question is required. The default value is false.
 func (m *VirtualEventRegistrationQuestionBase) SetIsRequired(value *bool)() {
     err := m.GetBackingStore().Set("isRequired", value)
     if err != nil {

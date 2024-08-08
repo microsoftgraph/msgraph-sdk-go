@@ -33,7 +33,7 @@ func (m *BookingService) GetAdditionalInformation()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time, and time zone when the service was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingService) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -405,7 +405,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetIsAnonymousJoinEnabled gets the isAnonymousJoinEnabled property value. True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
+// GetIsAnonymousJoinEnabled gets the isAnonymousJoinEnabled property value. Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
 // returns a *bool when successful
 func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAnonymousJoinEnabled")
@@ -417,7 +417,7 @@ func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
     }
     return nil
 }
-// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 // returns a *bool when successful
 func (m *BookingService) GetIsCustomerAllowedToManageBooking()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
@@ -429,7 +429,7 @@ func (m *BookingService) GetIsCustomerAllowedToManageBooking()(*bool) {
     }
     return nil
 }
-// GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+// GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True indicates that this service isn't available to customers for booking.
 // returns a *bool when successful
 func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
     val, err := m.GetBackingStore().Get("isHiddenFromCustomers")
@@ -441,7 +441,7 @@ func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
     }
     return nil
 }
-// GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+// GetIsLocationOnline gets the isLocationOnline property value. Indicates that the appointments for the service are held online. The default value is false.
 // returns a *bool when successful
 func (m *BookingService) GetIsLocationOnline()(*bool) {
     val, err := m.GetBackingStore().Get("isLocationOnline")
@@ -465,7 +465,7 @@ func (m *BookingService) GetLanguageTag()(*string) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time, and time zone when the service was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingService) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -739,7 +739,7 @@ func (m *BookingService) SetAdditionalInformation(value *string)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time, and time zone when the service was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingService) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -802,28 +802,28 @@ func (m *BookingService) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIsAnonymousJoinEnabled sets the isAnonymousJoinEnabled property value. True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
+// SetIsAnonymousJoinEnabled sets the isAnonymousJoinEnabled property value. Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
 func (m *BookingService) SetIsAnonymousJoinEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isAnonymousJoinEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 func (m *BookingService) SetIsCustomerAllowedToManageBooking(value *bool)() {
     err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+// SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True indicates that this service isn't available to customers for booking.
 func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
     err := m.GetBackingStore().Set("isHiddenFromCustomers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+// SetIsLocationOnline sets the isLocationOnline property value. Indicates that the appointments for the service are held online. The default value is false.
 func (m *BookingService) SetIsLocationOnline(value *bool)() {
     err := m.GetBackingStore().Set("isLocationOnline", value)
     if err != nil {
@@ -837,7 +837,7 @@ func (m *BookingService) SetLanguageTag(value *string)() {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time, and time zone when the service was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingService) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {

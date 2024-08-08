@@ -82,7 +82,7 @@ func (m *Device) GetDeviceCategory()(*string) {
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
+// GetDeviceId gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This alternate key can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
 // returns a *string when successful
 func (m *Device) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -106,7 +106,7 @@ func (m *Device) GetDeviceMetadata()(*string) {
     }
     return nil
 }
-// GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+// GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
 // returns a *string when successful
 func (m *Device) GetDeviceOwnership()(*string) {
     val, err := m.GetBackingStore().Get("deviceOwnership")
@@ -154,7 +154,7 @@ func (m *Device) GetEnrollmentProfileName()(*string) {
     }
     return nil
 }
-// GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
+// GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
 // returns a *string when successful
 func (m *Device) GetEnrollmentType()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentType")
@@ -812,7 +812,7 @@ func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
+// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
 // returns a *string when successful
 func (m *Device) GetTrustType()(*string) {
     val, err := m.GetBackingStore().Get("trustType")
@@ -1107,7 +1107,7 @@ func (m *Device) SetDeviceCategory(value *string)() {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
+// SetDeviceId sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This alternate key can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
@@ -1121,7 +1121,7 @@ func (m *Device) SetDeviceMetadata(value *string)() {
         panic(err)
     }
 }
-// SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+// SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
 func (m *Device) SetDeviceOwnership(value *string)() {
     err := m.GetBackingStore().Set("deviceOwnership", value)
     if err != nil {
@@ -1149,7 +1149,7 @@ func (m *Device) SetEnrollmentProfileName(value *string)() {
         panic(err)
     }
 }
-// SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
+// SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
 func (m *Device) SetEnrollmentType(value *string)() {
     err := m.GetBackingStore().Set("enrollmentType", value)
     if err != nil {
@@ -1303,7 +1303,7 @@ func (m *Device) SetTransitiveMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
+// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
 func (m *Device) SetTrustType(value *string)() {
     err := m.GetBackingStore().Set("trustType", value)
     if err != nil {

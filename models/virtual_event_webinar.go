@@ -21,7 +21,7 @@ func NewVirtualEventWebinar()(*VirtualEventWebinar) {
 func CreateVirtualEventWebinarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventWebinar(), nil
 }
-// GetAudience gets the audience property value. To whom the webinar is visible.
+// GetAudience gets the audience property value. To whom the webinar is visible. Possible values are: everyone, organization, and unknownFutureValue.
 // returns a *MeetingAudience when successful
 func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("audience")
@@ -103,7 +103,7 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRegistrationConfiguration gets the registrationConfiguration property value. The registrationConfiguration property
+// GetRegistrationConfiguration gets the registrationConfiguration property value. Registration configuration of the webinar.
 // returns a VirtualEventWebinarRegistrationConfigurationable when successful
 func (m *VirtualEventWebinar) GetRegistrationConfiguration()(VirtualEventWebinarRegistrationConfigurationable) {
     val, err := m.GetBackingStore().Get("registrationConfiguration")
@@ -172,7 +172,7 @@ func (m *VirtualEventWebinar) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAudience sets the audience property value. To whom the webinar is visible.
+// SetAudience sets the audience property value. To whom the webinar is visible. Possible values are: everyone, organization, and unknownFutureValue.
 func (m *VirtualEventWebinar) SetAudience(value *MeetingAudience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {
@@ -186,7 +186,7 @@ func (m *VirtualEventWebinar) SetCoOrganizers(value []CommunicationsUserIdentity
         panic(err)
     }
 }
-// SetRegistrationConfiguration sets the registrationConfiguration property value. The registrationConfiguration property
+// SetRegistrationConfiguration sets the registrationConfiguration property value. Registration configuration of the webinar.
 func (m *VirtualEventWebinar) SetRegistrationConfiguration(value VirtualEventWebinarRegistrationConfigurationable)() {
     err := m.GetBackingStore().Set("registrationConfiguration", value)
     if err != nil {

@@ -18,7 +18,7 @@ type VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters sessions for the virtual event.
+// VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters the sessions for the virtual event.
 type VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) D
     }
     return nil
 }
-// Get sessions for the virtual event.
+// Get the sessions for the virtual event.
 // returns a VirtualEventSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventSessionable, error) {
@@ -126,7 +126,7 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation sessions for the virtual event.
+// ToGetRequestInformation the sessions for the virtual event.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

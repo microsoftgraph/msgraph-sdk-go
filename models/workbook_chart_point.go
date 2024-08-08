@@ -45,7 +45,7 @@ func (m *WorkbookChartPoint) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFormat gets the format property value. Encapsulates the format properties chart point. Read-only.
+// GetFormat gets the format property value. The format properties of the chart point. Read-only.
 // returns a WorkbookChartPointFormatable when successful
 func (m *WorkbookChartPoint) GetFormat()(WorkbookChartPointFormatable) {
     val, err := m.GetBackingStore().Get("format")
@@ -57,7 +57,7 @@ func (m *WorkbookChartPoint) GetFormat()(WorkbookChartPointFormatable) {
     }
     return nil
 }
-// GetValue gets the value property value. Returns the value of a chart point. Read-only.
+// GetValue gets the value property value. The value of a chart point. Read-only.
 // returns a UntypedNodeable when successful
 func (m *WorkbookChartPoint) GetValue()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("value")
@@ -89,14 +89,14 @@ func (m *WorkbookChartPoint) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetFormat sets the format property value. Encapsulates the format properties chart point. Read-only.
+// SetFormat sets the format property value. The format properties of the chart point. Read-only.
 func (m *WorkbookChartPoint) SetFormat(value WorkbookChartPointFormatable)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValue sets the value property value. Returns the value of a chart point. Read-only.
+// SetValue sets the value property value. The value of a chart point. Read-only.
 func (m *WorkbookChartPoint) SetValue(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

@@ -1118,7 +1118,7 @@ func (m *Group) GetHasMembersWithLicenseErrors()(*bool) {
     }
     return nil
 }
-// GetHideFromAddressLists gets the hideFromAddressLists property value. True if the group isn't displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetHideFromAddressLists gets the hideFromAddressLists property value. True if the group isn't displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetHideFromAddressLists()(*bool) {
     val, err := m.GetBackingStore().Get("hideFromAddressLists")
@@ -1298,7 +1298,7 @@ func (m *Group) GetOnenote()(Onenoteable) {
     }
     return nil
 }
-// GetOnPremisesDomainName gets the onPremisesDomainName property value. The onPremisesDomainName property
+// GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 // returns a *string when successful
 func (m *Group) GetOnPremisesDomainName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesDomainName")
@@ -1322,7 +1322,7 @@ func (m *Group) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetOnPremisesNetBiosName gets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+// GetOnPremisesNetBiosName gets the onPremisesNetBiosName property value. Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 // returns a *string when successful
 func (m *Group) GetOnPremisesNetBiosName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesNetBiosName")
@@ -2366,7 +2366,7 @@ func (m *Group) SetHasMembersWithLicenseErrors(value *bool)() {
         panic(err)
     }
 }
-// SetHideFromAddressLists sets the hideFromAddressLists property value. True if the group isn't displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetHideFromAddressLists sets the hideFromAddressLists property value. True if the group isn't displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromAddressLists(value *bool)() {
     err := m.GetBackingStore().Set("hideFromAddressLists", value)
     if err != nil {
@@ -2471,7 +2471,7 @@ func (m *Group) SetOnenote(value Onenoteable)() {
         panic(err)
     }
 }
-// SetOnPremisesDomainName sets the onPremisesDomainName property value. The onPremisesDomainName property
+// SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesDomainName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesDomainName", value)
     if err != nil {
@@ -2485,7 +2485,7 @@ func (m *Group) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetOnPremisesNetBiosName sets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+// SetOnPremisesNetBiosName sets the onPremisesNetBiosName property value. Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesNetBiosName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesNetBiosName", value)
     if err != nil {
