@@ -196,7 +196,7 @@ func (m *VirtualEventRegistration) GetLastName()(*string) {
     }
     return nil
 }
-// GetPreferredLanguage gets the preferredLanguage property value. The preferredLanguage property
+// GetPreferredLanguage gets the preferredLanguage property value. The registrant's preferred language.
 // returns a *string when successful
 func (m *VirtualEventRegistration) GetPreferredLanguage()(*string) {
     val, err := m.GetBackingStore().Get("preferredLanguage")
@@ -208,7 +208,7 @@ func (m *VirtualEventRegistration) GetPreferredLanguage()(*string) {
     }
     return nil
 }
-// GetPreferredTimezone gets the preferredTimezone property value. The preferredTimezone property
+// GetPreferredTimezone gets the preferredTimezone property value. The registrant's time zone details.
 // returns a *string when successful
 func (m *VirtualEventRegistration) GetPreferredTimezone()(*string) {
     val, err := m.GetBackingStore().Get("preferredTimezone")
@@ -244,7 +244,7 @@ func (m *VirtualEventRegistration) GetRegistrationQuestionAnswers()([]VirtualEve
     }
     return nil
 }
-// GetSessions gets the sessions property value. The sessions property
+// GetSessions gets the sessions property value. Sessions for a registration.
 // returns a []VirtualEventSessionable when successful
 func (m *VirtualEventRegistration) GetSessions()([]VirtualEventSessionable) {
     val, err := m.GetBackingStore().Get("sessions")
@@ -256,7 +256,7 @@ func (m *VirtualEventRegistration) GetSessions()([]VirtualEventSessionable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Registration status of the registrant. Read-only.
+// GetStatus gets the status property value. Registration status of the registrant. Read-only. Possible values are registered, canceled, waitlisted, pendingApproval, rejectedByOrganizer, and unknownFutureValue.
 // returns a *VirtualEventAttendeeRegistrationStatus when successful
 func (m *VirtualEventRegistration) GetStatus()(*VirtualEventAttendeeRegistrationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -395,14 +395,14 @@ func (m *VirtualEventRegistration) SetLastName(value *string)() {
         panic(err)
     }
 }
-// SetPreferredLanguage sets the preferredLanguage property value. The preferredLanguage property
+// SetPreferredLanguage sets the preferredLanguage property value. The registrant's preferred language.
 func (m *VirtualEventRegistration) SetPreferredLanguage(value *string)() {
     err := m.GetBackingStore().Set("preferredLanguage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPreferredTimezone sets the preferredTimezone property value. The preferredTimezone property
+// SetPreferredTimezone sets the preferredTimezone property value. The registrant's time zone details.
 func (m *VirtualEventRegistration) SetPreferredTimezone(value *string)() {
     err := m.GetBackingStore().Set("preferredTimezone", value)
     if err != nil {
@@ -423,14 +423,14 @@ func (m *VirtualEventRegistration) SetRegistrationQuestionAnswers(value []Virtua
         panic(err)
     }
 }
-// SetSessions sets the sessions property value. The sessions property
+// SetSessions sets the sessions property value. Sessions for a registration.
 func (m *VirtualEventRegistration) SetSessions(value []VirtualEventSessionable)() {
     err := m.GetBackingStore().Set("sessions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Registration status of the registrant. Read-only.
+// SetStatus sets the status property value. Registration status of the registrant. Read-only. Possible values are registered, canceled, waitlisted, pendingApproval, rejectedByOrganizer, and unknownFutureValue.
 func (m *VirtualEventRegistration) SetStatus(value *VirtualEventAttendeeRegistrationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

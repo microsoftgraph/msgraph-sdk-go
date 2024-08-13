@@ -21,7 +21,7 @@ func NewBookingsAvailabilityWindow()(*BookingsAvailabilityWindow) {
 func CreateBookingsAvailabilityWindowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingsAvailabilityWindow(), nil
 }
-// GetEndDate gets the endDate property value. Allow customers to end date of availability window.
+// GetEndDate gets the endDate property value. End date of the availability window.
 // returns a *DateOnly when successful
 func (m *BookingsAvailabilityWindow) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endDate")
@@ -59,7 +59,7 @@ func (m *BookingsAvailabilityWindow) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetStartDate gets the startDate property value. Allow customers to start date of availability window.
+// GetStartDate gets the startDate property value. Start date of the availability window.
 // returns a *DateOnly when successful
 func (m *BookingsAvailabilityWindow) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startDate")
@@ -91,14 +91,14 @@ func (m *BookingsAvailabilityWindow) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetEndDate sets the endDate property value. Allow customers to end date of availability window.
+// SetEndDate sets the endDate property value. End date of the availability window.
 func (m *BookingsAvailabilityWindow) SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("endDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartDate sets the startDate property value. Allow customers to start date of availability window.
+// SetStartDate sets the startDate property value. Start date of the availability window.
 func (m *BookingsAvailabilityWindow) SetStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("startDate", value)
     if err != nil {
