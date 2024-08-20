@@ -21,7 +21,7 @@ func NewVirtualEventTownhall()(*VirtualEventTownhall) {
 func CreateVirtualEventTownhallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventTownhall(), nil
 }
-// GetAudience gets the audience property value. The audience property
+// GetAudience gets the audience property value. The audience to whom the town hall is visible. Possible values are: everyone, organization, and unknownFutureValue.
 // returns a *MeetingAudience when successful
 func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("audience")
@@ -33,7 +33,7 @@ func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
     }
     return nil
 }
-// GetCoOrganizers gets the coOrganizers property value. The coOrganizers property
+// GetCoOrganizers gets the coOrganizers property value. Identity information of the coorganizers of the town hall.
 // returns a []CommunicationsUserIdentityable when successful
 func (m *VirtualEventTownhall) GetCoOrganizers()([]CommunicationsUserIdentityable) {
     val, err := m.GetBackingStore().Get("coOrganizers")
@@ -103,7 +103,7 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetInvitedAttendees gets the invitedAttendees property value. The invitedAttendees property
+// GetInvitedAttendees gets the invitedAttendees property value. The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.
 // returns a []Identityable when successful
 func (m *VirtualEventTownhall) GetInvitedAttendees()([]Identityable) {
     val, err := m.GetBackingStore().Get("invitedAttendees")
@@ -115,7 +115,7 @@ func (m *VirtualEventTownhall) GetInvitedAttendees()([]Identityable) {
     }
     return nil
 }
-// GetIsInviteOnly gets the isInviteOnly property value. The isInviteOnly property
+// GetIsInviteOnly gets the isInviteOnly property value. Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.
 // returns a *bool when successful
 func (m *VirtualEventTownhall) GetIsInviteOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isInviteOnly")
@@ -172,28 +172,28 @@ func (m *VirtualEventTownhall) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAudience sets the audience property value. The audience property
+// SetAudience sets the audience property value. The audience to whom the town hall is visible. Possible values are: everyone, organization, and unknownFutureValue.
 func (m *VirtualEventTownhall) SetAudience(value *MeetingAudience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCoOrganizers sets the coOrganizers property value. The coOrganizers property
+// SetCoOrganizers sets the coOrganizers property value. Identity information of the coorganizers of the town hall.
 func (m *VirtualEventTownhall) SetCoOrganizers(value []CommunicationsUserIdentityable)() {
     err := m.GetBackingStore().Set("coOrganizers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInvitedAttendees sets the invitedAttendees property value. The invitedAttendees property
+// SetInvitedAttendees sets the invitedAttendees property value. The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.
 func (m *VirtualEventTownhall) SetInvitedAttendees(value []Identityable)() {
     err := m.GetBackingStore().Set("invitedAttendees", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsInviteOnly sets the isInviteOnly property value. The isInviteOnly property
+// SetIsInviteOnly sets the isInviteOnly property value. Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.
 func (m *VirtualEventTownhall) SetIsInviteOnly(value *bool)() {
     err := m.GetBackingStore().Set("isInviteOnly", value)
     if err != nil {

@@ -35,7 +35,7 @@ func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
 // returns a *bool when successful
 func (m *UserInsightsSettings) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -61,7 +61,7 @@ func (m *UserInsightsSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
 func (m *UserInsightsSettings) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

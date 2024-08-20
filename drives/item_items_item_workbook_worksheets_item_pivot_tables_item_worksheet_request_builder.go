@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetQueryParameters the worksheet containing the current PivotTable. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetQueryParameters the worksheet that contains the current pivot table. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the worksheet containing the current PivotTable. Read-only.
+// Get the worksheet that contains the current pivot table. Read-only.
 // returns a WorkbookWorksheetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, error) {
@@ -60,7 +60,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable), nil
 }
-// ToGetRequestInformation the worksheet containing the current PivotTable. Read-only.
+// ToGetRequestInformation the worksheet that contains the current pivot table. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

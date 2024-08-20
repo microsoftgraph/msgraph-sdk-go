@@ -79,7 +79,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollection()(On
     }
     return nil
 }
-// GetOnAuthenticationMethodLoadStart gets the onAuthenticationMethodLoadStart property value. Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.
+// GetOnAuthenticationMethodLoadStart gets the onAuthenticationMethodLoadStart property value. Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
 // returns a OnAuthenticationMethodLoadStartHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAuthenticationMethodLoadStart()(OnAuthenticationMethodLoadStartHandlerable) {
     val, err := m.GetBackingStore().Get("onAuthenticationMethodLoadStart")
@@ -154,7 +154,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAttributeCollection(valu
         panic(err)
     }
 }
-// SetOnAuthenticationMethodLoadStart sets the onAuthenticationMethodLoadStart property value. Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.
+// SetOnAuthenticationMethodLoadStart sets the onAuthenticationMethodLoadStart property value. Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAuthenticationMethodLoadStart(value OnAuthenticationMethodLoadStartHandlerable)() {
     err := m.GetBackingStore().Set("onAuthenticationMethodLoadStart", value)
     if err != nil {
