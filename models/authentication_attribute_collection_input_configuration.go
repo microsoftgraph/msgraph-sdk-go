@@ -52,7 +52,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetAttribute()(*st
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefaultValue gets the defaultValue property value. The default value of the attribute displayed to the end user.
+// GetDefaultValue gets the defaultValue property value. The default value of the attribute displayed to the end user. The capability to set the default value isn't available through the Microsoft Entra admin center.
 // returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetDefaultValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultValue")
@@ -64,7 +64,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetDefaultValue()(
     }
     return nil
 }
-// GetEditable gets the editable property value. Whether the attribute is editable by the end user.
+// GetEditable gets the editable property value. Defines whether the attribute is editable by the end user.
 // returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetEditable()(*bool) {
     val, err := m.GetBackingStore().Get("editable")
@@ -198,7 +198,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetFieldDeserializ
     }
     return res
 }
-// GetHidden gets the hidden property value. Whether the attribute is displayed to the end user.
+// GetHidden gets the hidden property value. Defines whether the attribute is displayed to the end user. The capability to hide isn't available through the Microsoft Entra admin center.
 // returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
@@ -222,7 +222,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetInputType()(*Au
     }
     return nil
 }
-// GetLabel gets the label property value. The label of the attribute field that is displayed to end user, unless overridden.
+// GetLabel gets the label property value. The label of the attribute field that's displayed to end user, unless overridden.
 // returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
@@ -258,7 +258,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetOptions()([]Aut
     }
     return nil
 }
-// GetRequired gets the required property value. Whether the field is required.
+// GetRequired gets the required property value. Defines whether the field is required.
 // returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
@@ -270,7 +270,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetRequired()(*boo
     }
     return nil
 }
-// GetValidationRegEx gets the validationRegEx property value. The regex for the value of the field.
+// GetValidationRegEx gets the validationRegEx property value. The regex for the value of the field. For more information about the supported regexes, see validationRegEx values for inputType objects. To understand how to specify regexes, see the Regular expressions cheat sheet.
 // returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetValidationRegEx()(*string) {
     val, err := m.GetBackingStore().Get("validationRegEx")
@@ -282,7 +282,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetValidationRegEx
     }
     return nil
 }
-// GetWriteToDirectory gets the writeToDirectory property value. Whether the value collected is stored.
+// GetWriteToDirectory gets the writeToDirectory property value. Defines whether Microsoft Entra ID stores the value that it collects.
 // returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetWriteToDirectory()(*bool) {
     val, err := m.GetBackingStore().Get("writeToDirectory")
@@ -395,21 +395,21 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) SetAttribute(value
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefaultValue sets the defaultValue property value. The default value of the attribute displayed to the end user.
+// SetDefaultValue sets the defaultValue property value. The default value of the attribute displayed to the end user. The capability to set the default value isn't available through the Microsoft Entra admin center.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetDefaultValue(value *string)() {
     err := m.GetBackingStore().Set("defaultValue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEditable sets the editable property value. Whether the attribute is editable by the end user.
+// SetEditable sets the editable property value. Defines whether the attribute is editable by the end user.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetEditable(value *bool)() {
     err := m.GetBackingStore().Set("editable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHidden sets the hidden property value. Whether the attribute is displayed to the end user.
+// SetHidden sets the hidden property value. Defines whether the attribute is displayed to the end user. The capability to hide isn't available through the Microsoft Entra admin center.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
     if err != nil {
@@ -423,7 +423,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) SetInputType(value
         panic(err)
     }
 }
-// SetLabel sets the label property value. The label of the attribute field that is displayed to end user, unless overridden.
+// SetLabel sets the label property value. The label of the attribute field that's displayed to end user, unless overridden.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetLabel(value *string)() {
     err := m.GetBackingStore().Set("label", value)
     if err != nil {
@@ -444,21 +444,21 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) SetOptions(value [
         panic(err)
     }
 }
-// SetRequired sets the required property value. Whether the field is required.
+// SetRequired sets the required property value. Defines whether the field is required.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetRequired(value *bool)() {
     err := m.GetBackingStore().Set("required", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValidationRegEx sets the validationRegEx property value. The regex for the value of the field.
+// SetValidationRegEx sets the validationRegEx property value. The regex for the value of the field. For more information about the supported regexes, see validationRegEx values for inputType objects. To understand how to specify regexes, see the Regular expressions cheat sheet.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetValidationRegEx(value *string)() {
     err := m.GetBackingStore().Set("validationRegEx", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWriteToDirectory sets the writeToDirectory property value. Whether the value collected is stored.
+// SetWriteToDirectory sets the writeToDirectory property value. Defines whether Microsoft Entra ID stores the value that it collects.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetWriteToDirectory(value *bool)() {
     err := m.GetBackingStore().Set("writeToDirectory", value)
     if err != nil {

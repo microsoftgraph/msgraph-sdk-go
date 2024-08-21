@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilderGetQueryParameters represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilderGetQueryParameters the formatting of a chart series, which includes fill and line formatting. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexForma
     }
     return nil
 }
-// Get represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+// Get the formatting of a chart series, which includes fill and line formatting. Read-only.
 // returns a WorkbookChartSeriesFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesFormatable, error) {
@@ -121,7 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexForma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+// ToGetRequestInformation the formatting of a chart series, which includes fill and line formatting. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

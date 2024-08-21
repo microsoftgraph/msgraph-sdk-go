@@ -57,7 +57,7 @@ func (m *WorkbookChartGridlines) GetFormat()(WorkbookChartGridlinesFormatable) {
     }
     return nil
 }
-// GetVisible gets the visible property value. Boolean value representing if the axis gridlines are visible or not.
+// GetVisible gets the visible property value. Indicates whether the axis gridlines are visible.
 // returns a *bool when successful
 func (m *WorkbookChartGridlines) GetVisible()(*bool) {
     val, err := m.GetBackingStore().Get("visible")
@@ -96,7 +96,7 @@ func (m *WorkbookChartGridlines) SetFormat(value WorkbookChartGridlinesFormatabl
         panic(err)
     }
 }
-// SetVisible sets the visible property value. Boolean value representing if the axis gridlines are visible or not.
+// SetVisible sets the visible property value. Indicates whether the axis gridlines are visible.
 func (m *WorkbookChartGridlines) SetVisible(value *bool)() {
     err := m.GetBackingStore().Set("visible", value)
     if err != nil {

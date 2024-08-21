@@ -37,7 +37,7 @@ func CreateAuthenticationEventsFlowFromDiscriminatorValue(parseNode i878a80d2330
     }
     return NewAuthenticationEventsFlow(), nil
 }
-// GetConditions gets the conditions property value. The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.
+// GetConditions gets the conditions property value. The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
 // returns a AuthenticationConditionsable when successful
 func (m *AuthenticationEventsFlow) GetConditions()(AuthenticationConditionsable) {
     val, err := m.GetBackingStore().Get("conditions")
@@ -135,7 +135,7 @@ func (m *AuthenticationEventsFlow) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetConditions sets the conditions property value. The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.
+// SetConditions sets the conditions property value. The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
 func (m *AuthenticationEventsFlow) SetConditions(value AuthenticationConditionsable)() {
     err := m.GetBackingStore().Set("conditions", value)
     if err != nil {

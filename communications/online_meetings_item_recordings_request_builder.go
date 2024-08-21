@@ -76,6 +76,11 @@ func NewOnlineMeetingsItemRecordingsRequestBuilder(rawUrl string, requestAdapter
 func (m *OnlineMeetingsItemRecordingsRequestBuilder) Count()(*OnlineMeetingsItemRecordingsCountRequestBuilder) {
     return NewOnlineMeetingsItemRecordingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Delta provides operations to call the delta method.
+// returns a *OnlineMeetingsItemRecordingsDeltaRequestBuilder when successful
+func (m *OnlineMeetingsItemRecordingsRequestBuilder) Delta()(*OnlineMeetingsItemRecordingsDeltaRequestBuilder) {
+    return NewOnlineMeetingsItemRecordingsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get the recordings of an online meeting. Read-only.
 // returns a CallRecordingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

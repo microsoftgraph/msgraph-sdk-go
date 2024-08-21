@@ -18,7 +18,7 @@ type VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetQueryParameters get townhalls from solutions
+// VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventTownhall object.
 type VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get townhalls from solutions
+// Get read the properties and relationships of a virtualEventTownhall object.
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventtownhall-get?view=graph-rest-1.0
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable), nil
 }
-// Patch update the navigation property townhalls in solutions
+// Patch update the properties of a virtualEventTownhall object.
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-1.0
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -131,7 +137,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get townhalls from solutions
+// ToGetRequestInformation read the properties and relationships of a virtualEventTownhall object.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,7 +151,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property townhalls in solutions
+// ToPatchRequestInformation update the properties of a virtualEventTownhall object.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
