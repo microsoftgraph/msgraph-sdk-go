@@ -139,7 +139,7 @@ func (m *WorkbookChartDataLabels) GetPosition()(*string) {
     }
     return nil
 }
-// GetSeparator gets the separator property value. String representing the separator used for the data labels on a chart.
+// GetSeparator gets the separator property value. String that represents the separator used for the data labels on a chart.
 // returns a *string when successful
 func (m *WorkbookChartDataLabels) GetSeparator()(*string) {
     val, err := m.GetBackingStore().Get("separator")
@@ -151,7 +151,7 @@ func (m *WorkbookChartDataLabels) GetSeparator()(*string) {
     }
     return nil
 }
-// GetShowBubbleSize gets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
+// GetShowBubbleSize gets the showBubbleSize property value. Boolean value that represents whether the data label bubble size is visible.
 // returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowBubbleSize()(*bool) {
     val, err := m.GetBackingStore().Get("showBubbleSize")
@@ -163,7 +163,7 @@ func (m *WorkbookChartDataLabels) GetShowBubbleSize()(*bool) {
     }
     return nil
 }
-// GetShowCategoryName gets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
+// GetShowCategoryName gets the showCategoryName property value. Boolean value that represents whether the data label category name is visible.
 // returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowCategoryName()(*bool) {
     val, err := m.GetBackingStore().Get("showCategoryName")
@@ -175,7 +175,7 @@ func (m *WorkbookChartDataLabels) GetShowCategoryName()(*bool) {
     }
     return nil
 }
-// GetShowLegendKey gets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
+// GetShowLegendKey gets the showLegendKey property value. Boolean value that represents whether the data label legend key is visible.
 // returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowLegendKey()(*bool) {
     val, err := m.GetBackingStore().Get("showLegendKey")
@@ -187,7 +187,7 @@ func (m *WorkbookChartDataLabels) GetShowLegendKey()(*bool) {
     }
     return nil
 }
-// GetShowPercentage gets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
+// GetShowPercentage gets the showPercentage property value. Boolean value that represents whether the data label percentage is visible.
 // returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowPercentage()(*bool) {
     val, err := m.GetBackingStore().Get("showPercentage")
@@ -199,7 +199,7 @@ func (m *WorkbookChartDataLabels) GetShowPercentage()(*bool) {
     }
     return nil
 }
-// GetShowSeriesName gets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
+// GetShowSeriesName gets the showSeriesName property value. Boolean value that represents whether the data label series name is visible.
 // returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowSeriesName()(*bool) {
     val, err := m.GetBackingStore().Get("showSeriesName")
@@ -211,7 +211,7 @@ func (m *WorkbookChartDataLabels) GetShowSeriesName()(*bool) {
     }
     return nil
 }
-// GetShowValue gets the showValue property value. Boolean value representing if the data label value is visible or not.
+// GetShowValue gets the showValue property value. Boolean value that represents whether the data label value is visible.
 // returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowValue()(*bool) {
     val, err := m.GetBackingStore().Get("showValue")
@@ -299,49 +299,49 @@ func (m *WorkbookChartDataLabels) SetPosition(value *string)() {
         panic(err)
     }
 }
-// SetSeparator sets the separator property value. String representing the separator used for the data labels on a chart.
+// SetSeparator sets the separator property value. String that represents the separator used for the data labels on a chart.
 func (m *WorkbookChartDataLabels) SetSeparator(value *string)() {
     err := m.GetBackingStore().Set("separator", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowBubbleSize sets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
+// SetShowBubbleSize sets the showBubbleSize property value. Boolean value that represents whether the data label bubble size is visible.
 func (m *WorkbookChartDataLabels) SetShowBubbleSize(value *bool)() {
     err := m.GetBackingStore().Set("showBubbleSize", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowCategoryName sets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
+// SetShowCategoryName sets the showCategoryName property value. Boolean value that represents whether the data label category name is visible.
 func (m *WorkbookChartDataLabels) SetShowCategoryName(value *bool)() {
     err := m.GetBackingStore().Set("showCategoryName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowLegendKey sets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
+// SetShowLegendKey sets the showLegendKey property value. Boolean value that represents whether the data label legend key is visible.
 func (m *WorkbookChartDataLabels) SetShowLegendKey(value *bool)() {
     err := m.GetBackingStore().Set("showLegendKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowPercentage sets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
+// SetShowPercentage sets the showPercentage property value. Boolean value that represents whether the data label percentage is visible.
 func (m *WorkbookChartDataLabels) SetShowPercentage(value *bool)() {
     err := m.GetBackingStore().Set("showPercentage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowSeriesName sets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
+// SetShowSeriesName sets the showSeriesName property value. Boolean value that represents whether the data label series name is visible.
 func (m *WorkbookChartDataLabels) SetShowSeriesName(value *bool)() {
     err := m.GetBackingStore().Set("showSeriesName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowValue sets the showValue property value. Boolean value representing if the data label value is visible or not.
+// SetShowValue sets the showValue property value. Boolean value that represents whether the data label value is visible.
 func (m *WorkbookChartDataLabels) SetShowValue(value *bool)() {
     err := m.GetBackingStore().Set("showValue", value)
     if err != nil {

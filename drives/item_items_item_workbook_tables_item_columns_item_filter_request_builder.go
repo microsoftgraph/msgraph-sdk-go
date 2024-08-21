@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderGetQueryParameters retrieve the filter applied to the column. Read-only.
+// ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderGetQueryParameters the filter applied to the column. Read-only.
 type ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -130,7 +130,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) Delete(
     }
     return nil
 }
-// Get retrieve the filter applied to the column. Read-only.
+// Get the filter applied to the column. Read-only.
 // returns a WorkbookFilterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFilterable, error) {
@@ -181,7 +181,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the filter applied to the column. Read-only.
+// ToGetRequestInformation the filter applied to the column. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

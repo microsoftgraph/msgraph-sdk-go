@@ -11,7 +11,7 @@ import (
 type VirtualEventsTownhallsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsTownhallsRequestBuilderGetQueryParameters get townhalls from solutions
+// VirtualEventsTownhallsRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventTownhall object.
 type VirtualEventsTownhallsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewVirtualEventsTownhallsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *VirtualEventsTownhallsRequestBuilder) Count()(*VirtualEventsTownhallsCountRequestBuilder) {
     return NewVirtualEventsTownhallsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get townhalls from solutions
+// Get read the properties and relationships of a virtualEventTownhall object.
 // returns a VirtualEventTownhallCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallCollectionResponseable, error) {
@@ -96,9 +96,12 @@ func (m *VirtualEventsTownhallsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallCollectionResponseable), nil
 }
-// Post create new navigation property to townhalls for solutions
+// Post create a new virtualEventTownhall object in draft mode.
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventsroot-post-townhalls?view=graph-rest-1.0
 func (m *VirtualEventsTownhallsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *VirtualEventsTownhallsRequestBuilder) Post(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable), nil
 }
-// ToGetRequestInformation get townhalls from solutions
+// ToGetRequestInformation read the properties and relationships of a virtualEventTownhall object.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +133,7 @@ func (m *VirtualEventsTownhallsRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to townhalls for solutions
+// ToPostRequestInformation create a new virtualEventTownhall object in draft mode.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

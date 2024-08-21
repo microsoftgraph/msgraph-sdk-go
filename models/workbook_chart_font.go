@@ -19,7 +19,7 @@ func NewWorkbookChartFont()(*WorkbookChartFont) {
 func CreateWorkbookChartFontFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartFont(), nil
 }
-// GetBold gets the bold property value. Represents the bold status of font.
+// GetBold gets the bold property value. Indicates whether the fond is bold.
 // returns a *bool when successful
 func (m *WorkbookChartFont) GetBold()(*bool) {
     val, err := m.GetBackingStore().Get("bold")
@@ -31,7 +31,7 @@ func (m *WorkbookChartFont) GetBold()(*bool) {
     }
     return nil
 }
-// GetColor gets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
+// GetColor gets the color property value. The HTML color code representation of the text color. For example #FF0000 represents Red.
 // returns a *string when successful
 func (m *WorkbookChartFont) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
@@ -109,7 +109,7 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetItalic gets the italic property value. Represents the italic status of the font.
+// GetItalic gets the italic property value. Indicates whether the fond is italic.
 // returns a *bool when successful
 func (m *WorkbookChartFont) GetItalic()(*bool) {
     val, err := m.GetBackingStore().Get("italic")
@@ -121,7 +121,7 @@ func (m *WorkbookChartFont) GetItalic()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. Font name (for example 'Calibri')
+// GetName gets the name property value. The font name. For example 'Calibri'.
 // returns a *string when successful
 func (m *WorkbookChartFont) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -133,7 +133,7 @@ func (m *WorkbookChartFont) GetName()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. Size of the font (for example 11)
+// GetSize gets the size property value. The size of the font. For example,  11.
 // returns a *float64 when successful
 func (m *WorkbookChartFont) GetSize()(*float64) {
     val, err := m.GetBackingStore().Get("size")
@@ -145,7 +145,7 @@ func (m *WorkbookChartFont) GetSize()(*float64) {
     }
     return nil
 }
-// GetUnderline gets the underline property value. Type of underline applied to the font. The possible values are: None, Single.
+// GetUnderline gets the underline property value. The type of underlining applied to the font. The possible values are: None, Single.
 // returns a *string when successful
 func (m *WorkbookChartFont) GetUnderline()(*string) {
     val, err := m.GetBackingStore().Get("underline")
@@ -201,42 +201,42 @@ func (m *WorkbookChartFont) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetBold sets the bold property value. Represents the bold status of font.
+// SetBold sets the bold property value. Indicates whether the fond is bold.
 func (m *WorkbookChartFont) SetBold(value *bool)() {
     err := m.GetBackingStore().Set("bold", value)
     if err != nil {
         panic(err)
     }
 }
-// SetColor sets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
+// SetColor sets the color property value. The HTML color code representation of the text color. For example #FF0000 represents Red.
 func (m *WorkbookChartFont) SetColor(value *string)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItalic sets the italic property value. Represents the italic status of the font.
+// SetItalic sets the italic property value. Indicates whether the fond is italic.
 func (m *WorkbookChartFont) SetItalic(value *bool)() {
     err := m.GetBackingStore().Set("italic", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. Font name (for example 'Calibri')
+// SetName sets the name property value. The font name. For example 'Calibri'.
 func (m *WorkbookChartFont) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. Size of the font (for example 11)
+// SetSize sets the size property value. The size of the font. For example,  11.
 func (m *WorkbookChartFont) SetSize(value *float64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUnderline sets the underline property value. Type of underline applied to the font. The possible values are: None, Single.
+// SetUnderline sets the underline property value. The type of underlining applied to the font. The possible values are: None, Single.
 func (m *WorkbookChartFont) SetUnderline(value *string)() {
     err := m.GetBackingStore().Set("underline", value)
     if err != nil {

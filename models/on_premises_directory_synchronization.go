@@ -19,7 +19,7 @@ func NewOnPremisesDirectorySynchronization()(*OnPremisesDirectorySynchronization
 func CreateOnPremisesDirectorySynchronizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesDirectorySynchronization(), nil
 }
-// GetConfiguration gets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
+// GetConfiguration gets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant. Nullable.
 // returns a OnPremisesDirectorySynchronizationConfigurationable when successful
 func (m *OnPremisesDirectorySynchronization) GetConfiguration()(OnPremisesDirectorySynchronizationConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
@@ -89,7 +89,7 @@ func (m *OnPremisesDirectorySynchronization) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetConfiguration sets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
+// SetConfiguration sets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant. Nullable.
 func (m *OnPremisesDirectorySynchronization) SetConfiguration(value OnPremisesDirectorySynchronizationConfigurationable)() {
     err := m.GetBackingStore().Set("configuration", value)
     if err != nil {

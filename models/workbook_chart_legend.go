@@ -77,7 +77,7 @@ func (m *WorkbookChartLegend) GetFormat()(WorkbookChartLegendFormatable) {
     }
     return nil
 }
-// GetOverlay gets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
+// GetOverlay gets the overlay property value. Indicates whether the chart legend should overlap with the main body of the chart.
 // returns a *bool when successful
 func (m *WorkbookChartLegend) GetOverlay()(*bool) {
     val, err := m.GetBackingStore().Get("overlay")
@@ -101,7 +101,7 @@ func (m *WorkbookChartLegend) GetPosition()(*string) {
     }
     return nil
 }
-// GetVisible gets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
+// GetVisible gets the visible property value. Indicates whether the chart legend is visible.
 // returns a *bool when successful
 func (m *WorkbookChartLegend) GetVisible()(*bool) {
     val, err := m.GetBackingStore().Get("visible")
@@ -152,7 +152,7 @@ func (m *WorkbookChartLegend) SetFormat(value WorkbookChartLegendFormatable)() {
         panic(err)
     }
 }
-// SetOverlay sets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
+// SetOverlay sets the overlay property value. Indicates whether the chart legend should overlap with the main body of the chart.
 func (m *WorkbookChartLegend) SetOverlay(value *bool)() {
     err := m.GetBackingStore().Set("overlay", value)
     if err != nil {
@@ -166,7 +166,7 @@ func (m *WorkbookChartLegend) SetPosition(value *string)() {
         panic(err)
     }
 }
-// SetVisible sets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
+// SetVisible sets the visible property value. Indicates whether the chart legend is visible.
 func (m *WorkbookChartLegend) SetVisible(value *bool)() {
     err := m.GetBackingStore().Set("visible", value)
     if err != nil {

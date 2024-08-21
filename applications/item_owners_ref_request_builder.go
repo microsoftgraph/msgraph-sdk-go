@@ -25,7 +25,7 @@ type ItemOwnersRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnersRefRequestBuilderDeleteQueryParameters
 }
-// ItemOwnersRefRequestBuilderGetQueryParameters retrieve a list of owners for an application that are directoryObject objects.
+// ItemOwnersRefRequestBuilderGetQueryParameters retrieve a list of owners for an application that are directoryObject types.
 type ItemOwnersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -88,7 +88,7 @@ func (m *ItemOwnersRefRequestBuilder) Delete(ctx context.Context, requestConfigu
     }
     return nil
 }
-// Get retrieve a list of owners for an application that are directoryObject objects.
+// Get retrieve a list of owners for an application that are directoryObject types.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -111,7 +111,7 @@ func (m *ItemOwnersRefRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add an owner to an application by posting to the owners collection.
+// Post add an owner to an application. Currently, only individual users are supported as owners of applications.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -144,7 +144,7 @@ func (m *ItemOwnersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a list of owners for an application that are directoryObject objects.
+// ToGetRequestInformation retrieve a list of owners for an application that are directoryObject types.
 // returns a *RequestInformation when successful
 func (m *ItemOwnersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/applications/{application%2Did}/owners/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +158,7 @@ func (m *ItemOwnersRefRequestBuilder) ToGetRequestInformation(ctx context.Contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add an owner to an application by posting to the owners collection.
+// ToPostRequestInformation add an owner to an application. Currently, only individual users are supported as owners of applications.
 // returns a *RequestInformation when successful
 func (m *ItemOwnersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemOwnersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/applications/{application%2Did}/owners/$ref", m.BaseRequestBuilder.PathParameters)

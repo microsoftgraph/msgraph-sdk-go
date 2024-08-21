@@ -100,6 +100,11 @@ func (m *LifecycleWorkflowsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.LifecycleWorkflowsContainerable), nil
 }
+// Insights provides operations to manage the insights property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+// returns a *LifecycleWorkflowsInsightsRequestBuilder when successful
+func (m *LifecycleWorkflowsRequestBuilder) Insights()(*LifecycleWorkflowsInsightsRequestBuilder) {
+    return NewLifecycleWorkflowsInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property lifecycleWorkflows in identityGovernance
 // returns a LifecycleWorkflowsContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

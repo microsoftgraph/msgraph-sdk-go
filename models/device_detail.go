@@ -40,7 +40,7 @@ func (m *DeviceDetail) GetAdditionalData()(map[string]any) {
 func (m *DeviceDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBrowser gets the browser property value. Indicates the browser information of the used for signing in.
+// GetBrowser gets the browser property value. Indicates the browser information of the used in the sign-in. Populated for devices registered in Microsoft Entra.
 // returns a *string when successful
 func (m *DeviceDetail) GetBrowser()(*string) {
     val, err := m.GetBackingStore().Get("browser")
@@ -52,7 +52,7 @@ func (m *DeviceDetail) GetBrowser()(*string) {
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. Refers to the UniqueID of the device used for signing in.
+// GetDeviceId gets the deviceId property value. Refers to the unique ID of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
 // returns a *string when successful
 func (m *DeviceDetail) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -64,7 +64,7 @@ func (m *DeviceDetail) GetDeviceId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Refers to the name of the device used for signing in.
+// GetDisplayName gets the displayName property value. Refers to the name of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
 // returns a *string when successful
 func (m *DeviceDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -162,7 +162,7 @@ func (m *DeviceDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIsCompliant gets the isCompliant property value. Indicates whether the device is compliant.
+// GetIsCompliant gets the isCompliant property value. Indicates whether the device is compliant or not.
 // returns a *bool when successful
 func (m *DeviceDetail) GetIsCompliant()(*bool) {
     val, err := m.GetBackingStore().Get("isCompliant")
@@ -174,7 +174,7 @@ func (m *DeviceDetail) GetIsCompliant()(*bool) {
     }
     return nil
 }
-// GetIsManaged gets the isManaged property value. Indicates whether the device is managed.
+// GetIsManaged gets the isManaged property value. Indicates if the device is managed or not.
 // returns a *bool when successful
 func (m *DeviceDetail) GetIsManaged()(*bool) {
     val, err := m.GetBackingStore().Get("isManaged")
@@ -198,7 +198,7 @@ func (m *DeviceDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperatingSystem gets the operatingSystem property value. Indicates the operating system name and version used for signing in.
+// GetOperatingSystem gets the operatingSystem property value. Indicates the OS name and version used in the sign-in.
 // returns a *string when successful
 func (m *DeviceDetail) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
@@ -210,7 +210,7 @@ func (m *DeviceDetail) GetOperatingSystem()(*string) {
     }
     return nil
 }
-// GetTrustType gets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+// GetTrustType gets the trustType property value. Indicates information on whether the device used in the sign-in is workplace-joined, Microsoft Entra-joined, domain-joined.
 // returns a *string when successful
 func (m *DeviceDetail) GetTrustType()(*string) {
     val, err := m.GetBackingStore().Get("trustType")
@@ -291,35 +291,35 @@ func (m *DeviceDetail) SetAdditionalData(value map[string]any)() {
 func (m *DeviceDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBrowser sets the browser property value. Indicates the browser information of the used for signing in.
+// SetBrowser sets the browser property value. Indicates the browser information of the used in the sign-in. Populated for devices registered in Microsoft Entra.
 func (m *DeviceDetail) SetBrowser(value *string)() {
     err := m.GetBackingStore().Set("browser", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. Refers to the UniqueID of the device used for signing in.
+// SetDeviceId sets the deviceId property value. Refers to the unique ID of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
 func (m *DeviceDetail) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Refers to the name of the device used for signing in.
+// SetDisplayName sets the displayName property value. Refers to the name of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
 func (m *DeviceDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCompliant sets the isCompliant property value. Indicates whether the device is compliant.
+// SetIsCompliant sets the isCompliant property value. Indicates whether the device is compliant or not.
 func (m *DeviceDetail) SetIsCompliant(value *bool)() {
     err := m.GetBackingStore().Set("isCompliant", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsManaged sets the isManaged property value. Indicates whether the device is managed.
+// SetIsManaged sets the isManaged property value. Indicates if the device is managed or not.
 func (m *DeviceDetail) SetIsManaged(value *bool)() {
     err := m.GetBackingStore().Set("isManaged", value)
     if err != nil {
@@ -333,14 +333,14 @@ func (m *DeviceDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperatingSystem sets the operatingSystem property value. Indicates the operating system name and version used for signing in.
+// SetOperatingSystem sets the operatingSystem property value. Indicates the OS name and version used in the sign-in.
 func (m *DeviceDetail) SetOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("operatingSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrustType sets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+// SetTrustType sets the trustType property value. Indicates information on whether the device used in the sign-in is workplace-joined, Microsoft Entra-joined, domain-joined.
 func (m *DeviceDetail) SetTrustType(value *string)() {
     err := m.GetBackingStore().Set("trustType", value)
     if err != nil {

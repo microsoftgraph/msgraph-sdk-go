@@ -104,7 +104,7 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetFieldDeseria
     }
     return res
 }
-// GetInputs gets the inputs property value. The display configuration of attributes being collected on the attribute collection page.
+// GetInputs gets the inputs property value. The display configuration of attributes being collected on the attribute collection page. You must specify all attributes that you want to retain, otherwise they're removed from the user flow.
 // returns a []AuthenticationAttributeCollectionInputConfigurationable when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetInputs()([]AuthenticationAttributeCollectionInputConfigurationable) {
     val, err := m.GetBackingStore().Get("inputs")
@@ -198,7 +198,7 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) SetDescription(
         panic(err)
     }
 }
-// SetInputs sets the inputs property value. The display configuration of attributes being collected on the attribute collection page.
+// SetInputs sets the inputs property value. The display configuration of attributes being collected on the attribute collection page. You must specify all attributes that you want to retain, otherwise they're removed from the user flow.
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) SetInputs(value []AuthenticationAttributeCollectionInputConfigurationable)() {
     err := m.GetBackingStore().Set("inputs", value)
     if err != nil {
