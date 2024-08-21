@@ -2222,7 +2222,7 @@ func (m *User) GetInferenceClassification()(InferenceClassificationable) {
     }
     return nil
 }
-// GetInsights gets the insights property value. The insights property
+// GetInsights gets the insights property value. Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.
 // returns a ItemInsightsable when successful
 func (m *User) GetInsights()(ItemInsightsable) {
     val, err := m.GetBackingStore().Get("insights")
@@ -4502,7 +4502,7 @@ func (m *User) SetInferenceClassification(value InferenceClassificationable)() {
         panic(err)
     }
 }
-// SetInsights sets the insights property value. The insights property
+// SetInsights sets the insights property value. Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.
 func (m *User) SetInsights(value ItemInsightsable)() {
     err := m.GetBackingStore().Set("insights", value)
     if err != nil {

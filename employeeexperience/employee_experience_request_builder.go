@@ -32,6 +32,11 @@ type EmployeeExperienceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Communities provides operations to manage the communities property of the microsoft.graph.employeeExperience entity.
+// returns a *CommunitiesRequestBuilder when successful
+func (m *EmployeeExperienceRequestBuilder) Communities()(*CommunitiesRequestBuilder) {
+    return NewCommunitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEmployeeExperienceRequestBuilderInternal instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
 func NewEmployeeExperienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmployeeExperienceRequestBuilder) {
     m := &EmployeeExperienceRequestBuilder{
@@ -44,6 +49,11 @@ func NewEmployeeExperienceRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmployeeExperienceRequestBuilderInternal(urlParams, requestAdapter)
+}
+// EngagementAsyncOperations provides operations to manage the engagementAsyncOperations property of the microsoft.graph.employeeExperience entity.
+// returns a *EngagementAsyncOperationsRequestBuilder when successful
+func (m *EmployeeExperienceRequestBuilder) EngagementAsyncOperations()(*EngagementAsyncOperationsRequestBuilder) {
+    return NewEngagementAsyncOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get employeeExperience
 // returns a EmployeeExperienceable when successful

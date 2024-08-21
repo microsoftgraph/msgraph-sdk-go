@@ -40,6 +40,18 @@ func (m *SolutionsRoot) GetAdditionalData()(map[string]any) {
 func (m *SolutionsRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetBackupRestore gets the backupRestore property value. The backupRestore property
+// returns a BackupRestoreRootable when successful
+func (m *SolutionsRoot) GetBackupRestore()(BackupRestoreRootable) {
+    val, err := m.GetBackingStore().Get("backupRestore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BackupRestoreRootable)
+    }
+    return nil
+}
 // GetBookingBusinesses gets the bookingBusinesses property value. The bookingBusinesses property
 // returns a []BookingBusinessable when successful
 func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusinessable) {
@@ -68,6 +80,16 @@ func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrencyable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["backupRestore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBackupRestoreRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBackupRestore(val.(BackupRestoreRootable))
+        }
+        return nil
+    }
     res["bookingBusinesses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingBusinessFromDiscriminatorValue)
         if err != nil {
@@ -148,6 +170,12 @@ func (m *SolutionsRoot) GetVirtualEvents()(VirtualEventsRootable) {
 }
 // Serialize serializes information the current object
 func (m *SolutionsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("backupRestore", m.GetBackupRestore())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetBookingBusinesses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBookingBusinesses()))
         for i, v := range m.GetBookingBusinesses() {
@@ -203,6 +231,13 @@ func (m *SolutionsRoot) SetAdditionalData(value map[string]any)() {
 func (m *SolutionsRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetBackupRestore sets the backupRestore property value. The backupRestore property
+func (m *SolutionsRoot) SetBackupRestore(value BackupRestoreRootable)() {
+    err := m.GetBackingStore().Set("backupRestore", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBookingBusinesses sets the bookingBusinesses property value. The bookingBusinesses property
 func (m *SolutionsRoot) SetBookingBusinesses(value []BookingBusinessable)() {
     err := m.GetBackingStore().Set("bookingBusinesses", value)
@@ -236,11 +271,13 @@ type SolutionsRootable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBackupRestore()(BackupRestoreRootable)
     GetBookingBusinesses()([]BookingBusinessable)
     GetBookingCurrencies()([]BookingCurrencyable)
     GetOdataType()(*string)
     GetVirtualEvents()(VirtualEventsRootable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBackupRestore(value BackupRestoreRootable)()
     SetBookingBusinesses(value []BookingBusinessable)()
     SetBookingCurrencies(value []BookingCurrencyable)()
     SetOdataType(value *string)()

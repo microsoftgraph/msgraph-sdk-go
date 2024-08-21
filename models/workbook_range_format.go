@@ -31,7 +31,7 @@ func (m *WorkbookRangeFormat) GetBorders()([]WorkbookRangeBorderable) {
     }
     return nil
 }
-// GetColumnWidth gets the columnWidth property value. Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
+// GetColumnWidth gets the columnWidth property value. The width of all columns within the range. If the column widths aren't uniform, null will be returned.
 // returns a *float64 when successful
 func (m *WorkbookRangeFormat) GetColumnWidth()(*float64) {
     val, err := m.GetBackingStore().Get("columnWidth")
@@ -169,7 +169,7 @@ func (m *WorkbookRangeFormat) GetFont()(WorkbookRangeFontable) {
     }
     return nil
 }
-// GetHorizontalAlignment gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// GetHorizontalAlignment gets the horizontalAlignment property value. The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 // returns a *string when successful
 func (m *WorkbookRangeFormat) GetHorizontalAlignment()(*string) {
     val, err := m.GetBackingStore().Get("horizontalAlignment")
@@ -193,7 +193,7 @@ func (m *WorkbookRangeFormat) GetProtection()(WorkbookFormatProtectionable) {
     }
     return nil
 }
-// GetRowHeight gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
+// GetRowHeight gets the rowHeight property value. The height of all rows in the range. If the row heights aren't uniform null will be returned.
 // returns a *float64 when successful
 func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
     val, err := m.GetBackingStore().Get("rowHeight")
@@ -205,7 +205,7 @@ func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
     }
     return nil
 }
-// GetVerticalAlignment gets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
+// GetVerticalAlignment gets the verticalAlignment property value. The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
 // returns a *string when successful
 func (m *WorkbookRangeFormat) GetVerticalAlignment()(*string) {
     val, err := m.GetBackingStore().Get("verticalAlignment")
@@ -217,7 +217,7 @@ func (m *WorkbookRangeFormat) GetVerticalAlignment()(*string) {
     }
     return nil
 }
-// GetWrapText gets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
+// GetWrapText gets the wrapText property value. Indicates whether Excel wraps the text in the object. A null value indicates that the entire range doesn't have a uniform wrap setting.
 // returns a *bool when successful
 func (m *WorkbookRangeFormat) GetWrapText()(*bool) {
     val, err := m.GetBackingStore().Get("wrapText")
@@ -304,7 +304,7 @@ func (m *WorkbookRangeFormat) SetBorders(value []WorkbookRangeBorderable)() {
         panic(err)
     }
 }
-// SetColumnWidth sets the columnWidth property value. Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
+// SetColumnWidth sets the columnWidth property value. The width of all columns within the range. If the column widths aren't uniform, null will be returned.
 func (m *WorkbookRangeFormat) SetColumnWidth(value *float64)() {
     err := m.GetBackingStore().Set("columnWidth", value)
     if err != nil {
@@ -325,7 +325,7 @@ func (m *WorkbookRangeFormat) SetFont(value WorkbookRangeFontable)() {
         panic(err)
     }
 }
-// SetHorizontalAlignment sets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// SetHorizontalAlignment sets the horizontalAlignment property value. The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 func (m *WorkbookRangeFormat) SetHorizontalAlignment(value *string)() {
     err := m.GetBackingStore().Set("horizontalAlignment", value)
     if err != nil {
@@ -339,21 +339,21 @@ func (m *WorkbookRangeFormat) SetProtection(value WorkbookFormatProtectionable)(
         panic(err)
     }
 }
-// SetRowHeight sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
+// SetRowHeight sets the rowHeight property value. The height of all rows in the range. If the row heights aren't uniform null will be returned.
 func (m *WorkbookRangeFormat) SetRowHeight(value *float64)() {
     err := m.GetBackingStore().Set("rowHeight", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVerticalAlignment sets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
+// SetVerticalAlignment sets the verticalAlignment property value. The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
 func (m *WorkbookRangeFormat) SetVerticalAlignment(value *string)() {
     err := m.GetBackingStore().Set("verticalAlignment", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWrapText sets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
+// SetWrapText sets the wrapText property value. Indicates whether Excel wraps the text in the object. A null value indicates that the entire range doesn't have a uniform wrap setting.
 func (m *WorkbookRangeFormat) SetWrapText(value *bool)() {
     err := m.GetBackingStore().Set("wrapText", value)
     if err != nil {

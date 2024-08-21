@@ -11,7 +11,7 @@ import (
 type AuthenticationEventsFlowsItemConditionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationEventsFlowsItemConditionsRequestBuilderGetQueryParameters the conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.
+// AuthenticationEventsFlowsItemConditionsRequestBuilderGetQueryParameters the conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
 type AuthenticationEventsFlowsItemConditionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -45,7 +45,7 @@ func NewAuthenticationEventsFlowsItemConditionsRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationEventsFlowsItemConditionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.
+// Get the conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
 // returns a AuthenticationConditionsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsItemConditionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionsable, error) {
@@ -65,7 +65,7 @@ func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationConditionsable), nil
 }
-// ToGetRequestInformation the conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.
+// ToGetRequestInformation the conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsItemConditionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
