@@ -53,6 +53,18 @@ func (m *UserSimulationEventInfo) GetBrowser()(*string) {
     }
     return nil
 }
+// GetClickSource gets the clickSource property value. The clickSource property
+// returns a *ClickSource when successful
+func (m *UserSimulationEventInfo) GetClickSource()(*ClickSource) {
+    val, err := m.GetBackingStore().Get("clickSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ClickSource)
+    }
+    return nil
+}
 // GetEventDateTime gets the eventDateTime property value. Date and time of the simulation event by a user in an attack simulation and training campaign.
 // returns a *Time when successful
 func (m *UserSimulationEventInfo) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -88,6 +100,16 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetBrowser(val)
+        }
+        return nil
+    }
+    res["clickSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseClickSource)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClickSource(val.(*ClickSource))
         }
         return nil
     }
@@ -187,6 +209,13 @@ func (m *UserSimulationEventInfo) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetClickSource() != nil {
+        cast := (*m.GetClickSource()).String()
+        err := writer.WriteStringValue("clickSource", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteTimeValue("eventDateTime", m.GetEventDateTime())
         if err != nil {
@@ -243,6 +272,13 @@ func (m *UserSimulationEventInfo) SetBrowser(value *string)() {
         panic(err)
     }
 }
+// SetClickSource sets the clickSource property value. The clickSource property
+func (m *UserSimulationEventInfo) SetClickSource(value *ClickSource)() {
+    err := m.GetBackingStore().Set("clickSource", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEventDateTime sets the eventDateTime property value. Date and time of the simulation event by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
@@ -284,6 +320,7 @@ type UserSimulationEventInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBrowser()(*string)
+    GetClickSource()(*ClickSource)
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEventName()(*string)
     GetIpAddress()(*string)
@@ -291,6 +328,7 @@ type UserSimulationEventInfoable interface {
     GetOsPlatformDeviceDetails()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBrowser(value *string)()
+    SetClickSource(value *ClickSource)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEventName(value *string)()
     SetIpAddress(value *string)()

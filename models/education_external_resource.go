@@ -37,7 +37,7 @@ func (m *EducationExternalResource) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetWebUrl gets the webUrl property value. Location of the resource. Required
+// GetWebUrl gets the webUrl property value. Location of the resource. Required.
 // returns a *string when successful
 func (m *EducationExternalResource) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -63,7 +63,7 @@ func (m *EducationExternalResource) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetWebUrl sets the webUrl property value. Location of the resource. Required
+// SetWebUrl sets the webUrl property value. Location of the resource. Required.
 func (m *EducationExternalResource) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

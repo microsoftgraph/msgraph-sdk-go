@@ -45,7 +45,7 @@ func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     }
     return nil
 }
-// GetAppointmentLabel gets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+// GetAppointmentLabel gets the appointmentLabel property value. The custom label that can be stamped on this appointment by users.
 // returns a *string when successful
 func (m *BookingAppointment) GetAppointmentLabel()(*string) {
     val, err := m.GetBackingStore().Get("appointmentLabel")
@@ -57,7 +57,7 @@ func (m *BookingAppointment) GetAppointmentLabel()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time, and time zone when the appointment was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingAppointment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -69,7 +69,7 @@ func (m *BookingAppointment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     }
     return nil
 }
-// GetCustomerEmailAddress gets the customerEmailAddress property value. The customerEmailAddress property
+// GetCustomerEmailAddress gets the customerEmailAddress property value. The SMTP address of the bookingCustomer who books the appointment.
 // returns a *string when successful
 func (m *BookingAppointment) GetCustomerEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("customerEmailAddress")
@@ -81,7 +81,7 @@ func (m *BookingAppointment) GetCustomerEmailAddress()(*string) {
     }
     return nil
 }
-// GetCustomerName gets the customerName property value. The customerName property
+// GetCustomerName gets the customerName property value. The customer's name.
 // returns a *string when successful
 func (m *BookingAppointment) GetCustomerName()(*string) {
     val, err := m.GetBackingStore().Get("customerName")
@@ -93,7 +93,7 @@ func (m *BookingAppointment) GetCustomerName()(*string) {
     }
     return nil
 }
-// GetCustomerNotes gets the customerNotes property value. Notes from the customer associated with this appointment.
+// GetCustomerNotes gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
 // returns a *string when successful
 func (m *BookingAppointment) GetCustomerNotes()(*string) {
     val, err := m.GetBackingStore().Get("customerNotes")
@@ -105,7 +105,7 @@ func (m *BookingAppointment) GetCustomerNotes()(*string) {
     }
     return nil
 }
-// GetCustomerPhone gets the customerPhone property value. The customerPhone property
+// GetCustomerPhone gets the customerPhone property value. The customer's phone number.
 // returns a *string when successful
 func (m *BookingAppointment) GetCustomerPhone()(*string) {
     val, err := m.GetBackingStore().Get("customerPhone")
@@ -509,7 +509,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment
+// GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment.
 // returns a *int32 when successful
 func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
     val, err := m.GetBackingStore().Get("filledAttendeesCount")
@@ -521,7 +521,7 @@ func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
     }
     return nil
 }
-// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 // returns a *bool when successful
 func (m *BookingAppointment) GetIsCustomerAllowedToManageBooking()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
@@ -533,7 +533,7 @@ func (m *BookingAppointment) GetIsCustomerAllowedToManageBooking()(*bool) {
     }
     return nil
 }
-// GetIsLocationOnline gets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+// GetIsLocationOnline gets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
 // returns a *bool when successful
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
     val, err := m.GetBackingStore().Get("isLocationOnline")
@@ -557,7 +557,7 @@ func (m *BookingAppointment) GetJoinWebUrl()(*string) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BookingAppointment) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -653,7 +653,7 @@ func (m *BookingAppointment) GetReminders()([]BookingReminderable) {
     }
     return nil
 }
-// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of the customer.
 // returns a *string when successful
 func (m *BookingAppointment) GetSelfServiceAppointmentId()(*string) {
     val, err := m.GetBackingStore().Get("selfServiceAppointmentId")
@@ -964,42 +964,42 @@ func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetAppointmentLabel sets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+// SetAppointmentLabel sets the appointmentLabel property value. The custom label that can be stamped on this appointment by users.
 func (m *BookingAppointment) SetAppointmentLabel(value *string)() {
     err := m.GetBackingStore().Set("appointmentLabel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time, and time zone when the appointment was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingAppointment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomerEmailAddress sets the customerEmailAddress property value. The customerEmailAddress property
+// SetCustomerEmailAddress sets the customerEmailAddress property value. The SMTP address of the bookingCustomer who books the appointment.
 func (m *BookingAppointment) SetCustomerEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("customerEmailAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomerName sets the customerName property value. The customerName property
+// SetCustomerName sets the customerName property value. The customer's name.
 func (m *BookingAppointment) SetCustomerName(value *string)() {
     err := m.GetBackingStore().Set("customerName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomerNotes sets the customerNotes property value. Notes from the customer associated with this appointment.
+// SetCustomerNotes sets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
 func (m *BookingAppointment) SetCustomerNotes(value *string)() {
     err := m.GetBackingStore().Set("customerNotes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomerPhone sets the customerPhone property value. The customerPhone property
+// SetCustomerPhone sets the customerPhone property value. The customer's phone number.
 func (m *BookingAppointment) SetCustomerPhone(value *string)() {
     err := m.GetBackingStore().Set("customerPhone", value)
     if err != nil {
@@ -1034,21 +1034,21 @@ func (m *BookingAppointment) SetEndDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetFilledAttendeesCount sets the filledAttendeesCount property value. The current number of customers in the appointment
+// SetFilledAttendeesCount sets the filledAttendeesCount property value. The current number of customers in the appointment.
 func (m *BookingAppointment) SetFilledAttendeesCount(value *int32)() {
     err := m.GetBackingStore().Set("filledAttendeesCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 func (m *BookingAppointment) SetIsCustomerAllowedToManageBooking(value *bool)() {
     err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsLocationOnline sets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+// SetIsLocationOnline sets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
     err := m.GetBackingStore().Set("isLocationOnline", value)
     if err != nil {
@@ -1062,7 +1062,7 @@ func (m *BookingAppointment) SetJoinWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BookingAppointment) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -1118,7 +1118,7 @@ func (m *BookingAppointment) SetReminders(value []BookingReminderable)() {
         panic(err)
     }
 }
-// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of the customer.
 func (m *BookingAppointment) SetSelfServiceAppointmentId(value *string)() {
     err := m.GetBackingStore().Set("selfServiceAppointmentId", value)
     if err != nil {

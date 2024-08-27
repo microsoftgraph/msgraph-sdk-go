@@ -32,6 +32,10 @@ func CreateWorkflowExecutionTriggerFromDiscriminatorValue(parseNode i878a80d2330
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.identityGovernance.attributeChangeTrigger":
+                        return NewAttributeChangeTrigger(), nil
+                    case "#microsoft.graph.identityGovernance.membershipChangeTrigger":
+                        return NewMembershipChangeTrigger(), nil
                     case "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger":
                         return NewTimeBasedAttributeTrigger(), nil
                 }

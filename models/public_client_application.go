@@ -84,7 +84,7 @@ func (m *PublicClientApplication) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
+// GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. For iOS and macOS apps, specify the value following the syntax msauth.{BUNDLEID}://auth, replacing '{BUNDLEID}'. For example, if the bundle ID is com.microsoft.identitysample.MSALiOS, the URI is msauth.com.microsoft.identitysample.MSALiOS://auth.
 // returns a []string when successful
 func (m *PublicClientApplication) GetRedirectUris()([]string) {
     val, err := m.GetBackingStore().Get("redirectUris")
@@ -136,7 +136,7 @@ func (m *PublicClientApplication) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRedirectUris sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
+// SetRedirectUris sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. For iOS and macOS apps, specify the value following the syntax msauth.{BUNDLEID}://auth, replacing '{BUNDLEID}'. For example, if the bundle ID is com.microsoft.identitysample.MSALiOS, the URI is msauth.com.microsoft.identitysample.MSALiOS://auth.
 func (m *PublicClientApplication) SetRedirectUris(value []string)() {
     err := m.GetBackingStore().Set("redirectUris", value)
     if err != nil {
