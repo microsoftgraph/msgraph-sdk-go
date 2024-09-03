@@ -32,6 +32,8 @@ func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d
                 switch *mappingValue {
                     case "#microsoft.graph.attackSimulationOperation":
                         return NewAttackSimulationOperation(), nil
+                    case "#microsoft.graph.engagementAsyncOperation":
+                        return NewEngagementAsyncOperation(), nil
                     case "#microsoft.graph.richLongRunningOperation":
                         return NewRichLongRunningOperation(), nil
                 }
@@ -40,7 +42,7 @@ func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d
     }
     return NewLongRunningOperation(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetCreatedDateTime gets the createdDateTime property value. The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *LongRunningOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -108,7 +110,7 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetLastActionDateTime gets the lastActionDateTime property value. The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetLastActionDateTime gets the lastActionDateTime property value. The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *LongRunningOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
@@ -195,14 +197,14 @@ func (m *LongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetCreatedDateTime sets the createdDateTime property value. The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LongRunningOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastActionDateTime sets the lastActionDateTime property value. The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetLastActionDateTime sets the lastActionDateTime property value. The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LongRunningOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastActionDateTime", value)
     if err != nil {

@@ -2036,6 +2036,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["solutions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserSolutionRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSolutions(val.(UserSolutionRootable))
+        }
+        return nil
+    }
     res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -2222,7 +2232,7 @@ func (m *User) GetInferenceClassification()(InferenceClassificationable) {
     }
     return nil
 }
-// GetInsights gets the insights property value. The insights property
+// GetInsights gets the insights property value. Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.
 // returns a ItemInsightsable when successful
 func (m *User) GetInsights()(ItemInsightsable) {
     val, err := m.GetBackingStore().Get("insights")
@@ -2999,6 +3009,18 @@ func (m *User) GetSkills()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetSolutions gets the solutions property value. The solutions property
+// returns a UserSolutionRootable when successful
+func (m *User) GetSolutions()(UserSolutionRootable) {
+    val, err := m.GetBackingStore().Get("solutions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserSolutionRootable)
     }
     return nil
 }
@@ -4064,6 +4086,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("solutions", m.GetSolutions())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSponsors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
         for i, v := range m.GetSponsors() {
@@ -4502,7 +4530,7 @@ func (m *User) SetInferenceClassification(value InferenceClassificationable)() {
         panic(err)
     }
 }
-// SetInsights sets the insights property value. The insights property
+// SetInsights sets the insights property value. Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.
 func (m *User) SetInsights(value ItemInsightsable)() {
     err := m.GetBackingStore().Set("insights", value)
     if err != nil {
@@ -4957,6 +4985,13 @@ func (m *User) SetSkills(value []string)() {
         panic(err)
     }
 }
+// SetSolutions sets the solutions property value. The solutions property
+func (m *User) SetSolutions(value UserSolutionRootable)() {
+    err := m.GetBackingStore().Set("solutions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSponsors sets the sponsors property value. The users and groups responsible for this guest's privileges in the tenant and keeping the guest's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 func (m *User) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
@@ -5147,6 +5182,7 @@ type Userable interface {
     GetSignInActivity()(SignInActivityable)
     GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSkills()([]string)
+    GetSolutions()(UserSolutionRootable)
     GetSponsors()([]DirectoryObjectable)
     GetState()(*string)
     GetStreetAddress()(*string)
@@ -5274,6 +5310,7 @@ type Userable interface {
     SetSignInActivity(value SignInActivityable)()
     SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSkills(value []string)()
+    SetSolutions(value UserSolutionRootable)()
     SetSponsors(value []DirectoryObjectable)()
     SetState(value *string)()
     SetStreetAddress(value *string)()

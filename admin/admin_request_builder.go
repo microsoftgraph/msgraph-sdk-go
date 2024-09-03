@@ -102,6 +102,11 @@ func (m *AdminRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e6
 func (m *AdminRequestBuilder) People()(*PeopleRequestBuilder) {
     return NewPeopleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ReportSettings provides operations to manage the reportSettings property of the microsoft.graph.admin entity.
+// returns a *ReportSettingsRequestBuilder when successful
+func (m *AdminRequestBuilder) ReportSettings()(*ReportSettingsRequestBuilder) {
+    return NewReportSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ServiceAnnouncement provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
 // returns a *ServiceAnnouncementRequestBuilder when successful
 func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestBuilder) {

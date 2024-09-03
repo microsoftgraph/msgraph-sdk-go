@@ -76,7 +76,7 @@ func (m *WorkbookIcon) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIndex gets the index property value. Represents the index of the icon in the given set.
+// GetIndex gets the index property value. The index of the icon in the given set.
 // returns a *int32 when successful
 func (m *WorkbookIcon) GetIndex()(*int32) {
     val, err := m.GetBackingStore().Get("index")
@@ -100,7 +100,7 @@ func (m *WorkbookIcon) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSet gets the set property value. Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
+// GetSet gets the set property value. The set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
 // returns a *string when successful
 func (m *WorkbookIcon) GetSet()(*string) {
     val, err := m.GetBackingStore().Get("set")
@@ -151,7 +151,7 @@ func (m *WorkbookIcon) SetAdditionalData(value map[string]any)() {
 func (m *WorkbookIcon) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIndex sets the index property value. Represents the index of the icon in the given set.
+// SetIndex sets the index property value. The index of the icon in the given set.
 func (m *WorkbookIcon) SetIndex(value *int32)() {
     err := m.GetBackingStore().Set("index", value)
     if err != nil {
@@ -165,7 +165,7 @@ func (m *WorkbookIcon) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSet sets the set property value. Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
+// SetSet sets the set property value. The set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
 func (m *WorkbookIcon) SetSet(value *string)() {
     err := m.GetBackingStore().Set("set", value)
     if err != nil {

@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilderGetQueryParameters represents the sorting for the table. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilderGetQueryParameters the sorting for the table. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuil
     }
     return nil
 }
-// Get represents the sorting for the table. Read-only.
+// Get the sorting for the table. Read-only.
 // returns a WorkbookTableSortable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable, error) {
@@ -121,7 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the sorting for the table. Read-only.
+// ToGetRequestInformation the sorting for the table. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
