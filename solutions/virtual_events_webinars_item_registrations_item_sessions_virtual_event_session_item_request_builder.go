@@ -11,7 +11,7 @@ import (
 type VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters get sessions from solutions
+// VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters sessions for a registration.
 type VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewVirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionIte
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get sessions from solutions
+// Get sessions for a registration.
 // returns a VirtualEventSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventSessionable, error) {
@@ -60,7 +60,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionIt
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventSessionable), nil
 }
-// ToGetRequestInformation get sessions from solutions
+// ToGetRequestInformation sessions for a registration.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

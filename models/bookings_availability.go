@@ -70,7 +70,7 @@ func (m *BookingsAvailability) GetAvailabilityType()(*BookingsServiceAvailabilit
 func (m *BookingsAvailability) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBusinessHours gets the businessHours property value. The hours of operation in a week. This is set to null if the availability type is not customWeeklyHours
+// GetBusinessHours gets the businessHours property value. The hours of operation in a week. The business hours value is set to null if the availability type isn't customWeeklyHours.
 // returns a []BookingWorkHoursable when successful
 func (m *BookingsAvailability) GetBusinessHours()([]BookingWorkHoursable) {
     val, err := m.GetBackingStore().Get("businessHours")
@@ -189,7 +189,7 @@ func (m *BookingsAvailability) SetAvailabilityType(value *BookingsServiceAvailab
 func (m *BookingsAvailability) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBusinessHours sets the businessHours property value. The hours of operation in a week. This is set to null if the availability type is not customWeeklyHours
+// SetBusinessHours sets the businessHours property value. The hours of operation in a week. The business hours value is set to null if the availability type isn't customWeeklyHours.
 func (m *BookingsAvailability) SetBusinessHours(value []BookingWorkHoursable)() {
     err := m.GetBackingStore().Set("businessHours", value)
     if err != nil {
