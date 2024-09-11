@@ -45,7 +45,7 @@ func (m *WorkbookFormatProtection) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetFormulaHidden gets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
+// GetFormulaHidden gets the formulaHidden property value. Indicates whether Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
 // returns a *bool when successful
 func (m *WorkbookFormatProtection) GetFormulaHidden()(*bool) {
     val, err := m.GetBackingStore().Get("formulaHidden")
@@ -57,7 +57,7 @@ func (m *WorkbookFormatProtection) GetFormulaHidden()(*bool) {
     }
     return nil
 }
-// GetLocked gets the locked property value. Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
+// GetLocked gets the locked property value. Indicates whether Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
 // returns a *bool when successful
 func (m *WorkbookFormatProtection) GetLocked()(*bool) {
     val, err := m.GetBackingStore().Get("locked")
@@ -89,14 +89,14 @@ func (m *WorkbookFormatProtection) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetFormulaHidden sets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
+// SetFormulaHidden sets the formulaHidden property value. Indicates whether Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
 func (m *WorkbookFormatProtection) SetFormulaHidden(value *bool)() {
     err := m.GetBackingStore().Set("formulaHidden", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocked sets the locked property value. Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
+// SetLocked sets the locked property value. Indicates whether Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
 func (m *WorkbookFormatProtection) SetLocked(value *bool)() {
     err := m.GetBackingStore().Set("locked", value)
     if err != nil {

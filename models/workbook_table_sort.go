@@ -61,7 +61,7 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetFields gets the fields property value. Represents the current conditions used to last sort the table. Read-only.
+// GetFields gets the fields property value. The list of the current conditions last used to sort the table. Read-only.
 // returns a []WorkbookSortFieldable when successful
 func (m *WorkbookTableSort) GetFields()([]WorkbookSortFieldable) {
     val, err := m.GetBackingStore().Get("fields")
@@ -73,7 +73,7 @@ func (m *WorkbookTableSort) GetFields()([]WorkbookSortFieldable) {
     }
     return nil
 }
-// GetMatchCase gets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
+// GetMatchCase gets the matchCase property value. Indicates whether the casing impacted the last sort of the table. Read-only.
 // returns a *bool when successful
 func (m *WorkbookTableSort) GetMatchCase()(*bool) {
     val, err := m.GetBackingStore().Get("matchCase")
@@ -85,7 +85,7 @@ func (m *WorkbookTableSort) GetMatchCase()(*bool) {
     }
     return nil
 }
-// GetMethod gets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+// GetMethod gets the method property value. The Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
 // returns a *string when successful
 func (m *WorkbookTableSort) GetMethod()(*string) {
     val, err := m.GetBackingStore().Get("method")
@@ -129,21 +129,21 @@ func (m *WorkbookTableSort) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetFields sets the fields property value. Represents the current conditions used to last sort the table. Read-only.
+// SetFields sets the fields property value. The list of the current conditions last used to sort the table. Read-only.
 func (m *WorkbookTableSort) SetFields(value []WorkbookSortFieldable)() {
     err := m.GetBackingStore().Set("fields", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMatchCase sets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
+// SetMatchCase sets the matchCase property value. Indicates whether the casing impacted the last sort of the table. Read-only.
 func (m *WorkbookTableSort) SetMatchCase(value *bool)() {
     err := m.GetBackingStore().Set("matchCase", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMethod sets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+// SetMethod sets the method property value. The Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
 func (m *WorkbookTableSort) SetMethod(value *string)() {
     err := m.GetBackingStore().Set("method", value)
     if err != nil {

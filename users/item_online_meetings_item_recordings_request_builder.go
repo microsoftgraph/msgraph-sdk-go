@@ -76,6 +76,11 @@ func NewItemOnlineMeetingsItemRecordingsRequestBuilder(rawUrl string, requestAda
 func (m *ItemOnlineMeetingsItemRecordingsRequestBuilder) Count()(*ItemOnlineMeetingsItemRecordingsCountRequestBuilder) {
     return NewItemOnlineMeetingsItemRecordingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Delta provides operations to call the delta method.
+// returns a *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder when successful
+func (m *ItemOnlineMeetingsItemRecordingsRequestBuilder) Delta()(*ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) {
+    return NewItemOnlineMeetingsItemRecordingsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get a callRecording object associated with a scheduled onlineMeeting. This API doesn't support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
 // returns a CallRecordingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -96,6 +96,16 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["reportSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAdminReportSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReportSettings(val.(AdminReportSettingsable))
+        }
+        return nil
+    }
     res["serviceAnnouncement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateServiceAnnouncementFromDiscriminatorValue)
         if err != nil {
@@ -154,6 +164,18 @@ func (m *Admin) GetPeople()(PeopleAdminSettingsable) {
     }
     return nil
 }
+// GetReportSettings gets the reportSettings property value. A container for administrative resources to manage reports.
+// returns a AdminReportSettingsable when successful
+func (m *Admin) GetReportSettings()(AdminReportSettingsable) {
+    val, err := m.GetBackingStore().Get("reportSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AdminReportSettingsable)
+    }
+    return nil
+}
 // GetServiceAnnouncement gets the serviceAnnouncement property value. A container for service communications resources. Read-only.
 // returns a ServiceAnnouncementable when successful
 func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
@@ -200,6 +222,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err := writer.WriteObjectValue("people", m.GetPeople())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("reportSettings", m.GetReportSettings())
         if err != nil {
             return err
         }
@@ -263,6 +291,13 @@ func (m *Admin) SetPeople(value PeopleAdminSettingsable)() {
         panic(err)
     }
 }
+// SetReportSettings sets the reportSettings property value. A container for administrative resources to manage reports.
+func (m *Admin) SetReportSettings(value AdminReportSettingsable)() {
+    err := m.GetBackingStore().Set("reportSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServiceAnnouncement sets the serviceAnnouncement property value. A container for service communications resources. Read-only.
 func (m *Admin) SetServiceAnnouncement(value ServiceAnnouncementable)() {
     err := m.GetBackingStore().Set("serviceAnnouncement", value)
@@ -286,6 +321,7 @@ type Adminable interface {
     GetMicrosoft365Apps()(AdminMicrosoft365Appsable)
     GetOdataType()(*string)
     GetPeople()(PeopleAdminSettingsable)
+    GetReportSettings()(AdminReportSettingsable)
     GetServiceAnnouncement()(ServiceAnnouncementable)
     GetSharepoint()(Sharepointable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -293,6 +329,7 @@ type Adminable interface {
     SetMicrosoft365Apps(value AdminMicrosoft365Appsable)()
     SetOdataType(value *string)()
     SetPeople(value PeopleAdminSettingsable)()
+    SetReportSettings(value AdminReportSettingsable)()
     SetServiceAnnouncement(value ServiceAnnouncementable)()
     SetSharepoint(value Sharepointable)()
 }

@@ -34,6 +34,11 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BackupRestore provides operations to manage the backupRestore property of the microsoft.graph.solutionsRoot entity.
+// returns a *BackupRestoreRequestBuilder when successful
+func (m *SolutionsRequestBuilder) BackupRestore()(*BackupRestoreRequestBuilder) {
+    return NewBackupRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // BookingBusinesses provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
 // returns a *BookingBusinessesRequestBuilder when successful
 func (m *SolutionsRequestBuilder) BookingBusinesses()(*BookingBusinessesRequestBuilder) {
