@@ -181,9 +181,9 @@ func (m *ItemItemsDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemItemsIt
     return NewItemItemsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
-// returns a *ItemItemsItemListItemRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListItemRequestBuilder) {
-    return NewItemItemsItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ListItem_EscapedRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ListItem_EscapedRequestBuilder) {
+    return NewListItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property items in drives
 // returns a DriveItemable when successful

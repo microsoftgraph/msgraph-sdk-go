@@ -76,9 +76,9 @@ func (m *SharedDriveItemItemRequestBuilder) Delete(ctx context.Context, requestC
     return nil
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.
-// returns a *ItemDriveItemRequestBuilder when successful
-func (m *SharedDriveItemItemRequestBuilder) DriveItem()(*ItemDriveItemRequestBuilder) {
-    return NewItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DriveItem_EscapedRequestBuilder when successful
+func (m *SharedDriveItemItemRequestBuilder) DriveItem()(*DriveItem_EscapedRequestBuilder) {
+    return NewDriveItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 // returns a SharedDriveItemable when successful
@@ -119,9 +119,9 @@ func (m *SharedDriveItemItemRequestBuilder) List()(*ItemListRequestBuilder) {
     return NewItemListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.sharedDriveItem entity.
-// returns a *ItemListItemRequestBuilder when successful
-func (m *SharedDriveItemItemRequestBuilder) ListItem()(*ItemListItemRequestBuilder) {
-    return NewItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ListItem_EscapedRequestBuilder when successful
+func (m *SharedDriveItemItemRequestBuilder) ListItem()(*ListItem_EscapedRequestBuilder) {
+    return NewListItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in shares
 // returns a SharedDriveItemable when successful

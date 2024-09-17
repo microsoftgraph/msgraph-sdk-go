@@ -11,7 +11,7 @@ import (
 type IdentitiesHealthIssuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentitiesHealthIssuesRequestBuilderGetQueryParameters get healthIssues from security
+// IdentitiesHealthIssuesRequestBuilderGetQueryParameters get a list of healthIssue objects and their properties.
 type IdentitiesHealthIssuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewIdentitiesHealthIssuesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *IdentitiesHealthIssuesRequestBuilder) Count()(*IdentitiesHealthIssuesCountRequestBuilder) {
     return NewIdentitiesHealthIssuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get healthIssues from security
+// Get get a list of healthIssue objects and their properties.
 // returns a HealthIssueCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-identitycontainer-list-healthissues?view=graph-rest-1.0
 func (m *IdentitiesHealthIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesHealthIssuesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HealthIssueCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *IdentitiesHealthIssuesRequestBuilder) Post(ctx context.Context, body id
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HealthIssueable), nil
 }
-// ToGetRequestInformation get healthIssues from security
+// ToGetRequestInformation get a list of healthIssue objects and their properties.
 // returns a *RequestInformation when successful
 func (m *IdentitiesHealthIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesHealthIssuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

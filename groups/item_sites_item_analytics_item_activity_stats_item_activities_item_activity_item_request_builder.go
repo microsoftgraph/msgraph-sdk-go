@@ -71,9 +71,9 @@ func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRe
     return nil
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.itemActivity entity.
-// returns a *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemRequestBuilder when successful
-func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRequestBuilder) DriveItem()(*ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemRequestBuilder) {
-    return NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DriveItem_EscapedRequestBuilder when successful
+func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRequestBuilder) DriveItem()(*DriveItem_EscapedRequestBuilder) {
+    return NewDriveItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get exposes the itemActivities represented in this itemActivityStat resource.
 // returns a ItemActivityable when successful

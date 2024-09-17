@@ -3012,7 +3012,7 @@ func (m *User) GetSkills()([]string) {
     }
     return nil
 }
-// GetSolutions gets the solutions property value. The solutions property
+// GetSolutions gets the solutions property value. The identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 // returns a UserSolutionRootable when successful
 func (m *User) GetSolutions()(UserSolutionRootable) {
     val, err := m.GetBackingStore().Get("solutions")
@@ -4985,7 +4985,7 @@ func (m *User) SetSkills(value []string)() {
         panic(err)
     }
 }
-// SetSolutions sets the solutions property value. The solutions property
+// SetSolutions sets the solutions property value. The identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 func (m *User) SetSolutions(value UserSolutionRootable)() {
     err := m.GetBackingStore().Set("solutions", value)
     if err != nil {

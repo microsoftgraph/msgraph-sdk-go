@@ -94,9 +94,9 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) DocumentSetVersions()(*It
     return NewItemListsItemItemsItemDocumentSetVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
-// returns a *ItemListsItemItemsItemDriveItemRequestBuilder when successful
-func (m *ItemListsItemItemsListItemItemRequestBuilder) DriveItem()(*ItemListsItemItemsItemDriveItemRequestBuilder) {
-    return NewItemListsItemItemsItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DriveItem_EscapedRequestBuilder when successful
+func (m *ItemListsItemItemsListItemItemRequestBuilder) DriveItem()(*DriveItem_EscapedRequestBuilder) {
+    return NewDriveItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Fields provides operations to manage the fields property of the microsoft.graph.listItem entity.
 // returns a *ItemListsItemItemsItemFieldsRequestBuilder when successful
