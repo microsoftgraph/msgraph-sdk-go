@@ -35,7 +35,7 @@ func (m *UserSolutionRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetWorkingTimeSchedule gets the workingTimeSchedule property value. The workingTimeSchedule property
+// GetWorkingTimeSchedule gets the workingTimeSchedule property value. The working time schedule entity associated with the solution.
 // returns a WorkingTimeScheduleable when successful
 func (m *UserSolutionRoot) GetWorkingTimeSchedule()(WorkingTimeScheduleable) {
     val, err := m.GetBackingStore().Get("workingTimeSchedule")
@@ -61,7 +61,7 @@ func (m *UserSolutionRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetWorkingTimeSchedule sets the workingTimeSchedule property value. The workingTimeSchedule property
+// SetWorkingTimeSchedule sets the workingTimeSchedule property value. The working time schedule entity associated with the solution.
 func (m *UserSolutionRoot) SetWorkingTimeSchedule(value WorkingTimeScheduleable)() {
     err := m.GetBackingStore().Set("workingTimeSchedule", value)
     if err != nil {

@@ -207,7 +207,7 @@ func (m *FileStorageContainer) GetPermissions()([]Permissionable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive,  active. Read-only.
+// GetStatus gets the status property value. Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.
 // returns a *FileStorageContainerStatus when successful
 func (m *FileStorageContainer) GetStatus()(*FileStorageContainerStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -349,7 +349,7 @@ func (m *FileStorageContainer) SetPermissions(value []Permissionable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive,  active. Read-only.
+// SetStatus sets the status property value. Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.
 func (m *FileStorageContainer) SetStatus(value *FileStorageContainerStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

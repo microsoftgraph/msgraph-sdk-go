@@ -31,7 +31,7 @@ func NewItemAssignLicenseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemAssignLicenseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add or remove licenses on the group. Licenses assigned to the group will be assigned to all users in the group. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.
+// Post add or remove licenses on the group. Licenses assigned to the group will be assigned to all users in the group. Group-based licensing is an alternative to direct user licensing. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,7 +54,7 @@ func (m *ItemAssignLicenseRequestBuilder) Post(ctx context.Context, body ItemAss
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable), nil
 }
-// ToPostRequestInformation add or remove licenses on the group. Licenses assigned to the group will be assigned to all users in the group. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.
+// ToPostRequestInformation add or remove licenses on the group. Licenses assigned to the group will be assigned to all users in the group. Group-based licensing is an alternative to direct user licensing. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.
 // returns a *RequestInformation when successful
 func (m *ItemAssignLicenseRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemAssignLicensePostRequestBodyable, requestConfiguration *ItemAssignLicenseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

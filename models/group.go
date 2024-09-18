@@ -580,6 +580,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsManagementRestricted(val)
+        }
+        return nil
+    }
     res["isSubscribedByMail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1166,6 +1176,18 @@ func (m *Group) GetIsAssignableToRole()(*bool) {
     }
     return nil
 }
+// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+// returns a *bool when successful
+func (m *Group) GetIsManagementRestricted()(*bool) {
+    val, err := m.GetBackingStore().Get("isManagementRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsSubscribedByMail gets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetIsSubscribedByMail()(*bool) {
@@ -1382,7 +1404,7 @@ func (m *Group) GetOnPremisesSyncEnabled()(*bool) {
     }
     return nil
 }
-// GetOwners gets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+// GetOwners gets the owners property value. The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can't explicitly add themselves to this collection when they're creating the group. For more information, see the related known issue. For security groups, the admin user isn't automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 // returns a []DirectoryObjectable when successful
 func (m *Group) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
@@ -1876,6 +1898,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err = writer.WriteBoolValue("isAssignableToRole", m.GetIsAssignableToRole())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
         if err != nil {
             return err
         }
@@ -2394,6 +2422,13 @@ func (m *Group) SetIsAssignableToRole(value *bool)() {
         panic(err)
     }
 }
+// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+func (m *Group) SetIsManagementRestricted(value *bool)() {
+    err := m.GetBackingStore().Set("isManagementRestricted", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsSubscribedByMail sets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetIsSubscribedByMail(value *bool)() {
     err := m.GetBackingStore().Set("isSubscribedByMail", value)
@@ -2520,7 +2555,7 @@ func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+// SetOwners sets the owners property value. The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can't explicitly add themselves to this collection when they're creating the group. For more information, see the related known issue. For security groups, the admin user isn't automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 func (m *Group) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {
@@ -2710,6 +2745,7 @@ type Groupable interface {
     GetHideFromOutlookClients()(*bool)
     GetIsArchived()(*bool)
     GetIsAssignableToRole()(*bool)
+    GetIsManagementRestricted()(*bool)
     GetIsSubscribedByMail()(*bool)
     GetLicenseProcessingState()(LicenseProcessingStateable)
     GetMail()(*string)
@@ -2777,6 +2813,7 @@ type Groupable interface {
     SetHideFromOutlookClients(value *bool)()
     SetIsArchived(value *bool)()
     SetIsAssignableToRole(value *bool)()
+    SetIsManagementRestricted(value *bool)()
     SetIsSubscribedByMail(value *bool)()
     SetLicenseProcessingState(value LicenseProcessingStateable)()
     SetMail(value *string)()

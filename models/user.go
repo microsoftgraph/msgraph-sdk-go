@@ -1250,6 +1250,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsManagementRestricted(val)
+        }
+        return nil
+    }
     res["isResourceAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -2256,6 +2266,18 @@ func (m *User) GetInterests()([]string) {
     }
     return nil
 }
+// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+// returns a *bool when successful
+func (m *User) GetIsManagementRestricted()(*bool) {
+    val, err := m.GetBackingStore().Get("isManagementRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsResourceAccount gets the isResourceAccount property value. Don't use – reserved for future use.
 // returns a *bool when successful
 func (m *User) GetIsResourceAccount()(*bool) {
@@ -3012,7 +3034,7 @@ func (m *User) GetSkills()([]string) {
     }
     return nil
 }
-// GetSolutions gets the solutions property value. The solutions property
+// GetSolutions gets the solutions property value. The identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 // returns a UserSolutionRootable when successful
 func (m *User) GetSolutions()(UserSolutionRootable) {
     val, err := m.GetBackingStore().Get("solutions")
@@ -3584,6 +3606,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     if m.GetInterests() != nil {
         err = writer.WriteCollectionOfStringValues("interests", m.GetInterests())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
         if err != nil {
             return err
         }
@@ -4544,6 +4572,13 @@ func (m *User) SetInterests(value []string)() {
         panic(err)
     }
 }
+// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+func (m *User) SetIsManagementRestricted(value *bool)() {
+    err := m.GetBackingStore().Set("isManagementRestricted", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsResourceAccount sets the isResourceAccount property value. Don't use – reserved for future use.
 func (m *User) SetIsResourceAccount(value *bool)() {
     err := m.GetBackingStore().Set("isResourceAccount", value)
@@ -4985,7 +5020,7 @@ func (m *User) SetSkills(value []string)() {
         panic(err)
     }
 }
-// SetSolutions sets the solutions property value. The solutions property
+// SetSolutions sets the solutions property value. The identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 func (m *User) SetSolutions(value UserSolutionRootable)() {
     err := m.GetBackingStore().Set("solutions", value)
     if err != nil {
@@ -5119,6 +5154,7 @@ type Userable interface {
     GetInferenceClassification()(InferenceClassificationable)
     GetInsights()(ItemInsightsable)
     GetInterests()([]string)
+    GetIsManagementRestricted()(*bool)
     GetIsResourceAccount()(*bool)
     GetJobTitle()(*string)
     GetJoinedTeams()([]Teamable)
@@ -5247,6 +5283,7 @@ type Userable interface {
     SetInferenceClassification(value InferenceClassificationable)()
     SetInsights(value ItemInsightsable)()
     SetInterests(value []string)()
+    SetIsManagementRestricted(value *bool)()
     SetIsResourceAccount(value *bool)()
     SetJobTitle(value *string)()
     SetJoinedTeams(value []Teamable)()

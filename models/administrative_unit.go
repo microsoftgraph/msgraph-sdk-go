@@ -97,6 +97,16 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["isMemberManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsMemberManagementRestricted(val)
+        }
+        return nil
+    }
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -110,6 +120,36 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
                 }
             }
             m.SetMembers(res)
+        }
+        return nil
+    }
+    res["membershipRule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipRule(val)
+        }
+        return nil
+    }
+    res["membershipRuleProcessingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipRuleProcessingState(val)
+        }
+        return nil
+    }
+    res["membershipType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipType(val)
         }
         return nil
     }
@@ -141,6 +181,18 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
+// GetIsMemberManagementRestricted gets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+// returns a *bool when successful
+func (m *AdministrativeUnit) GetIsMemberManagementRestricted()(*bool) {
+    val, err := m.GetBackingStore().Get("isMemberManagementRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetMembers gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
 // returns a []DirectoryObjectable when successful
 func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
@@ -150,6 +202,42 @@ func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
     }
     if val != nil {
         return val.([]DirectoryObjectable)
+    }
+    return nil
+}
+// GetMembershipRule gets the membershipRule property value. The membershipRule property
+// returns a *string when successful
+func (m *AdministrativeUnit) GetMembershipRule()(*string) {
+    val, err := m.GetBackingStore().Get("membershipRule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMembershipRuleProcessingState gets the membershipRuleProcessingState property value. The membershipRuleProcessingState property
+// returns a *string when successful
+func (m *AdministrativeUnit) GetMembershipRuleProcessingState()(*string) {
+    val, err := m.GetBackingStore().Get("membershipRuleProcessingState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMembershipType gets the membershipType property value. The membershipType property
+// returns a *string when successful
+func (m *AdministrativeUnit) GetMembershipType()(*string) {
+    val, err := m.GetBackingStore().Get("membershipType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -207,6 +295,12 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isMemberManagementRestricted", m.GetIsMemberManagementRestricted())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
@@ -215,6 +309,24 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             }
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("membershipRule", m.GetMembershipRule())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("membershipRuleProcessingState", m.GetMembershipRuleProcessingState())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("membershipType", m.GetMembershipType())
         if err != nil {
             return err
         }
@@ -260,9 +372,37 @@ func (m *AdministrativeUnit) SetExtensions(value []Extensionable)() {
         panic(err)
     }
 }
+// SetIsMemberManagementRestricted sets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+func (m *AdministrativeUnit) SetIsMemberManagementRestricted(value *bool)() {
+    err := m.GetBackingStore().Set("isMemberManagementRestricted", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMembers sets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
 func (m *AdministrativeUnit) SetMembers(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMembershipRule sets the membershipRule property value. The membershipRule property
+func (m *AdministrativeUnit) SetMembershipRule(value *string)() {
+    err := m.GetBackingStore().Set("membershipRule", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMembershipRuleProcessingState sets the membershipRuleProcessingState property value. The membershipRuleProcessingState property
+func (m *AdministrativeUnit) SetMembershipRuleProcessingState(value *string)() {
+    err := m.GetBackingStore().Set("membershipRuleProcessingState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMembershipType sets the membershipType property value. The membershipType property
+func (m *AdministrativeUnit) SetMembershipType(value *string)() {
+    err := m.GetBackingStore().Set("membershipType", value)
     if err != nil {
         panic(err)
     }
@@ -287,13 +427,21 @@ type AdministrativeUnitable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetExtensions()([]Extensionable)
+    GetIsMemberManagementRestricted()(*bool)
     GetMembers()([]DirectoryObjectable)
+    GetMembershipRule()(*string)
+    GetMembershipRuleProcessingState()(*string)
+    GetMembershipType()(*string)
     GetScopedRoleMembers()([]ScopedRoleMembershipable)
     GetVisibility()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetExtensions(value []Extensionable)()
+    SetIsMemberManagementRestricted(value *bool)()
     SetMembers(value []DirectoryObjectable)()
+    SetMembershipRule(value *string)()
+    SetMembershipRuleProcessingState(value *string)()
+    SetMembershipType(value *string)()
     SetScopedRoleMembers(value []ScopedRoleMembershipable)()
     SetVisibility(value *string)()
 }
