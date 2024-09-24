@@ -213,6 +213,16 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["rootDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRootDomain(val.(Domainable))
+        }
+        return nil
+    }
     res["serviceConfigurationRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDomainDnsRecordFromDiscriminatorValue)
         if err != nil {
@@ -381,6 +391,18 @@ func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     }
     return nil
 }
+// GetRootDomain gets the rootDomain property value. The rootDomain property
+// returns a Domainable when successful
+func (m *Domain) GetRootDomain()(Domainable) {
+    val, err := m.GetBackingStore().Get("rootDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Domainable)
+    }
+    return nil
+}
 // GetServiceConfigurationRecords gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
 // returns a []DomainDnsRecordable when successful
 func (m *Domain) GetServiceConfigurationRecords()([]DomainDnsRecordable) {
@@ -525,6 +547,12 @@ func (m *Domain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("rootDomain", m.GetRootDomain())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServiceConfigurationRecords() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceConfigurationRecords()))
         for i, v := range m.GetServiceConfigurationRecords() {
@@ -654,6 +682,13 @@ func (m *Domain) SetPasswordValidityPeriodInDays(value *int32)() {
         panic(err)
     }
 }
+// SetRootDomain sets the rootDomain property value. The rootDomain property
+func (m *Domain) SetRootDomain(value Domainable)() {
+    err := m.GetBackingStore().Set("rootDomain", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServiceConfigurationRecords sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
 func (m *Domain) SetServiceConfigurationRecords(value []DomainDnsRecordable)() {
     err := m.GetBackingStore().Set("serviceConfigurationRecords", value)
@@ -698,6 +733,7 @@ type Domainable interface {
     GetModel()(*string)
     GetPasswordNotificationWindowInDays()(*int32)
     GetPasswordValidityPeriodInDays()(*int32)
+    GetRootDomain()(Domainable)
     GetServiceConfigurationRecords()([]DomainDnsRecordable)
     GetState()(DomainStateable)
     GetSupportedServices()([]string)
@@ -715,6 +751,7 @@ type Domainable interface {
     SetModel(value *string)()
     SetPasswordNotificationWindowInDays(value *int32)()
     SetPasswordValidityPeriodInDays(value *int32)()
+    SetRootDomain(value Domainable)()
     SetServiceConfigurationRecords(value []DomainDnsRecordable)()
     SetState(value DomainStateable)()
     SetSupportedServices(value []string)()

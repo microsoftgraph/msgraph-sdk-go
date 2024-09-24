@@ -139,6 +139,11 @@ func (m *DomainItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412
 func (m *DomainItemRequestBuilder) Promote()(*ItemPromoteRequestBuilder) {
     return NewItemPromoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RootDomain provides operations to manage the rootDomain property of the microsoft.graph.domain entity.
+// returns a *ItemRootDomainRequestBuilder when successful
+func (m *DomainItemRequestBuilder) RootDomain()(*ItemRootDomainRequestBuilder) {
+    return NewItemRootDomainRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ServiceConfigurationRecords provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 // returns a *ItemServiceConfigurationRecordsRequestBuilder when successful
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceConfigurationRecordsRequestBuilder) {
