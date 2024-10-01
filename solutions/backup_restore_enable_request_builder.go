@@ -31,7 +31,7 @@ func NewBackupRestoreEnableRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewBackupRestoreEnableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post enable the Microsoft 365 Backup Storage service for a tenant. Before you call this API, call List protection policies to initialize the data store in the tenant. Data store initialization takes about 5 minutes. If you call this API before the data store is initialized, the call results in an error.
+// Post enable the Microsoft 365 Backup Storage service for a tenant.
 // returns a ServiceStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,7 +54,7 @@ func (m *BackupRestoreEnableRequestBuilder) Post(ctx context.Context, body Backu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceStatusable), nil
 }
-// ToPostRequestInformation enable the Microsoft 365 Backup Storage service for a tenant. Before you call this API, call List protection policies to initialize the data store in the tenant. Data store initialization takes about 5 minutes. If you call this API before the data store is initialized, the call results in an error.
+// ToPostRequestInformation enable the Microsoft 365 Backup Storage service for a tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreEnableRequestBuilder) ToPostRequestInformation(ctx context.Context, body BackupRestoreEnablePostRequestBodyable, requestConfiguration *BackupRestoreEnableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

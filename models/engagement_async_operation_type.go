@@ -1,8 +1,11 @@
 package models
+// Types of engagementAsyncOperationType. Members will be added here as more async operations are supported.
 type EngagementAsyncOperationType int
 
 const (
+    // Operation to create a Viva Engage community.
     CREATECOMMUNITY_ENGAGEMENTASYNCOPERATIONTYPE EngagementAsyncOperationType = iota
+    // A marker value for members added after the release of this API.
     UNKNOWNFUTUREVALUE_ENGAGEMENTASYNCOPERATIONTYPE
 )
 

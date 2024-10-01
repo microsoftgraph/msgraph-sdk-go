@@ -43,6 +43,8 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewEdiscoveryIndexOperation(), nil
                     case "#microsoft.graph.security.ediscoveryPurgeDataOperation":
                         return NewEdiscoveryPurgeDataOperation(), nil
+                    case "#microsoft.graph.security.ediscoverySearchExportOperation":
+                        return NewEdiscoverySearchExportOperation(), nil
                     case "#microsoft.graph.security.ediscoveryTagOperation":
                         return NewEdiscoveryTagOperation(), nil
                 }

@@ -344,6 +344,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsManagementRestricted(val)
+        }
+        return nil
+    }
     res["isRooted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -588,6 +598,18 @@ func (m *Device) GetIsCompliant()(*bool) {
 // returns a *bool when successful
 func (m *Device) GetIsManaged()(*bool) {
     val, err := m.GetBackingStore().Get("isManaged")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+// returns a *bool when successful
+func (m *Device) GetIsManagementRestricted()(*bool) {
+    val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
         panic(err)
     }
@@ -933,6 +955,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isRooted", m.GetIsRooted())
         if err != nil {
             return err
@@ -1177,6 +1205,13 @@ func (m *Device) SetIsManaged(value *bool)() {
         panic(err)
     }
 }
+// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+func (m *Device) SetIsManagementRestricted(value *bool)() {
+    err := m.GetBackingStore().Set("isManagementRestricted", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsRooted sets the isRooted property value. true if the device is rooted or jail-broken. This property can only be updated by Intune.
 func (m *Device) SetIsRooted(value *bool)() {
     err := m.GetBackingStore().Set("isRooted", value)
@@ -1328,6 +1363,7 @@ type Deviceable interface {
     GetExtensions()([]Extensionable)
     GetIsCompliant()(*bool)
     GetIsManaged()(*bool)
+    GetIsManagementRestricted()(*bool)
     GetIsRooted()(*bool)
     GetManagementType()(*string)
     GetManufacturer()(*string)
@@ -1362,6 +1398,7 @@ type Deviceable interface {
     SetExtensions(value []Extensionable)()
     SetIsCompliant(value *bool)()
     SetIsManaged(value *bool)()
+    SetIsManagementRestricted(value *bool)()
     SetIsRooted(value *bool)()
     SetManagementType(value *string)()
     SetManufacturer(value *string)()

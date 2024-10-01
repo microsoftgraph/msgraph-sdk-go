@@ -58,6 +58,18 @@ func (m *DeviceEvidence) GetDeviceDnsName()(*string) {
     }
     return nil
 }
+// GetDnsDomain gets the dnsDomain property value. The DNS domain that this computer belongs to. A sequence of labels separated by dots.
+// returns a *string when successful
+func (m *DeviceEvidence) GetDnsDomain()(*string) {
+    val, err := m.GetBackingStore().Get("dnsDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,6 +104,16 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["dnsDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDnsDomain(val)
+        }
+        return nil
+    }
     res["firstSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -109,6 +131,16 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetHealthStatus(val.(*DeviceHealthStatus))
+        }
+        return nil
+    }
+    res["hostName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHostName(val)
         }
         return nil
     }
@@ -171,6 +203,16 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetMdeDeviceId(val)
+        }
+        return nil
+    }
+    res["ntDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNtDomain(val)
         }
         return nil
     }
@@ -280,6 +322,18 @@ func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
     }
     return nil
 }
+// GetHostName gets the hostName property value. The hostname without the domain suffix.
+// returns a *string when successful
+func (m *DeviceEvidence) GetHostName()(*string) {
+    val, err := m.GetBackingStore().Get("hostName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetIpInterfaces gets the ipInterfaces property value. Ip interfaces of the device during the time of the alert.
 // returns a []string when successful
 func (m *DeviceEvidence) GetIpInterfaces()([]string) {
@@ -332,6 +386,18 @@ func (m *DeviceEvidence) GetLoggedOnUsers()([]LoggedOnUserable) {
 // returns a *string when successful
 func (m *DeviceEvidence) GetMdeDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("mdeDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetNtDomain gets the ntDomain property value. A logical grouping of computers within a Microsoft Windows network.
+// returns a *string when successful
+func (m *DeviceEvidence) GetNtDomain()(*string) {
+    val, err := m.GetBackingStore().Get("ntDomain")
     if err != nil {
         panic(err)
     }
@@ -462,6 +528,12 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteStringValue("dnsDomain", m.GetDnsDomain())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("firstSeenDateTime", m.GetFirstSeenDateTime())
         if err != nil {
             return err
@@ -470,6 +542,12 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetHealthStatus() != nil {
         cast := (*m.GetHealthStatus()).String()
         err = writer.WriteStringValue("healthStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("hostName", m.GetHostName())
         if err != nil {
             return err
         }
@@ -506,6 +584,12 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err = writer.WriteStringValue("mdeDeviceId", m.GetMdeDeviceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("ntDomain", m.GetNtDomain())
         if err != nil {
             return err
         }
@@ -583,6 +667,13 @@ func (m *DeviceEvidence) SetDeviceDnsName(value *string)() {
         panic(err)
     }
 }
+// SetDnsDomain sets the dnsDomain property value. The DNS domain that this computer belongs to. A sequence of labels separated by dots.
+func (m *DeviceEvidence) SetDnsDomain(value *string)() {
+    err := m.GetBackingStore().Set("dnsDomain", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The date and time when the device was first seen.
 func (m *DeviceEvidence) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstSeenDateTime", value)
@@ -593,6 +684,13 @@ func (m *DeviceEvidence) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3
 // SetHealthStatus sets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
 func (m *DeviceEvidence) SetHealthStatus(value *DeviceHealthStatus)() {
     err := m.GetBackingStore().Set("healthStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHostName sets the hostName property value. The hostname without the domain suffix.
+func (m *DeviceEvidence) SetHostName(value *string)() {
+    err := m.GetBackingStore().Set("hostName", value)
     if err != nil {
         panic(err)
     }
@@ -628,6 +726,13 @@ func (m *DeviceEvidence) SetLoggedOnUsers(value []LoggedOnUserable)() {
 // SetMdeDeviceId sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *DeviceEvidence) SetMdeDeviceId(value *string)() {
     err := m.GetBackingStore().Set("mdeDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetNtDomain sets the ntDomain property value. A logical grouping of computers within a Microsoft Windows network.
+func (m *DeviceEvidence) SetNtDomain(value *string)() {
+    err := m.GetBackingStore().Set("ntDomain", value)
     if err != nil {
         panic(err)
     }
@@ -694,13 +799,16 @@ type DeviceEvidenceable interface {
     GetAzureAdDeviceId()(*string)
     GetDefenderAvStatus()(*DefenderAvStatus)
     GetDeviceDnsName()(*string)
+    GetDnsDomain()(*string)
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHealthStatus()(*DeviceHealthStatus)
+    GetHostName()(*string)
     GetIpInterfaces()([]string)
     GetLastExternalIpAddress()(*string)
     GetLastIpAddress()(*string)
     GetLoggedOnUsers()([]LoggedOnUserable)
     GetMdeDeviceId()(*string)
+    GetNtDomain()(*string)
     GetOnboardingStatus()(*OnboardingStatus)
     GetOsBuild()(*int64)
     GetOsPlatform()(*string)
@@ -712,13 +820,16 @@ type DeviceEvidenceable interface {
     SetAzureAdDeviceId(value *string)()
     SetDefenderAvStatus(value *DefenderAvStatus)()
     SetDeviceDnsName(value *string)()
+    SetDnsDomain(value *string)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHealthStatus(value *DeviceHealthStatus)()
+    SetHostName(value *string)()
     SetIpInterfaces(value []string)()
     SetLastExternalIpAddress(value *string)()
     SetLastIpAddress(value *string)()
     SetLoggedOnUsers(value []LoggedOnUserable)()
     SetMdeDeviceId(value *string)()
+    SetNtDomain(value *string)()
     SetOnboardingStatus(value *OnboardingStatus)()
     SetOsBuild(value *int64)()
     SetOsPlatform(value *string)()

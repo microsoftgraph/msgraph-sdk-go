@@ -18,7 +18,7 @@ type ItemSolutionsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSolutionsRequestBuilderGetQueryParameters get solutions from users
+// ItemSolutionsRequestBuilderGetQueryParameters the identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 type ItemSolutionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSolutionsRequestBuilder) Delete(ctx context.Context, requestConfigu
     }
     return nil
 }
-// Get get solutions from users
+// Get the identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 // returns a UserSolutionRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSolutionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSolutionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserSolutionRootable, error) {
@@ -121,7 +121,7 @@ func (m *ItemSolutionsRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get solutions from users
+// ToGetRequestInformation the identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 // returns a *RequestInformation when successful
 func (m *ItemSolutionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSolutionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,10 +11,12 @@ const (
     HOLDUPDATE_CASEACTION
     UNKNOWNFUTUREVALUE_CASEACTION
     PURGEDATA_CASEACTION
+    EXPORTREPORT_CASEACTION
+    EXPORTRESULT_CASEACTION
 )
 
 func (i CaseAction) String() string {
-    return []string{"contentExport", "applyTags", "convertToPdf", "index", "estimateStatistics", "addToReviewSet", "holdUpdate", "unknownFutureValue", "purgeData"}[i]
+    return []string{"contentExport", "applyTags", "convertToPdf", "index", "estimateStatistics", "addToReviewSet", "holdUpdate", "unknownFutureValue", "purgeData", "exportReport", "exportResult"}[i]
 }
 func ParseCaseAction(v string) (any, error) {
     result := CONTENTEXPORT_CASEACTION
@@ -37,6 +39,10 @@ func ParseCaseAction(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_CASEACTION
         case "purgeData":
             result = PURGEDATA_CASEACTION
+        case "exportReport":
+            result = EXPORTREPORT_CASEACTION
+        case "exportResult":
+            result = EXPORTRESULT_CASEACTION
         default:
             return nil, nil
     }

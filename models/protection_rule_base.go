@@ -154,7 +154,7 @@ func (m *ProtectionRuleBase) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsAutoApplyEnabled gets the isAutoApplyEnabled property value. Indicates whether the protection rule is static or dynamic.
+// GetIsAutoApplyEnabled gets the isAutoApplyEnabled property value. true indicates that the protection rule is dynamic; false that it's static. Currently, only static rules are supported.
 // returns a *bool when successful
 func (m *ProtectionRuleBase) GetIsAutoApplyEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAutoApplyEnabled")
@@ -274,7 +274,7 @@ func (m *ProtectionRuleBase) SetError(value PublicErrorable)() {
         panic(err)
     }
 }
-// SetIsAutoApplyEnabled sets the isAutoApplyEnabled property value. Indicates whether the protection rule is static or dynamic.
+// SetIsAutoApplyEnabled sets the isAutoApplyEnabled property value. true indicates that the protection rule is dynamic; false that it's static. Currently, only static rules are supported.
 func (m *ProtectionRuleBase) SetIsAutoApplyEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isAutoApplyEnabled", value)
     if err != nil {
