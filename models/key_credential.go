@@ -54,7 +54,7 @@ func (m *KeyCredential) GetCustomKeyIdentifier()([]byte) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Friendly name for the key. Optional.
+// GetDisplayName gets the displayName property value. The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.
 // returns a *string when successful
 func (m *KeyCredential) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -174,7 +174,7 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
+// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it's always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
 // returns a []byte when successful
 func (m *KeyCredential) GetKey()([]byte) {
     val, err := m.GetBackingStore().Get("key")
@@ -328,7 +328,7 @@ func (m *KeyCredential) SetCustomKeyIdentifier(value []byte)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Friendly name for the key. Optional.
+// SetDisplayName sets the displayName property value. The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.
 func (m *KeyCredential) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -342,7 +342,7 @@ func (m *KeyCredential) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         panic(err)
     }
 }
-// SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
+// SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it's always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
 func (m *KeyCredential) SetKey(value []byte)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {

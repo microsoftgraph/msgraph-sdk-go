@@ -10,7 +10,7 @@ import (
 type DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters invoke function getAllRetainedMessages
+// DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 type DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAllRetainedMessages
+// Get get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponse instead.
 // returns a DeletedTeamsItemChannelsGetAllRetainedMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsGetAllRetainedMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) Get(ctx c
     }
     return res.(DeletedTeamsItemChannelsGetAllRetainedMessagesResponseable), nil
 }
-// GetAsGetAllRetainedMessagesGetResponse invoke function getAllRetainedMessages
+// GetAsGetAllRetainedMessagesGetResponse get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a DeletedTeamsItemChannelsGetAllRetainedMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) GetAsGetAllRetainedMessagesGetResponse(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsGetAllRetainedMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) GetAsGetA
     }
     return res.(DeletedTeamsItemChannelsGetAllRetainedMessagesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAllRetainedMessages
+// ToGetRequestInformation get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful
 func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

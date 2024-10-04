@@ -43,7 +43,7 @@ func (m *Domain) GetAvailabilityStatus()(*string) {
     }
     return nil
 }
-// GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+// GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn't support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 // returns a []DirectoryObjectable when successful
 func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("domainNameReferences")
@@ -55,7 +55,7 @@ func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+// GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn't support $expand.
 // returns a []InternalDomainFederationable when successful
 func (m *Domain) GetFederationConfiguration()([]InternalDomainFederationable) {
     val, err := m.GetBackingStore().Get("federationConfiguration")
@@ -213,6 +213,16 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["rootDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRootDomain(val.(Domainable))
+        }
+        return nil
+    }
     res["serviceConfigurationRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDomainDnsRecordFromDiscriminatorValue)
         if err != nil {
@@ -285,7 +295,7 @@ func (m *Domain) GetIsAdminManaged()(*bool) {
     }
     return nil
 }
-// GetIsDefault gets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable
+// GetIsDefault gets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
@@ -309,7 +319,7 @@ func (m *Domain) GetIsInitial()(*bool) {
     }
     return nil
 }
-// GetIsRoot gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+// GetIsRoot gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsRoot()(*bool) {
     val, err := m.GetBackingStore().Get("isRoot")
@@ -321,7 +331,7 @@ func (m *Domain) GetIsRoot()(*bool) {
     }
     return nil
 }
-// GetIsVerified gets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
+// GetIsVerified gets the isVerified property value. true if the domain completed domain ownership verification. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsVerified()(*bool) {
     val, err := m.GetBackingStore().Get("isVerified")
@@ -357,7 +367,7 @@ func (m *Domain) GetModel()(*string) {
     }
     return nil
 }
-// GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property isn't set, a default value of 14 days is used.
+// GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password expires. If the property isn't set, a default value of 14 days is used.
 // returns a *int32 when successful
 func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordNotificationWindowInDays")
@@ -381,7 +391,19 @@ func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     }
     return nil
 }
-// GetServiceConfigurationRecords gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+// GetRootDomain gets the rootDomain property value. The rootDomain property
+// returns a Domainable when successful
+func (m *Domain) GetRootDomain()(Domainable) {
+    val, err := m.GetBackingStore().Get("rootDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Domainable)
+    }
+    return nil
+}
+// GetServiceConfigurationRecords gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.
 // returns a []DomainDnsRecordable when successful
 func (m *Domain) GetServiceConfigurationRecords()([]DomainDnsRecordable) {
     val, err := m.GetBackingStore().Get("serviceConfigurationRecords")
@@ -417,7 +439,7 @@ func (m *Domain) GetSupportedServices()([]string) {
     }
     return nil
 }
-// GetVerificationDnsRecords gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// GetVerificationDnsRecords gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn't support $expand.
 // returns a []DomainDnsRecordable when successful
 func (m *Domain) GetVerificationDnsRecords()([]DomainDnsRecordable) {
     val, err := m.GetBackingStore().Get("verificationDnsRecords")
@@ -525,6 +547,12 @@ func (m *Domain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("rootDomain", m.GetRootDomain())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServiceConfigurationRecords() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceConfigurationRecords()))
         for i, v := range m.GetServiceConfigurationRecords() {
@@ -577,14 +605,14 @@ func (m *Domain) SetAvailabilityStatus(value *string)() {
         panic(err)
     }
 }
-// SetDomainNameReferences sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+// SetDomainNameReferences sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn't support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 func (m *Domain) SetDomainNameReferences(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("domainNameReferences", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFederationConfiguration sets the federationConfiguration property value. Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+// SetFederationConfiguration sets the federationConfiguration property value. Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn't support $expand.
 func (m *Domain) SetFederationConfiguration(value []InternalDomainFederationable)() {
     err := m.GetBackingStore().Set("federationConfiguration", value)
     if err != nil {
@@ -598,7 +626,7 @@ func (m *Domain) SetIsAdminManaged(value *bool)() {
         panic(err)
     }
 }
-// SetIsDefault sets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable
+// SetIsDefault sets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable.
 func (m *Domain) SetIsDefault(value *bool)() {
     err := m.GetBackingStore().Set("isDefault", value)
     if err != nil {
@@ -612,14 +640,14 @@ func (m *Domain) SetIsInitial(value *bool)() {
         panic(err)
     }
 }
-// SetIsRoot sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+// SetIsRoot sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.
 func (m *Domain) SetIsRoot(value *bool)() {
     err := m.GetBackingStore().Set("isRoot", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsVerified sets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
+// SetIsVerified sets the isVerified property value. true if the domain completed domain ownership verification. Not nullable.
 func (m *Domain) SetIsVerified(value *bool)() {
     err := m.GetBackingStore().Set("isVerified", value)
     if err != nil {
@@ -640,7 +668,7 @@ func (m *Domain) SetModel(value *string)() {
         panic(err)
     }
 }
-// SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property isn't set, a default value of 14 days is used.
+// SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password expires. If the property isn't set, a default value of 14 days is used.
 func (m *Domain) SetPasswordNotificationWindowInDays(value *int32)() {
     err := m.GetBackingStore().Set("passwordNotificationWindowInDays", value)
     if err != nil {
@@ -654,7 +682,14 @@ func (m *Domain) SetPasswordValidityPeriodInDays(value *int32)() {
         panic(err)
     }
 }
-// SetServiceConfigurationRecords sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+// SetRootDomain sets the rootDomain property value. The rootDomain property
+func (m *Domain) SetRootDomain(value Domainable)() {
+    err := m.GetBackingStore().Set("rootDomain", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetServiceConfigurationRecords sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.
 func (m *Domain) SetServiceConfigurationRecords(value []DomainDnsRecordable)() {
     err := m.GetBackingStore().Set("serviceConfigurationRecords", value)
     if err != nil {
@@ -675,7 +710,7 @@ func (m *Domain) SetSupportedServices(value []string)() {
         panic(err)
     }
 }
-// SetVerificationDnsRecords sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// SetVerificationDnsRecords sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn't support $expand.
 func (m *Domain) SetVerificationDnsRecords(value []DomainDnsRecordable)() {
     err := m.GetBackingStore().Set("verificationDnsRecords", value)
     if err != nil {
@@ -698,6 +733,7 @@ type Domainable interface {
     GetModel()(*string)
     GetPasswordNotificationWindowInDays()(*int32)
     GetPasswordValidityPeriodInDays()(*int32)
+    GetRootDomain()(Domainable)
     GetServiceConfigurationRecords()([]DomainDnsRecordable)
     GetState()(DomainStateable)
     GetSupportedServices()([]string)
@@ -715,6 +751,7 @@ type Domainable interface {
     SetModel(value *string)()
     SetPasswordNotificationWindowInDays(value *int32)()
     SetPasswordValidityPeriodInDays(value *int32)()
+    SetRootDomain(value Domainable)()
     SetServiceConfigurationRecords(value []DomainDnsRecordable)()
     SetState(value DomainStateable)()
     SetSupportedServices(value []string)()

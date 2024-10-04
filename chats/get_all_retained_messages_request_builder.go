@@ -10,7 +10,7 @@ import (
 type GetAllRetainedMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetAllRetainedMessagesRequestBuilderGetQueryParameters invoke function getAllRetainedMessages
+// GetAllRetainedMessagesRequestBuilderGetQueryParameters get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 type GetAllRetainedMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewGetAllRetainedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGetAllRetainedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAllRetainedMessages
+// Get get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponse instead.
 // returns a GetAllRetainedMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-1.0
 func (m *GetAllRetainedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(GetAllRetainedMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *GetAllRetainedMessagesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(GetAllRetainedMessagesResponseable), nil
 }
-// GetAsGetAllRetainedMessagesGetResponse invoke function getAllRetainedMessages
+// GetAsGetAllRetainedMessagesGetResponse get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a GetAllRetainedMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-1.0
 func (m *GetAllRetainedMessagesRequestBuilder) GetAsGetAllRetainedMessagesGetResponse(ctx context.Context, requestConfiguration *GetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(GetAllRetainedMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *GetAllRetainedMessagesRequestBuilder) GetAsGetAllRetainedMessagesGetRes
     }
     return res.(GetAllRetainedMessagesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAllRetainedMessages
+// ToGetRequestInformation get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful
 func (m *GetAllRetainedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ItemSolutionsWorkingTimeScheduleRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSolutionsWorkingTimeScheduleRequestBuilderGetQueryParameters get workingTimeSchedule from users
+// ItemSolutionsWorkingTimeScheduleRequestBuilderGetQueryParameters the working time schedule entity associated with the solution.
 type ItemSolutionsWorkingTimeScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) Delete(ctx context.Cont
 func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) EndWorkingTime()(*ItemSolutionsWorkingTimeScheduleEndWorkingTimeRequestBuilder) {
     return NewItemSolutionsWorkingTimeScheduleEndWorkingTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get workingTimeSchedule from users
+// Get the working time schedule entity associated with the solution.
 // returns a WorkingTimeScheduleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSolutionsWorkingTimeScheduleRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkingTimeScheduleable, error) {
@@ -131,7 +131,7 @@ func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) ToDeleteRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get workingTimeSchedule from users
+// ToGetRequestInformation the working time schedule entity associated with the solution.
 // returns a *RequestInformation when successful
 func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSolutionsWorkingTimeScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

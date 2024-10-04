@@ -1,9 +1,13 @@
 package models
+// Types of communityPrivacy.
 type CommunityPrivacy int
 
 const (
+    // Any user from the tenant can join and participate in the community.
     PUBLIC_COMMUNITYPRIVACY CommunityPrivacy = iota
+    // A community administrator must add tenant users to the community before they can participate.
     PRIVATE_COMMUNITYPRIVACY
+    // A marker value for members added after the release of this API.
     UNKNOWNFUTUREVALUE_COMMUNITYPRIVACY
 )
 

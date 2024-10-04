@@ -4,6 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
+// Community represents a community in Viva Engage that is a central place for conversations,files, events, and updates for people sharing a common interest or goal.
 type Community struct {
     Entity
 }
@@ -151,7 +152,7 @@ func (m *Community) GetOwners()([]Userable) {
     }
     return nil
 }
-// GetPrivacy gets the privacy property value. The privacy property
+// GetPrivacy gets the privacy property value. Types of communityPrivacy.
 // returns a *CommunityPrivacy when successful
 func (m *Community) GetPrivacy()(*CommunityPrivacy) {
     val, err := m.GetBackingStore().Get("privacy")
@@ -249,7 +250,7 @@ func (m *Community) SetOwners(value []Userable)() {
         panic(err)
     }
 }
-// SetPrivacy sets the privacy property value. The privacy property
+// SetPrivacy sets the privacy property value. Types of communityPrivacy.
 func (m *Community) SetPrivacy(value *CommunityPrivacy)() {
     err := m.GetBackingStore().Set("privacy", value)
     if err != nil {
