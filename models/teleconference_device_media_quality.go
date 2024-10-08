@@ -9,6 +9,634 @@ type TeleconferenceDeviceMediaQuality struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+// TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage composed type wrapper for classes float64, ReferenceNumeric, string
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage instantiates a new TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage and sets the default values.
+func NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage()(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) {
+    m := &TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage composed type wrapper for classes float64, ReferenceNumeric, string
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage instantiates a new TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage and sets the default values.
+func NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage()(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) {
+    m := &TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage composed type wrapper for classes float64, ReferenceNumeric, string
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage instantiates a new TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage and sets the default values.
+func NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage()(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) {
+    m := &TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage composed type wrapper for classes float64, ReferenceNumeric, string
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage instantiates a new TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage and sets the default values.
+func NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage()(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) {
+    m := &TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
 // NewTeleconferenceDeviceMediaQuality instantiates a new TeleconferenceDeviceMediaQuality and sets the default values.
 func NewTeleconferenceDeviceMediaQuality()(*TeleconferenceDeviceMediaQuality) {
     m := &TeleconferenceDeviceMediaQuality{
@@ -70,14 +698,14 @@ func (m *TeleconferenceDeviceMediaQuality) GetAverageInboundJitter()(*i878a80d23
     return nil
 }
 // GetAverageInboundPacketLossRateInPercentage gets the averageInboundPacketLossRateInPercentage property value. The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-// returns a *float64 when successful
-func (m *TeleconferenceDeviceMediaQuality) GetAverageInboundPacketLossRateInPercentage()(*float64) {
+// returns a TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageable when successful
+func (m *TeleconferenceDeviceMediaQuality) GetAverageInboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageable) {
     val, err := m.GetBackingStore().Get("averageInboundPacketLossRateInPercentage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageable)
     }
     return nil
 }
@@ -106,14 +734,14 @@ func (m *TeleconferenceDeviceMediaQuality) GetAverageOutboundJitter()(*i878a80d2
     return nil
 }
 // GetAverageOutboundPacketLossRateInPercentage gets the averageOutboundPacketLossRateInPercentage property value. The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-// returns a *float64 when successful
-func (m *TeleconferenceDeviceMediaQuality) GetAverageOutboundPacketLossRateInPercentage()(*float64) {
+// returns a TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageable when successful
+func (m *TeleconferenceDeviceMediaQuality) GetAverageOutboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageable) {
     val, err := m.GetBackingStore().Get("averageOutboundPacketLossRateInPercentage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageable)
     }
     return nil
 }
@@ -161,12 +789,12 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["averageInboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAverageInboundPacketLossRateInPercentage(val)
+            m.SetAverageInboundPacketLossRateInPercentage(val.(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentage))
         }
         return nil
     }
@@ -191,12 +819,12 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["averageOutboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAverageOutboundPacketLossRateInPercentage(val)
+            m.SetAverageOutboundPacketLossRateInPercentage(val.(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentage))
         }
         return nil
     }
@@ -261,12 +889,12 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["maximumInboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMaximumInboundPacketLossRateInPercentage(val)
+            m.SetMaximumInboundPacketLossRateInPercentage(val.(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentage))
         }
         return nil
     }
@@ -291,12 +919,12 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["maximumOutboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateTeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMaximumOutboundPacketLossRateInPercentage(val)
+            m.SetMaximumOutboundPacketLossRateInPercentage(val.(*TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentage))
         }
         return nil
     }
@@ -421,14 +1049,14 @@ func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundJitter()(*i878a80d23
     return nil
 }
 // GetMaximumInboundPacketLossRateInPercentage gets the maximumInboundPacketLossRateInPercentage property value. The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-// returns a *float64 when successful
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundPacketLossRateInPercentage()(*float64) {
+// returns a TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageable when successful
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumInboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageable) {
     val, err := m.GetBackingStore().Get("maximumInboundPacketLossRateInPercentage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageable)
     }
     return nil
 }
@@ -457,14 +1085,14 @@ func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundJitter()(*i878a80d2
     return nil
 }
 // GetMaximumOutboundPacketLossRateInPercentage gets the maximumOutboundPacketLossRateInPercentage property value. The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-// returns a *float64 when successful
-func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundPacketLossRateInPercentage()(*float64) {
+// returns a TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageable when successful
+func (m *TeleconferenceDeviceMediaQuality) GetMaximumOutboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageable) {
     val, err := m.GetBackingStore().Get("maximumOutboundPacketLossRateInPercentage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageable)
     }
     return nil
 }
@@ -561,7 +1189,7 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
-        err := writer.WriteFloat64Value("averageInboundPacketLossRateInPercentage", m.GetAverageInboundPacketLossRateInPercentage())
+        err := writer.WriteObjectValue("averageInboundPacketLossRateInPercentage", m.GetAverageInboundPacketLossRateInPercentage())
         if err != nil {
             return err
         }
@@ -579,7 +1207,7 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
-        err := writer.WriteFloat64Value("averageOutboundPacketLossRateInPercentage", m.GetAverageOutboundPacketLossRateInPercentage())
+        err := writer.WriteObjectValue("averageOutboundPacketLossRateInPercentage", m.GetAverageOutboundPacketLossRateInPercentage())
         if err != nil {
             return err
         }
@@ -621,7 +1249,7 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
-        err := writer.WriteFloat64Value("maximumInboundPacketLossRateInPercentage", m.GetMaximumInboundPacketLossRateInPercentage())
+        err := writer.WriteObjectValue("maximumInboundPacketLossRateInPercentage", m.GetMaximumInboundPacketLossRateInPercentage())
         if err != nil {
             return err
         }
@@ -639,7 +1267,7 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
-        err := writer.WriteFloat64Value("maximumOutboundPacketLossRateInPercentage", m.GetMaximumOutboundPacketLossRateInPercentage())
+        err := writer.WriteObjectValue("maximumOutboundPacketLossRateInPercentage", m.GetMaximumOutboundPacketLossRateInPercentage())
         if err != nil {
             return err
         }
@@ -709,7 +1337,7 @@ func (m *TeleconferenceDeviceMediaQuality) SetAverageInboundJitter(value *i878a8
     }
 }
 // SetAverageInboundPacketLossRateInPercentage sets the averageInboundPacketLossRateInPercentage property value. The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-func (m *TeleconferenceDeviceMediaQuality) SetAverageInboundPacketLossRateInPercentage(value *float64)() {
+func (m *TeleconferenceDeviceMediaQuality) SetAverageInboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageable)() {
     err := m.GetBackingStore().Set("averageInboundPacketLossRateInPercentage", value)
     if err != nil {
         panic(err)
@@ -730,7 +1358,7 @@ func (m *TeleconferenceDeviceMediaQuality) SetAverageOutboundJitter(value *i878a
     }
 }
 // SetAverageOutboundPacketLossRateInPercentage sets the averageOutboundPacketLossRateInPercentage property value. The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-func (m *TeleconferenceDeviceMediaQuality) SetAverageOutboundPacketLossRateInPercentage(value *float64)() {
+func (m *TeleconferenceDeviceMediaQuality) SetAverageOutboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageable)() {
     err := m.GetBackingStore().Set("averageOutboundPacketLossRateInPercentage", value)
     if err != nil {
         panic(err)
@@ -783,7 +1411,7 @@ func (m *TeleconferenceDeviceMediaQuality) SetMaximumInboundJitter(value *i878a8
     }
 }
 // SetMaximumInboundPacketLossRateInPercentage sets the maximumInboundPacketLossRateInPercentage property value. The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-func (m *TeleconferenceDeviceMediaQuality) SetMaximumInboundPacketLossRateInPercentage(value *float64)() {
+func (m *TeleconferenceDeviceMediaQuality) SetMaximumInboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageable)() {
     err := m.GetBackingStore().Set("maximumInboundPacketLossRateInPercentage", value)
     if err != nil {
         panic(err)
@@ -804,7 +1432,7 @@ func (m *TeleconferenceDeviceMediaQuality) SetMaximumOutboundJitter(value *i878a
     }
 }
 // SetMaximumOutboundPacketLossRateInPercentage sets the maximumOutboundPacketLossRateInPercentage property value. The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-func (m *TeleconferenceDeviceMediaQuality) SetMaximumOutboundPacketLossRateInPercentage(value *float64)() {
+func (m *TeleconferenceDeviceMediaQuality) SetMaximumOutboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageable)() {
     err := m.GetBackingStore().Set("maximumOutboundPacketLossRateInPercentage", value)
     if err != nil {
         panic(err)
@@ -864,10 +1492,10 @@ type TeleconferenceDeviceMediaQualityable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAverageInboundJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetAverageInboundPacketLossRateInPercentage()(*float64)
+    GetAverageInboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageable)
     GetAverageInboundRoundTripDelay()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetAverageOutboundJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetAverageOutboundPacketLossRateInPercentage()(*float64)
+    GetAverageOutboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageable)
     GetAverageOutboundRoundTripDelay()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetChannelIndex()(*int32)
@@ -875,10 +1503,10 @@ type TeleconferenceDeviceMediaQualityable interface {
     GetLocalIPAddress()(*string)
     GetLocalPort()(*int32)
     GetMaximumInboundJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetMaximumInboundPacketLossRateInPercentage()(*float64)
+    GetMaximumInboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageable)
     GetMaximumInboundRoundTripDelay()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetMaximumOutboundJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetMaximumOutboundPacketLossRateInPercentage()(*float64)
+    GetMaximumOutboundPacketLossRateInPercentage()(TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageable)
     GetMaximumOutboundRoundTripDelay()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetMediaDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetNetworkLinkSpeedInBytes()(*int64)
@@ -887,10 +1515,10 @@ type TeleconferenceDeviceMediaQualityable interface {
     GetRemoteIPAddress()(*string)
     GetRemotePort()(*int32)
     SetAverageInboundJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetAverageInboundPacketLossRateInPercentage(value *float64)()
+    SetAverageInboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageInboundPacketLossRateInPercentageable)()
     SetAverageInboundRoundTripDelay(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetAverageOutboundJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetAverageOutboundPacketLossRateInPercentage(value *float64)()
+    SetAverageOutboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_averageOutboundPacketLossRateInPercentageable)()
     SetAverageOutboundRoundTripDelay(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetChannelIndex(value *int32)()
@@ -898,10 +1526,10 @@ type TeleconferenceDeviceMediaQualityable interface {
     SetLocalIPAddress(value *string)()
     SetLocalPort(value *int32)()
     SetMaximumInboundJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetMaximumInboundPacketLossRateInPercentage(value *float64)()
+    SetMaximumInboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumInboundPacketLossRateInPercentageable)()
     SetMaximumInboundRoundTripDelay(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetMaximumOutboundJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetMaximumOutboundPacketLossRateInPercentage(value *float64)()
+    SetMaximumOutboundPacketLossRateInPercentage(value TeleconferenceDeviceMediaQuality_TeleconferenceDeviceMediaQuality_maximumOutboundPacketLossRateInPercentageable)()
     SetMaximumOutboundRoundTripDelay(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetMediaDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetNetworkLinkSpeedInBytes(value *int64)()

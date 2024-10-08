@@ -2,12 +2,641 @@ package callrecords
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type NetworkInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NetworkInfo_NetworkInfo_bandwidthLowEventRatio composed type wrapper for classes float32, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric, string
+type NetworkInfo_NetworkInfo_bandwidthLowEventRatio struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewNetworkInfo_NetworkInfo_bandwidthLowEventRatio instantiates a new NetworkInfo_NetworkInfo_bandwidthLowEventRatio and sets the default values.
+func NewNetworkInfo_NetworkInfo_bandwidthLowEventRatio()(*NetworkInfo_NetworkInfo_bandwidthLowEventRatio) {
+    m := &NetworkInfo_NetworkInfo_bandwidthLowEventRatio{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateNetworkInfo_NetworkInfo_bandwidthLowEventRatioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateNetworkInfo_NetworkInfo_bandwidthLowEventRatioFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewNetworkInfo_NetworkInfo_bandwidthLowEventRatio()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat32Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetFloat(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetFloat gets the float property value. Composed type representation for type float32
+// returns a *float32 when successful
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) GetFloat()(*float32) {
+    val, err := m.GetBackingStore().Get("float")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float32)
+    }
+    return nil
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetFloat() != nil {
+        err := writer.WriteFloat32Value("", m.GetFloat())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetFloat sets the float property value. Composed type representation for type float32
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) SetFloat(value *float32)() {
+    err := m.GetBackingStore().Set("float", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *NetworkInfo_NetworkInfo_bandwidthLowEventRatio) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// NetworkInfo_NetworkInfo_delayEventRatio composed type wrapper for classes float32, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric, string
+type NetworkInfo_NetworkInfo_delayEventRatio struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewNetworkInfo_NetworkInfo_delayEventRatio instantiates a new NetworkInfo_NetworkInfo_delayEventRatio and sets the default values.
+func NewNetworkInfo_NetworkInfo_delayEventRatio()(*NetworkInfo_NetworkInfo_delayEventRatio) {
+    m := &NetworkInfo_NetworkInfo_delayEventRatio{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateNetworkInfo_NetworkInfo_delayEventRatioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateNetworkInfo_NetworkInfo_delayEventRatioFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewNetworkInfo_NetworkInfo_delayEventRatio()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat32Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetFloat(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetFloat gets the float property value. Composed type representation for type float32
+// returns a *float32 when successful
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) GetFloat()(*float32) {
+    val, err := m.GetBackingStore().Get("float")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float32)
+    }
+    return nil
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetFloat() != nil {
+        err := writer.WriteFloat32Value("", m.GetFloat())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetFloat sets the float property value. Composed type representation for type float32
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) SetFloat(value *float32)() {
+    err := m.GetBackingStore().Set("float", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *NetworkInfo_NetworkInfo_delayEventRatio) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// NetworkInfo_NetworkInfo_receivedQualityEventRatio composed type wrapper for classes float32, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric, string
+type NetworkInfo_NetworkInfo_receivedQualityEventRatio struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewNetworkInfo_NetworkInfo_receivedQualityEventRatio instantiates a new NetworkInfo_NetworkInfo_receivedQualityEventRatio and sets the default values.
+func NewNetworkInfo_NetworkInfo_receivedQualityEventRatio()(*NetworkInfo_NetworkInfo_receivedQualityEventRatio) {
+    m := &NetworkInfo_NetworkInfo_receivedQualityEventRatio{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateNetworkInfo_NetworkInfo_receivedQualityEventRatioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateNetworkInfo_NetworkInfo_receivedQualityEventRatioFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewNetworkInfo_NetworkInfo_receivedQualityEventRatio()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat32Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetFloat(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetFloat gets the float property value. Composed type representation for type float32
+// returns a *float32 when successful
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) GetFloat()(*float32) {
+    val, err := m.GetBackingStore().Get("float")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float32)
+    }
+    return nil
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetFloat() != nil {
+        err := writer.WriteFloat32Value("", m.GetFloat())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetFloat sets the float property value. Composed type representation for type float32
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) SetFloat(value *float32)() {
+    err := m.GetBackingStore().Set("float", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *NetworkInfo_NetworkInfo_receivedQualityEventRatio) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// NetworkInfo_NetworkInfo_sentQualityEventRatio composed type wrapper for classes float32, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric, string
+type NetworkInfo_NetworkInfo_sentQualityEventRatio struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewNetworkInfo_NetworkInfo_sentQualityEventRatio instantiates a new NetworkInfo_NetworkInfo_sentQualityEventRatio and sets the default values.
+func NewNetworkInfo_NetworkInfo_sentQualityEventRatio()(*NetworkInfo_NetworkInfo_sentQualityEventRatio) {
+    m := &NetworkInfo_NetworkInfo_sentQualityEventRatio{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateNetworkInfo_NetworkInfo_sentQualityEventRatioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateNetworkInfo_NetworkInfo_sentQualityEventRatioFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewNetworkInfo_NetworkInfo_sentQualityEventRatio()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat32Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetFloat(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetFloat gets the float property value. Composed type representation for type float32
+// returns a *float32 when successful
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) GetFloat()(*float32) {
+    val, err := m.GetBackingStore().Get("float")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float32)
+    }
+    return nil
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetFloat() != nil {
+        err := writer.WriteFloat32Value("", m.GetFloat())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetFloat sets the float property value. Composed type representation for type float32
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) SetFloat(value *float32)() {
+    err := m.GetBackingStore().Set("float", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *NetworkInfo_NetworkInfo_sentQualityEventRatio) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type NetworkInfo_NetworkInfo_bandwidthLowEventRatioable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFloat()(*float32)
+    GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFloat(value *float32)()
+    SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)()
+    SetString(value *string)()
+}
+type NetworkInfo_NetworkInfo_delayEventRatioable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFloat()(*float32)
+    GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFloat(value *float32)()
+    SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)()
+    SetString(value *string)()
+}
+type NetworkInfo_NetworkInfo_receivedQualityEventRatioable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFloat()(*float32)
+    GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFloat(value *float32)()
+    SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)()
+    SetString(value *string)()
+}
+type NetworkInfo_NetworkInfo_sentQualityEventRatioable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFloat()(*float32)
+    GetReferenceNumeric()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFloat(value *float32)()
+    SetReferenceNumeric(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewNetworkInfo instantiates a new NetworkInfo and sets the default values.
 func NewNetworkInfo()(*NetworkInfo) {
@@ -41,14 +670,14 @@ func (m *NetworkInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424
     return m.backingStore
 }
 // GetBandwidthLowEventRatio gets the bandwidthLowEventRatio property value. Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
-// returns a *float32 when successful
-func (m *NetworkInfo) GetBandwidthLowEventRatio()(*float32) {
+// returns a NetworkInfo_NetworkInfo_bandwidthLowEventRatioable when successful
+func (m *NetworkInfo) GetBandwidthLowEventRatio()(NetworkInfo_NetworkInfo_bandwidthLowEventRatioable) {
     val, err := m.GetBackingStore().Get("bandwidthLowEventRatio")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float32)
+        return val.(NetworkInfo_NetworkInfo_bandwidthLowEventRatioable)
     }
     return nil
 }
@@ -77,14 +706,14 @@ func (m *NetworkInfo) GetConnectionType()(*NetworkConnectionType) {
     return nil
 }
 // GetDelayEventRatio gets the delayEventRatio property value. Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
-// returns a *float32 when successful
-func (m *NetworkInfo) GetDelayEventRatio()(*float32) {
+// returns a NetworkInfo_NetworkInfo_delayEventRatioable when successful
+func (m *NetworkInfo) GetDelayEventRatio()(NetworkInfo_NetworkInfo_delayEventRatioable) {
     val, err := m.GetBackingStore().Get("delayEventRatio")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float32)
+        return val.(NetworkInfo_NetworkInfo_delayEventRatioable)
     }
     return nil
 }
@@ -105,12 +734,12 @@ func (m *NetworkInfo) GetDnsSuffix()(*string) {
 func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bandwidthLowEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
+        val, err := n.GetObjectValue(CreateNetworkInfo_NetworkInfo_bandwidthLowEventRatioFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBandwidthLowEventRatio(val)
+            m.SetBandwidthLowEventRatio(val.(*NetworkInfo_NetworkInfo_bandwidthLowEventRatio))
         }
         return nil
     }
@@ -135,12 +764,12 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["delayEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
+        val, err := n.GetObjectValue(CreateNetworkInfo_NetworkInfo_delayEventRatioFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDelayEventRatio(val)
+            m.SetDelayEventRatio(val.(*NetworkInfo_NetworkInfo_delayEventRatio))
         }
         return nil
     }
@@ -215,12 +844,12 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["receivedQualityEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
+        val, err := n.GetObjectValue(CreateNetworkInfo_NetworkInfo_receivedQualityEventRatioFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReceivedQualityEventRatio(val)
+            m.SetReceivedQualityEventRatio(val.(*NetworkInfo_NetworkInfo_receivedQualityEventRatio))
         }
         return nil
     }
@@ -255,12 +884,12 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["sentQualityEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
+        val, err := n.GetObjectValue(CreateNetworkInfo_NetworkInfo_sentQualityEventRatioFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSentQualityEventRatio(val)
+            m.SetSentQualityEventRatio(val.(*NetworkInfo_NetworkInfo_sentQualityEventRatio))
         }
         return nil
     }
@@ -455,14 +1084,14 @@ func (m *NetworkInfo) GetPort()(*int32) {
     return nil
 }
 // GetReceivedQualityEventRatio gets the receivedQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
-// returns a *float32 when successful
-func (m *NetworkInfo) GetReceivedQualityEventRatio()(*float32) {
+// returns a NetworkInfo_NetworkInfo_receivedQualityEventRatioable when successful
+func (m *NetworkInfo) GetReceivedQualityEventRatio()(NetworkInfo_NetworkInfo_receivedQualityEventRatioable) {
     val, err := m.GetBackingStore().Get("receivedQualityEventRatio")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float32)
+        return val.(NetworkInfo_NetworkInfo_receivedQualityEventRatioable)
     }
     return nil
 }
@@ -503,14 +1132,14 @@ func (m *NetworkInfo) GetRelayPort()(*int32) {
     return nil
 }
 // GetSentQualityEventRatio gets the sentQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
-// returns a *float32 when successful
-func (m *NetworkInfo) GetSentQualityEventRatio()(*float32) {
+// returns a NetworkInfo_NetworkInfo_sentQualityEventRatioable when successful
+func (m *NetworkInfo) GetSentQualityEventRatio()(NetworkInfo_NetworkInfo_sentQualityEventRatioable) {
     val, err := m.GetBackingStore().Get("sentQualityEventRatio")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float32)
+        return val.(NetworkInfo_NetworkInfo_sentQualityEventRatioable)
     }
     return nil
 }
@@ -649,7 +1278,7 @@ func (m *NetworkInfo) GetWifiVendorDriverVersion()(*string) {
 // Serialize serializes information the current object
 func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteFloat32Value("bandwidthLowEventRatio", m.GetBandwidthLowEventRatio())
+        err := writer.WriteObjectValue("bandwidthLowEventRatio", m.GetBandwidthLowEventRatio())
         if err != nil {
             return err
         }
@@ -668,7 +1297,7 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteFloat32Value("delayEventRatio", m.GetDelayEventRatio())
+        err := writer.WriteObjectValue("delayEventRatio", m.GetDelayEventRatio())
         if err != nil {
             return err
         }
@@ -717,7 +1346,7 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteFloat32Value("receivedQualityEventRatio", m.GetReceivedQualityEventRatio())
+        err := writer.WriteObjectValue("receivedQualityEventRatio", m.GetReceivedQualityEventRatio())
         if err != nil {
             return err
         }
@@ -741,7 +1370,7 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteFloat32Value("sentQualityEventRatio", m.GetSentQualityEventRatio())
+        err := writer.WriteObjectValue("sentQualityEventRatio", m.GetSentQualityEventRatio())
         if err != nil {
             return err
         }
@@ -840,7 +1469,7 @@ func (m *NetworkInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d4118
     m.backingStore = value
 }
 // SetBandwidthLowEventRatio sets the bandwidthLowEventRatio property value. Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
-func (m *NetworkInfo) SetBandwidthLowEventRatio(value *float32)() {
+func (m *NetworkInfo) SetBandwidthLowEventRatio(value NetworkInfo_NetworkInfo_bandwidthLowEventRatioable)() {
     err := m.GetBackingStore().Set("bandwidthLowEventRatio", value)
     if err != nil {
         panic(err)
@@ -861,7 +1490,7 @@ func (m *NetworkInfo) SetConnectionType(value *NetworkConnectionType)() {
     }
 }
 // SetDelayEventRatio sets the delayEventRatio property value. Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
-func (m *NetworkInfo) SetDelayEventRatio(value *float32)() {
+func (m *NetworkInfo) SetDelayEventRatio(value NetworkInfo_NetworkInfo_delayEventRatioable)() {
     err := m.GetBackingStore().Set("delayEventRatio", value)
     if err != nil {
         panic(err)
@@ -917,7 +1546,7 @@ func (m *NetworkInfo) SetPort(value *int32)() {
     }
 }
 // SetReceivedQualityEventRatio sets the receivedQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
-func (m *NetworkInfo) SetReceivedQualityEventRatio(value *float32)() {
+func (m *NetworkInfo) SetReceivedQualityEventRatio(value NetworkInfo_NetworkInfo_receivedQualityEventRatioable)() {
     err := m.GetBackingStore().Set("receivedQualityEventRatio", value)
     if err != nil {
         panic(err)
@@ -945,7 +1574,7 @@ func (m *NetworkInfo) SetRelayPort(value *int32)() {
     }
 }
 // SetSentQualityEventRatio sets the sentQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
-func (m *NetworkInfo) SetSentQualityEventRatio(value *float32)() {
+func (m *NetworkInfo) SetSentQualityEventRatio(value NetworkInfo_NetworkInfo_sentQualityEventRatioable)() {
     err := m.GetBackingStore().Set("sentQualityEventRatio", value)
     if err != nil {
         panic(err)
@@ -1033,10 +1662,10 @@ type NetworkInfoable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetBandwidthLowEventRatio()(*float32)
+    GetBandwidthLowEventRatio()(NetworkInfo_NetworkInfo_bandwidthLowEventRatioable)
     GetBasicServiceSetIdentifier()(*string)
     GetConnectionType()(*NetworkConnectionType)
-    GetDelayEventRatio()(*float32)
+    GetDelayEventRatio()(NetworkInfo_NetworkInfo_delayEventRatioable)
     GetDnsSuffix()(*string)
     GetIpAddress()(*string)
     GetLinkSpeed()(*int64)
@@ -1044,11 +1673,11 @@ type NetworkInfoable interface {
     GetNetworkTransportProtocol()(*NetworkTransportProtocol)
     GetOdataType()(*string)
     GetPort()(*int32)
-    GetReceivedQualityEventRatio()(*float32)
+    GetReceivedQualityEventRatio()(NetworkInfo_NetworkInfo_receivedQualityEventRatioable)
     GetReflexiveIPAddress()(*string)
     GetRelayIPAddress()(*string)
     GetRelayPort()(*int32)
-    GetSentQualityEventRatio()(*float32)
+    GetSentQualityEventRatio()(NetworkInfo_NetworkInfo_sentQualityEventRatioable)
     GetSubnet()(*string)
     GetTraceRouteHops()([]TraceRouteHopable)
     GetWifiBand()(*WifiBand)
@@ -1061,10 +1690,10 @@ type NetworkInfoable interface {
     GetWifiVendorDriver()(*string)
     GetWifiVendorDriverVersion()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetBandwidthLowEventRatio(value *float32)()
+    SetBandwidthLowEventRatio(value NetworkInfo_NetworkInfo_bandwidthLowEventRatioable)()
     SetBasicServiceSetIdentifier(value *string)()
     SetConnectionType(value *NetworkConnectionType)()
-    SetDelayEventRatio(value *float32)()
+    SetDelayEventRatio(value NetworkInfo_NetworkInfo_delayEventRatioable)()
     SetDnsSuffix(value *string)()
     SetIpAddress(value *string)()
     SetLinkSpeed(value *int64)()
@@ -1072,11 +1701,11 @@ type NetworkInfoable interface {
     SetNetworkTransportProtocol(value *NetworkTransportProtocol)()
     SetOdataType(value *string)()
     SetPort(value *int32)()
-    SetReceivedQualityEventRatio(value *float32)()
+    SetReceivedQualityEventRatio(value NetworkInfo_NetworkInfo_receivedQualityEventRatioable)()
     SetReflexiveIPAddress(value *string)()
     SetRelayIPAddress(value *string)()
     SetRelayPort(value *int32)()
-    SetSentQualityEventRatio(value *float32)()
+    SetSentQualityEventRatio(value NetworkInfo_NetworkInfo_sentQualityEventRatioable)()
     SetSubnet(value *string)()
     SetTraceRouteHops(value []TraceRouteHopable)()
     SetWifiBand(value *WifiBand)()

@@ -3,11 +3,169 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // UserExperienceAnalyticsAppHealthDevicePerformance the user experience analytics device performance entity contains device performance details.
 type UserExperienceAnalyticsAppHealthDevicePerformance struct {
     Entity
+}
+// UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore instantiates a new UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore and sets the default values.
+func NewUserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore()(*UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) {
+    m := &UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewUserExperienceAnalyticsAppHealthDevicePerformance instantiates a new UserExperienceAnalyticsAppHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnalyticsAppHealthDevicePerformance) {
@@ -58,14 +216,14 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetCrashedAppCount()
     return nil
 }
 // GetDeviceAppHealthScore gets the deviceAppHealthScore property value. The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthScore()(*float64) {
+// returns a UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreable when successful
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthScore()(UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreable) {
     val, err := m.GetBackingStore().Get("deviceAppHealthScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreable)
     }
     return nil
 }
@@ -152,12 +310,12 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         return nil
     }
     res["deviceAppHealthScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceAppHealthScore(val)
+            m.SetDeviceAppHealthScore(val.(*UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScore))
         }
         return nil
     }
@@ -294,7 +452,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) Serialize(writer i87
         }
     }
     {
-        err = writer.WriteFloat64Value("deviceAppHealthScore", m.GetDeviceAppHealthScore())
+        err = writer.WriteObjectValue("deviceAppHealthScore", m.GetDeviceAppHealthScore())
         if err != nil {
             return err
         }
@@ -366,7 +524,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetCrashedAppCount(v
     }
 }
 // SetDeviceAppHealthScore sets the deviceAppHealthScore property value. The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceAppHealthScore(value *float64)() {
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceAppHealthScore(value UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreable)() {
     err := m.GetBackingStore().Set("deviceAppHealthScore", value)
     if err != nil {
         panic(err)
@@ -427,7 +585,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceable interface {
     GetAppCrashCount()(*int32)
     GetAppHangCount()(*int32)
     GetCrashedAppCount()(*int32)
-    GetDeviceAppHealthScore()(*float64)
+    GetDeviceAppHealthScore()(UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreable)
     GetDeviceDisplayName()(*string)
     GetDeviceId()(*string)
     GetDeviceManufacturer()(*string)
@@ -438,7 +596,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceable interface {
     SetAppCrashCount(value *int32)()
     SetAppHangCount(value *int32)()
     SetCrashedAppCount(value *int32)()
-    SetDeviceAppHealthScore(value *float64)()
+    SetDeviceAppHealthScore(value UserExperienceAnalyticsAppHealthDevicePerformance_UserExperienceAnalyticsAppHealthDevicePerformance_deviceAppHealthScoreable)()
     SetDeviceDisplayName(value *string)()
     SetDeviceId(value *string)()
     SetDeviceManufacturer(value *string)()

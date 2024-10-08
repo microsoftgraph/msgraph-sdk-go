@@ -9,6 +9,163 @@ type Video struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+// Video_Video_frameRate composed type wrapper for classes float64, ReferenceNumeric, string
+type Video_Video_frameRate struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewVideo_Video_frameRate instantiates a new Video_Video_frameRate and sets the default values.
+func NewVideo_Video_frameRate()(*Video_Video_frameRate) {
+    m := &Video_Video_frameRate{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateVideo_Video_frameRateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateVideo_Video_frameRateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewVideo_Video_frameRate()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *Video_Video_frameRate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *Video_Video_frameRate) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *Video_Video_frameRate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *Video_Video_frameRate) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *Video_Video_frameRate) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *Video_Video_frameRate) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *Video_Video_frameRate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *Video_Video_frameRate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *Video_Video_frameRate) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *Video_Video_frameRate) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *Video_Video_frameRate) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type Video_Video_frameRateable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
 // NewVideo instantiates a new Video and sets the default values.
 func NewVideo()(*Video) {
     m := &Video{
@@ -187,12 +344,12 @@ func (m *Video) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["frameRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateVideo_Video_frameRateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFrameRate(val)
+            m.SetFrameRate(val.(*Video_Video_frameRate))
         }
         return nil
     }
@@ -241,14 +398,14 @@ func (m *Video) GetFourCC()(*string) {
     return nil
 }
 // GetFrameRate gets the frameRate property value. Frame rate of the video.
-// returns a *float64 when successful
-func (m *Video) GetFrameRate()(*float64) {
+// returns a Video_Video_frameRateable when successful
+func (m *Video) GetFrameRate()(Video_Video_frameRateable) {
     val, err := m.GetBackingStore().Get("frameRate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(Video_Video_frameRateable)
     }
     return nil
 }
@@ -333,7 +490,7 @@ func (m *Video) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
-        err := writer.WriteFloat64Value("frameRate", m.GetFrameRate())
+        err := writer.WriteObjectValue("frameRate", m.GetFrameRate())
         if err != nil {
             return err
         }
@@ -425,7 +582,7 @@ func (m *Video) SetFourCC(value *string)() {
     }
 }
 // SetFrameRate sets the frameRate property value. Frame rate of the video.
-func (m *Video) SetFrameRate(value *float64)() {
+func (m *Video) SetFrameRate(value Video_Video_frameRateable)() {
     err := m.GetBackingStore().Set("frameRate", value)
     if err != nil {
         panic(err)
@@ -464,7 +621,7 @@ type Videoable interface {
     GetBitrate()(*int32)
     GetDuration()(*int64)
     GetFourCC()(*string)
-    GetFrameRate()(*float64)
+    GetFrameRate()(Video_Video_frameRateable)
     GetHeight()(*int32)
     GetOdataType()(*string)
     GetWidth()(*int32)
@@ -476,7 +633,7 @@ type Videoable interface {
     SetBitrate(value *int32)()
     SetDuration(value *int64)()
     SetFourCC(value *string)()
-    SetFrameRate(value *float64)()
+    SetFrameRate(value Video_Video_frameRateable)()
     SetHeight(value *int32)()
     SetOdataType(value *string)()
     SetWidth(value *int32)()

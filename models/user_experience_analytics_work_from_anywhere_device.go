@@ -2,11 +2,797 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // UserExperienceAnalyticsWorkFromAnywhereDevice the user experience analytics device for work from anywhere report.
 type UserExperienceAnalyticsWorkFromAnywhereDevice struct {
     Entity
+}
+// UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore and sets the default values.
+func NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore()(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) {
+    m := &UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore and sets the default values.
+func NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore()(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) {
+    m := &UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore and sets the default values.
+func NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore()(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) {
+    m := &UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore and sets the default values.
+func NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore()(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) {
+    m := &UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore and sets the default values.
+func NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore()(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) {
+    m := &UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereDevice instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereDevice()(*UserExperienceAnalyticsWorkFromAnywhereDevice) {
@@ -81,38 +867,38 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdRegistered()(*
     return nil
 }
 // GetCloudIdentityScore gets the cloudIdentityScore property value. Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudIdentityScore()(*float64) {
+// returns a UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreable when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudIdentityScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreable) {
     val, err := m.GetBackingStore().Get("cloudIdentityScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreable)
     }
     return nil
 }
 // GetCloudManagementScore gets the cloudManagementScore property value. Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudManagementScore()(*float64) {
+// returns a UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreable when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudManagementScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreable) {
     val, err := m.GetBackingStore().Get("cloudManagementScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreable)
     }
     return nil
 }
 // GetCloudProvisioningScore gets the cloudProvisioningScore property value. Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudProvisioningScore()(*float64) {
+// returns a UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreable when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudProvisioningScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreable) {
     val, err := m.GetBackingStore().Get("cloudProvisioningScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreable)
     }
     return nil
 }
@@ -207,32 +993,32 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         return nil
     }
     res["cloudIdentityScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudIdentityScore(val)
+            m.SetCloudIdentityScore(val.(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScore))
         }
         return nil
     }
     res["cloudManagementScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudManagementScore(val)
+            m.SetCloudManagementScore(val.(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScore))
         }
         return nil
     }
     res["cloudProvisioningScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudProvisioningScore(val)
+            m.SetCloudProvisioningScore(val.(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScore))
         }
         return nil
     }
@@ -477,22 +1263,22 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         return nil
     }
     res["windowsScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWindowsScore(val)
+            m.SetWindowsScore(val.(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScore))
         }
         return nil
     }
     res["workFromAnywhereScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWorkFromAnywhereScore(val)
+            m.SetWorkFromAnywhereScore(val.(*UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScore))
         }
         return nil
     }
@@ -751,26 +1537,26 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetUpgradeEligibility()(
     return nil
 }
 // GetWindowsScore gets the windowsScore property value. Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWindowsScore()(*float64) {
+// returns a UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreable when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWindowsScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreable) {
     val, err := m.GetBackingStore().Get("windowsScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreable)
     }
     return nil
 }
 // GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWorkFromAnywhereScore()(*float64) {
+// returns a UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreable when successful
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWorkFromAnywhereScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreable) {
     val, err := m.GetBackingStore().Get("workFromAnywhereScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreable)
     }
     return nil
 }
@@ -811,19 +1597,19 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) Serialize(writer i878a80
         }
     }
     {
-        err = writer.WriteFloat64Value("cloudIdentityScore", m.GetCloudIdentityScore())
+        err = writer.WriteObjectValue("cloudIdentityScore", m.GetCloudIdentityScore())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("cloudManagementScore", m.GetCloudManagementScore())
+        err = writer.WriteObjectValue("cloudManagementScore", m.GetCloudManagementScore())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("cloudProvisioningScore", m.GetCloudProvisioningScore())
+        err = writer.WriteObjectValue("cloudProvisioningScore", m.GetCloudProvisioningScore())
         if err != nil {
             return err
         }
@@ -975,13 +1761,13 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) Serialize(writer i878a80
         }
     }
     {
-        err = writer.WriteFloat64Value("windowsScore", m.GetWindowsScore())
+        err = writer.WriteObjectValue("windowsScore", m.GetWindowsScore())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("workFromAnywhereScore", m.GetWorkFromAnywhereScore())
+        err = writer.WriteObjectValue("workFromAnywhereScore", m.GetWorkFromAnywhereScore())
         if err != nil {
             return err
         }
@@ -1024,21 +1810,21 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetAzureAdRegistered(val
     }
 }
 // SetCloudIdentityScore sets the cloudIdentityScore property value. Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudIdentityScore(value *float64)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudIdentityScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreable)() {
     err := m.GetBackingStore().Set("cloudIdentityScore", value)
     if err != nil {
         panic(err)
     }
 }
 // SetCloudManagementScore sets the cloudManagementScore property value. Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudManagementScore(value *float64)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudManagementScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreable)() {
     err := m.GetBackingStore().Set("cloudManagementScore", value)
     if err != nil {
         panic(err)
     }
 }
 // SetCloudProvisioningScore sets the cloudProvisioningScore property value. Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudProvisioningScore(value *float64)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudProvisioningScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreable)() {
     err := m.GetBackingStore().Set("cloudProvisioningScore", value)
     if err != nil {
         panic(err)
@@ -1213,14 +1999,14 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetUpgradeEligibility(va
     }
 }
 // SetWindowsScore sets the windowsScore property value. Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetWindowsScore(value *float64)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetWindowsScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreable)() {
     err := m.GetBackingStore().Set("windowsScore", value)
     if err != nil {
         panic(err)
     }
 }
 // SetWorkFromAnywhereScore sets the workFromAnywhereScore property value. Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetWorkFromAnywhereScore(value *float64)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetWorkFromAnywhereScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreable)() {
     err := m.GetBackingStore().Set("workFromAnywhereScore", value)
     if err != nil {
         panic(err)
@@ -1234,9 +2020,9 @@ type UserExperienceAnalyticsWorkFromAnywhereDeviceable interface {
     GetAzureAdDeviceId()(*string)
     GetAzureAdJoinType()(*string)
     GetAzureAdRegistered()(*bool)
-    GetCloudIdentityScore()(*float64)
-    GetCloudManagementScore()(*float64)
-    GetCloudProvisioningScore()(*float64)
+    GetCloudIdentityScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreable)
+    GetCloudManagementScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreable)
+    GetCloudProvisioningScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreable)
     GetCompliancePolicySetToIntune()(*bool)
     GetDeviceId()(*string)
     GetDeviceName()(*string)
@@ -1261,16 +2047,16 @@ type UserExperienceAnalyticsWorkFromAnywhereDeviceable interface {
     GetTenantAttached()(*bool)
     GetTpmCheckFailed()(*bool)
     GetUpgradeEligibility()(*OperatingSystemUpgradeEligibility)
-    GetWindowsScore()(*float64)
-    GetWorkFromAnywhereScore()(*float64)
+    GetWindowsScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreable)
+    GetWorkFromAnywhereScore()(UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreable)
     SetAutoPilotProfileAssigned(value *bool)()
     SetAutoPilotRegistered(value *bool)()
     SetAzureAdDeviceId(value *string)()
     SetAzureAdJoinType(value *string)()
     SetAzureAdRegistered(value *bool)()
-    SetCloudIdentityScore(value *float64)()
-    SetCloudManagementScore(value *float64)()
-    SetCloudProvisioningScore(value *float64)()
+    SetCloudIdentityScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudIdentityScoreable)()
+    SetCloudManagementScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudManagementScoreable)()
+    SetCloudProvisioningScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_cloudProvisioningScoreable)()
     SetCompliancePolicySetToIntune(value *bool)()
     SetDeviceId(value *string)()
     SetDeviceName(value *string)()
@@ -1295,6 +2081,6 @@ type UserExperienceAnalyticsWorkFromAnywhereDeviceable interface {
     SetTenantAttached(value *bool)()
     SetTpmCheckFailed(value *bool)()
     SetUpgradeEligibility(value *OperatingSystemUpgradeEligibility)()
-    SetWindowsScore(value *float64)()
-    SetWorkFromAnywhereScore(value *float64)()
+    SetWindowsScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_windowsScoreable)()
+    SetWorkFromAnywhereScore(value UserExperienceAnalyticsWorkFromAnywhereDevice_UserExperienceAnalyticsWorkFromAnywhereDevice_workFromAnywhereScoreable)()
 }

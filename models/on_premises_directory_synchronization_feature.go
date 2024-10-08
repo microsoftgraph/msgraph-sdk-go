@@ -390,7 +390,7 @@ func (m *OnPremisesDirectorySynchronizationFeature) GetPasswordSyncEnabled()(*bo
     }
     return nil
 }
-// GetPasswordWritebackEnabled gets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
+// GetPasswordWritebackEnabled gets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled. This property isn't in use and updating it isn't supported.
 // returns a *bool when successful
 func (m *OnPremisesDirectorySynchronizationFeature) GetPasswordWritebackEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("passwordWritebackEnabled")
@@ -711,7 +711,7 @@ func (m *OnPremisesDirectorySynchronizationFeature) SetPasswordSyncEnabled(value
         panic(err)
     }
 }
-// SetPasswordWritebackEnabled sets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
+// SetPasswordWritebackEnabled sets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled. This property isn't in use and updating it isn't supported.
 func (m *OnPremisesDirectorySynchronizationFeature) SetPasswordWritebackEnabled(value *bool)() {
     err := m.GetBackingStore().Set("passwordWritebackEnabled", value)
     if err != nil {

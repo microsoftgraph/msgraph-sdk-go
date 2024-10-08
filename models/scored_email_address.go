@@ -9,6 +9,163 @@ type ScoredEmailAddress struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+// ScoredEmailAddress_ScoredEmailAddress_relevanceScore composed type wrapper for classes float64, ReferenceNumeric, string
+type ScoredEmailAddress_ScoredEmailAddress_relevanceScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewScoredEmailAddress_ScoredEmailAddress_relevanceScore instantiates a new ScoredEmailAddress_ScoredEmailAddress_relevanceScore and sets the default values.
+func NewScoredEmailAddress_ScoredEmailAddress_relevanceScore()(*ScoredEmailAddress_ScoredEmailAddress_relevanceScore) {
+    m := &ScoredEmailAddress_ScoredEmailAddress_relevanceScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateScoredEmailAddress_ScoredEmailAddress_relevanceScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateScoredEmailAddress_ScoredEmailAddress_relevanceScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewScoredEmailAddress_ScoredEmailAddress_relevanceScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *ScoredEmailAddress_ScoredEmailAddress_relevanceScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type ScoredEmailAddress_ScoredEmailAddress_relevanceScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
 // NewScoredEmailAddress instantiates a new ScoredEmailAddress and sets the default values.
 func NewScoredEmailAddress()(*ScoredEmailAddress) {
     m := &ScoredEmailAddress{
@@ -87,12 +244,12 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["relevanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateScoredEmailAddress_ScoredEmailAddress_relevanceScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRelevanceScore(val)
+            m.SetRelevanceScore(val.(*ScoredEmailAddress_ScoredEmailAddress_relevanceScore))
         }
         return nil
     }
@@ -133,14 +290,14 @@ func (m *ScoredEmailAddress) GetOdataType()(*string) {
     return nil
 }
 // GetRelevanceScore gets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
-// returns a *float64 when successful
-func (m *ScoredEmailAddress) GetRelevanceScore()(*float64) {
+// returns a ScoredEmailAddress_ScoredEmailAddress_relevanceScoreable when successful
+func (m *ScoredEmailAddress) GetRelevanceScore()(ScoredEmailAddress_ScoredEmailAddress_relevanceScoreable) {
     val, err := m.GetBackingStore().Get("relevanceScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(ScoredEmailAddress_ScoredEmailAddress_relevanceScoreable)
     }
     return nil
 }
@@ -177,7 +334,7 @@ func (m *ScoredEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteFloat64Value("relevanceScore", m.GetRelevanceScore())
+        err := writer.WriteObjectValue("relevanceScore", m.GetRelevanceScore())
         if err != nil {
             return err
         }
@@ -230,7 +387,7 @@ func (m *ScoredEmailAddress) SetOdataType(value *string)() {
     }
 }
 // SetRelevanceScore sets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
-func (m *ScoredEmailAddress) SetRelevanceScore(value *float64)() {
+func (m *ScoredEmailAddress) SetRelevanceScore(value ScoredEmailAddress_ScoredEmailAddress_relevanceScoreable)() {
     err := m.GetBackingStore().Set("relevanceScore", value)
     if err != nil {
         panic(err)
@@ -251,12 +408,12 @@ type ScoredEmailAddressable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetItemId()(*string)
     GetOdataType()(*string)
-    GetRelevanceScore()(*float64)
+    GetRelevanceScore()(ScoredEmailAddress_ScoredEmailAddress_relevanceScoreable)
     GetSelectionLikelihood()(*SelectionLikelihoodInfo)
     SetAddress(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetItemId(value *string)()
     SetOdataType(value *string)()
-    SetRelevanceScore(value *float64)()
+    SetRelevanceScore(value ScoredEmailAddress_ScoredEmailAddress_relevanceScoreable)()
     SetSelectionLikelihood(value *SelectionLikelihoodInfo)()
 }

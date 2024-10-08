@@ -2,10 +2,168 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type RelyingPartyDetailedSummary struct {
     Entity
+}
+// RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate composed type wrapper for classes float64, ReferenceNumeric, string
+type RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewRelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate instantiates a new RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate and sets the default values.
+func NewRelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate()(*RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) {
+    m := &RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateRelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateRelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewRelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewRelyingPartyDetailedSummary instantiates a new RelyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
@@ -118,12 +276,12 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["signInSuccessRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateRelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSignInSuccessRate(val)
+            m.SetSignInSuccessRate(val.(*RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRate))
         }
         return nil
     }
@@ -232,14 +390,14 @@ func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
     return nil
 }
 // GetSignInSuccessRate gets the signInSuccessRate property value. Calculated as Number of successful / (Number of successful + Number of failed sign ins) or successfulSignInCount / totalSignInCount on AD FS in the period specified. Supports $orderby, $filter (eq).
-// returns a *float64 when successful
-func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
+// returns a RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateable when successful
+func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateable) {
     val, err := m.GetBackingStore().Get("signInSuccessRate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateable)
     }
     return nil
 }
@@ -335,7 +493,7 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteFloat64Value("signInSuccessRate", m.GetSignInSuccessRate())
+        err = writer.WriteObjectValue("signInSuccessRate", m.GetSignInSuccessRate())
         if err != nil {
             return err
         }
@@ -410,7 +568,7 @@ func (m *RelyingPartyDetailedSummary) SetServiceId(value *string)() {
     }
 }
 // SetSignInSuccessRate sets the signInSuccessRate property value. Calculated as Number of successful / (Number of successful + Number of failed sign ins) or successfulSignInCount / totalSignInCount on AD FS in the period specified. Supports $orderby, $filter (eq).
-func (m *RelyingPartyDetailedSummary) SetSignInSuccessRate(value *float64)() {
+func (m *RelyingPartyDetailedSummary) SetSignInSuccessRate(value RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateable)() {
     err := m.GetBackingStore().Set("signInSuccessRate", value)
     if err != nil {
         panic(err)
@@ -447,7 +605,7 @@ type RelyingPartyDetailedSummaryable interface {
     GetRelyingPartyName()(*string)
     GetReplyUrls()([]string)
     GetServiceId()(*string)
-    GetSignInSuccessRate()(*float64)
+    GetSignInSuccessRate()(RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateable)
     GetSuccessfulSignInCount()(*int64)
     GetTotalSignInCount()(*int64)
     GetUniqueUserCount()(*int64)
@@ -458,7 +616,7 @@ type RelyingPartyDetailedSummaryable interface {
     SetRelyingPartyName(value *string)()
     SetReplyUrls(value []string)()
     SetServiceId(value *string)()
-    SetSignInSuccessRate(value *float64)()
+    SetSignInSuccessRate(value RelyingPartyDetailedSummary_RelyingPartyDetailedSummary_signInSuccessRateable)()
     SetSuccessfulSignInCount(value *int64)()
     SetTotalSignInCount(value *int64)()
     SetUniqueUserCount(value *int64)()

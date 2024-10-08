@@ -2,10 +2,168 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type WorkbookChartFont struct {
     Entity
+}
+// WorkbookChartFont_WorkbookChartFont_size composed type wrapper for classes float64, ReferenceNumeric, string
+type WorkbookChartFont_WorkbookChartFont_size struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewWorkbookChartFont_WorkbookChartFont_size instantiates a new WorkbookChartFont_WorkbookChartFont_size and sets the default values.
+func NewWorkbookChartFont_WorkbookChartFont_size()(*WorkbookChartFont_WorkbookChartFont_size) {
+    m := &WorkbookChartFont_WorkbookChartFont_size{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateWorkbookChartFont_WorkbookChartFont_sizeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateWorkbookChartFont_WorkbookChartFont_sizeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewWorkbookChartFont_WorkbookChartFont_size()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *WorkbookChartFont_WorkbookChartFont_size) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *WorkbookChartFont_WorkbookChartFont_size) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *WorkbookChartFont_WorkbookChartFont_size) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *WorkbookChartFont_WorkbookChartFont_size) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *WorkbookChartFont_WorkbookChartFont_size) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *WorkbookChartFont_WorkbookChartFont_size) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *WorkbookChartFont_WorkbookChartFont_size) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *WorkbookChartFont_WorkbookChartFont_size) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *WorkbookChartFont_WorkbookChartFont_size) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *WorkbookChartFont_WorkbookChartFont_size) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *WorkbookChartFont_WorkbookChartFont_size) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type WorkbookChartFont_WorkbookChartFont_sizeable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewWorkbookChartFont instantiates a new WorkbookChartFont and sets the default values.
 func NewWorkbookChartFont()(*WorkbookChartFont) {
@@ -88,12 +246,12 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateWorkbookChartFont_WorkbookChartFont_sizeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSize(val)
+            m.SetSize(val.(*WorkbookChartFont_WorkbookChartFont_size))
         }
         return nil
     }
@@ -134,14 +292,14 @@ func (m *WorkbookChartFont) GetName()(*string) {
     return nil
 }
 // GetSize gets the size property value. The size of the font. For example,  11.
-// returns a *float64 when successful
-func (m *WorkbookChartFont) GetSize()(*float64) {
+// returns a WorkbookChartFont_WorkbookChartFont_sizeable when successful
+func (m *WorkbookChartFont) GetSize()(WorkbookChartFont_WorkbookChartFont_sizeable) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(WorkbookChartFont_WorkbookChartFont_sizeable)
     }
     return nil
 }
@@ -188,7 +346,7 @@ func (m *WorkbookChartFont) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteFloat64Value("size", m.GetSize())
+        err = writer.WriteObjectValue("size", m.GetSize())
         if err != nil {
             return err
         }
@@ -230,7 +388,7 @@ func (m *WorkbookChartFont) SetName(value *string)() {
     }
 }
 // SetSize sets the size property value. The size of the font. For example,  11.
-func (m *WorkbookChartFont) SetSize(value *float64)() {
+func (m *WorkbookChartFont) SetSize(value WorkbookChartFont_WorkbookChartFont_sizeable)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
@@ -250,12 +408,12 @@ type WorkbookChartFontable interface {
     GetColor()(*string)
     GetItalic()(*bool)
     GetName()(*string)
-    GetSize()(*float64)
+    GetSize()(WorkbookChartFont_WorkbookChartFont_sizeable)
     GetUnderline()(*string)
     SetBold(value *bool)()
     SetColor(value *string)()
     SetItalic(value *bool)()
     SetName(value *string)()
-    SetSize(value *float64)()
+    SetSize(value WorkbookChartFont_WorkbookChartFont_sizeable)()
     SetUnderline(value *string)()
 }

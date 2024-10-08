@@ -9,6 +9,163 @@ type AverageComparativeScore struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+// AverageComparativeScore_AverageComparativeScore_averageScore composed type wrapper for classes float64, ReferenceNumeric, string
+type AverageComparativeScore_AverageComparativeScore_averageScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewAverageComparativeScore_AverageComparativeScore_averageScore instantiates a new AverageComparativeScore_AverageComparativeScore_averageScore and sets the default values.
+func NewAverageComparativeScore_AverageComparativeScore_averageScore()(*AverageComparativeScore_AverageComparativeScore_averageScore) {
+    m := &AverageComparativeScore_AverageComparativeScore_averageScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateAverageComparativeScore_AverageComparativeScore_averageScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateAverageComparativeScore_AverageComparativeScore_averageScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewAverageComparativeScore_AverageComparativeScore_averageScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *AverageComparativeScore_AverageComparativeScore_averageScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type AverageComparativeScore_AverageComparativeScore_averageScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
 // NewAverageComparativeScore instantiates a new AverageComparativeScore and sets the default values.
 func NewAverageComparativeScore()(*AverageComparativeScore) {
     m := &AverageComparativeScore{
@@ -36,14 +193,14 @@ func (m *AverageComparativeScore) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAverageScore gets the averageScore property value. Average score within specified basis.
-// returns a *float64 when successful
-func (m *AverageComparativeScore) GetAverageScore()(*float64) {
+// returns a AverageComparativeScore_AverageComparativeScore_averageScoreable when successful
+func (m *AverageComparativeScore) GetAverageScore()(AverageComparativeScore_AverageComparativeScore_averageScoreable) {
     val, err := m.GetBackingStore().Get("averageScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(AverageComparativeScore_AverageComparativeScore_averageScoreable)
     }
     return nil
 }
@@ -69,12 +226,12 @@ func (m *AverageComparativeScore) GetBasis()(*string) {
 func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["averageScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateAverageComparativeScore_AverageComparativeScore_averageScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAverageScore(val)
+            m.SetAverageScore(val.(*AverageComparativeScore_AverageComparativeScore_averageScore))
         }
         return nil
     }
@@ -115,7 +272,7 @@ func (m *AverageComparativeScore) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *AverageComparativeScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteFloat64Value("averageScore", m.GetAverageScore())
+        err := writer.WriteObjectValue("averageScore", m.GetAverageScore())
         if err != nil {
             return err
         }
@@ -148,7 +305,7 @@ func (m *AverageComparativeScore) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAverageScore sets the averageScore property value. Average score within specified basis.
-func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
+func (m *AverageComparativeScore) SetAverageScore(value AverageComparativeScore_AverageComparativeScore_averageScoreable)() {
     err := m.GetBackingStore().Set("averageScore", value)
     if err != nil {
         panic(err)
@@ -176,11 +333,11 @@ type AverageComparativeScoreable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAverageScore()(*float64)
+    GetAverageScore()(AverageComparativeScore_AverageComparativeScore_averageScoreable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBasis()(*string)
     GetOdataType()(*string)
-    SetAverageScore(value *float64)()
+    SetAverageScore(value AverageComparativeScore_AverageComparativeScore_averageScoreable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBasis(value *string)()
     SetOdataType(value *string)()
