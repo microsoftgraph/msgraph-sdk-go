@@ -111,7 +111,7 @@ func (m *EntitlementManagementSchedule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRecurrence gets the recurrence property value. For recurring access reviews.  Not used in access requests.
+// GetRecurrence gets the recurrence property value. The recurring access review pattern. Not used in access requests.
 // returns a PatternedRecurrenceable when successful
 func (m *EntitlementManagementSchedule) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
@@ -194,7 +194,7 @@ func (m *EntitlementManagementSchedule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRecurrence sets the recurrence property value. For recurring access reviews.  Not used in access requests.
+// SetRecurrence sets the recurrence property value. The recurring access review pattern. Not used in access requests.
 func (m *EntitlementManagementSchedule) SetRecurrence(value PatternedRecurrenceable)() {
     err := m.GetBackingStore().Set("recurrence", value)
     if err != nil {
