@@ -244,7 +244,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestT
     }
     return nil
 }
-// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
+// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set, but a new schedule for an assignment can be included in another userUpdate or UserExtend or adminUpdate assignment request.
 // returns a EntitlementManagementScheduleable when successful
 func (m *AccessPackageAssignmentRequest) GetSchedule()(EntitlementManagementScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
@@ -424,7 +424,7 @@ func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageRequ
         panic(err)
     }
 }
-// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
+// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set, but a new schedule for an assignment can be included in another userUpdate or UserExtend or adminUpdate assignment request.
 func (m *AccessPackageAssignmentRequest) SetSchedule(value EntitlementManagementScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
     if err != nil {

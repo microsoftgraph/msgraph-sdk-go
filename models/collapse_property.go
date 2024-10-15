@@ -61,7 +61,7 @@ func (m *CollapseProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["limit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetFloat64Value()
         if err != nil {
             return err
         }
@@ -95,14 +95,14 @@ func (m *CollapseProperty) GetFields()([]string) {
     return nil
 }
 // GetLimit gets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
-// returns a *int32 when successful
-func (m *CollapseProperty) GetLimit()(*int32) {
+// returns a *float64 when successful
+func (m *CollapseProperty) GetLimit()(*float64) {
     val, err := m.GetBackingStore().Get("limit")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*int32)
+        return val.(*float64)
     }
     return nil
 }
@@ -127,7 +127,7 @@ func (m *CollapseProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteInt32Value("limit", m.GetLimit())
+        err := writer.WriteFloat64Value("limit", m.GetLimit())
         if err != nil {
             return err
         }
@@ -165,7 +165,7 @@ func (m *CollapseProperty) SetFields(value []string)() {
     }
 }
 // SetLimit sets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
-func (m *CollapseProperty) SetLimit(value *int32)() {
+func (m *CollapseProperty) SetLimit(value *float64)() {
     err := m.GetBackingStore().Set("limit", value)
     if err != nil {
         panic(err)
@@ -184,10 +184,10 @@ type CollapsePropertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetFields()([]string)
-    GetLimit()(*int32)
+    GetLimit()(*float64)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFields(value []string)()
-    SetLimit(value *int32)()
+    SetLimit(value *float64)()
     SetOdataType(value *string)()
 }
