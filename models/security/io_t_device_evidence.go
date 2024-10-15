@@ -236,18 +236,12 @@ func (m *IoTDeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["nics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateNicEvidenceFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateNicEvidenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]NicEvidenceable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(NicEvidenceable)
-                }
-            }
-            m.SetNics(res)
+            m.SetNics(val.(NicEvidenceable))
         }
         return nil
     }
@@ -486,14 +480,14 @@ func (m *IoTDeviceEvidence) GetModel()(*string) {
     return nil
 }
 // GetNics gets the nics property value. The nics property
-// returns a []NicEvidenceable when successful
-func (m *IoTDeviceEvidence) GetNics()([]NicEvidenceable) {
+// returns a NicEvidenceable when successful
+func (m *IoTDeviceEvidence) GetNics()(NicEvidenceable) {
     val, err := m.GetBackingStore().Get("nics")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]NicEvidenceable)
+        return val.(NicEvidenceable)
     }
     return nil
 }
@@ -714,14 +708,8 @@ func (m *IoTDeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetNics() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNics()))
-        for i, v := range m.GetNics() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("nics", cast)
+    {
+        err = writer.WriteObjectValue("nics", m.GetNics())
         if err != nil {
             return err
         }
@@ -894,7 +882,7 @@ func (m *IoTDeviceEvidence) SetModel(value *string)() {
     }
 }
 // SetNics sets the nics property value. The nics property
-func (m *IoTDeviceEvidence) SetNics(value []NicEvidenceable)() {
+func (m *IoTDeviceEvidence) SetNics(value NicEvidenceable)() {
     err := m.GetBackingStore().Set("nics", value)
     if err != nil {
         panic(err)
@@ -988,7 +976,7 @@ type IoTDeviceEvidenceable interface {
     GetMacAddress()(*string)
     GetManufacturer()(*string)
     GetModel()(*string)
-    GetNics()([]NicEvidenceable)
+    GetNics()(NicEvidenceable)
     GetOperatingSystem()(*string)
     GetOwners()([]string)
     GetProtocols()([]string)
@@ -1014,7 +1002,7 @@ type IoTDeviceEvidenceable interface {
     SetMacAddress(value *string)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
-    SetNics(value []NicEvidenceable)()
+    SetNics(value NicEvidenceable)()
     SetOperatingSystem(value *string)()
     SetOwners(value []string)()
     SetProtocols(value []string)()

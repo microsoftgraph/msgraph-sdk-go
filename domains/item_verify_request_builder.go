@@ -37,8 +37,8 @@ func NewItemVerifyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0
-func (m *ItemVerifyRequestBuilder) Post(ctx context.Context, body ItemVerifyPostRequestBodyable, requestConfiguration *ItemVerifyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+func (m *ItemVerifyRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemVerifyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -56,17 +56,13 @@ func (m *ItemVerifyRequestBuilder) Post(ctx context.Context, body ItemVerifyPost
 }
 // ToPostRequestInformation validates the ownership of the domain.
 // returns a *RequestInformation when successful
-func (m *ItemVerifyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemVerifyPostRequestBodyable, requestConfiguration *ItemVerifyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemVerifyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemVerifyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
