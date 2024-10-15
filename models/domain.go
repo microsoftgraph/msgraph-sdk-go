@@ -391,7 +391,7 @@ func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     }
     return nil
 }
-// GetRootDomain gets the rootDomain property value. The rootDomain property
+// GetRootDomain gets the rootDomain property value. Root domain of a subdomain. Read-only, Nullable. Supports $expand.
 // returns a Domainable when successful
 func (m *Domain) GetRootDomain()(Domainable) {
     val, err := m.GetBackingStore().Get("rootDomain")
@@ -682,7 +682,7 @@ func (m *Domain) SetPasswordValidityPeriodInDays(value *int32)() {
         panic(err)
     }
 }
-// SetRootDomain sets the rootDomain property value. The rootDomain property
+// SetRootDomain sets the rootDomain property value. Root domain of a subdomain. Read-only, Nullable. Supports $expand.
 func (m *Domain) SetRootDomain(value Domainable)() {
     err := m.GetBackingStore().Set("rootDomain", value)
     if err != nil {
