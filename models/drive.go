@@ -33,7 +33,7 @@ func (m *Drive) GetBundles()([]DriveItemable) {
     }
     return nil
 }
-// GetDriveType gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
+// GetDriveType gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
 // returns a *string when successful
 func (m *Drive) GetDriveType()(*string) {
     val, err := m.GetBackingStore().Get("driveType")
@@ -281,7 +281,7 @@ func (m *Drive) GetSpecial()([]DriveItemable) {
     }
     return nil
 }
-// GetSystem gets the system property value. If present, indicates that it's a system-managed drive. Read-only.
+// GetSystem gets the system property value. If present, indicates that this is a system-managed drive. Read-only.
 // returns a SystemFacetable when successful
 func (m *Drive) GetSystem()(SystemFacetable) {
     val, err := m.GetBackingStore().Get("system")
@@ -398,7 +398,7 @@ func (m *Drive) SetBundles(value []DriveItemable)() {
         panic(err)
     }
 }
-// SetDriveType sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
+// SetDriveType sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
 func (m *Drive) SetDriveType(value *string)() {
     err := m.GetBackingStore().Set("driveType", value)
     if err != nil {
@@ -461,7 +461,7 @@ func (m *Drive) SetSpecial(value []DriveItemable)() {
         panic(err)
     }
 }
-// SetSystem sets the system property value. If present, indicates that it's a system-managed drive. Read-only.
+// SetSystem sets the system property value. If present, indicates that this is a system-managed drive. Read-only.
 func (m *Drive) SetSystem(value SystemFacetable)() {
     err := m.GetBackingStore().Set("system", value)
     if err != nil {

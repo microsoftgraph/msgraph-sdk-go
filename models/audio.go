@@ -113,26 +113,26 @@ func (m *Audio) GetCopyright()(*string) {
     return nil
 }
 // GetDisc gets the disc property value. The number of the disc this audio file came from.
-// returns a *float64 when successful
-func (m *Audio) GetDisc()(*float64) {
+// returns a *int32 when successful
+func (m *Audio) GetDisc()(*int32) {
     val, err := m.GetBackingStore().Get("disc")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(*int32)
     }
     return nil
 }
 // GetDiscCount gets the discCount property value. The total number of discs in this album.
-// returns a *float64 when successful
-func (m *Audio) GetDiscCount()(*float64) {
+// returns a *int32 when successful
+func (m *Audio) GetDiscCount()(*int32) {
     val, err := m.GetBackingStore().Get("discCount")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(*int32)
     }
     return nil
 }
@@ -213,7 +213,7 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["disc"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -223,7 +223,7 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["discCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -459,13 +459,13 @@ func (m *Audio) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
-        err := writer.WriteFloat64Value("disc", m.GetDisc())
+        err := writer.WriteInt32Value("disc", m.GetDisc())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteFloat64Value("discCount", m.GetDiscCount())
+        err := writer.WriteInt32Value("discCount", m.GetDiscCount())
         if err != nil {
             return err
         }
@@ -586,14 +586,14 @@ func (m *Audio) SetCopyright(value *string)() {
     }
 }
 // SetDisc sets the disc property value. The number of the disc this audio file came from.
-func (m *Audio) SetDisc(value *float64)() {
+func (m *Audio) SetDisc(value *int32)() {
     err := m.GetBackingStore().Set("disc", value)
     if err != nil {
         panic(err)
     }
 }
 // SetDiscCount sets the discCount property value. The total number of discs in this album.
-func (m *Audio) SetDiscCount(value *float64)() {
+func (m *Audio) SetDiscCount(value *int32)() {
     err := m.GetBackingStore().Set("discCount", value)
     if err != nil {
         panic(err)
@@ -673,8 +673,8 @@ type Audioable interface {
     GetBitrate()(*int64)
     GetComposers()(*string)
     GetCopyright()(*string)
-    GetDisc()(*float64)
-    GetDiscCount()(*float64)
+    GetDisc()(*int32)
+    GetDiscCount()(*int32)
     GetDuration()(*int64)
     GetGenre()(*string)
     GetHasDrm()(*bool)
@@ -691,8 +691,8 @@ type Audioable interface {
     SetBitrate(value *int64)()
     SetComposers(value *string)()
     SetCopyright(value *string)()
-    SetDisc(value *float64)()
-    SetDiscCount(value *float64)()
+    SetDisc(value *int32)()
+    SetDiscCount(value *int32)()
     SetDuration(value *int64)()
     SetGenre(value *string)()
     SetHasDrm(value *bool)()

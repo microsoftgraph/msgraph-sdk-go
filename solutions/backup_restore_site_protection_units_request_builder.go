@@ -11,7 +11,7 @@ import (
 type BackupRestoreSiteProtectionUnitsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreSiteProtectionUnitsRequestBuilderGetQueryParameters the list of site protection units in the tenant.
+// BackupRestoreSiteProtectionUnitsRequestBuilderGetQueryParameters get a list of the siteProtectionUnit objects that are associated with a sharePointProtectionPolicy.
 type BackupRestoreSiteProtectionUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewBackupRestoreSiteProtectionUnitsRequestBuilder(rawUrl string, requestAda
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Count()(*BackupRestoreSiteProtectionUnitsCountRequestBuilder) {
     return NewBackupRestoreSiteProtectionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of site protection units in the tenant.
+// Get get a list of the siteProtectionUnit objects that are associated with a sharePointProtectionPolicy.
 // returns a SiteProtectionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/backuprestoreroot-list-siteprotectionunits?view=graph-rest-1.0
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSiteProtectionUnitsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteProtectionUnitCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteProtectionUnitable), nil
 }
-// ToGetRequestInformation the list of site protection units in the tenant.
+// ToGetRequestInformation get a list of the siteProtectionUnit objects that are associated with a sharePointProtectionPolicy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteProtectionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

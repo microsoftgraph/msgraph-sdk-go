@@ -11,7 +11,7 @@ import (
 type BackupRestoreDriveProtectionUnitsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreDriveProtectionUnitsRequestBuilderGetQueryParameters the list of drive protection units in the tenant.
+// BackupRestoreDriveProtectionUnitsRequestBuilderGetQueryParameters get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
 type BackupRestoreDriveProtectionUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewBackupRestoreDriveProtectionUnitsRequestBuilder(rawUrl string, requestAd
 func (m *BackupRestoreDriveProtectionUnitsRequestBuilder) Count()(*BackupRestoreDriveProtectionUnitsCountRequestBuilder) {
     return NewBackupRestoreDriveProtectionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of drive protection units in the tenant.
+// Get get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
 // returns a DriveProtectionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-1.0
 func (m *BackupRestoreDriveProtectionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreDriveProtectionUnitsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveProtectionUnitCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *BackupRestoreDriveProtectionUnitsRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveProtectionUnitable), nil
 }
-// ToGetRequestInformation the list of drive protection units in the tenant.
+// ToGetRequestInformation get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveProtectionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveProtectionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
