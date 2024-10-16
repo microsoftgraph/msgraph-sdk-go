@@ -37,7 +37,7 @@ func (m *OnAuthenticationMethodLoadStartListener) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This property lets us define potential handler configurations per-event.
 // returns a OnAuthenticationMethodLoadStartHandlerable when successful
 func (m *OnAuthenticationMethodLoadStartListener) GetHandler()(OnAuthenticationMethodLoadStartHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
@@ -63,7 +63,7 @@ func (m *OnAuthenticationMethodLoadStartListener) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This property lets us define potential handler configurations per-event.
 func (m *OnAuthenticationMethodLoadStartListener) SetHandler(value OnAuthenticationMethodLoadStartHandlerable)() {
     err := m.GetBackingStore().Set("handler", value)
     if err != nil {
