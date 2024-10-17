@@ -18,7 +18,7 @@ type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of a customAuthenticationExtension object.
+// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
 type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a customAuthenticationExtension object.
+// Delete delete a customAuthenticationExtension object. The following derived types are currently supported.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -73,7 +73,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return nil
 }
-// Get read the properties and relationships of a customAuthenticationExtension object.
+// Get read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
 // returns a CustomAuthenticationExtensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,7 +96,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable), nil
 }
-// Patch update the properties of a customAuthenticationExtension object.
+// Patch update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
 // returns a CustomAuthenticationExtensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -119,7 +119,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable), nil
 }
-// ToDeleteRequestInformation delete a customAuthenticationExtension object.
+// ToDeleteRequestInformation delete a customAuthenticationExtension object. The following derived types are currently supported.
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +130,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a customAuthenticationExtension object.
+// ToGetRequestInformation read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +144,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a customAuthenticationExtension object.
+// ToPatchRequestInformation update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomAuthenticationExtensionable, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

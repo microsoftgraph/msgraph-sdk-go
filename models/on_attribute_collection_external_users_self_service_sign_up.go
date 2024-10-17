@@ -21,7 +21,7 @@ func NewOnAttributeCollectionExternalUsersSelfServiceSignUp()(*OnAttributeCollec
 func CreateOnAttributeCollectionExternalUsersSelfServiceSignUpFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnAttributeCollectionExternalUsersSelfServiceSignUp(), nil
 }
-// GetAttributeCollectionPage gets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
+// GetAttributeCollectionPage gets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign-up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
 // returns a AuthenticationAttributeCollectionPageable when successful
 func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) GetAttributeCollectionPage()(AuthenticationAttributeCollectionPageable) {
     val, err := m.GetBackingStore().Get("attributeCollectionPage")
@@ -103,7 +103,7 @@ func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) Serialize(writer i
     }
     return nil
 }
-// SetAttributeCollectionPage sets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
+// SetAttributeCollectionPage sets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign-up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
 func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) SetAttributeCollectionPage(value AuthenticationAttributeCollectionPageable)() {
     err := m.GetBackingStore().Set("attributeCollectionPage", value)
     if err != nil {
