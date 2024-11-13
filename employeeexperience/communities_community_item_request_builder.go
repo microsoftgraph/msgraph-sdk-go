@@ -106,6 +106,11 @@ func (m *CommunitiesCommunityItemRequestBuilder) Group()(*CommunitiesItemGroupRe
 func (m *CommunitiesCommunityItemRequestBuilder) Owners()(*CommunitiesItemOwnersRequestBuilder) {
     return NewCommunitiesItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OwnersWithUserPrincipalName provides operations to manage the owners property of the microsoft.graph.community entity.
+// returns a *CommunitiesItemOwnersWithUserPrincipalNameRequestBuilder when successful
+func (m *CommunitiesCommunityItemRequestBuilder) OwnersWithUserPrincipalName(userPrincipalName *string)(*CommunitiesItemOwnersWithUserPrincipalNameRequestBuilder) {
+    return NewCommunitiesItemOwnersWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
 // Patch update the properties of an existing Viva Engage community.
 // returns a Communityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

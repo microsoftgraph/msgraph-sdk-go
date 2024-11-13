@@ -52,6 +52,7 @@ import (
     ia3e0f7c2d21d5c73ecb8a7552177d0fe444ae0522290dd1c4b5559e449b118af "github.com/microsoftgraph/msgraph-sdk-go/places"
     ia4b736f581ceef30e9ef8cebd9a6c2b932628e087982ff3dd2c9a0f1a920a918 "github.com/microsoftgraph/msgraph-sdk-go/compliance"
     ia6e876e3ed2d92c29c13dbc8c37513bc38d0d5f05ab9321e43a25ff336912a2d "github.com/microsoftgraph/msgraph-sdk-go/groups"
+    ia724ceb8aa9a4939c178de6ca2fb2580087bc8dbeb163ad5367a6c4f1c5b51ee "github.com/microsoftgraph/msgraph-sdk-go/userswithuserprincipalname"
     iaca6694a878291d0e4021155b406c19d3080cdfc382b456e43c71264d4d9e519 "github.com/microsoftgraph/msgraph-sdk-go/domaindnsrecords"
     ib14d748b564c787931c10f1c7ba6856eeddea29a5b9e5c5c27eb1224ff65e5c4 "github.com/microsoftgraph/msgraph-sdk-go/directory"
     ib3217193884e00033cb8182cac52178dfa3b20ce9c4eb48e37a6217882d956ae "github.com/microsoftgraph/msgraph-sdk-go/external"
@@ -476,4 +477,9 @@ func (m *GraphBaseServiceClient) TenantRelationships()(*i80d5f91f6f8d9dc34283313
 // returns a *UsersRequestBuilder when successful
 func (m *GraphBaseServiceClient) Users()(*if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.UsersRequestBuilder) {
     return if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.NewUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UsersWithUserPrincipalName provides operations to manage the collection of user entities.
+// returns a *UsersWithUserPrincipalNameRequestBuilder when successful
+func (m *GraphBaseServiceClient) UsersWithUserPrincipalName(userPrincipalName *string)(*ia724ceb8aa9a4939c178de6ca2fb2580087bc8dbeb163ad5367a6c4f1c5b51ee.UsersWithUserPrincipalNameRequestBuilder) {
+    return ia724ceb8aa9a4939c178de6ca2fb2580087bc8dbeb163ad5367a6c4f1c5b51ee.NewUsersWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
 }

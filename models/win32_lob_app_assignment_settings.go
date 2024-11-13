@@ -22,6 +22,18 @@ func NewWin32LobAppAssignmentSettings()(*Win32LobAppAssignmentSettings) {
 func CreateWin32LobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobAppAssignmentSettings(), nil
 }
+// GetAutoUpdateSettings gets the autoUpdateSettings property value. The auto-update settings to apply for this app assignment.
+// returns a Win32LobAppAutoUpdateSettingsable when successful
+func (m *Win32LobAppAssignmentSettings) GetAutoUpdateSettings()(Win32LobAppAutoUpdateSettingsable) {
+    val, err := m.GetBackingStore().Get("autoUpdateSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Win32LobAppAutoUpdateSettingsable)
+    }
+    return nil
+}
 // GetDeliveryOptimizationPriority gets the deliveryOptimizationPriority property value. Contains value for delivery optimization priority.
 // returns a *Win32LobAppDeliveryOptimizationPriority when successful
 func (m *Win32LobAppAssignmentSettings) GetDeliveryOptimizationPriority()(*Win32LobAppDeliveryOptimizationPriority) {
@@ -38,6 +50,16 @@ func (m *Win32LobAppAssignmentSettings) GetDeliveryOptimizationPriority()(*Win32
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
+    res["autoUpdateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWin32LobAppAutoUpdateSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutoUpdateSettings(val.(Win32LobAppAutoUpdateSettingsable))
+        }
+        return nil
+    }
     res["deliveryOptimizationPriority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWin32LobAppDeliveryOptimizationPriority)
         if err != nil {
@@ -122,6 +144,12 @@ func (m *Win32LobAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("autoUpdateSettings", m.GetAutoUpdateSettings())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDeliveryOptimizationPriority() != nil {
         cast := (*m.GetDeliveryOptimizationPriority()).String()
         err = writer.WriteStringValue("deliveryOptimizationPriority", &cast)
@@ -149,6 +177,13 @@ func (m *Win32LobAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
         }
     }
     return nil
+}
+// SetAutoUpdateSettings sets the autoUpdateSettings property value. The auto-update settings to apply for this app assignment.
+func (m *Win32LobAppAssignmentSettings) SetAutoUpdateSettings(value Win32LobAppAutoUpdateSettingsable)() {
+    err := m.GetBackingStore().Set("autoUpdateSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeliveryOptimizationPriority sets the deliveryOptimizationPriority property value. Contains value for delivery optimization priority.
 func (m *Win32LobAppAssignmentSettings) SetDeliveryOptimizationPriority(value *Win32LobAppDeliveryOptimizationPriority)() {
@@ -181,10 +216,12 @@ func (m *Win32LobAppAssignmentSettings) SetRestartSettings(value Win32LobAppRest
 type Win32LobAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAutoUpdateSettings()(Win32LobAppAutoUpdateSettingsable)
     GetDeliveryOptimizationPriority()(*Win32LobAppDeliveryOptimizationPriority)
     GetInstallTimeSettings()(MobileAppInstallTimeSettingsable)
     GetNotifications()(*Win32LobAppNotification)
     GetRestartSettings()(Win32LobAppRestartSettingsable)
+    SetAutoUpdateSettings(value Win32LobAppAutoUpdateSettingsable)()
     SetDeliveryOptimizationPriority(value *Win32LobAppDeliveryOptimizationPriority)()
     SetInstallTimeSettings(value MobileAppInstallTimeSettingsable)()
     SetNotifications(value *Win32LobAppNotification)()
