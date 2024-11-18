@@ -30,8 +30,11 @@ func NewCasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultRe
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action exportResult
+// Post export results from an estimated ediscoverySearch. For details, see Manage a collection estimate.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverysearch-exportresult?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultRequestBuilder) Post(ctx context.Context, body CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultExportResultPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultR
     }
     return nil
 }
-// ToPostRequestInformation invoke action exportResult
+// ToPostRequestInformation export results from an estimated ediscoverySearch. For details, see Manage a collection estimate.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultRequestBuilder) ToPostRequestInformation(ctx context.Context, body CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultExportResultPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityExportResultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

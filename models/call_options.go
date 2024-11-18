@@ -84,6 +84,16 @@ func (m *CallOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["isDeltaRosterEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDeltaRosterEnabled(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -120,6 +130,18 @@ func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
     }
     return nil
 }
+// GetIsDeltaRosterEnabled gets the isDeltaRosterEnabled property value. Indicates whether delta roster is enabled for the call.
+// returns a *bool when successful
+func (m *CallOptions) GetIsDeltaRosterEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isDeltaRosterEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *CallOptions) GetOdataType()(*string) {
@@ -142,6 +164,12 @@ func (m *CallOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteBoolValue("isContentSharingNotificationEnabled", m.GetIsContentSharingNotificationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isDeltaRosterEnabled", m.GetIsDeltaRosterEnabled())
         if err != nil {
             return err
         }
@@ -185,6 +213,13 @@ func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetIsDeltaRosterEnabled sets the isDeltaRosterEnabled property value. Indicates whether delta roster is enabled for the call.
+func (m *CallOptions) SetIsDeltaRosterEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isDeltaRosterEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CallOptions) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -199,9 +234,11 @@ type CallOptionsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetHideBotAfterEscalation()(*bool)
     GetIsContentSharingNotificationEnabled()(*bool)
+    GetIsDeltaRosterEnabled()(*bool)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetHideBotAfterEscalation(value *bool)()
     SetIsContentSharingNotificationEnabled(value *bool)()
+    SetIsDeltaRosterEnabled(value *bool)()
     SetOdataType(value *string)()
 }
