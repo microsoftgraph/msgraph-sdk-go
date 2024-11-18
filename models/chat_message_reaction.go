@@ -41,7 +41,7 @@ func (m *ChatMessageReaction) GetAdditionalData()(map[string]any) {
 func (m *ChatMessageReaction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCreatedDateTime gets the createdDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ChatMessageReaction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -50,6 +50,18 @@ func (m *ChatMessageReaction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetDisplayName gets the displayName property value. The name of the reaction.
+// returns a *string when successful
+func (m *ChatMessageReaction) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -67,6 +79,16 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -74,6 +96,16 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["reactionContentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReactionContentUrl(val)
         }
         return nil
     }
@@ -111,7 +143,19 @@ func (m *ChatMessageReaction) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReactionType gets the reactionType property value. Supported values are like, angry, sad, laugh, heart, surprised.
+// GetReactionContentUrl gets the reactionContentUrl property value. The hosted content URL for the custom reaction type.
+// returns a *string when successful
+func (m *ChatMessageReaction) GetReactionContentUrl()(*string) {
+    val, err := m.GetBackingStore().Get("reactionContentUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetReactionType gets the reactionType property value. The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.
 // returns a *string when successful
 func (m *ChatMessageReaction) GetReactionType()(*string) {
     val, err := m.GetBackingStore().Get("reactionType")
@@ -144,7 +188,19 @@ func (m *ChatMessageReaction) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("reactionContentUrl", m.GetReactionContentUrl())
         if err != nil {
             return err
         }
@@ -180,9 +236,16 @@ func (m *ChatMessageReaction) SetAdditionalData(value map[string]any)() {
 func (m *ChatMessageReaction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetCreatedDateTime sets the createdDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ChatMessageReaction) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDisplayName sets the displayName property value. The name of the reaction.
+func (m *ChatMessageReaction) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
@@ -194,7 +257,14 @@ func (m *ChatMessageReaction) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReactionType sets the reactionType property value. Supported values are like, angry, sad, laugh, heart, surprised.
+// SetReactionContentUrl sets the reactionContentUrl property value. The hosted content URL for the custom reaction type.
+func (m *ChatMessageReaction) SetReactionContentUrl(value *string)() {
+    err := m.GetBackingStore().Set("reactionContentUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReactionType sets the reactionType property value. The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.
 func (m *ChatMessageReaction) SetReactionType(value *string)() {
     err := m.GetBackingStore().Set("reactionType", value)
     if err != nil {
@@ -214,12 +284,16 @@ type ChatMessageReactionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDisplayName()(*string)
     GetOdataType()(*string)
+    GetReactionContentUrl()(*string)
     GetReactionType()(*string)
     GetUser()(ChatMessageReactionIdentitySetable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDisplayName(value *string)()
     SetOdataType(value *string)()
+    SetReactionContentUrl(value *string)()
     SetReactionType(value *string)()
     SetUser(value ChatMessageReactionIdentitySetable)()
 }

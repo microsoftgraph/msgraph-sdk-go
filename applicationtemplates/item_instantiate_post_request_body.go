@@ -66,12 +66,40 @@ func (m *ItemInstantiatePostRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["serviceManagementReference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServiceManagementReference(val)
+        }
+        return nil
+    }
     return res
+}
+// GetServiceManagementReference gets the serviceManagementReference property value. The serviceManagementReference property
+// returns a *string when successful
+func (m *ItemInstantiatePostRequestBody) GetServiceManagementReference()(*string) {
+    val, err := m.GetBackingStore().Get("serviceManagementReference")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemInstantiatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("serviceManagementReference", m.GetServiceManagementReference())
         if err != nil {
             return err
         }
@@ -102,12 +130,21 @@ func (m *ItemInstantiatePostRequestBody) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetServiceManagementReference sets the serviceManagementReference property value. The serviceManagementReference property
+func (m *ItemInstantiatePostRequestBody) SetServiceManagementReference(value *string)() {
+    err := m.GetBackingStore().Set("serviceManagementReference", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ItemInstantiatePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
+    GetServiceManagementReference()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
+    SetServiceManagementReference(value *string)()
 }
