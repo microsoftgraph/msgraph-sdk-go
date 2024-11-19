@@ -1,5 +1,5 @@
 package models
-// Possible values for the file format of a report.
+// Possible values for the file format of a report to be exported.
 type DeviceManagementReportFileFormat int
 
 const (

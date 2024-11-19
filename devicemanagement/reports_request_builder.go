@@ -211,6 +211,11 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementReportsable), nil
 }
+// RetrieveDeviceAppInstallationStatusReport provides operations to call the retrieveDeviceAppInstallationStatusReport method.
+// returns a *ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveDeviceAppInstallationStatusReport()(*ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder) {
+    return NewReportsRetrieveDeviceAppInstallationStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property reports for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -173,6 +173,16 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateFileStorageContainerSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(FileStorageContainerSettingsable))
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFileStorageContainerStatus)
         if err != nil {
@@ -204,6 +214,18 @@ func (m *FileStorageContainer) GetPermissions()([]Permissionable) {
     }
     if val != nil {
         return val.([]Permissionable)
+    }
+    return nil
+}
+// GetSettings gets the settings property value. The settings property
+// returns a FileStorageContainerSettingsable when successful
+func (m *FileStorageContainer) GetSettings()(FileStorageContainerSettingsable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FileStorageContainerSettingsable)
     }
     return nil
 }
@@ -285,6 +307,12 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -349,6 +377,13 @@ func (m *FileStorageContainer) SetPermissions(value []Permissionable)() {
         panic(err)
     }
 }
+// SetSettings sets the settings property value. The settings property
+func (m *FileStorageContainer) SetSettings(value FileStorageContainerSettingsable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.
 func (m *FileStorageContainer) SetStatus(value *FileStorageContainerStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -373,6 +408,7 @@ type FileStorageContainerable interface {
     GetDisplayName()(*string)
     GetDrive()(Driveable)
     GetPermissions()([]Permissionable)
+    GetSettings()(FileStorageContainerSettingsable)
     GetStatus()(*FileStorageContainerStatus)
     GetViewpoint()(FileStorageContainerViewpointable)
     SetContainerTypeId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
@@ -382,6 +418,7 @@ type FileStorageContainerable interface {
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
     SetPermissions(value []Permissionable)()
+    SetSettings(value FileStorageContainerSettingsable)()
     SetStatus(value *FileStorageContainerStatus)()
     SetViewpoint(value FileStorageContainerViewpointable)()
 }
