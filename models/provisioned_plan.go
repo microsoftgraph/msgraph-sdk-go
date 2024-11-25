@@ -40,7 +40,7 @@ func (m *ProvisionedPlan) GetAdditionalData()(map[string]any) {
 func (m *ProvisionedPlan) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCapabilityStatus gets the capabilityStatus property value. For example, 'Enabled'.
+// GetCapabilityStatus gets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
 // returns a *string when successful
 func (m *ProvisionedPlan) GetCapabilityStatus()(*string) {
     val, err := m.GetBackingStore().Get("capabilityStatus")
@@ -110,7 +110,7 @@ func (m *ProvisionedPlan) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProvisioningStatus gets the provisioningStatus property value. For example, 'Success'.
+// GetProvisioningStatus gets the provisioningStatus property value. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
 // returns a *string when successful
 func (m *ProvisionedPlan) GetProvisioningStatus()(*string) {
     val, err := m.GetBackingStore().Get("provisioningStatus")
@@ -122,7 +122,7 @@ func (m *ProvisionedPlan) GetProvisioningStatus()(*string) {
     }
     return nil
 }
-// GetService gets the service property value. The name of the service; for example, 'AccessControlS2S'
+// GetService gets the service property value. The name of the service; for example, 'AccessControlS2S'.
 // returns a *string when successful
 func (m *ProvisionedPlan) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
@@ -179,7 +179,7 @@ func (m *ProvisionedPlan) SetAdditionalData(value map[string]any)() {
 func (m *ProvisionedPlan) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCapabilityStatus sets the capabilityStatus property value. For example, 'Enabled'.
+// SetCapabilityStatus sets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
 func (m *ProvisionedPlan) SetCapabilityStatus(value *string)() {
     err := m.GetBackingStore().Set("capabilityStatus", value)
     if err != nil {
@@ -193,14 +193,14 @@ func (m *ProvisionedPlan) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProvisioningStatus sets the provisioningStatus property value. For example, 'Success'.
+// SetProvisioningStatus sets the provisioningStatus property value. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
 func (m *ProvisionedPlan) SetProvisioningStatus(value *string)() {
     err := m.GetBackingStore().Set("provisioningStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetService sets the service property value. The name of the service; for example, 'AccessControlS2S'
+// SetService sets the service property value. The name of the service; for example, 'AccessControlS2S'.
 func (m *ProvisionedPlan) SetService(value *string)() {
     err := m.GetBackingStore().Set("service", value)
     if err != nil {

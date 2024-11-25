@@ -46,10 +46,20 @@ type SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConf
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Approvers()(*SubjectRightsRequestsItemApproversRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ApproversWithUserPrincipalName provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+// returns a *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder when successful
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ApproversWithUserPrincipalName(userPrincipalName *string)(*SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder) {
+    return NewSubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
 // Collaborators provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
 // returns a *SubjectRightsRequestsItemCollaboratorsRequestBuilder when successful
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Collaborators()(*SubjectRightsRequestsItemCollaboratorsRequestBuilder) {
     return NewSubjectRightsRequestsItemCollaboratorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CollaboratorsWithUserPrincipalName provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+// returns a *SubjectRightsRequestsItemCollaboratorsWithUserPrincipalNameRequestBuilder when successful
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) CollaboratorsWithUserPrincipalName(userPrincipalName *string)(*SubjectRightsRequestsItemCollaboratorsWithUserPrincipalNameRequestBuilder) {
+    return NewSubjectRightsRequestsItemCollaboratorsWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
 }
 // NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal instantiates a new SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {

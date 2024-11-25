@@ -19,7 +19,7 @@ func NewEdiscoverySearchExportOperation()(*EdiscoverySearchExportOperation) {
 func CreateEdiscoverySearchExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoverySearchExportOperation(), nil
 }
-// GetAdditionalOptions gets the additionalOptions property value. The additionalOptions property
+// GetAdditionalOptions gets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.
 // returns a *AdditionalOptions when successful
 func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOptions) {
     val, err := m.GetBackingStore().Get("additionalOptions")
@@ -31,7 +31,7 @@ func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOpti
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the export by the user.
 // returns a *string when successful
 func (m *EdiscoverySearchExportOperation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -43,7 +43,7 @@ func (m *EdiscoverySearchExportOperation) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of export provided by the user.
 // returns a *string when successful
 func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -55,7 +55,7 @@ func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExportCriteria gets the exportCriteria property value. The exportCriteria property
+// GetExportCriteria gets the exportCriteria property value. Items to be included in the export. The possible values are: searchHits, partiallyIndexed, unknownFutureValue.
 // returns a *ExportCriteria when successful
 func (m *EdiscoverySearchExportOperation) GetExportCriteria()(*ExportCriteria) {
     val, err := m.GetBackingStore().Get("exportCriteria")
@@ -67,7 +67,7 @@ func (m *EdiscoverySearchExportOperation) GetExportCriteria()(*ExportCriteria) {
     }
     return nil
 }
-// GetExportFileMetadata gets the exportFileMetadata property value. The exportFileMetadata property
+// GetExportFileMetadata gets the exportFileMetadata property value. Contains the properties for an export file metadata, including downloadUrl, fileName, and size.
 // returns a []ExportFileMetadataable when successful
 func (m *EdiscoverySearchExportOperation) GetExportFileMetadata()([]ExportFileMetadataable) {
     val, err := m.GetBackingStore().Get("exportFileMetadata")
@@ -79,7 +79,7 @@ func (m *EdiscoverySearchExportOperation) GetExportFileMetadata()([]ExportFileMe
     }
     return nil
 }
-// GetExportFormat gets the exportFormat property value. The exportFormat property
+// GetExportFormat gets the exportFormat property value. Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.
 // returns a *ExportFormat when successful
 func (m *EdiscoverySearchExportOperation) GetExportFormat()(*ExportFormat) {
     val, err := m.GetBackingStore().Get("exportFormat")
@@ -91,7 +91,7 @@ func (m *EdiscoverySearchExportOperation) GetExportFormat()(*ExportFormat) {
     }
     return nil
 }
-// GetExportLocation gets the exportLocation property value. The exportLocation property
+// GetExportLocation gets the exportLocation property value. Location scope for partially indexed items. You can choose to include partially indexed items only in responsive locations with search hits or in all targeted locations. The possible values are: responsiveLocations, nonresponsiveLocations, unknownFutureValue.
 // returns a *ExportLocation when successful
 func (m *EdiscoverySearchExportOperation) GetExportLocation()(*ExportLocation) {
     val, err := m.GetBackingStore().Get("exportLocation")
@@ -103,7 +103,7 @@ func (m *EdiscoverySearchExportOperation) GetExportLocation()(*ExportLocation) {
     }
     return nil
 }
-// GetExportSingleItems gets the exportSingleItems property value. The exportSingleItems property
+// GetExportSingleItems gets the exportSingleItems property value. Indicates whether to export single items.
 // returns a *bool when successful
 func (m *EdiscoverySearchExportOperation) GetExportSingleItems()(*bool) {
     val, err := m.GetBackingStore().Get("exportSingleItems")
@@ -217,7 +217,7 @@ func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetSearch gets the search property value. The search property
+// GetSearch gets the search property value. The eDiscovery searches under each case.
 // returns a EdiscoverySearchable when successful
 func (m *EdiscoverySearchExportOperation) GetSearch()(EdiscoverySearchable) {
     val, err := m.GetBackingStore().Get("search")
@@ -301,63 +301,63 @@ func (m *EdiscoverySearchExportOperation) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetAdditionalOptions sets the additionalOptions property value. The additionalOptions property
+// SetAdditionalOptions sets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *AdditionalOptions)() {
     err := m.GetBackingStore().Set("additionalOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the export by the user.
 func (m *EdiscoverySearchExportOperation) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of export provided by the user.
 func (m *EdiscoverySearchExportOperation) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportCriteria sets the exportCriteria property value. The exportCriteria property
+// SetExportCriteria sets the exportCriteria property value. Items to be included in the export. The possible values are: searchHits, partiallyIndexed, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetExportCriteria(value *ExportCriteria)() {
     err := m.GetBackingStore().Set("exportCriteria", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportFileMetadata sets the exportFileMetadata property value. The exportFileMetadata property
+// SetExportFileMetadata sets the exportFileMetadata property value. Contains the properties for an export file metadata, including downloadUrl, fileName, and size.
 func (m *EdiscoverySearchExportOperation) SetExportFileMetadata(value []ExportFileMetadataable)() {
     err := m.GetBackingStore().Set("exportFileMetadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportFormat sets the exportFormat property value. The exportFormat property
+// SetExportFormat sets the exportFormat property value. Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetExportFormat(value *ExportFormat)() {
     err := m.GetBackingStore().Set("exportFormat", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportLocation sets the exportLocation property value. The exportLocation property
+// SetExportLocation sets the exportLocation property value. Location scope for partially indexed items. You can choose to include partially indexed items only in responsive locations with search hits or in all targeted locations. The possible values are: responsiveLocations, nonresponsiveLocations, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetExportLocation(value *ExportLocation)() {
     err := m.GetBackingStore().Set("exportLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportSingleItems sets the exportSingleItems property value. The exportSingleItems property
+// SetExportSingleItems sets the exportSingleItems property value. Indicates whether to export single items.
 func (m *EdiscoverySearchExportOperation) SetExportSingleItems(value *bool)() {
     err := m.GetBackingStore().Set("exportSingleItems", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSearch sets the search property value. The search property
+// SetSearch sets the search property value. The eDiscovery searches under each case.
 func (m *EdiscoverySearchExportOperation) SetSearch(value EdiscoverySearchable)() {
     err := m.GetBackingStore().Set("search", value)
     if err != nil {

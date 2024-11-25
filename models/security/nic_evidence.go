@@ -63,7 +63,7 @@ func (m *NicEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. The ipAddress property
+// GetIpAddress gets the ipAddress property value. The current IP address of the NIC.
 // returns a IpEvidenceable when successful
 func (m *NicEvidence) GetIpAddress()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("ipAddress")
@@ -75,7 +75,7 @@ func (m *NicEvidence) GetIpAddress()(IpEvidenceable) {
     }
     return nil
 }
-// GetMacAddress gets the macAddress property value. The macAddress property
+// GetMacAddress gets the macAddress property value. The MAC address of the NIC.
 // returns a *string when successful
 func (m *NicEvidence) GetMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("macAddress")
@@ -87,7 +87,7 @@ func (m *NicEvidence) GetMacAddress()(*string) {
     }
     return nil
 }
-// GetVlans gets the vlans property value. The vlans property
+// GetVlans gets the vlans property value. The current virtual local area networks of the NIC.
 // returns a []string when successful
 func (m *NicEvidence) GetVlans()([]string) {
     val, err := m.GetBackingStore().Get("vlans")
@@ -125,21 +125,21 @@ func (m *NicEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetIpAddress sets the ipAddress property value. The ipAddress property
+// SetIpAddress sets the ipAddress property value. The current IP address of the NIC.
 func (m *NicEvidence) SetIpAddress(value IpEvidenceable)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMacAddress sets the macAddress property value. The macAddress property
+// SetMacAddress sets the macAddress property value. The MAC address of the NIC.
 func (m *NicEvidence) SetMacAddress(value *string)() {
     err := m.GetBackingStore().Set("macAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVlans sets the vlans property value. The vlans property
+// SetVlans sets the vlans property value. The current virtual local area networks of the NIC.
 func (m *NicEvidence) SetVlans(value []string)() {
     err := m.GetBackingStore().Set("vlans", value)
     if err != nil {

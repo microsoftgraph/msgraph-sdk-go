@@ -40,10 +40,38 @@ func CreateParticipantBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     }
     return NewParticipantBase(), nil
 }
+// GetAdministrativeUnitInfos gets the administrativeUnitInfos property value. List of administrativeUnitInfo objects for the call participant.
+// returns a []AdministrativeUnitInfoable when successful
+func (m *ParticipantBase) GetAdministrativeUnitInfos()([]AdministrativeUnitInfoable) {
+    val, err := m.GetBackingStore().Get("administrativeUnitInfos")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdministrativeUnitInfoable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ParticipantBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["administrativeUnitInfos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAdministrativeUnitInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AdministrativeUnitInfoable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AdministrativeUnitInfoable)
+                }
+            }
+            m.SetAdministrativeUnitInfos(res)
+        }
+        return nil
+    }
     res["identity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCommunicationsIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -74,6 +102,18 @@ func (m *ParticipantBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if err != nil {
         return err
     }
+    if m.GetAdministrativeUnitInfos() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdministrativeUnitInfos()))
+        for i, v := range m.GetAdministrativeUnitInfos() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("administrativeUnitInfos", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("identity", m.GetIdentity())
         if err != nil {
@@ -81,6 +121,13 @@ func (m *ParticipantBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     return nil
+}
+// SetAdministrativeUnitInfos sets the administrativeUnitInfos property value. List of administrativeUnitInfo objects for the call participant.
+func (m *ParticipantBase) SetAdministrativeUnitInfos(value []AdministrativeUnitInfoable)() {
+    err := m.GetBackingStore().Set("administrativeUnitInfos", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentity sets the identity property value. The identity of the call participant.
 func (m *ParticipantBase) SetIdentity(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CommunicationsIdentitySetable)() {
@@ -92,6 +139,8 @@ func (m *ParticipantBase) SetIdentity(value iadcd81124412c61e647227ecfc4449d8bba
 type ParticipantBaseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdministrativeUnitInfos()([]AdministrativeUnitInfoable)
     GetIdentity()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CommunicationsIdentitySetable)
+    SetAdministrativeUnitInfos(value []AdministrativeUnitInfoable)()
     SetIdentity(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CommunicationsIdentitySetable)()
 }

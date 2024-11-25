@@ -54,7 +54,7 @@ func NewEntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageRe
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
+// Delete remove an accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -123,7 +123,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageR
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) Scope()(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
+// ToDeleteRequestInformation remove an accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
