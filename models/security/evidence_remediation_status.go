@@ -8,10 +8,16 @@ const (
     BLOCKED_EVIDENCEREMEDIATIONSTATUS
     NOTFOUND_EVIDENCEREMEDIATIONSTATUS
     UNKNOWNFUTUREVALUE_EVIDENCEREMEDIATIONSTATUS
+    ACTIVE_EVIDENCEREMEDIATIONSTATUS
+    PENDINGAPPROVAL_EVIDENCEREMEDIATIONSTATUS
+    DECLINED_EVIDENCEREMEDIATIONSTATUS
+    UNREMEDIATED_EVIDENCEREMEDIATIONSTATUS
+    RUNNING_EVIDENCEREMEDIATIONSTATUS
+    PARTIALLYREMEDIATED_EVIDENCEREMEDIATIONSTATUS
 )
 
 func (i EvidenceRemediationStatus) String() string {
-    return []string{"none", "remediated", "prevented", "blocked", "notFound", "unknownFutureValue"}[i]
+    return []string{"none", "remediated", "prevented", "blocked", "notFound", "unknownFutureValue", "active", "pendingApproval", "declined", "unremediated", "running", "partiallyRemediated"}[i]
 }
 func ParseEvidenceRemediationStatus(v string) (any, error) {
     result := NONE_EVIDENCEREMEDIATIONSTATUS
@@ -28,6 +34,18 @@ func ParseEvidenceRemediationStatus(v string) (any, error) {
             result = NOTFOUND_EVIDENCEREMEDIATIONSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EVIDENCEREMEDIATIONSTATUS
+        case "active":
+            result = ACTIVE_EVIDENCEREMEDIATIONSTATUS
+        case "pendingApproval":
+            result = PENDINGAPPROVAL_EVIDENCEREMEDIATIONSTATUS
+        case "declined":
+            result = DECLINED_EVIDENCEREMEDIATIONSTATUS
+        case "unremediated":
+            result = UNREMEDIATED_EVIDENCEREMEDIATIONSTATUS
+        case "running":
+            result = RUNNING_EVIDENCEREMEDIATIONSTATUS
+        case "partiallyRemediated":
+            result = PARTIALLYREMEDIATED_EVIDENCEREMEDIATIONSTATUS
         default:
             return nil, nil
     }

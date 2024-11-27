@@ -47,6 +47,18 @@ func (m *ConditionalAccessConditionSet) GetApplications()(ConditionalAccessAppli
     }
     return nil
 }
+// GetAuthenticationFlows gets the authenticationFlows property value. The authenticationFlows property
+// returns a ConditionalAccessAuthenticationFlowsable when successful
+func (m *ConditionalAccessConditionSet) GetAuthenticationFlows()(ConditionalAccessAuthenticationFlowsable) {
+    val, err := m.GetBackingStore().Get("authenticationFlows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessAuthenticationFlowsable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *ConditionalAccessConditionSet) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -99,6 +111,16 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetApplications(val.(ConditionalAccessApplicationsable))
+        }
+        return nil
+    }
+    res["authenticationFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessAuthenticationFlowsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationFlows(val.(ConditionalAccessAuthenticationFlowsable))
         }
         return nil
     }
@@ -343,6 +365,12 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err := writer.WriteObjectValue("authenticationFlows", m.GetAuthenticationFlows())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("clientApplications", m.GetClientApplications())
         if err != nil {
             return err
@@ -427,6 +455,13 @@ func (m *ConditionalAccessConditionSet) SetAdditionalData(value map[string]any)(
 // SetApplications sets the applications property value. Applications and user actions included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) SetApplications(value ConditionalAccessApplicationsable)() {
     err := m.GetBackingStore().Set("applications", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAuthenticationFlows sets the authenticationFlows property value. The authenticationFlows property
+func (m *ConditionalAccessConditionSet) SetAuthenticationFlows(value ConditionalAccessAuthenticationFlowsable)() {
+    err := m.GetBackingStore().Set("authenticationFlows", value)
     if err != nil {
         panic(err)
     }
@@ -517,6 +552,7 @@ type ConditionalAccessConditionSetable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplications()(ConditionalAccessApplicationsable)
+    GetAuthenticationFlows()(ConditionalAccessAuthenticationFlowsable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetClientApplications()(ConditionalAccessClientApplicationsable)
     GetClientAppTypes()([]ConditionalAccessClientApp)
@@ -530,6 +566,7 @@ type ConditionalAccessConditionSetable interface {
     GetUserRiskLevels()([]RiskLevel)
     GetUsers()(ConditionalAccessUsersable)
     SetApplications(value ConditionalAccessApplicationsable)()
+    SetAuthenticationFlows(value ConditionalAccessAuthenticationFlowsable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetClientApplications(value ConditionalAccessClientApplicationsable)()
     SetClientAppTypes(value []ConditionalAccessClientApp)()
