@@ -115,6 +115,11 @@ func (m *IdentitiesRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc8
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IdentityContainerable), nil
 }
+// Sensors provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorsRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) Sensors()(*IdentitiesSensorsRequestBuilder) {
+    return NewIdentitiesSensorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property identities for security
 // returns a *RequestInformation when successful
 func (m *IdentitiesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IdentitiesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

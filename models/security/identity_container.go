@@ -40,6 +40,22 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["sensors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSensorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Sensorable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Sensorable)
+                }
+            }
+            m.SetSensors(res)
+        }
+        return nil
+    }
     return res
 }
 // GetHealthIssues gets the healthIssues property value. Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
@@ -51,6 +67,18 @@ func (m *IdentityContainer) GetHealthIssues()([]HealthIssueable) {
     }
     if val != nil {
         return val.([]HealthIssueable)
+    }
+    return nil
+}
+// GetSensors gets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
+// returns a []Sensorable when successful
+func (m *IdentityContainer) GetSensors()([]Sensorable) {
+    val, err := m.GetBackingStore().Get("sensors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Sensorable)
     }
     return nil
 }
@@ -72,6 +100,18 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetSensors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensors()))
+        for i, v := range m.GetSensors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sensors", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetHealthIssues sets the healthIssues property value. Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
@@ -81,9 +121,18 @@ func (m *IdentityContainer) SetHealthIssues(value []HealthIssueable)() {
         panic(err)
     }
 }
+// SetSensors sets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
+func (m *IdentityContainer) SetSensors(value []Sensorable)() {
+    err := m.GetBackingStore().Set("sensors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type IdentityContainerable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHealthIssues()([]HealthIssueable)
+    GetSensors()([]Sensorable)
     SetHealthIssues(value []HealthIssueable)()
+    SetSensors(value []Sensorable)()
 }

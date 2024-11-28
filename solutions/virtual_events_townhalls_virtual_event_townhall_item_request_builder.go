@@ -18,7 +18,7 @@ type VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventTownhall object.
+// VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
 type VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get read the properties and relationships of a virtualEventTownhall object.
+// Get read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -93,7 +93,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable), nil
 }
-// Patch update the properties of a virtualEventTownhall object.
+// Patch update the properties of a virtualEventTownhall object. Only the Organizer and Co-organizer can make changes to a townhall event.
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -137,7 +137,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a virtualEventTownhall object.
+// ToGetRequestInformation read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +151,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a virtualEventTownhall object.
+// ToPatchRequestInformation update the properties of a virtualEventTownhall object. Only the Organizer and Co-organizer can make changes to a townhall event.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
