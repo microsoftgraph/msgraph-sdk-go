@@ -167,7 +167,7 @@ func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// GetDisplayName gets the displayName property value. The display name for the application. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 // returns a *string when successful
 func (m *Application) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -1594,7 +1594,7 @@ func (m *Application) SetDisabledByMicrosoftStatus(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// SetDisplayName sets the displayName property value. The display name for the application. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 func (m *Application) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

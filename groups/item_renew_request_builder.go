@@ -30,7 +30,7 @@ func NewItemRenewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewItemRenewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post renews a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+// Post renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *ItemRenewRequestBuilder) Post(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// ToPostRequestInformation renews a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+// ToPostRequestInformation renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 // returns a *RequestInformation when successful
 func (m *ItemRenewRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemRenewRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

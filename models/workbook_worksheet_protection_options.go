@@ -35,7 +35,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAdditionalData()(map[string]any)
     }
     return val.(map[string]any)
 }
-// GetAllowAutoFilter gets the allowAutoFilter property value. Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+// GetAllowAutoFilter gets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowAutoFilter()(*bool) {
     val, err := m.GetBackingStore().Get("allowAutoFilter")
@@ -47,7 +47,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowAutoFilter()(*bool) {
     }
     return nil
 }
-// GetAllowDeleteColumns gets the allowDeleteColumns property value. Indicates whether the worksheet protection option to allow deleting columns is enabled.
+// GetAllowDeleteColumns gets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteColumns()(*bool) {
     val, err := m.GetBackingStore().Get("allowDeleteColumns")
@@ -59,7 +59,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteColumns()(*bool) {
     }
     return nil
 }
-// GetAllowDeleteRows gets the allowDeleteRows property value. Indicates whether the worksheet protection option to allow deleting rows is enabled.
+// GetAllowDeleteRows gets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteRows()(*bool) {
     val, err := m.GetBackingStore().Get("allowDeleteRows")
@@ -71,7 +71,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteRows()(*bool) {
     }
     return nil
 }
-// GetAllowFormatCells gets the allowFormatCells property value. Indicates whether the worksheet protection option to allow formatting cells is enabled.
+// GetAllowFormatCells gets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatCells()(*bool) {
     val, err := m.GetBackingStore().Get("allowFormatCells")
@@ -83,7 +83,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatCells()(*bool) {
     }
     return nil
 }
-// GetAllowFormatColumns gets the allowFormatColumns property value. Indicates whether the worksheet protection option to allow formatting columns is enabled.
+// GetAllowFormatColumns gets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatColumns()(*bool) {
     val, err := m.GetBackingStore().Get("allowFormatColumns")
@@ -95,7 +95,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatColumns()(*bool) {
     }
     return nil
 }
-// GetAllowFormatRows gets the allowFormatRows property value. Indicates whether the worksheet protection option to allow formatting rows is enabled.
+// GetAllowFormatRows gets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatRows()(*bool) {
     val, err := m.GetBackingStore().Get("allowFormatRows")
@@ -107,7 +107,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatRows()(*bool) {
     }
     return nil
 }
-// GetAllowInsertColumns gets the allowInsertColumns property value. Indicates whether the worksheet protection option to allow inserting columns is enabled.
+// GetAllowInsertColumns gets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertColumns()(*bool) {
     val, err := m.GetBackingStore().Get("allowInsertColumns")
@@ -119,7 +119,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertColumns()(*bool) {
     }
     return nil
 }
-// GetAllowInsertHyperlinks gets the allowInsertHyperlinks property value. Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+// GetAllowInsertHyperlinks gets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertHyperlinks()(*bool) {
     val, err := m.GetBackingStore().Get("allowInsertHyperlinks")
@@ -131,7 +131,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertHyperlinks()(*bool) {
     }
     return nil
 }
-// GetAllowInsertRows gets the allowInsertRows property value. Indicates whether the worksheet protection option to allow inserting rows is enabled.
+// GetAllowInsertRows gets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertRows()(*bool) {
     val, err := m.GetBackingStore().Get("allowInsertRows")
@@ -143,7 +143,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertRows()(*bool) {
     }
     return nil
 }
-// GetAllowPivotTables gets the allowPivotTables property value. Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+// GetAllowPivotTables gets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowPivotTables()(*bool) {
     val, err := m.GetBackingStore().Get("allowPivotTables")
@@ -155,7 +155,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowPivotTables()(*bool) {
     }
     return nil
 }
-// GetAllowSort gets the allowSort property value. Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+// GetAllowSort gets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
 // returns a *bool when successful
 func (m *WorkbookWorksheetProtectionOptions) GetAllowSort()(*bool) {
     val, err := m.GetBackingStore().Get("allowSort")
@@ -399,77 +399,77 @@ func (m *WorkbookWorksheetProtectionOptions) SetAdditionalData(value map[string]
         panic(err)
     }
 }
-// SetAllowAutoFilter sets the allowAutoFilter property value. Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+// SetAllowAutoFilter sets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowAutoFilter(value *bool)() {
     err := m.GetBackingStore().Set("allowAutoFilter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowDeleteColumns sets the allowDeleteColumns property value. Indicates whether the worksheet protection option to allow deleting columns is enabled.
+// SetAllowDeleteColumns sets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowDeleteColumns(value *bool)() {
     err := m.GetBackingStore().Set("allowDeleteColumns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowDeleteRows sets the allowDeleteRows property value. Indicates whether the worksheet protection option to allow deleting rows is enabled.
+// SetAllowDeleteRows sets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowDeleteRows(value *bool)() {
     err := m.GetBackingStore().Set("allowDeleteRows", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowFormatCells sets the allowFormatCells property value. Indicates whether the worksheet protection option to allow formatting cells is enabled.
+// SetAllowFormatCells sets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatCells(value *bool)() {
     err := m.GetBackingStore().Set("allowFormatCells", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowFormatColumns sets the allowFormatColumns property value. Indicates whether the worksheet protection option to allow formatting columns is enabled.
+// SetAllowFormatColumns sets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatColumns(value *bool)() {
     err := m.GetBackingStore().Set("allowFormatColumns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowFormatRows sets the allowFormatRows property value. Indicates whether the worksheet protection option to allow formatting rows is enabled.
+// SetAllowFormatRows sets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatRows(value *bool)() {
     err := m.GetBackingStore().Set("allowFormatRows", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowInsertColumns sets the allowInsertColumns property value. Indicates whether the worksheet protection option to allow inserting columns is enabled.
+// SetAllowInsertColumns sets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertColumns(value *bool)() {
     err := m.GetBackingStore().Set("allowInsertColumns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowInsertHyperlinks sets the allowInsertHyperlinks property value. Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+// SetAllowInsertHyperlinks sets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertHyperlinks(value *bool)() {
     err := m.GetBackingStore().Set("allowInsertHyperlinks", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowInsertRows sets the allowInsertRows property value. Indicates whether the worksheet protection option to allow inserting rows is enabled.
+// SetAllowInsertRows sets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertRows(value *bool)() {
     err := m.GetBackingStore().Set("allowInsertRows", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowPivotTables sets the allowPivotTables property value. Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+// SetAllowPivotTables sets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowPivotTables(value *bool)() {
     err := m.GetBackingStore().Set("allowPivotTables", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowSort sets the allowSort property value. Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+// SetAllowSort sets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowSort(value *bool)() {
     err := m.GetBackingStore().Set("allowSort", value)
     if err != nil {

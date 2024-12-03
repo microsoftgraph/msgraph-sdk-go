@@ -44,6 +44,16 @@ func (m *FileStorageContainerSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c38
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileStorageContainerSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["isItemVersioningEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsItemVersioningEnabled(val)
+        }
+        return nil
+    }
     res["isOcrEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -51,6 +61,16 @@ func (m *FileStorageContainerSettings) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetIsOcrEnabled(val)
+        }
+        return nil
+    }
+    res["itemMajorVersionLimit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetItemMajorVersionLimit(val)
         }
         return nil
     }
@@ -66,6 +86,18 @@ func (m *FileStorageContainerSettings) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
+// returns a *bool when successful
+func (m *FileStorageContainerSettings) GetIsItemVersioningEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isItemVersioningEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsOcrEnabled gets the isOcrEnabled property value. Indicates whether Optical Character Recognition (OCR) is enabled for the container. The default value is false. When set to true, OCR extraction is performed for new and updated documents of supported document types, and the extracted fields in the metadata of the document enable end-user search and search-driven solutions. When set to false, existing OCR metadata is not impacted. Optional. Read-write.
 // returns a *bool when successful
 func (m *FileStorageContainerSettings) GetIsOcrEnabled()(*bool) {
@@ -75,6 +107,18 @@ func (m *FileStorageContainerSettings) GetIsOcrEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
+// returns a *int32 when successful
+func (m *FileStorageContainerSettings) GetItemMajorVersionLimit()(*int32) {
+    val, err := m.GetBackingStore().Get("itemMajorVersionLimit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -93,7 +137,19 @@ func (m *FileStorageContainerSettings) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *FileStorageContainerSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteBoolValue("isItemVersioningEnabled", m.GetIsItemVersioningEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isOcrEnabled", m.GetIsOcrEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("itemMajorVersionLimit", m.GetItemMajorVersionLimit())
         if err != nil {
             return err
         }
@@ -123,9 +179,23 @@ func (m *FileStorageContainerSettings) SetAdditionalData(value map[string]any)()
 func (m *FileStorageContainerSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
+func (m *FileStorageContainerSettings) SetIsItemVersioningEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isItemVersioningEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsOcrEnabled sets the isOcrEnabled property value. Indicates whether Optical Character Recognition (OCR) is enabled for the container. The default value is false. When set to true, OCR extraction is performed for new and updated documents of supported document types, and the extracted fields in the metadata of the document enable end-user search and search-driven solutions. When set to false, existing OCR metadata is not impacted. Optional. Read-write.
 func (m *FileStorageContainerSettings) SetIsOcrEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isOcrEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
+func (m *FileStorageContainerSettings) SetItemMajorVersionLimit(value *int32)() {
+    err := m.GetBackingStore().Set("itemMajorVersionLimit", value)
     if err != nil {
         panic(err)
     }
@@ -142,9 +212,13 @@ type FileStorageContainerSettingsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsItemVersioningEnabled()(*bool)
     GetIsOcrEnabled()(*bool)
+    GetItemMajorVersionLimit()(*int32)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsItemVersioningEnabled(value *bool)()
     SetIsOcrEnabled(value *bool)()
+    SetItemMajorVersionLimit(value *int32)()
     SetOdataType(value *string)()
 }
