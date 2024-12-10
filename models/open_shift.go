@@ -21,7 +21,7 @@ func NewOpenShift()(*OpenShift) {
 func CreateOpenShiftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenShift(), nil
 }
-// GetDraftOpenShift gets the draftOpenShift property value. An unpublished open shift.
+// GetDraftOpenShift gets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they're shared.
 // returns a OpenShiftItemable when successful
 func (m *OpenShift) GetDraftOpenShift()(OpenShiftItemable) {
     val, err := m.GetBackingStore().Get("draftOpenShift")
@@ -69,7 +69,7 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetSchedulingGroupId gets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+// GetSchedulingGroupId gets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
 // returns a *string when successful
 func (m *OpenShift) GetSchedulingGroupId()(*string) {
     val, err := m.GetBackingStore().Get("schedulingGroupId")
@@ -81,7 +81,7 @@ func (m *OpenShift) GetSchedulingGroupId()(*string) {
     }
     return nil
 }
-// GetSharedOpenShift gets the sharedOpenShift property value. A published open shift.
+// GetSharedOpenShift gets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
 // returns a OpenShiftItemable when successful
 func (m *OpenShift) GetSharedOpenShift()(OpenShiftItemable) {
     val, err := m.GetBackingStore().Get("sharedOpenShift")
@@ -119,21 +119,21 @@ func (m *OpenShift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetDraftOpenShift sets the draftOpenShift property value. An unpublished open shift.
+// SetDraftOpenShift sets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they're shared.
 func (m *OpenShift) SetDraftOpenShift(value OpenShiftItemable)() {
     err := m.GetBackingStore().Set("draftOpenShift", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedulingGroupId sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+// SetSchedulingGroupId sets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
 func (m *OpenShift) SetSchedulingGroupId(value *string)() {
     err := m.GetBackingStore().Set("schedulingGroupId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharedOpenShift sets the sharedOpenShift property value. A published open shift.
+// SetSharedOpenShift sets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
 func (m *OpenShift) SetSharedOpenShift(value OpenShiftItemable)() {
     err := m.GetBackingStore().Set("sharedOpenShift", value)
     if err != nil {

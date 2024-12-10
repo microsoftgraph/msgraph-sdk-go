@@ -134,7 +134,7 @@ func (m *ConditionalAccessClientApplications) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServicePrincipalFilter gets the servicePrincipalFilter property value. The servicePrincipalFilter property
+// GetServicePrincipalFilter gets the servicePrincipalFilter property value. Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
 // returns a ConditionalAccessFilterable when successful
 func (m *ConditionalAccessClientApplications) GetServicePrincipalFilter()(ConditionalAccessFilterable) {
     val, err := m.GetBackingStore().Get("servicePrincipalFilter")
@@ -212,7 +212,7 @@ func (m *ConditionalAccessClientApplications) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetServicePrincipalFilter sets the servicePrincipalFilter property value. The servicePrincipalFilter property
+// SetServicePrincipalFilter sets the servicePrincipalFilter property value. Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
 func (m *ConditionalAccessClientApplications) SetServicePrincipalFilter(value ConditionalAccessFilterable)() {
     err := m.GetBackingStore().Set("servicePrincipalFilter", value)
     if err != nil {
