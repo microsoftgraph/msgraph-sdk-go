@@ -70,7 +70,7 @@ func (m *ServicePrincipal) GetAppDescription()(*string) {
     }
     return nil
 }
-// GetAppDisplayName gets the appDisplayName property value. The display name exposed by the associated application.
+// GetAppDisplayName gets the appDisplayName property value. The display name exposed by the associated application. Maximum length is 256 characters.
 // returns a *string when successful
 func (m *ServicePrincipal) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
@@ -1814,7 +1814,7 @@ func (m *ServicePrincipal) SetAppDescription(value *string)() {
         panic(err)
     }
 }
-// SetAppDisplayName sets the appDisplayName property value. The display name exposed by the associated application.
+// SetAppDisplayName sets the appDisplayName property value. The display name exposed by the associated application. Maximum length is 256 characters.
 func (m *ServicePrincipal) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {
