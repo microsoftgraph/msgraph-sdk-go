@@ -75,6 +75,11 @@ func (m *FileStorageRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
+// DeletedContainers provides operations to manage the deletedContainers property of the microsoft.graph.fileStorage entity.
+// returns a *FileStorageDeletedContainersRequestBuilder when successful
+func (m *FileStorageRequestBuilder) DeletedContainers()(*FileStorageDeletedContainersRequestBuilder) {
+    return NewFileStorageDeletedContainersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get fileStorage from storage
 // returns a FileStorageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -31,6 +31,18 @@ func (m *FileStorage) GetContainers()([]FileStorageContainerable) {
     }
     return nil
 }
+// GetDeletedContainers gets the deletedContainers property value. The deletedContainers property
+// returns a []FileStorageContainerable when successful
+func (m *FileStorage) GetDeletedContainers()([]FileStorageContainerable) {
+    val, err := m.GetBackingStore().Get("deletedContainers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FileStorageContainerable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileStorage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,6 +60,22 @@ func (m *FileStorage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 }
             }
             m.SetContainers(res)
+        }
+        return nil
+    }
+    res["deletedContainers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateFileStorageContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]FileStorageContainerable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(FileStorageContainerable)
+                }
+            }
+            m.SetDeletedContainers(res)
         }
         return nil
     }
@@ -71,6 +99,18 @@ func (m *FileStorage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetDeletedContainers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeletedContainers()))
+        for i, v := range m.GetDeletedContainers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("deletedContainers", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContainers sets the containers property value. The containers property
@@ -80,9 +120,18 @@ func (m *FileStorage) SetContainers(value []FileStorageContainerable)() {
         panic(err)
     }
 }
+// SetDeletedContainers sets the deletedContainers property value. The deletedContainers property
+func (m *FileStorage) SetDeletedContainers(value []FileStorageContainerable)() {
+    err := m.GetBackingStore().Set("deletedContainers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type FileStorageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContainers()([]FileStorageContainerable)
+    GetDeletedContainers()([]FileStorageContainerable)
     SetContainers(value []FileStorageContainerable)()
+    SetDeletedContainers(value []FileStorageContainerable)()
 }

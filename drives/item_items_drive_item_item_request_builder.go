@@ -130,6 +130,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Delta()(*ItemItemsItemDeltaReques
 func (m *ItemItemsDriveItemItemRequestBuilder) DeltaWithToken(token *string)(*ItemItemsItemDeltaWithTokenRequestBuilder) {
     return NewItemItemsItemDeltaWithTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, token)
 }
+// DiscardCheckout provides operations to call the discardCheckout method.
+// returns a *ItemItemsItemDiscardCheckoutRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) DiscardCheckout()(*ItemItemsItemDiscardCheckoutRequestBuilder) {
+    return NewItemItemsItemDiscardCheckoutRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExtractSensitivityLabels provides operations to call the extractSensitivityLabels method.
 // returns a *ItemItemsItemExtractSensitivityLabelsRequestBuilder when successful
 func (m *ItemItemsDriveItemItemRequestBuilder) ExtractSensitivityLabels()(*ItemItemsItemExtractSensitivityLabelsRequestBuilder) {

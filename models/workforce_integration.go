@@ -45,6 +45,18 @@ func (m *WorkforceIntegration) GetDisplayName()(*string) {
     }
     return nil
 }
+// GetEligibilityFilteringEnabledEntities gets the eligibilityFilteringEnabledEntities property value. Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.
+// returns a *EligibilityFilteringEnabledEntities when successful
+func (m *WorkforceIntegration) GetEligibilityFilteringEnabledEntities()(*EligibilityFilteringEnabledEntities) {
+    val, err := m.GetBackingStore().Get("eligibilityFilteringEnabledEntities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EligibilityFilteringEnabledEntities)
+    }
+    return nil
+}
 // GetEncryption gets the encryption property value. The workforce integration encryption resource.
 // returns a WorkforceIntegrationEncryptionable when successful
 func (m *WorkforceIntegration) GetEncryption()(WorkforceIntegrationEncryptionable) {
@@ -78,6 +90,16 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["eligibilityFilteringEnabledEntities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEligibilityFilteringEnabledEntities)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEligibilityFilteringEnabledEntities(val.(*EligibilityFilteringEnabledEntities))
         }
         return nil
     }
@@ -177,6 +199,13 @@ func (m *WorkforceIntegration) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetEligibilityFilteringEnabledEntities() != nil {
+        cast := (*m.GetEligibilityFilteringEnabledEntities()).String()
+        err = writer.WriteStringValue("eligibilityFilteringEnabledEntities", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("encryption", m.GetEncryption())
         if err != nil {
@@ -218,6 +247,13 @@ func (m *WorkforceIntegration) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetEligibilityFilteringEnabledEntities sets the eligibilityFilteringEnabledEntities property value. Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.
+func (m *WorkforceIntegration) SetEligibilityFilteringEnabledEntities(value *EligibilityFilteringEnabledEntities)() {
+    err := m.GetBackingStore().Set("eligibilityFilteringEnabledEntities", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEncryption sets the encryption property value. The workforce integration encryption resource.
 func (m *WorkforceIntegration) SetEncryption(value WorkforceIntegrationEncryptionable)() {
     err := m.GetBackingStore().Set("encryption", value)
@@ -251,12 +287,14 @@ type WorkforceIntegrationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApiVersion()(*int32)
     GetDisplayName()(*string)
+    GetEligibilityFilteringEnabledEntities()(*EligibilityFilteringEnabledEntities)
     GetEncryption()(WorkforceIntegrationEncryptionable)
     GetIsActive()(*bool)
     GetSupportedEntities()(*WorkforceIntegrationSupportedEntities)
     GetUrl()(*string)
     SetApiVersion(value *int32)()
     SetDisplayName(value *string)()
+    SetEligibilityFilteringEnabledEntities(value *EligibilityFilteringEnabledEntities)()
     SetEncryption(value WorkforceIntegrationEncryptionable)()
     SetIsActive(value *bool)()
     SetSupportedEntities(value *WorkforceIntegrationSupportedEntities)()

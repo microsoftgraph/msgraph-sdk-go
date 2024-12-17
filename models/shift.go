@@ -47,6 +47,16 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["isStagedForDeletion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsStagedForDeletion(val)
+        }
+        return nil
+    }
     res["schedulingGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -78,6 +88,18 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     return res
+}
+// GetIsStagedForDeletion gets the isStagedForDeletion property value. The shift is marked for deletion, a process that is finalized when the schedule is shared.
+// returns a *bool when successful
+func (m *Shift) GetIsStagedForDeletion()(*bool) {
+    val, err := m.GetBackingStore().Get("isStagedForDeletion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 // returns a *string when successful
@@ -128,6 +150,12 @@ func (m *Shift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteBoolValue("isStagedForDeletion", m.GetIsStagedForDeletion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("schedulingGroupId", m.GetSchedulingGroupId())
         if err != nil {
             return err
@@ -150,6 +178,13 @@ func (m *Shift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 // SetDraftShift sets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
 func (m *Shift) SetDraftShift(value ShiftItemable)() {
     err := m.GetBackingStore().Set("draftShift", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsStagedForDeletion sets the isStagedForDeletion property value. The shift is marked for deletion, a process that is finalized when the schedule is shared.
+func (m *Shift) SetIsStagedForDeletion(value *bool)() {
+    err := m.GetBackingStore().Set("isStagedForDeletion", value)
     if err != nil {
         panic(err)
     }
@@ -179,10 +214,12 @@ type Shiftable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDraftShift()(ShiftItemable)
+    GetIsStagedForDeletion()(*bool)
     GetSchedulingGroupId()(*string)
     GetSharedShift()(ShiftItemable)
     GetUserId()(*string)
     SetDraftShift(value ShiftItemable)()
+    SetIsStagedForDeletion(value *bool)()
     SetSchedulingGroupId(value *string)()
     SetSharedShift(value ShiftItemable)()
     SetUserId(value *string)()

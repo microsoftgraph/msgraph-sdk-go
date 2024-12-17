@@ -1116,6 +1116,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRbacApplication(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
+                    case "#microsoft.graph.recycleBin":
+                        return NewRecycleBin(), nil
+                    case "#microsoft.graph.recycleBinItem":
+                        return NewRecycleBinItem(), nil
                     case "#microsoft.graph.referenceAttachment":
                         return NewReferenceAttachment(), nil
                     case "#microsoft.graph.relyingPartyDetailedSummary":

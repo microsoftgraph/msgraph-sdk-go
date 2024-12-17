@@ -47,6 +47,16 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["isStagedForDeletion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsStagedForDeletion(val)
+        }
+        return nil
+    }
     res["schedulingGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -68,6 +78,18 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     return res
+}
+// GetIsStagedForDeletion gets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
+// returns a *bool when successful
+func (m *OpenShift) GetIsStagedForDeletion()(*bool) {
+    val, err := m.GetBackingStore().Get("isStagedForDeletion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSchedulingGroupId gets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
 // returns a *string when successful
@@ -106,6 +128,12 @@ func (m *OpenShift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteBoolValue("isStagedForDeletion", m.GetIsStagedForDeletion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("schedulingGroupId", m.GetSchedulingGroupId())
         if err != nil {
             return err
@@ -122,6 +150,13 @@ func (m *OpenShift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 // SetDraftOpenShift sets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they're shared.
 func (m *OpenShift) SetDraftOpenShift(value OpenShiftItemable)() {
     err := m.GetBackingStore().Set("draftOpenShift", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsStagedForDeletion sets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
+func (m *OpenShift) SetIsStagedForDeletion(value *bool)() {
+    err := m.GetBackingStore().Set("isStagedForDeletion", value)
     if err != nil {
         panic(err)
     }
@@ -144,9 +179,11 @@ type OpenShiftable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDraftOpenShift()(OpenShiftItemable)
+    GetIsStagedForDeletion()(*bool)
     GetSchedulingGroupId()(*string)
     GetSharedOpenShift()(OpenShiftItemable)
     SetDraftOpenShift(value OpenShiftItemable)()
+    SetIsStagedForDeletion(value *bool)()
     SetSchedulingGroupId(value *string)()
     SetSharedOpenShift(value OpenShiftItemable)()
 }
