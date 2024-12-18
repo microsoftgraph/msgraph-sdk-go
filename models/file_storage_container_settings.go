@@ -86,7 +86,7 @@ func (m *FileStorageContainerSettings) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
+// GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. Indicates whether versioning is enabled for items in the container. Optional. Read-write.
 // returns a *bool when successful
 func (m *FileStorageContainerSettings) GetIsItemVersioningEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isItemVersioningEnabled")
@@ -110,7 +110,7 @@ func (m *FileStorageContainerSettings) GetIsOcrEnabled()(*bool) {
     }
     return nil
 }
-// GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
+// GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. The maximum major versions allowed for items in the container. Optional. Read-write.
 // returns a *int32 when successful
 func (m *FileStorageContainerSettings) GetItemMajorVersionLimit()(*int32) {
     val, err := m.GetBackingStore().Get("itemMajorVersionLimit")
@@ -179,7 +179,7 @@ func (m *FileStorageContainerSettings) SetAdditionalData(value map[string]any)()
 func (m *FileStorageContainerSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
+// SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. Indicates whether versioning is enabled for items in the container. Optional. Read-write.
 func (m *FileStorageContainerSettings) SetIsItemVersioningEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isItemVersioningEnabled", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *FileStorageContainerSettings) SetIsOcrEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
+// SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. The maximum major versions allowed for items in the container. Optional. Read-write.
 func (m *FileStorageContainerSettings) SetItemMajorVersionLimit(value *int32)() {
     err := m.GetBackingStore().Set("itemMajorVersionLimit", value)
     if err != nil {

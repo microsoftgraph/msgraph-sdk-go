@@ -45,6 +45,18 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetCertificateUserBin
     }
     return nil
 }
+// GetCrlValidationConfiguration gets the crlValidationConfiguration property value. The crlValidationConfiguration property
+// returns a X509CertificateCRLValidationConfigurationable when successful
+func (m *X509CertificateAuthenticationMethodConfiguration) GetCrlValidationConfiguration()(X509CertificateCRLValidationConfigurationable) {
+    val, err := m.GetBackingStore().Get("crlValidationConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(X509CertificateCRLValidationConfigurationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,6 +84,16 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers
                 }
             }
             m.SetCertificateUserBindings(res)
+        }
+        return nil
+    }
+    res["crlValidationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateX509CertificateCRLValidationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCrlValidationConfiguration(val.(X509CertificateCRLValidationConfigurationable))
         }
         return nil
     }
@@ -129,6 +151,12 @@ func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("crlValidationConfiguration", m.GetCrlValidationConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetIncludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
         for i, v := range m.GetIncludeTargets() {
@@ -157,6 +185,13 @@ func (m *X509CertificateAuthenticationMethodConfiguration) SetCertificateUserBin
         panic(err)
     }
 }
+// SetCrlValidationConfiguration sets the crlValidationConfiguration property value. The crlValidationConfiguration property
+func (m *X509CertificateAuthenticationMethodConfiguration) SetCrlValidationConfiguration(value X509CertificateCRLValidationConfigurationable)() {
+    err := m.GetBackingStore().Set("crlValidationConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
     err := m.GetBackingStore().Set("includeTargets", value)
@@ -169,8 +204,10 @@ type X509CertificateAuthenticationMethodConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationModeConfiguration()(X509CertificateAuthenticationModeConfigurationable)
     GetCertificateUserBindings()([]X509CertificateUserBindingable)
+    GetCrlValidationConfiguration()(X509CertificateCRLValidationConfigurationable)
     GetIncludeTargets()([]AuthenticationMethodTargetable)
     SetAuthenticationModeConfiguration(value X509CertificateAuthenticationModeConfigurationable)()
     SetCertificateUserBindings(value []X509CertificateUserBindingable)()
+    SetCrlValidationConfiguration(value X509CertificateCRLValidationConfigurationable)()
     SetIncludeTargets(value []AuthenticationMethodTargetable)()
 }

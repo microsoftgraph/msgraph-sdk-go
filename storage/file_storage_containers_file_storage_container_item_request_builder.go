@@ -100,6 +100,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FileStorageContainerable), nil
 }
+// Lock provides operations to call the lock method.
+// returns a *FileStorageContainersItemLockRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Lock()(*FileStorageContainersItemLockRequestBuilder) {
+    return NewFileStorageContainersItemLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property containers in storage
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -129,6 +134,16 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) PermanentD
 // returns a *FileStorageContainersItemPermissionsRequestBuilder when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Permissions()(*FileStorageContainersItemPermissionsRequestBuilder) {
     return NewFileStorageContainersItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RecycleBin provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageContainersItemRecycleBinRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) RecycleBin()(*FileStorageContainersItemRecycleBinRequestBuilder) {
+    return NewFileStorageContainersItemRecycleBinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Restore provides operations to call the restore method.
+// returns a *FileStorageContainersItemRestoreRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Restore()(*FileStorageContainersItemRestoreRequestBuilder) {
+    return NewFileStorageContainersItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property containers for storage
 // returns a *RequestInformation when successful
@@ -169,6 +184,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) ToPatchReq
         return nil, err
     }
     return requestInfo, nil
+}
+// Unlock provides operations to call the unlock method.
+// returns a *FileStorageContainersItemUnlockRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Unlock()(*FileStorageContainersItemUnlockRequestBuilder) {
+    return NewFileStorageContainersItemUnlockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *FileStorageContainersFileStorageContainerItemRequestBuilder when successful

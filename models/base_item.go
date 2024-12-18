@@ -40,6 +40,10 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewList(), nil
                     case "#microsoft.graph.listItem":
                         return NewListItem(), nil
+                    case "#microsoft.graph.recycleBin":
+                        return NewRecycleBin(), nil
+                    case "#microsoft.graph.recycleBinItem":
+                        return NewRecycleBinItem(), nil
                     case "#microsoft.graph.sharedDriveItem":
                         return NewSharedDriveItem(), nil
                     case "#microsoft.graph.site":

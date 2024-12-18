@@ -89,6 +89,16 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["passwordResetUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasswordResetUri(val)
+        }
+        return nil
+    }
     res["promptLoginBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePromptLoginBehavior)
         if err != nil {
@@ -137,6 +147,18 @@ func (m *InternalDomainFederation) GetIsSignedAuthenticationRequestRequired()(*b
 // returns a *string when successful
 func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
     val, err := m.GetBackingStore().Get("nextSigningCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPasswordResetUri gets the passwordResetUri property value. The passwordResetUri property
+// returns a *string when successful
+func (m *InternalDomainFederation) GetPasswordResetUri()(*string) {
+    val, err := m.GetBackingStore().Get("passwordResetUri")
     if err != nil {
         panic(err)
     }
@@ -212,6 +234,12 @@ func (m *InternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("passwordResetUri", m.GetPasswordResetUri())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPromptLoginBehavior() != nil {
         cast := (*m.GetPromptLoginBehavior()).String()
         err = writer.WriteStringValue("promptLoginBehavior", &cast)
@@ -261,6 +289,13 @@ func (m *InternalDomainFederation) SetNextSigningCertificate(value *string)() {
         panic(err)
     }
 }
+// SetPasswordResetUri sets the passwordResetUri property value. The passwordResetUri property
+func (m *InternalDomainFederation) SetPasswordResetUri(value *string)() {
+    err := m.GetBackingStore().Set("passwordResetUri", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPromptLoginBehavior sets the promptLoginBehavior property value. Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.
 func (m *InternalDomainFederation) SetPromptLoginBehavior(value *PromptLoginBehavior)() {
     err := m.GetBackingStore().Set("promptLoginBehavior", value)
@@ -289,6 +324,7 @@ type InternalDomainFederationable interface {
     GetFederatedIdpMfaBehavior()(*FederatedIdpMfaBehavior)
     GetIsSignedAuthenticationRequestRequired()(*bool)
     GetNextSigningCertificate()(*string)
+    GetPasswordResetUri()(*string)
     GetPromptLoginBehavior()(*PromptLoginBehavior)
     GetSigningCertificateUpdateStatus()(SigningCertificateUpdateStatusable)
     GetSignOutUri()(*string)
@@ -296,6 +332,7 @@ type InternalDomainFederationable interface {
     SetFederatedIdpMfaBehavior(value *FederatedIdpMfaBehavior)()
     SetIsSignedAuthenticationRequestRequired(value *bool)()
     SetNextSigningCertificate(value *string)()
+    SetPasswordResetUri(value *string)()
     SetPromptLoginBehavior(value *PromptLoginBehavior)()
     SetSigningCertificateUpdateStatus(value SigningCertificateUpdateStatusable)()
     SetSignOutUri(value *string)()

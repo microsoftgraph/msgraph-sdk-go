@@ -157,6 +157,16 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["lockState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSiteLockState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockState(val.(*SiteLockState))
+        }
+        return nil
+    }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
         if err != nil {
@@ -170,6 +180,16 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
                 }
             }
             m.SetPermissions(res)
+        }
+        return nil
+    }
+    res["recycleBin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRecycleBinFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecycleBin(val.(RecycleBinable))
         }
         return nil
     }
@@ -205,6 +225,18 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
+// GetLockState gets the lockState property value. Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.
+// returns a *SiteLockState when successful
+func (m *FileStorageContainer) GetLockState()(*SiteLockState) {
+    val, err := m.GetBackingStore().Get("lockState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SiteLockState)
+    }
+    return nil
+}
 // GetPermissions gets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 // returns a []Permissionable when successful
 func (m *FileStorageContainer) GetPermissions()([]Permissionable) {
@@ -214,6 +246,18 @@ func (m *FileStorageContainer) GetPermissions()([]Permissionable) {
     }
     if val != nil {
         return val.([]Permissionable)
+    }
+    return nil
+}
+// GetRecycleBin gets the recycleBin property value. Recycle bin of the fileStorageContainer. Read-only.
+// returns a RecycleBinable when successful
+func (m *FileStorageContainer) GetRecycleBin()(RecycleBinable) {
+    val, err := m.GetBackingStore().Get("recycleBin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RecycleBinable)
     }
     return nil
 }
@@ -295,6 +339,13 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetLockState() != nil {
+        cast := (*m.GetLockState()).String()
+        err = writer.WriteStringValue("lockState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
@@ -303,6 +354,12 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             }
         }
         err = writer.WriteCollectionOfObjectValues("permissions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("recycleBin", m.GetRecycleBin())
         if err != nil {
             return err
         }
@@ -370,9 +427,23 @@ func (m *FileStorageContainer) SetDrive(value Driveable)() {
         panic(err)
     }
 }
+// SetLockState sets the lockState property value. Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.
+func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
+    err := m.GetBackingStore().Set("lockState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissions sets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 func (m *FileStorageContainer) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRecycleBin sets the recycleBin property value. Recycle bin of the fileStorageContainer. Read-only.
+func (m *FileStorageContainer) SetRecycleBin(value RecycleBinable)() {
+    err := m.GetBackingStore().Set("recycleBin", value)
     if err != nil {
         panic(err)
     }
@@ -407,7 +478,9 @@ type FileStorageContainerable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDrive()(Driveable)
+    GetLockState()(*SiteLockState)
     GetPermissions()([]Permissionable)
+    GetRecycleBin()(RecycleBinable)
     GetSettings()(FileStorageContainerSettingsable)
     GetStatus()(*FileStorageContainerStatus)
     GetViewpoint()(FileStorageContainerViewpointable)
@@ -417,7 +490,9 @@ type FileStorageContainerable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
+    SetLockState(value *SiteLockState)()
     SetPermissions(value []Permissionable)()
+    SetRecycleBin(value RecycleBinable)()
     SetSettings(value FileStorageContainerSettingsable)()
     SetStatus(value *FileStorageContainerStatus)()
     SetViewpoint(value FileStorageContainerViewpointable)()
