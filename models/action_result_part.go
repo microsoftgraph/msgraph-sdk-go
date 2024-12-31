@@ -58,7 +58,7 @@ func (m *ActionResultPart) GetAdditionalData()(map[string]any) {
 func (m *ActionResultPart) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetError gets the error property value. The error that occurred, if any, during the course of the bulk operation.
+// GetError gets the error property value. The error that occurred, if any, during the bulk operation.
 // returns a PublicErrorable when successful
 func (m *ActionResultPart) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -141,7 +141,7 @@ func (m *ActionResultPart) SetAdditionalData(value map[string]any)() {
 func (m *ActionResultPart) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetError sets the error property value. The error that occurred, if any, during the course of the bulk operation.
+// SetError sets the error property value. The error that occurred, if any, during the bulk operation.
 func (m *ActionResultPart) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
