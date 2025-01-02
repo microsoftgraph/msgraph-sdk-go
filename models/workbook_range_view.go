@@ -247,7 +247,7 @@ func (m *WorkbookRangeView) GetRowCount()(*int32) {
     }
     return nil
 }
-// GetRows gets the rows property value. The collection of range views associated with the range. Read-only. Read-only.
+// GetRows gets the rows property value. The collection of range views associated with the range. Read-only.Read-only.
 // returns a []WorkbookRangeViewable when successful
 func (m *WorkbookRangeView) GetRows()([]WorkbookRangeViewable) {
     val, err := m.GetBackingStore().Get("rows")
@@ -437,7 +437,7 @@ func (m *WorkbookRangeView) SetRowCount(value *int32)() {
         panic(err)
     }
 }
-// SetRows sets the rows property value. The collection of range views associated with the range. Read-only. Read-only.
+// SetRows sets the rows property value. The collection of range views associated with the range. Read-only.Read-only.
 func (m *WorkbookRangeView) SetRows(value []WorkbookRangeViewable)() {
     err := m.GetBackingStore().Set("rows", value)
     if err != nil {

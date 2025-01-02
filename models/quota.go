@@ -140,7 +140,7 @@ func (m *Quota) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRemaining gets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
+// GetRemaining gets the remaining property value. Total space remaining before reaching the capacity limit, in bytes. Read-only.
 // returns a *int64 when successful
 func (m *Quota) GetRemaining()(*int64) {
     val, err := m.GetBackingStore().Get("remaining")
@@ -277,7 +277,7 @@ func (m *Quota) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRemaining sets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
+// SetRemaining sets the remaining property value. Total space remaining before reaching the capacity limit, in bytes. Read-only.
 func (m *Quota) SetRemaining(value *int64)() {
     err := m.GetBackingStore().Set("remaining", value)
     if err != nil {

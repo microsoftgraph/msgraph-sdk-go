@@ -121,6 +121,11 @@ func (m *ItemChatsItemMembersRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
+// Remove provides operations to call the remove method.
+// returns a *ItemChatsItemMembersRemoveRequestBuilder when successful
+func (m *ItemChatsItemMembersRequestBuilder) Remove()(*ItemChatsItemMembersRemoveRequestBuilder) {
+    return NewItemChatsItemMembersRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation a collection of all the members in the chat. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -44,7 +44,7 @@ func (m *Team) GetChannels()([]Channelable) {
     }
     return nil
 }
-// GetClassification gets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+// GetClassification gets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
 // returns a *string when successful
 func (m *Team) GetClassification()(*string) {
     val, err := m.GetBackingStore().Get("classification")
@@ -68,7 +68,7 @@ func (m *Team) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     }
     return nil
 }
-// GetDescription gets the description property value. An optional description for the team. Maximum length: 1024 characters.
+// GetDescription gets the description property value. An optional description for the team. Maximum length: 1,024 characters.
 // returns a *string when successful
 func (m *Team) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -486,7 +486,7 @@ func (m *Team) GetInstalledApps()([]TeamsAppInstallationable) {
     }
     return nil
 }
-// GetInternalId gets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+// GetInternalId gets the internalId property value. A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
 // returns a *string when successful
 func (m *Team) GetInternalId()(*string) {
     val, err := m.GetBackingStore().Get("internalId")
@@ -606,7 +606,7 @@ func (m *Team) GetSchedule()(Scheduleable) {
     }
     return nil
 }
-// GetSpecialization gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
+// GetSpecialization gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case. Each team specialization has access to unique behaviors and experiences targeted to its use case.
 // returns a *TeamSpecialization when successful
 func (m *Team) GetSpecialization()(*TeamSpecialization) {
     val, err := m.GetBackingStore().Get("specialization")
@@ -678,7 +678,7 @@ func (m *Team) GetVisibility()(*TeamVisibilityType) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+// GetWebUrl gets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 // returns a *string when successful
 func (m *Team) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -930,7 +930,7 @@ func (m *Team) SetChannels(value []Channelable)() {
         panic(err)
     }
 }
-// SetClassification sets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+// SetClassification sets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
 func (m *Team) SetClassification(value *string)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
@@ -944,7 +944,7 @@ func (m *Team) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
         panic(err)
     }
 }
-// SetDescription sets the description property value. An optional description for the team. Maximum length: 1024 characters.
+// SetDescription sets the description property value. An optional description for the team. Maximum length: 1,024 characters.
 func (m *Team) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -993,7 +993,7 @@ func (m *Team) SetInstalledApps(value []TeamsAppInstallationable)() {
         panic(err)
     }
 }
-// SetInternalId sets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+// SetInternalId sets the internalId property value. A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
 func (m *Team) SetInternalId(value *string)() {
     err := m.GetBackingStore().Set("internalId", value)
     if err != nil {
@@ -1063,7 +1063,7 @@ func (m *Team) SetSchedule(value Scheduleable)() {
         panic(err)
     }
 }
-// SetSpecialization sets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
+// SetSpecialization sets the specialization property value. Optional. Indicates whether the team is intended for a particular use case. Each team specialization has access to unique behaviors and experiences targeted to its use case.
 func (m *Team) SetSpecialization(value *TeamSpecialization)() {
     err := m.GetBackingStore().Set("specialization", value)
     if err != nil {
@@ -1105,7 +1105,7 @@ func (m *Team) SetVisibility(value *TeamVisibilityType)() {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+// SetWebUrl sets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 func (m *Team) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {
