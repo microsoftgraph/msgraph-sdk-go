@@ -53,7 +53,7 @@ func (m *EventMessage) GetEndDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetEvent gets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
+// GetEvent gets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property. Read-only.
 // returns a Eventable when successful
 func (m *EventMessage) GetEvent()(Eventable) {
     val, err := m.GetBackingStore().Get("event")
@@ -344,7 +344,7 @@ func (m *EventMessage) SetEndDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetEvent sets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
+// SetEvent sets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property. Read-only.
 func (m *EventMessage) SetEvent(value Eventable)() {
     err := m.GetBackingStore().Set("event", value)
     if err != nil {
