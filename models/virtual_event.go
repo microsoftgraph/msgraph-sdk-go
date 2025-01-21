@@ -87,6 +87,18 @@ func (m *VirtualEvent) GetEndDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
+// GetExternalEventInformation gets the externalEventInformation property value. The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.
+// returns a []VirtualEventExternalInformationable when successful
+func (m *VirtualEvent) GetExternalEventInformation()([]VirtualEventExternalInformationable) {
+    val, err := m.GetBackingStore().Get("externalEventInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VirtualEventExternalInformationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,6 +140,22 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetEndDateTime(val.(DateTimeTimeZoneable))
+        }
+        return nil
+    }
+    res["externalEventInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventExternalInformationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VirtualEventExternalInformationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(VirtualEventExternalInformationable)
+                }
+            }
+            m.SetExternalEventInformation(res)
         }
         return nil
     }
@@ -285,6 +313,18 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetExternalEventInformation() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalEventInformation()))
+        for i, v := range m.GetExternalEventInformation() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("externalEventInformation", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPresenters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPresenters()))
         for i, v := range m.GetPresenters() {
@@ -358,6 +398,13 @@ func (m *VirtualEvent) SetEndDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
+// SetExternalEventInformation sets the externalEventInformation property value. The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.
+func (m *VirtualEvent) SetExternalEventInformation(value []VirtualEventExternalInformationable)() {
+    err := m.GetBackingStore().Set("externalEventInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPresenters sets the presenters property value. The virtual event presenters.
 func (m *VirtualEvent) SetPresenters(value []VirtualEventPresenterable)() {
     err := m.GetBackingStore().Set("presenters", value)
@@ -400,6 +447,7 @@ type VirtualEventable interface {
     GetDescription()(ItemBodyable)
     GetDisplayName()(*string)
     GetEndDateTime()(DateTimeTimeZoneable)
+    GetExternalEventInformation()([]VirtualEventExternalInformationable)
     GetPresenters()([]VirtualEventPresenterable)
     GetSessions()([]VirtualEventSessionable)
     GetSettings()(VirtualEventSettingsable)
@@ -409,6 +457,7 @@ type VirtualEventable interface {
     SetDescription(value ItemBodyable)()
     SetDisplayName(value *string)()
     SetEndDateTime(value DateTimeTimeZoneable)()
+    SetExternalEventInformation(value []VirtualEventExternalInformationable)()
     SetPresenters(value []VirtualEventPresenterable)()
     SetSessions(value []VirtualEventSessionable)()
     SetSettings(value VirtualEventSettingsable)()

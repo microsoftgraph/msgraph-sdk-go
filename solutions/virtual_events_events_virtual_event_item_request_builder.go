@@ -130,6 +130,11 @@ func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) Publish()(*VirtualEv
 func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) Sessions()(*VirtualEventsEventsItemSessionsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SetExternalEventInformation provides operations to call the setExternalEventInformation method.
+// returns a *VirtualEventsEventsItemSetExternalEventInformationRequestBuilder when successful
+func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) SetExternalEventInformation()(*VirtualEventsEventsItemSetExternalEventInformationRequestBuilder) {
+    return NewVirtualEventsEventsItemSetExternalEventInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property events for solutions
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsVirtualEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

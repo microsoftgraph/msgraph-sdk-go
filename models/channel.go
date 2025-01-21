@@ -296,7 +296,7 @@ func (m *Channel) GetMembers()([]ConversationMemberable) {
     }
     return nil
 }
-// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
 // returns a *ChannelMembershipType when successful
 func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
     val, err := m.GetBackingStore().Get("membershipType")
@@ -559,7 +559,7 @@ func (m *Channel) SetMembers(value []ConversationMemberable)() {
         panic(err)
     }
 }
-// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
 func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
     err := m.GetBackingStore().Set("membershipType", value)
     if err != nil {

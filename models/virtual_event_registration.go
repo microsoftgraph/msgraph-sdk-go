@@ -44,6 +44,18 @@ func (m *VirtualEventRegistration) GetEmail()(*string) {
     }
     return nil
 }
+// GetExternalRegistrationInformation gets the externalRegistrationInformation property value. The external information for a virtual event registration.
+// returns a VirtualEventExternalRegistrationInformationable when successful
+func (m *VirtualEventRegistration) GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable) {
+    val, err := m.GetBackingStore().Get("externalRegistrationInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VirtualEventExternalRegistrationInformationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -65,6 +77,16 @@ func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a
         }
         if val != nil {
             m.SetEmail(val)
+        }
+        return nil
+    }
+    res["externalRegistrationInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVirtualEventExternalRegistrationInformationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalRegistrationInformation(val.(VirtualEventExternalRegistrationInformationable))
         }
         return nil
     }
@@ -299,6 +321,12 @@ func (m *VirtualEventRegistration) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteObjectValue("externalRegistrationInformation", m.GetExternalRegistrationInformation())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("firstName", m.GetFirstName())
         if err != nil {
             return err
@@ -381,6 +409,13 @@ func (m *VirtualEventRegistration) SetEmail(value *string)() {
         panic(err)
     }
 }
+// SetExternalRegistrationInformation sets the externalRegistrationInformation property value. The external information for a virtual event registration.
+func (m *VirtualEventRegistration) SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)() {
+    err := m.GetBackingStore().Set("externalRegistrationInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFirstName sets the firstName property value. First name of the registrant.
 func (m *VirtualEventRegistration) SetFirstName(value *string)() {
     err := m.GetBackingStore().Set("firstName", value)
@@ -449,6 +484,7 @@ type VirtualEventRegistrationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCancelationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEmail()(*string)
+    GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable)
     GetFirstName()(*string)
     GetLastName()(*string)
     GetPreferredLanguage()(*string)
@@ -460,6 +496,7 @@ type VirtualEventRegistrationable interface {
     GetUserId()(*string)
     SetCancelationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmail(value *string)()
+    SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)()
     SetFirstName(value *string)()
     SetLastName(value *string)()
     SetPreferredLanguage(value *string)()

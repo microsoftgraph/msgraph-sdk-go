@@ -470,7 +470,7 @@ func (m *ChatMessage) GetLocale()(*string) {
     }
     return nil
 }
-// GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+// GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.
 // returns a []ChatMessageMentionable when successful
 func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     val, err := m.GetBackingStore().Get("mentions")
@@ -878,7 +878,7 @@ func (m *ChatMessage) SetLocale(value *string)() {
         panic(err)
     }
 }
-// SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+// SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.
 func (m *ChatMessage) SetMentions(value []ChatMessageMentionable)() {
     err := m.GetBackingStore().Set("mentions", value)
     if err != nil {
