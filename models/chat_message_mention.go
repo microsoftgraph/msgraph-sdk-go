@@ -98,7 +98,7 @@ func (m *ChatMessageMention) GetId()(*int32) {
     }
     return nil
 }
-// GetMentioned gets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
+// GetMentioned gets the mentioned property value. The entity (user, application, team, channel, or chat) that was @mentioned.
 // returns a ChatMessageMentionedIdentitySetable when successful
 func (m *ChatMessageMention) GetMentioned()(ChatMessageMentionedIdentitySetable) {
     val, err := m.GetBackingStore().Get("mentioned")
@@ -186,7 +186,7 @@ func (m *ChatMessageMention) SetId(value *int32)() {
         panic(err)
     }
 }
-// SetMentioned sets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
+// SetMentioned sets the mentioned property value. The entity (user, application, team, channel, or chat) that was @mentioned.
 func (m *ChatMessageMention) SetMentioned(value ChatMessageMentionedIdentitySetable)() {
     err := m.GetBackingStore().Set("mentioned", value)
     if err != nil {

@@ -52,7 +52,7 @@ func (m *ChatMessageAttachment) GetContent()(*string) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+// GetContentType gets the contentType property value. The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
 // returns a *string when successful
 func (m *ChatMessageAttachment) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
@@ -162,7 +162,7 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetId gets the id property value. Read-only. The unique id of the attachment.
+// GetId gets the id property value. Read-only. The unique ID of the attachment.
 // returns a *string when successful
 func (m *ChatMessageAttachment) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -298,7 +298,7 @@ func (m *ChatMessageAttachment) SetContent(value *string)() {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+// SetContentType sets the contentType property value. The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
 func (m *ChatMessageAttachment) SetContentType(value *string)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
@@ -312,7 +312,7 @@ func (m *ChatMessageAttachment) SetContentUrl(value *string)() {
         panic(err)
     }
 }
-// SetId sets the id property value. Read-only. The unique id of the attachment.
+// SetId sets the id property value. Read-only. The unique ID of the attachment.
 func (m *ChatMessageAttachment) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

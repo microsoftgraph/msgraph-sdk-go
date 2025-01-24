@@ -21,7 +21,7 @@ func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
 func CreateChatMessageMentionedIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessageMentionedIdentitySet(), nil
 }
-// GetConversation gets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
+// GetConversation gets the conversation property value. If present, represents a conversation (for example, team, channel, or chat) @mentioned in a message.
 // returns a TeamworkConversationIdentityable when successful
 func (m *ChatMessageMentionedIdentitySet) GetConversation()(TeamworkConversationIdentityable) {
     val, err := m.GetBackingStore().Get("conversation")
@@ -63,7 +63,7 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
+// SetConversation sets the conversation property value. If present, represents a conversation (for example, team, channel, or chat) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {
     err := m.GetBackingStore().Set("conversation", value)
     if err != nil {

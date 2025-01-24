@@ -99,10 +99,34 @@ func (m *OnlineMeetingBase) GetAllowParticipantsToChangeName()(*bool) {
     }
     return nil
 }
+// GetAllowRecording gets the allowRecording property value. Indicates whether recording is enabled for the meeting.
+// returns a *bool when successful
+func (m *OnlineMeetingBase) GetAllowRecording()(*bool) {
+    val, err := m.GetBackingStore().Get("allowRecording")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowTeamworkReactions()(*bool) {
     val, err := m.GetBackingStore().Get("allowTeamworkReactions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetAllowTranscription gets the allowTranscription property value. Indicates whether transcription is enabled for the meeting.
+// returns a *bool when successful
+func (m *OnlineMeetingBase) GetAllowTranscription()(*bool) {
+    val, err := m.GetBackingStore().Get("allowTranscription")
     if err != nil {
         panic(err)
     }
@@ -144,6 +168,18 @@ func (m *OnlineMeetingBase) GetChatInfo()(ChatInfoable) {
     }
     if val != nil {
         return val.(ChatInfoable)
+    }
+    return nil
+}
+// GetChatRestrictions gets the chatRestrictions property value. The chatRestrictions property
+// returns a ChatRestrictionsable when successful
+func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
+    val, err := m.GetBackingStore().Get("chatRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ChatRestrictionsable)
     }
     return nil
 }
@@ -201,6 +237,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["allowRecording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowRecording(val)
+        }
+        return nil
+    }
     res["allowTeamworkReactions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -208,6 +254,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetAllowTeamworkReactions(val)
+        }
+        return nil
+    }
+    res["allowTranscription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowTranscription(val)
         }
         return nil
     }
@@ -244,6 +300,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetChatInfo(val.(ChatInfoable))
+        }
+        return nil
+    }
+    res["chatRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateChatRestrictionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetChatRestrictions(val.(ChatRestrictionsable))
         }
         return nil
     }
@@ -508,7 +574,19 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteBoolValue("allowRecording", m.GetAllowRecording())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("allowTeamworkReactions", m.GetAllowTeamworkReactions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("allowTranscription", m.GetAllowTranscription())
         if err != nil {
             return err
         }
@@ -533,6 +611,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err = writer.WriteObjectValue("chatInfo", m.GetChatInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("chatRestrictions", m.GetChatRestrictions())
         if err != nil {
             return err
         }
@@ -635,9 +719,23 @@ func (m *OnlineMeetingBase) SetAllowParticipantsToChangeName(value *bool)() {
         panic(err)
     }
 }
+// SetAllowRecording sets the allowRecording property value. Indicates whether recording is enabled for the meeting.
+func (m *OnlineMeetingBase) SetAllowRecording(value *bool)() {
+    err := m.GetBackingStore().Set("allowRecording", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 func (m *OnlineMeetingBase) SetAllowTeamworkReactions(value *bool)() {
     err := m.GetBackingStore().Set("allowTeamworkReactions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowTranscription sets the allowTranscription property value. Indicates whether transcription is enabled for the meeting.
+func (m *OnlineMeetingBase) SetAllowTranscription(value *bool)() {
+    err := m.GetBackingStore().Set("allowTranscription", value)
     if err != nil {
         panic(err)
     }
@@ -659,6 +757,13 @@ func (m *OnlineMeetingBase) SetAudioConferencing(value AudioConferencingable)() 
 // SetChatInfo sets the chatInfo property value. The chat information associated with this online meeting.
 func (m *OnlineMeetingBase) SetChatInfo(value ChatInfoable)() {
     err := m.GetBackingStore().Set("chatInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetChatRestrictions sets the chatRestrictions property value. The chatRestrictions property
+func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
+    err := m.GetBackingStore().Set("chatRestrictions", value)
     if err != nil {
         panic(err)
     }
@@ -741,10 +846,13 @@ type OnlineMeetingBaseable interface {
     GetAllowedPresenters()(*OnlineMeetingPresenters)
     GetAllowMeetingChat()(*MeetingChatMode)
     GetAllowParticipantsToChangeName()(*bool)
+    GetAllowRecording()(*bool)
     GetAllowTeamworkReactions()(*bool)
+    GetAllowTranscription()(*bool)
     GetAttendanceReports()([]MeetingAttendanceReportable)
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
+    GetChatRestrictions()(ChatRestrictionsable)
     GetIsEntryExitAnnounced()(*bool)
     GetJoinInformation()(ItemBodyable)
     GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable)
@@ -760,10 +868,13 @@ type OnlineMeetingBaseable interface {
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
     SetAllowMeetingChat(value *MeetingChatMode)()
     SetAllowParticipantsToChangeName(value *bool)()
+    SetAllowRecording(value *bool)()
     SetAllowTeamworkReactions(value *bool)()
+    SetAllowTranscription(value *bool)()
     SetAttendanceReports(value []MeetingAttendanceReportable)()
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()
+    SetChatRestrictions(value ChatRestrictionsable)()
     SetIsEntryExitAnnounced(value *bool)()
     SetJoinInformation(value ItemBodyable)()
     SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)()

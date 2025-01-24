@@ -52,7 +52,7 @@ func (m *InvitedUserMessageInfo) GetCcRecipients()([]Recipientable) {
     }
     return nil
 }
-// GetCustomizedMessageBody gets the customizedMessageBody property value. Customized message body you want to send if you don't want the default message.
+// GetCustomizedMessageBody gets the customizedMessageBody property value. Customized message body you want to send if you don't want the default message. Only plain text is allowed.
 // returns a *string when successful
 func (m *InvitedUserMessageInfo) GetCustomizedMessageBody()(*string) {
     val, err := m.GetBackingStore().Get("customizedMessageBody")
@@ -198,7 +198,7 @@ func (m *InvitedUserMessageInfo) SetCcRecipients(value []Recipientable)() {
         panic(err)
     }
 }
-// SetCustomizedMessageBody sets the customizedMessageBody property value. Customized message body you want to send if you don't want the default message.
+// SetCustomizedMessageBody sets the customizedMessageBody property value. Customized message body you want to send if you don't want the default message. Only plain text is allowed.
 func (m *InvitedUserMessageInfo) SetCustomizedMessageBody(value *string)() {
     err := m.GetBackingStore().Set("customizedMessageBody", value)
     if err != nil {

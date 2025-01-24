@@ -110,7 +110,7 @@ func (m *SubjectRightsRequestStageDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStage gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: approval.
+// GetStage gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: approval.
 // returns a *SubjectRightsRequestStage when successful
 func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage) {
     val, err := m.GetBackingStore().Get("stage")
@@ -195,7 +195,7 @@ func (m *SubjectRightsRequestStageDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: approval.
+// SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: approval.
 func (m *SubjectRightsRequestStageDetail) SetStage(value *SubjectRightsRequestStage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {

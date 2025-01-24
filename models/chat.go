@@ -84,6 +84,16 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["isHiddenForAllMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsHiddenForAllMembers(val)
+        }
+        return nil
+    }
     res["lastMessagePreview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessageInfoFromDiscriminatorValue)
         if err != nil {
@@ -245,6 +255,18 @@ func (m *Chat) GetInstalledApps()([]TeamsAppInstallationable) {
     }
     if val != nil {
         return val.([]TeamsAppInstallationable)
+    }
+    return nil
+}
+// GetIsHiddenForAllMembers gets the isHiddenForAllMembers property value. Indicates whether the chat is hidden for all its members. Read-only.
+// returns a *bool when successful
+func (m *Chat) GetIsHiddenForAllMembers()(*bool) {
+    val, err := m.GetBackingStore().Get("isHiddenForAllMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -424,6 +446,12 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteBoolValue("isHiddenForAllMembers", m.GetIsHiddenForAllMembers())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("lastMessagePreview", m.GetLastMessagePreview())
         if err != nil {
             return err
@@ -548,6 +576,13 @@ func (m *Chat) SetInstalledApps(value []TeamsAppInstallationable)() {
         panic(err)
     }
 }
+// SetIsHiddenForAllMembers sets the isHiddenForAllMembers property value. Indicates whether the chat is hidden for all its members. Read-only.
+func (m *Chat) SetIsHiddenForAllMembers(value *bool)() {
+    err := m.GetBackingStore().Set("isHiddenForAllMembers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastMessagePreview sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.
 func (m *Chat) SetLastMessagePreview(value ChatMessageInfoable)() {
     err := m.GetBackingStore().Set("lastMessagePreview", value)
@@ -638,6 +673,7 @@ type Chatable interface {
     GetChatType()(*ChatType)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetInstalledApps()([]TeamsAppInstallationable)
+    GetIsHiddenForAllMembers()(*bool)
     GetLastMessagePreview()(ChatMessageInfoable)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMembers()([]ConversationMemberable)
@@ -653,6 +689,7 @@ type Chatable interface {
     SetChatType(value *ChatType)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetInstalledApps(value []TeamsAppInstallationable)()
+    SetIsHiddenForAllMembers(value *bool)()
     SetLastMessagePreview(value ChatMessageInfoable)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMembers(value []ConversationMemberable)()

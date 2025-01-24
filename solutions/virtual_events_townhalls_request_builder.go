@@ -96,6 +96,16 @@ func (m *VirtualEventsTownhallsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventTownhallCollectionResponseable), nil
 }
+// GetByUserIdAndRoleWithUserIdWithRole provides operations to call the getByUserIdAndRole method.
+// returns a *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder when successful
+func (m *VirtualEventsTownhallsRequestBuilder) GetByUserIdAndRoleWithUserIdWithRole(role *string, userId *string)(*VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) {
+    return NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role, userId)
+}
+// GetByUserRoleWithRole provides operations to call the getByUserRole method.
+// returns a *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder when successful
+func (m *VirtualEventsTownhallsRequestBuilder) GetByUserRoleWithRole(role *string)(*VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder) {
+    return NewVirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role)
+}
 // Post create a new virtualEventTownhall object in draft mode.
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
