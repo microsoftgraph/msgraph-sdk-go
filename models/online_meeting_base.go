@@ -171,7 +171,7 @@ func (m *OnlineMeetingBase) GetChatInfo()(ChatInfoable) {
     }
     return nil
 }
-// GetChatRestrictions gets the chatRestrictions property value. The chatRestrictions property
+// GetChatRestrictions gets the chatRestrictions property value. Specifies the configuration settings for meeting chat restrictions.
 // returns a ChatRestrictionsable when successful
 func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     val, err := m.GetBackingStore().Get("chatRestrictions")
@@ -761,7 +761,7 @@ func (m *OnlineMeetingBase) SetChatInfo(value ChatInfoable)() {
         panic(err)
     }
 }
-// SetChatRestrictions sets the chatRestrictions property value. The chatRestrictions property
+// SetChatRestrictions sets the chatRestrictions property value. Specifies the configuration settings for meeting chat restrictions.
 func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
     err := m.GetBackingStore().Set("chatRestrictions", value)
     if err != nil {

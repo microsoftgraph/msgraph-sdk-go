@@ -35,7 +35,7 @@ func (m *ChatRestrictions) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowTextOnly gets the allowTextOnly property value. The allowTextOnly property
+// GetAllowTextOnly gets the allowTextOnly property value. Indicates whether only text is allowed in the meeting chat. Optional.
 // returns a *bool when successful
 func (m *ChatRestrictions) GetAllowTextOnly()(*bool) {
     val, err := m.GetBackingStore().Get("allowTextOnly")
@@ -119,7 +119,7 @@ func (m *ChatRestrictions) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowTextOnly sets the allowTextOnly property value. The allowTextOnly property
+// SetAllowTextOnly sets the allowTextOnly property value. Indicates whether only text is allowed in the meeting chat. Optional.
 func (m *ChatRestrictions) SetAllowTextOnly(value *bool)() {
     err := m.GetBackingStore().Set("allowTextOnly", value)
     if err != nil {

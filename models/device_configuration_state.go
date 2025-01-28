@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationState device Configuration State for a given device.
+// DeviceConfigurationState support for this Entity is being deprecated starting May 2026 & will no longer be supported.
 type DeviceConfigurationState struct {
     Entity
 }
