@@ -43,6 +43,18 @@ func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicy
     }
     return nil
 }
+// GetAutopatch gets the autopatch property value. The autopatch property
+// returns a CloudPcProvisioningPolicyAutopatchable when successful
+func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAutopatchable) {
+    val, err := m.GetBackingStore().Get("autopatch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcProvisioningPolicyAutopatchable)
+    }
+    return nil
+}
 // GetCloudPcGroupDisplayName gets the cloudPcGroupDisplayName property value. The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
 // returns a *string when successful
 func (m *CloudPcProvisioningPolicy) GetCloudPcGroupDisplayName()(*string) {
@@ -142,6 +154,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
                 }
             }
             m.SetAssignments(res)
+        }
+        return nil
+    }
+    res["autopatch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcProvisioningPolicyAutopatchFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutopatch(val.(CloudPcProvisioningPolicyAutopatchable))
         }
         return nil
     }
@@ -414,6 +436,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("autopatch", m.GetAutopatch())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("cloudPcGroupDisplayName", m.GetCloudPcGroupDisplayName())
         if err != nil {
             return err
@@ -521,6 +549,13 @@ func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPo
         panic(err)
     }
 }
+// SetAutopatch sets the autopatch property value. The autopatch property
+func (m *CloudPcProvisioningPolicy) SetAutopatch(value CloudPcProvisioningPolicyAutopatchable)() {
+    err := m.GetBackingStore().Set("autopatch", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPcGroupDisplayName sets the cloudPcGroupDisplayName property value. The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
 func (m *CloudPcProvisioningPolicy) SetCloudPcGroupDisplayName(value *string)() {
     err := m.GetBackingStore().Set("cloudPcGroupDisplayName", value)
@@ -624,6 +659,7 @@ type CloudPcProvisioningPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlternateResourceUrl()(*string)
     GetAssignments()([]CloudPcProvisioningPolicyAssignmentable)
+    GetAutopatch()(CloudPcProvisioningPolicyAutopatchable)
     GetCloudPcGroupDisplayName()(*string)
     GetCloudPcNamingTemplate()(*string)
     GetDescription()(*string)
@@ -640,6 +676,7 @@ type CloudPcProvisioningPolicyable interface {
     GetWindowsSetting()(CloudPcWindowsSettingable)
     SetAlternateResourceUrl(value *string)()
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
+    SetAutopatch(value CloudPcProvisioningPolicyAutopatchable)()
     SetCloudPcGroupDisplayName(value *string)()
     SetCloudPcNamingTemplate(value *string)()
     SetDescription(value *string)()

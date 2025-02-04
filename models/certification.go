@@ -143,7 +143,7 @@ func (m *Certification) GetIsCertifiedByMicrosoft()(*bool) {
     }
     return nil
 }
-// GetIsPublisherAttested gets the isPublisherAttested property value. Indicates whether the application has been self-attested by the application developer or the publisher.
+// GetIsPublisherAttested gets the isPublisherAttested property value. Indicates whether the application developer or publisher completed Publisher Attestation.
 // returns a *bool when successful
 func (m *Certification) GetIsPublisherAttested()(*bool) {
     val, err := m.GetBackingStore().Get("isPublisherAttested")
@@ -245,7 +245,7 @@ func (m *Certification) SetIsCertifiedByMicrosoft(value *bool)() {
         panic(err)
     }
 }
-// SetIsPublisherAttested sets the isPublisherAttested property value. Indicates whether the application has been self-attested by the application developer or the publisher.
+// SetIsPublisherAttested sets the isPublisherAttested property value. Indicates whether the application developer or publisher completed Publisher Attestation.
 func (m *Certification) SetIsPublisherAttested(value *bool)() {
     err := m.GetBackingStore().Set("isPublisherAttested", value)
     if err != nil {

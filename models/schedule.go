@@ -491,7 +491,7 @@ func (m *Schedule) GetTimeZone()(*string) {
     }
     return nil
 }
-// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
 // returns a []string when successful
 func (m *Schedule) GetWorkforceIntegrationIds()([]string) {
     val, err := m.GetBackingStore().Get("workforceIntegrationIds")
@@ -793,7 +793,7 @@ func (m *Schedule) SetTimeZone(value *string)() {
         panic(err)
     }
 }
-// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. The workforceIntegrationIds property
+// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
 func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
     err := m.GetBackingStore().Set("workforceIntegrationIds", value)
     if err != nil {
