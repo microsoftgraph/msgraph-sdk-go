@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters returns the tags that are a child of a tag.
+// CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters list eDiscovery review tags with the tag hierarchy shown.
 type CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewCasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder(rawUrl string, r
 func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Count()(*CasesEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns the tags that are a child of a tag.
+// Get list eDiscovery review tags with the tag hierarchy shown.
 // returns a EdiscoveryReviewTagCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-ashierarchy?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Get(ctx contex
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagCollectionResponseable), nil
 }
-// ToGetRequestInformation returns the tags that are a child of a tag.
+// ToGetRequestInformation list eDiscovery review tags with the tag hierarchy shown.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

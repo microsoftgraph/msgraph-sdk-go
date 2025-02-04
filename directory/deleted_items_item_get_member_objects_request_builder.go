@@ -30,7 +30,7 @@ func NewDeletedItemsItemGetMemberObjectsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsItemGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+// Post return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 // Deprecated: This method is obsolete. Use PostAsGetMemberObjectsPostResponse instead.
 // returns a DeletedItemsItemGetMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -54,7 +54,7 @@ func (m *DeletedItemsItemGetMemberObjectsRequestBuilder) Post(ctx context.Contex
     }
     return res.(DeletedItemsItemGetMemberObjectsResponseable), nil
 }
-// PostAsGetMemberObjectsPostResponse return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+// PostAsGetMemberObjectsPostResponse return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 // returns a DeletedItemsItemGetMemberObjectsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -77,7 +77,7 @@ func (m *DeletedItemsItemGetMemberObjectsRequestBuilder) PostAsGetMemberObjectsP
     }
     return res.(DeletedItemsItemGetMemberObjectsPostResponseable), nil
 }
-// ToPostRequestInformation return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+// ToPostRequestInformation return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 // returns a *RequestInformation when successful
 func (m *DeletedItemsItemGetMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeletedItemsItemGetMemberObjectsPostRequestBodyable, requestConfiguration *DeletedItemsItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

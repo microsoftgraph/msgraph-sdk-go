@@ -21,7 +21,7 @@ func NewWorkforceIntegration()(*WorkforceIntegration) {
 func CreateWorkforceIntegrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkforceIntegration(), nil
 }
-// GetApiVersion gets the apiVersion property value. API version for the call back URL. Start with 1.
+// GetApiVersion gets the apiVersion property value. API version for the callback URL. Start with 1.
 // returns a *int32 when successful
 func (m *WorkforceIntegration) GetApiVersion()(*int32) {
     val, err := m.GetBackingStore().Get("apiVersion")
@@ -157,7 +157,7 @@ func (m *WorkforceIntegration) GetIsActive()(*bool) {
     }
     return nil
 }
-// GetSupportedEntities gets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeOffReason, timeOff, timeOffRequest. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeOffReason, timeOff, timeOffRequest.
+// GetSupportedEntities gets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard , timeOffReason , timeOff , timeOffRequest.
 // returns a *WorkforceIntegrationSupportedEntities when successful
 func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegrationSupportedEntities) {
     val, err := m.GetBackingStore().Get("supportedEntities")
@@ -233,7 +233,7 @@ func (m *WorkforceIntegration) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetApiVersion sets the apiVersion property value. API version for the call back URL. Start with 1.
+// SetApiVersion sets the apiVersion property value. API version for the callback URL. Start with 1.
 func (m *WorkforceIntegration) SetApiVersion(value *int32)() {
     err := m.GetBackingStore().Set("apiVersion", value)
     if err != nil {
@@ -268,7 +268,7 @@ func (m *WorkforceIntegration) SetIsActive(value *bool)() {
         panic(err)
     }
 }
-// SetSupportedEntities sets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeOffReason, timeOff, timeOffRequest. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeOffReason, timeOff, timeOffRequest.
+// SetSupportedEntities sets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard , timeOffReason , timeOff , timeOffRequest.
 func (m *WorkforceIntegration) SetSupportedEntities(value *WorkforceIntegrationSupportedEntities)() {
     err := m.GetBackingStore().Set("supportedEntities", value)
     if err != nil {

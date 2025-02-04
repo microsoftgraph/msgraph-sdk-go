@@ -2663,7 +2663,7 @@ func (m *User) GetOnPremisesUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetOtherMails gets the otherMails property value. A list of other email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property can't contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
+// GetOtherMails gets the otherMails property value. A list of other email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can't contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
 // returns a []string when successful
 func (m *User) GetOtherMails()([]string) {
     val, err := m.GetBackingStore().Get("otherMails")
@@ -4804,7 +4804,7 @@ func (m *User) SetOnPremisesUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetOtherMails sets the otherMails property value. A list of other email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property can't contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
+// SetOtherMails sets the otherMails property value. A list of other email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can't contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
 func (m *User) SetOtherMails(value []string)() {
     err := m.GetBackingStore().Set("otherMails", value)
     if err != nil {

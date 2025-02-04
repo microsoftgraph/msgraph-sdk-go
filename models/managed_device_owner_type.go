@@ -3,16 +3,18 @@ package models
 type ManagedDeviceOwnerType int
 
 const (
-    // Unknown.
+    // Unknown device owner type.
     UNKNOWN_MANAGEDDEVICEOWNERTYPE ManagedDeviceOwnerType = iota
-    // Owned by company.
+    // Corporate device owner type.
     COMPANY_MANAGEDDEVICEOWNERTYPE
-    // Owned by person.
+    // Personal device owner type.
     PERSONAL_MANAGEDDEVICEOWNERTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MANAGEDDEVICEOWNERTYPE
 )
 
 func (i ManagedDeviceOwnerType) String() string {
-    return []string{"unknown", "company", "personal"}[i]
+    return []string{"unknown", "company", "personal", "unknownFutureValue"}[i]
 }
 func ParseManagedDeviceOwnerType(v string) (any, error) {
     result := UNKNOWN_MANAGEDDEVICEOWNERTYPE
@@ -23,6 +25,8 @@ func ParseManagedDeviceOwnerType(v string) (any, error) {
             result = COMPANY_MANAGEDDEVICEOWNERTYPE
         case "personal":
             result = PERSONAL_MANAGEDDEVICEOWNERTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MANAGEDDEVICEOWNERTYPE
         default:
             return nil, nil
     }

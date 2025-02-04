@@ -101,7 +101,7 @@ func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallationable) {
     }
     return nil
 }
-// GetLocale gets the locale property value. Represents the location that a user selected in Microsoft Teams and doesn't follow the Office's locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.
+// GetLocale gets the locale property value. Represents the location that a user selected in Microsoft Teams and doesn't follow the Office's locale setting. A user's locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.
 // returns a *string when successful
 func (m *UserTeamwork) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
@@ -183,7 +183,7 @@ func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallationabl
         panic(err)
     }
 }
-// SetLocale sets the locale property value. Represents the location that a user selected in Microsoft Teams and doesn't follow the Office's locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.
+// SetLocale sets the locale property value. Represents the location that a user selected in Microsoft Teams and doesn't follow the Office's locale setting. A user's locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.
 func (m *UserTeamwork) SetLocale(value *string)() {
     err := m.GetBackingStore().Set("locale", value)
     if err != nil {
