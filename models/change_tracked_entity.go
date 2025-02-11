@@ -30,6 +30,8 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.dayNote":
+                        return NewDayNote(), nil
                     case "#microsoft.graph.offerShiftRequest":
                         return NewOfferShiftRequest(), nil
                     case "#microsoft.graph.openShift":
@@ -46,6 +48,8 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewShiftPreferences(), nil
                     case "#microsoft.graph.swapShiftsChangeRequest":
                         return NewSwapShiftsChangeRequest(), nil
+                    case "#microsoft.graph.timeCard":
+                        return NewTimeCard(), nil
                     case "#microsoft.graph.timeOff":
                         return NewTimeOff(), nil
                     case "#microsoft.graph.timeOffReason":
@@ -59,6 +63,18 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
         }
     }
     return NewChangeTrackedEntity(), nil
+}
+// GetCreatedBy gets the createdBy property value. Identity of the creator of the entity.
+// returns a IdentitySetable when successful
+func (m *ChangeTrackedEntity) GetCreatedBy()(IdentitySetable) {
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 // returns a *Time when successful
@@ -76,6 +92,16 @@ func (m *ChangeTrackedEntity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChangeTrackedEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -138,7 +164,20 @@ func (m *ChangeTrackedEntity) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetCreatedBy sets the createdBy property value. Identity of the creator of the entity.
+func (m *ChangeTrackedEntity) SetCreatedBy(value IdentitySetable)() {
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ChangeTrackedEntity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -164,9 +203,11 @@ func (m *ChangeTrackedEntity) SetLastModifiedDateTime(value *i336074805fc853987a
 type ChangeTrackedEntityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
