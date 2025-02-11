@@ -14,15 +14,16 @@ const (
     OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 32
     OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 64
     UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 128
-    TIMEOFFREASON_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 256
-    TIMEOFF_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 512
-    TIMEOFFREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 1024
+    TIMECARD_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 256
+    TIMEOFFREASON_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 512
+    TIMEOFF_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 1024
+    TIMEOFFREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 2048
 )
 
 func (i WorkforceIntegrationSupportedEntities) String() string {
     var values []string
-    options := []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue", "timeOffReason", "timeOff", "timeOffRequest"}
-    for p := 0; p < 11; p++ {
+    options := []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue", "timeCard", "timeOffReason", "timeOff", "timeOffRequest"}
+    for p := 0; p < 12; p++ {
         mantis := WorkforceIntegrationSupportedEntities(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -51,6 +52,8 @@ func ParseWorkforceIntegrationSupportedEntities(v string) (any, error) {
                 result |= OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "timeCard":
+                result |= TIMECARD_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
             case "timeOffReason":
                 result |= TIMEOFFREASON_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
             case "timeOff":

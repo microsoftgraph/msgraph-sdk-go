@@ -19,6 +19,18 @@ func NewSchedule()(*Schedule) {
 func CreateScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchedule(), nil
 }
+// GetDayNotes gets the dayNotes property value. The day notes in the schedule.
+// returns a []DayNoteable when successful
+func (m *Schedule) GetDayNotes()([]DayNoteable) {
+    val, err := m.GetBackingStore().Get("dayNotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DayNoteable)
+    }
+    return nil
+}
 // GetEnabled gets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
 // returns a *bool when successful
 func (m *Schedule) GetEnabled()(*bool) {
@@ -35,6 +47,22 @@ func (m *Schedule) GetEnabled()(*bool) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["dayNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDayNoteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DayNoteable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DayNoteable)
+                }
+            }
+            m.SetDayNotes(res)
+        }
+        return nil
+    }
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -42,6 +70,16 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetEnabled(val)
+        }
+        return nil
+    }
+    res["isActivitiesIncludedWhenCopyingShiftsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsActivitiesIncludedWhenCopyingShiftsEnabled(val)
         }
         return nil
     }
@@ -165,6 +203,16 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["startDayOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDayOfWeek)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartDayOfWeek(val.(*DayOfWeek))
+        }
+        return nil
+    }
     res["swapShiftsChangeRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSwapShiftsChangeRequestFromDiscriminatorValue)
         if err != nil {
@@ -191,6 +239,22 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["timeCards"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTimeCardFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TimeCardable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TimeCardable)
+                }
+            }
+            m.SetTimeCards(res)
+        }
+        return nil
+    }
     res["timeClockEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -198,6 +262,16 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetTimeClockEnabled(val)
+        }
+        return nil
+    }
+    res["timeClockSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTimeClockSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTimeClockSettings(val.(TimeClockSettingsable))
         }
         return nil
     }
@@ -286,6 +360,18 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetIsActivitiesIncludedWhenCopyingShiftsEnabled gets the isActivitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts include activities from the original shift.
+// returns a *bool when successful
+func (m *Schedule) GetIsActivitiesIncludedWhenCopyingShiftsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isActivitiesIncludedWhenCopyingShiftsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOfferShiftRequests gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 // returns a []OfferShiftRequestable when successful
@@ -395,6 +481,18 @@ func (m *Schedule) GetShifts()([]Shiftable) {
     }
     return nil
 }
+// GetStartDayOfWeek gets the startDayOfWeek property value. Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// returns a *DayOfWeek when successful
+func (m *Schedule) GetStartDayOfWeek()(*DayOfWeek) {
+    val, err := m.GetBackingStore().Get("startDayOfWeek")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DayOfWeek)
+    }
+    return nil
+}
 // GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
 // returns a []SwapShiftsChangeRequestable when successful
 func (m *Schedule) GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequestable) {
@@ -419,6 +517,18 @@ func (m *Schedule) GetSwapShiftsRequestsEnabled()(*bool) {
     }
     return nil
 }
+// GetTimeCards gets the timeCards property value. The time cards in the schedule.
+// returns a []TimeCardable when successful
+func (m *Schedule) GetTimeCards()([]TimeCardable) {
+    val, err := m.GetBackingStore().Get("timeCards")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TimeCardable)
+    }
+    return nil
+}
 // GetTimeClockEnabled gets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
 // returns a *bool when successful
 func (m *Schedule) GetTimeClockEnabled()(*bool) {
@@ -428,6 +538,18 @@ func (m *Schedule) GetTimeClockEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetTimeClockSettings gets the timeClockSettings property value. The time clock location settings for this schedule.
+// returns a TimeClockSettingsable when successful
+func (m *Schedule) GetTimeClockSettings()(TimeClockSettingsable) {
+    val, err := m.GetBackingStore().Get("timeClockSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TimeClockSettingsable)
     }
     return nil
 }
@@ -509,8 +631,26 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
+    if m.GetDayNotes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDayNotes()))
+        for i, v := range m.GetDayNotes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("dayNotes", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("enabled", m.GetEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isActivitiesIncludedWhenCopyingShiftsEnabled", m.GetIsActivitiesIncludedWhenCopyingShiftsEnabled())
         if err != nil {
             return err
         }
@@ -587,6 +727,13 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetStartDayOfWeek() != nil {
+        cast := (*m.GetStartDayOfWeek()).String()
+        err = writer.WriteStringValue("startDayOfWeek", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSwapShiftsChangeRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSwapShiftsChangeRequests()))
         for i, v := range m.GetSwapShiftsChangeRequests() {
@@ -605,8 +752,26 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetTimeCards() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTimeCards()))
+        for i, v := range m.GetTimeCards() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("timeCards", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("timeClockEnabled", m.GetTimeClockEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("timeClockSettings", m.GetTimeClockSettings())
         if err != nil {
             return err
         }
@@ -667,9 +832,23 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
+// SetDayNotes sets the dayNotes property value. The day notes in the schedule.
+func (m *Schedule) SetDayNotes(value []DayNoteable)() {
+    err := m.GetBackingStore().Set("dayNotes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEnabled sets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
 func (m *Schedule) SetEnabled(value *bool)() {
     err := m.GetBackingStore().Set("enabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsActivitiesIncludedWhenCopyingShiftsEnabled sets the isActivitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts include activities from the original shift.
+func (m *Schedule) SetIsActivitiesIncludedWhenCopyingShiftsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isActivitiesIncludedWhenCopyingShiftsEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -737,6 +916,13 @@ func (m *Schedule) SetShifts(value []Shiftable)() {
         panic(err)
     }
 }
+// SetStartDayOfWeek sets the startDayOfWeek property value. Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+func (m *Schedule) SetStartDayOfWeek(value *DayOfWeek)() {
+    err := m.GetBackingStore().Set("startDayOfWeek", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSwapShiftsChangeRequests sets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
 func (m *Schedule) SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequestable)() {
     err := m.GetBackingStore().Set("swapShiftsChangeRequests", value)
@@ -751,9 +937,23 @@ func (m *Schedule) SetSwapShiftsRequestsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetTimeCards sets the timeCards property value. The time cards in the schedule.
+func (m *Schedule) SetTimeCards(value []TimeCardable)() {
+    err := m.GetBackingStore().Set("timeCards", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTimeClockEnabled sets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
 func (m *Schedule) SetTimeClockEnabled(value *bool)() {
     err := m.GetBackingStore().Set("timeClockEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTimeClockSettings sets the timeClockSettings property value. The time clock location settings for this schedule.
+func (m *Schedule) SetTimeClockSettings(value TimeClockSettingsable)() {
+    err := m.GetBackingStore().Set("timeClockSettings", value)
     if err != nil {
         panic(err)
     }
@@ -803,7 +1003,9 @@ func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
 type Scheduleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDayNotes()([]DayNoteable)
     GetEnabled()(*bool)
+    GetIsActivitiesIncludedWhenCopyingShiftsEnabled()(*bool)
     GetOfferShiftRequests()([]OfferShiftRequestable)
     GetOfferShiftRequestsEnabled()(*bool)
     GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable)
@@ -813,16 +1015,21 @@ type Scheduleable interface {
     GetProvisionStatusCode()(*string)
     GetSchedulingGroups()([]SchedulingGroupable)
     GetShifts()([]Shiftable)
+    GetStartDayOfWeek()(*DayOfWeek)
     GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequestable)
     GetSwapShiftsRequestsEnabled()(*bool)
+    GetTimeCards()([]TimeCardable)
     GetTimeClockEnabled()(*bool)
+    GetTimeClockSettings()(TimeClockSettingsable)
     GetTimeOffReasons()([]TimeOffReasonable)
     GetTimeOffRequests()([]TimeOffRequestable)
     GetTimeOffRequestsEnabled()(*bool)
     GetTimesOff()([]TimeOffable)
     GetTimeZone()(*string)
     GetWorkforceIntegrationIds()([]string)
+    SetDayNotes(value []DayNoteable)()
     SetEnabled(value *bool)()
+    SetIsActivitiesIncludedWhenCopyingShiftsEnabled(value *bool)()
     SetOfferShiftRequests(value []OfferShiftRequestable)()
     SetOfferShiftRequestsEnabled(value *bool)()
     SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)()
@@ -832,9 +1039,12 @@ type Scheduleable interface {
     SetProvisionStatusCode(value *string)()
     SetSchedulingGroups(value []SchedulingGroupable)()
     SetShifts(value []Shiftable)()
+    SetStartDayOfWeek(value *DayOfWeek)()
     SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequestable)()
     SetSwapShiftsRequestsEnabled(value *bool)()
+    SetTimeCards(value []TimeCardable)()
     SetTimeClockEnabled(value *bool)()
+    SetTimeClockSettings(value TimeClockSettingsable)()
     SetTimeOffReasons(value []TimeOffReasonable)()
     SetTimeOffRequests(value []TimeOffRequestable)()
     SetTimeOffRequestsEnabled(value *bool)()

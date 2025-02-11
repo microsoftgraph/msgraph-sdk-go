@@ -63,11 +63,6 @@ func (m *ItemManagerRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// Ref provides operations to manage the collection of user entities.
-// returns a *ItemManagerRefRequestBuilder when successful
-func (m *ItemManagerRequestBuilder) Ref()(*ItemManagerRefRequestBuilder) {
-    return NewItemManagerRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 // returns a *RequestInformation when successful
 func (m *ItemManagerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
