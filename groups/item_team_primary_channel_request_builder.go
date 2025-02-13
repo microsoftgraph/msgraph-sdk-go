@@ -41,6 +41,11 @@ type ItemTeamPrimaryChannelRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AllMembers provides operations to manage the allMembers property of the microsoft.graph.channel entity.
+// returns a *ItemTeamPrimaryChannelAllMembersRequestBuilder when successful
+func (m *ItemTeamPrimaryChannelRequestBuilder) AllMembers()(*ItemTeamPrimaryChannelAllMembersRequestBuilder) {
+    return NewItemTeamPrimaryChannelAllMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Archive provides operations to call the archive method.
 // returns a *ItemTeamPrimaryChannelArchiveRequestBuilder when successful
 func (m *ItemTeamPrimaryChannelRequestBuilder) Archive()(*ItemTeamPrimaryChannelArchiveRequestBuilder) {

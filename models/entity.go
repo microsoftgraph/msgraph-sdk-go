@@ -374,6 +374,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataPolicyOperation":
                         return NewDataPolicyOperation(), nil
+                    case "#microsoft.graph.dayNote":
+                        return NewDayNote(), nil
                     case "#microsoft.graph.defaultManagedAppProtection":
                         return NewDefaultManagedAppProtection(), nil
                     case "#microsoft.graph.delegatedAdminAccessAssignment":
@@ -1360,6 +1362,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewThreatAssessmentResult(), nil
                     case "#microsoft.graph.thumbnailSet":
                         return NewThumbnailSet(), nil
+                    case "#microsoft.graph.timeCard":
+                        return NewTimeCard(), nil
                     case "#microsoft.graph.timeOff":
                         return NewTimeOff(), nil
                     case "#microsoft.graph.timeOffReason":

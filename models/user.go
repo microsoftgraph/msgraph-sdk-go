@@ -299,7 +299,7 @@ func (m *User) GetContacts()([]Contactable) {
     }
     return nil
 }
-// GetCountry gets the country property value. The country/region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetCountry gets the country property value. The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *User) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
@@ -2807,7 +2807,7 @@ func (m *User) GetPlanner()(PlannerUserable) {
     }
     return nil
 }
-// GetPostalCode gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetPostalCode gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country or region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *User) GetPostalCode()(*string) {
     val, err := m.GetBackingStore().Get("postalCode")
@@ -3131,7 +3131,7 @@ func (m *User) GetTransitiveMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetUsageLocation gets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetUsageLocation gets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries/regions. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *User) GetUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("usageLocation")
@@ -4356,7 +4356,7 @@ func (m *User) SetContacts(value []Contactable)() {
         panic(err)
     }
 }
-// SetCountry sets the country property value. The country/region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetCountry sets the country property value. The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCountry(value *string)() {
     err := m.GetBackingStore().Set("country", value)
     if err != nil {
@@ -4888,7 +4888,7 @@ func (m *User) SetPlanner(value PlannerUserable)() {
         panic(err)
     }
 }
-// SetPostalCode sets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetPostalCode sets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country or region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetPostalCode(value *string)() {
     err := m.GetBackingStore().Set("postalCode", value)
     if err != nil {
@@ -5077,7 +5077,7 @@ func (m *User) SetTransitiveMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetUsageLocation sets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetUsageLocation sets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries/regions. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetUsageLocation(value *string)() {
     err := m.GetBackingStore().Set("usageLocation", value)
     if err != nil {

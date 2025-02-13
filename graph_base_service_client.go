@@ -82,7 +82,6 @@ import (
     if5372351befdb652f617b1ee71fbf092fa8dd2a161ba9c021bc265628b6ea82b "github.com/microsoftgraph/msgraph-sdk-go/sites"
     if5555fa41b6637688bcf8c25c62a041258f4dc6eacb38ad42d91c66f222ee182 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement"
     if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329 "github.com/microsoftgraph/msgraph-sdk-go/users"
-    ifaac1286fcbb332377eef658041897d053ec6a58a5caa2899f3376d70c5a345d "github.com/microsoftgraph/msgraph-sdk-go/approleassignments"
     ifd912bc64ceed11eb9b85cc55c2e7c7a17f682cfe222749139d43f75cf28642a "github.com/microsoftgraph/msgraph-sdk-go/filteroperators"
 )
 
@@ -129,11 +128,6 @@ func (m *GraphBaseServiceClient) ApplicationsWithUniqueName(uniqueName *string)(
 // returns a *ApplicationTemplatesRequestBuilder when successful
 func (m *GraphBaseServiceClient) ApplicationTemplates()(*i5310ba7d4cfddbf5de4c1be94a30f9ca8c747c30a87e76587ce88d1cbfff01b4.ApplicationTemplatesRequestBuilder) {
     return i5310ba7d4cfddbf5de4c1be94a30f9ca8c747c30a87e76587ce88d1cbfff01b4.NewApplicationTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AppRoleAssignments provides operations to manage the collection of appRoleAssignment entities.
-// returns a *AppRoleAssignmentsRequestBuilder when successful
-func (m *GraphBaseServiceClient) AppRoleAssignments()(*ifaac1286fcbb332377eef658041897d053ec6a58a5caa2899f3376d70c5a345d.AppRoleAssignmentsRequestBuilder) {
-    return ifaac1286fcbb332377eef658041897d053ec6a58a5caa2899f3376d70c5a345d.NewAppRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuditLogs provides operations to manage the auditLogRoot singleton.
 // returns a *AuditLogsRequestBuilder when successful

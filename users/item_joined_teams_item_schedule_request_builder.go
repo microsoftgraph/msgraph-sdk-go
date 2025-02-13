@@ -54,6 +54,11 @@ func NewItemJoinedTeamsItemScheduleRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DayNotes provides operations to manage the dayNotes property of the microsoft.graph.schedule entity.
+// returns a *ItemJoinedTeamsItemScheduleDayNotesRequestBuilder when successful
+func (m *ItemJoinedTeamsItemScheduleRequestBuilder) DayNotes()(*ItemJoinedTeamsItemScheduleDayNotesRequestBuilder) {
+    return NewItemJoinedTeamsItemScheduleDayNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property schedule for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemJoinedTeamsItemScheduleRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,6 +149,11 @@ func (m *ItemJoinedTeamsItemScheduleRequestBuilder) Shifts()(*ItemJoinedTeamsIte
 // returns a *ItemJoinedTeamsItemScheduleSwapShiftsChangeRequestsRequestBuilder when successful
 func (m *ItemJoinedTeamsItemScheduleRequestBuilder) SwapShiftsChangeRequests()(*ItemJoinedTeamsItemScheduleSwapShiftsChangeRequestsRequestBuilder) {
     return NewItemJoinedTeamsItemScheduleSwapShiftsChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TimeCards provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+// returns a *ItemJoinedTeamsItemScheduleTimeCardsRequestBuilder when successful
+func (m *ItemJoinedTeamsItemScheduleRequestBuilder) TimeCards()(*ItemJoinedTeamsItemScheduleTimeCardsRequestBuilder) {
+    return NewItemJoinedTeamsItemScheduleTimeCardsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TimeOffReasons provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
 // returns a *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder when successful
