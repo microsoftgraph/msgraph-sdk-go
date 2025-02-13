@@ -63,6 +63,30 @@ func (m *OnlineMeetingBase) GetAllowAttendeeToEnableMic()(*bool) {
     }
     return nil
 }
+// GetAllowBreakoutRooms gets the allowBreakoutRooms property value. Indicates whether breakout rooms are enabled for the meeting.
+// returns a *bool when successful
+func (m *OnlineMeetingBase) GetAllowBreakoutRooms()(*bool) {
+    val, err := m.GetBackingStore().Get("allowBreakoutRooms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
+// returns a *AllowedLobbyAdmitterRoles when successful
+func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRoles) {
+    val, err := m.GetBackingStore().Get("allowedLobbyAdmitters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AllowedLobbyAdmitterRoles)
+    }
+    return nil
+}
 // GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
 // returns a *OnlineMeetingPresenters when successful
 func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
@@ -72,6 +96,18 @@ func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     }
     if val != nil {
         return val.(*OnlineMeetingPresenters)
+    }
+    return nil
+}
+// GetAllowLiveShare gets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
+// returns a *MeetingLiveShareOptions when successful
+func (m *OnlineMeetingBase) GetAllowLiveShare()(*MeetingLiveShareOptions) {
+    val, err := m.GetBackingStore().Get("allowLiveShare")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MeetingLiveShareOptions)
     }
     return nil
 }
@@ -91,6 +127,18 @@ func (m *OnlineMeetingBase) GetAllowMeetingChat()(*MeetingChatMode) {
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowParticipantsToChangeName()(*bool) {
     val, err := m.GetBackingStore().Get("allowParticipantsToChangeName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetAllowPowerPointSharing gets the allowPowerPointSharing property value. Indicates whether PowerPoint live is enabled for the meeting.
+// returns a *bool when successful
+func (m *OnlineMeetingBase) GetAllowPowerPointSharing()(*bool) {
+    val, err := m.GetBackingStore().Get("allowPowerPointSharing")
     if err != nil {
         panic(err)
     }
@@ -127,6 +175,18 @@ func (m *OnlineMeetingBase) GetAllowTeamworkReactions()(*bool) {
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowTranscription()(*bool) {
     val, err := m.GetBackingStore().Get("allowTranscription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetAllowWhiteboard gets the allowWhiteboard property value. Indicates whether whiteboard is enabled for the meeting.
+// returns a *bool when successful
+func (m *OnlineMeetingBase) GetAllowWhiteboard()(*bool) {
+    val, err := m.GetBackingStore().Get("allowWhiteboard")
     if err != nil {
         panic(err)
     }
@@ -207,6 +267,26 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["allowBreakoutRooms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowBreakoutRooms(val)
+        }
+        return nil
+    }
+    res["allowedLobbyAdmitters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAllowedLobbyAdmitterRoles)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedLobbyAdmitters(val.(*AllowedLobbyAdmitterRoles))
+        }
+        return nil
+    }
     res["allowedPresenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnlineMeetingPresenters)
         if err != nil {
@@ -214,6 +294,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetAllowedPresenters(val.(*OnlineMeetingPresenters))
+        }
+        return nil
+    }
+    res["allowLiveShare"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMeetingLiveShareOptions)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowLiveShare(val.(*MeetingLiveShareOptions))
         }
         return nil
     }
@@ -234,6 +324,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetAllowParticipantsToChangeName(val)
+        }
+        return nil
+    }
+    res["allowPowerPointSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowPowerPointSharing(val)
         }
         return nil
     }
@@ -264,6 +364,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetAllowTranscription(val)
+        }
+        return nil
+    }
+    res["allowWhiteboard"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowWhiteboard(val)
         }
         return nil
     }
@@ -553,9 +663,29 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("allowBreakoutRooms", m.GetAllowBreakoutRooms())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAllowedLobbyAdmitters() != nil {
+        cast := (*m.GetAllowedLobbyAdmitters()).String()
+        err = writer.WriteStringValue("allowedLobbyAdmitters", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAllowedPresenters() != nil {
         cast := (*m.GetAllowedPresenters()).String()
         err = writer.WriteStringValue("allowedPresenters", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAllowLiveShare() != nil {
+        cast := (*m.GetAllowLiveShare()).String()
+        err = writer.WriteStringValue("allowLiveShare", &cast)
         if err != nil {
             return err
         }
@@ -574,6 +704,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteBoolValue("allowPowerPointSharing", m.GetAllowPowerPointSharing())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("allowRecording", m.GetAllowRecording())
         if err != nil {
             return err
@@ -587,6 +723,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err = writer.WriteBoolValue("allowTranscription", m.GetAllowTranscription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("allowWhiteboard", m.GetAllowWhiteboard())
         if err != nil {
             return err
         }
@@ -698,9 +840,30 @@ func (m *OnlineMeetingBase) SetAllowAttendeeToEnableMic(value *bool)() {
         panic(err)
     }
 }
+// SetAllowBreakoutRooms sets the allowBreakoutRooms property value. Indicates whether breakout rooms are enabled for the meeting.
+func (m *OnlineMeetingBase) SetAllowBreakoutRooms(value *bool)() {
+    err := m.GetBackingStore().Set("allowBreakoutRooms", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowedLobbyAdmitters sets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
+func (m *OnlineMeetingBase) SetAllowedLobbyAdmitters(value *AllowedLobbyAdmitterRoles)() {
+    err := m.GetBackingStore().Set("allowedLobbyAdmitters", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
 func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
     err := m.GetBackingStore().Set("allowedPresenters", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowLiveShare sets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
+func (m *OnlineMeetingBase) SetAllowLiveShare(value *MeetingLiveShareOptions)() {
+    err := m.GetBackingStore().Set("allowLiveShare", value)
     if err != nil {
         panic(err)
     }
@@ -715,6 +878,13 @@ func (m *OnlineMeetingBase) SetAllowMeetingChat(value *MeetingChatMode)() {
 // SetAllowParticipantsToChangeName sets the allowParticipantsToChangeName property value. Specifies if participants are allowed to rename themselves in an instance of the meeting.
 func (m *OnlineMeetingBase) SetAllowParticipantsToChangeName(value *bool)() {
     err := m.GetBackingStore().Set("allowParticipantsToChangeName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowPowerPointSharing sets the allowPowerPointSharing property value. Indicates whether PowerPoint live is enabled for the meeting.
+func (m *OnlineMeetingBase) SetAllowPowerPointSharing(value *bool)() {
+    err := m.GetBackingStore().Set("allowPowerPointSharing", value)
     if err != nil {
         panic(err)
     }
@@ -736,6 +906,13 @@ func (m *OnlineMeetingBase) SetAllowTeamworkReactions(value *bool)() {
 // SetAllowTranscription sets the allowTranscription property value. Indicates whether transcription is enabled for the meeting.
 func (m *OnlineMeetingBase) SetAllowTranscription(value *bool)() {
     err := m.GetBackingStore().Set("allowTranscription", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowWhiteboard sets the allowWhiteboard property value. Indicates whether whiteboard is enabled for the meeting.
+func (m *OnlineMeetingBase) SetAllowWhiteboard(value *bool)() {
+    err := m.GetBackingStore().Set("allowWhiteboard", value)
     if err != nil {
         panic(err)
     }
@@ -843,12 +1020,17 @@ type OnlineMeetingBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowAttendeeToEnableCamera()(*bool)
     GetAllowAttendeeToEnableMic()(*bool)
+    GetAllowBreakoutRooms()(*bool)
+    GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRoles)
     GetAllowedPresenters()(*OnlineMeetingPresenters)
+    GetAllowLiveShare()(*MeetingLiveShareOptions)
     GetAllowMeetingChat()(*MeetingChatMode)
     GetAllowParticipantsToChangeName()(*bool)
+    GetAllowPowerPointSharing()(*bool)
     GetAllowRecording()(*bool)
     GetAllowTeamworkReactions()(*bool)
     GetAllowTranscription()(*bool)
+    GetAllowWhiteboard()(*bool)
     GetAttendanceReports()([]MeetingAttendanceReportable)
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
@@ -865,12 +1047,17 @@ type OnlineMeetingBaseable interface {
     GetWatermarkProtection()(WatermarkProtectionValuesable)
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
+    SetAllowBreakoutRooms(value *bool)()
+    SetAllowedLobbyAdmitters(value *AllowedLobbyAdmitterRoles)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
+    SetAllowLiveShare(value *MeetingLiveShareOptions)()
     SetAllowMeetingChat(value *MeetingChatMode)()
     SetAllowParticipantsToChangeName(value *bool)()
+    SetAllowPowerPointSharing(value *bool)()
     SetAllowRecording(value *bool)()
     SetAllowTeamworkReactions(value *bool)()
     SetAllowTranscription(value *bool)()
+    SetAllowWhiteboard(value *bool)()
     SetAttendanceReports(value []MeetingAttendanceReportable)()
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()

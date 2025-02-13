@@ -54,6 +54,11 @@ func NewItemTeamScheduleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DayNotes provides operations to manage the dayNotes property of the microsoft.graph.schedule entity.
+// returns a *ItemTeamScheduleDayNotesRequestBuilder when successful
+func (m *ItemTeamScheduleRequestBuilder) DayNotes()(*ItemTeamScheduleDayNotesRequestBuilder) {
+    return NewItemTeamScheduleDayNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property schedule for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamScheduleRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamScheduleRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,6 +149,11 @@ func (m *ItemTeamScheduleRequestBuilder) Shifts()(*ItemTeamScheduleShiftsRequest
 // returns a *ItemTeamScheduleSwapShiftsChangeRequestsRequestBuilder when successful
 func (m *ItemTeamScheduleRequestBuilder) SwapShiftsChangeRequests()(*ItemTeamScheduleSwapShiftsChangeRequestsRequestBuilder) {
     return NewItemTeamScheduleSwapShiftsChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TimeCards provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+// returns a *ItemTeamScheduleTimeCardsRequestBuilder when successful
+func (m *ItemTeamScheduleRequestBuilder) TimeCards()(*ItemTeamScheduleTimeCardsRequestBuilder) {
+    return NewItemTeamScheduleTimeCardsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TimeOffReasons provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
 // returns a *ItemTeamScheduleTimeOffReasonsRequestBuilder when successful

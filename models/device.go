@@ -834,7 +834,7 @@ func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID. Supports $filter (eq, ne, not, in).
 // returns a *string when successful
 func (m *Device) GetTrustType()(*string) {
     val, err := m.GetBackingStore().Get("trustType")
@@ -1338,7 +1338,7 @@ func (m *Device) SetTransitiveMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID. Supports $filter (eq, ne, not, in).
 func (m *Device) SetTrustType(value *string)() {
     err := m.GetBackingStore().Set("trustType", value)
     if err != nil {

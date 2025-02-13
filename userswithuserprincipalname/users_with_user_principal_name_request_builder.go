@@ -18,7 +18,7 @@ type UsersWithUserPrincipalNameRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UsersWithUserPrincipalNameRequestBuilderGetQueryParameters read properties and relationships of the user object.
+// UsersWithUserPrincipalNameRequestBuilderGetQueryParameters retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
 type UsersWithUserPrincipalNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -61,7 +61,7 @@ func NewUsersWithUserPrincipalNameRequestBuilder(rawUrl string, requestAdapter i
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
 func (m *UsersWithUserPrincipalNameRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersWithUserPrincipalNameRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +76,12 @@ func (m *UsersWithUserPrincipalNameRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Get read properties and relationships of the user object.
+// Get retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
 func (m *UsersWithUserPrincipalNameRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersWithUserPrincipalNameRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *UsersWithUserPrincipalNameRequestBuilder) Get(ctx context.Context, requ
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
 func (m *UsersWithUserPrincipalNameRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, requestConfiguration *UsersWithUserPrincipalNameRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -133,7 +133,7 @@ func (m *UsersWithUserPrincipalNameRequestBuilder) ToDeleteRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the user object.
+// ToGetRequestInformation retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
 // returns a *RequestInformation when successful
 func (m *UsersWithUserPrincipalNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersWithUserPrincipalNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

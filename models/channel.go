@@ -20,6 +20,18 @@ func NewChannel()(*Channel) {
 func CreateChannelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannel(), nil
 }
+// GetAllMembers gets the allMembers property value. A collection of membership records associated with the channel, including both direct and indirect members of shared channels.
+// returns a []ConversationMemberable when successful
+func (m *Channel) GetAllMembers()([]ConversationMemberable) {
+    val, err := m.GetBackingStore().Get("allMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConversationMemberable)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Read only. Timestamp at which the channel was created.
 // returns a *Time when successful
 func (m *Channel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -72,6 +84,22 @@ func (m *Channel) GetEmail()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["allMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConversationMemberable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConversationMemberable)
+                }
+            }
+            m.SetAllMembers(res)
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -386,6 +414,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if err != nil {
         return err
     }
+    if m.GetAllMembers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllMembers()))
+        for i, v := range m.GetAllMembers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("allMembers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
@@ -503,6 +543,13 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
+// SetAllMembers sets the allMembers property value. A collection of membership records associated with the channel, including both direct and indirect members of shared channels.
+func (m *Channel) SetAllMembers(value []ConversationMemberable)() {
+    err := m.GetBackingStore().Set("allMembers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. Read only. Timestamp at which the channel was created.
 func (m *Channel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -611,6 +658,7 @@ func (m *Channel) SetWebUrl(value *string)() {
 type Channelable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllMembers()([]ConversationMemberable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
@@ -626,6 +674,7 @@ type Channelable interface {
     GetTabs()([]TeamsTabable)
     GetTenantId()(*string)
     GetWebUrl()(*string)
+    SetAllMembers(value []ConversationMemberable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()

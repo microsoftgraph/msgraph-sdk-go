@@ -237,7 +237,7 @@ func (m *Qna) GetState()(*AnswerState) {
     }
     return nil
 }
-// GetTargetedVariations gets the targetedVariations property value. Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
+// GetTargetedVariations gets the targetedVariations property value. Variations of a QnA for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
 // returns a []AnswerVariantable when successful
 func (m *Qna) GetTargetedVariations()([]AnswerVariantable) {
     val, err := m.GetBackingStore().Get("targetedVariations")
@@ -374,7 +374,7 @@ func (m *Qna) SetState(value *AnswerState)() {
         panic(err)
     }
 }
-// SetTargetedVariations sets the targetedVariations property value. Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
+// SetTargetedVariations sets the targetedVariations property value. Variations of a QnA for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
 func (m *Qna) SetTargetedVariations(value []AnswerVariantable)() {
     err := m.GetBackingStore().Set("targetedVariations", value)
     if err != nil {

@@ -41,6 +41,11 @@ type ItemJoinedTeamsItemChannelsChannelItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AllMembers provides operations to manage the allMembers property of the microsoft.graph.channel entity.
+// returns a *ItemJoinedTeamsItemChannelsItemAllMembersRequestBuilder when successful
+func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) AllMembers()(*ItemJoinedTeamsItemChannelsItemAllMembersRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsItemAllMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Archive provides operations to call the archive method.
 // returns a *ItemJoinedTeamsItemChannelsItemArchiveRequestBuilder when successful
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) Archive()(*ItemJoinedTeamsItemChannelsItemArchiveRequestBuilder) {
