@@ -31,7 +31,7 @@ func NewSubjectRightsRequestsItemGetFinalReportRequestBuilder(rawUrl string, req
     return NewSubjectRightsRequestsItemGetFinalReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -55,7 +55,7 @@ func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) Get(ctx context.
     return res.([]byte), nil
 }
 // ToGetRequestInformation get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemGetFinalReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +67,7 @@ func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *SubjectRightsRequestsItemGetFinalReportRequestBuilder when successful
 func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemGetFinalReportRequestBuilder) {
     return NewSubjectRightsRequestsItemGetFinalReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
