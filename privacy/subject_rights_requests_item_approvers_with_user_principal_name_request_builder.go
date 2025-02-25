@@ -44,7 +44,7 @@ func NewSubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder(ra
     return NewSubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get collection of users who can approve the request. Currently only supported for requests of type delete.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
@@ -65,7 +65,7 @@ func (m *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder) 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
 // ToGetRequestInformation collection of users who can approve the request. Currently only supported for requests of type delete.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -80,7 +80,7 @@ func (m *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder when successful
 func (m *SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversWithUserPrincipalNameRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

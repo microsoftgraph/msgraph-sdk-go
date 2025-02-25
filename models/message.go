@@ -502,7 +502,7 @@ func (m *Message) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetFlag gets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
+// GetFlag gets the flag property value. Indicates the status, start date, due date, or completion date for the message.
 // returns a FollowupFlagable when successful
 func (m *Message) GetFlag()(FollowupFlagable) {
     val, err := m.GetBackingStore().Get("flag")
@@ -682,7 +682,7 @@ func (m *Message) GetReplyTo()([]Recipientable) {
     }
     return nil
 }
-// GetSender gets the sender property value. The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
+// GetSender gets the sender property value. The account that is used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
 // returns a Recipientable when successful
 func (m *Message) GetSender()(Recipientable) {
     val, err := m.GetBackingStore().Get("sender")
@@ -1066,7 +1066,7 @@ func (m *Message) SetExtensions(value []Extensionable)() {
         panic(err)
     }
 }
-// SetFlag sets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
+// SetFlag sets the flag property value. Indicates the status, start date, due date, or completion date for the message.
 func (m *Message) SetFlag(value FollowupFlagable)() {
     err := m.GetBackingStore().Set("flag", value)
     if err != nil {
@@ -1171,7 +1171,7 @@ func (m *Message) SetReplyTo(value []Recipientable)() {
         panic(err)
     }
 }
-// SetSender sets the sender property value. The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
+// SetSender sets the sender property value. The account that is used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
 func (m *Message) SetSender(value Recipientable)() {
     err := m.GetBackingStore().Set("sender", value)
     if err != nil {

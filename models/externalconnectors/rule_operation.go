@@ -2,7 +2,8 @@ package externalconnectors
 type RuleOperation int
 
 const (
-    EQUALS_RULEOPERATION RuleOperation = iota
+    NULL_RULEOPERATION RuleOperation = iota
+    EQUALS_RULEOPERATION
     NOTEQUALS_RULEOPERATION
     CONTAINS_RULEOPERATION
     NOTCONTAINS_RULEOPERATION
@@ -13,11 +14,13 @@ const (
 )
 
 func (i RuleOperation) String() string {
-    return []string{"equals", "notEquals", "contains", "notContains", "lessThan", "greaterThan", "startsWith", "unknownFutureValue"}[i]
+    return []string{"null", "equals", "notEquals", "contains", "notContains", "lessThan", "greaterThan", "startsWith", "unknownFutureValue"}[i]
 }
 func ParseRuleOperation(v string) (any, error) {
-    result := EQUALS_RULEOPERATION
+    result := NULL_RULEOPERATION
     switch v {
+        case "null":
+            result = NULL_RULEOPERATION
         case "equals":
             result = EQUALS_RULEOPERATION
         case "notEquals":

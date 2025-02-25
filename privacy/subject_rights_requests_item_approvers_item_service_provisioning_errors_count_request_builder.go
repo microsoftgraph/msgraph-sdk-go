@@ -40,7 +40,7 @@ func NewSubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequ
     return NewSubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +61,7 @@ func (m *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountReq
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +76,7 @@ func (m *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilder when successful
 func (m *SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversItemServiceProvisioningErrorsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

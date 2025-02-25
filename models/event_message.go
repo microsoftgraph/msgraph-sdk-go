@@ -183,7 +183,7 @@ func (m *EventMessage) GetIsAllDay()(*bool) {
     }
     return nil
 }
-// GetIsDelegated gets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
+// GetIsDelegated gets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. The default is false.
 // returns a *bool when successful
 func (m *EventMessage) GetIsDelegated()(*bool) {
     val, err := m.GetBackingStore().Get("isDelegated")
@@ -358,7 +358,7 @@ func (m *EventMessage) SetIsAllDay(value *bool)() {
         panic(err)
     }
 }
-// SetIsDelegated sets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
+// SetIsDelegated sets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. The default is false.
 func (m *EventMessage) SetIsDelegated(value *bool)() {
     err := m.GetBackingStore().Set("isDelegated", value)
     if err != nil {

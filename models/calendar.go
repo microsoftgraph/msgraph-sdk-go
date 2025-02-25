@@ -55,7 +55,7 @@ func (m *Calendar) GetCalendarView()([]Eventable) {
     }
     return nil
 }
-// GetCanEdit gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
+// GetCanEdit gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.
 // returns a *bool when successful
 func (m *Calendar) GetCanEdit()(*bool) {
     val, err := m.GetBackingStore().Get("canEdit")
@@ -67,7 +67,7 @@ func (m *Calendar) GetCanEdit()(*bool) {
     }
     return nil
 }
-// GetCanShare gets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
+// GetCanShare gets the canShare property value. true if the user has permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
 // returns a *bool when successful
 func (m *Calendar) GetCanShare()(*bool) {
     val, err := m.GetBackingStore().Get("canShare")
@@ -79,7 +79,7 @@ func (m *Calendar) GetCanShare()(*bool) {
     }
     return nil
 }
-// GetCanViewPrivateItems gets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
+// GetCanViewPrivateItems gets the canViewPrivateItems property value. If true, the user can read calendar items that have been marked private, false otherwise.
 // returns a *bool when successful
 func (m *Calendar) GetCanViewPrivateItems()(*bool) {
     val, err := m.GetBackingStore().Get("canViewPrivateItems")
@@ -626,21 +626,21 @@ func (m *Calendar) SetCalendarView(value []Eventable)() {
         panic(err)
     }
 }
-// SetCanEdit sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
+// SetCanEdit sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.
 func (m *Calendar) SetCanEdit(value *bool)() {
     err := m.GetBackingStore().Set("canEdit", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCanShare sets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
+// SetCanShare sets the canShare property value. true if the user has permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
 func (m *Calendar) SetCanShare(value *bool)() {
     err := m.GetBackingStore().Set("canShare", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCanViewPrivateItems sets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
+// SetCanViewPrivateItems sets the canViewPrivateItems property value. If true, the user can read calendar items that have been marked private, false otherwise.
 func (m *Calendar) SetCanViewPrivateItems(value *bool)() {
     err := m.GetBackingStore().Set("canViewPrivateItems", value)
     if err != nil {

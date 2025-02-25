@@ -95,6 +95,18 @@ func (m *Application) GetAppRoles()([]AppRoleable) {
     }
     return nil
 }
+// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The authenticationBehaviors property
+// returns a AuthenticationBehaviorsable when successful
+func (m *Application) GetAuthenticationBehaviors()(AuthenticationBehaviorsable) {
+    val, err := m.GetBackingStore().Get("authenticationBehaviors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationBehaviorsable)
+    }
+    return nil
+}
 // GetCertification gets the certification property value. Specifies the certification status of the application.
 // returns a Certificationable when successful
 func (m *Application) GetCertification()(Certificationable) {
@@ -282,6 +294,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 }
             }
             m.SetAppRoles(res)
+        }
+        return nil
+    }
+    res["authenticationBehaviors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthenticationBehaviorsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationBehaviors(val.(AuthenticationBehaviorsable))
         }
         return nil
     }
@@ -1208,6 +1230,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("authenticationBehaviors", m.GetAuthenticationBehaviors())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("certification", m.GetCertification())
         if err != nil {
             return err
@@ -1552,6 +1580,13 @@ func (m *Application) SetAppRoles(value []AppRoleable)() {
         panic(err)
     }
 }
+// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The authenticationBehaviors property
+func (m *Application) SetAuthenticationBehaviors(value AuthenticationBehaviorsable)() {
+    err := m.GetBackingStore().Set("authenticationBehaviors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCertification sets the certification property value. Specifies the certification status of the application.
 func (m *Application) SetCertification(value Certificationable)() {
     err := m.GetBackingStore().Set("certification", value)
@@ -1848,6 +1883,7 @@ type Applicationable interface {
     GetApplicationTemplateId()(*string)
     GetAppManagementPolicies()([]AppManagementPolicyable)
     GetAppRoles()([]AppRoleable)
+    GetAuthenticationBehaviors()(AuthenticationBehaviorsable)
     GetCertification()(Certificationable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedOnBehalfOf()(DirectoryObjectable)
@@ -1895,6 +1931,7 @@ type Applicationable interface {
     SetApplicationTemplateId(value *string)()
     SetAppManagementPolicies(value []AppManagementPolicyable)()
     SetAppRoles(value []AppRoleable)()
+    SetAuthenticationBehaviors(value AuthenticationBehaviorsable)()
     SetCertification(value Certificationable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedOnBehalfOf(value DirectoryObjectable)()
