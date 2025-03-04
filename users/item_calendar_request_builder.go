@@ -112,6 +112,11 @@ func (m *ItemCalendarRequestBuilder) Patch(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemCalendarPermanentDeleteRequestBuilder when successful
+func (m *ItemCalendarRequestBuilder) PermanentDelete()(*ItemCalendarPermanentDeleteRequestBuilder) {
+    return NewItemCalendarPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation the user's primary calendar. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

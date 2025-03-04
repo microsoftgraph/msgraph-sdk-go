@@ -119,6 +119,8 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewServicePrincipalEvidence(), nil
                     case "#microsoft.graph.security.submissionMailEvidence":
                         return NewSubmissionMailEvidence(), nil
+                    case "#microsoft.graph.security.teamsMessageEvidence":
+                        return NewTeamsMessageEvidence(), nil
                     case "#microsoft.graph.security.urlEvidence":
                         return NewUrlEvidence(), nil
                     case "#microsoft.graph.security.userEvidence":

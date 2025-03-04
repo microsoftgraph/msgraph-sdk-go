@@ -115,6 +115,11 @@ func (m *ItemContactsContactItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemContactsItemPermanentDeleteRequestBuilder when successful
+func (m *ItemContactsContactItemRequestBuilder) PermanentDelete()(*ItemContactsItemPermanentDeleteRequestBuilder) {
+    return NewItemContactsItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Photo provides operations to manage the photo property of the microsoft.graph.contact entity.
 // returns a *ItemContactsItemPhotoRequestBuilder when successful
 func (m *ItemContactsContactItemRequestBuilder) Photo()(*ItemContactsItemPhotoRequestBuilder) {

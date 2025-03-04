@@ -104,6 +104,11 @@ func (m *ItemEventsItemInstancesEventItemRequestBuilder) Get(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemEventsItemInstancesItemPermanentDeleteRequestBuilder when successful
+func (m *ItemEventsItemInstancesEventItemRequestBuilder) PermanentDelete()(*ItemEventsItemInstancesItemPermanentDeleteRequestBuilder) {
+    return NewItemEventsItemInstancesItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 // returns a *ItemEventsItemInstancesItemSnoozeReminderRequestBuilder when successful
 func (m *ItemEventsItemInstancesEventItemRequestBuilder) SnoozeReminder()(*ItemEventsItemInstancesItemSnoozeReminderRequestBuilder) {

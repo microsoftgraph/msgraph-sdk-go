@@ -85,6 +85,11 @@ func (m *ItemCalendarRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetScheduleRequestBuilder) {
     return NewItemCalendarGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemCalendarPermanentDeleteRequestBuilder when successful
+func (m *ItemCalendarRequestBuilder) PermanentDelete()(*ItemCalendarPermanentDeleteRequestBuilder) {
+    return NewItemCalendarPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation the group's calendar. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
