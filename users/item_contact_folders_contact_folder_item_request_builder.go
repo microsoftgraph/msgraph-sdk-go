@@ -120,6 +120,11 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemContactFoldersItemPermanentDeleteRequestBuilder when successful
+func (m *ItemContactFoldersContactFolderItemRequestBuilder) PermanentDelete()(*ItemContactFoldersItemPermanentDeleteRequestBuilder) {
+    return NewItemContactFoldersItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property contactFolders for users
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

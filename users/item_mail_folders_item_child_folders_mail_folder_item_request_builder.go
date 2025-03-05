@@ -132,6 +132,11 @@ func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) Patch(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemMailFoldersItemChildFoldersItemPermanentDeleteRequestBuilder when successful
+func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) PermanentDelete()(*ItemMailFoldersItemChildFoldersItemPermanentDeleteRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property childFolders for users
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

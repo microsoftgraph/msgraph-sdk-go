@@ -161,6 +161,11 @@ func (m *ItemEventsEventItemRequestBuilder) Patch(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemEventsItemPermanentDeleteRequestBuilder when successful
+func (m *ItemEventsEventItemRequestBuilder) PermanentDelete()(*ItemEventsItemPermanentDeleteRequestBuilder) {
+    return NewItemEventsItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 // returns a *ItemEventsItemSnoozeReminderRequestBuilder when successful
 func (m *ItemEventsEventItemRequestBuilder) SnoozeReminder()(*ItemEventsItemSnoozeReminderRequestBuilder) {

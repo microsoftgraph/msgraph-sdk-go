@@ -40,7 +40,7 @@ func (m *PrintSettings) GetAdditionalData()(map[string]any) {
 func (m *PrintSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDocumentConversionEnabled gets the documentConversionEnabled property value. Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
+// GetDocumentConversionEnabled gets the documentConversionEnabled property value. Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service converts documents into a format compatible with the printer (xps to pdf) when needed.
 // returns a *bool when successful
 func (m *PrintSettings) GetDocumentConversionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("documentConversionEnabled")
@@ -123,7 +123,7 @@ func (m *PrintSettings) SetAdditionalData(value map[string]any)() {
 func (m *PrintSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDocumentConversionEnabled sets the documentConversionEnabled property value. Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
+// SetDocumentConversionEnabled sets the documentConversionEnabled property value. Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service converts documents into a format compatible with the printer (xps to pdf) when needed.
 func (m *PrintSettings) SetDocumentConversionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("documentConversionEnabled", value)
     if err != nil {

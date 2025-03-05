@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetQueryParameters get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
+// CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetQueryParameters get a list of the siteSource objects associated with an ediscoveryCustodian.
 type CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder(rawUrl s
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) Count()(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
+// Get get a list of the siteSource objects associated with an ediscoveryCustodian.
 // returns a SiteSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -122,7 +122,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) Post(c
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SiteSourceable), nil
 }
-// ToGetRequestInformation get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
+// ToGetRequestInformation get a list of the siteSource objects associated with an ediscoveryCustodian.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -165,7 +165,7 @@ func (m *SignInActivity) GetLastSignInRequestId()(*string) {
     }
     return nil
 }
-// GetLastSuccessfulSignInDateTime gets the lastSuccessfulSignInDateTime property value. The date and time of the user's most recent successful interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
+// GetLastSuccessfulSignInDateTime gets the lastSuccessfulSignInDateTime property value. The date and time of the user's most recent successful interactive or non-interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
 // returns a *Time when successful
 func (m *SignInActivity) GetLastSuccessfulSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSuccessfulSignInDateTime")
@@ -292,7 +292,7 @@ func (m *SignInActivity) SetLastSignInRequestId(value *string)() {
         panic(err)
     }
 }
-// SetLastSuccessfulSignInDateTime sets the lastSuccessfulSignInDateTime property value. The date and time of the user's most recent successful interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
+// SetLastSuccessfulSignInDateTime sets the lastSuccessfulSignInDateTime property value. The date and time of the user's most recent successful interactive or non-interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
 func (m *SignInActivity) SetLastSuccessfulSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSuccessfulSignInDateTime", value)
     if err != nil {

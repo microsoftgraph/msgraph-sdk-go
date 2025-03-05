@@ -155,6 +155,11 @@ func (m *ItemMailFoldersItemMessagesMessageItemRequestBuilder) Patch(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemMailFoldersItemMessagesItemPermanentDeleteRequestBuilder when successful
+func (m *ItemMailFoldersItemMessagesMessageItemRequestBuilder) PermanentDelete()(*ItemMailFoldersItemMessagesItemPermanentDeleteRequestBuilder) {
+    return NewItemMailFoldersItemMessagesItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Reply provides operations to call the reply method.
 // returns a *ItemMailFoldersItemMessagesItemReplyRequestBuilder when successful
 func (m *ItemMailFoldersItemMessagesMessageItemRequestBuilder) Reply()(*ItemMailFoldersItemMessagesItemReplyRequestBuilder) {

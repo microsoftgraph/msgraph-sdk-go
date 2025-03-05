@@ -54,8 +54,11 @@ func NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property siteSources for security
+// Delete delete a siteSource object associated with an ediscoveryCustodian.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-delete-sitesources?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +118,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestB
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Site()(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property siteSources for security
+// ToDeleteRequestInformation delete a siteSource object associated with an ediscoveryCustodian.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

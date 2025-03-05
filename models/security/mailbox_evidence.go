@@ -57,6 +57,16 @@ func (m *MailboxEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["upn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUpn(val)
+        }
+        return nil
+    }
     res["userAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserAccountFromDiscriminatorValue)
         if err != nil {
@@ -73,6 +83,18 @@ func (m *MailboxEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 // returns a *string when successful
 func (m *MailboxEvidence) GetPrimaryAddress()(*string) {
     val, err := m.GetBackingStore().Get("primaryAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetUpn gets the upn property value. The user principal name of the mailbox.
+// returns a *string when successful
+func (m *MailboxEvidence) GetUpn()(*string) {
+    val, err := m.GetBackingStore().Get("upn")
     if err != nil {
         panic(err)
     }
@@ -112,6 +134,12 @@ func (m *MailboxEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("upn", m.GetUpn())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("userAccount", m.GetUserAccount())
         if err != nil {
             return err
@@ -133,6 +161,13 @@ func (m *MailboxEvidence) SetPrimaryAddress(value *string)() {
         panic(err)
     }
 }
+// SetUpn sets the upn property value. The user principal name of the mailbox.
+func (m *MailboxEvidence) SetUpn(value *string)() {
+    err := m.GetBackingStore().Set("upn", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserAccount sets the userAccount property value. The user account of the mailbox.
 func (m *MailboxEvidence) SetUserAccount(value UserAccountable)() {
     err := m.GetBackingStore().Set("userAccount", value)
@@ -145,8 +180,10 @@ type MailboxEvidenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetPrimaryAddress()(*string)
+    GetUpn()(*string)
     GetUserAccount()(UserAccountable)
     SetDisplayName(value *string)()
     SetPrimaryAddress(value *string)()
+    SetUpn(value *string)()
     SetUserAccount(value UserAccountable)()
 }

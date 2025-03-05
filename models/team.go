@@ -168,6 +168,16 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["firstChannelName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFirstChannelName(val)
+        }
+        return nil
+    }
     res["funSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamFunSettingsFromDiscriminatorValue)
         if err != nil {
@@ -425,6 +435,18 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     return res
+}
+// GetFirstChannelName gets the firstChannelName property value. The firstChannelName property
+// returns a *string when successful
+func (m *Team) GetFirstChannelName()(*string) {
+    val, err := m.GetBackingStore().Get("firstChannelName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFunSettings gets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
 // returns a TeamFunSettingsable when successful
@@ -745,6 +767,12 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("firstChannelName", m.GetFirstChannelName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("funSettings", m.GetFunSettings())
         if err != nil {
             return err
@@ -958,6 +986,13 @@ func (m *Team) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetFirstChannelName sets the firstChannelName property value. The firstChannelName property
+func (m *Team) SetFirstChannelName(value *string)() {
+    err := m.GetBackingStore().Set("firstChannelName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFunSettings sets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
 func (m *Team) SetFunSettings(value TeamFunSettingsable)() {
     err := m.GetBackingStore().Set("funSettings", value)
@@ -1121,6 +1156,7 @@ type Teamable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetFirstChannelName()(*string)
     GetFunSettings()(TeamFunSettingsable)
     GetGroup()(Groupable)
     GetGuestSettings()(TeamGuestSettingsable)
@@ -1149,6 +1185,7 @@ type Teamable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetFirstChannelName(value *string)()
     SetFunSettings(value TeamFunSettingsable)()
     SetGroup(value Groupable)()
     SetGuestSettings(value TeamGuestSettingsable)()
