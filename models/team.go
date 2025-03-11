@@ -436,7 +436,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetFirstChannelName gets the firstChannelName property value. The firstChannelName property
+// GetFirstChannelName gets the firstChannelName property value. The name of the first channel in the team. This is an optional property, only used during team creation and isn't returned in methods to get and list teams.
 // returns a *string when successful
 func (m *Team) GetFirstChannelName()(*string) {
     val, err := m.GetBackingStore().Get("firstChannelName")
@@ -986,7 +986,7 @@ func (m *Team) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetFirstChannelName sets the firstChannelName property value. The firstChannelName property
+// SetFirstChannelName sets the firstChannelName property value. The name of the first channel in the team. This is an optional property, only used during team creation and isn't returned in methods to get and list teams.
 func (m *Team) SetFirstChannelName(value *string)() {
     err := m.GetBackingStore().Set("firstChannelName", value)
     if err != nil {

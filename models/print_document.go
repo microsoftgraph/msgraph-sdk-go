@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -43,6 +44,18 @@ func (m *PrintDocument) GetDisplayName()(*string) {
     }
     return nil
 }
+// GetDownloadedDateTime gets the downloadedDateTime property value. The time the document was downloaded. Read-only
+// returns a *Time when successful
+func (m *PrintDocument) GetDownloadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("downloadedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,6 +80,16 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["downloadedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDownloadedDateTime(val)
+        }
+        return nil
+    }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -74,6 +97,16 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetSize(val)
+        }
+        return nil
+    }
+    res["uploadedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUploadedDateTime(val)
         }
         return nil
     }
@@ -88,6 +121,18 @@ func (m *PrintDocument) GetSize()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetUploadedDateTime gets the uploadedDateTime property value. The time the document was uploaded. Read-only
+// returns a *Time when successful
+func (m *PrintDocument) GetUploadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("uploadedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -110,7 +155,19 @@ func (m *PrintDocument) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteTimeValue("downloadedDateTime", m.GetDownloadedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("size", m.GetSize())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("uploadedDateTime", m.GetUploadedDateTime())
         if err != nil {
             return err
         }
@@ -131,9 +188,23 @@ func (m *PrintDocument) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetDownloadedDateTime sets the downloadedDateTime property value. The time the document was downloaded. Read-only
+func (m *PrintDocument) SetDownloadedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("downloadedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSize sets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUploadedDateTime sets the uploadedDateTime property value. The time the document was uploaded. Read-only
+func (m *PrintDocument) SetUploadedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("uploadedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -143,8 +214,12 @@ type PrintDocumentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentType()(*string)
     GetDisplayName()(*string)
+    GetDownloadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSize()(*int64)
+    GetUploadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetContentType(value *string)()
     SetDisplayName(value *string)()
+    SetDownloadedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSize(value *int64)()
+    SetUploadedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

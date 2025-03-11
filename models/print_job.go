@@ -20,6 +20,18 @@ func NewPrintJob()(*PrintJob) {
 func CreatePrintJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintJob(), nil
 }
+// GetAcknowledgedDateTime gets the acknowledgedDateTime property value. The dateTimeOffset when the job was acknowledged. Read-only.
+// returns a *Time when successful
+func (m *PrintJob) GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("acknowledgedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetConfiguration gets the configuration property value. The configuration property
 // returns a PrintJobConfigurationable when successful
 func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
@@ -68,10 +80,32 @@ func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     }
     return nil
 }
+// GetErrorCode gets the errorCode property value. The error code of the print job. Read-only.
+// returns a *int32 when successful
+func (m *PrintJob) GetErrorCode()(*int32) {
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["acknowledgedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAcknowledgedDateTime(val)
+        }
+        return nil
+    }
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrintJobConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -115,6 +149,16 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
                 }
             }
             m.SetDocuments(res)
+        }
+        return nil
+    }
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetErrorCode(val)
         }
         return nil
     }
@@ -243,6 +287,12 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         return err
     }
     {
+        err = writer.WriteTimeValue("acknowledgedDateTime", m.GetAcknowledgedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("configuration", m.GetConfiguration())
         if err != nil {
             return err
@@ -268,6 +318,12 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             }
         }
         err = writer.WriteCollectionOfObjectValues("documents", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("errorCode", m.GetErrorCode())
         if err != nil {
             return err
         }
@@ -310,6 +366,13 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
+// SetAcknowledgedDateTime sets the acknowledgedDateTime property value. The dateTimeOffset when the job was acknowledged. Read-only.
+func (m *PrintJob) SetAcknowledgedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("acknowledgedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConfiguration sets the configuration property value. The configuration property
 func (m *PrintJob) SetConfiguration(value PrintJobConfigurationable)() {
     err := m.GetBackingStore().Set("configuration", value)
@@ -334,6 +397,13 @@ func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
 // SetDocuments sets the documents property value. The documents property
 func (m *PrintJob) SetDocuments(value []PrintDocumentable)() {
     err := m.GetBackingStore().Set("documents", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetErrorCode sets the errorCode property value. The error code of the print job. Read-only.
+func (m *PrintJob) SetErrorCode(value *int32)() {
+    err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
         panic(err)
     }
@@ -376,19 +446,23 @@ func (m *PrintJob) SetTasks(value []PrintTaskable)() {
 type PrintJobable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetConfiguration()(PrintJobConfigurationable)
     GetCreatedBy()(UserIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDocuments()([]PrintDocumentable)
+    GetErrorCode()(*int32)
     GetIsFetchable()(*bool)
     GetRedirectedFrom()(*string)
     GetRedirectedTo()(*string)
     GetStatus()(PrintJobStatusable)
     GetTasks()([]PrintTaskable)
+    SetAcknowledgedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetConfiguration(value PrintJobConfigurationable)()
     SetCreatedBy(value UserIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDocuments(value []PrintDocumentable)()
+    SetErrorCode(value *int32)()
     SetIsFetchable(value *bool)()
     SetRedirectedFrom(value *string)()
     SetRedirectedTo(value *string)()
