@@ -12,7 +12,7 @@ var clientOptions = core.GraphClientOptions{
 	GraphServiceVersion: "", //v1 doesn't include the service version in the telemetry header
 	/** The SDK version */
 	// x-release-please-start-version
-	GraphServiceLibraryVersion: "1.64.0",
+	GraphServiceLibraryVersion: "1.65.0",
 	// x-release-please-end
 }
 
