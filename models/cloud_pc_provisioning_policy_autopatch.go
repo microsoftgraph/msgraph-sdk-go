@@ -35,7 +35,7 @@ func (m *CloudPcProvisioningPolicyAutopatch) GetAdditionalData()(map[string]any)
     }
     return val.(map[string]any)
 }
-// GetAutopatchGroupId gets the autopatchGroupId property value. The autopatchGroupId property
+// GetAutopatchGroupId gets the autopatchGroupId property value. The unique identifier (ID) of a Windows Autopatch group. An Autopatch group is a logical container or unit that groups several Microsoft Entra groups and software update policies. Devices with the same Autopatch group ID share unified software update management. The default value is null that indicates that no Autopatch group is associated with the provisioning policy.
 // returns a *string when successful
 func (m *CloudPcProvisioningPolicyAutopatch) GetAutopatchGroupId()(*string) {
     val, err := m.GetBackingStore().Get("autopatchGroupId")
@@ -119,7 +119,7 @@ func (m *CloudPcProvisioningPolicyAutopatch) SetAdditionalData(value map[string]
         panic(err)
     }
 }
-// SetAutopatchGroupId sets the autopatchGroupId property value. The autopatchGroupId property
+// SetAutopatchGroupId sets the autopatchGroupId property value. The unique identifier (ID) of a Windows Autopatch group. An Autopatch group is a logical container or unit that groups several Microsoft Entra groups and software update policies. Devices with the same Autopatch group ID share unified software update management. The default value is null that indicates that no Autopatch group is associated with the provisioning policy.
 func (m *CloudPcProvisioningPolicyAutopatch) SetAutopatchGroupId(value *string)() {
     err := m.GetBackingStore().Set("autopatchGroupId", value)
     if err != nil {
