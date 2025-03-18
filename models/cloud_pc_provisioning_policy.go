@@ -43,7 +43,7 @@ func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicy
     }
     return nil
 }
-// GetAutopatch gets the autopatch property value. The autopatch property
+// GetAutopatch gets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.
 // returns a CloudPcProvisioningPolicyAutopatchable when successful
 func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAutopatchable) {
     val, err := m.GetBackingStore().Get("autopatch")
@@ -549,7 +549,7 @@ func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPo
         panic(err)
     }
 }
-// SetAutopatch sets the autopatch property value. The autopatch property
+// SetAutopatch sets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetAutopatch(value CloudPcProvisioningPolicyAutopatchable)() {
     err := m.GetBackingStore().Set("autopatch", value)
     if err != nil {

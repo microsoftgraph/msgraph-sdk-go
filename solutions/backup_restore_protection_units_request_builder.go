@@ -89,6 +89,21 @@ func (m *BackupRestoreProtectionUnitsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProtectionUnitBaseCollectionResponseable), nil
 }
+// GraphDriveProtectionUnit casts the previous resource to driveProtectionUnit.
+// returns a *BackupRestoreProtectionUnitsGraphDriveProtectionUnitRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsRequestBuilder) GraphDriveProtectionUnit()(*BackupRestoreProtectionUnitsGraphDriveProtectionUnitRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsGraphDriveProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphMailboxProtectionUnit casts the previous resource to mailboxProtectionUnit.
+// returns a *BackupRestoreProtectionUnitsGraphMailboxProtectionUnitRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsRequestBuilder) GraphMailboxProtectionUnit()(*BackupRestoreProtectionUnitsGraphMailboxProtectionUnitRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsGraphMailboxProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphSiteProtectionUnit casts the previous resource to siteProtectionUnit.
+// returns a *BackupRestoreProtectionUnitsGraphSiteProtectionUnitRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsRequestBuilder) GraphSiteProtectionUnit()(*BackupRestoreProtectionUnitsGraphSiteProtectionUnitRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsGraphSiteProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation read the properties and relationships of a protectionUnitBase object.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

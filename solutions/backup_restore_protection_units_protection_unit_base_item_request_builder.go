@@ -63,6 +63,21 @@ func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) Get(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProtectionUnitBaseable), nil
 }
+// GraphDriveProtectionUnit casts the previous resource to driveProtectionUnit.
+// returns a *BackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) GraphDriveProtectionUnit()(*BackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphMailboxProtectionUnit casts the previous resource to mailboxProtectionUnit.
+// returns a *BackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) GraphMailboxProtectionUnit()(*BackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphSiteProtectionUnit casts the previous resource to siteProtectionUnit.
+// returns a *BackupRestoreProtectionUnitsItemGraphSiteProtectionUnitRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) GraphSiteProtectionUnit()(*BackupRestoreProtectionUnitsItemGraphSiteProtectionUnitRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsItemGraphSiteProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation read the properties and relationships of a protectionUnitBase object.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
