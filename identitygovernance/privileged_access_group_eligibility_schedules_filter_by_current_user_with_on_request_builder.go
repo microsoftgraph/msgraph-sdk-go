@@ -55,7 +55,7 @@ func NewPrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnReques
     return NewPrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get retrieve schedules of membership and ownership eligibility requests for the calling principal.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnReque
     }
     return res.(PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse retrieve schedules of membership and ownership eligibility requests for the calling principal.
-// returns a PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse retrieve schedules of membership and ownership eligibility requests for the calling principal.
+// returns a PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0
-func (m *PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnReque
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreatePrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreatePrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(PrivilegedAccessGroupEligibilitySchedulesFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation retrieve schedules of membership and ownership eligibility requests for the calling principal.
 // returns a *RequestInformation when successful

@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemCheckGrantedPermissionsForAppPostResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCheckGrantedPermissionsForApppostResponseable instead.
 type ItemCheckGrantedPermissionsForAppResponse struct {
-    ItemCheckGrantedPermissionsForAppPostResponse
+    ItemCheckGrantedPermissionsForApppostResponse
 }
 // NewItemCheckGrantedPermissionsForAppResponse instantiates a new ItemCheckGrantedPermissionsForAppResponse and sets the default values.
 func NewItemCheckGrantedPermissionsForAppResponse()(*ItemCheckGrantedPermissionsForAppResponse) {
     m := &ItemCheckGrantedPermissionsForAppResponse{
-        ItemCheckGrantedPermissionsForAppPostResponse: *NewItemCheckGrantedPermissionsForAppPostResponse(),
+        ItemCheckGrantedPermissionsForApppostResponse: *NewItemCheckGrantedPermissionsForApppostResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemCheckGrantedPermissionsForAppResponse()(*ItemCheckGrantedPermissions
 func CreateItemCheckGrantedPermissionsForAppResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCheckGrantedPermissionsForAppResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemCheckGrantedPermissionsForAppPostResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCheckGrantedPermissionsForApppostResponseable instead.
 type ItemCheckGrantedPermissionsForAppResponseable interface {
-    ItemCheckGrantedPermissionsForAppPostResponseable
+    ItemCheckGrantedPermissionsForApppostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

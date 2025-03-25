@@ -55,7 +55,7 @@ func NewAccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBui
     return NewAccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get retrieve all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBu
     }
     return res.(AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse retrieve all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-// returns a AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse retrieve all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
+// returns a AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-filterbycurrentuser?view=graph-rest-1.0
-func (m *AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBu
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation retrieve all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
 // returns a *RequestInformation when successful

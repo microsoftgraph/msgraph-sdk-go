@@ -52,7 +52,7 @@ func NewItemOnlineMeetingsItemRecordingsDeltaRequestBuilder(rawUrl string, reque
     return NewItemOnlineMeetingsItemRecordingsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a ItemOnlineMeetingsItemRecordingsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsItemRecordingsDeltaResponseable, error) {
@@ -72,10 +72,10 @@ func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) Get(ctx context.Co
     }
     return res.(ItemOnlineMeetingsItemRecordingsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
-// returns a ItemOnlineMeetingsItemRecordingsDeltaGetResponseable when successful
+// GetAsDeltagetResponse invoke function delta
+// returns a ItemOnlineMeetingsItemRecordingsDeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsItemRecordingsDeltaGetResponseable, error) {
+func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsItemRecordingsDeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) GetAsDeltaGetRespo
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOnlineMeetingsItemRecordingsDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOnlineMeetingsItemRecordingsDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemOnlineMeetingsItemRecordingsDeltaGetResponseable), nil
+    return res.(ItemOnlineMeetingsItemRecordingsDeltagetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 // returns a *RequestInformation when successful

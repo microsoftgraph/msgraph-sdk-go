@@ -31,7 +31,7 @@ func NewItemRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post removes a group from a lifecycle policy.
-// Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsRemoveGrouppostResponse instead.
 // returns a ItemRemoveGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemov
     }
     return res.(ItemRemoveGroupResponseable), nil
 }
-// PostAsRemoveGroupPostResponse removes a group from a lifecycle policy.
-// returns a ItemRemoveGroupPostResponseable when successful
+// PostAsRemoveGrouppostResponse removes a group from a lifecycle policy.
+// returns a ItemRemoveGrouppostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
-func (m *ItemRemoveGroupRequestBuilder) PostAsRemoveGroupPostResponse(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemRemoveGroupPostResponseable, error) {
+func (m *ItemRemoveGroupRequestBuilder) PostAsRemoveGrouppostResponse(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemRemoveGrouppostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemRemoveGroupRequestBuilder) PostAsRemoveGroupPostResponse(ctx contex
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRemoveGroupPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRemoveGrouppostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemRemoveGroupPostResponseable), nil
+    return res.(ItemRemoveGrouppostResponseable), nil
 }
 // ToPostRequestInformation removes a group from a lifecycle policy.
 // returns a *RequestInformation when successful

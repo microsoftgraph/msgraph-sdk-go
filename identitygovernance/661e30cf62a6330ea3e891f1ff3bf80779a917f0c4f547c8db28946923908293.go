@@ -55,7 +55,7 @@ func NewEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUser
     return NewEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUse
     }
     return res.(EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
-// returns a EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
+// returns a EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
-func (m *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUse
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
 // returns a *RequestInformation when successful

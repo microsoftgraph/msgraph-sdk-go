@@ -46,7 +46,7 @@ func NewManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilde
     return NewManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get not yet documented
-// Deprecated: This method is obsolete. Use GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetUserIdsWithFlaggedAppRegistrationgetResponse instead.
 // returns a ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuild
     }
     return res.(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationResponseable), nil
 }
-// GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse not yet documented
-// returns a ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable when successful
+// GetAsGetUserIdsWithFlaggedAppRegistrationgetResponse not yet documented
+// returns a ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0
-func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable, error) {
+func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) GetAsGetUserIdsWithFlaggedAppRegistrationgetResponse(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuild
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable), nil
+    return res.(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationgetResponseable), nil
 }
 // ToGetRequestInformation not yet documented
 // returns a *RequestInformation when successful

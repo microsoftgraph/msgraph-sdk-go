@@ -55,7 +55,7 @@ func NewAppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder(rawU
     return NewAppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a AppConsentAppConsentRequestsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) Ge
     }
     return res.(AppConsentAppConsentRequestsFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
-// returns a AppConsentAppConsentRequestsFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
+// returns a AppConsentAppConsentRequestsFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appconsentrequest-filterbycurrentuser?view=graph-rest-1.0
-func (m *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AppConsentAppConsentRequestsFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AppConsentAppConsentRequestsFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) Ge
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAppConsentAppConsentRequestsFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAppConsentAppConsentRequestsFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AppConsentAppConsentRequestsFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(AppConsentAppConsentRequestsFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
 // returns a *RequestInformation when successful

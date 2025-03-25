@@ -31,7 +31,7 @@ func NewItemCheckGrantedPermissionsForAppRequestBuilder(rawUrl string, requestAd
     return NewItemCheckGrantedPermissionsForAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action checkGrantedPermissionsForApp
-// Deprecated: This method is obsolete. Use PostAsCheckGrantedPermissionsForAppPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsCheckGrantedPermissionsForApppostResponse instead.
 // returns a ItemCheckGrantedPermissionsForAppResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCheckGrantedPermissionsForAppRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(ItemCheckGrantedPermissionsForAppResponseable, error) {
@@ -51,10 +51,10 @@ func (m *ItemCheckGrantedPermissionsForAppRequestBuilder) Post(ctx context.Conte
     }
     return res.(ItemCheckGrantedPermissionsForAppResponseable), nil
 }
-// PostAsCheckGrantedPermissionsForAppPostResponse invoke action checkGrantedPermissionsForApp
-// returns a ItemCheckGrantedPermissionsForAppPostResponseable when successful
+// PostAsCheckGrantedPermissionsForApppostResponse invoke action checkGrantedPermissionsForApp
+// returns a ItemCheckGrantedPermissionsForApppostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemCheckGrantedPermissionsForAppRequestBuilder) PostAsCheckGrantedPermissionsForAppPostResponse(ctx context.Context, requestConfiguration *ItemCheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(ItemCheckGrantedPermissionsForAppPostResponseable, error) {
+func (m *ItemCheckGrantedPermissionsForAppRequestBuilder) PostAsCheckGrantedPermissionsForApppostResponse(ctx context.Context, requestConfiguration *ItemCheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(ItemCheckGrantedPermissionsForApppostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,14 +62,14 @@ func (m *ItemCheckGrantedPermissionsForAppRequestBuilder) PostAsCheckGrantedPerm
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCheckGrantedPermissionsForAppPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCheckGrantedPermissionsForApppostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemCheckGrantedPermissionsForAppPostResponseable), nil
+    return res.(ItemCheckGrantedPermissionsForApppostResponseable), nil
 }
 // ToPostRequestInformation invoke action checkGrantedPermissionsForApp
 // returns a *RequestInformation when successful

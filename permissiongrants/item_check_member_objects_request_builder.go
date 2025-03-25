@@ -31,7 +31,7 @@ func NewItemCheckMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewItemCheckMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action checkMemberObjects
-// Deprecated: This method is obsolete. Use PostAsCheckMemberObjectsPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsCheckMemberObjectspostResponse instead.
 // returns a ItemCheckMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemCheckMemberObjectsResponseable, error) {
@@ -51,10 +51,10 @@ func (m *ItemCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body It
     }
     return res.(ItemCheckMemberObjectsResponseable), nil
 }
-// PostAsCheckMemberObjectsPostResponse invoke action checkMemberObjects
-// returns a ItemCheckMemberObjectsPostResponseable when successful
+// PostAsCheckMemberObjectspostResponse invoke action checkMemberObjects
+// returns a ItemCheckMemberObjectspostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectsPostResponse(ctx context.Context, body ItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemCheckMemberObjectsPostResponseable, error) {
+func (m *ItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectspostResponse(ctx context.Context, body ItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemCheckMemberObjectspostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,14 +62,14 @@ func (m *ItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectsPostRespo
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCheckMemberObjectsPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCheckMemberObjectspostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemCheckMemberObjectsPostResponseable), nil
+    return res.(ItemCheckMemberObjectspostResponseable), nil
 }
 // ToPostRequestInformation invoke action checkMemberObjects
 // returns a *RequestInformation when successful

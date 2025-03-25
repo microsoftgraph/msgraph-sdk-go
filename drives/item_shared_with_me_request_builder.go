@@ -52,7 +52,7 @@ func NewItemSharedWithMeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewItemSharedWithMeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
-// Deprecated: This method is obsolete. Use GetAsSharedWithMeGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsSharedWithMegetResponse instead.
 // returns a ItemSharedWithMeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *ItemSharedWithMeRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ItemSharedWithMeResponseable), nil
 }
-// GetAsSharedWithMeGetResponse get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
-// returns a ItemSharedWithMeGetResponseable when successful
+// GetAsSharedWithMegetResponse get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
+// returns a ItemSharedWithMegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
-func (m *ItemSharedWithMeRequestBuilder) GetAsSharedWithMeGetResponse(ctx context.Context, requestConfiguration *ItemSharedWithMeRequestBuilderGetRequestConfiguration)(ItemSharedWithMeGetResponseable, error) {
+func (m *ItemSharedWithMeRequestBuilder) GetAsSharedWithMegetResponse(ctx context.Context, requestConfiguration *ItemSharedWithMeRequestBuilderGetRequestConfiguration)(ItemSharedWithMegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *ItemSharedWithMeRequestBuilder) GetAsSharedWithMeGetResponse(ctx contex
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSharedWithMeGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSharedWithMegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemSharedWithMeGetResponseable), nil
+    return res.(ItemSharedWithMegetResponseable), nil
 }
 // ToGetRequestInformation get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
 // returns a *RequestInformation when successful

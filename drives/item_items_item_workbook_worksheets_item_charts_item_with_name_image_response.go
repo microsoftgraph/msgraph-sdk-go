@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImagegetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse struct {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageGetResponse
+    ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImagegetResponse
 }
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse()(*ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse{
-        ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageGetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageGetResponse(),
+        ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImagegetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImagegetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse()(*It
 func CreateItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImagegetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageResponseable interface {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageGetResponseable
+    ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImagegetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

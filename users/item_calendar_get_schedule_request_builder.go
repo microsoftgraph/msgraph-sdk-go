@@ -31,7 +31,7 @@ func NewItemCalendarGetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemCalendarGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
-// Deprecated: This method is obsolete. Use PostAsGetSchedulePostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsGetSchedulepostResponse instead.
 // returns a ItemCalendarGetScheduleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemCalendarGetScheduleRequestBuilder) Post(ctx context.Context, body I
     }
     return res.(ItemCalendarGetScheduleResponseable), nil
 }
-// PostAsGetSchedulePostResponse get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
-// returns a ItemCalendarGetSchedulePostResponseable when successful
+// PostAsGetSchedulepostResponse get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// returns a ItemCalendarGetSchedulepostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
-func (m *ItemCalendarGetScheduleRequestBuilder) PostAsGetSchedulePostResponse(ctx context.Context, body ItemCalendarGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGetSchedulePostResponseable, error) {
+func (m *ItemCalendarGetScheduleRequestBuilder) PostAsGetSchedulepostResponse(ctx context.Context, body ItemCalendarGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGetSchedulepostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemCalendarGetScheduleRequestBuilder) PostAsGetSchedulePostResponse(ct
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarGetSchedulePostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarGetSchedulepostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemCalendarGetSchedulePostResponseable), nil
+    return res.(ItemCalendarGetSchedulepostResponseable), nil
 }
 // ToPostRequestInformation get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 // returns a *RequestInformation when successful

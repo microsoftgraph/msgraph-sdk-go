@@ -31,7 +31,7 @@ func NewItemTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemTranslateExchangeIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post translate identifiers of Outlook-related resources between formats.
-// Deprecated: This method is obsolete. Use PostAsTranslateExchangeIdsPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsTranslateExchangeIdspostResponse instead.
 // returns a ItemTranslateExchangeIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ItemTranslateExchangeIdsResponseable), nil
 }
-// PostAsTranslateExchangeIdsPostResponse translate identifiers of Outlook-related resources between formats.
-// returns a ItemTranslateExchangeIdsPostResponseable when successful
+// PostAsTranslateExchangeIdspostResponse translate identifiers of Outlook-related resources between formats.
+// returns a ItemTranslateExchangeIdspostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
-func (m *ItemTranslateExchangeIdsRequestBuilder) PostAsTranslateExchangeIdsPostResponse(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdsPostResponseable, error) {
+func (m *ItemTranslateExchangeIdsRequestBuilder) PostAsTranslateExchangeIdspostResponse(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdspostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) PostAsTranslateExchangeIdsPostR
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTranslateExchangeIdsPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTranslateExchangeIdspostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemTranslateExchangeIdsPostResponseable), nil
+    return res.(ItemTranslateExchangeIdspostResponseable), nil
 }
 // ToPostRequestInformation translate identifiers of Outlook-related resources between formats.
 // returns a *RequestInformation when successful

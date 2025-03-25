@@ -46,7 +46,7 @@ func NewAuditEventsGetAuditCategoriesRequestBuilder(rawUrl string, requestAdapte
     return NewAuditEventsGetAuditCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get not yet documented
-// Deprecated: This method is obsolete. Use GetAsGetAuditCategoriesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAuditCategoriesgetResponse instead.
 // returns a AuditEventsGetAuditCategoriesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *AuditEventsGetAuditCategoriesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(AuditEventsGetAuditCategoriesResponseable), nil
 }
-// GetAsGetAuditCategoriesGetResponse not yet documented
-// returns a AuditEventsGetAuditCategoriesGetResponseable when successful
+// GetAsGetAuditCategoriesgetResponse not yet documented
+// returns a AuditEventsGetAuditCategoriesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
-func (m *AuditEventsGetAuditCategoriesRequestBuilder) GetAsGetAuditCategoriesGetResponse(ctx context.Context, requestConfiguration *AuditEventsGetAuditCategoriesRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditCategoriesGetResponseable, error) {
+func (m *AuditEventsGetAuditCategoriesRequestBuilder) GetAsGetAuditCategoriesgetResponse(ctx context.Context, requestConfiguration *AuditEventsGetAuditCategoriesRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditCategoriesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *AuditEventsGetAuditCategoriesRequestBuilder) GetAsGetAuditCategoriesGet
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAuditEventsGetAuditCategoriesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAuditEventsGetAuditCategoriesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AuditEventsGetAuditCategoriesGetResponseable), nil
+    return res.(AuditEventsGetAuditCategoriesgetResponseable), nil
 }
 // ToGetRequestInformation not yet documented
 // returns a *RequestInformation when successful

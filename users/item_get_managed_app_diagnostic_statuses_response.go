@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemGetManagedAppDiagnosticStatusesGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemGetManagedAppDiagnosticStatusesgetResponseable instead.
 type ItemGetManagedAppDiagnosticStatusesResponse struct {
-    ItemGetManagedAppDiagnosticStatusesGetResponse
+    ItemGetManagedAppDiagnosticStatusesgetResponse
 }
 // NewItemGetManagedAppDiagnosticStatusesResponse instantiates a new ItemGetManagedAppDiagnosticStatusesResponse and sets the default values.
 func NewItemGetManagedAppDiagnosticStatusesResponse()(*ItemGetManagedAppDiagnosticStatusesResponse) {
     m := &ItemGetManagedAppDiagnosticStatusesResponse{
-        ItemGetManagedAppDiagnosticStatusesGetResponse: *NewItemGetManagedAppDiagnosticStatusesGetResponse(),
+        ItemGetManagedAppDiagnosticStatusesgetResponse: *NewItemGetManagedAppDiagnosticStatusesgetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemGetManagedAppDiagnosticStatusesResponse()(*ItemGetManagedAppDiagnost
 func CreateItemGetManagedAppDiagnosticStatusesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemGetManagedAppDiagnosticStatusesResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemGetManagedAppDiagnosticStatusesGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemGetManagedAppDiagnosticStatusesgetResponseable instead.
 type ItemGetManagedAppDiagnosticStatusesResponseable interface {
-    ItemGetManagedAppDiagnosticStatusesGetResponseable
+    ItemGetManagedAppDiagnosticStatusesgetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

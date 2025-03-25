@@ -31,7 +31,7 @@ func NewManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuild
     return NewManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action createDownloadUrl
-// Deprecated: This method is obsolete. Use PostAsCreateDownloadUrlPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsCreateDownloadUrlpostResponse instead.
 // returns a ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable, error) {
@@ -51,10 +51,10 @@ func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuil
     }
     return res.(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable), nil
 }
-// PostAsCreateDownloadUrlPostResponse invoke action createDownloadUrl
-// returns a ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable when successful
+// PostAsCreateDownloadUrlpostResponse invoke action createDownloadUrl
+// returns a ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) PostAsCreateDownloadUrlPostResponse(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable, error) {
+func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) PostAsCreateDownloadUrlpostResponse(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,14 +62,14 @@ func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuil
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable), nil
+    return res.(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlpostResponseable), nil
 }
 // ToPostRequestInformation invoke action createDownloadUrl
 // returns a *RequestInformation when successful

@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImagegetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse struct {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponse
+    ItemItemsItemWorkbookWorksheetsItemChartsItemImagegetResponse
 }
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse()(*ItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse{
-        ItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponse(),
+        ItemItemsItemWorkbookWorksheetsItemChartsItemImagegetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemImagegetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse()(*ItemItemsI
 func CreateItemItemsItemWorkbookWorksheetsItemChartsItemImageResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemImageResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImagegetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemImageResponseable interface {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable
+    ItemItemsItemWorkbookWorksheetsItemChartsItemImagegetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

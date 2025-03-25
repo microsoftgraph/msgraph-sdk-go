@@ -46,7 +46,7 @@ func NewSecurityGetAttackSimulationRepeatOffendersRequestBuilder(rawUrl string, 
     return NewSecurityGetAttackSimulationRepeatOffendersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationRepeatOffendersGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationRepeatOffendersgetResponse instead.
 // returns a SecurityGetAttackSimulationRepeatOffendersResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) Get(ctx conte
     }
     return res.(SecurityGetAttackSimulationRepeatOffendersResponseable), nil
 }
-// GetAsGetAttackSimulationRepeatOffendersGetResponse list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-// returns a SecurityGetAttackSimulationRepeatOffendersGetResponseable when successful
+// GetAsGetAttackSimulationRepeatOffendersgetResponse list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
+// returns a SecurityGetAttackSimulationRepeatOffendersgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0
-func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) GetAsGetAttackSimulationRepeatOffendersGetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationRepeatOffendersGetResponseable, error) {
+func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) GetAsGetAttackSimulationRepeatOffendersgetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationRepeatOffendersgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *SecurityGetAttackSimulationRepeatOffendersRequestBuilder) GetAsGetAttac
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSecurityGetAttackSimulationRepeatOffendersGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSecurityGetAttackSimulationRepeatOffendersgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(SecurityGetAttackSimulationRepeatOffendersGetResponseable), nil
+    return res.(SecurityGetAttackSimulationRepeatOffendersgetResponseable), nil
 }
 // ToGetRequestInformation list the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // returns a *RequestInformation when successful

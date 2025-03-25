@@ -55,7 +55,7 @@ func NewItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBu
     return NewItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get site contentTypes that can be added to a list.
-// Deprecated: This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdgetResponse instead.
 // returns a ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestB
     }
     return res.(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdResponseable), nil
 }
-// GetAsGetApplicableContentTypesForListWithListIdGetResponse get site contentTypes that can be added to a list.
-// returns a ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdGetResponseable when successful
+// GetAsGetApplicableContentTypesForListWithListIdgetResponse get site contentTypes that can be added to a list.
+// returns a ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
-func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) GetAsGetApplicableContentTypesForListWithListIdGetResponse(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdGetResponseable, error) {
+func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) GetAsGetApplicableContentTypesForListWithListIdgetResponse(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestB
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetByPathWithPathGetApplicableContentTypesForListWithListIdGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetByPathWithPathGetApplicableContentTypesForListWithListIdgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdGetResponseable), nil
+    return res.(ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdgetResponseable), nil
 }
 // ToGetRequestInformation get site contentTypes that can be added to a list.
 // returns a *RequestInformation when successful

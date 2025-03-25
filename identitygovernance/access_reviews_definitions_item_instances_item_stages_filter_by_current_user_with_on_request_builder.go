@@ -55,7 +55,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOn
     return NewAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithO
     }
     return res.(AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-// returns a AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
+// returns a AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewstage-filterbycurrentuser?view=graph-rest-1.0
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithO
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
 // returns a *RequestInformation when successful

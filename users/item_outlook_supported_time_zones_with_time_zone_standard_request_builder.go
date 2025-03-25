@@ -49,7 +49,7 @@ func NewItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder(rawUrl s
     return NewItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function supportedTimeZones
-// Deprecated: This method is obsolete. Use GetAsSupportedTimeZonesWithTimeZoneStandardGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsSupportedTimeZonesWithTimeZoneStandardgetResponse instead.
 // returns a ItemOutlookSupportedTimeZonesWithTimeZoneStandardResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedTimeZonesWithTimeZoneStandardResponseable, error) {
@@ -69,10 +69,10 @@ func (m *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) Get(ct
     }
     return res.(ItemOutlookSupportedTimeZonesWithTimeZoneStandardResponseable), nil
 }
-// GetAsSupportedTimeZonesWithTimeZoneStandardGetResponse invoke function supportedTimeZones
-// returns a ItemOutlookSupportedTimeZonesWithTimeZoneStandardGetResponseable when successful
+// GetAsSupportedTimeZonesWithTimeZoneStandardgetResponse invoke function supportedTimeZones
+// returns a ItemOutlookSupportedTimeZonesWithTimeZoneStandardgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) GetAsSupportedTimeZonesWithTimeZoneStandardGetResponse(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedTimeZonesWithTimeZoneStandardGetResponseable, error) {
+func (m *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) GetAsSupportedTimeZonesWithTimeZoneStandardgetResponse(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedTimeZonesWithTimeZoneStandardgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -80,14 +80,14 @@ func (m *ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) GetAsS
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOutlookSupportedTimeZonesWithTimeZoneStandardGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOutlookSupportedTimeZonesWithTimeZoneStandardgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemOutlookSupportedTimeZonesWithTimeZoneStandardGetResponseable), nil
+    return res.(ItemOutlookSupportedTimeZonesWithTimeZoneStandardgetResponseable), nil
 }
 // ToGetRequestInformation invoke function supportedTimeZones
 // returns a *RequestInformation when successful

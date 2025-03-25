@@ -31,7 +31,7 @@ func NewImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder(rawUrl stri
     return NewImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
-// Deprecated: This method is obsolete. Use PostAsImportPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsImportpostResponse instead.
 // returns a ImportedWindowsAutopilotDeviceIdentitiesImportResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) Post(ctx 
     }
     return res.(ImportedWindowsAutopilotDeviceIdentitiesImportResponseable), nil
 }
-// PostAsImportPostResponse not yet documented
-// returns a ImportedWindowsAutopilotDeviceIdentitiesImportPostResponseable when successful
+// PostAsImportpostResponse not yet documented
+// returns a ImportedWindowsAutopilotDeviceIdentitiesImportpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-import?view=graph-rest-1.0
-func (m *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) PostAsImportPostResponse(ctx context.Context, body ImportedWindowsAutopilotDeviceIdentitiesImportPostRequestBodyable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderPostRequestConfiguration)(ImportedWindowsAutopilotDeviceIdentitiesImportPostResponseable, error) {
+func (m *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) PostAsImportpostResponse(ctx context.Context, body ImportedWindowsAutopilotDeviceIdentitiesImportPostRequestBodyable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderPostRequestConfiguration)(ImportedWindowsAutopilotDeviceIdentitiesImportpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) PostAsImp
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateImportedWindowsAutopilotDeviceIdentitiesImportPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateImportedWindowsAutopilotDeviceIdentitiesImportpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ImportedWindowsAutopilotDeviceIdentitiesImportPostResponseable), nil
+    return res.(ImportedWindowsAutopilotDeviceIdentitiesImportpostResponseable), nil
 }
 // ToPostRequestInformation not yet documented
 // returns a *RequestInformation when successful

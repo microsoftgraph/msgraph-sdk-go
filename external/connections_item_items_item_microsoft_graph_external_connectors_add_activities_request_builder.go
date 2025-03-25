@@ -31,7 +31,7 @@ func NewConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesReq
     return NewConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action addActivities
-// Deprecated: This method is obsolete. Use PostAsAddActivitiesPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsAddActivitiespostResponse instead.
 // returns a ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) Post(ctx context.Context, body ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostRequestBodyable, requestConfiguration *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderPostRequestConfiguration)(ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesResponseable, error) {
@@ -51,10 +51,10 @@ func (m *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRe
     }
     return res.(ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesResponseable), nil
 }
-// PostAsAddActivitiesPostResponse invoke action addActivities
-// returns a ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable when successful
+// PostAsAddActivitiespostResponse invoke action addActivities
+// returns a ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiespostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) PostAsAddActivitiesPostResponse(ctx context.Context, body ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostRequestBodyable, requestConfiguration *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderPostRequestConfiguration)(ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable, error) {
+func (m *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) PostAsAddActivitiespostResponse(ctx context.Context, body ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostRequestBodyable, requestConfiguration *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderPostRequestConfiguration)(ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiespostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,14 +62,14 @@ func (m *ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRe
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiespostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable), nil
+    return res.(ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiespostResponseable), nil
 }
 // ToPostRequestInformation invoke action addActivities
 // returns a *RequestInformation when successful

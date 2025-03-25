@@ -55,7 +55,7 @@ func NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder(
     return NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder
     }
     return res.(DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
-// returns a DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
+// returns a DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
-func (m *DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
 // returns a *RequestInformation when successful

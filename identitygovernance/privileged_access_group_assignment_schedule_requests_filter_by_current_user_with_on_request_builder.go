@@ -55,7 +55,7 @@ func NewPrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOn
     return NewPrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get in PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithO
     }
     return res.(PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse in PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.
-// returns a PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse in PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+// returns a PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
-func (m *PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithO
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreatePrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreatePrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation in PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.
 // returns a *RequestInformation when successful

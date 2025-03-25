@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use DeletedTeamsItemChannelsItemMessagesItemRepliesDeltagetResponseable instead.
 type DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse struct {
-    DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaGetResponse
+    DeletedTeamsItemChannelsItemMessagesItemRepliesDeltagetResponse
 }
 // NewDeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse instantiates a new DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse and sets the default values.
 func NewDeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse()(*DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse) {
     m := &DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse{
-        DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaGetResponse: *NewDeletedTeamsItemChannelsItemMessagesItemRepliesDeltaGetResponse(),
+        DeletedTeamsItemChannelsItemMessagesItemRepliesDeltagetResponse: *NewDeletedTeamsItemChannelsItemMessagesItemRepliesDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewDeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse()(*DeletedT
 func CreateDeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use DeletedTeamsItemChannelsItemMessagesItemRepliesDeltagetResponseable instead.
 type DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaResponseable interface {
-    DeletedTeamsItemChannelsItemMessagesItemRepliesDeltaGetResponseable
+    DeletedTeamsItemChannelsItemMessagesItemRepliesDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

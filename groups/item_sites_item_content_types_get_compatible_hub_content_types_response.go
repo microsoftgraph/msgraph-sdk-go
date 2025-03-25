@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemSitesItemContentTypesGetCompatibleHubContentTypesgetResponseable instead.
 type ItemSitesItemContentTypesGetCompatibleHubContentTypesResponse struct {
-    ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponse
+    ItemSitesItemContentTypesGetCompatibleHubContentTypesgetResponse
 }
 // NewItemSitesItemContentTypesGetCompatibleHubContentTypesResponse instantiates a new ItemSitesItemContentTypesGetCompatibleHubContentTypesResponse and sets the default values.
 func NewItemSitesItemContentTypesGetCompatibleHubContentTypesResponse()(*ItemSitesItemContentTypesGetCompatibleHubContentTypesResponse) {
     m := &ItemSitesItemContentTypesGetCompatibleHubContentTypesResponse{
-        ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponse: *NewItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponse(),
+        ItemSitesItemContentTypesGetCompatibleHubContentTypesgetResponse: *NewItemSitesItemContentTypesGetCompatibleHubContentTypesgetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemSitesItemContentTypesGetCompatibleHubContentTypesResponse()(*ItemSit
 func CreateItemSitesItemContentTypesGetCompatibleHubContentTypesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemSitesItemContentTypesGetCompatibleHubContentTypesResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemSitesItemContentTypesGetCompatibleHubContentTypesgetResponseable instead.
 type ItemSitesItemContentTypesGetCompatibleHubContentTypesResponseable interface {
-    ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable
+    ItemSitesItemContentTypesGetCompatibleHubContentTypesgetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

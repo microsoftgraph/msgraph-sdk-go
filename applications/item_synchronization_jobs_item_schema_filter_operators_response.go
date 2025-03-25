@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponseable instead.
 type ItemSynchronizationJobsItemSchemaFilterOperatorsResponse struct {
-    ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponse
+    ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponse
 }
 // NewItemSynchronizationJobsItemSchemaFilterOperatorsResponse instantiates a new ItemSynchronizationJobsItemSchemaFilterOperatorsResponse and sets the default values.
 func NewItemSynchronizationJobsItemSchemaFilterOperatorsResponse()(*ItemSynchronizationJobsItemSchemaFilterOperatorsResponse) {
     m := &ItemSynchronizationJobsItemSchemaFilterOperatorsResponse{
-        ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponse: *NewItemSynchronizationJobsItemSchemaFilterOperatorsGetResponse(),
+        ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponse: *NewItemSynchronizationJobsItemSchemaFilterOperatorsgetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemSynchronizationJobsItemSchemaFilterOperatorsResponse()(*ItemSynchron
 func CreateItemSynchronizationJobsItemSchemaFilterOperatorsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemSynchronizationJobsItemSchemaFilterOperatorsResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponseable instead.
 type ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable interface {
-    ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable
+    ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

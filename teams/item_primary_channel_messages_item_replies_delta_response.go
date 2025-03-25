@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemPrimaryChannelMessagesItemRepliesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemPrimaryChannelMessagesItemRepliesDeltagetResponseable instead.
 type ItemPrimaryChannelMessagesItemRepliesDeltaResponse struct {
-    ItemPrimaryChannelMessagesItemRepliesDeltaGetResponse
+    ItemPrimaryChannelMessagesItemRepliesDeltagetResponse
 }
 // NewItemPrimaryChannelMessagesItemRepliesDeltaResponse instantiates a new ItemPrimaryChannelMessagesItemRepliesDeltaResponse and sets the default values.
 func NewItemPrimaryChannelMessagesItemRepliesDeltaResponse()(*ItemPrimaryChannelMessagesItemRepliesDeltaResponse) {
     m := &ItemPrimaryChannelMessagesItemRepliesDeltaResponse{
-        ItemPrimaryChannelMessagesItemRepliesDeltaGetResponse: *NewItemPrimaryChannelMessagesItemRepliesDeltaGetResponse(),
+        ItemPrimaryChannelMessagesItemRepliesDeltagetResponse: *NewItemPrimaryChannelMessagesItemRepliesDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemPrimaryChannelMessagesItemRepliesDeltaResponse()(*ItemPrimaryChannel
 func CreateItemPrimaryChannelMessagesItemRepliesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPrimaryChannelMessagesItemRepliesDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemPrimaryChannelMessagesItemRepliesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemPrimaryChannelMessagesItemRepliesDeltagetResponseable instead.
 type ItemPrimaryChannelMessagesItemRepliesDeltaResponseable interface {
-    ItemPrimaryChannelMessagesItemRepliesDeltaGetResponseable
+    ItemPrimaryChannelMessagesItemRepliesDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

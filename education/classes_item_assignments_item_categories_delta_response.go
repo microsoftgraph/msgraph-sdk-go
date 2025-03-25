@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ClassesItemAssignmentsItemCategoriesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ClassesItemAssignmentsItemCategoriesDeltagetResponseable instead.
 type ClassesItemAssignmentsItemCategoriesDeltaResponse struct {
-    ClassesItemAssignmentsItemCategoriesDeltaGetResponse
+    ClassesItemAssignmentsItemCategoriesDeltagetResponse
 }
 // NewClassesItemAssignmentsItemCategoriesDeltaResponse instantiates a new ClassesItemAssignmentsItemCategoriesDeltaResponse and sets the default values.
 func NewClassesItemAssignmentsItemCategoriesDeltaResponse()(*ClassesItemAssignmentsItemCategoriesDeltaResponse) {
     m := &ClassesItemAssignmentsItemCategoriesDeltaResponse{
-        ClassesItemAssignmentsItemCategoriesDeltaGetResponse: *NewClassesItemAssignmentsItemCategoriesDeltaGetResponse(),
+        ClassesItemAssignmentsItemCategoriesDeltagetResponse: *NewClassesItemAssignmentsItemCategoriesDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewClassesItemAssignmentsItemCategoriesDeltaResponse()(*ClassesItemAssignme
 func CreateClassesItemAssignmentsItemCategoriesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassesItemAssignmentsItemCategoriesDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ClassesItemAssignmentsItemCategoriesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ClassesItemAssignmentsItemCategoriesDeltagetResponseable instead.
 type ClassesItemAssignmentsItemCategoriesDeltaResponseable interface {
-    ClassesItemAssignmentsItemCategoriesDeltaGetResponseable
+    ClassesItemAssignmentsItemCategoriesDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

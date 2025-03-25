@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemCalendarViewDeltagetResponseable instead.
 type ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse struct {
-    ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaGetResponse
+    ItemCalendarGroupsItemCalendarsItemCalendarViewDeltagetResponse
 }
 // NewItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse()(*ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse) {
     m := &ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse{
-        ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaGetResponse: *NewItemCalendarGroupsItemCalendarsItemCalendarViewDeltaGetResponse(),
+        ItemCalendarGroupsItemCalendarsItemCalendarViewDeltagetResponse: *NewItemCalendarGroupsItemCalendarsItemCalendarViewDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse()(*ItemCale
 func CreateItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemCalendarViewDeltagetResponseable instead.
 type ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaResponseable interface {
-    ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaGetResponseable
+    ItemCalendarGroupsItemCalendarsItemCalendarViewDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

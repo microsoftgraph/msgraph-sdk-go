@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesUnarchiveRequestBuilder(rawUrl string, reques
     return NewServiceAnnouncementMessagesUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post unarchive a list of serviceUpdateMessages for the signed in user.
-// Deprecated: This method is obsolete. Use PostAsUnarchivePostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsUnarchivepostResponse instead.
 // returns a ServiceAnnouncementMessagesUnarchiveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) Post(ctx context.Co
     }
     return res.(ServiceAnnouncementMessagesUnarchiveResponseable), nil
 }
-// PostAsUnarchivePostResponse unarchive a list of serviceUpdateMessages for the signed in user.
-// returns a ServiceAnnouncementMessagesUnarchivePostResponseable when successful
+// PostAsUnarchivepostResponse unarchive a list of serviceUpdateMessages for the signed in user.
+// returns a ServiceAnnouncementMessagesUnarchivepostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
-func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) PostAsUnarchivePostResponse(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnarchivePostResponseable, error) {
+func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) PostAsUnarchivepostResponse(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnarchivepostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) PostAsUnarchivePost
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesUnarchivePostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesUnarchivepostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ServiceAnnouncementMessagesUnarchivePostResponseable), nil
+    return res.(ServiceAnnouncementMessagesUnarchivepostResponseable), nil
 }
 // ToPostRequestInformation unarchive a list of serviceUpdateMessages for the signed in user.
 // returns a *RequestInformation when successful

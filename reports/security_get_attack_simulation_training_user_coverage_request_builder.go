@@ -46,7 +46,7 @@ func NewSecurityGetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl str
     return NewSecurityGetAttackSimulationTrainingUserCoverageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationTrainingUserCoverageGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationTrainingUserCoveragegetResponse instead.
 // returns a SecurityGetAttackSimulationTrainingUserCoverageResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) Get(ctx 
     }
     return res.(SecurityGetAttackSimulationTrainingUserCoverageResponseable), nil
 }
-// GetAsGetAttackSimulationTrainingUserCoverageGetResponse list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-// returns a SecurityGetAttackSimulationTrainingUserCoverageGetResponseable when successful
+// GetAsGetAttackSimulationTrainingUserCoveragegetResponse list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
+// returns a SecurityGetAttackSimulationTrainingUserCoveragegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-1.0
-func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) GetAsGetAttackSimulationTrainingUserCoverageGetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationTrainingUserCoverageGetResponseable, error) {
+func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) GetAsGetAttackSimulationTrainingUserCoveragegetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationTrainingUserCoveragegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) GetAsGet
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSecurityGetAttackSimulationTrainingUserCoverageGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSecurityGetAttackSimulationTrainingUserCoveragegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(SecurityGetAttackSimulationTrainingUserCoverageGetResponseable), nil
+    return res.(SecurityGetAttackSimulationTrainingUserCoveragegetResponseable), nil
 }
 // ToGetRequestInformation list training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // returns a *RequestInformation when successful

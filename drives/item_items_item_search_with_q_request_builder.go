@@ -55,7 +55,7 @@ func NewItemItemsItemSearchWithQRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemItemsItemSearchWithQRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
-// Deprecated: This method is obsolete. Use GetAsSearchWithQGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsSearchWithQgetResponse instead.
 // returns a ItemItemsItemSearchWithQResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *ItemItemsItemSearchWithQRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ItemItemsItemSearchWithQResponseable), nil
 }
-// GetAsSearchWithQGetResponse search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
-// returns a ItemItemsItemSearchWithQGetResponseable when successful
+// GetAsSearchWithQgetResponse search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
+// returns a ItemItemsItemSearchWithQgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
-func (m *ItemItemsItemSearchWithQRequestBuilder) GetAsSearchWithQGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemSearchWithQRequestBuilderGetRequestConfiguration)(ItemItemsItemSearchWithQGetResponseable, error) {
+func (m *ItemItemsItemSearchWithQRequestBuilder) GetAsSearchWithQgetResponse(ctx context.Context, requestConfiguration *ItemItemsItemSearchWithQRequestBuilderGetRequestConfiguration)(ItemItemsItemSearchWithQgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *ItemItemsItemSearchWithQRequestBuilder) GetAsSearchWithQGetResponse(ctx
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemSearchWithQGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemSearchWithQgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemItemsItemSearchWithQGetResponseable), nil
+    return res.(ItemItemsItemSearchWithQgetResponseable), nil
 }
 // ToGetRequestInformation search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
 // returns a *RequestInformation when successful

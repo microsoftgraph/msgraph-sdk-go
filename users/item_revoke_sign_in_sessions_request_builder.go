@@ -31,7 +31,7 @@ func NewItemRevokeSignInSessionsRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemRevokeSignInSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invalidates all the refresh tokens issued to applications for a user (and session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
-// Deprecated: This method is obsolete. Use PostAsRevokeSignInSessionsPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsRevokeSignInSessionspostResponse instead.
 // returns a ItemRevokeSignInSessionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemRevokeSignInSessionsRequestBuilder) Post(ctx context.Context, reque
     }
     return res.(ItemRevokeSignInSessionsResponseable), nil
 }
-// PostAsRevokeSignInSessionsPostResponse invalidates all the refresh tokens issued to applications for a user (and session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
-// returns a ItemRevokeSignInSessionsPostResponseable when successful
+// PostAsRevokeSignInSessionspostResponse invalidates all the refresh tokens issued to applications for a user (and session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
+// returns a ItemRevokeSignInSessionspostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
-func (m *ItemRevokeSignInSessionsRequestBuilder) PostAsRevokeSignInSessionsPostResponse(ctx context.Context, requestConfiguration *ItemRevokeSignInSessionsRequestBuilderPostRequestConfiguration)(ItemRevokeSignInSessionsPostResponseable, error) {
+func (m *ItemRevokeSignInSessionsRequestBuilder) PostAsRevokeSignInSessionspostResponse(ctx context.Context, requestConfiguration *ItemRevokeSignInSessionsRequestBuilderPostRequestConfiguration)(ItemRevokeSignInSessionspostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemRevokeSignInSessionsRequestBuilder) PostAsRevokeSignInSessionsPostR
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRevokeSignInSessionsPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRevokeSignInSessionspostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemRevokeSignInSessionsPostResponseable), nil
+    return res.(ItemRevokeSignInSessionspostResponseable), nil
 }
 // ToPostRequestInformation invalidates all the refresh tokens issued to applications for a user (and session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
 // returns a *RequestInformation when successful

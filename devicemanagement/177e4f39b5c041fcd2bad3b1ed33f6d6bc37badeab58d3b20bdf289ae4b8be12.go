@@ -31,7 +31,7 @@ func NewApplePushNotificationCertificateDownloadApplePushNotificationCertificate
     return NewApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get download Apple push notification certificate signing request
-// Deprecated: This method is obsolete. Use GetAsDownloadApplePushNotificationCertificateSigningRequestGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDownloadApplePushNotificationCertificateSigningRequestgetResponse instead.
 // returns a ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificat
     }
     return res.(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestResponseable), nil
 }
-// GetAsDownloadApplePushNotificationCertificateSigningRequestGetResponse download Apple push notification certificate signing request
-// returns a ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestGetResponseable when successful
+// GetAsDownloadApplePushNotificationCertificateSigningRequestgetResponse download Apple push notification certificate signing request
+// returns a ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0
-func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) GetAsDownloadApplePushNotificationCertificateSigningRequestGetResponse(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration)(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestGetResponseable, error) {
+func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) GetAsDownloadApplePushNotificationCertificateSigningRequestgetResponse(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration)(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificat
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestGetResponseable), nil
+    return res.(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestgetResponseable), nil
 }
 // ToGetRequestInformation download Apple push notification certificate signing request
 // returns a *RequestInformation when successful

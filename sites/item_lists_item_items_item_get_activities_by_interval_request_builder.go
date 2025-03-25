@@ -52,7 +52,7 @@ func NewItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder(rawUrl strin
     return NewItemListsItemItemsItemGetActivitiesByIntervalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getActivitiesByInterval
-// Deprecated: This method is obsolete. Use GetAsGetActivitiesByIntervalGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetActivitiesByIntervalgetResponse instead.
 // returns a ItemListsItemItemsItemGetActivitiesByIntervalResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemListsItemItemsItemGetActivitiesByIntervalResponseable, error) {
@@ -72,10 +72,10 @@ func (m *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder) Get(ctx co
     }
     return res.(ItemListsItemItemsItemGetActivitiesByIntervalResponseable), nil
 }
-// GetAsGetActivitiesByIntervalGetResponse invoke function getActivitiesByInterval
-// returns a ItemListsItemItemsItemGetActivitiesByIntervalGetResponseable when successful
+// GetAsGetActivitiesByIntervalgetResponse invoke function getActivitiesByInterval
+// returns a ItemListsItemItemsItemGetActivitiesByIntervalgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetActivitiesByIntervalGetResponse(ctx context.Context, requestConfiguration *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemListsItemItemsItemGetActivitiesByIntervalGetResponseable, error) {
+func (m *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetActivitiesByIntervalgetResponse(ctx context.Context, requestConfiguration *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemListsItemItemsItemGetActivitiesByIntervalgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetAc
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemListsItemItemsItemGetActivitiesByIntervalGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemListsItemItemsItemGetActivitiesByIntervalgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemListsItemItemsItemGetActivitiesByIntervalGetResponseable), nil
+    return res.(ItemListsItemItemsItemGetActivitiesByIntervalgetResponseable), nil
 }
 // ToGetRequestInformation invoke function getActivitiesByInterval
 // returns a *RequestInformation when successful

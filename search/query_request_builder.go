@@ -31,7 +31,7 @@ func NewQueryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewQueryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post runs the query specified in the request body. Search results are provided in the response.
-// Deprecated: This method is obsolete. Use PostAsQueryPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsQuerypostResponse instead.
 // returns a QueryResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *QueryRequestBuilder) Post(ctx context.Context, body QueryPostRequestBod
     }
     return res.(QueryResponseable), nil
 }
-// PostAsQueryPostResponse runs the query specified in the request body. Search results are provided in the response.
-// returns a QueryPostResponseable when successful
+// PostAsQuerypostResponse runs the query specified in the request body. Search results are provided in the response.
+// returns a QuerypostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
-func (m *QueryRequestBuilder) PostAsQueryPostResponse(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(QueryPostResponseable, error) {
+func (m *QueryRequestBuilder) PostAsQuerypostResponse(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(QuerypostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *QueryRequestBuilder) PostAsQueryPostResponse(ctx context.Context, body 
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateQueryPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateQuerypostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(QueryPostResponseable), nil
+    return res.(QuerypostResponseable), nil
 }
 // ToPostRequestInformation runs the query specified in the request body. Search results are provided in the response.
 // returns a *RequestInformation when successful

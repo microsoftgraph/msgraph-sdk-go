@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesUnfavoriteRequestBuilder(rawUrl string, reque
     return NewServiceAnnouncementMessagesUnfavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post remove the favorite status of serviceUpdateMessages for the signed in user.
-// Deprecated: This method is obsolete. Use PostAsUnfavoritePostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsUnfavoritepostResponse instead.
 // returns a ServiceAnnouncementMessagesUnfavoriteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) Post(ctx context.C
     }
     return res.(ServiceAnnouncementMessagesUnfavoriteResponseable), nil
 }
-// PostAsUnfavoritePostResponse remove the favorite status of serviceUpdateMessages for the signed in user.
-// returns a ServiceAnnouncementMessagesUnfavoritePostResponseable when successful
+// PostAsUnfavoritepostResponse remove the favorite status of serviceUpdateMessages for the signed in user.
+// returns a ServiceAnnouncementMessagesUnfavoritepostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
-func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) PostAsUnfavoritePostResponse(ctx context.Context, body ServiceAnnouncementMessagesUnfavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnfavoriteRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnfavoritePostResponseable, error) {
+func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) PostAsUnfavoritepostResponse(ctx context.Context, body ServiceAnnouncementMessagesUnfavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnfavoriteRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnfavoritepostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) PostAsUnfavoritePo
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesUnfavoritePostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesUnfavoritepostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ServiceAnnouncementMessagesUnfavoritePostResponseable), nil
+    return res.(ServiceAnnouncementMessagesUnfavoritepostResponseable), nil
 }
 // ToPostRequestInformation remove the favorite status of serviceUpdateMessages for the signed in user.
 // returns a *RequestInformation when successful

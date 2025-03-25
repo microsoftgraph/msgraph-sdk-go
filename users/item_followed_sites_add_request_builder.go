@@ -31,7 +31,7 @@ func NewItemFollowedSitesAddRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemFollowedSitesAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post follow a user's site or multiple sites.
-// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsAddpostResponse instead.
 // returns a ItemFollowedSitesAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemFollowedSitesAddRequestBuilder) Post(ctx context.Context, body Item
     }
     return res.(ItemFollowedSitesAddResponseable), nil
 }
-// PostAsAddPostResponse follow a user's site or multiple sites.
-// returns a ItemFollowedSitesAddPostResponseable when successful
+// PostAsAddpostResponse follow a user's site or multiple sites.
+// returns a ItemFollowedSitesAddpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
-func (m *ItemFollowedSitesAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemFollowedSitesAddPostRequestBodyable, requestConfiguration *ItemFollowedSitesAddRequestBuilderPostRequestConfiguration)(ItemFollowedSitesAddPostResponseable, error) {
+func (m *ItemFollowedSitesAddRequestBuilder) PostAsAddpostResponse(ctx context.Context, body ItemFollowedSitesAddPostRequestBodyable, requestConfiguration *ItemFollowedSitesAddRequestBuilderPostRequestConfiguration)(ItemFollowedSitesAddpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemFollowedSitesAddRequestBuilder) PostAsAddPostResponse(ctx context.C
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemFollowedSitesAddPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemFollowedSitesAddpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemFollowedSitesAddPostResponseable), nil
+    return res.(ItemFollowedSitesAddpostResponseable), nil
 }
 // ToPostRequestInformation follow a user's site or multiple sites.
 // returns a *RequestInformation when successful

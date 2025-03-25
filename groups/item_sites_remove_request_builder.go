@@ -31,7 +31,7 @@ func NewItemSitesRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemSitesRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post unfollow a user's site or multiple sites.
-// Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsRemovepostResponse instead.
 // returns a ItemSitesRemoveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemSitesRemoveRequestBuilder) Post(ctx context.Context, body ItemSites
     }
     return res.(ItemSitesRemoveResponseable), nil
 }
-// PostAsRemovePostResponse unfollow a user's site or multiple sites.
-// returns a ItemSitesRemovePostResponseable when successful
+// PostAsRemovepostResponse unfollow a user's site or multiple sites.
+// returns a ItemSitesRemovepostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
-func (m *ItemSitesRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(ItemSitesRemovePostResponseable, error) {
+func (m *ItemSitesRemoveRequestBuilder) PostAsRemovepostResponse(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(ItemSitesRemovepostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemSitesRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Con
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesRemovePostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesRemovepostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemSitesRemovePostResponseable), nil
+    return res.(ItemSitesRemovepostResponseable), nil
 }
 // ToPostRequestInformation unfollow a user's site or multiple sites.
 // returns a *RequestInformation when successful

@@ -52,7 +52,7 @@ func NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilder(rawUrl st
     return NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get in Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.
-// Deprecated: This method is obsolete. Use GetAsAdditionalAccessGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsAdditionalAccessgetResponse instead.
 // returns a EntitlementManagementAssignmentsAdditionalAccessResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) Get(ctx
     }
     return res.(EntitlementManagementAssignmentsAdditionalAccessResponseable), nil
 }
-// GetAsAdditionalAccessGetResponse in Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.
-// returns a EntitlementManagementAssignmentsAdditionalAccessGetResponseable when successful
+// GetAsAdditionalAccessgetResponse in Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.
+// returns a EntitlementManagementAssignmentsAdditionalAccessgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-1.0
-func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) GetAsAdditionalAccessGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentsAdditionalAccessGetResponseable, error) {
+func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) GetAsAdditionalAccessgetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentsAdditionalAccessgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) GetAsAd
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAssignmentsAdditionalAccessGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAssignmentsAdditionalAccessgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(EntitlementManagementAssignmentsAdditionalAccessGetResponseable), nil
+    return res.(EntitlementManagementAssignmentsAdditionalAccessgetResponseable), nil
 }
 // ToGetRequestInformation in Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.
 // returns a *RequestInformation when successful

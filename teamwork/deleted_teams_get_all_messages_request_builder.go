@@ -54,7 +54,7 @@ func NewDeletedTeamsGetAllMessagesRequestBuilder(rawUrl string, requestAdapter i
     return NewDeletedTeamsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllMessages
-// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllMessagesgetResponse instead.
 // returns a DeletedTeamsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedTeamsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsGetAllMessagesResponseable, error) {
@@ -74,10 +74,10 @@ func (m *DeletedTeamsGetAllMessagesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(DeletedTeamsGetAllMessagesResponseable), nil
 }
-// GetAsGetAllMessagesGetResponse invoke function getAllMessages
-// returns a DeletedTeamsGetAllMessagesGetResponseable when successful
+// GetAsGetAllMessagesgetResponse invoke function getAllMessages
+// returns a DeletedTeamsGetAllMessagesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *DeletedTeamsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *DeletedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsGetAllMessagesGetResponseable, error) {
+func (m *DeletedTeamsGetAllMessagesRequestBuilder) GetAsGetAllMessagesgetResponse(ctx context.Context, requestConfiguration *DeletedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsGetAllMessagesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -85,14 +85,14 @@ func (m *DeletedTeamsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetRespons
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsGetAllMessagesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsGetAllMessagesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(DeletedTeamsGetAllMessagesGetResponseable), nil
+    return res.(DeletedTeamsGetAllMessagesgetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAllMessages
 // returns a *RequestInformation when successful

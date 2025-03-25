@@ -53,7 +53,7 @@ func NewLifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsPr
     return NewLifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.
-// Deprecated: This method is obsolete. Use GetAsTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimegetResponse instead.
 // returns a LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -76,13 +76,13 @@ func (m *LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsP
     }
     return res.(LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.
-// returns a LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponseable when successful
+// GetAsTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimegetResponse provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.
+// returns a LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-insights-topworkflowsprocessedsummary?view=graph-rest-1.0
-func (m *LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponseable, error) {
+func (m *LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimegetResponse(ctx context.Context, requestConfiguration *LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -90,14 +90,14 @@ func (m *LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsP
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateLifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateLifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponseable), nil
+    return res.(LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimegetResponseable), nil
 }
 // ToGetRequestInformation provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.
 // returns a *RequestInformation when successful

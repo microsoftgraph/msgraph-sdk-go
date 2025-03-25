@@ -31,7 +31,7 @@ func NewItemSetMobileDeviceManagementAuthorityRequestBuilder(rawUrl string, requ
     return NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set mobile device management authority
-// Deprecated: This method is obsolete. Use PostAsSetMobileDeviceManagementAuthorityPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsSetMobileDeviceManagementAuthoritypostResponse instead.
 // returns a ItemSetMobileDeviceManagementAuthorityResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) Post(ctx context.
     }
     return res.(ItemSetMobileDeviceManagementAuthorityResponseable), nil
 }
-// PostAsSetMobileDeviceManagementAuthorityPostResponse set mobile device management authority
-// returns a ItemSetMobileDeviceManagementAuthorityPostResponseable when successful
+// PostAsSetMobileDeviceManagementAuthoritypostResponse set mobile device management authority
+// returns a ItemSetMobileDeviceManagementAuthoritypostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0
-func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) PostAsSetMobileDeviceManagementAuthorityPostResponse(ctx context.Context, requestConfiguration *ItemSetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(ItemSetMobileDeviceManagementAuthorityPostResponseable, error) {
+func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) PostAsSetMobileDeviceManagementAuthoritypostResponse(ctx context.Context, requestConfiguration *ItemSetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(ItemSetMobileDeviceManagementAuthoritypostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) PostAsSetMobileDe
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSetMobileDeviceManagementAuthorityPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSetMobileDeviceManagementAuthoritypostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemSetMobileDeviceManagementAuthorityPostResponseable), nil
+    return res.(ItemSetMobileDeviceManagementAuthoritypostResponseable), nil
 }
 // ToPostRequestInformation set mobile device management authority
 // returns a *RequestInformation when successful

@@ -31,7 +31,7 @@ func NewItemChannelsItemMembersAddRequestBuilder(rawUrl string, requestAdapter i
     return NewItemChannelsItemMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsAddpostResponse instead.
 // returns a ItemChannelsItemMembersAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemChannelsItemMembersAddRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ItemChannelsItemMembersAddResponseable), nil
 }
-// PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// returns a ItemChannelsItemMembersAddPostResponseable when successful
+// PostAsAddpostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+// returns a ItemChannelsItemMembersAddpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-func (m *ItemChannelsItemMembersAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemChannelsItemMembersAddPostRequestBodyable, requestConfiguration *ItemChannelsItemMembersAddRequestBuilderPostRequestConfiguration)(ItemChannelsItemMembersAddPostResponseable, error) {
+func (m *ItemChannelsItemMembersAddRequestBuilder) PostAsAddpostResponse(ctx context.Context, body ItemChannelsItemMembersAddPostRequestBodyable, requestConfiguration *ItemChannelsItemMembersAddRequestBuilderPostRequestConfiguration)(ItemChannelsItemMembersAddpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemChannelsItemMembersAddRequestBuilder) PostAsAddPostResponse(ctx con
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemChannelsItemMembersAddPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemChannelsItemMembersAddpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemChannelsItemMembersAddPostResponseable), nil
+    return res.(ItemChannelsItemMembersAddpostResponseable), nil
 }
 // ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // returns a *RequestInformation when successful

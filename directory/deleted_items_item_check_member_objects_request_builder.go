@@ -31,7 +31,7 @@ func NewDeletedItemsItemCheckMemberObjectsRequestBuilder(rawUrl string, requestA
     return NewDeletedItemsItemCheckMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action checkMemberObjects
-// Deprecated: This method is obsolete. Use PostAsCheckMemberObjectsPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsCheckMemberObjectspostResponse instead.
 // returns a DeletedItemsItemCheckMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedItemsItemCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body DeletedItemsItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *DeletedItemsItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(DeletedItemsItemCheckMemberObjectsResponseable, error) {
@@ -51,10 +51,10 @@ func (m *DeletedItemsItemCheckMemberObjectsRequestBuilder) Post(ctx context.Cont
     }
     return res.(DeletedItemsItemCheckMemberObjectsResponseable), nil
 }
-// PostAsCheckMemberObjectsPostResponse invoke action checkMemberObjects
-// returns a DeletedItemsItemCheckMemberObjectsPostResponseable when successful
+// PostAsCheckMemberObjectspostResponse invoke action checkMemberObjects
+// returns a DeletedItemsItemCheckMemberObjectspostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *DeletedItemsItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectsPostResponse(ctx context.Context, body DeletedItemsItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *DeletedItemsItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(DeletedItemsItemCheckMemberObjectsPostResponseable, error) {
+func (m *DeletedItemsItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectspostResponse(ctx context.Context, body DeletedItemsItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *DeletedItemsItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(DeletedItemsItemCheckMemberObjectspostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,14 +62,14 @@ func (m *DeletedItemsItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObje
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedItemsItemCheckMemberObjectsPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedItemsItemCheckMemberObjectspostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(DeletedItemsItemCheckMemberObjectsPostResponseable), nil
+    return res.(DeletedItemsItemCheckMemberObjectspostResponseable), nil
 }
 // ToPostRequestInformation invoke action checkMemberObjects
 // returns a *RequestInformation when successful

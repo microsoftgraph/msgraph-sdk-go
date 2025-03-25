@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountgetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse struct {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountGetResponse
+    ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountgetResponse
 }
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse{
-        ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountGetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountGetResponse(),
+        ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountgetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountgetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse()(*Item
 func CreateItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountgetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountResponseable interface {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountGetResponseable
+    ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountgetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

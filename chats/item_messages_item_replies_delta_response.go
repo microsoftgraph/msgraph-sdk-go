@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemMessagesItemRepliesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemMessagesItemRepliesDeltagetResponseable instead.
 type ItemMessagesItemRepliesDeltaResponse struct {
-    ItemMessagesItemRepliesDeltaGetResponse
+    ItemMessagesItemRepliesDeltagetResponse
 }
 // NewItemMessagesItemRepliesDeltaResponse instantiates a new ItemMessagesItemRepliesDeltaResponse and sets the default values.
 func NewItemMessagesItemRepliesDeltaResponse()(*ItemMessagesItemRepliesDeltaResponse) {
     m := &ItemMessagesItemRepliesDeltaResponse{
-        ItemMessagesItemRepliesDeltaGetResponse: *NewItemMessagesItemRepliesDeltaGetResponse(),
+        ItemMessagesItemRepliesDeltagetResponse: *NewItemMessagesItemRepliesDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemMessagesItemRepliesDeltaResponse()(*ItemMessagesItemRepliesDeltaResp
 func CreateItemMessagesItemRepliesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemMessagesItemRepliesDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemMessagesItemRepliesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemMessagesItemRepliesDeltagetResponseable instead.
 type ItemMessagesItemRepliesDeltaResponseable interface {
-    ItemMessagesItemRepliesDeltaGetResponseable
+    ItemMessagesItemRepliesDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable instead.
+// Deprecated: This class is obsolete. Use EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOngetResponseable instead.
 type EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse struct {
-    EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponse
+    EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOngetResponse
 }
 // NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse instantiates a new EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse and sets the default values.
 func NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse()(*EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse) {
     m := &EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse{
-        EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponse: *NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponse(),
+        EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOngetResponse: *NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOngetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse
 func CreateEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponse(), nil
 }
-// Deprecated: This class is obsolete. Use EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable instead.
+// Deprecated: This class is obsolete. Use EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOngetResponseable instead.
 type EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponseable interface {
-    EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable
+    EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOngetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -31,7 +31,7 @@ func NewBookingBusinessesItemGetStaffAvailabilityRequestBuilder(rawUrl string, r
     return NewBookingBusinessesItemGetStaffAvailabilityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the availability information of staff members of a Microsoft Bookings calendar.
-// Deprecated: This method is obsolete. Use PostAsGetStaffAvailabilityPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsGetStaffAvailabilitypostResponse instead.
 // returns a BookingBusinessesItemGetStaffAvailabilityResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) Post(ctx conte
     }
     return res.(BookingBusinessesItemGetStaffAvailabilityResponseable), nil
 }
-// PostAsGetStaffAvailabilityPostResponse get the availability information of staff members of a Microsoft Bookings calendar.
-// returns a BookingBusinessesItemGetStaffAvailabilityPostResponseable when successful
+// PostAsGetStaffAvailabilitypostResponse get the availability information of staff members of a Microsoft Bookings calendar.
+// returns a BookingBusinessesItemGetStaffAvailabilitypostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
-func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) PostAsGetStaffAvailabilityPostResponse(ctx context.Context, body BookingBusinessesItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *BookingBusinessesItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(BookingBusinessesItemGetStaffAvailabilityPostResponseable, error) {
+func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) PostAsGetStaffAvailabilitypostResponse(ctx context.Context, body BookingBusinessesItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *BookingBusinessesItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(BookingBusinessesItemGetStaffAvailabilitypostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) PostAsGetStaff
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateBookingBusinessesItemGetStaffAvailabilityPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateBookingBusinessesItemGetStaffAvailabilitypostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(BookingBusinessesItemGetStaffAvailabilityPostResponseable), nil
+    return res.(BookingBusinessesItemGetStaffAvailabilitypostResponseable), nil
 }
 // ToPostRequestInformation get the availability information of staff members of a Microsoft Bookings calendar.
 // returns a *RequestInformation when successful

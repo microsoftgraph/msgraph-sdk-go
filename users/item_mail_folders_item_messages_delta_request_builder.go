@@ -54,7 +54,7 @@ func NewItemMailFoldersItemMessagesDeltaRequestBuilder(rawUrl string, requestAda
     return NewItemMailFoldersItemMessagesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages withouthaving to fetch the entire set of messages from the server every time.
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a ItemMailFoldersItemMessagesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -77,13 +77,13 @@ func (m *ItemMailFoldersItemMessagesDeltaRequestBuilder) Get(ctx context.Context
     }
     return res.(ItemMailFoldersItemMessagesDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages withouthaving to fetch the entire set of messages from the server every time.
-// returns a ItemMailFoldersItemMessagesDeltaGetResponseable when successful
+// GetAsDeltagetResponse get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages withouthaving to fetch the entire set of messages from the server every time.
+// returns a ItemMailFoldersItemMessagesDeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-func (m *ItemMailFoldersItemMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMailFoldersItemMessagesDeltaGetResponseable, error) {
+func (m *ItemMailFoldersItemMessagesDeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMailFoldersItemMessagesDeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -91,14 +91,14 @@ func (m *ItemMailFoldersItemMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(c
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemMailFoldersItemMessagesDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemMailFoldersItemMessagesDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemMailFoldersItemMessagesDeltaGetResponseable), nil
+    return res.(ItemMailFoldersItemMessagesDeltagetResponseable), nil
 }
 // ToGetRequestInformation get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages withouthaving to fetch the entire set of messages from the server every time.
 // returns a *RequestInformation when successful

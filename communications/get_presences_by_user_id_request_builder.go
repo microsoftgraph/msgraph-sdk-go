@@ -31,7 +31,7 @@ func NewGetPresencesByUserIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewGetPresencesByUserIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the presence information for multiple users.
-// Deprecated: This method is obsolete. Use PostAsGetPresencesByUserIdPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsGetPresencesByUserIdpostResponse instead.
 // returns a GetPresencesByUserIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *GetPresencesByUserIdRequestBuilder) Post(ctx context.Context, body GetP
     }
     return res.(GetPresencesByUserIdResponseable), nil
 }
-// PostAsGetPresencesByUserIdPostResponse get the presence information for multiple users.
-// returns a GetPresencesByUserIdPostResponseable when successful
+// PostAsGetPresencesByUserIdpostResponse get the presence information for multiple users.
+// returns a GetPresencesByUserIdpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
-func (m *GetPresencesByUserIdRequestBuilder) PostAsGetPresencesByUserIdPostResponse(ctx context.Context, body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(GetPresencesByUserIdPostResponseable, error) {
+func (m *GetPresencesByUserIdRequestBuilder) PostAsGetPresencesByUserIdpostResponse(ctx context.Context, body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(GetPresencesByUserIdpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *GetPresencesByUserIdRequestBuilder) PostAsGetPresencesByUserIdPostRespo
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetPresencesByUserIdPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetPresencesByUserIdpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(GetPresencesByUserIdPostResponseable), nil
+    return res.(GetPresencesByUserIdpostResponseable), nil
 }
 // ToPostRequestInformation get the presence information for multiple users.
 // returns a *RequestInformation when successful

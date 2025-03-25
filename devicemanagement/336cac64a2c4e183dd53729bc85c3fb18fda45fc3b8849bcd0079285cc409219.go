@@ -55,7 +55,7 @@ func NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevice
     return NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function summarizeDevicePerformanceDevices
-// Deprecated: This method is obsolete. Use GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsSummarizeDevicePerformanceDevicesWithSummarizeBygetResponse instead.
 // returns a UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration)(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByResponseable, error) {
@@ -75,10 +75,10 @@ func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevic
     }
     return res.(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByResponseable), nil
 }
-// GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponse invoke function summarizeDevicePerformanceDevices
-// returns a UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseable when successful
+// GetAsSummarizeDevicePerformanceDevicesWithSummarizeBygetResponse invoke function summarizeDevicePerformanceDevices
+// returns a UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeBygetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponse(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration)(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseable, error) {
+func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) GetAsSummarizeDevicePerformanceDevicesWithSummarizeBygetResponse(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration)(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeBygetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -86,14 +86,14 @@ func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevic
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeBygetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseable), nil
+    return res.(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeBygetResponseable), nil
 }
 // ToGetRequestInformation invoke function summarizeDevicePerformanceDevices
 // returns a *RequestInformation when successful

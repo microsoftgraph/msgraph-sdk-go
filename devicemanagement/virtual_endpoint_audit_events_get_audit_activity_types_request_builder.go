@@ -46,7 +46,7 @@ func NewVirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder(rawUrl str
     return NewVirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get audit activity types by tenant ID.
-// Deprecated: This method is obsolete. Use GetAsGetAuditActivityTypesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAuditActivityTypesgetResponse instead.
 // returns a VirtualEndpointAuditEventsGetAuditActivityTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) Get(ctx 
     }
     return res.(VirtualEndpointAuditEventsGetAuditActivityTypesResponseable), nil
 }
-// GetAsGetAuditActivityTypesGetResponse get audit activity types by tenant ID.
-// returns a VirtualEndpointAuditEventsGetAuditActivityTypesGetResponseable when successful
+// GetAsGetAuditActivityTypesgetResponse get audit activity types by tenant ID.
+// returns a VirtualEndpointAuditEventsGetAuditActivityTypesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
-func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) GetAsGetAuditActivityTypesGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetRequestConfiguration)(VirtualEndpointAuditEventsGetAuditActivityTypesGetResponseable, error) {
+func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) GetAsGetAuditActivityTypesgetResponse(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetRequestConfiguration)(VirtualEndpointAuditEventsGetAuditActivityTypesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) GetAsGet
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointAuditEventsGetAuditActivityTypesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointAuditEventsGetAuditActivityTypesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(VirtualEndpointAuditEventsGetAuditActivityTypesGetResponseable), nil
+    return res.(VirtualEndpointAuditEventsGetAuditActivityTypesgetResponseable), nil
 }
 // ToGetRequestInformation get audit activity types by tenant ID.
 // returns a *RequestInformation when successful

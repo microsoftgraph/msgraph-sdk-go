@@ -58,7 +58,7 @@ func NewVirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(
     return NewVirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
-// Deprecated: This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRolegetResponse instead.
 // returns a VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -81,13 +81,13 @@ func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder
     }
     return res.(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleResponseable), nil
 }
-// GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
-// returns a VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable when successful
+// GetAsGetByUserIdAndRoleWithUserIdWithRolegetResponse get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
+// returns a VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRolegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-1.0
-func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable, error) {
+func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) GetAsGetByUserIdAndRoleWithUserIdWithRolegetResponse(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRolegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -95,14 +95,14 @@ func (m *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRolegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable), nil
+    return res.(VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRolegetResponseable), nil
 }
 // ToGetRequestInformation get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
 // returns a *RequestInformation when successful

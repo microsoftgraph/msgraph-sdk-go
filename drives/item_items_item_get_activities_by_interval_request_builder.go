@@ -52,7 +52,7 @@ func NewItemItemsItemGetActivitiesByIntervalRequestBuilder(rawUrl string, reques
     return NewItemItemsItemGetActivitiesByIntervalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-// Deprecated: This method is obsolete. Use GetAsGetActivitiesByIntervalGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetActivitiesByIntervalgetResponse instead.
 // returns a ItemItemsItemGetActivitiesByIntervalResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) Get(ctx context.Con
     }
     return res.(ItemItemsItemGetActivitiesByIntervalResponseable), nil
 }
-// GetAsGetActivitiesByIntervalGetResponse get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-// returns a ItemItemsItemGetActivitiesByIntervalGetResponseable when successful
+// GetAsGetActivitiesByIntervalgetResponse get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+// returns a ItemItemsItemGetActivitiesByIntervalgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
-func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetActivitiesByIntervalGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemItemsItemGetActivitiesByIntervalGetResponseable, error) {
+func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetActivitiesByIntervalgetResponse(ctx context.Context, requestConfiguration *ItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemItemsItemGetActivitiesByIntervalgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetActivitiesB
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemGetActivitiesByIntervalGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemGetActivitiesByIntervalgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemItemsItemGetActivitiesByIntervalGetResponseable), nil
+    return res.(ItemItemsItemGetActivitiesByIntervalgetResponseable), nil
 }
 // ToGetRequestInformation get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
 // returns a *RequestInformation when successful

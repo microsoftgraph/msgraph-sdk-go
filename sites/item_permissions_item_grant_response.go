@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemPermissionsItemGrantPostResponseable instead.
+// Deprecated: This class is obsolete. Use ItemPermissionsItemGrantpostResponseable instead.
 type ItemPermissionsItemGrantResponse struct {
-    ItemPermissionsItemGrantPostResponse
+    ItemPermissionsItemGrantpostResponse
 }
 // NewItemPermissionsItemGrantResponse instantiates a new ItemPermissionsItemGrantResponse and sets the default values.
 func NewItemPermissionsItemGrantResponse()(*ItemPermissionsItemGrantResponse) {
     m := &ItemPermissionsItemGrantResponse{
-        ItemPermissionsItemGrantPostResponse: *NewItemPermissionsItemGrantPostResponse(),
+        ItemPermissionsItemGrantpostResponse: *NewItemPermissionsItemGrantpostResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemPermissionsItemGrantResponse()(*ItemPermissionsItemGrantResponse) {
 func CreateItemPermissionsItemGrantResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPermissionsItemGrantResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemPermissionsItemGrantPostResponseable instead.
+// Deprecated: This class is obsolete. Use ItemPermissionsItemGrantpostResponseable instead.
 type ItemPermissionsItemGrantResponseable interface {
-    ItemPermissionsItemGrantPostResponseable
+    ItemPermissionsItemGrantpostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -46,7 +46,7 @@ func NewFederationConfigurationsAvailableProviderTypesRequestBuilder(rawUrl stri
     return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get all identity providers supported in a directory.
-// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesgetResponse instead.
 // returns a FederationConfigurationsAvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx c
     }
     return res.(FederationConfigurationsAvailableProviderTypesResponseable), nil
 }
-// GetAsAvailableProviderTypesGetResponse get all identity providers supported in a directory.
-// returns a FederationConfigurationsAvailableProviderTypesGetResponseable when successful
+// GetAsAvailableProviderTypesgetResponse get all identity providers supported in a directory.
+// returns a FederationConfigurationsAvailableProviderTypesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
-func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesGetResponseable, error) {
+func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesgetResponse(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvai
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateFederationConfigurationsAvailableProviderTypesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateFederationConfigurationsAvailableProviderTypesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(FederationConfigurationsAvailableProviderTypesGetResponseable), nil
+    return res.(FederationConfigurationsAvailableProviderTypesgetResponseable), nil
 }
 // ToGetRequestInformation get all identity providers supported in a directory.
 // returns a *RequestInformation when successful

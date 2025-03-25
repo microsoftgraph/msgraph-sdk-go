@@ -52,7 +52,7 @@ func NewItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl st
     return NewItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function reminderView
-// Deprecated: This method is obsolete. Use GetAsReminderViewWithStartDateTimeWithEndDateTimeGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsReminderViewWithStartDateTimeWithEndDateTimegetResponse instead.
 // returns a ItemReminderViewWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx
     }
     return res.(ItemReminderViewWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsReminderViewWithStartDateTimeWithEndDateTimeGetResponse invoke function reminderView
-// returns a ItemReminderViewWithStartDateTimeWithEndDateTimeGetResponseable when successful
+// GetAsReminderViewWithStartDateTimeWithEndDateTimegetResponse invoke function reminderView
+// returns a ItemReminderViewWithStartDateTimeWithEndDateTimegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0
-func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsReminderViewWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ItemReminderViewWithStartDateTimeWithEndDateTimeGetResponseable, error) {
+func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsReminderViewWithStartDateTimeWithEndDateTimegetResponse(ctx context.Context, requestConfiguration *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ItemReminderViewWithStartDateTimeWithEndDateTimegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsRe
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemReminderViewWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemReminderViewWithStartDateTimeWithEndDateTimegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemReminderViewWithStartDateTimeWithEndDateTimeGetResponseable), nil
+    return res.(ItemReminderViewWithStartDateTimeWithEndDateTimegetResponseable), nil
 }
 // ToGetRequestInformation invoke function reminderView
 // returns a *RequestInformation when successful

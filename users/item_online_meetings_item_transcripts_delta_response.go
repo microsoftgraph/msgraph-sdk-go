@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemOnlineMeetingsItemTranscriptsDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemOnlineMeetingsItemTranscriptsDeltagetResponseable instead.
 type ItemOnlineMeetingsItemTranscriptsDeltaResponse struct {
-    ItemOnlineMeetingsItemTranscriptsDeltaGetResponse
+    ItemOnlineMeetingsItemTranscriptsDeltagetResponse
 }
 // NewItemOnlineMeetingsItemTranscriptsDeltaResponse instantiates a new ItemOnlineMeetingsItemTranscriptsDeltaResponse and sets the default values.
 func NewItemOnlineMeetingsItemTranscriptsDeltaResponse()(*ItemOnlineMeetingsItemTranscriptsDeltaResponse) {
     m := &ItemOnlineMeetingsItemTranscriptsDeltaResponse{
-        ItemOnlineMeetingsItemTranscriptsDeltaGetResponse: *NewItemOnlineMeetingsItemTranscriptsDeltaGetResponse(),
+        ItemOnlineMeetingsItemTranscriptsDeltagetResponse: *NewItemOnlineMeetingsItemTranscriptsDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemOnlineMeetingsItemTranscriptsDeltaResponse()(*ItemOnlineMeetingsItem
 func CreateItemOnlineMeetingsItemTranscriptsDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemOnlineMeetingsItemTranscriptsDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemOnlineMeetingsItemTranscriptsDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemOnlineMeetingsItemTranscriptsDeltagetResponseable instead.
 type ItemOnlineMeetingsItemTranscriptsDeltaResponseable interface {
-    ItemOnlineMeetingsItemTranscriptsDeltaGetResponseable
+    ItemOnlineMeetingsItemTranscriptsDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

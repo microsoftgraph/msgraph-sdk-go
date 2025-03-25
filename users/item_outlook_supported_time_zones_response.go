@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemOutlookSupportedTimeZonesGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemOutlookSupportedTimeZonesgetResponseable instead.
 type ItemOutlookSupportedTimeZonesResponse struct {
-    ItemOutlookSupportedTimeZonesGetResponse
+    ItemOutlookSupportedTimeZonesgetResponse
 }
 // NewItemOutlookSupportedTimeZonesResponse instantiates a new ItemOutlookSupportedTimeZonesResponse and sets the default values.
 func NewItemOutlookSupportedTimeZonesResponse()(*ItemOutlookSupportedTimeZonesResponse) {
     m := &ItemOutlookSupportedTimeZonesResponse{
-        ItemOutlookSupportedTimeZonesGetResponse: *NewItemOutlookSupportedTimeZonesGetResponse(),
+        ItemOutlookSupportedTimeZonesgetResponse: *NewItemOutlookSupportedTimeZonesgetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemOutlookSupportedTimeZonesResponse()(*ItemOutlookSupportedTimeZonesRe
 func CreateItemOutlookSupportedTimeZonesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemOutlookSupportedTimeZonesResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemOutlookSupportedTimeZonesGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemOutlookSupportedTimeZonesgetResponseable instead.
 type ItemOutlookSupportedTimeZonesResponseable interface {
-    ItemOutlookSupportedTimeZonesGetResponseable
+    ItemOutlookSupportedTimeZonesgetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

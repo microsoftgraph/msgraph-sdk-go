@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookTablesCountGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookTablesCountgetResponseable instead.
 type ItemItemsItemWorkbookTablesCountResponse struct {
-    ItemItemsItemWorkbookTablesCountGetResponse
+    ItemItemsItemWorkbookTablesCountgetResponse
 }
 // NewItemItemsItemWorkbookTablesCountResponse instantiates a new ItemItemsItemWorkbookTablesCountResponse and sets the default values.
 func NewItemItemsItemWorkbookTablesCountResponse()(*ItemItemsItemWorkbookTablesCountResponse) {
     m := &ItemItemsItemWorkbookTablesCountResponse{
-        ItemItemsItemWorkbookTablesCountGetResponse: *NewItemItemsItemWorkbookTablesCountGetResponse(),
+        ItemItemsItemWorkbookTablesCountgetResponse: *NewItemItemsItemWorkbookTablesCountgetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemItemsItemWorkbookTablesCountResponse()(*ItemItemsItemWorkbookTablesC
 func CreateItemItemsItemWorkbookTablesCountResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookTablesCountResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookTablesCountGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookTablesCountgetResponseable instead.
 type ItemItemsItemWorkbookTablesCountResponseable interface {
-    ItemItemsItemWorkbookTablesCountGetResponseable
+    ItemItemsItemWorkbookTablesCountgetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

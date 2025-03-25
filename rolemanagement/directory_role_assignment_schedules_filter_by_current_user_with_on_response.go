@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable instead.
+// Deprecated: This class is obsolete. Use DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponseable instead.
 type DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse struct {
-    DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponse
+    DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponse
 }
 // NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse instantiates a new DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse and sets the default values.
 func NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse()(*DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse) {
     m := &DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse{
-        DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponse: *NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponse(),
+        DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponse: *NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse()(*Dir
 func CreateDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponse(), nil
 }
-// Deprecated: This class is obsolete. Use DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable instead.
+// Deprecated: This class is obsolete. Use DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponseable instead.
 type DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnResponseable interface {
-    DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnGetResponseable
+    DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOngetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

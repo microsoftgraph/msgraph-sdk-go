@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightgetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponse struct {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightGetResponse
+    ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightgetResponse
 }
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponse instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponse and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponse()(*ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponse) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponse{
-        ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightGetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightGetResponse(),
+        ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightgetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightgetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightRes
 func CreateItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightgetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightResponseable interface {
-    ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightGetResponseable
+    ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightgetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

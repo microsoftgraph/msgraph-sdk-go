@@ -52,7 +52,7 @@ func NewAdministrativeUnitsDeltaRequestBuilder(rawUrl string, requestAdapter i2a
     return NewAdministrativeUnitsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a AdministrativeUnitsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AdministrativeUnitsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(AdministrativeUnitsDeltaResponseable, error) {
@@ -72,10 +72,10 @@ func (m *AdministrativeUnitsDeltaRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(AdministrativeUnitsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
-// returns a AdministrativeUnitsDeltaGetResponseable when successful
+// GetAsDeltagetResponse invoke function delta
+// returns a AdministrativeUnitsDeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *AdministrativeUnitsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(AdministrativeUnitsDeltaGetResponseable, error) {
+func (m *AdministrativeUnitsDeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(AdministrativeUnitsDeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *AdministrativeUnitsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx conte
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAdministrativeUnitsDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAdministrativeUnitsDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AdministrativeUnitsDeltaGetResponseable), nil
+    return res.(AdministrativeUnitsDeltagetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 // returns a *RequestInformation when successful

@@ -31,7 +31,7 @@ func NewGetAvailableExtensionPropertiesRequestBuilder(rawUrl string, requestAdap
     return NewGetAvailableExtensionPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
-// Deprecated: This method is obsolete. Use PostAsGetAvailableExtensionPropertiesPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsGetAvailableExtensionPropertiespostResponse instead.
 // returns a GetAvailableExtensionPropertiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *GetAvailableExtensionPropertiesRequestBuilder) Post(ctx context.Context
     }
     return res.(GetAvailableExtensionPropertiesResponseable), nil
 }
-// PostAsGetAvailableExtensionPropertiesPostResponse return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
-// returns a GetAvailableExtensionPropertiesPostResponseable when successful
+// PostAsGetAvailableExtensionPropertiespostResponse return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
+// returns a GetAvailableExtensionPropertiespostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-func (m *GetAvailableExtensionPropertiesRequestBuilder) PostAsGetAvailableExtensionPropertiesPostResponse(ctx context.Context, body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(GetAvailableExtensionPropertiesPostResponseable, error) {
+func (m *GetAvailableExtensionPropertiesRequestBuilder) PostAsGetAvailableExtensionPropertiespostResponse(ctx context.Context, body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(GetAvailableExtensionPropertiespostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *GetAvailableExtensionPropertiesRequestBuilder) PostAsGetAvailableExtens
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetAvailableExtensionPropertiesPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetAvailableExtensionPropertiespostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(GetAvailableExtensionPropertiesPostResponseable), nil
+    return res.(GetAvailableExtensionPropertiespostResponseable), nil
 }
 // ToPostRequestInformation return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
 // returns a *RequestInformation when successful

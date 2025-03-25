@@ -52,7 +52,7 @@ func NewDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a DeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *DeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *Del
     }
     return res.(DeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
-// returns a DeltaGetResponseable when successful
+// GetAsDeltagetResponse get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// returns a DeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-1.0
-func (m *DeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(DeltaGetResponseable, error) {
+func (m *DeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(DeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *DeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, request
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(DeltaGetResponseable), nil
+    return res.(DeltagetResponseable), nil
 }
 // ToGetRequestInformation get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // returns a *RequestInformation when successful

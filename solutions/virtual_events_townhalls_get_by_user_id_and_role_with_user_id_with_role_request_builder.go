@@ -58,7 +58,7 @@ func NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder
     return NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
-// Deprecated: This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRolegetResponse instead.
 // returns a VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -81,13 +81,13 @@ func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilde
     }
     return res.(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleResponseable), nil
 }
-// GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
-// returns a VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable when successful
+// GetAsGetByUserIdAndRoleWithUserIdWithRolegetResponse get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
+// returns a VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRolegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-1.0
-func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable, error) {
+func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) GetAsGetByUserIdAndRoleWithUserIdWithRolegetResponse(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRolegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -95,14 +95,14 @@ func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilde
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRolegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable), nil
+    return res.(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRolegetResponseable), nil
 }
 // ToGetRequestInformation get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
 // returns a *RequestInformation when successful

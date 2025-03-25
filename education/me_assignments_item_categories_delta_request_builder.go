@@ -52,7 +52,7 @@ func NewMeAssignmentsItemCategoriesDeltaRequestBuilder(rawUrl string, requestAda
     return NewMeAssignmentsItemCategoriesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a MeAssignmentsItemCategoriesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.Context
     }
     return res.(MeAssignmentsItemCategoriesDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
-// returns a MeAssignmentsItemCategoriesDeltaGetResponseable when successful
+// GetAsDeltagetResponse get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
+// returns a MeAssignmentsItemCategoriesDeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
-func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(MeAssignmentsItemCategoriesDeltaGetResponseable, error) {
+func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(MeAssignmentsItemCategoriesDeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(c
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateMeAssignmentsItemCategoriesDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateMeAssignmentsItemCategoriesDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(MeAssignmentsItemCategoriesDeltaGetResponseable), nil
+    return res.(MeAssignmentsItemCategoriesDeltagetResponseable), nil
 }
 // ToGetRequestInformation get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
 // returns a *RequestInformation when successful

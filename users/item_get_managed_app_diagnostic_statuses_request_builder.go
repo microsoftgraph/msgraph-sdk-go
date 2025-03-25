@@ -46,7 +46,7 @@ func NewItemGetManagedAppDiagnosticStatusesRequestBuilder(rawUrl string, request
     return NewItemGetManagedAppDiagnosticStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets diagnostics validation status for a given user.
-// Deprecated: This method is obsolete. Use GetAsGetManagedAppDiagnosticStatusesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetManagedAppDiagnosticStatusesgetResponse instead.
 // returns a ItemGetManagedAppDiagnosticStatusesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Cont
     }
     return res.(ItemGetManagedAppDiagnosticStatusesResponseable), nil
 }
-// GetAsGetManagedAppDiagnosticStatusesGetResponse gets diagnostics validation status for a given user.
-// returns a ItemGetManagedAppDiagnosticStatusesGetResponseable when successful
+// GetAsGetManagedAppDiagnosticStatusesgetResponse gets diagnostics validation status for a given user.
+// returns a ItemGetManagedAppDiagnosticStatusesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0
-func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) GetAsGetManagedAppDiagnosticStatusesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesGetResponseable, error) {
+func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) GetAsGetManagedAppDiagnosticStatusesgetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) GetAsGetManagedAppDi
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppDiagnosticStatusesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppDiagnosticStatusesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemGetManagedAppDiagnosticStatusesGetResponseable), nil
+    return res.(ItemGetManagedAppDiagnosticStatusesgetResponseable), nil
 }
 // ToGetRequestInformation gets diagnostics validation status for a given user.
 // returns a *RequestInformation when successful

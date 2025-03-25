@@ -35,7 +35,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthReque
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function image
-// Deprecated: This method is obsolete. Use GetAsImageWithWidthGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsImageWithWidthgetResponse instead.
 // returns a ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponseable, error) {
@@ -55,10 +55,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequ
     }
     return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponseable), nil
 }
-// GetAsImageWithWidthGetResponse invoke function image
-// returns a ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponseable when successful
+// GetAsImageWithWidthgetResponse invoke function image
+// returns a ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequestBuilder) GetAsImageWithWidthGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponseable, error) {
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequestBuilder) GetAsImageWithWidthgetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -66,14 +66,14 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthRequ
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponseable), nil
+    return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthgetResponseable), nil
 }
 // ToGetRequestInformation invoke function image
 // returns a *RequestInformation when successful

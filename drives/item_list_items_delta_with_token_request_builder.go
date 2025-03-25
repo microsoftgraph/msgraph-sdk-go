@@ -55,7 +55,7 @@ func NewItemListItemsDeltaWithTokenRequestBuilder(rawUrl string, requestAdapter 
     return NewItemListItemsDeltaWithTokenRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use GetAsDeltaWithTokenGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaWithTokengetResponse instead.
 // returns a ItemListItemsDeltaWithTokenResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListItemsDeltaWithTokenRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsDeltaWithTokenRequestBuilderGetRequestConfiguration)(ItemListItemsDeltaWithTokenResponseable, error) {
@@ -75,10 +75,10 @@ func (m *ItemListItemsDeltaWithTokenRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ItemListItemsDeltaWithTokenResponseable), nil
 }
-// GetAsDeltaWithTokenGetResponse invoke function delta
-// returns a ItemListItemsDeltaWithTokenGetResponseable when successful
+// GetAsDeltaWithTokengetResponse invoke function delta
+// returns a ItemListItemsDeltaWithTokengetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemListItemsDeltaWithTokenRequestBuilder) GetAsDeltaWithTokenGetResponse(ctx context.Context, requestConfiguration *ItemListItemsDeltaWithTokenRequestBuilderGetRequestConfiguration)(ItemListItemsDeltaWithTokenGetResponseable, error) {
+func (m *ItemListItemsDeltaWithTokenRequestBuilder) GetAsDeltaWithTokengetResponse(ctx context.Context, requestConfiguration *ItemListItemsDeltaWithTokenRequestBuilderGetRequestConfiguration)(ItemListItemsDeltaWithTokengetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -86,14 +86,14 @@ func (m *ItemListItemsDeltaWithTokenRequestBuilder) GetAsDeltaWithTokenGetRespon
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemListItemsDeltaWithTokenGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemListItemsDeltaWithTokengetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemListItemsDeltaWithTokenGetResponseable), nil
+    return res.(ItemListItemsDeltaWithTokengetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 // returns a *RequestInformation when successful

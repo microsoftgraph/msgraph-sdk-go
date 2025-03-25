@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesMarkUnreadRequestBuilder(rawUrl string, reque
     return NewServiceAnnouncementMessagesMarkUnreadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post mark a list of serviceUpdateMessages as unread for the signed in user.
-// Deprecated: This method is obsolete. Use PostAsMarkUnreadPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsMarkUnreadpostResponse instead.
 // returns a ServiceAnnouncementMessagesMarkUnreadResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) Post(ctx context.C
     }
     return res.(ServiceAnnouncementMessagesMarkUnreadResponseable), nil
 }
-// PostAsMarkUnreadPostResponse mark a list of serviceUpdateMessages as unread for the signed in user.
-// returns a ServiceAnnouncementMessagesMarkUnreadPostResponseable when successful
+// PostAsMarkUnreadpostResponse mark a list of serviceUpdateMessages as unread for the signed in user.
+// returns a ServiceAnnouncementMessagesMarkUnreadpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
-func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) PostAsMarkUnreadPostResponse(ctx context.Context, body ServiceAnnouncementMessagesMarkUnreadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkUnreadRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesMarkUnreadPostResponseable, error) {
+func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) PostAsMarkUnreadpostResponse(ctx context.Context, body ServiceAnnouncementMessagesMarkUnreadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkUnreadRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesMarkUnreadpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) PostAsMarkUnreadPo
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesMarkUnreadPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesMarkUnreadpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ServiceAnnouncementMessagesMarkUnreadPostResponseable), nil
+    return res.(ServiceAnnouncementMessagesMarkUnreadpostResponseable), nil
 }
 // ToPostRequestInformation mark a list of serviceUpdateMessages as unread for the signed in user.
 // returns a *RequestInformation when successful

@@ -31,7 +31,7 @@ func NewItemPermissionGrantRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewItemPermissionGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post grant users access to a link represented by a permission.
-// Deprecated: This method is obsolete. Use PostAsGrantPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsGrantpostResponse instead.
 // returns a ItemPermissionGrantResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemPermissionGrantRequestBuilder) Post(ctx context.Context, body ItemP
     }
     return res.(ItemPermissionGrantResponseable), nil
 }
-// PostAsGrantPostResponse grant users access to a link represented by a permission.
-// returns a ItemPermissionGrantPostResponseable when successful
+// PostAsGrantpostResponse grant users access to a link represented by a permission.
+// returns a ItemPermissionGrantpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
-func (m *ItemPermissionGrantRequestBuilder) PostAsGrantPostResponse(ctx context.Context, body ItemPermissionGrantPostRequestBodyable, requestConfiguration *ItemPermissionGrantRequestBuilderPostRequestConfiguration)(ItemPermissionGrantPostResponseable, error) {
+func (m *ItemPermissionGrantRequestBuilder) PostAsGrantpostResponse(ctx context.Context, body ItemPermissionGrantPostRequestBodyable, requestConfiguration *ItemPermissionGrantRequestBuilderPostRequestConfiguration)(ItemPermissionGrantpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemPermissionGrantRequestBuilder) PostAsGrantPostResponse(ctx context.
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemPermissionGrantPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemPermissionGrantpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemPermissionGrantPostResponseable), nil
+    return res.(ItemPermissionGrantpostResponseable), nil
 }
 // ToPostRequestInformation grant users access to a link represented by a permission.
 // returns a *RequestInformation when successful

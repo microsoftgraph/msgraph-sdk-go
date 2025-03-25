@@ -31,7 +31,7 @@ func NewItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder(rawUrl string,
     return NewItemItemsItemWorkbookTablesItemColumnsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function count
-// Deprecated: This method is obsolete. Use GetAsCountGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsCountgetResponse instead.
 // returns a ItemItemsItemWorkbookTablesItemColumnsCountResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookTablesItemColumnsCountResponseable, error) {
@@ -51,10 +51,10 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder) Get(ctx cont
     }
     return res.(ItemItemsItemWorkbookTablesItemColumnsCountResponseable), nil
 }
-// GetAsCountGetResponse invoke function count
-// returns a ItemItemsItemWorkbookTablesItemColumnsCountGetResponseable when successful
+// GetAsCountgetResponse invoke function count
+// returns a ItemItemsItemWorkbookTablesItemColumnsCountgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder) GetAsCountGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookTablesItemColumnsCountGetResponseable, error) {
+func (m *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder) GetAsCountgetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookTablesItemColumnsCountgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,14 +62,14 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder) GetAsCountGe
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookTablesItemColumnsCountGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookTablesItemColumnsCountgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemItemsItemWorkbookTablesItemColumnsCountGetResponseable), nil
+    return res.(ItemItemsItemWorkbookTablesItemColumnsCountgetResponseable), nil
 }
 // ToGetRequestInformation invoke function count
 // returns a *RequestInformation when successful

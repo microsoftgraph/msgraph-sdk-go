@@ -54,7 +54,7 @@ func NewItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilder(rawUrl string, r
     return NewItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
-// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllMessagesgetResponse instead.
 // returns a ItemJoinedTeamsItemChannelsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -77,13 +77,13 @@ func (m *ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilder) Get(ctx contex
     }
     return res.(ItemJoinedTeamsItemChannelsGetAllMessagesResponseable), nil
 }
-// GetAsGetAllMessagesGetResponse retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
-// returns a ItemJoinedTeamsItemChannelsGetAllMessagesGetResponseable when successful
+// GetAsGetAllMessagesgetResponse retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+// returns a ItemJoinedTeamsItemChannelsGetAllMessagesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
-func (m *ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsItemChannelsGetAllMessagesGetResponseable, error) {
+func (m *ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilder) GetAsGetAllMessagesgetResponse(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsItemChannelsGetAllMessagesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -91,14 +91,14 @@ func (m *ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilder) GetAsGetAllMes
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsItemChannelsGetAllMessagesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsItemChannelsGetAllMessagesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemJoinedTeamsItemChannelsGetAllMessagesGetResponseable), nil
+    return res.(ItemJoinedTeamsItemChannelsGetAllMessagesgetResponseable), nil
 }
 // ToGetRequestInformation retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful

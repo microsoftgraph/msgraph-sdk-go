@@ -31,7 +31,7 @@ func NewItemItemsItemInviteRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewItemItemsItemInviteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
-// Deprecated: This method is obsolete. Use PostAsInvitePostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsInvitepostResponse instead.
 // returns a ItemItemsItemInviteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemItemsItemInviteRequestBuilder) Post(ctx context.Context, body ItemI
     }
     return res.(ItemItemsItemInviteResponseable), nil
 }
-// PostAsInvitePostResponse sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
-// returns a ItemItemsItemInvitePostResponseable when successful
+// PostAsInvitepostResponse sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
+// returns a ItemItemsItemInvitepostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
-func (m *ItemItemsItemInviteRequestBuilder) PostAsInvitePostResponse(ctx context.Context, body ItemItemsItemInvitePostRequestBodyable, requestConfiguration *ItemItemsItemInviteRequestBuilderPostRequestConfiguration)(ItemItemsItemInvitePostResponseable, error) {
+func (m *ItemItemsItemInviteRequestBuilder) PostAsInvitepostResponse(ctx context.Context, body ItemItemsItemInvitePostRequestBodyable, requestConfiguration *ItemItemsItemInviteRequestBuilderPostRequestConfiguration)(ItemItemsItemInvitepostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemItemsItemInviteRequestBuilder) PostAsInvitePostResponse(ctx context
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemInvitePostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemInvitepostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemItemsItemInvitePostResponseable), nil
+    return res.(ItemItemsItemInvitepostResponseable), nil
 }
 // ToPostRequestInformation sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
 // returns a *RequestInformation when successful

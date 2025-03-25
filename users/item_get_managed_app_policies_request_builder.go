@@ -52,7 +52,7 @@ func NewItemGetManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter i2
     return NewItemGetManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets app restrictions for a given user.
-// Deprecated: This method is obsolete. Use GetAsGetManagedAppPoliciesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetManagedAppPoliciesgetResponse instead.
 // returns a ItemGetManagedAppPoliciesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ItemGetManagedAppPoliciesResponseable), nil
 }
-// GetAsGetManagedAppPoliciesGetResponse gets app restrictions for a given user.
-// returns a ItemGetManagedAppPoliciesGetResponseable when successful
+// GetAsGetManagedAppPoliciesgetResponse gets app restrictions for a given user.
+// returns a ItemGetManagedAppPoliciesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0
-func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesGetResponseable, error) {
+func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesgetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesGetR
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppPoliciesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppPoliciesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemGetManagedAppPoliciesGetResponseable), nil
+    return res.(ItemGetManagedAppPoliciesgetResponseable), nil
 }
 // ToGetRequestInformation gets app restrictions for a given user.
 // returns a *RequestInformation when successful

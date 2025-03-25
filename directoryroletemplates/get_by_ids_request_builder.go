@@ -31,7 +31,7 @@ func NewGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
-// Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsGetByIdspostResponse instead.
 // returns a GetByIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *GetByIdsRequestBuilder) Post(ctx context.Context, body GetByIdsPostRequ
     }
     return res.(GetByIdsResponseable), nil
 }
-// PostAsGetByIdsPostResponse return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
-// returns a GetByIdsPostResponseable when successful
+// PostAsGetByIdspostResponse return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
+// returns a GetByIdspostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-func (m *GetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context, body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(GetByIdsPostResponseable, error) {
+func (m *GetByIdsRequestBuilder) PostAsGetByIdspostResponse(ctx context.Context, body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(GetByIdspostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *GetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context,
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetByIdsPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetByIdspostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(GetByIdsPostResponseable), nil
+    return res.(GetByIdspostResponseable), nil
 }
 // ToPostRequestInformation return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 // returns a *RequestInformation when successful

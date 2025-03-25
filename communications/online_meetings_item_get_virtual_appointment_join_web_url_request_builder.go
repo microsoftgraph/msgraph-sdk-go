@@ -31,7 +31,7 @@ func NewOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder(rawUrl s
     return NewOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
-// Deprecated: This method is obsolete. Use GetAsGetVirtualAppointmentJoinWebUrlGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetVirtualAppointmentJoinWebUrlgetResponse instead.
 // returns a OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) Get(ct
     }
     return res.(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlResponseable), nil
 }
-// GetAsGetVirtualAppointmentJoinWebUrlGetResponse get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
-// returns a OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseable when successful
+// GetAsGetVirtualAppointmentJoinWebUrlgetResponse get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
+// returns a OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0
-func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) GetAsGetVirtualAppointmentJoinWebUrlGetResponse(ctx context.Context, requestConfiguration *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseable, error) {
+func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) GetAsGetVirtualAppointmentJoinWebUrlgetResponse(ctx context.Context, requestConfiguration *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) GetAsG
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseable), nil
+    return res.(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlgetResponseable), nil
 }
 // ToGetRequestInformation get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
 // returns a *RequestInformation when successful

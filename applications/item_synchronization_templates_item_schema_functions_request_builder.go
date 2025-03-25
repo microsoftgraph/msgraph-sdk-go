@@ -52,7 +52,7 @@ func NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder(rawUrl str
     return NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all the functions currently supported in the attributeMappingSource.
-// Deprecated: This method is obsolete. Use GetAsFunctionsGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFunctionsgetResponse instead.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) Get(ctx 
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFunctionsResponseable), nil
 }
-// GetAsFunctionsGetResponse list all the functions currently supported in the attributeMappingSource.
-// returns a ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable when successful
+// GetAsFunctionsgetResponse list all the functions currently supported in the attributeMappingSource.
+// returns a ItemSynchronizationTemplatesItemSchemaFunctionsgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
-func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) GetAsFunctionsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable, error) {
+func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) GetAsFunctionsgetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFunctionsgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) GetAsFun
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationTemplatesItemSchemaFunctionsGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationTemplatesItemSchemaFunctionsgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable), nil
+    return res.(ItemSynchronizationTemplatesItemSchemaFunctionsgetResponseable), nil
 }
 // ToGetRequestInformation list all the functions currently supported in the attributeMappingSource.
 // returns a *RequestInformation when successful

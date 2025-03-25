@@ -30,7 +30,7 @@ func NewItemRetryServiceProvisioningRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemRetryServiceProvisioningRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post retry the user service provisioning.
+// Post retry the provisioning of a user object in Microsoft Entra ID.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *ItemRetryServiceProvisioningRequestBuilder) Post(ctx context.Context, r
     }
     return nil
 }
-// ToPostRequestInformation retry the user service provisioning.
+// ToPostRequestInformation retry the provisioning of a user object in Microsoft Entra ID.
 // returns a *RequestInformation when successful
 func (m *ItemRetryServiceProvisioningRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemRetryServiceProvisioningRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

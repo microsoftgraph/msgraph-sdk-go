@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponseable instead.
+// Deprecated: This class is obsolete. Use VerifyWindowsEnrollmentAutoDiscoveryWithDomainNamegetResponseable instead.
 type VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse struct {
-    VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse
+    VerifyWindowsEnrollmentAutoDiscoveryWithDomainNamegetResponse
 }
 // NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse instantiates a new VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse and sets the default values.
 func NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse()(*VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse) {
     m := &VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse{
-        VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse: *NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse(),
+        VerifyWindowsEnrollmentAutoDiscoveryWithDomainNamegetResponse: *NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNamegetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse()(*VerifyWind
 func CreateVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse(), nil
 }
-// Deprecated: This class is obsolete. Use VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponseable instead.
+// Deprecated: This class is obsolete. Use VerifyWindowsEnrollmentAutoDiscoveryWithDomainNamegetResponseable instead.
 type VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponseable
+    VerifyWindowsEnrollmentAutoDiscoveryWithDomainNamegetResponseable
 }

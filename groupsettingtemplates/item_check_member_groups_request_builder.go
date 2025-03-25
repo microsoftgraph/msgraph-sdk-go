@@ -31,7 +31,7 @@ func NewItemCheckMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewItemCheckMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:- user- group- service principal- organizational contact- device- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-// Deprecated: This method is obsolete. Use PostAsCheckMemberGroupsPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsCheckMemberGroupspostResponse instead.
 // returns a ItemCheckMemberGroupsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *ItemCheckMemberGroupsRequestBuilder) Post(ctx context.Context, body Ite
     }
     return res.(ItemCheckMemberGroupsResponseable), nil
 }
-// PostAsCheckMemberGroupsPostResponse check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:- user- group- service principal- organizational contact- device- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-// returns a ItemCheckMemberGroupsPostResponseable when successful
+// PostAsCheckMemberGroupspostResponse check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:- user- group- service principal- organizational contact- device- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+// returns a ItemCheckMemberGroupspostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-func (m *ItemCheckMemberGroupsRequestBuilder) PostAsCheckMemberGroupsPostResponse(ctx context.Context, body ItemCheckMemberGroupsPostRequestBodyable, requestConfiguration *ItemCheckMemberGroupsRequestBuilderPostRequestConfiguration)(ItemCheckMemberGroupsPostResponseable, error) {
+func (m *ItemCheckMemberGroupsRequestBuilder) PostAsCheckMemberGroupspostResponse(ctx context.Context, body ItemCheckMemberGroupsPostRequestBodyable, requestConfiguration *ItemCheckMemberGroupsRequestBuilderPostRequestConfiguration)(ItemCheckMemberGroupspostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *ItemCheckMemberGroupsRequestBuilder) PostAsCheckMemberGroupsPostRespons
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCheckMemberGroupsPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCheckMemberGroupspostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemCheckMemberGroupsPostResponseable), nil
+    return res.(ItemCheckMemberGroupspostResponseable), nil
 }
 // ToPostRequestInformation check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:- user- group- service principal- organizational contact- device- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 // returns a *RequestInformation when successful

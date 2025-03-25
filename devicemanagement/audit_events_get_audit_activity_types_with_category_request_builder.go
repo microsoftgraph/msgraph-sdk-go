@@ -49,7 +49,7 @@ func NewAuditEventsGetAuditActivityTypesWithCategoryRequestBuilder(rawUrl string
     return NewAuditEventsGetAuditActivityTypesWithCategoryRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getAuditActivityTypes
-// Deprecated: This method is obsolete. Use GetAsGetAuditActivityTypesWithCategoryGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAuditActivityTypesWithCategorygetResponse instead.
 // returns a AuditEventsGetAuditActivityTypesWithCategoryResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditActivityTypesWithCategoryResponseable, error) {
@@ -69,10 +69,10 @@ func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) Get(ctx con
     }
     return res.(AuditEventsGetAuditActivityTypesWithCategoryResponseable), nil
 }
-// GetAsGetAuditActivityTypesWithCategoryGetResponse invoke function getAuditActivityTypes
-// returns a AuditEventsGetAuditActivityTypesWithCategoryGetResponseable when successful
+// GetAsGetAuditActivityTypesWithCategorygetResponse invoke function getAuditActivityTypes
+// returns a AuditEventsGetAuditActivityTypesWithCategorygetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) GetAsGetAuditActivityTypesWithCategoryGetResponse(ctx context.Context, requestConfiguration *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditActivityTypesWithCategoryGetResponseable, error) {
+func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) GetAsGetAuditActivityTypesWithCategorygetResponse(ctx context.Context, requestConfiguration *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditActivityTypesWithCategorygetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -80,14 +80,14 @@ func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) GetAsGetAud
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAuditEventsGetAuditActivityTypesWithCategoryGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAuditEventsGetAuditActivityTypesWithCategorygetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AuditEventsGetAuditActivityTypesWithCategoryGetResponseable), nil
+    return res.(AuditEventsGetAuditActivityTypesWithCategorygetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAuditActivityTypes
 // returns a *RequestInformation when successful

@@ -52,7 +52,7 @@ func NewItemRecentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewItemRecentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
-// Deprecated: This method is obsolete. Use GetAsRecentGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsRecentgetResponse instead.
 // returns a ItemRecentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *ItemRecentRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ItemRecentResponseable), nil
 }
-// GetAsRecentGetResponse list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
-// returns a ItemRecentGetResponseable when successful
+// GetAsRecentgetResponse list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
+// returns a ItemRecentgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
-func (m *ItemRecentRequestBuilder) GetAsRecentGetResponse(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(ItemRecentGetResponseable, error) {
+func (m *ItemRecentRequestBuilder) GetAsRecentgetResponse(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(ItemRecentgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *ItemRecentRequestBuilder) GetAsRecentGetResponse(ctx context.Context, r
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRecentGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRecentgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemRecentGetResponseable), nil
+    return res.(ItemRecentgetResponseable), nil
 }
 // ToGetRequestInformation list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
 // returns a *RequestInformation when successful

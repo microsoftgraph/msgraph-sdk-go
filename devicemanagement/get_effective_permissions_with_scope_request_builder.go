@@ -49,7 +49,7 @@ func NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl string, requestAda
     return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get retrieves the effective permissions of the currently authenticated user
-// Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsWithScopeGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsWithScopegetResponse instead.
 // returns a GetEffectivePermissionsWithScopeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -72,13 +72,13 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context
     }
     return res.(GetEffectivePermissionsWithScopeResponseable), nil
 }
-// GetAsGetEffectivePermissionsWithScopeGetResponse retrieves the effective permissions of the currently authenticated user
-// returns a GetEffectivePermissionsWithScopeGetResponseable when successful
+// GetAsGetEffectivePermissionsWithScopegetResponse retrieves the effective permissions of the currently authenticated user
+// returns a GetEffectivePermissionsWithScopegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetAsGetEffectivePermissionsWithScopeGetResponse(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeGetResponseable, error) {
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetAsGetEffectivePermissionsWithScopegetResponse(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -86,14 +86,14 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetAsGetEffectivePermis
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetEffectivePermissionsWithScopeGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetEffectivePermissionsWithScopegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(GetEffectivePermissionsWithScopeGetResponseable), nil
+    return res.(GetEffectivePermissionsWithScopegetResponseable), nil
 }
 // ToGetRequestInformation retrieves the effective permissions of the currently authenticated user
 // returns a *RequestInformation when successful

@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemCalendarsItemEventsDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCalendarsItemEventsDeltagetResponseable instead.
 type ItemCalendarsItemEventsDeltaResponse struct {
-    ItemCalendarsItemEventsDeltaGetResponse
+    ItemCalendarsItemEventsDeltagetResponse
 }
 // NewItemCalendarsItemEventsDeltaResponse instantiates a new ItemCalendarsItemEventsDeltaResponse and sets the default values.
 func NewItemCalendarsItemEventsDeltaResponse()(*ItemCalendarsItemEventsDeltaResponse) {
     m := &ItemCalendarsItemEventsDeltaResponse{
-        ItemCalendarsItemEventsDeltaGetResponse: *NewItemCalendarsItemEventsDeltaGetResponse(),
+        ItemCalendarsItemEventsDeltagetResponse: *NewItemCalendarsItemEventsDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemCalendarsItemEventsDeltaResponse()(*ItemCalendarsItemEventsDeltaResp
 func CreateItemCalendarsItemEventsDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCalendarsItemEventsDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemCalendarsItemEventsDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCalendarsItemEventsDeltagetResponseable instead.
 type ItemCalendarsItemEventsDeltaResponseable interface {
-    ItemCalendarsItemEventsDeltaGetResponseable
+    ItemCalendarsItemEventsDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

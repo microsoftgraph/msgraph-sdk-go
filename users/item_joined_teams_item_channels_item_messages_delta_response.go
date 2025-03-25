@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemJoinedTeamsItemChannelsItemMessagesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemJoinedTeamsItemChannelsItemMessagesDeltagetResponseable instead.
 type ItemJoinedTeamsItemChannelsItemMessagesDeltaResponse struct {
-    ItemJoinedTeamsItemChannelsItemMessagesDeltaGetResponse
+    ItemJoinedTeamsItemChannelsItemMessagesDeltagetResponse
 }
 // NewItemJoinedTeamsItemChannelsItemMessagesDeltaResponse instantiates a new ItemJoinedTeamsItemChannelsItemMessagesDeltaResponse and sets the default values.
 func NewItemJoinedTeamsItemChannelsItemMessagesDeltaResponse()(*ItemJoinedTeamsItemChannelsItemMessagesDeltaResponse) {
     m := &ItemJoinedTeamsItemChannelsItemMessagesDeltaResponse{
-        ItemJoinedTeamsItemChannelsItemMessagesDeltaGetResponse: *NewItemJoinedTeamsItemChannelsItemMessagesDeltaGetResponse(),
+        ItemJoinedTeamsItemChannelsItemMessagesDeltagetResponse: *NewItemJoinedTeamsItemChannelsItemMessagesDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemJoinedTeamsItemChannelsItemMessagesDeltaResponse()(*ItemJoinedTeamsI
 func CreateItemJoinedTeamsItemChannelsItemMessagesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemJoinedTeamsItemChannelsItemMessagesDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemJoinedTeamsItemChannelsItemMessagesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemJoinedTeamsItemChannelsItemMessagesDeltagetResponseable instead.
 type ItemJoinedTeamsItemChannelsItemMessagesDeltaResponseable interface {
-    ItemJoinedTeamsItemChannelsItemMessagesDeltaGetResponseable
+    ItemJoinedTeamsItemChannelsItemMessagesDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

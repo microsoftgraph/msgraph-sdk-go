@@ -31,7 +31,7 @@ func NewDeviceConfigurationsItemAssignRequestBuilder(rawUrl string, requestAdapt
     return NewDeviceConfigurationsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
-// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsAssignpostResponse instead.
 // returns a DeviceConfigurationsItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *DeviceConfigurationsItemAssignRequestBuilder) Post(ctx context.Context,
     }
     return res.(DeviceConfigurationsItemAssignResponseable), nil
 }
-// PostAsAssignPostResponse not yet documented
-// returns a DeviceConfigurationsItemAssignPostResponseable when successful
+// PostAsAssignpostResponse not yet documented
+// returns a DeviceConfigurationsItemAssignpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0
-func (m *DeviceConfigurationsItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body DeviceConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(DeviceConfigurationsItemAssignPostResponseable, error) {
+func (m *DeviceConfigurationsItemAssignRequestBuilder) PostAsAssignpostResponse(ctx context.Context, body DeviceConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(DeviceConfigurationsItemAssignpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *DeviceConfigurationsItemAssignRequestBuilder) PostAsAssignPostResponse(
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeviceConfigurationsItemAssignPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeviceConfigurationsItemAssignpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(DeviceConfigurationsItemAssignPostResponseable), nil
+    return res.(DeviceConfigurationsItemAssignpostResponseable), nil
 }
 // ToPostRequestInformation not yet documented
 // returns a *RequestInformation when successful

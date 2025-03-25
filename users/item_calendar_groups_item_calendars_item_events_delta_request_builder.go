@@ -56,7 +56,7 @@ func NewItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilder(rawUrl stri
     return NewItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a ItemCalendarGroupsItemCalendarsItemEventsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -79,13 +79,13 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilder) Get(ctx c
     }
     return res.(ItemCalendarGroupsItemCalendarsItemEventsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
-// returns a ItemCalendarGroupsItemCalendarsItemEventsDeltaGetResponseable when successful
+// GetAsDeltagetResponse get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
+// returns a ItemCalendarGroupsItemCalendarsItemEventsDeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-func (m *ItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilderGetRequestConfiguration)(ItemCalendarGroupsItemCalendarsItemEventsDeltaGetResponseable, error) {
+func (m *ItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilderGetRequestConfiguration)(ItemCalendarGroupsItemCalendarsItemEventsDeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -93,14 +93,14 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsDeltaRequestBuilder) GetAsDelt
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarGroupsItemCalendarsItemEventsDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarGroupsItemCalendarsItemEventsDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemCalendarGroupsItemCalendarsItemEventsDeltaGetResponseable), nil
+    return res.(ItemCalendarGroupsItemCalendarsItemEventsDeltagetResponseable), nil
 }
 // ToGetRequestInformation get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
 // returns a *RequestInformation when successful

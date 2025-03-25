@@ -50,7 +50,7 @@ func NewItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksReques
     return NewItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get a list of recentNotebook instances that have been accessed by the signed-in user.
-// Deprecated: This method is obsolete. Use GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetRecentNotebooksWithIncludePersonalNotebooksgetResponse instead.
 // returns a ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -73,13 +73,13 @@ func (m *ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksReque
     }
     return res.(ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksResponseable), nil
 }
-// GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponse get a list of recentNotebook instances that have been accessed by the signed-in user.
-// returns a ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksGetResponseable when successful
+// GetAsGetRecentNotebooksWithIncludePersonalNotebooksgetResponse get a list of recentNotebook instances that have been accessed by the signed-in user.
+// returns a ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
-func (m *ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponse(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration)(ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksGetResponseable, error) {
+func (m *ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) GetAsGetRecentNotebooksWithIncludePersonalNotebooksgetResponse(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration)(ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -87,14 +87,14 @@ func (m *ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksReque
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksGetResponseable), nil
+    return res.(ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksgetResponseable), nil
 }
 // ToGetRequestInformation get a list of recentNotebook instances that have been accessed by the signed-in user.
 // returns a *RequestInformation when successful

@@ -31,7 +31,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountReques
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function count
-// Deprecated: This method is obsolete. Use GetAsCountGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsCountgetResponse instead.
 // returns a ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountResponseable, error) {
@@ -51,10 +51,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountReque
     }
     return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountResponseable), nil
 }
-// GetAsCountGetResponse invoke function count
-// returns a ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountGetResponseable when successful
+// GetAsCountgetResponse invoke function count
+// returns a ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountRequestBuilder) GetAsCountGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountGetResponseable, error) {
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountRequestBuilder) GetAsCountgetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,14 +62,14 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountReque
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountGetResponseable), nil
+    return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsCountgetResponseable), nil
 }
 // ToGetRequestInformation invoke function count
 // returns a *RequestInformation when successful

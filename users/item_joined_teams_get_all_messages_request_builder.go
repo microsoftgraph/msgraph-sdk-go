@@ -54,7 +54,7 @@ func NewItemJoinedTeamsGetAllMessagesRequestBuilder(rawUrl string, requestAdapte
     return NewItemJoinedTeamsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllMessages
-// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllMessagesgetResponse instead.
 // returns a ItemJoinedTeamsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemJoinedTeamsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsGetAllMessagesResponseable, error) {
@@ -74,10 +74,10 @@ func (m *ItemJoinedTeamsGetAllMessagesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ItemJoinedTeamsGetAllMessagesResponseable), nil
 }
-// GetAsGetAllMessagesGetResponse invoke function getAllMessages
-// returns a ItemJoinedTeamsGetAllMessagesGetResponseable when successful
+// GetAsGetAllMessagesgetResponse invoke function getAllMessages
+// returns a ItemJoinedTeamsGetAllMessagesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemJoinedTeamsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemJoinedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsGetAllMessagesGetResponseable, error) {
+func (m *ItemJoinedTeamsGetAllMessagesRequestBuilder) GetAsGetAllMessagesgetResponse(ctx context.Context, requestConfiguration *ItemJoinedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsGetAllMessagesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -85,14 +85,14 @@ func (m *ItemJoinedTeamsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResp
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsGetAllMessagesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsGetAllMessagesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemJoinedTeamsGetAllMessagesGetResponseable), nil
+    return res.(ItemJoinedTeamsGetAllMessagesgetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAllMessages
 // returns a *RequestInformation when successful

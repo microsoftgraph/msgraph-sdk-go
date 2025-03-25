@@ -55,7 +55,7 @@ func NewEntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuild
     return NewEntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get in Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponse instead.
 // returns a EntitlementManagementAccessPackagesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,13 +78,13 @@ func (m *EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuil
     }
     return res.(EntitlementManagementAccessPackagesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse in Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
-// returns a EntitlementManagementAccessPackagesFilterByCurrentUserWithOnGetResponseable when successful
+// GetAsFilterByCurrentUserWithOngetResponse in Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
+// returns a EntitlementManagementAccessPackagesFilterByCurrentUserWithOngetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-1.0
-func (m *EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackagesFilterByCurrentUserWithOnGetResponseable, error) {
+func (m *EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOngetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackagesFilterByCurrentUserWithOngetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -92,14 +92,14 @@ func (m *EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuil
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAccessPackagesFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAccessPackagesFilterByCurrentUserWithOngetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(EntitlementManagementAccessPackagesFilterByCurrentUserWithOnGetResponseable), nil
+    return res.(EntitlementManagementAccessPackagesFilterByCurrentUserWithOngetResponseable), nil
 }
 // ToGetRequestInformation in Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
 // returns a *RequestInformation when successful

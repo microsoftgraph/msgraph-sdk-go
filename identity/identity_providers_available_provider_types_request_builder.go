@@ -46,7 +46,7 @@ func NewIdentityProvidersAvailableProviderTypesRequestBuilder(rawUrl string, req
     return NewIdentityProvidersAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get all identity providers supported in a directory.
-// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesgetResponse instead.
 // returns a IdentityProvidersAvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,13 +69,13 @@ func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) Get(ctx context.
     }
     return res.(IdentityProvidersAvailableProviderTypesResponseable), nil
 }
-// GetAsAvailableProviderTypesGetResponse get all identity providers supported in a directory.
-// returns a IdentityProvidersAvailableProviderTypesGetResponseable when successful
+// GetAsAvailableProviderTypesgetResponse get all identity providers supported in a directory.
+// returns a IdentityProvidersAvailableProviderTypesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
-func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *IdentityProvidersAvailableProviderTypesRequestBuilderGetRequestConfiguration)(IdentityProvidersAvailableProviderTypesGetResponseable, error) {
+func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesgetResponse(ctx context.Context, requestConfiguration *IdentityProvidersAvailableProviderTypesRequestBuilderGetRequestConfiguration)(IdentityProvidersAvailableProviderTypesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,14 +83,14 @@ func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) GetAsAvailablePr
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateIdentityProvidersAvailableProviderTypesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateIdentityProvidersAvailableProviderTypesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(IdentityProvidersAvailableProviderTypesGetResponseable), nil
+    return res.(IdentityProvidersAvailableProviderTypesgetResponseable), nil
 }
 // ToGetRequestInformation get all identity providers supported in a directory.
 // returns a *RequestInformation when successful

@@ -54,7 +54,7 @@ func NewGetAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
-// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllMessagesgetResponse instead.
 // returns a GetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -77,13 +77,13 @@ func (m *GetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(GetAllMessagesResponseable), nil
 }
-// GetAsGetAllMessagesGetResponse get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
-// returns a GetAllMessagesGetResponseable when successful
+// GetAsGetAllMessagesgetResponse get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+// returns a GetAllMessagesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0
-func (m *GetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *GetAllMessagesRequestBuilderGetRequestConfiguration)(GetAllMessagesGetResponseable, error) {
+func (m *GetAllMessagesRequestBuilder) GetAsGetAllMessagesgetResponse(ctx context.Context, requestConfiguration *GetAllMessagesRequestBuilderGetRequestConfiguration)(GetAllMessagesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -91,14 +91,14 @@ func (m *GetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx contex
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetAllMessagesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetAllMessagesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(GetAllMessagesGetResponseable), nil
+    return res.(GetAllMessagesgetResponseable), nil
 }
 // ToGetRequestInformation get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
 // returns a *RequestInformation when successful

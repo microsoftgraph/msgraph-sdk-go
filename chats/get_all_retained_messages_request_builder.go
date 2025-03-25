@@ -52,7 +52,7 @@ func NewGetAllRetainedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewGetAllRetainedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
-// Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesgetResponse instead.
 // returns a GetAllRetainedMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *GetAllRetainedMessagesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(GetAllRetainedMessagesResponseable), nil
 }
-// GetAsGetAllRetainedMessagesGetResponse get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
-// returns a GetAllRetainedMessagesGetResponseable when successful
+// GetAsGetAllRetainedMessagesgetResponse get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+// returns a GetAllRetainedMessagesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-1.0
-func (m *GetAllRetainedMessagesRequestBuilder) GetAsGetAllRetainedMessagesGetResponse(ctx context.Context, requestConfiguration *GetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(GetAllRetainedMessagesGetResponseable, error) {
+func (m *GetAllRetainedMessagesRequestBuilder) GetAsGetAllRetainedMessagesgetResponse(ctx context.Context, requestConfiguration *GetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(GetAllRetainedMessagesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *GetAllRetainedMessagesRequestBuilder) GetAsGetAllRetainedMessagesGetRes
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetAllRetainedMessagesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetAllRetainedMessagesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(GetAllRetainedMessagesGetResponseable), nil
+    return res.(GetAllRetainedMessagesgetResponseable), nil
 }
 // ToGetRequestInformation get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful

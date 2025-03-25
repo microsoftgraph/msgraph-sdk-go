@@ -52,7 +52,7 @@ func NewSchoolsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewSchoolsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a SchoolsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(SchoolsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
-// returns a SchoolsDeltaGetResponseable when successful
+// GetAsDeltagetResponse get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
+// returns a SchoolsDeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0
-func (m *SchoolsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaGetResponseable, error) {
+func (m *SchoolsDeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *SchoolsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, 
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSchoolsDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSchoolsDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(SchoolsDeltaGetResponseable), nil
+    return res.(SchoolsDeltagetResponseable), nil
 }
 // ToGetRequestInformation get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
 // returns a *RequestInformation when successful

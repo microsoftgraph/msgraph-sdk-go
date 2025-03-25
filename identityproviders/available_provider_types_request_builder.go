@@ -46,7 +46,7 @@ func NewAvailableProviderTypesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieves all identity provider types available in a directory.
-// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesgetResponse instead.
 // returns a AvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -69,14 +69,14 @@ func (m *AvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(AvailableProviderTypesResponseable), nil
 }
-// GetAsAvailableProviderTypesGetResponse retrieves all identity provider types available in a directory.
+// GetAsAvailableProviderTypesgetResponse retrieves all identity provider types available in a directory.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
-// returns a AvailableProviderTypesGetResponseable when successful
+// returns a AvailableProviderTypesgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0
-func (m *AvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(AvailableProviderTypesGetResponseable, error) {
+func (m *AvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesgetResponse(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(AvailableProviderTypesgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -84,14 +84,14 @@ func (m *AvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetRes
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAvailableProviderTypesGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAvailableProviderTypesgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AvailableProviderTypesGetResponseable), nil
+    return res.(AvailableProviderTypesgetResponseable), nil
 }
 // ToGetRequestInformation retrieves all identity provider types available in a directory.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15

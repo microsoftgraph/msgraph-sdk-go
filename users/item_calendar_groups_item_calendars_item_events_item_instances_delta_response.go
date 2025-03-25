@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltagetResponseable instead.
 type ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse struct {
-    ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaGetResponse
+    ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltagetResponse
 }
 // NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse instantiates a new ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse()(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse) {
     m := &ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse{
-        ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaGetResponse: *NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaGetResponse(),
+        ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltagetResponse: *NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltagetResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse()(*I
 func CreateItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaGetResponseable instead.
+// Deprecated: This class is obsolete. Use ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltagetResponseable instead.
 type ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaResponseable interface {
-    ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaGetResponseable
+    ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltagetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

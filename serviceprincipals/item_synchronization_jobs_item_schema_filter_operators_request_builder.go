@@ -52,7 +52,7 @@ func NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder(rawUrl st
     return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all operators supported in the scoping filters.
-// Deprecated: This method is obsolete. Use GetAsFilterOperatorsGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsFilterOperatorsgetResponse instead.
 // returns a ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx
     }
     return res.(ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable), nil
 }
-// GetAsFilterOperatorsGetResponse list all operators supported in the scoping filters.
-// returns a ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable when successful
+// GetAsFilterOperatorsgetResponse list all operators supported in the scoping filters.
+// returns a ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
-func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) GetAsFilterOperatorsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable, error) {
+func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) GetAsFilterOperatorsgetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) GetAsFi
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationJobsItemSchemaFilterOperatorsgetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable), nil
+    return res.(ItemSynchronizationJobsItemSchemaFilterOperatorsgetResponseable), nil
 }
 // ToGetRequestInformation list all operators supported in the scoping filters.
 // returns a *RequestInformation when successful

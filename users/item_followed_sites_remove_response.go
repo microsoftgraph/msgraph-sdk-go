@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Deprecated: This class is obsolete. Use ItemFollowedSitesRemovePostResponseable instead.
+// Deprecated: This class is obsolete. Use ItemFollowedSitesRemovepostResponseable instead.
 type ItemFollowedSitesRemoveResponse struct {
-    ItemFollowedSitesRemovePostResponse
+    ItemFollowedSitesRemovepostResponse
 }
 // NewItemFollowedSitesRemoveResponse instantiates a new ItemFollowedSitesRemoveResponse and sets the default values.
 func NewItemFollowedSitesRemoveResponse()(*ItemFollowedSitesRemoveResponse) {
     m := &ItemFollowedSitesRemoveResponse{
-        ItemFollowedSitesRemovePostResponse: *NewItemFollowedSitesRemovePostResponse(),
+        ItemFollowedSitesRemovepostResponse: *NewItemFollowedSitesRemovepostResponse(),
     }
     return m
 }
@@ -20,8 +20,8 @@ func NewItemFollowedSitesRemoveResponse()(*ItemFollowedSitesRemoveResponse) {
 func CreateItemFollowedSitesRemoveResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemFollowedSitesRemoveResponse(), nil
 }
-// Deprecated: This class is obsolete. Use ItemFollowedSitesRemovePostResponseable instead.
+// Deprecated: This class is obsolete. Use ItemFollowedSitesRemovepostResponseable instead.
 type ItemFollowedSitesRemoveResponseable interface {
-    ItemFollowedSitesRemovePostResponseable
+    ItemFollowedSitesRemovepostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

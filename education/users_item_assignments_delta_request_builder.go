@@ -52,7 +52,7 @@ func NewUsersItemAssignmentsDeltaRequestBuilder(rawUrl string, requestAdapter i2
     return NewUsersItemAssignmentsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsDeltagetResponse instead.
 // returns a UsersItemAssignmentsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -75,13 +75,13 @@ func (m *UsersItemAssignmentsDeltaRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(UsersItemAssignmentsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
-// returns a UsersItemAssignmentsDeltaGetResponseable when successful
+// GetAsDeltagetResponse get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
+// returns a UsersItemAssignmentsDeltagetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0
-func (m *UsersItemAssignmentsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *UsersItemAssignmentsDeltaRequestBuilderGetRequestConfiguration)(UsersItemAssignmentsDeltaGetResponseable, error) {
+func (m *UsersItemAssignmentsDeltaRequestBuilder) GetAsDeltagetResponse(ctx context.Context, requestConfiguration *UsersItemAssignmentsDeltaRequestBuilderGetRequestConfiguration)(UsersItemAssignmentsDeltagetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,14 +89,14 @@ func (m *UsersItemAssignmentsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx cont
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUsersItemAssignmentsDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUsersItemAssignmentsDeltagetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(UsersItemAssignmentsDeltaGetResponseable), nil
+    return res.(UsersItemAssignmentsDeltagetResponseable), nil
 }
 // ToGetRequestInformation get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
 // returns a *RequestInformation when successful

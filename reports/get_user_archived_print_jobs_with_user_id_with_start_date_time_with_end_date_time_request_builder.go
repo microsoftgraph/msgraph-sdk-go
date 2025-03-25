@@ -56,7 +56,7 @@ func NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeReques
     return NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil, nil)
 }
 // Get get a list of archived print jobs for a particular user.
-// Deprecated: This method is obsolete. Use GetAsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse instead.
+// Deprecated: This method is obsolete. Use GetAsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimegetResponse instead.
 // returns a GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -79,13 +79,13 @@ func (m *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeReque
     }
     return res.(GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse get a list of archived print jobs for a particular user.
-// returns a GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponseable when successful
+// GetAsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimegetResponse get a list of archived print jobs for a particular user.
+// returns a GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimegetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reports-getuserarchivedprintjobs?view=graph-rest-1.0
-func (m *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponseable, error) {
+func (m *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimegetResponse(ctx context.Context, requestConfiguration *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimegetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -93,14 +93,14 @@ func (m *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeReque
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimegetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponseable), nil
+    return res.(GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimegetResponseable), nil
 }
 // ToGetRequestInformation get a list of archived print jobs for a particular user.
 // returns a *RequestInformation when successful

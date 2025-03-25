@@ -31,7 +31,7 @@ func NewAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     return NewAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post follow a user's site or multiple sites.
-// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
+// Deprecated: This method is obsolete. Use PostAsAddpostResponse instead.
 // returns a AddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,13 +54,13 @@ func (m *AddRequestBuilder) Post(ctx context.Context, body AddPostRequestBodyabl
     }
     return res.(AddResponseable), nil
 }
-// PostAsAddPostResponse follow a user's site or multiple sites.
-// returns a AddPostResponseable when successful
+// PostAsAddpostResponse follow a user's site or multiple sites.
+// returns a AddpostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
-func (m *AddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(AddPostResponseable, error) {
+func (m *AddRequestBuilder) PostAsAddpostResponse(ctx context.Context, body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(AddpostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -68,14 +68,14 @@ func (m *AddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body AddP
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAddPostResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAddpostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(AddPostResponseable), nil
+    return res.(AddpostResponseable), nil
 }
 // ToPostRequestInformation follow a user's site or multiple sites.
 // returns a *RequestInformation when successful
