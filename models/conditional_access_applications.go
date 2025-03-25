@@ -35,7 +35,7 @@ func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApplicationFilter gets the applicationFilter property value. The applicationFilter property
+// GetApplicationFilter gets the applicationFilter property value. Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
 // returns a ConditionalAccessFilterable when successful
 func (m *ConditionalAccessApplications) GetApplicationFilter()(ConditionalAccessFilterable) {
     val, err := m.GetBackingStore().Get("applicationFilter")
@@ -255,7 +255,7 @@ func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]any)(
         panic(err)
     }
 }
-// SetApplicationFilter sets the applicationFilter property value. The applicationFilter property
+// SetApplicationFilter sets the applicationFilter property value. Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
 func (m *ConditionalAccessApplications) SetApplicationFilter(value ConditionalAccessFilterable)() {
     err := m.GetBackingStore().Set("applicationFilter", value)
     if err != nil {
