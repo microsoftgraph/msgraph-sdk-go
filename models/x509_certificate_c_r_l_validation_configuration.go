@@ -40,7 +40,7 @@ func (m *X509CertificateCRLValidationConfiguration) GetAdditionalData()(map[stri
 func (m *X509CertificateCRLValidationConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExemptedCertificateAuthoritiesSubjectKeyIdentifiers gets the exemptedCertificateAuthoritiesSubjectKeyIdentifiers property value. The exemptedCertificateAuthoritiesSubjectKeyIdentifiers property
+// GetExemptedCertificateAuthoritiesSubjectKeyIdentifiers gets the exemptedCertificateAuthoritiesSubjectKeyIdentifiers property value. Represents the SKIs of CAs that should be excluded from the valid CRL distribution point check. SKI is represented as a hexadecimal string.
 // returns a []string when successful
 func (m *X509CertificateCRLValidationConfiguration) GetExemptedCertificateAuthoritiesSubjectKeyIdentifiers()([]string) {
     val, err := m.GetBackingStore().Get("exemptedCertificateAuthoritiesSubjectKeyIdentifiers")
@@ -158,7 +158,7 @@ func (m *X509CertificateCRLValidationConfiguration) SetAdditionalData(value map[
 func (m *X509CertificateCRLValidationConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExemptedCertificateAuthoritiesSubjectKeyIdentifiers sets the exemptedCertificateAuthoritiesSubjectKeyIdentifiers property value. The exemptedCertificateAuthoritiesSubjectKeyIdentifiers property
+// SetExemptedCertificateAuthoritiesSubjectKeyIdentifiers sets the exemptedCertificateAuthoritiesSubjectKeyIdentifiers property value. Represents the SKIs of CAs that should be excluded from the valid CRL distribution point check. SKI is represented as a hexadecimal string.
 func (m *X509CertificateCRLValidationConfiguration) SetExemptedCertificateAuthoritiesSubjectKeyIdentifiers(value []string)() {
     err := m.GetBackingStore().Set("exemptedCertificateAuthoritiesSubjectKeyIdentifiers", value)
     if err != nil {

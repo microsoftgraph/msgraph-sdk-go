@@ -73,6 +73,16 @@ func (m *EdiscoveryEstimateOperation) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["statisticsOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseStatisticsOptions)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatisticsOptions(val.(*StatisticsOptions))
+        }
+        return nil
+    }
     res["unindexedItemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -155,6 +165,18 @@ func (m *EdiscoveryEstimateOperation) GetSiteCount()(*int32) {
     }
     return nil
 }
+// GetStatisticsOptions gets the statisticsOptions property value. The statisticsOptions property
+// returns a *StatisticsOptions when successful
+func (m *EdiscoveryEstimateOperation) GetStatisticsOptions()(*StatisticsOptions) {
+    val, err := m.GetBackingStore().Get("statisticsOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StatisticsOptions)
+    }
+    return nil
+}
 // GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 // returns a *int64 when successful
 func (m *EdiscoveryEstimateOperation) GetUnindexedItemCount()(*int64) {
@@ -215,6 +237,13 @@ func (m *EdiscoveryEstimateOperation) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetStatisticsOptions() != nil {
+        cast := (*m.GetStatisticsOptions()).String()
+        err = writer.WriteStringValue("statisticsOptions", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt64Value("unindexedItemCount", m.GetUnindexedItemCount())
         if err != nil {
@@ -264,6 +293,13 @@ func (m *EdiscoveryEstimateOperation) SetSiteCount(value *int32)() {
         panic(err)
     }
 }
+// SetStatisticsOptions sets the statisticsOptions property value. The statisticsOptions property
+func (m *EdiscoveryEstimateOperation) SetStatisticsOptions(value *StatisticsOptions)() {
+    err := m.GetBackingStore().Set("statisticsOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUnindexedItemCount sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EdiscoveryEstimateOperation) SetUnindexedItemCount(value *int64)() {
     err := m.GetBackingStore().Set("unindexedItemCount", value)
@@ -286,6 +322,7 @@ type EdiscoveryEstimateOperationable interface {
     GetMailboxCount()(*int32)
     GetSearch()(EdiscoverySearchable)
     GetSiteCount()(*int32)
+    GetStatisticsOptions()(*StatisticsOptions)
     GetUnindexedItemCount()(*int64)
     GetUnindexedItemsSize()(*int64)
     SetIndexedItemCount(value *int64)()
@@ -293,6 +330,7 @@ type EdiscoveryEstimateOperationable interface {
     SetMailboxCount(value *int32)()
     SetSearch(value EdiscoverySearchable)()
     SetSiteCount(value *int32)()
+    SetStatisticsOptions(value *StatisticsOptions)()
     SetUnindexedItemCount(value *int64)()
     SetUnindexedItemsSize(value *int64)()
 }

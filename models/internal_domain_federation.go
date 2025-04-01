@@ -21,7 +21,7 @@ func NewInternalDomainFederation()(*InternalDomainFederation) {
 func CreateInternalDomainFederationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInternalDomainFederation(), nil
 }
-// GetActiveSignInUri gets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// GetActiveSignInUri gets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 // returns a *string when successful
 func (m *InternalDomainFederation) GetActiveSignInUri()(*string) {
     val, err := m.GetBackingStore().Get("activeSignInUri")
@@ -191,7 +191,7 @@ func (m *InternalDomainFederation) GetSigningCertificateUpdateStatus()(SigningCe
     }
     return nil
 }
-// GetSignOutUri gets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// GetSignOutUri gets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 // returns a *string when successful
 func (m *InternalDomainFederation) GetSignOutUri()(*string) {
     val, err := m.GetBackingStore().Get("signOutUri")
@@ -261,7 +261,7 @@ func (m *InternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetActiveSignInUri sets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// SetActiveSignInUri sets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 func (m *InternalDomainFederation) SetActiveSignInUri(value *string)() {
     err := m.GetBackingStore().Set("activeSignInUri", value)
     if err != nil {
@@ -310,7 +310,7 @@ func (m *InternalDomainFederation) SetSigningCertificateUpdateStatus(value Signi
         panic(err)
     }
 }
-// SetSignOutUri sets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// SetSignOutUri sets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 func (m *InternalDomainFederation) SetSignOutUri(value *string)() {
     err := m.GetBackingStore().Set("signOutUri", value)
     if err != nil {
