@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.67.1](https://github.com/microsoftgraph/msgraph-sdk-go/compare/v1.67.0...v1.67.1) (2025-04-02)
+
+
+### Bug Fixes
+
+* removes common go dependency ([7d29bd5](https://github.com/microsoftgraph/msgraph-sdk-go/commit/7d29bd5db4d24c6916b844686a233051c288ff1c))
+* removes common go dependency ([3b64bb5](https://github.com/microsoftgraph/msgraph-sdk-go/commit/3b64bb5fa363b51c0b1fdfa1ac64987bcd2d6b14))
+
 ## [1.67.0](https://github.com/microsoftgraph/msgraph-sdk-go/compare/v1.66.1...v1.67.0) (2025-03-25)
 
 
