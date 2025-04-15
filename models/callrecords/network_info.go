@@ -55,7 +55,7 @@ func (m *NetworkInfo) GetBandwidthLowEventRatio()(*float32) {
     }
     return nil
 }
-// GetBasicServiceSetIdentifier gets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+// GetBasicServiceSetIdentifier gets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn't available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.
 // returns a *string when successful
 func (m *NetworkInfo) GetBasicServiceSetIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("basicServiceSetIdentifier")
@@ -849,7 +849,7 @@ func (m *NetworkInfo) SetBandwidthLowEventRatio(value *float32)() {
         panic(err)
     }
 }
-// SetBasicServiceSetIdentifier sets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+// SetBasicServiceSetIdentifier sets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn't available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.
 func (m *NetworkInfo) SetBasicServiceSetIdentifier(value *string)() {
     err := m.GetBackingStore().Set("basicServiceSetIdentifier", value)
     if err != nil {
