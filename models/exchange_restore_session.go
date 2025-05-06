@@ -60,6 +60,22 @@ func (m *ExchangeRestoreSession) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["mailboxRestoreArtifactsBulkAdditionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMailboxRestoreArtifactsBulkAdditionRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MailboxRestoreArtifactsBulkAdditionRequestable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MailboxRestoreArtifactsBulkAdditionRequestable)
+                }
+            }
+            m.SetMailboxRestoreArtifactsBulkAdditionRequests(res)
+        }
+        return nil
+    }
     return res
 }
 // GetGranularMailboxRestoreArtifacts gets the granularMailboxRestoreArtifacts property value. The granularMailboxRestoreArtifacts property
@@ -83,6 +99,18 @@ func (m *ExchangeRestoreSession) GetMailboxRestoreArtifacts()([]MailboxRestoreAr
     }
     if val != nil {
         return val.([]MailboxRestoreArtifactable)
+    }
+    return nil
+}
+// GetMailboxRestoreArtifactsBulkAdditionRequests gets the mailboxRestoreArtifactsBulkAdditionRequests property value. The mailboxRestoreArtifactsBulkAdditionRequests property
+// returns a []MailboxRestoreArtifactsBulkAdditionRequestable when successful
+func (m *ExchangeRestoreSession) GetMailboxRestoreArtifactsBulkAdditionRequests()([]MailboxRestoreArtifactsBulkAdditionRequestable) {
+    val, err := m.GetBackingStore().Get("mailboxRestoreArtifactsBulkAdditionRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MailboxRestoreArtifactsBulkAdditionRequestable)
     }
     return nil
 }
@@ -116,6 +144,18 @@ func (m *ExchangeRestoreSession) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetMailboxRestoreArtifactsBulkAdditionRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxRestoreArtifactsBulkAdditionRequests()))
+        for i, v := range m.GetMailboxRestoreArtifactsBulkAdditionRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mailboxRestoreArtifactsBulkAdditionRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetGranularMailboxRestoreArtifacts sets the granularMailboxRestoreArtifacts property value. The granularMailboxRestoreArtifacts property
@@ -132,11 +172,20 @@ func (m *ExchangeRestoreSession) SetMailboxRestoreArtifacts(value []MailboxResto
         panic(err)
     }
 }
+// SetMailboxRestoreArtifactsBulkAdditionRequests sets the mailboxRestoreArtifactsBulkAdditionRequests property value. The mailboxRestoreArtifactsBulkAdditionRequests property
+func (m *ExchangeRestoreSession) SetMailboxRestoreArtifactsBulkAdditionRequests(value []MailboxRestoreArtifactsBulkAdditionRequestable)() {
+    err := m.GetBackingStore().Set("mailboxRestoreArtifactsBulkAdditionRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ExchangeRestoreSessionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RestoreSessionBaseable
     GetGranularMailboxRestoreArtifacts()([]GranularMailboxRestoreArtifactable)
     GetMailboxRestoreArtifacts()([]MailboxRestoreArtifactable)
+    GetMailboxRestoreArtifactsBulkAdditionRequests()([]MailboxRestoreArtifactsBulkAdditionRequestable)
     SetGranularMailboxRestoreArtifacts(value []GranularMailboxRestoreArtifactable)()
     SetMailboxRestoreArtifacts(value []MailboxRestoreArtifactable)()
+    SetMailboxRestoreArtifactsBulkAdditionRequests(value []MailboxRestoreArtifactsBulkAdditionRequestable)()
 }

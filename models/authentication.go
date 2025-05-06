@@ -162,6 +162,22 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["platformCredentialMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlatformCredentialAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlatformCredentialAuthenticationMethodable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PlatformCredentialAuthenticationMethodable)
+                }
+            }
+            m.SetPlatformCredentialMethods(res)
+        }
+        return nil
+    }
     res["softwareOathMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
@@ -269,6 +285,18 @@ func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     }
     if val != nil {
         return val.([]PhoneAuthenticationMethodable)
+    }
+    return nil
+}
+// GetPlatformCredentialMethods gets the platformCredentialMethods property value. Represents a platform credential instance registered to a user on Mac OS.
+// returns a []PlatformCredentialAuthenticationMethodable when successful
+func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable) {
+    val, err := m.GetBackingStore().Get("platformCredentialMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlatformCredentialAuthenticationMethodable)
     }
     return nil
 }
@@ -398,6 +426,18 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetPlatformCredentialMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlatformCredentialMethods()))
+        for i, v := range m.GetPlatformCredentialMethods() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("platformCredentialMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSoftwareOathMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSoftwareOathMethods()))
         for i, v := range m.GetSoftwareOathMethods() {
@@ -485,6 +525,13 @@ func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)(
         panic(err)
     }
 }
+// SetPlatformCredentialMethods sets the platformCredentialMethods property value. Represents a platform credential instance registered to a user on Mac OS.
+func (m *Authentication) SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)() {
+    err := m.GetBackingStore().Set("platformCredentialMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSoftwareOathMethods sets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
 func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("softwareOathMethods", value)
@@ -516,6 +563,7 @@ type Authenticationable interface {
     GetOperations()([]LongRunningOperationable)
     GetPasswordMethods()([]PasswordAuthenticationMethodable)
     GetPhoneMethods()([]PhoneAuthenticationMethodable)
+    GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable)
     GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable)
     GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable)
     GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable)
@@ -526,6 +574,7 @@ type Authenticationable interface {
     SetOperations(value []LongRunningOperationable)()
     SetPasswordMethods(value []PasswordAuthenticationMethodable)()
     SetPhoneMethods(value []PhoneAuthenticationMethodable)()
+    SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)()
     SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)()
     SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)()
     SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethodable)()

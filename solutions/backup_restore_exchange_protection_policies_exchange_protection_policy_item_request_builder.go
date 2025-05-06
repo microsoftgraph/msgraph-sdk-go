@@ -103,6 +103,11 @@ func (m *BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequ
 func (m *BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilder) MailboxProtectionUnits()(*BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder) {
     return NewBackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MailboxProtectionUnitsBulkAdditionJobs provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.
+// returns a *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilder) MailboxProtectionUnitsBulkAdditionJobs()(*BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update an Exchange protection policy. This method adds a mailboxprotectionunit to or removes it from the protection policy.
 // returns a ExchangeProtectionPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

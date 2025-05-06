@@ -83,6 +83,11 @@ func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessPr
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilder) DriveProtectionUnits()(*BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DriveProtectionUnitsBulkAdditionJobs provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+// returns a *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilder) DriveProtectionUnitsBulkAdditionJobs()(*BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get the list of OneDrive for Business protection policies in the tenant.
 // returns a OneDriveForBusinessProtectionPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

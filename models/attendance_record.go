@@ -46,6 +46,18 @@ func (m *AttendanceRecord) GetEmailAddress()(*string) {
     }
     return nil
 }
+// GetExternalRegistrationInformation gets the externalRegistrationInformation property value. The externalRegistrationInformation property
+// returns a VirtualEventExternalRegistrationInformationable when successful
+func (m *AttendanceRecord) GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable) {
+    val, err := m.GetBackingStore().Get("externalRegistrationInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VirtualEventExternalRegistrationInformationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,6 +88,16 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["externalRegistrationInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVirtualEventExternalRegistrationInformationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalRegistrationInformation(val.(VirtualEventExternalRegistrationInformationable))
+        }
+        return nil
+    }
     res["identity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
@@ -83,6 +105,16 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetIdentity(val.(Identityable))
+        }
+        return nil
+    }
+    res["registrationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrationId(val)
         }
         return nil
     }
@@ -117,6 +149,18 @@ func (m *AttendanceRecord) GetIdentity()(Identityable) {
     }
     if val != nil {
         return val.(Identityable)
+    }
+    return nil
+}
+// GetRegistrationId gets the registrationId property value. The registrationId property
+// returns a *string when successful
+func (m *AttendanceRecord) GetRegistrationId()(*string) {
+    val, err := m.GetBackingStore().Get("registrationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -169,7 +213,19 @@ func (m *AttendanceRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteObjectValue("externalRegistrationInformation", m.GetExternalRegistrationInformation())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("identity", m.GetIdentity())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("registrationId", m.GetRegistrationId())
         if err != nil {
             return err
         }
@@ -202,9 +258,23 @@ func (m *AttendanceRecord) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
+// SetExternalRegistrationInformation sets the externalRegistrationInformation property value. The externalRegistrationInformation property
+func (m *AttendanceRecord) SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)() {
+    err := m.GetBackingStore().Set("externalRegistrationInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIdentity sets the identity property value. Identity of the user associated with this attendance record.
 func (m *AttendanceRecord) SetIdentity(value Identityable)() {
     err := m.GetBackingStore().Set("identity", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRegistrationId sets the registrationId property value. The registrationId property
+func (m *AttendanceRecord) SetRegistrationId(value *string)() {
+    err := m.GetBackingStore().Set("registrationId", value)
     if err != nil {
         panic(err)
     }
@@ -228,12 +298,16 @@ type AttendanceRecordable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAttendanceIntervals()([]AttendanceIntervalable)
     GetEmailAddress()(*string)
+    GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable)
     GetIdentity()(Identityable)
+    GetRegistrationId()(*string)
     GetRole()(*string)
     GetTotalAttendanceInSeconds()(*int32)
     SetAttendanceIntervals(value []AttendanceIntervalable)()
     SetEmailAddress(value *string)()
+    SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)()
     SetIdentity(value Identityable)()
+    SetRegistrationId(value *string)()
     SetRole(value *string)()
     SetTotalAttendanceInSeconds(value *int32)()
 }

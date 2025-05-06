@@ -78,6 +78,11 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessResto
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilder) DriveRestoreArtifacts()(*BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DriveRestoreArtifactsBulkAdditionRequests provides operations to manage the driveRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.
+// returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder when successful
+func (m *BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilder) DriveRestoreArtifactsBulkAdditionRequests()(*BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder) {
+    return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get the list of OneDrive for Business restore sessions available in the tenant.
 // returns a OneDriveForBusinessRestoreSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

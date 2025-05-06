@@ -9,11 +9,10 @@ const (
     DIRECTORY_EXPORTFILESTRUCTURE
     PST_EXPORTFILESTRUCTURE
     UNKNOWNFUTUREVALUE_EXPORTFILESTRUCTURE
-    MSG_EXPORTFILESTRUCTURE
 )
 
 func (i ExportFileStructure) String() string {
-    return []string{"none", "directory", "pst", "unknownFutureValue", "msg"}[i]
+    return []string{"none", "directory", "pst", "unknownFutureValue"}[i]
 }
 func ParseExportFileStructure(v string) (any, error) {
     result := NONE_EXPORTFILESTRUCTURE
@@ -26,8 +25,6 @@ func ParseExportFileStructure(v string) (any, error) {
             result = PST_EXPORTFILESTRUCTURE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXPORTFILESTRUCTURE
-        case "msg":
-            result = MSG_EXPORTFILESTRUCTURE
         default:
             return nil, nil
     }

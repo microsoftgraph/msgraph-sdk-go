@@ -38,6 +38,26 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["onAttributeCollectionStart"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnAttributeCollectionStartHandlerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnAttributeCollectionStart(val.(OnAttributeCollectionStartHandlerable))
+        }
+        return nil
+    }
+    res["onAttributeCollectionSubmit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnAttributeCollectionSubmitHandlerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnAttributeCollectionSubmit(val.(OnAttributeCollectionSubmitHandlerable))
+        }
+        return nil
+    }
     res["onAuthenticationMethodLoadStart"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOnAuthenticationMethodLoadStartHandlerFromDiscriminatorValue)
         if err != nil {
@@ -79,6 +99,30 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollection()(On
     }
     if val != nil {
         return val.(OnAttributeCollectionHandlerable)
+    }
+    return nil
+}
+// GetOnAttributeCollectionStart gets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection starts.
+// returns a OnAttributeCollectionStartHandlerable when successful
+func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionStart()(OnAttributeCollectionStartHandlerable) {
+    val, err := m.GetBackingStore().Get("onAttributeCollectionStart")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnAttributeCollectionStartHandlerable)
+    }
+    return nil
+}
+// GetOnAttributeCollectionSubmit gets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes are submitted at the end of attribution collection.
+// returns a OnAttributeCollectionSubmitHandlerable when successful
+func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionSubmit()(OnAttributeCollectionSubmitHandlerable) {
+    val, err := m.GetBackingStore().Get("onAttributeCollectionSubmit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnAttributeCollectionSubmitHandlerable)
     }
     return nil
 }
@@ -131,6 +175,18 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) Serialize(writer i878a80d2330
         }
     }
     {
+        err = writer.WriteObjectValue("onAttributeCollectionStart", m.GetOnAttributeCollectionStart())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("onAttributeCollectionSubmit", m.GetOnAttributeCollectionSubmit())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("onAuthenticationMethodLoadStart", m.GetOnAuthenticationMethodLoadStart())
         if err != nil {
             return err
@@ -153,6 +209,20 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) Serialize(writer i878a80d2330
 // SetOnAttributeCollection sets the onAttributeCollection property value. The configuration for what to invoke when attributes are ready to be collected from the user.
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAttributeCollection(value OnAttributeCollectionHandlerable)() {
     err := m.GetBackingStore().Set("onAttributeCollection", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOnAttributeCollectionStart sets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection starts.
+func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAttributeCollectionStart(value OnAttributeCollectionStartHandlerable)() {
+    err := m.GetBackingStore().Set("onAttributeCollectionStart", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOnAttributeCollectionSubmit sets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes are submitted at the end of attribution collection.
+func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAttributeCollectionSubmit(value OnAttributeCollectionSubmitHandlerable)() {
+    err := m.GetBackingStore().Set("onAttributeCollectionSubmit", value)
     if err != nil {
         panic(err)
     }
@@ -182,10 +252,14 @@ type ExternalUsersSelfServiceSignUpEventsFlowable interface {
     AuthenticationEventsFlowable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetOnAttributeCollection()(OnAttributeCollectionHandlerable)
+    GetOnAttributeCollectionStart()(OnAttributeCollectionStartHandlerable)
+    GetOnAttributeCollectionSubmit()(OnAttributeCollectionSubmitHandlerable)
     GetOnAuthenticationMethodLoadStart()(OnAuthenticationMethodLoadStartHandlerable)
     GetOnInteractiveAuthFlowStart()(OnInteractiveAuthFlowStartHandlerable)
     GetOnUserCreateStart()(OnUserCreateStartHandlerable)
     SetOnAttributeCollection(value OnAttributeCollectionHandlerable)()
+    SetOnAttributeCollectionStart(value OnAttributeCollectionStartHandlerable)()
+    SetOnAttributeCollectionSubmit(value OnAttributeCollectionSubmitHandlerable)()
     SetOnAuthenticationMethodLoadStart(value OnAuthenticationMethodLoadStartHandlerable)()
     SetOnInteractiveAuthFlowStart(value OnInteractiveAuthFlowStartHandlerable)()
     SetOnUserCreateStart(value OnUserCreateStartHandlerable)()

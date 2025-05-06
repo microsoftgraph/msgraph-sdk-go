@@ -34,6 +34,10 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
                 switch *mappingValue {
                     case "#microsoft.graph.onAttributeCollectionListener":
                         return NewOnAttributeCollectionListener(), nil
+                    case "#microsoft.graph.onAttributeCollectionStartListener":
+                        return NewOnAttributeCollectionStartListener(), nil
+                    case "#microsoft.graph.onAttributeCollectionSubmitListener":
+                        return NewOnAttributeCollectionSubmitListener(), nil
                     case "#microsoft.graph.onAuthenticationMethodLoadStartListener":
                         return NewOnAuthenticationMethodLoadStartListener(), nil
                     case "#microsoft.graph.onInteractiveAuthFlowStartListener":

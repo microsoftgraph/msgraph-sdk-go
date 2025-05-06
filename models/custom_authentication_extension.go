@@ -34,6 +34,10 @@ func CreateCustomAuthenticationExtensionFromDiscriminatorValue(parseNode i878a80
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.onAttributeCollectionStartCustomExtension":
+                        return NewOnAttributeCollectionStartCustomExtension(), nil
+                    case "#microsoft.graph.onAttributeCollectionSubmitCustomExtension":
+                        return NewOnAttributeCollectionSubmitCustomExtension(), nil
                     case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
                         return NewOnTokenIssuanceStartCustomExtension(), nil
                 }
