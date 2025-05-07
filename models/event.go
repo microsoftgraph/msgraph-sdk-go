@@ -97,6 +97,18 @@ func (m *Event) GetCalendar()(Calendarable) {
     }
     return nil
 }
+// GetCancelledOccurrences gets the cancelledOccurrences property value. The cancelledOccurrences property
+// returns a []string when successful
+func (m *Event) GetCancelledOccurrences()([]string) {
+    val, err := m.GetBackingStore().Get("cancelledOccurrences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetEnd gets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
 // returns a DateTimeTimeZoneable when successful
 func (m *Event) GetEnd()(DateTimeTimeZoneable) {
@@ -106,6 +118,18 @@ func (m *Event) GetEnd()(DateTimeTimeZoneable) {
     }
     if val != nil {
         return val.(DateTimeTimeZoneable)
+    }
+    return nil
+}
+// GetExceptionOccurrences gets the exceptionOccurrences property value. The exceptionOccurrences property
+// returns a []Eventable when successful
+func (m *Event) GetExceptionOccurrences()([]Eventable) {
+    val, err := m.GetBackingStore().Get("exceptionOccurrences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Eventable)
     }
     return nil
 }
@@ -197,6 +221,22 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["cancelledOccurrences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetCancelledOccurrences(res)
+        }
+        return nil
+    }
     res["end"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
@@ -204,6 +244,22 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetEnd(val.(DateTimeTimeZoneable))
+        }
+        return nil
+    }
+    res["exceptionOccurrences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Eventable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Eventable)
+                }
+            }
+            m.SetExceptionOccurrences(res)
         }
         return nil
     }
@@ -1051,8 +1107,26 @@ func (m *Event) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetCancelledOccurrences() != nil {
+        err = writer.WriteCollectionOfStringValues("cancelledOccurrences", m.GetCancelledOccurrences())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("end", m.GetEnd())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetExceptionOccurrences() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExceptionOccurrences()))
+        for i, v := range m.GetExceptionOccurrences() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("exceptionOccurrences", cast)
         if err != nil {
             return err
         }
@@ -1346,9 +1420,23 @@ func (m *Event) SetCalendar(value Calendarable)() {
         panic(err)
     }
 }
+// SetCancelledOccurrences sets the cancelledOccurrences property value. The cancelledOccurrences property
+func (m *Event) SetCancelledOccurrences(value []string)() {
+    err := m.GetBackingStore().Set("cancelledOccurrences", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEnd sets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
 func (m *Event) SetEnd(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("end", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetExceptionOccurrences sets the exceptionOccurrences property value. The exceptionOccurrences property
+func (m *Event) SetExceptionOccurrences(value []Eventable)() {
+    err := m.GetBackingStore().Set("exceptionOccurrences", value)
     if err != nil {
         panic(err)
     }
@@ -1607,7 +1695,9 @@ type Eventable interface {
     GetBody()(ItemBodyable)
     GetBodyPreview()(*string)
     GetCalendar()(Calendarable)
+    GetCancelledOccurrences()([]string)
     GetEnd()(DateTimeTimeZoneable)
+    GetExceptionOccurrences()([]Eventable)
     GetExtensions()([]Extensionable)
     GetHasAttachments()(*bool)
     GetHideAttendees()(*bool)
@@ -1649,7 +1739,9 @@ type Eventable interface {
     SetBody(value ItemBodyable)()
     SetBodyPreview(value *string)()
     SetCalendar(value Calendarable)()
+    SetCancelledOccurrences(value []string)()
     SetEnd(value DateTimeTimeZoneable)()
+    SetExceptionOccurrences(value []Eventable)()
     SetExtensions(value []Extensionable)()
     SetHasAttachments(value *bool)()
     SetHideAttendees(value *bool)()

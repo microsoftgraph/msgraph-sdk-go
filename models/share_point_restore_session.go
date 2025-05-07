@@ -44,6 +44,22 @@ func (m *SharePointRestoreSession) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["siteRestoreArtifactsBulkAdditionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSiteRestoreArtifactsBulkAdditionRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SiteRestoreArtifactsBulkAdditionRequestable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SiteRestoreArtifactsBulkAdditionRequestable)
+                }
+            }
+            m.SetSiteRestoreArtifactsBulkAdditionRequests(res)
+        }
+        return nil
+    }
     return res
 }
 // GetSiteRestoreArtifacts gets the siteRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore SharePoint sites.
@@ -55,6 +71,18 @@ func (m *SharePointRestoreSession) GetSiteRestoreArtifacts()([]SiteRestoreArtifa
     }
     if val != nil {
         return val.([]SiteRestoreArtifactable)
+    }
+    return nil
+}
+// GetSiteRestoreArtifactsBulkAdditionRequests gets the siteRestoreArtifactsBulkAdditionRequests property value. The siteRestoreArtifactsBulkAdditionRequests property
+// returns a []SiteRestoreArtifactsBulkAdditionRequestable when successful
+func (m *SharePointRestoreSession) GetSiteRestoreArtifactsBulkAdditionRequests()([]SiteRestoreArtifactsBulkAdditionRequestable) {
+    val, err := m.GetBackingStore().Get("siteRestoreArtifactsBulkAdditionRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SiteRestoreArtifactsBulkAdditionRequestable)
     }
     return nil
 }
@@ -76,6 +104,18 @@ func (m *SharePointRestoreSession) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    if m.GetSiteRestoreArtifactsBulkAdditionRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteRestoreArtifactsBulkAdditionRequests()))
+        for i, v := range m.GetSiteRestoreArtifactsBulkAdditionRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("siteRestoreArtifactsBulkAdditionRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetSiteRestoreArtifacts sets the siteRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore SharePoint sites.
@@ -85,9 +125,18 @@ func (m *SharePointRestoreSession) SetSiteRestoreArtifacts(value []SiteRestoreAr
         panic(err)
     }
 }
+// SetSiteRestoreArtifactsBulkAdditionRequests sets the siteRestoreArtifactsBulkAdditionRequests property value. The siteRestoreArtifactsBulkAdditionRequests property
+func (m *SharePointRestoreSession) SetSiteRestoreArtifactsBulkAdditionRequests(value []SiteRestoreArtifactsBulkAdditionRequestable)() {
+    err := m.GetBackingStore().Set("siteRestoreArtifactsBulkAdditionRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type SharePointRestoreSessionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RestoreSessionBaseable
     GetSiteRestoreArtifacts()([]SiteRestoreArtifactable)
+    GetSiteRestoreArtifactsBulkAdditionRequests()([]SiteRestoreArtifactsBulkAdditionRequestable)
     SetSiteRestoreArtifacts(value []SiteRestoreArtifactable)()
+    SetSiteRestoreArtifactsBulkAdditionRequests(value []SiteRestoreArtifactsBulkAdditionRequestable)()
 }

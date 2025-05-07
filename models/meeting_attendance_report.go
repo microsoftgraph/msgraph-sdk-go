@@ -35,6 +35,18 @@ func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable)
     }
     return nil
 }
+// GetExternalEventInformation gets the externalEventInformation property value. The externalEventInformation property
+// returns a []VirtualEventExternalInformationable when successful
+func (m *MeetingAttendanceReport) GetExternalEventInformation()([]VirtualEventExternalInformationable) {
+    val, err := m.GetBackingStore().Get("externalEventInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VirtualEventExternalInformationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -52,6 +64,22 @@ func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(i878a8
                 }
             }
             m.SetAttendanceRecords(res)
+        }
+        return nil
+    }
+    res["externalEventInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventExternalInformationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VirtualEventExternalInformationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(VirtualEventExternalInformationable)
+                }
+            }
+            m.SetExternalEventInformation(res)
         }
         return nil
     }
@@ -141,6 +169,18 @@ func (m *MeetingAttendanceReport) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetExternalEventInformation() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalEventInformation()))
+        for i, v := range m.GetExternalEventInformation() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("externalEventInformation", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("meetingEndDateTime", m.GetMeetingEndDateTime())
         if err != nil {
@@ -164,6 +204,13 @@ func (m *MeetingAttendanceReport) Serialize(writer i878a80d2330e89d26896388a3f48
 // SetAttendanceRecords sets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
 func (m *MeetingAttendanceReport) SetAttendanceRecords(value []AttendanceRecordable)() {
     err := m.GetBackingStore().Set("attendanceRecords", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetExternalEventInformation sets the externalEventInformation property value. The externalEventInformation property
+func (m *MeetingAttendanceReport) SetExternalEventInformation(value []VirtualEventExternalInformationable)() {
+    err := m.GetBackingStore().Set("externalEventInformation", value)
     if err != nil {
         panic(err)
     }
@@ -193,10 +240,12 @@ type MeetingAttendanceReportable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAttendanceRecords()([]AttendanceRecordable)
+    GetExternalEventInformation()([]VirtualEventExternalInformationable)
     GetMeetingEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMeetingStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTotalParticipantCount()(*int32)
     SetAttendanceRecords(value []AttendanceRecordable)()
+    SetExternalEventInformation(value []VirtualEventExternalInformationable)()
     SetMeetingEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMeetingStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTotalParticipantCount(value *int32)()

@@ -77,6 +77,11 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesEventItemRequestBuilder) Decl
 func (m *ItemCalendarsItemCalendarViewItemInstancesEventItemRequestBuilder) DismissReminder()(*ItemCalendarsItemCalendarViewItemInstancesItemDismissReminderRequestBuilder) {
     return NewItemCalendarsItemCalendarViewItemInstancesItemDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExceptionOccurrences provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+// returns a *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder when successful
+func (m *ItemCalendarsItemCalendarViewItemInstancesEventItemRequestBuilder) ExceptionOccurrences()(*ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) {
+    return NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 // returns a *ItemCalendarsItemCalendarViewItemInstancesItemExtensionsRequestBuilder when successful
 func (m *ItemCalendarsItemCalendarViewItemInstancesEventItemRequestBuilder) Extensions()(*ItemCalendarsItemCalendarViewItemInstancesItemExtensionsRequestBuilder) {

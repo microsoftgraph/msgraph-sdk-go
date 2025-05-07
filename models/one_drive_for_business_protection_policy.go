@@ -48,6 +48,18 @@ func (m *OneDriveForBusinessProtectionPolicy) GetDriveProtectionUnits()([]DriveP
     }
     return nil
 }
+// GetDriveProtectionUnitsBulkAdditionJobs gets the driveProtectionUnitsBulkAdditionJobs property value. The driveProtectionUnitsBulkAdditionJobs property
+// returns a []DriveProtectionUnitsBulkAdditionJobable when successful
+func (m *OneDriveForBusinessProtectionPolicy) GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("driveProtectionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DriveProtectionUnitsBulkAdditionJobable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OneDriveForBusinessProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,6 +96,22 @@ func (m *OneDriveForBusinessProtectionPolicy) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["driveProtectionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDriveProtectionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DriveProtectionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DriveProtectionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetDriveProtectionUnitsBulkAdditionJobs(res)
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -116,6 +144,18 @@ func (m *OneDriveForBusinessProtectionPolicy) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    if m.GetDriveProtectionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveProtectionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetDriveProtectionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("driveProtectionUnitsBulkAdditionJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDriveInclusionRules sets the driveInclusionRules property value. Contains the details of the Onedrive for Business protection rule.
@@ -132,11 +172,20 @@ func (m *OneDriveForBusinessProtectionPolicy) SetDriveProtectionUnits(value []Dr
         panic(err)
     }
 }
+// SetDriveProtectionUnitsBulkAdditionJobs sets the driveProtectionUnitsBulkAdditionJobs property value. The driveProtectionUnitsBulkAdditionJobs property
+func (m *OneDriveForBusinessProtectionPolicy) SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("driveProtectionUnitsBulkAdditionJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type OneDriveForBusinessProtectionPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ProtectionPolicyBaseable
     GetDriveInclusionRules()([]DriveProtectionRuleable)
     GetDriveProtectionUnits()([]DriveProtectionUnitable)
+    GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable)
     SetDriveInclusionRules(value []DriveProtectionRuleable)()
     SetDriveProtectionUnits(value []DriveProtectionUnitable)()
+    SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)()
 }

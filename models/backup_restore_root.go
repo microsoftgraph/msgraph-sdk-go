@@ -46,6 +46,18 @@ func (m *BackupRestoreRoot) GetDriveProtectionUnits()([]DriveProtectionUnitable)
     }
     return nil
 }
+// GetDriveProtectionUnitsBulkAdditionJobs gets the driveProtectionUnitsBulkAdditionJobs property value. The driveProtectionUnitsBulkAdditionJobs property
+// returns a []DriveProtectionUnitsBulkAdditionJobable when successful
+func (m *BackupRestoreRoot) GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("driveProtectionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DriveProtectionUnitsBulkAdditionJobable)
+    }
+    return nil
+}
 // GetExchangeProtectionPolicies gets the exchangeProtectionPolicies property value. The list of Exchange protection policies in the tenant.
 // returns a []ExchangeProtectionPolicyable when successful
 func (m *BackupRestoreRoot) GetExchangeProtectionPolicies()([]ExchangeProtectionPolicyable) {
@@ -103,6 +115,22 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetDriveProtectionUnits(res)
+        }
+        return nil
+    }
+    res["driveProtectionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDriveProtectionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DriveProtectionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DriveProtectionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetDriveProtectionUnitsBulkAdditionJobs(res)
         }
         return nil
     }
@@ -167,6 +195,22 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetMailboxProtectionUnits(res)
+        }
+        return nil
+    }
+    res["mailboxProtectionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMailboxProtectionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MailboxProtectionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MailboxProtectionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetMailboxProtectionUnitsBulkAdditionJobs(res)
         }
         return nil
     }
@@ -356,6 +400,22 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["siteProtectionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSiteProtectionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SiteProtectionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SiteProtectionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetSiteProtectionUnitsBulkAdditionJobs(res)
+        }
+        return nil
+    }
     return res
 }
 // GetMailboxInclusionRules gets the mailboxInclusionRules property value. The list of mailbox inclusion rules applied to the tenant.
@@ -379,6 +439,18 @@ func (m *BackupRestoreRoot) GetMailboxProtectionUnits()([]MailboxProtectionUnita
     }
     if val != nil {
         return val.([]MailboxProtectionUnitable)
+    }
+    return nil
+}
+// GetMailboxProtectionUnitsBulkAdditionJobs gets the mailboxProtectionUnitsBulkAdditionJobs property value. The mailboxProtectionUnitsBulkAdditionJobs property
+// returns a []MailboxProtectionUnitsBulkAdditionJobable when successful
+func (m *BackupRestoreRoot) GetMailboxProtectionUnitsBulkAdditionJobs()([]MailboxProtectionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("mailboxProtectionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MailboxProtectionUnitsBulkAdditionJobable)
     }
     return nil
 }
@@ -526,6 +598,18 @@ func (m *BackupRestoreRoot) GetSiteProtectionUnits()([]SiteProtectionUnitable) {
     }
     return nil
 }
+// GetSiteProtectionUnitsBulkAdditionJobs gets the siteProtectionUnitsBulkAdditionJobs property value. The siteProtectionUnitsBulkAdditionJobs property
+// returns a []SiteProtectionUnitsBulkAdditionJobable when successful
+func (m *BackupRestoreRoot) GetSiteProtectionUnitsBulkAdditionJobs()([]SiteProtectionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("siteProtectionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SiteProtectionUnitsBulkAdditionJobable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -552,6 +636,18 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             }
         }
         err = writer.WriteCollectionOfObjectValues("driveProtectionUnits", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDriveProtectionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveProtectionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetDriveProtectionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("driveProtectionUnitsBulkAdditionJobs", cast)
         if err != nil {
             return err
         }
@@ -600,6 +696,18 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             }
         }
         err = writer.WriteCollectionOfObjectValues("mailboxProtectionUnits", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMailboxProtectionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxProtectionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetMailboxProtectionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mailboxProtectionUnitsBulkAdditionJobs", cast)
         if err != nil {
             return err
         }
@@ -742,6 +850,18 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetSiteProtectionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteProtectionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetSiteProtectionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("siteProtectionUnitsBulkAdditionJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDriveInclusionRules sets the driveInclusionRules property value. The list of drive inclusion rules applied to the tenant.
@@ -754,6 +874,13 @@ func (m *BackupRestoreRoot) SetDriveInclusionRules(value []DriveProtectionRuleab
 // SetDriveProtectionUnits sets the driveProtectionUnits property value. The list of drive protection units in the tenant.
 func (m *BackupRestoreRoot) SetDriveProtectionUnits(value []DriveProtectionUnitable)() {
     err := m.GetBackingStore().Set("driveProtectionUnits", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDriveProtectionUnitsBulkAdditionJobs sets the driveProtectionUnitsBulkAdditionJobs property value. The driveProtectionUnitsBulkAdditionJobs property
+func (m *BackupRestoreRoot) SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("driveProtectionUnitsBulkAdditionJobs", value)
     if err != nil {
         panic(err)
     }
@@ -782,6 +909,13 @@ func (m *BackupRestoreRoot) SetMailboxInclusionRules(value []MailboxProtectionRu
 // SetMailboxProtectionUnits sets the mailboxProtectionUnits property value. The list of mailbox protection units in the tenant.
 func (m *BackupRestoreRoot) SetMailboxProtectionUnits(value []MailboxProtectionUnitable)() {
     err := m.GetBackingStore().Set("mailboxProtectionUnits", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMailboxProtectionUnitsBulkAdditionJobs sets the mailboxProtectionUnitsBulkAdditionJobs property value. The mailboxProtectionUnitsBulkAdditionJobs property
+func (m *BackupRestoreRoot) SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("mailboxProtectionUnitsBulkAdditionJobs", value)
     if err != nil {
         panic(err)
     }
@@ -870,15 +1004,24 @@ func (m *BackupRestoreRoot) SetSiteProtectionUnits(value []SiteProtectionUnitabl
         panic(err)
     }
 }
+// SetSiteProtectionUnitsBulkAdditionJobs sets the siteProtectionUnitsBulkAdditionJobs property value. The siteProtectionUnitsBulkAdditionJobs property
+func (m *BackupRestoreRoot) SetSiteProtectionUnitsBulkAdditionJobs(value []SiteProtectionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("siteProtectionUnitsBulkAdditionJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type BackupRestoreRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDriveInclusionRules()([]DriveProtectionRuleable)
     GetDriveProtectionUnits()([]DriveProtectionUnitable)
+    GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable)
     GetExchangeProtectionPolicies()([]ExchangeProtectionPolicyable)
     GetExchangeRestoreSessions()([]ExchangeRestoreSessionable)
     GetMailboxInclusionRules()([]MailboxProtectionRuleable)
     GetMailboxProtectionUnits()([]MailboxProtectionUnitable)
+    GetMailboxProtectionUnitsBulkAdditionJobs()([]MailboxProtectionUnitsBulkAdditionJobable)
     GetOneDriveForBusinessProtectionPolicies()([]OneDriveForBusinessProtectionPolicyable)
     GetOneDriveForBusinessRestoreSessions()([]OneDriveForBusinessRestoreSessionable)
     GetProtectionPolicies()([]ProtectionPolicyBaseable)
@@ -891,12 +1034,15 @@ type BackupRestoreRootable interface {
     GetSharePointRestoreSessions()([]SharePointRestoreSessionable)
     GetSiteInclusionRules()([]SiteProtectionRuleable)
     GetSiteProtectionUnits()([]SiteProtectionUnitable)
+    GetSiteProtectionUnitsBulkAdditionJobs()([]SiteProtectionUnitsBulkAdditionJobable)
     SetDriveInclusionRules(value []DriveProtectionRuleable)()
     SetDriveProtectionUnits(value []DriveProtectionUnitable)()
+    SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)()
     SetExchangeProtectionPolicies(value []ExchangeProtectionPolicyable)()
     SetExchangeRestoreSessions(value []ExchangeRestoreSessionable)()
     SetMailboxInclusionRules(value []MailboxProtectionRuleable)()
     SetMailboxProtectionUnits(value []MailboxProtectionUnitable)()
+    SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)()
     SetOneDriveForBusinessProtectionPolicies(value []OneDriveForBusinessProtectionPolicyable)()
     SetOneDriveForBusinessRestoreSessions(value []OneDriveForBusinessRestoreSessionable)()
     SetProtectionPolicies(value []ProtectionPolicyBaseable)()
@@ -909,4 +1055,5 @@ type BackupRestoreRootable interface {
     SetSharePointRestoreSessions(value []SharePointRestoreSessionable)()
     SetSiteInclusionRules(value []SiteProtectionRuleable)()
     SetSiteProtectionUnits(value []SiteProtectionUnitable)()
+    SetSiteProtectionUnitsBulkAdditionJobs(value []SiteProtectionUnitsBulkAdditionJobable)()
 }

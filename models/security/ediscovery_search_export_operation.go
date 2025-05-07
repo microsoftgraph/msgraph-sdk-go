@@ -34,18 +34,6 @@ func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOpti
     }
     return nil
 }
-// GetCloudAttachmentVersion gets the cloudAttachmentVersion property value. The cloudAttachmentVersion property
-// returns a *CloudAttachmentVersion when successful
-func (m *EdiscoverySearchExportOperation) GetCloudAttachmentVersion()(*CloudAttachmentVersion) {
-    val, err := m.GetBackingStore().Get("cloudAttachmentVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*CloudAttachmentVersion)
-    }
-    return nil
-}
 // GetDescription gets the description property value. The description of the export by the user.
 // returns a *string when successful
 func (m *EdiscoverySearchExportOperation) GetDescription()(*string) {
@@ -67,18 +55,6 @@ func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
-    }
-    return nil
-}
-// GetDocumentVersion gets the documentVersion property value. The documentVersion property
-// returns a *DocumentVersion when successful
-func (m *EdiscoverySearchExportOperation) GetDocumentVersion()(*DocumentVersion) {
-    val, err := m.GetBackingStore().Get("documentVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*DocumentVersion)
     }
     return nil
 }
@@ -156,16 +132,6 @@ func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["cloudAttachmentVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudAttachmentVersion)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCloudAttachmentVersion(val.(*CloudAttachmentVersion))
-        }
-        return nil
-    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -183,16 +149,6 @@ func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["documentVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDocumentVersion)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDocumentVersion(val.(*DocumentVersion))
         }
         return nil
     }
@@ -289,13 +245,6 @@ func (m *EdiscoverySearchExportOperation) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
-    if m.GetCloudAttachmentVersion() != nil {
-        cast := (*m.GetCloudAttachmentVersion()).String()
-        err = writer.WriteStringValue("cloudAttachmentVersion", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -304,13 +253,6 @@ func (m *EdiscoverySearchExportOperation) Serialize(writer i878a80d2330e89d26896
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDocumentVersion() != nil {
-        cast := (*m.GetDocumentVersion()).String()
-        err = writer.WriteStringValue("documentVersion", &cast)
         if err != nil {
             return err
         }
@@ -369,13 +311,6 @@ func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *Additional
         panic(err)
     }
 }
-// SetCloudAttachmentVersion sets the cloudAttachmentVersion property value. The cloudAttachmentVersion property
-func (m *EdiscoverySearchExportOperation) SetCloudAttachmentVersion(value *CloudAttachmentVersion)() {
-    err := m.GetBackingStore().Set("cloudAttachmentVersion", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetDescription sets the description property value. The description of the export by the user.
 func (m *EdiscoverySearchExportOperation) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -386,13 +321,6 @@ func (m *EdiscoverySearchExportOperation) SetDescription(value *string)() {
 // SetDisplayName sets the displayName property value. The name of export provided by the user.
 func (m *EdiscoverySearchExportOperation) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetDocumentVersion sets the documentVersion property value. The documentVersion property
-func (m *EdiscoverySearchExportOperation) SetDocumentVersion(value *DocumentVersion)() {
-    err := m.GetBackingStore().Set("documentVersion", value)
     if err != nil {
         panic(err)
     }
@@ -443,10 +371,8 @@ type EdiscoverySearchExportOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalOptions()(*AdditionalOptions)
-    GetCloudAttachmentVersion()(*CloudAttachmentVersion)
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetDocumentVersion()(*DocumentVersion)
     GetExportCriteria()(*ExportCriteria)
     GetExportFileMetadata()([]ExportFileMetadataable)
     GetExportFormat()(*ExportFormat)
@@ -454,10 +380,8 @@ type EdiscoverySearchExportOperationable interface {
     GetExportSingleItems()(*bool)
     GetSearch()(EdiscoverySearchable)
     SetAdditionalOptions(value *AdditionalOptions)()
-    SetCloudAttachmentVersion(value *CloudAttachmentVersion)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetDocumentVersion(value *DocumentVersion)()
     SetExportCriteria(value *ExportCriteria)()
     SetExportFileMetadata(value []ExportFileMetadataable)()
     SetExportFormat(value *ExportFormat)()

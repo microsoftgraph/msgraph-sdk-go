@@ -106,6 +106,11 @@ func (m *ItemEventsEventItemRequestBuilder) Delete(ctx context.Context, requestC
 func (m *ItemEventsEventItemRequestBuilder) DismissReminder()(*ItemEventsItemDismissReminderRequestBuilder) {
     return NewItemEventsItemDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExceptionOccurrences provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+// returns a *ItemEventsItemExceptionOccurrencesRequestBuilder when successful
+func (m *ItemEventsEventItemRequestBuilder) ExceptionOccurrences()(*ItemEventsItemExceptionOccurrencesRequestBuilder) {
+    return NewItemEventsItemExceptionOccurrencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 // returns a *ItemEventsItemExtensionsRequestBuilder when successful
 func (m *ItemEventsEventItemRequestBuilder) Extensions()(*ItemEventsItemExtensionsRequestBuilder) {

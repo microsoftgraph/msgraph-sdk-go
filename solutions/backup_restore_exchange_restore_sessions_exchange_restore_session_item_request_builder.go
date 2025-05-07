@@ -103,6 +103,11 @@ func (m *BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBu
 func (m *BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilder) MailboxRestoreArtifacts()(*BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsRequestBuilder) {
     return NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MailboxRestoreArtifactsBulkAdditionRequests provides operations to manage the mailboxRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.exchangeRestoreSession entity.
+// returns a *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder when successful
+func (m *BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilder) MailboxRestoreArtifactsBulkAdditionRequests()(*BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder) {
+    return NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the properties of an exchangeRestoreSession.
 // returns a ExchangeRestoreSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

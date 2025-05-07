@@ -60,6 +60,22 @@ func (m *SharePointProtectionPolicy) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["siteProtectionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSiteProtectionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SiteProtectionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SiteProtectionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetSiteProtectionUnitsBulkAdditionJobs(res)
+        }
+        return nil
+    }
     return res
 }
 // GetSiteInclusionRules gets the siteInclusionRules property value. The rules associated with the SharePoint Protection policy.
@@ -83,6 +99,18 @@ func (m *SharePointProtectionPolicy) GetSiteProtectionUnits()([]SiteProtectionUn
     }
     if val != nil {
         return val.([]SiteProtectionUnitable)
+    }
+    return nil
+}
+// GetSiteProtectionUnitsBulkAdditionJobs gets the siteProtectionUnitsBulkAdditionJobs property value. The siteProtectionUnitsBulkAdditionJobs property
+// returns a []SiteProtectionUnitsBulkAdditionJobable when successful
+func (m *SharePointProtectionPolicy) GetSiteProtectionUnitsBulkAdditionJobs()([]SiteProtectionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("siteProtectionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SiteProtectionUnitsBulkAdditionJobable)
     }
     return nil
 }
@@ -116,6 +144,18 @@ func (m *SharePointProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    if m.GetSiteProtectionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteProtectionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetSiteProtectionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("siteProtectionUnitsBulkAdditionJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetSiteInclusionRules sets the siteInclusionRules property value. The rules associated with the SharePoint Protection policy.
@@ -132,11 +172,20 @@ func (m *SharePointProtectionPolicy) SetSiteProtectionUnits(value []SiteProtecti
         panic(err)
     }
 }
+// SetSiteProtectionUnitsBulkAdditionJobs sets the siteProtectionUnitsBulkAdditionJobs property value. The siteProtectionUnitsBulkAdditionJobs property
+func (m *SharePointProtectionPolicy) SetSiteProtectionUnitsBulkAdditionJobs(value []SiteProtectionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("siteProtectionUnitsBulkAdditionJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type SharePointProtectionPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ProtectionPolicyBaseable
     GetSiteInclusionRules()([]SiteProtectionRuleable)
     GetSiteProtectionUnits()([]SiteProtectionUnitable)
+    GetSiteProtectionUnitsBulkAdditionJobs()([]SiteProtectionUnitsBulkAdditionJobable)
     SetSiteInclusionRules(value []SiteProtectionRuleable)()
     SetSiteProtectionUnits(value []SiteProtectionUnitable)()
+    SetSiteProtectionUnitsBulkAdditionJobs(value []SiteProtectionUnitsBulkAdditionJobable)()
 }

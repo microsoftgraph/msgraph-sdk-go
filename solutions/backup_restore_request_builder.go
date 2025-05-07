@@ -83,6 +83,11 @@ func (m *BackupRestoreRequestBuilder) DriveInclusionRules()(*BackupRestoreDriveI
 func (m *BackupRestoreRequestBuilder) DriveProtectionUnits()(*BackupRestoreDriveProtectionUnitsRequestBuilder) {
     return NewBackupRestoreDriveProtectionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DriveProtectionUnitsBulkAdditionJobs provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+// returns a *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreRequestBuilder) DriveProtectionUnitsBulkAdditionJobs()(*BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Enable provides operations to call the enable method.
 // returns a *BackupRestoreEnableRequestBuilder when successful
 func (m *BackupRestoreRequestBuilder) Enable()(*BackupRestoreEnableRequestBuilder) {
@@ -130,6 +135,11 @@ func (m *BackupRestoreRequestBuilder) MailboxInclusionRules()(*BackupRestoreMail
 // returns a *BackupRestoreMailboxProtectionUnitsRequestBuilder when successful
 func (m *BackupRestoreRequestBuilder) MailboxProtectionUnits()(*BackupRestoreMailboxProtectionUnitsRequestBuilder) {
     return NewBackupRestoreMailboxProtectionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MailboxProtectionUnitsBulkAdditionJobs provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+// returns a *BackupRestoreMailboxProtectionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreRequestBuilder) MailboxProtectionUnitsBulkAdditionJobs()(*BackupRestoreMailboxProtectionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreMailboxProtectionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OneDriveForBusinessProtectionPolicies provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
 // returns a *BackupRestoreOneDriveForBusinessProtectionPoliciesRequestBuilder when successful
@@ -205,6 +215,11 @@ func (m *BackupRestoreRequestBuilder) SiteInclusionRules()(*BackupRestoreSiteInc
 // returns a *BackupRestoreSiteProtectionUnitsRequestBuilder when successful
 func (m *BackupRestoreRequestBuilder) SiteProtectionUnits()(*BackupRestoreSiteProtectionUnitsRequestBuilder) {
     return NewBackupRestoreSiteProtectionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SiteProtectionUnitsBulkAdditionJobs provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+// returns a *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreRequestBuilder) SiteProtectionUnitsBulkAdditionJobs()(*BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property backupRestore for solutions
 // returns a *RequestInformation when successful

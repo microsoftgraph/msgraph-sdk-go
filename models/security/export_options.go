@@ -14,17 +14,12 @@ const (
     PDFREPLACEMENT_EXPORTOPTIONS = 4
     TAGS_EXPORTOPTIONS = 8
     UNKNOWNFUTUREVALUE_EXPORTOPTIONS = 16
-    SPLITSOURCE_EXPORTOPTIONS = 32
-    INCLUDEFOLDERANDPATH_EXPORTOPTIONS = 64
-    FRIENDLYNAME_EXPORTOPTIONS = 128
-    CONDENSEPATHS_EXPORTOPTIONS = 256
-    OPTIMIZEDPARTITIONSIZE_EXPORTOPTIONS = 512
 )
 
 func (i ExportOptions) String() string {
     var values []string
-    options := []string{"originalFiles", "text", "pdfReplacement", "tags", "unknownFutureValue", "splitSource", "includeFolderAndPath", "friendlyName", "condensePaths", "optimizedPartitionSize"}
-    for p := 0; p < 10; p++ {
+    options := []string{"originalFiles", "text", "pdfReplacement", "tags", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
         mantis := ExportOptions(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -47,16 +42,6 @@ func ParseExportOptions(v string) (any, error) {
                 result |= TAGS_EXPORTOPTIONS
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_EXPORTOPTIONS
-            case "splitSource":
-                result |= SPLITSOURCE_EXPORTOPTIONS
-            case "includeFolderAndPath":
-                result |= INCLUDEFOLDERANDPATH_EXPORTOPTIONS
-            case "friendlyName":
-                result |= FRIENDLYNAME_EXPORTOPTIONS
-            case "condensePaths":
-                result |= CONDENSEPATHS_EXPORTOPTIONS
-            case "optimizedPartitionSize":
-                result |= OPTIMIZEDPARTITIONSIZE_EXPORTOPTIONS
             default:
                 return nil, nil
         }

@@ -148,6 +148,11 @@ func (m *ItemAuthenticationRequestBuilder) Patch(ctx context.Context, body iadcd
 func (m *ItemAuthenticationRequestBuilder) PhoneMethods()(*ItemAuthenticationPhoneMethodsRequestBuilder) {
     return NewItemAuthenticationPhoneMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PlatformCredentialMethods provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.
+// returns a *ItemAuthenticationPlatformCredentialMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) PlatformCredentialMethods()(*ItemAuthenticationPlatformCredentialMethodsRequestBuilder) {
+    return NewItemAuthenticationPlatformCredentialMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SoftwareOathMethods provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
 // returns a *ItemAuthenticationSoftwareOathMethodsRequestBuilder when successful
 func (m *ItemAuthenticationRequestBuilder) SoftwareOathMethods()(*ItemAuthenticationSoftwareOathMethodsRequestBuilder) {
