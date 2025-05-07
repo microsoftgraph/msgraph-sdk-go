@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.70.0](https://github.com/microsoftgraph/msgraph-sdk-go/compare/v1.69.0...v1.70.0) (2025-05-07)
+
+
+### Features
+
+* **generation:** update request builders and models ([#872](https://github.com/microsoftgraph/msgraph-sdk-go/issues/872)) ([3466e48](https://github.com/microsoftgraph/msgraph-sdk-go/commit/3466e48cf4b1b42f1ed167bbcf0cb3d5e02206cb))
+
 ## [1.69.0](https://github.com/microsoftgraph/msgraph-sdk-go/compare/v1.68.0...v1.69.0) (2025-04-15)
 
 
