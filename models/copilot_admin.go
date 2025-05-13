@@ -38,7 +38,7 @@ func (m *CopilotAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetSettings gets the settings property value. The settings property
+// GetSettings gets the settings property value. Set of Microsoft 365 Copilot settings that can be added or modified. Read-only. Nullable.
 // returns a CopilotAdminSettingable when successful
 func (m *CopilotAdmin) GetSettings()(CopilotAdminSettingable) {
     val, err := m.GetBackingStore().Get("settings")
@@ -64,7 +64,7 @@ func (m *CopilotAdmin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetSettings sets the settings property value. The settings property
+// SetSettings sets the settings property value. Set of Microsoft 365 Copilot settings that can be added or modified. Read-only. Nullable.
 func (m *CopilotAdmin) SetSettings(value CopilotAdminSettingable)() {
     err := m.GetBackingStore().Set("settings", value)
     if err != nil {

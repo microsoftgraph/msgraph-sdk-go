@@ -118,6 +118,11 @@ func (m *EntitlementManagementResourcesItemRolesItemResourceScopesItemResourceRe
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable), nil
 }
+// Refresh provides operations to call the refresh method.
+// returns a *EntitlementManagementResourcesItemRolesItemResourceScopesItemResourceRefreshRequestBuilder when successful
+func (m *EntitlementManagementResourcesItemRolesItemResourceScopesItemResourceRequestBuilder) Refresh()(*EntitlementManagementResourcesItemRolesItemResourceScopesItemResourceRefreshRequestBuilder) {
+    return NewEntitlementManagementResourcesItemRolesItemResourceScopesItemResourceRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property resource for identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementResourcesItemRolesItemResourceScopesItemResourceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourcesItemRolesItemResourceScopesItemResourceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

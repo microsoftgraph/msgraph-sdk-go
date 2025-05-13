@@ -118,6 +118,11 @@ func (m *EntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemRes
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable), nil
 }
+// Refresh provides operations to call the refresh method.
+// returns a *EntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemResourceRefreshRequestBuilder when successful
+func (m *EntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemResourceRequestBuilder) Refresh()(*EntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemResourceRefreshRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemResourceRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Roles provides operations to manage the roles property of the microsoft.graph.accessPackageResource entity.
 // returns a *EntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemResourceRolesRequestBuilder when successful
 func (m *EntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemResourceRequestBuilder) Roles()(*EntitlementManagementCatalogsItemResourceRolesItemResourceScopesItemResourceRolesRequestBuilder) {

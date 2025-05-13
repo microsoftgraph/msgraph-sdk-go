@@ -35,7 +35,7 @@ func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable)
     }
     return nil
 }
-// GetExternalEventInformation gets the externalEventInformation property value. The externalEventInformation property
+// GetExternalEventInformation gets the externalEventInformation property value. The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
 // returns a []VirtualEventExternalInformationable when successful
 func (m *MeetingAttendanceReport) GetExternalEventInformation()([]VirtualEventExternalInformationable) {
     val, err := m.GetBackingStore().Get("externalEventInformation")
@@ -208,7 +208,7 @@ func (m *MeetingAttendanceReport) SetAttendanceRecords(value []AttendanceRecorda
         panic(err)
     }
 }
-// SetExternalEventInformation sets the externalEventInformation property value. The externalEventInformation property
+// SetExternalEventInformation sets the externalEventInformation property value. The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
 func (m *MeetingAttendanceReport) SetExternalEventInformation(value []VirtualEventExternalInformationable)() {
     err := m.GetBackingStore().Set("externalEventInformation", value)
     if err != nil {

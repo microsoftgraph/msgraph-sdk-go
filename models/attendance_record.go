@@ -46,7 +46,7 @@ func (m *AttendanceRecord) GetEmailAddress()(*string) {
     }
     return nil
 }
-// GetExternalRegistrationInformation gets the externalRegistrationInformation property value. The externalRegistrationInformation property
+// GetExternalRegistrationInformation gets the externalRegistrationInformation property value. The external information for a virtualEventRegistration.
 // returns a VirtualEventExternalRegistrationInformationable when successful
 func (m *AttendanceRecord) GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable) {
     val, err := m.GetBackingStore().Get("externalRegistrationInformation")
@@ -140,7 +140,7 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIdentity gets the identity property value. Identity of the user associated with this attendance record.
+// GetIdentity gets the identity property value. The identity of the user associated with this attendance record. The specific type is one of the following derived types of identity, depending on the user type: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 // returns a Identityable when successful
 func (m *AttendanceRecord) GetIdentity()(Identityable) {
     val, err := m.GetBackingStore().Get("identity")
@@ -152,7 +152,7 @@ func (m *AttendanceRecord) GetIdentity()(Identityable) {
     }
     return nil
 }
-// GetRegistrationId gets the registrationId property value. The registrationId property
+// GetRegistrationId gets the registrationId property value. Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
 // returns a *string when successful
 func (m *AttendanceRecord) GetRegistrationId()(*string) {
     val, err := m.GetBackingStore().Get("registrationId")
@@ -258,21 +258,21 @@ func (m *AttendanceRecord) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
-// SetExternalRegistrationInformation sets the externalRegistrationInformation property value. The externalRegistrationInformation property
+// SetExternalRegistrationInformation sets the externalRegistrationInformation property value. The external information for a virtualEventRegistration.
 func (m *AttendanceRecord) SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)() {
     err := m.GetBackingStore().Set("externalRegistrationInformation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentity sets the identity property value. Identity of the user associated with this attendance record.
+// SetIdentity sets the identity property value. The identity of the user associated with this attendance record. The specific type is one of the following derived types of identity, depending on the user type: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 func (m *AttendanceRecord) SetIdentity(value Identityable)() {
     err := m.GetBackingStore().Set("identity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrationId sets the registrationId property value. The registrationId property
+// SetRegistrationId sets the registrationId property value. Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
 func (m *AttendanceRecord) SetRegistrationId(value *string)() {
     err := m.GetBackingStore().Set("registrationId", value)
     if err != nil {
