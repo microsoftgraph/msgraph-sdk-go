@@ -21,7 +21,7 @@ type ManagedAppPoliciesManagedAppPolicyItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedAppPoliciesManagedAppPolicyItemRequestBuilderGetQueryParameters read properties and relationships of the targetedManagedAppProtection object.
+// ManagedAppPoliciesManagedAppPolicyItemRequestBuilderGetQueryParameters read properties and relationships of the managedAppPolicy object.
 type ManagedAppPoliciesManagedAppPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,12 +73,12 @@ func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get read properties and relationships of the targetedManagedAppProtection object.
+// Get read properties and relationships of the managedAppPolicy object.
 // returns a ManagedAppPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-get?view=graph-rest-1.0
 func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppPoliciesManagedAppPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the targetedManagedAppProtection object.
+// ToGetRequestInformation read properties and relationships of the managedAppPolicy object.
 // returns a *RequestInformation when successful
 func (m *ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppPoliciesManagedAppPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

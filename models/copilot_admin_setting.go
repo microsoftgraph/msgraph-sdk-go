@@ -38,7 +38,7 @@ func (m *CopilotAdminSetting) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLimitedMode gets the limitedMode property value. The limitedMode property
+// GetLimitedMode gets the limitedMode property value. Represents a setting that controls whether users of Microsoft 365 Copilot in Teams meetings can receive responses to sentiment-related prompts. Read-only. Nullable.
 // returns a CopilotAdminLimitedModeable when successful
 func (m *CopilotAdminSetting) GetLimitedMode()(CopilotAdminLimitedModeable) {
     val, err := m.GetBackingStore().Get("limitedMode")
@@ -64,7 +64,7 @@ func (m *CopilotAdminSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetLimitedMode sets the limitedMode property value. The limitedMode property
+// SetLimitedMode sets the limitedMode property value. Represents a setting that controls whether users of Microsoft 365 Copilot in Teams meetings can receive responses to sentiment-related prompts. Read-only. Nullable.
 func (m *CopilotAdminSetting) SetLimitedMode(value CopilotAdminLimitedModeable)() {
     err := m.GetBackingStore().Set("limitedMode", value)
     if err != nil {
