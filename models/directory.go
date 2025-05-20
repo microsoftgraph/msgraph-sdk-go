@@ -210,6 +210,16 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["publicKeyInfrastructure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePublicKeyInfrastructureRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublicKeyInfrastructure(val.(PublicKeyInfrastructureRootable))
+        }
+        return nil
+    }
     res["subscriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCompanySubscriptionFromDiscriminatorValue)
         if err != nil {
@@ -237,6 +247,18 @@ func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchron
     }
     if val != nil {
         return val.([]OnPremisesDirectorySynchronizationable)
+    }
+    return nil
+}
+// GetPublicKeyInfrastructure gets the publicKeyInfrastructure property value. The publicKeyInfrastructure property
+// returns a PublicKeyInfrastructureRootable when successful
+func (m *Directory) GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable) {
+    val, err := m.GetBackingStore().Get("publicKeyInfrastructure")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PublicKeyInfrastructureRootable)
     }
     return nil
 }
@@ -342,6 +364,12 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("publicKeyInfrastructure", m.GetPublicKeyInfrastructure())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSubscriptions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubscriptions()))
         for i, v := range m.GetSubscriptions() {
@@ -405,6 +433,13 @@ func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySync
         panic(err)
     }
 }
+// SetPublicKeyInfrastructure sets the publicKeyInfrastructure property value. The publicKeyInfrastructure property
+func (m *Directory) SetPublicKeyInfrastructure(value PublicKeyInfrastructureRootable)() {
+    err := m.GetBackingStore().Set("publicKeyInfrastructure", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSubscriptions sets the subscriptions property value. List of commercial subscriptions that an organization acquired.
 func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
     err := m.GetBackingStore().Set("subscriptions", value)
@@ -422,6 +457,7 @@ type Directoryable interface {
     GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
     GetFederationConfigurations()([]IdentityProviderBaseable)
     GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
+    GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable)
     GetSubscriptions()([]CompanySubscriptionable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
@@ -430,5 +466,6 @@ type Directoryable interface {
     SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoable)()
     SetFederationConfigurations(value []IdentityProviderBaseable)()
     SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()
+    SetPublicKeyInfrastructure(value PublicKeyInfrastructureRootable)()
     SetSubscriptions(value []CompanySubscriptionable)()
 }

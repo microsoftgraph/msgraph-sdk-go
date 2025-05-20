@@ -113,6 +113,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAgreementFileProperties(), nil
                     case "#microsoft.graph.agreementFileVersion":
                         return NewAgreementFileVersion(), nil
+                    case "#microsoft.graph.aiInteraction":
+                        return NewAiInteraction(), nil
+                    case "#microsoft.graph.aiInteractionHistory":
+                        return NewAiInteractionHistory(), nil
+                    case "#microsoft.graph.aiUser":
+                        return NewAiUser(), nil
                     case "#microsoft.graph.alert":
                         return NewAlert(), nil
                     case "#microsoft.graph.allowedValue":
@@ -285,8 +291,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCancelMediaProcessingOperation(), nil
                     case "#microsoft.graph.canvasLayout":
                         return NewCanvasLayout(), nil
+                    case "#microsoft.graph.certificateAuthorityDetail":
+                        return NewCertificateAuthorityDetail(), nil
                     case "#microsoft.graph.certificateBasedAuthConfiguration":
                         return NewCertificateBasedAuthConfiguration(), nil
+                    case "#microsoft.graph.certificateBasedAuthPki":
+                        return NewCertificateBasedAuthPki(), nil
                     case "#microsoft.graph.changeTrackedEntity":
                         return NewChangeTrackedEntity(), nil
                     case "#microsoft.graph.channel":
@@ -1143,6 +1153,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewProtectionUnitsBulkJobBase(), nil
                     case "#microsoft.graph.provisioningObjectSummary":
                         return NewProvisioningObjectSummary(), nil
+                    case "#microsoft.graph.publicKeyInfrastructureRoot":
+                        return NewPublicKeyInfrastructureRoot(), nil
                     case "#microsoft.graph.rbacApplication":
                         return NewRbacApplication(), nil
                     case "#microsoft.graph.recordOperation":

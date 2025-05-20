@@ -233,7 +233,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetJustification gets the justification property value. The justification property
+// GetJustification gets the justification property value. The requestor's supplied justification.
 // returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
@@ -441,7 +441,7 @@ func (m *AccessPackageAssignmentRequest) SetCustomExtensionCalloutInstances(valu
         panic(err)
     }
 }
-// SetJustification sets the justification property value. The justification property
+// SetJustification sets the justification property value. The requestor's supplied justification.
 func (m *AccessPackageAssignmentRequest) SetJustification(value *string)() {
     err := m.GetBackingStore().Set("justification", value)
     if err != nil {

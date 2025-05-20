@@ -24,7 +24,7 @@ func NewVppToken()(*VppToken) {
 func CreateVppTokenFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVppToken(), nil
 }
-// GetAppleId gets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
+// GetAppleId gets the appleId property value. The Apple ID associated with the given Apple Volume Purchase Program Token.
 // returns a *string when successful
 func (m *VppToken) GetAppleId()(*string) {
     val, err := m.GetBackingStore().Get("appleId")
@@ -48,7 +48,7 @@ func (m *VppToken) GetAutomaticallyUpdateApps()(*bool) {
     }
     return nil
 }
-// GetCountryOrRegion gets the countryOrRegion property value. Whether or not apps for the VPP token will be automatically updated.
+// GetCountryOrRegion gets the countryOrRegion property value. The country or region associated with the Apple Volume Purchase Program Token.
 // returns a *string when successful
 func (m *VppToken) GetCountryOrRegion()(*string) {
     val, err := m.GetBackingStore().Get("countryOrRegion")
@@ -349,7 +349,7 @@ func (m *VppToken) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAppleId sets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
+// SetAppleId sets the appleId property value. The Apple ID associated with the given Apple Volume Purchase Program Token.
 func (m *VppToken) SetAppleId(value *string)() {
     err := m.GetBackingStore().Set("appleId", value)
     if err != nil {
@@ -363,7 +363,7 @@ func (m *VppToken) SetAutomaticallyUpdateApps(value *bool)() {
         panic(err)
     }
 }
-// SetCountryOrRegion sets the countryOrRegion property value. Whether or not apps for the VPP token will be automatically updated.
+// SetCountryOrRegion sets the countryOrRegion property value. The country or region associated with the Apple Volume Purchase Program Token.
 func (m *VppToken) SetCountryOrRegion(value *string)() {
     err := m.GetBackingStore().Set("countryOrRegion", value)
     if err != nil {

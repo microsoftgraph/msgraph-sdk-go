@@ -74,7 +74,7 @@ func (m *Group) GetAssignedLabels()([]AssignedLabelable) {
     }
     return nil
 }
-// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
 // returns a []AssignedLicenseable when successful
 func (m *Group) GetAssignedLicenses()([]AssignedLicenseable) {
     val, err := m.GetBackingStore().Get("assignedLicenses")
@@ -2272,7 +2272,7 @@ func (m *Group) SetAssignedLabels(value []AssignedLabelable)() {
         panic(err)
     }
 }
-// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
 func (m *Group) SetAssignedLicenses(value []AssignedLicenseable)() {
     err := m.GetBackingStore().Set("assignedLicenses", value)
     if err != nil {

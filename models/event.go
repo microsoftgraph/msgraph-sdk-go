@@ -97,7 +97,7 @@ func (m *Event) GetCalendar()(Calendarable) {
     }
     return nil
 }
-// GetCancelledOccurrences gets the cancelledOccurrences property value. The cancelledOccurrences property
+// GetCancelledOccurrences gets the cancelledOccurrences property value. Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.
 // returns a []string when successful
 func (m *Event) GetCancelledOccurrences()([]string) {
     val, err := m.GetBackingStore().Get("cancelledOccurrences")
@@ -121,7 +121,7 @@ func (m *Event) GetEnd()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetExceptionOccurrences gets the exceptionOccurrences property value. The exceptionOccurrences property
+// GetExceptionOccurrences gets the exceptionOccurrences property value. Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don't include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
 // returns a []Eventable when successful
 func (m *Event) GetExceptionOccurrences()([]Eventable) {
     val, err := m.GetBackingStore().Get("exceptionOccurrences")
@@ -693,7 +693,7 @@ func (m *Event) GetImportance()(*Importance) {
     }
     return nil
 }
-// GetInstances gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn't include occurrences cancelled from the series. Navigation property. Read-only. Nullable.
+// GetInstances gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn't include occurrences canceled from the series. Navigation property. Read-only. Nullable.
 // returns a []Eventable when successful
 func (m *Event) GetInstances()([]Eventable) {
     val, err := m.GetBackingStore().Get("instances")
@@ -1420,7 +1420,7 @@ func (m *Event) SetCalendar(value Calendarable)() {
         panic(err)
     }
 }
-// SetCancelledOccurrences sets the cancelledOccurrences property value. The cancelledOccurrences property
+// SetCancelledOccurrences sets the cancelledOccurrences property value. Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.
 func (m *Event) SetCancelledOccurrences(value []string)() {
     err := m.GetBackingStore().Set("cancelledOccurrences", value)
     if err != nil {
@@ -1434,7 +1434,7 @@ func (m *Event) SetEnd(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetExceptionOccurrences sets the exceptionOccurrences property value. The exceptionOccurrences property
+// SetExceptionOccurrences sets the exceptionOccurrences property value. Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don't include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
 func (m *Event) SetExceptionOccurrences(value []Eventable)() {
     err := m.GetBackingStore().Set("exceptionOccurrences", value)
     if err != nil {
@@ -1476,7 +1476,7 @@ func (m *Event) SetImportance(value *Importance)() {
         panic(err)
     }
 }
-// SetInstances sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn't include occurrences cancelled from the series. Navigation property. Read-only. Nullable.
+// SetInstances sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn't include occurrences canceled from the series. Navigation property. Read-only. Nullable.
 func (m *Event) SetInstances(value []Eventable)() {
     err := m.GetBackingStore().Set("instances", value)
     if err != nil {
