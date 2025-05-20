@@ -69,7 +69,7 @@ func (m *AccessPackageNotificationSettings) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetIsAssignmentNotificationDisabled gets the isAssignmentNotificationDisabled property value. The isAssignmentNotificationDisabled property
+// GetIsAssignmentNotificationDisabled gets the isAssignmentNotificationDisabled property value. Indicates if notification emails for an access package are disabled within an access package assignment policy.
 // returns a *bool when successful
 func (m *AccessPackageNotificationSettings) GetIsAssignmentNotificationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAssignmentNotificationDisabled")
@@ -126,7 +126,7 @@ func (m *AccessPackageNotificationSettings) SetAdditionalData(value map[string]a
 func (m *AccessPackageNotificationSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsAssignmentNotificationDisabled sets the isAssignmentNotificationDisabled property value. The isAssignmentNotificationDisabled property
+// SetIsAssignmentNotificationDisabled sets the isAssignmentNotificationDisabled property value. Indicates if notification emails for an access package are disabled within an access package assignment policy.
 func (m *AccessPackageNotificationSettings) SetIsAssignmentNotificationDisabled(value *bool)() {
     err := m.GetBackingStore().Set("isAssignmentNotificationDisabled", value)
     if err != nil {

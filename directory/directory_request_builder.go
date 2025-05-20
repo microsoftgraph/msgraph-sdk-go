@@ -125,6 +125,11 @@ func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable), nil
 }
+// PublicKeyInfrastructure provides operations to manage the publicKeyInfrastructure property of the microsoft.graph.directory entity.
+// returns a *PublicKeyInfrastructureRequestBuilder when successful
+func (m *DirectoryRequestBuilder) PublicKeyInfrastructure()(*PublicKeyInfrastructureRequestBuilder) {
+    return NewPublicKeyInfrastructureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
 // returns a *SubscriptionsRequestBuilder when successful
 func (m *DirectoryRequestBuilder) Subscriptions()(*SubscriptionsRequestBuilder) {

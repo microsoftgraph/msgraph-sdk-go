@@ -129,7 +129,7 @@ func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForUpdate
     }
     return nil
 }
-// GetIsRequestorJustificationRequired gets the isRequestorJustificationRequired property value. The isRequestorJustificationRequired property
+// GetIsRequestorJustificationRequired gets the isRequestorJustificationRequired property value. If false, then requestor justification isn't required for updates to requests in this policy.
 // returns a *bool when successful
 func (m *AccessPackageAssignmentApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isRequestorJustificationRequired")
@@ -236,7 +236,7 @@ func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForUpdate
         panic(err)
     }
 }
-// SetIsRequestorJustificationRequired sets the isRequestorJustificationRequired property value. The isRequestorJustificationRequired property
+// SetIsRequestorJustificationRequired sets the isRequestorJustificationRequired property value. If false, then requestor justification isn't required for updates to requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) SetIsRequestorJustificationRequired(value *bool)() {
     err := m.GetBackingStore().Set("isRequestorJustificationRequired", value)
     if err != nil {

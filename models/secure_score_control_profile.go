@@ -59,7 +59,7 @@ func (m *SecureScoreControlProfile) GetAzureTenantId()(*string) {
     }
     return nil
 }
-// GetComplianceInformation gets the complianceInformation property value. The collection of compliance information associated with secure score control
+// GetComplianceInformation gets the complianceInformation property value. The collection of compliance information associated with secure score control. Not implemented. Currently returns null.
 // returns a []ComplianceInformationable when successful
 func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInformationable) {
     val, err := m.GetBackingStore().Get("complianceInformation")
@@ -620,7 +620,7 @@ func (m *SecureScoreControlProfile) SetAzureTenantId(value *string)() {
         panic(err)
     }
 }
-// SetComplianceInformation sets the complianceInformation property value. The collection of compliance information associated with secure score control
+// SetComplianceInformation sets the complianceInformation property value. The collection of compliance information associated with secure score control. Not implemented. Currently returns null.
 func (m *SecureScoreControlProfile) SetComplianceInformation(value []ComplianceInformationable)() {
     err := m.GetBackingStore().Set("complianceInformation", value)
     if err != nil {

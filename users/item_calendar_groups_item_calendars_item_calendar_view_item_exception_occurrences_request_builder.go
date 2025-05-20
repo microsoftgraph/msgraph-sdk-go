@@ -14,7 +14,7 @@ import (
 type ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilderGetQueryParameters get exceptionOccurrences from users
+// ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilderGetQueryParameters contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don't include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
 type ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,7 +77,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrences
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder) Delta()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesDeltaRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get exceptionOccurrences from users
+// Get contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don't include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
 // returns a EventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
@@ -97,7 +97,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrences
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
 }
-// ToGetRequestInformation get exceptionOccurrences from users
+// ToGetRequestInformation contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don't include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
