@@ -74,7 +74,7 @@ func (m *SharePointRestoreSession) GetSiteRestoreArtifacts()([]SiteRestoreArtifa
     }
     return nil
 }
-// GetSiteRestoreArtifactsBulkAdditionRequests gets the siteRestoreArtifactsBulkAdditionRequests property value. The siteRestoreArtifactsBulkAdditionRequests property
+// GetSiteRestoreArtifactsBulkAdditionRequests gets the siteRestoreArtifactsBulkAdditionRequests property value. A collection of SharePoint site URLs and destination details that can be used to restore SharePoint sites.
 // returns a []SiteRestoreArtifactsBulkAdditionRequestable when successful
 func (m *SharePointRestoreSession) GetSiteRestoreArtifactsBulkAdditionRequests()([]SiteRestoreArtifactsBulkAdditionRequestable) {
     val, err := m.GetBackingStore().Get("siteRestoreArtifactsBulkAdditionRequests")
@@ -125,7 +125,7 @@ func (m *SharePointRestoreSession) SetSiteRestoreArtifacts(value []SiteRestoreAr
         panic(err)
     }
 }
-// SetSiteRestoreArtifactsBulkAdditionRequests sets the siteRestoreArtifactsBulkAdditionRequests property value. The siteRestoreArtifactsBulkAdditionRequests property
+// SetSiteRestoreArtifactsBulkAdditionRequests sets the siteRestoreArtifactsBulkAdditionRequests property value. A collection of SharePoint site URLs and destination details that can be used to restore SharePoint sites.
 func (m *SharePointRestoreSession) SetSiteRestoreArtifactsBulkAdditionRequests(value []SiteRestoreArtifactsBulkAdditionRequestable)() {
     err := m.GetBackingStore().Set("siteRestoreArtifactsBulkAdditionRequests", value)
     if err != nil {

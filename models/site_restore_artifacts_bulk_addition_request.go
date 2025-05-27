@@ -60,7 +60,7 @@ func (m *SiteRestoreArtifactsBulkAdditionRequest) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetSiteIds gets the siteIds property value. The siteIds property
+// GetSiteIds gets the siteIds property value. The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
 // returns a []string when successful
 func (m *SiteRestoreArtifactsBulkAdditionRequest) GetSiteIds()([]string) {
     val, err := m.GetBackingStore().Get("siteIds")
@@ -72,7 +72,7 @@ func (m *SiteRestoreArtifactsBulkAdditionRequest) GetSiteIds()([]string) {
     }
     return nil
 }
-// GetSiteWebUrls gets the siteWebUrls property value. The siteWebUrls property
+// GetSiteWebUrls gets the siteWebUrls property value. The list of SharePoint site URLs that are added to the corresponding SharePoint restore session in a bulk operation.
 // returns a []string when successful
 func (m *SiteRestoreArtifactsBulkAdditionRequest) GetSiteWebUrls()([]string) {
     val, err := m.GetBackingStore().Get("siteWebUrls")
@@ -104,14 +104,14 @@ func (m *SiteRestoreArtifactsBulkAdditionRequest) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetSiteIds sets the siteIds property value. The siteIds property
+// SetSiteIds sets the siteIds property value. The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
 func (m *SiteRestoreArtifactsBulkAdditionRequest) SetSiteIds(value []string)() {
     err := m.GetBackingStore().Set("siteIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteWebUrls sets the siteWebUrls property value. The siteWebUrls property
+// SetSiteWebUrls sets the siteWebUrls property value. The list of SharePoint site URLs that are added to the corresponding SharePoint restore session in a bulk operation.
 func (m *SiteRestoreArtifactsBulkAdditionRequest) SetSiteWebUrls(value []string)() {
     err := m.GetBackingStore().Set("siteWebUrls", value)
     if err != nil {

@@ -14,7 +14,7 @@ import (
 type BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+// BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
 type BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAddit
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder) Count()(*BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsCountRequestBuilder) {
     return NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+// Get get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
 // returns a MailboxRestoreArtifactsBulkAdditionRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangerestoresession-list-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-1.0
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAddi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponseable), nil
 }
-// Post create new navigation property to mailboxRestoreArtifactsBulkAdditionRequests for solutions
+// Post create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The following steps describe how to create and manage an exchangeRestoreSession with bulk artifact additions:
 // returns a MailboxRestoreArtifactsBulkAdditionRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangerestoresession-post-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-1.0
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxRestoreArtifactsBulkAdditionRequestable, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxRestoreArtifactsBulkAdditionRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAddi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxRestoreArtifactsBulkAdditionRequestable), nil
 }
-// ToGetRequestInformation get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+// ToGetRequestInformation get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +139,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAddi
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to mailboxRestoreArtifactsBulkAdditionRequests for solutions
+// ToPostRequestInformation create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The following steps describe how to create and manage an exchangeRestoreSession with bulk artifact additions:
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxRestoreArtifactsBulkAdditionRequestable, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
