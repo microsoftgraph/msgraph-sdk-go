@@ -66,6 +66,11 @@ func (m *RiskyUsersRequestBuilder) ByRiskyUserId(riskyUserId string)(*RiskyUsers
 func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*RiskyUsersConfirmCompromisedRequestBuilder) {
     return NewRiskyUsersConfirmCompromisedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ConfirmSafe provides operations to call the confirmSafe method.
+// returns a *RiskyUsersConfirmSafeRequestBuilder when successful
+func (m *RiskyUsersRequestBuilder) ConfirmSafe()(*RiskyUsersConfirmSafeRequestBuilder) {
+    return NewRiskyUsersConfirmSafeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRiskyUsersRequestBuilderInternal instantiates a new RiskyUsersRequestBuilder and sets the default values.
 func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersRequestBuilder) {
     m := &RiskyUsersRequestBuilder{

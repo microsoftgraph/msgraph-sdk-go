@@ -5,19 +5,16 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type AiInteractionLink struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+    Entity
 }
 // NewAiInteractionLink instantiates a new AiInteractionLink and sets the default values.
 func NewAiInteractionLink()(*AiInteractionLink) {
     m := &AiInteractionLink{
+        Entity: *NewEntity(),
     }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAiInteractionLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,25 +22,7 @@ func NewAiInteractionLink()(*AiInteractionLink) {
 func CreateAiInteractionLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAiInteractionLink(), nil
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// returns a map[string]any when successful
-func (m *AiInteractionLink) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
-}
-// GetBackingStore gets the BackingStore property value. Stores model information.
-// returns a BackingStore when successful
-func (m *AiInteractionLink) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
-}
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the link.
 // returns a *string when successful
 func (m *AiInteractionLink) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -58,7 +37,7 @@ func (m *AiInteractionLink) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AiInteractionLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -89,19 +68,9 @@ func (m *AiInteractionLink) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
-// GetLinkType gets the linkType property value. The linkType property
+// GetLinkType gets the linkType property value. Information about a link in an app chat or Business Chat (BizChat) interaction.
 // returns a *string when successful
 func (m *AiInteractionLink) GetLinkType()(*string) {
     val, err := m.GetBackingStore().Get("linkType")
@@ -113,7 +82,7 @@ func (m *AiInteractionLink) GetLinkType()(*string) {
     }
     return nil
 }
-// GetLinkUrl gets the linkUrl property value. The linkUrl property
+// GetLinkUrl gets the linkUrl property value. The URL of the link.
 // returns a *string when successful
 func (m *AiInteractionLink) GetLinkUrl()(*string) {
     val, err := m.GetBackingStore().Get("linkUrl")
@@ -125,103 +94,60 @@ func (m *AiInteractionLink) GetLinkUrl()(*string) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-// returns a *string when successful
-func (m *AiInteractionLink) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *AiInteractionLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
     {
-        err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("linkType", m.GetLinkType())
+        err = writer.WriteStringValue("linkType", m.GetLinkType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("linkUrl", m.GetLinkUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        err = writer.WriteStringValue("linkUrl", m.GetLinkUrl())
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AiInteractionLink) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *AiInteractionLink) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
-}
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the link.
 func (m *AiInteractionLink) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLinkType sets the linkType property value. The linkType property
+// SetLinkType sets the linkType property value. Information about a link in an app chat or Business Chat (BizChat) interaction.
 func (m *AiInteractionLink) SetLinkType(value *string)() {
     err := m.GetBackingStore().Set("linkType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLinkUrl sets the linkUrl property value. The linkUrl property
+// SetLinkUrl sets the linkUrl property value. The URL of the link.
 func (m *AiInteractionLink) SetLinkUrl(value *string)() {
     err := m.GetBackingStore().Set("linkUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AiInteractionLink) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 type AiInteractionLinkable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
     GetLinkType()(*string)
     GetLinkUrl()(*string)
-    GetOdataType()(*string)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetLinkType(value *string)()
     SetLinkUrl(value *string)()
-    SetOdataType(value *string)()
 }

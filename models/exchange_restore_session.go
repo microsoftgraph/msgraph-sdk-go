@@ -102,7 +102,7 @@ func (m *ExchangeRestoreSession) GetMailboxRestoreArtifacts()([]MailboxRestoreAr
     }
     return nil
 }
-// GetMailboxRestoreArtifactsBulkAdditionRequests gets the mailboxRestoreArtifactsBulkAdditionRequests property value. The mailboxRestoreArtifactsBulkAdditionRequests property
+// GetMailboxRestoreArtifactsBulkAdditionRequests gets the mailboxRestoreArtifactsBulkAdditionRequests property value. A collection of user mailboxes and destination details that can be used to restore Exchange mailboxes.
 // returns a []MailboxRestoreArtifactsBulkAdditionRequestable when successful
 func (m *ExchangeRestoreSession) GetMailboxRestoreArtifactsBulkAdditionRequests()([]MailboxRestoreArtifactsBulkAdditionRequestable) {
     val, err := m.GetBackingStore().Get("mailboxRestoreArtifactsBulkAdditionRequests")
@@ -172,7 +172,7 @@ func (m *ExchangeRestoreSession) SetMailboxRestoreArtifacts(value []MailboxResto
         panic(err)
     }
 }
-// SetMailboxRestoreArtifactsBulkAdditionRequests sets the mailboxRestoreArtifactsBulkAdditionRequests property value. The mailboxRestoreArtifactsBulkAdditionRequests property
+// SetMailboxRestoreArtifactsBulkAdditionRequests sets the mailboxRestoreArtifactsBulkAdditionRequests property value. A collection of user mailboxes and destination details that can be used to restore Exchange mailboxes.
 func (m *ExchangeRestoreSession) SetMailboxRestoreArtifactsBulkAdditionRequests(value []MailboxRestoreArtifactsBulkAdditionRequestable)() {
     err := m.GetBackingStore().Set("mailboxRestoreArtifactsBulkAdditionRequests", value)
     if err != nil {

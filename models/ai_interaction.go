@@ -23,7 +23,7 @@ func NewAiInteraction()(*AiInteraction) {
 func CreateAiInteractionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAiInteraction(), nil
 }
-// GetAppClass gets the appClass property value. The appClass property
+// GetAppClass gets the appClass property value. The data source for Copilot data. For example, IPM.SkypeTeams.Message.Copilot.Excel or IPM.SkypeTeams.Message.Copilot.Loop.
 // returns a *string when successful
 func (m *AiInteraction) GetAppClass()(*string) {
     val, err := m.GetBackingStore().Get("appClass")
@@ -35,7 +35,7 @@ func (m *AiInteraction) GetAppClass()(*string) {
     }
     return nil
 }
-// GetAttachments gets the attachments property value. The attachments property
+// GetAttachments gets the attachments property value. The collection of documents attached to the interaction, such as cards and images.
 // returns a []AiInteractionAttachmentable when successful
 func (m *AiInteraction) GetAttachments()([]AiInteractionAttachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
@@ -47,7 +47,7 @@ func (m *AiInteraction) GetAttachments()([]AiInteractionAttachmentable) {
     }
     return nil
 }
-// GetBody gets the body property value. The body property
+// GetBody gets the body property value. The body of the message, including the text of the body and its body type.
 // returns a ItemBodyable when successful
 func (m *AiInteraction) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
@@ -59,7 +59,7 @@ func (m *AiInteraction) GetBody()(ItemBodyable) {
     }
     return nil
 }
-// GetContexts gets the contexts property value. The contexts property
+// GetContexts gets the contexts property value. The identifer that maps to all contexts associated with an interaction.
 // returns a []AiInteractionContextable when successful
 func (m *AiInteraction) GetContexts()([]AiInteractionContextable) {
     val, err := m.GetBackingStore().Get("contexts")
@@ -71,7 +71,7 @@ func (m *AiInteraction) GetContexts()([]AiInteractionContextable) {
     }
     return nil
 }
-// GetConversationType gets the conversationType property value. The conversationType property
+// GetConversationType gets the conversationType property value. The type of the conversation. For example, appchat or bizchat.
 // returns a *string when successful
 func (m *AiInteraction) GetConversationType()(*string) {
     val, err := m.GetBackingStore().Get("conversationType")
@@ -83,7 +83,7 @@ func (m *AiInteraction) GetConversationType()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The time when the interaction was created.
 // returns a *Time when successful
 func (m *AiInteraction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -95,7 +95,7 @@ func (m *AiInteraction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetEtag gets the etag property value. The etag property
+// GetEtag gets the etag property value. The timestamp of when the interaction was last modified.
 // returns a *string when successful
 func (m *AiInteraction) GetEtag()(*string) {
     val, err := m.GetBackingStore().Get("etag")
@@ -301,7 +301,7 @@ func (m *AiInteraction) GetInteractionType()(*AiInteractionType) {
     }
     return nil
 }
-// GetLinks gets the links property value. The links property
+// GetLinks gets the links property value. The collection of links that appear in the interaction.
 // returns a []AiInteractionLinkable when successful
 func (m *AiInteraction) GetLinks()([]AiInteractionLinkable) {
     val, err := m.GetBackingStore().Get("links")
@@ -313,7 +313,7 @@ func (m *AiInteraction) GetLinks()([]AiInteractionLinkable) {
     }
     return nil
 }
-// GetLocale gets the locale property value. The locale property
+// GetLocale gets the locale property value. The locale of the sender.
 // returns a *string when successful
 func (m *AiInteraction) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
@@ -325,7 +325,7 @@ func (m *AiInteraction) GetLocale()(*string) {
     }
     return nil
 }
-// GetMentions gets the mentions property value. The mentions property
+// GetMentions gets the mentions property value. The collection of the entities that were mentioned in the interaction, including users, bots, and so on.
 // returns a []AiInteractionMentionable when successful
 func (m *AiInteraction) GetMentions()([]AiInteractionMentionable) {
     val, err := m.GetBackingStore().Get("mentions")
@@ -337,7 +337,7 @@ func (m *AiInteraction) GetMentions()([]AiInteractionMentionable) {
     }
     return nil
 }
-// GetRequestId gets the requestId property value. The requestId property
+// GetRequestId gets the requestId property value. The identifier that groups a user prompt with its Copilot response.
 // returns a *string when successful
 func (m *AiInteraction) GetRequestId()(*string) {
     val, err := m.GetBackingStore().Get("requestId")
@@ -349,7 +349,7 @@ func (m *AiInteraction) GetRequestId()(*string) {
     }
     return nil
 }
-// GetSessionId gets the sessionId property value. The sessionId property
+// GetSessionId gets the sessionId property value. The thread ID or conversation identifier that maps to all Copilot sessions for the user.
 // returns a *string when successful
 func (m *AiInteraction) GetSessionId()(*string) {
     val, err := m.GetBackingStore().Get("sessionId")
@@ -478,49 +478,49 @@ func (m *AiInteraction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAppClass sets the appClass property value. The appClass property
+// SetAppClass sets the appClass property value. The data source for Copilot data. For example, IPM.SkypeTeams.Message.Copilot.Excel or IPM.SkypeTeams.Message.Copilot.Loop.
 func (m *AiInteraction) SetAppClass(value *string)() {
     err := m.GetBackingStore().Set("appClass", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAttachments sets the attachments property value. The attachments property
+// SetAttachments sets the attachments property value. The collection of documents attached to the interaction, such as cards and images.
 func (m *AiInteraction) SetAttachments(value []AiInteractionAttachmentable)() {
     err := m.GetBackingStore().Set("attachments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBody sets the body property value. The body property
+// SetBody sets the body property value. The body of the message, including the text of the body and its body type.
 func (m *AiInteraction) SetBody(value ItemBodyable)() {
     err := m.GetBackingStore().Set("body", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContexts sets the contexts property value. The contexts property
+// SetContexts sets the contexts property value. The identifer that maps to all contexts associated with an interaction.
 func (m *AiInteraction) SetContexts(value []AiInteractionContextable)() {
     err := m.GetBackingStore().Set("contexts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConversationType sets the conversationType property value. The conversationType property
+// SetConversationType sets the conversationType property value. The type of the conversation. For example, appchat or bizchat.
 func (m *AiInteraction) SetConversationType(value *string)() {
     err := m.GetBackingStore().Set("conversationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The time when the interaction was created.
 func (m *AiInteraction) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEtag sets the etag property value. The etag property
+// SetEtag sets the etag property value. The timestamp of when the interaction was last modified.
 func (m *AiInteraction) SetEtag(value *string)() {
     err := m.GetBackingStore().Set("etag", value)
     if err != nil {
@@ -541,35 +541,35 @@ func (m *AiInteraction) SetInteractionType(value *AiInteractionType)() {
         panic(err)
     }
 }
-// SetLinks sets the links property value. The links property
+// SetLinks sets the links property value. The collection of links that appear in the interaction.
 func (m *AiInteraction) SetLinks(value []AiInteractionLinkable)() {
     err := m.GetBackingStore().Set("links", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocale sets the locale property value. The locale property
+// SetLocale sets the locale property value. The locale of the sender.
 func (m *AiInteraction) SetLocale(value *string)() {
     err := m.GetBackingStore().Set("locale", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMentions sets the mentions property value. The mentions property
+// SetMentions sets the mentions property value. The collection of the entities that were mentioned in the interaction, including users, bots, and so on.
 func (m *AiInteraction) SetMentions(value []AiInteractionMentionable)() {
     err := m.GetBackingStore().Set("mentions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestId sets the requestId property value. The requestId property
+// SetRequestId sets the requestId property value. The identifier that groups a user prompt with its Copilot response.
 func (m *AiInteraction) SetRequestId(value *string)() {
     err := m.GetBackingStore().Set("requestId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSessionId sets the sessionId property value. The sessionId property
+// SetSessionId sets the sessionId property value. The thread ID or conversation identifier that maps to all Copilot sessions for the user.
 func (m *AiInteraction) SetSessionId(value *string)() {
     err := m.GetBackingStore().Set("sessionId", value)
     if err != nil {
