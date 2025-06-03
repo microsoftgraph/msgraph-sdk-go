@@ -40,7 +40,7 @@ func (m *SwapShiftsChangeRequest) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetRecipientShiftId gets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
+// GetRecipientShiftId gets the recipientShiftId property value. The recipient's Shift ID
 // returns a *string when successful
 func (m *SwapShiftsChangeRequest) GetRecipientShiftId()(*string) {
     val, err := m.GetBackingStore().Get("recipientShiftId")
@@ -66,7 +66,7 @@ func (m *SwapShiftsChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetRecipientShiftId sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
+// SetRecipientShiftId sets the recipientShiftId property value. The recipient's Shift ID
 func (m *SwapShiftsChangeRequest) SetRecipientShiftId(value *string)() {
     err := m.GetBackingStore().Set("recipientShiftId", value)
     if err != nil {

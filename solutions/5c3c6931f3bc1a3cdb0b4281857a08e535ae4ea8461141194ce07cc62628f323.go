@@ -21,7 +21,7 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDri
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilderGetQueryParameters a collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+// BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilderGetQueryParameters a collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
 type BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     }
     return nil
 }
-// Get a collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+// Get a collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
 // returns a DriveRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRestoreArtifactable, error) {
@@ -128,7 +128,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+// ToGetRequestInformation a collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

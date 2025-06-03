@@ -14,7 +14,7 @@ import (
 type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters get driveProtectionUnitsBulkAdditionJobs from solutions
+// BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters get a driveProtectionUnitsBulkAdditionJob object by the ID associated with a oneDriveForBusinessProtectionPolicy.
 type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,9 +43,12 @@ func NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUni
     urlParams["request-raw-url"] = rawUrl
     return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get driveProtectionUnitsBulkAdditionJobs from solutions
+// Get get a driveProtectionUnitsBulkAdditionJob object by the ID associated with a oneDriveForBusinessProtectionPolicy.
 // returns a DriveProtectionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveprotectionunitsbulkadditionjobs-get?view=graph-rest-1.0
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveProtectionUnitsBulkAdditionJobable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUn
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveProtectionUnitsBulkAdditionJobable), nil
 }
-// ToGetRequestInformation get driveProtectionUnitsBulkAdditionJobs from solutions
+// ToGetRequestInformation get a driveProtectionUnitsBulkAdditionJob object by the ID associated with a oneDriveForBusinessProtectionPolicy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

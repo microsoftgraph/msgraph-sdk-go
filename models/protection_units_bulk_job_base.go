@@ -45,7 +45,7 @@ func CreateProtectionUnitsBulkJobBaseFromDiscriminatorValue(parseNode i878a80d23
     }
     return NewProtectionUnitsBulkJobBase(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The identity of person who created the job.
 // returns a IdentitySetable when successful
 func (m *ProtectionUnitsBulkJobBase) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -57,7 +57,7 @@ func (m *ProtectionUnitsBulkJobBase) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The time of creation of the job.
 // returns a *Time when successful
 func (m *ProtectionUnitsBulkJobBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -69,7 +69,7 @@ func (m *ProtectionUnitsBulkJobBase) GetCreatedDateTime()(*i336074805fc853987abe
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the protection units bulk addition job.
 // returns a *string when successful
 func (m *ProtectionUnitsBulkJobBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -81,7 +81,7 @@ func (m *ProtectionUnitsBulkJobBase) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. Error details containing resource resolution failures, if any.
 // returns a PublicErrorable when successful
 func (m *ProtectionUnitsBulkJobBase) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -169,7 +169,7 @@ func (m *ProtectionUnitsBulkJobBase) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity of the person who last modified the job.
 // returns a IdentitySetable when successful
 func (m *ProtectionUnitsBulkJobBase) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -181,7 +181,7 @@ func (m *ProtectionUnitsBulkJobBase) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of the last modification made to the job.
 // returns a *Time when successful
 func (m *ProtectionUnitsBulkJobBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -256,42 +256,42 @@ func (m *ProtectionUnitsBulkJobBase) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The identity of person who created the job.
 func (m *ProtectionUnitsBulkJobBase) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The time of creation of the job.
 func (m *ProtectionUnitsBulkJobBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the protection units bulk addition job.
 func (m *ProtectionUnitsBulkJobBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. Error details containing resource resolution failures, if any.
 func (m *ProtectionUnitsBulkJobBase) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity of the person who last modified the job.
 func (m *ProtectionUnitsBulkJobBase) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp of the last modification made to the job.
 func (m *ProtectionUnitsBulkJobBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

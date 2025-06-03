@@ -49,7 +49,7 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
     }
     return NewScheduleChangeRequest(), nil
 }
-// GetAssignedTo gets the assignedTo property value. The assignedTo property
+// GetAssignedTo gets the assignedTo property value. Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.
 // returns a *ScheduleChangeRequestActor when successful
 func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -147,7 +147,7 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetManagerActionDateTime gets the managerActionDateTime property value. The managerActionDateTime property
+// GetManagerActionDateTime gets the managerActionDateTime property value. The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ScheduleChangeRequest) GetManagerActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("managerActionDateTime")
@@ -159,7 +159,7 @@ func (m *ScheduleChangeRequest) GetManagerActionDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetManagerActionMessage gets the managerActionMessage property value. The managerActionMessage property
+// GetManagerActionMessage gets the managerActionMessage property value. The message sent by the manager regarding the scheduleChangeRequest. Optional.
 // returns a *string when successful
 func (m *ScheduleChangeRequest) GetManagerActionMessage()(*string) {
     val, err := m.GetBackingStore().Get("managerActionMessage")
@@ -171,7 +171,7 @@ func (m *ScheduleChangeRequest) GetManagerActionMessage()(*string) {
     }
     return nil
 }
-// GetManagerUserId gets the managerUserId property value. The managerUserId property
+// GetManagerUserId gets the managerUserId property value. The user ID of the manager who approved or declined the scheduleChangeRequest.
 // returns a *string when successful
 func (m *ScheduleChangeRequest) GetManagerUserId()(*string) {
     val, err := m.GetBackingStore().Get("managerUserId")
@@ -183,7 +183,7 @@ func (m *ScheduleChangeRequest) GetManagerUserId()(*string) {
     }
     return nil
 }
-// GetSenderDateTime gets the senderDateTime property value. The senderDateTime property
+// GetSenderDateTime gets the senderDateTime property value. The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ScheduleChangeRequest) GetSenderDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("senderDateTime")
@@ -195,7 +195,7 @@ func (m *ScheduleChangeRequest) GetSenderDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetSenderMessage gets the senderMessage property value. The senderMessage property
+// GetSenderMessage gets the senderMessage property value. The message sent by the sender of the scheduleChangeRequest. Optional.
 // returns a *string when successful
 func (m *ScheduleChangeRequest) GetSenderMessage()(*string) {
     val, err := m.GetBackingStore().Get("senderMessage")
@@ -207,7 +207,7 @@ func (m *ScheduleChangeRequest) GetSenderMessage()(*string) {
     }
     return nil
 }
-// GetSenderUserId gets the senderUserId property value. The senderUserId property
+// GetSenderUserId gets the senderUserId property value. The user ID of the sender of the scheduleChangeRequest.
 // returns a *string when successful
 func (m *ScheduleChangeRequest) GetSenderUserId()(*string) {
     val, err := m.GetBackingStore().Get("senderUserId")
@@ -219,7 +219,7 @@ func (m *ScheduleChangeRequest) GetSenderUserId()(*string) {
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.
 // returns a *ScheduleChangeState when successful
 func (m *ScheduleChangeRequest) GetState()(*ScheduleChangeState) {
     val, err := m.GetBackingStore().Get("state")
@@ -265,56 +265,56 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAssignedTo sets the assignedTo property value. The assignedTo property
+// SetAssignedTo sets the assignedTo property value. Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.
 func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequestActor)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManagerActionDateTime sets the managerActionDateTime property value. The managerActionDateTime property
+// SetManagerActionDateTime sets the managerActionDateTime property value. The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ScheduleChangeRequest) SetManagerActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("managerActionDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManagerActionMessage sets the managerActionMessage property value. The managerActionMessage property
+// SetManagerActionMessage sets the managerActionMessage property value. The message sent by the manager regarding the scheduleChangeRequest. Optional.
 func (m *ScheduleChangeRequest) SetManagerActionMessage(value *string)() {
     err := m.GetBackingStore().Set("managerActionMessage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManagerUserId sets the managerUserId property value. The managerUserId property
+// SetManagerUserId sets the managerUserId property value. The user ID of the manager who approved or declined the scheduleChangeRequest.
 func (m *ScheduleChangeRequest) SetManagerUserId(value *string)() {
     err := m.GetBackingStore().Set("managerUserId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSenderDateTime sets the senderDateTime property value. The senderDateTime property
+// SetSenderDateTime sets the senderDateTime property value. The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ScheduleChangeRequest) SetSenderDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("senderDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSenderMessage sets the senderMessage property value. The senderMessage property
+// SetSenderMessage sets the senderMessage property value. The message sent by the sender of the scheduleChangeRequest. Optional.
 func (m *ScheduleChangeRequest) SetSenderMessage(value *string)() {
     err := m.GetBackingStore().Set("senderMessage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSenderUserId sets the senderUserId property value. The senderUserId property
+// SetSenderUserId sets the senderUserId property value. The user ID of the sender of the scheduleChangeRequest.
 func (m *ScheduleChangeRequest) SetSenderUserId(value *string)() {
     err := m.GetBackingStore().Set("senderUserId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.
 func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

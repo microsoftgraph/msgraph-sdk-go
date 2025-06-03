@@ -24,7 +24,7 @@ func NewOneDriveForBusinessRestoreSession()(*OneDriveForBusinessRestoreSession) 
 func CreateOneDriveForBusinessRestoreSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOneDriveForBusinessRestoreSession(), nil
 }
-// GetDriveRestoreArtifacts gets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+// GetDriveRestoreArtifacts gets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
 // returns a []DriveRestoreArtifactable when successful
 func (m *OneDriveForBusinessRestoreSession) GetDriveRestoreArtifacts()([]DriveRestoreArtifactable) {
     val, err := m.GetBackingStore().Get("driveRestoreArtifacts")
@@ -36,7 +36,7 @@ func (m *OneDriveForBusinessRestoreSession) GetDriveRestoreArtifacts()([]DriveRe
     }
     return nil
 }
-// GetDriveRestoreArtifactsBulkAdditionRequests gets the driveRestoreArtifactsBulkAdditionRequests property value. The driveRestoreArtifactsBulkAdditionRequests property
+// GetDriveRestoreArtifactsBulkAdditionRequests gets the driveRestoreArtifactsBulkAdditionRequests property value. A collection of user mailboxes and destination details that can be used to restore a OneDrive for work or school drive.
 // returns a []DriveRestoreArtifactsBulkAdditionRequestable when successful
 func (m *OneDriveForBusinessRestoreSession) GetDriveRestoreArtifactsBulkAdditionRequests()([]DriveRestoreArtifactsBulkAdditionRequestable) {
     val, err := m.GetBackingStore().Get("driveRestoreArtifactsBulkAdditionRequests")
@@ -118,14 +118,14 @@ func (m *OneDriveForBusinessRestoreSession) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetDriveRestoreArtifacts sets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+// SetDriveRestoreArtifacts sets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
 func (m *OneDriveForBusinessRestoreSession) SetDriveRestoreArtifacts(value []DriveRestoreArtifactable)() {
     err := m.GetBackingStore().Set("driveRestoreArtifacts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDriveRestoreArtifactsBulkAdditionRequests sets the driveRestoreArtifactsBulkAdditionRequests property value. The driveRestoreArtifactsBulkAdditionRequests property
+// SetDriveRestoreArtifactsBulkAdditionRequests sets the driveRestoreArtifactsBulkAdditionRequests property value. A collection of user mailboxes and destination details that can be used to restore a OneDrive for work or school drive.
 func (m *OneDriveForBusinessRestoreSession) SetDriveRestoreArtifactsBulkAdditionRequests(value []DriveRestoreArtifactsBulkAdditionRequestable)() {
     err := m.GetBackingStore().Set("driveRestoreArtifactsBulkAdditionRequests", value)
     if err != nil {

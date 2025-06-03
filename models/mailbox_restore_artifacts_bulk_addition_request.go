@@ -22,7 +22,7 @@ func NewMailboxRestoreArtifactsBulkAdditionRequest()(*MailboxRestoreArtifactsBul
 func CreateMailboxRestoreArtifactsBulkAdditionRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailboxRestoreArtifactsBulkAdditionRequest(), nil
 }
-// GetDirectoryObjectIds gets the directoryObjectIds property value. The directoryObjectIds property
+// GetDirectoryObjectIds gets the directoryObjectIds property value. The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation.
 // returns a []string when successful
 func (m *MailboxRestoreArtifactsBulkAdditionRequest) GetDirectoryObjectIds()([]string) {
     val, err := m.GetBackingStore().Get("directoryObjectIds")
@@ -72,7 +72,7 @@ func (m *MailboxRestoreArtifactsBulkAdditionRequest) GetFieldDeserializers()(map
     }
     return res
 }
-// GetMailboxes gets the mailboxes property value. The mailboxes property
+// GetMailboxes gets the mailboxes property value. The list of email addresses that are added to the corresponding Exchange restore session in a bulk operation.
 // returns a []string when successful
 func (m *MailboxRestoreArtifactsBulkAdditionRequest) GetMailboxes()([]string) {
     val, err := m.GetBackingStore().Get("mailboxes")
@@ -104,14 +104,14 @@ func (m *MailboxRestoreArtifactsBulkAdditionRequest) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetDirectoryObjectIds sets the directoryObjectIds property value. The directoryObjectIds property
+// SetDirectoryObjectIds sets the directoryObjectIds property value. The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation.
 func (m *MailboxRestoreArtifactsBulkAdditionRequest) SetDirectoryObjectIds(value []string)() {
     err := m.GetBackingStore().Set("directoryObjectIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailboxes sets the mailboxes property value. The mailboxes property
+// SetMailboxes sets the mailboxes property value. The list of email addresses that are added to the corresponding Exchange restore session in a bulk operation.
 func (m *MailboxRestoreArtifactsBulkAdditionRequest) SetMailboxes(value []string)() {
     err := m.GetBackingStore().Set("mailboxes", value)
     if err != nil {
