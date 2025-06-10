@@ -121,6 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameTitleRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.

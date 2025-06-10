@@ -124,6 +124,7 @@ func (m *ItemOperationsRichLongRunningOperationItemRequestBuilder) ToDeleteReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the status of a rich long-running operation on a site or a list.

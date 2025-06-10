@@ -121,6 +121,7 @@ func (m *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.

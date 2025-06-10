@@ -134,6 +134,7 @@ func (m *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) ToDe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.

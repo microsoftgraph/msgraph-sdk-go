@@ -127,6 +127,7 @@ func (m *ReportSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Co
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the tenant-level settings for Microsoft 365 reports.

@@ -131,6 +131,7 @@ func (m *ItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuild
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation to indicate which terms are related to the current term as either pinned or reused.

@@ -89,7 +89,7 @@ func (m *ItemOnenoteResourcesItemContentRequestBuilder) ToGetRequestInformation(
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the content stream

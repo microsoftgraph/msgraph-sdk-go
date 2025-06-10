@@ -131,6 +131,7 @@ func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionIte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation version information for a document set version created by a user.

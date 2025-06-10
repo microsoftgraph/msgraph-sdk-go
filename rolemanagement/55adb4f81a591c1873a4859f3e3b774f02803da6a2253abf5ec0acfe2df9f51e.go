@@ -154,6 +154,7 @@ func (m *DirectoryRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation in PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.

@@ -130,6 +130,7 @@ func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) ToDe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the specified learningContent resource which represents the metadata of the specified provider's ingested content.

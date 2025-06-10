@@ -134,6 +134,7 @@ func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the metadata for a specific version of a ListItem.

@@ -122,6 +122,7 @@ func (m *SubscribedSkuItemRequestBuilder) ToDeleteRequestInformation(ctx context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get a specific commercial subscription that an organization has acquired.

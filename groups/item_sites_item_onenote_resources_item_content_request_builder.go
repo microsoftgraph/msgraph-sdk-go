@@ -112,6 +112,7 @@ func (m *ItemSitesItemOnenoteResourcesItemContentRequestBuilder) ToDeleteRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the content stream
@@ -122,7 +123,7 @@ func (m *ItemSitesItemOnenoteResourcesItemContentRequestBuilder) ToGetRequestInf
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the content stream

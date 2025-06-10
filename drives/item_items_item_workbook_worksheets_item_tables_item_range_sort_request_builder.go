@@ -121,6 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRangeSortRequestBuilder) T
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the worksheet containing the current range. Read-only.

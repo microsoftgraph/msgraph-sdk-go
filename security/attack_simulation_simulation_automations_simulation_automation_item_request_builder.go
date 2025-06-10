@@ -129,6 +129,7 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get an attack simulation automation for a tenant.

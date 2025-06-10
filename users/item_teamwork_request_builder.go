@@ -139,6 +139,7 @@ func (m *ItemTeamworkRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.

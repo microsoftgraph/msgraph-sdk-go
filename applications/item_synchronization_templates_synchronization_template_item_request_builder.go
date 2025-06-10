@@ -129,6 +129,7 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation preconfigured synchronization settings for a particular application.

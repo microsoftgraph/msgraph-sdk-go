@@ -151,6 +151,7 @@ func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) ToDeleteRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the calendars in the calendar group. Navigation property. Read-only. Nullable.

@@ -137,6 +137,7 @@ func (m *ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuil
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.

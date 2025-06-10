@@ -130,6 +130,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation.

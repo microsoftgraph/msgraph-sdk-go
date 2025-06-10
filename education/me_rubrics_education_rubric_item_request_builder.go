@@ -130,6 +130,7 @@ func (m *MeRubricsEducationRubricItemRequestBuilder) ToDeleteRequestInformation(
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of an educationRubric object. Only teachers and students can perform this operation.

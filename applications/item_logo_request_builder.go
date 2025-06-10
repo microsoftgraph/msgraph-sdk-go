@@ -111,6 +111,7 @@ func (m *ItemLogoRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the main logo for the application. Not nullable.
@@ -121,7 +122,7 @@ func (m *ItemLogoRequestBuilder) ToGetRequestInformation(ctx context.Context, re
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the main logo for the application. Not nullable.
@@ -132,6 +133,7 @@ func (m *ItemLogoRequestBuilder) ToPutRequestInformation(ctx context.Context, bo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

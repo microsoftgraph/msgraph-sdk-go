@@ -141,6 +141,7 @@ func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) ToDeleteRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of all sets available in the term store. This relationship can only be used to load a specific term set.

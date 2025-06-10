@@ -121,6 +121,7 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDevic
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation user experience analytics appHealth Application Performance by App Version Device Id

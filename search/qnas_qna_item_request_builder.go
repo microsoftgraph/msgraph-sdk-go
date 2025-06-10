@@ -130,6 +130,7 @@ func (m *QnasQnaItemRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a qna object.

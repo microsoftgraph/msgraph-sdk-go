@@ -115,6 +115,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsItemContentRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a serviceAnnouncementAttachment object.
@@ -125,7 +126,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsItemContentRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the attachment content.

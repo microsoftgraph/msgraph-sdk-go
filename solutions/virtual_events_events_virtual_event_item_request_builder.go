@@ -146,6 +146,7 @@ func (m *VirtualEventsEventsVirtualEventItemRequestBuilder) ToDeleteRequestInfor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get events from solutions

@@ -146,6 +146,7 @@ func (m *EntitlementManagementRoleAssignmentSchedulesUnifiedRoleAssignmentSchedu
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation schedules for active role assignment operations.

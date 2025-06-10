@@ -127,6 +127,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get a siteRestoreArtifactsBulkAdditionRequest object by its id, associated with a sharePointRestoreSession.

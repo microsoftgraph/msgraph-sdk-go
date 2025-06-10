@@ -127,6 +127,7 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) ToDeleteRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a conversationMember from a chat.

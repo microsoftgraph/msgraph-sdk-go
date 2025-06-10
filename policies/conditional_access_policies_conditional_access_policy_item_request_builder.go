@@ -121,6 +121,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the custom rules that define an access scenario.

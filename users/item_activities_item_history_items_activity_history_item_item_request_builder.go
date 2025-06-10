@@ -126,6 +126,7 @@ func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.

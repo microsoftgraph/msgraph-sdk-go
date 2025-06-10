@@ -131,6 +131,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the formatting of a chart series, which includes fill and line formatting. Read-only.

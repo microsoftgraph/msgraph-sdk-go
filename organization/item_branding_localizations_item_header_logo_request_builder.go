@@ -111,6 +111,7 @@ func (m *ItemBrandingLocalizationsItemHeaderLogoRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
@@ -121,7 +122,7 @@ func (m *ItemBrandingLocalizationsItemHeaderLogoRequestBuilder) ToGetRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff")
+    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation a company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
@@ -132,6 +133,7 @@ func (m *ItemBrandingLocalizationsItemHeaderLogoRequestBuilder) ToPutRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, *contentType)
     return requestInfo, nil
 }

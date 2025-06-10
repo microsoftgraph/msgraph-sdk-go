@@ -131,6 +131,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the fill format of the current chart data label. Read-only.

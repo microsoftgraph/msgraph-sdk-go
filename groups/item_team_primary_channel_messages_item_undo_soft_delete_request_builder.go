@@ -60,6 +60,7 @@ func (m *ItemTeamPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilder) ToPostR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

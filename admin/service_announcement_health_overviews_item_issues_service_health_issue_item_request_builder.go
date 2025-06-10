@@ -126,6 +126,7 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of issues that happened on the service, with detailed information for each issue.

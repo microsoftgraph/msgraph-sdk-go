@@ -121,6 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexLegendRequestBu
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the legend for the chart. Read-only.

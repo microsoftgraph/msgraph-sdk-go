@@ -121,6 +121,7 @@ func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list all resource-specific permission grants of a user.

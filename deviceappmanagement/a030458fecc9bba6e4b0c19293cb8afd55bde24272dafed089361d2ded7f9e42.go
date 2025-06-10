@@ -121,6 +121,7 @@ func (m *MobileAppsItemGraphWin32LobAppContentVersionsItemContainedAppsMobileCon
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of contained apps in a MobileLobApp acting as a package.

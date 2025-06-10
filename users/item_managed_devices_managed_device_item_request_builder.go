@@ -211,6 +211,7 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ToDeleteRequestInfor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the managed devices associated with the user.

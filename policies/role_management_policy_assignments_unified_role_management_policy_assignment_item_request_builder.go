@@ -129,6 +129,7 @@ func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentIte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership.

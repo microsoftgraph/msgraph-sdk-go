@@ -114,6 +114,7 @@ func (m *ItemPhotosItemValueContentRequestBuilder) ToDeleteRequestInformation(ct
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a list of profilePhoto objects.
@@ -124,7 +125,7 @@ func (m *ItemPhotosItemValueContentRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the unique identifier for an entity. Read-only.
@@ -135,6 +136,7 @@ func (m *ItemPhotosItemValueContentRequestBuilder) ToPutRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

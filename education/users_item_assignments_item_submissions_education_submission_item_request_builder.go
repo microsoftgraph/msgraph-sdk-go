@@ -161,6 +161,7 @@ func (m *UsersItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation once published, there's a submission object for each student representing their work and grade. Read-only. Nullable.

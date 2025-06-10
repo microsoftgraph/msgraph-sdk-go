@@ -127,6 +127,7 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToDeleteReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read a directory extension definition represented by an extensionProperty object.

@@ -121,6 +121,7 @@ func (m *ItemSitesItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestB
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of columns that are required by this content type.

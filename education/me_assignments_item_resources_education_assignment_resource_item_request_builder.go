@@ -121,6 +121,7 @@ func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.

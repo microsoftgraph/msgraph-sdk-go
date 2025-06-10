@@ -139,6 +139,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of Exchange protection policies in the tenant.

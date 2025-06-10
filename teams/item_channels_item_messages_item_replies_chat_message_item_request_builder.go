@@ -139,6 +139,7 @@ func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) ToDel
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a single message or a message reply in a channel or a chat.

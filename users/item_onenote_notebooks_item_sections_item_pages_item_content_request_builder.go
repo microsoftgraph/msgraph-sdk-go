@@ -112,6 +112,7 @@ func (m *ItemOnenoteNotebooksItemSectionsItemPagesItemContentRequestBuilder) ToD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the page's HTML content.
@@ -122,7 +123,7 @@ func (m *ItemOnenoteNotebooksItemSectionsItemPagesItemContentRequestBuilder) ToG
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the page's HTML content.

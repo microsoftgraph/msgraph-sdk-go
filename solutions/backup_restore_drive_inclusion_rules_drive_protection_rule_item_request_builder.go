@@ -121,6 +121,7 @@ func (m *BackupRestoreDriveInclusionRulesDriveProtectionRuleItemRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of drive inclusion rules applied to the tenant.

@@ -111,6 +111,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
@@ -121,7 +122,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToGetRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff")
+    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
@@ -132,6 +133,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToPutRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, *contentType)
     return requestInfo, nil
 }

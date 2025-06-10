@@ -121,6 +121,7 @@ func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of site inclusion rules applied to the tenant.

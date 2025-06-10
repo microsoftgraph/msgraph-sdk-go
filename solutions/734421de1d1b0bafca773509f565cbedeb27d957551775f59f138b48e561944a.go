@@ -21,7 +21,7 @@ type VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceRep
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetQueryParameters the attendance reports of an online meeting. Read-only.
+// VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetQueryParameters get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
 type VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,9 +78,12 @@ func (m *VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanc
     }
     return nil
 }
-// Get the attendance reports of an online meeting. Read-only.
+// Get get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
 // returns a MeetingAttendanceReportable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
 func (m *VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,9 +129,10 @@ func (m *VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanc
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the attendance reports of an online meeting. Read-only.
+// ToGetRequestInformation get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -126,6 +126,7 @@ func (m *ManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBu
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation zero or more policys already applied on the registered app when it last synchronized with managment service.

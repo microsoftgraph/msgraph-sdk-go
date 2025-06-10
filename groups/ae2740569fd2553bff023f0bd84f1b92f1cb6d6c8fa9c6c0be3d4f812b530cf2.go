@@ -126,6 +126,7 @@ func (m *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsHorizo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of horizontal sections on the SharePoint page.

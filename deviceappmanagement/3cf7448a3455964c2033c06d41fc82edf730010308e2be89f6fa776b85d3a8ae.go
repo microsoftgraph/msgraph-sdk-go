@@ -121,6 +121,7 @@ func (m *TargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicy
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation navigation property to list of inclusion and exclusion groups to which the policy is deployed.

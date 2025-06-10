@@ -126,6 +126,7 @@ func (m *ItemTeamPrimaryChannelMessagesItemHostedContentsChatMessageHostedConten
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation content in a message hosted by Microsoft Teams - for example, images or code snippets.

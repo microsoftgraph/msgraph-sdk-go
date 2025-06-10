@@ -141,6 +141,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToDeleteRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation nullable. Specifies a list of directoryObject resources that feature is enabled for.
@@ -165,6 +166,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToPostRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

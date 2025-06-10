@@ -141,6 +141,7 @@ func (m *EntitlementManagementResourceRequestsItemCatalogResourcesAccessPackageR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation access package resources in this catalog.

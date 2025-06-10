@@ -151,6 +151,7 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToDeleteRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.

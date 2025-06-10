@@ -131,6 +131,7 @@ func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) ToDel
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.

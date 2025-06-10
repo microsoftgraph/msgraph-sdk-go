@@ -121,6 +121,7 @@ func (m *UserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalytic
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the metric values for the user experience analytics category. Read-only.

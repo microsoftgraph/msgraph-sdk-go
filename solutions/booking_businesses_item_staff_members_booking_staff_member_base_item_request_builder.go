@@ -130,6 +130,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.

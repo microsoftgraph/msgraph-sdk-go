@@ -166,6 +166,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation all items contained in the list.

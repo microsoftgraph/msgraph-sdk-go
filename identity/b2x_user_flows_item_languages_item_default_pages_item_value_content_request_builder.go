@@ -114,6 +114,7 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the values in a userFlowLanguagePage object for a language in a user flow. These values are shown to a user during a user journey defined by a user flow.
@@ -124,7 +125,7 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the unique identifier for an entity. Read-only.
@@ -135,6 +136,7 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

@@ -111,6 +111,7 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToDe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation optional contact picture. You can get or set a photo for a contact.
@@ -121,7 +122,7 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToGe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation optional contact picture. You can get or set a photo for a contact.
@@ -132,6 +133,7 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToPu
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

@@ -117,6 +117,7 @@ func (m *ItemManagerRefRequestBuilder) ToDeleteRequestInformation(ctx context.Co
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
@@ -138,6 +139,7 @@ func (m *ItemManagerRefRequestBuilder) ToPutRequestInformation(ctx context.Conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

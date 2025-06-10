@@ -135,6 +135,7 @@ func (m *VppTokensVppTokenItemRequestBuilder) ToDeleteRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read properties and relationships of the vppToken object.

@@ -130,6 +130,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared.

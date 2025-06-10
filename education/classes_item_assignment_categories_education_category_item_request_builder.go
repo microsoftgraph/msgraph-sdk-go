@@ -127,6 +127,7 @@ func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) ToD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.

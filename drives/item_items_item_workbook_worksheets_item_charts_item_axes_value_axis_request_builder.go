@@ -141,6 +141,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the value axis in an axis. Read-only.

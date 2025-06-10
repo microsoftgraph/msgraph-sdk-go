@@ -131,6 +131,7 @@ func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) ToDeleteRequestInformat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the working time schedule entity associated with the solution.

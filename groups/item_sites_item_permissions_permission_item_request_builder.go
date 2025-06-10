@@ -126,6 +126,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the permissions associated with the site. Nullable.

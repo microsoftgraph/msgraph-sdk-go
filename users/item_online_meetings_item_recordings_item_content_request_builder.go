@@ -112,6 +112,7 @@ func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) ToDeleteRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the content of the recording. Read-only.
@@ -122,7 +123,7 @@ func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) ToGetRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the content of the recording. Read-only.

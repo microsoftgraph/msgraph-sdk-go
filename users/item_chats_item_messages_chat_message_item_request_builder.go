@@ -141,6 +141,7 @@ func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of all the messages in the chat. Nullable.

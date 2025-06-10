@@ -114,6 +114,7 @@ func (m *ItemOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
@@ -124,7 +125,7 @@ func (m *ItemOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToG
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the time-aligned metadata of the utterances in the transcript. Read-only.
@@ -135,6 +136,7 @@ func (m *ItemOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToP
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

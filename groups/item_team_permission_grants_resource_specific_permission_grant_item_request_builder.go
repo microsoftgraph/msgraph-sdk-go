@@ -121,6 +121,7 @@ func (m *ItemTeamPermissionGrantsResourceSpecificPermissionGrantItemRequestBuild
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of permissions granted to apps to access the team.

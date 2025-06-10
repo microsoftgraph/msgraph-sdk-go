@@ -111,6 +111,7 @@ func (m *ItemOnlineMeetingsItemAttendeeReportRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the content stream of the attendee report of a Microsoft Teams live event. Read-only.
@@ -121,7 +122,7 @@ func (m *ItemOnlineMeetingsItemAttendeeReportRequestBuilder) ToGetRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the content stream of the attendee report of a Microsoft Teams live event. Read-only.
@@ -132,6 +133,7 @@ func (m *ItemOnlineMeetingsItemAttendeeReportRequestBuilder) ToPutRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

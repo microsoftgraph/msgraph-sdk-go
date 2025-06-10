@@ -146,6 +146,7 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.

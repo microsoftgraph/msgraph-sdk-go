@@ -126,6 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of all the rows in the table. Read-only.

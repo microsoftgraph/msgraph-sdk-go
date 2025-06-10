@@ -126,6 +126,7 @@ func (m *ItemChatsItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of all the tabs in the chat. Nullable.

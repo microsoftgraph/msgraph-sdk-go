@@ -136,6 +136,7 @@ func (m *FileStorageContainersItemRecycleBinRequestBuilder) ToDeleteRequestInfor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation recycle bin of the fileStorageContainer. Read-only.

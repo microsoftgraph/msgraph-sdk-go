@@ -111,6 +111,7 @@ func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToDelet
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the time-aligned metadata of the utterances in the transcript. Read-only.
@@ -121,7 +122,7 @@ func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToGetRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the time-aligned metadata of the utterances in the transcript. Read-only.
@@ -132,6 +133,7 @@ func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToPutRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

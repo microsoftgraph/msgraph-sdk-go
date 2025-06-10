@@ -149,6 +149,7 @@ func (m *ItemPresenceRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation set a presence status message for a user. An optional expiration date and time can be supplied.

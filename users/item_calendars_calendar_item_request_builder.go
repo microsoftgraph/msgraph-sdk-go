@@ -151,6 +151,7 @@ func (m *ItemCalendarsCalendarItemRequestBuilder) ToDeleteRequestInformation(ctx
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the user's calendars. Read-only. Nullable.

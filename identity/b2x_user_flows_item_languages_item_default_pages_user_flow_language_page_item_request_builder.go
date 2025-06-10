@@ -126,6 +126,7 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesUserFlowLanguagePageItemReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.

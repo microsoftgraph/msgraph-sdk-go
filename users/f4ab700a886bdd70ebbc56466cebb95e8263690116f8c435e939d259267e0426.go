@@ -102,6 +102,7 @@ func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthentica
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents a platform credential instance registered to a user on Mac OS.

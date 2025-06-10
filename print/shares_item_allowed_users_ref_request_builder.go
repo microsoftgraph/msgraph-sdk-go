@@ -144,6 +144,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) ToDeleteRequestInformation(ctx
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
@@ -168,6 +169,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

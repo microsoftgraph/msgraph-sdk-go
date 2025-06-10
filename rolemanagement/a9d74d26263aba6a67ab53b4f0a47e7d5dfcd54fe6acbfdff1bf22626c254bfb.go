@@ -156,6 +156,7 @@ func (m *EntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmen
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation requests for active role assignments to principals through PIM.

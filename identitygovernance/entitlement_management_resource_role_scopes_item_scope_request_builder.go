@@ -126,6 +126,7 @@ func (m *EntitlementManagementResourceRoleScopesItemScopeRequestBuilder) ToDelet
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get scope from identityGovernance

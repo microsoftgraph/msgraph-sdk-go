@@ -212,6 +212,7 @@ func (m *TeamItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of the specified team.

@@ -114,6 +114,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the list of attachments associated with a service message.
@@ -124,7 +125,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) ToGetR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the zip file that contains all attachments for a message.
@@ -135,6 +136,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) ToPutR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

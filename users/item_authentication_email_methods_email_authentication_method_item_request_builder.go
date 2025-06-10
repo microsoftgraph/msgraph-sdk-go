@@ -127,6 +127,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the email address registered to a user for authentication.

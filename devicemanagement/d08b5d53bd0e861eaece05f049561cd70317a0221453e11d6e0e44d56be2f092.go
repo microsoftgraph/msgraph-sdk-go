@@ -121,6 +121,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceUserExperienceAnaly
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation user experience analytics appHealth OS version Performance

@@ -131,6 +131,7 @@ func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) ToDeleteReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of previous versions of the list item.

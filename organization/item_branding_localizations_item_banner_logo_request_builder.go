@@ -117,6 +117,7 @@ func (m *ItemBrandingLocalizationsItemBannerLogoRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.
@@ -127,7 +128,7 @@ func (m *ItemBrandingLocalizationsItemBannerLogoRequestBuilder) ToGetRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff")
+    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation update the properties of an organizationalBrandingLocalization object for a specific localization.
@@ -138,6 +139,7 @@ func (m *ItemBrandingLocalizationsItemBannerLogoRequestBuilder) ToPutRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, *contentType)
     return requestInfo, nil
 }

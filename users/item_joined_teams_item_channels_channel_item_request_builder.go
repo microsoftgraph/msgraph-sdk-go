@@ -176,6 +176,7 @@ func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) ToDeleteRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of channels and messages associated with the team.

@@ -121,6 +121,7 @@ func (m *ItemPlannerPlansItemBucketsItemTasksItemBucketTaskBoardFormatRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.

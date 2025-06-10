@@ -126,6 +126,7 @@ func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation entry-point to Planner resource that might exist for a Unified Group.

@@ -144,6 +144,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
@@ -168,6 +169,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) ToPostRequestInf
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

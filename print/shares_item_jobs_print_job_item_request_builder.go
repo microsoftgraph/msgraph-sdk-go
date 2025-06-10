@@ -151,6 +151,7 @@ func (m *SharesItemJobsPrintJobItemRequestBuilder) ToDeleteRequestInformation(ct
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of jobs that are queued for printing by the printer/printerShare.

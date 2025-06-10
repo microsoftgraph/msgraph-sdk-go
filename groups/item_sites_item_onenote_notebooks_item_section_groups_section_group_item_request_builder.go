@@ -141,6 +141,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBu
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the section groups in the notebook. Read-only. Nullable.

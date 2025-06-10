@@ -144,6 +144,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) ToDeleteRequestInformation(ctx conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the educationUser resources associated with an educationSchool.
@@ -168,6 +169,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) ToPostRequestInformation(ctx context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

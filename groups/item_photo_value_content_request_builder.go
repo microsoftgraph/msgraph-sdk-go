@@ -111,6 +111,7 @@ func (m *ItemPhotoValueContentRequestBuilder) ToDeleteRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the group's profile photo
@@ -121,7 +122,7 @@ func (m *ItemPhotoValueContentRequestBuilder) ToGetRequestInformation(ctx contex
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the group's profile photo
@@ -132,6 +133,7 @@ func (m *ItemPhotoValueContentRequestBuilder) ToPutRequestInformation(ctx contex
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

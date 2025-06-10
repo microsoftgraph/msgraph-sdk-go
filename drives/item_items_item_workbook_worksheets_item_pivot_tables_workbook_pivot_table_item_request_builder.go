@@ -126,6 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of piot tables that are part of the worksheet.

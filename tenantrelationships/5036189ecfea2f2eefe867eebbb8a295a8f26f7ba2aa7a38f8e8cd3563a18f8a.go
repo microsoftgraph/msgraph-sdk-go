@@ -121,6 +121,7 @@ func (m *DelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServic
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation contains the management details of a service in the customer tenant that's managed by delegated administration.
