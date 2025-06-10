@@ -129,6 +129,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation data source entity for groups associated with the custodian.

@@ -121,6 +121,7 @@ func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthent
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation names and descriptions of all valid authentication method modes in the system.

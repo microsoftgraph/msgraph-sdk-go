@@ -126,6 +126,7 @@ func (m *Microsoft365AppsRequestBuilder) ToDeleteRequestInformation(ctx context.
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a container for the Microsoft 365 apps admin functionality.

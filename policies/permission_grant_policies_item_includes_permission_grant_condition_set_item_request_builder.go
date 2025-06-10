@@ -124,6 +124,7 @@ func (m *PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation condition sets that are included in this permission grant policy. Automatically expanded on GET.

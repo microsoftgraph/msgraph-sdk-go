@@ -124,6 +124,7 @@ func (m *EngagementAsyncOperationsEngagementAsyncOperationItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get an engagementAsyncOperation to track a long-running operation request.

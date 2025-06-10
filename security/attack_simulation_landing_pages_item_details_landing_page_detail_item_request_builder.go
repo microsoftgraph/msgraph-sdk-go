@@ -121,6 +121,7 @@ func (m *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuil
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the detail information for a landing page associated with a simulation during its creation.

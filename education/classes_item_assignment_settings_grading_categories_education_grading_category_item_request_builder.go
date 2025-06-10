@@ -124,6 +124,7 @@ func (m *ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation when set, enables users to weight assignments differently when computing a class average grade.

@@ -126,6 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridline
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.

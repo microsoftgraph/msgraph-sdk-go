@@ -121,6 +121,7 @@ func (m *CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilder) ToDeleteR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of segments involved in the session. Read-only. Nullable.

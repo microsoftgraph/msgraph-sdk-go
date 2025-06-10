@@ -141,6 +141,7 @@ func (m *BucketsItemTasksPlannerTaskItemRequestBuilder) ToDeleteRequestInformati
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Nullable. The collection of tasks in the bucket.

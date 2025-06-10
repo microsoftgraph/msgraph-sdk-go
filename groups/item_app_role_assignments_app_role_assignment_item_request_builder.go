@@ -124,6 +124,7 @@ func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) ToDeleteRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the app roles granted to a group for an application. Supports $expand.

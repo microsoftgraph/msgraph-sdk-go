@@ -129,6 +129,7 @@ func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder)
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a virtualEventSession object.  Currently, the following virtual event types are supported: - virtualEventTownhall- virtualEventWebinar

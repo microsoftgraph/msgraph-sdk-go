@@ -111,6 +111,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the bulk upload operation for the job.
@@ -121,7 +122,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToGetR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the bulk upload operation for the job.
@@ -132,6 +133,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToPutR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

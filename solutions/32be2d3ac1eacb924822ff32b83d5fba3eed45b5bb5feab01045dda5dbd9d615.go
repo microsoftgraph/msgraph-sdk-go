@@ -126,6 +126,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of restore points and destination details that can be used to restore Exchange mailboxes.

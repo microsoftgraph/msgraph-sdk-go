@@ -97,6 +97,7 @@ func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuild
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the FIDO2 security keys registered to a user for authentication.

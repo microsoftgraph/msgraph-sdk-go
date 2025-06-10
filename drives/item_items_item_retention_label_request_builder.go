@@ -127,6 +127,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) ToDeleteRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation information about retention label and settings enforced on the driveItem. Read-write.

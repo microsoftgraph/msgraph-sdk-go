@@ -126,6 +126,7 @@ func (m *ManagedDevicesItemWindowsProtectionStateRequestBuilder) ToDeleteRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the device protection status. This property is read-only.

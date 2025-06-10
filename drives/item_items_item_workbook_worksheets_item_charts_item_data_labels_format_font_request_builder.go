@@ -121,6 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFontReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.

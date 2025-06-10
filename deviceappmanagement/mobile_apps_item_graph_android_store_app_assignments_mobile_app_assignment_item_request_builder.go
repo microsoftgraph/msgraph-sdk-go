@@ -121,6 +121,7 @@ func (m *MobileAppsItemGraphAndroidStoreAppAssignmentsMobileAppAssignmentItemReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of group assignments for this mobile app.

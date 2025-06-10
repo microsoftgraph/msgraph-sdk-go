@@ -136,6 +136,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the contacts in the folder. Navigation property. Read-only. Nullable.

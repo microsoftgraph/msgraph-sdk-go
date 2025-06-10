@@ -121,6 +121,7 @@ func (m *ItemMailFoldersItemMessageRulesMessageRuleItemRequestBuilder) ToDeleteR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of rules that apply to the user's Inbox folder.

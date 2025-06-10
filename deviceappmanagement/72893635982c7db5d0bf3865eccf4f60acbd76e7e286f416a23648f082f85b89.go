@@ -121,6 +121,7 @@ func (m *MdmWindowsInformationProtectionPoliciesItemAssignmentsTargetedManagedAp
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation navigation property to list of security groups targeted for policy.

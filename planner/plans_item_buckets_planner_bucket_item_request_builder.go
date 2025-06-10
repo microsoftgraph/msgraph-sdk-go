@@ -126,6 +126,7 @@ func (m *PlansItemBucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Nullable. Collection of buckets in the plan.

@@ -126,6 +126,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToDeleteRequestInformatio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation when set, the grading rubric attached to this assignment.

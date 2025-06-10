@@ -126,6 +126,7 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.

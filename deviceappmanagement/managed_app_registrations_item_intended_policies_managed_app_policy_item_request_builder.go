@@ -126,6 +126,7 @@ func (m *ManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestB
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation zero or more policies admin intended for the app as of now.

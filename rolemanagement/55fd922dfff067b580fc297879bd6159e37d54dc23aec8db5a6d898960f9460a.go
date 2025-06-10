@@ -141,6 +141,7 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesUnifiedRoleEligibi
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation instances for role eligibility requests.

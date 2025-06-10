@@ -142,6 +142,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents how customers can manage their data, whether and for how long to retain or delete it.

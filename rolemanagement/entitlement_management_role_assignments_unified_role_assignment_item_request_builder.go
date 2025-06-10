@@ -141,6 +141,7 @@ func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation resource to grant access to users or groups.

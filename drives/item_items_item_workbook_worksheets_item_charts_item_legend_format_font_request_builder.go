@@ -121,6 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFontRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.

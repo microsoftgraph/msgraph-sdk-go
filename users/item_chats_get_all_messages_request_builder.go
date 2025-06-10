@@ -13,7 +13,7 @@ import (
 type ItemChatsGetAllMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemChatsGetAllMessagesRequestBuilderGetQueryParameters get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+// ItemChatsGetAllMessagesRequestBuilderGetQueryParameters get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 type ItemChatsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ func NewItemChatsGetAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+// Get get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 // returns a ItemChatsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -80,7 +80,7 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ItemChatsGetAllMessagesResponseable), nil
 }
-// GetAsGetAllMessagesGetResponse get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+// GetAsGetAllMessagesGetResponse get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a ItemChatsGetAllMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,7 +103,7 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(c
     }
     return res.(ItemChatsGetAllMessagesGetResponseable), nil
 }
-// ToGetRequestInformation get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+// ToGetRequestInformation get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful
 func (m *ItemChatsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

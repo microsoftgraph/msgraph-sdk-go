@@ -130,6 +130,7 @@ func (m *GroupSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.

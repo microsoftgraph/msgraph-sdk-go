@@ -121,6 +121,7 @@ func (m *ItemPlannerPlansItemDetailsRequestBuilder) ToDeleteRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Nullable. Extra details about the plan.

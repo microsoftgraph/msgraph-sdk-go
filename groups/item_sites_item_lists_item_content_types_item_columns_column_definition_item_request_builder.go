@@ -126,6 +126,7 @@ func (m *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of column definitions for this content type.

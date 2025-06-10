@@ -121,6 +121,7 @@ func (m *CallRecordsItemOrganizer_v2RequestBuilder) ToDeleteRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation identity of the organizer of the call. This relationship is expanded by default in callRecord methods.

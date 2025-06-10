@@ -131,6 +131,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFillRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the fill format of an object, which includes background formating information. Read-only.

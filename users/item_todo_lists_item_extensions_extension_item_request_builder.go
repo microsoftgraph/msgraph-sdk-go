@@ -121,6 +121,7 @@ func (m *ItemTodoListsItemExtensionsExtensionItemRequestBuilder) ToDeleteRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of open extensions defined for the task list. Nullable.

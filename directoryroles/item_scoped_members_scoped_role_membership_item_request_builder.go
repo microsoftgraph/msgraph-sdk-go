@@ -121,6 +121,7 @@ func (m *ItemScopedMembersScopedRoleMembershipItemRequestBuilder) ToDeleteReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation members of this directory role that are scoped to administrative units. Read-only. Nullable.

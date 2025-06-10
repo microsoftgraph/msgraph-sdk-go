@@ -121,6 +121,7 @@ func (m *ItemTeamPrimaryChannelAllMembersConversationMemberItemRequestBuilder) T
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of membership records associated with the channel, including both direct and indirect members of shared channels.

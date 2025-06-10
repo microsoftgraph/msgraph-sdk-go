@@ -129,6 +129,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) ToDe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.

@@ -94,6 +94,7 @@ func (m *ItemMessagesItemAttachmentsAttachmentItemRequestBuilder) ToDeleteReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the fileAttachment and itemAttachment attachments for the message.

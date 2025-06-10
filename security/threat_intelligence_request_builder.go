@@ -191,6 +191,7 @@ func (m *ThreatIntelligenceRequestBuilder) ToDeleteRequestInformation(ctx contex
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get threatIntelligence from security

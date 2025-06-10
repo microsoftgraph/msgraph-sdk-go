@@ -121,6 +121,7 @@ func (m *BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder) T
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of site protection units in the tenant.

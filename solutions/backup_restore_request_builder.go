@@ -229,6 +229,7 @@ func (m *BackupRestoreRequestBuilder) ToDeleteRequestInformation(ctx context.Con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the serviceStatus of the Microsoft 365 Backup Storage service in a tenant.

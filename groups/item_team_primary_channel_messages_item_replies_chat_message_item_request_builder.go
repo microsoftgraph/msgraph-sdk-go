@@ -136,6 +136,7 @@ func (m *ItemTeamPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder)
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation replies for a specified message. Supports $expand for channel messages.

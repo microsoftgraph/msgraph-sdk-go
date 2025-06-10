@@ -146,6 +146,7 @@ func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) ToDeleteRequestInform
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the tasks in this task list. Read-only. Nullable.

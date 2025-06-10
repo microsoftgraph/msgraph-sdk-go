@@ -141,6 +141,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) ToDeleteRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation default synchronization schema for the jobs based on this template.

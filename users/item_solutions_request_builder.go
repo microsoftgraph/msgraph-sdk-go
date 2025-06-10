@@ -121,6 +121,7 @@ func (m *ItemSolutionsRequestBuilder) ToDeleteRequestInformation(ctx context.Con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the identifier that relates the user to the working time schedule triggers. Read-Only. Nullable

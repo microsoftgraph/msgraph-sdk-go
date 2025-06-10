@@ -121,6 +121,7 @@ func (m *ItemGetByPathWithPathOnenoteRequestBuilder) ToDeleteRequestInformation(
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation calls the OneNote service for notebook related operations.

@@ -121,6 +121,7 @@ func (m *OnlineMeetingsItemAttendanceReportsItemAttendanceRecordsAttendanceRecor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list of attendance records of an attendance report. Read-only.

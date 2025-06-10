@@ -131,6 +131,7 @@ func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToDeleteReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation indicates which terms have been pinned or reused directly under the set.

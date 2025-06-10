@@ -121,6 +121,7 @@ func (m *TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the current status of a user's response to a company's customizable terms of use agreement.

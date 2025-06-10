@@ -141,6 +141,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of all the columns in the table. Read-only.

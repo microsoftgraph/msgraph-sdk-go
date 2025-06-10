@@ -186,6 +186,7 @@ func (m *ItemCalendarEventsEventItemRequestBuilder) ToDeleteRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the events in the calendar. Navigation property. Read-only.

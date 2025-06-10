@@ -94,6 +94,7 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) ToDeleteRequestInformatio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation deleted workflows in your lifecycle workflows instance.

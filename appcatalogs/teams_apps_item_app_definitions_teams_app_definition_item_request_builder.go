@@ -129,6 +129,7 @@ func (m *TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the details for each version of the app.

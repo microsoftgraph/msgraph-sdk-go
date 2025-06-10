@@ -126,6 +126,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionIte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation contains the collection of directories and all of their objects.

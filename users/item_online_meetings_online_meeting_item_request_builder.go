@@ -151,6 +151,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToDeleteRequestInfor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation information about a meeting, including the URL used to join a meeting, the attendees list, and the description.

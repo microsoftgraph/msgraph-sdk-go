@@ -126,6 +126,7 @@ func (m *EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.

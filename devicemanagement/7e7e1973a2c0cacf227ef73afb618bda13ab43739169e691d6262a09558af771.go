@@ -121,6 +121,7 @@ func (m *UserExperienceAnalyticsMetricHistoryUserExperienceAnalyticsMetricHistor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation user experience analytics metric history

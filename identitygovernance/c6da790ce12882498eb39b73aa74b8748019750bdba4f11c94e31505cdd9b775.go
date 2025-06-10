@@ -121,6 +121,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsItemVersionsAgreementFileVersi
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.

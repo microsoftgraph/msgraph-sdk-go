@@ -131,6 +131,7 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) ToDeleteReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.

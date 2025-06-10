@@ -126,6 +126,7 @@ func (m *EntitlementManagementResourceEnvironmentsAccessPackageResourceEnvironme
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a reference to the geolocation environments in which a resource is located.

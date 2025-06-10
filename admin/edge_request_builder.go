@@ -126,6 +126,7 @@ func (m *EdgeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, req
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a container for Microsoft Edge resources. Read-only.

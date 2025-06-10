@@ -131,6 +131,7 @@ func (m *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) ToDelete
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the transcripts of an online meeting. Read-only.

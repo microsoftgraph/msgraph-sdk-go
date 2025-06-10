@@ -149,6 +149,7 @@ func (m *DirectoryRoleAssignmentScheduleInstancesUnifiedRoleAssignmentScheduleIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the instance of an active role assignment.

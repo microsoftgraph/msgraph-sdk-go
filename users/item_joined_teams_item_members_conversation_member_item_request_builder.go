@@ -121,6 +121,7 @@ func (m *ItemJoinedTeamsItemMembersConversationMemberItemRequestBuilder) ToDelet
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation members and owners of the team.

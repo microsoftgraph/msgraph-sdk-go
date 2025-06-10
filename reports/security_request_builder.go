@@ -136,6 +136,7 @@ func (m *SecurityRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents an abstract type that contains resources for attack simulation and training reports.
