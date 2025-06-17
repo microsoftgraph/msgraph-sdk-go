@@ -42,7 +42,7 @@ func CreateDataSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     }
     return NewDataSet(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The user who created the data set. Read-only.
 // returns a IdentitySetable when successful
 func (m *DataSet) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -54,7 +54,7 @@ func (m *DataSet) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddd
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *DataSet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -66,7 +66,7 @@ func (m *DataSet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the data set.
 // returns a *string when successful
 func (m *DataSet) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -78,7 +78,7 @@ func (m *DataSet) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the data set. The name is unique with a maximum limit of 64 characters.
 // returns a *string when successful
 func (m *DataSet) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -168,28 +168,28 @@ func (m *DataSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The user who created the data set. Read-only.
 func (m *DataSet) SetCreatedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *DataSet) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the data set.
 func (m *DataSet) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the data set. The name is unique with a maximum limit of 64 characters.
 func (m *DataSet) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

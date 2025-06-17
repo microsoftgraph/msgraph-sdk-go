@@ -46,18 +46,6 @@ type ItemCalendarsItemEventsItemInstancesRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ItemCalendarsItemEventsItemInstancesRequestBuilderGetQueryParameters
 }
-// ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
-// returns a *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder when successful
-func (m *ItemCalendarsItemEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if eventId1 != "" {
-        urlTplParams["event%2Did1"] = eventId1
-    }
-    return NewItemCalendarsItemEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemCalendarsItemEventsItemInstancesRequestBuilderInternal instantiates a new ItemCalendarsItemEventsItemInstancesRequestBuilder and sets the default values.
 func NewItemCalendarsItemEventsItemInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemEventsItemInstancesRequestBuilder) {
     m := &ItemCalendarsItemEventsItemInstancesRequestBuilder{
@@ -70,11 +58,6 @@ func NewItemCalendarsItemEventsItemInstancesRequestBuilder(rawUrl string, reques
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemEventsItemInstancesRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-// returns a *ItemCalendarsItemEventsItemInstancesCountRequestBuilder when successful
-func (m *ItemCalendarsItemEventsItemInstancesRequestBuilder) Count()(*ItemCalendarsItemEventsItemInstancesCountRequestBuilder) {
-    return NewItemCalendarsItemEventsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
 // returns a *ItemCalendarsItemEventsItemInstancesDeltaRequestBuilder when successful

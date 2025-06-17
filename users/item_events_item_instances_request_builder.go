@@ -46,18 +46,6 @@ type ItemEventsItemInstancesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemEventsItemInstancesRequestBuilderGetQueryParameters
 }
-// ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
-// returns a *ItemEventsItemInstancesEventItemRequestBuilder when successful
-func (m *ItemEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemEventsItemInstancesEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if eventId1 != "" {
-        urlTplParams["event%2Did1"] = eventId1
-    }
-    return NewItemEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemEventsItemInstancesRequestBuilderInternal instantiates a new ItemEventsItemInstancesRequestBuilder and sets the default values.
 func NewItemEventsItemInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemInstancesRequestBuilder) {
     m := &ItemEventsItemInstancesRequestBuilder{
@@ -70,11 +58,6 @@ func NewItemEventsItemInstancesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsItemInstancesRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-// returns a *ItemEventsItemInstancesCountRequestBuilder when successful
-func (m *ItemEventsItemInstancesRequestBuilder) Count()(*ItemEventsItemInstancesCountRequestBuilder) {
-    return NewItemEventsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
 // returns a *ItemEventsItemInstancesDeltaRequestBuilder when successful
