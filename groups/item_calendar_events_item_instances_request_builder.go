@@ -46,18 +46,6 @@ type ItemCalendarEventsItemInstancesRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *ItemCalendarEventsItemInstancesRequestBuilderGetQueryParameters
 }
-// ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
-// returns a *ItemCalendarEventsItemInstancesEventItemRequestBuilder when successful
-func (m *ItemCalendarEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarEventsItemInstancesEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if eventId1 != "" {
-        urlTplParams["event%2Did1"] = eventId1
-    }
-    return NewItemCalendarEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemCalendarEventsItemInstancesRequestBuilderInternal instantiates a new ItemCalendarEventsItemInstancesRequestBuilder and sets the default values.
 func NewItemCalendarEventsItemInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsItemInstancesRequestBuilder) {
     m := &ItemCalendarEventsItemInstancesRequestBuilder{
@@ -70,11 +58,6 @@ func NewItemCalendarEventsItemInstancesRequestBuilder(rawUrl string, requestAdap
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarEventsItemInstancesRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-// returns a *ItemCalendarEventsItemInstancesCountRequestBuilder when successful
-func (m *ItemCalendarEventsItemInstancesRequestBuilder) Count()(*ItemCalendarEventsItemInstancesCountRequestBuilder) {
-    return NewItemCalendarEventsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
 // returns a *ItemCalendarEventsItemInstancesDeltaRequestBuilder when successful

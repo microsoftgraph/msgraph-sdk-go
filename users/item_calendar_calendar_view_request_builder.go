@@ -46,18 +46,6 @@ type ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCalendarCalendarViewRequestBuilderGetQueryParameters
 }
-// ByEventId provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-// returns a *ItemCalendarCalendarViewEventItemRequestBuilder when successful
-func (m *ItemCalendarCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarCalendarViewEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if eventId != "" {
-        urlTplParams["event%2Did"] = eventId
-    }
-    return NewItemCalendarCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemCalendarCalendarViewRequestBuilderInternal instantiates a new ItemCalendarCalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarCalendarViewRequestBuilder) {
     m := &ItemCalendarCalendarViewRequestBuilder{
@@ -70,11 +58,6 @@ func NewItemCalendarCalendarViewRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-// returns a *ItemCalendarCalendarViewCountRequestBuilder when successful
-func (m *ItemCalendarCalendarViewRequestBuilder) Count()(*ItemCalendarCalendarViewCountRequestBuilder) {
-    return NewItemCalendarCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
 // returns a *ItemCalendarCalendarViewDeltaRequestBuilder when successful

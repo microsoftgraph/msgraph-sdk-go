@@ -46,18 +46,6 @@ type ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilderGetQueryParameters
 }
-// ByEventId provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewEventItemRequestBuilder when successful
-func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if eventId != "" {
-        urlTplParams["event%2Did"] = eventId
-    }
-    return NewItemCalendarGroupsItemCalendarsItemCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilderInternal instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder{
@@ -70,11 +58,6 @@ func NewItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder(rawUrl str
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewCountRequestBuilder when successful
-func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemCalendarViewCountRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
 // returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilder when successful

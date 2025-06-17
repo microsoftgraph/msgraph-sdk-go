@@ -46,18 +46,6 @@ type ItemCalendarViewRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCalendarViewRequestBuilderGetQueryParameters
 }
-// ByEventId provides operations to manage the calendarView property of the microsoft.graph.user entity.
-// returns a *ItemCalendarViewEventItemRequestBuilder when successful
-func (m *ItemCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarViewEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if eventId != "" {
-        urlTplParams["event%2Did"] = eventId
-    }
-    return NewItemCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemCalendarViewRequestBuilderInternal instantiates a new ItemCalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewRequestBuilder) {
     m := &ItemCalendarViewRequestBuilder{
@@ -70,11 +58,6 @@ func NewItemCalendarViewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-// returns a *ItemCalendarViewCountRequestBuilder when successful
-func (m *ItemCalendarViewRequestBuilder) Count()(*ItemCalendarViewCountRequestBuilder) {
-    return NewItemCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
 // returns a *ItemCalendarViewDeltaRequestBuilder when successful

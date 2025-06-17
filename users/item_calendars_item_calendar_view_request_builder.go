@@ -46,18 +46,6 @@ type ItemCalendarsItemCalendarViewRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCalendarsItemCalendarViewRequestBuilderGetQueryParameters
 }
-// ByEventId provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-// returns a *ItemCalendarsItemCalendarViewEventItemRequestBuilder when successful
-func (m *ItemCalendarsItemCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarsItemCalendarViewEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if eventId != "" {
-        urlTplParams["event%2Did"] = eventId
-    }
-    return NewItemCalendarsItemCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemCalendarsItemCalendarViewRequestBuilderInternal instantiates a new ItemCalendarsItemCalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewRequestBuilder) {
     m := &ItemCalendarsItemCalendarViewRequestBuilder{
@@ -70,11 +58,6 @@ func NewItemCalendarsItemCalendarViewRequestBuilder(rawUrl string, requestAdapte
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-// returns a *ItemCalendarsItemCalendarViewCountRequestBuilder when successful
-func (m *ItemCalendarsItemCalendarViewRequestBuilder) Count()(*ItemCalendarsItemCalendarViewCountRequestBuilder) {
-    return NewItemCalendarsItemCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
 // returns a *ItemCalendarsItemCalendarViewDeltaRequestBuilder when successful
