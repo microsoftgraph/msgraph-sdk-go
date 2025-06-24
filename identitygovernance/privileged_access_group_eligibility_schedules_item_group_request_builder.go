@@ -14,7 +14,7 @@ import (
 type PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderGetQueryParameters references the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+// PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderGetQueryParameters references the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
 type PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewPrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get references the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+// Get references the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, error) {
@@ -68,7 +68,7 @@ func (m *PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilder) Get(c
 func (m *PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilder) ServiceProvisioningErrors()(*PrivilegedAccessGroupEligibilitySchedulesItemGroupServiceProvisioningErrorsRequestBuilder) {
     return NewPrivilegedAccessGroupEligibilitySchedulesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation references the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+// ToGetRequestInformation references the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

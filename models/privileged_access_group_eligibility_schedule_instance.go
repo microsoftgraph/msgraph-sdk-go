@@ -124,7 +124,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetFieldDeserializers
     }
     return res
 }
-// GetGroup gets the group property value. References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+// GetGroup gets the group property value. References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
 // returns a Groupable when successful
 func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetGroup()(Groupable) {
     val, err := m.GetBackingStore().Get("group")
@@ -136,7 +136,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetGroup()(Groupable)
     }
     return nil
 }
-// GetGroupId gets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
+// GetGroupId gets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).
 // returns a *string when successful
 func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
@@ -172,7 +172,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetPrincipal()(Direct
     }
     return nil
 }
-// GetPrincipalId gets the principalId property value. The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required. Supports $filter (eq).
+// GetPrincipalId gets the principalId property value. The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for Groups. Required. Supports $filter (eq).
 // returns a *string when successful
 func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
@@ -250,14 +250,14 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetEligibilitySchedul
         panic(err)
     }
 }
-// SetGroup sets the group property value. References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+// SetGroup sets the group property value. References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetGroup(value Groupable)() {
     err := m.GetBackingStore().Set("group", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGroupId sets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
+// SetGroupId sets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).
 func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetGroupId(value *string)() {
     err := m.GetBackingStore().Set("groupId", value)
     if err != nil {
@@ -278,7 +278,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetPrincipal(value Di
         panic(err)
     }
 }
-// SetPrincipalId sets the principalId property value. The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required. Supports $filter (eq).
+// SetPrincipalId sets the principalId property value. The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for Groups. Required. Supports $filter (eq).
 func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetPrincipalId(value *string)() {
     err := m.GetBackingStore().Set("principalId", value)
     if err != nil {

@@ -13,7 +13,7 @@ import (
 type PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters in PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+// PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters in PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
 type PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ func NewPrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithO
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get in PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+// Get in PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -81,7 +81,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWith
     }
     return res.(PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse in PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+// GetAsFilterByCurrentUserWithOnGetResponse in PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
 // returns a PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -104,7 +104,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWith
     }
     return res.(PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponseable), nil
 }
-// ToGetRequestInformation in PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+// ToGetRequestInformation in PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

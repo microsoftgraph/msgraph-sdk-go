@@ -102,7 +102,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetPolicyId()(*string) {
     }
     return nil
 }
-// GetRoleDefinitionId gets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+// GetRoleDefinitionId gets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for Groups membership and ownership, it's either member or owner. Supports $filter (eq).
 // returns a *string when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
@@ -114,7 +114,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
     }
     return nil
 }
-// GetScopeId gets the scopeId property value. The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
+// GetScopeId gets the scopeId property value. The identifier of the scope where the policy is assigned. Can be / for the tenant or a group ID. Required.
 // returns a *string when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
@@ -190,14 +190,14 @@ func (m *UnifiedRoleManagementPolicyAssignment) SetPolicyId(value *string)() {
         panic(err)
     }
 }
-// SetRoleDefinitionId sets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+// SetRoleDefinitionId sets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for Groups membership and ownership, it's either member or owner. Supports $filter (eq).
 func (m *UnifiedRoleManagementPolicyAssignment) SetRoleDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("roleDefinitionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeId sets the scopeId property value. The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
+// SetScopeId sets the scopeId property value. The identifier of the scope where the policy is assigned. Can be / for the tenant or a group ID. Required.
 func (m *UnifiedRoleManagementPolicyAssignment) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
     if err != nil {
