@@ -158,6 +158,11 @@ func (m *PartnersBillingReconciliationRequestBuilder) ToPatchRequestInformation(
     }
     return requestInfo, nil
 }
+// Unbilled provides operations to manage the unbilled property of the microsoft.graph.partners.billing.billingReconciliation entity.
+// returns a *PartnersBillingReconciliationUnbilledRequestBuilder when successful
+func (m *PartnersBillingReconciliationRequestBuilder) Unbilled()(*PartnersBillingReconciliationUnbilledRequestBuilder) {
+    return NewPartnersBillingReconciliationUnbilledRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *PartnersBillingReconciliationRequestBuilder when successful
 func (m *PartnersBillingReconciliationRequestBuilder) WithUrl(rawUrl string)(*PartnersBillingReconciliationRequestBuilder) {

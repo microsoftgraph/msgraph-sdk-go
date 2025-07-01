@@ -250,7 +250,7 @@ func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchron
     }
     return nil
 }
-// GetPublicKeyInfrastructure gets the publicKeyInfrastructure property value. The publicKeyInfrastructure property
+// GetPublicKeyInfrastructure gets the publicKeyInfrastructure property value. The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
 // returns a PublicKeyInfrastructureRootable when successful
 func (m *Directory) GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable) {
     val, err := m.GetBackingStore().Get("publicKeyInfrastructure")
@@ -433,7 +433,7 @@ func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySync
         panic(err)
     }
 }
-// SetPublicKeyInfrastructure sets the publicKeyInfrastructure property value. The publicKeyInfrastructure property
+// SetPublicKeyInfrastructure sets the publicKeyInfrastructure property value. The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
 func (m *Directory) SetPublicKeyInfrastructure(value PublicKeyInfrastructureRootable)() {
     err := m.GetBackingStore().Set("publicKeyInfrastructure", value)
     if err != nil {

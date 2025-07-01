@@ -25,7 +25,7 @@ func NewCertificateAuthorityDetail()(*CertificateAuthorityDetail) {
 func CreateCertificateAuthorityDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateAuthorityDetail(), nil
 }
-// GetCertificate gets the certificate property value. The certificate property
+// GetCertificate gets the certificate property value. The public key of the certificate authority.
 // returns a []byte when successful
 func (m *CertificateAuthorityDetail) GetCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("certificate")
@@ -37,7 +37,7 @@ func (m *CertificateAuthorityDetail) GetCertificate()([]byte) {
     }
     return nil
 }
-// GetCertificateAuthorityType gets the certificateAuthorityType property value. The certificateAuthorityType property
+// GetCertificateAuthorityType gets the certificateAuthorityType property value. The type of certificate authority. The possible values are: root, intermediate, unknownFutureValue. Supports $filter (eq).
 // returns a *CertificateAuthorityType when successful
 func (m *CertificateAuthorityDetail) GetCertificateAuthorityType()(*CertificateAuthorityType) {
     val, err := m.GetBackingStore().Get("certificateAuthorityType")
@@ -49,7 +49,7 @@ func (m *CertificateAuthorityDetail) GetCertificateAuthorityType()(*CertificateA
     }
     return nil
 }
-// GetCertificateRevocationListUrl gets the certificateRevocationListUrl property value. The certificateRevocationListUrl property
+// GetCertificateRevocationListUrl gets the certificateRevocationListUrl property value. The URL to check if the certificate is revoked.
 // returns a *string when successful
 func (m *CertificateAuthorityDetail) GetCertificateRevocationListUrl()(*string) {
     val, err := m.GetBackingStore().Get("certificateRevocationListUrl")
@@ -61,7 +61,7 @@ func (m *CertificateAuthorityDetail) GetCertificateRevocationListUrl()(*string) 
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the certificate authority was created.
 // returns a *Time when successful
 func (m *CertificateAuthorityDetail) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -85,7 +85,7 @@ func (m *CertificateAuthorityDetail) GetDeltaCertificateRevocationListUrl()(*str
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the certificate authority.
 // returns a *string when successful
 func (m *CertificateAuthorityDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -97,7 +97,7 @@ func (m *CertificateAuthorityDetail) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.
 // returns a *Time when successful
 func (m *CertificateAuthorityDetail) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -225,7 +225,7 @@ func (m *CertificateAuthorityDetail) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIsIssuerHintEnabled gets the isIssuerHintEnabled property value. The isIssuerHintEnabled property
+// GetIsIssuerHintEnabled gets the isIssuerHintEnabled property value. Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.
 // returns a *bool when successful
 func (m *CertificateAuthorityDetail) GetIsIssuerHintEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isIssuerHintEnabled")
@@ -237,7 +237,7 @@ func (m *CertificateAuthorityDetail) GetIsIssuerHintEnabled()(*bool) {
     }
     return nil
 }
-// GetIssuer gets the issuer property value. The issuer property
+// GetIssuer gets the issuer property value. The issuer of the certificate authority.
 // returns a *string when successful
 func (m *CertificateAuthorityDetail) GetIssuer()(*string) {
     val, err := m.GetBackingStore().Get("issuer")
@@ -249,7 +249,7 @@ func (m *CertificateAuthorityDetail) GetIssuer()(*string) {
     }
     return nil
 }
-// GetIssuerSubjectKeyIdentifier gets the issuerSubjectKeyIdentifier property value. The issuerSubjectKeyIdentifier property
+// GetIssuerSubjectKeyIdentifier gets the issuerSubjectKeyIdentifier property value. The subject key identifier of certificate authority.
 // returns a *string when successful
 func (m *CertificateAuthorityDetail) GetIssuerSubjectKeyIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("issuerSubjectKeyIdentifier")
@@ -261,7 +261,7 @@ func (m *CertificateAuthorityDetail) GetIssuerSubjectKeyIdentifier()(*string) {
     }
     return nil
 }
-// GetThumbprint gets the thumbprint property value. The thumbprint property
+// GetThumbprint gets the thumbprint property value. The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).
 // returns a *string when successful
 func (m *CertificateAuthorityDetail) GetThumbprint()(*string) {
     val, err := m.GetBackingStore().Get("thumbprint")
@@ -348,28 +348,28 @@ func (m *CertificateAuthorityDetail) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetCertificate sets the certificate property value. The certificate property
+// SetCertificate sets the certificate property value. The public key of the certificate authority.
 func (m *CertificateAuthorityDetail) SetCertificate(value []byte)() {
     err := m.GetBackingStore().Set("certificate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCertificateAuthorityType sets the certificateAuthorityType property value. The certificateAuthorityType property
+// SetCertificateAuthorityType sets the certificateAuthorityType property value. The type of certificate authority. The possible values are: root, intermediate, unknownFutureValue. Supports $filter (eq).
 func (m *CertificateAuthorityDetail) SetCertificateAuthorityType(value *CertificateAuthorityType)() {
     err := m.GetBackingStore().Set("certificateAuthorityType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCertificateRevocationListUrl sets the certificateRevocationListUrl property value. The certificateRevocationListUrl property
+// SetCertificateRevocationListUrl sets the certificateRevocationListUrl property value. The URL to check if the certificate is revoked.
 func (m *CertificateAuthorityDetail) SetCertificateRevocationListUrl(value *string)() {
     err := m.GetBackingStore().Set("certificateRevocationListUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the certificate authority was created.
 func (m *CertificateAuthorityDetail) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -383,42 +383,42 @@ func (m *CertificateAuthorityDetail) SetDeltaCertificateRevocationListUrl(value 
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the certificate authority.
 func (m *CertificateAuthorityDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.
 func (m *CertificateAuthorityDetail) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsIssuerHintEnabled sets the isIssuerHintEnabled property value. The isIssuerHintEnabled property
+// SetIsIssuerHintEnabled sets the isIssuerHintEnabled property value. Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.
 func (m *CertificateAuthorityDetail) SetIsIssuerHintEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isIssuerHintEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuer sets the issuer property value. The issuer property
+// SetIssuer sets the issuer property value. The issuer of the certificate authority.
 func (m *CertificateAuthorityDetail) SetIssuer(value *string)() {
     err := m.GetBackingStore().Set("issuer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuerSubjectKeyIdentifier sets the issuerSubjectKeyIdentifier property value. The issuerSubjectKeyIdentifier property
+// SetIssuerSubjectKeyIdentifier sets the issuerSubjectKeyIdentifier property value. The subject key identifier of certificate authority.
 func (m *CertificateAuthorityDetail) SetIssuerSubjectKeyIdentifier(value *string)() {
     err := m.GetBackingStore().Set("issuerSubjectKeyIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThumbprint sets the thumbprint property value. The thumbprint property
+// SetThumbprint sets the thumbprint property value. The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).
 func (m *CertificateAuthorityDetail) SetThumbprint(value *string)() {
     err := m.GetBackingStore().Set("thumbprint", value)
     if err != nil {
