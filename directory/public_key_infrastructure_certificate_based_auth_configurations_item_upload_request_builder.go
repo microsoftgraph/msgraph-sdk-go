@@ -33,8 +33,11 @@ func NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadReque
     urlParams["request-raw-url"] = rawUrl
     return NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action upload
+// Post append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-1.0
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequestBuilder) Post(ctx context.Context, body PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadPostRequestBodyable, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequ
     }
     return nil
 }
-// ToPostRequestInformation invoke action upload
+// ToPostRequestInformation append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.
 // returns a *RequestInformation when successful
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequestBuilder) ToPostRequestInformation(ctx context.Context, body PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadPostRequestBodyable, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

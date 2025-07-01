@@ -283,6 +283,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCalendarSharingMessage(), nil
                     case "#microsoft.graph.call":
                         return NewCall(), nil
+                    case "#microsoft.graph.callEvent":
+                        return NewCallEvent(), nil
                     case "#microsoft.graph.callRecording":
                         return NewCallRecording(), nil
                     case "#microsoft.graph.callTranscript":
@@ -599,6 +601,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmailAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.emailFileAssessmentRequest":
                         return NewEmailFileAssessmentRequest(), nil
+                    case "#microsoft.graph.emergencyCallEvent":
+                        return NewEmergencyCallEvent(), nil
                     case "#microsoft.graph.employeeExperienceUser":
                         return NewEmployeeExperienceUser(), nil
                     case "#microsoft.graph.endpoint":

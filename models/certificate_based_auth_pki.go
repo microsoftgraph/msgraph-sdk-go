@@ -25,7 +25,7 @@ func NewCertificateBasedAuthPki()(*CertificateBasedAuthPki) {
 func CreateCertificateBasedAuthPkiFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateBasedAuthPki(), nil
 }
-// GetCertificateAuthorities gets the certificateAuthorities property value. The certificateAuthorities property
+// GetCertificateAuthorities gets the certificateAuthorities property value. The collection of certificate authorities contained in this public key infrastructure resource.
 // returns a []CertificateAuthorityDetailable when successful
 func (m *CertificateBasedAuthPki) GetCertificateAuthorities()([]CertificateAuthorityDetailable) {
     val, err := m.GetBackingStore().Get("certificateAuthorities")
@@ -37,7 +37,7 @@ func (m *CertificateBasedAuthPki) GetCertificateAuthorities()([]CertificateAutho
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the object. Maximum length is 256 characters.
 // returns a *string when successful
 func (m *CertificateBasedAuthPki) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -111,7 +111,7 @@ func (m *CertificateBasedAuthPki) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the object was created or last modified.
 // returns a *Time when successful
 func (m *CertificateBasedAuthPki) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -123,7 +123,7 @@ func (m *CertificateBasedAuthPki) GetLastModifiedDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. The status of any asynchronous jobs runs on the object which can be upload or delete.
 // returns a *string when successful
 func (m *CertificateBasedAuthPki) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
@@ -135,7 +135,7 @@ func (m *CertificateBasedAuthPki) GetStatus()(*string) {
     }
     return nil
 }
-// GetStatusDetails gets the statusDetails property value. The statusDetails property
+// GetStatusDetails gets the statusDetails property value. The status details of the upload/deleted operation of PKI (Public Key Infrastructure).
 // returns a *string when successful
 func (m *CertificateBasedAuthPki) GetStatusDetails()(*string) {
     val, err := m.GetBackingStore().Get("statusDetails")
@@ -191,35 +191,35 @@ func (m *CertificateBasedAuthPki) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCertificateAuthorities sets the certificateAuthorities property value. The certificateAuthorities property
+// SetCertificateAuthorities sets the certificateAuthorities property value. The collection of certificate authorities contained in this public key infrastructure resource.
 func (m *CertificateBasedAuthPki) SetCertificateAuthorities(value []CertificateAuthorityDetailable)() {
     err := m.GetBackingStore().Set("certificateAuthorities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the object. Maximum length is 256 characters.
 func (m *CertificateBasedAuthPki) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the object was created or last modified.
 func (m *CertificateBasedAuthPki) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. The status of any asynchronous jobs runs on the object which can be upload or delete.
 func (m *CertificateBasedAuthPki) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatusDetails sets the statusDetails property value. The statusDetails property
+// SetStatusDetails sets the statusDetails property value. The status details of the upload/deleted operation of PKI (Public Key Infrastructure).
 func (m *CertificateBasedAuthPki) SetStatusDetails(value *string)() {
     err := m.GetBackingStore().Set("statusDetails", value)
     if err != nil {

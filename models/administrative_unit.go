@@ -184,7 +184,7 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsMemberManagementRestricted gets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+// GetIsMemberManagementRestricted gets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. If not set, the default value is null and the default behavior is false. Use this property to define administrative units with roles that don't inherit from tenant-level administrators, and where the management of individual member objects is limited to administrators scoped to a restricted management administrative unit. This property is immutable and can't be changed later.  For more information on how to work with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
 // returns a *bool when successful
 func (m *AdministrativeUnit) GetIsMemberManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isMemberManagementRestricted")
@@ -375,7 +375,7 @@ func (m *AdministrativeUnit) SetExtensions(value []Extensionable)() {
         panic(err)
     }
 }
-// SetIsMemberManagementRestricted sets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+// SetIsMemberManagementRestricted sets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. If not set, the default value is null and the default behavior is false. Use this property to define administrative units with roles that don't inherit from tenant-level administrators, and where the management of individual member objects is limited to administrators scoped to a restricted management administrative unit. This property is immutable and can't be changed later.  For more information on how to work with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
 func (m *AdministrativeUnit) SetIsMemberManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isMemberManagementRestricted", value)
     if err != nil {

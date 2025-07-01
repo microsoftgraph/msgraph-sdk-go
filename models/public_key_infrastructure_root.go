@@ -22,7 +22,7 @@ func NewPublicKeyInfrastructureRoot()(*PublicKeyInfrastructureRoot) {
 func CreatePublicKeyInfrastructureRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPublicKeyInfrastructureRoot(), nil
 }
-// GetCertificateBasedAuthConfigurations gets the certificateBasedAuthConfigurations property value. The certificateBasedAuthConfigurations property
+// GetCertificateBasedAuthConfigurations gets the certificateBasedAuthConfigurations property value. The collection of public key infrastructure instances for the certificate-based authentication feature for users.
 // returns a []CertificateBasedAuthPkiable when successful
 func (m *PublicKeyInfrastructureRoot) GetCertificateBasedAuthConfigurations()([]CertificateBasedAuthPkiable) {
     val, err := m.GetBackingStore().Get("certificateBasedAuthConfigurations")
@@ -76,7 +76,7 @@ func (m *PublicKeyInfrastructureRoot) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCertificateBasedAuthConfigurations sets the certificateBasedAuthConfigurations property value. The certificateBasedAuthConfigurations property
+// SetCertificateBasedAuthConfigurations sets the certificateBasedAuthConfigurations property value. The collection of public key infrastructure instances for the certificate-based authentication feature for users.
 func (m *PublicKeyInfrastructureRoot) SetCertificateBasedAuthConfigurations(value []CertificateBasedAuthPkiable)() {
     err := m.GetBackingStore().Set("certificateBasedAuthConfigurations", value)
     if err != nil {
