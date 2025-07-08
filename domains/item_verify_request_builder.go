@@ -34,7 +34,7 @@ func NewItemVerifyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewItemVerifyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post validates the ownership of the domain.
+// Post validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
 // returns a Domainable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -57,7 +57,7 @@ func (m *ItemVerifyRequestBuilder) Post(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable), nil
 }
-// ToPostRequestInformation validates the ownership of the domain.
+// ToPostRequestInformation validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
 // returns a *RequestInformation when successful
 func (m *ItemVerifyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemVerifyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

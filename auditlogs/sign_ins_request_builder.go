@@ -61,6 +61,16 @@ func (m *SignInsRequestBuilder) BySignInId(signInId string)(*SignInsSignInItemRe
     }
     return NewSignInsSignInItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
+// ConfirmCompromised provides operations to call the confirmCompromised method.
+// returns a *SignInsConfirmCompromisedRequestBuilder when successful
+func (m *SignInsRequestBuilder) ConfirmCompromised()(*SignInsConfirmCompromisedRequestBuilder) {
+    return NewSignInsConfirmCompromisedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ConfirmSafe provides operations to call the confirmSafe method.
+// returns a *SignInsConfirmSafeRequestBuilder when successful
+func (m *SignInsRequestBuilder) ConfirmSafe()(*SignInsConfirmSafeRequestBuilder) {
+    return NewSignInsConfirmSafeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSignInsRequestBuilderInternal instantiates a new SignInsRequestBuilder and sets the default values.
 func NewSignInsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SignInsRequestBuilder) {
     m := &SignInsRequestBuilder{
@@ -78,6 +88,11 @@ func NewSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 // returns a *SignInsCountRequestBuilder when successful
 func (m *SignInsRequestBuilder) Count()(*SignInsCountRequestBuilder) {
     return NewSignInsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dismiss provides operations to call the dismiss method.
+// returns a *SignInsDismissRequestBuilder when successful
+func (m *SignInsRequestBuilder) Dismiss()(*SignInsDismissRequestBuilder) {
+    return NewSignInsDismissRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the Microsoft Entra user sign-ins for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Microsoft Entra ID default retention period are available.
 // returns a SignInCollectionResponseable when successful
