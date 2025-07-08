@@ -87,6 +87,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAccessReviewSet(), nil
                     case "#microsoft.graph.accessReviewStage":
                         return NewAccessReviewStage(), nil
+                    case "#microsoft.graph.activitiesContainer":
+                        return NewActivitiesContainer(), nil
                     case "#microsoft.graph.activityBasedTimeoutPolicy":
                         return NewActivityBasedTimeoutPolicy(), nil
                     case "#microsoft.graph.activityHistoryItem":
@@ -361,6 +363,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewContact(), nil
                     case "#microsoft.graph.contactFolder":
                         return NewContactFolder(), nil
+                    case "#microsoft.graph.contentActivity":
+                        return NewContentActivity(), nil
                     case "#microsoft.graph.contentSharingSession":
                         return NewContentSharingSession(), nil
                     case "#microsoft.graph.contentType":
@@ -395,6 +399,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataPolicyOperation":
                         return NewDataPolicyOperation(), nil
+                    case "#microsoft.graph.dataSecurityAndGovernance":
+                        return NewDataSecurityAndGovernance(), nil
                     case "#microsoft.graph.dayNote":
                         return NewDayNote(), nil
                     case "#microsoft.graph.defaultManagedAppProtection":
@@ -769,6 +775,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewItemInsights(), nil
                     case "#microsoft.graph.itemRetentionLabel":
                         return NewItemRetentionLabel(), nil
+                    case "#microsoft.graph.labelContentRight":
+                        return NewLabelContentRight(), nil
                     case "#microsoft.graph.landingPage":
                         return NewLandingPage(), nil
                     case "#microsoft.graph.landingPageDetail":
@@ -1397,6 +1405,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTemporaryAccessPassAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.tenantAppManagementPolicy":
                         return NewTenantAppManagementPolicy(), nil
+                    case "#microsoft.graph.tenantDataSecurityAndGovernance":
+                        return NewTenantDataSecurityAndGovernance(), nil
+                    case "#microsoft.graph.tenantProtectionScopeContainer":
+                        return NewTenantProtectionScopeContainer(), nil
                     case "#microsoft.graph.termsAndConditions":
                         return NewTermsAndConditions(), nil
                     case "#microsoft.graph.termsAndConditionsAcceptanceStatus":
@@ -1485,6 +1497,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUpdateRecordingStatusOperation(), nil
                     case "#microsoft.graph.urlAssessmentRequest":
                         return NewUrlAssessmentRequest(), nil
+                    case "#microsoft.graph.usageRightsIncluded":
+                        return NewUsageRightsIncluded(), nil
                     case "#microsoft.graph.usedInsight":
                         return NewUsedInsight(), nil
                     case "#microsoft.graph.user":
@@ -1493,6 +1507,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserActivity(), nil
                     case "#microsoft.graph.userConsentRequest":
                         return NewUserConsentRequest(), nil
+                    case "#microsoft.graph.userDataSecurityAndGovernance":
+                        return NewUserDataSecurityAndGovernance(), nil
                     case "#microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance":
                         return NewUserExperienceAnalyticsAppHealthApplicationPerformance(), nil
                     case "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails":
@@ -1549,6 +1565,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserInsightsSettings(), nil
                     case "#microsoft.graph.userInstallStateSummary":
                         return NewUserInstallStateSummary(), nil
+                    case "#microsoft.graph.userProtectionScopeContainer":
+                        return NewUserProtectionScopeContainer(), nil
                     case "#microsoft.graph.userRegistrationDetails":
                         return NewUserRegistrationDetails(), nil
                     case "#microsoft.graph.userScopeTeamsAppInstallation":

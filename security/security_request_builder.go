@@ -70,6 +70,11 @@ func NewSecurityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DataSecurityAndGovernance provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.
+// returns a *DataSecurityAndGovernanceRequestBuilder when successful
+func (m *SecurityRequestBuilder) DataSecurityAndGovernance()(*DataSecurityAndGovernanceRequestBuilder) {
+    return NewDataSecurityAndGovernanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get security
 // returns a Securityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

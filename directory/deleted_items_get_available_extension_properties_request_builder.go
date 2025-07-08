@@ -33,7 +33,7 @@ func NewDeletedItemsGetAvailableExtensionPropertiesRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsGetAvailableExtensionPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
+// Post return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 // Deprecated: This method is obsolete. Use PostAsGetAvailableExtensionPropertiesPostResponse instead.
 // returns a DeletedItemsGetAvailableExtensionPropertiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -57,7 +57,7 @@ func (m *DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) Post(ctx con
     }
     return res.(DeletedItemsGetAvailableExtensionPropertiesResponseable), nil
 }
-// PostAsGetAvailableExtensionPropertiesPostResponse return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
+// PostAsGetAvailableExtensionPropertiesPostResponse return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 // returns a DeletedItemsGetAvailableExtensionPropertiesPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -80,7 +80,7 @@ func (m *DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) PostAsGetAva
     }
     return res.(DeletedItemsGetAvailableExtensionPropertiesPostResponseable), nil
 }
-// ToPostRequestInformation return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
+// ToPostRequestInformation return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 // returns a *RequestInformation when successful
 func (m *DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeletedItemsGetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *DeletedItemsGetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

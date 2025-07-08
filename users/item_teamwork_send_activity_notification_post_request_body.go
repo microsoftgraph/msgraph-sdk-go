@@ -92,6 +92,16 @@ func (m *ItemTeamworkSendActivityNotificationPostRequestBody) GetFieldDeserializ
         }
         return nil
     }
+    res["iconId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIconId(val)
+        }
+        return nil
+    }
     res["previewText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -139,6 +149,18 @@ func (m *ItemTeamworkSendActivityNotificationPostRequestBody) GetFieldDeserializ
         return nil
     }
     return res
+}
+// GetIconId gets the iconId property value. The iconId property
+// returns a *string when successful
+func (m *ItemTeamworkSendActivityNotificationPostRequestBody) GetIconId()(*string) {
+    val, err := m.GetBackingStore().Get("iconId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreviewText gets the previewText property value. The previewText property
 // returns a ItemBodyable when successful
@@ -198,6 +220,12 @@ func (m *ItemTeamworkSendActivityNotificationPostRequestBody) Serialize(writer i
     }
     {
         err := writer.WriteInt64Value("chainId", m.GetChainId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("iconId", m.GetIconId())
         if err != nil {
             return err
         }
@@ -265,6 +293,13 @@ func (m *ItemTeamworkSendActivityNotificationPostRequestBody) SetChainId(value *
         panic(err)
     }
 }
+// SetIconId sets the iconId property value. The iconId property
+func (m *ItemTeamworkSendActivityNotificationPostRequestBody) SetIconId(value *string)() {
+    err := m.GetBackingStore().Set("iconId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPreviewText sets the previewText property value. The previewText property
 func (m *ItemTeamworkSendActivityNotificationPostRequestBody) SetPreviewText(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemBodyable)() {
     err := m.GetBackingStore().Set("previewText", value)
@@ -300,6 +335,7 @@ type ItemTeamworkSendActivityNotificationPostRequestBodyable interface {
     GetActivityType()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetChainId()(*int64)
+    GetIconId()(*string)
     GetPreviewText()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemBodyable)
     GetTeamsAppId()(*string)
     GetTemplateParameters()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValuePairable)
@@ -307,6 +343,7 @@ type ItemTeamworkSendActivityNotificationPostRequestBodyable interface {
     SetActivityType(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetChainId(value *int64)()
+    SetIconId(value *string)()
     SetPreviewText(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemBodyable)()
     SetTeamsAppId(value *string)()
     SetTemplateParameters(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValuePairable)()

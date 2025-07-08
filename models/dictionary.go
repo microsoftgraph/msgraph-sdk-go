@@ -35,6 +35,8 @@ func CreateDictionaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.customMetadataDictionary":
+                        return NewCustomMetadataDictionary(), nil
                     case "#microsoft.graph.fileStorageContainerCustomPropertyDictionary":
                         return NewFileStorageContainerCustomPropertyDictionary(), nil
                     case "#microsoft.graph.resultTemplateDictionary":

@@ -46,6 +46,18 @@ func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
     }
     return nil
 }
+// GetDataSecurityAndGovernance gets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+// returns a TenantDataSecurityAndGovernanceable when successful
+func (m *Security) GetDataSecurityAndGovernance()(TenantDataSecurityAndGovernanceable) {
+    val, err := m.GetBackingStore().Get("dataSecurityAndGovernance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TenantDataSecurityAndGovernanceable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,6 +85,16 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetAttackSimulation(val.(AttackSimulationRootable))
+        }
+        return nil
+    }
+    res["dataSecurityAndGovernance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTenantDataSecurityAndGovernanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDataSecurityAndGovernance(val.(TenantDataSecurityAndGovernanceable))
         }
         return nil
     }
@@ -186,6 +208,12 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("dataSecurityAndGovernance", m.GetDataSecurityAndGovernance())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSecureScoreControlProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecureScoreControlProfiles()))
         for i, v := range m.GetSecureScoreControlProfiles() {
@@ -238,6 +266,13 @@ func (m *Security) SetAttackSimulation(value AttackSimulationRootable)() {
         panic(err)
     }
 }
+// SetDataSecurityAndGovernance sets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+func (m *Security) SetDataSecurityAndGovernance(value TenantDataSecurityAndGovernanceable)() {
+    err := m.GetBackingStore().Set("dataSecurityAndGovernance", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
     err := m.GetBackingStore().Set("secureScoreControlProfiles", value)
@@ -264,11 +299,13 @@ type Securityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlerts()([]Alertable)
     GetAttackSimulation()(AttackSimulationRootable)
+    GetDataSecurityAndGovernance()(TenantDataSecurityAndGovernanceable)
     GetSecureScoreControlProfiles()([]SecureScoreControlProfileable)
     GetSecureScores()([]SecureScoreable)
     GetSubjectRightsRequests()([]SubjectRightsRequestable)
     SetAlerts(value []Alertable)()
     SetAttackSimulation(value AttackSimulationRootable)()
+    SetDataSecurityAndGovernance(value TenantDataSecurityAndGovernanceable)()
     SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)()
     SetSecureScores(value []SecureScoreable)()
     SetSubjectRightsRequests(value []SubjectRightsRequestable)()
