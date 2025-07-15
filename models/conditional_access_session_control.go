@@ -41,6 +41,8 @@ func CreateConditionalAccessSessionControlFromDiscriminatorValue(parseNode i878a
                         return NewCloudAppSecuritySessionControl(), nil
                     case "#microsoft.graph.persistentBrowserSessionControl":
                         return NewPersistentBrowserSessionControl(), nil
+                    case "#microsoft.graph.secureSignInSessionControl":
+                        return NewSecureSignInSessionControl(), nil
                     case "#microsoft.graph.signInFrequencySessionControl":
                         return NewSignInFrequencySessionControl(), nil
                 }

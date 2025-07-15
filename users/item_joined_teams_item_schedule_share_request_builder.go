@@ -35,9 +35,6 @@ func NewItemJoinedTeamsItemScheduleShareRequestBuilder(rawUrl string, requestAda
 }
 // Post share a schedule time range with schedule members. This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers. Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleShareRequestBuilder) Post(ctx context.Context, body ItemJoinedTeamsItemScheduleSharePostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemScheduleShareRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

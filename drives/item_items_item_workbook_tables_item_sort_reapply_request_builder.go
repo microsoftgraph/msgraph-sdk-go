@@ -35,9 +35,6 @@ func NewItemItemsItemWorkbookTablesItemSortReapplyRequestBuilder(rawUrl string, 
 }
 // Post reapplies the current sorting parameters to the table.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/tablesort-reapply?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemSortReapplyRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemSortReapplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

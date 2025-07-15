@@ -37,9 +37,6 @@ func NewServiceAnnouncementMessagesUnarchiveRequestBuilder(rawUrl string, reques
 // Deprecated: This method is obsolete. Use PostAsUnarchivePostResponse instead.
 // returns a ServiceAnnouncementMessagesUnarchiveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnarchiveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) Post(ctx context.Co
 // PostAsUnarchivePostResponse unarchive a list of serviceUpdateMessages for the signed in user.
 // returns a ServiceAnnouncementMessagesUnarchivePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) PostAsUnarchivePostResponse(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnarchivePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

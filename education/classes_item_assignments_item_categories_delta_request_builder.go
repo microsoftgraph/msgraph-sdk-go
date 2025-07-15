@@ -28,9 +28,9 @@ type ClassesItemAssignmentsItemCategoriesDeltaRequestBuilderGetQueryParameters s
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ClassesItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewClassesItemAssignmentsItemCategoriesDeltaRequestBuilder(rawUrl string, r
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ClassesItemAssignmentsItemCategoriesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentsItemCategoriesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ClassesItemAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx contex
 // GetAsDeltaGetResponse get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
 // returns a ClassesItemAssignmentsItemCategoriesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsItemCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentsItemCategoriesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

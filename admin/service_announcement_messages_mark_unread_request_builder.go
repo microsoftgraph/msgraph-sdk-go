@@ -37,9 +37,6 @@ func NewServiceAnnouncementMessagesMarkUnreadRequestBuilder(rawUrl string, reque
 // Deprecated: This method is obsolete. Use PostAsMarkUnreadPostResponse instead.
 // returns a ServiceAnnouncementMessagesMarkUnreadResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesMarkUnreadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkUnreadRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesMarkUnreadResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) Post(ctx context.C
 // PostAsMarkUnreadPostResponse mark a list of serviceUpdateMessages as unread for the signed in user.
 // returns a ServiceAnnouncementMessagesMarkUnreadPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) PostAsMarkUnreadPostResponse(ctx context.Context, body ServiceAnnouncementMessagesMarkUnreadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkUnreadRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesMarkUnreadPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -37,9 +37,6 @@ func NewUsersItemAssignmentsItemDeactivateRequestBuilder(rawUrl string, requestA
 // Post mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
 // returns a EducationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemDeactivateRequestBuilder) Post(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemDeactivateRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

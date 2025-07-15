@@ -28,9 +28,9 @@ type EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWit
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration struct {
@@ -61,9 +61,6 @@ func NewEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUser
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +81,6 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUse
 // GetAsFilterByCurrentUserWithOnGetResponse in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
 // returns a EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

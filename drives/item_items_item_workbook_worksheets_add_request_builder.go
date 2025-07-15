@@ -37,9 +37,6 @@ func NewItemItemsItemWorkbookWorksheetsAddRequestBuilder(rawUrl string, requestA
 // Post add a new worksheet to the workbook. The worksheet is added at the end of existing worksheets. If you want to activate the newly added worksheet, call .activate() on it.
 // returns a WorkbookWorksheetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/worksheetcollection-add?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsAddRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsAddRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

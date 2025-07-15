@@ -28,9 +28,9 @@ type GetAllSitesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // GetAllSitesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetAllSitesRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewGetAllSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 // Deprecated: This method is obsolete. Use GetAsGetAllSitesGetResponse instead.
 // returns a GetAllSitesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0
 func (m *GetAllSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAllSitesRequestBuilderGetRequestConfiguration)(GetAllSitesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *GetAllSitesRequestBuilder) Get(ctx context.Context, requestConfiguratio
 // GetAsGetAllSitesGetResponse list sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
 // returns a GetAllSitesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0
 func (m *GetAllSitesRequestBuilder) GetAsGetAllSitesGetResponse(ctx context.Context, requestConfiguration *GetAllSitesRequestBuilderGetRequestConfiguration)(GetAllSitesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

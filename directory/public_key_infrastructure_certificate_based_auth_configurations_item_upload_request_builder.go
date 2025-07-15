@@ -35,9 +35,6 @@ func NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadReque
 }
 // Post append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-1.0
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequestBuilder) Post(ctx context.Context, body PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadPostRequestBodyable, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemUploadRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

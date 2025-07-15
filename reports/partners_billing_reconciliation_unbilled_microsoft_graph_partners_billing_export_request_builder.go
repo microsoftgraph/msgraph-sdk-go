@@ -34,7 +34,7 @@ func NewPartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExport
     urlParams["request-raw-url"] = rawUrl
     return NewPartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action export
+// Post export the unbilled invoice reconciliation data for a specific billing period and a given currency.
 // returns a Operationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportRequestBuilder) Post(ctx context.Context, body PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportExportPostRequestBodyable, requestConfiguration *PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportRequestBuilderPostRequestConfiguration)(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.Operationable, error) {
@@ -54,7 +54,7 @@ func (m *PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExpor
     }
     return res.(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.Operationable), nil
 }
-// ToPostRequestInformation invoke action export
+// ToPostRequestInformation export the unbilled invoice reconciliation data for a specific billing period and a given currency.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportRequestBuilder) ToPostRequestInformation(ctx context.Context, body PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportExportPostRequestBodyable, requestConfiguration *PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

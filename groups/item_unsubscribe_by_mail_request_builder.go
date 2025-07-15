@@ -35,9 +35,6 @@ func NewItemUnsubscribeByMailRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Post calling this method prevents the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-unsubscribebymail?view=graph-rest-1.0
 func (m *ItemUnsubscribeByMailRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemUnsubscribeByMailRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

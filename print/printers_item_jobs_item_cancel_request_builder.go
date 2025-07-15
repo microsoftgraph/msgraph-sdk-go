@@ -35,9 +35,6 @@ func NewPrintersItemJobsItemCancelRequestBuilder(rawUrl string, requestAdapter i
 }
 // Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
 func (m *PrintersItemJobsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *PrintersItemJobsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

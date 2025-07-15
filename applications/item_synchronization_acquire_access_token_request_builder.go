@@ -35,9 +35,6 @@ func NewItemSynchronizationAcquireAccessTokenRequestBuilder(rawUrl string, reque
 }
 // Post acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
 func (m *ItemSynchronizationAcquireAccessTokenRequestBuilder) Post(ctx context.Context, body ItemSynchronizationAcquireAccessTokenPostRequestBodyable, requestConfiguration *ItemSynchronizationAcquireAccessTokenRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

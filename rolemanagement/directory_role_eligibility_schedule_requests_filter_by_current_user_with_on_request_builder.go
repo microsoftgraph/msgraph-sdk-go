@@ -28,9 +28,9 @@ type DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBui
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration struct {
@@ -61,9 +61,6 @@ func NewDirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequest
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
 func (m *DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +81,6 @@ func (m *DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnReques
 // GetAsFilterByCurrentUserWithOnGetResponse in PIM, retrieve the requests for role eligibilities for a particular principal. The principal can be the creator or approver of the unifiedRoleEligibilityScheduleRequest object, or they can be the target of the role eligibility.
 // returns a DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
 func (m *DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(DirectoryRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

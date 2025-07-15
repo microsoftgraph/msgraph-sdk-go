@@ -35,9 +35,6 @@ func NewManagedDevicesItemRebootNowRequestBuilder(rawUrl string, requestAdapter 
 }
 // Post reboot device
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-rebootnow?view=graph-rest-1.0
 func (m *ManagedDevicesItemRebootNowRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemRebootNowRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,9 +35,6 @@ func NewItemRemoveAllDevicesFromManagementRequestBuilder(rawUrl string, requestA
 }
 // Post retire all devices from management for this user
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-user-removealldevicesfrommanagement?view=graph-rest-1.0
 func (m *ItemRemoveAllDevicesFromManagementRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemRemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -26,73 +26,7 @@ func CreateUsageRightsIncludedFromDiscriminatorValue(parseNode i878a80d2330e89d2
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UsageRightsIncluded) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["ownerEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOwnerEmail(val)
-        }
-        return nil
-    }
-    res["userEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserEmail(val)
-        }
-        return nil
-    }
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUsageRights)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetValue(val.(*UsageRights))
-        }
-        return nil
-    }
     return res
-}
-// GetOwnerEmail gets the ownerEmail property value. The email of owner label rights.
-// returns a *string when successful
-func (m *UsageRightsIncluded) GetOwnerEmail()(*string) {
-    val, err := m.GetBackingStore().Get("ownerEmail")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetUserEmail gets the userEmail property value. The email of user with label user rights.
-// returns a *string when successful
-func (m *UsageRightsIncluded) GetUserEmail()(*string) {
-    val, err := m.GetBackingStore().Get("userEmail")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetValue gets the value property value. The value property
-// returns a *UsageRights when successful
-func (m *UsageRightsIncluded) GetValue()(*UsageRights) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*UsageRights)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *UsageRightsIncluded) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,55 +34,9 @@ func (m *UsageRightsIncluded) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("ownerEmail", m.GetOwnerEmail())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("userEmail", m.GetUserEmail())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetValue() != nil {
-        cast := (*m.GetValue()).String()
-        err = writer.WriteStringValue("value", &cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetOwnerEmail sets the ownerEmail property value. The email of owner label rights.
-func (m *UsageRightsIncluded) SetOwnerEmail(value *string)() {
-    err := m.GetBackingStore().Set("ownerEmail", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetUserEmail sets the userEmail property value. The email of user with label user rights.
-func (m *UsageRightsIncluded) SetUserEmail(value *string)() {
-    err := m.GetBackingStore().Set("userEmail", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetValue sets the value property value. The value property
-func (m *UsageRightsIncluded) SetValue(value *UsageRights)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type UsageRightsIncludedable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOwnerEmail()(*string)
-    GetUserEmail()(*string)
-    GetValue()(*UsageRights)
-    SetOwnerEmail(value *string)()
-    SetUserEmail(value *string)()
-    SetValue(value *UsageRights)()
 }

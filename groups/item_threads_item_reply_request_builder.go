@@ -35,9 +35,6 @@ func NewItemThreadsItemReplyRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Post create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
 func (m *ItemThreadsItemReplyRequestBuilder) Post(ctx context.Context, body ItemThreadsItemReplyPostRequestBodyable, requestConfiguration *ItemThreadsItemReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

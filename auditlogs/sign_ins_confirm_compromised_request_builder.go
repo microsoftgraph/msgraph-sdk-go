@@ -35,9 +35,6 @@ func NewSignInsConfirmCompromisedRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Post mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
 func (m *SignInsConfirmCompromisedRequestBuilder) Post(ctx context.Context, body SignInsConfirmCompromisedPostRequestBodyable, requestConfiguration *SignInsConfirmCompromisedRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

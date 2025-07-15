@@ -35,9 +35,6 @@ func NewItemCalendarsItemEventsItemDeclineRequestBuilder(rawUrl string, requestA
 }
 // Post decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
 func (m *ItemCalendarsItemEventsItemDeclineRequestBuilder) Post(ctx context.Context, body ItemCalendarsItemEventsItemDeclinePostRequestBodyable, requestConfiguration *ItemCalendarsItemEventsItemDeclineRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

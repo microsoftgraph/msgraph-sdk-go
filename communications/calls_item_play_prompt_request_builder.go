@@ -37,9 +37,6 @@ func NewCallsItemPlayPromptRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Post play a prompt in the call. For more information about how to handle operations, see commsOperation
 // returns a PlayPromptOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
 func (m *CallsItemPlayPromptRequestBuilder) Post(ctx context.Context, body CallsItemPlayPromptPostRequestBodyable, requestConfiguration *CallsItemPlayPromptRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlayPromptOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

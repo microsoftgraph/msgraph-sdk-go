@@ -128,6 +128,11 @@ func (m *ItemDataSecurityAndGovernanceRequestBuilder) ProcessContent()(*ItemData
 func (m *ItemDataSecurityAndGovernanceRequestBuilder) ProtectionScopes()(*ItemDataSecurityAndGovernanceProtectionScopesRequestBuilder) {
     return NewItemDataSecurityAndGovernanceProtectionScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.dataSecurityAndGovernance entity.
+// returns a *ItemDataSecurityAndGovernanceSensitivityLabelsRequestBuilder when successful
+func (m *ItemDataSecurityAndGovernanceRequestBuilder) SensitivityLabels()(*ItemDataSecurityAndGovernanceSensitivityLabelsRequestBuilder) {
+    return NewItemDataSecurityAndGovernanceSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property dataSecurityAndGovernance for users
 // returns a *RequestInformation when successful
 func (m *ItemDataSecurityAndGovernanceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDataSecurityAndGovernanceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

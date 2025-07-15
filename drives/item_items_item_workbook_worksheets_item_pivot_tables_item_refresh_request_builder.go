@@ -35,9 +35,6 @@ func NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder(
 }
 // Post refreshes the PivotTable.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workbookpivottable-refresh?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

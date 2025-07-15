@@ -38,7 +38,7 @@ func (m *DriveRecipient) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAlias gets the alias property value. The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
+// GetAlias gets the alias property value. The alias of the domain object, for cases where an email address is unavailable (for example, security groups).
 // returns a *string when successful
 func (m *DriveRecipient) GetAlias()(*string) {
     val, err := m.GetBackingStore().Get("alias")
@@ -178,7 +178,7 @@ func (m *DriveRecipient) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAlias sets the alias property value. The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
+// SetAlias sets the alias property value. The alias of the domain object, for cases where an email address is unavailable (for example, security groups).
 func (m *DriveRecipient) SetAlias(value *string)() {
     err := m.GetBackingStore().Set("alias", value)
     if err != nil {

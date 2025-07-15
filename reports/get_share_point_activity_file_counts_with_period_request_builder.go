@@ -39,9 +39,6 @@ func NewGetSharePointActivityFileCountsWithPeriodRequestBuilder(rawUrl string, r
 // Get get the number of unique, licensed users who interacted with files stored on SharePoint sites.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityfilecounts?view=graph-rest-1.0
 func (m *GetSharePointActivityFileCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetSharePointActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

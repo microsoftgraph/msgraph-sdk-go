@@ -35,9 +35,6 @@ func NewItemInstalledAppsItemUpgradeRequestBuilder(rawUrl string, requestAdapter
 }
 // Post upgrade an app installation within a chat.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
 func (m *ItemInstalledAppsItemUpgradeRequestBuilder) Post(ctx context.Context, body ItemInstalledAppsItemUpgradePostRequestBodyable, requestConfiguration *ItemInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

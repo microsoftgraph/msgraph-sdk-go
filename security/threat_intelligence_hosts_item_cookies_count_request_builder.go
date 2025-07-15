@@ -43,9 +43,9 @@ func NewThreatIntelligenceHostsItemCookiesCountRequestBuilder(rawUrl string, req
     return NewThreatIntelligenceHostsItemCookiesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// returns a *int32 when successful
+// returns a *int64 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ThreatIntelligenceHostsItemCookiesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemCookiesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+func (m *ThreatIntelligenceHostsItemCookiesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemCookiesCountRequestBuilderGetRequestConfiguration)(*int64, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -53,14 +53,14 @@ func (m *ThreatIntelligenceHostsItemCookiesCountRequestBuilder) Get(ctx context.
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int64", errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(*int32), nil
+    return res.(*int64), nil
 }
 // ToGetRequestInformation get the number of the resource
 // returns a *RequestInformation when successful

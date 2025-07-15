@@ -39,9 +39,6 @@ func NewGetMailboxUsageDetailWithPeriodRequestBuilder(rawUrl string, requestAdap
 // Get get details about mailbox usage.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagedetail?view=graph-rest-1.0
 func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetMailboxUsageDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

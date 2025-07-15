@@ -1247,6 +1247,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSecurityReportsRoot(), nil
                     case "#microsoft.graph.sendDtmfTonesOperation":
                         return NewSendDtmfTonesOperation(), nil
+                    case "#microsoft.graph.sensitivityLabel":
+                        return NewSensitivityLabel(), nil
                     case "#microsoft.graph.serviceAnnouncement":
                         return NewServiceAnnouncement(), nil
                     case "#microsoft.graph.serviceAnnouncementAttachment":

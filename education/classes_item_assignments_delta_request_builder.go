@@ -28,9 +28,9 @@ type ClassesItemAssignmentsDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ClassesItemAssignmentsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemAssignmentsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewClassesItemAssignmentsDeltaRequestBuilder(rawUrl string, requestAdapter 
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ClassesItemAssignmentsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ClassesItemAssignmentsDeltaRequestBuilder) Get(ctx context.Context, req
 // GetAsDeltaGetResponse get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
 // returns a ClassesItemAssignmentsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ClassesItemAssignmentsDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

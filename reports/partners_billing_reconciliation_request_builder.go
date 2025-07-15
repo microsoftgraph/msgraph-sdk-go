@@ -21,7 +21,7 @@ type PartnersBillingReconciliationRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PartnersBillingReconciliationRequestBuilderGetQueryParameters represents details for billed invoice reconciliation data.
+// PartnersBillingReconciliationRequestBuilderGetQueryParameters represents details for billed and unbilled invoice reconciliation data.
 type PartnersBillingReconciliationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *PartnersBillingReconciliationRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get represents details for billed invoice reconciliation data.
+// Get represents details for billed and unbilled invoice reconciliation data.
 // returns a BillingReconciliationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PartnersBillingReconciliationRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnersBillingReconciliationRequestBuilderGetRequestConfiguration)(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.BillingReconciliationable, error) {
@@ -129,7 +129,7 @@ func (m *PartnersBillingReconciliationRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents details for billed invoice reconciliation data.
+// ToGetRequestInformation represents details for billed and unbilled invoice reconciliation data.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingReconciliationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnersBillingReconciliationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

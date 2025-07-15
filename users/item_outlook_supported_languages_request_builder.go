@@ -22,9 +22,9 @@ type ItemOutlookSupportedLanguagesRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemOutlookSupportedLanguagesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOutlookSupportedLanguagesRequestBuilderGetRequestConfiguration struct {
@@ -52,9 +52,6 @@ func NewItemOutlookSupportedLanguagesRequestBuilder(rawUrl string, requestAdapte
 // Deprecated: This method is obsolete. Use GetAsSupportedLanguagesGetResponse instead.
 // returns a ItemOutlookSupportedLanguagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
 func (m *ItemOutlookSupportedLanguagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookSupportedLanguagesRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedLanguagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +72,6 @@ func (m *ItemOutlookSupportedLanguagesRequestBuilder) Get(ctx context.Context, r
 // GetAsSupportedLanguagesGetResponse get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user's mailbox settings.
 // returns a ItemOutlookSupportedLanguagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
 func (m *ItemOutlookSupportedLanguagesRequestBuilder) GetAsSupportedLanguagesGetResponse(ctx context.Context, requestConfiguration *ItemOutlookSupportedLanguagesRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedLanguagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

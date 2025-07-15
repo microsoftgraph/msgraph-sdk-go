@@ -28,9 +28,9 @@ type ItemListItemsDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemListItemsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListItemsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewItemListItemsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemListItemsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
 func (m *ItemListItemsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsDeltaRequestBuilderGetRequestConfiguration)(ItemListItemsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ItemListItemsDeltaRequestBuilder) Get(ctx context.Context, requestConfi
 // GetAsDeltaGetResponse get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.The service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.Your app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.To check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.The same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state.
 // returns a ItemListItemsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
 func (m *ItemListItemsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemListItemsDeltaRequestBuilderGetRequestConfiguration)(ItemListItemsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -56,14 +56,14 @@ func (m *RecurrencePattern) GetDayOfMonth()(*int32) {
     return nil
 }
 // GetDaysOfWeek gets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-// returns a []DayOfWeek when successful
-func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
+// returns a []string when successful
+func (m *RecurrencePattern) GetDaysOfWeek()([]string) {
     val, err := m.GetBackingStore().Get("daysOfWeek")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]DayOfWeek)
+        return val.([]string)
     }
     return nil
 }
@@ -82,15 +82,15 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["daysOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DayOfWeek, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*DayOfWeek))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetDaysOfWeek(res)
@@ -240,7 +240,7 @@ func (m *RecurrencePattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     if m.GetDaysOfWeek() != nil {
-        err := writer.WriteCollectionOfStringValues("daysOfWeek", SerializeDayOfWeek(m.GetDaysOfWeek()))
+        err := writer.WriteCollectionOfStringValues("daysOfWeek", m.GetDaysOfWeek())
         if err != nil {
             return err
         }
@@ -311,7 +311,7 @@ func (m *RecurrencePattern) SetDayOfMonth(value *int32)() {
     }
 }
 // SetDaysOfWeek sets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-func (m *RecurrencePattern) SetDaysOfWeek(value []DayOfWeek)() {
+func (m *RecurrencePattern) SetDaysOfWeek(value []string)() {
     err := m.GetBackingStore().Set("daysOfWeek", value)
     if err != nil {
         panic(err)
@@ -365,7 +365,7 @@ type RecurrencePatternable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDayOfMonth()(*int32)
-    GetDaysOfWeek()([]DayOfWeek)
+    GetDaysOfWeek()([]string)
     GetFirstDayOfWeek()(*DayOfWeek)
     GetIndex()(*WeekIndex)
     GetInterval()(*int32)
@@ -374,7 +374,7 @@ type RecurrencePatternable interface {
     GetTypeEscaped()(*RecurrencePatternType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDayOfMonth(value *int32)()
-    SetDaysOfWeek(value []DayOfWeek)()
+    SetDaysOfWeek(value []string)()
     SetFirstDayOfWeek(value *DayOfWeek)()
     SetIndex(value *WeekIndex)()
     SetInterval(value *int32)()

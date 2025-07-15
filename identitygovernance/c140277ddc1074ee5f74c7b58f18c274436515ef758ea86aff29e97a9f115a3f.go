@@ -28,9 +28,9 @@ type PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnR
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration struct {
@@ -61,9 +61,6 @@ func NewPrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWith
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +81,6 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWit
 // GetAsFilterByCurrentUserWithOnGetResponse return instances of membership and ownership eligibility schedules for the calling principal.
 // returns a PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

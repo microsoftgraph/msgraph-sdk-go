@@ -21,7 +21,7 @@ type PartnersBillingReconciliationUnbilledRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PartnersBillingReconciliationUnbilledRequestBuilderGetQueryParameters get unbilled from reports
+// PartnersBillingReconciliationUnbilledRequestBuilderGetQueryParameters represents details for unbilled invoice reconciliation data.
 type PartnersBillingReconciliationUnbilledRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *PartnersBillingReconciliationUnbilledRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get unbilled from reports
+// Get represents details for unbilled invoice reconciliation data.
 // returns a UnbilledReconciliationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PartnersBillingReconciliationUnbilledRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnersBillingReconciliationUnbilledRequestBuilderGetRequestConfiguration)(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.UnbilledReconciliationable, error) {
@@ -129,7 +129,7 @@ func (m *PartnersBillingReconciliationUnbilledRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get unbilled from reports
+// ToGetRequestInformation represents details for unbilled invoice reconciliation data.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingReconciliationUnbilledRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnersBillingReconciliationUnbilledRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

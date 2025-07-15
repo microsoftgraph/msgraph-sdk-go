@@ -28,9 +28,9 @@ type ItemMailFoldersDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemMailFoldersDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewItemMailFoldersDeltaRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemMailFoldersDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
 func (m *ItemMailFoldersDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersDeltaRequestBuilderGetRequestConfiguration)(ItemMailFoldersDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ItemMailFoldersDeltaRequestBuilder) Get(ctx context.Context, requestCon
 // GetAsDeltaGetResponse get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls,you can query for incremental changes in the mail folders. This allows you to maintain and synchronizea local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
 // returns a ItemMailFoldersDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
 func (m *ItemMailFoldersDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemMailFoldersDeltaRequestBuilderGetRequestConfiguration)(ItemMailFoldersDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

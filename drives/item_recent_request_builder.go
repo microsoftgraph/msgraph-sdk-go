@@ -28,9 +28,9 @@ type ItemRecentRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemRecentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRecentRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewItemRecentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // Deprecated: This method is obsolete. Use GetAsRecentGetResponse instead.
 // returns a ItemRecentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
 func (m *ItemRecentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(ItemRecentResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ItemRecentRequestBuilder) Get(ctx context.Context, requestConfiguration
 // GetAsRecentGetResponse list a set of items that have been recently used by the signed in user.This collection includes items that are in the user's drive and items they have access to from other drives.
 // returns a ItemRecentGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
 func (m *ItemRecentRequestBuilder) GetAsRecentGetResponse(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(ItemRecentGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

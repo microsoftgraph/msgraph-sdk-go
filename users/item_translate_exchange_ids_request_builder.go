@@ -37,9 +37,6 @@ func NewItemTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2a
 // Deprecated: This method is obsolete. Use PostAsTranslateExchangeIdsPostResponse instead.
 // returns a ItemTranslateExchangeIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
 func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body 
 // PostAsTranslateExchangeIdsPostResponse translate identifiers of Outlook-related resources between formats.
 // returns a ItemTranslateExchangeIdsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
 func (m *ItemTranslateExchangeIdsRequestBuilder) PostAsTranslateExchangeIdsPostResponse(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -37,9 +37,6 @@ func NewItemScheduleTimeCardsClockInRequestBuilder(rawUrl string, requestAdapter
 // Post clock in to start a timeCard.
 // returns a TimeCardable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0
 func (m *ItemScheduleTimeCardsClockInRequestBuilder) Post(ctx context.Context, body ItemScheduleTimeCardsClockInPostRequestBodyable, requestConfiguration *ItemScheduleTimeCardsClockInRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

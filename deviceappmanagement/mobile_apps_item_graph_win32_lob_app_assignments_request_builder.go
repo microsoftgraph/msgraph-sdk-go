@@ -29,9 +29,9 @@ type MobileAppsItemGraphWin32LobAppAssignmentsRequestBuilderGetQueryParameters s
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // MobileAppsItemGraphWin32LobAppAssignmentsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWin32LobAppAssignmentsRequestBuilderGetRequestConfiguration struct {

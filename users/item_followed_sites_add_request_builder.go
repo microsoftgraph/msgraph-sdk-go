@@ -37,9 +37,6 @@ func NewItemFollowedSitesAddRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // returns a ItemFollowedSitesAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
 func (m *ItemFollowedSitesAddRequestBuilder) Post(ctx context.Context, body ItemFollowedSitesAddPostRequestBodyable, requestConfiguration *ItemFollowedSitesAddRequestBuilderPostRequestConfiguration)(ItemFollowedSitesAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemFollowedSitesAddRequestBuilder) Post(ctx context.Context, body Item
 // PostAsAddPostResponse follow a user's site or multiple sites.
 // returns a ItemFollowedSitesAddPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
 func (m *ItemFollowedSitesAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemFollowedSitesAddPostRequestBodyable, requestConfiguration *ItemFollowedSitesAddRequestBuilderPostRequestConfiguration)(ItemFollowedSitesAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

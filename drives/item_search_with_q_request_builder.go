@@ -28,9 +28,9 @@ type ItemSearchWithQRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemSearchWithQRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSearchWithQRequestBuilderGetRequestConfiguration struct {
@@ -61,9 +61,6 @@ func NewItemSearchWithQRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // Deprecated: This method is obsolete. Use GetAsSearchWithQGetResponse instead.
 // returns a ItemSearchWithQResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
 func (m *ItemSearchWithQRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSearchWithQRequestBuilderGetRequestConfiguration)(ItemSearchWithQResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +81,6 @@ func (m *ItemSearchWithQRequestBuilder) Get(ctx context.Context, requestConfigur
 // GetAsSearchWithQGetResponse search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
 // returns a ItemSearchWithQGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
 func (m *ItemSearchWithQRequestBuilder) GetAsSearchWithQGetResponse(ctx context.Context, requestConfiguration *ItemSearchWithQRequestBuilderGetRequestConfiguration)(ItemSearchWithQGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

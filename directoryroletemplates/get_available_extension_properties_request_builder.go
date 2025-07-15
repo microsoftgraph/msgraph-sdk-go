@@ -37,9 +37,6 @@ func NewGetAvailableExtensionPropertiesRequestBuilder(rawUrl string, requestAdap
 // Deprecated: This method is obsolete. Use PostAsGetAvailableExtensionPropertiesPostResponse instead.
 // returns a GetAvailableExtensionPropertiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
 func (m *GetAvailableExtensionPropertiesRequestBuilder) Post(ctx context.Context, body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(GetAvailableExtensionPropertiesResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *GetAvailableExtensionPropertiesRequestBuilder) Post(ctx context.Context
 // PostAsGetAvailableExtensionPropertiesPostResponse return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 // returns a GetAvailableExtensionPropertiesPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
 func (m *GetAvailableExtensionPropertiesRequestBuilder) PostAsGetAvailableExtensionPropertiesPostResponse(ctx context.Context, body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(GetAvailableExtensionPropertiesPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

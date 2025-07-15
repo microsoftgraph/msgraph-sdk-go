@@ -35,9 +35,6 @@ func NewItemValidatePropertiesRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Post validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to update a Microsoft 365 group. To validate the properties before creating a group, use the directoryobject:validateProperties function. The following policy validations are performed for the display name and mail nickname properties: This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-validateproperties?view=graph-rest-1.0
 func (m *ItemValidatePropertiesRequestBuilder) Post(ctx context.Context, body ItemValidatePropertiesPostRequestBodyable, requestConfiguration *ItemValidatePropertiesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

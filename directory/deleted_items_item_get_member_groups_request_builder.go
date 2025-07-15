@@ -37,9 +37,6 @@ func NewDeletedItemsItemGetMemberGroupsRequestBuilder(rawUrl string, requestAdap
 // Deprecated: This method is obsolete. Use PostAsGetMemberGroupsPostResponse instead.
 // returns a DeletedItemsItemGetMemberGroupsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
 func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context, body DeletedItemsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(DeletedItemsItemGetMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context
 // PostAsGetMemberGroupsPostResponse return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.
 // returns a DeletedItemsItemGetMemberGroupsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
 func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) PostAsGetMemberGroupsPostResponse(ctx context.Context, body DeletedItemsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(DeletedItemsItemGetMemberGroupsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

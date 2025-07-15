@@ -35,9 +35,6 @@ func NewItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder(rawUrl s
 }
 // Post enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled:
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
 func (m *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

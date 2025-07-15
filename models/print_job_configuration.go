@@ -180,15 +180,15 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrintFinishing, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*PrintFinishing))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetFinishings(res)
@@ -334,14 +334,14 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFinishings gets the finishings property value. Finishing processes to use when printing.
-// returns a []PrintFinishing when successful
-func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
+// returns a []string when successful
+func (m *PrintJobConfiguration) GetFinishings()([]string) {
     val, err := m.GetBackingStore().Get("finishings")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]PrintFinishing)
+        return val.([]string)
     }
     return nil
 }
@@ -543,7 +543,7 @@ func (m *PrintJobConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
+        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
         if err != nil {
             return err
         }
@@ -698,7 +698,7 @@ func (m *PrintJobConfiguration) SetFeedOrientation(value *PrinterFeedOrientation
     }
 }
 // SetFinishings sets the finishings property value. Finishing processes to use when printing.
-func (m *PrintJobConfiguration) SetFinishings(value []PrintFinishing)() {
+func (m *PrintJobConfiguration) SetFinishings(value []string)() {
     err := m.GetBackingStore().Set("finishings", value)
     if err != nil {
         panic(err)
@@ -806,7 +806,7 @@ type PrintJobConfigurationable interface {
     GetDpi()(*int32)
     GetDuplexMode()(*PrintDuplexMode)
     GetFeedOrientation()(*PrinterFeedOrientation)
-    GetFinishings()([]PrintFinishing)
+    GetFinishings()([]string)
     GetFitPdfToPage()(*bool)
     GetInputBin()(*string)
     GetMargin()(PrintMarginable)
@@ -827,7 +827,7 @@ type PrintJobConfigurationable interface {
     SetDpi(value *int32)()
     SetDuplexMode(value *PrintDuplexMode)()
     SetFeedOrientation(value *PrinterFeedOrientation)()
-    SetFinishings(value []PrintFinishing)()
+    SetFinishings(value []string)()
     SetFitPdfToPage(value *bool)()
     SetInputBin(value *string)()
     SetMargin(value PrintMarginable)()

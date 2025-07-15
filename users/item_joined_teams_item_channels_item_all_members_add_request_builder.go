@@ -37,9 +37,6 @@ func NewItemJoinedTeamsItemChannelsItemAllMembersAddRequestBuilder(rawUrl string
 // Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // returns a ItemJoinedTeamsItemChannelsItemAllMembersAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemAllMembersAddRequestBuilder) Post(ctx context.Context, body ItemJoinedTeamsItemChannelsItemAllMembersAddPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemChannelsItemAllMembersAddRequestBuilderPostRequestConfiguration)(ItemJoinedTeamsItemChannelsItemAllMembersAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemJoinedTeamsItemChannelsItemAllMembersAddRequestBuilder) Post(ctx co
 // PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // returns a ItemJoinedTeamsItemChannelsItemAllMembersAddPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemAllMembersAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemJoinedTeamsItemChannelsItemAllMembersAddPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemChannelsItemAllMembersAddRequestBuilderPostRequestConfiguration)(ItemJoinedTeamsItemChannelsItemAllMembersAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

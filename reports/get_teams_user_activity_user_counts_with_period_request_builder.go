@@ -39,9 +39,6 @@ func NewGetTeamsUserActivityUserCountsWithPeriodRequestBuilder(rawUrl string, re
 // Get get the number of Microsoft Teams users by activity type. The activity types are number of teams chat messages, private chat messages, calls, or meetings.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivityusercounts?view=graph-rest-1.0
 func (m *GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsUserActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

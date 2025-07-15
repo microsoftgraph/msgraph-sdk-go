@@ -28,9 +28,9 @@ type ItemTodoListsItemTasksDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemTodoListsItemTasksDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTodoListsItemTasksDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewItemTodoListsItemTasksDeltaRequestBuilder(rawUrl string, requestAdapter 
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemTodoListsItemTasksDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksDeltaRequestBuilderGetRequestConfiguration)(ItemTodoListsItemTasksDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ItemTodoListsItemTasksDeltaRequestBuilder) Get(ctx context.Context, req
 // GetAsDeltaGetResponse get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTask resources without having to fetch the entire set from the server every time.  
 // returns a ItemTodoListsItemTasksDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksDeltaRequestBuilderGetRequestConfiguration)(ItemTodoListsItemTasksDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

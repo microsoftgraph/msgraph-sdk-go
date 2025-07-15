@@ -31,11 +31,11 @@ type ItemCalendarsItemEventsItemInstancesRequestBuilderGetQueryParameters struct
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
     StartDateTime *string `uriparametername:"startDateTime"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemCalendarsItemEventsItemInstancesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemEventsItemInstancesRequestBuilderGetRequestConfiguration struct {

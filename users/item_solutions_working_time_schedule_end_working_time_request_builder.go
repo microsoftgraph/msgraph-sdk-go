@@ -35,9 +35,6 @@ func NewItemSolutionsWorkingTimeScheduleEndWorkingTimeRequestBuilder(rawUrl stri
 }
 // Post trigger the policies associated with the end of working hours for a specific user.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workingtimeschedule-endworkingtime?view=graph-rest-1.0
 func (m *ItemSolutionsWorkingTimeScheduleEndWorkingTimeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSolutionsWorkingTimeScheduleEndWorkingTimeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

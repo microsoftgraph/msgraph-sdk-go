@@ -35,9 +35,6 @@ func NewItemCalendarGroupsItemCalendarsItemEventsItemSnoozeReminderRequestBuilde
 }
 // Post postpone a reminder for an event in a user calendar until a new time.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsItemEventsItemSnoozeReminderRequestBuilder) Post(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemEventsItemSnoozeReminderPostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsItemSnoozeReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

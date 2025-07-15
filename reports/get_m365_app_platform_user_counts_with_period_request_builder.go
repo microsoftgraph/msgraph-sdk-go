@@ -39,9 +39,6 @@ func NewGetM365AppPlatformUserCountsWithPeriodRequestBuilder(rawUrl string, requ
 // Get get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in your organization.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getm365appplatformusercounts?view=graph-rest-1.0
 func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -28,9 +28,9 @@ type GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters st
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration struct {
@@ -61,9 +61,6 @@ func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl string, re
 // Deprecated: This method is obsolete. Use GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse instead.
 // returns a GetRelyingPartyDetailedSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +81,6 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(ctx context
 // GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse get a summary of AD FS relying parties information.
 // returns a GetRelyingPartyDetailedSummaryWithPeriodGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

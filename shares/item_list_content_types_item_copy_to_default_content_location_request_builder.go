@@ -35,9 +35,6 @@ func NewItemListContentTypesItemCopyToDefaultContentLocationRequestBuilder(rawUr
 }
 // Post copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
 func (m *ItemListContentTypesItemCopyToDefaultContentLocationRequestBuilder) Post(ctx context.Context, body ItemListContentTypesItemCopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *ItemListContentTypesItemCopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

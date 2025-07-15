@@ -30,9 +30,9 @@ type ItemChatsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration struct {
@@ -60,9 +60,6 @@ func NewItemChatsGetAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae
 // Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 // returns a ItemChatsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0
 func (m *ItemChatsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemChatsGetAllMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,9 +80,6 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) Get(ctx context.Context, request
 // GetAsGetAllMessagesGetResponse get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a ItemChatsGetAllMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0
 func (m *ItemChatsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemChatsGetAllMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

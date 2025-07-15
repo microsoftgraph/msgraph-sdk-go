@@ -37,9 +37,6 @@ func NewItemAddGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 // Deprecated: This method is obsolete. Use PostAsAddGroupPostResponse instead.
 // returns a ItemAddGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0
 func (m *ItemAddGroupRequestBuilder) Post(ctx context.Context, body ItemAddGroupPostRequestBodyable, requestConfiguration *ItemAddGroupRequestBuilderPostRequestConfiguration)(ItemAddGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemAddGroupRequestBuilder) Post(ctx context.Context, body ItemAddGroup
 // PostAsAddGroupPostResponse add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.
 // returns a ItemAddGroupPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0
 func (m *ItemAddGroupRequestBuilder) PostAsAddGroupPostResponse(ctx context.Context, body ItemAddGroupPostRequestBodyable, requestConfiguration *ItemAddGroupRequestBuilderPostRequestConfiguration)(ItemAddGroupPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

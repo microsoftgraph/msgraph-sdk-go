@@ -28,9 +28,9 @@ type ItemMessagesDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemMessagesDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMessagesDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewItemMessagesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemMessagesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
 func (m *ItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMessagesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfig
 // GetAsDeltaGetResponse get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.
 // returns a ItemMessagesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
 func (m *ItemMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMessagesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,9 +35,6 @@ func NewItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilder(ra
 }
 // Post send an SMS reminder to external attendees for a Teams virtual appointment. This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilder) Post(ctx context.Context, body ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBodyable, requestConfiguration *ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

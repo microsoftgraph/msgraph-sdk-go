@@ -37,9 +37,6 @@ func NewItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder(rawU
 // Deprecated: This method is obsolete. Use GetAsGetVirtualAppointmentJoinWebUrlGetResponse instead.
 // returns a ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) Ge
 // GetAsGetVirtualAppointmentJoinWebUrlGetResponse get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
 // returns a ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) GetAsGetVirtualAppointmentJoinWebUrlGetResponse(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

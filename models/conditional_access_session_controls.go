@@ -133,6 +133,16 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["secureSignInSession"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSecureSignInSessionControlFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecureSignInSession(val.(SecureSignInSessionControlable))
+        }
+        return nil
+    }
     res["signInFrequency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInFrequencySessionControlFromDiscriminatorValue)
         if err != nil {
@@ -166,6 +176,18 @@ func (m *ConditionalAccessSessionControls) GetPersistentBrowser()(PersistentBrow
     }
     if val != nil {
         return val.(PersistentBrowserSessionControlable)
+    }
+    return nil
+}
+// GetSecureSignInSession gets the secureSignInSession property value. The secureSignInSession property
+// returns a SecureSignInSessionControlable when successful
+func (m *ConditionalAccessSessionControls) GetSecureSignInSession()(SecureSignInSessionControlable) {
+    val, err := m.GetBackingStore().Get("secureSignInSession")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecureSignInSessionControlable)
     }
     return nil
 }
@@ -209,6 +231,12 @@ func (m *ConditionalAccessSessionControls) Serialize(writer i878a80d2330e89d2689
     }
     {
         err := writer.WriteObjectValue("persistentBrowser", m.GetPersistentBrowser())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("secureSignInSession", m.GetSecureSignInSession())
         if err != nil {
             return err
         }
@@ -273,6 +301,13 @@ func (m *ConditionalAccessSessionControls) SetPersistentBrowser(value Persistent
         panic(err)
     }
 }
+// SetSecureSignInSession sets the secureSignInSession property value. The secureSignInSession property
+func (m *ConditionalAccessSessionControls) SetSecureSignInSession(value SecureSignInSessionControlable)() {
+    err := m.GetBackingStore().Set("secureSignInSession", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignInFrequency sets the signInFrequency property value. Session control to enforce signin frequency.
 func (m *ConditionalAccessSessionControls) SetSignInFrequency(value SignInFrequencySessionControlable)() {
     err := m.GetBackingStore().Set("signInFrequency", value)
@@ -290,6 +325,7 @@ type ConditionalAccessSessionControlsable interface {
     GetDisableResilienceDefaults()(*bool)
     GetOdataType()(*string)
     GetPersistentBrowser()(PersistentBrowserSessionControlable)
+    GetSecureSignInSession()(SecureSignInSessionControlable)
     GetSignInFrequency()(SignInFrequencySessionControlable)
     SetApplicationEnforcedRestrictions(value ApplicationEnforcedRestrictionsSessionControlable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -297,5 +333,6 @@ type ConditionalAccessSessionControlsable interface {
     SetDisableResilienceDefaults(value *bool)()
     SetOdataType(value *string)()
     SetPersistentBrowser(value PersistentBrowserSessionControlable)()
+    SetSecureSignInSession(value SecureSignInSessionControlable)()
     SetSignInFrequency(value SignInFrequencySessionControlable)()
 }

@@ -37,9 +37,6 @@ func NewItemPermissionGrantRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Deprecated: This method is obsolete. Use PostAsGrantPostResponse instead.
 // returns a ItemPermissionGrantResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
 func (m *ItemPermissionGrantRequestBuilder) Post(ctx context.Context, body ItemPermissionGrantPostRequestBodyable, requestConfiguration *ItemPermissionGrantRequestBuilderPostRequestConfiguration)(ItemPermissionGrantResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemPermissionGrantRequestBuilder) Post(ctx context.Context, body ItemP
 // PostAsGrantPostResponse grant users access to a link represented by a permission.
 // returns a ItemPermissionGrantPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
 func (m *ItemPermissionGrantRequestBuilder) PostAsGrantPostResponse(ctx context.Context, body ItemPermissionGrantPostRequestBodyable, requestConfiguration *ItemPermissionGrantRequestBuilderPostRequestConfiguration)(ItemPermissionGrantPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
