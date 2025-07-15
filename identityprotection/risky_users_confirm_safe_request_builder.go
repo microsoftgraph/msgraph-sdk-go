@@ -35,9 +35,6 @@ func NewRiskyUsersConfirmSafeRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Post confirm one or more riskyUser objects as safe. This action sets the targeted user's risk level to none.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-confirmsafe?view=graph-rest-1.0
 func (m *RiskyUsersConfirmSafeRequestBuilder) Post(ctx context.Context, body RiskyUsersConfirmSafePostRequestBodyable, requestConfiguration *RiskyUsersConfirmSafeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

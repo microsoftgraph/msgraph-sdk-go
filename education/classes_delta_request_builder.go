@@ -28,9 +28,9 @@ type ClassesDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ClassesDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewClassesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ClassesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delta?view=graph-rest-1.0
 func (m *ClassesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesDeltaRequestBuilderGetRequestConfiguration)(ClassesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *ClassesDeltaRequestBuilder) Get(ctx context.Context, requestConfigurati
 // GetAsDeltaGetResponse get newly created or updated classes, including membership changes, without having to perform a full read of the entire class collection. See Use delta query for details.
 // returns a ClassesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delta?view=graph-rest-1.0
 func (m *ClassesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ClassesDeltaRequestBuilderGetRequestConfiguration)(ClassesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

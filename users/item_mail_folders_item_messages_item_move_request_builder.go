@@ -37,9 +37,6 @@ func NewItemMailFoldersItemMessagesItemMoveRequestBuilder(rawUrl string, request
 // Post move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-1.0
 func (m *ItemMailFoldersItemMessagesItemMoveRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemMessagesItemMovePostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemMoveRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

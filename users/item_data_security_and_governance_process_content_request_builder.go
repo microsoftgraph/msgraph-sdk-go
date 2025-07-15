@@ -37,9 +37,6 @@ func NewItemDataSecurityAndGovernanceProcessContentRequestBuilder(rawUrl string,
 // Post process content against data protection policies in the context of the current, or specified, user.
 // returns a ProcessContentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-processcontent?view=graph-rest-1.0
 func (m *ItemDataSecurityAndGovernanceProcessContentRequestBuilder) Post(ctx context.Context, body ItemDataSecurityAndGovernanceProcessContentPostRequestBodyable, requestConfiguration *ItemDataSecurityAndGovernanceProcessContentRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProcessContentResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

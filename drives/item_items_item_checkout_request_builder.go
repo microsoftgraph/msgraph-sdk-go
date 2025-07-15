@@ -35,9 +35,6 @@ func NewItemItemsItemCheckoutRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Post check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
 func (m *ItemItemsItemCheckoutRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemCheckoutRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

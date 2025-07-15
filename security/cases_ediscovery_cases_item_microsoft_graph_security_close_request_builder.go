@@ -35,9 +35,6 @@ func NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder(rawUrl
 }
 // Post close an eDiscovery case. For details, see Close a case.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,9 +35,6 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetDataRequestBu
 }
 // Post resets the source data for the chart.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chart-setdata?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetDataRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetDataPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetDataRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

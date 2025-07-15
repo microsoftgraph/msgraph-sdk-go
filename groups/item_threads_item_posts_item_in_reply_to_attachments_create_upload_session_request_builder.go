@@ -37,9 +37,6 @@ func NewItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionRequestBu
 // Post create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 // returns a UploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionRequestBuilder) Post(ctx context.Context, body ItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UploadSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

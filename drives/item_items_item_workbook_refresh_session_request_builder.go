@@ -35,9 +35,6 @@ func NewItemItemsItemWorkbookRefreshSessionRequestBuilder(rawUrl string, request
 }
 // Post use this API to refresh an existing workbook session.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-refreshsession?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookRefreshSessionRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookRefreshSessionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

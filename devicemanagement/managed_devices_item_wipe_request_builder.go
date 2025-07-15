@@ -35,9 +35,6 @@ func NewManagedDevicesItemWipeRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Post wipe a device
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-wipe?view=graph-rest-1.0
 func (m *ManagedDevicesItemWipeRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemWipePostRequestBodyable, requestConfiguration *ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

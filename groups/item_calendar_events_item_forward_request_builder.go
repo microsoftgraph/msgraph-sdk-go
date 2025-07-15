@@ -35,9 +35,6 @@ func NewItemCalendarEventsItemForwardRequestBuilder(rawUrl string, requestAdapte
 }
 // Post this action allows the organizer or attendee of a meeting event to forward themeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this actionalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer'scopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
 func (m *ItemCalendarEventsItemForwardRequestBuilder) Post(ctx context.Context, body ItemCalendarEventsItemForwardPostRequestBodyable, requestConfiguration *ItemCalendarEventsItemForwardRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

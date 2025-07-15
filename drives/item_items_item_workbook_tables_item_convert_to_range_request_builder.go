@@ -37,9 +37,6 @@ func NewItemItemsItemWorkbookTablesItemConvertToRangeRequestBuilder(rawUrl strin
 // Post converts the table into a normal range of cells. All data is preserved.
 // returns a WorkbookRangeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/table-converttorange?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemConvertToRangeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemConvertToRangeRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

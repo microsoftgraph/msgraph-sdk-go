@@ -37,9 +37,6 @@ func NewItemGetMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Deprecated: This method is obsolete. Use PostAsGetMemberObjectsPostResponse instead.
 // returns a ItemGetMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
 func (m *ItemGetMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemGetMemberObjectsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemGetMemberObjectsRequestBuilder) Post(ctx context.Context, body Item
 // PostAsGetMemberObjectsPostResponse return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 // returns a ItemGetMemberObjectsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
 func (m *ItemGetMemberObjectsRequestBuilder) PostAsGetMemberObjectsPostResponse(ctx context.Context, body ItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemGetMemberObjectsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

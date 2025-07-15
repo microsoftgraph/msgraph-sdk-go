@@ -25,14 +25,14 @@ func CreateCustomTrainingSettingFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewCustomTrainingSetting(), nil
 }
 // GetAssignedTo gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
-// returns a []TrainingAssignedTo when successful
-func (m *CustomTrainingSetting) GetAssignedTo()([]TrainingAssignedTo) {
+// returns a []string when successful
+func (m *CustomTrainingSetting) GetAssignedTo()([]string) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]TrainingAssignedTo)
+        return val.([]string)
     }
     return nil
 }
@@ -77,15 +77,15 @@ func (m *CustomTrainingSetting) GetDurationInMinutes()(*int32) {
 func (m *CustomTrainingSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TrainingSetting.GetFieldDeserializers()
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseTrainingAssignedTo)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TrainingAssignedTo, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*TrainingAssignedTo))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetAssignedTo(res)
@@ -153,7 +153,7 @@ func (m *CustomTrainingSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
         return err
     }
     if m.GetAssignedTo() != nil {
-        err = writer.WriteCollectionOfStringValues("assignedTo", SerializeTrainingAssignedTo(m.GetAssignedTo()))
+        err = writer.WriteCollectionOfStringValues("assignedTo", m.GetAssignedTo())
         if err != nil {
             return err
         }
@@ -185,7 +185,7 @@ func (m *CustomTrainingSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAssignedTo sets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
-func (m *CustomTrainingSetting) SetAssignedTo(value []TrainingAssignedTo)() {
+func (m *CustomTrainingSetting) SetAssignedTo(value []string)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
         panic(err)
@@ -222,12 +222,12 @@ func (m *CustomTrainingSetting) SetUrl(value *string)() {
 type CustomTrainingSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TrainingSettingable
-    GetAssignedTo()([]TrainingAssignedTo)
+    GetAssignedTo()([]string)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDurationInMinutes()(*int32)
     GetUrl()(*string)
-    SetAssignedTo(value []TrainingAssignedTo)()
+    SetAssignedTo(value []string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDurationInMinutes(value *int32)()

@@ -35,9 +35,6 @@ func NewItemMarkChatUnreadForUserRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Post mark a chat as unread for a user.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
 func (m *ItemMarkChatUnreadForUserRequestBuilder) Post(ctx context.Context, body ItemMarkChatUnreadForUserPostRequestBodyable, requestConfiguration *ItemMarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

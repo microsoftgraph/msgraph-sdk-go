@@ -39,9 +39,6 @@ func NewGetTeamsUserActivityCountsWithPeriodRequestBuilder(rawUrl string, reques
 // Get get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivitycounts?view=graph-rest-1.0
 func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

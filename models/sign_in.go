@@ -270,15 +270,15 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["riskEventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRiskEventType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RiskEventType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*RiskEventType))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetRiskEventTypes(res)
@@ -446,14 +446,14 @@ func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     return nil
 }
 // GetRiskEventTypes gets the riskEventTypes property value. The riskEventTypes property
-// returns a []RiskEventType when successful
-func (m *SignIn) GetRiskEventTypes()([]RiskEventType) {
+// returns a []string when successful
+func (m *SignIn) GetRiskEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("riskEventTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]RiskEventType)
+        return val.([]string)
     }
     return nil
 }
@@ -652,7 +652,7 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     if m.GetRiskEventTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("riskEventTypes", SerializeRiskEventType(m.GetRiskEventTypes()))
+        err = writer.WriteCollectionOfStringValues("riskEventTypes", m.GetRiskEventTypes())
         if err != nil {
             return err
         }
@@ -809,7 +809,7 @@ func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
     }
 }
 // SetRiskEventTypes sets the riskEventTypes property value. The riskEventTypes property
-func (m *SignIn) SetRiskEventTypes(value []RiskEventType)() {
+func (m *SignIn) SetRiskEventTypes(value []string)() {
     err := m.GetBackingStore().Set("riskEventTypes", value)
     if err != nil {
         panic(err)
@@ -888,7 +888,7 @@ type SignInable interface {
     GetResourceDisplayName()(*string)
     GetResourceId()(*string)
     GetRiskDetail()(*RiskDetail)
-    GetRiskEventTypes()([]RiskEventType)
+    GetRiskEventTypes()([]string)
     GetRiskEventTypesV2()([]string)
     GetRiskLevelAggregated()(*RiskLevel)
     GetRiskLevelDuringSignIn()(*RiskLevel)
@@ -911,7 +911,7 @@ type SignInable interface {
     SetResourceDisplayName(value *string)()
     SetResourceId(value *string)()
     SetRiskDetail(value *RiskDetail)()
-    SetRiskEventTypes(value []RiskEventType)()
+    SetRiskEventTypes(value []string)()
     SetRiskEventTypesV2(value []string)()
     SetRiskLevelAggregated(value *RiskLevel)()
     SetRiskLevelDuringSignIn(value *RiskLevel)()

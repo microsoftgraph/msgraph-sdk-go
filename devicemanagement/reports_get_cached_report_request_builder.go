@@ -36,9 +36,6 @@ func NewReportsGetCachedReportRequestBuilder(rawUrl string, requestAdapter i2ae4
 // Post not yet documented
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcachedreport?view=graph-rest-1.0
 func (m *ReportsGetCachedReportRequestBuilder) Post(ctx context.Context, body ReportsGetCachedReportPostRequestBodyable, requestConfiguration *ReportsGetCachedReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

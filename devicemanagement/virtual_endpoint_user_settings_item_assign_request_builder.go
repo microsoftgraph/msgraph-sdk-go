@@ -35,9 +35,6 @@ func NewVirtualEndpointUserSettingsItemAssignRequestBuilder(rawUrl string, reque
 }
 // Post assign a cloudPcUserSetting to user groups.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
 func (m *VirtualEndpointUserSettingsItemAssignRequestBuilder) Post(ctx context.Context, body VirtualEndpointUserSettingsItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointUserSettingsItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

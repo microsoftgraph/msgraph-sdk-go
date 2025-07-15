@@ -22,9 +22,9 @@ type FederationConfigurationsAvailableProviderTypesRequestBuilderGetQueryParamet
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration struct {
@@ -52,9 +52,6 @@ func NewFederationConfigurationsAvailableProviderTypesRequestBuilder(rawUrl stri
 // Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 // returns a FederationConfigurationsAvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +72,6 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx c
 // GetAsAvailableProviderTypesGetResponse get all identity providers supported in a directory.
 // returns a FederationConfigurationsAvailableProviderTypesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

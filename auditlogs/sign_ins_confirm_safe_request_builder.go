@@ -35,9 +35,6 @@ func NewSignInsConfirmSafeRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Post mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-1.0
 func (m *SignInsConfirmSafeRequestBuilder) Post(ctx context.Context, body SignInsConfirmSafePostRequestBodyable, requestConfiguration *SignInsConfirmSafeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -37,9 +37,6 @@ func NewFileStorageContainersItemPermissionsItemGrantRequestBuilder(rawUrl strin
 // Deprecated: This method is obsolete. Use PostAsGrantPostResponse instead.
 // returns a FileStorageContainersItemPermissionsItemGrantResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
 func (m *FileStorageContainersItemPermissionsItemGrantRequestBuilder) Post(ctx context.Context, body FileStorageContainersItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *FileStorageContainersItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(FileStorageContainersItemPermissionsItemGrantResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *FileStorageContainersItemPermissionsItemGrantRequestBuilder) Post(ctx c
 // PostAsGrantPostResponse grant users access to a link represented by a permission.
 // returns a FileStorageContainersItemPermissionsItemGrantPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
 func (m *FileStorageContainersItemPermissionsItemGrantRequestBuilder) PostAsGrantPostResponse(ctx context.Context, body FileStorageContainersItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *FileStorageContainersItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(FileStorageContainersItemPermissionsItemGrantPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -35,9 +35,6 @@ func NewItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilder(rawUrl 
 }
 // Post associate a published content type present in a content type hub with a list of hub sites.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
 func (m *ItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilder) Post(ctx context.Context, body ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBodyable, requestConfiguration *ItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

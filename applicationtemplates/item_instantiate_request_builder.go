@@ -37,9 +37,6 @@ func NewItemInstantiateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // Post add an instance of an application from the Microsoft Entra application gallery into your directory. For non-gallery apps, use an application template with one of the following IDs to configure different single sign-on (SSO) modes like SAML SSO and password-based SSO.
 // returns a ApplicationServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
 func (m *ItemInstantiateRequestBuilder) Post(ctx context.Context, body ItemInstantiatePostRequestBodyable, requestConfiguration *ItemInstantiateRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationServicePrincipalable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

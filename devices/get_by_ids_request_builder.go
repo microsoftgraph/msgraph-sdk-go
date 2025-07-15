@@ -37,9 +37,6 @@ func NewGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 // Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
 // returns a GetByIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *GetByIdsRequestBuilder) Post(ctx context.Context, body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(GetByIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *GetByIdsRequestBuilder) Post(ctx context.Context, body GetByIdsPostRequ
 // PostAsGetByIdsPostResponse return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 // returns a GetByIdsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *GetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context, body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(GetByIdsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

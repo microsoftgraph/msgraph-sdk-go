@@ -35,9 +35,6 @@ func NewVirtualEndpointCloudPCsItemRestoreRequestBuilder(rawUrl string, requestA
 }
 // Post restore a specific cloudPC object to a previous state from a snapshot. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemRestoreRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsItemRestorePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemRestoreRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

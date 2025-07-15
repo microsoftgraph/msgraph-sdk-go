@@ -37,9 +37,6 @@ func NewItemCalendarGetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae
 // Deprecated: This method is obsolete. Use PostAsGetSchedulePostResponse instead.
 // returns a ItemCalendarGetScheduleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
 func (m *ItemCalendarGetScheduleRequestBuilder) Post(ctx context.Context, body ItemCalendarGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGetScheduleResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemCalendarGetScheduleRequestBuilder) Post(ctx context.Context, body I
 // PostAsGetSchedulePostResponse get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 // returns a ItemCalendarGetSchedulePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
 func (m *ItemCalendarGetScheduleRequestBuilder) PostAsGetSchedulePostResponse(ctx context.Context, body ItemCalendarGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGetSchedulePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

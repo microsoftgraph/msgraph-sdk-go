@@ -37,9 +37,6 @@ func NewDeletedTeamsItemChannelsItemMembersRemoveRequestBuilder(rawUrl string, r
 // Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
 // returns a DeletedTeamsItemChannelsItemMembersRemoveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) Post(ctx context.Context, body DeletedTeamsItemChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(DeletedTeamsItemChannelsItemMembersRemoveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) Post(ctx conte
 // PostAsRemovePostResponse remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // returns a DeletedTeamsItemChannelsItemMembersRemovePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body DeletedTeamsItemChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(DeletedTeamsItemChannelsItemMembersRemovePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

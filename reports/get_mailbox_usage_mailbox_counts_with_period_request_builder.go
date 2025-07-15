@@ -39,9 +39,6 @@ func NewGetMailboxUsageMailboxCountsWithPeriodRequestBuilder(rawUrl string, requ
 // Get get the total number of user mailboxes in your organization and how many are active each day of the reporting period. A mailbox is considered active if the user sent or read any email.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagemailboxcounts?view=graph-rest-1.0
 func (m *GetMailboxUsageMailboxCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetMailboxUsageMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

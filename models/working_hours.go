@@ -44,14 +44,14 @@ func (m *WorkingHours) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d4118542
     return m.backingStore
 }
 // GetDaysOfWeek gets the daysOfWeek property value. The days of the week on which the user works.
-// returns a []DayOfWeek when successful
-func (m *WorkingHours) GetDaysOfWeek()([]DayOfWeek) {
+// returns a []string when successful
+func (m *WorkingHours) GetDaysOfWeek()([]string) {
     val, err := m.GetBackingStore().Get("daysOfWeek")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]DayOfWeek)
+        return val.([]string)
     }
     return nil
 }
@@ -72,15 +72,15 @@ func (m *WorkingHours) GetEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 func (m *WorkingHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["daysOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DayOfWeek, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*DayOfWeek))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetDaysOfWeek(res)
@@ -168,7 +168,7 @@ func (m *WorkingHours) GetTimeZone()(TimeZoneBaseable) {
 // Serialize serializes information the current object
 func (m *WorkingHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetDaysOfWeek() != nil {
-        err := writer.WriteCollectionOfStringValues("daysOfWeek", SerializeDayOfWeek(m.GetDaysOfWeek()))
+        err := writer.WriteCollectionOfStringValues("daysOfWeek", m.GetDaysOfWeek())
         if err != nil {
             return err
         }
@@ -217,7 +217,7 @@ func (m *WorkingHours) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d411
     m.backingStore = value
 }
 // SetDaysOfWeek sets the daysOfWeek property value. The days of the week on which the user works.
-func (m *WorkingHours) SetDaysOfWeek(value []DayOfWeek)() {
+func (m *WorkingHours) SetDaysOfWeek(value []string)() {
     err := m.GetBackingStore().Set("daysOfWeek", value)
     if err != nil {
         panic(err)
@@ -256,13 +256,13 @@ type WorkingHoursable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDaysOfWeek()([]DayOfWeek)
+    GetDaysOfWeek()([]string)
     GetEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetOdataType()(*string)
     GetStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetTimeZone()(TimeZoneBaseable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDaysOfWeek(value []DayOfWeek)()
+    SetDaysOfWeek(value []string)()
     SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
     SetOdataType(value *string)()
     SetStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()

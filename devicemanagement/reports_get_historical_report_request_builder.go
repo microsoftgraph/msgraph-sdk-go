@@ -36,9 +36,6 @@ func NewReportsGetHistoricalReportRequestBuilder(rawUrl string, requestAdapter i
 // Post not yet documented
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-gethistoricalreport?view=graph-rest-1.0
 func (m *ReportsGetHistoricalReportRequestBuilder) Post(ctx context.Context, body ReportsGetHistoricalReportPostRequestBodyable, requestConfiguration *ReportsGetHistoricalReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

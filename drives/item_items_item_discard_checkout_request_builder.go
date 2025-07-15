@@ -35,9 +35,6 @@ func NewItemItemsItemDiscardCheckoutRequestBuilder(rawUrl string, requestAdapter
 }
 // Post discard the check out of a driveItem. This action releases a driveItem resource that was previously checked out. Any changes made to the item while it was checked out are discarded.  The same user that performed the checkout must discard it. Another alternative is to use application permissions.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-discardcheckout?view=graph-rest-1.0
 func (m *ItemItemsItemDiscardCheckoutRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemDiscardCheckoutRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

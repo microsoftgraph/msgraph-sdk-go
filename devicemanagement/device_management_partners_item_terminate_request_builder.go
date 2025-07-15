@@ -35,9 +35,6 @@ func NewDeviceManagementPartnersItemTerminateRequestBuilder(rawUrl string, reque
 }
 // Post not yet documented
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-terminate?view=graph-rest-1.0
 func (m *DeviceManagementPartnersItemTerminateRequestBuilder) Post(ctx context.Context, requestConfiguration *DeviceManagementPartnersItemTerminateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

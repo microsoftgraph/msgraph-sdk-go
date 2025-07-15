@@ -40,9 +40,6 @@ func NewGetYammerActivityUserDetailWithDateRequestBuilder(rawUrl string, request
 // Get get details about Yammer activity by user.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getyammeractivityuserdetail?view=graph-rest-1.0
 func (m *GetYammerActivityUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

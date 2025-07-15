@@ -37,9 +37,6 @@ func NewDeviceCompliancePoliciesItemAssignRequestBuilder(rawUrl string, requestA
 // Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a DeviceCompliancePoliciesItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-assign?view=graph-rest-1.0
 func (m *DeviceCompliancePoliciesItemAssignRequestBuilder) Post(ctx context.Context, body DeviceCompliancePoliciesItemAssignPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesItemAssignRequestBuilderPostRequestConfiguration)(DeviceCompliancePoliciesItemAssignResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *DeviceCompliancePoliciesItemAssignRequestBuilder) Post(ctx context.Cont
 // PostAsAssignPostResponse not yet documented
 // returns a DeviceCompliancePoliciesItemAssignPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-assign?view=graph-rest-1.0
 func (m *DeviceCompliancePoliciesItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body DeviceCompliancePoliciesItemAssignPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesItemAssignRequestBuilderPostRequestConfiguration)(DeviceCompliancePoliciesItemAssignPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

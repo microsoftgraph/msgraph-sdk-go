@@ -35,9 +35,6 @@ func NewAccessReviewsDefinitionsItemInstancesItemSendReminderRequestBuilder(rawU
 }
 // Post send a reminder to the reviewers of an active accessReviewInstance.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
 func (m *AccessReviewsDefinitionsItemInstancesItemSendReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemSendReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

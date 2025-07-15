@@ -22,38 +22,10 @@ func NewActivitiesContainer()(*ActivitiesContainer) {
 func CreateActivitiesContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActivitiesContainer(), nil
 }
-// GetContentActivities gets the contentActivities property value. Collection of activity logs related to content processing.
-// returns a []ContentActivityable when successful
-func (m *ActivitiesContainer) GetContentActivities()([]ContentActivityable) {
-    val, err := m.GetBackingStore().Get("contentActivities")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ContentActivityable)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActivitiesContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["contentActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateContentActivityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ContentActivityable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ContentActivityable)
-                }
-            }
-            m.SetContentActivities(res)
-        }
-        return nil
-    }
     return res
 }
 // Serialize serializes information the current object
@@ -62,30 +34,9 @@ func (m *ActivitiesContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if err != nil {
         return err
     }
-    if m.GetContentActivities() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentActivities()))
-        for i, v := range m.GetContentActivities() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("contentActivities", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetContentActivities sets the contentActivities property value. Collection of activity logs related to content processing.
-func (m *ActivitiesContainer) SetContentActivities(value []ContentActivityable)() {
-    err := m.GetBackingStore().Set("contentActivities", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type ActivitiesContainerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetContentActivities()([]ContentActivityable)
-    SetContentActivities(value []ContentActivityable)()
 }

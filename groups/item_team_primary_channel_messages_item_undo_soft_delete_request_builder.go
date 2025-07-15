@@ -35,9 +35,6 @@ func NewItemTeamPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilder(rawUrl st
 }
 // Post undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

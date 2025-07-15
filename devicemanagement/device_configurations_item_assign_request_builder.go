@@ -37,9 +37,6 @@ func NewDeviceConfigurationsItemAssignRequestBuilder(rawUrl string, requestAdapt
 // Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a DeviceConfigurationsItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemAssignRequestBuilder) Post(ctx context.Context, body DeviceConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(DeviceConfigurationsItemAssignResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *DeviceConfigurationsItemAssignRequestBuilder) Post(ctx context.Context,
 // PostAsAssignPostResponse not yet documented
 // returns a DeviceConfigurationsItemAssignPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body DeviceConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(DeviceConfigurationsItemAssignPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

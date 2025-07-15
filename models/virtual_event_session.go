@@ -60,6 +60,16 @@ func (m *VirtualEventSession) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["videoOnDemandWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVideoOnDemandWebUrl(val)
+        }
+        return nil
+    }
     return res
 }
 // GetStartDateTime gets the startDateTime property value. The virtual event session start time.
@@ -71,6 +81,18 @@ func (m *VirtualEventSession) GetStartDateTime()(DateTimeTimeZoneable) {
     }
     if val != nil {
         return val.(DateTimeTimeZoneable)
+    }
+    return nil
+}
+// GetVideoOnDemandWebUrl gets the videoOnDemandWebUrl property value. The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
+// returns a *string when successful
+func (m *VirtualEventSession) GetVideoOnDemandWebUrl()(*string) {
+    val, err := m.GetBackingStore().Get("videoOnDemandWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -92,6 +114,12 @@ func (m *VirtualEventSession) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("videoOnDemandWebUrl", m.GetVideoOnDemandWebUrl())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetEndDateTime sets the endDateTime property value. The virtual event session end time.
@@ -108,11 +136,20 @@ func (m *VirtualEventSession) SetStartDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
+// SetVideoOnDemandWebUrl sets the videoOnDemandWebUrl property value. The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
+func (m *VirtualEventSession) SetVideoOnDemandWebUrl(value *string)() {
+    err := m.GetBackingStore().Set("videoOnDemandWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type VirtualEventSessionable interface {
     OnlineMeetingBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEndDateTime()(DateTimeTimeZoneable)
     GetStartDateTime()(DateTimeTimeZoneable)
+    GetVideoOnDemandWebUrl()(*string)
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
+    SetVideoOnDemandWebUrl(value *string)()
 }
