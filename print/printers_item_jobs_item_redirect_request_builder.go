@@ -37,6 +37,9 @@ func NewPrintersItemJobsItemRedirectRequestBuilder(rawUrl string, requestAdapter
 // Post redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // returns a PrintJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
 func (m *PrintersItemJobsItemRedirectRequestBuilder) Post(ctx context.Context, body PrintersItemJobsItemRedirectPostRequestBodyable, requestConfiguration *PrintersItemJobsItemRedirectRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

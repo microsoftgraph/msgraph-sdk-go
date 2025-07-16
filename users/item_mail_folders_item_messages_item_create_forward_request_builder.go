@@ -37,6 +37,9 @@ func NewItemMailFoldersItemMessagesItemCreateForwardRequestBuilder(rawUrl string
 // Post create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.- Update the draft later to add content to the body or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation.
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
 func (m *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemMessagesItemCreateForwardPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -30,9 +30,9 @@ type ItemTeamChannelsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemTeamChannelsGetAllMessagesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamChannelsGetAllMessagesRequestBuilderGetRequestConfiguration struct {
@@ -60,6 +60,9 @@ func NewItemTeamChannelsGetAllMessagesRequestBuilder(rawUrl string, requestAdapt
 // Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 // returns a ItemTeamChannelsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
 func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamChannelsGetAllMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,6 +83,9 @@ func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) Get(ctx context.Context, 
 // GetAsGetAllMessagesGetResponse retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a ItemTeamChannelsGetAllMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
 func (m *ItemTeamChannelsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemTeamChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamChannelsGetAllMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

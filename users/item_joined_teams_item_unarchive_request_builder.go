@@ -35,6 +35,9 @@ func NewItemJoinedTeamsItemUnarchiveRequestBuilder(rawUrl string, requestAdapter
 }
 // Post restore an archived team. This API restores users' ability to send messages and edit the team, abiding by tenant and team settings. A Team is archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

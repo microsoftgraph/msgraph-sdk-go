@@ -35,6 +35,9 @@ func NewExchangeConnectorsItemSyncRequestBuilder(rawUrl string, requestAdapter i
 }
 // Post not yet documented
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-sync?view=graph-rest-1.0
 func (m *ExchangeConnectorsItemSyncRequestBuilder) Post(ctx context.Context, body ExchangeConnectorsItemSyncPostRequestBodyable, requestConfiguration *ExchangeConnectorsItemSyncRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -28,9 +28,9 @@ type SchoolsDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // SchoolsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SchoolsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewSchoolsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a SchoolsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0
 func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfigurati
 // GetAsDeltaGetResponse get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
 // returns a SchoolsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0
 func (m *SchoolsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

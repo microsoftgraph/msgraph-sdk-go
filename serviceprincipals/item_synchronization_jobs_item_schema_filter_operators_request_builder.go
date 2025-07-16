@@ -28,9 +28,9 @@ type ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetQueryParam
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder(rawUrl st
 // Deprecated: This method is obsolete. Use GetAsFilterOperatorsGetResponse instead.
 // returns a ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx
 // GetAsFilterOperatorsGetResponse list all operators supported in the scoping filters.
 // returns a ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) GetAsFilterOperatorsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

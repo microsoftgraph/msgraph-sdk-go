@@ -39,6 +39,9 @@ func NewGetM365AppUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapt
 // Get get a report that provides the trend in the number of active users for each app (Outlook, Word, Excel, PowerPoint, OneNote, and Teams) in your organization.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getm365appusercounts?view=graph-rest-1.0
 func (m *GetM365AppUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetM365AppUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

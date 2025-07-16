@@ -35,6 +35,9 @@ func NewBookingBusinessesItemUnpublishRequestBuilder(rawUrl string, requestAdapt
 }
 // Post make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
 func (m *BookingBusinessesItemUnpublishRequestBuilder) Post(ctx context.Context, requestConfiguration *BookingBusinessesItemUnpublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

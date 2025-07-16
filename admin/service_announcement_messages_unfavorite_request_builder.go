@@ -37,6 +37,9 @@ func NewServiceAnnouncementMessagesUnfavoriteRequestBuilder(rawUrl string, reque
 // Deprecated: This method is obsolete. Use PostAsUnfavoritePostResponse instead.
 // returns a ServiceAnnouncementMessagesUnfavoriteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesUnfavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnfavoriteRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnfavoriteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) Post(ctx context.C
 // PostAsUnfavoritePostResponse remove the favorite status of serviceUpdateMessages for the signed in user.
 // returns a ServiceAnnouncementMessagesUnfavoritePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) PostAsUnfavoritePostResponse(ctx context.Context, body ServiceAnnouncementMessagesUnfavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnfavoriteRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnfavoritePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

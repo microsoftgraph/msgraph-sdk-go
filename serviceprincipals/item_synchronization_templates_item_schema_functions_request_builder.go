@@ -28,9 +28,9 @@ type ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetQueryParame
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder(rawUrl str
 // Deprecated: This method is obsolete. Use GetAsFunctionsGetResponse instead.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFunctionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) Get(ctx 
 // GetAsFunctionsGetResponse list all the functions currently supported in the attributeMappingSource.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) GetAsFunctionsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

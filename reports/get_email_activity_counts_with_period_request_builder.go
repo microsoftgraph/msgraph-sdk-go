@@ -39,6 +39,9 @@ func NewGetEmailActivityCountsWithPeriodRequestBuilder(rawUrl string, requestAda
 // Get enables you to understand the trends of email activity (like how many were sent, read, and received) in your organization.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getemailactivitycounts?view=graph-rest-1.0
 func (m *GetEmailActivityCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEmailActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

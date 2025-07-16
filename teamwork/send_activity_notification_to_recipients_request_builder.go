@@ -35,6 +35,9 @@ func NewSendActivityNotificationToRecipientsRequestBuilder(rawUrl string, reques
 }
 // Post send activity feed notifications to multiple users, in bulk.  For more information, see sending Teams activity notifications.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-sendactivitynotificationtorecipients?view=graph-rest-1.0
 func (m *SendActivityNotificationToRecipientsRequestBuilder) Post(ctx context.Context, body SendActivityNotificationToRecipientsPostRequestBodyable, requestConfiguration *SendActivityNotificationToRecipientsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

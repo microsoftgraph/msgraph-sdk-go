@@ -37,6 +37,9 @@ func NewItemRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
 // returns a ItemRemoveGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
 func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemRemoveGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemov
 // PostAsRemoveGroupPostResponse removes a group from a lifecycle policy.
 // returns a ItemRemoveGroupPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
 func (m *ItemRemoveGroupRequestBuilder) PostAsRemoveGroupPostResponse(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemRemoveGroupPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

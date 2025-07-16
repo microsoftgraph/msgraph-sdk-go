@@ -48,14 +48,14 @@ func (m *AccessReviewHistoryDefinition) GetCreatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetDecisions gets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
-// returns a []string when successful
-func (m *AccessReviewHistoryDefinition) GetDecisions()([]string) {
+// returns a []AccessReviewHistoryDecisionFilter when successful
+func (m *AccessReviewHistoryDefinition) GetDecisions()([]AccessReviewHistoryDecisionFilter) {
     val, err := m.GetBackingStore().Get("decisions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]AccessReviewHistoryDecisionFilter)
     }
     return nil
 }
@@ -96,15 +96,15 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["decisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAccessReviewHistoryDecisionFilter)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AccessReviewHistoryDecisionFilter, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*AccessReviewHistoryDecisionFilter))
                 }
             }
             m.SetDecisions(res)
@@ -286,7 +286,7 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetDecisions() != nil {
-        err = writer.WriteCollectionOfStringValues("decisions", m.GetDecisions())
+        err = writer.WriteCollectionOfStringValues("decisions", SerializeAccessReviewHistoryDecisionFilter(m.GetDecisions()))
         if err != nil {
             return err
         }
@@ -363,7 +363,7 @@ func (m *AccessReviewHistoryDefinition) SetCreatedDateTime(value *i336074805fc85
     }
 }
 // SetDecisions sets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
-func (m *AccessReviewHistoryDefinition) SetDecisions(value []string)() {
+func (m *AccessReviewHistoryDefinition) SetDecisions(value []AccessReviewHistoryDecisionFilter)() {
     err := m.GetBackingStore().Set("decisions", value)
     if err != nil {
         panic(err)
@@ -423,7 +423,7 @@ type AccessReviewHistoryDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedBy()(UserIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDecisions()([]string)
+    GetDecisions()([]AccessReviewHistoryDecisionFilter)
     GetDisplayName()(*string)
     GetInstances()([]AccessReviewHistoryInstanceable)
     GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -433,7 +433,7 @@ type AccessReviewHistoryDefinitionable interface {
     GetStatus()(*AccessReviewHistoryStatus)
     SetCreatedBy(value UserIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDecisions(value []string)()
+    SetDecisions(value []AccessReviewHistoryDecisionFilter)()
     SetDisplayName(value *string)()
     SetInstances(value []AccessReviewHistoryInstanceable)()
     SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

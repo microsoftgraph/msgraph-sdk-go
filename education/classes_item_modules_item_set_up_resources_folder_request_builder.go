@@ -37,6 +37,9 @@ func NewClassesItemModulesItemSetUpResourcesFolderRequestBuilder(rawUrl string, 
 // Post create a SharePoint folder to upload files for a given educationModule. Only teachers can perform this operation. The teacher determines what resources to upload to the SharePoint folder for the module.
 // returns a EducationModuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-setupresourcesfolder?view=graph-rest-1.0
 func (m *ClassesItemModulesItemSetUpResourcesFolderRequestBuilder) Post(ctx context.Context, requestConfiguration *ClassesItemModulesItemSetUpResourcesFolderRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationModuleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

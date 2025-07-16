@@ -35,6 +35,9 @@ func NewItemResetUnseenCountRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Post reset the unseenCount of all the posts that the current user hasn't seen since their last visit. Supported for Microsoft 365 groups only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-resetunseencount?view=graph-rest-1.0
 func (m *ItemResetUnseenCountRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemResetUnseenCountRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

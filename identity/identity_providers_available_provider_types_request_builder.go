@@ -22,9 +22,9 @@ type IdentityProvidersAvailableProviderTypesRequestBuilderGetQueryParameters str
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // IdentityProvidersAvailableProviderTypesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentityProvidersAvailableProviderTypesRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewIdentityProvidersAvailableProviderTypesRequestBuilder(rawUrl string, req
 // Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 // returns a IdentityProvidersAvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
 func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProvidersAvailableProviderTypesRequestBuilderGetRequestConfiguration)(IdentityProvidersAvailableProviderTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) Get(ctx context.
 // GetAsAvailableProviderTypesGetResponse get all identity providers supported in a directory.
 // returns a IdentityProvidersAvailableProviderTypesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
 func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *IdentityProvidersAvailableProviderTypesRequestBuilderGetRequestConfiguration)(IdentityProvidersAvailableProviderTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

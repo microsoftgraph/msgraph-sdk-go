@@ -22,9 +22,9 @@ type VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetQueryParameters 
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder(rawUrl string, 
 // Deprecated: This method is obsolete. Use GetAsGetSourceImagesGetResponse instead.
 // returns a VirtualEndpointDeviceImagesGetSourceImagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(VirtualEndpointDeviceImagesGetSourceImagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) Get(ctx conte
 // GetAsGetSourceImagesGetResponse get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
 // returns a VirtualEndpointDeviceImagesGetSourceImagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) GetAsGetSourceImagesGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(VirtualEndpointDeviceImagesGetSourceImagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewCasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseReque
 }
 // Post release a custodian from a case. For details, see Release a custodian from a case.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -36,6 +36,9 @@ func NewSubjectRightsRequestsItemGetFinalReportRequestBuilder(rawUrl string, req
 // Get get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalreport?view=graph-rest-1.0
 func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemGetFinalReportRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

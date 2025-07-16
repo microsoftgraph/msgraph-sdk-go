@@ -35,6 +35,9 @@ func NewItemPresenceSetPresenceRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Post set the state of a user's presence session as an application.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
 func (m *ItemPresenceSetPresenceRequestBuilder) Post(ctx context.Context, body ItemPresenceSetPresencePostRequestBodyable, requestConfiguration *ItemPresenceSetPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

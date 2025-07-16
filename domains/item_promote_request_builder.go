@@ -37,6 +37,9 @@ func NewItemPromoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 // Deprecated: This method is obsolete. Use PostAsPromotePostResponse instead.
 // returns a ItemPromoteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
 func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(ItemPromoteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfigurati
 // PostAsPromotePostResponse promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
 // returns a ItemPromotePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
 func (m *ItemPromoteRequestBuilder) PostAsPromotePostResponse(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(ItemPromotePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

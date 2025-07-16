@@ -36,6 +36,9 @@ func NewGetOffice365ActivationsUserDetailRequestBuilder(rawUrl string, requestAd
 // Get get details about users who have activated Microsoft 365.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsuserdetail?view=graph-rest-1.0
 func (m *GetOffice365ActivationsUserDetailRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ActivationsUserDetailRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

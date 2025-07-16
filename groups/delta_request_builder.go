@@ -28,9 +28,9 @@ type DeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // DeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a DeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-delta?view=graph-rest-1.0
 func (m *DeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(DeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *DeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *Del
 // GetAsDeltaGetResponse get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // returns a DeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-delta?view=graph-rest-1.0
 func (m *DeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(DeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

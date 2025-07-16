@@ -40,6 +40,9 @@ func NewGetYammerDeviceUsageUserDetailWithDateRequestBuilder(rawUrl string, requ
 // Get get details about Yammer device usage by user.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusageuserdetail?view=graph-rest-1.0
 func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

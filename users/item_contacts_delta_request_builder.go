@@ -28,9 +28,9 @@ type ItemContactsDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemContactsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemContactsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemContactsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
 func (m *ItemContactsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactsDeltaRequestBuilderGetRequestConfiguration)(ItemContactsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemContactsDeltaRequestBuilder) Get(ctx context.Context, requestConfig
 // GetAsDeltaGetResponse get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
 // returns a ItemContactsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
 func (m *ItemContactsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemContactsDeltaRequestBuilderGetRequestConfiguration)(ItemContactsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

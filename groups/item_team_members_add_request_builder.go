@@ -37,6 +37,9 @@ func NewItemTeamMembersAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // returns a ItemTeamMembersAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
 func (m *ItemTeamMembersAddRequestBuilder) Post(ctx context.Context, body ItemTeamMembersAddPostRequestBodyable, requestConfiguration *ItemTeamMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamMembersAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemTeamMembersAddRequestBuilder) Post(ctx context.Context, body ItemTe
 // PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // returns a ItemTeamMembersAddPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
 func (m *ItemTeamMembersAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemTeamMembersAddPostRequestBodyable, requestConfiguration *ItemTeamMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamMembersAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

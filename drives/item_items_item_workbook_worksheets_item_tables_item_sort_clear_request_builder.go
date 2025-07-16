@@ -35,6 +35,9 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemSortClearRequestBuilder(raw
 }
 // Post clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablesort-clear?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortClearRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemSortClearRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

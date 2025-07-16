@@ -28,9 +28,9 @@ type VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetQueryParameters 
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration struct {
@@ -61,6 +61,9 @@ func NewVirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder(rawUrl string, 
 // Deprecated: This method is obsolete. Use GetAsGetByUserRoleWithRoleGetResponse instead.
 // returns a VirtualEventsWebinarsGetByUserRoleWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsWebinarsGetByUserRoleWithRoleResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,6 +84,9 @@ func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) Get(ctx conte
 // GetAsGetByUserRoleWithRoleGetResponse get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
 // returns a VirtualEventsWebinarsGetByUserRoleWithRoleGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) GetAsGetByUserRoleWithRoleGetResponse(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsWebinarsGetByUserRoleWithRoleGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

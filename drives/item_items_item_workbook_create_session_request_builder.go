@@ -37,6 +37,9 @@ func NewItemItemsItemWorkbookCreateSessionRequestBuilder(rawUrl string, requestA
 // Post create a new workbook session.  Excel APIs can be called in one of two modes:  To represent the session in the API, use the workbook-session-id: {session-id} header.  In some cases, creating a new session requires an indeterminate time to complete. Microsoft Graph also provides a long running operations pattern. This pattern provides a way to poll for creation status updates, without waiting for the creation to complete. The following are the steps:
 // returns a WorkbookSessionInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-createsession?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookCreateSessionRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookCreateSessionPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookCreateSessionRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSessionInfoable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

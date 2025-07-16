@@ -37,6 +37,9 @@ func NewDeletedItemsItemCheckMemberGroupsRequestBuilder(rawUrl string, requestAd
 // Deprecated: This method is obsolete. Use PostAsCheckMemberGroupsPostResponse instead.
 // returns a DeletedItemsItemCheckMemberGroupsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
 func (m *DeletedItemsItemCheckMemberGroupsRequestBuilder) Post(ctx context.Context, body DeletedItemsItemCheckMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemCheckMemberGroupsRequestBuilderPostRequestConfiguration)(DeletedItemsItemCheckMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *DeletedItemsItemCheckMemberGroupsRequestBuilder) Post(ctx context.Conte
 // PostAsCheckMemberGroupsPostResponse check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:- user- group- service principal- organizational contact- device- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 // returns a DeletedItemsItemCheckMemberGroupsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
 func (m *DeletedItemsItemCheckMemberGroupsRequestBuilder) PostAsCheckMemberGroupsPostResponse(ctx context.Context, body DeletedItemsItemCheckMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemCheckMemberGroupsRequestBuilderPostRequestConfiguration)(DeletedItemsItemCheckMemberGroupsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

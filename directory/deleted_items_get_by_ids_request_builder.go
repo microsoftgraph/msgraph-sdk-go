@@ -37,6 +37,9 @@ func NewDeletedItemsGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
 // returns a DeletedItemsGetByIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *DeletedItemsGetByIdsRequestBuilder) Post(ctx context.Context, body DeletedItemsGetByIdsPostRequestBodyable, requestConfiguration *DeletedItemsGetByIdsRequestBuilderPostRequestConfiguration)(DeletedItemsGetByIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *DeletedItemsGetByIdsRequestBuilder) Post(ctx context.Context, body Dele
 // PostAsGetByIdsPostResponse return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 // returns a DeletedItemsGetByIdsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *DeletedItemsGetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context, body DeletedItemsGetByIdsPostRequestBodyable, requestConfiguration *DeletedItemsGetByIdsRequestBuilderPostRequestConfiguration)(DeletedItemsGetByIdsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

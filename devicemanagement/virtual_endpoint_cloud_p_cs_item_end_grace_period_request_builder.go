@@ -35,6 +35,9 @@ func NewVirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder(rawUrl string, r
 }
 // Post end the grace period for a specific cloudPC object. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before deprovisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

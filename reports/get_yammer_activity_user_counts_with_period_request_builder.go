@@ -39,6 +39,9 @@ func NewGetYammerActivityUserCountsWithPeriodRequestBuilder(rawUrl string, reque
 // Get get the trends on the number of unique users who posted, read, and liked Yammer messages.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getyammeractivityusercounts?view=graph-rest-1.0
 func (m *GetYammerActivityUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -39,6 +39,9 @@ func NewGetOneDriveActivityFileCountsWithPeriodRequestBuilder(rawUrl string, req
 // Get get the number of unique, licensed users that performed file interactions against any OneDrive account.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityfilecounts?view=graph-rest-1.0
 func (m *GetOneDriveActivityFileCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOneDriveActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
