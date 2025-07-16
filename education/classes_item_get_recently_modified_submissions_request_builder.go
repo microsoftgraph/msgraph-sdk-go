@@ -28,9 +28,9 @@ type ClassesItemGetRecentlyModifiedSubmissionsRequestBuilderGetQueryParameters s
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ClassesItemGetRecentlyModifiedSubmissionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemGetRecentlyModifiedSubmissionsRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewClassesItemGetRecentlyModifiedSubmissionsRequestBuilder(rawUrl string, r
 // Deprecated: This method is obsolete. Use GetAsGetRecentlyModifiedSubmissionsGetResponse instead.
 // returns a ClassesItemGetRecentlyModifiedSubmissionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-getrecentlymodifiedsubmissions?view=graph-rest-1.0
 func (m *ClassesItemGetRecentlyModifiedSubmissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemGetRecentlyModifiedSubmissionsRequestBuilderGetRequestConfiguration)(ClassesItemGetRecentlyModifiedSubmissionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ClassesItemGetRecentlyModifiedSubmissionsRequestBuilder) Get(ctx contex
 // GetAsGetRecentlyModifiedSubmissionsGetResponse retrieve submissions modified in the previous seven days. Only teachers and applications with application permissions can perform this operation. A submission object represents a student's work for an assignment. Resources associated with the submission represent their work. A teacher or application with application permissions has full access to all submission objects. The grade and feedback from a teacher are part of the educationOutcome associated with this object. Only teachers or applications with application permissions can add or change grades and feedback. Students can't see the grade or feedback until the assignment is released.
 // returns a ClassesItemGetRecentlyModifiedSubmissionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-getrecentlymodifiedsubmissions?view=graph-rest-1.0
 func (m *ClassesItemGetRecentlyModifiedSubmissionsRequestBuilder) GetAsGetRecentlyModifiedSubmissionsGetResponse(ctx context.Context, requestConfiguration *ClassesItemGetRecentlyModifiedSubmissionsRequestBuilderGetRequestConfiguration)(ClassesItemGetRecentlyModifiedSubmissionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

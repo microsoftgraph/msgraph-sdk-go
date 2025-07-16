@@ -39,6 +39,9 @@ func NewGetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder(rawUrl string
 // Get get the count of unique users by Outlook desktop version.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getemailappusageversionsusercounts?view=graph-rest-1.0
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

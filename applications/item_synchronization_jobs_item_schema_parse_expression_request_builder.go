@@ -37,6 +37,9 @@ func NewItemSynchronizationJobsItemSchemaParseExpressionRequestBuilder(rawUrl st
 // Post parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
 // returns a ParseExpressionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemSchemaParseExpressionRequestBuilder) Post(ctx context.Context, body ItemSynchronizationJobsItemSchemaParseExpressionPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemSchemaParseExpressionRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseExpressionResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

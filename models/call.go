@@ -303,15 +303,15 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["requestedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*Modality))
                 }
             }
             m.SetRequestedModalities(res)
@@ -491,14 +491,14 @@ func (m *Call) GetParticipants()([]Participantable) {
     return nil
 }
 // GetRequestedModalities gets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
-// returns a []string when successful
-func (m *Call) GetRequestedModalities()([]string) {
+// returns a []Modality when successful
+func (m *Call) GetRequestedModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("requestedModalities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]Modality)
     }
     return nil
 }
@@ -726,7 +726,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRequestedModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("requestedModalities", m.GetRequestedModalities())
+        err = writer.WriteCollectionOfStringValues("requestedModalities", SerializeModality(m.GetRequestedModalities()))
         if err != nil {
             return err
         }
@@ -894,7 +894,7 @@ func (m *Call) SetParticipants(value []Participantable)() {
     }
 }
 // SetRequestedModalities sets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
-func (m *Call) SetRequestedModalities(value []string)() {
+func (m *Call) SetRequestedModalities(value []Modality)() {
     err := m.GetBackingStore().Set("requestedModalities", value)
     if err != nil {
         panic(err)
@@ -974,7 +974,7 @@ type Callable interface {
     GetMyParticipantId()(*string)
     GetOperations()([]CommsOperationable)
     GetParticipants()([]Participantable)
-    GetRequestedModalities()([]string)
+    GetRequestedModalities()([]Modality)
     GetResultInfo()(ResultInfoable)
     GetSource()(ParticipantInfoable)
     GetState()(*CallState)
@@ -998,7 +998,7 @@ type Callable interface {
     SetMyParticipantId(value *string)()
     SetOperations(value []CommsOperationable)()
     SetParticipants(value []Participantable)()
-    SetRequestedModalities(value []string)()
+    SetRequestedModalities(value []Modality)()
     SetResultInfo(value ResultInfoable)()
     SetSource(value ParticipantInfoable)()
     SetState(value *CallState)()

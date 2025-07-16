@@ -14,7 +14,7 @@ import (
 type ManagedEBooksItemAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedEBooksItemAssignmentsRequestBuilderGetQueryParameters list properties and relationships of the iosVppEBookAssignment objects.
+// ManagedEBooksItemAssignmentsRequestBuilderGetQueryParameters list properties and relationships of the managedEBookAssignment objects.
 type ManagedEBooksItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -29,9 +29,9 @@ type ManagedEBooksItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ManagedEBooksItemAssignmentsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedEBooksItemAssignmentsRequestBuilderGetRequestConfiguration struct {
@@ -79,12 +79,12 @@ func NewManagedEBooksItemAssignmentsRequestBuilder(rawUrl string, requestAdapter
 func (m *ManagedEBooksItemAssignmentsRequestBuilder) Count()(*ManagedEBooksItemAssignmentsCountRequestBuilder) {
     return NewManagedEBooksItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the iosVppEBookAssignment objects.
+// Get list properties and relationships of the managedEBookAssignment objects.
 // returns a ManagedEBookAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-list?view=graph-rest-1.0
 func (m *ManagedEBooksItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ManagedEBooksItemAssignmentsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable), nil
 }
-// ToGetRequestInformation list properties and relationships of the iosVppEBookAssignment objects.
+// ToGetRequestInformation list properties and relationships of the managedEBookAssignment objects.
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

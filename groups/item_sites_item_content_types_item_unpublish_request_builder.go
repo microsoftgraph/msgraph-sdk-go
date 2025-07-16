@@ -35,6 +35,9 @@ func NewItemSitesItemContentTypesItemUnpublishRequestBuilder(rawUrl string, requ
 }
 // Post unpublish a contentType from a content type hub site.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesItemUnpublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemUnpublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

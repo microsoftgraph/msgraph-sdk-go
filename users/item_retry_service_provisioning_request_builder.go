@@ -35,6 +35,9 @@ func NewItemRetryServiceProvisioningRequestBuilder(rawUrl string, requestAdapter
 }
 // Post retry the provisioning of a user object in Microsoft Entra ID.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-retryserviceprovisioning?view=graph-rest-1.0
 func (m *ItemRetryServiceProvisioningRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemRetryServiceProvisioningRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

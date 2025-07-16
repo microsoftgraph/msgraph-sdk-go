@@ -44,9 +44,9 @@ func NewCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 }
 // Get get the number of the resource
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
-// returns a *int64 when successful
+// returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *CountRequestBuilder) Get(ctx context.Context, requestConfiguration *CountRequestBuilderGetRequestConfiguration)(*int64, error) {
+func (m *CountRequestBuilder) Get(ctx context.Context, requestConfiguration *CountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -54,14 +54,14 @@ func (m *CountRequestBuilder) Get(ctx context.Context, requestConfiguration *Cou
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int64", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(*int64), nil
+    return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15

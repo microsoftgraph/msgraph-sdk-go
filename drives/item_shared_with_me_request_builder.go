@@ -28,9 +28,9 @@ type ItemSharedWithMeRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemSharedWithMeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSharedWithMeRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemSharedWithMeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // Deprecated: This method is obsolete. Use GetAsSharedWithMeGetResponse instead.
 // returns a ItemSharedWithMeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
 func (m *ItemSharedWithMeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSharedWithMeRequestBuilderGetRequestConfiguration)(ItemSharedWithMeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemSharedWithMeRequestBuilder) Get(ctx context.Context, requestConfigu
 // GetAsSharedWithMeGetResponse get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
 // returns a ItemSharedWithMeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
 func (m *ItemSharedWithMeRequestBuilder) GetAsSharedWithMeGetResponse(ctx context.Context, requestConfiguration *ItemSharedWithMeRequestBuilderGetRequestConfiguration)(ItemSharedWithMeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

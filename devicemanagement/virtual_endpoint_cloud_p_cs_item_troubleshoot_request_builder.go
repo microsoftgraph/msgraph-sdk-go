@@ -35,6 +35,9 @@ func NewVirtualEndpointCloudPCsItemTroubleshootRequestBuilder(rawUrl string, req
 }
 // Post troubleshoot a specific cloudPC object. Use this API to check the health status of the Cloud PC and the session host.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemTroubleshootRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemTroubleshootRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

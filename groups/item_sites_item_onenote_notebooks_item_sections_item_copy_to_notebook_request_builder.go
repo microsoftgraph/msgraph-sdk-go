@@ -37,6 +37,9 @@ func NewItemSitesItemOnenoteNotebooksItemSectionsItemCopyToNotebookRequestBuilde
 // Post for Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 // returns a OnenoteOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemCopyToNotebookRequestBuilder) Post(ctx context.Context, body ItemSitesItemOnenoteNotebooksItemSectionsItemCopyToNotebookPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteNotebooksItemSectionsItemCopyToNotebookRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

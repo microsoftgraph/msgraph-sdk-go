@@ -64,7 +64,7 @@ func NewUsersWithUserPrincipalNameRequestBuilder(rawUrl string, requestAdapter i
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
 func (m *UsersWithUserPrincipalNameRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersWithUserPrincipalNameRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewManagedDevicesItemSyncDeviceRequestBuilder(rawUrl string, requestAdapter
 }
 // Post not yet documented
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
 func (m *ManagedDevicesItemSyncDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemSyncDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewItemEventsItemDismissReminderRequestBuilder(rawUrl string, requestAdapte
 }
 // Post dismiss a reminder that has been triggered for an event in a user calendar.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
 func (m *ItemEventsItemDismissReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemEventsItemDismissReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

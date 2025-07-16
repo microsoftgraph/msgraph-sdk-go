@@ -39,6 +39,9 @@ func NewGetOneDriveUsageAccountCountsWithPeriodRequestBuilder(rawUrl string, req
 // Get get the trend in the number of active OneDrive for Business sites. Any site on which users viewed, modified, uploaded, downloaded, shared, or synced files is considered an active site.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getonedriveusageaccountcounts?view=graph-rest-1.0
 func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOneDriveUsageAccountCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

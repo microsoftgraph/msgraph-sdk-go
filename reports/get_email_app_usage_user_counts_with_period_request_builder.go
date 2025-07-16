@@ -39,6 +39,9 @@ func NewGetEmailAppUsageUserCountsWithPeriodRequestBuilder(rawUrl string, reques
 // Get get the count of unique users that connected to Exchange Online using any email app.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getemailappusageusercounts?view=graph-rest-1.0
 func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

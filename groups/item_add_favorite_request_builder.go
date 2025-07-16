@@ -35,6 +35,9 @@ func NewItemAddFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Post add the group to the list of the current user's favorite groups.  The group shows up in Outlook and Teams favorites. Supported for Microsoft 365 groups only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
 func (m *ItemAddFavoriteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemAddFavoriteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

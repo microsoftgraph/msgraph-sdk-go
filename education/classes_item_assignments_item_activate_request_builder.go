@@ -37,6 +37,9 @@ func NewClassesItemAssignmentsItemActivateRequestBuilder(rawUrl string, requestA
 // Post activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
 // returns a EducationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsItemActivateRequestBuilder) Post(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemActivateRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

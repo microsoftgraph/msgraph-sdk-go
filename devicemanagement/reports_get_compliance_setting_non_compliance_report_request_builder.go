@@ -36,6 +36,9 @@ func NewReportsGetComplianceSettingNonComplianceReportRequestBuilder(rawUrl stri
 // Post not yet documented
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcompliancesettingnoncompliancereport?view=graph-rest-1.0
 func (m *ReportsGetComplianceSettingNonComplianceReportRequestBuilder) Post(ctx context.Context, body ReportsGetComplianceSettingNonComplianceReportPostRequestBodyable, requestConfiguration *ReportsGetComplianceSettingNonComplianceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -27,9 +27,9 @@ type DrivesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // DrivesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DrivesRequestBuilderGetRequestConfiguration struct {

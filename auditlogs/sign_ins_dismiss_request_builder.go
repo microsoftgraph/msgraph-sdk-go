@@ -35,6 +35,9 @@ func NewSignInsDismissRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Post mark an event in Microsoft Entra sign-in logs as dismissed. For details about investigating Identity Protection risks, see How to investigate risk.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/signin-dismiss?view=graph-rest-1.0
 func (m *SignInsDismissRequestBuilder) Post(ctx context.Context, body SignInsDismissPostRequestBodyable, requestConfiguration *SignInsDismissRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

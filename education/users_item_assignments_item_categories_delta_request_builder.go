@@ -28,9 +28,9 @@ type UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetQueryParameters str
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewUsersItemAssignmentsItemCategoriesDeltaRequestBuilder(rawUrl string, req
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a UsersItemAssignmentsItemCategoriesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(UsersItemAssignmentsItemCategoriesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.
 // GetAsDeltaGetResponse get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
 // returns a UsersItemAssignmentsItemCategoriesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(UsersItemAssignmentsItemCategoriesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

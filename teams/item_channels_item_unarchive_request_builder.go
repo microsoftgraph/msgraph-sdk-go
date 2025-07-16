@@ -35,6 +35,9 @@ func NewItemChannelsItemUnarchiveRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Post restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
 func (m *ItemChannelsItemUnarchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemChannelsItemUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

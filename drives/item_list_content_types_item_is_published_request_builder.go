@@ -37,6 +37,9 @@ func NewItemListContentTypesItemIsPublishedRequestBuilder(rawUrl string, request
 // Deprecated: This method is obsolete. Use GetAsIsPublishedGetResponse instead.
 // returns a ItemListContentTypesItemIsPublishedResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
 func (m *ItemListContentTypesItemIsPublishedRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemListContentTypesItemIsPublishedResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemListContentTypesItemIsPublishedRequestBuilder) Get(ctx context.Cont
 // GetAsIsPublishedGetResponse check the publishing status of a contentType in a content type hub site.
 // returns a ItemListContentTypesItemIsPublishedGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
 func (m *ItemListContentTypesItemIsPublishedRequestBuilder) GetAsIsPublishedGetResponse(ctx context.Context, requestConfiguration *ItemListContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemListContentTypesItemIsPublishedGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewItemMessagesItemSendRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Post send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
 func (m *ItemMessagesItemSendRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemMessagesItemSendRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

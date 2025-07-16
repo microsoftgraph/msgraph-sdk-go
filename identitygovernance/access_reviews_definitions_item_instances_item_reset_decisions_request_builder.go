@@ -35,6 +35,9 @@ func NewAccessReviewsDefinitionsItemInstancesItemResetDecisionsRequestBuilder(ra
 }
 // Post resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-1.0
 func (m *AccessReviewsDefinitionsItemInstancesItemResetDecisionsRequestBuilder) Post(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemResetDecisionsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

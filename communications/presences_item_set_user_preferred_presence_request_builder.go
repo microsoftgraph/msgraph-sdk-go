@@ -35,6 +35,9 @@ func NewPresencesItemSetUserPreferredPresenceRequestBuilder(rawUrl string, reque
 }
 // Post set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user's presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user's presence shows as Offline. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
 func (m *PresencesItemSetUserPreferredPresenceRequestBuilder) Post(ctx context.Context, body PresencesItemSetUserPreferredPresencePostRequestBodyable, requestConfiguration *PresencesItemSetUserPreferredPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
