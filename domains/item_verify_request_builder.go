@@ -37,6 +37,9 @@ func NewItemVerifyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // Post validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
 // returns a Domainable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0
 func (m *ItemVerifyRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemVerifyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

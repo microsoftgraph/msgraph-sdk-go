@@ -26,7 +26,29 @@ func CreatePlannerBucketTaskBoardTaskFormatFromDiscriminatorValue(parseNode i878
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerBucketTaskBoardTaskFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["orderHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrderHint(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOrderHint gets the orderHint property value. Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
+// returns a *string when successful
+func (m *PlannerBucketTaskBoardTaskFormat) GetOrderHint()(*string) {
+    val, err := m.GetBackingStore().Get("orderHint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerBucketTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -34,9 +56,24 @@ func (m *PlannerBucketTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d2689
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("orderHint", m.GetOrderHint())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetOrderHint sets the orderHint property value. Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
+func (m *PlannerBucketTaskBoardTaskFormat) SetOrderHint(value *string)() {
+    err := m.GetBackingStore().Set("orderHint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type PlannerBucketTaskBoardTaskFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOrderHint()(*string)
+    SetOrderHint(value *string)()
 }

@@ -35,6 +35,9 @@ func NewItemListsItemSubscriptionsItemReauthorizeRequestBuilder(rawUrl string, r
 }
 // Post reauthorize a subscription when you receive a reauthorizationRequired challenge.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
 func (m *ItemListsItemSubscriptionsItemReauthorizeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsItemReauthorizeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

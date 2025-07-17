@@ -37,6 +37,9 @@ func NewItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuil
 // Post discover the latest schema definition for provisioning to an application. 
 // returns a DirectoryDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

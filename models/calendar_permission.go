@@ -23,14 +23,14 @@ func CreateCalendarPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewCalendarPermission(), nil
 }
 // GetAllowedRoles gets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
-// returns a []string when successful
-func (m *CalendarPermission) GetAllowedRoles()([]string) {
+// returns a []CalendarRoleType when successful
+func (m *CalendarPermission) GetAllowedRoles()([]CalendarRoleType) {
     val, err := m.GetBackingStore().Get("allowedRoles")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]CalendarRoleType)
     }
     return nil
 }
@@ -51,15 +51,15 @@ func (m *CalendarPermission) GetEmailAddress()(EmailAddressable) {
 func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseCalendarRoleType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]CalendarRoleType, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*CalendarRoleType))
                 }
             }
             m.SetAllowedRoles(res)
@@ -151,7 +151,7 @@ func (m *CalendarPermission) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     if m.GetAllowedRoles() != nil {
-        err = writer.WriteCollectionOfStringValues("allowedRoles", m.GetAllowedRoles())
+        err = writer.WriteCollectionOfStringValues("allowedRoles", SerializeCalendarRoleType(m.GetAllowedRoles()))
         if err != nil {
             return err
         }
@@ -184,7 +184,7 @@ func (m *CalendarPermission) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAllowedRoles sets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
-func (m *CalendarPermission) SetAllowedRoles(value []string)() {
+func (m *CalendarPermission) SetAllowedRoles(value []CalendarRoleType)() {
     err := m.GetBackingStore().Set("allowedRoles", value)
     if err != nil {
         panic(err)
@@ -221,12 +221,12 @@ func (m *CalendarPermission) SetRole(value *CalendarRoleType)() {
 type CalendarPermissionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedRoles()([]string)
+    GetAllowedRoles()([]CalendarRoleType)
     GetEmailAddress()(EmailAddressable)
     GetIsInsideOrganization()(*bool)
     GetIsRemovable()(*bool)
     GetRole()(*CalendarRoleType)
-    SetAllowedRoles(value []string)()
+    SetAllowedRoles(value []CalendarRoleType)()
     SetEmailAddress(value EmailAddressable)()
     SetIsInsideOrganization(value *bool)()
     SetIsRemovable(value *bool)()

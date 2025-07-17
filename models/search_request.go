@@ -104,14 +104,14 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     return nil
 }
 // GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-// returns a []string when successful
-func (m *SearchRequest) GetEntityTypes()([]string) {
+// returns a []EntityType when successful
+func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     val, err := m.GetBackingStore().Get("entityTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]EntityType)
     }
     return nil
 }
@@ -194,15 +194,15 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["entityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseEntityType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]EntityType, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*EntityType))
                 }
             }
             m.SetEntityTypes(res)
@@ -488,7 +488,7 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetEntityTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("entityTypes", m.GetEntityTypes())
+        err := writer.WriteCollectionOfStringValues("entityTypes", SerializeEntityType(m.GetEntityTypes()))
         if err != nil {
             return err
         }
@@ -614,7 +614,7 @@ func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     }
 }
 // SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-func (m *SearchRequest) SetEntityTypes(value []string)() {
+func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     err := m.GetBackingStore().Set("entityTypes", value)
     if err != nil {
         panic(err)
@@ -700,7 +700,7 @@ type SearchRequestable interface {
     GetCollapseProperties()([]CollapsePropertyable)
     GetContentSources()([]string)
     GetEnableTopResults()(*bool)
-    GetEntityTypes()([]string)
+    GetEntityTypes()([]EntityType)
     GetFields()([]string)
     GetFrom()(*int32)
     GetOdataType()(*string)
@@ -717,7 +717,7 @@ type SearchRequestable interface {
     SetCollapseProperties(value []CollapsePropertyable)()
     SetContentSources(value []string)()
     SetEnableTopResults(value *bool)()
-    SetEntityTypes(value []string)()
+    SetEntityTypes(value []EntityType)()
     SetFields(value []string)()
     SetFrom(value *int32)()
     SetOdataType(value *string)()

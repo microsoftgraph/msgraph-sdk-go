@@ -35,6 +35,9 @@ func NewEntitlementManagementAssignmentRequestsItemResumeRequestBuilder(rawUrl s
 }
 // Post resume a user's access package request after waiting for a callback from a custom extension. In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It's performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentRequestsItemResumeRequestBuilder) Post(ctx context.Context, body EntitlementManagementAssignmentRequestsItemResumePostRequestBodyable, requestConfiguration *EntitlementManagementAssignmentRequestsItemResumeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

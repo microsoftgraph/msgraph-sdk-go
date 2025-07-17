@@ -37,6 +37,9 @@ func NewItemTeamPrimaryChannelMembersAddRequestBuilder(rawUrl string, requestAda
 // Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // returns a ItemTeamPrimaryChannelMembersAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelMembersAddRequestBuilder) Post(ctx context.Context, body ItemTeamPrimaryChannelMembersAddPostRequestBodyable, requestConfiguration *ItemTeamPrimaryChannelMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamPrimaryChannelMembersAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemTeamPrimaryChannelMembersAddRequestBuilder) Post(ctx context.Contex
 // PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // returns a ItemTeamPrimaryChannelMembersAddPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelMembersAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemTeamPrimaryChannelMembersAddPostRequestBodyable, requestConfiguration *ItemTeamPrimaryChannelMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamPrimaryChannelMembersAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewItemSendMailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // Post send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include a file attachment in the same sendMail action call. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0
 func (m *ItemSendMailRequestBuilder) Post(ctx context.Context, body ItemSendMailPostRequestBodyable, requestConfiguration *ItemSendMailRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

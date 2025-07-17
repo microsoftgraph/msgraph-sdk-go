@@ -35,6 +35,9 @@ func NewItemRemoveKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Post remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
 func (m *ItemRemoveKeyRequestBuilder) Post(ctx context.Context, body ItemRemoveKeyPostRequestBodyable, requestConfiguration *ItemRemoveKeyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

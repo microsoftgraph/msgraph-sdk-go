@@ -37,6 +37,9 @@ func NewCallsItemUnmuteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // Post allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.
 // returns a UnmuteParticipantOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
 func (m *CallsItemUnmuteRequestBuilder) Post(ctx context.Context, body CallsItemUnmutePostRequestBodyable, requestConfiguration *CallsItemUnmuteRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnmuteParticipantOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewItemSendActivityNotificationRequestBuilder(rawUrl string, requestAdapter
 }
 // Post send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
 func (m *ItemSendActivityNotificationRequestBuilder) Post(ctx context.Context, body ItemSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemSendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

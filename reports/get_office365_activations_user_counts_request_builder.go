@@ -36,6 +36,9 @@ func NewGetOffice365ActivationsUserCountsRequestBuilder(rawUrl string, requestAd
 // Get get the count of users that are enabled and the ones that activated the Office subscription on desktop or devices or shared computers.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsusercounts?view=graph-rest-1.0
 func (m *GetOffice365ActivationsUserCountsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ActivationsUserCountsRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewVirtualEndpointCloudPCsItemRebootRequestBuilder(rawUrl string, requestAd
 }
 // Post reboot a specific cloudPC object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemRebootRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRebootRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

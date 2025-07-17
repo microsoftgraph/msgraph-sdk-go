@@ -68,14 +68,14 @@ func (m *PrinterCapabilities) GetCollation()(*bool) {
     return nil
 }
 // GetColorModes gets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetColorModes()([]string) {
+// returns a []PrintColorMode when successful
+func (m *PrinterCapabilities) GetColorModes()([]PrintColorMode) {
     val, err := m.GetBackingStore().Get("colorModes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrintColorMode)
     }
     return nil
 }
@@ -116,26 +116,26 @@ func (m *PrinterCapabilities) GetDpis()([]int32) {
     return nil
 }
 // GetDuplexModes gets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetDuplexModes()([]string) {
+// returns a []PrintDuplexMode when successful
+func (m *PrinterCapabilities) GetDuplexModes()([]PrintDuplexMode) {
     val, err := m.GetBackingStore().Get("duplexModes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrintDuplexMode)
     }
     return nil
 }
 // GetFeedOrientations gets the feedOrientations property value. The list of feed orientations that are supported by the printer.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetFeedOrientations()([]string) {
+// returns a []PrinterFeedOrientation when successful
+func (m *PrinterCapabilities) GetFeedOrientations()([]PrinterFeedOrientation) {
     val, err := m.GetBackingStore().Get("feedOrientations")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrinterFeedOrientation)
     }
     return nil
 }
@@ -170,15 +170,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["colorModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintColorMode)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintColorMode, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrintColorMode))
                 }
             }
             m.SetColorModes(res)
@@ -228,15 +228,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["duplexModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintDuplexMode)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintDuplexMode, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrintDuplexMode))
                 }
             }
             m.SetDuplexModes(res)
@@ -244,15 +244,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["feedOrientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrinterFeedOrientation)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrinterFeedOrientation, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrinterFeedOrientation))
                 }
             }
             m.SetFeedOrientations(res)
@@ -260,15 +260,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintFinishing, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrintFinishing))
                 }
             }
             m.SetFinishings(res)
@@ -376,15 +376,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["multipageLayouts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintMultipageLayout)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintMultipageLayout, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrintMultipageLayout))
                 }
             }
             m.SetMultipageLayouts(res)
@@ -402,15 +402,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["orientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintOrientation)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintOrientation, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrintOrientation))
                 }
             }
             m.SetOrientations(res)
@@ -450,15 +450,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["qualities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintQuality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintQuality, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrintQuality))
                 }
             }
             m.SetQualities(res)
@@ -482,15 +482,15 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["scalings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintScaling)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintScaling, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*PrintScaling))
                 }
             }
             m.SetScalings(res)
@@ -526,14 +526,14 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFinishings gets the finishings property value. Finishing processes the printer supports for a printed document.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetFinishings()([]string) {
+// returns a []PrintFinishing when successful
+func (m *PrinterCapabilities) GetFinishings()([]PrintFinishing) {
     val, err := m.GetBackingStore().Get("finishings")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrintFinishing)
     }
     return nil
 }
@@ -622,14 +622,14 @@ func (m *PrinterCapabilities) GetMediaTypes()([]string) {
     return nil
 }
 // GetMultipageLayouts gets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetMultipageLayouts()([]string) {
+// returns a []PrintMultipageLayout when successful
+func (m *PrinterCapabilities) GetMultipageLayouts()([]PrintMultipageLayout) {
     val, err := m.GetBackingStore().Get("multipageLayouts")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrintMultipageLayout)
     }
     return nil
 }
@@ -646,14 +646,14 @@ func (m *PrinterCapabilities) GetOdataType()(*string) {
     return nil
 }
 // GetOrientations gets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetOrientations()([]string) {
+// returns a []PrintOrientation when successful
+func (m *PrinterCapabilities) GetOrientations()([]PrintOrientation) {
     val, err := m.GetBackingStore().Get("orientations")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrintOrientation)
     }
     return nil
 }
@@ -682,14 +682,14 @@ func (m *PrinterCapabilities) GetPagesPerSheet()([]int32) {
     return nil
 }
 // GetQualities gets the qualities property value. The print qualities supported by the printer.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetQualities()([]string) {
+// returns a []PrintQuality when successful
+func (m *PrinterCapabilities) GetQualities()([]PrintQuality) {
     val, err := m.GetBackingStore().Get("qualities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrintQuality)
     }
     return nil
 }
@@ -706,14 +706,14 @@ func (m *PrinterCapabilities) GetRightMargins()([]int32) {
     return nil
 }
 // GetScalings gets the scalings property value. Supported print scalings.
-// returns a []string when successful
-func (m *PrinterCapabilities) GetScalings()([]string) {
+// returns a []PrintScaling when successful
+func (m *PrinterCapabilities) GetScalings()([]PrintScaling) {
     val, err := m.GetBackingStore().Get("scalings")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]PrintScaling)
     }
     return nil
 }
@@ -756,7 +756,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetColorModes() != nil {
-        err := writer.WriteCollectionOfStringValues("colorModes", m.GetColorModes())
+        err := writer.WriteCollectionOfStringValues("colorModes", SerializePrintColorMode(m.GetColorModes()))
         if err != nil {
             return err
         }
@@ -780,19 +780,19 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetDuplexModes() != nil {
-        err := writer.WriteCollectionOfStringValues("duplexModes", m.GetDuplexModes())
+        err := writer.WriteCollectionOfStringValues("duplexModes", SerializePrintDuplexMode(m.GetDuplexModes()))
         if err != nil {
             return err
         }
     }
     if m.GetFeedOrientations() != nil {
-        err := writer.WriteCollectionOfStringValues("feedOrientations", m.GetFeedOrientations())
+        err := writer.WriteCollectionOfStringValues("feedOrientations", SerializePrinterFeedOrientation(m.GetFeedOrientations()))
         if err != nil {
             return err
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
+        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
         if err != nil {
             return err
         }
@@ -840,7 +840,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetMultipageLayouts() != nil {
-        err := writer.WriteCollectionOfStringValues("multipageLayouts", m.GetMultipageLayouts())
+        err := writer.WriteCollectionOfStringValues("multipageLayouts", SerializePrintMultipageLayout(m.GetMultipageLayouts()))
         if err != nil {
             return err
         }
@@ -852,7 +852,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetOrientations() != nil {
-        err := writer.WriteCollectionOfStringValues("orientations", m.GetOrientations())
+        err := writer.WriteCollectionOfStringValues("orientations", SerializePrintOrientation(m.GetOrientations()))
         if err != nil {
             return err
         }
@@ -870,7 +870,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetQualities() != nil {
-        err := writer.WriteCollectionOfStringValues("qualities", m.GetQualities())
+        err := writer.WriteCollectionOfStringValues("qualities", SerializePrintQuality(m.GetQualities()))
         if err != nil {
             return err
         }
@@ -882,7 +882,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetScalings() != nil {
-        err := writer.WriteCollectionOfStringValues("scalings", m.GetScalings())
+        err := writer.WriteCollectionOfStringValues("scalings", SerializePrintScaling(m.GetScalings()))
         if err != nil {
             return err
         }
@@ -933,7 +933,7 @@ func (m *PrinterCapabilities) SetCollation(value *bool)() {
     }
 }
 // SetColorModes sets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) SetColorModes(value []string)() {
+func (m *PrinterCapabilities) SetColorModes(value []PrintColorMode)() {
     err := m.GetBackingStore().Set("colorModes", value)
     if err != nil {
         panic(err)
@@ -961,21 +961,21 @@ func (m *PrinterCapabilities) SetDpis(value []int32)() {
     }
 }
 // SetDuplexModes sets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) SetDuplexModes(value []string)() {
+func (m *PrinterCapabilities) SetDuplexModes(value []PrintDuplexMode)() {
     err := m.GetBackingStore().Set("duplexModes", value)
     if err != nil {
         panic(err)
     }
 }
 // SetFeedOrientations sets the feedOrientations property value. The list of feed orientations that are supported by the printer.
-func (m *PrinterCapabilities) SetFeedOrientations(value []string)() {
+func (m *PrinterCapabilities) SetFeedOrientations(value []PrinterFeedOrientation)() {
     err := m.GetBackingStore().Set("feedOrientations", value)
     if err != nil {
         panic(err)
     }
 }
 // SetFinishings sets the finishings property value. Finishing processes the printer supports for a printed document.
-func (m *PrinterCapabilities) SetFinishings(value []string)() {
+func (m *PrinterCapabilities) SetFinishings(value []PrintFinishing)() {
     err := m.GetBackingStore().Set("finishings", value)
     if err != nil {
         panic(err)
@@ -1031,7 +1031,7 @@ func (m *PrinterCapabilities) SetMediaTypes(value []string)() {
     }
 }
 // SetMultipageLayouts sets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
-func (m *PrinterCapabilities) SetMultipageLayouts(value []string)() {
+func (m *PrinterCapabilities) SetMultipageLayouts(value []PrintMultipageLayout)() {
     err := m.GetBackingStore().Set("multipageLayouts", value)
     if err != nil {
         panic(err)
@@ -1045,7 +1045,7 @@ func (m *PrinterCapabilities) SetOdataType(value *string)() {
     }
 }
 // SetOrientations sets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) SetOrientations(value []string)() {
+func (m *PrinterCapabilities) SetOrientations(value []PrintOrientation)() {
     err := m.GetBackingStore().Set("orientations", value)
     if err != nil {
         panic(err)
@@ -1066,7 +1066,7 @@ func (m *PrinterCapabilities) SetPagesPerSheet(value []int32)() {
     }
 }
 // SetQualities sets the qualities property value. The print qualities supported by the printer.
-func (m *PrinterCapabilities) SetQualities(value []string)() {
+func (m *PrinterCapabilities) SetQualities(value []PrintQuality)() {
     err := m.GetBackingStore().Set("qualities", value)
     if err != nil {
         panic(err)
@@ -1080,7 +1080,7 @@ func (m *PrinterCapabilities) SetRightMargins(value []int32)() {
     }
 }
 // SetScalings sets the scalings property value. Supported print scalings.
-func (m *PrinterCapabilities) SetScalings(value []string)() {
+func (m *PrinterCapabilities) SetScalings(value []PrintScaling)() {
     err := m.GetBackingStore().Set("scalings", value)
     if err != nil {
         panic(err)
@@ -1107,13 +1107,13 @@ type PrinterCapabilitiesable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBottomMargins()([]int32)
     GetCollation()(*bool)
-    GetColorModes()([]string)
+    GetColorModes()([]PrintColorMode)
     GetContentTypes()([]string)
     GetCopiesPerJob()(IntegerRangeable)
     GetDpis()([]int32)
-    GetDuplexModes()([]string)
-    GetFeedOrientations()([]string)
-    GetFinishings()([]string)
+    GetDuplexModes()([]PrintDuplexMode)
+    GetFeedOrientations()([]PrinterFeedOrientation)
+    GetFinishings()([]PrintFinishing)
     GetInputBins()([]string)
     GetIsColorPrintingSupported()(*bool)
     GetIsPageRangeSupported()(*bool)
@@ -1121,26 +1121,26 @@ type PrinterCapabilitiesable interface {
     GetMediaColors()([]string)
     GetMediaSizes()([]string)
     GetMediaTypes()([]string)
-    GetMultipageLayouts()([]string)
+    GetMultipageLayouts()([]PrintMultipageLayout)
     GetOdataType()(*string)
-    GetOrientations()([]string)
+    GetOrientations()([]PrintOrientation)
     GetOutputBins()([]string)
     GetPagesPerSheet()([]int32)
-    GetQualities()([]string)
+    GetQualities()([]PrintQuality)
     GetRightMargins()([]int32)
-    GetScalings()([]string)
+    GetScalings()([]PrintScaling)
     GetSupportsFitPdfToPage()(*bool)
     GetTopMargins()([]int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBottomMargins(value []int32)()
     SetCollation(value *bool)()
-    SetColorModes(value []string)()
+    SetColorModes(value []PrintColorMode)()
     SetContentTypes(value []string)()
     SetCopiesPerJob(value IntegerRangeable)()
     SetDpis(value []int32)()
-    SetDuplexModes(value []string)()
-    SetFeedOrientations(value []string)()
-    SetFinishings(value []string)()
+    SetDuplexModes(value []PrintDuplexMode)()
+    SetFeedOrientations(value []PrinterFeedOrientation)()
+    SetFinishings(value []PrintFinishing)()
     SetInputBins(value []string)()
     SetIsColorPrintingSupported(value *bool)()
     SetIsPageRangeSupported(value *bool)()
@@ -1148,14 +1148,14 @@ type PrinterCapabilitiesable interface {
     SetMediaColors(value []string)()
     SetMediaSizes(value []string)()
     SetMediaTypes(value []string)()
-    SetMultipageLayouts(value []string)()
+    SetMultipageLayouts(value []PrintMultipageLayout)()
     SetOdataType(value *string)()
-    SetOrientations(value []string)()
+    SetOrientations(value []PrintOrientation)()
     SetOutputBins(value []string)()
     SetPagesPerSheet(value []int32)()
-    SetQualities(value []string)()
+    SetQualities(value []PrintQuality)()
     SetRightMargins(value []int32)()
-    SetScalings(value []string)()
+    SetScalings(value []PrintScaling)()
     SetSupportsFitPdfToPage(value *bool)()
     SetTopMargins(value []int32)()
 }

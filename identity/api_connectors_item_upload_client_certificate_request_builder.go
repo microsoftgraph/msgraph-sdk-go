@@ -37,6 +37,9 @@ func NewApiConnectorsItemUploadClientCertificateRequestBuilder(rawUrl string, re
 // Post upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
 // returns a IdentityApiConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
 func (m *ApiConnectorsItemUploadClientCertificateRequestBuilder) Post(ctx context.Context, body ApiConnectorsItemUploadClientCertificatePostRequestBodyable, requestConfiguration *ApiConnectorsItemUploadClientCertificateRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

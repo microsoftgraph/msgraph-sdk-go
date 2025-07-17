@@ -22,9 +22,9 @@ type VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetQueryParame
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewVirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder(rawUrl str
 // Deprecated: This method is obsolete. Use GetAsGetAuditActivityTypesGetResponse instead.
 // returns a VirtualEndpointAuditEventsGetAuditActivityTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
 func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetRequestConfiguration)(VirtualEndpointAuditEventsGetAuditActivityTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) Get(ctx 
 // GetAsGetAuditActivityTypesGetResponse get audit activity types by tenant ID.
 // returns a VirtualEndpointAuditEventsGetAuditActivityTypesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
 func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) GetAsGetAuditActivityTypesGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetRequestConfiguration)(VirtualEndpointAuditEventsGetAuditActivityTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

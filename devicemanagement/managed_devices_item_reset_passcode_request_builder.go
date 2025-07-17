@@ -35,6 +35,9 @@ func NewManagedDevicesItemResetPasscodeRequestBuilder(rawUrl string, requestAdap
 }
 // Post reset passcode
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-resetpasscode?view=graph-rest-1.0
 func (m *ManagedDevicesItemResetPasscodeRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemResetPasscodeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

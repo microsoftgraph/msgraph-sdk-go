@@ -30,9 +30,9 @@ type ItemMessagesDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemMessagesDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMessagesDeltaRequestBuilderGetRequestConfiguration struct {
@@ -60,6 +60,9 @@ func NewItemMessagesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemMessagesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
 func (m *ItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMessagesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,6 +83,9 @@ func (m *ItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfig
 // GetAsDeltaGetResponse get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages withouthaving to fetch the entire set of messages from the server every time.
 // returns a ItemMessagesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
 func (m *ItemMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMessagesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

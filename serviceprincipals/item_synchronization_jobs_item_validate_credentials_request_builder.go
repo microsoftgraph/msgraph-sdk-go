@@ -35,6 +35,9 @@ func NewItemSynchronizationJobsItemValidateCredentialsRequestBuilder(rawUrl stri
 }
 // Post validate that the credentials are valid in the tenant.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) Post(ctx context.Context, body ItemSynchronizationJobsItemValidateCredentialsPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemValidateCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

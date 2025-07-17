@@ -39,6 +39,9 @@ func NewGetOneDriveUsageStorageWithPeriodRequestBuilder(rawUrl string, requestAd
 // Get get the trend on the amount of storage you're using in OneDrive for Business.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getonedriveusagestorage?view=graph-rest-1.0
 func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOneDriveUsageStorageWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

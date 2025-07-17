@@ -35,6 +35,9 @@ func NewItemChatsItemHideForUserRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Post hide a chat for a user.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
 func (m *ItemChatsItemHideForUserRequestBuilder) Post(ctx context.Context, body ItemChatsItemHideForUserPostRequestBodyable, requestConfiguration *ItemChatsItemHideForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

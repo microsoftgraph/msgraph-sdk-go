@@ -35,6 +35,9 @@ func NewEntitlementManagementRoleAssignmentScheduleRequestsItemCancelRequestBuil
 }
 // Post immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
 func (m *EntitlementManagementRoleAssignmentScheduleRequestsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentScheduleRequestsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

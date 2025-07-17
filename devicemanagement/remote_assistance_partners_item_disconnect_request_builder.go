@@ -35,6 +35,9 @@ func NewRemoteAssistancePartnersItemDisconnectRequestBuilder(rawUrl string, requ
 }
 // Post a request to remove the active TeamViewer connector
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
 func (m *RemoteAssistancePartnersItemDisconnectRequestBuilder) Post(ctx context.Context, requestConfiguration *RemoteAssistancePartnersItemDisconnectRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

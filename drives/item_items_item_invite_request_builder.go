@@ -37,6 +37,9 @@ func NewItemItemsItemInviteRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Deprecated: This method is obsolete. Use PostAsInvitePostResponse instead.
 // returns a ItemItemsItemInviteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
 func (m *ItemItemsItemInviteRequestBuilder) Post(ctx context.Context, body ItemItemsItemInvitePostRequestBodyable, requestConfiguration *ItemItemsItemInviteRequestBuilderPostRequestConfiguration)(ItemItemsItemInviteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemItemsItemInviteRequestBuilder) Post(ctx context.Context, body ItemI
 // PostAsInvitePostResponse sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
 // returns a ItemItemsItemInvitePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
 func (m *ItemItemsItemInviteRequestBuilder) PostAsInvitePostResponse(ctx context.Context, body ItemItemsItemInvitePostRequestBodyable, requestConfiguration *ItemItemsItemInviteRequestBuilderPostRequestConfiguration)(ItemItemsItemInvitePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
