@@ -21,7 +21,7 @@ type AttackSimulationLoginPagesLoginPageItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters represents an attack simulation training login page.
+// AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters get a loginPage associated with an attack simulation campaign for a tenant. Login pages are shown to users in attack simulations that use credential harvest and link in attachment social engineering techniques.
 type AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get represents an attack simulation training login page.
+// Get get a loginPage associated with an attack simulation campaign for a tenant. Login pages are shown to users in attack simulations that use credential harvest and link in attachment social engineering techniques.
 // returns a LoginPageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/loginpage-get?view=graph-rest-1.0
 func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLoginPagesLoginPageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents an attack simulation training login page.
+// ToGetRequestInformation get a loginPage associated with an attack simulation campaign for a tenant. Login pages are shown to users in attack simulations that use credential harvest and link in attachment social engineering techniques.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLoginPagesLoginPageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

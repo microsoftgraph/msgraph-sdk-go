@@ -131,6 +131,11 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reboot()(*VirtualEndp
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Rename()(*VirtualEndpointCloudPCsItemRenameRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRenameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Resize provides operations to call the resize method.
+// returns a *VirtualEndpointCloudPCsItemResizeRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Resize()(*VirtualEndpointCloudPCsItemResizeRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Restore provides operations to call the restore method.
 // returns a *VirtualEndpointCloudPCsItemRestoreRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {

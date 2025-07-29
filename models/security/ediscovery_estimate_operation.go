@@ -168,7 +168,7 @@ func (m *EdiscoveryEstimateOperation) GetSiteCount()(*int32) {
     }
     return nil
 }
-// GetStatisticsOptions gets the statisticsOptions property value. The statisticsOptions property
+// GetStatisticsOptions gets the statisticsOptions property value. The options to generate statistics. Possible values are: includeRefiners, includeQueryStats, includeUnindexedStats, advancedIndexing, locationsWithoutHits, unknownFutureValue.
 // returns a *StatisticsOptions when successful
 func (m *EdiscoveryEstimateOperation) GetStatisticsOptions()(*StatisticsOptions) {
     val, err := m.GetBackingStore().Get("statisticsOptions")
@@ -296,7 +296,7 @@ func (m *EdiscoveryEstimateOperation) SetSiteCount(value *int32)() {
         panic(err)
     }
 }
-// SetStatisticsOptions sets the statisticsOptions property value. The statisticsOptions property
+// SetStatisticsOptions sets the statisticsOptions property value. The options to generate statistics. Possible values are: includeRefiners, includeQueryStats, includeUnindexedStats, advancedIndexing, locationsWithoutHits, unknownFutureValue.
 func (m *EdiscoveryEstimateOperation) SetStatisticsOptions(value *StatisticsOptions)() {
     err := m.GetBackingStore().Set("statisticsOptions", value)
     if err != nil {

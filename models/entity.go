@@ -1055,6 +1055,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPerson(), nil
                     case "#microsoft.graph.phoneAuthenticationMethod":
                         return NewPhoneAuthenticationMethod(), nil
+                    case "#microsoft.graph.phoneUserConversationMember":
+                        return NewPhoneUserConversationMember(), nil
                     case "#microsoft.graph.pinnedChatMessageInfo":
                         return NewPinnedChatMessageInfo(), nil
                     case "#microsoft.graph.place":
@@ -1169,6 +1171,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPublicKeyInfrastructureRoot(), nil
                     case "#microsoft.graph.rbacApplication":
                         return NewRbacApplication(), nil
+                    case "#microsoft.graph.readingAssignmentSubmission":
+                        return NewReadingAssignmentSubmission(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
                     case "#microsoft.graph.recycleBin":
@@ -1177,12 +1181,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRecycleBinItem(), nil
                     case "#microsoft.graph.referenceAttachment":
                         return NewReferenceAttachment(), nil
+                    case "#microsoft.graph.reflectCheckInResponse":
+                        return NewReflectCheckInResponse(), nil
                     case "#microsoft.graph.relyingPartyDetailedSummary":
                         return NewRelyingPartyDetailedSummary(), nil
                     case "#microsoft.graph.remoteAssistancePartner":
                         return NewRemoteAssistancePartner(), nil
                     case "#microsoft.graph.remoteDesktopSecurityConfiguration":
                         return NewRemoteDesktopSecurityConfiguration(), nil
+                    case "#microsoft.graph.reportsRoot":
+                        return NewReportsRoot(), nil
                     case "#microsoft.graph.request":
                         return NewRequest(), nil
                     case "#microsoft.graph.resellerDelegatedAdminRelationship":
@@ -1619,6 +1627,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWebApp(), nil
                     case "#microsoft.graph.webPart":
                         return NewWebPart(), nil
+                    case "#microsoft.graph.whatIfAnalysisResult":
+                        return NewWhatIfAnalysisResult(), nil
                     case "#microsoft.graph.win32LobApp":
                         return NewWin32LobApp(), nil
                     case "#microsoft.graph.windows10CompliancePolicy":
