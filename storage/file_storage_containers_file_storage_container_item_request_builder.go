@@ -49,6 +49,11 @@ type FileStorageContainersFileStorageContainerItemRequestBuilderPatchRequestConf
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Activate()(*FileStorageContainersItemActivateRequestBuilder) {
     return NewFileStorageContainersItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Columns provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageContainersItemColumnsRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Columns()(*FileStorageContainersItemColumnsRequestBuilder) {
+    return NewFileStorageContainersItemColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewFileStorageContainersFileStorageContainerItemRequestBuilderInternal instantiates a new FileStorageContainersFileStorageContainerItemRequestBuilder and sets the default values.
 func NewFileStorageContainersFileStorageContainerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainersFileStorageContainerItemRequestBuilder) {
     m := &FileStorageContainersFileStorageContainerItemRequestBuilder{

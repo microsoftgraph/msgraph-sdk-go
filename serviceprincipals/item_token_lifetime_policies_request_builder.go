@@ -42,7 +42,7 @@ type ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenLifetimePoliciesRequestBuilderGetQueryParameters
 }
-// ByTokenLifetimePolicyId provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
+// ByTokenLifetimePolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.tokenLifetimePolicies.item collection
 // returns a *ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder when successful
 func (m *ItemTokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyId(tokenLifetimePolicyId string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -94,6 +94,11 @@ func (m *ItemTokenLifetimePoliciesRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyCollectionResponseable), nil
+}
+// Ref provides operations to manage the collection of servicePrincipal entities.
+// returns a *ItemTokenLifetimePoliciesRefRequestBuilder when successful
+func (m *ItemTokenLifetimePoliciesRequestBuilder) Ref()(*ItemTokenLifetimePoliciesRefRequestBuilder) {
+    return NewItemTokenLifetimePoliciesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
 // returns a *RequestInformation when successful

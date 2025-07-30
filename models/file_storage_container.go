@@ -24,6 +24,18 @@ func NewFileStorageContainer()(*FileStorageContainer) {
 func CreateFileStorageContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileStorageContainer(), nil
 }
+// GetColumns gets the columns property value. The columns property
+// returns a []ColumnDefinitionable when successful
+func (m *FileStorageContainer) GetColumns()([]ColumnDefinitionable) {
+    val, err := m.GetBackingStore().Get("columns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ColumnDefinitionable)
+    }
+    return nil
+}
 // GetContainerTypeId gets the containerTypeId property value. Container type ID of the fileStorageContainer. For details about container types, see Container Types. Each container must have only one container type. Read-only.
 // returns a *UUID when successful
 func (m *FileStorageContainer) GetContainerTypeId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
@@ -100,6 +112,22 @@ func (m *FileStorageContainer) GetDrive()(Driveable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["columns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateColumnDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ColumnDefinitionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ColumnDefinitionable)
+                }
+            }
+            m.SetColumns(res)
+        }
+        return nil
+    }
     res["containerTypeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetUUIDValue()
         if err != nil {
@@ -306,6 +334,18 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
+    if m.GetColumns() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetColumns()))
+        for i, v := range m.GetColumns() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("columns", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteUUIDValue("containerTypeId", m.GetContainerTypeId())
         if err != nil {
@@ -387,6 +427,13 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
+}
+// SetColumns sets the columns property value. The columns property
+func (m *FileStorageContainer) SetColumns(value []ColumnDefinitionable)() {
+    err := m.GetBackingStore().Set("columns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContainerTypeId sets the containerTypeId property value. Container type ID of the fileStorageContainer. For details about container types, see Container Types. Each container must have only one container type. Read-only.
 func (m *FileStorageContainer) SetContainerTypeId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
@@ -475,6 +522,7 @@ func (m *FileStorageContainer) SetViewpoint(value FileStorageContainerViewpointa
 type FileStorageContainerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetColumns()([]ColumnDefinitionable)
     GetContainerTypeId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomProperties()(FileStorageContainerCustomPropertyDictionaryable)
@@ -487,6 +535,7 @@ type FileStorageContainerable interface {
     GetSettings()(FileStorageContainerSettingsable)
     GetStatus()(*FileStorageContainerStatus)
     GetViewpoint()(FileStorageContainerViewpointable)
+    SetColumns(value []ColumnDefinitionable)()
     SetContainerTypeId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomProperties(value FileStorageContainerCustomPropertyDictionaryable)()

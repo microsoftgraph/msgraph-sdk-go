@@ -49,6 +49,11 @@ type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderPatchRequ
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Activate()(*FileStorageDeletedContainersItemActivateRequestBuilder) {
     return NewFileStorageDeletedContainersItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Columns provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageDeletedContainersItemColumnsRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Columns()(*FileStorageDeletedContainersItemColumnsRequestBuilder) {
+    return NewFileStorageDeletedContainersItemColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewFileStorageDeletedContainersFileStorageContainerItemRequestBuilderInternal instantiates a new FileStorageDeletedContainersFileStorageContainerItemRequestBuilder and sets the default values.
 func NewFileStorageDeletedContainersFileStorageContainerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) {
     m := &FileStorageDeletedContainersFileStorageContainerItemRequestBuilder{

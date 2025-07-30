@@ -426,6 +426,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["isEndToEndEncryptionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEndToEndEncryptionEnabled(val)
+        }
+        return nil
+    }
     res["isEntryExitAnnounced"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -527,6 +537,18 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetIsEndToEndEncryptionEnabled gets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+// returns a *bool when successful
+func (m *OnlineMeetingBase) GetIsEndToEndEncryptionEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isEndToEndEncryptionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsEntryExitAnnounced gets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
 // returns a *bool when successful
@@ -767,6 +789,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteBoolValue("isEndToEndEncryptionEnabled", m.GetIsEndToEndEncryptionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isEntryExitAnnounced", m.GetIsEntryExitAnnounced())
         if err != nil {
             return err
@@ -948,6 +976,13 @@ func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
         panic(err)
     }
 }
+// SetIsEndToEndEncryptionEnabled sets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+func (m *OnlineMeetingBase) SetIsEndToEndEncryptionEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isEndToEndEncryptionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsEntryExitAnnounced sets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
 func (m *OnlineMeetingBase) SetIsEntryExitAnnounced(value *bool)() {
     err := m.GetBackingStore().Set("isEntryExitAnnounced", value)
@@ -1038,6 +1073,7 @@ type OnlineMeetingBaseable interface {
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
     GetChatRestrictions()(ChatRestrictionsable)
+    GetIsEndToEndEncryptionEnabled()(*bool)
     GetIsEntryExitAnnounced()(*bool)
     GetJoinInformation()(ItemBodyable)
     GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable)
@@ -1065,6 +1101,7 @@ type OnlineMeetingBaseable interface {
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()
     SetChatRestrictions(value ChatRestrictionsable)()
+    SetIsEndToEndEncryptionEnabled(value *bool)()
     SetIsEntryExitAnnounced(value *bool)()
     SetJoinInformation(value ItemBodyable)()
     SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)()

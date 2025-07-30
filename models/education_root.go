@@ -95,6 +95,16 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["reports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateReportsRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReports(val.(ReportsRootable))
+        }
+        return nil
+    }
     res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
@@ -153,6 +163,18 @@ func (m *EducationRoot) GetOdataType()(*string) {
     }
     return nil
 }
+// GetReports gets the reports property value. The reports property
+// returns a ReportsRootable when successful
+func (m *EducationRoot) GetReports()(ReportsRootable) {
+    val, err := m.GetBackingStore().Get("reports")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ReportsRootable)
+    }
+    return nil
+}
 // GetSchools gets the schools property value. The schools property
 // returns a []EducationSchoolable when successful
 func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
@@ -199,6 +221,12 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("reports", m.GetReports())
         if err != nil {
             return err
         }
@@ -267,6 +295,13 @@ func (m *EducationRoot) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetReports sets the reports property value. The reports property
+func (m *EducationRoot) SetReports(value ReportsRootable)() {
+    err := m.GetBackingStore().Set("reports", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchools sets the schools property value. The schools property
 func (m *EducationRoot) SetSchools(value []EducationSchoolable)() {
     err := m.GetBackingStore().Set("schools", value)
@@ -289,12 +324,14 @@ type EducationRootable interface {
     GetClasses()([]EducationClassable)
     GetMe()(EducationUserable)
     GetOdataType()(*string)
+    GetReports()(ReportsRootable)
     GetSchools()([]EducationSchoolable)
     GetUsers()([]EducationUserable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetClasses(value []EducationClassable)()
     SetMe(value EducationUserable)()
     SetOdataType(value *string)()
+    SetReports(value ReportsRootable)()
     SetSchools(value []EducationSchoolable)()
     SetUsers(value []EducationUserable)()
 }

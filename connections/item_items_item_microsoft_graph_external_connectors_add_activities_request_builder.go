@@ -33,10 +33,13 @@ func NewItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action addActivities
+// Post append additional instances of externalActivity objects on an externalItem.
 // Deprecated: This method is obsolete. Use PostAsAddActivitiesPostResponse instead.
 // returns a ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0
 func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) Post(ctx context.Context, body ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostRequestBodyable, requestConfiguration *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderPostRequestConfiguration)(ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -54,9 +57,12 @@ func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilde
     }
     return res.(ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesResponseable), nil
 }
-// PostAsAddActivitiesPostResponse invoke action addActivities
+// PostAsAddActivitiesPostResponse append additional instances of externalActivity objects on an externalItem.
 // returns a ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0
 func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) PostAsAddActivitiesPostResponse(ctx context.Context, body ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostRequestBodyable, requestConfiguration *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderPostRequestConfiguration)(ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -74,7 +80,7 @@ func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilde
     }
     return res.(ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable), nil
 }
-// ToPostRequestInformation invoke action addActivities
+// ToPostRequestInformation append additional instances of externalActivity objects on an externalItem.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostRequestBodyable, requestConfiguration *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

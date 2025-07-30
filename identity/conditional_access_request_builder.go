@@ -34,6 +34,11 @@ func NewConditionalAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Evaluate provides operations to call the evaluate method.
+// returns a *ConditionalAccessEvaluateRequestBuilder when successful
+func (m *ConditionalAccessRequestBuilder) Evaluate()(*ConditionalAccessEvaluateRequestBuilder) {
+    return NewConditionalAccessEvaluateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NamedLocations provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
 // returns a *ConditionalAccessNamedLocationsRequestBuilder when successful
 func (m *ConditionalAccessRequestBuilder) NamedLocations()(*ConditionalAccessNamedLocationsRequestBuilder) {

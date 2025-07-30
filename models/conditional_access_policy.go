@@ -21,6 +21,24 @@ func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
 // CreateConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.whatIfAnalysisResult":
+                        return NewWhatIfAnalysisResult(), nil
+                }
+            }
+        }
+    }
     return NewConditionalAccessPolicy(), nil
 }
 // GetConditions gets the conditions property value. The conditions property
@@ -215,7 +233,7 @@ func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
     }
     return nil
 }
-// GetTemplateId gets the templateId property value. The templateId property
+// GetTemplateId gets the templateId property value. Specifies the unique identifier of a Conditional Access template. Inherited from entity.
 // returns a *string when successful
 func (m *ConditionalAccessPolicy) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
@@ -346,7 +364,7 @@ func (m *ConditionalAccessPolicy) SetState(value *ConditionalAccessPolicyState)(
         panic(err)
     }
 }
-// SetTemplateId sets the templateId property value. The templateId property
+// SetTemplateId sets the templateId property value. Specifies the unique identifier of a Conditional Access template. Inherited from entity.
 func (m *ConditionalAccessPolicy) SetTemplateId(value *string)() {
     err := m.GetBackingStore().Set("templateId", value)
     if err != nil {

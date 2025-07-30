@@ -22,7 +22,7 @@ func NewEdiscoverySearchExportOperation()(*EdiscoverySearchExportOperation) {
 func CreateEdiscoverySearchExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoverySearchExportOperation(), nil
 }
-// GetAdditionalOptions gets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.
+// GetAdditionalOptions gets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport.
 // returns a *AdditionalOptions when successful
 func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOptions) {
     val, err := m.GetBackingStore().Get("additionalOptions")
@@ -34,7 +34,7 @@ func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOpti
     }
     return nil
 }
-// GetCloudAttachmentVersion gets the cloudAttachmentVersion property value. The cloudAttachmentVersion property
+// GetCloudAttachmentVersion gets the cloudAttachmentVersion property value. The versions of cloud attachments to include in messages. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
 // returns a *CloudAttachmentVersion when successful
 func (m *EdiscoverySearchExportOperation) GetCloudAttachmentVersion()(*CloudAttachmentVersion) {
     val, err := m.GetBackingStore().Get("cloudAttachmentVersion")
@@ -70,7 +70,7 @@ func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDocumentVersion gets the documentVersion property value. The documentVersion property
+// GetDocumentVersion gets the documentVersion property value. The versions of files in SharePoint to include. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
 // returns a *DocumentVersion when successful
 func (m *EdiscoverySearchExportOperation) GetDocumentVersion()(*DocumentVersion) {
     val, err := m.GetBackingStore().Get("documentVersion")
@@ -106,7 +106,7 @@ func (m *EdiscoverySearchExportOperation) GetExportFileMetadata()([]ExportFileMe
     }
     return nil
 }
-// GetExportFormat gets the exportFormat property value. Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.
+// GetExportFormat gets the exportFormat property value. Format of the emails of the export. The possible values are: pst, msg, eml (deprecated), unknownFutureValue. The eml member is deprecated. It remains in v1.0 for backward compatibility. Going forward, use either pst or msg.
 // returns a *ExportFormat when successful
 func (m *EdiscoverySearchExportOperation) GetExportFormat()(*ExportFormat) {
     val, err := m.GetBackingStore().Get("exportFormat")
@@ -362,14 +362,14 @@ func (m *EdiscoverySearchExportOperation) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetAdditionalOptions sets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.
+// SetAdditionalOptions sets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport.
 func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *AdditionalOptions)() {
     err := m.GetBackingStore().Set("additionalOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCloudAttachmentVersion sets the cloudAttachmentVersion property value. The cloudAttachmentVersion property
+// SetCloudAttachmentVersion sets the cloudAttachmentVersion property value. The versions of cloud attachments to include in messages. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetCloudAttachmentVersion(value *CloudAttachmentVersion)() {
     err := m.GetBackingStore().Set("cloudAttachmentVersion", value)
     if err != nil {
@@ -390,7 +390,7 @@ func (m *EdiscoverySearchExportOperation) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDocumentVersion sets the documentVersion property value. The documentVersion property
+// SetDocumentVersion sets the documentVersion property value. The versions of files in SharePoint to include. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetDocumentVersion(value *DocumentVersion)() {
     err := m.GetBackingStore().Set("documentVersion", value)
     if err != nil {
@@ -411,7 +411,7 @@ func (m *EdiscoverySearchExportOperation) SetExportFileMetadata(value []ExportFi
         panic(err)
     }
 }
-// SetExportFormat sets the exportFormat property value. Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.
+// SetExportFormat sets the exportFormat property value. Format of the emails of the export. The possible values are: pst, msg, eml (deprecated), unknownFutureValue. The eml member is deprecated. It remains in v1.0 for backward compatibility. Going forward, use either pst or msg.
 func (m *EdiscoverySearchExportOperation) SetExportFormat(value *ExportFormat)() {
     err := m.GetBackingStore().Set("exportFormat", value)
     if err != nil {
