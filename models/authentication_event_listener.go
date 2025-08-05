@@ -52,7 +52,7 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
     }
     return NewAuthenticationEventListener(), nil
 }
-// GetAuthenticationEventsFlowId gets the authenticationEventsFlowId property value. Indicates the authenticationEventListener is associated with an authenticationEventsFlow. Read-only.
+// GetAuthenticationEventsFlowId gets the authenticationEventsFlowId property value. The identifier of the authenticationEventsFlow object.
 // returns a *string when successful
 func (m *AuthenticationEventListener) GetAuthenticationEventsFlowId()(*string) {
     val, err := m.GetBackingStore().Get("authenticationEventsFlowId")
@@ -122,7 +122,7 @@ func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAuthenticationEventsFlowId sets the authenticationEventsFlowId property value. Indicates the authenticationEventListener is associated with an authenticationEventsFlow. Read-only.
+// SetAuthenticationEventsFlowId sets the authenticationEventsFlowId property value. The identifier of the authenticationEventsFlow object.
 func (m *AuthenticationEventListener) SetAuthenticationEventsFlowId(value *string)() {
     err := m.GetBackingStore().Set("authenticationEventsFlowId", value)
     if err != nil {

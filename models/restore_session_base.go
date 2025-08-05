@@ -157,6 +157,26 @@ func (m *RestoreSessionBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["restoreJobType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseRestoreJobType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRestoreJobType(val.(*RestoreJobType))
+        }
+        return nil
+    }
+    res["restoreSessionArtifactCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRestoreSessionArtifactCountFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRestoreSessionArtifactCount(val.(RestoreSessionArtifactCountable))
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRestoreSessionStatus)
         if err != nil {
@@ -190,6 +210,30 @@ func (m *RestoreSessionBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetRestoreJobType gets the restoreJobType property value. Indicates whether the restore session was created normally or by a bulk job.
+// returns a *RestoreJobType when successful
+func (m *RestoreSessionBase) GetRestoreJobType()(*RestoreJobType) {
+    val, err := m.GetBackingStore().Get("restoreJobType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RestoreJobType)
+    }
+    return nil
+}
+// GetRestoreSessionArtifactCount gets the restoreSessionArtifactCount property value. The number of metadata artifacts that belong to this restore session.
+// returns a RestoreSessionArtifactCountable when successful
+func (m *RestoreSessionBase) GetRestoreSessionArtifactCount()(RestoreSessionArtifactCountable) {
+    val, err := m.GetBackingStore().Get("restoreSessionArtifactCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RestoreSessionArtifactCountable)
     }
     return nil
 }
@@ -247,6 +291,19 @@ func (m *RestoreSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetRestoreJobType() != nil {
+        cast := (*m.GetRestoreJobType()).String()
+        err = writer.WriteStringValue("restoreJobType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("restoreSessionArtifactCount", m.GetRestoreSessionArtifactCount())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -298,6 +355,20 @@ func (m *RestoreSessionBase) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetRestoreJobType sets the restoreJobType property value. Indicates whether the restore session was created normally or by a bulk job.
+func (m *RestoreSessionBase) SetRestoreJobType(value *RestoreJobType)() {
+    err := m.GetBackingStore().Set("restoreJobType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRestoreSessionArtifactCount sets the restoreSessionArtifactCount property value. The number of metadata artifacts that belong to this restore session.
+func (m *RestoreSessionBase) SetRestoreSessionArtifactCount(value RestoreSessionArtifactCountable)() {
+    err := m.GetBackingStore().Set("restoreSessionArtifactCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.
 func (m *RestoreSessionBase) SetStatus(value *RestoreSessionStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -314,6 +385,8 @@ type RestoreSessionBaseable interface {
     GetError()(PublicErrorable)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRestoreJobType()(*RestoreJobType)
+    GetRestoreSessionArtifactCount()(RestoreSessionArtifactCountable)
     GetStatus()(*RestoreSessionStatus)
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedBy(value IdentitySetable)()
@@ -321,5 +394,7 @@ type RestoreSessionBaseable interface {
     SetError(value PublicErrorable)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRestoreJobType(value *RestoreJobType)()
+    SetRestoreSessionArtifactCount(value RestoreSessionArtifactCountable)()
     SetStatus(value *RestoreSessionStatus)()
 }

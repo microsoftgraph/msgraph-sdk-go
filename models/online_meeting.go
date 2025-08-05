@@ -73,7 +73,7 @@ func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The external ID that is a custom identifier. Optional.
 // returns a *string when successful
 func (m *OnlineMeeting) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
@@ -399,7 +399,7 @@ func (m *OnlineMeeting) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The external ID that is a custom identifier. Optional.
 func (m *OnlineMeeting) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {

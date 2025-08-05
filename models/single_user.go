@@ -24,7 +24,7 @@ func NewSingleUser()(*SingleUser) {
 func CreateSingleUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSingleUser(), nil
 }
-// GetDescription gets the description property value. The name of the user in Microsoft Entra ID. Read only.
+// GetDescription gets the description property value. The name of the user in Microsoft Entra ID. Read-only.
 // returns a *string when successful
 func (m *SingleUser) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -94,7 +94,7 @@ func (m *SingleUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetDescription sets the description property value. The name of the user in Microsoft Entra ID. Read only.
+// SetDescription sets the description property value. The name of the user in Microsoft Entra ID. Read-only.
 func (m *SingleUser) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
