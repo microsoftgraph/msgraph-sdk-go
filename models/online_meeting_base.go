@@ -90,7 +90,7 @@ func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRole
     }
     return nil
 }
-// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
+// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.
 // returns a *OnlineMeetingPresenters when successful
 func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
@@ -885,7 +885,7 @@ func (m *OnlineMeetingBase) SetAllowedLobbyAdmitters(value *AllowedLobbyAdmitter
         panic(err)
     }
 }
-// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
+// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.
 func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
     err := m.GetBackingStore().Set("allowedPresenters", value)
     if err != nil {

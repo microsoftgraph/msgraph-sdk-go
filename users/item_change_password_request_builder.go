@@ -33,7 +33,7 @@ func NewItemChangePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemChangePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post update the signed-in user's password. Any user can update their password without belonging to any administrator role.
+// Post update the signed-in user's password. Any user can update their password without belonging to any administrator role.To update another user's password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *ItemChangePasswordRequestBuilder) Post(ctx context.Context, body ItemCh
     }
     return nil
 }
-// ToPostRequestInformation update the signed-in user's password. Any user can update their password without belonging to any administrator role.
+// ToPostRequestInformation update the signed-in user's password. Any user can update their password without belonging to any administrator role.To update another user's password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password.
 // returns a *RequestInformation when successful
 func (m *ItemChangePasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChangePasswordPostRequestBodyable, requestConfiguration *ItemChangePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -68,7 +68,7 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetLastUsed gets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read only.
+// GetLastUsed gets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read-only.
 // returns a UsageDetailsable when successful
 func (m *UsedInsight) GetLastUsed()(UsageDetailsable) {
     val, err := m.GetBackingStore().Get("lastUsed")
@@ -92,7 +92,7 @@ func (m *UsedInsight) GetResource()(Entityable) {
     }
     return nil
 }
-// GetResourceReference gets the resourceReference property value. Reference properties of the used document, such as the url and type of the document. Read-only
+// GetResourceReference gets the resourceReference property value. Reference properties of the used document, such as the URL and type of the document. Read-only
 // returns a ResourceReferenceable when successful
 func (m *UsedInsight) GetResourceReference()(ResourceReferenceable) {
     val, err := m.GetBackingStore().Get("resourceReference")
@@ -136,7 +136,7 @@ func (m *UsedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetLastUsed sets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read only.
+// SetLastUsed sets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read-only.
 func (m *UsedInsight) SetLastUsed(value UsageDetailsable)() {
     err := m.GetBackingStore().Set("lastUsed", value)
     if err != nil {
@@ -150,7 +150,7 @@ func (m *UsedInsight) SetResource(value Entityable)() {
         panic(err)
     }
 }
-// SetResourceReference sets the resourceReference property value. Reference properties of the used document, such as the url and type of the document. Read-only
+// SetResourceReference sets the resourceReference property value. Reference properties of the used document, such as the URL and type of the document. Read-only
 func (m *UsedInsight) SetResourceReference(value ResourceReferenceable)() {
     err := m.GetBackingStore().Set("resourceReference", value)
     if err != nil {
