@@ -925,6 +925,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileAppContent(), nil
                     case "#microsoft.graph.mobileAppContentFile":
                         return NewMobileAppContentFile(), nil
+                    case "#microsoft.graph.mobileAppRelationship":
+                        return NewMobileAppRelationship(), nil
                     case "#microsoft.graph.mobileAppTroubleshootingEvent":
                         return NewMobileAppTroubleshootingEvent(), nil
                     case "#microsoft.graph.mobileContainedApp":
@@ -975,6 +977,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOneDriveForBusinessProtectionPolicy(), nil
                     case "#microsoft.graph.oneDriveForBusinessRestoreSession":
                         return NewOneDriveForBusinessRestoreSession(), nil
+                    case "#microsoft.graph.onEmailOtpSendListener":
+                        return NewOnEmailOtpSendListener(), nil
                     case "#microsoft.graph.onenote":
                         return NewOnenote(), nil
                     case "#microsoft.graph.onenoteEntityBaseModel":
@@ -997,6 +1001,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnlineMeeting(), nil
                     case "#microsoft.graph.onlineMeetingBase":
                         return NewOnlineMeetingBase(), nil
+                    case "#microsoft.graph.onOtpSendCustomExtension":
+                        return NewOnOtpSendCustomExtension(), nil
                     case "#microsoft.graph.onPremisesConditionalAccessSettings":
                         return NewOnPremisesConditionalAccessSettings(), nil
                     case "#microsoft.graph.onPremisesDirectorySynchronization":

@@ -11,7 +11,7 @@ const (
     HDD_DISKTYPE
     // Enum member for SSD devices.
     SSD_DISKTYPE
-    // Evolvable enumeration sentinel value.Do not use.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DISKTYPE
 )
 

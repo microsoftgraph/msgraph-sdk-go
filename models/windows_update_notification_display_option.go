@@ -14,7 +14,7 @@ const (
     RESTARTWARNINGSONLY_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
     // Turn off all notifications, including restart warnings.
     DISABLEALLNOTIFICATIONS_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
-    // Evolvable enum member
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
 )
 

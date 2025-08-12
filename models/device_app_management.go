@@ -252,6 +252,22 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["mobileAppRelationships"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppRelationshipFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MobileAppRelationshipable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MobileAppRelationshipable)
+                }
+            }
+            m.SetMobileAppRelationships(res)
+        }
+        return nil
+    }
     res["mobileApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppFromDiscriminatorValue)
         if err != nil {
@@ -462,6 +478,18 @@ func (m *DeviceAppManagement) GetMobileAppConfigurations()([]ManagedDeviceMobile
     }
     return nil
 }
+// GetMobileAppRelationships gets the mobileAppRelationships property value. The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
+// returns a []MobileAppRelationshipable when successful
+func (m *DeviceAppManagement) GetMobileAppRelationships()([]MobileAppRelationshipable) {
+    val, err := m.GetBackingStore().Get("mobileAppRelationships")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppRelationshipable)
+    }
+    return nil
+}
 // GetMobileApps gets the mobileApps property value. The mobile apps.
 // returns a []MobileAppable when successful
 func (m *DeviceAppManagement) GetMobileApps()([]MobileAppable) {
@@ -660,6 +688,18 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetMobileAppRelationships() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppRelationships()))
+        for i, v := range m.GetMobileAppRelationships() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mobileAppRelationships", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMobileApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileApps()))
         for i, v := range m.GetMobileApps() {
@@ -808,6 +848,13 @@ func (m *DeviceAppManagement) SetMobileAppConfigurations(value []ManagedDeviceMo
         panic(err)
     }
 }
+// SetMobileAppRelationships sets the mobileAppRelationships property value. The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
+func (m *DeviceAppManagement) SetMobileAppRelationships(value []MobileAppRelationshipable)() {
+    err := m.GetBackingStore().Set("mobileAppRelationships", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMobileApps sets the mobileApps property value. The mobile apps.
 func (m *DeviceAppManagement) SetMobileApps(value []MobileAppable)() {
     err := m.GetBackingStore().Set("mobileApps", value)
@@ -853,6 +900,7 @@ type DeviceAppManagementable interface {
     GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMobileAppCategories()([]MobileAppCategoryable)
     GetMobileAppConfigurations()([]ManagedDeviceMobileAppConfigurationable)
+    GetMobileAppRelationships()([]MobileAppRelationshipable)
     GetMobileApps()([]MobileAppable)
     GetTargetedManagedAppConfigurations()([]TargetedManagedAppConfigurationable)
     GetVppTokens()([]VppTokenable)
@@ -871,6 +919,7 @@ type DeviceAppManagementable interface {
     SetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMobileAppCategories(value []MobileAppCategoryable)()
     SetMobileAppConfigurations(value []ManagedDeviceMobileAppConfigurationable)()
+    SetMobileAppRelationships(value []MobileAppRelationshipable)()
     SetMobileApps(value []MobileAppable)()
     SetTargetedManagedAppConfigurations(value []TargetedManagedAppConfigurationable)()
     SetVppTokens(value []VppTokenable)()

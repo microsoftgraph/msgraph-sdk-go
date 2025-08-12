@@ -62,7 +62,7 @@ func (m *AiInteractionMentionedIdentitySet) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetTag gets the tag property value. The tag details.
+// GetTag gets the tag property value. The tag property
 // returns a TeamworkTagIdentityable when successful
 func (m *AiInteractionMentionedIdentitySet) GetTag()(TeamworkTagIdentityable) {
     val, err := m.GetBackingStore().Get("tag")
@@ -101,7 +101,7 @@ func (m *AiInteractionMentionedIdentitySet) SetConversation(value TeamworkConver
         panic(err)
     }
 }
-// SetTag sets the tag property value. The tag details.
+// SetTag sets the tag property value. The tag property
 func (m *AiInteractionMentionedIdentitySet) SetTag(value TeamworkTagIdentityable)() {
     err := m.GetBackingStore().Set("tag", value)
     if err != nil {

@@ -123,6 +123,11 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppCategories()(*MobileAppCate
 func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurations()(*MobileAppConfigurationsRequestBuilder) {
     return NewMobileAppConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MobileAppRelationships provides operations to manage the mobileAppRelationships property of the microsoft.graph.deviceAppManagement entity.
+// returns a *MobileAppRelationshipsRequestBuilder when successful
+func (m *DeviceAppManagementRequestBuilder) MobileAppRelationships()(*MobileAppRelationshipsRequestBuilder) {
+    return NewMobileAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MobileApps provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
 // returns a *MobileAppsRequestBuilder when successful
 func (m *DeviceAppManagementRequestBuilder) MobileApps()(*MobileAppsRequestBuilder) {
@@ -133,7 +138,7 @@ func (m *DeviceAppManagementRequestBuilder) MobileApps()(*MobileAppsRequestBuild
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-deviceappmanagement-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-partnerintegration-deviceappmanagement-update?view=graph-rest-1.0
 func (m *DeviceAppManagementRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable, requestConfiguration *DeviceAppManagementRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

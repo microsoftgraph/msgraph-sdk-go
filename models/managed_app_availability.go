@@ -8,7 +8,7 @@ type ManagedAppAvailability int
 const (
     // A globally available app to all tenants.
     GLOBAL_MANAGEDAPPAVAILABILITY ManagedAppAvailability = iota
-    // A line of business apps private to an organization.
+    // A line-of-business apps private to an organization.
     LINEOFBUSINESS_MANAGEDAPPAVAILABILITY
 )
 

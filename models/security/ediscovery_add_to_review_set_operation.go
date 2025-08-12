@@ -102,6 +102,22 @@ func (m *EdiscoveryAddToReviewSetOperation) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["reportFileMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateReportFileMetadataFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ReportFileMetadataable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ReportFileMetadataable)
+                }
+            }
+            m.SetReportFileMetadata(res)
+        }
+        return nil
+    }
     res["reviewSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEdiscoveryReviewSetFromDiscriminatorValue)
         if err != nil {
@@ -133,6 +149,18 @@ func (m *EdiscoveryAddToReviewSetOperation) GetItemsToInclude()(*ItemsToInclude)
     }
     if val != nil {
         return val.(*ItemsToInclude)
+    }
+    return nil
+}
+// GetReportFileMetadata gets the reportFileMetadata property value. Contains the properties for report file metadata, including downloadUrl, fileName, and size.
+// returns a []ReportFileMetadataable when successful
+func (m *EdiscoveryAddToReviewSetOperation) GetReportFileMetadata()([]ReportFileMetadataable) {
+    val, err := m.GetBackingStore().Get("reportFileMetadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ReportFileMetadataable)
     }
     return nil
 }
@@ -194,6 +222,18 @@ func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    if m.GetReportFileMetadata() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReportFileMetadata()))
+        for i, v := range m.GetReportFileMetadata() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("reportFileMetadata", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("reviewSet", m.GetReviewSet())
         if err != nil {
@@ -236,6 +276,13 @@ func (m *EdiscoveryAddToReviewSetOperation) SetItemsToInclude(value *ItemsToIncl
         panic(err)
     }
 }
+// SetReportFileMetadata sets the reportFileMetadata property value. Contains the properties for report file metadata, including downloadUrl, fileName, and size.
+func (m *EdiscoveryAddToReviewSetOperation) SetReportFileMetadata(value []ReportFileMetadataable)() {
+    err := m.GetBackingStore().Set("reportFileMetadata", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReviewSet sets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
 func (m *EdiscoveryAddToReviewSetOperation) SetReviewSet(value EdiscoveryReviewSetable)() {
     err := m.GetBackingStore().Set("reviewSet", value)
@@ -257,12 +304,14 @@ type EdiscoveryAddToReviewSetOperationable interface {
     GetCloudAttachmentVersion()(*CloudAttachmentVersion)
     GetDocumentVersion()(*DocumentVersion)
     GetItemsToInclude()(*ItemsToInclude)
+    GetReportFileMetadata()([]ReportFileMetadataable)
     GetReviewSet()(EdiscoveryReviewSetable)
     GetSearch()(EdiscoverySearchable)
     SetAdditionalDataOptions(value *AdditionalDataOptions)()
     SetCloudAttachmentVersion(value *CloudAttachmentVersion)()
     SetDocumentVersion(value *DocumentVersion)()
     SetItemsToInclude(value *ItemsToInclude)()
+    SetReportFileMetadata(value []ReportFileMetadataable)()
     SetReviewSet(value EdiscoveryReviewSetable)()
     SetSearch(value EdiscoverySearchable)()
 }
