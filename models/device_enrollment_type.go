@@ -32,10 +32,12 @@ const (
     APPLEUSERENROLLMENT_DEVICEENROLLMENTTYPE
     // Indicates the device is enrolled via Apple User Enrollment with Company Portal using a device enrollment manager user. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities
     APPLEUSERENROLLMENTWITHSERVICEACCOUNT_DEVICEENROLLMENTTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICEENROLLMENTTYPE
 )
 
 func (i DeviceEnrollmentType) String() string {
-    return []string{"unknown", "userEnrollment", "deviceEnrollmentManager", "appleBulkWithUser", "appleBulkWithoutUser", "windowsAzureADJoin", "windowsBulkUserless", "windowsAutoEnrollment", "windowsBulkAzureDomainJoin", "windowsCoManagement", "windowsAzureADJoinUsingDeviceAuth", "appleUserEnrollment", "appleUserEnrollmentWithServiceAccount"}[i]
+    return []string{"unknown", "userEnrollment", "deviceEnrollmentManager", "appleBulkWithUser", "appleBulkWithoutUser", "windowsAzureADJoin", "windowsBulkUserless", "windowsAutoEnrollment", "windowsBulkAzureDomainJoin", "windowsCoManagement", "windowsAzureADJoinUsingDeviceAuth", "appleUserEnrollment", "appleUserEnrollmentWithServiceAccount", "unknownFutureValue"}[i]
 }
 func ParseDeviceEnrollmentType(v string) (any, error) {
     result := UNKNOWN_DEVICEENROLLMENTTYPE
@@ -66,6 +68,8 @@ func ParseDeviceEnrollmentType(v string) (any, error) {
             result = APPLEUSERENROLLMENT_DEVICEENROLLMENTTYPE
         case "appleUserEnrollmentWithServiceAccount":
             result = APPLEUSERENROLLMENTWITHSERVICEACCOUNT_DEVICEENROLLMENTTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEENROLLMENTTYPE
         default:
             return nil, nil
     }

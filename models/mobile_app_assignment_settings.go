@@ -36,6 +36,8 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.iosDdmLobAppAssignmentSettings":
+                        return NewIosDdmLobAppAssignmentSettings(), nil
                     case "#microsoft.graph.iosLobAppAssignmentSettings":
                         return NewIosLobAppAssignmentSettings(), nil
                     case "#microsoft.graph.iosStoreAppAssignmentSettings":

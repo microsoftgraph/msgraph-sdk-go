@@ -12,7 +12,7 @@ const (
     AUTOMATIC_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
     // User dismissal. Allows the user to dismiss the notification
     USER_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
-    // Evolvable enum member
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
 )
 

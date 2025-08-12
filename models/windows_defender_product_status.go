@@ -20,11 +20,11 @@ const (
     PENDINGFULLSCANDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS = 8
     // Pending reboot due to threat action
     PENDINGREBOOTDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS = 16
-    // Pending manual steps due to threat action 
+    // Pending manual steps due to threat action
     PENDINGMANUALSTEPSDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS = 32
-    // AV signatures out of date
+    // Antivirus (AV) signatures out of date
     AVSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS = 64
-    // AS signatures out of date
+    // Antisypware (AS) signatures out of date
     ASSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS = 128
     // No quick scan has happened for a specified period
     NOQUICKSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS = 256

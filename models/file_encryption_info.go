@@ -8,7 +8,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// FileEncryptionInfo contains properties for file encryption information for the content version of a line of business app.
+// FileEncryptionInfo contains properties for file encryption information for the content version of a line-of-business app.
 type FileEncryptionInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore

@@ -145,6 +145,22 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["resourceAccessEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceAccessEventFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceAccessEventable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceAccessEventable)
+                }
+            }
+            m.SetResourceAccessEvents(res)
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -176,6 +192,18 @@ func (m *UserAccount) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetResourceAccessEvents gets the resourceAccessEvents property value. Information on resource access attempts made by the user account.
+// returns a []ResourceAccessEventable when successful
+func (m *UserAccount) GetResourceAccessEvents()([]ResourceAccessEventable) {
+    val, err := m.GetBackingStore().Get("resourceAccessEvents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceAccessEventable)
     }
     return nil
 }
@@ -231,6 +259,18 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetResourceAccessEvents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceAccessEvents()))
+        for i, v := range m.GetResourceAccessEvents() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("resourceAccessEvents", cast)
         if err != nil {
             return err
         }
@@ -301,6 +341,13 @@ func (m *UserAccount) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetResourceAccessEvents sets the resourceAccessEvents property value. Information on resource access attempts made by the user account.
+func (m *UserAccount) SetResourceAccessEvents(value []ResourceAccessEventable)() {
+    err := m.GetBackingStore().Set("resourceAccessEvents", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name of the account in Microsoft Entra ID.
 func (m *UserAccount) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
@@ -325,6 +372,7 @@ type UserAccountable interface {
     GetDisplayName()(*string)
     GetDomainName()(*string)
     GetOdataType()(*string)
+    GetResourceAccessEvents()([]ResourceAccessEventable)
     GetUserPrincipalName()(*string)
     GetUserSid()(*string)
     SetAccountName(value *string)()
@@ -333,6 +381,7 @@ type UserAccountable interface {
     SetDisplayName(value *string)()
     SetDomainName(value *string)()
     SetOdataType(value *string)()
+    SetResourceAccessEvents(value []ResourceAccessEventable)()
     SetUserPrincipalName(value *string)()
     SetUserSid(value *string)()
 }

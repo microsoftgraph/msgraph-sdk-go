@@ -43,6 +43,18 @@ func (m *CustomExtensionOverwriteConfiguration) GetAdditionalData()(map[string]a
 func (m *CustomExtensionOverwriteConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetBehaviorOnError gets the behaviorOnError property value. The behaviorOnError property
+// returns a CustomExtensionBehaviorOnErrorable when successful
+func (m *CustomExtensionOverwriteConfiguration) GetBehaviorOnError()(CustomExtensionBehaviorOnErrorable) {
+    val, err := m.GetBackingStore().Get("behaviorOnError")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomExtensionBehaviorOnErrorable)
+    }
+    return nil
+}
 // GetClientConfiguration gets the clientConfiguration property value. Configuration regarding properties of the custom extension which can be overwritten per event listener. If no values are provided, the properties on the custom extension are used.
 // returns a CustomExtensionClientConfigurationable when successful
 func (m *CustomExtensionOverwriteConfiguration) GetClientConfiguration()(CustomExtensionClientConfigurationable) {
@@ -59,6 +71,16 @@ func (m *CustomExtensionOverwriteConfiguration) GetClientConfiguration()(CustomE
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionOverwriteConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["behaviorOnError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCustomExtensionBehaviorOnErrorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBehaviorOnError(val.(CustomExtensionBehaviorOnErrorable))
+        }
+        return nil
+    }
     res["clientConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomExtensionClientConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -96,6 +118,12 @@ func (m *CustomExtensionOverwriteConfiguration) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *CustomExtensionOverwriteConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("behaviorOnError", m.GetBehaviorOnError())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("clientConfiguration", m.GetClientConfiguration())
         if err != nil {
             return err
@@ -126,6 +154,13 @@ func (m *CustomExtensionOverwriteConfiguration) SetAdditionalData(value map[stri
 func (m *CustomExtensionOverwriteConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetBehaviorOnError sets the behaviorOnError property value. The behaviorOnError property
+func (m *CustomExtensionOverwriteConfiguration) SetBehaviorOnError(value CustomExtensionBehaviorOnErrorable)() {
+    err := m.GetBackingStore().Set("behaviorOnError", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetClientConfiguration sets the clientConfiguration property value. Configuration regarding properties of the custom extension which can be overwritten per event listener. If no values are provided, the properties on the custom extension are used.
 func (m *CustomExtensionOverwriteConfiguration) SetClientConfiguration(value CustomExtensionClientConfigurationable)() {
     err := m.GetBackingStore().Set("clientConfiguration", value)
@@ -145,9 +180,11 @@ type CustomExtensionOverwriteConfigurationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBehaviorOnError()(CustomExtensionBehaviorOnErrorable)
     GetClientConfiguration()(CustomExtensionClientConfigurationable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBehaviorOnError(value CustomExtensionBehaviorOnErrorable)()
     SetClientConfiguration(value CustomExtensionClientConfigurationable)()
     SetOdataType(value *string)()
 }

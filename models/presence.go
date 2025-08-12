@@ -34,7 +34,7 @@ func (m *Presence) GetActivity()(*string) {
     }
     return nil
 }
-// GetAvailability gets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+// GetAvailability gets the availability property value. The base presence information for a user. Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.
 // returns a *string when successful
 func (m *Presence) GetAvailability()(*string) {
     val, err := m.GetBackingStore().Get("availability")
@@ -102,7 +102,7 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The outOfOfficeSettings property
+// GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The user's out-of-office settings.
 // returns a OutOfOfficeSettingsable when successful
 func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
     val, err := m.GetBackingStore().Get("outOfOfficeSettings")
@@ -114,7 +114,7 @@ func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
     }
     return nil
 }
-// GetSequenceNumber gets the sequenceNumber property value. The sequenceNumber property
+// GetSequenceNumber gets the sequenceNumber property value. The lexicographically sortable string stamp that represents the version of a presence object.
 // returns a *string when successful
 func (m *Presence) GetSequenceNumber()(*string) {
     val, err := m.GetBackingStore().Get("sequenceNumber")
@@ -177,21 +177,21 @@ func (m *Presence) SetActivity(value *string)() {
         panic(err)
     }
 }
-// SetAvailability sets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+// SetAvailability sets the availability property value. The base presence information for a user. Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.
 func (m *Presence) SetAvailability(value *string)() {
     err := m.GetBackingStore().Set("availability", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOutOfOfficeSettings sets the outOfOfficeSettings property value. The outOfOfficeSettings property
+// SetOutOfOfficeSettings sets the outOfOfficeSettings property value. The user's out-of-office settings.
 func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
     err := m.GetBackingStore().Set("outOfOfficeSettings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSequenceNumber sets the sequenceNumber property value. The sequenceNumber property
+// SetSequenceNumber sets the sequenceNumber property value. The lexicographically sortable string stamp that represents the version of a presence object.
 func (m *Presence) SetSequenceNumber(value *string)() {
     err := m.GetBackingStore().Set("sequenceNumber", value)
     if err != nil {

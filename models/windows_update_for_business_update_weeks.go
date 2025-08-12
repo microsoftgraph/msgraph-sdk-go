@@ -22,7 +22,7 @@ const (
     FOURTHWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 16
     // Scheduled the update installation on every week of the month
     EVERYWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 32
-    // Evolvable enum member
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 64
 )
 

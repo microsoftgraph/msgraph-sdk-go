@@ -79,7 +79,7 @@ func (m *OutOfOfficeSettings) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIsOutOfOffice gets the isOutOfOffice property value. The isOutOfOffice property
+// GetIsOutOfOffice gets the isOutOfOffice property value. If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as 'Show as Out of Office' appears on the user's calendar.Otherwise, false.
 // returns a *bool when successful
 func (m *OutOfOfficeSettings) GetIsOutOfOffice()(*bool) {
     val, err := m.GetBackingStore().Get("isOutOfOffice")
@@ -91,7 +91,7 @@ func (m *OutOfOfficeSettings) GetIsOutOfOffice()(*bool) {
     }
     return nil
 }
-// GetMessage gets the message property value. The message property
+// GetMessage gets the message property value. The out-of-office message configured by the user in the Outlook client (Automatic replies) or the Teams client (Schedule out of office).
 // returns a *string when successful
 func (m *OutOfOfficeSettings) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
@@ -154,14 +154,14 @@ func (m *OutOfOfficeSettings) SetAdditionalData(value map[string]any)() {
 func (m *OutOfOfficeSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsOutOfOffice sets the isOutOfOffice property value. The isOutOfOffice property
+// SetIsOutOfOffice sets the isOutOfOffice property value. If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as 'Show as Out of Office' appears on the user's calendar.Otherwise, false.
 func (m *OutOfOfficeSettings) SetIsOutOfOffice(value *bool)() {
     err := m.GetBackingStore().Set("isOutOfOffice", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessage sets the message property value. The message property
+// SetMessage sets the message property value. The out-of-office message configured by the user in the Outlook client (Automatic replies) or the Teams client (Schedule out of office).
 func (m *OutOfOfficeSettings) SetMessage(value *string)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
