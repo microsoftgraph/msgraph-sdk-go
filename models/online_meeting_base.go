@@ -538,7 +538,7 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetIsEndToEndEncryptionEnabled gets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+// GetIsEndToEndEncryptionEnabled gets the isEndToEndEncryptionEnabled property value. Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetIsEndToEndEncryptionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEndToEndEncryptionEnabled")
@@ -976,7 +976,7 @@ func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
         panic(err)
     }
 }
-// SetIsEndToEndEncryptionEnabled sets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+// SetIsEndToEndEncryptionEnabled sets the isEndToEndEncryptionEnabled property value. Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
 func (m *OnlineMeetingBase) SetIsEndToEndEncryptionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEndToEndEncryptionEnabled", value)
     if err != nil {
