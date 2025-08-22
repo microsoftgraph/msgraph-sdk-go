@@ -5,7 +5,7 @@ go 1.23.0
 toolchain go1.24.1
 
 require (
-	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.18.2
+	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.19.0
 	github.com/google/uuid v1.6.0
 	github.com/microsoft/kiota-abstractions-go v1.9.3
 	github.com/microsoft/kiota-serialization-form-go v1.1.2
