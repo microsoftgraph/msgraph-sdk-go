@@ -4,6 +4,7 @@
 package security
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -24,6 +25,18 @@ func NewSecurityGroupEvidence()(*SecurityGroupEvidence) {
 func CreateSecurityGroupEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityGroupEvidence(), nil
 }
+// GetActiveDirectoryObjectGuid gets the activeDirectoryObjectGuid property value. The activeDirectoryObjectGuid property
+// returns a *UUID when successful
+func (m *SecurityGroupEvidence) GetActiveDirectoryObjectGuid()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("activeDirectoryObjectGuid")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The name of the security group.
 // returns a *string when successful
 func (m *SecurityGroupEvidence) GetDisplayName()(*string) {
@@ -36,10 +49,32 @@ func (m *SecurityGroupEvidence) GetDisplayName()(*string) {
     }
     return nil
 }
+// GetDistinguishedName gets the distinguishedName property value. The distinguishedName property
+// returns a *string when successful
+func (m *SecurityGroupEvidence) GetDistinguishedName()(*string) {
+    val, err := m.GetBackingStore().Get("distinguishedName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
+    res["activeDirectoryObjectGuid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveDirectoryObjectGuid(val)
+        }
+        return nil
+    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -47,6 +82,26 @@ func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["distinguishedName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDistinguishedName(val)
+        }
+        return nil
+    }
+    res["friendlyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFriendlyName(val)
         }
         return nil
     }
@@ -60,12 +115,46 @@ func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["sid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSid(val)
+        }
+        return nil
+    }
     return res
+}
+// GetFriendlyName gets the friendlyName property value. The friendlyName property
+// returns a *string when successful
+func (m *SecurityGroupEvidence) GetFriendlyName()(*string) {
+    val, err := m.GetBackingStore().Get("friendlyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSecurityGroupId gets the securityGroupId property value. Unique identifier of the security group.
 // returns a *string when successful
 func (m *SecurityGroupEvidence) GetSecurityGroupId()(*string) {
     val, err := m.GetBackingStore().Get("securityGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSid gets the sid property value. The sid property
+// returns a *string when successful
+func (m *SecurityGroupEvidence) GetSid()(*string) {
+    val, err := m.GetBackingStore().Get("sid")
     if err != nil {
         panic(err)
     }
@@ -81,7 +170,25 @@ func (m *SecurityGroupEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
         return err
     }
     {
+        err = writer.WriteUUIDValue("activeDirectoryObjectGuid", m.GetActiveDirectoryObjectGuid())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("distinguishedName", m.GetDistinguishedName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("friendlyName", m.GetFriendlyName())
         if err != nil {
             return err
         }
@@ -92,11 +199,38 @@ func (m *SecurityGroupEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("sid", m.GetSid())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetActiveDirectoryObjectGuid sets the activeDirectoryObjectGuid property value. The activeDirectoryObjectGuid property
+func (m *SecurityGroupEvidence) SetActiveDirectoryObjectGuid(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("activeDirectoryObjectGuid", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the security group.
 func (m *SecurityGroupEvidence) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDistinguishedName sets the distinguishedName property value. The distinguishedName property
+func (m *SecurityGroupEvidence) SetDistinguishedName(value *string)() {
+    err := m.GetBackingStore().Set("distinguishedName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFriendlyName sets the friendlyName property value. The friendlyName property
+func (m *SecurityGroupEvidence) SetFriendlyName(value *string)() {
+    err := m.GetBackingStore().Set("friendlyName", value)
     if err != nil {
         panic(err)
     }
@@ -108,11 +242,26 @@ func (m *SecurityGroupEvidence) SetSecurityGroupId(value *string)() {
         panic(err)
     }
 }
+// SetSid sets the sid property value. The sid property
+func (m *SecurityGroupEvidence) SetSid(value *string)() {
+    err := m.GetBackingStore().Set("sid", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type SecurityGroupEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveDirectoryObjectGuid()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetDisplayName()(*string)
+    GetDistinguishedName()(*string)
+    GetFriendlyName()(*string)
     GetSecurityGroupId()(*string)
+    GetSid()(*string)
+    SetActiveDirectoryObjectGuid(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetDisplayName(value *string)()
+    SetDistinguishedName(value *string)()
+    SetFriendlyName(value *string)()
     SetSecurityGroupId(value *string)()
+    SetSid(value *string)()
 }
