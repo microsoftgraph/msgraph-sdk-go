@@ -4,6 +4,7 @@
 package security
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
@@ -34,6 +35,18 @@ func (m *UserAccount) GetAccountName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetActiveDirectoryObjectGuid gets the activeDirectoryObjectGuid property value. The activeDirectoryObjectGuid property
+// returns a *UUID when successful
+func (m *UserAccount) GetActiveDirectoryObjectGuid()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("activeDirectoryObjectGuid")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     }
     return nil
 }
@@ -102,6 +115,16 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetAccountName(val)
+        }
+        return nil
+    }
+    res["activeDirectoryObjectGuid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveDirectoryObjectGuid(val)
         }
         return nil
     }
@@ -240,6 +263,12 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteUUIDValue("activeDirectoryObjectGuid", m.GetActiveDirectoryObjectGuid())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("azureAdUserId", m.GetAzureAdUserId())
         if err != nil {
             return err
@@ -298,6 +327,13 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 // SetAccountName sets the accountName property value. The displayed name of the user account.
 func (m *UserAccount) SetAccountName(value *string)() {
     err := m.GetBackingStore().Set("accountName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetActiveDirectoryObjectGuid sets the activeDirectoryObjectGuid property value. The activeDirectoryObjectGuid property
+func (m *UserAccount) SetActiveDirectoryObjectGuid(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("activeDirectoryObjectGuid", value)
     if err != nil {
         panic(err)
     }
@@ -367,6 +403,7 @@ type UserAccountable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccountName()(*string)
+    GetActiveDirectoryObjectGuid()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetAzureAdUserId()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
@@ -376,6 +413,7 @@ type UserAccountable interface {
     GetUserPrincipalName()(*string)
     GetUserSid()(*string)
     SetAccountName(value *string)()
+    SetActiveDirectoryObjectGuid(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetAzureAdUserId(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()

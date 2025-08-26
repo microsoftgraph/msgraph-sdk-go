@@ -78,6 +78,18 @@ func (m *OnlineMeetingBase) GetAllowBreakoutRooms()(*bool) {
     }
     return nil
 }
+// GetAllowCopyingAndSharingMeetingContent gets the allowCopyingAndSharingMeetingContent property value. The allowCopyingAndSharingMeetingContent property
+// returns a *bool when successful
+func (m *OnlineMeetingBase) GetAllowCopyingAndSharingMeetingContent()(*bool) {
+    val, err := m.GetBackingStore().Get("allowCopyingAndSharingMeetingContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
 // returns a *AllowedLobbyAdmitterRoles when successful
 func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRoles) {
@@ -277,6 +289,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetAllowBreakoutRooms(val)
+        }
+        return nil
+    }
+    res["allowCopyingAndSharingMeetingContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowCopyingAndSharingMeetingContent(val)
         }
         return nil
     }
@@ -694,6 +716,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("allowCopyingAndSharingMeetingContent", m.GetAllowCopyingAndSharingMeetingContent())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAllowedLobbyAdmitters() != nil {
         cast := (*m.GetAllowedLobbyAdmitters()).String()
         err = writer.WriteStringValue("allowedLobbyAdmitters", &cast)
@@ -874,6 +902,13 @@ func (m *OnlineMeetingBase) SetAllowAttendeeToEnableMic(value *bool)() {
 // SetAllowBreakoutRooms sets the allowBreakoutRooms property value. Indicates whether breakout rooms are enabled for the meeting.
 func (m *OnlineMeetingBase) SetAllowBreakoutRooms(value *bool)() {
     err := m.GetBackingStore().Set("allowBreakoutRooms", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowCopyingAndSharingMeetingContent sets the allowCopyingAndSharingMeetingContent property value. The allowCopyingAndSharingMeetingContent property
+func (m *OnlineMeetingBase) SetAllowCopyingAndSharingMeetingContent(value *bool)() {
+    err := m.GetBackingStore().Set("allowCopyingAndSharingMeetingContent", value)
     if err != nil {
         panic(err)
     }
@@ -1059,6 +1094,7 @@ type OnlineMeetingBaseable interface {
     GetAllowAttendeeToEnableCamera()(*bool)
     GetAllowAttendeeToEnableMic()(*bool)
     GetAllowBreakoutRooms()(*bool)
+    GetAllowCopyingAndSharingMeetingContent()(*bool)
     GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRoles)
     GetAllowedPresenters()(*OnlineMeetingPresenters)
     GetAllowLiveShare()(*MeetingLiveShareOptions)
@@ -1087,6 +1123,7 @@ type OnlineMeetingBaseable interface {
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
     SetAllowBreakoutRooms(value *bool)()
+    SetAllowCopyingAndSharingMeetingContent(value *bool)()
     SetAllowedLobbyAdmitters(value *AllowedLobbyAdmitterRoles)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
     SetAllowLiveShare(value *MeetingLiveShareOptions)()
