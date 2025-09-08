@@ -22,7 +22,7 @@ func NewGranularMailboxRestoreArtifact()(*GranularMailboxRestoreArtifact) {
 func CreateGranularMailboxRestoreArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGranularMailboxRestoreArtifact(), nil
 }
-// GetArtifactCount gets the artifactCount property value. .
+// GetArtifactCount gets the artifactCount property value. This property will be deprecated soon. Don't use.
 // returns a *int32 when successful
 func (m *GranularMailboxRestoreArtifact) GetArtifactCount()(*int32) {
     val, err := m.GetBackingStore().Get("artifactCount")
@@ -92,7 +92,7 @@ func (m *GranularMailboxRestoreArtifact) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetArtifactCount sets the artifactCount property value. .
+// SetArtifactCount sets the artifactCount property value. This property will be deprecated soon. Don't use.
 func (m *GranularMailboxRestoreArtifact) SetArtifactCount(value *int32)() {
     err := m.GetBackingStore().Set("artifactCount", value)
     if err != nil {

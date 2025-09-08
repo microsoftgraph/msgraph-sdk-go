@@ -23,10 +23,32 @@ func NewEdiscoveryCaseSettings()(*EdiscoveryCaseSettings) {
 func CreateEdiscoveryCaseSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryCaseSettings(), nil
 }
+// GetCaseType gets the caseType property value. The caseType property
+// returns a *CaseType when successful
+func (m *EdiscoveryCaseSettings) GetCaseType()(*CaseType) {
+    val, err := m.GetBackingStore().Get("caseType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CaseType)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryCaseSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["caseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCaseType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCaseType(val.(*CaseType))
+        }
+        return nil
+    }
     res["ocr"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOcrSettingsFromDiscriminatorValue)
         if err != nil {
@@ -44,6 +66,16 @@ func (m *EdiscoveryCaseSettings) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetRedundancyDetection(val.(RedundancyDetectionSettingsable))
+        }
+        return nil
+    }
+    res["reviewSetSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseReviewSetSettings)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReviewSetSettings(val.(*ReviewSetSettings))
         }
         return nil
     }
@@ -83,6 +115,18 @@ func (m *EdiscoveryCaseSettings) GetRedundancyDetection()(RedundancyDetectionSet
     }
     return nil
 }
+// GetReviewSetSettings gets the reviewSetSettings property value. The reviewSetSettings property
+// returns a *ReviewSetSettings when successful
+func (m *EdiscoveryCaseSettings) GetReviewSetSettings()(*ReviewSetSettings) {
+    val, err := m.GetBackingStore().Get("reviewSetSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReviewSetSettings)
+    }
+    return nil
+}
 // GetTopicModeling gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 // returns a TopicModelingSettingsable when successful
 func (m *EdiscoveryCaseSettings) GetTopicModeling()(TopicModelingSettingsable) {
@@ -101,6 +145,13 @@ func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
+    if m.GetCaseType() != nil {
+        cast := (*m.GetCaseType()).String()
+        err = writer.WriteStringValue("caseType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("ocr", m.GetOcr())
         if err != nil {
@@ -113,6 +164,13 @@ func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetReviewSetSettings() != nil {
+        cast := (*m.GetReviewSetSettings()).String()
+        err = writer.WriteStringValue("reviewSetSettings", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("topicModeling", m.GetTopicModeling())
         if err != nil {
@@ -120,6 +178,13 @@ func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     return nil
+}
+// SetCaseType sets the caseType property value. The caseType property
+func (m *EdiscoveryCaseSettings) SetCaseType(value *CaseType)() {
+    err := m.GetBackingStore().Set("caseType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *EdiscoveryCaseSettings) SetOcr(value OcrSettingsable)() {
@@ -135,6 +200,13 @@ func (m *EdiscoveryCaseSettings) SetRedundancyDetection(value RedundancyDetectio
         panic(err)
     }
 }
+// SetReviewSetSettings sets the reviewSetSettings property value. The reviewSetSettings property
+func (m *EdiscoveryCaseSettings) SetReviewSetSettings(value *ReviewSetSettings)() {
+    err := m.GetBackingStore().Set("reviewSetSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTopicModeling sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *EdiscoveryCaseSettings) SetTopicModeling(value TopicModelingSettingsable)() {
     err := m.GetBackingStore().Set("topicModeling", value)
@@ -145,10 +217,14 @@ func (m *EdiscoveryCaseSettings) SetTopicModeling(value TopicModelingSettingsabl
 type EdiscoveryCaseSettingsable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCaseType()(*CaseType)
     GetOcr()(OcrSettingsable)
     GetRedundancyDetection()(RedundancyDetectionSettingsable)
+    GetReviewSetSettings()(*ReviewSetSettings)
     GetTopicModeling()(TopicModelingSettingsable)
+    SetCaseType(value *CaseType)()
     SetOcr(value OcrSettingsable)()
     SetRedundancyDetection(value RedundancyDetectionSettingsable)()
+    SetReviewSetSettings(value *ReviewSetSettings)()
     SetTopicModeling(value TopicModelingSettingsable)()
 }

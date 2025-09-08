@@ -177,7 +177,7 @@ func (m *CloudPcDeviceImage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetOperatingSystem gets the operatingSystem property value. The operating system (OS) of the image. For example, Windows 10 Enterprise. Read-only.
+// GetOperatingSystem gets the operatingSystem property value. The operating system (OS) of the image. For example, Windows 11 Enterprise. Read-only.
 // returns a *string when successful
 func (m *CloudPcDeviceImage) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
@@ -348,7 +348,7 @@ func (m *CloudPcDeviceImage) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetOperatingSystem sets the operatingSystem property value. The operating system (OS) of the image. For example, Windows 10 Enterprise. Read-only.
+// SetOperatingSystem sets the operatingSystem property value. The operating system (OS) of the image. For example, Windows 11 Enterprise. Read-only.
 func (m *CloudPcDeviceImage) SetOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("operatingSystem", value)
     if err != nil {
