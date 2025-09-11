@@ -2,17 +2,17 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
-// Storage locations where managed apps can potentially store their data
+// The storage locations where managed apps can potentially store their data.
 type ManagedAppDataStorageLocation int
 
 const (
-    // OneDrive for business
+    // Indicates allowed storage location for the managed app to save files is 'OneDrive for Business'.
     ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION ManagedAppDataStorageLocation = iota
-    // SharePoint
+    // Indicates allowed storage location for the managed app to save files is 'Sharepoint'.
     SHAREPOINT_MANAGEDAPPDATASTORAGELOCATION
-    // Box
+    // Indicates that the allowed storage location for a managed app to save files is to 'Box'. Box is a non-Microsoft solution that enables cloud-based file storage capabilities.
     BOX_MANAGEDAPPDATASTORAGELOCATION
-    // Local storage on the device
+    // Indicates allowed storage location for the managed app to save files is local storage on the device.
     LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION
 )
 
