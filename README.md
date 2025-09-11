@@ -6,7 +6,6 @@ Get started with the Microsoft Graph SDK for Go by integrating the [Microsoft Gr
 
 > **Note:** this SDK allows you to build applications using the [v1.0](https://docs.microsoft.com/graph/use-the-api#version) of Microsoft Graph. If you want to try the latest Microsoft Graph APIs under beta, use our [beta SDK](https://github.com/microsoftgraph/msgraph-beta-sdk-go) instead.
 >
-> **Note:** The Microsoft Graph Go SDK is currently in General Availability version starting from version 1.0.0. The SDK is considered stable, regular releases and updates to the SDK will however continue weekly..
 
 ## 1. Installation
 
