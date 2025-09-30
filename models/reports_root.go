@@ -60,7 +60,7 @@ func (m *ReportsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetReadingAssignmentSubmissions gets the readingAssignmentSubmissions property value. The readingAssignmentSubmissions property
+// GetReadingAssignmentSubmissions gets the readingAssignmentSubmissions property value. Details of submitted reading assignments.
 // returns a []ReadingAssignmentSubmissionable when successful
 func (m *ReportsRoot) GetReadingAssignmentSubmissions()([]ReadingAssignmentSubmissionable) {
     val, err := m.GetBackingStore().Get("readingAssignmentSubmissions")
@@ -72,7 +72,7 @@ func (m *ReportsRoot) GetReadingAssignmentSubmissions()([]ReadingAssignmentSubmi
     }
     return nil
 }
-// GetReflectCheckInResponses gets the reflectCheckInResponses property value. The reflectCheckInResponses property
+// GetReflectCheckInResponses gets the reflectCheckInResponses property value. Details of check-in responses.
 // returns a []ReflectCheckInResponseable when successful
 func (m *ReportsRoot) GetReflectCheckInResponses()([]ReflectCheckInResponseable) {
     val, err := m.GetBackingStore().Get("reflectCheckInResponses")
@@ -116,14 +116,14 @@ func (m *ReportsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetReadingAssignmentSubmissions sets the readingAssignmentSubmissions property value. The readingAssignmentSubmissions property
+// SetReadingAssignmentSubmissions sets the readingAssignmentSubmissions property value. Details of submitted reading assignments.
 func (m *ReportsRoot) SetReadingAssignmentSubmissions(value []ReadingAssignmentSubmissionable)() {
     err := m.GetBackingStore().Set("readingAssignmentSubmissions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReflectCheckInResponses sets the reflectCheckInResponses property value. The reflectCheckInResponses property
+// SetReflectCheckInResponses sets the reflectCheckInResponses property value. Details of check-in responses.
 func (m *ReportsRoot) SetReflectCheckInResponses(value []ReflectCheckInResponseable)() {
     err := m.GetBackingStore().Set("reflectCheckInResponses", value)
     if err != nil {

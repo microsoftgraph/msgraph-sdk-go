@@ -21,7 +21,7 @@ type ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBuilderGetQueryParameters get readingAssignmentSubmissions from education
+// ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBuilderGetQueryParameters details of submitted reading assignments.
 type ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemReque
     }
     return nil
 }
-// Get get readingAssignmentSubmissions from education
+// Get details of submitted reading assignments.
 // returns a ReadingAssignmentSubmissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReadingAssignmentSubmissionable, error) {
@@ -124,7 +124,7 @@ func (m *ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get readingAssignmentSubmissions from education
+// ToGetRequestInformation details of submitted reading assignments.
 // returns a *RequestInformation when successful
 func (m *ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsReadingAssignmentSubmissionsReadingAssignmentSubmissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
