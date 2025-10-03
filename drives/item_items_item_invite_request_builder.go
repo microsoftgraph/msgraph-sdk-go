@@ -33,7 +33,7 @@ func NewItemItemsItemInviteRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemInviteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
+// Post send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
 // Deprecated: This method is obsolete. Use PostAsInvitePostResponse instead.
 // returns a ItemItemsItemInviteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -57,7 +57,7 @@ func (m *ItemItemsItemInviteRequestBuilder) Post(ctx context.Context, body ItemI
     }
     return res.(ItemItemsItemInviteResponseable), nil
 }
-// PostAsInvitePostResponse sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
+// PostAsInvitePostResponse send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
 // returns a ItemItemsItemInvitePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -80,7 +80,7 @@ func (m *ItemItemsItemInviteRequestBuilder) PostAsInvitePostResponse(ctx context
     }
     return res.(ItemItemsItemInvitePostResponseable), nil
 }
-// ToPostRequestInformation sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
+// ToPostRequestInformation send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemInviteRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemInvitePostRequestBodyable, requestConfiguration *ItemItemsItemInviteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
