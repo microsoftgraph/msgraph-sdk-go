@@ -42,6 +42,8 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewEdiscoveryExportOperation(), nil
                     case "#microsoft.graph.security.ediscoveryHoldOperation":
                         return NewEdiscoveryHoldOperation(), nil
+                    case "#microsoft.graph.security.ediscoveryHoldPolicySyncOperation":
+                        return NewEdiscoveryHoldPolicySyncOperation(), nil
                     case "#microsoft.graph.security.ediscoveryIndexOperation":
                         return NewEdiscoveryIndexOperation(), nil
                     case "#microsoft.graph.security.ediscoveryPurgeDataOperation":

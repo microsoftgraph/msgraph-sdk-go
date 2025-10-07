@@ -16,10 +16,11 @@ const (
     PURGEDATA_CASEACTION
     EXPORTREPORT_CASEACTION
     EXPORTRESULT_CASEACTION
+    HOLDPOLICYSYNC_CASEACTION
 )
 
 func (i CaseAction) String() string {
-    return []string{"contentExport", "applyTags", "convertToPdf", "index", "estimateStatistics", "addToReviewSet", "holdUpdate", "unknownFutureValue", "purgeData", "exportReport", "exportResult"}[i]
+    return []string{"contentExport", "applyTags", "convertToPdf", "index", "estimateStatistics", "addToReviewSet", "holdUpdate", "unknownFutureValue", "purgeData", "exportReport", "exportResult", "holdPolicySync"}[i]
 }
 func ParseCaseAction(v string) (any, error) {
     result := CONTENTEXPORT_CASEACTION
@@ -46,6 +47,8 @@ func ParseCaseAction(v string) (any, error) {
             result = EXPORTREPORT_CASEACTION
         case "exportResult":
             result = EXPORTRESULT_CASEACTION
+        case "holdPolicySync":
+            result = HOLDPOLICYSYNC_CASEACTION
         default:
             return nil, nil
     }

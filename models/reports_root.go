@@ -42,6 +42,22 @@ func (m *ReportsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["readingCoachPassages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateReadingCoachPassageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ReadingCoachPassageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ReadingCoachPassageable)
+                }
+            }
+            m.SetReadingCoachPassages(res)
+        }
+        return nil
+    }
     res["reflectCheckInResponses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateReflectCheckInResponseFromDiscriminatorValue)
         if err != nil {
@@ -55,6 +71,22 @@ func (m *ReportsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 }
             }
             m.SetReflectCheckInResponses(res)
+        }
+        return nil
+    }
+    res["speakerAssignmentSubmissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSpeakerAssignmentSubmissionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SpeakerAssignmentSubmissionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SpeakerAssignmentSubmissionable)
+                }
+            }
+            m.SetSpeakerAssignmentSubmissions(res)
         }
         return nil
     }
@@ -72,6 +104,18 @@ func (m *ReportsRoot) GetReadingAssignmentSubmissions()([]ReadingAssignmentSubmi
     }
     return nil
 }
+// GetReadingCoachPassages gets the readingCoachPassages property value. Details of practiced Reading Coach passages.
+// returns a []ReadingCoachPassageable when successful
+func (m *ReportsRoot) GetReadingCoachPassages()([]ReadingCoachPassageable) {
+    val, err := m.GetBackingStore().Get("readingCoachPassages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ReadingCoachPassageable)
+    }
+    return nil
+}
 // GetReflectCheckInResponses gets the reflectCheckInResponses property value. Details of check-in responses.
 // returns a []ReflectCheckInResponseable when successful
 func (m *ReportsRoot) GetReflectCheckInResponses()([]ReflectCheckInResponseable) {
@@ -81,6 +125,18 @@ func (m *ReportsRoot) GetReflectCheckInResponses()([]ReflectCheckInResponseable)
     }
     if val != nil {
         return val.([]ReflectCheckInResponseable)
+    }
+    return nil
+}
+// GetSpeakerAssignmentSubmissions gets the speakerAssignmentSubmissions property value. Details of submitted speaker assignments.
+// returns a []SpeakerAssignmentSubmissionable when successful
+func (m *ReportsRoot) GetSpeakerAssignmentSubmissions()([]SpeakerAssignmentSubmissionable) {
+    val, err := m.GetBackingStore().Get("speakerAssignmentSubmissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SpeakerAssignmentSubmissionable)
     }
     return nil
 }
@@ -102,6 +158,18 @@ func (m *ReportsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetReadingCoachPassages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReadingCoachPassages()))
+        for i, v := range m.GetReadingCoachPassages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("readingCoachPassages", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetReflectCheckInResponses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReflectCheckInResponses()))
         for i, v := range m.GetReflectCheckInResponses() {
@@ -110,6 +178,18 @@ func (m *ReportsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             }
         }
         err = writer.WriteCollectionOfObjectValues("reflectCheckInResponses", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSpeakerAssignmentSubmissions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSpeakerAssignmentSubmissions()))
+        for i, v := range m.GetSpeakerAssignmentSubmissions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("speakerAssignmentSubmissions", cast)
         if err != nil {
             return err
         }
@@ -123,9 +203,23 @@ func (m *ReportsRoot) SetReadingAssignmentSubmissions(value []ReadingAssignmentS
         panic(err)
     }
 }
+// SetReadingCoachPassages sets the readingCoachPassages property value. Details of practiced Reading Coach passages.
+func (m *ReportsRoot) SetReadingCoachPassages(value []ReadingCoachPassageable)() {
+    err := m.GetBackingStore().Set("readingCoachPassages", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReflectCheckInResponses sets the reflectCheckInResponses property value. Details of check-in responses.
 func (m *ReportsRoot) SetReflectCheckInResponses(value []ReflectCheckInResponseable)() {
     err := m.GetBackingStore().Set("reflectCheckInResponses", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSpeakerAssignmentSubmissions sets the speakerAssignmentSubmissions property value. Details of submitted speaker assignments.
+func (m *ReportsRoot) SetSpeakerAssignmentSubmissions(value []SpeakerAssignmentSubmissionable)() {
+    err := m.GetBackingStore().Set("speakerAssignmentSubmissions", value)
     if err != nil {
         panic(err)
     }
@@ -134,7 +228,11 @@ type ReportsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetReadingAssignmentSubmissions()([]ReadingAssignmentSubmissionable)
+    GetReadingCoachPassages()([]ReadingCoachPassageable)
     GetReflectCheckInResponses()([]ReflectCheckInResponseable)
+    GetSpeakerAssignmentSubmissions()([]SpeakerAssignmentSubmissionable)
     SetReadingAssignmentSubmissions(value []ReadingAssignmentSubmissionable)()
+    SetReadingCoachPassages(value []ReadingCoachPassageable)()
     SetReflectCheckInResponses(value []ReflectCheckInResponseable)()
+    SetSpeakerAssignmentSubmissions(value []SpeakerAssignmentSubmissionable)()
 }

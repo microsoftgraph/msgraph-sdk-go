@@ -209,6 +209,11 @@ func (m *GroupItemRequestBuilder) MembersWithLicenseErrors()(*ItemMembersWithLic
 func (m *GroupItemRequestBuilder) Onenote()(*ItemOnenoteRequestBuilder) {
     return NewItemOnenoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OnPremisesSyncBehavior provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.group entity.
+// returns a *ItemOnPremisesSyncBehaviorRequestBuilder when successful
+func (m *GroupItemRequestBuilder) OnPremisesSyncBehavior()(*ItemOnPremisesSyncBehaviorRequestBuilder) {
+    return NewItemOnPremisesSyncBehaviorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Owners provides operations to manage the owners property of the microsoft.graph.group entity.
 // returns a *ItemOwnersRequestBuilder when successful
 func (m *GroupItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {

@@ -744,6 +744,16 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["managementState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagementState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagementState(val.(*ManagementState))
+        }
+        return nil
+    }
     res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1116,6 +1126,18 @@ func (m *ManagedDevice) GetManagementCertificateExpirationDate()(*i336074805fc85
     }
     return nil
 }
+// GetManagementState gets the managementState property value. Management state of device in Microsoft Intune.
+// returns a *ManagementState when successful
+func (m *ManagedDevice) GetManagementState()(*ManagementState) {
+    val, err := m.GetBackingStore().Get("managementState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementState)
+    }
+    return nil
+}
 // GetManufacturer gets the manufacturer property value. Manufacturer of the device. This property is read-only.
 // returns a *string when successful
 func (m *ManagedDevice) GetManufacturer()(*string) {
@@ -1483,6 +1505,13 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetManagementState() != nil {
+        cast := (*m.GetManagementState()).String()
+        err = writer.WriteStringValue("managementState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("notes", m.GetNotes())
         if err != nil {
@@ -1782,6 +1811,13 @@ func (m *ManagedDevice) SetManagementCertificateExpirationDate(value *i336074805
         panic(err)
     }
 }
+// SetManagementState sets the managementState property value. Management state of device in Microsoft Intune.
+func (m *ManagedDevice) SetManagementState(value *ManagementState)() {
+    err := m.GetBackingStore().Set("managementState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManufacturer sets the manufacturer property value. Manufacturer of the device. This property is read-only.
 func (m *ManagedDevice) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
@@ -1977,6 +2013,7 @@ type ManagedDeviceable interface {
     GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType)
     GetManagementAgent()(*ManagementAgentType)
     GetManagementCertificateExpirationDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagementState()(*ManagementState)
     GetManufacturer()(*string)
     GetMeid()(*string)
     GetModel()(*string)
@@ -2037,6 +2074,7 @@ type ManagedDeviceable interface {
     SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)()
     SetManagementAgent(value *ManagementAgentType)()
     SetManagementCertificateExpirationDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagementState(value *ManagementState)()
     SetManufacturer(value *string)()
     SetMeid(value *string)()
     SetModel(value *string)()

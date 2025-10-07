@@ -118,10 +118,20 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
 func (m *ReportsRequestBuilder) ReadingAssignmentSubmissions()(*ReportsReadingAssignmentSubmissionsRequestBuilder) {
     return NewReportsReadingAssignmentSubmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ReadingCoachPassages provides operations to manage the readingCoachPassages property of the microsoft.graph.reportsRoot entity.
+// returns a *ReportsReadingCoachPassagesRequestBuilder when successful
+func (m *ReportsRequestBuilder) ReadingCoachPassages()(*ReportsReadingCoachPassagesRequestBuilder) {
+    return NewReportsReadingCoachPassagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ReflectCheckInResponses provides operations to manage the reflectCheckInResponses property of the microsoft.graph.reportsRoot entity.
 // returns a *ReportsReflectCheckInResponsesRequestBuilder when successful
 func (m *ReportsRequestBuilder) ReflectCheckInResponses()(*ReportsReflectCheckInResponsesRequestBuilder) {
     return NewReportsReflectCheckInResponsesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SpeakerAssignmentSubmissions provides operations to manage the speakerAssignmentSubmissions property of the microsoft.graph.reportsRoot entity.
+// returns a *ReportsSpeakerAssignmentSubmissionsRequestBuilder when successful
+func (m *ReportsRequestBuilder) SpeakerAssignmentSubmissions()(*ReportsSpeakerAssignmentSubmissionsRequestBuilder) {
+    return NewReportsSpeakerAssignmentSubmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property reports for education
 // returns a *RequestInformation when successful
