@@ -52,6 +52,8 @@ func CreateEducationResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268
                         return NewEducationMediaResource(), nil
                     case "#microsoft.graph.educationPowerPointResource":
                         return NewEducationPowerPointResource(), nil
+                    case "#microsoft.graph.educationSpeakerProgressResource":
+                        return NewEducationSpeakerProgressResource(), nil
                     case "#microsoft.graph.educationTeamsAppResource":
                         return NewEducationTeamsAppResource(), nil
                     case "#microsoft.graph.educationWordResource":

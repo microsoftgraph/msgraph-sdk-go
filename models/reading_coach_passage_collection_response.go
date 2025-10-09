@@ -7,35 +7,35 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type TelecomExpenseManagementPartnerCollectionResponse struct {
+type ReadingCoachPassageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTelecomExpenseManagementPartnerCollectionResponse instantiates a new TelecomExpenseManagementPartnerCollectionResponse and sets the default values.
-func NewTelecomExpenseManagementPartnerCollectionResponse()(*TelecomExpenseManagementPartnerCollectionResponse) {
-    m := &TelecomExpenseManagementPartnerCollectionResponse{
+// NewReadingCoachPassageCollectionResponse instantiates a new ReadingCoachPassageCollectionResponse and sets the default values.
+func NewReadingCoachPassageCollectionResponse()(*ReadingCoachPassageCollectionResponse) {
+    m := &ReadingCoachPassageCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
     }
     return m
 }
-// CreateTelecomExpenseManagementPartnerCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateReadingCoachPassageCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateTelecomExpenseManagementPartnerCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewTelecomExpenseManagementPartnerCollectionResponse(), nil
+func CreateReadingCoachPassageCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewReadingCoachPassageCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *TelecomExpenseManagementPartnerCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ReadingCoachPassageCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTelecomExpenseManagementPartnerFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateReadingCoachPassageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TelecomExpenseManagementPartnerable, len(val))
+            res := make([]ReadingCoachPassageable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(TelecomExpenseManagementPartnerable)
+                    res[i] = v.(ReadingCoachPassageable)
                 }
             }
             m.SetValue(res)
@@ -45,19 +45,19 @@ func (m *TelecomExpenseManagementPartnerCollectionResponse) GetFieldDeserializer
     return res
 }
 // GetValue gets the value property value. The value property
-// returns a []TelecomExpenseManagementPartnerable when successful
-func (m *TelecomExpenseManagementPartnerCollectionResponse) GetValue()([]TelecomExpenseManagementPartnerable) {
+// returns a []ReadingCoachPassageable when successful
+func (m *ReadingCoachPassageCollectionResponse) GetValue()([]ReadingCoachPassageable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]TelecomExpenseManagementPartnerable)
+        return val.([]ReadingCoachPassageable)
     }
     return nil
 }
 // Serialize serializes information the current object
-func (m *TelecomExpenseManagementPartnerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *ReadingCoachPassageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
     if err != nil {
         return err
@@ -77,15 +77,15 @@ func (m *TelecomExpenseManagementPartnerCollectionResponse) Serialize(writer i87
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *TelecomExpenseManagementPartnerCollectionResponse) SetValue(value []TelecomExpenseManagementPartnerable)() {
+func (m *ReadingCoachPassageCollectionResponse) SetValue(value []ReadingCoachPassageable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
     }
 }
-type TelecomExpenseManagementPartnerCollectionResponseable interface {
+type ReadingCoachPassageCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]TelecomExpenseManagementPartnerable)
-    SetValue(value []TelecomExpenseManagementPartnerable)()
+    GetValue()([]ReadingCoachPassageable)
+    SetValue(value []ReadingCoachPassageable)()
 }

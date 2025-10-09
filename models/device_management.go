@@ -647,22 +647,6 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["telecomExpenseManagementPartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTelecomExpenseManagementPartnerFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TelecomExpenseManagementPartnerable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TelecomExpenseManagementPartnerable)
-                }
-            }
-            m.SetTelecomExpenseManagementPartners(res)
-        }
-        return nil
-    }
     res["termsAndConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTermsAndConditionsFromDiscriminatorValue)
         if err != nil {
@@ -1342,18 +1326,6 @@ func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionS
     }
     if val != nil {
         return val.(*DeviceManagementSubscriptionState)
-    }
-    return nil
-}
-// GetTelecomExpenseManagementPartners gets the telecomExpenseManagementPartners property value. The telecom expense management partners.
-// returns a []TelecomExpenseManagementPartnerable when successful
-func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartnerable) {
-    val, err := m.GetBackingStore().Get("telecomExpenseManagementPartners")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TelecomExpenseManagementPartnerable)
     }
     return nil
 }
@@ -2060,18 +2032,6 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetTelecomExpenseManagementPartners() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTelecomExpenseManagementPartners()))
-        for i, v := range m.GetTelecomExpenseManagementPartners() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("telecomExpenseManagementPartners", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetTermsAndConditions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTermsAndConditions()))
         for i, v := range m.GetTermsAndConditions() {
@@ -2646,13 +2606,6 @@ func (m *DeviceManagement) SetSubscriptionState(value *DeviceManagementSubscript
         panic(err)
     }
 }
-// SetTelecomExpenseManagementPartners sets the telecomExpenseManagementPartners property value. The telecom expense management partners.
-func (m *DeviceManagement) SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartnerable)() {
-    err := m.GetBackingStore().Set("telecomExpenseManagementPartners", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTermsAndConditions sets the termsAndConditions property value. The terms and conditions associated with device management of the company.
 func (m *DeviceManagement) SetTermsAndConditions(value []TermsAndConditionsable)() {
     err := m.GetBackingStore().Set("termsAndConditions", value)
@@ -2912,7 +2865,6 @@ type DeviceManagementable interface {
     GetSettings()(DeviceManagementSettingsable)
     GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatusSummaryable)
     GetSubscriptionState()(*DeviceManagementSubscriptionState)
-    GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartnerable)
     GetTermsAndConditions()([]TermsAndConditionsable)
     GetTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable)
     GetUserExperienceAnalyticsAppHealthApplicationPerformance()([]UserExperienceAnalyticsAppHealthApplicationPerformanceable)
@@ -2977,7 +2929,6 @@ type DeviceManagementable interface {
     SetSettings(value DeviceManagementSettingsable)()
     SetSoftwareUpdateStatusSummary(value SoftwareUpdateStatusSummaryable)()
     SetSubscriptionState(value *DeviceManagementSubscriptionState)()
-    SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartnerable)()
     SetTermsAndConditions(value []TermsAndConditionsable)()
     SetTroubleshootingEvents(value []DeviceManagementTroubleshootingEventable)()
     SetUserExperienceAnalyticsAppHealthApplicationPerformance(value []UserExperienceAnalyticsAppHealthApplicationPerformanceable)()

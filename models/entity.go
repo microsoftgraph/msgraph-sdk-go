@@ -619,6 +619,18 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEndUserNotificationDetail(), nil
                     case "#microsoft.graph.engagementAsyncOperation":
                         return NewEngagementAsyncOperation(), nil
+                    case "#microsoft.graph.engagementConversation":
+                        return NewEngagementConversation(), nil
+                    case "#microsoft.graph.engagementConversationDiscussionMessage":
+                        return NewEngagementConversationDiscussionMessage(), nil
+                    case "#microsoft.graph.engagementConversationMessage":
+                        return NewEngagementConversationMessage(), nil
+                    case "#microsoft.graph.engagementConversationMessageReaction":
+                        return NewEngagementConversationMessageReaction(), nil
+                    case "#microsoft.graph.engagementConversationQuestionMessage":
+                        return NewEngagementConversationQuestionMessage(), nil
+                    case "#microsoft.graph.engagementConversationSystemMessage":
+                        return NewEngagementConversationSystemMessage(), nil
                     case "#microsoft.graph.enrollmentConfigurationAssignment":
                         return NewEnrollmentConfigurationAssignment(), nil
                     case "#microsoft.graph.enrollmentTroubleshootingEvent":
@@ -1001,12 +1013,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnlineMeeting(), nil
                     case "#microsoft.graph.onlineMeetingBase":
                         return NewOnlineMeetingBase(), nil
+                    case "#microsoft.graph.onlineMeetingEngagementConversation":
+                        return NewOnlineMeetingEngagementConversation(), nil
                     case "#microsoft.graph.onOtpSendCustomExtension":
                         return NewOnOtpSendCustomExtension(), nil
                     case "#microsoft.graph.onPremisesConditionalAccessSettings":
                         return NewOnPremisesConditionalAccessSettings(), nil
                     case "#microsoft.graph.onPremisesDirectorySynchronization":
                         return NewOnPremisesDirectorySynchronization(), nil
+                    case "#microsoft.graph.onPremisesSyncBehavior":
+                        return NewOnPremisesSyncBehavior(), nil
                     case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
                         return NewOnTokenIssuanceStartCustomExtension(), nil
                     case "#microsoft.graph.onTokenIssuanceStartListener":
@@ -1179,6 +1195,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRbacApplication(), nil
                     case "#microsoft.graph.readingAssignmentSubmission":
                         return NewReadingAssignmentSubmission(), nil
+                    case "#microsoft.graph.readingCoachPassage":
+                        return NewReadingCoachPassage(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
                     case "#microsoft.graph.recycleBin":
@@ -1345,6 +1363,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.softwareUpdateStatusSummary":
                         return NewSoftwareUpdateStatusSummary(), nil
+                    case "#microsoft.graph.speakerAssignmentSubmission":
+                        return NewSpeakerAssignmentSubmission(), nil
                     case "#microsoft.graph.standardWebPart":
                         return NewStandardWebPart(), nil
                     case "#microsoft.graph.startHoldMusicOperation":
@@ -1413,8 +1433,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTeamworkTag(), nil
                     case "#microsoft.graph.teamworkTagMember":
                         return NewTeamworkTagMember(), nil
-                    case "#microsoft.graph.telecomExpenseManagementPartner":
-                        return NewTelecomExpenseManagementPartner(), nil
                     case "#microsoft.graph.temporaryAccessPassAuthenticationMethod":
                         return NewTemporaryAccessPassAuthenticationMethod(), nil
                     case "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration":

@@ -157,7 +157,7 @@ func (m *ProtectionRuleBase) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsAutoApplyEnabled gets the isAutoApplyEnabled property value. The isAutoApplyEnabled property
+// GetIsAutoApplyEnabled gets the isAutoApplyEnabled property value. true indicates that the protection rule is dynamic; false that it's static.
 // returns a *bool when successful
 func (m *ProtectionRuleBase) GetIsAutoApplyEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAutoApplyEnabled")
@@ -193,7 +193,7 @@ func (m *ProtectionRuleBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue. The draft member is currently unsupported.
+// GetStatus gets the status property value. The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue, updateRequested, deleteRequested. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: updateRequested , deleteRequested. The draft member is currently unsupported.
 // returns a *ProtectionRuleStatus when successful
 func (m *ProtectionRuleBase) GetStatus()(*ProtectionRuleStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -277,7 +277,7 @@ func (m *ProtectionRuleBase) SetError(value PublicErrorable)() {
         panic(err)
     }
 }
-// SetIsAutoApplyEnabled sets the isAutoApplyEnabled property value. The isAutoApplyEnabled property
+// SetIsAutoApplyEnabled sets the isAutoApplyEnabled property value. true indicates that the protection rule is dynamic; false that it's static.
 func (m *ProtectionRuleBase) SetIsAutoApplyEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isAutoApplyEnabled", value)
     if err != nil {
@@ -298,7 +298,7 @@ func (m *ProtectionRuleBase) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue. The draft member is currently unsupported.
+// SetStatus sets the status property value. The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue, updateRequested, deleteRequested. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: updateRequested , deleteRequested. The draft member is currently unsupported.
 func (m *ProtectionRuleBase) SetStatus(value *ProtectionRuleStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

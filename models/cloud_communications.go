@@ -8,6 +8,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
+// CloudCommunications represents a container that exposes navigation properties for cloud communications resources.
 type CloudCommunications struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -85,6 +86,22 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["onlineMeetingConversations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOnlineMeetingEngagementConversationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OnlineMeetingEngagementConversationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OnlineMeetingEngagementConversationable)
+                }
+            }
+            m.SetOnlineMeetingConversations(res)
+        }
+        return nil
+    }
     res["onlineMeetings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnlineMeetingFromDiscriminatorValue)
         if err != nil {
@@ -131,6 +148,18 @@ func (m *CloudCommunications) GetOdataType()(*string) {
     }
     return nil
 }
+// GetOnlineMeetingConversations gets the onlineMeetingConversations property value. A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
+// returns a []OnlineMeetingEngagementConversationable when successful
+func (m *CloudCommunications) GetOnlineMeetingConversations()([]OnlineMeetingEngagementConversationable) {
+    val, err := m.GetBackingStore().Get("onlineMeetingConversations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnlineMeetingEngagementConversationable)
+    }
+    return nil
+}
 // GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
 // returns a []OnlineMeetingable when successful
 func (m *CloudCommunications) GetOnlineMeetings()([]OnlineMeetingable) {
@@ -171,6 +200,18 @@ func (m *CloudCommunications) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOnlineMeetingConversations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnlineMeetingConversations()))
+        for i, v := range m.GetOnlineMeetingConversations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("onlineMeetingConversations", cast)
         if err != nil {
             return err
         }
@@ -232,6 +273,13 @@ func (m *CloudCommunications) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetOnlineMeetingConversations sets the onlineMeetingConversations property value. A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
+func (m *CloudCommunications) SetOnlineMeetingConversations(value []OnlineMeetingEngagementConversationable)() {
+    err := m.GetBackingStore().Set("onlineMeetingConversations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
 func (m *CloudCommunications) SetOnlineMeetings(value []OnlineMeetingable)() {
     err := m.GetBackingStore().Set("onlineMeetings", value)
@@ -253,11 +301,13 @@ type CloudCommunicationsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCalls()([]Callable)
     GetOdataType()(*string)
+    GetOnlineMeetingConversations()([]OnlineMeetingEngagementConversationable)
     GetOnlineMeetings()([]OnlineMeetingable)
     GetPresences()([]Presenceable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCalls(value []Callable)()
     SetOdataType(value *string)()
+    SetOnlineMeetingConversations(value []OnlineMeetingEngagementConversationable)()
     SetOnlineMeetings(value []OnlineMeetingable)()
     SetPresences(value []Presenceable)()
 }
