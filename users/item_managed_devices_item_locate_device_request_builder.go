@@ -35,9 +35,6 @@ func NewItemManagedDevicesItemLocateDeviceRequestBuilder(rawUrl string, requestA
 }
 // Post locate a device
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemLocateDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemLocateDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

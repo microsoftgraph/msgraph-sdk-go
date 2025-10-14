@@ -44,7 +44,7 @@ func (m *EdiscoveryHoldPolicySyncOperation) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetReportFileMetadata gets the reportFileMetadata property value. The reportFileMetadata property
+// GetReportFileMetadata gets the reportFileMetadata property value. Contains the properties for report file metadata, including downloadUrl, fileName, and size.
 // returns a []ReportFileMetadataable when successful
 func (m *EdiscoveryHoldPolicySyncOperation) GetReportFileMetadata()([]ReportFileMetadataable) {
     val, err := m.GetBackingStore().Get("reportFileMetadata")
@@ -76,7 +76,7 @@ func (m *EdiscoveryHoldPolicySyncOperation) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetReportFileMetadata sets the reportFileMetadata property value. The reportFileMetadata property
+// SetReportFileMetadata sets the reportFileMetadata property value. Contains the properties for report file metadata, including downloadUrl, fileName, and size.
 func (m *EdiscoveryHoldPolicySyncOperation) SetReportFileMetadata(value []ReportFileMetadataable)() {
     err := m.GetBackingStore().Set("reportFileMetadata", value)
     if err != nil {

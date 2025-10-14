@@ -21,7 +21,7 @@ type DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderGetQueryParameters read properties and relationships of the deviceConfigurationDeviceOverview object.
+// DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderGetQueryParameters device Configuration devices status overview
 type DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,12 +73,9 @@ func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get read properties and relationships of the deviceConfigurationDeviceOverview object.
+// Get device Configuration devices status overview
 // returns a DeviceConfigurationDeviceOverviewable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdeviceoverview-get?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceOverviewable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +93,9 @@ func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceOverviewable), nil
 }
-// Patch update the properties of a deviceConfigurationDeviceOverview object.
+// Patch update the navigation property deviceStatusOverview in deviceManagement
 // returns a DeviceConfigurationDeviceOverviewable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdeviceoverview-update?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceOverviewable, requestConfiguration *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceOverviewable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +124,7 @@ func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the deviceConfigurationDeviceOverview object.
+// ToGetRequestInformation device Configuration devices status overview
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +138,7 @@ func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a deviceConfigurationDeviceOverview object.
+// ToPatchRequestInformation update the navigation property deviceStatusOverview in deviceManagement
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceOverviewable, requestConfiguration *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

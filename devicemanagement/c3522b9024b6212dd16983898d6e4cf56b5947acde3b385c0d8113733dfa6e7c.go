@@ -21,7 +21,7 @@ type WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDevic
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderGetQueryParameters read properties and relationships of the malwareStateForWindowsDevice object.
+// WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderGetQueryParameters list of devices affected by current malware with the malware state on each device
 type WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewWindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDe
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a malwareStateForWindowsDevice.
+// Delete delete navigation property deviceMalwareStates for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-delete?view=graph-rest-1.0
 func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsD
     }
     return nil
 }
-// Get read properties and relationships of the malwareStateForWindowsDevice object.
+// Get list of devices affected by current malware with the malware state on each device
 // returns a MalwareStateForWindowsDeviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-get?view=graph-rest-1.0
 func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MalwareStateForWindowsDeviceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +93,9 @@ func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsD
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MalwareStateForWindowsDeviceable), nil
 }
-// Patch update the properties of a malwareStateForWindowsDevice object.
+// Patch update the navigation property deviceMalwareStates in deviceManagement
 // returns a MalwareStateForWindowsDeviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-update?view=graph-rest-1.0
 func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MalwareStateForWindowsDeviceable, requestConfiguration *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MalwareStateForWindowsDeviceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +113,7 @@ func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsD
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MalwareStateForWindowsDeviceable), nil
 }
-// ToDeleteRequestInformation deletes a malwareStateForWindowsDevice.
+// ToDeleteRequestInformation delete navigation property deviceMalwareStates for deviceManagement
 // returns a *RequestInformation when successful
 func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +124,7 @@ func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the malwareStateForWindowsDevice object.
+// ToGetRequestInformation list of devices affected by current malware with the malware state on each device
 // returns a *RequestInformation when successful
 func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +138,7 @@ func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a malwareStateForWindowsDevice object.
+// ToPatchRequestInformation update the navigation property deviceMalwareStates in deviceManagement
 // returns a *RequestInformation when successful
 func (m *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MalwareStateForWindowsDeviceable, requestConfiguration *WindowsMalwareInformationItemDeviceMalwareStatesMalwareStateForWindowsDeviceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

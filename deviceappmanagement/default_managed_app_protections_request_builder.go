@@ -14,7 +14,7 @@ import (
 type DefaultManagedAppProtectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DefaultManagedAppProtectionsRequestBuilderGetQueryParameters list properties and relationships of the defaultManagedAppProtection objects.
+// DefaultManagedAppProtectionsRequestBuilderGetQueryParameters default managed app policies.
 type DefaultManagedAppProtectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,12 +79,9 @@ func NewDefaultManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter
 func (m *DefaultManagedAppProtectionsRequestBuilder) Count()(*DefaultManagedAppProtectionsCountRequestBuilder) {
     return NewDefaultManagedAppProtectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the defaultManagedAppProtection objects.
+// Get default managed app policies.
 // returns a DefaultManagedAppProtectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-list?view=graph-rest-1.0
 func (m *DefaultManagedAppProtectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *DefaultManagedAppProtectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DefaultManagedAppProtectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,12 +99,9 @@ func (m *DefaultManagedAppProtectionsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DefaultManagedAppProtectionCollectionResponseable), nil
 }
-// Post create a new defaultManagedAppProtection object.
+// Post create new navigation property to defaultManagedAppProtections for deviceAppManagement
 // returns a DefaultManagedAppProtectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-create?view=graph-rest-1.0
 func (m *DefaultManagedAppProtectionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DefaultManagedAppProtectionable, requestConfiguration *DefaultManagedAppProtectionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DefaultManagedAppProtectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +119,7 @@ func (m *DefaultManagedAppProtectionsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DefaultManagedAppProtectionable), nil
 }
-// ToGetRequestInformation list properties and relationships of the defaultManagedAppProtection objects.
+// ToGetRequestInformation default managed app policies.
 // returns a *RequestInformation when successful
 func (m *DefaultManagedAppProtectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DefaultManagedAppProtectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +133,7 @@ func (m *DefaultManagedAppProtectionsRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new defaultManagedAppProtection object.
+// ToPostRequestInformation create new navigation property to defaultManagedAppProtections for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *DefaultManagedAppProtectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DefaultManagedAppProtectionable, requestConfiguration *DefaultManagedAppProtectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

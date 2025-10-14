@@ -24,7 +24,7 @@ func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) 
 func CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAppPolicyDeploymentSummary(), nil
 }
-// GetConfigurationDeployedUserCount gets the configurationDeployedUserCount property value. Not yet documented
+// GetConfigurationDeployedUserCount gets the configurationDeployedUserCount property value. The configurationDeployedUserCount property
 // returns a *int32 when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeployedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("configurationDeployedUserCount")
@@ -36,7 +36,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeployedUserCount()(
     }
     return nil
 }
-// GetConfigurationDeploymentSummaryPerApp gets the configurationDeploymentSummaryPerApp property value. Not yet documented
+// GetConfigurationDeploymentSummaryPerApp gets the configurationDeploymentSummaryPerApp property value. The configurationDeploymentSummaryPerApp property
 // returns a []ManagedAppPolicyDeploymentSummaryPerAppable when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeploymentSummaryPerApp()([]ManagedAppPolicyDeploymentSummaryPerAppable) {
     val, err := m.GetBackingStore().Get("configurationDeploymentSummaryPerApp")
@@ -48,7 +48,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeploymentSummaryPer
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Not yet documented
+// GetDisplayName gets the displayName property value. The displayName property
 // returns a *string when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -122,7 +122,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetLastRefreshTime gets the lastRefreshTime property value. Not yet documented
+// GetLastRefreshTime gets the lastRefreshTime property value. The lastRefreshTime property
 // returns a *Time when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetLastRefreshTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshTime")
@@ -190,28 +190,28 @@ func (m *ManagedAppPolicyDeploymentSummary) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetConfigurationDeployedUserCount sets the configurationDeployedUserCount property value. Not yet documented
+// SetConfigurationDeployedUserCount sets the configurationDeployedUserCount property value. The configurationDeployedUserCount property
 func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeployedUserCount(value *int32)() {
     err := m.GetBackingStore().Set("configurationDeployedUserCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConfigurationDeploymentSummaryPerApp sets the configurationDeploymentSummaryPerApp property value. Not yet documented
+// SetConfigurationDeploymentSummaryPerApp sets the configurationDeploymentSummaryPerApp property value. The configurationDeploymentSummaryPerApp property
 func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeploymentSummaryPerApp(value []ManagedAppPolicyDeploymentSummaryPerAppable)() {
     err := m.GetBackingStore().Set("configurationDeploymentSummaryPerApp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Not yet documented
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *ManagedAppPolicyDeploymentSummary) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastRefreshTime sets the lastRefreshTime property value. Not yet documented
+// SetLastRefreshTime sets the lastRefreshTime property value. The lastRefreshTime property
 func (m *ManagedAppPolicyDeploymentSummary) SetLastRefreshTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastRefreshTime", value)
     if err != nil {

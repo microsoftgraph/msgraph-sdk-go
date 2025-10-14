@@ -192,7 +192,7 @@ func (m *MacOSMinimumOperatingSystem) GetOdataType()(*string) {
     }
     return nil
 }
-// GetV1010 gets the v10_10 property value. When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV1010 gets the v10_10 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.10 or later is required to install the app. If 'False', OS X Version 10.10 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1010()(*bool) {
     val, err := m.GetBackingStore().Get("v10_10")
@@ -204,7 +204,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1010()(*bool) {
     }
     return nil
 }
-// GetV1011 gets the v10_11 property value. When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV1011 gets the v10_11 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.11 or later is required to install the app. If 'False', OS X Version 10.11 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1011()(*bool) {
     val, err := m.GetBackingStore().Get("v10_11")
@@ -216,7 +216,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1011()(*bool) {
     }
     return nil
 }
-// GetV1012 gets the v10_12 property value. When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV1012 gets the v10_12 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.12 or later is required to install the app. If 'False', OS X Version 10.12 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1012()(*bool) {
     val, err := m.GetBackingStore().Get("v10_12")
@@ -228,7 +228,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1012()(*bool) {
     }
     return nil
 }
-// GetV1013 gets the v10_13 property value. When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV1013 gets the v10_13 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.13 or later is required to install the app. If 'False', OS X Version 10.13 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1013()(*bool) {
     val, err := m.GetBackingStore().Get("v10_13")
@@ -240,7 +240,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1013()(*bool) {
     }
     return nil
 }
-// GetV1014 gets the v10_14 property value. When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV1014 gets the v10_14 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.14 or later is required to install the app. If 'False', OS X Version 10.14 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1014()(*bool) {
     val, err := m.GetBackingStore().Get("v10_14")
@@ -252,7 +252,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1014()(*bool) {
     }
     return nil
 }
-// GetV1015 gets the v10_15 property value. When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV1015 gets the v10_15 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.15 or later is required to install the app. If 'False', OS X Version 10.15 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1015()(*bool) {
     val, err := m.GetBackingStore().Get("v10_15")
@@ -264,7 +264,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1015()(*bool) {
     }
     return nil
 }
-// GetV107 gets the v10_7 property value. When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV107 gets the v10_7 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.7 or later is required to install the app. If 'False', OS X Version 10.7 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV107()(*bool) {
     val, err := m.GetBackingStore().Get("v10_7")
@@ -276,7 +276,7 @@ func (m *MacOSMinimumOperatingSystem) GetV107()(*bool) {
     }
     return nil
 }
-// GetV108 gets the v10_8 property value. When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV108 gets the v10_8 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.8 or later is required to install the app. If 'False', OS X Version 10.8 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV108()(*bool) {
     val, err := m.GetBackingStore().Get("v10_8")
@@ -288,7 +288,7 @@ func (m *MacOSMinimumOperatingSystem) GetV108()(*bool) {
     }
     return nil
 }
-// GetV109 gets the v10_9 property value. When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV109 gets the v10_9 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.9 or later is required to install the app. If 'False', OS X Version 10.9 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV109()(*bool) {
     val, err := m.GetBackingStore().Get("v10_9")
@@ -300,7 +300,7 @@ func (m *MacOSMinimumOperatingSystem) GetV109()(*bool) {
     }
     return nil
 }
-// GetV110 gets the v11_0 property value. When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV110 gets the v11_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 11.0 or later is required to install the app. If 'False', OS X Version 11.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV110()(*bool) {
     val, err := m.GetBackingStore().Get("v11_0")
@@ -312,7 +312,7 @@ func (m *MacOSMinimumOperatingSystem) GetV110()(*bool) {
     }
     return nil
 }
-// GetV120 gets the v12_0 property value. When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV120 gets the v12_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 12.0 or later is required to install the app. If 'False', OS X Version 12.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV120()(*bool) {
     val, err := m.GetBackingStore().Get("v12_0")
@@ -324,7 +324,7 @@ func (m *MacOSMinimumOperatingSystem) GetV120()(*bool) {
     }
     return nil
 }
-// GetV130 gets the v13_0 property value. When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// GetV130 gets the v13_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 13.0 or later is required to install the app. If 'False', OS X Version 13.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV130()(*bool) {
     val, err := m.GetBackingStore().Get("v13_0")
@@ -442,84 +442,84 @@ func (m *MacOSMinimumOperatingSystem) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetV1010 sets the v10_10 property value. When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV1010 sets the v10_10 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.10 or later is required to install the app. If 'False', OS X Version 10.10 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV1010(value *bool)() {
     err := m.GetBackingStore().Set("v10_10", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV1011 sets the v10_11 property value. When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV1011 sets the v10_11 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.11 or later is required to install the app. If 'False', OS X Version 10.11 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV1011(value *bool)() {
     err := m.GetBackingStore().Set("v10_11", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV1012 sets the v10_12 property value. When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV1012 sets the v10_12 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.12 or later is required to install the app. If 'False', OS X Version 10.12 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV1012(value *bool)() {
     err := m.GetBackingStore().Set("v10_12", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV1013 sets the v10_13 property value. When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV1013 sets the v10_13 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.13 or later is required to install the app. If 'False', OS X Version 10.13 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV1013(value *bool)() {
     err := m.GetBackingStore().Set("v10_13", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV1014 sets the v10_14 property value. When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV1014 sets the v10_14 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.14 or later is required to install the app. If 'False', OS X Version 10.14 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV1014(value *bool)() {
     err := m.GetBackingStore().Set("v10_14", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV1015 sets the v10_15 property value. When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV1015 sets the v10_15 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.15 or later is required to install the app. If 'False', OS X Version 10.15 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV1015(value *bool)() {
     err := m.GetBackingStore().Set("v10_15", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV107 sets the v10_7 property value. When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV107 sets the v10_7 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.7 or later is required to install the app. If 'False', OS X Version 10.7 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV107(value *bool)() {
     err := m.GetBackingStore().Set("v10_7", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV108 sets the v10_8 property value. When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV108 sets the v10_8 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.8 or later is required to install the app. If 'False', OS X Version 10.8 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV108(value *bool)() {
     err := m.GetBackingStore().Set("v10_8", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV109 sets the v10_9 property value. When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV109 sets the v10_9 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 10.9 or later is required to install the app. If 'False', OS X Version 10.9 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV109(value *bool)() {
     err := m.GetBackingStore().Set("v10_9", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV110 sets the v11_0 property value. When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV110 sets the v11_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 11.0 or later is required to install the app. If 'False', OS X Version 11.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV110(value *bool)() {
     err := m.GetBackingStore().Set("v11_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV120 sets the v12_0 property value. When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV120 sets the v12_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 12.0 or later is required to install the app. If 'False', OS X Version 12.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV120(value *bool)() {
     err := m.GetBackingStore().Set("v12_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV130 sets the v13_0 property value. When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// SetV130 sets the v13_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 13.0 or later is required to install the app. If 'False', OS X Version 13.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *MacOSMinimumOperatingSystem) SetV130(value *bool)() {
     err := m.GetBackingStore().Set("v13_0", value)
     if err != nil {

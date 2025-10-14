@@ -116,7 +116,7 @@ func (m *MobileApp) GetCategories()([]MobileAppCategoryable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time the app was created.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the app was created. This property is read-only.
 // returns a *Time when successful
 func (m *MobileApp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -368,7 +368,7 @@ func (m *MobileApp) GetLargeIcon()(MimeContentable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified. This property is read-only.
 // returns a *Time when successful
 func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -553,7 +553,7 @@ func (m *MobileApp) SetCategories(value []MobileAppCategoryable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time the app was created.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the app was created. This property is read-only.
 func (m *MobileApp) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -602,7 +602,7 @@ func (m *MobileApp) SetLargeIcon(value MimeContentable)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the app was last modified.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the app was last modified. This property is read-only.
 func (m *MobileApp) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

@@ -37,7 +37,7 @@ func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
     return nil
 }
-// GetExecutionScope gets the executionScope property value. The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// GetExecutionScope gets the executionScope property value. The list of users that meet the workflowExecutionConditions of a workflow.
 // returns a []UserProcessingResultable when successful
 func (m *Workflow) GetExecutionScope()([]UserProcessingResultable) {
     val, err := m.GetBackingStore().Get("executionScope")
@@ -358,7 +358,7 @@ func (m *Workflow) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         panic(err)
     }
 }
-// SetExecutionScope sets the executionScope property value. The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// SetExecutionScope sets the executionScope property value. The list of users that meet the workflowExecutionConditions of a workflow.
 func (m *Workflow) SetExecutionScope(value []UserProcessingResultable)() {
     err := m.GetBackingStore().Set("executionScope", value)
     if err != nil {

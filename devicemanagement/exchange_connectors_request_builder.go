@@ -14,7 +14,7 @@ import (
 type ExchangeConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeConnectorsRequestBuilderGetQueryParameters list properties and relationships of the deviceManagementExchangeConnector objects.
+// ExchangeConnectorsRequestBuilderGetQueryParameters the list of Exchange Connectors configured by the tenant.
 type ExchangeConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,12 +79,9 @@ func NewExchangeConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ExchangeConnectorsRequestBuilder) Count()(*ExchangeConnectorsCountRequestBuilder) {
     return NewExchangeConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the deviceManagementExchangeConnector objects.
+// Get the list of Exchange Connectors configured by the tenant.
 // returns a DeviceManagementExchangeConnectorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-list?view=graph-rest-1.0
 func (m *ExchangeConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeConnectorsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,12 +99,9 @@ func (m *ExchangeConnectorsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorCollectionResponseable), nil
 }
-// Post create a new deviceManagementExchangeConnector object.
+// Post create new navigation property to exchangeConnectors for deviceManagement
 // returns a DeviceManagementExchangeConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-create?view=graph-rest-1.0
 func (m *ExchangeConnectorsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, requestConfiguration *ExchangeConnectorsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +119,7 @@ func (m *ExchangeConnectorsRequestBuilder) Post(ctx context.Context, body iadcd8
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable), nil
 }
-// ToGetRequestInformation list properties and relationships of the deviceManagementExchangeConnector objects.
+// ToGetRequestInformation the list of Exchange Connectors configured by the tenant.
 // returns a *RequestInformation when successful
 func (m *ExchangeConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +133,7 @@ func (m *ExchangeConnectorsRequestBuilder) ToGetRequestInformation(ctx context.C
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new deviceManagementExchangeConnector object.
+// ToPostRequestInformation create new navigation property to exchangeConnectors for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ExchangeConnectorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, requestConfiguration *ExchangeConnectorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

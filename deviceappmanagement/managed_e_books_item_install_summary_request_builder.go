@@ -21,7 +21,7 @@ type ManagedEBooksItemInstallSummaryRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedEBooksItemInstallSummaryRequestBuilderGetQueryParameters read properties and relationships of the eBookInstallSummary object.
+// ManagedEBooksItemInstallSummaryRequestBuilderGetQueryParameters mobile App Install Summary.
 type ManagedEBooksItemInstallSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,12 +73,9 @@ func (m *ManagedEBooksItemInstallSummaryRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get read properties and relationships of the eBookInstallSummary object.
+// Get mobile App Install Summary.
 // returns a EBookInstallSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-ebookinstallsummary-get?view=graph-rest-1.0
 func (m *ManagedEBooksItemInstallSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemInstallSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EBookInstallSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +93,9 @@ func (m *ManagedEBooksItemInstallSummaryRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EBookInstallSummaryable), nil
 }
-// Patch update the properties of a eBookInstallSummary object.
+// Patch update the navigation property installSummary in deviceAppManagement
 // returns a EBookInstallSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-ebookinstallsummary-update?view=graph-rest-1.0
 func (m *ManagedEBooksItemInstallSummaryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EBookInstallSummaryable, requestConfiguration *ManagedEBooksItemInstallSummaryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EBookInstallSummaryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +124,7 @@ func (m *ManagedEBooksItemInstallSummaryRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the eBookInstallSummary object.
+// ToGetRequestInformation mobile App Install Summary.
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksItemInstallSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemInstallSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +138,7 @@ func (m *ManagedEBooksItemInstallSummaryRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a eBookInstallSummary object.
+// ToPatchRequestInformation update the navigation property installSummary in deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *ManagedEBooksItemInstallSummaryRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EBookInstallSummaryable, requestConfiguration *ManagedEBooksItemInstallSummaryRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

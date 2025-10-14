@@ -169,7 +169,7 @@ func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIgnoreVersionDetection gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
+// GetIgnoreVersionDetection gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
 // returns a *bool when successful
 func (m *MacOSLobApp) GetIgnoreVersionDetection()(*bool) {
     val, err := m.GetBackingStore().Get("ignoreVersionDetection")
@@ -181,7 +181,7 @@ func (m *MacOSLobApp) GetIgnoreVersionDetection()(*bool) {
     }
     return nil
 }
-// GetInstallAsManaged gets the installAsManaged property value. When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.
+// GetInstallAsManaged gets the installAsManaged property value. When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged. The default value is FALSE.
 // returns a *bool when successful
 func (m *MacOSLobApp) GetInstallAsManaged()(*bool) {
     val, err := m.GetBackingStore().Get("installAsManaged")
@@ -330,14 +330,14 @@ func (m *MacOSLobApp) SetChildApps(value []MacOSLobChildAppable)() {
         panic(err)
     }
 }
-// SetIgnoreVersionDetection sets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
+// SetIgnoreVersionDetection sets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
 func (m *MacOSLobApp) SetIgnoreVersionDetection(value *bool)() {
     err := m.GetBackingStore().Set("ignoreVersionDetection", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInstallAsManaged sets the installAsManaged property value. When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.
+// SetInstallAsManaged sets the installAsManaged property value. When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged. The default value is FALSE.
 func (m *MacOSLobApp) SetInstallAsManaged(value *bool)() {
     err := m.GetBackingStore().Set("installAsManaged", value)
     if err != nil {

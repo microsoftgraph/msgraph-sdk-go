@@ -14,7 +14,7 @@ import (
 type SoftwareUpdateStatusSummaryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters read properties and relationships of the softwareUpdateStatusSummary object.
+// SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters the software update status summary.
 type SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,12 +43,9 @@ func NewSoftwareUpdateStatusSummaryRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read properties and relationships of the softwareUpdateStatusSummary object.
+// Get the software update status summary.
 // returns a SoftwareUpdateStatusSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-softwareupdatestatussummary-get?view=graph-rest-1.0
 func (m *SoftwareUpdateStatusSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *SoftwareUpdateStatusSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SoftwareUpdateStatusSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,7 +63,7 @@ func (m *SoftwareUpdateStatusSummaryRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SoftwareUpdateStatusSummaryable), nil
 }
-// ToGetRequestInformation read properties and relationships of the softwareUpdateStatusSummary object.
+// ToGetRequestInformation the software update status summary.
 // returns a *RequestInformation when successful
 func (m *SoftwareUpdateStatusSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SoftwareUpdateStatusSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

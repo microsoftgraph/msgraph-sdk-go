@@ -33,12 +33,9 @@ func NewReportsGetDeviceManagementIntentSettingsReportRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetDeviceManagementIntentSettingsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post not yet documented
+// Post invoke action getDeviceManagementIntentSettingsReport
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicemanagementintentsettingsreport?view=graph-rest-1.0
 func (m *ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) Post(ctx context.Context, body ReportsGetDeviceManagementIntentSettingsReportPostRequestBodyable, requestConfiguration *ReportsGetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -56,7 +53,7 @@ func (m *ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) Post(ctx 
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation not yet documented
+// ToPostRequestInformation invoke action getDeviceManagementIntentSettingsReport
 // returns a *RequestInformation when successful
 func (m *ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetDeviceManagementIntentSettingsReportPostRequestBodyable, requestConfiguration *ReportsGetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

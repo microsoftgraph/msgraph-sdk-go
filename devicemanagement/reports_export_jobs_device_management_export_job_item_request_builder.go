@@ -21,7 +21,7 @@ type ReportsExportJobsDeviceManagementExportJobItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ReportsExportJobsDeviceManagementExportJobItemRequestBuilderGetQueryParameters read properties and relationships of the deviceManagementExportJob object.
+// ReportsExportJobsDeviceManagementExportJobItemRequestBuilderGetQueryParameters entity representing a job to export a report.
 type ReportsExportJobsDeviceManagementExportJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewReportsExportJobsDeviceManagementExportJobItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a deviceManagementExportJob.
+// Delete delete navigation property exportJobs for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-delete?view=graph-rest-1.0
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get read properties and relationships of the deviceManagementExportJob object.
+// Get entity representing a job to export a report.
 // returns a DeviceManagementExportJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-get?view=graph-rest-1.0
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +93,9 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable), nil
 }
-// Patch update the properties of a deviceManagementExportJob object.
+// Patch update the navigation property exportJobs in deviceManagement
 // returns a DeviceManagementExportJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-update?view=graph-rest-1.0
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +113,7 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Patch(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable), nil
 }
-// ToDeleteRequestInformation deletes a deviceManagementExportJob.
+// ToDeleteRequestInformation delete navigation property exportJobs for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +124,7 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the deviceManagementExportJob object.
+// ToGetRequestInformation entity representing a job to export a report.
 // returns a *RequestInformation when successful
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +138,7 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a deviceManagementExportJob object.
+// ToPatchRequestInformation update the navigation property exportJobs in deviceManagement
 // returns a *RequestInformation when successful
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

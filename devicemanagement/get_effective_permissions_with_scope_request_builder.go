@@ -55,9 +55,6 @@ func NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl string, requestAda
 // Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsWithScopeGetResponse instead.
 // returns a GetEffectivePermissionsWithScopeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +75,6 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context
 // GetAsGetEffectivePermissionsWithScopeGetResponse retrieves the effective permissions of the currently authenticated user
 // returns a GetEffectivePermissionsWithScopeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetAsGetEffectivePermissionsWithScopeGetResponse(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
