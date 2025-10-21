@@ -40,7 +40,7 @@ func (m *WindowsDeviceAzureADAccount) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetUserPrincipalName gets the userPrincipalName property value. Not yet documented
+// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 // returns a *string when successful
 func (m *WindowsDeviceAzureADAccount) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -66,7 +66,7 @@ func (m *WindowsDeviceAzureADAccount) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetUserPrincipalName sets the userPrincipalName property value. Not yet documented
+// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *WindowsDeviceAzureADAccount) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

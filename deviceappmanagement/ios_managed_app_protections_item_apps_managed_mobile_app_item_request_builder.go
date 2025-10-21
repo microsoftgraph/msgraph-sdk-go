@@ -21,7 +21,7 @@ type IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters read properties and relationships of the managedMobileApp object.
+// IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters list of apps to which the policy is deployed.
 type IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a managedMobileApp.
+// Delete delete navigation property apps for deviceAppManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-delete?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Del
     }
     return nil
 }
-// Get read properties and relationships of the managedMobileApp object.
+// Get list of apps to which the policy is deployed.
 // returns a ManagedMobileAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-get?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +93,9 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable), nil
 }
-// Patch update the properties of a managedMobileApp object.
+// Patch update the navigation property apps in deviceAppManagement
 // returns a ManagedMobileAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-update?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +113,7 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable), nil
 }
-// ToDeleteRequestInformation deletes a managedMobileApp.
+// ToDeleteRequestInformation delete navigation property apps for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +124,7 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the managedMobileApp object.
+// ToGetRequestInformation list of apps to which the policy is deployed.
 // returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +138,7 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToG
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a managedMobileApp object.
+// ToPatchRequestInformation update the navigation property apps in deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

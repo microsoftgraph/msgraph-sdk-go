@@ -14,7 +14,7 @@ import (
 type IosManagedAppProtectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IosManagedAppProtectionsRequestBuilderGetQueryParameters list properties and relationships of the iosManagedAppProtection objects.
+// IosManagedAppProtectionsRequestBuilderGetQueryParameters iOS managed app policies.
 type IosManagedAppProtectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,12 +79,9 @@ func NewIosManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *IosManagedAppProtectionsRequestBuilder) Count()(*IosManagedAppProtectionsCountRequestBuilder) {
     return NewIosManagedAppProtectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the iosManagedAppProtection objects.
+// Get iOS managed app policies.
 // returns a IosManagedAppProtectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-list?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosManagedAppProtectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,12 +99,9 @@ func (m *IosManagedAppProtectionsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosManagedAppProtectionCollectionResponseable), nil
 }
-// Post create a new iosManagedAppProtection object.
+// Post create new navigation property to iosManagedAppProtections for deviceAppManagement
 // returns a IosManagedAppProtectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-create?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosManagedAppProtectionable, requestConfiguration *IosManagedAppProtectionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosManagedAppProtectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +119,7 @@ func (m *IosManagedAppProtectionsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosManagedAppProtectionable), nil
 }
-// ToGetRequestInformation list properties and relationships of the iosManagedAppProtection objects.
+// ToGetRequestInformation iOS managed app policies.
 // returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +133,7 @@ func (m *IosManagedAppProtectionsRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new iosManagedAppProtection object.
+// ToPostRequestInformation create new navigation property to iosManagedAppProtections for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosManagedAppProtectionable, requestConfiguration *IosManagedAppProtectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

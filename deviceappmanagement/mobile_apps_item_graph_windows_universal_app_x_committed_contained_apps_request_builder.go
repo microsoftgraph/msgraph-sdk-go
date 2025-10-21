@@ -14,7 +14,7 @@ import (
 type MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilderGetQueryParameters the collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+// MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilderGetQueryParameters the collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
 type MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewMobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuil
 func (m *MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilder) Count()(*MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsCountRequestBuilder) {
     return NewMobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+// Get the collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
 // returns a MobileContainedAppCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileContainedAppCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileContainedAppable), nil
 }
-// ToGetRequestInformation the collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+// ToGetRequestInformation the collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

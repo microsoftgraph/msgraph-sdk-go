@@ -37,6 +37,8 @@ func CreateCustomExtensionDataFromDiscriminatorValue(parseNode i878a80d2330e89d2
                 switch *mappingValue {
                     case "#microsoft.graph.accessPackageAssignmentRequestCallbackData":
                         return NewAccessPackageAssignmentRequestCallbackData(), nil
+                    case "#microsoft.graph.assignmentRequestApprovalStageCallbackData":
+                        return NewAssignmentRequestApprovalStageCallbackData(), nil
                 }
             }
         }

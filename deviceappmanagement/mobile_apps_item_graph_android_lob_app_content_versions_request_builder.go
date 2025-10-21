@@ -14,7 +14,7 @@ import (
 type MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilderGetQueryParameters the list of content versions for this app.
+// MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilderGetQueryParameters the list of content versions for this app. This property is read-only.
 type MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewMobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilder(rawUrl str
 func (m *MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilder) Count()(*MobileAppsItemGraphAndroidLobAppContentVersionsCountRequestBuilder) {
     return NewMobileAppsItemGraphAndroidLobAppContentVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of content versions for this app.
+// Get the list of content versions for this app. This property is read-only.
 // returns a MobileAppContentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppContentCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilder) Post(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppContentable), nil
 }
-// ToGetRequestInformation the list of content versions for this app.
+// ToGetRequestInformation the list of content versions for this app. This property is read-only.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

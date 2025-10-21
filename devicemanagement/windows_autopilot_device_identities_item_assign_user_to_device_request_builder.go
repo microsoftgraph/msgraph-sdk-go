@@ -35,9 +35,6 @@ func NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder(raw
 }
 // Post assigns user to Autopilot devices.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-assignusertodevice?view=graph-rest-1.0
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) Post(ctx context.Context, body WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBodyable, requestConfiguration *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

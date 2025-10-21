@@ -21,7 +21,7 @@ type ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderGetQueryParameters read properties and relationships of the complianceManagementPartner object.
+// ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderGetQueryParameters the list of Compliance Management Partners configured by the tenant.
 type ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a complianceManagementPartner.
+// Delete delete navigation property complianceManagementPartners for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-delete?view=graph-rest-1.0
 func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuild
     }
     return nil
 }
-// Get read properties and relationships of the complianceManagementPartner object.
+// Get the list of Compliance Management Partners configured by the tenant.
 // returns a ComplianceManagementPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-get?view=graph-rest-1.0
 func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +93,9 @@ func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable), nil
 }
-// Patch update the properties of a complianceManagementPartner object.
+// Patch update the navigation property complianceManagementPartners in deviceManagement
 // returns a ComplianceManagementPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-update?view=graph-rest-1.0
 func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable, requestConfiguration *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +113,7 @@ func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable), nil
 }
-// ToDeleteRequestInformation deletes a complianceManagementPartner.
+// ToDeleteRequestInformation delete navigation property complianceManagementPartners for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +124,7 @@ func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the complianceManagementPartner object.
+// ToGetRequestInformation the list of Compliance Management Partners configured by the tenant.
 // returns a *RequestInformation when successful
 func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +138,7 @@ func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a complianceManagementPartner object.
+// ToPatchRequestInformation update the navigation property complianceManagementPartners in deviceManagement
 // returns a *RequestInformation when successful
 func (m *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ComplianceManagementPartnerable, requestConfiguration *ComplianceManagementPartnersComplianceManagementPartnerItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

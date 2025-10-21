@@ -85,7 +85,7 @@ func (m *AndroidStoreApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOpe
     }
     return nil
 }
-// GetPackageId gets the packageId property value. The package identifier.
+// GetPackageId gets the packageId property value. The package identifier. This property is read-only.
 // returns a *string when successful
 func (m *AndroidStoreApp) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
@@ -131,7 +131,7 @@ func (m *AndroidStoreApp) SetMinimumSupportedOperatingSystem(value AndroidMinimu
         panic(err)
     }
 }
-// SetPackageId sets the packageId property value. The package identifier.
+// SetPackageId sets the packageId property value. The package identifier. This property is read-only.
 func (m *AndroidStoreApp) SetPackageId(value *string)() {
     err := m.GetBackingStore().Set("packageId", value)
     if err != nil {

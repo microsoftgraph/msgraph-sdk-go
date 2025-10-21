@@ -35,9 +35,6 @@ func NewManagedDevicesItemCleanWindowsDeviceRequestBuilder(rawUrl string, reques
 }
 // Post clean Windows device
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-cleanwindowsdevice?view=graph-rest-1.0
 func (m *ManagedDevicesItemCleanWindowsDeviceRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemCleanWindowsDevicePostRequestBodyable, requestConfiguration *ManagedDevicesItemCleanWindowsDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

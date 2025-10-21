@@ -33,11 +33,8 @@ func NewManagedDevicesItemSyncDeviceRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemSyncDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post not yet documented
+// Post invoke action syncDevice
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
 func (m *ManagedDevicesItemSyncDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemSyncDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ManagedDevicesItemSyncDeviceRequestBuilder) Post(ctx context.Context, r
     }
     return nil
 }
-// ToPostRequestInformation not yet documented
+// ToPostRequestInformation invoke action syncDevice
 // returns a *RequestInformation when successful
 func (m *ManagedDevicesItemSyncDeviceRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemSyncDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

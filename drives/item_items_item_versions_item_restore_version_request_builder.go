@@ -33,11 +33,11 @@ func NewItemItemsItemVersionsItemRestoreVersionRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+// Post restore a previous version of a driveItem to be the current version. This operation creates a new version with the contents of the previous version, and it preserves all existing versions of the file.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitemversion-restoreversion?view=graph-rest-1.0
 func (m *ItemItemsItemVersionsItemRestoreVersionRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemVersionsItemRestoreVersionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -52,7 +52,7 @@ func (m *ItemItemsItemVersionsItemRestoreVersionRequestBuilder) Post(ctx context
     }
     return nil
 }
-// ToPostRequestInformation restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+// ToPostRequestInformation restore a previous version of a driveItem to be the current version. This operation creates a new version with the contents of the previous version, and it preserves all existing versions of the file.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemVersionsItemRestoreVersionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemVersionsItemRestoreVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

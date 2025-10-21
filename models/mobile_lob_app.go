@@ -69,7 +69,7 @@ func (m *MobileLobApp) GetCommittedContentVersion()(*string) {
     }
     return nil
 }
-// GetContentVersions gets the contentVersions property value. The list of content versions for this app.
+// GetContentVersions gets the contentVersions property value. The list of content versions for this app. This property is read-only.
 // returns a []MobileAppContentable when successful
 func (m *MobileLobApp) GetContentVersions()([]MobileAppContentable) {
     val, err := m.GetBackingStore().Get("contentVersions")
@@ -145,7 +145,7 @@ func (m *MobileLobApp) GetFileName()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. The total size, including all uploaded files.
+// GetSize gets the size property value. The total size, including all uploaded files. This property is read-only.
 // returns a *int64 when successful
 func (m *MobileLobApp) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
@@ -196,7 +196,7 @@ func (m *MobileLobApp) SetCommittedContentVersion(value *string)() {
         panic(err)
     }
 }
-// SetContentVersions sets the contentVersions property value. The list of content versions for this app.
+// SetContentVersions sets the contentVersions property value. The list of content versions for this app. This property is read-only.
 func (m *MobileLobApp) SetContentVersions(value []MobileAppContentable)() {
     err := m.GetBackingStore().Set("contentVersions", value)
     if err != nil {
@@ -210,7 +210,7 @@ func (m *MobileLobApp) SetFileName(value *string)() {
         panic(err)
     }
 }
-// SetSize sets the size property value. The total size, including all uploaded files.
+// SetSize sets the size property value. The total size, including all uploaded files. This property is read-only.
 func (m *MobileLobApp) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {

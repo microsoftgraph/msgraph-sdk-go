@@ -76,6 +76,11 @@ func (m *ClassesItemAssignmentsItemResourcesEducationAssignmentResourceItemReque
     }
     return nil
 }
+// DependentResources provides operations to manage the dependentResources property of the microsoft.graph.educationAssignmentResource entity.
+// returns a *ClassesItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder when successful
+func (m *ClassesItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) DependentResources()(*ClassesItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder) {
+    return NewClassesItemAssignmentsItemResourcesItemDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // returns a EducationAssignmentResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

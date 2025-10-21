@@ -10,10 +10,12 @@ const (
     COMPLETED_PROTECTIONRULESTATUS
     COMPLETEDWITHERRORS_PROTECTIONRULESTATUS
     UNKNOWNFUTUREVALUE_PROTECTIONRULESTATUS
+    UPDATEREQUESTED_PROTECTIONRULESTATUS
+    DELETEREQUESTED_PROTECTIONRULESTATUS
 )
 
 func (i ProtectionRuleStatus) String() string {
-    return []string{"draft", "active", "completed", "completedWithErrors", "unknownFutureValue"}[i]
+    return []string{"draft", "active", "completed", "completedWithErrors", "unknownFutureValue", "updateRequested", "deleteRequested"}[i]
 }
 func ParseProtectionRuleStatus(v string) (any, error) {
     result := DRAFT_PROTECTIONRULESTATUS
@@ -28,6 +30,10 @@ func ParseProtectionRuleStatus(v string) (any, error) {
             result = COMPLETEDWITHERRORS_PROTECTIONRULESTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROTECTIONRULESTATUS
+        case "updateRequested":
+            result = UPDATEREQUESTED_PROTECTIONRULESTATUS
+        case "deleteRequested":
+            result = DELETEREQUESTED_PROTECTIONRULESTATUS
         default:
             return nil, nil
     }

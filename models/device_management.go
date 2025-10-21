@@ -1245,7 +1245,7 @@ func (m *DeviceManagement) GetRemoteAssistancePartners()([]RemoteAssistancePartn
     }
     return nil
 }
-// GetReports gets the reports property value. Reports singleton
+// GetReports gets the reports property value. The reports property
 // returns a DeviceManagementReportsable when successful
 func (m *DeviceManagement) GetReports()(DeviceManagementReportsable) {
     val, err := m.GetBackingStore().Get("reports")
@@ -1641,7 +1641,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereModelPerfor
     }
     return nil
 }
-// GetVirtualEndpoint gets the virtualEndpoint property value. Virtual endpoint
+// GetVirtualEndpoint gets the virtualEndpoint property value. The virtualEndpoint property
 // returns a VirtualEndpointable when successful
 func (m *DeviceManagement) GetVirtualEndpoint()(VirtualEndpointable) {
     val, err := m.GetBackingStore().Get("virtualEndpoint")
@@ -2557,7 +2557,7 @@ func (m *DeviceManagement) SetRemoteAssistancePartners(value []RemoteAssistanceP
         panic(err)
     }
 }
-// SetReports sets the reports property value. Reports singleton
+// SetReports sets the reports property value. The reports property
 func (m *DeviceManagement) SetReports(value DeviceManagementReportsable)() {
     err := m.GetBackingStore().Set("reports", value)
     if err != nil {
@@ -2788,7 +2788,7 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereModelPerfor
         panic(err)
     }
 }
-// SetVirtualEndpoint sets the virtualEndpoint property value. Virtual endpoint
+// SetVirtualEndpoint sets the virtualEndpoint property value. The virtualEndpoint property
 func (m *DeviceManagement) SetVirtualEndpoint(value VirtualEndpointable)() {
     err := m.GetBackingStore().Set("virtualEndpoint", value)
     if err != nil {

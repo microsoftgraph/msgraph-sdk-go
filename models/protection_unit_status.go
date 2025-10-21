@@ -11,10 +11,13 @@ const (
     UNPROTECTED_PROTECTIONUNITSTATUS
     REMOVEREQUESTED_PROTECTIONUNITSTATUS
     UNKNOWNFUTUREVALUE_PROTECTIONUNITSTATUS
+    OFFBOARDREQUESTED_PROTECTIONUNITSTATUS
+    OFFBOARDED_PROTECTIONUNITSTATUS
+    CANCELOFFBOARDREQUESTED_PROTECTIONUNITSTATUS
 )
 
 func (i ProtectionUnitStatus) String() string {
-    return []string{"protectRequested", "protected", "unprotectRequested", "unprotected", "removeRequested", "unknownFutureValue"}[i]
+    return []string{"protectRequested", "protected", "unprotectRequested", "unprotected", "removeRequested", "unknownFutureValue", "offboardRequested", "offboarded", "cancelOffboardRequested"}[i]
 }
 func ParseProtectionUnitStatus(v string) (any, error) {
     result := PROTECTREQUESTED_PROTECTIONUNITSTATUS
@@ -31,6 +34,12 @@ func ParseProtectionUnitStatus(v string) (any, error) {
             result = REMOVEREQUESTED_PROTECTIONUNITSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROTECTIONUNITSTATUS
+        case "offboardRequested":
+            result = OFFBOARDREQUESTED_PROTECTIONUNITSTATUS
+        case "offboarded":
+            result = OFFBOARDED_PROTECTIONUNITSTATUS
+        case "cancelOffboardRequested":
+            result = CANCELOFFBOARDREQUESTED_PROTECTIONUNITSTATUS
         default:
             return nil, nil
     }

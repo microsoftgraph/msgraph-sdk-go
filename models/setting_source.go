@@ -43,7 +43,7 @@ func (m *SettingSource) GetAdditionalData()(map[string]any) {
 func (m *SettingSource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. Not yet documented
+// GetDisplayName gets the displayName property value. The displayName property
 // returns a *string when successful
 func (m *SettingSource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -101,7 +101,7 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetId gets the id property value. Not yet documented
+// GetId gets the id property value. The id property
 // returns a *string when successful
 func (m *SettingSource) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -183,14 +183,14 @@ func (m *SettingSource) SetAdditionalData(value map[string]any)() {
 func (m *SettingSource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. Not yet documented
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *SettingSource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. Not yet documented
+// SetId sets the id property value. The id property
 func (m *SettingSource) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

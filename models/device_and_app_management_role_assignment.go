@@ -45,7 +45,7 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetMembers gets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
+// GetMembers gets the members property value. Indicates the list of role member security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.
 // returns a []string when successful
 func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
     val, err := m.GetBackingStore().Get("members")
@@ -71,7 +71,7 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetMembers sets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
+// SetMembers sets the members property value. Indicates the list of role member security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.
 func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {

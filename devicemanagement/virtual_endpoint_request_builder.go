@@ -21,7 +21,7 @@ type VirtualEndpointRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointRequestBuilderGetQueryParameters virtual endpoint
+// VirtualEndpointRequestBuilderGetQueryParameters get virtualEndpoint from deviceManagement
 type VirtualEndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -93,7 +93,7 @@ func (m *VirtualEndpointRequestBuilder) DeviceImages()(*VirtualEndpointDeviceIma
 func (m *VirtualEndpointRequestBuilder) GalleryImages()(*VirtualEndpointGalleryImagesRequestBuilder) {
     return NewVirtualEndpointGalleryImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get virtual endpoint
+// Get get virtualEndpoint from deviceManagement
 // returns a VirtualEndpointable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEndpointable, error) {
@@ -154,7 +154,7 @@ func (m *VirtualEndpointRequestBuilder) ToDeleteRequestInformation(ctx context.C
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation virtual endpoint
+// ToGetRequestInformation get virtualEndpoint from deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

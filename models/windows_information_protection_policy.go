@@ -25,7 +25,7 @@ func NewWindowsInformationProtectionPolicy()(*WindowsInformationProtectionPolicy
 func CreateWindowsInformationProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsInformationProtectionPolicy(), nil
 }
-// GetDaysWithoutContactBeforeUnenroll gets the daysWithoutContactBeforeUnenroll property value. Offline interval before app data is wiped (days)
+// GetDaysWithoutContactBeforeUnenroll gets the daysWithoutContactBeforeUnenroll property value. Offline interval before app data is wiped (days) . Valid values 0 to 999
 // returns a *int32 when successful
 func (m *WindowsInformationProtectionPolicy) GetDaysWithoutContactBeforeUnenroll()(*int32) {
     val, err := m.GetBackingStore().Get("daysWithoutContactBeforeUnenroll")
@@ -175,7 +175,7 @@ func (m *WindowsInformationProtectionPolicy) GetMdmEnrollmentUrl()(*string) {
     }
     return nil
 }
-// GetMinutesOfInactivityBeforeDeviceLock gets the minutesOfInactivityBeforeDeviceLock property value. Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
+// GetMinutesOfInactivityBeforeDeviceLock gets the minutesOfInactivityBeforeDeviceLock property value. Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999. Valid values 0 to 999
 // returns a *int32 when successful
 func (m *WindowsInformationProtectionPolicy) GetMinutesOfInactivityBeforeDeviceLock()(*int32) {
     val, err := m.GetBackingStore().Get("minutesOfInactivityBeforeDeviceLock")
@@ -187,7 +187,7 @@ func (m *WindowsInformationProtectionPolicy) GetMinutesOfInactivityBeforeDeviceL
     }
     return nil
 }
-// GetNumberOfPastPinsRemembered gets the numberOfPastPinsRemembered property value. Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
+// GetNumberOfPastPinsRemembered gets the numberOfPastPinsRemembered property value. Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0. Valid values 0 to 50
 // returns a *int32 when successful
 func (m *WindowsInformationProtectionPolicy) GetNumberOfPastPinsRemembered()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfPastPinsRemembered")
@@ -199,7 +199,7 @@ func (m *WindowsInformationProtectionPolicy) GetNumberOfPastPinsRemembered()(*in
     }
     return nil
 }
-// GetPasswordMaximumAttemptCount gets the passwordMaximumAttemptCount property value. The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
+// GetPasswordMaximumAttemptCount gets the passwordMaximumAttemptCount property value. The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices. Valid values 0 to 999
 // returns a *int32 when successful
 func (m *WindowsInformationProtectionPolicy) GetPasswordMaximumAttemptCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMaximumAttemptCount")
@@ -211,7 +211,7 @@ func (m *WindowsInformationProtectionPolicy) GetPasswordMaximumAttemptCount()(*i
     }
     return nil
 }
-// GetPinExpirationDays gets the pinExpirationDays property value. Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
+// GetPinExpirationDays gets the pinExpirationDays property value. Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0. Valid values 0 to 730
 // returns a *int32 when successful
 func (m *WindowsInformationProtectionPolicy) GetPinExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("pinExpirationDays")
@@ -235,7 +235,7 @@ func (m *WindowsInformationProtectionPolicy) GetPinLowercaseLetters()(*WindowsIn
     }
     return nil
 }
-// GetPinMinimumLength gets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
+// GetPinMinimumLength gets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest. Valid values 0 to 127
 // returns a *int32 when successful
 func (m *WindowsInformationProtectionPolicy) GetPinMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("pinMinimumLength")
@@ -378,7 +378,7 @@ func (m *WindowsInformationProtectionPolicy) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetDaysWithoutContactBeforeUnenroll sets the daysWithoutContactBeforeUnenroll property value. Offline interval before app data is wiped (days)
+// SetDaysWithoutContactBeforeUnenroll sets the daysWithoutContactBeforeUnenroll property value. Offline interval before app data is wiped (days) . Valid values 0 to 999
 func (m *WindowsInformationProtectionPolicy) SetDaysWithoutContactBeforeUnenroll(value *int32)() {
     err := m.GetBackingStore().Set("daysWithoutContactBeforeUnenroll", value)
     if err != nil {
@@ -392,28 +392,28 @@ func (m *WindowsInformationProtectionPolicy) SetMdmEnrollmentUrl(value *string)(
         panic(err)
     }
 }
-// SetMinutesOfInactivityBeforeDeviceLock sets the minutesOfInactivityBeforeDeviceLock property value. Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
+// SetMinutesOfInactivityBeforeDeviceLock sets the minutesOfInactivityBeforeDeviceLock property value. Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999. Valid values 0 to 999
 func (m *WindowsInformationProtectionPolicy) SetMinutesOfInactivityBeforeDeviceLock(value *int32)() {
     err := m.GetBackingStore().Set("minutesOfInactivityBeforeDeviceLock", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNumberOfPastPinsRemembered sets the numberOfPastPinsRemembered property value. Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
+// SetNumberOfPastPinsRemembered sets the numberOfPastPinsRemembered property value. Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0. Valid values 0 to 50
 func (m *WindowsInformationProtectionPolicy) SetNumberOfPastPinsRemembered(value *int32)() {
     err := m.GetBackingStore().Set("numberOfPastPinsRemembered", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordMaximumAttemptCount sets the passwordMaximumAttemptCount property value. The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
+// SetPasswordMaximumAttemptCount sets the passwordMaximumAttemptCount property value. The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices. Valid values 0 to 999
 func (m *WindowsInformationProtectionPolicy) SetPasswordMaximumAttemptCount(value *int32)() {
     err := m.GetBackingStore().Set("passwordMaximumAttemptCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPinExpirationDays sets the pinExpirationDays property value. Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
+// SetPinExpirationDays sets the pinExpirationDays property value. Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0. Valid values 0 to 730
 func (m *WindowsInformationProtectionPolicy) SetPinExpirationDays(value *int32)() {
     err := m.GetBackingStore().Set("pinExpirationDays", value)
     if err != nil {
@@ -427,7 +427,7 @@ func (m *WindowsInformationProtectionPolicy) SetPinLowercaseLetters(value *Windo
         panic(err)
     }
 }
-// SetPinMinimumLength sets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
+// SetPinMinimumLength sets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest. Valid values 0 to 127
 func (m *WindowsInformationProtectionPolicy) SetPinMinimumLength(value *int32)() {
     err := m.GetBackingStore().Set("pinMinimumLength", value)
     if err != nil {

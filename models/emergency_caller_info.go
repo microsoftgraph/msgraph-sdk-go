@@ -43,7 +43,7 @@ func (m *EmergencyCallerInfo) GetAdditionalData()(map[string]any) {
 func (m *EmergencyCallerInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the emergency caller.
 // returns a *string when successful
 func (m *EmergencyCallerInfo) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -121,7 +121,7 @@ func (m *EmergencyCallerInfo) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. The location of the emergency caller.
 // returns a Locationable when successful
 func (m *EmergencyCallerInfo) GetLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("location")
@@ -145,7 +145,7 @@ func (m *EmergencyCallerInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
+// GetPhoneNumber gets the phoneNumber property value. The phone number of the emergency caller.
 // returns a *string when successful
 func (m *EmergencyCallerInfo) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
@@ -157,7 +157,7 @@ func (m *EmergencyCallerInfo) GetPhoneNumber()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The tenant ID of the emergency caller.
 // returns a *string when successful
 func (m *EmergencyCallerInfo) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -169,7 +169,7 @@ func (m *EmergencyCallerInfo) GetTenantId()(*string) {
     }
     return nil
 }
-// GetUpn gets the upn property value. The upn property
+// GetUpn gets the upn property value. The user principal name of the emergency caller.
 // returns a *string when successful
 func (m *EmergencyCallerInfo) GetUpn()(*string) {
     val, err := m.GetBackingStore().Get("upn")
@@ -238,14 +238,14 @@ func (m *EmergencyCallerInfo) SetAdditionalData(value map[string]any)() {
 func (m *EmergencyCallerInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the emergency caller.
 func (m *EmergencyCallerInfo) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. The location of the emergency caller.
 func (m *EmergencyCallerInfo) SetLocation(value Locationable)() {
     err := m.GetBackingStore().Set("location", value)
     if err != nil {
@@ -259,21 +259,21 @@ func (m *EmergencyCallerInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
+// SetPhoneNumber sets the phoneNumber property value. The phone number of the emergency caller.
 func (m *EmergencyCallerInfo) SetPhoneNumber(value *string)() {
     err := m.GetBackingStore().Set("phoneNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The tenant ID of the emergency caller.
 func (m *EmergencyCallerInfo) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUpn sets the upn property value. The upn property
+// SetUpn sets the upn property value. The user principal name of the emergency caller.
 func (m *EmergencyCallerInfo) SetUpn(value *string)() {
     err := m.GetBackingStore().Set("upn", value)
     if err != nil {

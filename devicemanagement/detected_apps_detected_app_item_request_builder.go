@@ -21,7 +21,7 @@ type DetectedAppsDetectedAppItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DetectedAppsDetectedAppItemRequestBuilderGetQueryParameters read properties and relationships of the detectedApp object.
+// DetectedAppsDetectedAppItemRequestBuilderGetQueryParameters the list of detected apps associated with a device.
 type DetectedAppsDetectedAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewDetectedAppsDetectedAppItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewDetectedAppsDetectedAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a detectedApp.
+// Delete delete navigation property detectedApps for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-delete?view=graph-rest-1.0
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get read properties and relationships of the detectedApp object.
+// Get the list of detected apps associated with a device.
 // returns a DetectedAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-get?view=graph-rest-1.0
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,12 +98,9 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) Get(ctx context.Context, req
 func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevices()(*DetectedAppsItemManagedDevicesRequestBuilder) {
     return NewDetectedAppsItemManagedDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a detectedApp object.
+// Patch update the navigation property detectedApps in deviceManagement
 // returns a DetectedAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-update?view=graph-rest-1.0
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +118,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable), nil
 }
-// ToDeleteRequestInformation deletes a detectedApp.
+// ToDeleteRequestInformation delete navigation property detectedApps for deviceManagement
 // returns a *RequestInformation when successful
 func (m *DetectedAppsDetectedAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +129,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) ToDeleteRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the detectedApp object.
+// ToGetRequestInformation the list of detected apps associated with a device.
 // returns a *RequestInformation when successful
 func (m *DetectedAppsDetectedAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,7 +143,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a detectedApp object.
+// ToPatchRequestInformation update the navigation property detectedApps in deviceManagement
 // returns a *RequestInformation when successful
 func (m *DetectedAppsDetectedAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
