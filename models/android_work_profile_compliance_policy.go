@@ -373,7 +373,7 @@ func (m *AndroidWorkProfileCompliancePolicy) GetPasswordRequiredType()(*AndroidR
     }
     return nil
 }
-// GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
+// GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Indicates the device should not be rooted. When TRUE, if the device is detected as rooted it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device rooted state. Default is FALSE.
 // returns a *bool when successful
 func (m *AndroidWorkProfileCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bool) {
     val, err := m.GetBackingStore().Get("securityBlockJailbrokenDevices")
@@ -433,7 +433,7 @@ func (m *AndroidWorkProfileCompliancePolicy) GetSecurityRequireGooglePlayService
     }
     return nil
 }
-// GetSecurityRequireSafetyNetAttestationBasicIntegrity gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+// GetSecurityRequireSafetyNetAttestationBasicIntegrity gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
 // returns a *bool when successful
 func (m *AndroidWorkProfileCompliancePolicy) GetSecurityRequireSafetyNetAttestationBasicIntegrity()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireSafetyNetAttestationBasicIntegrity")
@@ -445,7 +445,7 @@ func (m *AndroidWorkProfileCompliancePolicy) GetSecurityRequireSafetyNetAttestat
     }
     return nil
 }
-// GetSecurityRequireSafetyNetAttestationCertifiedDevice gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+// GetSecurityRequireSafetyNetAttestationCertifiedDevice gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
 // returns a *bool when successful
 func (m *AndroidWorkProfileCompliancePolicy) GetSecurityRequireSafetyNetAttestationCertifiedDevice()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireSafetyNetAttestationCertifiedDevice")
@@ -706,7 +706,7 @@ func (m *AndroidWorkProfileCompliancePolicy) SetPasswordRequiredType(value *Andr
         panic(err)
     }
 }
-// SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
+// SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Indicates the device should not be rooted. When TRUE, if the device is detected as rooted it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device rooted state. Default is FALSE.
 func (m *AndroidWorkProfileCompliancePolicy) SetSecurityBlockJailbrokenDevices(value *bool)() {
     err := m.GetBackingStore().Set("securityBlockJailbrokenDevices", value)
     if err != nil {
@@ -741,14 +741,14 @@ func (m *AndroidWorkProfileCompliancePolicy) SetSecurityRequireGooglePlayService
         panic(err)
     }
 }
-// SetSecurityRequireSafetyNetAttestationBasicIntegrity sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+// SetSecurityRequireSafetyNetAttestationBasicIntegrity sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
 func (m *AndroidWorkProfileCompliancePolicy) SetSecurityRequireSafetyNetAttestationBasicIntegrity(value *bool)() {
     err := m.GetBackingStore().Set("securityRequireSafetyNetAttestationBasicIntegrity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecurityRequireSafetyNetAttestationCertifiedDevice sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+// SetSecurityRequireSafetyNetAttestationCertifiedDevice sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
 func (m *AndroidWorkProfileCompliancePolicy) SetSecurityRequireSafetyNetAttestationCertifiedDevice(value *bool)() {
     err := m.GetBackingStore().Set("securityRequireSafetyNetAttestationCertifiedDevice", value)
     if err != nil {

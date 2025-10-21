@@ -21,7 +21,7 @@ type ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetQueryParameters read properties and relationships of the managedAppOperation object.
+// ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetQueryParameters zero or more long running operations triggered on the app registration.
 type ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a managedAppOperation.
+// Delete delete navigation property operations for deviceAppManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-delete?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuil
     }
     return nil
 }
-// Get read properties and relationships of the managedAppOperation object.
+// Get zero or more long running operations triggered on the app registration.
 // returns a ManagedAppOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-get?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +93,9 @@ func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable), nil
 }
-// Patch update the properties of a managedAppOperation object.
+// Patch update the navigation property operations in deviceAppManagement
 // returns a ManagedAppOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-update?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable, requestConfiguration *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +113,7 @@ func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable), nil
 }
-// ToDeleteRequestInformation deletes a managedAppOperation.
+// ToDeleteRequestInformation delete navigation property operations for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +124,7 @@ func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the managedAppOperation object.
+// ToGetRequestInformation zero or more long running operations triggered on the app registration.
 // returns a *RequestInformation when successful
 func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +138,7 @@ func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a managedAppOperation object.
+// ToPatchRequestInformation update the navigation property operations in deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable, requestConfiguration *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

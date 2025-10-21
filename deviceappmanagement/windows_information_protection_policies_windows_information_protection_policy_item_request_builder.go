@@ -21,7 +21,7 @@ type WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters read properties and relationships of the windowsInformationProtectionPolicy object.
+// WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters windows information protection for apps running on devices which are not MDM enrolled.
 type WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,11 +62,8 @@ func NewWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyIt
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a windowsInformationProtectionPolicy.
+// Delete delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-delete?view=graph-rest-1.0
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,12 +83,9 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ExemptAppLockerFiles()(*WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) {
     return NewWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read properties and relationships of the windowsInformationProtectionPolicy object.
+// Get windows information protection for apps running on devices which are not MDM enrolled.
 // returns a WindowsInformationProtectionPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-get?view=graph-rest-1.0
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -109,12 +103,9 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionPolicyable), nil
 }
-// Patch update the properties of a windowsInformationProtectionPolicy object.
+// Patch update the navigation property windowsInformationProtectionPolicies in deviceAppManagement
 // returns a WindowsInformationProtectionPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-update?view=graph-rest-1.0
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionPolicyable, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -137,7 +128,7 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ProtectedAppLockerFiles()(*WindowsInformationProtectionPoliciesItemProtectedAppLockerFilesRequestBuilder) {
     return NewWindowsInformationProtectionPoliciesItemProtectedAppLockerFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a windowsInformationProtectionPolicy.
+// ToDeleteRequestInformation delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -148,7 +139,7 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the windowsInformationProtectionPolicy object.
+// ToGetRequestInformation windows information protection for apps running on devices which are not MDM enrolled.
 // returns a *RequestInformation when successful
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,7 +153,7 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a windowsInformationProtectionPolicy object.
+// ToPatchRequestInformation update the navigation property windowsInformationProtectionPolicies in deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionPolicyable, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

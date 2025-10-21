@@ -152,7 +152,7 @@ func (m *IosMinimumOperatingSystem) GetOdataType()(*string) {
     }
     return nil
 }
-// GetV100 gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV100 gets the v10_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 10.0 or later is required to install the app. If 'False', iOS Version 10.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV100()(*bool) {
     val, err := m.GetBackingStore().Get("v10_0")
@@ -164,7 +164,7 @@ func (m *IosMinimumOperatingSystem) GetV100()(*bool) {
     }
     return nil
 }
-// GetV110 gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV110 gets the v11_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 11.0 or later is required to install the app. If 'False', iOS Version 11.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV110()(*bool) {
     val, err := m.GetBackingStore().Get("v11_0")
@@ -176,7 +176,7 @@ func (m *IosMinimumOperatingSystem) GetV110()(*bool) {
     }
     return nil
 }
-// GetV120 gets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV120 gets the v12_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 12.0 or later is required to install the app. If 'False', iOS Version 12.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV120()(*bool) {
     val, err := m.GetBackingStore().Get("v12_0")
@@ -188,7 +188,7 @@ func (m *IosMinimumOperatingSystem) GetV120()(*bool) {
     }
     return nil
 }
-// GetV130 gets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV130 gets the v13_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 13.0 or later is required to install the app. If 'False', iOS Version 13.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV130()(*bool) {
     val, err := m.GetBackingStore().Get("v13_0")
@@ -200,7 +200,7 @@ func (m *IosMinimumOperatingSystem) GetV130()(*bool) {
     }
     return nil
 }
-// GetV140 gets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV140 gets the v14_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 14.0 or later is required to install the app. If 'False', iOS Version 14.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV140()(*bool) {
     val, err := m.GetBackingStore().Get("v14_0")
@@ -212,7 +212,7 @@ func (m *IosMinimumOperatingSystem) GetV140()(*bool) {
     }
     return nil
 }
-// GetV150 gets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV150 gets the v15_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 15.0 or later is required to install the app. If 'False', iOS Version 15.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV150()(*bool) {
     val, err := m.GetBackingStore().Get("v15_0")
@@ -224,7 +224,7 @@ func (m *IosMinimumOperatingSystem) GetV150()(*bool) {
     }
     return nil
 }
-// GetV80 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV80 gets the v8_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 8.0 or later is required to install the app. If 'False', iOS Version 8.0  is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV80()(*bool) {
     val, err := m.GetBackingStore().Get("v8_0")
@@ -236,7 +236,7 @@ func (m *IosMinimumOperatingSystem) GetV80()(*bool) {
     }
     return nil
 }
-// GetV90 gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// GetV90 gets the v9_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 9.0 or later is required to install the app. If 'False', iOS Version 9.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV90()(*bool) {
     val, err := m.GetBackingStore().Get("v9_0")
@@ -330,56 +330,56 @@ func (m *IosMinimumOperatingSystem) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetV100 sets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV100 sets the v10_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 10.0 or later is required to install the app. If 'False', iOS Version 10.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV100(value *bool)() {
     err := m.GetBackingStore().Set("v10_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV110 sets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV110 sets the v11_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 11.0 or later is required to install the app. If 'False', iOS Version 11.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV110(value *bool)() {
     err := m.GetBackingStore().Set("v11_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV120 sets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV120 sets the v12_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 12.0 or later is required to install the app. If 'False', iOS Version 12.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV120(value *bool)() {
     err := m.GetBackingStore().Set("v12_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV130 sets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV130 sets the v13_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 13.0 or later is required to install the app. If 'False', iOS Version 13.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV130(value *bool)() {
     err := m.GetBackingStore().Set("v13_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV140 sets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV140 sets the v14_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 14.0 or later is required to install the app. If 'False', iOS Version 14.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV140(value *bool)() {
     err := m.GetBackingStore().Set("v14_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV150 sets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV150 sets the v15_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 15.0 or later is required to install the app. If 'False', iOS Version 15.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV150(value *bool)() {
     err := m.GetBackingStore().Set("v15_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV80 sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV80 sets the v8_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 8.0 or later is required to install the app. If 'False', iOS Version 8.0  is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV80(value *bool)() {
     err := m.GetBackingStore().Set("v8_0", value)
     if err != nil {
         panic(err)
     }
 }
-// SetV90 sets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// SetV90 sets the v9_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 9.0 or later is required to install the app. If 'False', iOS Version 9.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV90(value *bool)() {
     err := m.GetBackingStore().Set("v9_0", value)
     if err != nil {

@@ -25,7 +25,7 @@ func NewWin32LobApp()(*Win32LobApp) {
 func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobApp(), nil
 }
-// GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the `allowedArchitectures` property, the value of the `applicableArchitectures` property is set to `none`. Possible values are: `null`, `x86`, `x64`, `arm64`.
+// GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral.
 // returns a *WindowsArchitecture when successful
 func (m *Win32LobApp) GetAllowedArchitectures()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("allowedArchitectures")
@@ -207,7 +207,7 @@ func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetInstallCommandLine gets the installCommandLine property value. The command line to install this app
+// GetInstallCommandLine gets the installCommandLine property value. Indicates the command line to install this app. Used to install the Win32 app. Example: msiexec /i 'Orca.Msi' /qn.
 // returns a *string when successful
 func (m *Win32LobApp) GetInstallCommandLine()(*string) {
     val, err := m.GetBackingStore().Get("installCommandLine")
@@ -219,7 +219,7 @@ func (m *Win32LobApp) GetInstallCommandLine()(*string) {
     }
     return nil
 }
-// GetInstallExperience gets the installExperience property value. The install experience for this app.
+// GetInstallExperience gets the installExperience property value. Indicates the install experience for this app.
 // returns a Win32LobAppInstallExperienceable when successful
 func (m *Win32LobApp) GetInstallExperience()(Win32LobAppInstallExperienceable) {
     val, err := m.GetBackingStore().Get("installExperience")
@@ -231,7 +231,7 @@ func (m *Win32LobApp) GetInstallExperience()(Win32LobAppInstallExperienceable) {
     }
     return nil
 }
-// GetMinimumCpuSpeedInMHz gets the minimumCpuSpeedInMHz property value. The value for the minimum CPU speed which is required to install this app.
+// GetMinimumCpuSpeedInMHz gets the minimumCpuSpeedInMHz property value. Indicates the value for the minimum CPU speed which is required to install this app. Allowed range from 0 to clock speed from WMI helper.
 // returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumCpuSpeedInMHz()(*int32) {
     val, err := m.GetBackingStore().Get("minimumCpuSpeedInMHz")
@@ -243,7 +243,7 @@ func (m *Win32LobApp) GetMinimumCpuSpeedInMHz()(*int32) {
     }
     return nil
 }
-// GetMinimumFreeDiskSpaceInMB gets the minimumFreeDiskSpaceInMB property value. The value for the minimum free disk space which is required to install this app.
+// GetMinimumFreeDiskSpaceInMB gets the minimumFreeDiskSpaceInMB property value. Indicates the value for the minimum free disk space which is required to install this app. Allowed range from 0 to driver's maximum available free space.
 // returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumFreeDiskSpaceInMB()(*int32) {
     val, err := m.GetBackingStore().Get("minimumFreeDiskSpaceInMB")
@@ -255,7 +255,7 @@ func (m *Win32LobApp) GetMinimumFreeDiskSpaceInMB()(*int32) {
     }
     return nil
 }
-// GetMinimumMemoryInMB gets the minimumMemoryInMB property value. The value for the minimum physical memory which is required to install this app.
+// GetMinimumMemoryInMB gets the minimumMemoryInMB property value. Indicates the value for the minimum physical memory which is required to install this app. Allowed range from 0 to total physical memory from WMI helper.
 // returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumMemoryInMB()(*int32) {
     val, err := m.GetBackingStore().Get("minimumMemoryInMB")
@@ -267,7 +267,7 @@ func (m *Win32LobApp) GetMinimumMemoryInMB()(*int32) {
     }
     return nil
 }
-// GetMinimumNumberOfProcessors gets the minimumNumberOfProcessors property value. The value for the minimum number of processors which is required to install this app.
+// GetMinimumNumberOfProcessors gets the minimumNumberOfProcessors property value. Indicates the value for the minimum number of processors which is required to install this app. Minimum value is 0.
 // returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumNumberOfProcessors()(*int32) {
     val, err := m.GetBackingStore().Get("minimumNumberOfProcessors")
@@ -279,7 +279,7 @@ func (m *Win32LobApp) GetMinimumNumberOfProcessors()(*int32) {
     }
     return nil
 }
-// GetMinimumSupportedWindowsRelease gets the minimumSupportedWindowsRelease property value. The value for the minimum supported windows release.
+// GetMinimumSupportedWindowsRelease gets the minimumSupportedWindowsRelease property value. Indicates the value for the minimum supported windows release. Example: Windows11_23H2.
 // returns a *string when successful
 func (m *Win32LobApp) GetMinimumSupportedWindowsRelease()(*string) {
     val, err := m.GetBackingStore().Get("minimumSupportedWindowsRelease")
@@ -291,7 +291,7 @@ func (m *Win32LobApp) GetMinimumSupportedWindowsRelease()(*string) {
     }
     return nil
 }
-// GetMsiInformation gets the msiInformation property value. The MSI details if this Win32 app is an MSI app.
+// GetMsiInformation gets the msiInformation property value. Indicates the MSI details if this Win32 app is an MSI app.
 // returns a Win32LobAppMsiInformationable when successful
 func (m *Win32LobApp) GetMsiInformation()(Win32LobAppMsiInformationable) {
     val, err := m.GetBackingStore().Get("msiInformation")
@@ -303,7 +303,7 @@ func (m *Win32LobApp) GetMsiInformation()(Win32LobAppMsiInformationable) {
     }
     return nil
 }
-// GetReturnCodes gets the returnCodes property value. The return codes for post installation behavior.
+// GetReturnCodes gets the returnCodes property value. Indicates the return codes for post installation behavior.
 // returns a []Win32LobAppReturnCodeable when successful
 func (m *Win32LobApp) GetReturnCodes()([]Win32LobAppReturnCodeable) {
     val, err := m.GetBackingStore().Get("returnCodes")
@@ -315,7 +315,7 @@ func (m *Win32LobApp) GetReturnCodes()([]Win32LobAppReturnCodeable) {
     }
     return nil
 }
-// GetRules gets the rules property value. The detection and requirement rules for this app.
+// GetRules gets the rules property value. Indicates the detection and requirement rules for this app. Possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
 // returns a []Win32LobAppRuleable when successful
 func (m *Win32LobApp) GetRules()([]Win32LobAppRuleable) {
     val, err := m.GetBackingStore().Get("rules")
@@ -327,7 +327,7 @@ func (m *Win32LobApp) GetRules()([]Win32LobAppRuleable) {
     }
     return nil
 }
-// GetSetupFilePath gets the setupFilePath property value. The relative path of the setup file in the encrypted Win32LobApp package.
+// GetSetupFilePath gets the setupFilePath property value. Indicates the relative path of the setup file in the encrypted Win32LobApp package. Example: Intel-SA-00075 Detection and Mitigation Tool.msi.
 // returns a *string when successful
 func (m *Win32LobApp) GetSetupFilePath()(*string) {
     val, err := m.GetBackingStore().Get("setupFilePath")
@@ -339,7 +339,7 @@ func (m *Win32LobApp) GetSetupFilePath()(*string) {
     }
     return nil
 }
-// GetUninstallCommandLine gets the uninstallCommandLine property value. The command line to uninstall this app
+// GetUninstallCommandLine gets the uninstallCommandLine property value. Indicates the command line to uninstall this app. Used to uninstall the app. Example: msiexec /x '{85F4CBCB-9BBC-4B50-A7D8-E1106771498D}' /qn.
 // returns a *string when successful
 func (m *Win32LobApp) GetUninstallCommandLine()(*string) {
     val, err := m.GetBackingStore().Get("uninstallCommandLine")
@@ -457,7 +457,7 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the `allowedArchitectures` property, the value of the `applicableArchitectures` property is set to `none`. Possible values are: `null`, `x86`, `x64`, `arm64`.
+// SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral.
 func (m *Win32LobApp) SetAllowedArchitectures(value *WindowsArchitecture)() {
     err := m.GetBackingStore().Set("allowedArchitectures", value)
     if err != nil {
@@ -471,84 +471,84 @@ func (m *Win32LobApp) SetApplicableArchitectures(value *WindowsArchitecture)() {
         panic(err)
     }
 }
-// SetInstallCommandLine sets the installCommandLine property value. The command line to install this app
+// SetInstallCommandLine sets the installCommandLine property value. Indicates the command line to install this app. Used to install the Win32 app. Example: msiexec /i 'Orca.Msi' /qn.
 func (m *Win32LobApp) SetInstallCommandLine(value *string)() {
     err := m.GetBackingStore().Set("installCommandLine", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInstallExperience sets the installExperience property value. The install experience for this app.
+// SetInstallExperience sets the installExperience property value. Indicates the install experience for this app.
 func (m *Win32LobApp) SetInstallExperience(value Win32LobAppInstallExperienceable)() {
     err := m.GetBackingStore().Set("installExperience", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumCpuSpeedInMHz sets the minimumCpuSpeedInMHz property value. The value for the minimum CPU speed which is required to install this app.
+// SetMinimumCpuSpeedInMHz sets the minimumCpuSpeedInMHz property value. Indicates the value for the minimum CPU speed which is required to install this app. Allowed range from 0 to clock speed from WMI helper.
 func (m *Win32LobApp) SetMinimumCpuSpeedInMHz(value *int32)() {
     err := m.GetBackingStore().Set("minimumCpuSpeedInMHz", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumFreeDiskSpaceInMB sets the minimumFreeDiskSpaceInMB property value. The value for the minimum free disk space which is required to install this app.
+// SetMinimumFreeDiskSpaceInMB sets the minimumFreeDiskSpaceInMB property value. Indicates the value for the minimum free disk space which is required to install this app. Allowed range from 0 to driver's maximum available free space.
 func (m *Win32LobApp) SetMinimumFreeDiskSpaceInMB(value *int32)() {
     err := m.GetBackingStore().Set("minimumFreeDiskSpaceInMB", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumMemoryInMB sets the minimumMemoryInMB property value. The value for the minimum physical memory which is required to install this app.
+// SetMinimumMemoryInMB sets the minimumMemoryInMB property value. Indicates the value for the minimum physical memory which is required to install this app. Allowed range from 0 to total physical memory from WMI helper.
 func (m *Win32LobApp) SetMinimumMemoryInMB(value *int32)() {
     err := m.GetBackingStore().Set("minimumMemoryInMB", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumNumberOfProcessors sets the minimumNumberOfProcessors property value. The value for the minimum number of processors which is required to install this app.
+// SetMinimumNumberOfProcessors sets the minimumNumberOfProcessors property value. Indicates the value for the minimum number of processors which is required to install this app. Minimum value is 0.
 func (m *Win32LobApp) SetMinimumNumberOfProcessors(value *int32)() {
     err := m.GetBackingStore().Set("minimumNumberOfProcessors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumSupportedWindowsRelease sets the minimumSupportedWindowsRelease property value. The value for the minimum supported windows release.
+// SetMinimumSupportedWindowsRelease sets the minimumSupportedWindowsRelease property value. Indicates the value for the minimum supported windows release. Example: Windows11_23H2.
 func (m *Win32LobApp) SetMinimumSupportedWindowsRelease(value *string)() {
     err := m.GetBackingStore().Set("minimumSupportedWindowsRelease", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMsiInformation sets the msiInformation property value. The MSI details if this Win32 app is an MSI app.
+// SetMsiInformation sets the msiInformation property value. Indicates the MSI details if this Win32 app is an MSI app.
 func (m *Win32LobApp) SetMsiInformation(value Win32LobAppMsiInformationable)() {
     err := m.GetBackingStore().Set("msiInformation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReturnCodes sets the returnCodes property value. The return codes for post installation behavior.
+// SetReturnCodes sets the returnCodes property value. Indicates the return codes for post installation behavior.
 func (m *Win32LobApp) SetReturnCodes(value []Win32LobAppReturnCodeable)() {
     err := m.GetBackingStore().Set("returnCodes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRules sets the rules property value. The detection and requirement rules for this app.
+// SetRules sets the rules property value. Indicates the detection and requirement rules for this app. Possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
 func (m *Win32LobApp) SetRules(value []Win32LobAppRuleable)() {
     err := m.GetBackingStore().Set("rules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSetupFilePath sets the setupFilePath property value. The relative path of the setup file in the encrypted Win32LobApp package.
+// SetSetupFilePath sets the setupFilePath property value. Indicates the relative path of the setup file in the encrypted Win32LobApp package. Example: Intel-SA-00075 Detection and Mitigation Tool.msi.
 func (m *Win32LobApp) SetSetupFilePath(value *string)() {
     err := m.GetBackingStore().Set("setupFilePath", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUninstallCommandLine sets the uninstallCommandLine property value. The command line to uninstall this app
+// SetUninstallCommandLine sets the uninstallCommandLine property value. Indicates the command line to uninstall this app. Used to uninstall the app. Example: msiexec /x '{85F4CBCB-9BBC-4B50-A7D8-E1106771498D}' /qn.
 func (m *Win32LobApp) SetUninstallCommandLine(value *string)() {
     err := m.GetBackingStore().Set("uninstallCommandLine", value)
     if err != nil {

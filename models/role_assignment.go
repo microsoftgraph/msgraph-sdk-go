@@ -41,7 +41,7 @@ func CreateRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     }
     return NewRoleAssignment(), nil
 }
-// GetDescription gets the description property value. Description of the Role Assignment.
+// GetDescription gets the description property value. Indicates the description of the role assignment. For example: 'All administrators, employees and scope tags associated with the Houston office.' Max length is 1024 characters.
 // returns a *string when successful
 func (m *RoleAssignment) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -53,7 +53,7 @@ func (m *RoleAssignment) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display or friendly name of the role Assignment.
+// GetDisplayName gets the displayName property value. Indicates the display name of the role assignment. For example: 'Houston administrators and users'. Max length is 128 characters.
 // returns a *string when successful
 func (m *RoleAssignment) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -117,7 +117,7 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetResourceScopes gets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
+// GetResourceScopes gets the resourceScopes property value. Indicates the list of resource scope security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.
 // returns a []string when successful
 func (m *RoleAssignment) GetResourceScopes()([]string) {
     val, err := m.GetBackingStore().Get("resourceScopes")
@@ -129,7 +129,7 @@ func (m *RoleAssignment) GetResourceScopes()([]string) {
     }
     return nil
 }
-// GetRoleDefinition gets the roleDefinition property value. Role definition this assignment is part of.
+// GetRoleDefinition gets the roleDefinition property value. Indicates the role definition for this role assignment.
 // returns a RoleDefinitionable when successful
 func (m *RoleAssignment) GetRoleDefinition()(RoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinition")
@@ -173,28 +173,28 @@ func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetDescription sets the description property value. Description of the Role Assignment.
+// SetDescription sets the description property value. Indicates the description of the role assignment. For example: 'All administrators, employees and scope tags associated with the Houston office.' Max length is 1024 characters.
 func (m *RoleAssignment) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display or friendly name of the role Assignment.
+// SetDisplayName sets the displayName property value. Indicates the display name of the role assignment. For example: 'Houston administrators and users'. Max length is 128 characters.
 func (m *RoleAssignment) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceScopes sets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
+// SetResourceScopes sets the resourceScopes property value. Indicates the list of resource scope security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.
 func (m *RoleAssignment) SetResourceScopes(value []string)() {
     err := m.GetBackingStore().Set("resourceScopes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleDefinition sets the roleDefinition property value. Role definition this assignment is part of.
+// SetRoleDefinition sets the roleDefinition property value. Indicates the role definition for this role assignment.
 func (m *RoleAssignment) SetRoleDefinition(value RoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinition", value)
     if err != nil {

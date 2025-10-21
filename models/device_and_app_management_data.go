@@ -44,7 +44,7 @@ func (m *DeviceAndAppManagementData) GetAdditionalData()(map[string]any) {
 func (m *DeviceAndAppManagementData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContent gets the content property value. Not yet documented
+// GetContent gets the content property value. The content property
 // returns a []byte when successful
 func (m *DeviceAndAppManagementData) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
@@ -127,7 +127,7 @@ func (m *DeviceAndAppManagementData) SetAdditionalData(value map[string]any)() {
 func (m *DeviceAndAppManagementData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContent sets the content property value. Not yet documented
+// SetContent sets the content property value. The content property
 func (m *DeviceAndAppManagementData) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {

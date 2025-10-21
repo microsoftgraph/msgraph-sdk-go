@@ -463,7 +463,7 @@ func (m *ManagedAppProtection) GetManagedBrowserToOpenLinksRequired()(*bool) {
     }
     return nil
 }
-// GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+// GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped. Valid values 1 to 65535
 // returns a *int32 when successful
 func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
     val, err := m.GetBackingStore().Get("maximumPinRetries")
@@ -907,7 +907,7 @@ func (m *ManagedAppProtection) SetManagedBrowserToOpenLinksRequired(value *bool)
         panic(err)
     }
 }
-// SetMaximumPinRetries sets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+// SetMaximumPinRetries sets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped. Valid values 1 to 65535
 func (m *ManagedAppProtection) SetMaximumPinRetries(value *int32)() {
     err := m.GetBackingStore().Set("maximumPinRetries", value)
     if err != nil {

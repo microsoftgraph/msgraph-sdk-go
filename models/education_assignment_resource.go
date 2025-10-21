@@ -22,6 +22,18 @@ func NewEducationAssignmentResource()(*EducationAssignmentResource) {
 func CreateEducationAssignmentResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentResource(), nil
 }
+// GetDependentResources gets the dependentResources property value. A collection of assignment resources that depend on the parent educationAssignmentResource.
+// returns a []EducationAssignmentResourceable when successful
+func (m *EducationAssignmentResource) GetDependentResources()([]EducationAssignmentResourceable) {
+    val, err := m.GetBackingStore().Get("dependentResources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationAssignmentResourceable)
+    }
+    return nil
+}
 // GetDistributeForStudentWork gets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 // returns a *bool when successful
 func (m *EducationAssignmentResource) GetDistributeForStudentWork()(*bool) {
@@ -38,6 +50,22 @@ func (m *EducationAssignmentResource) GetDistributeForStudentWork()(*bool) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["dependentResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationAssignmentResourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationAssignmentResourceable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(EducationAssignmentResourceable)
+                }
+            }
+            m.SetDependentResources(res)
+        }
+        return nil
+    }
     res["distributeForStudentWork"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -78,6 +106,18 @@ func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a
     if err != nil {
         return err
     }
+    if m.GetDependentResources() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDependentResources()))
+        for i, v := range m.GetDependentResources() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("dependentResources", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("distributeForStudentWork", m.GetDistributeForStudentWork())
         if err != nil {
@@ -91,6 +131,13 @@ func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     return nil
+}
+// SetDependentResources sets the dependentResources property value. A collection of assignment resources that depend on the parent educationAssignmentResource.
+func (m *EducationAssignmentResource) SetDependentResources(value []EducationAssignmentResourceable)() {
+    err := m.GetBackingStore().Set("dependentResources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDistributeForStudentWork sets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 func (m *EducationAssignmentResource) SetDistributeForStudentWork(value *bool)() {
@@ -109,8 +156,10 @@ func (m *EducationAssignmentResource) SetResource(value EducationResourceable)()
 type EducationAssignmentResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDependentResources()([]EducationAssignmentResourceable)
     GetDistributeForStudentWork()(*bool)
     GetResource()(EducationResourceable)
+    SetDependentResources(value []EducationAssignmentResourceable)()
     SetDistributeForStudentWork(value *bool)()
     SetResource(value EducationResourceable)()
 }

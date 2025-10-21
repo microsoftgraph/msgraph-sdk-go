@@ -30,6 +30,11 @@ type BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilderGetRequestC
     // Request query parameters
     QueryParameters *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilderGetQueryParameters
 }
+// CancelOffboard provides operations to call the cancelOffboard method.
+// returns a *BackupRestoreProtectionUnitsItemCancelOffboardRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) CancelOffboard()(*BackupRestoreProtectionUnitsItemCancelOffboardRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsItemCancelOffboardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilderInternal instantiates a new BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder and sets the default values.
 func NewBackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) {
     m := &BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder{
@@ -80,6 +85,11 @@ func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) Graph
 // returns a *BackupRestoreProtectionUnitsItemGraphSiteProtectionUnitRequestBuilder when successful
 func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) GraphSiteProtectionUnit()(*BackupRestoreProtectionUnitsItemGraphSiteProtectionUnitRequestBuilder) {
     return NewBackupRestoreProtectionUnitsItemGraphSiteProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Offboard provides operations to call the offboard method.
+// returns a *BackupRestoreProtectionUnitsItemOffboardRequestBuilder when successful
+func (m *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) Offboard()(*BackupRestoreProtectionUnitsItemOffboardRequestBuilder) {
+    return NewBackupRestoreProtectionUnitsItemOffboardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation read the properties and relationships of a protectionUnitBase object.
 // returns a *RequestInformation when successful

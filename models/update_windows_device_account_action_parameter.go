@@ -43,7 +43,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetAdditionalData()(map[stri
 func (m *UpdateWindowsDeviceAccountActionParameter) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCalendarSyncEnabled gets the calendarSyncEnabled property value. Not yet documented
+// GetCalendarSyncEnabled gets the calendarSyncEnabled property value. The calendarSyncEnabled property
 // returns a *bool when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetCalendarSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("calendarSyncEnabled")
@@ -55,7 +55,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetCalendarSyncEnabled()(*bo
     }
     return nil
 }
-// GetDeviceAccount gets the deviceAccount property value. Not yet documented
+// GetDeviceAccount gets the deviceAccount property value. The deviceAccount property
 // returns a WindowsDeviceAccountable when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccount()(WindowsDeviceAccountable) {
     val, err := m.GetBackingStore().Get("deviceAccount")
@@ -67,7 +67,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccount()(WindowsDe
     }
     return nil
 }
-// GetDeviceAccountEmail gets the deviceAccountEmail property value. Not yet documented
+// GetDeviceAccountEmail gets the deviceAccountEmail property value. The deviceAccountEmail property
 // returns a *string when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccountEmail()(*string) {
     val, err := m.GetBackingStore().Get("deviceAccountEmail")
@@ -79,7 +79,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccountEmail()(*str
     }
     return nil
 }
-// GetExchangeServer gets the exchangeServer property value. Not yet documented
+// GetExchangeServer gets the exchangeServer property value. The exchangeServer property
 // returns a *string when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetExchangeServer()(*string) {
     val, err := m.GetBackingStore().Get("exchangeServer")
@@ -179,7 +179,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPasswordRotationEnabled gets the passwordRotationEnabled property value. Not yet documented
+// GetPasswordRotationEnabled gets the passwordRotationEnabled property value. The passwordRotationEnabled property
 // returns a *bool when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRotationEnabled")
@@ -191,7 +191,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()
     }
     return nil
 }
-// GetSessionInitiationProtocalAddress gets the sessionInitiationProtocalAddress property value. Not yet documented
+// GetSessionInitiationProtocalAddress gets the sessionInitiationProtocalAddress property value. The sessionInitiationProtocalAddress property
 // returns a *string when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetSessionInitiationProtocalAddress()(*string) {
     val, err := m.GetBackingStore().Get("sessionInitiationProtocalAddress")
@@ -266,28 +266,28 @@ func (m *UpdateWindowsDeviceAccountActionParameter) SetAdditionalData(value map[
 func (m *UpdateWindowsDeviceAccountActionParameter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCalendarSyncEnabled sets the calendarSyncEnabled property value. Not yet documented
+// SetCalendarSyncEnabled sets the calendarSyncEnabled property value. The calendarSyncEnabled property
 func (m *UpdateWindowsDeviceAccountActionParameter) SetCalendarSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("calendarSyncEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceAccount sets the deviceAccount property value. Not yet documented
+// SetDeviceAccount sets the deviceAccount property value. The deviceAccount property
 func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccount(value WindowsDeviceAccountable)() {
     err := m.GetBackingStore().Set("deviceAccount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceAccountEmail sets the deviceAccountEmail property value. Not yet documented
+// SetDeviceAccountEmail sets the deviceAccountEmail property value. The deviceAccountEmail property
 func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccountEmail(value *string)() {
     err := m.GetBackingStore().Set("deviceAccountEmail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExchangeServer sets the exchangeServer property value. Not yet documented
+// SetExchangeServer sets the exchangeServer property value. The exchangeServer property
 func (m *UpdateWindowsDeviceAccountActionParameter) SetExchangeServer(value *string)() {
     err := m.GetBackingStore().Set("exchangeServer", value)
     if err != nil {
@@ -301,14 +301,14 @@ func (m *UpdateWindowsDeviceAccountActionParameter) SetOdataType(value *string)(
         panic(err)
     }
 }
-// SetPasswordRotationEnabled sets the passwordRotationEnabled property value. Not yet documented
+// SetPasswordRotationEnabled sets the passwordRotationEnabled property value. The passwordRotationEnabled property
 func (m *UpdateWindowsDeviceAccountActionParameter) SetPasswordRotationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("passwordRotationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSessionInitiationProtocalAddress sets the sessionInitiationProtocalAddress property value. Not yet documented
+// SetSessionInitiationProtocalAddress sets the sessionInitiationProtocalAddress property value. The sessionInitiationProtocalAddress property
 func (m *UpdateWindowsDeviceAccountActionParameter) SetSessionInitiationProtocalAddress(value *string)() {
     err := m.GetBackingStore().Set("sessionInitiationProtocalAddress", value)
     if err != nil {

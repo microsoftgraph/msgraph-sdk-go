@@ -21,7 +21,7 @@ type ResourceOperationsResourceOperationItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ResourceOperationsResourceOperationItemRequestBuilderGetQueryParameters read properties and relationships of the resourceOperation object.
+// ResourceOperationsResourceOperationItemRequestBuilderGetQueryParameters the Resource Operations.
 type ResourceOperationsResourceOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewResourceOperationsResourceOperationItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewResourceOperationsResourceOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a resourceOperation.
+// Delete delete navigation property resourceOperations for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-delete?view=graph-rest-1.0
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read properties and relationships of the resourceOperation object.
+// Get the Resource Operations.
 // returns a ResourceOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-get?view=graph-rest-1.0
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +93,9 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable), nil
 }
-// Patch update the properties of a resourceOperation object.
+// Patch update the navigation property resourceOperations in deviceManagement
 // returns a ResourceOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-update?view=graph-rest-1.0
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +113,7 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) Patch(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable), nil
 }
-// ToDeleteRequestInformation deletes a resourceOperation.
+// ToDeleteRequestInformation delete navigation property resourceOperations for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +124,7 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the resourceOperation object.
+// ToGetRequestInformation the Resource Operations.
 // returns a *RequestInformation when successful
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +138,7 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) ToGetRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a resourceOperation object.
+// ToPatchRequestInformation update the navigation property resourceOperations in deviceManagement
 // returns a *RequestInformation when successful
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

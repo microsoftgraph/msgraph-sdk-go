@@ -36,7 +36,7 @@ func (m *ApplePushNotificationCertificate) GetAppleIdentifier()(*string) {
     }
     return nil
 }
-// GetCertificate gets the certificate property value. Not yet documented
+// GetCertificate gets the certificate property value. The certificate property
 // returns a *string when successful
 func (m *ApplePushNotificationCertificate) GetCertificate()(*string) {
     val, err := m.GetBackingStore().Get("certificate")
@@ -263,7 +263,7 @@ func (m *ApplePushNotificationCertificate) SetAppleIdentifier(value *string)() {
         panic(err)
     }
 }
-// SetCertificate sets the certificate property value. Not yet documented
+// SetCertificate sets the certificate property value. The certificate property
 func (m *ApplePushNotificationCertificate) SetCertificate(value *string)() {
     err := m.GetBackingStore().Set("certificate", value)
     if err != nil {

@@ -62,7 +62,7 @@ func (m *MobileAppCategory) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified. This property is read-only.
 // returns a *Time when successful
 func (m *MobileAppCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -95,7 +95,7 @@ func (m *MobileAppCategory) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified. This property is read-only.
 func (m *MobileAppCategory) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
