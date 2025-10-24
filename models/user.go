@@ -254,6 +254,18 @@ func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
     }
     return nil
 }
+// GetCloudPCs gets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
+// returns a []CloudPCable when successful
+func (m *User) GetCloudPCs()([]CloudPCable) {
+    val, err := m.GetBackingStore().Get("cloudPCs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPCable)
+    }
+    return nil
+}
 // GetCompanyName gets the companyName property value. The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *User) GetCompanyName()(*string) {
@@ -841,6 +853,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCloudClipboard(val.(CloudClipboardRootable))
+        }
+        return nil
+    }
+    res["cloudPCs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPCFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPCable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPCable)
+                }
+            }
+            m.SetCloudPCs(res)
         }
         return nil
     }
@@ -3366,6 +3394,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetCloudPCs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCs()))
+        for i, v := range m.GetCloudPCs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudPCs", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("companyName", m.GetCompanyName())
         if err != nil {
@@ -4359,6 +4399,13 @@ func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
         panic(err)
     }
 }
+// SetCloudPCs sets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
+func (m *User) SetCloudPCs(value []CloudPCable)() {
+    err := m.GetBackingStore().Set("cloudPCs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCompanyName sets the companyName property value. The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCompanyName(value *string)() {
     err := m.GetBackingStore().Set("companyName", value)
@@ -5158,6 +5205,7 @@ type Userable interface {
     GetChats()([]Chatable)
     GetCity()(*string)
     GetCloudClipboard()(CloudClipboardRootable)
+    GetCloudPCs()([]CloudPCable)
     GetCompanyName()(*string)
     GetConsentProvidedForMinor()(*string)
     GetContactFolders()([]ContactFolderable)
@@ -5288,6 +5336,7 @@ type Userable interface {
     SetChats(value []Chatable)()
     SetCity(value *string)()
     SetCloudClipboard(value CloudClipboardRootable)()
+    SetCloudPCs(value []CloudPCable)()
     SetCompanyName(value *string)()
     SetConsentProvidedForMinor(value *string)()
     SetContactFolders(value []ContactFolderable)()
