@@ -164,6 +164,10 @@ For more detailed documentation, see:
 * [Known issues](https://github.com/MicrosoftGraph/msgraph-sdk-go/issues)
 * [Contributions](https://github.com/microsoftgraph/msgraph-sdk-go/blob/main/CONTRIBUTING.md)
 
+## 5. Update Schedule
+
+The Microsoft Graph Go Client Library is scheduled to be updated during the week of the second and fourth Tuesday of each month
+
 ## 6. Issues
 
 For known issues, see [issues](https://github.com/MicrosoftGraph/msgraph-sdk-go/issues).
