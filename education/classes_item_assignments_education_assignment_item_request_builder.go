@@ -119,6 +119,11 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Get(ctx co
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) GradingCategory()(*ClassesItemAssignmentsItemGradingCategoryRequestBuilder) {
     return NewClassesItemAssignmentsItemGradingCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GradingScheme provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.
+// returns a *ClassesItemAssignmentsItemGradingSchemeRequestBuilder when successful
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) GradingScheme()(*ClassesItemAssignmentsItemGradingSchemeRequestBuilder) {
+    return NewClassesItemAssignmentsItemGradingSchemeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update an educationAssignment object.  Only teachers can perform this action.  Alternatively, request to change the status of an assignment with publish action. Don't use a PATCH operation for this purpose.
 // returns a EducationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

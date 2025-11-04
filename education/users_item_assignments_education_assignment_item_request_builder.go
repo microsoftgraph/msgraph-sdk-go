@@ -113,6 +113,11 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Get(ctx cont
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) GradingCategory()(*UsersItemAssignmentsItemGradingCategoryRequestBuilder) {
     return NewUsersItemAssignmentsItemGradingCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GradingScheme provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.
+// returns a *UsersItemAssignmentsItemGradingSchemeRequestBuilder when successful
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) GradingScheme()(*UsersItemAssignmentsItemGradingSchemeRequestBuilder) {
+    return NewUsersItemAssignmentsItemGradingSchemeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property assignments in education
 // returns a EducationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
