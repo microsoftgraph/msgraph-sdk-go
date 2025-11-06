@@ -57,6 +57,11 @@ func NewClassesItemAssignmentSettingsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DefaultGradingScheme provides operations to manage the defaultGradingScheme property of the microsoft.graph.educationAssignmentSettings entity.
+// returns a *ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilder when successful
+func (m *ClassesItemAssignmentSettingsRequestBuilder) DefaultGradingScheme()(*ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilder) {
+    return NewClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property assignmentSettings for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -97,6 +102,11 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) Get(ctx context.Context, r
 // returns a *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder when successful
 func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingCategories()(*ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) {
     return NewClassesItemAssignmentSettingsGradingCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GradingSchemes provides operations to manage the gradingSchemes property of the microsoft.graph.educationAssignmentSettings entity.
+// returns a *ClassesItemAssignmentSettingsGradingSchemesRequestBuilder when successful
+func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingSchemes()(*ClassesItemAssignmentSettingsGradingSchemesRequestBuilder) {
+    return NewClassesItemAssignmentSettingsGradingSchemesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
 // returns a EducationAssignmentSettingsable when successful

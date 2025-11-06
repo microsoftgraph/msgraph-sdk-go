@@ -125,6 +125,11 @@ func (m *IdentityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityContainerable), nil
 }
+// RiskPrevention provides operations to manage the riskPrevention property of the microsoft.graph.identityContainer entity.
+// returns a *RiskPreventionRequestBuilder when successful
+func (m *IdentityRequestBuilder) RiskPrevention()(*RiskPreventionRequestBuilder) {
+    return NewRiskPreventionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get identity
 // returns a *RequestInformation when successful
 func (m *IdentityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -383,6 +383,16 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["gradingScheme"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEducationGradingSchemeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGradingScheme(val.(EducationGradingSchemeable))
+        }
+        return nil
+    }
     res["instructions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -390,6 +400,16 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetInstructions(val.(EducationItemBodyable))
+        }
+        return nil
+    }
+    res["languageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLanguageTag(val)
         }
         return nil
     }
@@ -531,6 +551,18 @@ func (m *EducationAssignment) GetGradingCategory()(EducationGradingCategoryable)
     }
     return nil
 }
+// GetGradingScheme gets the gradingScheme property value. When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
+// returns a EducationGradingSchemeable when successful
+func (m *EducationAssignment) GetGradingScheme()(EducationGradingSchemeable) {
+    val, err := m.GetBackingStore().Get("gradingScheme")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationGradingSchemeable)
+    }
+    return nil
+}
 // GetInstructions gets the instructions property value. Instructions for the assignment. The instructions and the display name tell the student what to do.
 // returns a EducationItemBodyable when successful
 func (m *EducationAssignment) GetInstructions()(EducationItemBodyable) {
@@ -540,6 +572,18 @@ func (m *EducationAssignment) GetInstructions()(EducationItemBodyable) {
     }
     if val != nil {
         return val.(EducationItemBodyable)
+    }
+    return nil
+}
+// GetLanguageTag gets the languageTag property value. Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn't provided, the default language is en-US. Optional.
+// returns a *string when successful
+func (m *EducationAssignment) GetLanguageTag()(*string) {
+    val, err := m.GetBackingStore().Get("languageTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -750,7 +794,19 @@ func (m *EducationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteObjectValue("gradingScheme", m.GetGradingScheme())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("instructions", m.GetInstructions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("languageTag", m.GetLanguageTag())
         if err != nil {
             return err
         }
@@ -918,9 +974,23 @@ func (m *EducationAssignment) SetGradingCategory(value EducationGradingCategorya
         panic(err)
     }
 }
+// SetGradingScheme sets the gradingScheme property value. When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
+func (m *EducationAssignment) SetGradingScheme(value EducationGradingSchemeable)() {
+    err := m.GetBackingStore().Set("gradingScheme", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInstructions sets the instructions property value. Instructions for the assignment. The instructions and the display name tell the student what to do.
 func (m *EducationAssignment) SetInstructions(value EducationItemBodyable)() {
     err := m.GetBackingStore().Set("instructions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLanguageTag sets the languageTag property value. Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn't provided, the default language is en-US. Optional.
+func (m *EducationAssignment) SetLanguageTag(value *string)() {
+    err := m.GetBackingStore().Set("languageTag", value)
     if err != nil {
         panic(err)
     }
@@ -1015,7 +1085,9 @@ type EducationAssignmentable interface {
     GetFeedbackResourcesFolderUrl()(*string)
     GetGrading()(EducationAssignmentGradeTypeable)
     GetGradingCategory()(EducationGradingCategoryable)
+    GetGradingScheme()(EducationGradingSchemeable)
     GetInstructions()(EducationItemBodyable)
+    GetLanguageTag()(*string)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetModuleUrl()(*string)
@@ -1043,7 +1115,9 @@ type EducationAssignmentable interface {
     SetFeedbackResourcesFolderUrl(value *string)()
     SetGrading(value EducationAssignmentGradeTypeable)()
     SetGradingCategory(value EducationGradingCategoryable)()
+    SetGradingScheme(value EducationGradingSchemeable)()
     SetInstructions(value EducationItemBodyable)()
+    SetLanguageTag(value *string)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetModuleUrl(value *string)()

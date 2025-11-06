@@ -204,6 +204,16 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["riskPrevention"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRiskPreventionContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRiskPrevention(val.(RiskPreventionContainerable))
+        }
+        return nil
+    }
     res["userFlowAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
         if err != nil {
@@ -231,6 +241,18 @@ func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
     }
     if val != nil {
         return val.([]IdentityProviderBaseable)
+    }
+    return nil
+}
+// GetRiskPrevention gets the riskPrevention property value. The riskPrevention property
+// returns a RiskPreventionContainerable when successful
+func (m *IdentityContainer) GetRiskPrevention()(RiskPreventionContainerable) {
+    val, err := m.GetBackingStore().Get("riskPrevention")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RiskPreventionContainerable)
     }
     return nil
 }
@@ -330,6 +352,12 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("riskPrevention", m.GetRiskPrevention())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserFlowAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowAttributes()))
         for i, v := range m.GetUserFlowAttributes() {
@@ -393,6 +421,13 @@ func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBaseabl
         panic(err)
     }
 }
+// SetRiskPrevention sets the riskPrevention property value. The riskPrevention property
+func (m *IdentityContainer) SetRiskPrevention(value RiskPreventionContainerable)() {
+    err := m.GetBackingStore().Set("riskPrevention", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttributeable)() {
     err := m.GetBackingStore().Set("userFlowAttributes", value)
@@ -410,6 +445,7 @@ type IdentityContainerable interface {
     GetConditionalAccess()(ConditionalAccessRootable)
     GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable)
     GetIdentityProviders()([]IdentityProviderBaseable)
+    GetRiskPrevention()(RiskPreventionContainerable)
     GetUserFlowAttributes()([]IdentityUserFlowAttributeable)
     SetApiConnectors(value []IdentityApiConnectorable)()
     SetAuthenticationEventListeners(value []AuthenticationEventListenerable)()
@@ -418,5 +454,6 @@ type IdentityContainerable interface {
     SetConditionalAccess(value ConditionalAccessRootable)()
     SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)()
     SetIdentityProviders(value []IdentityProviderBaseable)()
+    SetRiskPrevention(value RiskPreventionContainerable)()
     SetUserFlowAttributes(value []IdentityUserFlowAttributeable)()
 }
