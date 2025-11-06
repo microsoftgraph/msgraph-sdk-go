@@ -400,6 +400,16 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["investigationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseInvestigationState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInvestigationState(val.(*InvestigationState))
+        }
+        return nil
+    }
     res["lastActivityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -597,6 +607,18 @@ func (m *Alert) GetIncidentWebUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetInvestigationState gets the investigationState property value. Information on the current status of the investigation. Possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.
+// returns a *InvestigationState when successful
+func (m *Alert) GetInvestigationState()(*InvestigationState) {
+    val, err := m.GetBackingStore().Get("investigationState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InvestigationState)
     }
     return nil
 }
@@ -909,6 +931,13 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetInvestigationState() != nil {
+        cast := (*m.GetInvestigationState()).String()
+        err = writer.WriteStringValue("investigationState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("lastActivityDateTime", m.GetLastActivityDateTime())
         if err != nil {
@@ -1130,6 +1159,13 @@ func (m *Alert) SetIncidentWebUrl(value *string)() {
         panic(err)
     }
 }
+// SetInvestigationState sets the investigationState property value. Information on the current status of the investigation. Possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.
+func (m *Alert) SetInvestigationState(value *InvestigationState)() {
+    err := m.GetBackingStore().Set("investigationState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastActivityDateTime sets the lastActivityDateTime property value. The oldest activity associated with the alert.
 func (m *Alert) SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastActivityDateTime", value)
@@ -1256,6 +1292,7 @@ type Alertable interface {
     GetFirstActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIncidentId()(*string)
     GetIncidentWebUrl()(*string)
+    GetInvestigationState()(*InvestigationState)
     GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMitreTechniques()([]string)
@@ -1289,6 +1326,7 @@ type Alertable interface {
     SetFirstActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIncidentId(value *string)()
     SetIncidentWebUrl(value *string)()
+    SetInvestigationState(value *InvestigationState)()
     SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMitreTechniques(value []string)()

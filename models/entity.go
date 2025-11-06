@@ -121,6 +121,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAiInteractionHistory(), nil
                     case "#microsoft.graph.aiUser":
                         return NewAiUser(), nil
+                    case "#microsoft.graph.akamaiWebApplicationFirewallProvider":
+                        return NewAkamaiWebApplicationFirewallProvider(), nil
                     case "#microsoft.graph.alert":
                         return NewAlert(), nil
                     case "#microsoft.graph.allowedValue":
@@ -321,6 +323,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudClipboardItem(), nil
                     case "#microsoft.graph.cloudClipboardRoot":
                         return NewCloudClipboardRoot(), nil
+                    case "#microsoft.graph.cloudFlareWebApplicationFirewallProvider":
+                        return NewCloudFlareWebApplicationFirewallProvider(), nil
                     case "#microsoft.graph.cloudPC":
                         return NewCloudPC(), nil
                     case "#microsoft.graph.cloudPcAuditEvent":
@@ -579,6 +583,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEducationFeedbackResourceOutcome(), nil
                     case "#microsoft.graph.educationGradingCategory":
                         return NewEducationGradingCategory(), nil
+                    case "#microsoft.graph.educationGradingScheme":
+                        return NewEducationGradingScheme(), nil
                     case "#microsoft.graph.educationModule":
                         return NewEducationModule(), nil
                     case "#microsoft.graph.educationModuleResource":
@@ -1649,6 +1655,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVppToken(), nil
                     case "#microsoft.graph.webApp":
                         return NewWebApp(), nil
+                    case "#microsoft.graph.webApplicationFirewallProvider":
+                        return NewWebApplicationFirewallProvider(), nil
+                    case "#microsoft.graph.webApplicationFirewallVerificationModel":
+                        return NewWebApplicationFirewallVerificationModel(), nil
                     case "#microsoft.graph.webPart":
                         return NewWebPart(), nil
                     case "#microsoft.graph.whatIfAnalysisResult":

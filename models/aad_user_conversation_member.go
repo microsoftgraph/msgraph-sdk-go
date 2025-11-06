@@ -82,7 +82,7 @@ func (m *AadUserConversationMember) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetTenantId gets the tenantId property value. TenantId which the Microsoft Entra user belongs to.
+// GetTenantId gets the tenantId property value. The tenant ID of the Microsoft Entra user.
 // returns a *string when successful
 func (m *AadUserConversationMember) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -106,7 +106,7 @@ func (m *AadUserConversationMember) GetUser()(Userable) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The guid of the user.
+// GetUserId gets the userId property value. The user ID of the Microsoft Entra user.
 // returns a *string when successful
 func (m *AadUserConversationMember) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -157,7 +157,7 @@ func (m *AadUserConversationMember) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. TenantId which the Microsoft Entra user belongs to.
+// SetTenantId sets the tenantId property value. The tenant ID of the Microsoft Entra user.
 func (m *AadUserConversationMember) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
@@ -171,7 +171,7 @@ func (m *AadUserConversationMember) SetUser(value Userable)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The guid of the user.
+// SetUserId sets the userId property value. The user ID of the Microsoft Entra user.
 func (m *AadUserConversationMember) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
