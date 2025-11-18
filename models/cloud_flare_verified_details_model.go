@@ -24,7 +24,7 @@ func NewCloudFlareVerifiedDetailsModel()(*CloudFlareVerifiedDetailsModel) {
 func CreateCloudFlareVerifiedDetailsModelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudFlareVerifiedDetailsModel(), nil
 }
-// GetEnabledCustomRules gets the enabledCustomRules property value. The enabledCustomRules property
+// GetEnabledCustomRules gets the enabledCustomRules property value. Collection of Cloudflare custom rules that are currently enabled for the zone or host.
 // returns a []CloudFlareRuleModelable when successful
 func (m *CloudFlareVerifiedDetailsModel) GetEnabledCustomRules()([]CloudFlareRuleModelable) {
     val, err := m.GetBackingStore().Get("enabledCustomRules")
@@ -36,7 +36,7 @@ func (m *CloudFlareVerifiedDetailsModel) GetEnabledCustomRules()([]CloudFlareRul
     }
     return nil
 }
-// GetEnabledRecommendedRulesets gets the enabledRecommendedRulesets property value. The enabledRecommendedRulesets property
+// GetEnabledRecommendedRulesets gets the enabledRecommendedRulesets property value. Collection of Cloudflare recommended rulesets that are enabled for the zone or host.
 // returns a []CloudFlareRulesetModelable when successful
 func (m *CloudFlareVerifiedDetailsModel) GetEnabledRecommendedRulesets()([]CloudFlareRulesetModelable) {
     val, err := m.GetBackingStore().Get("enabledRecommendedRulesets")
@@ -96,7 +96,7 @@ func (m *CloudFlareVerifiedDetailsModel) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetZoneId gets the zoneId property value. The zoneId property
+// GetZoneId gets the zoneId property value. Cloudflare-assigned identifier for the DNS zone associated with the verified host (for example, the Cloudflare Zone ID). This ID is used to correlate verification details with the Cloudflare account and to perform configuration operations via the provider's API.
 // returns a *string when successful
 func (m *CloudFlareVerifiedDetailsModel) GetZoneId()(*string) {
     val, err := m.GetBackingStore().Get("zoneId")
@@ -146,21 +146,21 @@ func (m *CloudFlareVerifiedDetailsModel) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetEnabledCustomRules sets the enabledCustomRules property value. The enabledCustomRules property
+// SetEnabledCustomRules sets the enabledCustomRules property value. Collection of Cloudflare custom rules that are currently enabled for the zone or host.
 func (m *CloudFlareVerifiedDetailsModel) SetEnabledCustomRules(value []CloudFlareRuleModelable)() {
     err := m.GetBackingStore().Set("enabledCustomRules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnabledRecommendedRulesets sets the enabledRecommendedRulesets property value. The enabledRecommendedRulesets property
+// SetEnabledRecommendedRulesets sets the enabledRecommendedRulesets property value. Collection of Cloudflare recommended rulesets that are enabled for the zone or host.
 func (m *CloudFlareVerifiedDetailsModel) SetEnabledRecommendedRulesets(value []CloudFlareRulesetModelable)() {
     err := m.GetBackingStore().Set("enabledRecommendedRulesets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetZoneId sets the zoneId property value. The zoneId property
+// SetZoneId sets the zoneId property value. Cloudflare-assigned identifier for the DNS zone associated with the verified host (for example, the Cloudflare Zone ID). This ID is used to correlate verification details with the Cloudflare account and to perform configuration operations via the provider's API.
 func (m *CloudFlareVerifiedDetailsModel) SetZoneId(value *string)() {
     err := m.GetBackingStore().Set("zoneId", value)
     if err != nil {

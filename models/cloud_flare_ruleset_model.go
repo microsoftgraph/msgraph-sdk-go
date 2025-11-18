@@ -89,7 +89,7 @@ func (m *CloudFlareRulesetModel) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Friendly name for the ruleset, used in UIs and logs to help administrators identify the ruleset.
 // returns a *string when successful
 func (m *CloudFlareRulesetModel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -113,7 +113,7 @@ func (m *CloudFlareRulesetModel) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPhaseName gets the phaseName property value. The phaseName property
+// GetPhaseName gets the phaseName property value. Name of the phase during which the ruleset is evaluated (for example, httprequestfirewallmanaged, httprequestfirewallcustom, or provider-specific phase names). This indicates when in the request/response lifecycle the rules apply.
 // returns a *string when successful
 func (m *CloudFlareRulesetModel) GetPhaseName()(*string) {
     val, err := m.GetBackingStore().Get("phaseName")
@@ -125,7 +125,7 @@ func (m *CloudFlareRulesetModel) GetPhaseName()(*string) {
     }
     return nil
 }
-// GetRulesetId gets the rulesetId property value. The rulesetId property
+// GetRulesetId gets the rulesetId property value. Unique identifier assigned to the ruleset by Cloudflare or the integration.
 // returns a *string when successful
 func (m *CloudFlareRulesetModel) GetRulesetId()(*string) {
     val, err := m.GetBackingStore().Get("rulesetId")
@@ -182,7 +182,7 @@ func (m *CloudFlareRulesetModel) SetAdditionalData(value map[string]any)() {
 func (m *CloudFlareRulesetModel) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Friendly name for the ruleset, used in UIs and logs to help administrators identify the ruleset.
 func (m *CloudFlareRulesetModel) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -196,14 +196,14 @@ func (m *CloudFlareRulesetModel) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPhaseName sets the phaseName property value. The phaseName property
+// SetPhaseName sets the phaseName property value. Name of the phase during which the ruleset is evaluated (for example, httprequestfirewallmanaged, httprequestfirewallcustom, or provider-specific phase names). This indicates when in the request/response lifecycle the rules apply.
 func (m *CloudFlareRulesetModel) SetPhaseName(value *string)() {
     err := m.GetBackingStore().Set("phaseName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRulesetId sets the rulesetId property value. The rulesetId property
+// SetRulesetId sets the rulesetId property value. Unique identifier assigned to the ruleset by Cloudflare or the integration.
 func (m *CloudFlareRulesetModel) SetRulesetId(value *string)() {
     err := m.GetBackingStore().Set("rulesetId", value)
     if err != nil {

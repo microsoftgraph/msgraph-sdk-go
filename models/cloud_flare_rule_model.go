@@ -25,7 +25,7 @@ func NewCloudFlareRuleModel()(*CloudFlareRuleModel) {
 func CreateCloudFlareRuleModelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudFlareRuleModel(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. The action Cloudflare applies when the rule matches traffic. Common values include Managed Challenge, Interactive Challenge, Log, Block, JS Challenge, or Skip.
 // returns a *string when successful
 func (m *CloudFlareRuleModel) GetAction()(*string) {
     val, err := m.GetBackingStore().Get("action")
@@ -101,7 +101,7 @@ func (m *CloudFlareRuleModel) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Friendly name for the rule, used in UIs or logs to help administrators identify the rule.
 // returns a *string when successful
 func (m *CloudFlareRuleModel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -125,7 +125,7 @@ func (m *CloudFlareRuleModel) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRuleId gets the ruleId property value. The ruleId property
+// GetRuleId gets the ruleId property value. Unique identifier assigned to the rule by Cloudflare or the integration.
 // returns a *string when successful
 func (m *CloudFlareRuleModel) GetRuleId()(*string) {
     val, err := m.GetBackingStore().Get("ruleId")
@@ -171,7 +171,7 @@ func (m *CloudFlareRuleModel) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. The action Cloudflare applies when the rule matches traffic. Common values include Managed Challenge, Interactive Challenge, Log, Block, JS Challenge, or Skip.
 func (m *CloudFlareRuleModel) SetAction(value *string)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -189,7 +189,7 @@ func (m *CloudFlareRuleModel) SetAdditionalData(value map[string]any)() {
 func (m *CloudFlareRuleModel) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Friendly name for the rule, used in UIs or logs to help administrators identify the rule.
 func (m *CloudFlareRuleModel) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *CloudFlareRuleModel) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRuleId sets the ruleId property value. The ruleId property
+// SetRuleId sets the ruleId property value. Unique identifier assigned to the rule by Cloudflare or the integration.
 func (m *CloudFlareRuleModel) SetRuleId(value *string)() {
     err := m.GetBackingStore().Set("ruleId", value)
     if err != nil {

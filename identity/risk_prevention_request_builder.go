@@ -21,7 +21,7 @@ type RiskPreventionRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskPreventionRequestBuilderGetQueryParameters get riskPrevention from identity
+// RiskPreventionRequestBuilderGetQueryParameters represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
 type RiskPreventionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,12 @@ func (m *RiskPreventionRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get get riskPrevention from identity
+// FraudProtectionProviders provides operations to manage the fraudProtectionProviders property of the microsoft.graph.riskPreventionContainer entity.
+// returns a *RiskPreventionFraudProtectionProvidersRequestBuilder when successful
+func (m *RiskPreventionRequestBuilder) FraudProtectionProviders()(*RiskPreventionFraudProtectionProvidersRequestBuilder) {
+    return NewRiskPreventionFraudProtectionProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
 // returns a RiskPreventionContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RiskPreventionRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskPreventionRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskPreventionContainerable, error) {
@@ -124,7 +129,7 @@ func (m *RiskPreventionRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get riskPrevention from identity
+// ToGetRequestInformation represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskPreventionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

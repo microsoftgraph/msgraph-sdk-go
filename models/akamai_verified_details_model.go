@@ -24,7 +24,7 @@ func NewAkamaiVerifiedDetailsModel()(*AkamaiVerifiedDetailsModel) {
 func CreateAkamaiVerifiedDetailsModelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAkamaiVerifiedDetailsModel(), nil
 }
-// GetActiveAttackGroups gets the activeAttackGroups property value. The activeAttackGroups property
+// GetActiveAttackGroups gets the activeAttackGroups property value. Collection of Akamai attack groups that are currently active for the zone or host, including the action applied to each group (for example, deny, none or alert).
 // returns a []AkamaiAttackGroupActionModelable when successful
 func (m *AkamaiVerifiedDetailsModel) GetActiveAttackGroups()([]AkamaiAttackGroupActionModelable) {
     val, err := m.GetBackingStore().Get("activeAttackGroups")
@@ -36,7 +36,7 @@ func (m *AkamaiVerifiedDetailsModel) GetActiveAttackGroups()([]AkamaiAttackGroup
     }
     return nil
 }
-// GetActiveCustomRules gets the activeCustomRules property value. The activeCustomRules property
+// GetActiveCustomRules gets the activeCustomRules property value. Collection of Akamai custom rules that are currently enabled for the zone or host. Each entry includes rule metadata such as the rule identifier, friendly name, and the action taken when the rule matches traffic.
 // returns a []AkamaiCustomRuleModelable when successful
 func (m *AkamaiVerifiedDetailsModel) GetActiveCustomRules()([]AkamaiCustomRuleModelable) {
     val, err := m.GetBackingStore().Get("activeCustomRules")
@@ -96,7 +96,7 @@ func (m *AkamaiVerifiedDetailsModel) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetRapidRules gets the rapidRules property value. The rapidRules property
+// GetRapidRules gets the rapidRules property value. Configuration for Akamai Rapid Rules, including whether Rapid Rules are enabled and the default action applied to matching traffic.
 // returns a AkamaiRapidRulesModelable when successful
 func (m *AkamaiVerifiedDetailsModel) GetRapidRules()(AkamaiRapidRulesModelable) {
     val, err := m.GetBackingStore().Get("rapidRules")
@@ -146,21 +146,21 @@ func (m *AkamaiVerifiedDetailsModel) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetActiveAttackGroups sets the activeAttackGroups property value. The activeAttackGroups property
+// SetActiveAttackGroups sets the activeAttackGroups property value. Collection of Akamai attack groups that are currently active for the zone or host, including the action applied to each group (for example, deny, none or alert).
 func (m *AkamaiVerifiedDetailsModel) SetActiveAttackGroups(value []AkamaiAttackGroupActionModelable)() {
     err := m.GetBackingStore().Set("activeAttackGroups", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActiveCustomRules sets the activeCustomRules property value. The activeCustomRules property
+// SetActiveCustomRules sets the activeCustomRules property value. Collection of Akamai custom rules that are currently enabled for the zone or host. Each entry includes rule metadata such as the rule identifier, friendly name, and the action taken when the rule matches traffic.
 func (m *AkamaiVerifiedDetailsModel) SetActiveCustomRules(value []AkamaiCustomRuleModelable)() {
     err := m.GetBackingStore().Set("activeCustomRules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRapidRules sets the rapidRules property value. The rapidRules property
+// SetRapidRules sets the rapidRules property value. Configuration for Akamai Rapid Rules, including whether Rapid Rules are enabled and the default action applied to matching traffic.
 func (m *AkamaiVerifiedDetailsModel) SetRapidRules(value AkamaiRapidRulesModelable)() {
     err := m.GetBackingStore().Set("rapidRules", value)
     if err != nil {

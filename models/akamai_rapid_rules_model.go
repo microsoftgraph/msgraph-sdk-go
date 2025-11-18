@@ -43,7 +43,7 @@ func (m *AkamaiRapidRulesModel) GetAdditionalData()(map[string]any) {
 func (m *AkamaiRapidRulesModel) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefaultAction gets the defaultAction property value. The defaultAction property
+// GetDefaultAction gets the defaultAction property value. The default action Akamai applies to traffic that matches Rapid Rules. Common values include deny, none or alert.
 // returns a *string when successful
 func (m *AkamaiRapidRulesModel) GetDefaultAction()(*string) {
     val, err := m.GetBackingStore().Get("defaultAction")
@@ -91,7 +91,7 @@ func (m *AkamaiRapidRulesModel) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether Akamai Rapid Rules are enabled for the WAF integration. If true, Rapid Rules are active and applied to incoming traffic.
 // returns a *bool when successful
 func (m *AkamaiRapidRulesModel) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -154,14 +154,14 @@ func (m *AkamaiRapidRulesModel) SetAdditionalData(value map[string]any)() {
 func (m *AkamaiRapidRulesModel) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefaultAction sets the defaultAction property value. The defaultAction property
+// SetDefaultAction sets the defaultAction property value. The default action Akamai applies to traffic that matches Rapid Rules. Common values include deny, none or alert.
 func (m *AkamaiRapidRulesModel) SetDefaultAction(value *string)() {
     err := m.GetBackingStore().Set("defaultAction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether Akamai Rapid Rules are enabled for the WAF integration. If true, Rapid Rules are active and applied to incoming traffic.
 func (m *AkamaiRapidRulesModel) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

@@ -44,7 +44,7 @@ func (m *WebApplicationFirewallVerificationResult) GetAdditionalData()(map[strin
 func (m *WebApplicationFirewallVerificationResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrors gets the errors property value. The errors property
+// GetErrors gets the errors property value. List of errors encountered during the verification process.
 // returns a []GenericErrorable when successful
 func (m *WebApplicationFirewallVerificationResult) GetErrors()([]GenericErrorable) {
     val, err := m.GetBackingStore().Get("errors")
@@ -148,7 +148,7 @@ func (m *WebApplicationFirewallVerificationResult) GetStatus()(*WebApplicationFi
     }
     return nil
 }
-// GetVerifiedOnDateTime gets the verifiedOnDateTime property value. The verifiedOnDateTime property
+// GetVerifiedOnDateTime gets the verifiedOnDateTime property value. UTC timestamp when the verification was performed or last updated. This indicates when the verification result was produced.
 // returns a *Time when successful
 func (m *WebApplicationFirewallVerificationResult) GetVerifiedOnDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("verifiedOnDateTime")
@@ -160,7 +160,7 @@ func (m *WebApplicationFirewallVerificationResult) GetVerifiedOnDateTime()(*i336
     }
     return nil
 }
-// GetWarnings gets the warnings property value. The warnings property
+// GetWarnings gets the warnings property value. List of warnings produced during verification.
 // returns a []GenericErrorable when successful
 func (m *WebApplicationFirewallVerificationResult) GetWarnings()([]GenericErrorable) {
     val, err := m.GetBackingStore().Get("warnings")
@@ -236,7 +236,7 @@ func (m *WebApplicationFirewallVerificationResult) SetAdditionalData(value map[s
 func (m *WebApplicationFirewallVerificationResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrors sets the errors property value. The errors property
+// SetErrors sets the errors property value. List of errors encountered during the verification process.
 func (m *WebApplicationFirewallVerificationResult) SetErrors(value []GenericErrorable)() {
     err := m.GetBackingStore().Set("errors", value)
     if err != nil {
@@ -257,14 +257,14 @@ func (m *WebApplicationFirewallVerificationResult) SetStatus(value *WebApplicati
         panic(err)
     }
 }
-// SetVerifiedOnDateTime sets the verifiedOnDateTime property value. The verifiedOnDateTime property
+// SetVerifiedOnDateTime sets the verifiedOnDateTime property value. UTC timestamp when the verification was performed or last updated. This indicates when the verification result was produced.
 func (m *WebApplicationFirewallVerificationResult) SetVerifiedOnDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("verifiedOnDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWarnings sets the warnings property value. The warnings property
+// SetWarnings sets the warnings property value. List of warnings produced during verification.
 func (m *WebApplicationFirewallVerificationResult) SetWarnings(value []GenericErrorable)() {
     err := m.GetBackingStore().Set("warnings", value)
     if err != nil {

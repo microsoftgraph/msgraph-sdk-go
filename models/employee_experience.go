@@ -146,6 +146,22 @@ func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEngagementRoleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EngagementRoleable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(EngagementRoleable)
+                }
+            }
+            m.SetRoles(res)
+        }
+        return nil
+    }
     return res
 }
 // GetLearningCourseActivities gets the learningCourseActivities property value. The learningCourseActivities property
@@ -181,6 +197,18 @@ func (m *EmployeeExperience) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetRoles gets the roles property value. A collection of roles in Viva Engage.
+// returns a []EngagementRoleable when successful
+func (m *EmployeeExperience) GetRoles()([]EngagementRoleable) {
+    val, err := m.GetBackingStore().Get("roles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EngagementRoleable)
     }
     return nil
 }
@@ -240,6 +268,18 @@ func (m *EmployeeExperience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetRoles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoles()))
+        for i, v := range m.GetRoles() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("roles", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
@@ -294,6 +334,13 @@ func (m *EmployeeExperience) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetRoles sets the roles property value. A collection of roles in Viva Engage.
+func (m *EmployeeExperience) SetRoles(value []EngagementRoleable)() {
+    err := m.GetBackingStore().Set("roles", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type EmployeeExperienceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -304,10 +351,12 @@ type EmployeeExperienceable interface {
     GetLearningCourseActivities()([]LearningCourseActivityable)
     GetLearningProviders()([]LearningProviderable)
     GetOdataType()(*string)
+    GetRoles()([]EngagementRoleable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCommunities(value []Communityable)()
     SetEngagementAsyncOperations(value []EngagementAsyncOperationable)()
     SetLearningCourseActivities(value []LearningCourseActivityable)()
     SetLearningProviders(value []LearningProviderable)()
     SetOdataType(value *string)()
+    SetRoles(value []EngagementRoleable)()
 }

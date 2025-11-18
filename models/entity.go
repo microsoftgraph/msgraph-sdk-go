@@ -177,6 +177,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewApprovalStage(), nil
                     case "#microsoft.graph.appScope":
                         return NewAppScope(), nil
+                    case "#microsoft.graph.arkoseFraudProtectionProvider":
+                        return NewArkoseFraudProtectionProvider(), nil
                     case "#microsoft.graph.associatedTeamInfo":
                         return NewAssociatedTeamInfo(), nil
                     case "#microsoft.graph.attachment":
@@ -637,6 +639,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEngagementConversationQuestionMessage(), nil
                     case "#microsoft.graph.engagementConversationSystemMessage":
                         return NewEngagementConversationSystemMessage(), nil
+                    case "#microsoft.graph.engagementRole":
+                        return NewEngagementRole(), nil
+                    case "#microsoft.graph.engagementRoleMember":
+                        return NewEngagementRoleMember(), nil
                     case "#microsoft.graph.enrollmentConfigurationAssignment":
                         return NewEnrollmentConfigurationAssignment(), nil
                     case "#microsoft.graph.enrollmentTroubleshootingEvent":
@@ -689,6 +695,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFileStorageContainer(), nil
                     case "#microsoft.graph.filterOperatorSchema":
                         return NewFilterOperatorSchema(), nil
+                    case "#microsoft.graph.fraudProtectionProvider":
+                        return NewFraudProtectionProvider(), nil
                     case "#microsoft.graph.governanceInsight":
                         return NewGovernanceInsight(), nil
                     case "#microsoft.graph.granularMailboxRestoreArtifact":
@@ -707,6 +715,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewHorizontalSection(), nil
                     case "#microsoft.graph.horizontalSectionColumn":
                         return NewHorizontalSectionColumn(), nil
+                    case "#microsoft.graph.humanSecurityFraudProtectionProvider":
+                        return NewHumanSecurityFraudProtectionProvider(), nil
                     case "#microsoft.graph.identityApiConnector":
                         return NewIdentityApiConnector(), nil
                     case "#microsoft.graph.identityBuiltInUserFlowAttribute":
@@ -1013,6 +1023,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnenoteResource(), nil
                     case "#microsoft.graph.onenoteSection":
                         return NewOnenoteSection(), nil
+                    case "#microsoft.graph.onFraudProtectionLoadStartListener":
+                        return NewOnFraudProtectionLoadStartListener(), nil
                     case "#microsoft.graph.onInteractiveAuthFlowStartListener":
                         return NewOnInteractiveAuthFlowStartListener(), nil
                     case "#microsoft.graph.onlineMeeting":

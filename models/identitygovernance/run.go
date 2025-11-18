@@ -24,6 +24,18 @@ func NewRun()(*Run) {
 func CreateRunFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRun(), nil
 }
+// GetActivatedOnScope gets the activatedOnScope property value. The scope for which the workflow runs.
+// returns a ActivationScopeable when successful
+func (m *Run) GetActivatedOnScope()(ActivationScopeable) {
+    val, err := m.GetBackingStore().Get("activatedOnScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ActivationScopeable)
+    }
+    return nil
+}
 // GetCompletedDateTime gets the completedDateTime property value. The date time that the run completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 // returns a *Time when successful
 func (m *Run) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -64,6 +76,16 @@ func (m *Run) GetFailedUsersCount()(*int32) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Run) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["activatedOnScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateActivationScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivatedOnScope(val.(ActivationScopeable))
+        }
+        return nil
+    }
     res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -111,6 +133,22 @@ func (m *Run) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         }
         if val != nil {
             m.SetProcessingStatus(val.(*LifecycleWorkflowProcessingStatus))
+        }
+        return nil
+    }
+    res["reprocessedRuns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRunFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Runable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Runable)
+                }
+            }
+            m.SetReprocessedRuns(res)
         }
         return nil
     }
@@ -242,6 +280,18 @@ func (m *Run) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
     }
     return nil
 }
+// GetReprocessedRuns gets the reprocessedRuns property value. The related reprocessed workflow run.
+// returns a []Runable when successful
+func (m *Run) GetReprocessedRuns()([]Runable) {
+    val, err := m.GetBackingStore().Get("reprocessedRuns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Runable)
+    }
+    return nil
+}
 // GetScheduledDateTime gets the scheduledDateTime property value. The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 // returns a *Time when successful
 func (m *Run) GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -357,6 +407,12 @@ func (m *Run) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
         return err
     }
     {
+        err = writer.WriteObjectValue("activatedOnScope", m.GetActivatedOnScope())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("completedDateTime", m.GetCompletedDateTime())
         if err != nil {
             return err
@@ -383,6 +439,18 @@ func (m *Run) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetProcessingStatus() != nil {
         cast := (*m.GetProcessingStatus()).String()
         err = writer.WriteStringValue("processingStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetReprocessedRuns() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReprocessedRuns()))
+        for i, v := range m.GetReprocessedRuns() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("reprocessedRuns", cast)
         if err != nil {
             return err
         }
@@ -456,6 +524,13 @@ func (m *Run) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     }
     return nil
 }
+// SetActivatedOnScope sets the activatedOnScope property value. The scope for which the workflow runs.
+func (m *Run) SetActivatedOnScope(value ActivationScopeable)() {
+    err := m.GetBackingStore().Set("activatedOnScope", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCompletedDateTime sets the completedDateTime property value. The date time that the run completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completedDateTime", value)
@@ -487,6 +562,13 @@ func (m *Run) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
 // SetProcessingStatus sets the processingStatus property value. The processingStatus property
 func (m *Run) SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)() {
     err := m.GetBackingStore().Set("processingStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReprocessedRuns sets the reprocessedRuns property value. The related reprocessed workflow run.
+func (m *Run) SetReprocessedRuns(value []Runable)() {
+    err := m.GetBackingStore().Set("reprocessedRuns", value)
     if err != nil {
         panic(err)
     }
@@ -557,11 +639,13 @@ func (m *Run) SetWorkflowExecutionType(value *WorkflowExecutionType)() {
 type Runable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivatedOnScope()(ActivationScopeable)
     GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFailedTasksCount()(*int32)
     GetFailedUsersCount()(*int32)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetProcessingStatus()(*LifecycleWorkflowProcessingStatus)
+    GetReprocessedRuns()([]Runable)
     GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSuccessfulUsersCount()(*int32)
@@ -571,11 +655,13 @@ type Runable interface {
     GetTotalUsersCount()(*int32)
     GetUserProcessingResults()([]UserProcessingResultable)
     GetWorkflowExecutionType()(*WorkflowExecutionType)
+    SetActivatedOnScope(value ActivationScopeable)()
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFailedTasksCount(value *int32)()
     SetFailedUsersCount(value *int32)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)()
+    SetReprocessedRuns(value []Runable)()
     SetScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSuccessfulUsersCount(value *int32)()

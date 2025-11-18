@@ -24,7 +24,7 @@ func NewCloudFlareWebApplicationFirewallProvider()(*CloudFlareWebApplicationFire
 func CreateCloudFlareWebApplicationFirewallProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudFlareWebApplicationFirewallProvider(), nil
 }
-// GetApiToken gets the apiToken property value. The apiToken property
+// GetApiToken gets the apiToken property value. Cloudflare API token or credential used by Microsoft services to authenticate to the Cloudflare account. Contact your Cloudflare Customer Success Manager for assistance with your apitoken.
 // returns a *string when successful
 func (m *CloudFlareWebApplicationFirewallProvider) GetApiToken()(*string) {
     val, err := m.GetBackingStore().Get("apiToken")
@@ -62,7 +62,7 @@ func (m *CloudFlareWebApplicationFirewallProvider) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetZoneId gets the zoneId property value. The zoneId property
+// GetZoneId gets the zoneId property value. Default Cloudflare Zone ID associated with this provider configuration. This ID identifies the DNS zone in Cloudflare that is commonly used for verification and configuration operations for the provider.
 // returns a *string when successful
 func (m *CloudFlareWebApplicationFirewallProvider) GetZoneId()(*string) {
     val, err := m.GetBackingStore().Get("zoneId")
@@ -94,14 +94,14 @@ func (m *CloudFlareWebApplicationFirewallProvider) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetApiToken sets the apiToken property value. The apiToken property
+// SetApiToken sets the apiToken property value. Cloudflare API token or credential used by Microsoft services to authenticate to the Cloudflare account. Contact your Cloudflare Customer Success Manager for assistance with your apitoken.
 func (m *CloudFlareWebApplicationFirewallProvider) SetApiToken(value *string)() {
     err := m.GetBackingStore().Set("apiToken", value)
     if err != nil {
         panic(err)
     }
 }
-// SetZoneId sets the zoneId property value. The zoneId property
+// SetZoneId sets the zoneId property value. Default Cloudflare Zone ID associated with this provider configuration. This ID identifies the DNS zone in Cloudflare that is commonly used for verification and configuration operations for the provider.
 func (m *CloudFlareWebApplicationFirewallProvider) SetZoneId(value *string)() {
     err := m.GetBackingStore().Set("zoneId", value)
     if err != nil {

@@ -109,7 +109,7 @@ func (m *WebApplicationFirewallDnsConfiguration) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetIsDomainVerified gets the isDomainVerified property value. The isDomainVerified property
+// GetIsDomainVerified gets the isDomainVerified property value. Indicates whether the domain owning this DNS record has been verified by the WAF provider.
 // returns a *bool when successful
 func (m *WebApplicationFirewallDnsConfiguration) GetIsDomainVerified()(*bool) {
     val, err := m.GetBackingStore().Get("isDomainVerified")
@@ -121,7 +121,7 @@ func (m *WebApplicationFirewallDnsConfiguration) GetIsDomainVerified()(*bool) {
     }
     return nil
 }
-// GetIsProxied gets the isProxied property value. The isProxied property
+// GetIsProxied gets the isProxied property value. Indicates whether traffic for this DNS record is proxied through the WAF provider's network (for example, using a CDN or reverse proxy).
 // returns a *bool when successful
 func (m *WebApplicationFirewallDnsConfiguration) GetIsProxied()(*bool) {
     val, err := m.GetBackingStore().Get("isProxied")
@@ -133,7 +133,7 @@ func (m *WebApplicationFirewallDnsConfiguration) GetIsProxied()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The DNS record name (for example, www.contoso.com or contoso.com). This is the host or zone name to which the configuration applies.
 // returns a *string when successful
 func (m *WebApplicationFirewallDnsConfiguration) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -169,7 +169,7 @@ func (m *WebApplicationFirewallDnsConfiguration) GetRecordType()(*WebApplication
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The value of the DNS record.
 // returns a *string when successful
 func (m *WebApplicationFirewallDnsConfiguration) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -239,21 +239,21 @@ func (m *WebApplicationFirewallDnsConfiguration) SetAdditionalData(value map[str
 func (m *WebApplicationFirewallDnsConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsDomainVerified sets the isDomainVerified property value. The isDomainVerified property
+// SetIsDomainVerified sets the isDomainVerified property value. Indicates whether the domain owning this DNS record has been verified by the WAF provider.
 func (m *WebApplicationFirewallDnsConfiguration) SetIsDomainVerified(value *bool)() {
     err := m.GetBackingStore().Set("isDomainVerified", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsProxied sets the isProxied property value. The isProxied property
+// SetIsProxied sets the isProxied property value. Indicates whether traffic for this DNS record is proxied through the WAF provider's network (for example, using a CDN or reverse proxy).
 func (m *WebApplicationFirewallDnsConfiguration) SetIsProxied(value *bool)() {
     err := m.GetBackingStore().Set("isProxied", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The DNS record name (for example, www.contoso.com or contoso.com). This is the host or zone name to which the configuration applies.
 func (m *WebApplicationFirewallDnsConfiguration) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -274,7 +274,7 @@ func (m *WebApplicationFirewallDnsConfiguration) SetRecordType(value *WebApplica
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The value of the DNS record.
 func (m *WebApplicationFirewallDnsConfiguration) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

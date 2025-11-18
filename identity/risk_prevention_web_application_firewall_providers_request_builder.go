@@ -14,7 +14,7 @@ import (
 type RiskPreventionWebApplicationFirewallProvidersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskPreventionWebApplicationFirewallProvidersRequestBuilderGetQueryParameters get webApplicationFirewallProviders from identity
+// RiskPreventionWebApplicationFirewallProvidersRequestBuilderGetQueryParameters get a list of the webApplicationFirewallProvider objects and their properties.
 type RiskPreventionWebApplicationFirewallProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewRiskPreventionWebApplicationFirewallProvidersRequestBuilder(rawUrl strin
 func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) Count()(*RiskPreventionWebApplicationFirewallProvidersCountRequestBuilder) {
     return NewRiskPreventionWebApplicationFirewallProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get webApplicationFirewallProviders from identity
+// Get get a list of the webApplicationFirewallProvider objects and their properties.
 // returns a WebApplicationFirewallProviderCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskpreventioncontainer-list-webapplicationfirewallproviders?view=graph-rest-1.0
 func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderCollectionResponseable), nil
 }
-// Post create new navigation property to webApplicationFirewallProviders for identity
+// Post create a new webApplicationFirewallProvider object. You can create one of the following subtypes that are derived from webApplicationFirewallProvider.
 // returns a WebApplicationFirewallProviderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskpreventioncontainer-post-webapplicationfirewallproviders?view=graph-rest-1.0
 func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) Post(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable), nil
 }
-// ToGetRequestInformation get webApplicationFirewallProviders from identity
+// ToGetRequestInformation get a list of the webApplicationFirewallProvider objects and their properties.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +139,7 @@ func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) ToGetReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to webApplicationFirewallProviders for identity
+// ToPostRequestInformation create a new webApplicationFirewallProvider object. You can create one of the following subtypes that are derived from webApplicationFirewallProvider.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionWebApplicationFirewallProvidersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
