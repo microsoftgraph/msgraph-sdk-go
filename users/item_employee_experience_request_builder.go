@@ -44,6 +44,11 @@ type ItemEmployeeExperienceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AssignedRoles provides operations to manage the assignedRoles property of the microsoft.graph.employeeExperienceUser entity.
+// returns a *ItemEmployeeExperienceAssignedRolesRequestBuilder when successful
+func (m *ItemEmployeeExperienceRequestBuilder) AssignedRoles()(*ItemEmployeeExperienceAssignedRolesRequestBuilder) {
+    return NewItemEmployeeExperienceAssignedRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemEmployeeExperienceRequestBuilderInternal instantiates a new ItemEmployeeExperienceRequestBuilder and sets the default values.
 func NewItemEmployeeExperienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEmployeeExperienceRequestBuilder) {
     m := &ItemEmployeeExperienceRequestBuilder{

@@ -28,6 +28,11 @@ type PlaceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CheckIns provides operations to manage the checkIns property of the microsoft.graph.place entity.
+// returns a *ItemCheckInsRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) CheckIns()(*ItemCheckInsRequestBuilder) {
+    return NewItemCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPlaceItemRequestBuilderInternal instantiates a new PlaceItemRequestBuilder and sets the default values.
 func NewPlaceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlaceItemRequestBuilder) {
     m := &PlaceItemRequestBuilder{

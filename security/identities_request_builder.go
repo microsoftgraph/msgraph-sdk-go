@@ -118,6 +118,16 @@ func (m *IdentitiesRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc8
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IdentityContainerable), nil
 }
+// SensorCandidateActivationConfiguration provides operations to manage the sensorCandidateActivationConfiguration property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorCandidateActivationConfigurationRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) SensorCandidateActivationConfiguration()(*IdentitiesSensorCandidateActivationConfigurationRequestBuilder) {
+    return NewIdentitiesSensorCandidateActivationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SensorCandidates provides operations to manage the sensorCandidates property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorCandidatesRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) SensorCandidates()(*IdentitiesSensorCandidatesRequestBuilder) {
+    return NewIdentitiesSensorCandidatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Sensors provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.
 // returns a *IdentitiesSensorsRequestBuilder when successful
 func (m *IdentitiesRequestBuilder) Sensors()(*IdentitiesSensorsRequestBuilder) {

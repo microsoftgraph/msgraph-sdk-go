@@ -63,7 +63,7 @@ func (m *WebApplicationFirewallVerifiedDetails) GetAdditionalData()(map[string]a
 func (m *WebApplicationFirewallVerifiedDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDnsConfiguration gets the dnsConfiguration property value. The dnsConfiguration property
+// GetDnsConfiguration gets the dnsConfiguration property value. DNS-related details discovered during verification for the host, such as the DNS record name, record type, record value, whether the record is proxied through the provider, and whether the domain is verified.
 // returns a WebApplicationFirewallDnsConfigurationable when successful
 func (m *WebApplicationFirewallVerifiedDetails) GetDnsConfiguration()(WebApplicationFirewallDnsConfigurationable) {
     val, err := m.GetBackingStore().Get("dnsConfiguration")
@@ -146,7 +146,7 @@ func (m *WebApplicationFirewallVerifiedDetails) SetAdditionalData(value map[stri
 func (m *WebApplicationFirewallVerifiedDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDnsConfiguration sets the dnsConfiguration property value. The dnsConfiguration property
+// SetDnsConfiguration sets the dnsConfiguration property value. DNS-related details discovered during verification for the host, such as the DNS record name, record type, record value, whether the record is proxied through the provider, and whether the domain is verified.
 func (m *WebApplicationFirewallVerifiedDetails) SetDnsConfiguration(value WebApplicationFirewallDnsConfigurationable)() {
     err := m.GetBackingStore().Set("dnsConfiguration", value)
     if err != nil {

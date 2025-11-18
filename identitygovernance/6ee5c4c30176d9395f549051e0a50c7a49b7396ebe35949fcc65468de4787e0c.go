@@ -63,6 +63,11 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsUserPro
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.UserProcessingResultable), nil
 }
+// ReprocessedRuns provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.userProcessingResult entity.
+// returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsItemReprocessedRunsRequestBuilder when successful
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilder) ReprocessedRuns()(*LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsItemReprocessedRunsRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsItemReprocessedRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Subject provides operations to manage the subject property of the microsoft.graph.identityGovernance.userProcessingResult entity.
 // returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsItemSubjectRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilder) Subject()(*LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsItemSubjectRequestBuilder) {

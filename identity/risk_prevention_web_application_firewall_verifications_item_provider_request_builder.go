@@ -14,7 +14,7 @@ import (
 type RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetQueryParameters get provider from identity
+// RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetQueryParameters reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
 type RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewRiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewRiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get provider from identity
+// Get reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
 // returns a WebApplicationFirewallProviderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, error) {
@@ -63,7 +63,7 @@ func (m *RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable), nil
 }
-// ToGetRequestInformation get provider from identity
+// ToGetRequestInformation reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

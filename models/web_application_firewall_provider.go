@@ -42,7 +42,7 @@ func CreateWebApplicationFirewallProviderFromDiscriminatorValue(parseNode i878a8
     }
     return NewWebApplicationFirewallProvider(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the WAF provider.
 // returns a *string when successful
 func (m *WebApplicationFirewallProvider) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -84,7 +84,7 @@ func (m *WebApplicationFirewallProvider) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the WAF provider.
 func (m *WebApplicationFirewallProvider) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
