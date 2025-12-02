@@ -51,6 +51,21 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *PlacesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphBuilding casts the previous resource to building.
+// returns a *GraphBuildingRequestBuilder when successful
+func (m *PlacesRequestBuilder) GraphBuilding()(*GraphBuildingRequestBuilder) {
+    return NewGraphBuildingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphDesk casts the previous resource to desk.
+// returns a *GraphDeskRequestBuilder when successful
+func (m *PlacesRequestBuilder) GraphDesk()(*GraphDeskRequestBuilder) {
+    return NewGraphDeskRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphFloor casts the previous resource to floor.
+// returns a *GraphFloorRequestBuilder when successful
+func (m *PlacesRequestBuilder) GraphFloor()(*GraphFloorRequestBuilder) {
+    return NewGraphFloorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphRoom casts the previous resource to room.
 // returns a *GraphRoomRequestBuilder when successful
 func (m *PlacesRequestBuilder) GraphRoom()(*GraphRoomRequestBuilder) {
@@ -60,6 +75,16 @@ func (m *PlacesRequestBuilder) GraphRoom()(*GraphRoomRequestBuilder) {
 // returns a *GraphRoomListRequestBuilder when successful
 func (m *PlacesRequestBuilder) GraphRoomList()(*GraphRoomListRequestBuilder) {
     return NewGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphSection casts the previous resource to section.
+// returns a *GraphSectionRequestBuilder when successful
+func (m *PlacesRequestBuilder) GraphSection()(*GraphSectionRequestBuilder) {
+    return NewGraphSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWorkspace casts the previous resource to workspace.
+// returns a *GraphWorkspaceRequestBuilder when successful
+func (m *PlacesRequestBuilder) GraphWorkspace()(*GraphWorkspaceRequestBuilder) {
+    return NewGraphWorkspaceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post add new entity to places
 // returns a Placeable when successful

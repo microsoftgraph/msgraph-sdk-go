@@ -43,6 +43,22 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["identityAccounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIdentityAccountsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IdentityAccountsable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(IdentityAccountsable)
+                }
+            }
+            m.SetIdentityAccounts(res)
+        }
+        return nil
+    }
     res["sensorCandidateActivationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSensorCandidateActivationConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -96,6 +112,18 @@ func (m *IdentityContainer) GetHealthIssues()([]HealthIssueable) {
     }
     if val != nil {
         return val.([]HealthIssueable)
+    }
+    return nil
+}
+// GetIdentityAccounts gets the identityAccounts property value. Represents an identity's details in the context of Microsoft Defender for Identity.
+// returns a []IdentityAccountsable when successful
+func (m *IdentityContainer) GetIdentityAccounts()([]IdentityAccountsable) {
+    val, err := m.GetBackingStore().Get("identityAccounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityAccountsable)
     }
     return nil
 }
@@ -153,6 +181,18 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetIdentityAccounts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIdentityAccounts()))
+        for i, v := range m.GetIdentityAccounts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("identityAccounts", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("sensorCandidateActivationConfiguration", m.GetSensorCandidateActivationConfiguration())
         if err != nil {
@@ -192,6 +232,13 @@ func (m *IdentityContainer) SetHealthIssues(value []HealthIssueable)() {
         panic(err)
     }
 }
+// SetIdentityAccounts sets the identityAccounts property value. Represents an identity's details in the context of Microsoft Defender for Identity.
+func (m *IdentityContainer) SetIdentityAccounts(value []IdentityAccountsable)() {
+    err := m.GetBackingStore().Set("identityAccounts", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSensorCandidateActivationConfiguration sets the sensorCandidateActivationConfiguration property value. The sensorCandidateActivationConfiguration property
 func (m *IdentityContainer) SetSensorCandidateActivationConfiguration(value SensorCandidateActivationConfigurationable)() {
     err := m.GetBackingStore().Set("sensorCandidateActivationConfiguration", value)
@@ -217,10 +264,12 @@ type IdentityContainerable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHealthIssues()([]HealthIssueable)
+    GetIdentityAccounts()([]IdentityAccountsable)
     GetSensorCandidateActivationConfiguration()(SensorCandidateActivationConfigurationable)
     GetSensorCandidates()([]SensorCandidateable)
     GetSensors()([]Sensorable)
     SetHealthIssues(value []HealthIssueable)()
+    SetIdentityAccounts(value []IdentityAccountsable)()
     SetSensorCandidateActivationConfiguration(value SensorCandidateActivationConfigurationable)()
     SetSensorCandidates(value []SensorCandidateable)()
     SetSensors(value []Sensorable)()

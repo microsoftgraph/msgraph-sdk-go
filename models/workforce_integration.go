@@ -48,7 +48,7 @@ func (m *WorkforceIntegration) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEligibilityFilteringEnabledEntities gets the eligibilityFilteringEnabledEntities property value. Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.
+// GetEligibilityFilteringEnabledEntities gets the eligibilityFilteringEnabledEntities property value. Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: timeOffReason.
 // returns a *EligibilityFilteringEnabledEntities when successful
 func (m *WorkforceIntegration) GetEligibilityFilteringEnabledEntities()(*EligibilityFilteringEnabledEntities) {
     val, err := m.GetBackingStore().Get("eligibilityFilteringEnabledEntities")
@@ -250,7 +250,7 @@ func (m *WorkforceIntegration) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEligibilityFilteringEnabledEntities sets the eligibilityFilteringEnabledEntities property value. Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.
+// SetEligibilityFilteringEnabledEntities sets the eligibilityFilteringEnabledEntities property value. Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: timeOffReason.
 func (m *WorkforceIntegration) SetEligibilityFilteringEnabledEntities(value *EligibilityFilteringEnabledEntities)() {
     err := m.GetBackingStore().Set("eligibilityFilteringEnabledEntities", value)
     if err != nil {

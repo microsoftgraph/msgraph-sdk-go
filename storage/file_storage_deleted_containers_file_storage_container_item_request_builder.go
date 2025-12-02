@@ -113,6 +113,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Get
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Lock()(*FileStorageDeletedContainersItemLockRequestBuilder) {
     return NewFileStorageDeletedContainersItemLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MigrationJobs provides operations to manage the migrationJobs property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageDeletedContainersItemMigrationJobsRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) MigrationJobs()(*FileStorageDeletedContainersItemMigrationJobsRequestBuilder) {
+    return NewFileStorageDeletedContainersItemMigrationJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property deletedContainers in storage
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -142,6 +147,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Per
 // returns a *FileStorageDeletedContainersItemPermissionsRequestBuilder when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Permissions()(*FileStorageDeletedContainersItemPermissionsRequestBuilder) {
     return NewFileStorageDeletedContainersItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ProvisionMigrationContainers provides operations to call the provisionMigrationContainers method.
+// returns a *FileStorageDeletedContainersItemProvisionMigrationContainersRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ProvisionMigrationContainers()(*FileStorageDeletedContainersItemProvisionMigrationContainersRequestBuilder) {
+    return NewFileStorageDeletedContainersItemProvisionMigrationContainersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RecycleBin provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.
 // returns a *FileStorageDeletedContainersItemRecycleBinRequestBuilder when successful

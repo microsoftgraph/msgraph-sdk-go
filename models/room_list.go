@@ -66,6 +66,22 @@ func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["workspaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWorkspaceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Workspaceable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Workspaceable)
+                }
+            }
+            m.SetWorkspaces(res)
+        }
+        return nil
+    }
     return res
 }
 // GetRooms gets the rooms property value. The rooms property
@@ -77,6 +93,18 @@ func (m *RoomList) GetRooms()([]Roomable) {
     }
     if val != nil {
         return val.([]Roomable)
+    }
+    return nil
+}
+// GetWorkspaces gets the workspaces property value. The workspaces property
+// returns a []Workspaceable when successful
+func (m *RoomList) GetWorkspaces()([]Workspaceable) {
+    val, err := m.GetBackingStore().Get("workspaces")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Workspaceable)
     }
     return nil
 }
@@ -104,6 +132,18 @@ func (m *RoomList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetWorkspaces() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkspaces()))
+        for i, v := range m.GetWorkspaces() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("workspaces", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the room list.
@@ -120,11 +160,20 @@ func (m *RoomList) SetRooms(value []Roomable)() {
         panic(err)
     }
 }
+// SetWorkspaces sets the workspaces property value. The workspaces property
+func (m *RoomList) SetWorkspaces(value []Workspaceable)() {
+    err := m.GetBackingStore().Set("workspaces", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type RoomListable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable
     GetEmailAddress()(*string)
     GetRooms()([]Roomable)
+    GetWorkspaces()([]Workspaceable)
     SetEmailAddress(value *string)()
     SetRooms(value []Roomable)()
+    SetWorkspaces(value []Workspaceable)()
 }

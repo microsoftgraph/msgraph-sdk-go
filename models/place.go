@@ -32,10 +32,20 @@ func CreatePlaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.building":
+                        return NewBuilding(), nil
+                    case "#microsoft.graph.desk":
+                        return NewDesk(), nil
+                    case "#microsoft.graph.floor":
+                        return NewFloor(), nil
                     case "#microsoft.graph.room":
                         return NewRoom(), nil
                     case "#microsoft.graph.roomList":
                         return NewRoomList(), nil
+                    case "#microsoft.graph.section":
+                        return NewSection(), nil
+                    case "#microsoft.graph.workspace":
+                        return NewWorkspace(), nil
                 }
             }
         }
@@ -128,6 +138,36 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["isWheelChairAccessible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsWheelChairAccessible(val)
+        }
+        return nil
+    }
+    res["label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLabel(val)
+        }
+        return nil
+    }
+    res["parentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetParentId(val)
+        }
+        return nil
+    }
     res["phone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -135,6 +175,22 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetPhone(val)
+        }
+        return nil
+    }
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetTags(res)
         }
         return nil
     }
@@ -152,6 +208,42 @@ func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
     }
     return nil
 }
+// GetIsWheelChairAccessible gets the isWheelChairAccessible property value. The isWheelChairAccessible property
+// returns a *bool when successful
+func (m *Place) GetIsWheelChairAccessible()(*bool) {
+    val, err := m.GetBackingStore().Get("isWheelChairAccessible")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetLabel gets the label property value. The label property
+// returns a *string when successful
+func (m *Place) GetLabel()(*string) {
+    val, err := m.GetBackingStore().Get("label")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetParentId gets the parentId property value. The parentId property
+// returns a *string when successful
+func (m *Place) GetParentId()(*string) {
+    val, err := m.GetBackingStore().Get("parentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPhone gets the phone property value. The phone number of the place.
 // returns a *string when successful
 func (m *Place) GetPhone()(*string) {
@@ -161,6 +253,18 @@ func (m *Place) GetPhone()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetTags gets the tags property value. The tags property
+// returns a []string when successful
+func (m *Place) GetTags()([]string) {
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -201,7 +305,31 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteBoolValue("isWheelChairAccessible", m.GetIsWheelChairAccessible())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("label", m.GetLabel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("parentId", m.GetParentId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("phone", m.GetPhone())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTags() != nil {
+        err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err
         }
@@ -236,9 +364,37 @@ func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
         panic(err)
     }
 }
+// SetIsWheelChairAccessible sets the isWheelChairAccessible property value. The isWheelChairAccessible property
+func (m *Place) SetIsWheelChairAccessible(value *bool)() {
+    err := m.GetBackingStore().Set("isWheelChairAccessible", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLabel sets the label property value. The label property
+func (m *Place) SetLabel(value *string)() {
+    err := m.GetBackingStore().Set("label", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetParentId sets the parentId property value. The parentId property
+func (m *Place) SetParentId(value *string)() {
+    err := m.GetBackingStore().Set("parentId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPhone sets the phone property value. The phone number of the place.
 func (m *Place) SetPhone(value *string)() {
     err := m.GetBackingStore().Set("phone", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTags sets the tags property value. The tags property
+func (m *Place) SetTags(value []string)() {
+    err := m.GetBackingStore().Set("tags", value)
     if err != nil {
         panic(err)
     }
@@ -250,10 +406,18 @@ type Placeable interface {
     GetCheckIns()([]CheckInClaimable)
     GetDisplayName()(*string)
     GetGeoCoordinates()(OutlookGeoCoordinatesable)
+    GetIsWheelChairAccessible()(*bool)
+    GetLabel()(*string)
+    GetParentId()(*string)
     GetPhone()(*string)
+    GetTags()([]string)
     SetAddress(value PhysicalAddressable)()
     SetCheckIns(value []CheckInClaimable)()
     SetDisplayName(value *string)()
     SetGeoCoordinates(value OutlookGeoCoordinatesable)()
+    SetIsWheelChairAccessible(value *bool)()
+    SetLabel(value *string)()
+    SetParentId(value *string)()
     SetPhone(value *string)()
+    SetTags(value []string)()
 }

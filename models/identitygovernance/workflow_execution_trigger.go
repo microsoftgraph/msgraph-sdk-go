@@ -41,6 +41,8 @@ func CreateWorkflowExecutionTriggerFromDiscriminatorValue(parseNode i878a80d2330
                         return NewMembershipChangeTrigger(), nil
                     case "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger":
                         return NewTimeBasedAttributeTrigger(), nil
+                    case "#microsoft.graph.identityGovernance.userInactivityTrigger":
+                        return NewUserInactivityTrigger(), nil
                 }
             }
         }

@@ -36,6 +36,8 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.security.aiAgentEvidence":
+                        return NewAiAgentEvidence(), nil
                     case "#microsoft.graph.security.amazonResourceEvidence":
                         return NewAmazonResourceEvidence(), nil
                     case "#microsoft.graph.security.analyzedMessageEvidence":
