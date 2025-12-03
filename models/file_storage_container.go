@@ -198,6 +198,22 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["migrationJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSharePointMigrationJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SharePointMigrationJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SharePointMigrationJobable)
+                }
+            }
+            m.SetMigrationJobs(res)
+        }
+        return nil
+    }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
         if err != nil {
@@ -265,6 +281,18 @@ func (m *FileStorageContainer) GetLockState()(*SiteLockState) {
     }
     if val != nil {
         return val.(*SiteLockState)
+    }
+    return nil
+}
+// GetMigrationJobs gets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
+// returns a []SharePointMigrationJobable when successful
+func (m *FileStorageContainer) GetMigrationJobs()([]SharePointMigrationJobable) {
+    val, err := m.GetBackingStore().Get("migrationJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharePointMigrationJobable)
     }
     return nil
 }
@@ -389,6 +417,18 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetMigrationJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMigrationJobs()))
+        for i, v := range m.GetMigrationJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("migrationJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
@@ -484,6 +524,13 @@ func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
         panic(err)
     }
 }
+// SetMigrationJobs sets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
+func (m *FileStorageContainer) SetMigrationJobs(value []SharePointMigrationJobable)() {
+    err := m.GetBackingStore().Set("migrationJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissions sets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 func (m *FileStorageContainer) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
@@ -530,6 +577,7 @@ type FileStorageContainerable interface {
     GetDisplayName()(*string)
     GetDrive()(Driveable)
     GetLockState()(*SiteLockState)
+    GetMigrationJobs()([]SharePointMigrationJobable)
     GetPermissions()([]Permissionable)
     GetRecycleBin()(RecycleBinable)
     GetSettings()(FileStorageContainerSettingsable)
@@ -543,6 +591,7 @@ type FileStorageContainerable interface {
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
     SetLockState(value *SiteLockState)()
+    SetMigrationJobs(value []SharePointMigrationJobable)()
     SetPermissions(value []Permissionable)()
     SetRecycleBin(value RecycleBinable)()
     SetSettings(value FileStorageContainerSettingsable)()

@@ -92,3 +92,8 @@ func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Co
 func (m *ItemGraphRoomListRequestBuilder) WithUrl(rawUrl string)(*ItemGraphRoomListRequestBuilder) {
     return NewItemGraphRoomListRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
+// Workspaces provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+// returns a *ItemGraphRoomListWorkspacesRequestBuilder when successful
+func (m *ItemGraphRoomListRequestBuilder) Workspaces()(*ItemGraphRoomListWorkspacesRequestBuilder) {
+    return NewItemGraphRoomListWorkspacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

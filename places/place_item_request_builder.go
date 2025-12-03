@@ -62,6 +62,26 @@ func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
     }
     return nil
 }
+// Descendants provides operations to call the descendants method.
+// returns a *ItemDescendantsRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) Descendants()(*ItemDescendantsRequestBuilder) {
+    return NewItemDescendantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphBuilding casts the previous resource to building.
+// returns a *ItemGraphBuildingRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphBuilding()(*ItemGraphBuildingRequestBuilder) {
+    return NewItemGraphBuildingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphDesk casts the previous resource to desk.
+// returns a *ItemGraphDeskRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphDesk()(*ItemGraphDeskRequestBuilder) {
+    return NewItemGraphDeskRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphFloor casts the previous resource to floor.
+// returns a *ItemGraphFloorRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphFloor()(*ItemGraphFloorRequestBuilder) {
+    return NewItemGraphFloorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphRoom casts the previous resource to room.
 // returns a *ItemGraphRoomRequestBuilder when successful
 func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
@@ -71,6 +91,16 @@ func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
 // returns a *ItemGraphRoomListRequestBuilder when successful
 func (m *PlaceItemRequestBuilder) GraphRoomList()(*ItemGraphRoomListRequestBuilder) {
     return NewItemGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphSection casts the previous resource to section.
+// returns a *ItemGraphSectionRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphSection()(*ItemGraphSectionRequestBuilder) {
+    return NewItemGraphSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWorkspace casts the previous resource to workspace.
+// returns a *ItemGraphWorkspaceRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphWorkspace()(*ItemGraphWorkspaceRequestBuilder) {
+    return NewItemGraphWorkspaceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
 // returns a Placeable when successful
