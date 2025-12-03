@@ -43,7 +43,7 @@ func (m *RiskServicePrincipalActivity) GetAdditionalData()(map[string]any) {
 func (m *RiskServicePrincipalActivity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDetail gets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// GetDetail gets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden.
 // returns a *RiskDetail when successful
 func (m *RiskServicePrincipalActivity) GetDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("detail")
@@ -161,7 +161,7 @@ func (m *RiskServicePrincipalActivity) SetAdditionalData(value map[string]any)()
 func (m *RiskServicePrincipalActivity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDetail sets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// SetDetail sets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden.
 func (m *RiskServicePrincipalActivity) SetDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {

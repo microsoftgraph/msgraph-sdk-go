@@ -22,10 +22,38 @@ func NewEmployeeExperienceUser()(*EmployeeExperienceUser) {
 func CreateEmployeeExperienceUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmployeeExperienceUser(), nil
 }
+// GetAssignedRoles gets the assignedRoles property value. Represents the collection of Viva Engage roles assigned to a user.
+// returns a []EngagementRoleable when successful
+func (m *EmployeeExperienceUser) GetAssignedRoles()([]EngagementRoleable) {
+    val, err := m.GetBackingStore().Get("assignedRoles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EngagementRoleable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmployeeExperienceUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["assignedRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEngagementRoleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EngagementRoleable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(EngagementRoleable)
+                }
+            }
+            m.SetAssignedRoles(res)
+        }
+        return nil
+    }
     res["learningCourseActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLearningCourseActivityFromDiscriminatorValue)
         if err != nil {
@@ -62,6 +90,18 @@ func (m *EmployeeExperienceUser) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
+    if m.GetAssignedRoles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedRoles()))
+        for i, v := range m.GetAssignedRoles() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("assignedRoles", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLearningCourseActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningCourseActivities()))
         for i, v := range m.GetLearningCourseActivities() {
@@ -76,6 +116,13 @@ func (m *EmployeeExperienceUser) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
+// SetAssignedRoles sets the assignedRoles property value. Represents the collection of Viva Engage roles assigned to a user.
+func (m *EmployeeExperienceUser) SetAssignedRoles(value []EngagementRoleable)() {
+    err := m.GetBackingStore().Set("assignedRoles", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLearningCourseActivities sets the learningCourseActivities property value. The learningCourseActivities property
 func (m *EmployeeExperienceUser) SetLearningCourseActivities(value []LearningCourseActivityable)() {
     err := m.GetBackingStore().Set("learningCourseActivities", value)
@@ -86,6 +133,8 @@ func (m *EmployeeExperienceUser) SetLearningCourseActivities(value []LearningCou
 type EmployeeExperienceUserable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignedRoles()([]EngagementRoleable)
     GetLearningCourseActivities()([]LearningCourseActivityable)
+    SetAssignedRoles(value []EngagementRoleable)()
     SetLearningCourseActivities(value []LearningCourseActivityable)()
 }

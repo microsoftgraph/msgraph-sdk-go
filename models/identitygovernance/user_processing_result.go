@@ -82,6 +82,22 @@ func (m *UserProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["reprocessedRuns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRunFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Runable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Runable)
+                }
+            }
+            m.SetReprocessedRuns(res)
+        }
+        return nil
+    }
     res["scheduledDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -182,6 +198,18 @@ func (m *UserProcessingResult) GetProcessingStatus()(*LifecycleWorkflowProcessin
     }
     return nil
 }
+// GetReprocessedRuns gets the reprocessedRuns property value. The related reprocessed workflow run.
+// returns a []Runable when successful
+func (m *UserProcessingResult) GetReprocessedRuns()([]Runable) {
+    val, err := m.GetBackingStore().Get("reprocessedRuns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Runable)
+    }
+    return nil
+}
 // GetScheduledDateTime gets the scheduledDateTime property value. The date time that the workflow is scheduled to be executed for a user.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 // returns a *Time when successful
 func (m *UserProcessingResult) GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -194,7 +222,7 @@ func (m *UserProcessingResult) GetScheduledDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetStartedDateTime gets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// GetStartedDateTime gets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution hasn't started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 // returns a *Time when successful
 func (m *UserProcessingResult) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
@@ -303,6 +331,18 @@ func (m *UserProcessingResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetReprocessedRuns() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReprocessedRuns()))
+        for i, v := range m.GetReprocessedRuns() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("reprocessedRuns", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("scheduledDateTime", m.GetScheduledDateTime())
         if err != nil {
@@ -381,6 +421,13 @@ func (m *UserProcessingResult) SetProcessingStatus(value *LifecycleWorkflowProce
         panic(err)
     }
 }
+// SetReprocessedRuns sets the reprocessedRuns property value. The related reprocessed workflow run.
+func (m *UserProcessingResult) SetReprocessedRuns(value []Runable)() {
+    err := m.GetBackingStore().Set("reprocessedRuns", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScheduledDateTime sets the scheduledDateTime property value. The date time that the workflow is scheduled to be executed for a user.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *UserProcessingResult) SetScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("scheduledDateTime", value)
@@ -388,7 +435,7 @@ func (m *UserProcessingResult) SetScheduledDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// SetStartedDateTime sets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// SetStartedDateTime sets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution hasn't started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *UserProcessingResult) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startedDateTime", value)
     if err != nil {
@@ -443,6 +490,7 @@ type UserProcessingResultable interface {
     GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFailedTasksCount()(*int32)
     GetProcessingStatus()(*LifecycleWorkflowProcessingStatus)
+    GetReprocessedRuns()([]Runable)
     GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSubject()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)
@@ -454,6 +502,7 @@ type UserProcessingResultable interface {
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFailedTasksCount(value *int32)()
     SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)()
+    SetReprocessedRuns(value []Runable)()
     SetScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSubject(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)()

@@ -24,7 +24,7 @@ func NewAkamaiWebApplicationFirewallProvider()(*AkamaiWebApplicationFirewallProv
 func CreateAkamaiWebApplicationFirewallProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAkamaiWebApplicationFirewallProvider(), nil
 }
-// GetAccessToken gets the accessToken property value. The accessToken property
+// GetAccessToken gets the accessToken property value. Akamai API access token used to authenticate to the Akamai account. Contact your Akamai Customer Success Manager for assistance with your accessToken.
 // returns a *string when successful
 func (m *AkamaiWebApplicationFirewallProvider) GetAccessToken()(*string) {
     val, err := m.GetBackingStore().Get("accessToken")
@@ -36,7 +36,7 @@ func (m *AkamaiWebApplicationFirewallProvider) GetAccessToken()(*string) {
     }
     return nil
 }
-// GetClientSecret gets the clientSecret property value. The clientSecret property
+// GetClientSecret gets the clientSecret property value. Akamai API client secret used in conjunction with the client token and access token for authentication. Contact your Akamai Customer Success Manager for assistance with this information.
 // returns a *string when successful
 func (m *AkamaiWebApplicationFirewallProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
@@ -48,7 +48,7 @@ func (m *AkamaiWebApplicationFirewallProvider) GetClientSecret()(*string) {
     }
     return nil
 }
-// GetClientToken gets the clientToken property value. The clientToken property
+// GetClientToken gets the clientToken property value. Akamai API client token used for authentication to the Akamai account. Contact your Akamai Customer Success Manager for assistance with this information.
 // returns a *string when successful
 func (m *AkamaiWebApplicationFirewallProvider) GetClientToken()(*string) {
     val, err := m.GetBackingStore().Get("clientToken")
@@ -106,7 +106,7 @@ func (m *AkamaiWebApplicationFirewallProvider) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetHostPrefix gets the hostPrefix property value. The hostPrefix property
+// GetHostPrefix gets the hostPrefix property value. Prefix used to identify the host or domain in Akamai configuration operations. This value may be required for certain API calls or configuration scenarios.
 // returns a *string when successful
 func (m *AkamaiWebApplicationFirewallProvider) GetHostPrefix()(*string) {
     val, err := m.GetBackingStore().Get("hostPrefix")
@@ -150,28 +150,28 @@ func (m *AkamaiWebApplicationFirewallProvider) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetAccessToken sets the accessToken property value. The accessToken property
+// SetAccessToken sets the accessToken property value. Akamai API access token used to authenticate to the Akamai account. Contact your Akamai Customer Success Manager for assistance with your accessToken.
 func (m *AkamaiWebApplicationFirewallProvider) SetAccessToken(value *string)() {
     err := m.GetBackingStore().Set("accessToken", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientSecret sets the clientSecret property value. The clientSecret property
+// SetClientSecret sets the clientSecret property value. Akamai API client secret used in conjunction with the client token and access token for authentication. Contact your Akamai Customer Success Manager for assistance with this information.
 func (m *AkamaiWebApplicationFirewallProvider) SetClientSecret(value *string)() {
     err := m.GetBackingStore().Set("clientSecret", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientToken sets the clientToken property value. The clientToken property
+// SetClientToken sets the clientToken property value. Akamai API client token used for authentication to the Akamai account. Contact your Akamai Customer Success Manager for assistance with this information.
 func (m *AkamaiWebApplicationFirewallProvider) SetClientToken(value *string)() {
     err := m.GetBackingStore().Set("clientToken", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostPrefix sets the hostPrefix property value. The hostPrefix property
+// SetHostPrefix sets the hostPrefix property value. Prefix used to identify the host or domain in Akamai configuration operations. This value may be required for certain API calls or configuration scenarios.
 func (m *AkamaiWebApplicationFirewallProvider) SetHostPrefix(value *string)() {
     err := m.GetBackingStore().Set("hostPrefix", value)
     if err != nil {

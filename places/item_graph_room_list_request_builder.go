@@ -30,6 +30,11 @@ type ItemGraphRoomListRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemGraphRoomListRequestBuilderGetQueryParameters
 }
+// CheckIns provides operations to manage the checkIns property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListCheckInsRequestBuilder when successful
+func (m *ItemGraphRoomListRequestBuilder) CheckIns()(*ItemGraphRoomListCheckInsRequestBuilder) {
+    return NewItemGraphRoomListCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemGraphRoomListRequestBuilderInternal instantiates a new ItemGraphRoomListRequestBuilder and sets the default values.
 func NewItemGraphRoomListRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomListRequestBuilder) {
     m := &ItemGraphRoomListRequestBuilder{
@@ -86,4 +91,9 @@ func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Co
 // returns a *ItemGraphRoomListRequestBuilder when successful
 func (m *ItemGraphRoomListRequestBuilder) WithUrl(rawUrl string)(*ItemGraphRoomListRequestBuilder) {
     return NewItemGraphRoomListRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// Workspaces provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+// returns a *ItemGraphRoomListWorkspacesRequestBuilder when successful
+func (m *ItemGraphRoomListRequestBuilder) Workspaces()(*ItemGraphRoomListWorkspacesRequestBuilder) {
+    return NewItemGraphRoomListWorkspacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

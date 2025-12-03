@@ -24,10 +24,32 @@ func NewCommunicationsGuestIdentity()(*CommunicationsGuestIdentity) {
 func CreateCommunicationsGuestIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunicationsGuestIdentity(), nil
 }
+// GetEmail gets the email property value. The email of the guest user.
+// returns a *string when successful
+func (m *CommunicationsGuestIdentity) GetEmail()(*string) {
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommunicationsGuestIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmail(val)
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -36,9 +58,24 @@ func (m *CommunicationsGuestIdentity) Serialize(writer i878a80d2330e89d26896388a
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("email", m.GetEmail())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetEmail sets the email property value. The email of the guest user.
+func (m *CommunicationsGuestIdentity) SetEmail(value *string)() {
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type CommunicationsGuestIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEmail()(*string)
+    SetEmail(value *string)()
 }

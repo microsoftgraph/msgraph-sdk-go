@@ -167,6 +167,11 @@ func (m *ChatItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequest
 func (m *ChatItemRequestBuilder) PinnedMessages()(*ItemPinnedMessagesRequestBuilder) {
     return NewItemPinnedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RemoveAllAccessForUser provides operations to call the removeAllAccessForUser method.
+// returns a *ItemRemoveAllAccessForUserRequestBuilder when successful
+func (m *ChatItemRequestBuilder) RemoveAllAccessForUser()(*ItemRemoveAllAccessForUserRequestBuilder) {
+    return NewItemRemoveAllAccessForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SendActivityNotification provides operations to call the sendActivityNotification method.
 // returns a *ItemSendActivityNotificationRequestBuilder when successful
 func (m *ChatItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {

@@ -34,9 +34,12 @@ func NewRiskPreventionWebApplicationFirewallProvidersItemVerifyRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewRiskPreventionWebApplicationFirewallProvidersItemVerifyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action verify
+// Post initiate a verification operation for a webApplicationFirewallProvider object. This API triggers provider-specific verification logic and returns a webApplicationFirewallVerificationModel object describing the verification result.
 // returns a WebApplicationFirewallVerificationModelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-verify?view=graph-rest-1.0
 func (m *RiskPreventionWebApplicationFirewallProvidersItemVerifyRequestBuilder) Post(ctx context.Context, body RiskPreventionWebApplicationFirewallProvidersItemVerifyPostRequestBodyable, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersItemVerifyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallVerificationModelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -54,7 +57,7 @@ func (m *RiskPreventionWebApplicationFirewallProvidersItemVerifyRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallVerificationModelable), nil
 }
-// ToPostRequestInformation invoke action verify
+// ToPostRequestInformation initiate a verification operation for a webApplicationFirewallProvider object. This API triggers provider-specific verification logic and returns a webApplicationFirewallVerificationModel object describing the verification result.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionWebApplicationFirewallProvidersItemVerifyRequestBuilder) ToPostRequestInformation(ctx context.Context, body RiskPreventionWebApplicationFirewallProvidersItemVerifyPostRequestBodyable, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersItemVerifyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

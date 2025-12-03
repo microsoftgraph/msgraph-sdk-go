@@ -30,6 +30,11 @@ type ItemGraphRoomRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemGraphRoomRequestBuilderGetQueryParameters
 }
+// CheckIns provides operations to manage the checkIns property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomCheckInsRequestBuilder when successful
+func (m *ItemGraphRoomRequestBuilder) CheckIns()(*ItemGraphRoomCheckInsRequestBuilder) {
+    return NewItemGraphRoomCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemGraphRoomRequestBuilderInternal instantiates a new ItemGraphRoomRequestBuilder and sets the default values.
 func NewItemGraphRoomRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomRequestBuilder) {
     m := &ItemGraphRoomRequestBuilder{

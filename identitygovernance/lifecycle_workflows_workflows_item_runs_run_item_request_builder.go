@@ -66,6 +66,11 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) Get(ctx conte
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Runable), nil
 }
+// ReprocessedRuns provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.run entity.
+// returns a *LifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) ReprocessedRuns()(*LifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 // returns a *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) TaskProcessingResults()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) {

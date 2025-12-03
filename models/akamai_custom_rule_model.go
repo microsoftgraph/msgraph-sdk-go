@@ -25,7 +25,7 @@ func NewAkamaiCustomRuleModel()(*AkamaiCustomRuleModel) {
 func CreateAkamaiCustomRuleModelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAkamaiCustomRuleModel(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. The action Akamai applies when the rule matches traffic. Common values include deny, none or alert.
 // returns a *string when successful
 func (m *AkamaiCustomRuleModel) GetAction()(*string) {
     val, err := m.GetBackingStore().Get("action")
@@ -101,7 +101,7 @@ func (m *AkamaiCustomRuleModel) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Friendly name for the rule, used in UIs or logs to help administrators identify the rule (for example, 'Block suspicious user agents').
 // returns a *string when successful
 func (m *AkamaiCustomRuleModel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -125,7 +125,7 @@ func (m *AkamaiCustomRuleModel) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRuleId gets the ruleId property value. The ruleId property
+// GetRuleId gets the ruleId property value. Unique identifier assigned to the rule by Akamai or the integration. Use this identifier to reference, update, or remove the rule in API requests.
 // returns a *string when successful
 func (m *AkamaiCustomRuleModel) GetRuleId()(*string) {
     val, err := m.GetBackingStore().Get("ruleId")
@@ -171,7 +171,7 @@ func (m *AkamaiCustomRuleModel) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. The action Akamai applies when the rule matches traffic. Common values include deny, none or alert.
 func (m *AkamaiCustomRuleModel) SetAction(value *string)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -189,7 +189,7 @@ func (m *AkamaiCustomRuleModel) SetAdditionalData(value map[string]any)() {
 func (m *AkamaiCustomRuleModel) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Friendly name for the rule, used in UIs or logs to help administrators identify the rule (for example, 'Block suspicious user agents').
 func (m *AkamaiCustomRuleModel) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *AkamaiCustomRuleModel) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRuleId sets the ruleId property value. The ruleId property
+// SetRuleId sets the ruleId property value. Unique identifier assigned to the rule by Akamai or the integration. Use this identifier to reference, update, or remove the rule in API requests.
 func (m *AkamaiCustomRuleModel) SetRuleId(value *string)() {
     err := m.GetBackingStore().Set("ruleId", value)
     if err != nil {

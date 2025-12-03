@@ -43,7 +43,7 @@ func (m *RiskUserActivity) GetAdditionalData()(map[string]any) {
 func (m *RiskUserActivity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDetail gets the detail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue. For more information about each value, see Risk types and detection.
+// GetDetail gets the detail property value. For more information, see riskDetail.
 // returns a *RiskDetail when successful
 func (m *RiskUserActivity) GetDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("detail")
@@ -161,7 +161,7 @@ func (m *RiskUserActivity) SetAdditionalData(value map[string]any)() {
 func (m *RiskUserActivity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDetail sets the detail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue. For more information about each value, see Risk types and detection.
+// SetDetail sets the detail property value. For more information, see riskDetail.
 func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {

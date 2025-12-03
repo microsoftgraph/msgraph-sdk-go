@@ -47,6 +47,22 @@ func (m *RiskPreventionContainer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskPreventionContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["fraudProtectionProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateFraudProtectionProviderFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]FraudProtectionProviderable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(FraudProtectionProviderable)
+                }
+            }
+            m.SetFraudProtectionProviders(res)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -91,6 +107,18 @@ func (m *RiskPreventionContainer) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
+// GetFraudProtectionProviders gets the fraudProtectionProviders property value. Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
+// returns a []FraudProtectionProviderable when successful
+func (m *RiskPreventionContainer) GetFraudProtectionProviders()([]FraudProtectionProviderable) {
+    val, err := m.GetBackingStore().Get("fraudProtectionProviders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FraudProtectionProviderable)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *RiskPreventionContainer) GetOdataType()(*string) {
@@ -103,7 +131,7 @@ func (m *RiskPreventionContainer) GetOdataType()(*string) {
     }
     return nil
 }
-// GetWebApplicationFirewallProviders gets the webApplicationFirewallProviders property value. The webApplicationFirewallProviders property
+// GetWebApplicationFirewallProviders gets the webApplicationFirewallProviders property value. Collection of WAF provider configurations registered in the External ID tenant.
 // returns a []WebApplicationFirewallProviderable when successful
 func (m *RiskPreventionContainer) GetWebApplicationFirewallProviders()([]WebApplicationFirewallProviderable) {
     val, err := m.GetBackingStore().Get("webApplicationFirewallProviders")
@@ -115,7 +143,7 @@ func (m *RiskPreventionContainer) GetWebApplicationFirewallProviders()([]WebAppl
     }
     return nil
 }
-// GetWebApplicationFirewallVerifications gets the webApplicationFirewallVerifications property value. The webApplicationFirewallVerifications property
+// GetWebApplicationFirewallVerifications gets the webApplicationFirewallVerifications property value. Collection of verification operations performed for domains or hosts with WAF providers registered in the External ID tenant.
 // returns a []WebApplicationFirewallVerificationModelable when successful
 func (m *RiskPreventionContainer) GetWebApplicationFirewallVerifications()([]WebApplicationFirewallVerificationModelable) {
     val, err := m.GetBackingStore().Get("webApplicationFirewallVerifications")
@@ -129,6 +157,18 @@ func (m *RiskPreventionContainer) GetWebApplicationFirewallVerifications()([]Web
 }
 // Serialize serializes information the current object
 func (m *RiskPreventionContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetFraudProtectionProviders() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFraudProtectionProviders()))
+        for i, v := range m.GetFraudProtectionProviders() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("fraudProtectionProviders", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -178,6 +218,13 @@ func (m *RiskPreventionContainer) SetAdditionalData(value map[string]any)() {
 func (m *RiskPreventionContainer) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetFraudProtectionProviders sets the fraudProtectionProviders property value. Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
+func (m *RiskPreventionContainer) SetFraudProtectionProviders(value []FraudProtectionProviderable)() {
+    err := m.GetBackingStore().Set("fraudProtectionProviders", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RiskPreventionContainer) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -185,14 +232,14 @@ func (m *RiskPreventionContainer) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetWebApplicationFirewallProviders sets the webApplicationFirewallProviders property value. The webApplicationFirewallProviders property
+// SetWebApplicationFirewallProviders sets the webApplicationFirewallProviders property value. Collection of WAF provider configurations registered in the External ID tenant.
 func (m *RiskPreventionContainer) SetWebApplicationFirewallProviders(value []WebApplicationFirewallProviderable)() {
     err := m.GetBackingStore().Set("webApplicationFirewallProviders", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebApplicationFirewallVerifications sets the webApplicationFirewallVerifications property value. The webApplicationFirewallVerifications property
+// SetWebApplicationFirewallVerifications sets the webApplicationFirewallVerifications property value. Collection of verification operations performed for domains or hosts with WAF providers registered in the External ID tenant.
 func (m *RiskPreventionContainer) SetWebApplicationFirewallVerifications(value []WebApplicationFirewallVerificationModelable)() {
     err := m.GetBackingStore().Set("webApplicationFirewallVerifications", value)
     if err != nil {
@@ -204,10 +251,12 @@ type RiskPreventionContainerable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFraudProtectionProviders()([]FraudProtectionProviderable)
     GetOdataType()(*string)
     GetWebApplicationFirewallProviders()([]WebApplicationFirewallProviderable)
     GetWebApplicationFirewallVerifications()([]WebApplicationFirewallVerificationModelable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFraudProtectionProviders(value []FraudProtectionProviderable)()
     SetOdataType(value *string)()
     SetWebApplicationFirewallProviders(value []WebApplicationFirewallProviderable)()
     SetWebApplicationFirewallVerifications(value []WebApplicationFirewallVerificationModelable)()

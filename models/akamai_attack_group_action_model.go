@@ -25,7 +25,7 @@ func NewAkamaiAttackGroupActionModel()(*AkamaiAttackGroupActionModel) {
 func CreateAkamaiAttackGroupActionModelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAkamaiAttackGroupActionModel(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. The action Akamai applies to the attack group when a matching threat is detected. Common values include deny, none or alert.
 // returns a *string when successful
 func (m *AkamaiAttackGroupActionModel) GetAction()(*string) {
     val, err := m.GetBackingStore().Get("action")
@@ -91,7 +91,7 @@ func (m *AkamaiAttackGroupActionModel) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetGroup gets the group property value. The group property
+// GetGroup gets the group property value. The name or identifier of the attack group. This value categorizes the type of attack the action applies to.
 // returns a *string when successful
 func (m *AkamaiAttackGroupActionModel) GetGroup()(*string) {
     val, err := m.GetBackingStore().Get("group")
@@ -143,7 +143,7 @@ func (m *AkamaiAttackGroupActionModel) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. The action Akamai applies to the attack group when a matching threat is detected. Common values include deny, none or alert.
 func (m *AkamaiAttackGroupActionModel) SetAction(value *string)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -161,7 +161,7 @@ func (m *AkamaiAttackGroupActionModel) SetAdditionalData(value map[string]any)()
 func (m *AkamaiAttackGroupActionModel) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetGroup sets the group property value. The group property
+// SetGroup sets the group property value. The name or identifier of the attack group. This value categorizes the type of attack the action applies to.
 func (m *AkamaiAttackGroupActionModel) SetGroup(value *string)() {
     err := m.GetBackingStore().Set("group", value)
     if err != nil {

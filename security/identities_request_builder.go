@@ -98,6 +98,11 @@ func (m *IdentitiesRequestBuilder) Get(ctx context.Context, requestConfiguration
 func (m *IdentitiesRequestBuilder) HealthIssues()(*IdentitiesHealthIssuesRequestBuilder) {
     return NewIdentitiesHealthIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// IdentityAccounts provides operations to manage the identityAccounts property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesIdentityAccountsRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) IdentityAccounts()(*IdentitiesIdentityAccountsRequestBuilder) {
+    return NewIdentitiesIdentityAccountsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property identities in security
 // returns a IdentityContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -117,6 +122,16 @@ func (m *IdentitiesRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc8
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IdentityContainerable), nil
+}
+// SensorCandidateActivationConfiguration provides operations to manage the sensorCandidateActivationConfiguration property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorCandidateActivationConfigurationRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) SensorCandidateActivationConfiguration()(*IdentitiesSensorCandidateActivationConfigurationRequestBuilder) {
+    return NewIdentitiesSensorCandidateActivationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SensorCandidates provides operations to manage the sensorCandidates property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorCandidatesRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) SensorCandidates()(*IdentitiesSensorCandidatesRequestBuilder) {
+    return NewIdentitiesSensorCandidatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sensors provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.
 // returns a *IdentitiesSensorsRequestBuilder when successful

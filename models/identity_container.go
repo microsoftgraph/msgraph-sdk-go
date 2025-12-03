@@ -244,7 +244,7 @@ func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
     }
     return nil
 }
-// GetRiskPrevention gets the riskPrevention property value. The riskPrevention property
+// GetRiskPrevention gets the riskPrevention property value. Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
 // returns a RiskPreventionContainerable when successful
 func (m *IdentityContainer) GetRiskPrevention()(RiskPreventionContainerable) {
     val, err := m.GetBackingStore().Get("riskPrevention")
@@ -421,7 +421,7 @@ func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBaseabl
         panic(err)
     }
 }
-// SetRiskPrevention sets the riskPrevention property value. The riskPrevention property
+// SetRiskPrevention sets the riskPrevention property value. Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
 func (m *IdentityContainer) SetRiskPrevention(value RiskPreventionContainerable)() {
     err := m.GetBackingStore().Set("riskPrevention", value)
     if err != nil {

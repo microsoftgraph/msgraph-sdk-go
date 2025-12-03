@@ -21,7 +21,7 @@ type RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProvider
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetQueryParameters get webApplicationFirewallProviders from identity
+// RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetQueryParameters read the properties and relationships of webApplicationFirewallProvider object.
 type RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewRiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProvi
     urlParams["request-raw-url"] = rawUrl
     return NewRiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property webApplicationFirewallProviders for identity
+// Delete delete a webApplicationFirewallProvider object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskpreventioncontainer-delete-webapplicationfirewallproviders?view=graph-rest-1.0
 func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProv
     }
     return nil
 }
-// Get get webApplicationFirewallProviders from identity
+// Get read the properties and relationships of webApplicationFirewallProvider object.
 // returns a WebApplicationFirewallProviderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-get?view=graph-rest-1.0
 func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +99,12 @@ func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProv
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable), nil
 }
-// Patch update the navigation property webApplicationFirewallProviders in identity
+// Patch update the properties of a webApplicationFirewallProvider object.
 // returns a WebApplicationFirewallProviderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-update?view=graph-rest-1.0
 func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +122,7 @@ func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProv
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable), nil
 }
-// ToDeleteRequestInformation delete navigation property webApplicationFirewallProviders for identity
+// ToDeleteRequestInformation delete a webApplicationFirewallProvider object.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +133,7 @@ func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProv
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get webApplicationFirewallProviders from identity
+// ToGetRequestInformation read the properties and relationships of webApplicationFirewallProvider object.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +147,7 @@ func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProv
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property webApplicationFirewallProviders in identity
+// ToPatchRequestInformation update the properties of a webApplicationFirewallProvider object.
 // returns a *RequestInformation when successful
 func (m *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebApplicationFirewallProviderable, requestConfiguration *RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -113,6 +113,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Get(ctx co
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Lock()(*FileStorageContainersItemLockRequestBuilder) {
     return NewFileStorageContainersItemLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MigrationJobs provides operations to manage the migrationJobs property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageContainersItemMigrationJobsRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) MigrationJobs()(*FileStorageContainersItemMigrationJobsRequestBuilder) {
+    return NewFileStorageContainersItemMigrationJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property containers in storage
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -142,6 +147,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) PermanentD
 // returns a *FileStorageContainersItemPermissionsRequestBuilder when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Permissions()(*FileStorageContainersItemPermissionsRequestBuilder) {
     return NewFileStorageContainersItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ProvisionMigrationContainers provides operations to call the provisionMigrationContainers method.
+// returns a *FileStorageContainersItemProvisionMigrationContainersRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) ProvisionMigrationContainers()(*FileStorageContainersItemProvisionMigrationContainersRequestBuilder) {
+    return NewFileStorageContainersItemProvisionMigrationContainersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RecycleBin provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.
 // returns a *FileStorageContainersItemRecycleBinRequestBuilder when successful

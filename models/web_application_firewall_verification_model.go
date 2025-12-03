@@ -78,7 +78,7 @@ func (m *WebApplicationFirewallVerificationModel) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetProvider gets the provider property value. The provider property
+// GetProvider gets the provider property value. Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
 // returns a WebApplicationFirewallProviderable when successful
 func (m *WebApplicationFirewallVerificationModel) GetProvider()(WebApplicationFirewallProviderable) {
     val, err := m.GetBackingStore().Get("provider")
@@ -102,7 +102,7 @@ func (m *WebApplicationFirewallVerificationModel) GetProviderType()(*WebApplicat
     }
     return nil
 }
-// GetVerificationResult gets the verificationResult property value. The verificationResult property
+// GetVerificationResult gets the verificationResult property value. An object describing the outcome of the verification operation, including status, errors or warnings
 // returns a WebApplicationFirewallVerificationResultable when successful
 func (m *WebApplicationFirewallVerificationModel) GetVerificationResult()(WebApplicationFirewallVerificationResultable) {
     val, err := m.GetBackingStore().Get("verificationResult")
@@ -114,7 +114,7 @@ func (m *WebApplicationFirewallVerificationModel) GetVerificationResult()(WebApp
     }
     return nil
 }
-// GetVerifiedDetails gets the verifiedDetails property value. The verifiedDetails property
+// GetVerifiedDetails gets the verifiedDetails property value. Details of DNS configuration
 // returns a WebApplicationFirewallVerifiedDetailsable when successful
 func (m *WebApplicationFirewallVerificationModel) GetVerifiedDetails()(WebApplicationFirewallVerifiedDetailsable) {
     val, err := m.GetBackingStore().Get("verifiedDetails")
@@ -126,7 +126,7 @@ func (m *WebApplicationFirewallVerificationModel) GetVerifiedDetails()(WebApplic
     }
     return nil
 }
-// GetVerifiedHost gets the verifiedHost property value. The verifiedHost property
+// GetVerifiedHost gets the verifiedHost property value. The host (domain or subdomain) that was verified as part of this verification operation.
 // returns a *string when successful
 func (m *WebApplicationFirewallVerificationModel) GetVerifiedHost()(*string) {
     val, err := m.GetBackingStore().Get("verifiedHost")
@@ -177,7 +177,7 @@ func (m *WebApplicationFirewallVerificationModel) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetProvider sets the provider property value. The provider property
+// SetProvider sets the provider property value. Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
 func (m *WebApplicationFirewallVerificationModel) SetProvider(value WebApplicationFirewallProviderable)() {
     err := m.GetBackingStore().Set("provider", value)
     if err != nil {
@@ -191,21 +191,21 @@ func (m *WebApplicationFirewallVerificationModel) SetProviderType(value *WebAppl
         panic(err)
     }
 }
-// SetVerificationResult sets the verificationResult property value. The verificationResult property
+// SetVerificationResult sets the verificationResult property value. An object describing the outcome of the verification operation, including status, errors or warnings
 func (m *WebApplicationFirewallVerificationModel) SetVerificationResult(value WebApplicationFirewallVerificationResultable)() {
     err := m.GetBackingStore().Set("verificationResult", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVerifiedDetails sets the verifiedDetails property value. The verifiedDetails property
+// SetVerifiedDetails sets the verifiedDetails property value. Details of DNS configuration
 func (m *WebApplicationFirewallVerificationModel) SetVerifiedDetails(value WebApplicationFirewallVerifiedDetailsable)() {
     err := m.GetBackingStore().Set("verifiedDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVerifiedHost sets the verifiedHost property value. The verifiedHost property
+// SetVerifiedHost sets the verifiedHost property value. The host (domain or subdomain) that was verified as part of this verification operation.
 func (m *WebApplicationFirewallVerificationModel) SetVerifiedHost(value *string)() {
     err := m.GetBackingStore().Set("verifiedHost", value)
     if err != nil {
