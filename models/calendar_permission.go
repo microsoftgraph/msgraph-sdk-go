@@ -22,7 +22,7 @@ func NewCalendarPermission()(*CalendarPermission) {
 func CreateCalendarPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCalendarPermission(), nil
 }
-// GetAllowedRoles gets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
+// GetAllowedRoles gets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
 // returns a []CalendarRoleType when successful
 func (m *CalendarPermission) GetAllowedRoles()([]CalendarRoleType) {
     val, err := m.GetBackingStore().Get("allowedRoles")
@@ -183,7 +183,7 @@ func (m *CalendarPermission) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAllowedRoles sets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
+// SetAllowedRoles sets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
 func (m *CalendarPermission) SetAllowedRoles(value []CalendarRoleType)() {
     err := m.GetBackingStore().Set("allowedRoles", value)
     if err != nil {

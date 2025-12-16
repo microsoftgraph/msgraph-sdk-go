@@ -38,7 +38,7 @@ func (m *CallMediaState) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAudio gets the audio property value. The audio media state. Possible values are: active, inactive, unknownFutureValue.
+// GetAudio gets the audio property value. The audio media state. The possible values are: active, inactive, unknownFutureValue.
 // returns a *MediaState when successful
 func (m *CallMediaState) GetAudio()(*MediaState) {
     val, err := m.GetBackingStore().Get("audio")
@@ -123,7 +123,7 @@ func (m *CallMediaState) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAudio sets the audio property value. The audio media state. Possible values are: active, inactive, unknownFutureValue.
+// SetAudio sets the audio property value. The audio media state. The possible values are: active, inactive, unknownFutureValue.
 func (m *CallMediaState) SetAudio(value *MediaState)() {
     err := m.GetBackingStore().Set("audio", value)
     if err != nil {

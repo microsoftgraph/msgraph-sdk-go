@@ -210,7 +210,7 @@ func (m *CallRecord) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetModalities gets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+// GetModalities gets the modalities property value. List of all the modalities used in the call. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 // returns a []Modality when successful
 func (m *CallRecord) GetModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("modalities")
@@ -438,7 +438,7 @@ func (m *CallRecord) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
         panic(err)
     }
 }
-// SetModalities sets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+// SetModalities sets the modalities property value. List of all the modalities used in the call. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *CallRecord) SetModalities(value []Modality)() {
     err := m.GetBackingStore().Set("modalities", value)
     if err != nil {

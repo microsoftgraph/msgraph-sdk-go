@@ -103,7 +103,7 @@ func (m *ProvisioningStatusInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
+// GetStatus gets the status property value. The possible values are: success, warning, failure, skipped, unknownFutureValue.
 // returns a *ProvisioningResult when successful
 func (m *ProvisioningStatusInfo) GetStatus()(*ProvisioningResult) {
     val, err := m.GetBackingStore().Get("status")
@@ -169,7 +169,7 @@ func (m *ProvisioningStatusInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
+// SetStatus sets the status property value. The possible values are: success, warning, failure, skipped, unknownFutureValue.
 func (m *ProvisioningStatusInfo) SetStatus(value *ProvisioningResult)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -113,7 +113,7 @@ func (m *DataPolicyOperation) GetProgress()(*float64) {
     }
     return nil
 }
-// GetStatus gets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
+// GetStatus gets the status property value. The possible values are: notStarted, running, complete, failed, unknownFutureValue.
 // returns a *DataPolicyOperationStatus when successful
 func (m *DataPolicyOperation) GetStatus()(*DataPolicyOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -220,7 +220,7 @@ func (m *DataPolicyOperation) SetProgress(value *float64)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
+// SetStatus sets the status property value. The possible values are: notStarted, running, complete, failed, unknownFutureValue.
 func (m *DataPolicyOperation) SetStatus(value *DataPolicyOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -56,7 +56,7 @@ func (m *BitLockerRemovableDrivePolicy) GetBlockCrossOrganizationWriteAccess()(*
     }
     return nil
 }
-// GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
+// GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for removable  drives. The possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 // returns a *BitLockerEncryptionMethod when successful
 func (m *BitLockerRemovableDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMethod) {
     val, err := m.GetBackingStore().Get("encryptionMethod")
@@ -191,7 +191,7 @@ func (m *BitLockerRemovableDrivePolicy) SetBlockCrossOrganizationWriteAccess(val
         panic(err)
     }
 }
-// SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
+// SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for removable  drives. The possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 func (m *BitLockerRemovableDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
     err := m.GetBackingStore().Set("encryptionMethod", value)
     if err != nil {

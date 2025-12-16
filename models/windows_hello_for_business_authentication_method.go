@@ -107,7 +107,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetKeyStrength gets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
+// GetKeyStrength gets the keyStrength property value. Key strength of this Windows Hello for Business key. The possible values are: normal, weak, unknown.
 // returns a *AuthenticationMethodKeyStrength when successful
 func (m *WindowsHelloForBusinessAuthenticationMethod) GetKeyStrength()(*AuthenticationMethodKeyStrength) {
     val, err := m.GetBackingStore().Get("keyStrength")
@@ -173,7 +173,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) SetDisplayName(value *stri
         panic(err)
     }
 }
-// SetKeyStrength sets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
+// SetKeyStrength sets the keyStrength property value. Key strength of this Windows Hello for Business key. The possible values are: normal, weak, unknown.
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetKeyStrength(value *AuthenticationMethodKeyStrength)() {
     err := m.GetBackingStore().Set("keyStrength", value)
     if err != nil {

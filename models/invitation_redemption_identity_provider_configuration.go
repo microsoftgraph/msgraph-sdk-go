@@ -61,7 +61,7 @@ func (m *InvitationRedemptionIdentityProviderConfiguration) GetAdditionalData()(
 func (m *InvitationRedemptionIdentityProviderConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFallbackIdentityProvider gets the fallbackIdentityProvider property value. The fallback identity provider to be used in case no primary identity provider can be used for guest invitation redemption. Possible values are: defaultConfiguredIdp, emailOneTimePasscode, or microsoftAccount.
+// GetFallbackIdentityProvider gets the fallbackIdentityProvider property value. The fallback identity provider to be used in case no primary identity provider can be used for guest invitation redemption. The possible values are: defaultConfiguredIdp, emailOneTimePasscode, or microsoftAccount.
 // returns a *B2bIdentityProvidersType when successful
 func (m *InvitationRedemptionIdentityProviderConfiguration) GetFallbackIdentityProvider()(*B2bIdentityProvidersType) {
     val, err := m.GetBackingStore().Get("fallbackIdentityProvider")
@@ -127,7 +127,7 @@ func (m *InvitationRedemptionIdentityProviderConfiguration) GetOdataType()(*stri
     }
     return nil
 }
-// GetPrimaryIdentityProviderPrecedenceOrder gets the primaryIdentityProviderPrecedenceOrder property value. Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.
+// GetPrimaryIdentityProviderPrecedenceOrder gets the primaryIdentityProviderPrecedenceOrder property value. Collection of identity providers in priority order of preference to be used for guest invitation redemption. The possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.
 // returns a []B2bIdentityProvidersType when successful
 func (m *InvitationRedemptionIdentityProviderConfiguration) GetPrimaryIdentityProviderPrecedenceOrder()([]B2bIdentityProvidersType) {
     val, err := m.GetBackingStore().Get("primaryIdentityProviderPrecedenceOrder")
@@ -179,7 +179,7 @@ func (m *InvitationRedemptionIdentityProviderConfiguration) SetAdditionalData(va
 func (m *InvitationRedemptionIdentityProviderConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFallbackIdentityProvider sets the fallbackIdentityProvider property value. The fallback identity provider to be used in case no primary identity provider can be used for guest invitation redemption. Possible values are: defaultConfiguredIdp, emailOneTimePasscode, or microsoftAccount.
+// SetFallbackIdentityProvider sets the fallbackIdentityProvider property value. The fallback identity provider to be used in case no primary identity provider can be used for guest invitation redemption. The possible values are: defaultConfiguredIdp, emailOneTimePasscode, or microsoftAccount.
 func (m *InvitationRedemptionIdentityProviderConfiguration) SetFallbackIdentityProvider(value *B2bIdentityProvidersType)() {
     err := m.GetBackingStore().Set("fallbackIdentityProvider", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *InvitationRedemptionIdentityProviderConfiguration) SetOdataType(value *
         panic(err)
     }
 }
-// SetPrimaryIdentityProviderPrecedenceOrder sets the primaryIdentityProviderPrecedenceOrder property value. Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.
+// SetPrimaryIdentityProviderPrecedenceOrder sets the primaryIdentityProviderPrecedenceOrder property value. Collection of identity providers in priority order of preference to be used for guest invitation redemption. The possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.
 func (m *InvitationRedemptionIdentityProviderConfiguration) SetPrimaryIdentityProviderPrecedenceOrder(value []B2bIdentityProvidersType)() {
     err := m.GetBackingStore().Set("primaryIdentityProviderPrecedenceOrder", value)
     if err != nil {

@@ -390,7 +390,7 @@ func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(MicrosoftManage
     }
     return nil
 }
-// GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.
+// GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy was created. The possible values are: dedicated, shared, unknownFutureValue.
 // returns a *CloudPcProvisioningType when successful
 func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
@@ -643,7 +643,7 @@ func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value MicrosoftMa
         panic(err)
     }
 }
-// SetProvisioningType sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.
+// SetProvisioningType sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy was created. The possible values are: dedicated, shared, unknownFutureValue.
 func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {

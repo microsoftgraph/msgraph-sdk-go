@@ -172,7 +172,7 @@ func (m *WorkbookRangeFormat) GetFont()(WorkbookRangeFontable) {
     }
     return nil
 }
-// GetHorizontalAlignment gets the horizontalAlignment property value. The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// GetHorizontalAlignment gets the horizontalAlignment property value. The horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 // returns a *string when successful
 func (m *WorkbookRangeFormat) GetHorizontalAlignment()(*string) {
     val, err := m.GetBackingStore().Get("horizontalAlignment")
@@ -208,7 +208,7 @@ func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
     }
     return nil
 }
-// GetVerticalAlignment gets the verticalAlignment property value. The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+// GetVerticalAlignment gets the verticalAlignment property value. The vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
 // returns a *string when successful
 func (m *WorkbookRangeFormat) GetVerticalAlignment()(*string) {
     val, err := m.GetBackingStore().Get("verticalAlignment")
@@ -328,7 +328,7 @@ func (m *WorkbookRangeFormat) SetFont(value WorkbookRangeFontable)() {
         panic(err)
     }
 }
-// SetHorizontalAlignment sets the horizontalAlignment property value. The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// SetHorizontalAlignment sets the horizontalAlignment property value. The horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 func (m *WorkbookRangeFormat) SetHorizontalAlignment(value *string)() {
     err := m.GetBackingStore().Set("horizontalAlignment", value)
     if err != nil {
@@ -349,7 +349,7 @@ func (m *WorkbookRangeFormat) SetRowHeight(value *float64)() {
         panic(err)
     }
 }
-// SetVerticalAlignment sets the verticalAlignment property value. The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+// SetVerticalAlignment sets the verticalAlignment property value. The vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
 func (m *WorkbookRangeFormat) SetVerticalAlignment(value *string)() {
     err := m.GetBackingStore().Set("verticalAlignment", value)
     if err != nil {

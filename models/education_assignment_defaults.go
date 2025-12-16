@@ -22,7 +22,7 @@ func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
 func CreateEducationAssignmentDefaultsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentDefaults(), nil
 }
-// GetAddedStudentAction gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
+// GetAddedStudentAction gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. The possible values are: none, assignIfOpen.
 // returns a *EducationAddedStudentAction when successful
 func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAddedStudentAction) {
     val, err := m.GetBackingStore().Get("addedStudentAction")
@@ -150,7 +150,7 @@ func (m *EducationAssignmentDefaults) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAddedStudentAction sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
+// SetAddedStudentAction sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. The possible values are: none, assignIfOpen.
 func (m *EducationAssignmentDefaults) SetAddedStudentAction(value *EducationAddedStudentAction)() {
     err := m.GetBackingStore().Set("addedStudentAction", value)
     if err != nil {

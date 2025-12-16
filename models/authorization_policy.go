@@ -61,7 +61,7 @@ func (m *AuthorizationPolicy) GetAllowEmailVerifiedUsersToJoinOrganization()(*bo
     }
     return nil
 }
-// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
+// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite guests to the organization. The possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
 // returns a *AllowInvitesFrom when successful
 func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
     val, err := m.GetBackingStore().Get("allowInvitesFrom")
@@ -285,7 +285,7 @@ func (m *AuthorizationPolicy) SetAllowEmailVerifiedUsersToJoinOrganization(value
         panic(err)
     }
 }
-// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
+// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite guests to the organization. The possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
 func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
     err := m.GetBackingStore().Set("allowInvitesFrom", value)
     if err != nil {

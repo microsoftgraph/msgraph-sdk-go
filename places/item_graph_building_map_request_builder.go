@@ -21,7 +21,7 @@ type ItemGraphBuildingMapRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGraphBuildingMapRequestBuilderGetQueryParameters get map from places
+// ItemGraphBuildingMapRequestBuilderGetQueryParameters get the map of a building in IMDF format.
 type ItemGraphBuildingMapRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewItemGraphBuildingMapRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphBuildingMapRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property map for places
+// Delete delete the map of a specific building.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/buildingmap-delete?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemGraphBuildingMapRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *ItemGraphBuildingMapRequestBuilder) Delete(ctx context.Context, request
 func (m *ItemGraphBuildingMapRequestBuilder) Footprints()(*ItemGraphBuildingMapFootprintsRequestBuilder) {
     return NewItemGraphBuildingMapFootprintsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get map from places
+// Get get the map of a building in IMDF format.
 // returns a BuildingMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/buildingmap-get?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BuildingMapable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +129,7 @@ func (m *ItemGraphBuildingMapRequestBuilder) Patch(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BuildingMapable), nil
 }
-// ToDeleteRequestInformation delete navigation property map for places
+// ToDeleteRequestInformation delete the map of a specific building.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,7 +140,7 @@ func (m *ItemGraphBuildingMapRequestBuilder) ToDeleteRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get map from places
+// ToGetRequestInformation get the map of a building in IMDF format.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

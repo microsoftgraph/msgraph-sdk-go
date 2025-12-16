@@ -22,7 +22,7 @@ func NewWorkbookApplication()(*WorkbookApplication) {
 func CreateWorkbookApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookApplication(), nil
 }
-// GetCalculationMode gets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
+// GetCalculationMode gets the calculationMode property value. Returns the calculation mode used in the workbook. The possible values are: Automatic, AutomaticExceptTables, Manual.
 // returns a *string when successful
 func (m *WorkbookApplication) GetCalculationMode()(*string) {
     val, err := m.GetBackingStore().Get("calculationMode")
@@ -64,7 +64,7 @@ func (m *WorkbookApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCalculationMode sets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
+// SetCalculationMode sets the calculationMode property value. Returns the calculation mode used in the workbook. The possible values are: Automatic, AutomaticExceptTables, Manual.
 func (m *WorkbookApplication) SetCalculationMode(value *string)() {
     err := m.GetBackingStore().Set("calculationMode", value)
     if err != nil {

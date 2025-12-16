@@ -34,7 +34,7 @@ func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOpti
     }
     return nil
 }
-// GetCloudAttachmentVersion gets the cloudAttachmentVersion property value. The versions of cloud attachments to include in messages. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
+// GetCloudAttachmentVersion gets the cloudAttachmentVersion property value. The versions of cloud attachments to include in messages. The possible values are: latest, recent10, recent100, all, unknownFutureValue.
 // returns a *CloudAttachmentVersion when successful
 func (m *EdiscoverySearchExportOperation) GetCloudAttachmentVersion()(*CloudAttachmentVersion) {
     val, err := m.GetBackingStore().Get("cloudAttachmentVersion")
@@ -70,7 +70,7 @@ func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDocumentVersion gets the documentVersion property value. The versions of files in SharePoint to include. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
+// GetDocumentVersion gets the documentVersion property value. The versions of files in SharePoint to include. The possible values are: latest, recent10, recent100, all, unknownFutureValue.
 // returns a *DocumentVersion when successful
 func (m *EdiscoverySearchExportOperation) GetDocumentVersion()(*DocumentVersion) {
     val, err := m.GetBackingStore().Get("documentVersion")
@@ -369,7 +369,7 @@ func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *Additional
         panic(err)
     }
 }
-// SetCloudAttachmentVersion sets the cloudAttachmentVersion property value. The versions of cloud attachments to include in messages. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
+// SetCloudAttachmentVersion sets the cloudAttachmentVersion property value. The versions of cloud attachments to include in messages. The possible values are: latest, recent10, recent100, all, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetCloudAttachmentVersion(value *CloudAttachmentVersion)() {
     err := m.GetBackingStore().Set("cloudAttachmentVersion", value)
     if err != nil {
@@ -390,7 +390,7 @@ func (m *EdiscoverySearchExportOperation) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDocumentVersion sets the documentVersion property value. The versions of files in SharePoint to include. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
+// SetDocumentVersion sets the documentVersion property value. The versions of files in SharePoint to include. The possible values are: latest, recent10, recent100, all, unknownFutureValue.
 func (m *EdiscoverySearchExportOperation) SetDocumentVersion(value *DocumentVersion)() {
     err := m.GetBackingStore().Set("documentVersion", value)
     if err != nil {

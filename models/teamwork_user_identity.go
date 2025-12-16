@@ -40,7 +40,7 @@ func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
+// GetUserIdentityType gets the userIdentityType property value. Type of user. The possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
 // returns a *TeamworkUserIdentityType when successful
 func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) {
     val, err := m.GetBackingStore().Get("userIdentityType")
@@ -67,7 +67,7 @@ func (m *TeamworkUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
+// SetUserIdentityType sets the userIdentityType property value. Type of user. The possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
 func (m *TeamworkUserIdentity) SetUserIdentityType(value *TeamworkUserIdentityType)() {
     err := m.GetBackingStore().Set("userIdentityType", value)
     if err != nil {

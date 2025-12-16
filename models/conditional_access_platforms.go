@@ -43,7 +43,7 @@ func (m *ConditionalAccessPlatforms) GetAdditionalData()(map[string]any) {
 func (m *ConditionalAccessPlatforms) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExcludePlatforms gets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// GetExcludePlatforms gets the excludePlatforms property value. The possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
 // returns a []ConditionalAccessDevicePlatform when successful
 func (m *ConditionalAccessPlatforms) GetExcludePlatforms()([]ConditionalAccessDevicePlatform) {
     val, err := m.GetBackingStore().Get("excludePlatforms")
@@ -103,7 +103,7 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// GetIncludePlatforms gets the includePlatforms property value. The possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
 // returns a []ConditionalAccessDevicePlatform when successful
 func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDevicePlatform) {
     val, err := m.GetBackingStore().Get("includePlatforms")
@@ -166,14 +166,14 @@ func (m *ConditionalAccessPlatforms) SetAdditionalData(value map[string]any)() {
 func (m *ConditionalAccessPlatforms) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExcludePlatforms sets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// SetExcludePlatforms sets the excludePlatforms property value. The possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
 func (m *ConditionalAccessPlatforms) SetExcludePlatforms(value []ConditionalAccessDevicePlatform)() {
     err := m.GetBackingStore().Set("excludePlatforms", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludePlatforms sets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+// SetIncludePlatforms sets the includePlatforms property value. The possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
 func (m *ConditionalAccessPlatforms) SetIncludePlatforms(value []ConditionalAccessDevicePlatform)() {
     err := m.GetBackingStore().Set("includePlatforms", value)
     if err != nil {

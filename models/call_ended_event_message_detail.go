@@ -36,7 +36,7 @@ func (m *CallEndedEventMessageDetail) GetCallDuration()(*i878a80d2330e89d2689638
     }
     return nil
 }
-// GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
+// GetCallEventType gets the callEventType property value. Represents the call event type. The possible values are: call, meeting, screenShare, unknownFutureValue.
 // returns a *TeamworkCallEventType when successful
 func (m *CallEndedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
@@ -198,7 +198,7 @@ func (m *CallEndedEventMessageDetail) SetCallDuration(value *i878a80d2330e89d268
         panic(err)
     }
 }
-// SetCallEventType sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
+// SetCallEventType sets the callEventType property value. Represents the call event type. The possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallEndedEventMessageDetail) SetCallEventType(value *TeamworkCallEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
     if err != nil {

@@ -79,7 +79,7 @@ func (m *MailboxSettings) GetDateFormat()(*string) {
     }
     return nil
 }
-// GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+// GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. The possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
 // returns a *DelegateMeetingMessageDeliveryOptions when successful
 func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMeetingMessageDeliveryOptions) {
     val, err := m.GetBackingStore().Get("delegateMeetingMessageDeliveryOptions")
@@ -245,7 +245,7 @@ func (m *MailboxSettings) GetTimeZone()(*string) {
     }
     return nil
 }
-// GetUserPurpose gets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
+// GetUserPurpose gets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. The possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
 // returns a *UserPurpose when successful
 func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
     val, err := m.GetBackingStore().Get("userPurpose")
@@ -373,7 +373,7 @@ func (m *MailboxSettings) SetDateFormat(value *string)() {
         panic(err)
     }
 }
-// SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+// SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. The possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
 func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *DelegateMeetingMessageDeliveryOptions)() {
     err := m.GetBackingStore().Set("delegateMeetingMessageDeliveryOptions", value)
     if err != nil {
@@ -408,7 +408,7 @@ func (m *MailboxSettings) SetTimeZone(value *string)() {
         panic(err)
     }
 }
-// SetUserPurpose sets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
+// SetUserPurpose sets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. The possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
 func (m *MailboxSettings) SetUserPurpose(value *UserPurpose)() {
     err := m.GetBackingStore().Set("userPurpose", value)
     if err != nil {

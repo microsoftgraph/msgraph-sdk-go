@@ -40,7 +40,7 @@ func (m *UnitMap) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetPlaceId gets the placeId property value. The placeId property
+// GetPlaceId gets the placeId property value. Identifier of the place (such as a room) to which this unitMap belongs.
 // returns a *string when successful
 func (m *UnitMap) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -66,7 +66,7 @@ func (m *UnitMap) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetPlaceId sets the placeId property value. The placeId property
+// SetPlaceId sets the placeId property value. Identifier of the place (such as a room) to which this unitMap belongs.
 func (m *UnitMap) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {

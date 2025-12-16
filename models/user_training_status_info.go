@@ -148,7 +148,7 @@ func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTrainingStatus gets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+// GetTrainingStatus gets the trainingStatus property value. The status of the training assigned to the user. The possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 // returns a *TrainingStatus when successful
 func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
     val, err := m.GetBackingStore().Get("trainingStatus")
@@ -240,7 +240,7 @@ func (m *UserTrainingStatusInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTrainingStatus sets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+// SetTrainingStatus sets the trainingStatus property value. The status of the training assigned to the user. The possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) SetTrainingStatus(value *TrainingStatus)() {
     err := m.GetBackingStore().Set("trainingStatus", value)
     if err != nil {

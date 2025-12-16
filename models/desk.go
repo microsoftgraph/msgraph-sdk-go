@@ -24,7 +24,7 @@ func NewDesk()(*Desk) {
 func CreateDeskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDesk(), nil
 }
-// GetDisplayDeviceName gets the displayDeviceName property value. The displayDeviceName property
+// GetDisplayDeviceName gets the displayDeviceName property value. The name of the display device (for example, monitor or projector) that is available at the desk.
 // returns a *string when successful
 func (m *Desk) GetDisplayDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("displayDeviceName")
@@ -72,7 +72,7 @@ func (m *Desk) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetMailboxDetails gets the mailboxDetails property value. The mailboxDetails property
+// GetMailboxDetails gets the mailboxDetails property value. The mailbox object id and email address that are associated with the desk.
 // returns a MailboxDetailsable when successful
 func (m *Desk) GetMailboxDetails()(MailboxDetailsable) {
     val, err := m.GetBackingStore().Get("mailboxDetails")
@@ -84,7 +84,7 @@ func (m *Desk) GetMailboxDetails()(MailboxDetailsable) {
     }
     return nil
 }
-// GetMode gets the mode property value. The mode property
+// GetMode gets the mode property value. The mode of the desk. The supported modes are:assignedPlaceMode - Desks that are assigned to a user.reservablePlaceMode - Desks that can be booked in advance using desk reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks, the desk is booked for you, assuming the peripheral is associated with the desk in the Microsoft Teams Rooms Pro management portal.
 // returns a PlaceModeable when successful
 func (m *Desk) GetMode()(PlaceModeable) {
     val, err := m.GetBackingStore().Get("mode")
@@ -122,21 +122,21 @@ func (m *Desk) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetDisplayDeviceName sets the displayDeviceName property value. The displayDeviceName property
+// SetDisplayDeviceName sets the displayDeviceName property value. The name of the display device (for example, monitor or projector) that is available at the desk.
 func (m *Desk) SetDisplayDeviceName(value *string)() {
     err := m.GetBackingStore().Set("displayDeviceName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailboxDetails sets the mailboxDetails property value. The mailboxDetails property
+// SetMailboxDetails sets the mailboxDetails property value. The mailbox object id and email address that are associated with the desk.
 func (m *Desk) SetMailboxDetails(value MailboxDetailsable)() {
     err := m.GetBackingStore().Set("mailboxDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMode sets the mode property value. The mode property
+// SetMode sets the mode property value. The mode of the desk. The supported modes are:assignedPlaceMode - Desks that are assigned to a user.reservablePlaceMode - Desks that can be booked in advance using desk reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks, the desk is booked for you, assuming the peripheral is associated with the desk in the Microsoft Teams Rooms Pro management portal.
 func (m *Desk) SetMode(value PlaceModeable)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {

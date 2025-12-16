@@ -135,7 +135,7 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetGiphyContentRating gets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
+// GetGiphyContentRating gets the giphyContentRating property value. Giphy content rating. The possible values are: moderate, strict.
 // returns a *GiphyRatingType when successful
 func (m *TeamFunSettings) GetGiphyContentRating()(*GiphyRatingType) {
     val, err := m.GetBackingStore().Get("giphyContentRating")
@@ -232,7 +232,7 @@ func (m *TeamFunSettings) SetAllowStickersAndMemes(value *bool)() {
 func (m *TeamFunSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetGiphyContentRating sets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
+// SetGiphyContentRating sets the giphyContentRating property value. Giphy content rating. The possible values are: moderate, strict.
 func (m *TeamFunSettings) SetGiphyContentRating(value *GiphyRatingType)() {
     err := m.GetBackingStore().Set("giphyContentRating", value)
     if err != nil {

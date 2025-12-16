@@ -24,7 +24,7 @@ func NewWorkspace()(*Workspace) {
 func CreateWorkspaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkspace(), nil
 }
-// GetCapacity gets the capacity property value. The capacity property
+// GetCapacity gets the capacity property value. The maximum number of individual desks within a workspace.
 // returns a *int32 when successful
 func (m *Workspace) GetCapacity()(*int32) {
     val, err := m.GetBackingStore().Get("capacity")
@@ -36,7 +36,7 @@ func (m *Workspace) GetCapacity()(*int32) {
     }
     return nil
 }
-// GetDisplayDeviceName gets the displayDeviceName property value. The displayDeviceName property
+// GetDisplayDeviceName gets the displayDeviceName property value. The name of the display device (for example, monitor or projector) that is available in the workspace.
 // returns a *string when successful
 func (m *Workspace) GetDisplayDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("displayDeviceName")
@@ -48,7 +48,7 @@ func (m *Workspace) GetDisplayDeviceName()(*string) {
     }
     return nil
 }
-// GetEmailAddress gets the emailAddress property value. The emailAddress property
+// GetEmailAddress gets the emailAddress property value. The email address that is associated with the workspace. This email address is used for booking.
 // returns a *string when successful
 func (m *Workspace) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
@@ -116,7 +116,7 @@ func (m *Workspace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetMode gets the mode property value. The mode property
+// GetMode gets the mode property value. The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.
 // returns a PlaceModeable when successful
 func (m *Workspace) GetMode()(PlaceModeable) {
     val, err := m.GetBackingStore().Get("mode")
@@ -128,7 +128,7 @@ func (m *Workspace) GetMode()(PlaceModeable) {
     }
     return nil
 }
-// GetNickname gets the nickname property value. The nickname property
+// GetNickname gets the nickname property value. A short, friendly name for the workspace, often used for easier identification or display in the UI.
 // returns a *string when successful
 func (m *Workspace) GetNickname()(*string) {
     val, err := m.GetBackingStore().Get("nickname")
@@ -178,35 +178,35 @@ func (m *Workspace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetCapacity sets the capacity property value. The capacity property
+// SetCapacity sets the capacity property value. The maximum number of individual desks within a workspace.
 func (m *Workspace) SetCapacity(value *int32)() {
     err := m.GetBackingStore().Set("capacity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayDeviceName sets the displayDeviceName property value. The displayDeviceName property
+// SetDisplayDeviceName sets the displayDeviceName property value. The name of the display device (for example, monitor or projector) that is available in the workspace.
 func (m *Workspace) SetDisplayDeviceName(value *string)() {
     err := m.GetBackingStore().Set("displayDeviceName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmailAddress sets the emailAddress property value. The emailAddress property
+// SetEmailAddress sets the emailAddress property value. The email address that is associated with the workspace. This email address is used for booking.
 func (m *Workspace) SetEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("emailAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMode sets the mode property value. The mode property
+// SetMode sets the mode property value. The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.
 func (m *Workspace) SetMode(value PlaceModeable)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNickname sets the nickname property value. The nickname property
+// SetNickname sets the nickname property value. A short, friendly name for the workspace, often used for easier identification or display in the UI.
 func (m *Workspace) SetNickname(value *string)() {
     err := m.GetBackingStore().Set("nickname", value)
     if err != nil {

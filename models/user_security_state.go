@@ -80,7 +80,7 @@ func (m *UserSecurityState) GetDomainName()(*string) {
     }
     return nil
 }
-// GetEmailRole gets the emailRole property value. For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
+// GetEmailRole gets the emailRole property value. For email-related alerts - user account's email 'role'. The possible values are: unknown, sender, recipient.
 // returns a *EmailRole when successful
 func (m *UserSecurityState) GetEmailRole()(*EmailRole) {
     val, err := m.GetBackingStore().Get("emailRole")
@@ -308,7 +308,7 @@ func (m *UserSecurityState) GetLogonLocation()(*string) {
     }
     return nil
 }
-// GetLogonType gets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+// GetLogonType gets the logonType property value. Method of user sign in. The possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 // returns a *LogonType when successful
 func (m *UserSecurityState) GetLogonType()(*LogonType) {
     val, err := m.GetBackingStore().Get("logonType")
@@ -356,7 +356,7 @@ func (m *UserSecurityState) GetRiskScore()(*string) {
     }
     return nil
 }
-// GetUserAccountType gets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
+// GetUserAccountType gets the userAccountType property value. User account type (group membership), per Windows definition. The possible values are: unknown, standard, power, administrator.
 // returns a *UserAccountSecurityType when successful
 func (m *UserSecurityState) GetUserAccountType()(*UserAccountSecurityType) {
     val, err := m.GetBackingStore().Get("userAccountType")
@@ -515,7 +515,7 @@ func (m *UserSecurityState) SetDomainName(value *string)() {
         panic(err)
     }
 }
-// SetEmailRole sets the emailRole property value. For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
+// SetEmailRole sets the emailRole property value. For email-related alerts - user account's email 'role'. The possible values are: unknown, sender, recipient.
 func (m *UserSecurityState) SetEmailRole(value *EmailRole)() {
     err := m.GetBackingStore().Set("emailRole", value)
     if err != nil {
@@ -557,7 +557,7 @@ func (m *UserSecurityState) SetLogonLocation(value *string)() {
         panic(err)
     }
 }
-// SetLogonType sets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+// SetLogonType sets the logonType property value. Method of user sign in. The possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 func (m *UserSecurityState) SetLogonType(value *LogonType)() {
     err := m.GetBackingStore().Set("logonType", value)
     if err != nil {
@@ -585,7 +585,7 @@ func (m *UserSecurityState) SetRiskScore(value *string)() {
         panic(err)
     }
 }
-// SetUserAccountType sets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
+// SetUserAccountType sets the userAccountType property value. User account type (group membership), per Windows definition. The possible values are: unknown, standard, power, administrator.
 func (m *UserSecurityState) SetUserAccountType(value *UserAccountSecurityType)() {
     err := m.GetBackingStore().Set("userAccountType", value)
     if err != nil {

@@ -56,7 +56,7 @@ func (m *Building) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetMapEscaped gets the map property value. The map property
+// GetMapEscaped gets the map property value. Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.
 // returns a BuildingMapable when successful
 func (m *Building) GetMapEscaped()(BuildingMapable) {
     val, err := m.GetBackingStore().Get("mapEscaped")
@@ -68,7 +68,7 @@ func (m *Building) GetMapEscaped()(BuildingMapable) {
     }
     return nil
 }
-// GetResourceLinks gets the resourceLinks property value. The resourceLinks property
+// GetResourceLinks gets the resourceLinks property value. A set of links to external resources that are associated with the building. Inherited from place.
 // returns a []ResourceLinkable when successful
 func (m *Building) GetResourceLinks()([]ResourceLinkable) {
     val, err := m.GetBackingStore().Get("resourceLinks")
@@ -106,14 +106,14 @@ func (m *Building) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetMapEscaped sets the map property value. The map property
+// SetMapEscaped sets the map property value. Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.
 func (m *Building) SetMapEscaped(value BuildingMapable)() {
     err := m.GetBackingStore().Set("mapEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceLinks sets the resourceLinks property value. The resourceLinks property
+// SetResourceLinks sets the resourceLinks property value. A set of links to external resources that are associated with the building. Inherited from place.
 func (m *Building) SetResourceLinks(value []ResourceLinkable)() {
     err := m.GetBackingStore().Set("resourceLinks", value)
     if err != nil {

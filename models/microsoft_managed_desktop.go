@@ -79,7 +79,7 @@ func (m *MicrosoftManagedDesktop) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetManagedType gets the managedType property value. Indicates the provisioning policy associated with Microsoft Managed Desktop settings. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default is notManaged.
+// GetManagedType gets the managedType property value. Indicates the provisioning policy associated with Microsoft Managed Desktop settings. The possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default is notManaged.
 // returns a *MicrosoftManagedDesktopType when successful
 func (m *MicrosoftManagedDesktop) GetManagedType()(*MicrosoftManagedDesktopType) {
     val, err := m.GetBackingStore().Get("managedType")
@@ -155,7 +155,7 @@ func (m *MicrosoftManagedDesktop) SetAdditionalData(value map[string]any)() {
 func (m *MicrosoftManagedDesktop) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetManagedType sets the managedType property value. Indicates the provisioning policy associated with Microsoft Managed Desktop settings. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default is notManaged.
+// SetManagedType sets the managedType property value. Indicates the provisioning policy associated with Microsoft Managed Desktop settings. The possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default is notManaged.
 func (m *MicrosoftManagedDesktop) SetManagedType(value *MicrosoftManagedDesktopType)() {
     err := m.GetBackingStore().Set("managedType", value)
     if err != nil {

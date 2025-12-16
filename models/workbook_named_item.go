@@ -134,7 +134,7 @@ func (m *WorkbookNamedItem) GetScope()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// GetTypeEscaped gets the type property value. The type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 // returns a *string when successful
 func (m *WorkbookNamedItem) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -253,7 +253,7 @@ func (m *WorkbookNamedItem) SetScope(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// SetTypeEscaped sets the type property value. The type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 func (m *WorkbookNamedItem) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

@@ -275,7 +275,7 @@ func (m *CompanySubscription) GetSkuPartNumber()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
+// GetStatus gets the status property value. The status of this subscription. The possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
 // returns a *string when successful
 func (m *CompanySubscription) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
@@ -455,7 +455,7 @@ func (m *CompanySubscription) SetSkuPartNumber(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
+// SetStatus sets the status property value. The status of this subscription. The possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
 func (m *CompanySubscription) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
