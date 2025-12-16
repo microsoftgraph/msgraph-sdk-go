@@ -170,7 +170,7 @@ func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetStatus gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
+// GetStatus gets the status property value. Latest status of the dataSourceContainer. The possible values are: Active, Released.
 // returns a *DataSourceContainerStatus when successful
 func (m *DataSourceContainer) GetStatus()(*DataSourceContainerStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -263,7 +263,7 @@ func (m *DataSourceContainer) SetReleasedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetStatus sets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
+// SetStatus sets the status property value. Latest status of the dataSourceContainer. The possible values are: Active, Released.
 func (m *DataSourceContainer) SetStatus(value *DataSourceContainerStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

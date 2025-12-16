@@ -243,7 +243,7 @@ func (m *EducationModule) GetResourcesFolderUrl()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the module. You can't use a PATCH operation to update this value. Possible values are: draft and published.
+// GetStatus gets the status property value. Status of the module. You can't use a PATCH operation to update this value. The possible values are: draft and published.
 // returns a *EducationModuleStatus when successful
 func (m *EducationModule) GetStatus()(*EducationModuleStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -356,7 +356,7 @@ func (m *EducationModule) SetResourcesFolderUrl(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the module. You can't use a PATCH operation to update this value. Possible values are: draft and published.
+// SetStatus sets the status property value. Status of the module. You can't use a PATCH operation to update this value. The possible values are: draft and published.
 func (m *EducationModule) SetStatus(value *EducationModuleStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

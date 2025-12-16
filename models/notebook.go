@@ -206,7 +206,7 @@ func (m *Notebook) GetSectionsUrl()(*string) {
     }
     return nil
 }
-// GetUserRole gets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
+// GetUserRole gets the userRole property value. The possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
 // returns a *OnenoteUserRole when successful
 func (m *Notebook) GetUserRole()(*OnenoteUserRole) {
     val, err := m.GetBackingStore().Get("userRole")
@@ -336,7 +336,7 @@ func (m *Notebook) SetSectionsUrl(value *string)() {
         panic(err)
     }
 }
-// SetUserRole sets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
+// SetUserRole sets the userRole property value. The possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
 func (m *Notebook) SetUserRole(value *OnenoteUserRole)() {
     err := m.GetBackingStore().Set("userRole", value)
     if err != nil {

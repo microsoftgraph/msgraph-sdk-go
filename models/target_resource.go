@@ -137,7 +137,7 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
+// GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type. The possible values are: unifiedGroups, azureAD, and unknownFutureValue
 // returns a *GroupType when successful
 func (m *TargetResource) GetGroupType()(*GroupType) {
     val, err := m.GetBackingStore().Get("groupType")
@@ -286,7 +286,7 @@ func (m *TargetResource) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
+// SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type. The possible values are: unifiedGroups, azureAD, and unknownFutureValue
 func (m *TargetResource) SetGroupType(value *GroupType)() {
     err := m.GetBackingStore().Set("groupType", value)
     if err != nil {

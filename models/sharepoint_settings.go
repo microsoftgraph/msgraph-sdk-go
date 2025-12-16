@@ -409,7 +409,7 @@ func (m *SharepointSettings) GetIdleSessionSignOut()(IdleSessionSignOutable) {
     }
     return nil
 }
-// GetImageTaggingOption gets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
+// GetImageTaggingOption gets the imageTaggingOption property value. Specifies the image tagging option for the tenant. The possible values are: disabled, basic, enhanced.
 // returns a *ImageTaggingChoice when successful
 func (m *SharepointSettings) GetImageTaggingOption()(*ImageTaggingChoice) {
     val, err := m.GetBackingStore().Get("imageTaggingOption")
@@ -637,7 +637,7 @@ func (m *SharepointSettings) GetSharingBlockedDomainList()([]string) {
     }
     return nil
 }
-// GetSharingCapability gets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
+// GetSharingCapability gets the sharingCapability property value. Sharing capability for the tenant. The possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
 // returns a *SharingCapabilities when successful
 func (m *SharepointSettings) GetSharingCapability()(*SharingCapabilities) {
     val, err := m.GetBackingStore().Get("sharingCapability")
@@ -649,7 +649,7 @@ func (m *SharepointSettings) GetSharingCapability()(*SharingCapabilities) {
     }
     return nil
 }
-// GetSharingDomainRestrictionMode gets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
+// GetSharingDomainRestrictionMode gets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. The possible values are: none, allowList, blockList.
 // returns a *SharingDomainRestrictionMode when successful
 func (m *SharepointSettings) GetSharingDomainRestrictionMode()(*SharingDomainRestrictionMode) {
     val, err := m.GetBackingStore().Get("sharingDomainRestrictionMode")
@@ -917,7 +917,7 @@ func (m *SharepointSettings) SetIdleSessionSignOut(value IdleSessionSignOutable)
         panic(err)
     }
 }
-// SetImageTaggingOption sets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
+// SetImageTaggingOption sets the imageTaggingOption property value. Specifies the image tagging option for the tenant. The possible values are: disabled, basic, enhanced.
 func (m *SharepointSettings) SetImageTaggingOption(value *ImageTaggingChoice)() {
     err := m.GetBackingStore().Set("imageTaggingOption", value)
     if err != nil {
@@ -1050,14 +1050,14 @@ func (m *SharepointSettings) SetSharingBlockedDomainList(value []string)() {
         panic(err)
     }
 }
-// SetSharingCapability sets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
+// SetSharingCapability sets the sharingCapability property value. Sharing capability for the tenant. The possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
 func (m *SharepointSettings) SetSharingCapability(value *SharingCapabilities)() {
     err := m.GetBackingStore().Set("sharingCapability", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharingDomainRestrictionMode sets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
+// SetSharingDomainRestrictionMode sets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. The possible values are: none, allowList, blockList.
 func (m *SharepointSettings) SetSharingDomainRestrictionMode(value *SharingDomainRestrictionMode)() {
     err := m.GetBackingStore().Set("sharingDomainRestrictionMode", value)
     if err != nil {

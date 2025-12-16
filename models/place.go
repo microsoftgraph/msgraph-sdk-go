@@ -52,7 +52,7 @@ func CreatePlaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
     }
     return NewPlace(), nil
 }
-// GetAddress gets the address property value. The street address of the place.
+// GetAddress gets the address property value. The physical address of the place, including the street, city, state, country or region, and postal code.
 // returns a PhysicalAddressable when successful
 func (m *Place) GetAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
@@ -64,7 +64,7 @@ func (m *Place) GetAddress()(PhysicalAddressable) {
     }
     return nil
 }
-// GetCheckIns gets the checkIns property value. The checkIns property
+// GetCheckIns gets the checkIns property value. A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 // returns a []CheckInClaimable when successful
 func (m *Place) GetCheckIns()([]CheckInClaimable) {
     val, err := m.GetBackingStore().Get("checkIns")
@@ -76,7 +76,7 @@ func (m *Place) GetCheckIns()([]CheckInClaimable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name associated with the place.
+// GetDisplayName gets the displayName property value. The name that is associated with the place.
 // returns a *string when successful
 func (m *Place) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -208,7 +208,7 @@ func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
     }
     return nil
 }
-// GetIsWheelChairAccessible gets the isWheelChairAccessible property value. The isWheelChairAccessible property
+// GetIsWheelChairAccessible gets the isWheelChairAccessible property value. Indicates whether the place is wheelchair accessible.
 // returns a *bool when successful
 func (m *Place) GetIsWheelChairAccessible()(*bool) {
     val, err := m.GetBackingStore().Get("isWheelChairAccessible")
@@ -220,7 +220,7 @@ func (m *Place) GetIsWheelChairAccessible()(*bool) {
     }
     return nil
 }
-// GetLabel gets the label property value. The label property
+// GetLabel gets the label property value. User-defined description of the place.
 // returns a *string when successful
 func (m *Place) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
@@ -232,7 +232,7 @@ func (m *Place) GetLabel()(*string) {
     }
     return nil
 }
-// GetParentId gets the parentId property value. The parentId property
+// GetParentId gets the parentId property value. The ID of a parent place.
 // returns a *string when successful
 func (m *Place) GetParentId()(*string) {
     val, err := m.GetBackingStore().Get("parentId")
@@ -256,7 +256,7 @@ func (m *Place) GetPhone()(*string) {
     }
     return nil
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. Custom tags that are associated with the place for categorization or filtering.
 // returns a []string when successful
 func (m *Place) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
@@ -336,21 +336,21 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     return nil
 }
-// SetAddress sets the address property value. The street address of the place.
+// SetAddress sets the address property value. The physical address of the place, including the street, city, state, country or region, and postal code.
 func (m *Place) SetAddress(value PhysicalAddressable)() {
     err := m.GetBackingStore().Set("address", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCheckIns sets the checkIns property value. The checkIns property
+// SetCheckIns sets the checkIns property value. A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 func (m *Place) SetCheckIns(value []CheckInClaimable)() {
     err := m.GetBackingStore().Set("checkIns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name associated with the place.
+// SetDisplayName sets the displayName property value. The name that is associated with the place.
 func (m *Place) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -364,21 +364,21 @@ func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
         panic(err)
     }
 }
-// SetIsWheelChairAccessible sets the isWheelChairAccessible property value. The isWheelChairAccessible property
+// SetIsWheelChairAccessible sets the isWheelChairAccessible property value. Indicates whether the place is wheelchair accessible.
 func (m *Place) SetIsWheelChairAccessible(value *bool)() {
     err := m.GetBackingStore().Set("isWheelChairAccessible", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLabel sets the label property value. The label property
+// SetLabel sets the label property value. User-defined description of the place.
 func (m *Place) SetLabel(value *string)() {
     err := m.GetBackingStore().Set("label", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParentId sets the parentId property value. The parentId property
+// SetParentId sets the parentId property value. The ID of a parent place.
 func (m *Place) SetParentId(value *string)() {
     err := m.GetBackingStore().Set("parentId", value)
     if err != nil {
@@ -392,7 +392,7 @@ func (m *Place) SetPhone(value *string)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. Custom tags that are associated with the place for categorization or filtering.
 func (m *Place) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {

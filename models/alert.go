@@ -191,7 +191,7 @@ func (m *Alert) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     }
     return nil
 }
-// GetFeedback gets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.
+// GetFeedback gets the feedback property value. Analyst feedback on the alert. The possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.
 // returns a *AlertFeedback when successful
 func (m *Alert) GetFeedback()(*AlertFeedback) {
     val, err := m.GetBackingStore().Get("feedback")
@@ -1458,7 +1458,7 @@ func (m *Alert) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
         panic(err)
     }
 }
-// SetFeedback sets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.
+// SetFeedback sets the feedback property value. Analyst feedback on the alert. The possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.
 func (m *Alert) SetFeedback(value *AlertFeedback)() {
     err := m.GetBackingStore().Set("feedback", value)
     if err != nil {

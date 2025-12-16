@@ -147,7 +147,7 @@ func (m *AvailabilityItem) GetStartDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
+// GetStatus gets the status property value. The status of the staff member. The possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
 // returns a *BookingsAvailabilityStatus when successful
 func (m *AvailabilityItem) GetStatus()(*BookingsAvailabilityStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -239,7 +239,7 @@ func (m *AvailabilityItem) SetStartDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
+// SetStatus sets the status property value. The status of the staff member. The possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
 func (m *AvailabilityItem) SetStatus(value *BookingsAvailabilityStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

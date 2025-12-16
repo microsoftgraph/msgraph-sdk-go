@@ -107,7 +107,7 @@ func (m *TrainingSetting) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSettingType gets the settingType property value. Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
+// GetSettingType gets the settingType property value. Type of setting. The possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
 // returns a *TrainingSettingType when successful
 func (m *TrainingSetting) GetSettingType()(*TrainingSettingType) {
     val, err := m.GetBackingStore().Get("settingType")
@@ -160,7 +160,7 @@ func (m *TrainingSetting) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSettingType sets the settingType property value. Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
+// SetSettingType sets the settingType property value. Type of setting. The possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
 func (m *TrainingSetting) SetSettingType(value *TrainingSettingType)() {
     err := m.GetBackingStore().Set("settingType", value)
     if err != nil {

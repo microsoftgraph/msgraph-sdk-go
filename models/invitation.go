@@ -264,7 +264,7 @@ func (m *Invitation) GetSendInvitationMessage()(*bool) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
+// GetStatus gets the status property value. The status of the invitation. The possible values are: PendingAcceptance, Completed, InProgress, and Error.
 // returns a *string when successful
 func (m *Invitation) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
@@ -426,7 +426,7 @@ func (m *Invitation) SetSendInvitationMessage(value *bool)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
+// SetStatus sets the status property value. The status of the invitation. The possible values are: PendingAcceptance, Completed, InProgress, and Error.
 func (m *Invitation) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

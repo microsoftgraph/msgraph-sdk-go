@@ -79,7 +79,7 @@ func (m *AttributeDefinitionMetadataEntry) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetKey gets the key property value. Possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
+// GetKey gets the key property value. The possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
 // returns a *AttributeDefinitionMetadata when successful
 func (m *AttributeDefinitionMetadataEntry) GetKey()(*AttributeDefinitionMetadata) {
     val, err := m.GetBackingStore().Get("key")
@@ -155,7 +155,7 @@ func (m *AttributeDefinitionMetadataEntry) SetAdditionalData(value map[string]an
 func (m *AttributeDefinitionMetadataEntry) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. Possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
+// SetKey sets the key property value. The possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
 func (m *AttributeDefinitionMetadataEntry) SetKey(value *AttributeDefinitionMetadata)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {

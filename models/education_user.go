@@ -131,7 +131,7 @@ func (m *EducationUser) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalSource gets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
+// GetExternalSource gets the externalSource property value. Where this user was created from. The possible values are: sis, manual.
 // returns a *EducationExternalSource when successful
 func (m *EducationUser) GetExternalSource()(*EducationExternalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
@@ -1280,7 +1280,7 @@ func (m *EducationUser) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExternalSource sets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
+// SetExternalSource sets the externalSource property value. Where this user was created from. The possible values are: sis, manual.
 func (m *EducationUser) SetExternalSource(value *EducationExternalSource)() {
     err := m.GetBackingStore().Set("externalSource", value)
     if err != nil {

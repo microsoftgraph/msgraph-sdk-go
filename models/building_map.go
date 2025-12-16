@@ -72,7 +72,7 @@ func (m *BuildingMap) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetFootprints gets the footprints property value. The footprints property
+// GetFootprints gets the footprints property value. Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
 // returns a []FootprintMapable when successful
 func (m *BuildingMap) GetFootprints()([]FootprintMapable) {
     val, err := m.GetBackingStore().Get("footprints")
@@ -84,7 +84,7 @@ func (m *BuildingMap) GetFootprints()([]FootprintMapable) {
     }
     return nil
 }
-// GetLevels gets the levels property value. The levels property
+// GetLevels gets the levels property value. Represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
 // returns a []LevelMapable when successful
 func (m *BuildingMap) GetLevels()([]LevelMapable) {
     val, err := m.GetBackingStore().Get("levels")
@@ -96,7 +96,7 @@ func (m *BuildingMap) GetLevels()([]LevelMapable) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. The placeId property
+// GetPlaceId gets the placeId property value. Identifier for the building to which this buildingMap belongs.
 // returns a *string when successful
 func (m *BuildingMap) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -146,21 +146,21 @@ func (m *BuildingMap) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetFootprints sets the footprints property value. The footprints property
+// SetFootprints sets the footprints property value. Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
 func (m *BuildingMap) SetFootprints(value []FootprintMapable)() {
     err := m.GetBackingStore().Set("footprints", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLevels sets the levels property value. The levels property
+// SetLevels sets the levels property value. Represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
 func (m *BuildingMap) SetLevels(value []LevelMapable)() {
     err := m.GetBackingStore().Set("levels", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. The placeId property
+// SetPlaceId sets the placeId property value. Identifier for the building to which this buildingMap belongs.
 func (m *BuildingMap) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {

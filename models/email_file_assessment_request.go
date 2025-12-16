@@ -36,7 +36,7 @@ func (m *EmailFileAssessmentRequest) GetContentData()(*string) {
     }
     return nil
 }
-// GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
+// GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. The possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 // returns a *MailDestinationRoutingReason when successful
 func (m *EmailFileAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRoutingReason) {
     val, err := m.GetBackingStore().Get("destinationRoutingReason")
@@ -130,7 +130,7 @@ func (m *EmailFileAssessmentRequest) SetContentData(value *string)() {
         panic(err)
     }
 }
-// SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
+// SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. The possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 func (m *EmailFileAssessmentRequest) SetDestinationRoutingReason(value *MailDestinationRoutingReason)() {
     err := m.GetBackingStore().Set("destinationRoutingReason", value)
     if err != nil {

@@ -98,7 +98,7 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
+// GetState gets the state property value. The state of the policy. The possible values are: enabled, disabled.
 // returns a *AuthenticationMethodState when successful
 func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
     val, err := m.GetBackingStore().Get("state")
@@ -144,7 +144,7 @@ func (m *AuthenticationMethodConfiguration) SetExcludeTargets(value []ExcludeTar
         panic(err)
     }
 }
-// SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
+// SetState sets the state property value. The state of the policy. The possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

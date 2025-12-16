@@ -90,7 +90,7 @@ func (m *OnlineMeetingBase) GetAllowCopyingAndSharingMeetingContent()(*bool) {
     }
     return nil
 }
-// GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
+// GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. The possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
 // returns a *AllowedLobbyAdmitterRoles when successful
 func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRoles) {
     val, err := m.GetBackingStore().Get("allowedLobbyAdmitters")
@@ -102,7 +102,7 @@ func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRole
     }
     return nil
 }
-// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.
+// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. The possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.
 // returns a *OnlineMeetingPresenters when successful
 func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
@@ -114,7 +114,7 @@ func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     }
     return nil
 }
-// GetAllowLiveShare gets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
+// GetAllowLiveShare gets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. The possible values are: enabled, disabled, unknownFutureValue.
 // returns a *MeetingLiveShareOptions when successful
 func (m *OnlineMeetingBase) GetAllowLiveShare()(*MeetingLiveShareOptions) {
     val, err := m.GetBackingStore().Get("allowLiveShare")
@@ -644,7 +644,7 @@ func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
     }
     return nil
 }
-// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
+// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.
 // returns a *MeetingChatHistoryDefaultMode when successful
 func (m *OnlineMeetingBase) GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode) {
     val, err := m.GetBackingStore().Get("shareMeetingChatHistoryDefault")
@@ -913,21 +913,21 @@ func (m *OnlineMeetingBase) SetAllowCopyingAndSharingMeetingContent(value *bool)
         panic(err)
     }
 }
-// SetAllowedLobbyAdmitters sets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
+// SetAllowedLobbyAdmitters sets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. The possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowedLobbyAdmitters(value *AllowedLobbyAdmitterRoles)() {
     err := m.GetBackingStore().Set("allowedLobbyAdmitters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.
+// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. The possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.
 func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
     err := m.GetBackingStore().Set("allowedPresenters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowLiveShare sets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
+// SetAllowLiveShare sets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. The possible values are: enabled, disabled, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowLiveShare(value *MeetingLiveShareOptions)() {
     err := m.GetBackingStore().Set("allowLiveShare", value)
     if err != nil {
@@ -1060,7 +1060,7 @@ func (m *OnlineMeetingBase) SetRecordAutomatically(value *bool)() {
         panic(err)
     }
 }
-// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
+// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.
 func (m *OnlineMeetingBase) SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)() {
     err := m.GetBackingStore().Set("shareMeetingChatHistoryDefault", value)
     if err != nil {

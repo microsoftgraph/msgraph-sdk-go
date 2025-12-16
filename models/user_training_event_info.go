@@ -121,7 +121,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+// GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. The possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 // returns a *TrainingStatus when successful
 func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
     val, err := m.GetBackingStore().Get("latestTrainingStatus")
@@ -246,7 +246,7 @@ func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+// SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. The possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
     err := m.GetBackingStore().Set("latestTrainingStatus", value)
     if err != nil {

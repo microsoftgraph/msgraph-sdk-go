@@ -24,7 +24,7 @@ func NewCallStartedEventMessageDetail()(*CallStartedEventMessageDetail) {
 func CreateCallStartedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallStartedEventMessageDetail(), nil
 }
-// GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
+// GetCallEventType gets the callEventType property value. Represents the call event type. The possible values are: call, meeting, screenShare, unknownFutureValue.
 // returns a *TeamworkCallEventType when successful
 func (m *CallStartedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
@@ -123,7 +123,7 @@ func (m *CallStartedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetCallEventType sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
+// SetCallEventType sets the callEventType property value. Represents the call event type. The possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallStartedEventMessageDetail) SetCallEventType(value *TeamworkCallEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
     if err != nil {

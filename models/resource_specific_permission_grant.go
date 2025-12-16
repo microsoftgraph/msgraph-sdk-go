@@ -116,7 +116,7 @@ func (m *ResourceSpecificPermissionGrant) GetPermission()(*string) {
     }
     return nil
 }
-// GetPermissionType gets the permissionType property value. The type of permission. Possible values are: Application, Delegated. Read-only.
+// GetPermissionType gets the permissionType property value. The type of permission. The possible values are: Application, Delegated. Read-only.
 // returns a *string when successful
 func (m *ResourceSpecificPermissionGrant) GetPermissionType()(*string) {
     val, err := m.GetBackingStore().Get("permissionType")
@@ -199,7 +199,7 @@ func (m *ResourceSpecificPermissionGrant) SetPermission(value *string)() {
         panic(err)
     }
 }
-// SetPermissionType sets the permissionType property value. The type of permission. Possible values are: Application, Delegated. Read-only.
+// SetPermissionType sets the permissionType property value. The type of permission. The possible values are: Application, Delegated. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetPermissionType(value *string)() {
     err := m.GetBackingStore().Set("permissionType", value)
     if err != nil {

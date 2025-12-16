@@ -14,7 +14,7 @@ import (
 type ItemGraphRoomListWorkspacesItemCheckInsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphRoomListWorkspacesItemCheckInsRequestBuilderGetQueryParameters get checkIns from places
+// ItemGraphRoomListWorkspacesItemCheckInsRequestBuilderGetQueryParameters a subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 type ItemGraphRoomListWorkspacesItemCheckInsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewItemGraphRoomListWorkspacesItemCheckInsRequestBuilder(rawUrl string, req
 func (m *ItemGraphRoomListWorkspacesItemCheckInsRequestBuilder) Count()(*ItemGraphRoomListWorkspacesItemCheckInsCountRequestBuilder) {
     return NewItemGraphRoomListWorkspacesItemCheckInsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get checkIns from places
+// Get a subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 // returns a CheckInClaimCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphRoomListWorkspacesItemCheckInsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphRoomListWorkspacesItemCheckInsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CheckInClaimCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemGraphRoomListWorkspacesItemCheckInsRequestBuilder) Post(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CheckInClaimable), nil
 }
-// ToGetRequestInformation get checkIns from places
+// ToGetRequestInformation a subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 // returns a *RequestInformation when successful
 func (m *ItemGraphRoomListWorkspacesItemCheckInsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomListWorkspacesItemCheckInsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

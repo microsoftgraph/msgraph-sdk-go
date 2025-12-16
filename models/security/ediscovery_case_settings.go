@@ -115,7 +115,7 @@ func (m *EdiscoveryCaseSettings) GetRedundancyDetection()(RedundancyDetectionSet
     }
     return nil
 }
-// GetReviewSetSettings gets the reviewSetSettings property value. The settings of the review set for the case. Possible values are: none, disableGrouping, unknownFutureValue.
+// GetReviewSetSettings gets the reviewSetSettings property value. The settings of the review set for the case. The possible values are: none, disableGrouping, unknownFutureValue.
 // returns a *ReviewSetSettings when successful
 func (m *EdiscoveryCaseSettings) GetReviewSetSettings()(*ReviewSetSettings) {
     val, err := m.GetBackingStore().Get("reviewSetSettings")
@@ -200,7 +200,7 @@ func (m *EdiscoveryCaseSettings) SetRedundancyDetection(value RedundancyDetectio
         panic(err)
     }
 }
-// SetReviewSetSettings sets the reviewSetSettings property value. The settings of the review set for the case. Possible values are: none, disableGrouping, unknownFutureValue.
+// SetReviewSetSettings sets the reviewSetSettings property value. The settings of the review set for the case. The possible values are: none, disableGrouping, unknownFutureValue.
 func (m *EdiscoveryCaseSettings) SetReviewSetSettings(value *ReviewSetSettings)() {
     err := m.GetBackingStore().Set("reviewSetSettings", value)
     if err != nil {

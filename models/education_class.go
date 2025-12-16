@@ -154,7 +154,7 @@ func (m *EducationClass) GetExternalName()(*string) {
     }
     return nil
 }
-// GetExternalSource gets the externalSource property value. How this class was created. Possible values are: sis, manual.
+// GetExternalSource gets the externalSource property value. How this class was created. The possible values are: sis, manual.
 // returns a *EducationExternalSource when successful
 func (m *EducationClass) GetExternalSource()(*EducationExternalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
@@ -774,7 +774,7 @@ func (m *EducationClass) SetExternalName(value *string)() {
         panic(err)
     }
 }
-// SetExternalSource sets the externalSource property value. How this class was created. Possible values are: sis, manual.
+// SetExternalSource sets the externalSource property value. How this class was created. The possible values are: sis, manual.
 func (m *EducationClass) SetExternalSource(value *EducationExternalSource)() {
     err := m.GetBackingStore().Set("externalSource", value)
     if err != nil {

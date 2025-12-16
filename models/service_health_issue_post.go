@@ -126,7 +126,7 @@ func (m *ServiceHealthIssuePost) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPostType gets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
+// GetPostType gets the postType property value. The post type of the service issue historical post. The possible values are: regular, quick, strategic, unknownFutureValue.
 // returns a *PostType when successful
 func (m *ServiceHealthIssuePost) GetPostType()(*PostType) {
     val, err := m.GetBackingStore().Get("postType")
@@ -205,7 +205,7 @@ func (m *ServiceHealthIssuePost) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPostType sets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
+// SetPostType sets the postType property value. The post type of the service issue historical post. The possible values are: regular, quick, strategic, unknownFutureValue.
 func (m *ServiceHealthIssuePost) SetPostType(value *PostType)() {
     err := m.GetBackingStore().Set("postType", value)
     if err != nil {

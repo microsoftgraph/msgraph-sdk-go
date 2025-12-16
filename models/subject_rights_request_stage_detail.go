@@ -113,7 +113,7 @@ func (m *SubjectRightsRequestStageDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStage gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: approval.
+// GetStage gets the stage property value. The stage of the subject rights request.
 // returns a *SubjectRightsRequestStage when successful
 func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage) {
     val, err := m.GetBackingStore().Get("stage")
@@ -125,7 +125,7 @@ func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage)
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+// GetStatus gets the status property value. Status of the current stage. The possible values are: notStarted, current, completed, failed, unknownFutureValue.
 // returns a *SubjectRightsRequestStageStatus when successful
 func (m *SubjectRightsRequestStageDetail) GetStatus()(*SubjectRightsRequestStageStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -198,14 +198,14 @@ func (m *SubjectRightsRequestStageDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: approval.
+// SetStage sets the stage property value. The stage of the subject rights request.
 func (m *SubjectRightsRequestStageDetail) SetStage(value *SubjectRightsRequestStage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+// SetStatus sets the status property value. Status of the current stage. The possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) SetStatus(value *SubjectRightsRequestStageStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

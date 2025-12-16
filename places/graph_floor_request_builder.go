@@ -14,7 +14,7 @@ import (
 type GraphFloorRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GraphFloorRequestBuilderGetQueryParameters get the items of type microsoft.graph.floor in the microsoft.graph.place collection
+// GraphFloorRequestBuilderGetQueryParameters get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
 type GraphFloorRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -60,9 +60,12 @@ func NewGraphFloorRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *GraphFloorRequestBuilder) Count()(*GraphFloorCountRequestBuilder) {
     return NewGraphFloorCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the items of type microsoft.graph.floor in the microsoft.graph.place collection
+// Get get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
 // returns a FloorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
 func (m *GraphFloorRequestBuilder) Get(ctx context.Context, requestConfiguration *GraphFloorRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FloorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +83,7 @@ func (m *GraphFloorRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FloorCollectionResponseable), nil
 }
-// ToGetRequestInformation get the items of type microsoft.graph.floor in the microsoft.graph.place collection
+// ToGetRequestInformation get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
 // returns a *RequestInformation when successful
 func (m *GraphFloorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GraphFloorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

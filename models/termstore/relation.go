@@ -81,7 +81,7 @@ func (m *Relation) GetFromTerm()(Termable) {
     }
     return nil
 }
-// GetRelationship gets the relationship property value. The type of relation. Possible values are: pin, reuse.
+// GetRelationship gets the relationship property value. The type of relation. The possible values are: pin, reuse.
 // returns a *RelationType when successful
 func (m *Relation) GetRelationship()(*RelationType) {
     val, err := m.GetBackingStore().Get("relationship")
@@ -157,7 +157,7 @@ func (m *Relation) SetFromTerm(value Termable)() {
         panic(err)
     }
 }
-// SetRelationship sets the relationship property value. The type of relation. Possible values are: pin, reuse.
+// SetRelationship sets the relationship property value. The type of relation. The possible values are: pin, reuse.
 func (m *Relation) SetRelationship(value *RelationType)() {
     err := m.GetBackingStore().Set("relationship", value)
     if err != nil {

@@ -83,7 +83,7 @@ func (m *AttackSimulationOperation) GetTenantId()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
+// GetTypeEscaped gets the type property value. The attack simulation operation type. The possible values are: createSimulation, updateSimulation, unknownFutureValue.
 // returns a *AttackSimulationOperationType when successful
 func (m *AttackSimulationOperation) GetTypeEscaped()(*AttackSimulationOperationType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -136,7 +136,7 @@ func (m *AttackSimulationOperation) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
+// SetTypeEscaped sets the type property value. The attack simulation operation type. The possible values are: createSimulation, updateSimulation, unknownFutureValue.
 func (m *AttackSimulationOperation) SetTypeEscaped(value *AttackSimulationOperationType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

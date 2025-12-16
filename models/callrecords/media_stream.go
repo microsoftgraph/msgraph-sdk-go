@@ -39,7 +39,7 @@ func (m *MediaStream) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAudioCodec gets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
+// GetAudioCodec gets the audioCodec property value. Codec name used to encode audio for transmission on the network. The possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
 // returns a *AudioCodec when successful
 func (m *MediaStream) GetAudioCodec()(*AudioCodec) {
     val, err := m.GetBackingStore().Get("audioCodec")
@@ -708,7 +708,7 @@ func (m *MediaStream) GetStreamId()(*string) {
     }
     return nil
 }
-// GetVideoCodec gets the videoCodec property value. Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
+// GetVideoCodec gets the videoCodec property value. Codec name used to encode video for transmission on the network. The possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
 // returns a *VideoCodec when successful
 func (m *MediaStream) GetVideoCodec()(*VideoCodec) {
     val, err := m.GetBackingStore().Get("videoCodec")
@@ -938,7 +938,7 @@ func (m *MediaStream) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAudioCodec sets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
+// SetAudioCodec sets the audioCodec property value. Codec name used to encode audio for transmission on the network. The possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
 func (m *MediaStream) SetAudioCodec(value *AudioCodec)() {
     err := m.GetBackingStore().Set("audioCodec", value)
     if err != nil {
@@ -1145,7 +1145,7 @@ func (m *MediaStream) SetStreamId(value *string)() {
         panic(err)
     }
 }
-// SetVideoCodec sets the videoCodec property value. Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
+// SetVideoCodec sets the videoCodec property value. Codec name used to encode video for transmission on the network. The possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
 func (m *MediaStream) SetVideoCodec(value *VideoCodec)() {
     err := m.GetBackingStore().Set("videoCodec", value)
     if err != nil {

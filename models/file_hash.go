@@ -79,7 +79,7 @@ func (m *FileHash) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetHashType gets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
+// GetHashType gets the hashType property value. File hash type. The possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
 // returns a *FileHashType when successful
 func (m *FileHash) GetHashType()(*FileHashType) {
     val, err := m.GetBackingStore().Get("hashType")
@@ -155,7 +155,7 @@ func (m *FileHash) SetAdditionalData(value map[string]any)() {
 func (m *FileHash) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetHashType sets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
+// SetHashType sets the hashType property value. File hash type. The possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
 func (m *FileHash) SetHashType(value *FileHashType)() {
     err := m.GetBackingStore().Set("hashType", value)
     if err != nil {

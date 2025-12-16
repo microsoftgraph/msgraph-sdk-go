@@ -59,7 +59,7 @@ func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
+// GetContentType gets the contentType property value. The content type of threat assessment. The possible values are: mail, url, file.
 // returns a *ThreatAssessmentContentType when successful
 func (m *ThreatAssessmentRequest) GetContentType()(*ThreatAssessmentContentType) {
     val, err := m.GetBackingStore().Get("contentType")
@@ -199,7 +199,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
+// GetRequestSource gets the requestSource property value. The source of the threat assessment request. The possible values are: administrator.
 // returns a *ThreatAssessmentRequestSource when successful
 func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
     val, err := m.GetBackingStore().Get("requestSource")
@@ -223,7 +223,7 @@ func (m *ThreatAssessmentRequest) GetResults()([]ThreatAssessmentResultable) {
     }
     return nil
 }
-// GetStatus gets the status property value. The assessment process status. Possible values are: pending, completed.
+// GetStatus gets the status property value. The assessment process status. The possible values are: pending, completed.
 // returns a *ThreatAssessmentStatus when successful
 func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -309,7 +309,7 @@ func (m *ThreatAssessmentRequest) SetCategory(value *ThreatCategory)() {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
+// SetContentType sets the contentType property value. The content type of threat assessment. The possible values are: mail, url, file.
 func (m *ThreatAssessmentRequest) SetContentType(value *ThreatAssessmentContentType)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
@@ -337,7 +337,7 @@ func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAss
         panic(err)
     }
 }
-// SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
+// SetRequestSource sets the requestSource property value. The source of the threat assessment request. The possible values are: administrator.
 func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
     err := m.GetBackingStore().Set("requestSource", value)
     if err != nil {
@@ -351,7 +351,7 @@ func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResultable)
         panic(err)
     }
 }
-// SetStatus sets the status property value. The assessment process status. Possible values are: pending, completed.
+// SetStatus sets the status property value. The assessment process status. The possible values are: pending, completed.
 func (m *ThreatAssessmentRequest) SetStatus(value *ThreatAssessmentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

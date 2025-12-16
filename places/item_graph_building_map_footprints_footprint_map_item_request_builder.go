@@ -21,7 +21,7 @@ type ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetQueryParameters get footprints from places
+// ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetQueryParameters represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
 type ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get footprints from places
+// Get represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
 // returns a FootprintMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FootprintMapable, error) {
@@ -124,7 +124,7 @@ func (m *ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get footprints from places
+// ToGetRequestInformation represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

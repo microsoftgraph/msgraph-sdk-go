@@ -63,7 +63,7 @@ func (m *UnifiedGroupSource) GetGroup()(iadcd81124412c61e647227ecfc4449d8bba17de
     }
     return nil
 }
-// GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
+// GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. The possible values are: mailbox, site.
 // returns a *SourceType when successful
 func (m *UnifiedGroupSource) GetIncludedSources()(*SourceType) {
     val, err := m.GetBackingStore().Get("includedSources")
@@ -103,7 +103,7 @@ func (m *UnifiedGroupSource) SetGroup(value iadcd81124412c61e647227ecfc4449d8bba
         panic(err)
     }
 }
-// SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
+// SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. The possible values are: mailbox, site.
 func (m *UnifiedGroupSource) SetIncludedSources(value *SourceType)() {
     err := m.GetBackingStore().Set("includedSources", value)
     if err != nil {

@@ -247,7 +247,7 @@ func (m *DirectoryAudit) GetOperationType()(*string) {
     }
     return nil
 }
-// GetResult gets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
+// GetResult gets the result property value. Indicates the result of the activity. The possible values are: success, failure, timeout, unknownFutureValue.
 // returns a *OperationResult when successful
 func (m *DirectoryAudit) GetResult()(*OperationResult) {
     val, err := m.GetBackingStore().Get("result")
@@ -426,7 +426,7 @@ func (m *DirectoryAudit) SetOperationType(value *string)() {
         panic(err)
     }
 }
-// SetResult sets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
+// SetResult sets the result property value. Indicates the result of the activity. The possible values are: success, failure, timeout, unknownFutureValue.
 func (m *DirectoryAudit) SetResult(value *OperationResult)() {
     err := m.GetBackingStore().Set("result", value)
     if err != nil {

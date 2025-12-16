@@ -260,7 +260,7 @@ func (m *Bookmark) GetLanguageTags()([]string) {
     }
     return nil
 }
-// GetPlatforms gets the platforms property value. List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
+// GetPlatforms gets the platforms property value. List of devices and operating systems that are able to view this bookmark. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 // returns a []DevicePlatformType when successful
 func (m *Bookmark) GetPlatforms()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platforms")
@@ -438,7 +438,7 @@ func (m *Bookmark) SetLanguageTags(value []string)() {
         panic(err)
     }
 }
-// SetPlatforms sets the platforms property value. List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
+// SetPlatforms sets the platforms property value. List of devices and operating systems that are able to view this bookmark. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 func (m *Bookmark) SetPlatforms(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DevicePlatformType)() {
     err := m.GetBackingStore().Set("platforms", value)
     if err != nil {

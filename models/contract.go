@@ -25,7 +25,7 @@ func NewContract()(*Contract) {
 func CreateContractFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContract(), nil
 }
-// GetContractType gets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
+// GetContractType gets the contractType property value. Type of contract. The possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 // returns a *string when successful
 func (m *Contract) GetContractType()(*string) {
     val, err := m.GetBackingStore().Get("contractType")
@@ -151,7 +151,7 @@ func (m *Contract) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetContractType sets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
+// SetContractType sets the contractType property value. Type of contract. The possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) SetContractType(value *string)() {
     err := m.GetBackingStore().Set("contractType", value)
     if err != nil {

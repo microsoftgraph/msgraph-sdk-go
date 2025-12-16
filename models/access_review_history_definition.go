@@ -47,7 +47,7 @@ func (m *AccessReviewHistoryDefinition) GetCreatedDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetDecisions gets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
+// GetDecisions gets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. The possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
 // returns a []AccessReviewHistoryDecisionFilter when successful
 func (m *AccessReviewHistoryDefinition) GetDecisions()([]AccessReviewHistoryDecisionFilter) {
     val, err := m.GetBackingStore().Get("decisions")
@@ -362,7 +362,7 @@ func (m *AccessReviewHistoryDefinition) SetCreatedDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// SetDecisions sets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
+// SetDecisions sets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. The possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
 func (m *AccessReviewHistoryDefinition) SetDecisions(value []AccessReviewHistoryDecisionFilter)() {
     err := m.GetBackingStore().Set("decisions", value)
     if err != nil {

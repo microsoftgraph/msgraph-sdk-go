@@ -60,7 +60,7 @@ func (m *CallRecordingEventMessageDetail) GetCallRecordingDuration()(*i878a80d23
     }
     return nil
 }
-// GetCallRecordingStatus gets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
+// GetCallRecordingStatus gets the callRecordingStatus property value. Status of the call recording. The possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
 // returns a *CallRecordingStatus when successful
 func (m *CallRecordingEventMessageDetail) GetCallRecordingStatus()(*CallRecordingStatus) {
     val, err := m.GetBackingStore().Get("callRecordingStatus")
@@ -256,7 +256,7 @@ func (m *CallRecordingEventMessageDetail) SetCallRecordingDuration(value *i878a8
         panic(err)
     }
 }
-// SetCallRecordingStatus sets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
+// SetCallRecordingStatus sets the callRecordingStatus property value. Status of the call recording. The possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
 func (m *CallRecordingEventMessageDetail) SetCallRecordingStatus(value *CallRecordingStatus)() {
     err := m.GetBackingStore().Set("callRecordingStatus", value)
     if err != nil {

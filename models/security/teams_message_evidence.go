@@ -50,7 +50,7 @@ func (m *TeamsMessageEvidence) GetChannelId()(*string) {
     }
     return nil
 }
-// GetDeliveryAction gets the deliveryAction property value. The delivery action of this Teams message. Possible values are: unknown, deliveredAsSpam, delivered, blocked, replaced, unknownFutureValue.
+// GetDeliveryAction gets the deliveryAction property value. The delivery action of this Teams message. The possible values are: unknown, deliveredAsSpam, delivered, blocked, replaced, unknownFutureValue.
 // returns a *TeamsMessageDeliveryAction when successful
 func (m *TeamsMessageEvidence) GetDeliveryAction()(*TeamsMessageDeliveryAction) {
     val, err := m.GetBackingStore().Get("deliveryAction")
@@ -62,7 +62,7 @@ func (m *TeamsMessageEvidence) GetDeliveryAction()(*TeamsMessageDeliveryAction) 
     }
     return nil
 }
-// GetDeliveryLocation gets the deliveryLocation property value. The delivery location of this Teams message. Possible values are: unknown, teams, quarantine, failed, unknownFutureValue.
+// GetDeliveryLocation gets the deliveryLocation property value. The delivery location of this Teams message. The possible values are: unknown, teams, quarantine, failed, unknownFutureValue.
 // returns a *TeamsDeliveryLocation when successful
 func (m *TeamsMessageEvidence) GetDeliveryLocation()(*TeamsDeliveryLocation) {
     val, err := m.GetBackingStore().Get("deliveryLocation")
@@ -765,14 +765,14 @@ func (m *TeamsMessageEvidence) SetChannelId(value *string)() {
         panic(err)
     }
 }
-// SetDeliveryAction sets the deliveryAction property value. The delivery action of this Teams message. Possible values are: unknown, deliveredAsSpam, delivered, blocked, replaced, unknownFutureValue.
+// SetDeliveryAction sets the deliveryAction property value. The delivery action of this Teams message. The possible values are: unknown, deliveredAsSpam, delivered, blocked, replaced, unknownFutureValue.
 func (m *TeamsMessageEvidence) SetDeliveryAction(value *TeamsMessageDeliveryAction)() {
     err := m.GetBackingStore().Set("deliveryAction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeliveryLocation sets the deliveryLocation property value. The delivery location of this Teams message. Possible values are: unknown, teams, quarantine, failed, unknownFutureValue.
+// SetDeliveryLocation sets the deliveryLocation property value. The delivery location of this Teams message. The possible values are: unknown, teams, quarantine, failed, unknownFutureValue.
 func (m *TeamsMessageEvidence) SetDeliveryLocation(value *TeamsDeliveryLocation)() {
     err := m.GetBackingStore().Set("deliveryLocation", value)
     if err != nil {

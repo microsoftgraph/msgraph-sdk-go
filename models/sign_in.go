@@ -71,7 +71,7 @@ func (m *SignIn) GetClientAppUsed()(*string) {
     }
     return nil
 }
-// GetConditionalAccessStatus gets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
+// GetConditionalAccessStatus gets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. The possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
 // returns a *ConditionalAccessStatus when successful
 func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
     val, err := m.GetBackingStore().Get("conditionalAccessStatus")
@@ -738,7 +738,7 @@ func (m *SignIn) SetClientAppUsed(value *string)() {
         panic(err)
     }
 }
-// SetConditionalAccessStatus sets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
+// SetConditionalAccessStatus sets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. The possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
 func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
     err := m.GetBackingStore().Set("conditionalAccessStatus", value)
     if err != nil {

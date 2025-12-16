@@ -24,7 +24,7 @@ func NewAssignedPlaceMode()(*AssignedPlaceMode) {
 func CreateAssignedPlaceModeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignedPlaceMode(), nil
 }
-// GetAssignedUserEmailAddress gets the assignedUserEmailAddress property value. The assignedUserEmailAddress property
+// GetAssignedUserEmailAddress gets the assignedUserEmailAddress property value. The email address of the user to whom the desk is assigned.
 // returns a *string when successful
 func (m *AssignedPlaceMode) GetAssignedUserEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("assignedUserEmailAddress")
@@ -36,7 +36,7 @@ func (m *AssignedPlaceMode) GetAssignedUserEmailAddress()(*string) {
     }
     return nil
 }
-// GetAssignedUserId gets the assignedUserId property value. The assignedUserId property
+// GetAssignedUserId gets the assignedUserId property value. The user ID of the user to whom the desk is assigned.
 // returns a *string when successful
 func (m *AssignedPlaceMode) GetAssignedUserId()(*string) {
     val, err := m.GetBackingStore().Get("assignedUserId")
@@ -94,14 +94,14 @@ func (m *AssignedPlaceMode) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAssignedUserEmailAddress sets the assignedUserEmailAddress property value. The assignedUserEmailAddress property
+// SetAssignedUserEmailAddress sets the assignedUserEmailAddress property value. The email address of the user to whom the desk is assigned.
 func (m *AssignedPlaceMode) SetAssignedUserEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("assignedUserEmailAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignedUserId sets the assignedUserId property value. The assignedUserId property
+// SetAssignedUserId sets the assignedUserId property value. The user ID of the user to whom the desk is assigned.
 func (m *AssignedPlaceMode) SetAssignedUserId(value *string)() {
     err := m.GetBackingStore().Set("assignedUserId", value)
     if err != nil {
