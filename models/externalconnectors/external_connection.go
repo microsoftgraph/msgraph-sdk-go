@@ -277,7 +277,7 @@ func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
     }
     return nil
 }
-// GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+// GetState gets the state property value. Indicates the current state of the connection. The possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 // returns a *ConnectionState when successful
 func (m *ExternalConnection) GetState()(*ConnectionState) {
     val, err := m.GetBackingStore().Get("state")
@@ -445,7 +445,7 @@ func (m *ExternalConnection) SetSearchSettings(value SearchSettingsable)() {
         panic(err)
     }
 }
-// SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+// SetState sets the state property value. Indicates the current state of the connection. The possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) SetState(value *ConnectionState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

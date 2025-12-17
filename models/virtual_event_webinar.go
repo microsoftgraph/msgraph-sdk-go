@@ -24,7 +24,7 @@ func NewVirtualEventWebinar()(*VirtualEventWebinar) {
 func CreateVirtualEventWebinarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventWebinar(), nil
 }
-// GetAudience gets the audience property value. To whom the webinar is visible. Possible values are: everyone, organization, and unknownFutureValue.
+// GetAudience gets the audience property value. To whom the webinar is visible. The possible values are: everyone, organization, and unknownFutureValue.
 // returns a *MeetingAudience when successful
 func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("audience")
@@ -175,7 +175,7 @@ func (m *VirtualEventWebinar) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAudience sets the audience property value. To whom the webinar is visible. Possible values are: everyone, organization, and unknownFutureValue.
+// SetAudience sets the audience property value. To whom the webinar is visible. The possible values are: everyone, organization, and unknownFutureValue.
 func (m *VirtualEventWebinar) SetAudience(value *MeetingAudience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {

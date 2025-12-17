@@ -228,7 +228,7 @@ func (m *Process) GetFileHash()(FileHashable) {
     }
     return nil
 }
-// GetIntegrityLevel gets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
+// GetIntegrityLevel gets the integrityLevel property value. The integrity level of the process. The possible values are: unknown, untrusted, low, medium, high, system.
 // returns a *ProcessIntegrityLevel when successful
 func (m *Process) GetIntegrityLevel()(*ProcessIntegrityLevel) {
     val, err := m.GetBackingStore().Get("integrityLevel")
@@ -464,7 +464,7 @@ func (m *Process) SetFileHash(value FileHashable)() {
         panic(err)
     }
 }
-// SetIntegrityLevel sets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
+// SetIntegrityLevel sets the integrityLevel property value. The integrity level of the process. The possible values are: unknown, untrusted, low, medium, high, system.
 func (m *Process) SetIntegrityLevel(value *ProcessIntegrityLevel)() {
     err := m.GetBackingStore().Set("integrityLevel", value)
     if err != nil {

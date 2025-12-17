@@ -182,7 +182,7 @@ func (m *Session) GetIsTest()(*bool) {
     }
     return nil
 }
-// GetModalities gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+// GetModalities gets the modalities property value. List of modalities present in the session. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 // returns a []Modality when successful
 func (m *Session) GetModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("modalities")
@@ -315,7 +315,7 @@ func (m *Session) SetIsTest(value *bool)() {
         panic(err)
     }
 }
-// SetModalities sets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+// SetModalities sets the modalities property value. List of modalities present in the session. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *Session) SetModalities(value []Modality)() {
     err := m.GetBackingStore().Set("modalities", value)
     if err != nil {

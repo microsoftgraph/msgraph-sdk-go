@@ -24,7 +24,7 @@ func NewEdiscoveryReviewTag()(*EdiscoveryReviewTag) {
 func CreateEdiscoveryReviewTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryReviewTag(), nil
 }
-// GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
+// GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. The possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 // returns a *ChildSelectability when successful
 func (m *EdiscoveryReviewTag) GetChildSelectability()(*ChildSelectability) {
     val, err := m.GetBackingStore().Get("childSelectability")
@@ -135,7 +135,7 @@ func (m *EdiscoveryReviewTag) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
+// SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. The possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *EdiscoveryReviewTag) SetChildSelectability(value *ChildSelectability)() {
     err := m.GetBackingStore().Set("childSelectability", value)
     if err != nil {

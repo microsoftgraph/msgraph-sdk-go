@@ -24,7 +24,7 @@ func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
 func CreateCloudAppSecuritySessionControlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudAppSecuritySessionControl(), nil
 }
-// GetCloudAppSecurityType gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
+// GetCloudAppSecurityType gets the cloudAppSecurityType property value. The possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 // returns a *CloudAppSecuritySessionControlType when successful
 func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType) {
     val, err := m.GetBackingStore().Get("cloudAppSecurityType")
@@ -67,7 +67,7 @@ func (m *CloudAppSecuritySessionControl) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetCloudAppSecurityType sets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
+// SetCloudAppSecurityType sets the cloudAppSecurityType property value. The possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudAppSecuritySessionControlType)() {
     err := m.GetBackingStore().Set("cloudAppSecurityType", value)
     if err != nil {

@@ -83,7 +83,7 @@ func (m *ThreatAssessmentResult) GetMessage()(*string) {
     }
     return nil
 }
-// GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
+// GetResultType gets the resultType property value. The threat assessment result type. The possible values are: checkPolicy, rescan.
 // returns a *ThreatAssessmentResultType when successful
 func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResultType) {
     val, err := m.GetBackingStore().Get("resultType")
@@ -136,7 +136,7 @@ func (m *ThreatAssessmentResult) SetMessage(value *string)() {
         panic(err)
     }
 }
-// SetResultType sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
+// SetResultType sets the resultType property value. The threat assessment result type. The possible values are: checkPolicy, rescan.
 func (m *ThreatAssessmentResult) SetResultType(value *ThreatAssessmentResultType)() {
     err := m.GetBackingStore().Set("resultType", value)
     if err != nil {

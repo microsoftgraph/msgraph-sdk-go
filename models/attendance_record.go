@@ -164,7 +164,7 @@ func (m *AttendanceRecord) GetRegistrationId()(*string) {
     }
     return nil
 }
-// GetRole gets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
+// GetRole gets the role property value. Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.
 // returns a *string when successful
 func (m *AttendanceRecord) GetRole()(*string) {
     val, err := m.GetBackingStore().Get("role")
@@ -279,7 +279,7 @@ func (m *AttendanceRecord) SetRegistrationId(value *string)() {
         panic(err)
     }
 }
-// SetRole sets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
+// SetRole sets the role property value. Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) SetRole(value *string)() {
     err := m.GetBackingStore().Set("role", value)
     if err != nil {

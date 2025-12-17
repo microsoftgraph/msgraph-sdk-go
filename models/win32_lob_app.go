@@ -25,7 +25,7 @@ func NewWin32LobApp()(*Win32LobApp) {
 func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobApp(), nil
 }
-// GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral.
+// GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. The possible values are: null, x86, x64, arm64. The possible values are: none, x86, x64, arm, neutral.
 // returns a *WindowsArchitecture when successful
 func (m *Win32LobApp) GetAllowedArchitectures()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("allowedArchitectures")
@@ -315,7 +315,7 @@ func (m *Win32LobApp) GetReturnCodes()([]Win32LobAppReturnCodeable) {
     }
     return nil
 }
-// GetRules gets the rules property value. Indicates the detection and requirement rules for this app. Possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
+// GetRules gets the rules property value. Indicates the detection and requirement rules for this app. The possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
 // returns a []Win32LobAppRuleable when successful
 func (m *Win32LobApp) GetRules()([]Win32LobAppRuleable) {
     val, err := m.GetBackingStore().Get("rules")
@@ -457,7 +457,7 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral.
+// SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. The possible values are: null, x86, x64, arm64. The possible values are: none, x86, x64, arm, neutral.
 func (m *Win32LobApp) SetAllowedArchitectures(value *WindowsArchitecture)() {
     err := m.GetBackingStore().Set("allowedArchitectures", value)
     if err != nil {
@@ -534,7 +534,7 @@ func (m *Win32LobApp) SetReturnCodes(value []Win32LobAppReturnCodeable)() {
         panic(err)
     }
 }
-// SetRules sets the rules property value. Indicates the detection and requirement rules for this app. Possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
+// SetRules sets the rules property value. Indicates the detection and requirement rules for this app. The possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
 func (m *Win32LobApp) SetRules(value []Win32LobAppRuleable)() {
     err := m.GetBackingStore().Set("rules", value)
     if err != nil {

@@ -117,7 +117,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetKeyStrength gets the keyStrength property value. Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.
+// GetKeyStrength gets the keyStrength property value. Key strength of this Platform Credential key. The possible values are: normal, weak, unknown.
 // returns a *AuthenticationMethodKeyStrength when successful
 func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*AuthenticationMethodKeyStrength) {
     val, err := m.GetBackingStore().Get("keyStrength")
@@ -129,7 +129,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*Authenticatio
     }
     return nil
 }
-// GetPlatform gets the platform property value. Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.
+// GetPlatform gets the platform property value. Platform on which this Platform Credential key is present. The possible values are: unknown, windows, macOS,iOS, android, linux.
 // returns a *AuthenticationMethodPlatform when successful
 func (m *PlatformCredentialAuthenticationMethod) GetPlatform()(*AuthenticationMethodPlatform) {
     val, err := m.GetBackingStore().Get("platform")
@@ -202,14 +202,14 @@ func (m *PlatformCredentialAuthenticationMethod) SetDisplayName(value *string)()
         panic(err)
     }
 }
-// SetKeyStrength sets the keyStrength property value. Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.
+// SetKeyStrength sets the keyStrength property value. Key strength of this Platform Credential key. The possible values are: normal, weak, unknown.
 func (m *PlatformCredentialAuthenticationMethod) SetKeyStrength(value *AuthenticationMethodKeyStrength)() {
     err := m.GetBackingStore().Set("keyStrength", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.
+// SetPlatform sets the platform property value. Platform on which this Platform Credential key is present. The possible values are: unknown, windows, macOS,iOS, android, linux.
 func (m *PlatformCredentialAuthenticationMethod) SetPlatform(value *AuthenticationMethodPlatform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {

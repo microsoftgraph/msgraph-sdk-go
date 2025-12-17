@@ -157,7 +157,7 @@ func (m *ProvisioningStep) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProvisioningStepType gets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
+// GetProvisioningStepType gets the provisioningStepType property value. Type of step. The possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
 // returns a *ProvisioningStepType when successful
 func (m *ProvisioningStep) GetProvisioningStepType()(*ProvisioningStepType) {
     val, err := m.GetBackingStore().Get("provisioningStepType")
@@ -169,7 +169,7 @@ func (m *ProvisioningStep) GetProvisioningStepType()(*ProvisioningStepType) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
+// GetStatus gets the status property value. Status of the step. The possible values are: success, warning,  failure, skipped, unknownFutureValue.
 // returns a *ProvisioningResult when successful
 func (m *ProvisioningStep) GetStatus()(*ProvisioningResult) {
     val, err := m.GetBackingStore().Get("status")
@@ -268,14 +268,14 @@ func (m *ProvisioningStep) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProvisioningStepType sets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
+// SetProvisioningStepType sets the provisioningStepType property value. Type of step. The possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
 func (m *ProvisioningStep) SetProvisioningStepType(value *ProvisioningStepType)() {
     err := m.GetBackingStore().Set("provisioningStepType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
+// SetStatus sets the status property value. Status of the step. The possible values are: success, warning,  failure, skipped, unknownFutureValue.
 func (m *ProvisioningStep) SetStatus(value *ProvisioningResult)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

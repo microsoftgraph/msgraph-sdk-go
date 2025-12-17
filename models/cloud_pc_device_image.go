@@ -35,7 +35,7 @@ func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetErrorCode gets the errorCode property value. The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.
+// GetErrorCode gets the errorCode property value. The error code of the status of the image that indicates why the upload failed, if applicable. The possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.
 // returns a *CloudPcDeviceImageErrorCode when successful
 func (m *CloudPcDeviceImage) GetErrorCode()(*CloudPcDeviceImageErrorCode) {
     val, err := m.GetBackingStore().Get("errorCode")
@@ -201,7 +201,7 @@ func (m *CloudPcDeviceImage) GetOsBuildNumber()(*string) {
     }
     return nil
 }
-// GetOsStatus gets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.
+// GetOsStatus gets the osStatus property value. The OS status of this image. The possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.
 // returns a *CloudPcDeviceImageOsStatus when successful
 func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
     val, err := m.GetBackingStore().Get("osStatus")
@@ -225,7 +225,7 @@ func (m *CloudPcDeviceImage) GetSourceImageResourceId()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the image on the Cloud PC. Possible values are: pending, ready, failed, unknownFutureValue. Read-only.
+// GetStatus gets the status property value. The status of the image on the Cloud PC. The possible values are: pending, ready, failed, unknownFutureValue. Read-only.
 // returns a *CloudPcDeviceImageStatus when successful
 func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -327,7 +327,7 @@ func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetErrorCode sets the errorCode property value. The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.
+// SetErrorCode sets the errorCode property value. The error code of the status of the image that indicates why the upload failed, if applicable. The possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.
 func (m *CloudPcDeviceImage) SetErrorCode(value *CloudPcDeviceImageErrorCode)() {
     err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
@@ -362,7 +362,7 @@ func (m *CloudPcDeviceImage) SetOsBuildNumber(value *string)() {
         panic(err)
     }
 }
-// SetOsStatus sets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.
+// SetOsStatus sets the osStatus property value. The OS status of this image. The possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.
 func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
     err := m.GetBackingStore().Set("osStatus", value)
     if err != nil {
@@ -376,7 +376,7 @@ func (m *CloudPcDeviceImage) SetSourceImageResourceId(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the image on the Cloud PC. Possible values are: pending, ready, failed, unknownFutureValue. Read-only.
+// SetStatus sets the status property value. The status of the image on the Cloud PC. The possible values are: pending, ready, failed, unknownFutureValue. Read-only.
 func (m *CloudPcDeviceImage) SetStatus(value *CloudPcDeviceImageStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

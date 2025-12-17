@@ -24,7 +24,7 @@ func NewMailAssessmentRequest()(*MailAssessmentRequest) {
 func CreateMailAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailAssessmentRequest(), nil
 }
-// GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
+// GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. The possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 // returns a *MailDestinationRoutingReason when successful
 func (m *MailAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRoutingReason) {
     val, err := m.GetBackingStore().Get("destinationRoutingReason")
@@ -123,7 +123,7 @@ func (m *MailAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
+// SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. The possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 func (m *MailAssessmentRequest) SetDestinationRoutingReason(value *MailDestinationRoutingReason)() {
     err := m.GetBackingStore().Set("destinationRoutingReason", value)
     if err != nil {

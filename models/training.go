@@ -23,7 +23,7 @@ func NewTraining()(*Training) {
 func CreateTrainingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTraining(), nil
 }
-// GetAvailabilityStatus gets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
+// GetAvailabilityStatus gets the availabilityStatus property value. Training availability status. The possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
 // returns a *TrainingAvailabilityStatus when successful
 func (m *Training) GetAvailabilityStatus()(*TrainingAvailabilityStatus) {
     val, err := m.GetBackingStore().Get("availabilityStatus")
@@ -307,7 +307,7 @@ func (m *Training) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetSource gets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
+// GetSource gets the source property value. Training content source. The possible values are: unknown, global, tenant, unknownFutureValue.
 // returns a *SimulationContentSource when successful
 func (m *Training) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
@@ -343,7 +343,7 @@ func (m *Training) GetTags()([]string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
+// GetTypeEscaped gets the type property value. The type of training. The possible values are: unknown, phishing, unknownFutureValue.
 // returns a *TrainingType when successful
 func (m *Training) GetTypeEscaped()(*TrainingType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -456,7 +456,7 @@ func (m *Training) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAvailabilityStatus sets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
+// SetAvailabilityStatus sets the availabilityStatus property value. Training availability status. The possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
 func (m *Training) SetAvailabilityStatus(value *TrainingAvailabilityStatus)() {
     err := m.GetBackingStore().Set("availabilityStatus", value)
     if err != nil {
@@ -526,7 +526,7 @@ func (m *Training) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetSource sets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
+// SetSource sets the source property value. Training content source. The possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *Training) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
@@ -547,7 +547,7 @@ func (m *Training) SetTags(value []string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
+// SetTypeEscaped sets the type property value. The type of training. The possible values are: unknown, phishing, unknownFutureValue.
 func (m *Training) SetTypeEscaped(value *TrainingType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

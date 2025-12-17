@@ -38,7 +38,7 @@ func (m *OAuthConsentAppDetail) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppScope gets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
+// GetAppScope gets the appScope property value. App scope. The possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
 // returns a *OAuthAppScope when successful
 func (m *OAuthConsentAppDetail) GetAppScope()(*OAuthAppScope) {
     val, err := m.GetBackingStore().Get("appScope")
@@ -179,7 +179,7 @@ func (m *OAuthConsentAppDetail) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppScope sets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
+// SetAppScope sets the appScope property value. App scope. The possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
 func (m *OAuthConsentAppDetail) SetAppScope(value *OAuthAppScope)() {
     err := m.GetBackingStore().Set("appScope", value)
     if err != nil {

@@ -324,7 +324,7 @@ func (m *WorkbookTable) GetSort()(WorkbookTableSortable) {
     }
     return nil
 }
-// GetStyle gets the style property value. A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// GetStyle gets the style property value. A constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 // returns a *string when successful
 func (m *WorkbookTable) GetStyle()(*string) {
     val, err := m.GetBackingStore().Get("style")
@@ -536,7 +536,7 @@ func (m *WorkbookTable) SetSort(value WorkbookTableSortable)() {
         panic(err)
     }
 }
-// SetStyle sets the style property value. A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// SetStyle sets the style property value. A constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) SetStyle(value *string)() {
     err := m.GetBackingStore().Set("style", value)
     if err != nil {

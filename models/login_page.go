@@ -225,7 +225,7 @@ func (m *LoginPage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// GetSource gets the source property value. The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.
 // returns a *SimulationContentSource when successful
 func (m *LoginPage) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
@@ -237,7 +237,7 @@ func (m *LoginPage) GetSource()(*SimulationContentSource) {
     }
     return nil
 }
-// GetStatus gets the status property value. The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// GetStatus gets the status property value. The login page status. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 // returns a *SimulationContentStatus when successful
 func (m *LoginPage) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -375,14 +375,14 @@ func (m *LoginPage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetSource sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// SetSource sets the source property value. The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *LoginPage) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// SetStatus sets the status property value. The login page status. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *LoginPage) SetStatus(value *SimulationContentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -24,7 +24,7 @@ func NewCustomTrainingSetting()(*CustomTrainingSetting) {
 func CreateCustomTrainingSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTrainingSetting(), nil
 }
-// GetAssignedTo gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
+// GetAssignedTo gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. The possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
 // returns a []TrainingAssignedTo when successful
 func (m *CustomTrainingSetting) GetAssignedTo()([]TrainingAssignedTo) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -184,7 +184,7 @@ func (m *CustomTrainingSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAssignedTo sets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
+// SetAssignedTo sets the assignedTo property value. A user collection that specifies to whom the training should be assigned. The possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
 func (m *CustomTrainingSetting) SetAssignedTo(value []TrainingAssignedTo)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {

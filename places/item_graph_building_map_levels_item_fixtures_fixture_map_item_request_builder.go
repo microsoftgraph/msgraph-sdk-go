@@ -21,7 +21,7 @@ type ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetQueryParameters get fixtures from places
+// ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetQueryParameters collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
 type ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property fixtures for places
+// Delete delete a fixture on a specified floor.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/fixturemap-delete?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) Del
     }
     return nil
 }
-// Get get fixtures from places
+// Get collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
 // returns a FixtureMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapable, error) {
@@ -93,9 +96,12 @@ func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapable), nil
 }
-// Patch update the navigation property fixtures in places
+// Patch update the properties of an existing fixtureMap object in IMDF format on a specified floor, or create one if it doesn't exist.
 // returns a FixtureMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/fixturemap-update?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapable, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapable), nil
 }
-// ToDeleteRequestInformation delete navigation property fixtures for places
+// ToDeleteRequestInformation delete a fixture on a specified floor.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +130,7 @@ func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get fixtures from places
+// ToGetRequestInformation collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +144,7 @@ func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) ToG
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property fixtures in places
+// ToPatchRequestInformation update the properties of an existing fixtureMap object in IMDF format on a specified floor, or create one if it doesn't exist.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapable, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

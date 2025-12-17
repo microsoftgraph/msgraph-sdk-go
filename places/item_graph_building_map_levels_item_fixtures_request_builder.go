@@ -14,7 +14,7 @@ import (
 type ItemGraphBuildingMapLevelsItemFixturesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphBuildingMapLevelsItemFixturesRequestBuilderGetQueryParameters get fixtures from places
+// ItemGraphBuildingMapLevelsItemFixturesRequestBuilderGetQueryParameters get a list of the fixtureMap objects and their properties.
 type ItemGraphBuildingMapLevelsItemFixturesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewItemGraphBuildingMapLevelsItemFixturesRequestBuilder(rawUrl string, requ
 func (m *ItemGraphBuildingMapLevelsItemFixturesRequestBuilder) Count()(*ItemGraphBuildingMapLevelsItemFixturesCountRequestBuilder) {
     return NewItemGraphBuildingMapLevelsItemFixturesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get fixtures from places
+// Get get a list of the fixtureMap objects and their properties.
 // returns a FixtureMapCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/levelmap-list-fixtures?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapLevelsItemFixturesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *ItemGraphBuildingMapLevelsItemFixturesRequestBuilder) Post(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FixtureMapable), nil
 }
-// ToGetRequestInformation get fixtures from places
+// ToGetRequestInformation get a list of the fixtureMap objects and their properties.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemFixturesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

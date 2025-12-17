@@ -89,7 +89,7 @@ func (m *CalculatedColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetFormat gets the format property value. For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
+// GetFormat gets the format property value. For dateTime output types, the format of the value. The possible values are: dateOnly or dateTime.
 // returns a *string when successful
 func (m *CalculatedColumn) GetFormat()(*string) {
     val, err := m.GetBackingStore().Get("format")
@@ -125,7 +125,7 @@ func (m *CalculatedColumn) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOutputType gets the outputType property value. The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
+// GetOutputType gets the outputType property value. The output type used to format values in this column. The possible values are: boolean, currency, dateTime, number, or text.
 // returns a *string when successful
 func (m *CalculatedColumn) GetOutputType()(*string) {
     val, err := m.GetBackingStore().Get("outputType")
@@ -182,7 +182,7 @@ func (m *CalculatedColumn) SetAdditionalData(value map[string]any)() {
 func (m *CalculatedColumn) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFormat sets the format property value. For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
+// SetFormat sets the format property value. For dateTime output types, the format of the value. The possible values are: dateOnly or dateTime.
 func (m *CalculatedColumn) SetFormat(value *string)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *CalculatedColumn) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOutputType sets the outputType property value. The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
+// SetOutputType sets the outputType property value. The output type used to format values in this column. The possible values are: boolean, currency, dateTime, number, or text.
 func (m *CalculatedColumn) SetOutputType(value *string)() {
     err := m.GetBackingStore().Set("outputType", value)
     if err != nil {

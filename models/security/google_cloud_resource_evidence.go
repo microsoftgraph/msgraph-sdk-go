@@ -124,7 +124,7 @@ func (m *GoogleCloudResourceEvidence) GetLocation()(*string) {
     }
     return nil
 }
-// GetLocationType gets the locationType property value. The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.
+// GetLocationType gets the locationType property value. The type of location. The possible values are: unknown, regional, zonal, global, unknownFutureValue.
 // returns a *GoogleCloudLocationType when successful
 func (m *GoogleCloudResourceEvidence) GetLocationType()(*GoogleCloudLocationType) {
     val, err := m.GetBackingStore().Get("locationType")
@@ -249,7 +249,7 @@ func (m *GoogleCloudResourceEvidence) SetLocation(value *string)() {
         panic(err)
     }
 }
-// SetLocationType sets the locationType property value. The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.
+// SetLocationType sets the locationType property value. The type of location. The possible values are: unknown, regional, zonal, global, unknownFutureValue.
 func (m *GoogleCloudResourceEvidence) SetLocationType(value *GoogleCloudLocationType)() {
     err := m.GetBackingStore().Set("locationType", value)
     if err != nil {

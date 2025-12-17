@@ -14,7 +14,7 @@ import (
 type ItemGraphBuildingMapFootprintsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphBuildingMapFootprintsRequestBuilderGetQueryParameters get footprints from places
+// ItemGraphBuildingMapFootprintsRequestBuilderGetQueryParameters get a list of footprintMap objects for building footprints and their properties.
 type ItemGraphBuildingMapFootprintsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewItemGraphBuildingMapFootprintsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemGraphBuildingMapFootprintsRequestBuilder) Count()(*ItemGraphBuildingMapFootprintsCountRequestBuilder) {
     return NewItemGraphBuildingMapFootprintsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get footprints from places
+// Get get a list of footprintMap objects for building footprints and their properties.
 // returns a FootprintMapCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/buildingmap-list-footprints?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapFootprintsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapFootprintsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FootprintMapCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *ItemGraphBuildingMapFootprintsRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FootprintMapable), nil
 }
-// ToGetRequestInformation get footprints from places
+// ToGetRequestInformation get a list of footprintMap objects for building footprints and their properties.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapFootprintsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapFootprintsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

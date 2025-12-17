@@ -49,7 +49,7 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
     }
     return NewScheduleChangeRequest(), nil
 }
-// GetAssignedTo gets the assignedTo property value. Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.
+// GetAssignedTo gets the assignedTo property value. Indicates who the request is assigned to. The possible values are: sender, recipient, manager, system, unknownFutureValue.
 // returns a *ScheduleChangeRequestActor when successful
 func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -219,7 +219,7 @@ func (m *ScheduleChangeRequest) GetSenderUserId()(*string) {
     }
     return nil
 }
-// GetState gets the state property value. The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.
+// GetState gets the state property value. The state of the scheduleChangeRequest. The possible values are: pending, approved, declined, unknownFutureValue.
 // returns a *ScheduleChangeState when successful
 func (m *ScheduleChangeRequest) GetState()(*ScheduleChangeState) {
     val, err := m.GetBackingStore().Get("state")
@@ -265,7 +265,7 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAssignedTo sets the assignedTo property value. Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.
+// SetAssignedTo sets the assignedTo property value. Indicates who the request is assigned to. The possible values are: sender, recipient, manager, system, unknownFutureValue.
 func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequestActor)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
@@ -314,7 +314,7 @@ func (m *ScheduleChangeRequest) SetSenderUserId(value *string)() {
         panic(err)
     }
 }
-// SetState sets the state property value. The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.
+// SetState sets the state property value. The state of the scheduleChangeRequest. The possible values are: pending, approved, declined, unknownFutureValue.
 func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

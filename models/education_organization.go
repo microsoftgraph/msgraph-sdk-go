@@ -64,7 +64,7 @@ func (m *EducationOrganization) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalSource gets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
+// GetExternalSource gets the externalSource property value. Source where this organization was created from. The possible values are: sis, manual.
 // returns a *EducationExternalSource when successful
 func (m *EducationOrganization) GetExternalSource()(*EducationExternalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
@@ -181,7 +181,7 @@ func (m *EducationOrganization) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExternalSource sets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
+// SetExternalSource sets the externalSource property value. Source where this organization was created from. The possible values are: sis, manual.
 func (m *EducationOrganization) SetExternalSource(value *EducationExternalSource)() {
     err := m.GetBackingStore().Set("externalSource", value)
     if err != nil {

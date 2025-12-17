@@ -119,7 +119,7 @@ func (m *SubjectRightsRequest) GetDataSubject()(DataSubjectable) {
     }
     return nil
 }
-// GetDataSubjectType gets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
+// GetDataSubjectType gets the dataSubjectType property value. The type of the data subject. The possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
 // returns a *DataSubjectType when successful
 func (m *SubjectRightsRequest) GetDataSubjectType()(*DataSubjectType) {
     val, err := m.GetBackingStore().Get("dataSubjectType")
@@ -645,7 +645,7 @@ func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
+// GetStatus gets the status property value. The status of the request. The possible values are: active, closed, unknownFutureValue.
 // returns a *SubjectRightsRequestStatus when successful
 func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -669,7 +669,7 @@ func (m *SubjectRightsRequest) GetTeam()(Teamable) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
+// GetTypeEscaped gets the type property value. The type of the request. The possible values are: export, delete, access, tagForAction, unknownFutureValue.
 // returns a *SubjectRightsRequestType when successful
 func (m *SubjectRightsRequest) GetTypeEscaped()(*SubjectRightsRequestType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -946,7 +946,7 @@ func (m *SubjectRightsRequest) SetDataSubject(value DataSubjectable)() {
         panic(err)
     }
 }
-// SetDataSubjectType sets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
+// SetDataSubjectType sets the dataSubjectType property value. The type of the data subject. The possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
 func (m *SubjectRightsRequest) SetDataSubjectType(value *DataSubjectType)() {
     err := m.GetBackingStore().Set("dataSubjectType", value)
     if err != nil {
@@ -1065,7 +1065,7 @@ func (m *SubjectRightsRequest) SetStages(value []SubjectRightsRequestStageDetail
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
+// SetStatus sets the status property value. The status of the request. The possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
@@ -1079,7 +1079,7 @@ func (m *SubjectRightsRequest) SetTeam(value Teamable)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
+// SetTypeEscaped sets the type property value. The type of the request. The possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) SetTypeEscaped(value *SubjectRightsRequestType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

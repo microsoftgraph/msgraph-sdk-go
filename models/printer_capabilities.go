@@ -585,7 +585,7 @@ func (m *PrinterCapabilities) GetLeftMargins()([]int32) {
     }
     return nil
 }
-// GetMediaColors gets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+// GetMediaColors gets the mediaColors property value. The media (for example, paper) colors supported by the printer.
 // returns a []string when successful
 func (m *PrinterCapabilities) GetMediaColors()([]string) {
     val, err := m.GetBackingStore().Get("mediaColors")
@@ -597,7 +597,7 @@ func (m *PrinterCapabilities) GetMediaColors()([]string) {
     }
     return nil
 }
-// GetMediaSizes gets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+// GetMediaSizes gets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.
 // returns a []string when successful
 func (m *PrinterCapabilities) GetMediaSizes()([]string) {
     val, err := m.GetBackingStore().Get("mediaSizes")
@@ -1009,14 +1009,14 @@ func (m *PrinterCapabilities) SetLeftMargins(value []int32)() {
         panic(err)
     }
 }
-// SetMediaColors sets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+// SetMediaColors sets the mediaColors property value. The media (for example, paper) colors supported by the printer.
 func (m *PrinterCapabilities) SetMediaColors(value []string)() {
     err := m.GetBackingStore().Set("mediaColors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMediaSizes sets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+// SetMediaSizes sets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.
 func (m *PrinterCapabilities) SetMediaSizes(value []string)() {
     err := m.GetBackingStore().Set("mediaSizes", value)
     if err != nil {

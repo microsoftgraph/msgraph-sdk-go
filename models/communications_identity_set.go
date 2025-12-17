@@ -72,7 +72,7 @@ func (m *CommunicationsIdentitySet) GetEncrypted()(Identityable) {
     }
     return nil
 }
-// GetEndpointType gets the endpointType property value. Type of endpoint that the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.
+// GetEndpointType gets the endpointType property value. Type of endpoint that the participant uses. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.
 // returns a *EndpointType when successful
 func (m *CommunicationsIdentitySet) GetEndpointType()(*EndpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
@@ -291,7 +291,7 @@ func (m *CommunicationsIdentitySet) SetEncrypted(value Identityable)() {
         panic(err)
     }
 }
-// SetEndpointType sets the endpointType property value. Type of endpoint that the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.
+// SetEndpointType sets the endpointType property value. Type of endpoint that the participant uses. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.
 func (m *CommunicationsIdentitySet) SetEndpointType(value *EndpointType)() {
     err := m.GetBackingStore().Set("endpointType", value)
     if err != nil {

@@ -179,7 +179,7 @@ func (m *KubernetesServicePort) GetPort()(*int32) {
     }
     return nil
 }
-// GetProtocol gets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
+// GetProtocol gets the protocol property value. The protocol name. The possible values are: udp, tcp, sctp, unknownFutureValue.
 // returns a *ContainerPortProtocol when successful
 func (m *KubernetesServicePort) GetProtocol()(*ContainerPortProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
@@ -302,7 +302,7 @@ func (m *KubernetesServicePort) SetPort(value *int32)() {
         panic(err)
     }
 }
-// SetProtocol sets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
+// SetProtocol sets the protocol property value. The protocol name. The possible values are: udp, tcp, sctp, unknownFutureValue.
 func (m *KubernetesServicePort) SetProtocol(value *ContainerPortProtocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {

@@ -144,7 +144,7 @@ func (m *Group) GetParentSiteId()(*string) {
     }
     return nil
 }
-// GetScope gets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
+// GetScope gets the scope property value. Returns the type of the group. The possible values are: global, system, and siteCollection.
 // returns a *TermGroupScope when successful
 func (m *Group) GetScope()(*TermGroupScope) {
     val, err := m.GetBackingStore().Get("scope")
@@ -247,7 +247,7 @@ func (m *Group) SetParentSiteId(value *string)() {
         panic(err)
     }
 }
-// SetScope sets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
+// SetScope sets the scope property value. Returns the type of the group. The possible values are: global, system, and siteCollection.
 func (m *Group) SetScope(value *TermGroupScope)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {

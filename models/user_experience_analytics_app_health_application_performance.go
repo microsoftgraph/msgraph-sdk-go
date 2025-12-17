@@ -47,7 +47,7 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppCrashCoun
     }
     return nil
 }
-// GetAppDisplayName gets the appDisplayName property value. The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+// GetAppDisplayName gets the appDisplayName property value. The friendly name of the application. The possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
@@ -83,7 +83,7 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppHealthSco
     }
     return nil
 }
-// GetAppName gets the appName property value. The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+// GetAppName gets the appName property value. The name of the application. The possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
@@ -303,7 +303,7 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppCrashCoun
         panic(err)
     }
 }
-// SetAppDisplayName sets the appDisplayName property value. The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+// SetAppDisplayName sets the appDisplayName property value. The friendly name of the application. The possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {
@@ -324,7 +324,7 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppHealthSco
         panic(err)
     }
 }
-// SetAppName sets the appName property value. The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+// SetAppName sets the appName property value. The name of the application. The possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppName(value *string)() {
     err := m.GetBackingStore().Set("appName", value)
     if err != nil {

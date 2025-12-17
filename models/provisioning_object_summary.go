@@ -285,7 +285,7 @@ func (m *ProvisioningObjectSummary) GetModifiedProperties()([]ModifiedPropertyab
     }
     return nil
 }
-// GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
+// GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. The possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
 // returns a *ProvisioningAction when successful
 func (m *ProvisioningObjectSummary) GetProvisioningAction()(*ProvisioningAction) {
     val, err := m.GetBackingStore().Get("provisioningAction")
@@ -559,7 +559,7 @@ func (m *ProvisioningObjectSummary) SetModifiedProperties(value []ModifiedProper
         panic(err)
     }
 }
-// SetProvisioningAction sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
+// SetProvisioningAction sets the provisioningAction property value. Indicates the activity name or the operation name. The possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
 func (m *ProvisioningObjectSummary) SetProvisioningAction(value *ProvisioningAction)() {
     err := m.GetBackingStore().Set("provisioningAction", value)
     if err != nil {
