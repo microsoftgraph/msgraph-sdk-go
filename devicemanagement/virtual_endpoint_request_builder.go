@@ -143,6 +143,11 @@ func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body iadcd811
 func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*VirtualEndpointProvisioningPoliciesRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Report provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointReportRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) Report()(*VirtualEndpointReportRequestBuilder) {
+    return NewVirtualEndpointReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property virtualEndpoint for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

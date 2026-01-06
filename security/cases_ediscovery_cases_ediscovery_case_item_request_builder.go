@@ -44,6 +44,11 @@ type CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CaseMembers provides operations to manage the caseMembers property of the microsoft.graph.security.ediscoveryCase entity.
+// returns a *CasesEdiscoveryCasesItemCaseMembersRequestBuilder when successful
+func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) CaseMembers()(*CasesEdiscoveryCasesItemCaseMembersRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCaseMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderInternal instantiates a new CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) {
     m := &CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder{

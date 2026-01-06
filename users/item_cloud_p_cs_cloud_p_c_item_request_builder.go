@@ -128,6 +128,11 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reboot()(*ItemCloudPCsItemReboot
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Rename()(*ItemCloudPCsItemRenameRequestBuilder) {
     return NewItemCloudPCsItemRenameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Reprovision provides operations to call the reprovision method.
+// returns a *ItemCloudPCsItemReprovisionRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reprovision()(*ItemCloudPCsItemReprovisionRequestBuilder) {
+    return NewItemCloudPCsItemReprovisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Resize provides operations to call the resize method.
 // returns a *ItemCloudPCsItemResizeRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Resize()(*ItemCloudPCsItemResizeRequestBuilder) {
@@ -137,6 +142,11 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Resize()(*ItemCloudPCsItemResize
 // returns a *ItemCloudPCsItemRestoreRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemRestoreRequestBuilder) {
     return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveCloudPcLaunchDetail provides operations to call the retrieveCloudPcLaunchDetail method.
+// returns a *ItemCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPcLaunchDetail()(*ItemCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder) {
+    return NewItemCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property cloudPCs for users
 // returns a *RequestInformation when successful

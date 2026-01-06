@@ -67,7 +67,7 @@ func NewBackupRestoreServiceAppsServiceAppItemRequestBuilder(rawUrl string, requ
 func (m *BackupRestoreServiceAppsServiceAppItemRequestBuilder) Deactivate()(*BackupRestoreServiceAppsItemDeactivateRequestBuilder) {
     return NewBackupRestoreServiceAppsItemDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a serviceApp.
+// Delete delete a serviceApp. When this API is called via Microsoft Graph PowerShell, it returns a 403 Forbidden response code.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -129,7 +129,7 @@ func (m *BackupRestoreServiceAppsServiceAppItemRequestBuilder) Patch(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAppable), nil
 }
-// ToDeleteRequestInformation delete a serviceApp.
+// ToDeleteRequestInformation delete a serviceApp. When this API is called via Microsoft Graph PowerShell, it returns a 403 Forbidden response code.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreServiceAppsServiceAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreServiceAppsServiceAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

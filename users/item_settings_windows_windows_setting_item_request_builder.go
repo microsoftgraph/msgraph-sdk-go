@@ -21,7 +21,7 @@ type ItemSettingsWindowsWindowsSettingItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsWindowsWindowsSettingItemRequestBuilderGetQueryParameters get windows from users
+// ItemSettingsWindowsWindowsSettingItemRequestBuilderGetQueryParameters the Windows settings of the user stored in the cloud.
 type ItemSettingsWindowsWindowsSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get windows from users
+// Get the Windows settings of the user stored in the cloud.
 // returns a WindowsSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsSettingable, error) {
@@ -129,7 +129,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get windows from users
+// ToGetRequestInformation the Windows settings of the user stored in the cloud.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

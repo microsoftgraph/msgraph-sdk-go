@@ -48,6 +48,18 @@ func (m *ListItem) GetContentType()(ContentTypeInfoable) {
     }
     return nil
 }
+// GetDeleted gets the deleted property value. If present in the result of a delta enumeration, indicates that the item was deleted. Read-only.
+// returns a Deletedable when successful
+func (m *ListItem) GetDeleted()(Deletedable) {
+    val, err := m.GetBackingStore().Get("deleted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Deletedable)
+    }
+    return nil
+}
 // GetDocumentSetVersions gets the documentSetVersions property value. Version information for a document set version created by a user.
 // returns a []DocumentSetVersionable when successful
 func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
@@ -93,6 +105,16 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetContentType(val.(ContentTypeInfoable))
+        }
+        return nil
+    }
+    res["deleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeletedFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeleted(val.(Deletedable))
         }
         return nil
     }
@@ -214,6 +236,12 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("deleted", m.GetDeleted())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDocumentSetVersions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocumentSetVersions()))
         for i, v := range m.GetDocumentSetVersions() {
@@ -272,6 +300,13 @@ func (m *ListItem) SetContentType(value ContentTypeInfoable)() {
         panic(err)
     }
 }
+// SetDeleted sets the deleted property value. If present in the result of a delta enumeration, indicates that the item was deleted. Read-only.
+func (m *ListItem) SetDeleted(value Deletedable)() {
+    err := m.GetBackingStore().Set("deleted", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDocumentSetVersions sets the documentSetVersions property value. Version information for a document set version created by a user.
 func (m *ListItem) SetDocumentSetVersions(value []DocumentSetVersionable)() {
     err := m.GetBackingStore().Set("documentSetVersions", value)
@@ -312,6 +347,7 @@ type ListItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAnalytics()(ItemAnalyticsable)
     GetContentType()(ContentTypeInfoable)
+    GetDeleted()(Deletedable)
     GetDocumentSetVersions()([]DocumentSetVersionable)
     GetDriveItem()(DriveItemable)
     GetFields()(FieldValueSetable)
@@ -319,6 +355,7 @@ type ListItemable interface {
     GetVersions()([]ListItemVersionable)
     SetAnalytics(value ItemAnalyticsable)()
     SetContentType(value ContentTypeInfoable)()
+    SetDeleted(value Deletedable)()
     SetDocumentSetVersions(value []DocumentSetVersionable)()
     SetDriveItem(value DriveItemable)()
     SetFields(value FieldValueSetable)()

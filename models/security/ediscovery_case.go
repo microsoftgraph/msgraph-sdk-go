@@ -26,6 +26,18 @@ func NewEdiscoveryCase()(*EdiscoveryCase) {
 func CreateEdiscoveryCaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryCase(), nil
 }
+// GetCaseMembers gets the caseMembers property value. Represents members of an eDiscovery case.
+// returns a []EdiscoveryCaseMemberable when successful
+func (m *EdiscoveryCase) GetCaseMembers()([]EdiscoveryCaseMemberable) {
+    val, err := m.GetBackingStore().Get("caseMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryCaseMemberable)
+    }
+    return nil
+}
 // GetClosedBy gets the closedBy property value. The user who closed the case.
 // returns a IdentitySetable when successful
 func (m *EdiscoveryCase) GetClosedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
@@ -78,6 +90,22 @@ func (m *EdiscoveryCase) GetExternalId()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseEscaped.GetFieldDeserializers()
+    res["caseMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryCaseMemberFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EdiscoveryCaseMemberable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(EdiscoveryCaseMemberable)
+                }
+            }
+            m.SetCaseMembers(res)
+        }
+        return nil
+    }
     res["closedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -294,6 +322,18 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if err != nil {
         return err
     }
+    if m.GetCaseMembers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCaseMembers()))
+        for i, v := range m.GetCaseMembers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("caseMembers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("closedBy", m.GetClosedBy())
         if err != nil {
@@ -392,6 +432,13 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
+// SetCaseMembers sets the caseMembers property value. Represents members of an eDiscovery case.
+func (m *EdiscoveryCase) SetCaseMembers(value []EdiscoveryCaseMemberable)() {
+    err := m.GetBackingStore().Set("caseMembers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetClosedBy sets the closedBy property value. The user who closed the case.
 func (m *EdiscoveryCase) SetClosedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
     err := m.GetBackingStore().Set("closedBy", value)
@@ -465,6 +512,7 @@ func (m *EdiscoveryCase) SetTags(value []EdiscoveryReviewTagable)() {
 type EdiscoveryCaseable interface {
     CaseEscapedable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCaseMembers()([]EdiscoveryCaseMemberable)
     GetClosedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
     GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustodians()([]EdiscoveryCustodianable)
@@ -475,6 +523,7 @@ type EdiscoveryCaseable interface {
     GetSearches()([]EdiscoverySearchable)
     GetSettings()(EdiscoveryCaseSettingsable)
     GetTags()([]EdiscoveryReviewTagable)
+    SetCaseMembers(value []EdiscoveryCaseMemberable)()
     SetClosedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)()
     SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustodians(value []EdiscoveryCustodianable)()

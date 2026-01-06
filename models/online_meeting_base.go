@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -258,6 +259,18 @@ func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     }
     return nil
 }
+// GetExpiryDateTime gets the expiryDateTime property value. Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
+func (m *OnlineMeetingBase) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("expiryDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -448,6 +461,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["expiryDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExpiryDateTime(val)
+        }
+        return nil
+    }
     res["isEndToEndEncryptionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -508,6 +531,26 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["meetingOptionsWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingOptionsWebUrl(val)
+        }
+        return nil
+    }
+    res["meetingSpokenLanguageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingSpokenLanguageTag(val)
+        }
+        return nil
+    }
     res["recordAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -515,6 +558,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetRecordAutomatically(val)
+        }
+        return nil
+    }
+    res["sensitivityLabelAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnlineMeetingSensitivityLabelAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSensitivityLabelAssignment(val.(OnlineMeetingSensitivityLabelAssignmentable))
         }
         return nil
     }
@@ -632,6 +685,30 @@ func (m *OnlineMeetingBase) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
     }
     return nil
 }
+// GetMeetingOptionsWebUrl gets the meetingOptionsWebUrl property value. Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+// returns a *string when successful
+func (m *OnlineMeetingBase) GetMeetingOptionsWebUrl()(*string) {
+    val, err := m.GetBackingStore().Get("meetingOptionsWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMeetingSpokenLanguageTag gets the meetingSpokenLanguageTag property value. Specifies the spoken language used during the meeting for recording and transcription purposes.
+// returns a *string when successful
+func (m *OnlineMeetingBase) GetMeetingSpokenLanguageTag()(*string) {
+    val, err := m.GetBackingStore().Get("meetingSpokenLanguageTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetRecordAutomatically gets the recordAutomatically property value. Indicates whether to record the meeting automatically.
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
@@ -641,6 +718,18 @@ func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetSensitivityLabelAssignment gets the sensitivityLabelAssignment property value. Specifies the sensitivity label applied to the Teams meeting.
+// returns a OnlineMeetingSensitivityLabelAssignmentable when successful
+func (m *OnlineMeetingBase) GetSensitivityLabelAssignment()(OnlineMeetingSensitivityLabelAssignmentable) {
+    val, err := m.GetBackingStore().Get("sensitivityLabelAssignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnlineMeetingSensitivityLabelAssignmentable)
     }
     return nil
 }
@@ -817,6 +906,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteTimeValue("expiryDateTime", m.GetExpiryDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isEndToEndEncryptionEnabled", m.GetIsEndToEndEncryptionEnabled())
         if err != nil {
             return err
@@ -853,7 +948,25 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("meetingOptionsWebUrl", m.GetMeetingOptionsWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("meetingSpokenLanguageTag", m.GetMeetingSpokenLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("recordAutomatically", m.GetRecordAutomatically())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("sensitivityLabelAssignment", m.GetSensitivityLabelAssignment())
         if err != nil {
             return err
         }
@@ -1011,6 +1124,13 @@ func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
         panic(err)
     }
 }
+// SetExpiryDateTime sets the expiryDateTime property value. Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *OnlineMeetingBase) SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("expiryDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsEndToEndEncryptionEnabled sets the isEndToEndEncryptionEnabled property value. Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
 func (m *OnlineMeetingBase) SetIsEndToEndEncryptionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEndToEndEncryptionEnabled", value)
@@ -1053,9 +1173,30 @@ func (m *OnlineMeetingBase) SetLobbyBypassSettings(value LobbyBypassSettingsable
         panic(err)
     }
 }
+// SetMeetingOptionsWebUrl sets the meetingOptionsWebUrl property value. Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+func (m *OnlineMeetingBase) SetMeetingOptionsWebUrl(value *string)() {
+    err := m.GetBackingStore().Set("meetingOptionsWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMeetingSpokenLanguageTag sets the meetingSpokenLanguageTag property value. Specifies the spoken language used during the meeting for recording and transcription purposes.
+func (m *OnlineMeetingBase) SetMeetingSpokenLanguageTag(value *string)() {
+    err := m.GetBackingStore().Set("meetingSpokenLanguageTag", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecordAutomatically sets the recordAutomatically property value. Indicates whether to record the meeting automatically.
 func (m *OnlineMeetingBase) SetRecordAutomatically(value *bool)() {
     err := m.GetBackingStore().Set("recordAutomatically", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSensitivityLabelAssignment sets the sensitivityLabelAssignment property value. Specifies the sensitivity label applied to the Teams meeting.
+func (m *OnlineMeetingBase) SetSensitivityLabelAssignment(value OnlineMeetingSensitivityLabelAssignmentable)() {
+    err := m.GetBackingStore().Set("sensitivityLabelAssignment", value)
     if err != nil {
         panic(err)
     }
@@ -1109,13 +1250,17 @@ type OnlineMeetingBaseable interface {
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
     GetChatRestrictions()(ChatRestrictionsable)
+    GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsEndToEndEncryptionEnabled()(*bool)
     GetIsEntryExitAnnounced()(*bool)
     GetJoinInformation()(ItemBodyable)
     GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable)
     GetJoinWebUrl()(*string)
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
+    GetMeetingOptionsWebUrl()(*string)
+    GetMeetingSpokenLanguageTag()(*string)
     GetRecordAutomatically()(*bool)
+    GetSensitivityLabelAssignment()(OnlineMeetingSensitivityLabelAssignmentable)
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
     GetSubject()(*string)
     GetVideoTeleconferenceId()(*string)
@@ -1138,13 +1283,17 @@ type OnlineMeetingBaseable interface {
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()
     SetChatRestrictions(value ChatRestrictionsable)()
+    SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsEndToEndEncryptionEnabled(value *bool)()
     SetIsEntryExitAnnounced(value *bool)()
     SetJoinInformation(value ItemBodyable)()
     SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)()
     SetJoinWebUrl(value *string)()
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()
+    SetMeetingOptionsWebUrl(value *string)()
+    SetMeetingSpokenLanguageTag(value *string)()
     SetRecordAutomatically(value *bool)()
+    SetSensitivityLabelAssignment(value OnlineMeetingSensitivityLabelAssignmentable)()
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
     SetSubject(value *string)()
     SetVideoTeleconferenceId(value *string)()
