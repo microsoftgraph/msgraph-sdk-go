@@ -178,3 +178,8 @@ func (m *ItemSettingsRequestBuilder) Windows()(*ItemSettingsWindowsRequestBuilde
 func (m *ItemSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsRequestBuilder) {
     return NewItemSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
+// WorkHoursAndLocations provides operations to manage the workHoursAndLocations property of the microsoft.graph.userSettings entity.
+// returns a *ItemSettingsWorkHoursAndLocationsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) WorkHoursAndLocations()(*ItemSettingsWorkHoursAndLocationsRequestBuilder) {
+    return NewItemSettingsWorkHoursAndLocationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

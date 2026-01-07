@@ -25,7 +25,7 @@ func NewMailboxConfigurationEvidence()(*MailboxConfigurationEvidence) {
 func CreateMailboxConfigurationEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailboxConfigurationEvidence(), nil
 }
-// GetConfigurationId gets the configurationId property value. The configurationId property
+// GetConfigurationId gets the configurationId property value. The unique identifier of the mailbox configuration.
 // returns a *string when successful
 func (m *MailboxConfigurationEvidence) GetConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("configurationId")
@@ -37,7 +37,7 @@ func (m *MailboxConfigurationEvidence) GetConfigurationId()(*string) {
     }
     return nil
 }
-// GetConfigurationType gets the configurationType property value. The configurationType property
+// GetConfigurationType gets the configurationType property value. The type of mailbox configuration. The possible values are: mailForwardingRule, owaSettings, ewsSettings, mailDelegation, userInboxRule, unknownFutureValue.
 // returns a *MailboxConfigurationType when successful
 func (m *MailboxConfigurationEvidence) GetConfigurationType()(*MailboxConfigurationType) {
     val, err := m.GetBackingStore().Get("configurationType")
@@ -49,7 +49,7 @@ func (m *MailboxConfigurationEvidence) GetConfigurationType()(*MailboxConfigurat
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the mailbox.
 // returns a *string when successful
 func (m *MailboxConfigurationEvidence) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -61,7 +61,7 @@ func (m *MailboxConfigurationEvidence) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalDirectoryObjectId gets the externalDirectoryObjectId property value. The externalDirectoryObjectId property
+// GetExternalDirectoryObjectId gets the externalDirectoryObjectId property value. The external directory object identifier of the mailbox.
 // returns a *UUID when successful
 func (m *MailboxConfigurationEvidence) GetExternalDirectoryObjectId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("externalDirectoryObjectId")
@@ -139,7 +139,7 @@ func (m *MailboxConfigurationEvidence) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetMailboxPrimaryAddress gets the mailboxPrimaryAddress property value. The mailboxPrimaryAddress property
+// GetMailboxPrimaryAddress gets the mailboxPrimaryAddress property value. The primary email address of the mailbox.
 // returns a *string when successful
 func (m *MailboxConfigurationEvidence) GetMailboxPrimaryAddress()(*string) {
     val, err := m.GetBackingStore().Get("mailboxPrimaryAddress")
@@ -151,7 +151,7 @@ func (m *MailboxConfigurationEvidence) GetMailboxPrimaryAddress()(*string) {
     }
     return nil
 }
-// GetUpn gets the upn property value. The upn property
+// GetUpn gets the upn property value. The user principal name (UPN) of the mailbox.
 // returns a *string when successful
 func (m *MailboxConfigurationEvidence) GetUpn()(*string) {
     val, err := m.GetBackingStore().Get("upn")
@@ -208,42 +208,42 @@ func (m *MailboxConfigurationEvidence) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetConfigurationId sets the configurationId property value. The configurationId property
+// SetConfigurationId sets the configurationId property value. The unique identifier of the mailbox configuration.
 func (m *MailboxConfigurationEvidence) SetConfigurationId(value *string)() {
     err := m.GetBackingStore().Set("configurationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConfigurationType sets the configurationType property value. The configurationType property
+// SetConfigurationType sets the configurationType property value. The type of mailbox configuration. The possible values are: mailForwardingRule, owaSettings, ewsSettings, mailDelegation, userInboxRule, unknownFutureValue.
 func (m *MailboxConfigurationEvidence) SetConfigurationType(value *MailboxConfigurationType)() {
     err := m.GetBackingStore().Set("configurationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the mailbox.
 func (m *MailboxConfigurationEvidence) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalDirectoryObjectId sets the externalDirectoryObjectId property value. The externalDirectoryObjectId property
+// SetExternalDirectoryObjectId sets the externalDirectoryObjectId property value. The external directory object identifier of the mailbox.
 func (m *MailboxConfigurationEvidence) SetExternalDirectoryObjectId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("externalDirectoryObjectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailboxPrimaryAddress sets the mailboxPrimaryAddress property value. The mailboxPrimaryAddress property
+// SetMailboxPrimaryAddress sets the mailboxPrimaryAddress property value. The primary email address of the mailbox.
 func (m *MailboxConfigurationEvidence) SetMailboxPrimaryAddress(value *string)() {
     err := m.GetBackingStore().Set("mailboxPrimaryAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUpn sets the upn property value. The upn property
+// SetUpn sets the upn property value. The user principal name (UPN) of the mailbox.
 func (m *MailboxConfigurationEvidence) SetUpn(value *string)() {
     err := m.GetBackingStore().Set("upn", value)
     if err != nil {

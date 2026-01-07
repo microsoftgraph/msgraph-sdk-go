@@ -21,7 +21,7 @@ type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters get deletedContainers from storage
+// FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters the collection of deleted fileStorageContainer resources.
 type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -88,7 +88,7 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Del
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Drive()(*FileStorageDeletedContainersItemDriveRequestBuilder) {
     return NewFileStorageDeletedContainersItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get deletedContainers from storage
+// Get the collection of deleted fileStorageContainer resources.
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FileStorageContainerable, error) {
@@ -174,7 +174,7 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get deletedContainers from storage
+// ToGetRequestInformation the collection of deleted fileStorageContainer resources.
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
