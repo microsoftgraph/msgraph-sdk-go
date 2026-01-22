@@ -62,6 +62,16 @@ func NewFileStorageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *FileStorageRequestBuilder) Containers()(*FileStorageContainersRequestBuilder) {
     return NewFileStorageContainersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContainerTypeRegistrations provides operations to manage the containerTypeRegistrations property of the microsoft.graph.fileStorage entity.
+// returns a *FileStorageContainerTypeRegistrationsRequestBuilder when successful
+func (m *FileStorageRequestBuilder) ContainerTypeRegistrations()(*FileStorageContainerTypeRegistrationsRequestBuilder) {
+    return NewFileStorageContainerTypeRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ContainerTypes provides operations to manage the containerTypes property of the microsoft.graph.fileStorage entity.
+// returns a *FileStorageContainerTypesRequestBuilder when successful
+func (m *FileStorageRequestBuilder) ContainerTypes()(*FileStorageContainerTypesRequestBuilder) {
+    return NewFileStorageContainerTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property fileStorage for storage
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageRequestBuilder) Delete(ctx context.Context, requestConfiguration *FileStorageRequestBuilderDeleteRequestConfiguration)(error) {

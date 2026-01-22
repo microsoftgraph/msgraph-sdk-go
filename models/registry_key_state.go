@@ -159,7 +159,7 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetHive gets the hive property value. A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
+// GetHive gets the hive property value. A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. The possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
 // returns a *RegistryHive when successful
 func (m *RegistryKeyState) GetHive()(*RegistryHive) {
     val, err := m.GetBackingStore().Get("hive")
@@ -231,7 +231,7 @@ func (m *RegistryKeyState) GetOldValueName()(*string) {
     }
     return nil
 }
-// GetOperation gets the operation property value. Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
+// GetOperation gets the operation property value. Operation that changed the registry key name and/or value. The possible values are: unknown, create, modify, delete.
 // returns a *RegistryOperation when successful
 func (m *RegistryKeyState) GetOperation()(*RegistryOperation) {
     val, err := m.GetBackingStore().Get("operation")
@@ -279,7 +279,7 @@ func (m *RegistryKeyState) GetValueName()(*string) {
     }
     return nil
 }
-// GetValueType gets the valueType property value. Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
+// GetValueType gets the valueType property value. Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ The possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
 // returns a *RegistryValueType when successful
 func (m *RegistryKeyState) GetValueType()(*RegistryValueType) {
     val, err := m.GetBackingStore().Get("valueType")
@@ -381,7 +381,7 @@ func (m *RegistryKeyState) SetAdditionalData(value map[string]any)() {
 func (m *RegistryKeyState) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetHive sets the hive property value. A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
+// SetHive sets the hive property value. A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. The possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
 func (m *RegistryKeyState) SetHive(value *RegistryHive)() {
     err := m.GetBackingStore().Set("hive", value)
     if err != nil {
@@ -423,7 +423,7 @@ func (m *RegistryKeyState) SetOldValueName(value *string)() {
         panic(err)
     }
 }
-// SetOperation sets the operation property value. Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
+// SetOperation sets the operation property value. Operation that changed the registry key name and/or value. The possible values are: unknown, create, modify, delete.
 func (m *RegistryKeyState) SetOperation(value *RegistryOperation)() {
     err := m.GetBackingStore().Set("operation", value)
     if err != nil {
@@ -451,7 +451,7 @@ func (m *RegistryKeyState) SetValueName(value *string)() {
         panic(err)
     }
 }
-// SetValueType sets the valueType property value. Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
+// SetValueType sets the valueType property value. Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ The possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
 func (m *RegistryKeyState) SetValueType(value *RegistryValueType)() {
     err := m.GetBackingStore().Set("valueType", value)
     if err != nil {

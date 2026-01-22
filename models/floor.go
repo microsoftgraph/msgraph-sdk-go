@@ -40,7 +40,7 @@ func (m *Floor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetSortOrder gets the sortOrder property value. The sortOrder property
+// GetSortOrder gets the sortOrder property value. Specifies the sort order of the floor. For example, a floor might be named 'Lobby' with a sort order of 0 to show this floor first in ordered lists.
 // returns a *int32 when successful
 func (m *Floor) GetSortOrder()(*int32) {
     val, err := m.GetBackingStore().Get("sortOrder")
@@ -66,7 +66,7 @@ func (m *Floor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     return nil
 }
-// SetSortOrder sets the sortOrder property value. The sortOrder property
+// SetSortOrder sets the sortOrder property value. Specifies the sort order of the floor. For example, a floor might be named 'Lobby' with a sort order of 0 to show this floor first in ordered lists.
 func (m *Floor) SetSortOrder(value *int32)() {
     err := m.GetBackingStore().Set("sortOrder", value)
     if err != nil {

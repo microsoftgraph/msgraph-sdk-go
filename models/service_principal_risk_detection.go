@@ -23,7 +23,7 @@ func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
 func CreateServicePrincipalRiskDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalRiskDetection(), nil
 }
-// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: servicePrincipal.
+// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.
 // returns a *ActivityType when successful
 func (m *ServicePrincipalRiskDetection) GetActivity()(*ActivityType) {
     val, err := m.GetBackingStore().Get("activity")
@@ -609,7 +609,7 @@ func (m *ServicePrincipalRiskDetection) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: servicePrincipal.
+// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.
 func (m *ServicePrincipalRiskDetection) SetActivity(value *ActivityType)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {

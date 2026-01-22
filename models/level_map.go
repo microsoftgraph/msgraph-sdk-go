@@ -88,7 +88,7 @@ func (m *LevelMap) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetFixtures gets the fixtures property value. The fixtures property
+// GetFixtures gets the fixtures property value. Collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
 // returns a []FixtureMapable when successful
 func (m *LevelMap) GetFixtures()([]FixtureMapable) {
     val, err := m.GetBackingStore().Get("fixtures")
@@ -100,7 +100,7 @@ func (m *LevelMap) GetFixtures()([]FixtureMapable) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. The placeId property
+// GetPlaceId gets the placeId property value. Identifier of the floor to which this levelMap belongs.
 // returns a *string when successful
 func (m *LevelMap) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -112,7 +112,7 @@ func (m *LevelMap) GetPlaceId()(*string) {
     }
     return nil
 }
-// GetSections gets the sections property value. The sections property
+// GetSections gets the sections property value. Collection of sections (such as zones or partitions) on this level. Supports upsert.
 // returns a []SectionMapable when successful
 func (m *LevelMap) GetSections()([]SectionMapable) {
     val, err := m.GetBackingStore().Get("sections")
@@ -124,7 +124,7 @@ func (m *LevelMap) GetSections()([]SectionMapable) {
     }
     return nil
 }
-// GetUnits gets the units property value. The units property
+// GetUnits gets the units property value. Collection of units (such as rooms or offices) on this level. Supports upsert.
 // returns a []UnitMapable when successful
 func (m *LevelMap) GetUnits()([]UnitMapable) {
     val, err := m.GetBackingStore().Get("units")
@@ -186,28 +186,28 @@ func (m *LevelMap) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetFixtures sets the fixtures property value. The fixtures property
+// SetFixtures sets the fixtures property value. Collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
 func (m *LevelMap) SetFixtures(value []FixtureMapable)() {
     err := m.GetBackingStore().Set("fixtures", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. The placeId property
+// SetPlaceId sets the placeId property value. Identifier of the floor to which this levelMap belongs.
 func (m *LevelMap) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSections sets the sections property value. The sections property
+// SetSections sets the sections property value. Collection of sections (such as zones or partitions) on this level. Supports upsert.
 func (m *LevelMap) SetSections(value []SectionMapable)() {
     err := m.GetBackingStore().Set("sections", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUnits sets the units property value. The units property
+// SetUnits sets the units property value. Collection of units (such as rooms or offices) on this level. Supports upsert.
 func (m *LevelMap) SetUnits(value []UnitMapable)() {
     err := m.GetBackingStore().Set("units", value)
     if err != nil {

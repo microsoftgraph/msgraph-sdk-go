@@ -91,7 +91,7 @@ func (m *WorkforceIntegrationEncryption) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProtocol gets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
+// GetProtocol gets the protocol property value. The possible values are: sharedSecret, unknownFutureValue.
 // returns a *WorkforceIntegrationEncryptionProtocol when successful
 func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncryptionProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
@@ -162,7 +162,7 @@ func (m *WorkforceIntegrationEncryption) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProtocol sets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
+// SetProtocol sets the protocol property value. The possible values are: sharedSecret, unknownFutureValue.
 func (m *WorkforceIntegrationEncryption) SetProtocol(value *WorkforceIntegrationEncryptionProtocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {

@@ -66,7 +66,7 @@ func (m *BaseMapFeature) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetProperties gets the properties property value. The properties property
+// GetProperties gets the properties property value. Concatenated key-value pair of all properties of a GeoJSON file for this baseMapFeature.
 // returns a *string when successful
 func (m *BaseMapFeature) GetProperties()(*string) {
     val, err := m.GetBackingStore().Get("properties")
@@ -92,7 +92,7 @@ func (m *BaseMapFeature) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetProperties sets the properties property value. The properties property
+// SetProperties sets the properties property value. Concatenated key-value pair of all properties of a GeoJSON file for this baseMapFeature.
 func (m *BaseMapFeature) SetProperties(value *string)() {
     err := m.GetBackingStore().Set("properties", value)
     if err != nil {

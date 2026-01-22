@@ -38,7 +38,7 @@ func (m *RestorePointSearchResult) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetArtifactHitCount gets the artifactHitCount property value. Total number of artifacts restored.
+// GetArtifactHitCount gets the artifactHitCount property value. Total number of mailbox items that can be restored for a granular restore session.
 // returns a *int32 when successful
 func (m *RestorePointSearchResult) GetArtifactHitCount()(*int32) {
     val, err := m.GetBackingStore().Get("artifactHitCount")
@@ -150,7 +150,7 @@ func (m *RestorePointSearchResult) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetArtifactHitCount sets the artifactHitCount property value. Total number of artifacts restored.
+// SetArtifactHitCount sets the artifactHitCount property value. Total number of mailbox items that can be restored for a granular restore session.
 func (m *RestorePointSearchResult) SetArtifactHitCount(value *int32)() {
     err := m.GetBackingStore().Set("artifactHitCount", value)
     if err != nil {

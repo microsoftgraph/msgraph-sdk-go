@@ -61,7 +61,7 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
+// GetStatus gets the status property value. Indicates the status of the asynchronous operation. The possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
 // returns a *ConnectionOperationStatus when successful
 func (m *ConnectionOperation) GetStatus()(*ConnectionOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -101,7 +101,7 @@ func (m *ConnectionOperation) SetError(value iadcd81124412c61e647227ecfc4449d8bb
         panic(err)
     }
 }
-// SetStatus sets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
+// SetStatus sets the status property value. Indicates the status of the asynchronous operation. The possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
 func (m *ConnectionOperation) SetStatus(value *ConnectionOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

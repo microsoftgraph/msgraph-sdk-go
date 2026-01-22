@@ -72,7 +72,7 @@ func (m *PhoneAuthenticationMethod) GetPhoneNumber()(*string) {
     }
     return nil
 }
-// GetPhoneType gets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
+// GetPhoneType gets the phoneType property value. The type of this phone. The possible values are: mobile, alternateMobile, or office.
 // returns a *AuthenticationPhoneType when successful
 func (m *PhoneAuthenticationMethod) GetPhoneType()(*AuthenticationPhoneType) {
     val, err := m.GetBackingStore().Get("phoneType")
@@ -84,7 +84,7 @@ func (m *PhoneAuthenticationMethod) GetPhoneType()(*AuthenticationPhoneType) {
     }
     return nil
 }
-// GetSmsSignInState gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
+// GetSmsSignInState gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. The possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
 // returns a *AuthenticationMethodSignInState when successful
 func (m *PhoneAuthenticationMethod) GetSmsSignInState()(*AuthenticationMethodSignInState) {
     val, err := m.GetBackingStore().Get("smsSignInState")
@@ -131,14 +131,14 @@ func (m *PhoneAuthenticationMethod) SetPhoneNumber(value *string)() {
         panic(err)
     }
 }
-// SetPhoneType sets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
+// SetPhoneType sets the phoneType property value. The type of this phone. The possible values are: mobile, alternateMobile, or office.
 func (m *PhoneAuthenticationMethod) SetPhoneType(value *AuthenticationPhoneType)() {
     err := m.GetBackingStore().Set("phoneType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSmsSignInState sets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
+// SetSmsSignInState sets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. The possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
 func (m *PhoneAuthenticationMethod) SetSmsSignInState(value *AuthenticationMethodSignInState)() {
     err := m.GetBackingStore().Set("smsSignInState", value)
     if err != nil {

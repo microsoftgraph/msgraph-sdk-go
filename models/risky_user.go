@@ -155,7 +155,7 @@ func (m *RiskyUser) GetHistory()([]RiskyUserHistoryItemable) {
     }
     return nil
 }
-// GetIsDeleted gets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
+// GetIsDeleted gets the isDeleted property value. Indicates whether the user is deleted. The possible values are: true, false.
 // returns a *bool when successful
 func (m *RiskyUser) GetIsDeleted()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleted")
@@ -203,7 +203,7 @@ func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetRiskLevel gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// GetRiskLevel gets the riskLevel property value. Level of the detected risky user. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
 // returns a *RiskLevel when successful
 func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
@@ -215,7 +215,7 @@ func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// GetRiskState gets the riskState property value. State of the user's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 // returns a *RiskState when successful
 func (m *RiskyUser) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
@@ -329,7 +329,7 @@ func (m *RiskyUser) SetHistory(value []RiskyUserHistoryItemable)() {
         panic(err)
     }
 }
-// SetIsDeleted sets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
+// SetIsDeleted sets the isDeleted property value. Indicates whether the user is deleted. The possible values are: true, false.
 func (m *RiskyUser) SetIsDeleted(value *bool)() {
     err := m.GetBackingStore().Set("isDeleted", value)
     if err != nil {
@@ -357,14 +357,14 @@ func (m *RiskyUser) SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
-// SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// SetRiskLevel sets the riskLevel property value. Level of the detected risky user. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
 func (m *RiskyUser) SetRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// SetRiskState sets the riskState property value. State of the user's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskState(value *RiskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {

@@ -94,7 +94,7 @@ func (m *AiAgentEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetHostingPlatformType gets the hostingPlatformType property value. Type of the platform the agent runs on. Possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue.
+// GetHostingPlatformType gets the hostingPlatformType property value. Type of the platform the agent runs on. The possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue.
 // returns a *AiAgentPlatform when successful
 func (m *AiAgentEvidence) GetHostingPlatformType()(*AiAgentPlatform) {
     val, err := m.GetBackingStore().Get("hostingPlatformType")
@@ -165,7 +165,7 @@ func (m *AiAgentEvidence) SetAgentName(value *string)() {
         panic(err)
     }
 }
-// SetHostingPlatformType sets the hostingPlatformType property value. Type of the platform the agent runs on. Possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue.
+// SetHostingPlatformType sets the hostingPlatformType property value. Type of the platform the agent runs on. The possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue.
 func (m *AiAgentEvidence) SetHostingPlatformType(value *AiAgentPlatform)() {
     err := m.GetBackingStore().Set("hostingPlatformType", value)
     if err != nil {

@@ -40,7 +40,7 @@ func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetMode gets the mode property value. Possible values are: always, never.
+// GetMode gets the mode property value. The possible values are: always, never.
 // returns a *PersistentBrowserSessionMode when successful
 func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMode) {
     val, err := m.GetBackingStore().Get("mode")
@@ -67,7 +67,7 @@ func (m *PersistentBrowserSessionControl) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetMode sets the mode property value. Possible values are: always, never.
+// SetMode sets the mode property value. The possible values are: always, never.
 func (m *PersistentBrowserSessionControl) SetMode(value *PersistentBrowserSessionMode)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {

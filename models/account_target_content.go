@@ -101,7 +101,7 @@ func (m *AccountTargetContent) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of account target content. Possible values are: unknown, includeAll, addressBook, unknownFutureValue.
+// GetTypeEscaped gets the type property value. The type of account target content. The possible values are: unknown, includeAll, addressBook, unknownFutureValue.
 // returns a *AccountTargetContentType when successful
 func (m *AccountTargetContent) GetTypeEscaped()(*AccountTargetContentType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -154,7 +154,7 @@ func (m *AccountTargetContent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of account target content. Possible values are: unknown, includeAll, addressBook, unknownFutureValue.
+// SetTypeEscaped sets the type property value. The type of account target content. The possible values are: unknown, includeAll, addressBook, unknownFutureValue.
 func (m *AccountTargetContent) SetTypeEscaped(value *AccountTargetContentType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

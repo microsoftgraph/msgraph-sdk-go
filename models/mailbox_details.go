@@ -43,7 +43,7 @@ func (m *MailboxDetails) GetAdditionalData()(map[string]any) {
 func (m *MailboxDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEmailAddress gets the emailAddress property value. The emailAddress property
+// GetEmailAddress gets the emailAddress property value. The primary SMTP address associated with the mailbox.
 // returns a *string when successful
 func (m *MailboxDetails) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
@@ -55,7 +55,7 @@ func (m *MailboxDetails) GetEmailAddress()(*string) {
     }
     return nil
 }
-// GetExternalDirectoryObjectId gets the externalDirectoryObjectId property value. The externalDirectoryObjectId property
+// GetExternalDirectoryObjectId gets the externalDirectoryObjectId property value. The unique identifier of the mailbox in the external directory (such as Microsoft Entra).
 // returns a *string when successful
 func (m *MailboxDetails) GetExternalDirectoryObjectId()(*string) {
     val, err := m.GetBackingStore().Get("externalDirectoryObjectId")
@@ -154,14 +154,14 @@ func (m *MailboxDetails) SetAdditionalData(value map[string]any)() {
 func (m *MailboxDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEmailAddress sets the emailAddress property value. The emailAddress property
+// SetEmailAddress sets the emailAddress property value. The primary SMTP address associated with the mailbox.
 func (m *MailboxDetails) SetEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("emailAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalDirectoryObjectId sets the externalDirectoryObjectId property value. The externalDirectoryObjectId property
+// SetExternalDirectoryObjectId sets the externalDirectoryObjectId property value. The unique identifier of the mailbox in the external directory (such as Microsoft Entra).
 func (m *MailboxDetails) SetExternalDirectoryObjectId(value *string)() {
     err := m.GetBackingStore().Set("externalDirectoryObjectId", value)
     if err != nil {

@@ -620,7 +620,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetInstallationSchedule gets the installationSchedule property value. The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
+// GetInstallationSchedule gets the installationSchedule property value. The Installation Schedule. The possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
 // returns a WindowsUpdateInstallScheduleTypeable when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetInstallationSchedule()(WindowsUpdateInstallScheduleTypeable) {
     val, err := m.GetBackingStore().Get("installationSchedule")
@@ -788,7 +788,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetUpdateNotificationLevel()(*Wi
     }
     return nil
 }
-// GetUpdateWeeks gets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
+// GetUpdateWeeks gets the updateWeeks property value. Schedule the update installation on the weeks of the month. The possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. The possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
 // returns a *WindowsUpdateForBusinessUpdateWeeks when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateForBusinessUpdateWeeks) {
     val, err := m.GetBackingStore().Get("updateWeeks")
@@ -1178,7 +1178,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesWillBeRolledBac
         panic(err)
     }
 }
-// SetInstallationSchedule sets the installationSchedule property value. The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
+// SetInstallationSchedule sets the installationSchedule property value. The Installation Schedule. The possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetInstallationSchedule(value WindowsUpdateInstallScheduleTypeable)() {
     err := m.GetBackingStore().Set("installationSchedule", value)
     if err != nil {
@@ -1276,7 +1276,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetUpdateNotificationLevel(value
         panic(err)
     }
 }
-// SetUpdateWeeks sets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
+// SetUpdateWeeks sets the updateWeeks property value. Schedule the update installation on the weeks of the month. The possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. The possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
 func (m *WindowsUpdateForBusinessConfiguration) SetUpdateWeeks(value *WindowsUpdateForBusinessUpdateWeeks)() {
     err := m.GetBackingStore().Set("updateWeeks", value)
     if err != nil {

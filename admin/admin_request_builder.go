@@ -120,6 +120,11 @@ func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestB
 func (m *AdminRequestBuilder) Sharepoint()(*SharepointRequestBuilder) {
     return NewSharepointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Teams provides operations to manage the teams property of the microsoft.graph.admin entity.
+// returns a *TeamsRequestBuilder when successful
+func (m *AdminRequestBuilder) Teams()(*TeamsRequestBuilder) {
+    return NewTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get admin
 // returns a *RequestInformation when successful
 func (m *AdminRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdminRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

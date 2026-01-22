@@ -37,7 +37,7 @@ func (m *DeviceEvidence) GetAzureAdDeviceId()(*string) {
     }
     return nil
 }
-// GetDefenderAvStatus gets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
+// GetDefenderAvStatus gets the defenderAvStatus property value. State of the Defender anti-malware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
 // returns a *DefenderAvStatus when successful
 func (m *DeviceEvidence) GetDefenderAvStatus()(*DefenderAvStatus) {
     val, err := m.GetBackingStore().Get("defenderAvStatus")
@@ -269,6 +269,22 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["resourceAccessEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceAccessEventFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceAccessEventable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceAccessEventable)
+                }
+            }
+            m.SetResourceAccessEvents(res)
+        }
+        return nil
+    }
     res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceRiskScore)
         if err != nil {
@@ -469,6 +485,18 @@ func (m *DeviceEvidence) GetRbacGroupName()(*string) {
     }
     return nil
 }
+// GetResourceAccessEvents gets the resourceAccessEvents property value. Information on resource access attempts made by the user account.
+// returns a []ResourceAccessEventable when successful
+func (m *DeviceEvidence) GetResourceAccessEvents()([]ResourceAccessEventable) {
+    val, err := m.GetBackingStore().Get("resourceAccessEvents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceAccessEventable)
+    }
+    return nil
+}
 // GetRiskScore gets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
 // returns a *DeviceRiskScore when successful
 func (m *DeviceEvidence) GetRiskScore()(*DeviceRiskScore) {
@@ -628,6 +656,18 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetResourceAccessEvents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceAccessEvents()))
+        for i, v := range m.GetResourceAccessEvents() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("resourceAccessEvents", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRiskScore() != nil {
         cast := (*m.GetRiskScore()).String()
         err = writer.WriteStringValue("riskScore", &cast)
@@ -656,7 +696,7 @@ func (m *DeviceEvidence) SetAzureAdDeviceId(value *string)() {
         panic(err)
     }
 }
-// SetDefenderAvStatus sets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
+// SetDefenderAvStatus sets the defenderAvStatus property value. State of the Defender anti-malware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
 func (m *DeviceEvidence) SetDefenderAvStatus(value *DefenderAvStatus)() {
     err := m.GetBackingStore().Set("defenderAvStatus", value)
     if err != nil {
@@ -775,6 +815,13 @@ func (m *DeviceEvidence) SetRbacGroupName(value *string)() {
         panic(err)
     }
 }
+// SetResourceAccessEvents sets the resourceAccessEvents property value. Information on resource access attempts made by the user account.
+func (m *DeviceEvidence) SetResourceAccessEvents(value []ResourceAccessEventable)() {
+    err := m.GetBackingStore().Set("resourceAccessEvents", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRiskScore sets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
 func (m *DeviceEvidence) SetRiskScore(value *DeviceRiskScore)() {
     err := m.GetBackingStore().Set("riskScore", value)
@@ -817,6 +864,7 @@ type DeviceEvidenceable interface {
     GetOsPlatform()(*string)
     GetRbacGroupId()(*int32)
     GetRbacGroupName()(*string)
+    GetResourceAccessEvents()([]ResourceAccessEventable)
     GetRiskScore()(*DeviceRiskScore)
     GetVersion()(*string)
     GetVmMetadata()(VmMetadataable)
@@ -838,6 +886,7 @@ type DeviceEvidenceable interface {
     SetOsPlatform(value *string)()
     SetRbacGroupId(value *int32)()
     SetRbacGroupName(value *string)()
+    SetResourceAccessEvents(value []ResourceAccessEventable)()
     SetRiskScore(value *DeviceRiskScore)()
     SetVersion(value *string)()
     SetVmMetadata(value VmMetadataable)()

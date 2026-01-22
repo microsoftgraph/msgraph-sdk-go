@@ -21,7 +21,7 @@ type ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderGetQueryParameters get units from places
+// ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderGetQueryParameters collection of units (such as rooms or offices) on this level. Supports upsert.
 type ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property units for places
+// Delete delete a unitMap object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unitmap-delete?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get units from places
+// Get collection of units (such as rooms or offices) on this level. Supports upsert.
 // returns a UnitMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnitMapable, error) {
@@ -93,9 +96,12 @@ func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnitMapable), nil
 }
-// Patch update the navigation property units in places
+// Patch update the properties of an existing unitMap object in IMDF format on a specified floor, or create one if it doesn't exist.
 // returns a UnitMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unitmap-update?view=graph-rest-1.0
 func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnitMapable, requestConfiguration *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnitMapable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) Patch(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnitMapable), nil
 }
-// ToDeleteRequestInformation delete navigation property units for places
+// ToDeleteRequestInformation delete a unitMap object.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +130,7 @@ func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get units from places
+// ToGetRequestInformation collection of units (such as rooms or offices) on this level. Supports upsert.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +144,7 @@ func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property units in places
+// ToPatchRequestInformation update the properties of an existing unitMap object in IMDF format on a specified floor, or create one if it doesn't exist.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnitMapable, requestConfiguration *ItemGraphBuildingMapLevelsItemUnitsUnitMapItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

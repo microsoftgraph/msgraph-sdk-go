@@ -72,7 +72,7 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
+// GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. The possible values are: mailbox, site.
 // returns a *SourceType when successful
 func (m *UserSource) GetIncludedSources()(*SourceType) {
     val, err := m.GetBackingStore().Get("includedSources")
@@ -130,7 +130,7 @@ func (m *UserSource) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
+// SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. The possible values are: mailbox, site.
 func (m *UserSource) SetIncludedSources(value *SourceType)() {
     err := m.GetBackingStore().Set("includedSources", value)
     if err != nil {

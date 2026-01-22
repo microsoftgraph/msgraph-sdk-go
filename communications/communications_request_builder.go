@@ -37,6 +37,11 @@ type CommunicationsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AdhocCalls provides operations to manage the adhocCalls property of the microsoft.graph.cloudCommunications entity.
+// returns a *AdhocCallsRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) AdhocCalls()(*AdhocCallsRequestBuilder) {
+    return NewAdhocCallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CallRecords provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
 // returns a *CallRecordsRequestBuilder when successful
 func (m *CommunicationsRequestBuilder) CallRecords()(*CallRecordsRequestBuilder) {

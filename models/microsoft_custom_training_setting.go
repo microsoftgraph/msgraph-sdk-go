@@ -91,7 +91,7 @@ func (m *MicrosoftCustomTrainingSetting) GetTrainingAssignmentMappings()([]Micro
     }
     return nil
 }
-// GetTrainingCompletionDuration gets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.
+// GetTrainingCompletionDuration gets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
 // returns a *TrainingCompletionDuration when successful
 func (m *MicrosoftCustomTrainingSetting) GetTrainingCompletionDuration()(*TrainingCompletionDuration) {
     val, err := m.GetBackingStore().Get("trainingCompletionDuration")
@@ -150,7 +150,7 @@ func (m *MicrosoftCustomTrainingSetting) SetTrainingAssignmentMappings(value []M
         panic(err)
     }
 }
-// SetTrainingCompletionDuration sets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.
+// SetTrainingCompletionDuration sets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
 func (m *MicrosoftCustomTrainingSetting) SetTrainingCompletionDuration(value *TrainingCompletionDuration)() {
     err := m.GetBackingStore().Set("trainingCompletionDuration", value)
     if err != nil {

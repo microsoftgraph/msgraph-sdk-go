@@ -44,6 +44,16 @@ type ItemPresenceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ClearAutomaticLocation provides operations to call the clearAutomaticLocation method.
+// returns a *ItemPresenceClearAutomaticLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) ClearAutomaticLocation()(*ItemPresenceClearAutomaticLocationRequestBuilder) {
+    return NewItemPresenceClearAutomaticLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ClearLocation provides operations to call the clearLocation method.
+// returns a *ItemPresenceClearLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) ClearLocation()(*ItemPresenceClearLocationRequestBuilder) {
+    return NewItemPresenceClearLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ClearPresence provides operations to call the clearPresence method.
 // returns a *ItemPresenceClearPresenceRequestBuilder when successful
 func (m *ItemPresenceRequestBuilder) ClearPresence()(*ItemPresenceClearPresenceRequestBuilder) {
@@ -125,6 +135,16 @@ func (m *ItemPresenceRequestBuilder) Patch(ctx context.Context, body iadcd811244
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable), nil
+}
+// SetAutomaticLocation provides operations to call the setAutomaticLocation method.
+// returns a *ItemPresenceSetAutomaticLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) SetAutomaticLocation()(*ItemPresenceSetAutomaticLocationRequestBuilder) {
+    return NewItemPresenceSetAutomaticLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetManualLocation provides operations to call the setManualLocation method.
+// returns a *ItemPresenceSetManualLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) SetManualLocation()(*ItemPresenceSetManualLocationRequestBuilder) {
+    return NewItemPresenceSetManualLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetPresence provides operations to call the setPresence method.
 // returns a *ItemPresenceSetPresenceRequestBuilder when successful

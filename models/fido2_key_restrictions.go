@@ -55,7 +55,7 @@ func (m *Fido2KeyRestrictions) GetAdditionalData()(map[string]any) {
 func (m *Fido2KeyRestrictions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEnforcementType gets the enforcementType property value. Enforcement type. Possible values are: allow, block.
+// GetEnforcementType gets the enforcementType property value. Enforcement type. The possible values are: allow, block.
 // returns a *Fido2RestrictionEnforcementType when successful
 func (m *Fido2KeyRestrictions) GetEnforcementType()(*Fido2RestrictionEnforcementType) {
     val, err := m.GetBackingStore().Get("enforcementType")
@@ -196,7 +196,7 @@ func (m *Fido2KeyRestrictions) SetAdditionalData(value map[string]any)() {
 func (m *Fido2KeyRestrictions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEnforcementType sets the enforcementType property value. Enforcement type. Possible values are: allow, block.
+// SetEnforcementType sets the enforcementType property value. Enforcement type. The possible values are: allow, block.
 func (m *Fido2KeyRestrictions) SetEnforcementType(value *Fido2RestrictionEnforcementType)() {
     err := m.GetBackingStore().Set("enforcementType", value)
     if err != nil {

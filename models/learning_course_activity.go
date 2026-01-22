@@ -191,7 +191,7 @@ func (m *LearningCourseActivity) GetLearningProviderId()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.
+// GetStatus gets the status property value. The status of the course activity. The possible values are: notStarted, inProgress, completed. Required.
 // returns a *CourseStatus when successful
 func (m *LearningCourseActivity) GetStatus()(*CourseStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -296,7 +296,7 @@ func (m *LearningCourseActivity) SetLearningProviderId(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.
+// SetStatus sets the status property value. The status of the course activity. The possible values are: notStarted, inProgress, completed. Required.
 func (m *LearningCourseActivity) SetStatus(value *CourseStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

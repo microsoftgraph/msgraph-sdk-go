@@ -24,7 +24,7 @@ func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserExperien
 func CreateUserExperienceAnalyticsAppHealthDevicePerformanceDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails(), nil
 }
-// GetAppDisplayName gets the appDisplayName property value. The friendly name of the application for which the event occurred. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+// GetAppDisplayName gets the appDisplayName property value. The friendly name of the application for which the event occurred. The possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
@@ -48,7 +48,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppPublish
     }
     return nil
 }
-// GetAppVersion gets the appVersion property value. The version of the application. Possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.
+// GetAppVersion gets the appVersion property value. The version of the application. The possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("appVersion")
@@ -234,7 +234,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) Serialize(wri
     }
     return nil
 }
-// SetAppDisplayName sets the appDisplayName property value. The friendly name of the application for which the event occurred. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+// SetAppDisplayName sets the appDisplayName property value. The friendly name of the application for which the event occurred. The possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {
@@ -248,7 +248,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAppPublish
         panic(err)
     }
 }
-// SetAppVersion sets the appVersion property value. The version of the application. Possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.
+// SetAppVersion sets the appVersion property value. The version of the application. The possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAppVersion(value *string)() {
     err := m.GetBackingStore().Set("appVersion", value)
     if err != nil {

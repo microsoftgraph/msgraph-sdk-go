@@ -21,7 +21,7 @@ type ItemGraphBuildingMapLevelsLevelMapItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGraphBuildingMapLevelsLevelMapItemRequestBuilderGetQueryParameters get levels from places
+// ItemGraphBuildingMapLevelsLevelMapItemRequestBuilderGetQueryParameters represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
 type ItemGraphBuildingMapLevelsLevelMapItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ItemGraphBuildingMapLevelsLevelMapItemRequestBuilder) Delete(ctx contex
 func (m *ItemGraphBuildingMapLevelsLevelMapItemRequestBuilder) Fixtures()(*ItemGraphBuildingMapLevelsItemFixturesRequestBuilder) {
     return NewItemGraphBuildingMapLevelsItemFixturesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get levels from places
+// Get represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
 // returns a LevelMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphBuildingMapLevelsLevelMapItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsLevelMapItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LevelMapable, error) {
@@ -134,7 +134,7 @@ func (m *ItemGraphBuildingMapLevelsLevelMapItemRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get levels from places
+// ToGetRequestInformation represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsLevelMapItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsLevelMapItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

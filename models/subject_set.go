@@ -51,6 +51,8 @@ func CreateSubjectSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewSingleServicePrincipal(), nil
                     case "#microsoft.graph.singleUser":
                         return NewSingleUser(), nil
+                    case "#microsoft.graph.targetAgentIdentitySponsorsOrOwners":
+                        return NewTargetAgentIdentitySponsorsOrOwners(), nil
                     case "#microsoft.graph.targetApplicationOwners":
                         return NewTargetApplicationOwners(), nil
                     case "#microsoft.graph.targetManager":

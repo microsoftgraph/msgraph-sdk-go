@@ -21,7 +21,7 @@ type ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters get checkIns from places
+// ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters a subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 type ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilder) De
     }
     return nil
 }
-// Get get checkIns from places
+// Get a subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 // returns a CheckInClaimable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CheckInClaimable, error) {
@@ -124,7 +124,7 @@ func (m *ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get checkIns from places
+// ToGetRequestInformation a subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 // returns a *RequestInformation when successful
 func (m *ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphSectionCheckInsCheckInClaimCalendarEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -21,7 +21,7 @@ type ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderGetQueryParameters get sections from places
+// ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderGetQueryParameters collection of sections (such as zones or partitions) on this level. Supports upsert.
 type ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder) Del
     }
     return nil
 }
-// Get get sections from places
+// Get collection of sections (such as zones or partitions) on this level. Supports upsert.
 // returns a SectionMapable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionMapable, error) {
@@ -124,7 +124,7 @@ func (m *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get sections from places
+// ToGetRequestInformation collection of sections (such as zones or partitions) on this level. Supports upsert.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

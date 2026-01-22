@@ -158,7 +158,7 @@ func (m *AnswerVariant) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPlatform gets the platform property value. The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
+// GetPlatform gets the platform property value. The device or operating system that can view this answer variation. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 // returns a *DevicePlatformType when successful
 func (m *AnswerVariant) GetPlatform()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platform")
@@ -268,7 +268,7 @@ func (m *AnswerVariant) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
+// SetPlatform sets the platform property value. The device or operating system that can view this answer variation. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 func (m *AnswerVariant) SetPlatform(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DevicePlatformType)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {

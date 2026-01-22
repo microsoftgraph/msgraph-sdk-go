@@ -96,7 +96,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable), nil
 }
-// Patch update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+// Patch update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as tenantNote.
 // returns a SecureScoreControlProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -144,7 +144,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+// ToPatchRequestInformation update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as tenantNote.
 // returns a *RequestInformation when successful
 func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable, requestConfiguration *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

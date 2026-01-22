@@ -44,7 +44,7 @@ func (m *CheckInClaim) GetAdditionalData()(map[string]any) {
 func (m *CheckInClaim) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCalendarEventId gets the calendarEventId property value. The calendarEventId property
+// GetCalendarEventId gets the calendarEventId property value. The unique identifier for an Outlook calendar event associated with the checkInClaim object. For more information, see the iCalUId property in event.
 // returns a *string when successful
 func (m *CheckInClaim) GetCalendarEventId()(*string) {
     val, err := m.GetBackingStore().Get("calendarEventId")
@@ -68,7 +68,7 @@ func (m *CheckInClaim) GetCheckInMethod()(*CheckInMethod) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the checkInClaim object was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CheckInClaim) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -184,7 +184,7 @@ func (m *CheckInClaim) SetAdditionalData(value map[string]any)() {
 func (m *CheckInClaim) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCalendarEventId sets the calendarEventId property value. The calendarEventId property
+// SetCalendarEventId sets the calendarEventId property value. The unique identifier for an Outlook calendar event associated with the checkInClaim object. For more information, see the iCalUId property in event.
 func (m *CheckInClaim) SetCalendarEventId(value *string)() {
     err := m.GetBackingStore().Set("calendarEventId", value)
     if err != nil {
@@ -198,7 +198,7 @@ func (m *CheckInClaim) SetCheckInMethod(value *CheckInMethod)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the checkInClaim object was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CheckInClaim) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {

@@ -14,7 +14,7 @@ import (
 type ItemGraphBuildingRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphBuildingRequestBuilderGetQueryParameters get the item of type microsoft.graph.place as microsoft.graph.building
+// ItemGraphBuildingRequestBuilderGetQueryParameters get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
 type ItemGraphBuildingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,9 +48,12 @@ func NewItemGraphBuildingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphBuildingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the item of type microsoft.graph.place as microsoft.graph.building
+// Get get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
 // returns a Buildingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
 func (m *ItemGraphBuildingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphBuildingRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Buildingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *ItemGraphBuildingRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *ItemGraphBuildingRequestBuilder) MapEscaped()(*ItemGraphBuildingMapRequestBuilder) {
     return NewItemGraphBuildingMapRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get the item of type microsoft.graph.place as microsoft.graph.building
+// ToGetRequestInformation get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

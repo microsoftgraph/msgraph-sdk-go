@@ -40,7 +40,7 @@ func (m *Initiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetInitiatorType gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
+// GetInitiatorType gets the initiatorType property value. Type of initiator. The possible values are: user, application, system, unknownFutureValue.
 // returns a *InitiatorType when successful
 func (m *Initiator) GetInitiatorType()(*InitiatorType) {
     val, err := m.GetBackingStore().Get("initiatorType")
@@ -67,7 +67,7 @@ func (m *Initiator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetInitiatorType sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
+// SetInitiatorType sets the initiatorType property value. Type of initiator. The possible values are: user, application, system, unknownFutureValue.
 func (m *Initiator) SetInitiatorType(value *InitiatorType)() {
     err := m.GetBackingStore().Set("initiatorType", value)
     if err != nil {

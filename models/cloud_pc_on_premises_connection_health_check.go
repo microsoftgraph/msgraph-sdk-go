@@ -92,7 +92,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetEndDateTime()(*i336074805fc8
     }
     return nil
 }
-// GetErrorType gets the errorType property value. The type of error that occurred during this health check. Possible values are: endpointConnectivityCheckCloudPcUrlNotAllowListed, endpointConnectivityCheckWVDUrlNotAllowListed, etc. (The all possible values can refer to cloudPcOnPremisesConnectionHealthCheckErrorType) Read-Only.
+// GetErrorType gets the errorType property value. The type of error that occurred during this health check. The possible values are: endpointConnectivityCheckCloudPcUrlNotAllowListed, endpointConnectivityCheckWVDUrlNotAllowListed, etc. (The all possible values can refer to cloudPcOnPremisesConnectionHealthCheckErrorType) Read-Only.
 // returns a *CloudPcOnPremisesConnectionHealthCheckErrorType when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremisesConnectionHealthCheckErrorType) {
     val, err := m.GetBackingStore().Get("errorType")
@@ -353,7 +353,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetEndDateTime(value *i33607480
         panic(err)
     }
 }
-// SetErrorType sets the errorType property value. The type of error that occurred during this health check. Possible values are: endpointConnectivityCheckCloudPcUrlNotAllowListed, endpointConnectivityCheckWVDUrlNotAllowListed, etc. (The all possible values can refer to cloudPcOnPremisesConnectionHealthCheckErrorType) Read-Only.
+// SetErrorType sets the errorType property value. The type of error that occurred during this health check. The possible values are: endpointConnectivityCheckCloudPcUrlNotAllowListed, endpointConnectivityCheckWVDUrlNotAllowListed, etc. (The all possible values can refer to cloudPcOnPremisesConnectionHealthCheckErrorType) Read-Only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetErrorType(value *CloudPcOnPremisesConnectionHealthCheckErrorType)() {
     err := m.GetBackingStore().Set("errorType", value)
     if err != nil {

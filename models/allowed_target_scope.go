@@ -14,11 +14,12 @@ const (
     ALLDIRECTORYSERVICEPRINCIPALS_ALLOWEDTARGETSCOPE
     ALLCONFIGUREDCONNECTEDORGANIZATIONUSERS_ALLOWEDTARGETSCOPE
     ALLEXTERNALUSERS_ALLOWEDTARGETSCOPE
+    ALLDIRECTORYAGENTIDENTITIES_ALLOWEDTARGETSCOPE
     UNKNOWNFUTUREVALUE_ALLOWEDTARGETSCOPE
 )
 
 func (i AllowedTargetScope) String() string {
-    return []string{"notSpecified", "specificDirectoryUsers", "specificConnectedOrganizationUsers", "specificDirectoryServicePrincipals", "allMemberUsers", "allDirectoryUsers", "allDirectoryServicePrincipals", "allConfiguredConnectedOrganizationUsers", "allExternalUsers", "unknownFutureValue"}[i]
+    return []string{"notSpecified", "specificDirectoryUsers", "specificConnectedOrganizationUsers", "specificDirectoryServicePrincipals", "allMemberUsers", "allDirectoryUsers", "allDirectoryServicePrincipals", "allConfiguredConnectedOrganizationUsers", "allExternalUsers", "allDirectoryAgentIdentities", "unknownFutureValue"}[i]
 }
 func ParseAllowedTargetScope(v string) (any, error) {
     result := NOTSPECIFIED_ALLOWEDTARGETSCOPE
@@ -41,6 +42,8 @@ func ParseAllowedTargetScope(v string) (any, error) {
             result = ALLCONFIGUREDCONNECTEDORGANIZATIONUSERS_ALLOWEDTARGETSCOPE
         case "allExternalUsers":
             result = ALLEXTERNALUSERS_ALLOWEDTARGETSCOPE
+        case "allDirectoryAgentIdentities":
+            result = ALLDIRECTORYAGENTIDENTITIES_ALLOWEDTARGETSCOPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALLOWEDTARGETSCOPE
         default:

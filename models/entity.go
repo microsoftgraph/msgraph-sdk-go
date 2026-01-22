@@ -95,6 +95,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewActivityHistoryItem(), nil
                     case "#microsoft.graph.addLargeGalleryViewOperation":
                         return NewAddLargeGalleryViewOperation(), nil
+                    case "#microsoft.graph.adhocCall":
+                        return NewAdhocCall(), nil
                     case "#microsoft.graph.adminConsentRequestPolicy":
                         return NewAdminConsentRequestPolicy(), nil
                     case "#microsoft.graph.administrativeUnit":
@@ -119,6 +121,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAiInteraction(), nil
                     case "#microsoft.graph.aiInteractionHistory":
                         return NewAiInteractionHistory(), nil
+                    case "#microsoft.graph.aiOnlineMeeting":
+                        return NewAiOnlineMeeting(), nil
                     case "#microsoft.graph.aiUser":
                         return NewAiUser(), nil
                     case "#microsoft.graph.akamaiWebApplicationFirewallProvider":
@@ -295,6 +299,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCalendarSharingMessage(), nil
                     case "#microsoft.graph.call":
                         return NewCall(), nil
+                    case "#microsoft.graph.callAiInsight":
+                        return NewCallAiInsight(), nil
                     case "#microsoft.graph.callEvent":
                         return NewCallEvent(), nil
                     case "#microsoft.graph.callRecording":
@@ -347,6 +353,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcProvisioningPolicy(), nil
                     case "#microsoft.graph.cloudPcProvisioningPolicyAssignment":
                         return NewCloudPcProvisioningPolicyAssignment(), nil
+                    case "#microsoft.graph.cloudPcReport":
+                        return NewCloudPcReport(), nil
                     case "#microsoft.graph.cloudPcUserSetting":
                         return NewCloudPcUserSetting(), nil
                     case "#microsoft.graph.cloudPcUserSettingAssignment":
@@ -703,6 +711,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFileStorage(), nil
                     case "#microsoft.graph.fileStorageContainer":
                         return NewFileStorageContainer(), nil
+                    case "#microsoft.graph.fileStorageContainerType":
+                        return NewFileStorageContainerType(), nil
+                    case "#microsoft.graph.fileStorageContainerTypeRegistration":
+                        return NewFileStorageContainerTypeRegistration(), nil
                     case "#microsoft.graph.filterOperatorSchema":
                         return NewFilterOperatorSchema(), nil
                     case "#microsoft.graph.fixtureMap":
@@ -1887,8 +1899,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkbookWorksheetProtection(), nil
                     case "#microsoft.graph.workforceIntegration":
                         return NewWorkforceIntegration(), nil
+                    case "#microsoft.graph.workHoursAndLocationsSetting":
+                        return NewWorkHoursAndLocationsSetting(), nil
                     case "#microsoft.graph.workingTimeSchedule":
                         return NewWorkingTimeSchedule(), nil
+                    case "#microsoft.graph.workPlanOccurrence":
+                        return NewWorkPlanOccurrence(), nil
+                    case "#microsoft.graph.workPlanRecurrence":
+                        return NewWorkPlanRecurrence(), nil
                     case "#microsoft.graph.workspace":
                         return NewWorkspace(), nil
                     case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":

@@ -247,7 +247,7 @@ func (m *LandingPage) GetLocale()(*string) {
     }
     return nil
 }
-// GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// GetSource gets the source property value. The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.
 // returns a *SimulationContentSource when successful
 func (m *LandingPage) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
@@ -259,7 +259,7 @@ func (m *LandingPage) GetSource()(*SimulationContentSource) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// GetStatus gets the status property value. The status of the simulation. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 // returns a *SimulationContentStatus when successful
 func (m *LandingPage) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -421,14 +421,14 @@ func (m *LandingPage) SetLocale(value *string)() {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// SetSource sets the source property value. The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *LandingPage) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// SetStatus sets the status property value. The status of the simulation. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *LandingPage) SetStatus(value *SimulationContentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

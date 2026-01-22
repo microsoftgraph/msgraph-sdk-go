@@ -116,7 +116,7 @@ func (m *NetworkConnection) GetDestinationUrl()(*string) {
     }
     return nil
 }
-// GetDirection gets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
+// GetDirection gets the direction property value. Network connection direction. The possible values are: unknown, inbound, outbound.
 // returns a *ConnectionDirection when successful
 func (m *NetworkConnection) GetDirection()(*ConnectionDirection) {
     val, err := m.GetBackingStore().Get("direction")
@@ -428,7 +428,7 @@ func (m *NetworkConnection) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProtocol gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
+// GetProtocol gets the protocol property value. Network protocol. The possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
 // returns a *SecurityNetworkProtocol when successful
 func (m *NetworkConnection) GetProtocol()(*SecurityNetworkProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
@@ -488,7 +488,7 @@ func (m *NetworkConnection) GetSourcePort()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
+// GetStatus gets the status property value. Network connection status. The possible values are: unknown, attempted, succeeded, blocked, failed.
 // returns a *ConnectionStatus when successful
 func (m *NetworkConnection) GetStatus()(*ConnectionStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -704,7 +704,7 @@ func (m *NetworkConnection) SetDestinationUrl(value *string)() {
         panic(err)
     }
 }
-// SetDirection sets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
+// SetDirection sets the direction property value. Network connection direction. The possible values are: unknown, inbound, outbound.
 func (m *NetworkConnection) SetDirection(value *ConnectionDirection)() {
     err := m.GetBackingStore().Set("direction", value)
     if err != nil {
@@ -760,7 +760,7 @@ func (m *NetworkConnection) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProtocol sets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
+// SetProtocol sets the protocol property value. Network protocol. The possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
 func (m *NetworkConnection) SetProtocol(value *SecurityNetworkProtocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
@@ -795,7 +795,7 @@ func (m *NetworkConnection) SetSourcePort(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
+// SetStatus sets the status property value. Network connection status. The possible values are: unknown, attempted, succeeded, blocked, failed.
 func (m *NetworkConnection) SetStatus(value *ConnectionStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

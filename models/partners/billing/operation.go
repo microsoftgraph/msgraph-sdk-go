@@ -106,7 +106,7 @@ func (m *Operation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the operation. Possible values are: notStarted, running, completed, failed, unknownFutureValue.
+// GetStatus gets the status property value. The status of the operation. The possible values are: notStarted, running, completed, failed, unknownFutureValue.
 // returns a *LongRunningOperationStatus when successful
 func (m *Operation) GetStatus()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LongRunningOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -159,7 +159,7 @@ func (m *Operation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the operation. Possible values are: notStarted, running, completed, failed, unknownFutureValue.
+// SetStatus sets the status property value. The status of the operation. The possible values are: notStarted, running, completed, failed, unknownFutureValue.
 func (m *Operation) SetStatus(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LongRunningOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -101,7 +101,7 @@ func (m *ResourceLink) GetLinkType()(*ResourceLinkType) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The link text that is visible in the Places app. The maximum length is 200 characters.
 // returns a *string when successful
 func (m *ResourceLink) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -125,7 +125,7 @@ func (m *ResourceLink) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The URL of the resource link. The maximum length is 200 characters.
 // returns a *string when successful
 func (m *ResourceLink) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -190,7 +190,7 @@ func (m *ResourceLink) SetLinkType(value *ResourceLinkType)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The link text that is visible in the Places app. The maximum length is 200 characters.
 func (m *ResourceLink) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -204,7 +204,7 @@ func (m *ResourceLink) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The URL of the resource link. The maximum length is 200 characters.
 func (m *ResourceLink) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

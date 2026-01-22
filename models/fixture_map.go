@@ -40,7 +40,7 @@ func (m *FixtureMap) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetPlaceId gets the placeId property value. The placeId property
+// GetPlaceId gets the placeId property value. Identifier for the floor to which this fixtureMap belongs.
 // returns a *string when successful
 func (m *FixtureMap) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -66,7 +66,7 @@ func (m *FixtureMap) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetPlaceId sets the placeId property value. The placeId property
+// SetPlaceId sets the placeId property value. Identifier for the floor to which this fixtureMap belongs.
 func (m *FixtureMap) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {

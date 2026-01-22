@@ -22,7 +22,7 @@ func NewSendDtmfTonesOperation()(*SendDtmfTonesOperation) {
 func CreateSendDtmfTonesOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSendDtmfTonesOperation(), nil
 }
-// GetCompletionReason gets the completionReason property value. The results of the action. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.
+// GetCompletionReason gets the completionReason property value. The results of the action. The possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.
 // returns a *SendDtmfCompletionReason when successful
 func (m *SendDtmfTonesOperation) GetCompletionReason()(*SendDtmfCompletionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
@@ -65,7 +65,7 @@ func (m *SendDtmfTonesOperation) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetCompletionReason sets the completionReason property value. The results of the action. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.
+// SetCompletionReason sets the completionReason property value. The results of the action. The possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.
 func (m *SendDtmfTonesOperation) SetCompletionReason(value *SendDtmfCompletionReason)() {
     err := m.GetBackingStore().Set("completionReason", value)
     if err != nil {
