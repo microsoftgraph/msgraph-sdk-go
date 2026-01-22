@@ -274,6 +274,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["priorityScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPriorityScore(val)
+        }
+        return nil
+    }
     res["redirectIncidentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -385,6 +395,18 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetPriorityScore gets the priorityScore property value. The priorityScore property
+// returns a *int32 when successful
+func (m *Incident) GetPriorityScore()(*int32) {
+    val, err := m.GetBackingStore().Get("priorityScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -565,6 +587,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteInt32Value("priorityScore", m.GetPriorityScore())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("redirectIncidentId", m.GetRedirectIncidentId())
         if err != nil {
             return err
@@ -694,6 +722,13 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
+// SetPriorityScore sets the priorityScore property value. The priorityScore property
+func (m *Incident) SetPriorityScore(value *int32)() {
+    err := m.GetBackingStore().Set("priorityScore", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRedirectIncidentId sets the redirectIncidentId property value. Only populated in case an incident is grouped with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) SetRedirectIncidentId(value *string)() {
     err := m.GetBackingStore().Set("redirectIncidentId", value)
@@ -758,6 +793,7 @@ type Incidentable interface {
     GetIncidentWebUrl()(*string)
     GetLastModifiedBy()(*string)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPriorityScore()(*int32)
     GetRedirectIncidentId()(*string)
     GetResolvingComment()(*string)
     GetSeverity()(*AlertSeverity)
@@ -777,6 +813,7 @@ type Incidentable interface {
     SetIncidentWebUrl(value *string)()
     SetLastModifiedBy(value *string)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPriorityScore(value *int32)()
     SetRedirectIncidentId(value *string)()
     SetResolvingComment(value *string)()
     SetSeverity(value *AlertSeverity)()
