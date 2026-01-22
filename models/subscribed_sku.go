@@ -47,7 +47,7 @@ func (m *SubscribedSku) GetAccountName()(*string) {
     }
     return nil
 }
-// GetAppliesTo gets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: User, Company.
+// GetAppliesTo gets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. The possible values are: User, Company.
 // returns a *string when successful
 func (m *SubscribedSku) GetAppliesTo()(*string) {
     val, err := m.GetBackingStore().Get("appliesTo")
@@ -59,7 +59,7 @@ func (m *SubscribedSku) GetAppliesTo()(*string) {
     }
     return nil
 }
-// GetCapabilityStatus gets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+// GetCapabilityStatus gets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. The possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
 // returns a *string when successful
 func (m *SubscribedSku) GetCapabilityStatus()(*string) {
     val, err := m.GetBackingStore().Get("capabilityStatus")
@@ -349,14 +349,14 @@ func (m *SubscribedSku) SetAccountName(value *string)() {
         panic(err)
     }
 }
-// SetAppliesTo sets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: User, Company.
+// SetAppliesTo sets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. The possible values are: User, Company.
 func (m *SubscribedSku) SetAppliesTo(value *string)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCapabilityStatus sets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+// SetCapabilityStatus sets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. The possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
 func (m *SubscribedSku) SetCapabilityStatus(value *string)() {
     err := m.GetBackingStore().Set("capabilityStatus", value)
     if err != nil {

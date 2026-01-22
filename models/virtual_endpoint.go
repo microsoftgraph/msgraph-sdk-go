@@ -158,6 +158,16 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["report"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcReportFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReport(val.(CloudPcReportable))
+        }
+        return nil
+    }
     res["userSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcUserSettingFromDiscriminatorValue)
         if err != nil {
@@ -209,6 +219,18 @@ func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicya
     }
     if val != nil {
         return val.([]CloudPcProvisioningPolicyable)
+    }
+    return nil
+}
+// GetReport gets the report property value. Cloud PC-related reports. Read-only.
+// returns a CloudPcReportable when successful
+func (m *VirtualEndpoint) GetReport()(CloudPcReportable) {
+    val, err := m.GetBackingStore().Get("report")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcReportable)
     }
     return nil
 }
@@ -302,6 +324,12 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("report", m.GetReport())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserSettings()))
         for i, v := range m.GetUserSettings() {
@@ -358,6 +386,13 @@ func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPol
         panic(err)
     }
 }
+// SetReport sets the report property value. Cloud PC-related reports. Read-only.
+func (m *VirtualEndpoint) SetReport(value CloudPcReportable)() {
+    err := m.GetBackingStore().Set("report", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserSettings sets the userSettings property value. A collection of Cloud PC user settings.
 func (m *VirtualEndpoint) SetUserSettings(value []CloudPcUserSettingable)() {
     err := m.GetBackingStore().Set("userSettings", value)
@@ -374,6 +409,7 @@ type VirtualEndpointable interface {
     GetGalleryImages()([]CloudPcGalleryImageable)
     GetOnPremisesConnections()([]CloudPcOnPremisesConnectionable)
     GetProvisioningPolicies()([]CloudPcProvisioningPolicyable)
+    GetReport()(CloudPcReportable)
     GetUserSettings()([]CloudPcUserSettingable)
     SetAuditEvents(value []CloudPcAuditEventable)()
     SetCloudPCs(value []CloudPCable)()
@@ -381,5 +417,6 @@ type VirtualEndpointable interface {
     SetGalleryImages(value []CloudPcGalleryImageable)()
     SetOnPremisesConnections(value []CloudPcOnPremisesConnectionable)()
     SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)()
+    SetReport(value CloudPcReportable)()
     SetUserSettings(value []CloudPcUserSettingable)()
 }

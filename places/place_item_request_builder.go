@@ -46,8 +46,11 @@ func NewPlaceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewPlaceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from places
+// Delete delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-1.0
 func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PlaceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -62,6 +65,26 @@ func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
     }
     return nil
 }
+// Descendants provides operations to call the descendants method.
+// returns a *ItemDescendantsRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) Descendants()(*ItemDescendantsRequestBuilder) {
+    return NewItemDescendantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphBuilding casts the previous resource to building.
+// returns a *ItemGraphBuildingRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphBuilding()(*ItemGraphBuildingRequestBuilder) {
+    return NewItemGraphBuildingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphDesk casts the previous resource to desk.
+// returns a *ItemGraphDeskRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphDesk()(*ItemGraphDeskRequestBuilder) {
+    return NewItemGraphDeskRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphFloor casts the previous resource to floor.
+// returns a *ItemGraphFloorRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphFloor()(*ItemGraphFloorRequestBuilder) {
+    return NewItemGraphFloorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphRoom casts the previous resource to room.
 // returns a *ItemGraphRoomRequestBuilder when successful
 func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
@@ -72,7 +95,17 @@ func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
 func (m *PlaceItemRequestBuilder) GraphRoomList()(*ItemGraphRoomListRequestBuilder) {
     return NewItemGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
+// GraphSection casts the previous resource to section.
+// returns a *ItemGraphSectionRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphSection()(*ItemGraphSectionRequestBuilder) {
+    return NewItemGraphSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWorkspace casts the previous resource to workspace.
+// returns a *ItemGraphWorkspaceRequestBuilder when successful
+func (m *PlaceItemRequestBuilder) GraphWorkspace()(*ItemGraphWorkspaceRequestBuilder) {
+    return NewItemGraphWorkspaceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Patch update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
 // returns a Placeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -95,7 +128,7 @@ func (m *PlaceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
 }
-// ToDeleteRequestInformation delete entity from places
+// ToDeleteRequestInformation delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
 // returns a *RequestInformation when successful
 func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -106,7 +139,7 @@ func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
+// ToPatchRequestInformation update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
 // returns a *RequestInformation when successful
 func (m *PlaceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable, requestConfiguration *PlaceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

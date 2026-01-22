@@ -49,7 +49,7 @@ func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
     }
     return nil
 }
-// GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
+// GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. The possible values are: attested, or notAttested.
 // returns a *AttestationLevel when successful
 func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
     val, err := m.GetBackingStore().Get("attestationLevel")
@@ -228,7 +228,7 @@ func (m *Fido2AuthenticationMethod) SetAttestationCertificates(value []string)()
         panic(err)
     }
 }
-// SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
+// SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. The possible values are: attested, or notAttested.
 func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *AttestationLevel)() {
     err := m.GetBackingStore().Set("attestationLevel", value)
     if err != nil {

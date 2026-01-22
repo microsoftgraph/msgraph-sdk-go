@@ -490,7 +490,7 @@ func (m *Call) GetParticipants()([]Participantable) {
     }
     return nil
 }
-// GetRequestedModalities gets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
+// GetRequestedModalities gets the requestedModalities property value. The list of requested modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data.
 // returns a []Modality when successful
 func (m *Call) GetRequestedModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("requestedModalities")
@@ -526,7 +526,7 @@ func (m *Call) GetSource()(ParticipantInfoable) {
     }
     return nil
 }
-// GetState gets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
+// GetState gets the state property value. The call state. The possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
 // returns a *CallState when successful
 func (m *Call) GetState()(*CallState) {
     val, err := m.GetBackingStore().Get("state")
@@ -893,7 +893,7 @@ func (m *Call) SetParticipants(value []Participantable)() {
         panic(err)
     }
 }
-// SetRequestedModalities sets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
+// SetRequestedModalities sets the requestedModalities property value. The list of requested modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data.
 func (m *Call) SetRequestedModalities(value []Modality)() {
     err := m.GetBackingStore().Set("requestedModalities", value)
     if err != nil {
@@ -914,7 +914,7 @@ func (m *Call) SetSource(value ParticipantInfoable)() {
         panic(err)
     }
 }
-// SetState sets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
+// SetState sets the state property value. The call state. The possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
 func (m *Call) SetState(value *CallState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

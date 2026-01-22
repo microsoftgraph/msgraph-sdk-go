@@ -103,7 +103,7 @@ func (m *SecurityResource) GetResource()(*string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. Represents type of security resources related to an alert. Possible values are: attacked, related.
+// GetResourceType gets the resourceType property value. Represents type of security resources related to an alert. The possible values are: attacked, related.
 // returns a *SecurityResourceType when successful
 func (m *SecurityResource) GetResourceType()(*SecurityResourceType) {
     val, err := m.GetBackingStore().Get("resourceType")
@@ -169,7 +169,7 @@ func (m *SecurityResource) SetResource(value *string)() {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. Represents type of security resources related to an alert. Possible values are: attacked, related.
+// SetResourceType sets the resourceType property value. Represents type of security resources related to an alert. The possible values are: attacked, related.
 func (m *SecurityResource) SetResourceType(value *SecurityResourceType)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

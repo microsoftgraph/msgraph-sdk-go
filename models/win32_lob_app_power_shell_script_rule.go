@@ -183,7 +183,7 @@ func (m *Win32LobAppPowerShellScriptRule) GetRunAs32Bit()(*bool) {
     }
     return nil
 }
-// GetRunAsAccount gets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. The possible values are: system, user.
 // returns a *RunAsAccountType when successful
 func (m *Win32LobAppPowerShellScriptRule) GetRunAsAccount()(*RunAsAccountType) {
     val, err := m.GetBackingStore().Get("runAsAccount")
@@ -308,7 +308,7 @@ func (m *Win32LobAppPowerShellScriptRule) SetRunAs32Bit(value *bool)() {
         panic(err)
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. The possible values are: system, user.
 func (m *Win32LobAppPowerShellScriptRule) SetRunAsAccount(value *RunAsAccountType)() {
     err := m.GetBackingStore().Set("runAsAccount", value)
     if err != nil {

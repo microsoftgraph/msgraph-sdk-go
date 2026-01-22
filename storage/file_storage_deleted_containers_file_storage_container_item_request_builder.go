@@ -21,7 +21,7 @@ type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters get deletedContainers from storage
+// FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters the collection of deleted fileStorageContainer resources.
 type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -88,7 +88,7 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Del
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Drive()(*FileStorageDeletedContainersItemDriveRequestBuilder) {
     return NewFileStorageDeletedContainersItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get deletedContainers from storage
+// Get the collection of deleted fileStorageContainer resources.
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FileStorageContainerable, error) {
@@ -112,6 +112,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Get
 // returns a *FileStorageDeletedContainersItemLockRequestBuilder when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Lock()(*FileStorageDeletedContainersItemLockRequestBuilder) {
     return NewFileStorageDeletedContainersItemLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MigrationJobs provides operations to manage the migrationJobs property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageDeletedContainersItemMigrationJobsRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) MigrationJobs()(*FileStorageDeletedContainersItemMigrationJobsRequestBuilder) {
+    return NewFileStorageDeletedContainersItemMigrationJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property deletedContainers in storage
 // returns a FileStorageContainerable when successful
@@ -143,6 +148,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Per
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Permissions()(*FileStorageDeletedContainersItemPermissionsRequestBuilder) {
     return NewFileStorageDeletedContainersItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ProvisionMigrationContainers provides operations to call the provisionMigrationContainers method.
+// returns a *FileStorageDeletedContainersItemProvisionMigrationContainersRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ProvisionMigrationContainers()(*FileStorageDeletedContainersItemProvisionMigrationContainersRequestBuilder) {
+    return NewFileStorageDeletedContainersItemProvisionMigrationContainersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RecycleBin provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.
 // returns a *FileStorageDeletedContainersItemRecycleBinRequestBuilder when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) RecycleBin()(*FileStorageDeletedContainersItemRecycleBinRequestBuilder) {
@@ -164,7 +174,7 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get deletedContainers from storage
+// ToGetRequestInformation the collection of deleted fileStorageContainer resources.
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

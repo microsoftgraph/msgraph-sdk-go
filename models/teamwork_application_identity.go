@@ -24,7 +24,7 @@ func NewTeamworkApplicationIdentity()(*TeamworkApplicationIdentity) {
 func CreateTeamworkApplicationIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkApplicationIdentity(), nil
 }
-// GetApplicationIdentityType gets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
+// GetApplicationIdentityType gets the applicationIdentityType property value. Type of application that is referenced. The possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
 // returns a *TeamworkApplicationIdentityType when successful
 func (m *TeamworkApplicationIdentity) GetApplicationIdentityType()(*TeamworkApplicationIdentityType) {
     val, err := m.GetBackingStore().Get("applicationIdentityType")
@@ -67,7 +67,7 @@ func (m *TeamworkApplicationIdentity) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetApplicationIdentityType sets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
+// SetApplicationIdentityType sets the applicationIdentityType property value. Type of application that is referenced. The possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
 func (m *TeamworkApplicationIdentity) SetApplicationIdentityType(value *TeamworkApplicationIdentityType)() {
     err := m.GetBackingStore().Set("applicationIdentityType", value)
     if err != nil {

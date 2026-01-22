@@ -21,7 +21,7 @@ type FileStorageContainersFileStorageContainerItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageContainersFileStorageContainerItemRequestBuilderGetQueryParameters get containers from storage
+// FileStorageContainersFileStorageContainerItemRequestBuilderGetQueryParameters the collection of active fileStorageContainer resources.
 type FileStorageContainersFileStorageContainerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -88,7 +88,7 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Delete(ctx
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Drive()(*FileStorageContainersItemDriveRequestBuilder) {
     return NewFileStorageContainersItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get containers from storage
+// Get the collection of active fileStorageContainer resources.
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FileStorageContainerable, error) {
@@ -112,6 +112,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Get(ctx co
 // returns a *FileStorageContainersItemLockRequestBuilder when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Lock()(*FileStorageContainersItemLockRequestBuilder) {
     return NewFileStorageContainersItemLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MigrationJobs provides operations to manage the migrationJobs property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageContainersItemMigrationJobsRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) MigrationJobs()(*FileStorageContainersItemMigrationJobsRequestBuilder) {
+    return NewFileStorageContainersItemMigrationJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property containers in storage
 // returns a FileStorageContainerable when successful
@@ -143,6 +148,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) PermanentD
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Permissions()(*FileStorageContainersItemPermissionsRequestBuilder) {
     return NewFileStorageContainersItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ProvisionMigrationContainers provides operations to call the provisionMigrationContainers method.
+// returns a *FileStorageContainersItemProvisionMigrationContainersRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) ProvisionMigrationContainers()(*FileStorageContainersItemProvisionMigrationContainersRequestBuilder) {
+    return NewFileStorageContainersItemProvisionMigrationContainersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RecycleBin provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.
 // returns a *FileStorageContainersItemRecycleBinRequestBuilder when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) RecycleBin()(*FileStorageContainersItemRecycleBinRequestBuilder) {
@@ -164,7 +174,7 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get containers from storage
+// ToGetRequestInformation the collection of active fileStorageContainer resources.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

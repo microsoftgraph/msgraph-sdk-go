@@ -94,7 +94,7 @@ func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyI
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Possible values are: days, hours.
+// GetTypeEscaped gets the type property value. The possible values are: days, hours.
 // returns a *SigninFrequencyType when successful
 func (m *SignInFrequencySessionControl) GetTypeEscaped()(*SigninFrequencyType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -167,7 +167,7 @@ func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFreque
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Possible values are: days, hours.
+// SetTypeEscaped sets the type property value. The possible values are: days, hours.
 func (m *SignInFrequencySessionControl) SetTypeEscaped(value *SigninFrequencyType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

@@ -24,6 +24,18 @@ func NewFileStorageContainer()(*FileStorageContainer) {
 func CreateFileStorageContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileStorageContainer(), nil
 }
+// GetAssignedSensitivityLabel gets the assignedSensitivityLabel property value. Sensitivity label assigned to the fileStorageContainer. Read-write.
+// returns a AssignedLabelable when successful
+func (m *FileStorageContainer) GetAssignedSensitivityLabel()(AssignedLabelable) {
+    val, err := m.GetBackingStore().Get("assignedSensitivityLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AssignedLabelable)
+    }
+    return nil
+}
 // GetColumns gets the columns property value. The columns property
 // returns a []ColumnDefinitionable when successful
 func (m *FileStorageContainer) GetColumns()([]ColumnDefinitionable) {
@@ -112,6 +124,16 @@ func (m *FileStorageContainer) GetDrive()(Driveable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["assignedSensitivityLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAssignedLabelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignedSensitivityLabel(val.(AssignedLabelable))
+        }
+        return nil
+    }
     res["columns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateColumnDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -198,6 +220,22 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["migrationJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSharePointMigrationJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SharePointMigrationJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SharePointMigrationJobable)
+                }
+            }
+            m.SetMigrationJobs(res)
+        }
+        return nil
+    }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
         if err != nil {
@@ -268,6 +306,18 @@ func (m *FileStorageContainer) GetLockState()(*SiteLockState) {
     }
     return nil
 }
+// GetMigrationJobs gets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
+// returns a []SharePointMigrationJobable when successful
+func (m *FileStorageContainer) GetMigrationJobs()([]SharePointMigrationJobable) {
+    val, err := m.GetBackingStore().Get("migrationJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharePointMigrationJobable)
+    }
+    return nil
+}
 // GetPermissions gets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 // returns a []Permissionable when successful
 func (m *FileStorageContainer) GetPermissions()([]Permissionable) {
@@ -334,6 +384,12 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("assignedSensitivityLabel", m.GetAssignedSensitivityLabel())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetColumns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetColumns()))
         for i, v := range m.GetColumns() {
@@ -389,6 +445,18 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetMigrationJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMigrationJobs()))
+        for i, v := range m.GetMigrationJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("migrationJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
@@ -427,6 +495,13 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
+}
+// SetAssignedSensitivityLabel sets the assignedSensitivityLabel property value. Sensitivity label assigned to the fileStorageContainer. Read-write.
+func (m *FileStorageContainer) SetAssignedSensitivityLabel(value AssignedLabelable)() {
+    err := m.GetBackingStore().Set("assignedSensitivityLabel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetColumns sets the columns property value. The columns property
 func (m *FileStorageContainer) SetColumns(value []ColumnDefinitionable)() {
@@ -484,6 +559,13 @@ func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
         panic(err)
     }
 }
+// SetMigrationJobs sets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
+func (m *FileStorageContainer) SetMigrationJobs(value []SharePointMigrationJobable)() {
+    err := m.GetBackingStore().Set("migrationJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissions sets the permissions property value. The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 func (m *FileStorageContainer) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
@@ -522,6 +604,7 @@ func (m *FileStorageContainer) SetViewpoint(value FileStorageContainerViewpointa
 type FileStorageContainerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignedSensitivityLabel()(AssignedLabelable)
     GetColumns()([]ColumnDefinitionable)
     GetContainerTypeId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -530,11 +613,13 @@ type FileStorageContainerable interface {
     GetDisplayName()(*string)
     GetDrive()(Driveable)
     GetLockState()(*SiteLockState)
+    GetMigrationJobs()([]SharePointMigrationJobable)
     GetPermissions()([]Permissionable)
     GetRecycleBin()(RecycleBinable)
     GetSettings()(FileStorageContainerSettingsable)
     GetStatus()(*FileStorageContainerStatus)
     GetViewpoint()(FileStorageContainerViewpointable)
+    SetAssignedSensitivityLabel(value AssignedLabelable)()
     SetColumns(value []ColumnDefinitionable)()
     SetContainerTypeId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -543,6 +628,7 @@ type FileStorageContainerable interface {
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
     SetLockState(value *SiteLockState)()
+    SetMigrationJobs(value []SharePointMigrationJobable)()
     SetPermissions(value []Permissionable)()
     SetRecycleBin(value RecycleBinable)()
     SetSettings(value FileStorageContainerSettingsable)()

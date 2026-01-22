@@ -235,7 +235,7 @@ func (m *EndUserNotification) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetNotificationType gets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
+// GetNotificationType gets the notificationType property value. Type of notification. The possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
 // returns a *EndUserNotificationType when successful
 func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
     val, err := m.GetBackingStore().Get("notificationType")
@@ -247,7 +247,7 @@ func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
     }
     return nil
 }
-// GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// GetSource gets the source property value. The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.
 // returns a *SimulationContentSource when successful
 func (m *EndUserNotification) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
@@ -259,7 +259,7 @@ func (m *EndUserNotification) GetSource()(*SimulationContentSource) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// GetStatus gets the status property value. The status of the notification. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 // returns a *SimulationContentStatus when successful
 func (m *EndUserNotification) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -415,21 +415,21 @@ func (m *EndUserNotification) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// SetNotificationType sets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
+// SetNotificationType sets the notificationType property value. Type of notification. The possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
 func (m *EndUserNotification) SetNotificationType(value *EndUserNotificationType)() {
     err := m.GetBackingStore().Set("notificationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// SetSource sets the source property value. The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *EndUserNotification) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// SetStatus sets the status property value. The status of the notification. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *EndUserNotification) SetStatus(value *SimulationContentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

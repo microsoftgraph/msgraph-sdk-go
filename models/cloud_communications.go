@@ -39,6 +39,18 @@ func (m *CloudCommunications) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAdhocCalls gets the adhocCalls property value. The adhocCalls property
+// returns a []AdhocCallable when successful
+func (m *CloudCommunications) GetAdhocCalls()([]AdhocCallable) {
+    val, err := m.GetBackingStore().Get("adhocCalls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdhocCallable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *CloudCommunications) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -60,6 +72,22 @@ func (m *CloudCommunications) GetCalls()([]Callable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["adhocCalls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAdhocCallFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AdhocCallable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AdhocCallable)
+                }
+            }
+            m.SetAdhocCalls(res)
+        }
+        return nil
+    }
     res["calls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCallFromDiscriminatorValue)
         if err != nil {
@@ -186,6 +214,18 @@ func (m *CloudCommunications) GetPresences()([]Presenceable) {
 }
 // Serialize serializes information the current object
 func (m *CloudCommunications) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAdhocCalls() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdhocCalls()))
+        for i, v := range m.GetAdhocCalls() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("adhocCalls", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCalls() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCalls()))
         for i, v := range m.GetCalls() {
@@ -255,6 +295,13 @@ func (m *CloudCommunications) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetAdhocCalls sets the adhocCalls property value. The adhocCalls property
+func (m *CloudCommunications) SetAdhocCalls(value []AdhocCallable)() {
+    err := m.GetBackingStore().Set("adhocCalls", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *CloudCommunications) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -298,12 +345,14 @@ type CloudCommunicationsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdhocCalls()([]AdhocCallable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCalls()([]Callable)
     GetOdataType()(*string)
     GetOnlineMeetingConversations()([]OnlineMeetingEngagementConversationable)
     GetOnlineMeetings()([]OnlineMeetingable)
     GetPresences()([]Presenceable)
+    SetAdhocCalls(value []AdhocCallable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCalls(value []Callable)()
     SetOdataType(value *string)()

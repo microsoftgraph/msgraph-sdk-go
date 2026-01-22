@@ -24,7 +24,7 @@ func NewTrainingReminderNotification()(*TrainingReminderNotification) {
 func CreateTrainingReminderNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrainingReminderNotification(), nil
 }
-// GetDeliveryFrequency gets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
+// GetDeliveryFrequency gets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. The possible values are: unknown, weekly, biWeekly, unknownFutureValue.
 // returns a *NotificationDeliveryFrequency when successful
 func (m *TrainingReminderNotification) GetDeliveryFrequency()(*NotificationDeliveryFrequency) {
     val, err := m.GetBackingStore().Get("deliveryFrequency")
@@ -67,7 +67,7 @@ func (m *TrainingReminderNotification) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetDeliveryFrequency sets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
+// SetDeliveryFrequency sets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. The possible values are: unknown, weekly, biWeekly, unknownFutureValue.
 func (m *TrainingReminderNotification) SetDeliveryFrequency(value *NotificationDeliveryFrequency)() {
     err := m.GetBackingStore().Set("deliveryFrequency", value)
     if err != nil {

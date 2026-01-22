@@ -116,7 +116,7 @@ func (m *KubernetesClusterEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetPlatform gets the platform property value. The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
+// GetPlatform gets the platform property value. The platform the cluster runs on. The possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
 // returns a *KubernetesPlatform when successful
 func (m *KubernetesClusterEvidence) GetPlatform()(*KubernetesPlatform) {
     val, err := m.GetBackingStore().Get("platform")
@@ -200,7 +200,7 @@ func (m *KubernetesClusterEvidence) SetName(value *string)() {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
+// SetPlatform sets the platform property value. The platform the cluster runs on. The possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
 func (m *KubernetesClusterEvidence) SetPlatform(value *KubernetesPlatform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {

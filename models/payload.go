@@ -23,7 +23,7 @@ func NewPayload()(*Payload) {
 func CreatePayloadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPayload(), nil
 }
-// GetBrand gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+// GetBrand gets the brand property value. The branch of a payload. The possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
 // returns a *PayloadBrand when successful
 func (m *Payload) GetBrand()(*PayloadBrand) {
     val, err := m.GetBackingStore().Get("brand")
@@ -35,7 +35,7 @@ func (m *Payload) GetBrand()(*PayloadBrand) {
     }
     return nil
 }
-// GetComplexity gets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
+// GetComplexity gets the complexity property value. The complexity of a payload. The possible values are: unknown, low, medium, high, unknownFutureValue.
 // returns a *PayloadComplexity when successful
 func (m *Payload) GetComplexity()(*PayloadComplexity) {
     val, err := m.GetBackingStore().Get("complexity")
@@ -339,7 +339,7 @@ func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetIndustry gets the industry property value. Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
+// GetIndustry gets the industry property value. Industry of a payload. The possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
 // returns a *PayloadIndustry when successful
 func (m *Payload) GetIndustry()(*PayloadIndustry) {
     val, err := m.GetBackingStore().Get("industry")
@@ -435,7 +435,7 @@ func (m *Payload) GetPayloadTags()([]string) {
     }
     return nil
 }
-// GetPlatform gets the platform property value. The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
+// GetPlatform gets the platform property value. The payload delivery platform for a simulation. The possible values are: unknown, sms, email, teams, unknownFutureValue.
 // returns a *PayloadDeliveryPlatform when successful
 func (m *Payload) GetPlatform()(*PayloadDeliveryPlatform) {
     val, err := m.GetBackingStore().Get("platform")
@@ -459,7 +459,7 @@ func (m *Payload) GetPredictedCompromiseRate()(*float64) {
     }
     return nil
 }
-// GetSimulationAttackType gets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
+// GetSimulationAttackType gets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
 // returns a *SimulationAttackType when successful
 func (m *Payload) GetSimulationAttackType()(*SimulationAttackType) {
     val, err := m.GetBackingStore().Get("simulationAttackType")
@@ -483,7 +483,7 @@ func (m *Payload) GetSource()(*SimulationContentSource) {
     }
     return nil
 }
-// GetStatus gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// GetStatus gets the status property value. Simulation content status. Supports $filter and $orderby. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 // returns a *SimulationContentStatus when successful
 func (m *Payload) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -495,7 +495,7 @@ func (m *Payload) GetStatus()(*SimulationContentStatus) {
     }
     return nil
 }
-// GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
+// GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
 // returns a *SimulationAttackTechnique when successful
 func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     val, err := m.GetBackingStore().Get("technique")
@@ -507,7 +507,7 @@ func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     }
     return nil
 }
-// GetTheme gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+// GetTheme gets the theme property value. The theme of a payload. The possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
 // returns a *PayloadTheme when successful
 func (m *Payload) GetTheme()(*PayloadTheme) {
     val, err := m.GetBackingStore().Get("theme")
@@ -668,14 +668,14 @@ func (m *Payload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetBrand sets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+// SetBrand sets the brand property value. The branch of a payload. The possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
 func (m *Payload) SetBrand(value *PayloadBrand)() {
     err := m.GetBackingStore().Set("brand", value)
     if err != nil {
         panic(err)
     }
 }
-// SetComplexity sets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
+// SetComplexity sets the complexity property value. The complexity of a payload. The possible values are: unknown, low, medium, high, unknownFutureValue.
 func (m *Payload) SetComplexity(value *PayloadComplexity)() {
     err := m.GetBackingStore().Set("complexity", value)
     if err != nil {
@@ -717,7 +717,7 @@ func (m *Payload) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIndustry sets the industry property value. Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
+// SetIndustry sets the industry property value. Industry of a payload. The possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
 func (m *Payload) SetIndustry(value *PayloadIndustry)() {
     err := m.GetBackingStore().Set("industry", value)
     if err != nil {
@@ -773,7 +773,7 @@ func (m *Payload) SetPayloadTags(value []string)() {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
+// SetPlatform sets the platform property value. The payload delivery platform for a simulation. The possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Payload) SetPlatform(value *PayloadDeliveryPlatform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
@@ -787,7 +787,7 @@ func (m *Payload) SetPredictedCompromiseRate(value *float64)() {
         panic(err)
     }
 }
-// SetSimulationAttackType sets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
+// SetSimulationAttackType sets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
 func (m *Payload) SetSimulationAttackType(value *SimulationAttackType)() {
     err := m.GetBackingStore().Set("simulationAttackType", value)
     if err != nil {
@@ -801,21 +801,21 @@ func (m *Payload) SetSource(value *SimulationContentSource)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// SetStatus sets the status property value. Simulation content status. Supports $filter and $orderby. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *Payload) SetStatus(value *SimulationContentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
+// SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Payload) SetTechnique(value *SimulationAttackTechnique)() {
     err := m.GetBackingStore().Set("technique", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTheme sets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+// SetTheme sets the theme property value. The theme of a payload. The possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
 func (m *Payload) SetTheme(value *PayloadTheme)() {
     err := m.GetBackingStore().Set("theme", value)
     if err != nil {

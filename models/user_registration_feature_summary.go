@@ -141,7 +141,7 @@ func (m *UserRegistrationFeatureSummary) GetUserRegistrationFeatureCounts()([]Us
     }
     return nil
 }
-// GetUserRoles gets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
+// GetUserRoles gets the userRoles property value. The role type of the user. The possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
 // returns a *IncludedUserRoles when successful
 func (m *UserRegistrationFeatureSummary) GetUserRoles()(*IncludedUserRoles) {
     val, err := m.GetBackingStore().Get("userRoles")
@@ -153,7 +153,7 @@ func (m *UserRegistrationFeatureSummary) GetUserRoles()(*IncludedUserRoles) {
     }
     return nil
 }
-// GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
+// GetUserTypes gets the userTypes property value. User type. The possible values are: all, member, guest, unknownFutureValue.
 // returns a *IncludedUserTypes when successful
 func (m *UserRegistrationFeatureSummary) GetUserTypes()(*IncludedUserTypes) {
     val, err := m.GetBackingStore().Get("userTypes")
@@ -245,14 +245,14 @@ func (m *UserRegistrationFeatureSummary) SetUserRegistrationFeatureCounts(value 
         panic(err)
     }
 }
-// SetUserRoles sets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
+// SetUserRoles sets the userRoles property value. The role type of the user. The possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
 func (m *UserRegistrationFeatureSummary) SetUserRoles(value *IncludedUserRoles)() {
     err := m.GetBackingStore().Set("userRoles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserTypes sets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
+// SetUserTypes sets the userTypes property value. User type. The possible values are: all, member, guest, unknownFutureValue.
 func (m *UserRegistrationFeatureSummary) SetUserTypes(value *IncludedUserTypes)() {
     err := m.GetBackingStore().Set("userTypes", value)
     if err != nil {

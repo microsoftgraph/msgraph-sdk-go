@@ -125,7 +125,7 @@ func (m *AlterationResponse) GetQueryAlteration()(SearchAlterationable) {
     }
     return nil
 }
-// GetQueryAlterationType gets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
+// GetQueryAlterationType gets the queryAlterationType property value. Defines the type of the spelling correction. The possible values are: suggestion, modification.
 // returns a *SearchAlterationType when successful
 func (m *AlterationResponse) GetQueryAlterationType()(*SearchAlterationType) {
     val, err := m.GetBackingStore().Get("queryAlterationType")
@@ -204,7 +204,7 @@ func (m *AlterationResponse) SetQueryAlteration(value SearchAlterationable)() {
         panic(err)
     }
 }
-// SetQueryAlterationType sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
+// SetQueryAlterationType sets the queryAlterationType property value. Defines the type of the spelling correction. The possible values are: suggestion, modification.
 func (m *AlterationResponse) SetQueryAlterationType(value *SearchAlterationType)() {
     err := m.GetBackingStore().Set("queryAlterationType", value)
     if err != nil {

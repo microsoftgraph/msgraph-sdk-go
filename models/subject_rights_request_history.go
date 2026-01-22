@@ -146,7 +146,7 @@ func (m *SubjectRightsRequestHistory) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
+// GetStage gets the stage property value. The stage when the entity was changed.
 // returns a *SubjectRightsRequestStage when successful
 func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
     val, err := m.GetBackingStore().Get("stage")
@@ -158,7 +158,7 @@ func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
     }
     return nil
 }
-// GetStageStatus gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+// GetStageStatus gets the stageStatus property value. The status of the stage when the entity was changed. The possible values are: notStarted, current, completed, failed, unknownFutureValue.
 // returns a *SubjectRightsRequestStageStatus when successful
 func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStageStatus) {
     val, err := m.GetBackingStore().Get("stageStatus")
@@ -262,14 +262,14 @@ func (m *SubjectRightsRequestHistory) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStage sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
+// SetStage sets the stage property value. The stage when the entity was changed.
 func (m *SubjectRightsRequestHistory) SetStage(value *SubjectRightsRequestStage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStageStatus sets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+// SetStageStatus sets the stageStatus property value. The status of the stage when the entity was changed. The possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) SetStageStatus(value *SubjectRightsRequestStageStatus)() {
     err := m.GetBackingStore().Set("stageStatus", value)
     if err != nil {

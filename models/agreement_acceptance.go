@@ -255,7 +255,7 @@ func (m *AgreementAcceptance) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetState gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
+// GetState gets the state property value. The state of the agreement acceptance. The possible values are: accepted, declined. Supports $filter (eq).
 // returns a *AgreementAcceptanceState when successful
 func (m *AgreementAcceptance) GetState()(*AgreementAcceptanceState) {
     val, err := m.GetBackingStore().Get("state")
@@ -458,7 +458,7 @@ func (m *AgreementAcceptance) SetRecordedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetState sets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
+// SetState sets the state property value. The state of the agreement acceptance. The possible values are: accepted, declined. Supports $filter (eq).
 func (m *AgreementAcceptance) SetState(value *AgreementAcceptanceState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

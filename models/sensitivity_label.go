@@ -114,6 +114,16 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["hasProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasProtection(val)
+        }
+        return nil
+    }
     res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -211,6 +221,18 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetHasProtection gets the hasProtection property value. The hasProtection property
+// returns a *bool when successful
+func (m *SensitivityLabel) GetHasProtection()(*bool) {
+    val, err := m.GetBackingStore().Get("hasProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
 // returns a *bool when successful
@@ -352,6 +374,12 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteBoolValue("hasProtection", m.GetHasProtection())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isDefault", m.GetIsDefault())
         if err != nil {
             return err
@@ -441,6 +469,13 @@ func (m *SensitivityLabel) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetHasProtection sets the hasProtection property value. The hasProtection property
+func (m *SensitivityLabel) SetHasProtection(value *bool)() {
+    err := m.GetBackingStore().Set("hasProtection", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsDefault sets the isDefault property value. The isDefault property
 func (m *SensitivityLabel) SetIsDefault(value *bool)() {
     err := m.GetBackingStore().Set("isDefault", value)
@@ -511,6 +546,7 @@ type SensitivityLabelable interface {
     GetAutoTooltip()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetHasProtection()(*bool)
     GetIsDefault()(*bool)
     GetIsEndpointProtectionEnabled()(*bool)
     GetIsScopedToUser()(*bool)
@@ -524,6 +560,7 @@ type SensitivityLabelable interface {
     SetAutoTooltip(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetHasProtection(value *bool)()
     SetIsDefault(value *bool)()
     SetIsEndpointProtectionEnabled(value *bool)()
     SetIsScopedToUser(value *bool)()

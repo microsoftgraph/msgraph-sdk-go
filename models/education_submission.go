@@ -403,7 +403,7 @@ func (m *EducationSubmission) GetReturnedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetStatus gets the status property value. Read-only. Possible values are: excused, reassigned, returned, submitted and working. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.
+// GetStatus gets the status property value. Read-only. The possible values are: excused, reassigned, returned, submitted and working. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.
 // returns a *EducationSubmissionStatus when successful
 func (m *EducationSubmission) GetStatus()(*EducationSubmissionStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -628,7 +628,7 @@ func (m *EducationSubmission) SetReturnedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetStatus sets the status property value. Read-only. Possible values are: excused, reassigned, returned, submitted and working. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.
+// SetStatus sets the status property value. Read-only. The possible values are: excused, reassigned, returned, submitted and working. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.
 func (m *EducationSubmission) SetStatus(value *EducationSubmissionStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

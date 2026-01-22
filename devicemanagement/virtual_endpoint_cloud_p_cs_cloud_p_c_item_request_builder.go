@@ -131,6 +131,11 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reboot()(*VirtualEndp
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Rename()(*VirtualEndpointCloudPCsItemRenameRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRenameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Reprovision provides operations to call the reprovision method.
+// returns a *VirtualEndpointCloudPCsItemReprovisionRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reprovision()(*VirtualEndpointCloudPCsItemReprovisionRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemReprovisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Resize provides operations to call the resize method.
 // returns a *VirtualEndpointCloudPCsItemResizeRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Resize()(*VirtualEndpointCloudPCsItemResizeRequestBuilder) {
@@ -140,6 +145,11 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Resize()(*VirtualEndp
 // returns a *VirtualEndpointCloudPCsItemRestoreRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveCloudPcLaunchDetail provides operations to call the retrieveCloudPcLaunchDetail method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPcLaunchDetail()(*VirtualEndpointCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property cloudPCs for deviceManagement
 // returns a *RequestInformation when successful

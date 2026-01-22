@@ -101,7 +101,7 @@ func (m *TeamworkActivityTopic) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSource gets the source property value. Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.
+// GetSource gets the source property value. Type of source. The possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.
 // returns a *TeamworkActivityTopicSource when successful
 func (m *TeamworkActivityTopic) GetSource()(*TeamworkActivityTopicSource) {
     val, err := m.GetBackingStore().Get("source")
@@ -190,7 +190,7 @@ func (m *TeamworkActivityTopic) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSource sets the source property value. Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.
+// SetSource sets the source property value. Type of source. The possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.
 func (m *TeamworkActivityTopic) SetSource(value *TeamworkActivityTopicSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {

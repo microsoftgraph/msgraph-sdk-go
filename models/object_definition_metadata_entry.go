@@ -79,7 +79,7 @@ func (m *ObjectDefinitionMetadataEntry) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetKey gets the key property value. Possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted, IsSoftDeletionSupported, IsSynchronizeAllSupported, ConnectorDataStorageRequired, Extensions, LinkTypeName.
+// GetKey gets the key property value. The possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted, IsSoftDeletionSupported, IsSynchronizeAllSupported, ConnectorDataStorageRequired, Extensions, LinkTypeName.
 // returns a *ObjectDefinitionMetadata when successful
 func (m *ObjectDefinitionMetadataEntry) GetKey()(*ObjectDefinitionMetadata) {
     val, err := m.GetBackingStore().Get("key")
@@ -155,7 +155,7 @@ func (m *ObjectDefinitionMetadataEntry) SetAdditionalData(value map[string]any)(
 func (m *ObjectDefinitionMetadataEntry) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. Possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted, IsSoftDeletionSupported, IsSynchronizeAllSupported, ConnectorDataStorageRequired, Extensions, LinkTypeName.
+// SetKey sets the key property value. The possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted, IsSoftDeletionSupported, IsSynchronizeAllSupported, ConnectorDataStorageRequired, Extensions, LinkTypeName.
 func (m *ObjectDefinitionMetadataEntry) SetKey(value *ObjectDefinitionMetadata)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {

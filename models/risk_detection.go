@@ -23,7 +23,7 @@ func NewRiskDetection()(*RiskDetection) {
 func CreateRiskDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskDetection(), nil
 }
-// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
+// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.
 // returns a *ActivityType when successful
 func (m *RiskDetection) GetActivity()(*ActivityType) {
     val, err := m.GetBackingStore().Get("activity")
@@ -83,7 +83,7 @@ func (m *RiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+// GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 // returns a *RiskDetectionTimingType when successful
 func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
     val, err := m.GetBackingStore().Get("detectionTimingType")
@@ -339,7 +339,7 @@ func (m *RiskDetection) GetRequestId()(*string) {
     }
     return nil
 }
-// GetRiskDetail gets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userChangedPasswordOnPremises, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk.
 // returns a *RiskDetail when successful
 func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
@@ -363,7 +363,7 @@ func (m *RiskDetection) GetRiskEventType()(*string) {
     }
     return nil
 }
-// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// GetRiskLevel gets the riskLevel property value. Level of the detected risk. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
 // returns a *RiskLevel when successful
 func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
@@ -375,7 +375,7 @@ func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 // returns a *RiskState when successful
 func (m *RiskDetection) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
@@ -399,7 +399,7 @@ func (m *RiskDetection) GetSource()(*string) {
     }
     return nil
 }
-// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
+// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
 // returns a *TokenIssuerType when successful
 func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
     val, err := m.GetBackingStore().Get("tokenIssuerType")
@@ -575,7 +575,7 @@ func (m *RiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
+// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.
 func (m *RiskDetection) SetActivity(value *ActivityType)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {
@@ -610,7 +610,7 @@ func (m *RiskDetection) SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+// SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk (real-time/offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 func (m *RiskDetection) SetDetectionTimingType(value *RiskDetectionTimingType)() {
     err := m.GetBackingStore().Set("detectionTimingType", value)
     if err != nil {
@@ -645,7 +645,7 @@ func (m *RiskDetection) SetRequestId(value *string)() {
         panic(err)
     }
 }
-// SetRiskDetail sets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userChangedPasswordOnPremises, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.
+// SetRiskDetail sets the riskDetail property value. Details of the detected risk.
 func (m *RiskDetection) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
@@ -659,14 +659,14 @@ func (m *RiskDetection) SetRiskEventType(value *string)() {
         panic(err)
     }
 }
-// SetRiskLevel sets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// SetRiskLevel sets the riskLevel property value. Level of the detected risk. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
 func (m *RiskDetection) SetRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskState sets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// SetRiskState sets the riskState property value. The state of a detected risky user or sign-in. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskDetection) SetRiskState(value *RiskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {
@@ -680,7 +680,7 @@ func (m *RiskDetection) SetSource(value *string)() {
         panic(err)
     }
 }
-// SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
+// SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
 func (m *RiskDetection) SetTokenIssuerType(value *TokenIssuerType)() {
     err := m.GetBackingStore().Set("tokenIssuerType", value)
     if err != nil {

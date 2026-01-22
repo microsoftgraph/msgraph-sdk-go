@@ -38,7 +38,7 @@ func (m *AttachmentItem) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAttachmentType gets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
+// GetAttachmentType gets the attachmentType property value. The type of attachment. The possible values are: file, item, reference. Required.
 // returns a *AttachmentType when successful
 func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
     val, err := m.GetBackingStore().Get("attachmentType")
@@ -263,7 +263,7 @@ func (m *AttachmentItem) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAttachmentType sets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
+// SetAttachmentType sets the attachmentType property value. The type of attachment. The possible values are: file, item, reference. Required.
 func (m *AttachmentItem) SetAttachmentType(value *AttachmentType)() {
     err := m.GetBackingStore().Set("attachmentType", value)
     if err != nil {

@@ -36,7 +36,7 @@ func (m *Room) GetAudioDeviceName()(*string) {
     }
     return nil
 }
-// GetBookingType gets the bookingType property value. Type of room. Possible values are standard, and reserved.
+// GetBookingType gets the bookingType property value. Type of room. Possible values are: unknown, standard, reserved.
 // returns a *BookingType when successful
 func (m *Room) GetBookingType()(*BookingType) {
     val, err := m.GetBackingStore().Get("bookingType")
@@ -180,26 +180,6 @@ func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
-    res["isWheelChairAccessible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsWheelChairAccessible(val)
-        }
-        return nil
-    }
-    res["label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLabel(val)
-        }
-        return nil
-    }
     res["nickname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -210,19 +190,23 @@ func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
-    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+    res["placeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetTags(res)
+            m.SetPlaceId(val)
+        }
+        return nil
+    }
+    res["teamsEnabledState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePlaceFeatureEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsEnabledState(val.(*PlaceFeatureEnablement))
         }
         return nil
     }
@@ -262,30 +246,6 @@ func (m *Room) GetFloorNumber()(*int32) {
     }
     return nil
 }
-// GetIsWheelChairAccessible gets the isWheelChairAccessible property value. Specifies whether the room is wheelchair accessible.
-// returns a *bool when successful
-func (m *Room) GetIsWheelChairAccessible()(*bool) {
-    val, err := m.GetBackingStore().Get("isWheelChairAccessible")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
-}
-// GetLabel gets the label property value. Specifies a descriptive label for the room, for example, a number or name.
-// returns a *string when successful
-func (m *Room) GetLabel()(*string) {
-    val, err := m.GetBackingStore().Get("label")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetNickname gets the nickname property value. Specifies a nickname for the room, for example, 'conf room'.
 // returns a *string when successful
 func (m *Room) GetNickname()(*string) {
@@ -298,15 +258,27 @@ func (m *Room) GetNickname()(*string) {
     }
     return nil
 }
-// GetTags gets the tags property value. Specifies other features of the room, for example, details like the type of view or furniture type.
-// returns a []string when successful
-func (m *Room) GetTags()([]string) {
-    val, err := m.GetBackingStore().Get("tags")
+// GetPlaceId gets the placeId property value. An alternative immutable unique identifier of the room. Read-only.
+// returns a *string when successful
+func (m *Room) GetPlaceId()(*string) {
+    val, err := m.GetBackingStore().Get("placeId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.(*string)
+    }
+    return nil
+}
+// GetTeamsEnabledState gets the teamsEnabledState property value. The teamsEnabledState property
+// returns a *PlaceFeatureEnablement when successful
+func (m *Room) GetTeamsEnabledState()(*PlaceFeatureEnablement) {
+    val, err := m.GetBackingStore().Get("teamsEnabledState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PlaceFeatureEnablement)
     }
     return nil
 }
@@ -378,25 +350,20 @@ func (m *Room) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
-        err = writer.WriteBoolValue("isWheelChairAccessible", m.GetIsWheelChairAccessible())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("label", m.GetLabel())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("nickname", m.GetNickname())
         if err != nil {
             return err
         }
     }
-    if m.GetTags() != nil {
-        err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
+    {
+        err = writer.WriteStringValue("placeId", m.GetPlaceId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTeamsEnabledState() != nil {
+        cast := (*m.GetTeamsEnabledState()).String()
+        err = writer.WriteStringValue("teamsEnabledState", &cast)
         if err != nil {
             return err
         }
@@ -416,7 +383,7 @@ func (m *Room) SetAudioDeviceName(value *string)() {
         panic(err)
     }
 }
-// SetBookingType sets the bookingType property value. Type of room. Possible values are standard, and reserved.
+// SetBookingType sets the bookingType property value. Type of room. Possible values are: unknown, standard, reserved.
 func (m *Room) SetBookingType(value *BookingType)() {
     err := m.GetBackingStore().Set("bookingType", value)
     if err != nil {
@@ -465,20 +432,6 @@ func (m *Room) SetFloorNumber(value *int32)() {
         panic(err)
     }
 }
-// SetIsWheelChairAccessible sets the isWheelChairAccessible property value. Specifies whether the room is wheelchair accessible.
-func (m *Room) SetIsWheelChairAccessible(value *bool)() {
-    err := m.GetBackingStore().Set("isWheelChairAccessible", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetLabel sets the label property value. Specifies a descriptive label for the room, for example, a number or name.
-func (m *Room) SetLabel(value *string)() {
-    err := m.GetBackingStore().Set("label", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetNickname sets the nickname property value. Specifies a nickname for the room, for example, 'conf room'.
 func (m *Room) SetNickname(value *string)() {
     err := m.GetBackingStore().Set("nickname", value)
@@ -486,9 +439,16 @@ func (m *Room) SetNickname(value *string)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. Specifies other features of the room, for example, details like the type of view or furniture type.
-func (m *Room) SetTags(value []string)() {
-    err := m.GetBackingStore().Set("tags", value)
+// SetPlaceId sets the placeId property value. An alternative immutable unique identifier of the room. Read-only.
+func (m *Room) SetPlaceId(value *string)() {
+    err := m.GetBackingStore().Set("placeId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTeamsEnabledState sets the teamsEnabledState property value. The teamsEnabledState property
+func (m *Room) SetTeamsEnabledState(value *PlaceFeatureEnablement)() {
+    err := m.GetBackingStore().Set("teamsEnabledState", value)
     if err != nil {
         panic(err)
     }
@@ -511,10 +471,9 @@ type Roomable interface {
     GetEmailAddress()(*string)
     GetFloorLabel()(*string)
     GetFloorNumber()(*int32)
-    GetIsWheelChairAccessible()(*bool)
-    GetLabel()(*string)
     GetNickname()(*string)
-    GetTags()([]string)
+    GetPlaceId()(*string)
+    GetTeamsEnabledState()(*PlaceFeatureEnablement)
     GetVideoDeviceName()(*string)
     SetAudioDeviceName(value *string)()
     SetBookingType(value *BookingType)()
@@ -524,9 +483,8 @@ type Roomable interface {
     SetEmailAddress(value *string)()
     SetFloorLabel(value *string)()
     SetFloorNumber(value *int32)()
-    SetIsWheelChairAccessible(value *bool)()
-    SetLabel(value *string)()
     SetNickname(value *string)()
-    SetTags(value []string)()
+    SetPlaceId(value *string)()
+    SetTeamsEnabledState(value *PlaceFeatureEnablement)()
     SetVideoDeviceName(value *string)()
 }

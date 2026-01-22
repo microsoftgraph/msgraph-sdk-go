@@ -98,6 +98,11 @@ func (m *IdentitiesRequestBuilder) Get(ctx context.Context, requestConfiguration
 func (m *IdentitiesRequestBuilder) HealthIssues()(*IdentitiesHealthIssuesRequestBuilder) {
     return NewIdentitiesHealthIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// IdentityAccounts provides operations to manage the identityAccounts property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesIdentityAccountsRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) IdentityAccounts()(*IdentitiesIdentityAccountsRequestBuilder) {
+    return NewIdentitiesIdentityAccountsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property identities in security
 // returns a IdentityContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

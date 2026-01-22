@@ -62,7 +62,7 @@ func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
     }
     return nil
 }
-// GetResponseType gets the responseType property value. Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
+// GetResponseType gets the responseType property value. Specifies the type of response to a meeting request. The possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
 // returns a *ResponseType when successful
 func (m *EventMessageResponse) GetResponseType()(*ResponseType) {
     val, err := m.GetBackingStore().Get("responseType")
@@ -102,7 +102,7 @@ func (m *EventMessageResponse) SetProposedNewTime(value TimeSlotable)() {
         panic(err)
     }
 }
-// SetResponseType sets the responseType property value. Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
+// SetResponseType sets the responseType property value. Specifies the type of response to a meeting request. The possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
 func (m *EventMessageResponse) SetResponseType(value *ResponseType)() {
     err := m.GetBackingStore().Set("responseType", value)
     if err != nil {

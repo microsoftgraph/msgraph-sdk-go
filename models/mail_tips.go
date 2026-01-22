@@ -305,7 +305,7 @@ func (m *MailTips) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRecipientScope gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+// GetRecipientScope gets the recipientScope property value. The scope of the recipient. The possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
 // returns a *RecipientScopeType when successful
 func (m *MailTips) GetRecipientScope()(*RecipientScopeType) {
     val, err := m.GetBackingStore().Get("recipientScope")
@@ -517,7 +517,7 @@ func (m *MailTips) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRecipientScope sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+// SetRecipientScope sets the recipientScope property value. The scope of the recipient. The possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
 func (m *MailTips) SetRecipientScope(value *RecipientScopeType)() {
     err := m.GetBackingStore().Set("recipientScope", value)
     if err != nil {
