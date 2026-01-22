@@ -162,6 +162,16 @@ func (m *Sensor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["serviceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseServiceStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServiceStatus(val.(*ServiceStatus))
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSensorSettingsFromDiscriminatorValue)
         if err != nil {
@@ -229,6 +239,18 @@ func (m *Sensor) GetSensorType()(*SensorType) {
     }
     if val != nil {
         return val.(*SensorType)
+    }
+    return nil
+}
+// GetServiceStatus gets the serviceStatus property value. The serviceStatus property
+// returns a *ServiceStatus when successful
+func (m *Sensor) GetServiceStatus()(*ServiceStatus) {
+    val, err := m.GetBackingStore().Get("serviceStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceStatus)
     }
     return nil
 }
@@ -319,6 +341,13 @@ func (m *Sensor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetServiceStatus() != nil {
+        cast := (*m.GetServiceStatus()).String()
+        err = writer.WriteStringValue("serviceStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
@@ -389,6 +418,13 @@ func (m *Sensor) SetSensorType(value *SensorType)() {
         panic(err)
     }
 }
+// SetServiceStatus sets the serviceStatus property value. The serviceStatus property
+func (m *Sensor) SetServiceStatus(value *ServiceStatus)() {
+    err := m.GetBackingStore().Set("serviceStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. The settings property
 func (m *Sensor) SetSettings(value SensorSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -414,6 +450,7 @@ type Sensorable interface {
     GetHealthStatus()(*SensorHealthStatus)
     GetOpenHealthIssuesCount()(*int64)
     GetSensorType()(*SensorType)
+    GetServiceStatus()(*ServiceStatus)
     GetSettings()(SensorSettingsable)
     GetVersion()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -424,6 +461,7 @@ type Sensorable interface {
     SetHealthStatus(value *SensorHealthStatus)()
     SetOpenHealthIssuesCount(value *int64)()
     SetSensorType(value *SensorType)()
+    SetServiceStatus(value *ServiceStatus)()
     SetSettings(value SensorSettingsable)()
     SetVersion(value *string)()
 }

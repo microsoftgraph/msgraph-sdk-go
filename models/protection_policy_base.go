@@ -115,6 +115,16 @@ func (m *ProtectionPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
+        return nil
+    }
     res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -132,6 +142,16 @@ func (m *ProtectionPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["protectionPolicyArtifactCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProtectionPolicyArtifactCountFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProtectionPolicyArtifactCount(val.(ProtectionPolicyArtifactCountable))
         }
         return nil
     }
@@ -163,6 +183,18 @@ func (m *ProtectionPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
+// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// returns a *bool when successful
+func (m *ProtectionPolicyBase) GetIsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetLastModifiedBy gets the lastModifiedBy property value. The identity of the person who last modified the policy.
 // returns a IdentitySetable when successful
 func (m *ProtectionPolicyBase) GetLastModifiedBy()(IdentitySetable) {
@@ -184,6 +216,18 @@ func (m *ProtectionPolicyBase) GetLastModifiedDateTime()(*i336074805fc853987abe6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetProtectionPolicyArtifactCount gets the protectionPolicyArtifactCount property value. The protectionPolicyArtifactCount property
+// returns a ProtectionPolicyArtifactCountable when successful
+func (m *ProtectionPolicyBase) GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable) {
+    val, err := m.GetBackingStore().Get("protectionPolicyArtifactCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ProtectionPolicyArtifactCountable)
     }
     return nil
 }
@@ -236,6 +280,12 @@ func (m *ProtectionPolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
         if err != nil {
             return err
@@ -243,6 +293,12 @@ func (m *ProtectionPolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("protectionPolicyArtifactCount", m.GetProtectionPolicyArtifactCount())
         if err != nil {
             return err
         }
@@ -289,6 +345,13 @@ func (m *ProtectionPolicyBase) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetIsEnabled sets the isEnabled property value. The isEnabled property
+func (m *ProtectionPolicyBase) SetIsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedBy sets the lastModifiedBy property value. The identity of the person who last modified the policy.
 func (m *ProtectionPolicyBase) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
@@ -299,6 +362,13 @@ func (m *ProtectionPolicyBase) SetLastModifiedBy(value IdentitySetable)() {
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The timestamp of the last modification of the policy.
 func (m *ProtectionPolicyBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetProtectionPolicyArtifactCount sets the protectionPolicyArtifactCount property value. The protectionPolicyArtifactCount property
+func (m *ProtectionPolicyBase) SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)() {
+    err := m.GetBackingStore().Set("protectionPolicyArtifactCount", value)
     if err != nil {
         panic(err)
     }
@@ -323,15 +393,19 @@ type ProtectionPolicyBaseable interface {
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
+    GetIsEnabled()(*bool)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable)
     GetRetentionSettings()([]RetentionSettingable)
     GetStatus()(*ProtectionPolicyStatus)
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
+    SetIsEnabled(value *bool)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)()
     SetRetentionSettings(value []RetentionSettingable)()
     SetStatus(value *ProtectionPolicyStatus)()
 }

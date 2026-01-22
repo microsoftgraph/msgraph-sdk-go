@@ -36,6 +36,18 @@ func (m *SensorCandidate) GetComputerDnsName()(*string) {
     }
     return nil
 }
+// GetDomainName gets the domainName property value. The domain name of the sensor.
+// returns a *string when successful
+func (m *SensorCandidate) GetDomainName()(*string) {
+    val, err := m.GetBackingStore().Get("domainName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SensorCandidate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,6 +59,16 @@ func (m *SensorCandidate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetComputerDnsName(val)
+        }
+        return nil
+    }
+    res["domainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDomainName(val)
         }
         return nil
     }
@@ -109,6 +131,12 @@ func (m *SensorCandidate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("domainName", m.GetDomainName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastSeenDateTime", m.GetLastSeenDateTime())
         if err != nil {
             return err
@@ -125,6 +153,13 @@ func (m *SensorCandidate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 // SetComputerDnsName sets the computerDnsName property value. The DNS name of the computer associated with the sensor.
 func (m *SensorCandidate) SetComputerDnsName(value *string)() {
     err := m.GetBackingStore().Set("computerDnsName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDomainName sets the domainName property value. The domain name of the sensor.
+func (m *SensorCandidate) SetDomainName(value *string)() {
+    err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
         panic(err)
     }
@@ -147,9 +182,11 @@ type SensorCandidateable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetComputerDnsName()(*string)
+    GetDomainName()(*string)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSenseClientVersion()(*string)
     SetComputerDnsName(value *string)()
+    SetDomainName(value *string)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSenseClientVersion(value *string)()
 }
