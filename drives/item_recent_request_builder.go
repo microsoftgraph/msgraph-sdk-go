@@ -79,6 +79,7 @@ func (m *ItemRecentRequestBuilder) Get(ctx context.Context, requestConfiguration
     return res.(ItemRecentResponseable), nil
 }
 // GetAsRecentGetResponse list a set of items recently used by the signed-in user.This collection includes items that are in the user's drive and items they have access to from other drives.
+// Deprecated: This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01
 // returns a ItemRecentGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +103,7 @@ func (m *ItemRecentRequestBuilder) GetAsRecentGetResponse(ctx context.Context, r
     return res.(ItemRecentGetResponseable), nil
 }
 // ToGetRequestInformation list a set of items recently used by the signed-in user.This collection includes items that are in the user's drive and items they have access to from other drives.
+// Deprecated: This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01
 // returns a *RequestInformation when successful
 func (m *ItemRecentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -116,6 +118,7 @@ func (m *ItemRecentRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01
 // returns a *ItemRecentRequestBuilder when successful
 func (m *ItemRecentRequestBuilder) WithUrl(rawUrl string)(*ItemRecentRequestBuilder) {
     return NewItemRecentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -49,6 +49,11 @@ type UserItemRequestBuilderPatchRequestConfiguration struct {
 func (m *UserItemRequestBuilder) Activities()(*ItemActivitiesRequestBuilder) {
     return NewItemActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AdhocCalls provides operations to manage the adhocCalls property of the microsoft.graph.user entity.
+// returns a *ItemAdhocCallsRequestBuilder when successful
+func (m *UserItemRequestBuilder) AdhocCalls()(*ItemAdhocCallsRequestBuilder) {
+    return NewItemAdhocCallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // AgreementAcceptances provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
 // returns a *ItemAgreementAcceptancesRequestBuilder when successful
 func (m *UserItemRequestBuilder) AgreementAcceptances()(*ItemAgreementAcceptancesRequestBuilder) {
@@ -353,6 +358,11 @@ func (m *UserItemRequestBuilder) Onenote()(*ItemOnenoteRequestBuilder) {
 // returns a *ItemOnlineMeetingsRequestBuilder when successful
 func (m *UserItemRequestBuilder) OnlineMeetings()(*ItemOnlineMeetingsRequestBuilder) {
     return NewItemOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OnPremisesSyncBehavior provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.user entity.
+// returns a *ItemOnPremisesSyncBehaviorRequestBuilder when successful
+func (m *UserItemRequestBuilder) OnPremisesSyncBehavior()(*ItemOnPremisesSyncBehaviorRequestBuilder) {
+    return NewItemOnPremisesSyncBehaviorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Outlook provides operations to manage the outlook property of the microsoft.graph.user entity.
 // returns a *ItemOutlookRequestBuilder when successful

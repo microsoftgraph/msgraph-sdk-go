@@ -36,6 +36,22 @@ func (m *AiUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["onlineMeetings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAiOnlineMeetingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AiOnlineMeetingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AiOnlineMeetingable)
+                }
+            }
+            m.SetOnlineMeetings(res)
+        }
+        return nil
+    }
     return res
 }
 // GetInteractionHistory gets the interactionHistory property value. The interactionHistory property
@@ -47,6 +63,18 @@ func (m *AiUser) GetInteractionHistory()(AiInteractionHistoryable) {
     }
     if val != nil {
         return val.(AiInteractionHistoryable)
+    }
+    return nil
+}
+// GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
+// returns a []AiOnlineMeetingable when successful
+func (m *AiUser) GetOnlineMeetings()([]AiOnlineMeetingable) {
+    val, err := m.GetBackingStore().Get("onlineMeetings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AiOnlineMeetingable)
     }
     return nil
 }
@@ -62,6 +90,18 @@ func (m *AiUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetOnlineMeetings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnlineMeetings()))
+        for i, v := range m.GetOnlineMeetings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("onlineMeetings", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetInteractionHistory sets the interactionHistory property value. The interactionHistory property
@@ -71,9 +111,18 @@ func (m *AiUser) SetInteractionHistory(value AiInteractionHistoryable)() {
         panic(err)
     }
 }
+// SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
+func (m *AiUser) SetOnlineMeetings(value []AiOnlineMeetingable)() {
+    err := m.GetBackingStore().Set("onlineMeetings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AiUserable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInteractionHistory()(AiInteractionHistoryable)
+    GetOnlineMeetings()([]AiOnlineMeetingable)
     SetInteractionHistory(value AiInteractionHistoryable)()
+    SetOnlineMeetings(value []AiOnlineMeetingable)()
 }

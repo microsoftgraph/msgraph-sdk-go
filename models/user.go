@@ -62,6 +62,18 @@ func (m *User) GetActivities()([]UserActivityable) {
     }
     return nil
 }
+// GetAdhocCalls gets the adhocCalls property value. Ad hoc calls associated with the user. Read-only. Nullable.
+// returns a []AdhocCallable when successful
+func (m *User) GetAdhocCalls()([]AdhocCallable) {
+    val, err := m.GetBackingStore().Get("adhocCalls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdhocCallable)
+    }
+    return nil
+}
 // GetAgeGroup gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).
 // returns a *string when successful
 func (m *User) GetAgeGroup()(*string) {
@@ -639,6 +651,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetActivities(res)
+        }
+        return nil
+    }
+    res["adhocCalls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAdhocCallFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AdhocCallable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AdhocCallable)
+                }
+            }
+            m.SetAdhocCalls(res)
         }
         return nil
     }
@@ -1680,6 +1708,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["onPremisesSyncBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesSyncBehaviorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSyncBehavior(val.(OnPremisesSyncBehaviorable))
+        }
+        return nil
+    }
     res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -2692,6 +2730,18 @@ func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
     }
     return nil
 }
+// GetOnPremisesSyncBehavior gets the onPremisesSyncBehavior property value. The onPremisesSyncBehavior property
+// returns a OnPremisesSyncBehaviorable when successful
+func (m *User) GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable) {
+    val, err := m.GetBackingStore().Get("onPremisesSyncBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesSyncBehaviorable)
+    }
+    return nil
+}
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
 // returns a *bool when successful
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
@@ -3246,6 +3296,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             }
         }
         err = writer.WriteCollectionOfObjectValues("activities", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAdhocCalls() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdhocCalls()))
+        for i, v := range m.GetAdhocCalls() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("adhocCalls", cast)
         if err != nil {
             return err
         }
@@ -3935,6 +3997,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("onPremisesSyncBehavior", m.GetOnPremisesSyncBehavior())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("onPremisesSyncEnabled", m.GetOnPremisesSyncEnabled())
         if err != nil {
             return err
@@ -4283,6 +4351,13 @@ func (m *User) SetAccountEnabled(value *bool)() {
 // SetActivities sets the activities property value. The user's activities across devices. Read-only. Nullable.
 func (m *User) SetActivities(value []UserActivityable)() {
     err := m.GetBackingStore().Set("activities", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdhocCalls sets the adhocCalls property value. Ad hoc calls associated with the user. Read-only. Nullable.
+func (m *User) SetAdhocCalls(value []AdhocCallable)() {
+    err := m.GetBackingStore().Set("adhocCalls", value)
     if err != nil {
         panic(err)
     }
@@ -4875,6 +4950,13 @@ func (m *User) SetOnPremisesSecurityIdentifier(value *string)() {
         panic(err)
     }
 }
+// SetOnPremisesSyncBehavior sets the onPremisesSyncBehavior property value. The onPremisesSyncBehavior property
+func (m *User) SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)() {
+    err := m.GetBackingStore().Set("onPremisesSyncBehavior", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
@@ -5189,6 +5271,7 @@ type Userable interface {
     GetAboutMe()(*string)
     GetAccountEnabled()(*bool)
     GetActivities()([]UserActivityable)
+    GetAdhocCalls()([]AdhocCallable)
     GetAgeGroup()(*string)
     GetAgreementAcceptances()([]AgreementAcceptanceable)
     GetAppRoleAssignments()([]AppRoleAssignmentable)
@@ -5273,6 +5356,7 @@ type Userable interface {
     GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable)
     GetOnPremisesSamAccountName()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
+    GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable)
     GetOnPremisesSyncEnabled()(*bool)
     GetOnPremisesUserPrincipalName()(*string)
     GetOtherMails()([]string)
@@ -5320,6 +5404,7 @@ type Userable interface {
     SetAboutMe(value *string)()
     SetAccountEnabled(value *bool)()
     SetActivities(value []UserActivityable)()
+    SetAdhocCalls(value []AdhocCallable)()
     SetAgeGroup(value *string)()
     SetAgreementAcceptances(value []AgreementAcceptanceable)()
     SetAppRoleAssignments(value []AppRoleAssignmentable)()
@@ -5404,6 +5489,7 @@ type Userable interface {
     SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)()
     SetOnPremisesSamAccountName(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
+    SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetOnPremisesUserPrincipalName(value *string)()
     SetOtherMails(value []string)()

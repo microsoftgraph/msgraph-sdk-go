@@ -41,6 +41,8 @@ func CreatePlaceModeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewDropInPlaceMode(), nil
                     case "#microsoft.graph.reservablePlaceMode":
                         return NewReservablePlaceMode(), nil
+                    case "#microsoft.graph.unavailablePlaceMode":
+                        return NewUnavailablePlaceMode(), nil
                 }
             }
         }
