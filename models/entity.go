@@ -687,6 +687,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExtension(), nil
                     case "#microsoft.graph.extensionProperty":
                         return NewExtensionProperty(), nil
+                    case "#microsoft.graph.externalAuthenticationMethod":
+                        return NewExternalAuthenticationMethod(), nil
                     case "#microsoft.graph.externalDomainName":
                         return NewExternalDomainName(), nil
                     case "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow":
@@ -1019,6 +1021,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOfferShiftRequest(), nil
                     case "#microsoft.graph.officeGraphInsights":
                         return NewOfficeGraphInsights(), nil
+                    case "#microsoft.graph.oidcIdentityProvider":
+                        return NewOidcIdentityProvider(), nil
                     case "#microsoft.graph.onAttributeCollectionListener":
                         return NewOnAttributeCollectionListener(), nil
                     case "#microsoft.graph.onAttributeCollectionStartCustomExtension":

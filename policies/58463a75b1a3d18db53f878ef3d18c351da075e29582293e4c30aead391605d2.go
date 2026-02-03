@@ -21,7 +21,7 @@ type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthentication
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters read the properties and relationships of an externalAuthenticationMethodConfiguration object.
 type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewAuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticat
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property authenticationMethodConfigurations for policies
+// Delete delete an externalAuthenticationMethodConfiguration object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalauthenticationmethodconfiguration-delete?view=graph-rest-1.0
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthentica
     }
     return nil
 }
-// Get represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// Get read the properties and relationships of an externalAuthenticationMethodConfiguration object.
 // returns a AuthenticationMethodConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalauthenticationmethodconfiguration-get?view=graph-rest-1.0
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +99,12 @@ func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthentica
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable), nil
 }
-// Patch update the navigation property authenticationMethodConfigurations in policies
+// Patch update the properties of an externalAuthenticationMethodConfiguration object.
 // returns a AuthenticationMethodConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalauthenticationmethodconfiguration-update?view=graph-rest-1.0
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +122,7 @@ func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthentica
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable), nil
 }
-// ToDeleteRequestInformation delete navigation property authenticationMethodConfigurations for policies
+// ToDeleteRequestInformation delete an externalAuthenticationMethodConfiguration object.
 // returns a *RequestInformation when successful
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +133,7 @@ func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthentica
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// ToGetRequestInformation read the properties and relationships of an externalAuthenticationMethodConfiguration object.
 // returns a *RequestInformation when successful
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +147,7 @@ func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthentica
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property authenticationMethodConfigurations in policies
+// ToPatchRequestInformation update the properties of an externalAuthenticationMethodConfiguration object.
 // returns a *RequestInformation when successful
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -398,7 +398,7 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetPriorityScore gets the priorityScore property value. The priorityScore property
+// GetPriorityScore gets the priorityScore property value. A priority score for the incident from 0 to 100, with > 85 being the top priority, 15 - 85 medium priority, and < 15 low priority. This score is generated using machine learning and is based on multiple factors, including severity, disruption impact, threat intelligence, alert types, asset criticality, threat analytics, incident rarity, and additional priority signals. The value can also be null which indicates the feature is not open for the tenant or the value of the score is pending calculation.
 // returns a *int32 when successful
 func (m *Incident) GetPriorityScore()(*int32) {
     val, err := m.GetBackingStore().Get("priorityScore")
@@ -722,7 +722,7 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetPriorityScore sets the priorityScore property value. The priorityScore property
+// SetPriorityScore sets the priorityScore property value. A priority score for the incident from 0 to 100, with > 85 being the top priority, 15 - 85 medium priority, and < 15 low priority. This score is generated using machine learning and is based on multiple factors, including severity, disruption impact, threat intelligence, alert types, asset criticality, threat analytics, incident rarity, and additional priority signals. The value can also be null which indicates the feature is not open for the tenant or the value of the score is pending calculation.
 func (m *Incident) SetPriorityScore(value *int32)() {
     err := m.GetBackingStore().Set("priorityScore", value)
     if err != nil {

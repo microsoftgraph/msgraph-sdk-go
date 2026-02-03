@@ -78,6 +78,11 @@ func (m *ItemAuthenticationRequestBuilder) Delete(ctx context.Context, requestCo
 func (m *ItemAuthenticationRequestBuilder) EmailMethods()(*ItemAuthenticationEmailMethodsRequestBuilder) {
     return NewItemAuthenticationEmailMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExternalAuthenticationMethods provides operations to manage the externalAuthenticationMethods property of the microsoft.graph.authentication entity.
+// returns a *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) ExternalAuthenticationMethods()(*ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) {
+    return NewItemAuthenticationExternalAuthenticationMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Fido2Methods provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
 // returns a *ItemAuthenticationFido2MethodsRequestBuilder when successful
 func (m *ItemAuthenticationRequestBuilder) Fido2Methods()(*ItemAuthenticationFido2MethodsRequestBuilder) {

@@ -38,6 +38,8 @@ func CreateIdentityProviderBaseFromDiscriminatorValue(parseNode i878a80d2330e89d
                         return NewBuiltInIdentityProvider(), nil
                     case "#microsoft.graph.internalDomainFederation":
                         return NewInternalDomainFederation(), nil
+                    case "#microsoft.graph.oidcIdentityProvider":
+                        return NewOidcIdentityProvider(), nil
                     case "#microsoft.graph.samlOrWsFedExternalDomainFederation":
                         return NewSamlOrWsFedExternalDomainFederation(), nil
                     case "#microsoft.graph.samlOrWsFedProvider":
