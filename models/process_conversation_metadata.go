@@ -36,6 +36,30 @@ func (m *ProcessConversationMetadata) GetAccessedResources()([]string) {
     }
     return nil
 }
+// GetAccessedResourcesV2 gets the accessedResources_v2 property value. The accessedResources_v2 property
+// returns a []ResourceAccessDetailable when successful
+func (m *ProcessConversationMetadata) GetAccessedResourcesV2()([]ResourceAccessDetailable) {
+    val, err := m.GetBackingStore().Get("accessedResources_v2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceAccessDetailable)
+    }
+    return nil
+}
+// GetAgents gets the agents property value. The agents property
+// returns a []AiAgentInfoable when successful
+func (m *ProcessConversationMetadata) GetAgents()([]AiAgentInfoable) {
+    val, err := m.GetBackingStore().Get("agents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AiAgentInfoable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProcessConversationMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -53,6 +77,38 @@ func (m *ProcessConversationMetadata) GetFieldDeserializers()(map[string]func(i8
                 }
             }
             m.SetAccessedResources(res)
+        }
+        return nil
+    }
+    res["accessedResources_v2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceAccessDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceAccessDetailable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceAccessDetailable)
+                }
+            }
+            m.SetAccessedResourcesV2(res)
+        }
+        return nil
+    }
+    res["agents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAiAgentInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AiAgentInfoable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AiAgentInfoable)
+                }
+            }
+            m.SetAgents(res)
         }
         return nil
     }
@@ -120,6 +176,30 @@ func (m *ProcessConversationMetadata) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetAccessedResourcesV2() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessedResourcesV2()))
+        for i, v := range m.GetAccessedResourcesV2() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("accessedResources_v2", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAgents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgents()))
+        for i, v := range m.GetAgents() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("agents", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("parentMessageId", m.GetParentMessageId())
         if err != nil {
@@ -147,6 +227,20 @@ func (m *ProcessConversationMetadata) SetAccessedResources(value []string)() {
         panic(err)
     }
 }
+// SetAccessedResourcesV2 sets the accessedResources_v2 property value. The accessedResources_v2 property
+func (m *ProcessConversationMetadata) SetAccessedResourcesV2(value []ResourceAccessDetailable)() {
+    err := m.GetBackingStore().Set("accessedResources_v2", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAgents sets the agents property value. The agents property
+func (m *ProcessConversationMetadata) SetAgents(value []AiAgentInfoable)() {
+    err := m.GetBackingStore().Set("agents", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParentMessageId sets the parentMessageId property value. Identifier of the parent message in a threaded conversation, if applicable.
 func (m *ProcessConversationMetadata) SetParentMessageId(value *string)() {
     err := m.GetBackingStore().Set("parentMessageId", value)
@@ -165,9 +259,13 @@ type ProcessConversationMetadataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ProcessContentMetadataBaseable
     GetAccessedResources()([]string)
+    GetAccessedResourcesV2()([]ResourceAccessDetailable)
+    GetAgents()([]AiAgentInfoable)
     GetParentMessageId()(*string)
     GetPlugins()([]AiInteractionPluginable)
     SetAccessedResources(value []string)()
+    SetAccessedResourcesV2(value []ResourceAccessDetailable)()
+    SetAgents(value []AiAgentInfoable)()
     SetParentMessageId(value *string)()
     SetPlugins(value []AiInteractionPluginable)()
 }

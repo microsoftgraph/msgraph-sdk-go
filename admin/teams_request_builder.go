@@ -21,7 +21,7 @@ type TeamsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsRequestBuilderGetQueryParameters represents a collection of user configurations.
+// TeamsRequestBuilderGetQueryParameters a container for Teams administration functionalities, such as user configurations and policy assignments.
 type TeamsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *TeamsRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     }
     return nil
 }
-// Get represents a collection of user configurations.
+// Get a container for Teams administration functionalities, such as user configurations and policy assignments.
 // returns a TeamsAdminRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(i22ad7c1b3905b3ca3489583547f6edfaef2f77bdd9a38e24b2fdb52e37702f84.TeamsAdminRootable, error) {
@@ -113,6 +113,11 @@ func (m *TeamsRequestBuilder) Patch(ctx context.Context, body i22ad7c1b3905b3ca3
     }
     return res.(i22ad7c1b3905b3ca3489583547f6edfaef2f77bdd9a38e24b2fdb52e37702f84.TeamsAdminRootable), nil
 }
+// Policy provides operations to manage the policy property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
+// returns a *TeamsPolicyRequestBuilder when successful
+func (m *TeamsRequestBuilder) Policy()(*TeamsPolicyRequestBuilder) {
+    return NewTeamsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property teams for admin
 // returns a *RequestInformation when successful
 func (m *TeamsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -124,7 +129,7 @@ func (m *TeamsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents a collection of user configurations.
+// ToGetRequestInformation a container for Teams administration functionalities, such as user configurations and policy assignments.
 // returns a *RequestInformation when successful
 func (m *TeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

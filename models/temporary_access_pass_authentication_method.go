@@ -25,32 +25,10 @@ func NewTemporaryAccessPassAuthenticationMethod()(*TemporaryAccessPassAuthentica
 func CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTemporaryAccessPassAuthenticationMethod(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time when the Temporary Access Pass was created.
-// returns a *Time when successful
-func (m *TemporaryAccessPassAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("createdDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
     res["isUsable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -192,12 +170,6 @@ func (m *TemporaryAccessPassAuthenticationMethod) Serialize(writer i878a80d2330e
         return err
     }
     {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("isUsable", m.GetIsUsable())
         if err != nil {
             return err
@@ -234,13 +206,6 @@ func (m *TemporaryAccessPassAuthenticationMethod) Serialize(writer i878a80d2330e
         }
     }
     return nil
-}
-// SetCreatedDateTime sets the createdDateTime property value. The date and time when the Temporary Access Pass was created.
-func (m *TemporaryAccessPassAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("createdDateTime", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetIsUsable sets the isUsable property value. The state of the authentication method that indicates whether it's currently usable by the user.
 func (m *TemporaryAccessPassAuthenticationMethod) SetIsUsable(value *bool)() {
@@ -287,14 +252,12 @@ func (m *TemporaryAccessPassAuthenticationMethod) SetTemporaryAccessPass(value *
 type TemporaryAccessPassAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsUsable()(*bool)
     GetIsUsableOnce()(*bool)
     GetLifetimeInMinutes()(*int32)
     GetMethodUsabilityReason()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTemporaryAccessPass()(*string)
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsUsable(value *bool)()
     SetIsUsableOnce(value *bool)()
     SetLifetimeInMinutes(value *int32)()

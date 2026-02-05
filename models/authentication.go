@@ -34,6 +34,18 @@ func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
     }
     return nil
 }
+// GetExternalAuthenticationMethods gets the externalAuthenticationMethods property value. Represents the external authentication methods registered to a user for authentication using an external identity provider.
+// returns a []ExternalAuthenticationMethodable when successful
+func (m *Authentication) GetExternalAuthenticationMethods()([]ExternalAuthenticationMethodable) {
+    val, err := m.GetBackingStore().Get("externalAuthenticationMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalAuthenticationMethodable)
+    }
+    return nil
+}
 // GetFido2Methods gets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
 // returns a []Fido2AuthenticationMethodable when successful
 func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
@@ -63,6 +75,22 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
                 }
             }
             m.SetEmailMethods(res)
+        }
+        return nil
+    }
+    res["externalAuthenticationMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExternalAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExternalAuthenticationMethodable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ExternalAuthenticationMethodable)
+                }
+            }
+            m.SetExternalAuthenticationMethods(res)
         }
         return nil
     }
@@ -354,6 +382,18 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetExternalAuthenticationMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalAuthenticationMethods()))
+        for i, v := range m.GetExternalAuthenticationMethods() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("externalAuthenticationMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFido2Methods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFido2Methods()))
         for i, v := range m.GetFido2Methods() {
@@ -483,6 +523,13 @@ func (m *Authentication) SetEmailMethods(value []EmailAuthenticationMethodable)(
         panic(err)
     }
 }
+// SetExternalAuthenticationMethods sets the externalAuthenticationMethods property value. Represents the external authentication methods registered to a user for authentication using an external identity provider.
+func (m *Authentication) SetExternalAuthenticationMethods(value []ExternalAuthenticationMethodable)() {
+    err := m.GetBackingStore().Set("externalAuthenticationMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFido2Methods sets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
 func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethodable)() {
     err := m.GetBackingStore().Set("fido2Methods", value)
@@ -557,6 +604,7 @@ type Authenticationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmailMethods()([]EmailAuthenticationMethodable)
+    GetExternalAuthenticationMethods()([]ExternalAuthenticationMethodable)
     GetFido2Methods()([]Fido2AuthenticationMethodable)
     GetMethods()([]AuthenticationMethodable)
     GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethodable)
@@ -568,6 +616,7 @@ type Authenticationable interface {
     GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable)
     GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable)
     SetEmailMethods(value []EmailAuthenticationMethodable)()
+    SetExternalAuthenticationMethods(value []ExternalAuthenticationMethodable)()
     SetFido2Methods(value []Fido2AuthenticationMethodable)()
     SetMethods(value []AuthenticationMethodable)()
     SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)()

@@ -29,13 +29,14 @@ const (
     ENCRYPTEDPROTECTIONTYPENOTSUPPORTEDEXCEPTION_USAGERIGHTS = 131072
     PURVIEWCLAIMSCHALLENGENOTSUPPORTEDEXCEPTION_USAGERIGHTS = 262144
     EXCEPTION_USAGERIGHTS = 524288
-    UNKNOWNFUTUREVALUE_USAGERIGHTS = 1048576
+    LABELNOTFOUNDEXCEPTION_USAGERIGHTS = 1048576
+    UNKNOWNFUTUREVALUE_USAGERIGHTS = 2097152
 )
 
 func (i UsageRights) String() string {
     var values []string
-    options := []string{"unknown", "docEdit", "edit", "comment", "export", "forward", "owner", "print", "reply", "replyAll", "view", "extract", "viewRightsData", "editRightsData", "objModel", "accessDenied", "userDefinedProtectionTypeNotSupportedException", "encryptedProtectionTypeNotSupportedException", "purviewClaimsChallengeNotSupportedException", "exception", "unknownFutureValue"}
-    for p := 0; p < 21; p++ {
+    options := []string{"unknown", "docEdit", "edit", "comment", "export", "forward", "owner", "print", "reply", "replyAll", "view", "extract", "viewRightsData", "editRightsData", "objModel", "accessDenied", "userDefinedProtectionTypeNotSupportedException", "encryptedProtectionTypeNotSupportedException", "purviewClaimsChallengeNotSupportedException", "exception", "labelNotFoundException", "unknownFutureValue"}
+    for p := 0; p < 22; p++ {
         mantis := UsageRights(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -88,6 +89,8 @@ func ParseUsageRights(v string) (any, error) {
                 result |= PURVIEWCLAIMSCHALLENGENOTSUPPORTEDEXCEPTION_USAGERIGHTS
             case "exception":
                 result |= EXCEPTION_USAGERIGHTS
+            case "labelNotFoundException":
+                result |= LABELNOTFOUNDEXCEPTION_USAGERIGHTS
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_USAGERIGHTS
             default:

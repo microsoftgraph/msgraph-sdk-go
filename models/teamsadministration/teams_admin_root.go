@@ -27,6 +27,16 @@ func CreateTeamsAdminRootFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsAdminRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamsPolicyAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicy(val.(TeamsPolicyAssignmentable))
+        }
+        return nil
+    }
     res["userConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsUserConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -45,7 +55,19 @@ func (m *TeamsAdminRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetUserConfigurations gets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams.
+// GetPolicy gets the policy property value. Represents a navigation property to the Teams policy assignment object.
+// returns a TeamsPolicyAssignmentable when successful
+func (m *TeamsAdminRoot) GetPolicy()(TeamsPolicyAssignmentable) {
+    val, err := m.GetBackingStore().Get("policy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsPolicyAssignmentable)
+    }
+    return nil
+}
+// GetUserConfigurations gets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams
 // returns a []TeamsUserConfigurationable when successful
 func (m *TeamsAdminRoot) GetUserConfigurations()([]TeamsUserConfigurationable) {
     val, err := m.GetBackingStore().Get("userConfigurations")
@@ -63,6 +85,12 @@ func (m *TeamsAdminRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("policy", m.GetPolicy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserConfigurations()))
         for i, v := range m.GetUserConfigurations() {
@@ -77,7 +105,14 @@ func (m *TeamsAdminRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetUserConfigurations sets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams.
+// SetPolicy sets the policy property value. Represents a navigation property to the Teams policy assignment object.
+func (m *TeamsAdminRoot) SetPolicy(value TeamsPolicyAssignmentable)() {
+    err := m.GetBackingStore().Set("policy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserConfigurations sets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams
 func (m *TeamsAdminRoot) SetUserConfigurations(value []TeamsUserConfigurationable)() {
     err := m.GetBackingStore().Set("userConfigurations", value)
     if err != nil {
@@ -87,6 +122,8 @@ func (m *TeamsAdminRoot) SetUserConfigurations(value []TeamsUserConfigurationabl
 type TeamsAdminRootable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPolicy()(TeamsPolicyAssignmentable)
     GetUserConfigurations()([]TeamsUserConfigurationable)
+    SetPolicy(value TeamsPolicyAssignmentable)()
     SetUserConfigurations(value []TeamsUserConfigurationable)()
 }
