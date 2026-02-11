@@ -55,6 +55,11 @@ func NewAdminRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *AdminRequestBuilder) Edge()(*EdgeRequestBuilder) {
     return NewEdgeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Exchange provides operations to manage the exchange property of the microsoft.graph.admin entity.
+// returns a *ExchangeRequestBuilder when successful
+func (m *AdminRequestBuilder) Exchange()(*ExchangeRequestBuilder) {
+    return NewExchangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get admin
 // returns a Adminable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

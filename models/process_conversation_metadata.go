@@ -24,7 +24,7 @@ func NewProcessConversationMetadata()(*ProcessConversationMetadata) {
 func CreateProcessConversationMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProcessConversationMetadata(), nil
 }
-// GetAccessedResources gets the accessedResources property value. List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions).
+// GetAccessedResources gets the accessedResources property value. List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions). The accessedResources property is deprecated and stopped returning data on August 20, 2025. Going forward, use the accessedResources_v2 property.
 // returns a []string when successful
 func (m *ProcessConversationMetadata) GetAccessedResources()([]string) {
     val, err := m.GetBackingStore().Get("accessedResources")
@@ -36,7 +36,7 @@ func (m *ProcessConversationMetadata) GetAccessedResources()([]string) {
     }
     return nil
 }
-// GetAccessedResourcesV2 gets the accessedResources_v2 property value. The accessedResources_v2 property
+// GetAccessedResourcesV2 gets the accessedResources_v2 property value. Lists details about the resources accessed by AI agents, such as identifiers, access type, and status.
 // returns a []ResourceAccessDetailable when successful
 func (m *ProcessConversationMetadata) GetAccessedResourcesV2()([]ResourceAccessDetailable) {
     val, err := m.GetBackingStore().Get("accessedResources_v2")
@@ -48,7 +48,7 @@ func (m *ProcessConversationMetadata) GetAccessedResourcesV2()([]ResourceAccessD
     }
     return nil
 }
-// GetAgents gets the agents property value. The agents property
+// GetAgents gets the agents property value. Indicates the information about an AI agent that participated in the preparation of the message.
 // returns a []AiAgentInfoable when successful
 func (m *ProcessConversationMetadata) GetAgents()([]AiAgentInfoable) {
     val, err := m.GetBackingStore().Get("agents")
@@ -220,21 +220,21 @@ func (m *ProcessConversationMetadata) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAccessedResources sets the accessedResources property value. List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions).
+// SetAccessedResources sets the accessedResources property value. List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions). The accessedResources property is deprecated and stopped returning data on August 20, 2025. Going forward, use the accessedResources_v2 property.
 func (m *ProcessConversationMetadata) SetAccessedResources(value []string)() {
     err := m.GetBackingStore().Set("accessedResources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAccessedResourcesV2 sets the accessedResources_v2 property value. The accessedResources_v2 property
+// SetAccessedResourcesV2 sets the accessedResources_v2 property value. Lists details about the resources accessed by AI agents, such as identifiers, access type, and status.
 func (m *ProcessConversationMetadata) SetAccessedResourcesV2(value []ResourceAccessDetailable)() {
     err := m.GetBackingStore().Set("accessedResources_v2", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAgents sets the agents property value. The agents property
+// SetAgents sets the agents property value. Indicates the information about an AI agent that participated in the preparation of the message.
 func (m *ProcessConversationMetadata) SetAgents(value []AiAgentInfoable)() {
     err := m.GetBackingStore().Set("agents", value)
     if err != nil {
