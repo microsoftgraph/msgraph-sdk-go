@@ -938,6 +938,38 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["resourceBehaviorOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetResourceBehaviorOptions(res)
+        }
+        return nil
+    }
+    res["resourceProvisioningOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetResourceProvisioningOptions(res)
+        }
+        return nil
+    }
     res["securityEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1550,6 +1582,30 @@ func (m *Group) GetRenewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     return nil
 }
+// GetResourceBehaviorOptions gets the resourceBehaviorOptions property value. Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This property can be set only as part of creation (POST). For the list of possible values, see Microsoft 365 group behaviors and provisioning options.
+// returns a []string when successful
+func (m *Group) GetResourceBehaviorOptions()([]string) {
+    val, err := m.GetBackingStore().Get("resourceBehaviorOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// GetResourceProvisioningOptions gets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).
+// returns a []string when successful
+func (m *Group) GetResourceProvisioningOptions()([]string) {
+    val, err := m.GetBackingStore().Get("resourceProvisioningOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetSecurityEnabled gets the securityEnabled property value. Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
 // returns a *bool when successful
 func (m *Group) GetSecurityEnabled()(*bool) {
@@ -2156,6 +2212,18 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetResourceBehaviorOptions() != nil {
+        err = writer.WriteCollectionOfStringValues("resourceBehaviorOptions", m.GetResourceBehaviorOptions())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetResourceProvisioningOptions() != nil {
+        err = writer.WriteCollectionOfStringValues("resourceProvisioningOptions", m.GetResourceProvisioningOptions())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("securityEnabled", m.GetSecurityEnabled())
         if err != nil {
@@ -2664,6 +2732,20 @@ func (m *Group) SetRenewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         panic(err)
     }
 }
+// SetResourceBehaviorOptions sets the resourceBehaviorOptions property value. Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This property can be set only as part of creation (POST). For the list of possible values, see Microsoft 365 group behaviors and provisioning options.
+func (m *Group) SetResourceBehaviorOptions(value []string)() {
+    err := m.GetBackingStore().Set("resourceBehaviorOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetResourceProvisioningOptions sets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).
+func (m *Group) SetResourceProvisioningOptions(value []string)() {
+    err := m.GetBackingStore().Set("resourceProvisioningOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSecurityEnabled sets the securityEnabled property value. Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
 func (m *Group) SetSecurityEnabled(value *bool)() {
     err := m.GetBackingStore().Set("securityEnabled", value)
@@ -2814,6 +2896,8 @@ type Groupable interface {
     GetProxyAddresses()([]string)
     GetRejectedSenders()([]DirectoryObjectable)
     GetRenewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetResourceBehaviorOptions()([]string)
+    GetResourceProvisioningOptions()([]string)
     GetSecurityEnabled()(*bool)
     GetSecurityIdentifier()(*string)
     GetServiceProvisioningErrors()([]ServiceProvisioningErrorable)
@@ -2883,6 +2967,8 @@ type Groupable interface {
     SetProxyAddresses(value []string)()
     SetRejectedSenders(value []DirectoryObjectable)()
     SetRenewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetResourceBehaviorOptions(value []string)()
+    SetResourceProvisioningOptions(value []string)()
     SetSecurityEnabled(value *bool)()
     SetSecurityIdentifier(value *string)()
     SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)()
