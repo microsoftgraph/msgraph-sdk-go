@@ -60,6 +60,18 @@ func (m *WorkflowBase) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAdministrationScopeTargets gets the administrationScopeTargets property value. The administrationScopeTargets property
+// returns a []DirectoryObjectable when successful
+func (m *WorkflowBase) GetAdministrationScopeTargets()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("administrationScopeTargets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *WorkflowBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -141,6 +153,22 @@ func (m *WorkflowBase) GetExecutionConditions()(WorkflowExecutionConditionsable)
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["administrationScopeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)
+                }
+            }
+            m.SetAdministrationScopeTargets(res)
+        }
+        return nil
+    }
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLifecycleWorkflowCategory)
         if err != nil {
@@ -343,6 +371,18 @@ func (m *WorkflowBase) GetTasks()([]Taskable) {
 }
 // Serialize serializes information the current object
 func (m *WorkflowBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAdministrationScopeTargets() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdministrationScopeTargets()))
+        for i, v := range m.GetAdministrationScopeTargets() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("administrationScopeTargets", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCategory() != nil {
         cast := (*m.GetCategory()).String()
         err := writer.WriteStringValue("category", &cast)
@@ -433,6 +473,13 @@ func (m *WorkflowBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkflowBase) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdministrationScopeTargets sets the administrationScopeTargets property value. The administrationScopeTargets property
+func (m *WorkflowBase) SetAdministrationScopeTargets(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("administrationScopeTargets", value)
     if err != nil {
         panic(err)
     }
@@ -529,6 +576,7 @@ type WorkflowBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdministrationScopeTargets()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCategory()(*LifecycleWorkflowCategory)
     GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)
@@ -542,6 +590,7 @@ type WorkflowBaseable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     GetTasks()([]Taskable)
+    SetAdministrationScopeTargets(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCategory(value *LifecycleWorkflowCategory)()
     SetCreatedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)()
