@@ -105,6 +105,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAdminMicrosoft365Apps(), nil
                     case "#microsoft.graph.adminReportSettings":
                         return NewAdminReportSettings(), nil
+                    case "#microsoft.graph.agentIdentity":
+                        return NewAgentIdentity(), nil
+                    case "#microsoft.graph.agentIdentityBlueprint":
+                        return NewAgentIdentityBlueprint(), nil
+                    case "#microsoft.graph.agentIdentityBlueprintPrincipal":
+                        return NewAgentIdentityBlueprintPrincipal(), nil
+                    case "#microsoft.graph.agentUser":
+                        return NewAgentUser(), nil
                     case "#microsoft.graph.agreement":
                         return NewAgreement(), nil
                     case "#microsoft.graph.agreementAcceptance":
@@ -1239,6 +1247,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewProfileCardProperty(), nil
                     case "#microsoft.graph.profilePhoto":
                         return NewProfilePhoto(), nil
+                    case "#microsoft.graph.profileSource":
+                        return NewProfileSource(), nil
                     case "#microsoft.graph.pronounsSettings":
                         return NewPronounsSettings(), nil
                     case "#microsoft.graph.protectionPolicyBase":
@@ -1253,6 +1263,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewProvisioningObjectSummary(), nil
                     case "#microsoft.graph.publicKeyInfrastructureRoot":
                         return NewPublicKeyInfrastructureRoot(), nil
+                    case "#microsoft.graph.qrCode":
+                        return NewQrCode(), nil
+                    case "#microsoft.graph.qrCodePinAuthenticationMethod":
+                        return NewQrCodePinAuthenticationMethod(), nil
+                    case "#microsoft.graph.qrCodePinAuthenticationMethodConfiguration":
+                        return NewQrCodePinAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.qrPin":
+                        return NewQrPin(), nil
                     case "#microsoft.graph.rbacApplication":
                         return NewRbacApplication(), nil
                     case "#microsoft.graph.readingAssignmentSubmission":
@@ -1379,6 +1397,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSharedWithChannelTeamInfo(), nil
                     case "#microsoft.graph.sharepoint":
                         return NewSharepoint(), nil
+                    case "#microsoft.graph.sharePointGroup":
+                        return NewSharePointGroup(), nil
+                    case "#microsoft.graph.sharePointGroupMember":
+                        return NewSharePointGroupMember(), nil
                     case "#microsoft.graph.sharePointMigrationEvent":
                         return NewSharePointMigrationEvent(), nil
                     case "#microsoft.graph.sharePointMigrationFinishManifestFileUploadEvent":

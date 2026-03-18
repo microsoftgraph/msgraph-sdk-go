@@ -55,6 +55,18 @@ func (m *Property) GetAliases()([]string) {
 func (m *Property) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetDescription gets the description property value. Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.
+// returns a *string when successful
+func (m *Property) GetDescription()(*string) {
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,6 +84,16 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
                 }
             }
             m.SetAliases(res)
+        }
+        return nil
+    }
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
         }
         return nil
     }
@@ -211,7 +233,7 @@ func (m *Property) GetIsSearchable()(*bool) {
     }
     return nil
 }
-// GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: iconUrl.
+// GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional..The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to retrieve additional values defined in this evolvable enum,For People Connectors you can include : personEmails, personAddresses, personAnniversaries, personName, personNote, personPhones, personCurrentPosition, personWebAccounts, personWebSite, personSkills, personProjects, personAccount, personAwards, personCertifications, personAssistants, personColleagues, personManager, personAlternateContacts, personEmergencyContacts.
 // returns a []Label when successful
 func (m *Property) GetLabels()([]Label) {
     val, err := m.GetBackingStore().Get("labels")
@@ -263,6 +285,12 @@ func (m *Property) GetTypeEscaped()(*PropertyType) {
 func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAliases() != nil {
         err := writer.WriteCollectionOfStringValues("aliases", m.GetAliases())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
         }
@@ -342,6 +370,13 @@ func (m *Property) SetAliases(value []string)() {
 func (m *Property) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetDescription sets the description property value. Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.
+func (m *Property) SetDescription(value *string)() {
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsQueryable sets the isQueryable property value. Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
 func (m *Property) SetIsQueryable(value *bool)() {
     err := m.GetBackingStore().Set("isQueryable", value)
@@ -370,7 +405,7 @@ func (m *Property) SetIsSearchable(value *bool)() {
         panic(err)
     }
 }
-// SetLabels sets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: iconUrl.
+// SetLabels sets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional..The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to retrieve additional values defined in this evolvable enum,For People Connectors you can include : personEmails, personAddresses, personAnniversaries, personName, personNote, personPhones, personCurrentPosition, personWebAccounts, personWebSite, personSkills, personProjects, personAccount, personAwards, personCertifications, personAssistants, personColleagues, personManager, personAlternateContacts, personEmergencyContacts.
 func (m *Property) SetLabels(value []Label)() {
     err := m.GetBackingStore().Set("labels", value)
     if err != nil {
@@ -404,6 +439,7 @@ type Propertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAliases()([]string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDescription()(*string)
     GetIsQueryable()(*bool)
     GetIsRefinable()(*bool)
     GetIsRetrievable()(*bool)
@@ -414,6 +450,7 @@ type Propertyable interface {
     GetTypeEscaped()(*PropertyType)
     SetAliases(value []string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDescription(value *string)()
     SetIsQueryable(value *bool)()
     SetIsRefinable(value *bool)()
     SetIsRetrievable(value *bool)()

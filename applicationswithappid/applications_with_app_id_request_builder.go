@@ -21,7 +21,7 @@ type ApplicationsWithAppIdRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplicationsWithAppIdRequestBuilderGetQueryParameters get the properties and relationships of an application object.
+// ApplicationsWithAppIdRequestBuilderGetQueryParameters get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
 type ApplicationsWithAppIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -60,7 +60,7 @@ func NewApplicationsWithAppIdRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationsWithAppIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+// Delete delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -79,7 +79,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get the properties and relationships of an application object.
+// Get get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
 // returns a Applicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +102,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// Patch create a new application object if it doesn't exist, or update the properties of an existing application object.
+// Patch create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 // returns a Applicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -125,7 +125,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Patch(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// ToDeleteRequestInformation delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+// ToDeleteRequestInformation delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
 // returns a *RequestInformation when successful
 func (m *ApplicationsWithAppIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationsWithAppIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +136,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) ToDeleteRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of an application object.
+// ToGetRequestInformation get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
 // returns a *RequestInformation when successful
 func (m *ApplicationsWithAppIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationsWithAppIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +150,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation create a new application object if it doesn't exist, or update the properties of an existing application object.
+// ToPatchRequestInformation create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 // returns a *RequestInformation when successful
 func (m *ApplicationsWithAppIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationsWithAppIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

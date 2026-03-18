@@ -130,6 +130,11 @@ func (m *ItemMessagesRequestBuilder) Post(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemMessagesReplyWithQuoteRequestBuilder when successful
+func (m *ItemMessagesRequestBuilder) ReplyWithQuote()(*ItemMessagesReplyWithQuoteRequestBuilder) {
+    return NewItemMessagesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
 // returns a *RequestInformation when successful
 func (m *ItemMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

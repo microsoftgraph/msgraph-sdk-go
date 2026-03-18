@@ -52,6 +52,22 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["profileSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateProfileSourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ProfileSourceable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ProfileSourceable)
+                }
+            }
+            m.SetProfileSources(res)
+        }
+        return nil
+    }
     res["pronouns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePronounsSettingsFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +101,18 @@ func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyab
     }
     if val != nil {
         return val.([]ProfileCardPropertyable)
+    }
+    return nil
+}
+// GetProfileSources gets the profileSources property value. A collection of profile source settings configured by an administrator in an organization.
+// returns a []ProfileSourceable when successful
+func (m *PeopleAdminSettings) GetProfileSources()([]ProfileSourceable) {
+    val, err := m.GetBackingStore().Get("profileSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProfileSourceable)
     }
     return nil
 }
@@ -124,6 +152,18 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetProfileSources() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileSources()))
+        for i, v := range m.GetProfileSources() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("profileSources", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("pronouns", m.GetPronouns())
         if err != nil {
@@ -146,6 +186,13 @@ func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardProper
         panic(err)
     }
 }
+// SetProfileSources sets the profileSources property value. A collection of profile source settings configured by an administrator in an organization.
+func (m *PeopleAdminSettings) SetProfileSources(value []ProfileSourceable)() {
+    err := m.GetBackingStore().Set("profileSources", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPronouns sets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
 func (m *PeopleAdminSettings) SetPronouns(value PronounsSettingsable)() {
     err := m.GetBackingStore().Set("pronouns", value)
@@ -158,8 +205,10 @@ type PeopleAdminSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemInsights()(InsightsSettingsable)
     GetProfileCardProperties()([]ProfileCardPropertyable)
+    GetProfileSources()([]ProfileSourceable)
     GetPronouns()(PronounsSettingsable)
     SetItemInsights(value InsightsSettingsable)()
     SetProfileCardProperties(value []ProfileCardPropertyable)()
+    SetProfileSources(value []ProfileSourceable)()
     SetPronouns(value PronounsSettingsable)()
 }

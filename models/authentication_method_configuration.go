@@ -40,6 +40,8 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
                         return NewFido2AuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration":
                         return NewMicrosoftAuthenticatorAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.qrCodePinAuthenticationMethodConfiguration":
+                        return NewQrCodePinAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.smsAuthenticationMethodConfiguration":
                         return NewSmsAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.softwareOathAuthenticationMethodConfiguration":

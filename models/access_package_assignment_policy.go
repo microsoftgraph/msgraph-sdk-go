@@ -23,7 +23,7 @@ func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
 func CreateAccessPackageAssignmentPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentPolicy(), nil
 }
-// GetAccessPackage gets the accessPackage property value. Access package containing this policy. Read-only.  Supports $expand.
+// GetAccessPackage gets the accessPackage property value. Access package containing this policy. Read-only. Supports $expand.
 // returns a AccessPackageable when successful
 func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackage")
@@ -35,7 +35,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     }
     return nil
 }
-// GetAllowedTargetScope gets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
+// GetAllowedTargetScope gets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, allDirectoryAgentIdentities, unknownFutureValue.
 // returns a *AllowedTargetScope when successful
 func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AllowedTargetScope) {
     val, err := m.GetBackingStore().Get("allowedTargetScope")
@@ -522,14 +522,14 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAccessPackage sets the accessPackage property value. Access package containing this policy. Read-only.  Supports $expand.
+// SetAccessPackage sets the accessPackage property value. Access package containing this policy. Read-only. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable)() {
     err := m.GetBackingStore().Set("accessPackage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedTargetScope sets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
+// SetAllowedTargetScope sets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, allDirectoryAgentIdentities, unknownFutureValue.
 func (m *AccessPackageAssignmentPolicy) SetAllowedTargetScope(value *AllowedTargetScope)() {
     err := m.GetBackingStore().Set("allowedTargetScope", value)
     if err != nil {
