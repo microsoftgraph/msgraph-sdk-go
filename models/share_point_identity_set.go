@@ -38,6 +38,16 @@ func (m *SharePointIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["sharePointGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSharePointGroupIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharePointGroup(val.(SharePointGroupIdentityable))
+        }
+        return nil
+    }
     res["siteGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharePointIdentityFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +79,18 @@ func (m *SharePointIdentitySet) GetGroup()(Identityable) {
     }
     if val != nil {
         return val.(Identityable)
+    }
+    return nil
+}
+// GetSharePointGroup gets the sharePointGroup property value. The sharePointGroup property
+// returns a SharePointGroupIdentityable when successful
+func (m *SharePointIdentitySet) GetSharePointGroup()(SharePointGroupIdentityable) {
+    val, err := m.GetBackingStore().Get("sharePointGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharePointGroupIdentityable)
     }
     return nil
 }
@@ -109,6 +131,12 @@ func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteObjectValue("sharePointGroup", m.GetSharePointGroup())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("siteGroup", m.GetSiteGroup())
         if err != nil {
             return err
@@ -125,6 +153,13 @@ func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetGroup sets the group property value. The group associated with this action. Optional.
 func (m *SharePointIdentitySet) SetGroup(value Identityable)() {
     err := m.GetBackingStore().Set("group", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSharePointGroup sets the sharePointGroup property value. The sharePointGroup property
+func (m *SharePointIdentitySet) SetSharePointGroup(value SharePointGroupIdentityable)() {
+    err := m.GetBackingStore().Set("sharePointGroup", value)
     if err != nil {
         panic(err)
     }
@@ -147,9 +182,11 @@ type SharePointIdentitySetable interface {
     IdentitySetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetGroup()(Identityable)
+    GetSharePointGroup()(SharePointGroupIdentityable)
     GetSiteGroup()(SharePointIdentityable)
     GetSiteUser()(SharePointIdentityable)
     SetGroup(value Identityable)()
+    SetSharePointGroup(value SharePointGroupIdentityable)()
     SetSiteGroup(value SharePointIdentityable)()
     SetSiteUser(value SharePointIdentityable)()
 }

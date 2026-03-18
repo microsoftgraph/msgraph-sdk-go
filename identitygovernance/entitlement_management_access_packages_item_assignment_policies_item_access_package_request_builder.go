@@ -14,7 +14,7 @@ import (
 type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderGetQueryParameters access package containing this policy. Read-only.  Supports $expand.
+// EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderGetQueryParameters access package containing this policy. Read-only. Supports $expand.
 type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPacka
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get access package containing this policy. Read-only.  Supports $expand.
+// Get access package containing this policy. Read-only. Supports $expand.
 // returns a AccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
@@ -63,7 +63,7 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPack
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable), nil
 }
-// ToGetRequestInformation access package containing this policy. Read-only.  Supports $expand.
+// ToGetRequestInformation access package containing this policy. Read-only. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

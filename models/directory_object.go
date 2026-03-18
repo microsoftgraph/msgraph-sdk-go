@@ -37,6 +37,14 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewActivityBasedTimeoutPolicy(), nil
                     case "#microsoft.graph.administrativeUnit":
                         return NewAdministrativeUnit(), nil
+                    case "#microsoft.graph.agentIdentity":
+                        return NewAgentIdentity(), nil
+                    case "#microsoft.graph.agentIdentityBlueprint":
+                        return NewAgentIdentityBlueprint(), nil
+                    case "#microsoft.graph.agentIdentityBlueprintPrincipal":
+                        return NewAgentIdentityBlueprintPrincipal(), nil
+                    case "#microsoft.graph.agentUser":
+                        return NewAgentUser(), nil
                     case "#microsoft.graph.application":
                         return NewApplication(), nil
                     case "#microsoft.graph.appManagementPolicy":
