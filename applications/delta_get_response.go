@@ -28,15 +28,15 @@ func CreateDeltaGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *DeltaGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseDeltaFunctionResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateApplicationFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, len(val))
+            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable)
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)
                 }
             }
             m.SetValue(res)
@@ -46,14 +46,14 @@ func (m *DeltaGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetValue gets the value property value. The value property
-// returns a []Applicationable when successful
-func (m *DeltaGetResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable) {
+// returns a []DirectoryObjectable when successful
+func (m *DeltaGetResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable)
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)
     }
     return nil
 }
@@ -78,7 +78,7 @@ func (m *DeltaGetResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *DeltaGetResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable)() {
+func (m *DeltaGetResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
@@ -87,6 +87,6 @@ func (m *DeltaGetResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba
 type DeltaGetResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable)
-    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable)()
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)()
 }

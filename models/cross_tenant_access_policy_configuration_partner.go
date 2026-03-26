@@ -38,6 +38,18 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetAdditionalData()(map[st
     }
     return val.(map[string]any)
 }
+// GetAppServiceConnectInbound gets the appServiceConnectInbound property value. The appServiceConnectInbound property
+// returns a CrossTenantAccessPolicyAppServiceConnectSettingable when successful
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetAppServiceConnectInbound()(CrossTenantAccessPolicyAppServiceConnectSettingable) {
+    val, err := m.GetBackingStore().Get("appServiceConnectInbound")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantAccessPolicyAppServiceConnectSettingable)
+    }
+    return nil
+}
 // GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
 // returns a InboundOutboundPolicyConfigurationable when successful
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable) {
@@ -107,6 +119,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetBackingStore()(ie8677ce
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["appServiceConnectInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyAppServiceConnectSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppServiceConnectInbound(val.(CrossTenantAccessPolicyAppServiceConnectSettingable))
+        }
+        return nil
+    }
     res["automaticUserConsentSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInboundOutboundPolicyConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -197,6 +219,26 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["m365CollaborationInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyM365CollaborationInboundSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetM365CollaborationInbound(val.(CrossTenantAccessPolicyM365CollaborationInboundSettingable))
+        }
+        return nil
+    }
+    res["m365CollaborationOutbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyM365CollaborationOutboundSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetM365CollaborationOutbound(val.(CrossTenantAccessPolicyM365CollaborationOutboundSettingable))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -277,6 +319,30 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bo
     }
     return nil
 }
+// GetM365CollaborationInbound gets the m365CollaborationInbound property value. The m365CollaborationInbound property
+// returns a CrossTenantAccessPolicyM365CollaborationInboundSettingable when successful
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetM365CollaborationInbound()(CrossTenantAccessPolicyM365CollaborationInboundSettingable) {
+    val, err := m.GetBackingStore().Get("m365CollaborationInbound")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantAccessPolicyM365CollaborationInboundSettingable)
+    }
+    return nil
+}
+// GetM365CollaborationOutbound gets the m365CollaborationOutbound property value. The m365CollaborationOutbound property
+// returns a CrossTenantAccessPolicyM365CollaborationOutboundSettingable when successful
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetM365CollaborationOutbound()(CrossTenantAccessPolicyM365CollaborationOutboundSettingable) {
+    val, err := m.GetBackingStore().Get("m365CollaborationOutbound")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantAccessPolicyM365CollaborationOutboundSettingable)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetOdataType()(*string) {
@@ -315,6 +381,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantRestrictions()(Cr
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("appServiceConnectInbound", m.GetAppServiceConnectInbound())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("automaticUserConsentSettings", m.GetAutomaticUserConsentSettings())
         if err != nil {
@@ -370,6 +442,18 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
         }
     }
     {
+        err := writer.WriteObjectValue("m365CollaborationInbound", m.GetM365CollaborationInbound())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("m365CollaborationOutbound", m.GetM365CollaborationOutbound())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -398,6 +482,13 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAppServiceConnectInbound sets the appServiceConnectInbound property value. The appServiceConnectInbound property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetAppServiceConnectInbound(value CrossTenantAccessPolicyAppServiceConnectSettingable)() {
+    err := m.GetBackingStore().Set("appServiceConnectInbound", value)
     if err != nil {
         panic(err)
     }
@@ -469,6 +560,20 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsServiceProvider(value
         panic(err)
     }
 }
+// SetM365CollaborationInbound sets the m365CollaborationInbound property value. The m365CollaborationInbound property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetM365CollaborationInbound(value CrossTenantAccessPolicyM365CollaborationInboundSettingable)() {
+    err := m.GetBackingStore().Set("m365CollaborationInbound", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetM365CollaborationOutbound sets the m365CollaborationOutbound property value. The m365CollaborationOutbound property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetM365CollaborationOutbound(value CrossTenantAccessPolicyM365CollaborationOutboundSettingable)() {
+    err := m.GetBackingStore().Set("m365CollaborationOutbound", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -494,6 +599,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppServiceConnectInbound()(CrossTenantAccessPolicyAppServiceConnectSettingable)
     GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable)
     GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bCollaborationOutbound()(CrossTenantAccessPolicyB2BSettingable)
@@ -504,9 +610,12 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsInMultiTenantOrganization()(*bool)
     GetIsServiceProvider()(*bool)
+    GetM365CollaborationInbound()(CrossTenantAccessPolicyM365CollaborationInboundSettingable)
+    GetM365CollaborationOutbound()(CrossTenantAccessPolicyM365CollaborationOutboundSettingable)
     GetOdataType()(*string)
     GetTenantId()(*string)
     GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
+    SetAppServiceConnectInbound(value CrossTenantAccessPolicyAppServiceConnectSettingable)()
     SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
@@ -517,6 +626,8 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetIsInMultiTenantOrganization(value *bool)()
     SetIsServiceProvider(value *bool)()
+    SetM365CollaborationInbound(value CrossTenantAccessPolicyM365CollaborationInboundSettingable)()
+    SetM365CollaborationOutbound(value CrossTenantAccessPolicyM365CollaborationOutboundSettingable)()
     SetOdataType(value *string)()
     SetTenantId(value *string)()
     SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()

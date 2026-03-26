@@ -124,6 +124,11 @@ func (m *ItemTeamChannelsItemMessagesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemTeamChannelsItemMessagesReplyWithQuoteRequestBuilder when successful
+func (m *ItemTeamChannelsItemMessagesRequestBuilder) ReplyWithQuote()(*ItemTeamChannelsItemMessagesReplyWithQuoteRequestBuilder) {
+    return NewItemTeamChannelsItemMessagesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

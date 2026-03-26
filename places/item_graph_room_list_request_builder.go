@@ -14,7 +14,7 @@ import (
 type ItemGraphRoomListRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphRoomListRequestBuilderGetQueryParameters get the item of type microsoft.graph.place as microsoft.graph.roomList
+// ItemGraphRoomListRequestBuilderGetQueryParameters read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
 type ItemGraphRoomListRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,9 +48,12 @@ func NewItemGraphRoomListRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphRoomListRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the item of type microsoft.graph.place as microsoft.graph.roomList
+// Get read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
 // returns a RoomListable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-get?view=graph-rest-1.0
 func (m *ItemGraphRoomListRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphRoomListRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoomListable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *ItemGraphRoomListRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *ItemGraphRoomListRequestBuilder) Rooms()(*ItemGraphRoomListRoomsRequestBuilder) {
     return NewItemGraphRoomListRoomsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get the item of type microsoft.graph.place as microsoft.graph.roomList
+// ToGetRequestInformation read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
 // returns a *RequestInformation when successful
 func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
