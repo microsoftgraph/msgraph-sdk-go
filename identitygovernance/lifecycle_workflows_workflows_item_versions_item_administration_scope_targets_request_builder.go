@@ -14,7 +14,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilderGetQueryParameters get administrationScopeTargets from identityGovernance
+// LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilderGetQueryParameters the administrative units in the scope of the workflow. Optional. Supports $expand.
 type LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewLifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsReq
 func (m *LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get administrationScopeTargets from identityGovernance
+// Get the administrative units in the scope of the workflow. Optional. Supports $expand.
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRe
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation get administrationScopeTargets from identityGovernance
+// ToGetRequestInformation the administrative units in the scope of the workflow. Optional. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemVersionsItemAdministrationScopeTargetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

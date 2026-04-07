@@ -42,7 +42,7 @@ type ItemSponsorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSponsorsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the sponsors property of the microsoft.graph.user entity.
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.sponsors.item collection
 // returns a *ItemSponsorsDirectoryObjectItemRequestBuilder when successful
 func (m *ItemSponsorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemSponsorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -94,6 +94,11 @@ func (m *ItemSponsorsRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// Ref provides operations to manage the collection of user entities.
+// returns a *ItemSponsorsRefRequestBuilder when successful
+func (m *ItemSponsorsRequestBuilder) Ref()(*ItemSponsorsRefRequestBuilder) {
+    return NewItemSponsorsRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
 // returns a *RequestInformation when successful

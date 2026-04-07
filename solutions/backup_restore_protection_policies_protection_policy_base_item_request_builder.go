@@ -67,7 +67,7 @@ func NewBackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder(ra
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) Deactivate()(*BackupRestoreProtectionPoliciesItemDeactivateRequestBuilder) {
     return NewBackupRestoreProtectionPoliciesItemDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a protection policy. Read the properties and relationships of a protectionPolicyBase object.
+// Delete delete a protectionPolicyBase object. A protection policy can be deleted only after it was deactivated. When you delete a policy, all associated protection units are removed, and backup protection stops for the resources previously covered by the policy. Existing backup data is retained according to the retention policy before it's offboarded. You can restore data using previous restore points even after deletion.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -126,7 +126,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProtectionPolicyBaseable), nil
 }
-// ToDeleteRequestInformation delete a protection policy. Read the properties and relationships of a protectionPolicyBase object.
+// ToDeleteRequestInformation delete a protectionPolicyBase object. A protection policy can be deleted only after it was deactivated. When you delete a policy, all associated protection units are removed, and backup protection stops for the resources previously covered by the policy. Existing backup data is retained according to the retention policy before it's offboarded. You can restore data using previous restore points even after deletion.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

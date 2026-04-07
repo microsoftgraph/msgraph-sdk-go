@@ -21,7 +21,7 @@ type ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethod
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetQueryParameters represents the external authentication methods registered to a user for authentication using an external identity provider.
+// ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetQueryParameters represents the external MFA registered to a user for authentication using an external identity provider.
 type ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -76,7 +76,7 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMe
     }
     return nil
 }
-// Get represents the external authentication methods registered to a user for authentication using an external identity provider.
+// Get represents the external MFA registered to a user for authentication using an external identity provider.
 // returns a ExternalAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExternalAuthenticationMethodable, error) {
@@ -127,7 +127,7 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the external authentication methods registered to a user for authentication using an external identity provider.
+// ToGetRequestInformation represents the external MFA registered to a user for authentication using an external identity provider.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

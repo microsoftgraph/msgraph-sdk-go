@@ -43,6 +43,18 @@ func (m *Admin) GetAdditionalData()(map[string]any) {
 func (m *Admin) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetConfigurationManagement gets the configurationManagement property value. A container for Tenant Configuration Management (TCM) resources. Read-only.
+// returns a ConfigurationManagementable when successful
+func (m *Admin) GetConfigurationManagement()(ConfigurationManagementable) {
+    val, err := m.GetBackingStore().Get("configurationManagement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConfigurationManagementable)
+    }
+    return nil
+}
 // GetEdge gets the edge property value. A container for Microsoft Edge resources. Read-only.
 // returns a Edgeable when successful
 func (m *Admin) GetEdge()(Edgeable) {
@@ -71,6 +83,16 @@ func (m *Admin) GetExchange()(ExchangeAdminable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["configurationManagement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConfigurationManagementFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConfigurationManagement(val.(ConfigurationManagementable))
+        }
+        return nil
+    }
     res["edge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEdgeFromDiscriminatorValue)
         if err != nil {
@@ -228,6 +250,12 @@ func (m *Admin) GetSharepoint()(Sharepointable) {
 // Serialize serializes information the current object
 func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("configurationManagement", m.GetConfigurationManagement())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("edge", m.GetEdge())
         if err != nil {
             return err
@@ -294,6 +322,13 @@ func (m *Admin) SetAdditionalData(value map[string]any)() {
 func (m *Admin) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetConfigurationManagement sets the configurationManagement property value. A container for Tenant Configuration Management (TCM) resources. Read-only.
+func (m *Admin) SetConfigurationManagement(value ConfigurationManagementable)() {
+    err := m.GetBackingStore().Set("configurationManagement", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEdge sets the edge property value. A container for Microsoft Edge resources. Read-only.
 func (m *Admin) SetEdge(value Edgeable)() {
     err := m.GetBackingStore().Set("edge", value)
@@ -355,6 +390,7 @@ type Adminable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConfigurationManagement()(ConfigurationManagementable)
     GetEdge()(Edgeable)
     GetExchange()(ExchangeAdminable)
     GetMicrosoft365Apps()(AdminMicrosoft365Appsable)
@@ -364,6 +400,7 @@ type Adminable interface {
     GetServiceAnnouncement()(ServiceAnnouncementable)
     GetSharepoint()(Sharepointable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConfigurationManagement(value ConfigurationManagementable)()
     SetEdge(value Edgeable)()
     SetExchange(value ExchangeAdminable)()
     SetMicrosoft365Apps(value AdminMicrosoft365Appsable)()

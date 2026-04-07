@@ -14,7 +14,7 @@ import (
 type FileStorageDeletedContainersItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FileStorageDeletedContainersItemColumnsRequestBuilderGetQueryParameters get columns from storage
+// FileStorageDeletedContainersItemColumnsRequestBuilderGetQueryParameters the set of custom structured metadata supported by the fileStorageContainer. Read-write.
 type FileStorageDeletedContainersItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewFileStorageDeletedContainersItemColumnsRequestBuilder(rawUrl string, req
 func (m *FileStorageDeletedContainersItemColumnsRequestBuilder) Count()(*FileStorageDeletedContainersItemColumnsCountRequestBuilder) {
     return NewFileStorageDeletedContainersItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get columns from storage
+// Get the set of custom structured metadata supported by the fileStorageContainer. Read-write.
 // returns a ColumnDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageDeletedContainersItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *FileStorageDeletedContainersItemColumnsRequestBuilder) Post(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get columns from storage
+// ToGetRequestInformation the set of custom structured metadata supported by the fileStorageContainer. Read-write.
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

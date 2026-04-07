@@ -26,6 +26,22 @@ func CreateExchangeAdminFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExchangeAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["mailboxes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMailboxFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Mailboxable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Mailboxable)
+                }
+            }
+            m.SetMailboxes(res)
+        }
+        return nil
+    }
     res["tracing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMessageTracingRootFromDiscriminatorValue)
         if err != nil {
@@ -37,6 +53,18 @@ func (m *ExchangeAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetMailboxes gets the mailboxes property value. The mailboxes property
+// returns a []Mailboxable when successful
+func (m *ExchangeAdmin) GetMailboxes()([]Mailboxable) {
+    val, err := m.GetBackingStore().Get("mailboxes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Mailboxable)
+    }
+    return nil
 }
 // GetTracing gets the tracing property value. Represents a container for administrative resources to trace messages.
 // returns a MessageTracingRootable when successful
@@ -56,6 +84,18 @@ func (m *ExchangeAdmin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
+    if m.GetMailboxes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxes()))
+        for i, v := range m.GetMailboxes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mailboxes", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("tracing", m.GetTracing())
         if err != nil {
@@ -63,6 +103,13 @@ func (m *ExchangeAdmin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     return nil
+}
+// SetMailboxes sets the mailboxes property value. The mailboxes property
+func (m *ExchangeAdmin) SetMailboxes(value []Mailboxable)() {
+    err := m.GetBackingStore().Set("mailboxes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTracing sets the tracing property value. Represents a container for administrative resources to trace messages.
 func (m *ExchangeAdmin) SetTracing(value MessageTracingRootable)() {
@@ -74,6 +121,8 @@ func (m *ExchangeAdmin) SetTracing(value MessageTracingRootable)() {
 type ExchangeAdminable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMailboxes()([]Mailboxable)
     GetTracing()(MessageTracingRootable)
+    SetMailboxes(value []Mailboxable)()
     SetTracing(value MessageTracingRootable)()
 }
