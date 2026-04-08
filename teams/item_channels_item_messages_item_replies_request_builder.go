@@ -130,6 +130,11 @@ func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) Post(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilder when successful
+func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) ReplyWithQuote()(*ItemChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilder) {
+    return NewItemChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemMessagesItemRepliesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

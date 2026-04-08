@@ -44,6 +44,7 @@ func NewItemInsightsSharedItemLastSharedMethodRequestBuilder(rawUrl string, requ
     return NewItemInsightsSharedItemLastSharedMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get lastSharedMethod from users
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a Entityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsSharedItemLastSharedMethodRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsSharedItemLastSharedMethodRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable, error) {
@@ -64,6 +65,7 @@ func (m *ItemInsightsSharedItemLastSharedMethodRequestBuilder) Get(ctx context.C
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable), nil
 }
 // ToGetRequestInformation get lastSharedMethod from users
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *RequestInformation when successful
 func (m *ItemInsightsSharedItemLastSharedMethodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsSharedItemLastSharedMethodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *ItemInsightsSharedItemLastSharedMethodRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *ItemInsightsSharedItemLastSharedMethodRequestBuilder when successful
 func (m *ItemInsightsSharedItemLastSharedMethodRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsSharedItemLastSharedMethodRequestBuilder) {
     return NewItemInsightsSharedItemLastSharedMethodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -43,6 +43,7 @@ func NewItemInsightsUsedCountRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewItemInsightsUsedCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsUsedCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsUsedCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -63,6 +64,7 @@ func (m *ItemInsightsUsedCountRequestBuilder) Get(ctx context.Context, requestCo
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *RequestInformation when successful
 func (m *ItemInsightsUsedCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsUsedCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,6 +79,7 @@ func (m *ItemInsightsUsedCountRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *ItemInsightsUsedCountRequestBuilder when successful
 func (m *ItemInsightsUsedCountRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsUsedCountRequestBuilder) {
     return NewItemInsightsUsedCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

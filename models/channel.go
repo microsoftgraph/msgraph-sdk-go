@@ -83,6 +83,18 @@ func (m *Channel) GetEmail()(*string) {
     }
     return nil
 }
+// GetEnabledApps gets the enabledApps property value. A collection of enabled apps in the channel.
+// returns a []TeamsAppable when successful
+func (m *Channel) GetEnabledApps()([]TeamsAppable) {
+    val, err := m.GetBackingStore().Get("enabledApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAppable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,6 +152,22 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetEmail(val)
+        }
+        return nil
+    }
+    res["enabledApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamsAppable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamsAppable)
+                }
+            }
+            m.SetEnabledApps(res)
         }
         return nil
     }
@@ -453,6 +481,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetEnabledApps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnabledApps()))
+        for i, v := range m.GetEnabledApps() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("enabledApps", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("filesFolder", m.GetFilesFolder())
         if err != nil {
@@ -581,6 +621,13 @@ func (m *Channel) SetEmail(value *string)() {
         panic(err)
     }
 }
+// SetEnabledApps sets the enabledApps property value. A collection of enabled apps in the channel.
+func (m *Channel) SetEnabledApps(value []TeamsAppable)() {
+    err := m.GetBackingStore().Set("enabledApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFilesFolder sets the filesFolder property value. Metadata for the location where the channel's files are stored.
 func (m *Channel) SetFilesFolder(value DriveItemable)() {
     err := m.GetBackingStore().Set("filesFolder", value)
@@ -666,6 +713,7 @@ type Channelable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEmail()(*string)
+    GetEnabledApps()([]TeamsAppable)
     GetFilesFolder()(DriveItemable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
@@ -682,6 +730,7 @@ type Channelable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
+    SetEnabledApps(value []TeamsAppable)()
     SetFilesFolder(value DriveItemable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()

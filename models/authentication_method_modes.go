@@ -26,12 +26,13 @@ const (
     FEDERATEDSINGLEFACTOR_AUTHENTICATIONMETHODMODES = 16384
     FEDERATEDMULTIFACTOR_AUTHENTICATIONMETHODMODES = 32768
     UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODMODES = 65536
+    QRCODEPIN_AUTHENTICATIONMETHODMODES = 131072
 )
 
 func (i AuthenticationMethodModes) String() string {
     var values []string
-    options := []string{"password", "voice", "hardwareOath", "softwareOath", "sms", "fido2", "windowsHelloForBusiness", "microsoftAuthenticatorPush", "deviceBasedPush", "temporaryAccessPassOneTime", "temporaryAccessPassMultiUse", "email", "x509CertificateSingleFactor", "x509CertificateMultiFactor", "federatedSingleFactor", "federatedMultiFactor", "unknownFutureValue"}
-    for p := 0; p < 17; p++ {
+    options := []string{"password", "voice", "hardwareOath", "softwareOath", "sms", "fido2", "windowsHelloForBusiness", "microsoftAuthenticatorPush", "deviceBasedPush", "temporaryAccessPassOneTime", "temporaryAccessPassMultiUse", "email", "x509CertificateSingleFactor", "x509CertificateMultiFactor", "federatedSingleFactor", "federatedMultiFactor", "unknownFutureValue", "qrCodePin"}
+    for p := 0; p < 18; p++ {
         mantis := AuthenticationMethodModes(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -78,6 +79,8 @@ func ParseAuthenticationMethodModes(v string) (any, error) {
                 result |= FEDERATEDMULTIFACTOR_AUTHENTICATIONMETHODMODES
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODMODES
+            case "qrCodePin":
+                result |= QRCODEPIN_AUTHENTICATIONMETHODMODES
             default:
                 return nil, nil
         }

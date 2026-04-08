@@ -73,6 +73,11 @@ func (m *ItemSettingsRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
+// Exchange provides operations to manage the exchange property of the microsoft.graph.userSettings entity.
+// returns a *ItemSettingsExchangeRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) Exchange()(*ItemSettingsExchangeRequestBuilder) {
+    return NewItemSettingsExchangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get settings from users
 // returns a UserSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

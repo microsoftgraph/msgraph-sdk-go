@@ -60,7 +60,7 @@ func (m *WorkflowBase) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAdministrationScopeTargets gets the administrationScopeTargets property value. The administrationScopeTargets property
+// GetAdministrationScopeTargets gets the administrationScopeTargets property value. The administrative units in the scope of the workflow. Optional. Supports $expand.
 // returns a []DirectoryObjectable when successful
 func (m *WorkflowBase) GetAdministrationScopeTargets()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("administrationScopeTargets")
@@ -477,7 +477,7 @@ func (m *WorkflowBase) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAdministrationScopeTargets sets the administrationScopeTargets property value. The administrationScopeTargets property
+// SetAdministrationScopeTargets sets the administrationScopeTargets property value. The administrative units in the scope of the workflow. Optional. Supports $expand.
 func (m *WorkflowBase) SetAdministrationScopeTargets(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)() {
     err := m.GetBackingStore().Set("administrationScopeTargets", value)
     if err != nil {
