@@ -122,6 +122,11 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Patch(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationable), nil
 }
+// Restore provides operations to call the restore method.
+// returns a *ConditionalAccessNamedLocationsItemRestoreRequestBuilder when successful
+func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Restore()(*ConditionalAccessNamedLocationsItemRestoreRequestBuilder) {
+    return NewConditionalAccessNamedLocationsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete a countryNamedLocation object.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

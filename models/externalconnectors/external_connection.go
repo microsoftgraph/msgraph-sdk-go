@@ -59,6 +59,18 @@ func (m *ExternalConnection) GetConnectorId()(*string) {
     }
     return nil
 }
+// GetContentCategory gets the contentCategory property value. The contentCategory property
+// returns a *ContentCategory when successful
+func (m *ExternalConnection) GetContentCategory()(*ContentCategory) {
+    val, err := m.GetBackingStore().Get("contentCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ContentCategory)
+    }
+    return nil
+}
 // GetDescription gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 // returns a *string when successful
 func (m *ExternalConnection) GetDescription()(*string) {
@@ -102,6 +114,16 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetConnectorId(val)
+        }
+        return nil
+    }
+    res["contentCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseContentCategory)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentCategory(val.(*ContentCategory))
         }
         return nil
     }
@@ -313,6 +335,13 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetContentCategory() != nil {
+        cast := (*m.GetContentCategory()).String()
+        err = writer.WriteStringValue("contentCategory", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -396,6 +425,13 @@ func (m *ExternalConnection) SetConnectorId(value *string)() {
         panic(err)
     }
 }
+// SetContentCategory sets the contentCategory property value. The contentCategory property
+func (m *ExternalConnection) SetContentCategory(value *ContentCategory)() {
+    err := m.GetBackingStore().Set("contentCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -458,6 +494,7 @@ type ExternalConnectionable interface {
     GetActivitySettings()(ActivitySettingsable)
     GetConfiguration()(Configurationable)
     GetConnectorId()(*string)
+    GetContentCategory()(*ContentCategory)
     GetDescription()(*string)
     GetGroups()([]ExternalGroupable)
     GetItems()([]ExternalItemable)
@@ -469,6 +506,7 @@ type ExternalConnectionable interface {
     SetActivitySettings(value ActivitySettingsable)()
     SetConfiguration(value Configurationable)()
     SetConnectorId(value *string)()
+    SetContentCategory(value *ContentCategory)()
     SetDescription(value *string)()
     SetGroups(value []ExternalGroupable)()
     SetItems(value []ExternalItemable)()

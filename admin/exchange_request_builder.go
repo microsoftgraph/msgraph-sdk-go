@@ -93,6 +93,11 @@ func (m *ExchangeRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeAdminable), nil
 }
+// Mailboxes provides operations to manage the mailboxes property of the microsoft.graph.exchangeAdmin entity.
+// returns a *ExchangeMailboxesRequestBuilder when successful
+func (m *ExchangeRequestBuilder) Mailboxes()(*ExchangeMailboxesRequestBuilder) {
+    return NewExchangeMailboxesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property exchange in admin
 // returns a ExchangeAdminable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

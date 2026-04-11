@@ -46,6 +46,18 @@ func (m *ConditionalAccessRoot) GetAuthenticationStrength()(AuthenticationStreng
     }
     return nil
 }
+// GetDeletedItems gets the deletedItems property value. The deletedItems property
+// returns a CaPoliciesDeletableRootable when successful
+func (m *ConditionalAccessRoot) GetDeletedItems()(CaPoliciesDeletableRootable) {
+    val, err := m.GetBackingStore().Get("deletedItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CaPoliciesDeletableRootable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,6 +85,16 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetAuthenticationStrength(val.(AuthenticationStrengthRootable))
+        }
+        return nil
+    }
+    res["deletedItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCaPoliciesDeletableRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeletedItems(val.(CaPoliciesDeletableRootable))
         }
         return nil
     }
@@ -186,6 +208,12 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("deletedItems", m.GetDeletedItems())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetNamedLocations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNamedLocations()))
         for i, v := range m.GetNamedLocations() {
@@ -238,6 +266,13 @@ func (m *ConditionalAccessRoot) SetAuthenticationStrength(value AuthenticationSt
         panic(err)
     }
 }
+// SetDeletedItems sets the deletedItems property value. The deletedItems property
+func (m *ConditionalAccessRoot) SetDeletedItems(value CaPoliciesDeletableRootable)() {
+    err := m.GetBackingStore().Set("deletedItems", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNamedLocations sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
     err := m.GetBackingStore().Set("namedLocations", value)
@@ -264,11 +299,13 @@ type ConditionalAccessRootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable)
     GetAuthenticationStrength()(AuthenticationStrengthRootable)
+    GetDeletedItems()(CaPoliciesDeletableRootable)
     GetNamedLocations()([]NamedLocationable)
     GetPolicies()([]ConditionalAccessPolicyable)
     GetTemplates()([]ConditionalAccessTemplateable)
     SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)()
     SetAuthenticationStrength(value AuthenticationStrengthRootable)()
+    SetDeletedItems(value CaPoliciesDeletableRootable)()
     SetNamedLocations(value []NamedLocationable)()
     SetPolicies(value []ConditionalAccessPolicyable)()
     SetTemplates(value []ConditionalAccessTemplateable)()

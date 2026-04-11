@@ -93,6 +93,11 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Delete(ctx context.C
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*DeletedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EnabledApps provides operations to manage the enabledApps property of the microsoft.graph.channel entity.
+// returns a *DeletedTeamsItemChannelsItemEnabledAppsRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) EnabledApps()(*DeletedTeamsItemChannelsItemEnabledAppsRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemEnabledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 // returns a *DeletedTeamsItemChannelsItemFilesFolderRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) FilesFolder()(*DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) {
@@ -162,6 +167,11 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) RemoveEmail()(*Delet
 // returns a *DeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*DeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartMigration provides operations to call the startMigration method.
+// returns a *DeletedTeamsItemChannelsItemStartMigrationRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) StartMigration()(*DeletedTeamsItemChannelsItemStartMigrationRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *DeletedTeamsItemChannelsItemTabsRequestBuilder when successful

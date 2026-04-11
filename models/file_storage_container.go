@@ -36,7 +36,7 @@ func (m *FileStorageContainer) GetAssignedSensitivityLabel()(AssignedLabelable) 
     }
     return nil
 }
-// GetColumns gets the columns property value. The columns property
+// GetColumns gets the columns property value. The set of custom structured metadata supported by the fileStorageContainer. Read-write.
 // returns a []ColumnDefinitionable when successful
 func (m *FileStorageContainer) GetColumns()([]ColumnDefinitionable) {
     val, err := m.GetBackingStore().Get("columns")
@@ -272,6 +272,22 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["sharePointGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSharePointGroupFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SharePointGroupable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SharePointGroupable)
+                }
+            }
+            m.SetSharePointGroups(res)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFileStorageContainerStatus)
         if err != nil {
@@ -351,6 +367,18 @@ func (m *FileStorageContainer) GetSettings()(FileStorageContainerSettingsable) {
     }
     if val != nil {
         return val.(FileStorageContainerSettingsable)
+    }
+    return nil
+}
+// GetSharePointGroups gets the sharePointGroups property value. The sharePointGroups property
+// returns a []SharePointGroupable when successful
+func (m *FileStorageContainer) GetSharePointGroups()([]SharePointGroupable) {
+    val, err := m.GetBackingStore().Get("sharePointGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharePointGroupable)
     }
     return nil
 }
@@ -481,6 +509,18 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetSharePointGroups() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharePointGroups()))
+        for i, v := range m.GetSharePointGroups() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sharePointGroups", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -503,7 +543,7 @@ func (m *FileStorageContainer) SetAssignedSensitivityLabel(value AssignedLabelab
         panic(err)
     }
 }
-// SetColumns sets the columns property value. The columns property
+// SetColumns sets the columns property value. The set of custom structured metadata supported by the fileStorageContainer. Read-write.
 func (m *FileStorageContainer) SetColumns(value []ColumnDefinitionable)() {
     err := m.GetBackingStore().Set("columns", value)
     if err != nil {
@@ -587,6 +627,13 @@ func (m *FileStorageContainer) SetSettings(value FileStorageContainerSettingsabl
         panic(err)
     }
 }
+// SetSharePointGroups sets the sharePointGroups property value. The sharePointGroups property
+func (m *FileStorageContainer) SetSharePointGroups(value []SharePointGroupable)() {
+    err := m.GetBackingStore().Set("sharePointGroups", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.
 func (m *FileStorageContainer) SetStatus(value *FileStorageContainerStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -617,6 +664,7 @@ type FileStorageContainerable interface {
     GetPermissions()([]Permissionable)
     GetRecycleBin()(RecycleBinable)
     GetSettings()(FileStorageContainerSettingsable)
+    GetSharePointGroups()([]SharePointGroupable)
     GetStatus()(*FileStorageContainerStatus)
     GetViewpoint()(FileStorageContainerViewpointable)
     SetAssignedSensitivityLabel(value AssignedLabelable)()
@@ -632,6 +680,7 @@ type FileStorageContainerable interface {
     SetPermissions(value []Permissionable)()
     SetRecycleBin(value RecycleBinable)()
     SetSettings(value FileStorageContainerSettingsable)()
+    SetSharePointGroups(value []SharePointGroupable)()
     SetStatus(value *FileStorageContainerStatus)()
     SetViewpoint(value FileStorageContainerViewpointable)()
 }

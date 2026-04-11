@@ -15,6 +15,8 @@ func NewIpNamedLocation()(*IpNamedLocation) {
     m := &IpNamedLocation{
         NamedLocation: *NewNamedLocation(),
     }
+    odataTypeValue := "#microsoft.graph.ipNamedLocation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIpNamedLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

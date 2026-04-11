@@ -93,6 +93,11 @@ func (m *ItemPrimaryChannelRequestBuilder) Delete(ctx context.Context, requestCo
 func (m *ItemPrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
     return NewItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EnabledApps provides operations to manage the enabledApps property of the microsoft.graph.channel entity.
+// returns a *ItemPrimaryChannelEnabledAppsRequestBuilder when successful
+func (m *ItemPrimaryChannelRequestBuilder) EnabledApps()(*ItemPrimaryChannelEnabledAppsRequestBuilder) {
+    return NewItemPrimaryChannelEnabledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 // returns a *ItemPrimaryChannelFilesFolderRequestBuilder when successful
 func (m *ItemPrimaryChannelRequestBuilder) FilesFolder()(*ItemPrimaryChannelFilesFolderRequestBuilder) {
@@ -165,6 +170,11 @@ func (m *ItemPrimaryChannelRequestBuilder) RemoveEmail()(*ItemPrimaryChannelRemo
 // returns a *ItemPrimaryChannelSharedWithTeamsRequestBuilder when successful
 func (m *ItemPrimaryChannelRequestBuilder) SharedWithTeams()(*ItemPrimaryChannelSharedWithTeamsRequestBuilder) {
     return NewItemPrimaryChannelSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemPrimaryChannelStartMigrationRequestBuilder when successful
+func (m *ItemPrimaryChannelRequestBuilder) StartMigration()(*ItemPrimaryChannelStartMigrationRequestBuilder) {
+    return NewItemPrimaryChannelStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *ItemPrimaryChannelTabsRequestBuilder when successful

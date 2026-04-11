@@ -61,6 +61,9 @@ func NewExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddres
 // Deprecated: This method is obsolete. Use GetAsGetDetailsByRecipientWithRecipientAddressGetResponse instead.
 // returns a ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-1.0
 func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration)(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,6 +84,9 @@ func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddre
 // GetAsGetDetailsByRecipientWithRecipientAddressGetResponse get a list of exchangeMessageTraceDetail objects filtered on the recipient.
 // returns a ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-1.0
 func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder) GetAsGetDetailsByRecipientWithRecipientAddressGetResponse(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration)(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

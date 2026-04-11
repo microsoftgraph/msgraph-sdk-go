@@ -138,6 +138,11 @@ func (m *IdentitiesRequestBuilder) SensorCandidates()(*IdentitiesSensorCandidate
 func (m *IdentitiesRequestBuilder) Sensors()(*IdentitiesSensorsRequestBuilder) {
     return NewIdentitiesSensorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Settings provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSettingsRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) Settings()(*IdentitiesSettingsRequestBuilder) {
+    return NewIdentitiesSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property identities for security
 // returns a *RequestInformation when successful
 func (m *IdentitiesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IdentitiesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

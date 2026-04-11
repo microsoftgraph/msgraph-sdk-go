@@ -122,6 +122,11 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable), nil
 }
+// Restore provides operations to call the restore method.
+// returns a *ConditionalAccessPoliciesItemRestoreRequestBuilder when successful
+func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Restore()(*ConditionalAccessPoliciesItemRestoreRequestBuilder) {
+    return NewConditionalAccessPoliciesItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete a conditionalAccessPolicy object.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
