@@ -15,6 +15,8 @@ func NewWhatIfAnalysisResult()(*WhatIfAnalysisResult) {
     m := &WhatIfAnalysisResult{
         ConditionalAccessPolicy: *NewConditionalAccessPolicy(),
     }
+    odataTypeValue := "#microsoft.graph.whatIfAnalysisResult"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWhatIfAnalysisResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -124,6 +124,11 @@ func (m *ItemPrimaryChannelMessagesItemRepliesRequestBuilder) Post(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemPrimaryChannelMessagesItemRepliesReplyWithQuoteRequestBuilder when successful
+func (m *ItemPrimaryChannelMessagesItemRepliesRequestBuilder) ReplyWithQuote()(*ItemPrimaryChannelMessagesItemRepliesReplyWithQuoteRequestBuilder) {
+    return NewItemPrimaryChannelMessagesItemRepliesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation replies for a specified message. Supports $expand for channel messages.
 // returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelMessagesItemRepliesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelMessagesItemRepliesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -33,11 +33,11 @@ func NewItemUnsetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemUnsetVerifiedPublisherRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
+// Post unset the verifiedPublisher previously set on an agentIdentityBlueprint, removing all verified publisher properties. For more information, see Publisher verification.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentidentityblueprint-unsetverifiedpublisher?view=graph-rest-1.0
 func (m *ItemUnsetVerifiedPublisherRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemUnsetVerifiedPublisherRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -52,7 +52,7 @@ func (m *ItemUnsetVerifiedPublisherRequestBuilder) Post(ctx context.Context, req
     }
     return nil
 }
-// ToPostRequestInformation unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
+// ToPostRequestInformation unset the verifiedPublisher previously set on an agentIdentityBlueprint, removing all verified publisher properties. For more information, see Publisher verification.
 // returns a *RequestInformation when successful
 func (m *ItemUnsetVerifiedPublisherRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemUnsetVerifiedPublisherRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

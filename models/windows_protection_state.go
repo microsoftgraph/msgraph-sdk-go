@@ -36,6 +36,18 @@ func (m *WindowsProtectionState) GetAntiMalwareVersion()(*string) {
     }
     return nil
 }
+// GetControlledConfigurationEnabled gets the controlledConfigurationEnabled property value. When TRUE indicates the Windows Defender controlled configuration feature is enabled, when FALSE indicates the Windows Defender controlled configuration feature is not enabled. Defaults to setting on client device.
+// returns a *bool when successful
+func (m *WindowsProtectionState) GetControlledConfigurationEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("controlledConfigurationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetDetectedMalwareState gets the detectedMalwareState property value. Device malware list
 // returns a []WindowsDeviceMalwareStateable when successful
 func (m *WindowsProtectionState) GetDetectedMalwareState()([]WindowsDeviceMalwareStateable) {
@@ -83,6 +95,16 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetAntiMalwareVersion(val)
+        }
+        return nil
+    }
+    res["controlledConfigurationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetControlledConfigurationEnabled(val)
         }
         return nil
     }
@@ -510,6 +532,12 @@ func (m *WindowsProtectionState) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("controlledConfigurationEnabled", m.GetControlledConfigurationEnabled())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDetectedMalwareState() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetectedMalwareState()))
         for i, v := range m.GetDetectedMalwareState() {
@@ -643,6 +671,13 @@ func (m *WindowsProtectionState) Serialize(writer i878a80d2330e89d26896388a3f487
 // SetAntiMalwareVersion sets the antiMalwareVersion property value. Current anti malware version
 func (m *WindowsProtectionState) SetAntiMalwareVersion(value *string)() {
     err := m.GetBackingStore().Set("antiMalwareVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetControlledConfigurationEnabled sets the controlledConfigurationEnabled property value. When TRUE indicates the Windows Defender controlled configuration feature is enabled, when FALSE indicates the Windows Defender controlled configuration feature is not enabled. Defaults to setting on client device.
+func (m *WindowsProtectionState) SetControlledConfigurationEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("controlledConfigurationEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -791,6 +826,7 @@ type WindowsProtectionStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAntiMalwareVersion()(*string)
+    GetControlledConfigurationEnabled()(*bool)
     GetDetectedMalwareState()([]WindowsDeviceMalwareStateable)
     GetDeviceState()(*WindowsDeviceHealthState)
     GetEngineVersion()(*string)
@@ -812,6 +848,7 @@ type WindowsProtectionStateable interface {
     GetSignatureVersion()(*string)
     GetTamperProtectionEnabled()(*bool)
     SetAntiMalwareVersion(value *string)()
+    SetControlledConfigurationEnabled(value *bool)()
     SetDetectedMalwareState(value []WindowsDeviceMalwareStateable)()
     SetDeviceState(value *WindowsDeviceHealthState)()
     SetEngineVersion(value *string)()

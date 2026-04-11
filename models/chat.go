@@ -149,6 +149,16 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["migrationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMigrationMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMigrationMode(val.(*MigrationMode))
+        }
+        return nil
+    }
     res["onlineMeetingInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue)
         if err != nil {
@@ -156,6 +166,16 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetOnlineMeetingInfo(val.(TeamworkOnlineMeetingInfoable))
+        }
+        return nil
+    }
+    res["originalCreatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOriginalCreatedDateTime(val)
         }
         return nil
     }
@@ -321,6 +341,18 @@ func (m *Chat) GetMessages()([]ChatMessageable) {
     }
     return nil
 }
+// GetMigrationMode gets the migrationMode property value. The migrationMode property
+// returns a *MigrationMode when successful
+func (m *Chat) GetMigrationMode()(*MigrationMode) {
+    val, err := m.GetBackingStore().Get("migrationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MigrationMode)
+    }
+    return nil
+}
 // GetOnlineMeetingInfo gets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 // returns a TeamworkOnlineMeetingInfoable when successful
 func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
@@ -330,6 +362,18 @@ func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
     }
     if val != nil {
         return val.(TeamworkOnlineMeetingInfoable)
+    }
+    return nil
+}
+// GetOriginalCreatedDateTime gets the originalCreatedDateTime property value. The originalCreatedDateTime property
+// returns a *Time when successful
+func (m *Chat) GetOriginalCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("originalCreatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -490,8 +534,21 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetMigrationMode() != nil {
+        cast := (*m.GetMigrationMode()).String()
+        err = writer.WriteStringValue("migrationMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("onlineMeetingInfo", m.GetOnlineMeetingInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("originalCreatedDateTime", m.GetOriginalCreatedDateTime())
         if err != nil {
             return err
         }
@@ -614,9 +671,23 @@ func (m *Chat) SetMessages(value []ChatMessageable)() {
         panic(err)
     }
 }
+// SetMigrationMode sets the migrationMode property value. The migrationMode property
+func (m *Chat) SetMigrationMode(value *MigrationMode)() {
+    err := m.GetBackingStore().Set("migrationMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnlineMeetingInfo sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 func (m *Chat) SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)() {
     err := m.GetBackingStore().Set("onlineMeetingInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOriginalCreatedDateTime sets the originalCreatedDateTime property value. The originalCreatedDateTime property
+func (m *Chat) SetOriginalCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("originalCreatedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -681,7 +752,9 @@ type Chatable interface {
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMembers()([]ConversationMemberable)
     GetMessages()([]ChatMessageable)
+    GetMigrationMode()(*MigrationMode)
     GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable)
+    GetOriginalCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPermissionGrants()([]ResourceSpecificPermissionGrantable)
     GetPinnedMessages()([]PinnedChatMessageInfoable)
     GetTabs()([]TeamsTabable)
@@ -697,7 +770,9 @@ type Chatable interface {
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMembers(value []ConversationMemberable)()
     SetMessages(value []ChatMessageable)()
+    SetMigrationMode(value *MigrationMode)()
     SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)()
+    SetOriginalCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPermissionGrants(value []ResourceSpecificPermissionGrantable)()
     SetPinnedMessages(value []PinnedChatMessageInfoable)()
     SetTabs(value []TeamsTabable)()

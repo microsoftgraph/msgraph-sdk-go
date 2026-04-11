@@ -163,6 +163,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Rec
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Restore()(*FileStorageDeletedContainersItemRestoreRequestBuilder) {
     return NewFileStorageDeletedContainersItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SharePointGroups provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageDeletedContainersItemSharePointGroupsRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) SharePointGroups()(*FileStorageDeletedContainersItemSharePointGroupsRequestBuilder) {
+    return NewFileStorageDeletedContainersItemSharePointGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property deletedContainers for storage
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersFileStorageContainerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

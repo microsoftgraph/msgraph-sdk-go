@@ -44,6 +44,11 @@ type ItemChatsChatItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CompleteMigration provides operations to call the completeMigration method.
+// returns a *ItemChatsItemCompleteMigrationRequestBuilder when successful
+func (m *ItemChatsChatItemRequestBuilder) CompleteMigration()(*ItemChatsItemCompleteMigrationRequestBuilder) {
+    return NewItemChatsItemCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemChatsChatItemRequestBuilderInternal instantiates a new ItemChatsChatItemRequestBuilder and sets the default values.
 func NewItemChatsChatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsChatItemRequestBuilder) {
     m := &ItemChatsChatItemRequestBuilder{
@@ -170,6 +175,11 @@ func (m *ItemChatsChatItemRequestBuilder) RemoveAllAccessForUser()(*ItemChatsIte
 // returns a *ItemChatsItemSendActivityNotificationRequestBuilder when successful
 func (m *ItemChatsChatItemRequestBuilder) SendActivityNotification()(*ItemChatsItemSendActivityNotificationRequestBuilder) {
     return NewItemChatsItemSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemChatsItemStartMigrationRequestBuilder when successful
+func (m *ItemChatsChatItemRequestBuilder) StartMigration()(*ItemChatsItemStartMigrationRequestBuilder) {
+    return NewItemChatsItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 // returns a *ItemChatsItemTabsRequestBuilder when successful

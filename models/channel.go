@@ -83,6 +83,18 @@ func (m *Channel) GetEmail()(*string) {
     }
     return nil
 }
+// GetEnabledApps gets the enabledApps property value. A collection of enabled apps in the channel.
+// returns a []TeamsAppable when successful
+func (m *Channel) GetEnabledApps()([]TeamsAppable) {
+    val, err := m.GetBackingStore().Get("enabledApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAppable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,6 +152,22 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetEmail(val)
+        }
+        return nil
+    }
+    res["enabledApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamsAppable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamsAppable)
+                }
+            }
+            m.SetEnabledApps(res)
         }
         return nil
     }
@@ -212,6 +240,26 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
                 }
             }
             m.SetMessages(res)
+        }
+        return nil
+    }
+    res["migrationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMigrationMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMigrationMode(val.(*MigrationMode))
+        }
+        return nil
+    }
+    res["originalCreatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOriginalCreatedDateTime(val)
         }
         return nil
     }
@@ -351,6 +399,30 @@ func (m *Channel) GetMessages()([]ChatMessageable) {
     }
     return nil
 }
+// GetMigrationMode gets the migrationMode property value. The migrationMode property
+// returns a *MigrationMode when successful
+func (m *Channel) GetMigrationMode()(*MigrationMode) {
+    val, err := m.GetBackingStore().Get("migrationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MigrationMode)
+    }
+    return nil
+}
+// GetOriginalCreatedDateTime gets the originalCreatedDateTime property value. The originalCreatedDateTime property
+// returns a *Time when successful
+func (m *Channel) GetOriginalCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("originalCreatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetSharedWithTeams gets the sharedWithTeams property value. A collection of teams with which a channel is shared.
 // returns a []SharedWithChannelTeamInfoable when successful
 func (m *Channel) GetSharedWithTeams()([]SharedWithChannelTeamInfoable) {
@@ -453,6 +525,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetEnabledApps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnabledApps()))
+        for i, v := range m.GetEnabledApps() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("enabledApps", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("filesFolder", m.GetFilesFolder())
         if err != nil {
@@ -498,6 +582,19 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             }
         }
         err = writer.WriteCollectionOfObjectValues("messages", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMigrationMode() != nil {
+        cast := (*m.GetMigrationMode()).String()
+        err = writer.WriteStringValue("migrationMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("originalCreatedDateTime", m.GetOriginalCreatedDateTime())
         if err != nil {
             return err
         }
@@ -581,6 +678,13 @@ func (m *Channel) SetEmail(value *string)() {
         panic(err)
     }
 }
+// SetEnabledApps sets the enabledApps property value. A collection of enabled apps in the channel.
+func (m *Channel) SetEnabledApps(value []TeamsAppable)() {
+    err := m.GetBackingStore().Set("enabledApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFilesFolder sets the filesFolder property value. Metadata for the location where the channel's files are stored.
 func (m *Channel) SetFilesFolder(value DriveItemable)() {
     err := m.GetBackingStore().Set("filesFolder", value)
@@ -619,6 +723,20 @@ func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
 // SetMessages sets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
 func (m *Channel) SetMessages(value []ChatMessageable)() {
     err := m.GetBackingStore().Set("messages", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMigrationMode sets the migrationMode property value. The migrationMode property
+func (m *Channel) SetMigrationMode(value *MigrationMode)() {
+    err := m.GetBackingStore().Set("migrationMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOriginalCreatedDateTime sets the originalCreatedDateTime property value. The originalCreatedDateTime property
+func (m *Channel) SetOriginalCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("originalCreatedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -666,12 +784,15 @@ type Channelable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEmail()(*string)
+    GetEnabledApps()([]TeamsAppable)
     GetFilesFolder()(DriveItemable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
+    GetMigrationMode()(*MigrationMode)
+    GetOriginalCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
     GetSummary()(ChannelSummaryable)
     GetTabs()([]TeamsTabable)
@@ -682,12 +803,15 @@ type Channelable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
+    SetEnabledApps(value []TeamsAppable)()
     SetFilesFolder(value DriveItemable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()
+    SetMigrationMode(value *MigrationMode)()
+    SetOriginalCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()
     SetSummary(value ChannelSummaryable)()
     SetTabs(value []TeamsTabable)()
