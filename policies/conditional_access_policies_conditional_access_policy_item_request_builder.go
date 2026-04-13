@@ -24,9 +24,9 @@ type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteReq
 // ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters the custom rules that define an access scenario.
 type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration struct {
@@ -112,6 +112,11 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Pat
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable), nil
+}
+// Restore provides operations to call the restore method.
+// returns a *ConditionalAccessPoliciesItemRestoreRequestBuilder when successful
+func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Restore()(*ConditionalAccessPoliciesItemRestoreRequestBuilder) {
+    return NewConditionalAccessPoliciesItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property conditionalAccessPolicies for policies
 // returns a *RequestInformation when successful

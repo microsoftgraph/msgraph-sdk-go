@@ -17,9 +17,9 @@ type ItemItemsBaseItemItemRequestBuilder struct {
 // ItemItemsBaseItemItemRequestBuilderGetQueryParameters used to address any item contained in this site. This collection can't be enumerated.
 type ItemItemsBaseItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsBaseItemItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsBaseItemItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilde
 // UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetQueryParameters the scores and insights for the resource performance metrics.
 type UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetRequestConfiguration struct {

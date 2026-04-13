@@ -16,9 +16,9 @@ type AttackSimulationOperationsCountRequestBuilder struct {
 // AttackSimulationOperationsCountRequestBuilderGetQueryParameters get the number of the resource
 type AttackSimulationOperationsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // AttackSimulationOperationsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AttackSimulationOperationsCountRequestBuilderGetRequestConfiguration struct {

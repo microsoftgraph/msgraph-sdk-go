@@ -24,9 +24,9 @@ type PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderDeleteRequestConf
 // PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetQueryParameters get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 type PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetRequestConfiguration struct {

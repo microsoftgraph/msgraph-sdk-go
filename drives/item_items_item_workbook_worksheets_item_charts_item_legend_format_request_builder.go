@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatRequestBuilderDele
 // ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatRequestBuilderGetQueryParameters represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatRequestBuilderGetRequestConfiguration struct {

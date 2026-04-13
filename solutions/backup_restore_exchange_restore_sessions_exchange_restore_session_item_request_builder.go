@@ -24,9 +24,9 @@ type BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilde
 // BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilderGetQueryParameters the list of Exchange restore sessions available in the tenant.
 type BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilderGetRequestConfiguration struct {

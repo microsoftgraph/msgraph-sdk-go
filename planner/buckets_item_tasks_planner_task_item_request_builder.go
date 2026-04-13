@@ -24,9 +24,9 @@ type BucketsItemTasksPlannerTaskItemRequestBuilderDeleteRequestConfiguration str
 // BucketsItemTasksPlannerTaskItemRequestBuilderGetQueryParameters read-only. Nullable. The collection of tasks in the bucket.
 type BucketsItemTasksPlannerTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BucketsItemTasksPlannerTaskItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BucketsItemTasksPlannerTaskItemRequestBuilderGetRequestConfiguration struct {

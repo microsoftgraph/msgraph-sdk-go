@@ -16,9 +16,9 @@ type ManagedAppPoliciesCountRequestBuilder struct {
 // ManagedAppPoliciesCountRequestBuilderGetQueryParameters get the number of the resource
 type ManagedAppPoliciesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ManagedAppPoliciesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedAppPoliciesCountRequestBuilderGetRequestConfiguration struct {

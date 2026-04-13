@@ -17,9 +17,9 @@ type SharesItemJobsItemTasksItemTriggerRequestBuilder struct {
 // SharesItemJobsItemTasksItemTriggerRequestBuilderGetQueryParameters the printTaskTrigger that triggered this task's execution. Read-only.
 type SharesItemJobsItemTasksItemTriggerRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SharesItemJobsItemTasksItemTriggerRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SharesItemJobsItemTasksItemTriggerRequestBuilderGetRequestConfiguration struct {

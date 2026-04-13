@@ -16,9 +16,9 @@ type MobileAppsGraphIosVppAppCountRequestBuilder struct {
 // MobileAppsGraphIosVppAppCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppsGraphIosVppAppCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppsGraphIosVppAppCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsGraphIosVppAppCountRequestBuilderGetRequestConfiguration struct {

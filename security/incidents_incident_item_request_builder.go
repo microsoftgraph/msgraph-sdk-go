@@ -24,9 +24,9 @@ type IncidentsIncidentItemRequestBuilderDeleteRequestConfiguration struct {
 // IncidentsIncidentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.
 type IncidentsIncidentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IncidentsIncidentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IncidentsIncidentItemRequestBuilderGetRequestConfiguration struct {

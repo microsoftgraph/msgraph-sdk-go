@@ -24,9 +24,9 @@ type ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration struct
 // ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters retrieve the properties and relationships of a shiftPreferences object by ID.
 type ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration struct {

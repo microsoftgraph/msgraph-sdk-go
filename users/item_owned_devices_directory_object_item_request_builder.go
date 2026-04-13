@@ -17,9 +17,9 @@ type ItemOwnedDevicesDirectoryObjectItemRequestBuilder struct {
 // ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 type ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

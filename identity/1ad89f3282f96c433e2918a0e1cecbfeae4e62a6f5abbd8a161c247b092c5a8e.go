@@ -24,9 +24,9 @@ type RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProvider
 // RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetQueryParameters read the properties and relationships of webApplicationFirewallProvider object.
 type RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RiskPreventionWebApplicationFirewallProvidersWebApplicationFirewallProviderItemRequestBuilderGetRequestConfiguration struct {

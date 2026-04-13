@@ -17,9 +17,9 @@ type MultiTenantOrganizationRequestBuilder struct {
 // MultiTenantOrganizationRequestBuilderGetQueryParameters get properties of the multitenant organization.
 type MultiTenantOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MultiTenantOrganizationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MultiTenantOrganizationRequestBuilderGetRequestConfiguration struct {

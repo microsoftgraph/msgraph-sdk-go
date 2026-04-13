@@ -24,9 +24,9 @@ type ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderDeleteRequestConf
 // ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderGetQueryParameters a member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
 type ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAu
 // PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilderGetQueryParameters read the properties and relationships of a certificateBasedAuthPki object.
 type PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder struct {
 // LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetQueryParameters read the details of a built-in workflow task in Lifecycle Workflows.
 type LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type CallRecordsItemParticipants_v2ParticipantItemRequestBuilderDeleteRequestCon
 // CallRecordsItemParticipants_v2ParticipantItemRequestBuilderGetQueryParameters list of distinct participants in the call.
 type CallRecordsItemParticipants_v2ParticipantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CallRecordsItemParticipants_v2ParticipantItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallRecordsItemParticipants_v2ParticipantItemRequestBuilderGetRequestConfiguration struct {

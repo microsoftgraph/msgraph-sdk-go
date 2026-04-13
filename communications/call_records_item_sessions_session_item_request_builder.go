@@ -24,9 +24,9 @@ type CallRecordsItemSessionsSessionItemRequestBuilderDeleteRequestConfiguration 
 // CallRecordsItemSessionsSessionItemRequestBuilderGetQueryParameters list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
 type CallRecordsItemSessionsSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CallRecordsItemSessionsSessionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallRecordsItemSessionsSessionItemRequestBuilderGetRequestConfiguration struct {

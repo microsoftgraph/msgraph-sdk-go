@@ -24,9 +24,9 @@ type VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestB
 // VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of the cloudPcOnPremisesConnection object.
 type VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration struct {
@@ -166,6 +166,11 @@ func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequ
         return nil, err
     }
     return requestInfo, nil
+}
+// UpdateAdDomainPassword provides operations to call the updateAdDomainPassword method.
+// returns a *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder when successful
+func (m *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) UpdateAdDomainPassword()(*VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder) {
+    return NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder when successful

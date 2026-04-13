@@ -24,9 +24,9 @@ type ItemTodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration struc
 // ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters the task lists in the users mailbox.
 type ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration struct {

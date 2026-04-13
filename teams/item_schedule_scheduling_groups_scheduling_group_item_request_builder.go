@@ -24,9 +24,9 @@ type ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequestC
 // ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a schedulingGroup by ID.
 type ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetRequestConfiguration struct {

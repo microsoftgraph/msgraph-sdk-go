@@ -17,9 +17,9 @@ type ItemItemsItemAnalyticsAllTimeRequestBuilder struct {
 // ItemItemsItemAnalyticsAllTimeRequestBuilderGetQueryParameters get itemAnalytics about the views that took place under this resource.The itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.For a custom time range or interval, use the getActivitiesByInterval API.
 type ItemItemsItemAnalyticsAllTimeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemAnalyticsAllTimeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemAnalyticsAllTimeRequestBuilderGetRequestConfiguration struct {

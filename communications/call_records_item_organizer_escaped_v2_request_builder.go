@@ -24,9 +24,9 @@ type CallRecordsItemOrganizer_v2RequestBuilderDeleteRequestConfiguration struct 
 // CallRecordsItemOrganizer_v2RequestBuilderGetQueryParameters identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
 type CallRecordsItemOrganizer_v2RequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CallRecordsItemOrganizer_v2RequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallRecordsItemOrganizer_v2RequestBuilderGetRequestConfiguration struct {

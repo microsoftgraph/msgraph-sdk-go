@@ -24,9 +24,9 @@ type ItemListItemsItemFieldsRequestBuilderDeleteRequestConfiguration struct {
 // ItemListItemsItemFieldsRequestBuilderGetQueryParameters the values of the columns set on this list item.
 type ItemListItemsItemFieldsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemListItemsItemFieldsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListItemsItemFieldsRequestBuilderGetRequestConfiguration struct {

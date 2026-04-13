@@ -24,9 +24,9 @@ type TasksItemBucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration stru
 // TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 type TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration struct {

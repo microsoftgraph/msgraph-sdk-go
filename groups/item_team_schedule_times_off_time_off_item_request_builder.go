@@ -24,9 +24,9 @@ type ItemTeamScheduleTimesOffTimeOffItemRequestBuilderDeleteRequestConfiguration
 // ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters the instances of times off in the schedule.
 type ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetRequestConfiguration struct {

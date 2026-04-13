@@ -17,9 +17,9 @@ type DataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilder struct {
 // DataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilderGetQueryParameters get the usage rights granted to the calling user for a specific sensitivity label that has admin-defined permissions.
 type DataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilderGetRequestConfiguration struct {

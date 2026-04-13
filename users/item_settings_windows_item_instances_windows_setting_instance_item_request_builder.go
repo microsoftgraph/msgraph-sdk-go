@@ -24,9 +24,9 @@ type ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderDel
 // ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderGetQueryParameters a collection of setting values for a given windowsSetting.
 type ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderGetRequestConfiguration struct {

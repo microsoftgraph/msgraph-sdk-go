@@ -24,9 +24,9 @@ type ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderD
 // ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetQueryParameters zero or more long running operations triggered on the app registration.
 type ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderGetRequestConfiguration struct {

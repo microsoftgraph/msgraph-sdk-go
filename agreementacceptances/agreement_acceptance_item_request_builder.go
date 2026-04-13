@@ -24,7 +24,7 @@ type AgreementAcceptanceItemRequestBuilderDeleteRequestConfiguration struct {
 // AgreementAcceptanceItemRequestBuilderGetQueryParameters get entity from agreementAcceptances by key
 type AgreementAcceptanceItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AgreementAcceptanceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AgreementAcceptanceItemRequestBuilderGetRequestConfiguration struct {

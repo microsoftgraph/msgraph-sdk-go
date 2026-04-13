@@ -24,9 +24,9 @@ type ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderDeleteRequestConfi
 // ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderGetQueryParameters the calendars in the calendar group. Navigation property. Read-only. Nullable.
 type ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderGetRequestConfiguration struct {

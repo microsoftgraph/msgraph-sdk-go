@@ -17,9 +17,9 @@ type LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder stru
 // LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetQueryParameters represents the aggregation of task execution data for tasks within a workflow object.
 type LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderGetRequestConfiguration struct {

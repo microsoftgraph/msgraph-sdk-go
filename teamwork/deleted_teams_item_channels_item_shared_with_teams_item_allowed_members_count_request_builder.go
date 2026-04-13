@@ -16,9 +16,9 @@ type DeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBu
 // DeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderGetQueryParameters get the number of the resource
 type DeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // DeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderGetRequestConfiguration struct {

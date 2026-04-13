@@ -24,7 +24,7 @@ type ItemPrimaryChannelFilesFolderContentRequestBuilderDeleteRequestConfiguratio
 // ItemPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
 type ItemPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters struct {
     // Format of the content
-    Format *string `uriparametername:"%24format"`
+    Format *string "uriparametername:\"%24format\""
 }
 // ItemPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration struct {

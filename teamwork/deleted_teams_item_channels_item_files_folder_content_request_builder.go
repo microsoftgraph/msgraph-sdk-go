@@ -24,7 +24,7 @@ type DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderDeleteRequestCo
 // DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
 type DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetQueryParameters struct {
     // Format of the content
-    Format *string `uriparametername:"%24format"`
+    Format *string "uriparametername:\"%24format\""
 }
 // DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration struct {

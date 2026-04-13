@@ -24,9 +24,9 @@ type SignInsSignInItemRequestBuilderDeleteRequestConfiguration struct {
 // SignInsSignInItemRequestBuilderGetQueryParameters retrieve a specific Microsoft Entra user sign-in event for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.
 type SignInsSignInItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SignInsSignInItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SignInsSignInItemRequestBuilderGetRequestConfiguration struct {

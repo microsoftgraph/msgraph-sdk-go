@@ -24,9 +24,9 @@ type ItemTermStoreSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRe
 // ItemTermStoreSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilderGetQueryParameters to indicate which terms are related to the current term as either pinned or reused.
 type ItemTermStoreSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTermStoreSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTermStoreSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilderGetRequestConfiguration struct {

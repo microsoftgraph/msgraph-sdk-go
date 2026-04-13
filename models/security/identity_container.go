@@ -101,6 +101,16 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSettingsContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(SettingsContainerable))
+        }
+        return nil
+    }
     return res
 }
 // GetHealthIssues gets the healthIssues property value. Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
@@ -160,6 +170,18 @@ func (m *IdentityContainer) GetSensors()([]Sensorable) {
     }
     if val != nil {
         return val.([]Sensorable)
+    }
+    return nil
+}
+// GetSettings gets the settings property value. Represents a container for security identities settings APIs.
+// returns a SettingsContainerable when successful
+func (m *IdentityContainer) GetSettings()(SettingsContainerable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SettingsContainerable)
     }
     return nil
 }
@@ -223,6 +245,12 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetHealthIssues sets the healthIssues property value. Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
@@ -260,6 +288,13 @@ func (m *IdentityContainer) SetSensors(value []Sensorable)() {
         panic(err)
     }
 }
+// SetSettings sets the settings property value. Represents a container for security identities settings APIs.
+func (m *IdentityContainer) SetSettings(value SettingsContainerable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type IdentityContainerable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -268,9 +303,11 @@ type IdentityContainerable interface {
     GetSensorCandidateActivationConfiguration()(SensorCandidateActivationConfigurationable)
     GetSensorCandidates()([]SensorCandidateable)
     GetSensors()([]Sensorable)
+    GetSettings()(SettingsContainerable)
     SetHealthIssues(value []HealthIssueable)()
     SetIdentityAccounts(value []IdentityAccountsable)()
     SetSensorCandidateActivationConfiguration(value SensorCandidateActivationConfigurationable)()
     SetSensorCandidates(value []SensorCandidateable)()
     SetSensors(value []Sensorable)()
+    SetSettings(value SettingsContainerable)()
 }

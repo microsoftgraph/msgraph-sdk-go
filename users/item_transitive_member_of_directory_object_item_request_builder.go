@@ -17,9 +17,9 @@ type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder struct {
 // ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

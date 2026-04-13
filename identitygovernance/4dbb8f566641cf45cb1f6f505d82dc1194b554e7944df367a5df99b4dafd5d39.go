@@ -17,15 +17,15 @@ type LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProce
 // LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.
 type LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsInsightsMicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type MobileAppsItemGraphWin32LobAppContentVersionsItemFilesMobileAppContentFileI
 // MobileAppsItemGraphWin32LobAppContentVersionsItemFilesMobileAppContentFileItemRequestBuilderGetQueryParameters the list of files for this app content version.
 type MobileAppsItemGraphWin32LobAppContentVersionsItemFilesMobileAppContentFileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphWin32LobAppContentVersionsItemFilesMobileAppContentFileItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWin32LobAppContentVersionsItemFilesMobileAppContentFileItemRequestBuilderGetRequestConfiguration struct {

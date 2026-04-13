@@ -24,9 +24,9 @@ type ItemOnenoteResourcesOnenoteResourceItemRequestBuilderDeleteRequestConfigura
 // ItemOnenoteResourcesOnenoteResourceItemRequestBuilderGetQueryParameters the image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 type ItemOnenoteResourcesOnenoteResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOnenoteResourcesOnenoteResourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOnenoteResourcesOnenoteResourceItemRequestBuilderGetRequestConfiguration struct {

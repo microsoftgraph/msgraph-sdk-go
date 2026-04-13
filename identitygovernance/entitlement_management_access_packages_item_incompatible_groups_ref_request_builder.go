@@ -17,7 +17,7 @@ type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder 
 // EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderD
 // EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration struct {

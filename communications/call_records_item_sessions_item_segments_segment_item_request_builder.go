@@ -24,9 +24,9 @@ type CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderDeleteRequestCo
 // CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderGetQueryParameters the list of segments involved in the session. Read-only. Nullable.
 type CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderGetRequestConfiguration struct {

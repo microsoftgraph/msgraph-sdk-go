@@ -17,9 +17,9 @@ type LifecycleWorkflowsWorkflowsItemTasksItemTaskProcessingResultsItemSubjectReq
 // LifecycleWorkflowsWorkflowsItemTasksItemTaskProcessingResultsItemSubjectRequestBuilderGetQueryParameters the unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 type LifecycleWorkflowsWorkflowsItemTasksItemTaskProcessingResultsItemSubjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsWorkflowsItemTasksItemTaskProcessingResultsItemSubjectRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemTasksItemTaskProcessingResultsItemSubjectRequestBuilderGetRequestConfiguration struct {

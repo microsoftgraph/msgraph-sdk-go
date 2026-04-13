@@ -24,9 +24,9 @@ type AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequest
 // AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessReviewStage object.
 type AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetRequestConfiguration struct {

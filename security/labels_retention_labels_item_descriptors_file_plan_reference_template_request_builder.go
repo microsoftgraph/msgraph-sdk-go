@@ -17,9 +17,9 @@ type LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder
 // LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilderGetQueryParameters specifies a unique alpha-numeric identifier for an organization’s retention schedule.
 type LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilderGetRequestConfiguration struct {

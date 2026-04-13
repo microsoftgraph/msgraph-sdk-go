@@ -24,9 +24,9 @@ type ItemSitesItemTermStoreSetsItemRelationsRelationItemRequestBuilderDeleteRequ
 // ItemSitesItemTermStoreSetsItemRelationsRelationItemRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
 type ItemSitesItemTermStoreSetsItemRelationsRelationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemTermStoreSetsItemRelationsRelationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemTermStoreSetsItemRelationsRelationItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderDel
 // ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the personal scope of the specified user.
 type ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration struct {

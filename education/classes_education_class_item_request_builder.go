@@ -24,9 +24,9 @@ type ClassesEducationClassItemRequestBuilderDeleteRequestConfiguration struct {
 // ClassesEducationClassItemRequestBuilderGetQueryParameters retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you're using the delegated token, the user will only see classes in which they are members.
 type ClassesEducationClassItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ClassesEducationClassItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesEducationClassItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type DeletedItemsItemGraphApplicationRequestBuilder struct {
 // DeletedItemsItemGraphApplicationRequestBuilderGetQueryParameters get the item of type microsoft.graph.directoryObject as microsoft.graph.application
 type DeletedItemsItemGraphApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedItemsItemGraphApplicationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedItemsItemGraphApplicationRequestBuilderGetRequestConfiguration struct {

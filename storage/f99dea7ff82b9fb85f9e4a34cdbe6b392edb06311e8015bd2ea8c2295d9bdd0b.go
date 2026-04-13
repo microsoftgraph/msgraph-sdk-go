@@ -24,9 +24,9 @@ type FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationIt
 // FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetQueryParameters read the properties and relationships of a fileStorageContainerTypeRegistration object.
 type FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetRequestConfiguration struct {

@@ -16,25 +16,25 @@ type ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilder struct {
 // ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilderGetQueryParameters get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
 type ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
-    EndDateTime *string `uriparametername:"endDateTime"`
+    EndDateTime *string "uriparametername:\"endDateTime\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
-    StartDateTime *string `uriparametername:"startDateTime"`
+    StartDateTime *string "uriparametername:\"startDateTime\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilderGetRequestConfiguration struct {

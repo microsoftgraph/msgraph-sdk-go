@@ -24,9 +24,9 @@ type ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilderDe
 // ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilderGetQueryParameters retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 type ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilderGetRequestConfiguration struct {

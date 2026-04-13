@@ -24,9 +24,9 @@ type LabelsRetentionLabelsItemDescriptorsRequestBuilderDeleteRequestConfiguratio
 // LabelsRetentionLabelsItemDescriptorsRequestBuilderGetQueryParameters represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
 type LabelsRetentionLabelsItemDescriptorsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LabelsRetentionLabelsItemDescriptorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LabelsRetentionLabelsItemDescriptorsRequestBuilderGetRequestConfiguration struct {

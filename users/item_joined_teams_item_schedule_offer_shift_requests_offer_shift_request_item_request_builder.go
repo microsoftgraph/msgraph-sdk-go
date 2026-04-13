@@ -24,9 +24,9 @@ type ItemJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBu
 // ItemJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters the offer requests for shifts in the schedule.
 type ItemJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetRequestConfiguration struct {

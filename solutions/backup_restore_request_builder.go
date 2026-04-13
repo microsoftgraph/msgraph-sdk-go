@@ -24,9 +24,9 @@ type BackupRestoreRequestBuilderDeleteRequestConfiguration struct {
 // BackupRestoreRequestBuilderGetQueryParameters get the serviceStatus of the Microsoft 365 Backup Storage service in a tenant.
 type BackupRestoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreRequestBuilderGetRequestConfiguration struct {

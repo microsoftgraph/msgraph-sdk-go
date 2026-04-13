@@ -24,9 +24,9 @@ type ItemInsightsRequestBuilderDeleteRequestConfiguration struct {
 // ItemInsightsRequestBuilderGetQueryParameters represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.
 type ItemInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemInsightsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemInsightsRequestBuilderGetRequestConfiguration struct {

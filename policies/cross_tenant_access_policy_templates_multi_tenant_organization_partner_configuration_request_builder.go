@@ -24,9 +24,9 @@ type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfiguration
 // CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParameters get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
 type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetRequestConfiguration struct {

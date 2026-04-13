@@ -24,9 +24,9 @@ type ItemContactFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration
 // ItemContactFoldersContactFolderItemRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
 type ItemContactFoldersContactFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemContactFoldersContactFolderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersContactFolderItemRequestBuilderGetRequestConfiguration struct {

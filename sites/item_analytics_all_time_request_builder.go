@@ -17,9 +17,9 @@ type ItemAnalyticsAllTimeRequestBuilder struct {
 // ItemAnalyticsAllTimeRequestBuilderGetQueryParameters get allTime from sites
 type ItemAnalyticsAllTimeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAnalyticsAllTimeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAnalyticsAllTimeRequestBuilderGetRequestConfiguration struct {

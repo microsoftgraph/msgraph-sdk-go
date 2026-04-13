@@ -24,9 +24,9 @@ type PartnersBillingUsageBilledRequestBuilderDeleteRequestConfiguration struct {
 // PartnersBillingUsageBilledRequestBuilderGetQueryParameters represents details for billed Azure usage data.
 type PartnersBillingUsageBilledRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PartnersBillingUsageBilledRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PartnersBillingUsageBilledRequestBuilderGetRequestConfiguration struct {

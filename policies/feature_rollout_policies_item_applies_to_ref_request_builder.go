@@ -17,7 +17,7 @@ type FeatureRolloutPoliciesItemAppliesToRefRequestBuilder struct {
 // FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteQueryParameters remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteRequestConfigurat
 // FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters nullable. Specifies a list of directoryObject resources that feature is enabled for.
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetRequestConfiguration struct {

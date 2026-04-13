@@ -17,9 +17,9 @@ type SharesItemJobsItemTasksItemDefinitionRequestBuilder struct {
 // SharesItemJobsItemTasksItemDefinitionRequestBuilderGetQueryParameters the printTaskDefinition that was used to create this task. Read-only.
 type SharesItemJobsItemTasksItemDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SharesItemJobsItemTasksItemDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SharesItemJobsItemTasksItemDefinitionRequestBuilderGetRequestConfiguration struct {

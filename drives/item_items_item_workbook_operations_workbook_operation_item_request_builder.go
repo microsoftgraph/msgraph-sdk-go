@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookOperationsWorkbookOperationItemRequestBuilderDeleteReq
 // ItemItemsItemWorkbookOperationsWorkbookOperationItemRequestBuilderGetQueryParameters the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 type ItemItemsItemWorkbookOperationsWorkbookOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookOperationsWorkbookOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookOperationsWorkbookOperationItemRequestBuilderGetRequestConfiguration struct {

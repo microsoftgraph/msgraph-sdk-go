@@ -13,24 +13,24 @@ import (
 type DeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeltaRequestBuilderGetQueryParameters get newly created, updated, or deleted users without having to perform a full read of the entire user collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// DeltaRequestBuilderGetQueryParameters get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 type DeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // DeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeltaRequestBuilderGetRequestConfiguration struct {
@@ -54,13 +54,13 @@ func NewDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get newly created, updated, or deleted users without having to perform a full read of the entire user collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// Get get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a DeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
 func (m *DeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(DeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +78,12 @@ func (m *DeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *Del
     }
     return res.(DeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get newly created, updated, or deleted users without having to perform a full read of the entire user collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// GetAsDeltaGetResponse get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // returns a DeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
 func (m *DeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(DeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *DeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, request
     }
     return res.(DeltaGetResponseable), nil
 }
-// ToGetRequestInformation get newly created, updated, or deleted users without having to perform a full read of the entire user collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// ToGetRequestInformation get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // returns a *RequestInformation when successful
 func (m *DeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

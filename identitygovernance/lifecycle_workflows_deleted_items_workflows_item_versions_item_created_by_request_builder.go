@@ -17,9 +17,9 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemCreatedByRequestBuil
 // LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemCreatedByRequestBuilderGetQueryParameters the user who created the workflow.
 type LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemCreatedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemCreatedByRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemCreatedByRequestBuilderGetRequestConfiguration struct {

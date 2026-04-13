@@ -17,9 +17,9 @@ type LifecycleWorkflowsWorkflowsItemUserProcessingResultsItemTaskProcessingResul
 // LifecycleWorkflowsWorkflowsItemUserProcessingResultsItemTaskProcessingResultsItemTaskRequestBuilderGetQueryParameters the related workflow task
 type LifecycleWorkflowsWorkflowsItemUserProcessingResultsItemTaskProcessingResultsItemTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsWorkflowsItemUserProcessingResultsItemTaskProcessingResultsItemTaskRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemUserProcessingResultsItemTaskProcessingResultsItemTaskRequestBuilderGetRequestConfiguration struct {

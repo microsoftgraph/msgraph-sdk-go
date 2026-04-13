@@ -17,7 +17,7 @@ type ItemRegisteredOwnersRefRequestBuilder struct {
 // ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters remove a user as a registered owner of the device.
 type ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration struct {
 // ItemRegisteredOwnersRefRequestBuilderGetQueryParameters retrieve a list of users that are registered owners of the device. A registered owner is the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner.
 type ItemRegisteredOwnersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ItemRegisteredOwnersRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRegisteredOwnersRefRequestBuilderGetRequestConfiguration struct {

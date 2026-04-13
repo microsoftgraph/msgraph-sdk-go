@@ -24,9 +24,9 @@ type MeRequestBuilderDeleteRequestConfiguration struct {
 // MeRequestBuilderGetQueryParameters get me from education
 type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MeRequestBuilderGetRequestConfiguration struct {

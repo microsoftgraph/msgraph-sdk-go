@@ -24,9 +24,9 @@ type ItemCalendarsCalendarItemRequestBuilderDeleteRequestConfiguration struct {
 // ItemCalendarsCalendarItemRequestBuilderGetQueryParameters the user's calendars. Read-only. Nullable.
 type ItemCalendarsCalendarItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemCalendarsCalendarItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsCalendarItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type UsersItemAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration stru
 // UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters when set, the grading rubric attached to this assignment.
 type UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UsersItemAssignmentsItemRubricRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UsersItemAssignmentsItemRubricRequestBuilderGetRequestConfiguration struct {

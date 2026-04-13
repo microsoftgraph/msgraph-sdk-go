@@ -24,9 +24,9 @@ type DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderDeleteRequestC
 // DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters retrieve a usage summary for a printer for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.
 type DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetRequestConfiguration struct {

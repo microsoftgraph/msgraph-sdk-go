@@ -24,9 +24,9 @@ type EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderDele
 // EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters get a browserSite that resides on a browserSiteList.
 type EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetRequestConfiguration struct {

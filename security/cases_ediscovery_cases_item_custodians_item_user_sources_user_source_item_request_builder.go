@@ -24,9 +24,9 @@ type CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuild
 // CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetQueryParameters data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 type CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetRequestConfiguration struct {

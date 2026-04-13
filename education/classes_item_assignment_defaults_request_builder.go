@@ -24,9 +24,9 @@ type ClassesItemAssignmentDefaultsRequestBuilderDeleteRequestConfiguration struc
 // ClassesItemAssignmentDefaultsRequestBuilderGetQueryParameters read the properties and relationships of an educationAssignmentDefaults object.  These are the class-level assignment defaults respected by new assignments created in the class. Callers can continue to specify custom values on each assignment creation if they don't want the default behaviors. Only teachers can perform this operation.
 type ClassesItemAssignmentDefaultsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ClassesItemAssignmentDefaultsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemAssignmentDefaultsRequestBuilderGetRequestConfiguration struct {

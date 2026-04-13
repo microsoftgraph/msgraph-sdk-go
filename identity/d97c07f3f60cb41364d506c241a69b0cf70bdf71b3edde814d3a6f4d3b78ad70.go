@@ -17,7 +17,7 @@ type AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowO
 // AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderDeleteQueryParameters delete ref of navigation property identityProviders for identity
 type AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowO
 // AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderGetQueryParameters get the identity providers that are defined for an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object type.
 type AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowOnAuthenticationMethodLoadStartGraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpIdentityProvidersRefRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type InvitedUserServiceProvisioningErrorsCountRequestBuilder struct {
 // InvitedUserServiceProvisioningErrorsCountRequestBuilderGetQueryParameters get the number of the resource
 type InvitedUserServiceProvisioningErrorsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // InvitedUserServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type InvitedUserServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration struct {

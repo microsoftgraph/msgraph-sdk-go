@@ -17,9 +17,9 @@ type DirectoryRoleEligibilityScheduleRequestsItemDirectoryScopeRequestBuilder st
 // DirectoryRoleEligibilityScheduleRequestsItemDirectoryScopeRequestBuilderGetQueryParameters the directory object that is the scope of the role eligibility. Read-only. Supports $expand.
 type DirectoryRoleEligibilityScheduleRequestsItemDirectoryScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleEligibilityScheduleRequestsItemDirectoryScopeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleEligibilityScheduleRequestsItemDirectoryScopeRequestBuilderGetRequestConfiguration struct {

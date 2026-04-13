@@ -16,9 +16,9 @@ type ItemCalendarsItemCalendarPermissionsCountRequestBuilder struct {
 // ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemCalendarPermissionsCountRequestBuilderGetRequestConfiguration struct {

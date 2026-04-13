@@ -24,9 +24,9 @@ type ItemGetByPathWithPathTermStoreRequestBuilderDeleteRequestConfiguration stru
 // ItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters the default termStore under this site.
 type ItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGetByPathWithPathTermStoreRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGetByPathWithPathTermStoreRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItem
 // ItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilderGetQueryParameters the [set] in which the relation is relevant.
 type ItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilderGetRequestConfiguration struct {

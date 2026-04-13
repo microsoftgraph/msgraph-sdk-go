@@ -17,7 +17,7 @@ type B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilder struct {
 // B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderDeleteQueryParameters delete ref of navigation property userFlowIdentityProviders for identity
 type B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderDeleteRequestConf
 // B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderGetQueryParameters get ref of userFlowIdentityProviders from identity
 type B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsItemUserFlowIdentityProvidersRefRequestBuilderGetRequestConfiguration struct {

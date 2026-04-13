@@ -17,9 +17,9 @@ type PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilder stru
 // PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetQueryParameters references the group that is the scope of the membership or ownership assignment request through PIM for Groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetRequestConfiguration struct {

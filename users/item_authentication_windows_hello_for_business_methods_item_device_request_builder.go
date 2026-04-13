@@ -17,9 +17,9 @@ type ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder st
 // ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderGetQueryParameters the registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 type ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderGetRequestConfiguration struct {

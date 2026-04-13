@@ -24,9 +24,9 @@ type ItemSettingsItemInsightsRequestBuilderDeleteRequestConfiguration struct {
 // ItemSettingsItemInsightsRequestBuilderGetQueryParameters the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 type ItemSettingsItemInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsItemInsightsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsItemInsightsRequestBuilderGetRequestConfiguration struct {

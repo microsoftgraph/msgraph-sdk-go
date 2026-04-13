@@ -16,9 +16,9 @@ type ItemJoinedTeamsItemChannelsItemMembersCountRequestBuilder struct {
 // ItemJoinedTeamsItemChannelsItemMembersCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemJoinedTeamsItemChannelsItemMembersCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemJoinedTeamsItemChannelsItemMembersCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemChannelsItemMembersCountRequestBuilderGetRequestConfiguration struct {

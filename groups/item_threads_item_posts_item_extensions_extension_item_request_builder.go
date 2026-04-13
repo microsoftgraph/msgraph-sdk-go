@@ -24,9 +24,9 @@ type ItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderDeleteRequestC
 // ItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderGetQueryParameters get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
 type ItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration struct {

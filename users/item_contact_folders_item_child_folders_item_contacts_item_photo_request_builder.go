@@ -17,9 +17,9 @@ type ItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilder struc
 // ItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilderGetQueryParameters optional contact picture. You can get or set a photo for a contact.
 type ItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilderGetRequestConfiguration struct {

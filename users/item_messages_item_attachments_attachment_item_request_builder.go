@@ -24,9 +24,9 @@ type ItemMessagesItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfigu
 // ItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters the fileAttachment and itemAttachment attachments for the message.
 type ItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type LifecycleWorkflowsWorkflowsItemLastModifiedByServiceProvisioningErrorsCount
 // LifecycleWorkflowsWorkflowsItemLastModifiedByServiceProvisioningErrorsCountRequestBuilderGetQueryParameters get the number of the resource
 type LifecycleWorkflowsWorkflowsItemLastModifiedByServiceProvisioningErrorsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // LifecycleWorkflowsWorkflowsItemLastModifiedByServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemLastModifiedByServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration struct {

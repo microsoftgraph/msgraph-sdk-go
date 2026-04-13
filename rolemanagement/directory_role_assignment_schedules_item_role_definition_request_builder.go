@@ -17,9 +17,9 @@ type DirectoryRoleAssignmentSchedulesItemRoleDefinitionRequestBuilder struct {
 // DirectoryRoleAssignmentSchedulesItemRoleDefinitionRequestBuilderGetQueryParameters detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.
 type DirectoryRoleAssignmentSchedulesItemRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleAssignmentSchedulesItemRoleDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleAssignmentSchedulesItemRoleDefinitionRequestBuilderGetRequestConfiguration struct {

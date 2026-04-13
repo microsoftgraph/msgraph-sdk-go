@@ -24,9 +24,9 @@ type VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBu
 // VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters get the properties and relationships of a virtualEventRegistration object.
 type VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetRequestConfiguration struct {

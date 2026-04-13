@@ -24,9 +24,9 @@ type ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderD
 // ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
 type ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration struct {

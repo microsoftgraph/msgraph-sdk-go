@@ -17,7 +17,7 @@ type ItemHomeRealmDiscoveryPoliciesRefRequestBuilder struct {
 // ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteQueryParameters remove a homeRealmDiscoveryPolicy from a servicePrincipal.
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderDeleteRequestConfiguration s
 // ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemContactFoldersItemContactsItemExtensionsExtensionItemRequestBuilderDele
 // ItemContactFoldersItemContactsItemExtensionsExtensionItemRequestBuilderGetQueryParameters the collection of open extensions defined for the contact. Read-only. Nullable.
 type ItemContactFoldersItemContactsItemExtensionsExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemContactFoldersItemContactsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersItemContactsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration struct {

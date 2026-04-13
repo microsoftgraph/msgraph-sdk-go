@@ -24,9 +24,9 @@ type EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequestBuil
 // EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequestBuilderGetQueryParameters get resource from identityGovernance
 type EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequestBuilderGetRequestConfiguration struct {

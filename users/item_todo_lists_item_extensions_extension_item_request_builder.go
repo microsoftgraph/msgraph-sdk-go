@@ -24,9 +24,9 @@ type ItemTodoListsItemExtensionsExtensionItemRequestBuilderDeleteRequestConfigur
 // ItemTodoListsItemExtensionsExtensionItemRequestBuilderGetQueryParameters the collection of open extensions defined for the task list. Nullable.
 type ItemTodoListsItemExtensionsExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTodoListsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTodoListsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration struct {

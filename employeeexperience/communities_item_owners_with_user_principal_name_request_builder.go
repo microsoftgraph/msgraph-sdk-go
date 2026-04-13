@@ -17,9 +17,9 @@ type CommunitiesItemOwnersWithUserPrincipalNameRequestBuilder struct {
 // CommunitiesItemOwnersWithUserPrincipalNameRequestBuilderGetQueryParameters the admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
 type CommunitiesItemOwnersWithUserPrincipalNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CommunitiesItemOwnersWithUserPrincipalNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CommunitiesItemOwnersWithUserPrincipalNameRequestBuilderGetRequestConfiguration struct {

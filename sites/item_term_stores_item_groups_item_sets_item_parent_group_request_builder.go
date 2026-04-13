@@ -24,9 +24,9 @@ type ItemTermStoresItemGroupsItemSetsItemParentGroupRequestBuilderDeleteRequestC
 // ItemTermStoresItemGroupsItemSetsItemParentGroupRequestBuilderGetQueryParameters the parent [group] that contains the set.
 type ItemTermStoresItemGroupsItemSetsItemParentGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTermStoresItemGroupsItemSetsItemParentGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTermStoresItemGroupsItemSetsItemParentGroupRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderDeleteRequ
 // DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
 type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type IdentitiesRequestBuilderDeleteRequestConfiguration struct {
 // IdentitiesRequestBuilderGetQueryParameters a container for security identities APIs.
 type IdentitiesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IdentitiesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentitiesRequestBuilderGetRequestConfiguration struct {
@@ -137,6 +137,11 @@ func (m *IdentitiesRequestBuilder) SensorCandidates()(*IdentitiesSensorCandidate
 // returns a *IdentitiesSensorsRequestBuilder when successful
 func (m *IdentitiesRequestBuilder) Sensors()(*IdentitiesSensorsRequestBuilder) {
     return NewIdentitiesSensorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Settings provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSettingsRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) Settings()(*IdentitiesSettingsRequestBuilder) {
+    return NewIdentitiesSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property identities for security
 // returns a *RequestInformation when successful

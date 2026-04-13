@@ -24,9 +24,9 @@ type DeletedTeamsItemChannelsChannelItemRequestBuilderDeleteRequestConfiguration
 // DeletedTeamsItemChannelsChannelItemRequestBuilderGetQueryParameters the channels that are either shared with this deleted team or created in this deleted team.
 type DeletedTeamsItemChannelsChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedTeamsItemChannelsChannelItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedTeamsItemChannelsChannelItemRequestBuilderGetRequestConfiguration struct {
@@ -92,6 +92,11 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Delete(ctx context.C
 // returns a *DeletedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*DeletedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// EnabledApps provides operations to manage the enabledApps property of the microsoft.graph.channel entity.
+// returns a *DeletedTeamsItemChannelsItemEnabledAppsRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) EnabledApps()(*DeletedTeamsItemChannelsItemEnabledAppsRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemEnabledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 // returns a *DeletedTeamsItemChannelsItemFilesFolderRequestBuilder when successful
@@ -162,6 +167,11 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) RemoveEmail()(*Delet
 // returns a *DeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*DeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartMigration provides operations to call the startMigration method.
+// returns a *DeletedTeamsItemChannelsItemStartMigrationRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) StartMigration()(*DeletedTeamsItemChannelsItemStartMigrationRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *DeletedTeamsItemChannelsItemTabsRequestBuilder when successful

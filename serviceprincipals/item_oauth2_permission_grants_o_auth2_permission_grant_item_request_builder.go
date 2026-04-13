@@ -17,9 +17,9 @@ type ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder struct {
 // ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderGetQueryParameters delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
 type ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration struct {

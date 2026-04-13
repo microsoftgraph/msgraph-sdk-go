@@ -24,9 +24,9 @@ type IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteReq
 // IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters list of apps to which the policy is deployed.
 type IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetRequestConfiguration struct {

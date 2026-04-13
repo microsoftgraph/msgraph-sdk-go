@@ -17,9 +17,9 @@ type BackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsItem
 // BackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsItemRestorePointRequestBuilderGetQueryParameters represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
 type BackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsItemRestorePointRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsItemRestorePointRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsItemRestorePointRequestBuilderGetRequestConfiguration struct {
