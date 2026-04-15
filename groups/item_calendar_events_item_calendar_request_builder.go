@@ -17,9 +17,9 @@ type ItemCalendarEventsItemCalendarRequestBuilder struct {
 // ItemCalendarEventsItemCalendarRequestBuilderGetQueryParameters the calendar that contains the event. Navigation property. Read-only.
 type ItemCalendarEventsItemCalendarRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemCalendarEventsItemCalendarRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarEventsItemCalendarRequestBuilderGetRequestConfiguration struct {

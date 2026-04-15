@@ -24,9 +24,9 @@ type EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestB
 // EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters access package resources in this catalog.
 type EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration struct {

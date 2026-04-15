@@ -24,9 +24,9 @@ type MobileAppRelationshipsMobileAppRelationshipItemRequestBuilderDeleteRequestC
 // MobileAppRelationshipsMobileAppRelationshipItemRequestBuilderGetQueryParameters the mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
 type MobileAppRelationshipsMobileAppRelationshipItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppRelationshipsMobileAppRelationshipItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppRelationshipsMobileAppRelationshipItemRequestBuilderGetRequestConfiguration struct {

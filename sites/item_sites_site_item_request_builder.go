@@ -17,9 +17,9 @@ type ItemSitesSiteItemRequestBuilder struct {
 // ItemSitesSiteItemRequestBuilderGetQueryParameters the collection of the sub-sites under this site.
 type ItemSitesSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesSiteItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesSiteItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type RoleAssignmentsItemRoleDefinitionRequestBuilder struct {
 // RoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters indicates the role definition for this role assignment.
 type RoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration struct {

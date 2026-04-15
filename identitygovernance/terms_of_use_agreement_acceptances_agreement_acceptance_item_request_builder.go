@@ -24,9 +24,9 @@ type TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderDeleteRe
 // TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetQueryParameters represents the current status of a user's response to a company's customizable terms of use agreement.
 type TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ItemJoinedTeamsItemAllChannelsChannelItemRequestBuilder struct {
 // ItemJoinedTeamsItemAllChannelsChannelItemRequestBuilderGetQueryParameters list of channels either hosted in or shared with the team (incoming channels).
 type ItemJoinedTeamsItemAllChannelsChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemJoinedTeamsItemAllChannelsChannelItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemAllChannelsChannelItemRequestBuilderGetRequestConfiguration struct {

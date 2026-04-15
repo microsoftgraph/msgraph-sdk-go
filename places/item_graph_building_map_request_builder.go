@@ -24,9 +24,9 @@ type ItemGraphBuildingMapRequestBuilderDeleteRequestConfiguration struct {
 // ItemGraphBuildingMapRequestBuilderGetQueryParameters get the map of a building in IMDF format.
 type ItemGraphBuildingMapRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGraphBuildingMapRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGraphBuildingMapRequestBuilderGetRequestConfiguration struct {

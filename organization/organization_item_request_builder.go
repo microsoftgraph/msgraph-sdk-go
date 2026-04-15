@@ -24,9 +24,9 @@ type OrganizationItemRequestBuilderDeleteRequestConfiguration struct {
 // OrganizationItemRequestBuilderGetQueryParameters get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
 type OrganizationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // OrganizationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OrganizationItemRequestBuilderGetRequestConfiguration struct {

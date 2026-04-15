@@ -17,9 +17,9 @@ type ItemListsItemItemsItemAnalyticsRequestBuilder struct {
 // ItemListsItemItemsItemAnalyticsRequestBuilderGetQueryParameters analytics about the view activities that took place on this item.
 type ItemListsItemItemsItemAnalyticsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemListsItemItemsItemAnalyticsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListsItemItemsItemAnalyticsRequestBuilderGetRequestConfiguration struct {

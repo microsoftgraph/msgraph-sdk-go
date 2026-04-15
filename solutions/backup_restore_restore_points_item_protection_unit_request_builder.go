@@ -17,9 +17,9 @@ type BackupRestoreRestorePointsItemProtectionUnitRequestBuilder struct {
 // BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetQueryParameters the site, drive, or mailbox units that are protected under a protection policy.
 type BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetRequestConfiguration struct {

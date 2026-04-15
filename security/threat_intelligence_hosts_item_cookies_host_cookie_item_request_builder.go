@@ -17,9 +17,9 @@ type ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilder struct {
 // ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilderGetQueryParameters the hostCookies that are associated with this host.
 type ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilderGetRequestConfiguration struct {

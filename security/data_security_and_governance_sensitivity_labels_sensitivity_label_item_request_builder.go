@@ -24,9 +24,9 @@ type DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilde
 // DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetQueryParameters get a sensitivity label available for the entire tenant.
 type DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetRequestConfiguration struct {

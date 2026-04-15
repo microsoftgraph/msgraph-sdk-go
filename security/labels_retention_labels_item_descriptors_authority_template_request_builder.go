@@ -17,9 +17,9 @@ type LabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilder struct 
 // LabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilderGetQueryParameters specifies the underlying authority that describes the type of content to be retained and its retention schedule.
 type LabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilderGetRequestConfiguration struct {

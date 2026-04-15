@@ -17,9 +17,9 @@ type FileStorageDeletedContainersItemRecycleBinItemsItemCreatedByUserRequestBuil
 // FileStorageDeletedContainersItemRecycleBinItemsItemCreatedByUserRequestBuilderGetQueryParameters identity of the user who created the item. Read-only.
 type FileStorageDeletedContainersItemRecycleBinItemsItemCreatedByUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageDeletedContainersItemRecycleBinItemsItemCreatedByUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageDeletedContainersItemRecycleBinItemsItemCreatedByUserRequestBuilderGetRequestConfiguration struct {

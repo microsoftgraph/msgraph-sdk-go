@@ -24,9 +24,9 @@ type PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderDeleteReque
 // PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
 type PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetRequestConfiguration struct {

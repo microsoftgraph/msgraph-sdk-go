@@ -17,9 +17,9 @@ type TriggersRetentionEventsItemRetentionEventTypeRequestBuilder struct {
 // TriggersRetentionEventsItemRetentionEventTypeRequestBuilderGetQueryParameters specifies the event that will start the retention period for labels that use this event type when an event is created.
 type TriggersRetentionEventsItemRetentionEventTypeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TriggersRetentionEventsItemRetentionEventTypeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TriggersRetentionEventsItemRetentionEventTypeRequestBuilderGetRequestConfiguration struct {

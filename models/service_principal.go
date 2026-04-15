@@ -23,6 +23,26 @@ func NewServicePrincipal()(*ServicePrincipal) {
 // CreateServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.agentIdentity":
+                        return NewAgentIdentity(), nil
+                    case "#microsoft.graph.agentIdentityBlueprintPrincipal":
+                        return NewAgentIdentityBlueprintPrincipal(), nil
+                }
+            }
+        }
+    }
     return NewServicePrincipal(), nil
 }
 // GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they're assigned to it. Supports $filter (eq, ne, not, in).
@@ -190,6 +210,18 @@ func (m *ServicePrincipal) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     }
     if val != nil {
         return val.([]ClaimsMappingPolicyable)
+    }
+    return nil
+}
+// GetCreatedByAppId gets the createdByAppId property value. The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
+// returns a *string when successful
+func (m *ServicePrincipal) GetCreatedByAppId()(*string) {
+    val, err := m.GetBackingStore().Get("createdByAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -475,6 +507,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["createdByAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedByAppId(val)
+        }
+        return nil
+    }
     res["createdObjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -612,6 +654,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetInfo(val.(InformationalUrlable))
+        }
+        return nil
+    }
+    res["isDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDisabled(val)
         }
         return nil
     }
@@ -1010,6 +1062,18 @@ func (m *ServicePrincipal) GetInfo()(InformationalUrlable) {
     }
     if val != nil {
         return val.(InformationalUrlable)
+    }
+    return nil
+}
+// GetIsDisabled gets the isDisabled property value. The isDisabled property
+// returns a *bool when successful
+func (m *ServicePrincipal) GetIsDisabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -1463,6 +1527,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("createdByAppId", m.GetCreatedByAppId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCreatedObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCreatedObjects()))
         for i, v := range m.GetCreatedObjects() {
@@ -1555,6 +1625,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteObjectValue("info", m.GetInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isDisabled", m.GetIsDisabled())
         if err != nil {
             return err
         }
@@ -1887,6 +1963,13 @@ func (m *ServicePrincipal) SetClaimsMappingPolicies(value []ClaimsMappingPolicya
         panic(err)
     }
 }
+// SetCreatedByAppId sets the createdByAppId property value. The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
+func (m *ServicePrincipal) SetCreatedByAppId(value *string)() {
+    err := m.GetBackingStore().Set("createdByAppId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedObjects sets the createdObjects property value. Directory objects created by this service principal. Read-only. Nullable.
 func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("createdObjects", value)
@@ -1960,6 +2043,13 @@ func (m *ServicePrincipal) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscov
 // SetInfo sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *ServicePrincipal) SetInfo(value InformationalUrlable)() {
     err := m.GetBackingStore().Set("info", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsDisabled sets the isDisabled property value. The isDisabled property
+func (m *ServicePrincipal) SetIsDisabled(value *bool)() {
+    err := m.GetBackingStore().Set("isDisabled", value)
     if err != nil {
         panic(err)
     }
@@ -2170,6 +2260,7 @@ type ServicePrincipalable interface {
     GetAppRoleAssignments()([]AppRoleAssignmentable)
     GetAppRoles()([]AppRoleable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
+    GetCreatedByAppId()(*string)
     GetCreatedObjects()([]DirectoryObjectable)
     GetCustomSecurityAttributes()(CustomSecurityAttributeValueable)
     GetDelegatedPermissionClassifications()([]DelegatedPermissionClassificationable)
@@ -2181,6 +2272,7 @@ type ServicePrincipalable interface {
     GetHomepage()(*string)
     GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
     GetInfo()(InformationalUrlable)
+    GetIsDisabled()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLoginUrl()(*string)
     GetLogoutUrl()(*string)
@@ -2222,6 +2314,7 @@ type ServicePrincipalable interface {
     SetAppRoleAssignments(value []AppRoleAssignmentable)()
     SetAppRoles(value []AppRoleable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
+    SetCreatedByAppId(value *string)()
     SetCreatedObjects(value []DirectoryObjectable)()
     SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)()
     SetDelegatedPermissionClassifications(value []DelegatedPermissionClassificationable)()
@@ -2233,6 +2326,7 @@ type ServicePrincipalable interface {
     SetHomepage(value *string)()
     SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
     SetInfo(value InformationalUrlable)()
+    SetIsDisabled(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLoginUrl(value *string)()
     SetLogoutUrl(value *string)()

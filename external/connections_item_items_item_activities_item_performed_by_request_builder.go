@@ -17,9 +17,9 @@ type ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder struct {
 // ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetQueryParameters represents an identity used to identify who is responsible for the activity.
 type ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetRequestConfiguration struct {

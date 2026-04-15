@@ -17,9 +17,9 @@ type ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilder s
 // ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetQueryParameters the worksheet that contains the current pivot table. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderGetRequestConfiguration struct {

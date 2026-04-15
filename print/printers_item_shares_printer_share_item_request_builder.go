@@ -17,9 +17,9 @@ type PrintersItemSharesPrinterShareItemRequestBuilder struct {
 // PrintersItemSharesPrinterShareItemRequestBuilderGetQueryParameters the list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 type PrintersItemSharesPrinterShareItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrintersItemSharesPrinterShareItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrintersItemSharesPrinterShareItemRequestBuilderGetRequestConfiguration struct {

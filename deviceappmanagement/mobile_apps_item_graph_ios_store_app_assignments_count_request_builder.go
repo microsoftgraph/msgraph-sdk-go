@@ -16,9 +16,9 @@ type MobileAppsItemGraphIosStoreAppAssignmentsCountRequestBuilder struct {
 // MobileAppsItemGraphIosStoreAppAssignmentsCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppsItemGraphIosStoreAppAssignmentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppsItemGraphIosStoreAppAssignmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphIosStoreAppAssignmentsCountRequestBuilderGetRequestConfiguration struct {

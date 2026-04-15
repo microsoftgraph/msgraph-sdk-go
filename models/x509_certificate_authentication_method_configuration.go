@@ -36,6 +36,18 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetAuthenticationMode
     }
     return nil
 }
+// GetCertificateAuthorityScopes gets the certificateAuthorityScopes property value. The certificateAuthorityScopes property
+// returns a []X509CertificateAuthorityScopeable when successful
+func (m *X509CertificateAuthenticationMethodConfiguration) GetCertificateAuthorityScopes()([]X509CertificateAuthorityScopeable) {
+    val, err := m.GetBackingStore().Get("certificateAuthorityScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]X509CertificateAuthorityScopeable)
+    }
+    return nil
+}
 // GetCertificateUserBindings gets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
 // returns a []X509CertificateUserBindingable when successful
 func (m *X509CertificateAuthenticationMethodConfiguration) GetCertificateUserBindings()([]X509CertificateUserBindingable) {
@@ -71,6 +83,22 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers
         }
         if val != nil {
             m.SetAuthenticationModeConfiguration(val.(X509CertificateAuthenticationModeConfigurationable))
+        }
+        return nil
+    }
+    res["certificateAuthorityScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateX509CertificateAuthorityScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]X509CertificateAuthorityScopeable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(X509CertificateAuthorityScopeable)
+                }
+            }
+            m.SetCertificateAuthorityScopes(res)
         }
         return nil
     }
@@ -116,6 +144,16 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers
         }
         return nil
     }
+    res["issuerHintsConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateX509CertificateIssuerHintsConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIssuerHintsConfiguration(val.(X509CertificateIssuerHintsConfigurationable))
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
@@ -130,6 +168,18 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetIncludeTargets()([
     }
     return nil
 }
+// GetIssuerHintsConfiguration gets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+// returns a X509CertificateIssuerHintsConfigurationable when successful
+func (m *X509CertificateAuthenticationMethodConfiguration) GetIssuerHintsConfiguration()(X509CertificateIssuerHintsConfigurationable) {
+    val, err := m.GetBackingStore().Get("issuerHintsConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(X509CertificateIssuerHintsConfigurationable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.AuthenticationMethodConfiguration.Serialize(writer)
@@ -138,6 +188,18 @@ func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878
     }
     {
         err = writer.WriteObjectValue("authenticationModeConfiguration", m.GetAuthenticationModeConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCertificateAuthorityScopes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCertificateAuthorityScopes()))
+        for i, v := range m.GetCertificateAuthorityScopes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("certificateAuthorityScopes", cast)
         if err != nil {
             return err
         }
@@ -172,11 +234,24 @@ func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("issuerHintsConfiguration", m.GetIssuerHintsConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAuthenticationModeConfiguration sets the authenticationModeConfiguration property value. Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetAuthenticationModeConfiguration(value X509CertificateAuthenticationModeConfigurationable)() {
     err := m.GetBackingStore().Set("authenticationModeConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCertificateAuthorityScopes sets the certificateAuthorityScopes property value. The certificateAuthorityScopes property
+func (m *X509CertificateAuthenticationMethodConfiguration) SetCertificateAuthorityScopes(value []X509CertificateAuthorityScopeable)() {
+    err := m.GetBackingStore().Set("certificateAuthorityScopes", value)
     if err != nil {
         panic(err)
     }
@@ -202,15 +277,26 @@ func (m *X509CertificateAuthenticationMethodConfiguration) SetIncludeTargets(val
         panic(err)
     }
 }
+// SetIssuerHintsConfiguration sets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+func (m *X509CertificateAuthenticationMethodConfiguration) SetIssuerHintsConfiguration(value X509CertificateIssuerHintsConfigurationable)() {
+    err := m.GetBackingStore().Set("issuerHintsConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type X509CertificateAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationModeConfiguration()(X509CertificateAuthenticationModeConfigurationable)
+    GetCertificateAuthorityScopes()([]X509CertificateAuthorityScopeable)
     GetCertificateUserBindings()([]X509CertificateUserBindingable)
     GetCrlValidationConfiguration()(X509CertificateCRLValidationConfigurationable)
     GetIncludeTargets()([]AuthenticationMethodTargetable)
+    GetIssuerHintsConfiguration()(X509CertificateIssuerHintsConfigurationable)
     SetAuthenticationModeConfiguration(value X509CertificateAuthenticationModeConfigurationable)()
+    SetCertificateAuthorityScopes(value []X509CertificateAuthorityScopeable)()
     SetCertificateUserBindings(value []X509CertificateUserBindingable)()
     SetCrlValidationConfiguration(value X509CertificateCRLValidationConfigurationable)()
     SetIncludeTargets(value []AuthenticationMethodTargetable)()
+    SetIssuerHintsConfiguration(value X509CertificateIssuerHintsConfigurationable)()
 }

@@ -17,9 +17,9 @@ type AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder struct 
 // AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetQueryParameters collection of applications and service principals to which the policy is applied.
 type AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

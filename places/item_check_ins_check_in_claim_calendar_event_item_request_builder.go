@@ -24,9 +24,9 @@ type ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderDeleteRequestConfigu
 // ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.
 type ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetRequestConfiguration struct {

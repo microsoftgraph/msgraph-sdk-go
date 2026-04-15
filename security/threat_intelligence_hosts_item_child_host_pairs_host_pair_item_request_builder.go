@@ -17,9 +17,9 @@ type ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilder struct 
 // ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetQueryParameters the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 type ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetRequestConfiguration struct {

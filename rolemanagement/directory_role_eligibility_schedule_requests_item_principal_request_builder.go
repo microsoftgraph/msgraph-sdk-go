@@ -17,9 +17,9 @@ type DirectoryRoleEligibilityScheduleRequestsItemPrincipalRequestBuilder struct 
 // DirectoryRoleEligibilityScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters the principal that's getting a role eligibility through the request. Supports $expand.
 type DirectoryRoleEligibilityScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleEligibilityScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleEligibilityScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration struct {

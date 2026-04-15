@@ -24,9 +24,9 @@ type ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderDeleteRequestC
 // ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderGetQueryParameters retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from all meeting types except live events. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
 type ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderGetRequestConfiguration struct {

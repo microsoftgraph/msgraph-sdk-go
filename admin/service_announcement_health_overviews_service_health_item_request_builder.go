@@ -24,9 +24,9 @@ type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderDeleteRequ
 // ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
 type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetRequestConfiguration struct {

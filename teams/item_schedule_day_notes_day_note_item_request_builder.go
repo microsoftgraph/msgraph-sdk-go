@@ -24,9 +24,9 @@ type ItemScheduleDayNotesDayNoteItemRequestBuilderDeleteRequestConfiguration str
 // ItemScheduleDayNotesDayNoteItemRequestBuilderGetQueryParameters the day notes in the schedule.
 type ItemScheduleDayNotesDayNoteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemScheduleDayNotesDayNoteItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemScheduleDayNotesDayNoteItemRequestBuilderGetRequestConfiguration struct {

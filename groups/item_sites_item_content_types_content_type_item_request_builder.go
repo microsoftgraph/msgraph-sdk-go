@@ -24,9 +24,9 @@ type ItemSitesItemContentTypesContentTypeItemRequestBuilderDeleteRequestConfigur
 // ItemSitesItemContentTypesContentTypeItemRequestBuilderGetQueryParameters the collection of content types defined for this site.
 type ItemSitesItemContentTypesContentTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemContentTypesContentTypeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemContentTypesContentTypeItemRequestBuilderGetRequestConfiguration struct {

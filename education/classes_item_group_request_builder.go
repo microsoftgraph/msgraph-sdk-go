@@ -17,9 +17,9 @@ type ClassesItemGroupRequestBuilder struct {
 // ClassesItemGroupRequestBuilderGetQueryParameters the underlying Microsoft 365 group object.
 type ClassesItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ClassesItemGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemGroupRequestBuilderGetRequestConfiguration struct {

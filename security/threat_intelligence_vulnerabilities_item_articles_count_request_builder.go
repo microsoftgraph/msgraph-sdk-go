@@ -16,9 +16,9 @@ type ThreatIntelligenceVulnerabilitiesItemArticlesCountRequestBuilder struct {
 // ThreatIntelligenceVulnerabilitiesItemArticlesCountRequestBuilderGetQueryParameters get the number of the resource
 type ThreatIntelligenceVulnerabilitiesItemArticlesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ThreatIntelligenceVulnerabilitiesItemArticlesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceVulnerabilitiesItemArticlesCountRequestBuilderGetRequestConfiguration struct {

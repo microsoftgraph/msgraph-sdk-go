@@ -17,9 +17,9 @@ type UsersItemUserRequestBuilder struct {
 // UsersItemUserRequestBuilderGetQueryParameters the directory user that corresponds to this user.
 type UsersItemUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UsersItemUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UsersItemUserRequestBuilderGetRequestConfiguration struct {

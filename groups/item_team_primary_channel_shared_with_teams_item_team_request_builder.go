@@ -17,9 +17,9 @@ type ItemTeamPrimaryChannelSharedWithTeamsItemTeamRequestBuilder struct {
 // ItemTeamPrimaryChannelSharedWithTeamsItemTeamRequestBuilderGetQueryParameters get team from groups
 type ItemTeamPrimaryChannelSharedWithTeamsItemTeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamPrimaryChannelSharedWithTeamsItemTeamRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamPrimaryChannelSharedWithTeamsItemTeamRequestBuilderGetRequestConfiguration struct {

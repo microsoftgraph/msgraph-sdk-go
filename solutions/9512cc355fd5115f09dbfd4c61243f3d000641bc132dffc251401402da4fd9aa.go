@@ -17,9 +17,9 @@ type BackupRestoreSharePointProtectionPoliciesItemSiteProtectionUnitsSiteProtect
 // BackupRestoreSharePointProtectionPoliciesItemSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderGetQueryParameters the protection units (sites) that are protected under the site protection policy.
 type BackupRestoreSharePointProtectionPoliciesItemSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreSharePointProtectionPoliciesItemSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreSharePointProtectionPoliciesItemSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderGetRequestConfiguration struct {

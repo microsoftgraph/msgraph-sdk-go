@@ -24,9 +24,9 @@ type MobileAppsItemGraphWin32LobAppAssignmentsMobileAppAssignmentItemRequestBuil
 // MobileAppsItemGraphWin32LobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetQueryParameters the list of group assignments for this mobile app.
 type MobileAppsItemGraphWin32LobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphWin32LobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWin32LobAppAssignmentsMobileAppAssignmentItemRequestBuilderGetRequestConfiguration struct {

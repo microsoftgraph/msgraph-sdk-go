@@ -24,9 +24,9 @@ type ItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration struct 
 // ItemMessagesChatMessageItemRequestBuilderGetQueryParameters retrieve a single message or a message reply in a channel or a chat.
 type ItemMessagesChatMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMessagesChatMessageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMessagesChatMessageItemRequestBuilderGetRequestConfiguration struct {

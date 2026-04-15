@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderDeleteRe
 // ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderGetQueryParameters returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.
 type ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderGetRequestConfiguration struct {

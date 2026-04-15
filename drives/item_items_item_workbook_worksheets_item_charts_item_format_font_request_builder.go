@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemFormatFontRequestBuilderDelete
 // ItemItemsItemWorkbookWorksheetsItemChartsItemFormatFontRequestBuilderGetQueryParameters represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemFormatFontRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemFormatFontRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemFormatFontRequestBuilderGetRequestConfiguration struct {

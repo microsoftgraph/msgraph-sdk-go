@@ -24,9 +24,9 @@ type BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderDeleteRequestConfi
 // BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 type BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BucketsItemTasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration struct {

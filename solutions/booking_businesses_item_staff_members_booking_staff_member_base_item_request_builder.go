@@ -24,9 +24,9 @@ type BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderDe
 // BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
 type BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration struct {

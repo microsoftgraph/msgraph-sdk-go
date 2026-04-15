@@ -16,9 +16,9 @@ type ItemAuthenticationFido2MethodsCountRequestBuilder struct {
 // ItemAuthenticationFido2MethodsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemAuthenticationFido2MethodsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemAuthenticationFido2MethodsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationFido2MethodsCountRequestBuilderGetRequestConfiguration struct {

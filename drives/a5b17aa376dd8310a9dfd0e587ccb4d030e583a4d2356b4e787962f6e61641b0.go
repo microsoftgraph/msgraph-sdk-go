@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisTitleFormatFon
 // ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisTitleFormatFontRequestBuilderGetQueryParameters represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisTitleFormatFontRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisTitleFormatFontRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisTitleFormatFontRequestBuilderGetRequestConfiguration struct {

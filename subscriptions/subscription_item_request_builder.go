@@ -24,7 +24,7 @@ type SubscriptionItemRequestBuilderDeleteRequestConfiguration struct {
 // SubscriptionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 type SubscriptionItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SubscriptionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SubscriptionItemRequestBuilderGetRequestConfiguration struct {

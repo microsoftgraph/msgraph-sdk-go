@@ -24,7 +24,7 @@ func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
 func CreateFido2AuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2AuthenticationMethod(), nil
 }
-// GetAaGuid gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+// GetAaGuid gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.
 // returns a *string when successful
 func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
     val, err := m.GetBackingStore().Get("aaGuid")
@@ -36,7 +36,7 @@ func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
     }
     return nil
 }
-// GetAttestationCertificates gets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
+// GetAttestationCertificates gets the attestationCertificates property value. The attestation certificate or certificates attached to this passkey.
 // returns a []string when successful
 func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
     val, err := m.GetBackingStore().Get("attestationCertificates")
@@ -48,7 +48,7 @@ func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
     }
     return nil
 }
-// GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. The possible values are: attested, or notAttested.
+// GetAttestationLevel gets the attestationLevel property value. The attestation level of this passkey (FIDO2). The possible values are: attested, notAttested, unknownFutureValue.
 // returns a *AttestationLevel when successful
 func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
     val, err := m.GetBackingStore().Get("attestationLevel")
@@ -132,9 +132,19 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["passkeyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePasskeyType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasskeyType(val.(*PasskeyType))
+        }
+        return nil
+    }
     return res
 }
-// GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 security key.
+// GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 passkey.
 // returns a *string when successful
 func (m *Fido2AuthenticationMethod) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
@@ -143,6 +153,18 @@ func (m *Fido2AuthenticationMethod) GetModel()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPasskeyType gets the passkeyType property value. The type of passkey. The possible values are: deviceBound, synced, unknownFutureValue.
+// returns a *PasskeyType when successful
+func (m *Fido2AuthenticationMethod) GetPasskeyType()(*PasskeyType) {
+    val, err := m.GetBackingStore().Get("passkeyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PasskeyType)
     }
     return nil
 }
@@ -183,23 +205,30 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetPasskeyType() != nil {
+        cast := (*m.GetPasskeyType()).String()
+        err = writer.WriteStringValue("passkeyType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetAaGuid sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+// SetAaGuid sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.
 func (m *Fido2AuthenticationMethod) SetAaGuid(value *string)() {
     err := m.GetBackingStore().Set("aaGuid", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAttestationCertificates sets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
+// SetAttestationCertificates sets the attestationCertificates property value. The attestation certificate or certificates attached to this passkey.
 func (m *Fido2AuthenticationMethod) SetAttestationCertificates(value []string)() {
     err := m.GetBackingStore().Set("attestationCertificates", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. The possible values are: attested, or notAttested.
+// SetAttestationLevel sets the attestationLevel property value. The attestation level of this passkey (FIDO2). The possible values are: attested, notAttested, unknownFutureValue.
 func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *AttestationLevel)() {
     err := m.GetBackingStore().Set("attestationLevel", value)
     if err != nil {
@@ -213,9 +242,16 @@ func (m *Fido2AuthenticationMethod) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetModel sets the model property value. The manufacturer-assigned model of the FIDO2 security key.
+// SetModel sets the model property value. The manufacturer-assigned model of the FIDO2 passkey.
 func (m *Fido2AuthenticationMethod) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPasskeyType sets the passkeyType property value. The type of passkey. The possible values are: deviceBound, synced, unknownFutureValue.
+func (m *Fido2AuthenticationMethod) SetPasskeyType(value *PasskeyType)() {
+    err := m.GetBackingStore().Set("passkeyType", value)
     if err != nil {
         panic(err)
     }
@@ -228,9 +264,11 @@ type Fido2AuthenticationMethodable interface {
     GetAttestationLevel()(*AttestationLevel)
     GetDisplayName()(*string)
     GetModel()(*string)
+    GetPasskeyType()(*PasskeyType)
     SetAaGuid(value *string)()
     SetAttestationCertificates(value []string)()
     SetAttestationLevel(value *AttestationLevel)()
     SetDisplayName(value *string)()
     SetModel(value *string)()
+    SetPasskeyType(value *PasskeyType)()
 }

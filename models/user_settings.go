@@ -46,6 +46,18 @@ func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     }
     return nil
 }
+// GetExchange gets the exchange property value. The exchange property
+// returns a ExchangeSettingsable when successful
+func (m *UserSettings) GetExchange()(ExchangeSettingsable) {
+    val, err := m.GetBackingStore().Get("exchange")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExchangeSettingsable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,6 +79,16 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetContributionToContentDiscoveryDisabled(val)
+        }
+        return nil
+    }
+    res["exchange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExchangeSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExchange(val.(ExchangeSettingsable))
         }
         return nil
     }
@@ -207,6 +229,12 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteObjectValue("exchange", m.GetExchange())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("itemInsights", m.GetItemInsights())
         if err != nil {
             return err
@@ -258,6 +286,13 @@ func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() 
         panic(err)
     }
 }
+// SetExchange sets the exchange property value. The exchange property
+func (m *UserSettings) SetExchange(value ExchangeSettingsable)() {
+    err := m.GetBackingStore().Set("exchange", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetItemInsights sets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 func (m *UserSettings) SetItemInsights(value UserInsightsSettingsable)() {
     err := m.GetBackingStore().Set("itemInsights", value)
@@ -298,6 +333,7 @@ type UserSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool)
     GetContributionToContentDiscoveryDisabled()(*bool)
+    GetExchange()(ExchangeSettingsable)
     GetItemInsights()(UserInsightsSettingsable)
     GetShiftPreferences()(ShiftPreferencesable)
     GetStorage()(UserStorageable)
@@ -305,6 +341,7 @@ type UserSettingsable interface {
     GetWorkHoursAndLocations()(WorkHoursAndLocationsSettingable)
     SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)()
     SetContributionToContentDiscoveryDisabled(value *bool)()
+    SetExchange(value ExchangeSettingsable)()
     SetItemInsights(value UserInsightsSettingsable)()
     SetShiftPreferences(value ShiftPreferencesable)()
     SetStorage(value UserStorageable)()

@@ -24,9 +24,9 @@ type MobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBui
 // MobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBuilderGetQueryParameters the list of content versions for this app. This property is read-only.
 type MobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBuilderGetRequestConfiguration struct {

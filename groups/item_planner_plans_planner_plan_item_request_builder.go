@@ -24,9 +24,9 @@ type ItemPlannerPlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration str
 // ItemPlannerPlansPlannerPlanItemRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans owned by the group.
 type ItemPlannerPlansPlannerPlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration struct {

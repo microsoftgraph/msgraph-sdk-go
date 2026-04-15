@@ -24,9 +24,9 @@ type ItemLicenseDetailsLicenseDetailsItemRequestBuilderDeleteRequestConfiguratio
 // ItemLicenseDetailsLicenseDetailsItemRequestBuilderGetQueryParameters a collection of this user's license details. Read-only.
 type ItemLicenseDetailsLicenseDetailsItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemLicenseDetailsLicenseDetailsItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemLicenseDetailsLicenseDetailsItemRequestBuilderGetRequestConfiguration struct {

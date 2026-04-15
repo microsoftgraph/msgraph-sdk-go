@@ -24,9 +24,9 @@ type OnlineMeetingConversationsItemMessagesItemRepliesEngagementConversationMess
 // OnlineMeetingConversationsItemMessagesItemRepliesEngagementConversationMessageItemRequestBuilderGetQueryParameters a collection of messages that are replies to this message and form a threaded discussion.
 type OnlineMeetingConversationsItemMessagesItemRepliesEngagementConversationMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // OnlineMeetingConversationsItemMessagesItemRepliesEngagementConversationMessageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OnlineMeetingConversationsItemMessagesItemRepliesEngagementConversationMessageItemRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type AndroidManagedAppProtectionsItemAppsCountRequestBuilder struct {
 // AndroidManagedAppProtectionsItemAppsCountRequestBuilderGetQueryParameters get the number of the resource
 type AndroidManagedAppProtectionsItemAppsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // AndroidManagedAppProtectionsItemAppsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AndroidManagedAppProtectionsItemAppsCountRequestBuilderGetRequestConfiguration struct {

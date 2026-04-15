@@ -17,9 +17,9 @@ type SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder struct {
 // SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetQueryParameters collection of users who can collaborate on the request.
 type SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemMessagesItemExtensionsExtensionItemRequestBuilderDeleteRequestConfigura
 // ItemMessagesItemExtensionsExtensionItemRequestBuilderGetQueryParameters the collection of open extensions defined for the message. Nullable.
 type ItemMessagesItemExtensionsExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMessagesItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMessagesItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration struct {

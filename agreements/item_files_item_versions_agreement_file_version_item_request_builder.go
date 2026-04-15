@@ -24,9 +24,9 @@ type ItemFilesItemVersionsAgreementFileVersionItemRequestBuilderDeleteRequestCon
 // ItemFilesItemVersionsAgreementFileVersionItemRequestBuilderGetQueryParameters read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
 type ItemFilesItemVersionsAgreementFileVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemFilesItemVersionsAgreementFileVersionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemFilesItemVersionsAgreementFileVersionItemRequestBuilderGetRequestConfiguration struct {

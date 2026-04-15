@@ -24,9 +24,9 @@ type DeviceCategoriesDeviceCategoryItemRequestBuilderDeleteRequestConfiguration 
 // DeviceCategoriesDeviceCategoryItemRequestBuilderGetQueryParameters the list of device categories with the tenant.
 type DeviceCategoriesDeviceCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceCategoriesDeviceCategoryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceCategoriesDeviceCategoryItemRequestBuilderGetRequestConfiguration struct {

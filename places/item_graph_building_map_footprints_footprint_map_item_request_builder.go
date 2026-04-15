@@ -24,9 +24,9 @@ type ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderDeleteRequestCo
 // ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetQueryParameters represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
 type ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGraphBuildingMapFootprintsFootprintMapItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ItemMemberOfItemGraphGroupRequestBuilder struct {
 // ItemMemberOfItemGraphGroupRequestBuilderGetQueryParameters get groups and administrative units that this device is a direct member of. This operation is not transitive.
 type ItemMemberOfItemGraphGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMemberOfItemGraphGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMemberOfItemGraphGroupRequestBuilderGetRequestConfiguration struct {

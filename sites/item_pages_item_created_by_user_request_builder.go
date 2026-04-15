@@ -17,9 +17,9 @@ type ItemPagesItemCreatedByUserRequestBuilder struct {
 // ItemPagesItemCreatedByUserRequestBuilderGetQueryParameters identity of the user who created the item. Read-only.
 type ItemPagesItemCreatedByUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPagesItemCreatedByUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPagesItemCreatedByUserRequestBuilderGetRequestConfiguration struct {

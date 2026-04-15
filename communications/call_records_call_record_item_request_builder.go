@@ -24,9 +24,9 @@ type CallRecordsCallRecordItemRequestBuilderDeleteRequestConfiguration struct {
 // CallRecordsCallRecordItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:* Subscribe to change notifications to the /communications/callRecords endpoint.* Use the callChainId property of a call. The call record is available only after the associated call is completed.
 type CallRecordsCallRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CallRecordsCallRecordItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallRecordsCallRecordItemRequestBuilderGetRequestConfiguration struct {

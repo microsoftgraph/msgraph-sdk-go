@@ -16,9 +16,9 @@ type ItemPrimaryChannelMessagesItemRepliesCountRequestBuilder struct {
 // ItemPrimaryChannelMessagesItemRepliesCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemPrimaryChannelMessagesItemRepliesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemPrimaryChannelMessagesItemRepliesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPrimaryChannelMessagesItemRepliesCountRequestBuilderGetRequestConfiguration struct {

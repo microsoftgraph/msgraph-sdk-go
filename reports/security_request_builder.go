@@ -24,9 +24,9 @@ type SecurityRequestBuilderDeleteRequestConfiguration struct {
 // SecurityRequestBuilderGetQueryParameters represents an abstract type that contains resources for attack simulation and training reports.
 type SecurityRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SecurityRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SecurityRequestBuilderGetRequestConfiguration struct {

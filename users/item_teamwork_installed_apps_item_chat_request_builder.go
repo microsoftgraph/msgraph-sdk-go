@@ -17,9 +17,9 @@ type ItemTeamworkInstalledAppsItemChatRequestBuilder struct {
 // ItemTeamworkInstalledAppsItemChatRequestBuilderGetQueryParameters retrieve the chat of the specified user and Teams app.
 type ItemTeamworkInstalledAppsItemChatRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamworkInstalledAppsItemChatRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamworkInstalledAppsItemChatRequestBuilderGetRequestConfiguration struct {

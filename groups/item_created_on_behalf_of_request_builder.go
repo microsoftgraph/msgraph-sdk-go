@@ -17,9 +17,9 @@ type ItemCreatedOnBehalfOfRequestBuilder struct {
 // ItemCreatedOnBehalfOfRequestBuilderGetQueryParameters the user (or application) that created the group. NOTE: This property isn't set if the user is an administrator. Read-only.
 type ItemCreatedOnBehalfOfRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemCreatedOnBehalfOfRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCreatedOnBehalfOfRequestBuilderGetRequestConfiguration struct {

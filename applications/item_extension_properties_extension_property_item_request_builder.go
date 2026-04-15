@@ -24,9 +24,9 @@ type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConf
 // ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters read a directory extension definition represented by an extensionProperty object.
 type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetRequestConfiguration struct {

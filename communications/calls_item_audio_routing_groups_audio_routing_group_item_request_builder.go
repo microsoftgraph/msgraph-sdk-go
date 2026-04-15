@@ -24,9 +24,9 @@ type CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderDeleteRequest
 // CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an audioRoutingGroup object.
 type CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetRequestConfiguration struct {

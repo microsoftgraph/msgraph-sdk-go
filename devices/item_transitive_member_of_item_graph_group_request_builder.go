@@ -17,9 +17,9 @@ type ItemTransitiveMemberOfItemGraphGroupRequestBuilder struct {
 // ItemTransitiveMemberOfItemGraphGroupRequestBuilderGetQueryParameters get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.
 type ItemTransitiveMemberOfItemGraphGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTransitiveMemberOfItemGraphGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTransitiveMemberOfItemGraphGroupRequestBuilderGetRequestConfiguration struct {

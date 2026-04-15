@@ -24,9 +24,9 @@ type DirectoryRoleAssignmentsItemAppScopeRequestBuilderDeleteRequestConfiguratio
 // DirectoryRoleAssignmentsItemAppScopeRequestBuilderGetQueryParameters read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
 type DirectoryRoleAssignmentsItemAppScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleAssignmentsItemAppScopeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleAssignmentsItemAppScopeRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderDeleteRe
 // BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetQueryParameters the list of site inclusion rules applied to the tenant.
 type BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetRequestConfiguration struct {

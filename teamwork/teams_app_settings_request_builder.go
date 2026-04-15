@@ -24,9 +24,9 @@ type TeamsAppSettingsRequestBuilderDeleteRequestConfiguration struct {
 // TeamsAppSettingsRequestBuilderGetQueryParameters get the tenant-wide teamsAppSettings for all Teams apps in the tenant.
 type TeamsAppSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamsAppSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsAppSettingsRequestBuilderGetRequestConfiguration struct {

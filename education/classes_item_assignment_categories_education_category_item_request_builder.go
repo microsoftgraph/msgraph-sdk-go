@@ -24,9 +24,9 @@ type ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderDeleteReq
 // ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetQueryParameters retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
 type ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetRequestConfiguration struct {

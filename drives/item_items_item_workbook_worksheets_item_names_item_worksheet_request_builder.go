@@ -17,9 +17,9 @@ type ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilder struct 
 // ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetQueryParameters returns the worksheet to which the named item is scoped. Available only if the item is scoped to the worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemNamesItemWorksheetRequestBuilderGetRequestConfiguration struct {

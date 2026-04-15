@@ -34,6 +34,11 @@ func NewConditionalAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.conditionalAccessRoot entity.
+// returns a *ConditionalAccessDeletedItemsRequestBuilder when successful
+func (m *ConditionalAccessRequestBuilder) DeletedItems()(*ConditionalAccessDeletedItemsRequestBuilder) {
+    return NewConditionalAccessDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Evaluate provides operations to call the evaluate method.
 // returns a *ConditionalAccessEvaluateRequestBuilder when successful
 func (m *ConditionalAccessRequestBuilder) Evaluate()(*ConditionalAccessEvaluateRequestBuilder) {

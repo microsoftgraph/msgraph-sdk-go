@@ -24,9 +24,9 @@ type ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestC
 // ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters retrieve the metadata for a site, a list, or a contentType column.
 type ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration struct {

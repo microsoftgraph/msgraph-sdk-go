@@ -16,9 +16,9 @@ type MobileAppsGraphAndroidStoreAppCountRequestBuilder struct {
 // MobileAppsGraphAndroidStoreAppCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppsGraphAndroidStoreAppCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppsGraphAndroidStoreAppCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsGraphAndroidStoreAppCountRequestBuilderGetRequestConfiguration struct {

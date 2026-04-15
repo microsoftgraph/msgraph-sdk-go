@@ -17,9 +17,9 @@ type PrintersItemTaskTriggersItemDefinitionRequestBuilder struct {
 // PrintersItemTaskTriggersItemDefinitionRequestBuilderGetQueryParameters an abstract definition that is used to create a printTask when triggered by a print event. Read-only.
 type PrintersItemTaskTriggersItemDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrintersItemTaskTriggersItemDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrintersItemTaskTriggersItemDefinitionRequestBuilderGetRequestConfiguration struct {

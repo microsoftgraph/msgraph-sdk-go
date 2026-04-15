@@ -17,9 +17,9 @@ type ThreatIntelligenceHostTrackersItemHostRequestBuilder struct {
 // ThreatIntelligenceHostTrackersItemHostRequestBuilderGetQueryParameters the host related to this hostTracker. When navigating to a hostTracker from a host, this should be assumed to be a return reference.
 type ThreatIntelligenceHostTrackersItemHostRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceHostTrackersItemHostRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceHostTrackersItemHostRequestBuilderGetRequestConfiguration struct {

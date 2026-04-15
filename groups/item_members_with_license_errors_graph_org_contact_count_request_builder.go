@@ -16,9 +16,9 @@ type ItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilder struct {
 // ItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilderGetRequestConfiguration struct {

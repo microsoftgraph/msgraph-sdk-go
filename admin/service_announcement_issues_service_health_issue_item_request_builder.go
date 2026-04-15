@@ -24,9 +24,9 @@ type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderDeleteRequestC
 // ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
 type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ThreatIntelligenceHostPortsItemHostRequestBuilder struct {
 // ThreatIntelligenceHostPortsItemHostRequestBuilderGetQueryParameters the host related to this hostPort. This is a reverse navigation property. When you navigate to hostPorts from a host, assume that this is a return reference.
 type ThreatIntelligenceHostPortsItemHostRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceHostPortsItemHostRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceHostPortsItemHostRequestBuilderGetRequestConfiguration struct {

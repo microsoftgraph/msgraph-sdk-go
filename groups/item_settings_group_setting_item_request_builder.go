@@ -24,9 +24,9 @@ type ItemSettingsGroupSettingItemRequestBuilderDeleteRequestConfiguration struct
 // ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 type ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsGroupSettingItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsGroupSettingItemRequestBuilderGetRequestConfiguration struct {

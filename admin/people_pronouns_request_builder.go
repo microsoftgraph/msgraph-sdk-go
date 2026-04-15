@@ -17,9 +17,9 @@ type PeoplePronounsRequestBuilder struct {
 // PeoplePronounsRequestBuilderGetQueryParameters get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 type PeoplePronounsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PeoplePronounsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PeoplePronounsRequestBuilderGetRequestConfiguration struct {

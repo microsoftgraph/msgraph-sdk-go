@@ -24,9 +24,9 @@ type ItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration str
 // ItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters the collection of column definitions reusable across lists under this site.
 type ItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration struct {

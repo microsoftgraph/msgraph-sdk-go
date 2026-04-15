@@ -17,9 +17,9 @@ type CasesEdiscoveryCasesItemSearchesItemAddToReviewSetOperationRequestBuilder s
 // CasesEdiscoveryCasesItemSearchesItemAddToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the eDiscovery search to the specified reviewSet.
 type CasesEdiscoveryCasesItemSearchesItemAddToReviewSetOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CasesEdiscoveryCasesItemSearchesItemAddToReviewSetOperationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CasesEdiscoveryCasesItemSearchesItemAddToReviewSetOperationRequestBuilderGetRequestConfiguration struct {

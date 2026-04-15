@@ -17,9 +17,9 @@ type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder struct {
 // ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.
 type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

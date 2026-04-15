@@ -36,7 +36,7 @@ func (m *ExternalAuthenticationMethod) GetConfigurationId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Custom name given to the registered external authentication method.
+// GetDisplayName gets the displayName property value. Custom name given to the registered external MFA.
 // returns a *string when successful
 func (m *ExternalAuthenticationMethod) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -101,7 +101,7 @@ func (m *ExternalAuthenticationMethod) SetConfigurationId(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Custom name given to the registered external authentication method.
+// SetDisplayName sets the displayName property value. Custom name given to the registered external MFA.
 func (m *ExternalAuthenticationMethod) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFontRequestBuilder
 // ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFontRequestBuilderGetQueryParameters represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFontRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFontRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatFontRequestBuilderGetRequestConfiguration struct {
