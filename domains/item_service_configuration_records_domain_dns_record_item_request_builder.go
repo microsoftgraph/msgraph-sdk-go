@@ -24,9 +24,9 @@ type ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderDeleteReque
 // ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderGetQueryParameters dNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.
 type ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderGetRequestConfiguration struct {

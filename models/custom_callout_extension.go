@@ -44,6 +44,8 @@ func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e8
                         return NewOnAttributeCollectionSubmitCustomExtension(), nil
                     case "#microsoft.graph.onOtpSendCustomExtension":
                         return NewOnOtpSendCustomExtension(), nil
+                    case "#microsoft.graph.onPasswordSubmitCustomExtension":
+                        return NewOnPasswordSubmitCustomExtension(), nil
                     case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
                         return NewOnTokenIssuanceStartCustomExtension(), nil
                 }

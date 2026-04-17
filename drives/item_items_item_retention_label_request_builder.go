@@ -24,9 +24,9 @@ type ItemItemsItemRetentionLabelRequestBuilderDeleteRequestConfiguration struct 
 // ItemItemsItemRetentionLabelRequestBuilderGetQueryParameters get metadata information for a retention label applied on a driveItem. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
 type ItemItemsItemRetentionLabelRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemRetentionLabelRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemRetentionLabelRequestBuilderGetRequestConfiguration struct {

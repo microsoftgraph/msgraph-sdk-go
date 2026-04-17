@@ -16,9 +16,9 @@ type AppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilder stru
 // AppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilderGetQueryParameters get the number of the resource
 type AppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // AppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilderGetRequestConfiguration struct {

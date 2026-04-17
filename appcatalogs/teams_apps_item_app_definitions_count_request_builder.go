@@ -16,9 +16,9 @@ type TeamsAppsItemAppDefinitionsCountRequestBuilder struct {
 // TeamsAppsItemAppDefinitionsCountRequestBuilderGetQueryParameters get the number of the resource
 type TeamsAppsItemAppDefinitionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // TeamsAppsItemAppDefinitionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsAppsItemAppDefinitionsCountRequestBuilderGetRequestConfiguration struct {

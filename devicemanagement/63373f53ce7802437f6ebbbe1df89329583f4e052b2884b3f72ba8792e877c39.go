@@ -17,9 +17,9 @@ type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersWithUser
 // VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersWithUserPrincipalNameRequestBuilderGetQueryParameters the assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.
 type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersWithUserPrincipalNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersWithUserPrincipalNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersWithUserPrincipalNameRequestBuilderGetRequestConfiguration struct {

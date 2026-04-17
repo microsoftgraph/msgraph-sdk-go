@@ -24,6 +24,24 @@ func NewApplication()(*Application) {
 // CreateApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.agentIdentityBlueprint":
+                        return NewAgentIdentityBlueprint(), nil
+                }
+            }
+        }
+    }
     return NewApplication(), nil
 }
 // GetAddIns gets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams can set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.
@@ -119,6 +137,18 @@ func (m *Application) GetCertification()(Certificationable) {
     }
     if val != nil {
         return val.(Certificationable)
+    }
+    return nil
+}
+// GetCreatedByAppId gets the createdByAppId property value. The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+// returns a *string when successful
+func (m *Application) GetCreatedByAppId()(*string) {
+    val, err := m.GetBackingStore().Get("createdByAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -320,6 +350,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["createdByAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedByAppId(val)
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -471,6 +511,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetIsDeviceOnlyAuthSupported(val)
+        }
+        return nil
+    }
+    res["isDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDisabled(val)
         }
         return nil
     }
@@ -840,6 +890,18 @@ func (m *Application) GetInfo()(InformationalUrlable) {
 // returns a *bool when successful
 func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
     val, err := m.GetBackingStore().Get("isDeviceOnlyAuthSupported")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsDisabled gets the isDisabled property value. The isDisabled property
+// returns a *bool when successful
+func (m *Application) GetIsDisabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isDisabled")
     if err != nil {
         panic(err)
     }
@@ -1245,6 +1307,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("createdByAppId", m.GetCreatedByAppId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
@@ -1336,6 +1404,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err = writer.WriteBoolValue("isDeviceOnlyAuthSupported", m.GetIsDeviceOnlyAuthSupported())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isDisabled", m.GetIsDisabled())
         if err != nil {
             return err
         }
@@ -1597,6 +1671,13 @@ func (m *Application) SetCertification(value Certificationable)() {
         panic(err)
     }
 }
+// SetCreatedByAppId sets the createdByAppId property value. The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+func (m *Application) SetCreatedByAppId(value *string)() {
+    err := m.GetBackingStore().Set("createdByAppId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.
 func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -1684,6 +1765,13 @@ func (m *Application) SetInfo(value InformationalUrlable)() {
 // SetIsDeviceOnlyAuthSupported sets the isDeviceOnlyAuthSupported property value. Specifies whether this application supports device authentication without a user. The default is false.
 func (m *Application) SetIsDeviceOnlyAuthSupported(value *bool)() {
     err := m.GetBackingStore().Set("isDeviceOnlyAuthSupported", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsDisabled sets the isDisabled property value. The isDisabled property
+func (m *Application) SetIsDisabled(value *bool)() {
+    err := m.GetBackingStore().Set("isDisabled", value)
     if err != nil {
         panic(err)
     }
@@ -1888,6 +1976,7 @@ type Applicationable interface {
     GetAppRoles()([]AppRoleable)
     GetAuthenticationBehaviors()(AuthenticationBehaviorsable)
     GetCertification()(Certificationable)
+    GetCreatedByAppId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedOnBehalfOf()(DirectoryObjectable)
     GetDefaultRedirectUri()(*string)
@@ -1901,6 +1990,7 @@ type Applicationable interface {
     GetIdentifierUris()([]string)
     GetInfo()(InformationalUrlable)
     GetIsDeviceOnlyAuthSupported()(*bool)
+    GetIsDisabled()(*bool)
     GetIsFallbackPublicClient()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLogo()([]byte)
@@ -1936,6 +2026,7 @@ type Applicationable interface {
     SetAppRoles(value []AppRoleable)()
     SetAuthenticationBehaviors(value AuthenticationBehaviorsable)()
     SetCertification(value Certificationable)()
+    SetCreatedByAppId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedOnBehalfOf(value DirectoryObjectable)()
     SetDefaultRedirectUri(value *string)()
@@ -1949,6 +2040,7 @@ type Applicationable interface {
     SetIdentifierUris(value []string)()
     SetInfo(value InformationalUrlable)()
     SetIsDeviceOnlyAuthSupported(value *bool)()
+    SetIsDisabled(value *bool)()
     SetIsFallbackPublicClient(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLogo(value []byte)()

@@ -24,9 +24,9 @@ type EntitlementManagementRequestBuilderDeleteRequestConfiguration struct {
 // EntitlementManagementRequestBuilderGetQueryParameters container for roles and assignments for entitlement management resources.
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementRequestBuilderGetRequestConfiguration struct {

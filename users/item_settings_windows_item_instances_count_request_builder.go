@@ -16,9 +16,9 @@ type ItemSettingsWindowsItemInstancesCountRequestBuilder struct {
 // ItemSettingsWindowsItemInstancesCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemSettingsWindowsItemInstancesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemSettingsWindowsItemInstancesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsWindowsItemInstancesCountRequestBuilderGetRequestConfiguration struct {

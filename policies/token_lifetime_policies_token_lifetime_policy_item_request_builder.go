@@ -24,9 +24,9 @@ type TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderDeleteRequestConf
 // TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a tokenLifetimePolicy object.
 type TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type VirtualEndpointProvisioningPoliciesCountRequestBuilder struct {
 // VirtualEndpointProvisioningPoliciesCountRequestBuilderGetQueryParameters get the number of the resource
 type VirtualEndpointProvisioningPoliciesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // VirtualEndpointProvisioningPoliciesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointProvisioningPoliciesCountRequestBuilderGetRequestConfiguration struct {

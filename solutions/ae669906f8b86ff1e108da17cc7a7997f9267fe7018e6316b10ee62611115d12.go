@@ -24,9 +24,9 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBul
 // BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsDriveRestoreArtifactsBulkAdditionRequestItemRequestBuilderGetQueryParameters get a driveRestoreArtifactsBulkAdditionRequest object by its id, associated with a oneDriveForBusinessRestoreSession.
 type BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsDriveRestoreArtifactsBulkAdditionRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsDriveRestoreArtifactsBulkAdditionRequestItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsDriveRestoreArtifactsBulkAdditionRequestItemRequestBuilderGetRequestConfiguration struct {

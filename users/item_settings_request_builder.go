@@ -24,9 +24,9 @@ type ItemSettingsRequestBuilderDeleteRequestConfiguration struct {
 // ItemSettingsRequestBuilderGetQueryParameters get settings from users
 type ItemSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsRequestBuilderGetRequestConfiguration struct {
@@ -72,6 +72,11 @@ func (m *ItemSettingsRequestBuilder) Delete(ctx context.Context, requestConfigur
         return err
     }
     return nil
+}
+// Exchange provides operations to manage the exchange property of the microsoft.graph.userSettings entity.
+// returns a *ItemSettingsExchangeRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) Exchange()(*ItemSettingsExchangeRequestBuilder) {
+    return NewItemSettingsExchangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get settings from users
 // returns a UserSettingsable when successful

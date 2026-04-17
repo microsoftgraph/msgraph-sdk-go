@@ -16,9 +16,9 @@ type ItemTermStoreSetsItemTermsItemChildrenCountRequestBuilder struct {
 // ItemTermStoreSetsItemTermsItemChildrenCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemTermStoreSetsItemTermsItemChildrenCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemTermStoreSetsItemTermsItemChildrenCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTermStoreSetsItemTermsItemChildrenCountRequestBuilderGetRequestConfiguration struct {

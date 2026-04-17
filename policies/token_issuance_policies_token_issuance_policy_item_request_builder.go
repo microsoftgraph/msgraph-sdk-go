@@ -24,9 +24,9 @@ type TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderDeleteRequestConf
 // TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetQueryParameters the policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
 type TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetRequestConfiguration struct {

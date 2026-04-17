@@ -24,9 +24,9 @@ type ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderDeleteRequ
 // ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
 type ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetRequestConfiguration struct {

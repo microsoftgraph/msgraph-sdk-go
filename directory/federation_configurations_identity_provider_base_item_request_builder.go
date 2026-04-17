@@ -24,9 +24,9 @@ type FederationConfigurationsIdentityProviderBaseItemRequestBuilderDeleteRequest
 // FederationConfigurationsIdentityProviderBaseItemRequestBuilderGetQueryParameters configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 type FederationConfigurationsIdentityProviderBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FederationConfigurationsIdentityProviderBaseItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FederationConfigurationsIdentityProviderBaseItemRequestBuilderGetRequestConfiguration struct {

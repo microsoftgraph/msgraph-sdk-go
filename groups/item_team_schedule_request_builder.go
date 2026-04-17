@@ -24,9 +24,9 @@ type ItemTeamScheduleRequestBuilderDeleteRequestConfiguration struct {
 // ItemTeamScheduleRequestBuilderGetQueryParameters the schedule of shifts for this team.
 type ItemTeamScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamScheduleRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamScheduleRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type EntitlementManagementCatalogsItemAccessPackagesCountRequestBuilder struct {
 // EntitlementManagementCatalogsItemAccessPackagesCountRequestBuilderGetQueryParameters get the number of the resource
 type EntitlementManagementCatalogsItemAccessPackagesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // EntitlementManagementCatalogsItemAccessPackagesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementCatalogsItemAccessPackagesCountRequestBuilderGetRequestConfiguration struct {

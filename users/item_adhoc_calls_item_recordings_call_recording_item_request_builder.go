@@ -24,9 +24,9 @@ type ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderDeleteRequestCon
 // ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
 type ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetRequestConfiguration struct {

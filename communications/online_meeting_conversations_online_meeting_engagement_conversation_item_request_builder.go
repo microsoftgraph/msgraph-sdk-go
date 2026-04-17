@@ -24,9 +24,9 @@ type OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBui
 // OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetQueryParameters a collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 type OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetRequestConfiguration struct {

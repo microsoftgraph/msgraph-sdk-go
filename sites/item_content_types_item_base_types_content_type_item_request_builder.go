@@ -17,9 +17,9 @@ type ItemContentTypesItemBaseTypesContentTypeItemRequestBuilder struct {
 // ItemContentTypesItemBaseTypesContentTypeItemRequestBuilderGetQueryParameters the collection of content types that are ancestors of this content type.
 type ItemContentTypesItemBaseTypesContentTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemContentTypesItemBaseTypesContentTypeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContentTypesItemBaseTypesContentTypeItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderDe
 // BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderGetQueryParameters the list of mailbox inclusion rules applied to the tenant.
 type BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderGetRequestConfiguration struct {

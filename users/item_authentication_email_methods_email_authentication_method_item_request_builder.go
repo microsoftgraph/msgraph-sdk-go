@@ -24,9 +24,9 @@ type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDe
 // ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters the email address registered to a user for authentication.
 type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration struct {

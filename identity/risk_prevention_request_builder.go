@@ -24,9 +24,9 @@ type RiskPreventionRequestBuilderDeleteRequestConfiguration struct {
 // RiskPreventionRequestBuilderGetQueryParameters represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
 type RiskPreventionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RiskPreventionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RiskPreventionRequestBuilderGetRequestConfiguration struct {

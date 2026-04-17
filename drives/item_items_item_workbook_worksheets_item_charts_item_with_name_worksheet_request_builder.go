@@ -17,9 +17,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameWorksheetRequestBuilde
 // ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameWorksheetRequestBuilderGetQueryParameters the worksheet containing the current chart. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameWorksheetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameWorksheetRequestBuilderGetRequestConfiguration struct {

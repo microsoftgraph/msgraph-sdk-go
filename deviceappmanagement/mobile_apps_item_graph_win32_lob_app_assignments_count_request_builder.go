@@ -16,9 +16,9 @@ type MobileAppsItemGraphWin32LobAppAssignmentsCountRequestBuilder struct {
 // MobileAppsItemGraphWin32LobAppAssignmentsCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppsItemGraphWin32LobAppAssignmentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppsItemGraphWin32LobAppAssignmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWin32LobAppAssignmentsCountRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type BackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilder st
 // BackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilderGetQueryParameters get a list of mailboxProtectionUnit objects.
 type BackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreProtectionUnitsItemGraphMailboxProtectionUnitRequestBuilderGetRequestConfiguration struct {

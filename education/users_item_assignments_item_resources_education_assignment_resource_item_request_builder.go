@@ -24,9 +24,9 @@ type UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuil
 // UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
 type UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration struct {

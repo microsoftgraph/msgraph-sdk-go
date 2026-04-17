@@ -24,9 +24,9 @@ type ItemListSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfigurati
 // ItemListSubscriptionsSubscriptionItemRequestBuilderGetQueryParameters the set of subscriptions on the list.
 type ItemListSubscriptionsSubscriptionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemListSubscriptionsSubscriptionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListSubscriptionsSubscriptionItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type LabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilder struct {
 // LabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilderGetQueryParameters the specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
 type LabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilderGetRequestConfiguration struct {

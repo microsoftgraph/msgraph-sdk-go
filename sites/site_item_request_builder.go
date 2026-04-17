@@ -17,9 +17,9 @@ type SiteItemRequestBuilder struct {
 // SiteItemRequestBuilderGetQueryParameters retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
 type SiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SiteItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SiteItemRequestBuilderGetRequestConfiguration struct {

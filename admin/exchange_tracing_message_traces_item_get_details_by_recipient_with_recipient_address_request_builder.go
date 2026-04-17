@@ -16,21 +16,21 @@ type ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRe
 // ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters get a list of exchangeMessageTraceDetail objects filtered on the recipient.
 type ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration struct {
@@ -61,6 +61,9 @@ func NewExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddres
 // Deprecated: This method is obsolete. Use GetAsGetDetailsByRecipientWithRecipientAddressGetResponse instead.
 // returns a ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-1.0
 func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration)(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,6 +84,9 @@ func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddre
 // GetAsGetDetailsByRecipientWithRecipientAddressGetResponse get a list of exchangeMessageTraceDetail objects filtered on the recipient.
 // returns a ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-1.0
 func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder) GetAsGetDetailsByRecipientWithRecipientAddressGetResponse(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration)(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -24,9 +24,9 @@ type ItemSolutionsRequestBuilderDeleteRequestConfiguration struct {
 // ItemSolutionsRequestBuilderGetQueryParameters the identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
 type ItemSolutionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSolutionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSolutionsRequestBuilderGetRequestConfiguration struct {

@@ -33,11 +33,11 @@ func NewItemRemoveKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewItemRemoveKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+// Post remove a key credential from an agentIdentityBlueprint. This method along with addKey can be used to automate rolling its expiring keys.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentidentityblueprint-removekey?view=graph-rest-1.0
 func (m *ItemRemoveKeyRequestBuilder) Post(ctx context.Context, body ItemRemoveKeyPostRequestBodyable, requestConfiguration *ItemRemoveKeyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +52,7 @@ func (m *ItemRemoveKeyRequestBuilder) Post(ctx context.Context, body ItemRemoveK
     }
     return nil
 }
-// ToPostRequestInformation remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+// ToPostRequestInformation remove a key credential from an agentIdentityBlueprint. This method along with addKey can be used to automate rolling its expiring keys.
 // returns a *RequestInformation when successful
 func (m *ItemRemoveKeyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemRemoveKeyPostRequestBodyable, requestConfiguration *ItemRemoveKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

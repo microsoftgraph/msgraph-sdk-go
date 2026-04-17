@@ -24,9 +24,9 @@ type TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderDel
 // TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderGetQueryParameters pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
 type TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemJoinedTeamsItemChannelsChannelItemRequestBuilderDeleteRequestConfigurat
 // ItemJoinedTeamsItemChannelsChannelItemRequestBuilderGetQueryParameters the collection of channels and messages associated with the team.
 type ItemJoinedTeamsItemChannelsChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemJoinedTeamsItemChannelsChannelItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemChannelsChannelItemRequestBuilderGetRequestConfiguration struct {
@@ -92,6 +92,11 @@ func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) Delete(ctx contex
 // returns a *ItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder when successful
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// EnabledApps provides operations to manage the enabledApps property of the microsoft.graph.channel entity.
+// returns a *ItemJoinedTeamsItemChannelsItemEnabledAppsRequestBuilder when successful
+func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) EnabledApps()(*ItemJoinedTeamsItemChannelsItemEnabledAppsRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsItemEnabledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 // returns a *ItemJoinedTeamsItemChannelsItemFilesFolderRequestBuilder when successful
@@ -162,6 +167,11 @@ func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) RemoveEmail()(*It
 // returns a *ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder when successful
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemJoinedTeamsItemChannelsItemStartMigrationRequestBuilder when successful
+func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) StartMigration()(*ItemJoinedTeamsItemChannelsItemStartMigrationRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder when successful

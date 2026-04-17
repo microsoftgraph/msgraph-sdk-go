@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderD
 // ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderGetQueryParameters represents chart axes. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderGetRequestConfiguration struct {

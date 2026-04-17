@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderDel
 // ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetQueryParameters represents the value axis in an axis. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderGetRequestConfiguration struct {

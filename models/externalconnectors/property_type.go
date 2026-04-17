@@ -15,10 +15,12 @@ const (
     DOUBLECOLLECTION_PROPERTYTYPE
     DATETIMECOLLECTION_PROPERTYTYPE
     UNKNOWNFUTUREVALUE_PROPERTYTYPE
+    PRINCIPAL_PROPERTYTYPE
+    PRINCIPALCOLLECTION_PROPERTYTYPE
 )
 
 func (i PropertyType) String() string {
-    return []string{"string", "int64", "double", "dateTime", "boolean", "stringCollection", "int64Collection", "doubleCollection", "dateTimeCollection", "unknownFutureValue"}[i]
+    return []string{"string", "int64", "double", "dateTime", "boolean", "stringCollection", "int64Collection", "doubleCollection", "dateTimeCollection", "unknownFutureValue", "principal", "principalCollection"}[i]
 }
 func ParsePropertyType(v string) (any, error) {
     result := STRING_PROPERTYTYPE
@@ -43,6 +45,10 @@ func ParsePropertyType(v string) (any, error) {
             result = DATETIMECOLLECTION_PROPERTYTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROPERTYTYPE
+        case "principal":
+            result = PRINCIPAL_PROPERTYTYPE
+        case "principalCollection":
+            result = PRINCIPALCOLLECTION_PROPERTYTYPE
         default:
             return nil, nil
     }

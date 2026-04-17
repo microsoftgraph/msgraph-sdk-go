@@ -24,9 +24,9 @@ type ItemTeamPrimaryChannelRequestBuilderDeleteRequestConfiguration struct {
 // ItemTeamPrimaryChannelRequestBuilderGetQueryParameters the general channel for the team.
 type ItemTeamPrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamPrimaryChannelRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamPrimaryChannelRequestBuilderGetRequestConfiguration struct {
@@ -92,6 +92,11 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) Delete(ctx context.Context, reque
 // returns a *ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder when successful
 func (m *ItemTeamPrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
     return NewItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// EnabledApps provides operations to manage the enabledApps property of the microsoft.graph.channel entity.
+// returns a *ItemTeamPrimaryChannelEnabledAppsRequestBuilder when successful
+func (m *ItemTeamPrimaryChannelRequestBuilder) EnabledApps()(*ItemTeamPrimaryChannelEnabledAppsRequestBuilder) {
+    return NewItemTeamPrimaryChannelEnabledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 // returns a *ItemTeamPrimaryChannelFilesFolderRequestBuilder when successful
@@ -162,6 +167,11 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) RemoveEmail()(*ItemTeamPrimaryCha
 // returns a *ItemTeamPrimaryChannelSharedWithTeamsRequestBuilder when successful
 func (m *ItemTeamPrimaryChannelRequestBuilder) SharedWithTeams()(*ItemTeamPrimaryChannelSharedWithTeamsRequestBuilder) {
     return NewItemTeamPrimaryChannelSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemTeamPrimaryChannelStartMigrationRequestBuilder when successful
+func (m *ItemTeamPrimaryChannelRequestBuilder) StartMigration()(*ItemTeamPrimaryChannelStartMigrationRequestBuilder) {
+    return NewItemTeamPrimaryChannelStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *ItemTeamPrimaryChannelTabsRequestBuilder when successful

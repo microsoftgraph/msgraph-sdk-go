@@ -24,6 +24,24 @@ func NewUser()(*User) {
 // CreateUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.agentUser":
+                        return NewAgentUser(), nil
+                }
+            }
+        }
+    }
     return NewUser(), nil
 }
 // GetAboutMe gets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -1280,6 +1298,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["identityParentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityParentId(val)
+        }
+        return nil
+    }
     res["imAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -2307,6 +2335,18 @@ func (m *User) GetIdentities()([]ObjectIdentityable) {
     }
     if val != nil {
         return val.([]ObjectIdentityable)
+    }
+    return nil
+}
+// GetIdentityParentId gets the identityParentId property value. The identityParentId property
+// returns a *string when successful
+func (m *User) GetIdentityParentId()(*string) {
+    val, err := m.GetBackingStore().Get("identityParentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -3720,6 +3760,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("identityParentId", m.GetIdentityParentId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetImAddresses() != nil {
         err = writer.WriteCollectionOfStringValues("imAddresses", m.GetImAddresses())
         if err != nil {
@@ -4705,6 +4751,13 @@ func (m *User) SetIdentities(value []ObjectIdentityable)() {
         panic(err)
     }
 }
+// SetIdentityParentId sets the identityParentId property value. The identityParentId property
+func (m *User) SetIdentityParentId(value *string)() {
+    err := m.GetBackingStore().Set("identityParentId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetImAddresses sets the imAddresses property value. The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) SetImAddresses(value []string)() {
     err := m.GetBackingStore().Set("imAddresses", value)
@@ -5321,6 +5374,7 @@ type Userable interface {
     GetGivenName()(*string)
     GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIdentities()([]ObjectIdentityable)
+    GetIdentityParentId()(*string)
     GetImAddresses()([]string)
     GetInferenceClassification()(InferenceClassificationable)
     GetInsights()(ItemInsightsable)
@@ -5454,6 +5508,7 @@ type Userable interface {
     SetGivenName(value *string)()
     SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIdentities(value []ObjectIdentityable)()
+    SetIdentityParentId(value *string)()
     SetImAddresses(value []string)()
     SetInferenceClassification(value InferenceClassificationable)()
     SetInsights(value ItemInsightsable)()

@@ -17,9 +17,9 @@ type InvitedUserSponsorsDirectoryObjectItemRequestBuilder struct {
 // InvitedUserSponsorsDirectoryObjectItemRequestBuilderGetQueryParameters the users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
 type InvitedUserSponsorsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // InvitedUserSponsorsDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type InvitedUserSponsorsDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

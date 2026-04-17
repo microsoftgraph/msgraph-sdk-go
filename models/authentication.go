@@ -34,7 +34,7 @@ func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
     }
     return nil
 }
-// GetExternalAuthenticationMethods gets the externalAuthenticationMethods property value. Represents the external authentication methods registered to a user for authentication using an external identity provider.
+// GetExternalAuthenticationMethods gets the externalAuthenticationMethods property value. Represents the external MFA registered to a user for authentication using an external identity provider.
 // returns a []ExternalAuthenticationMethodable when successful
 func (m *Authentication) GetExternalAuthenticationMethods()([]ExternalAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("externalAuthenticationMethods")
@@ -523,7 +523,7 @@ func (m *Authentication) SetEmailMethods(value []EmailAuthenticationMethodable)(
         panic(err)
     }
 }
-// SetExternalAuthenticationMethods sets the externalAuthenticationMethods property value. Represents the external authentication methods registered to a user for authentication using an external identity provider.
+// SetExternalAuthenticationMethods sets the externalAuthenticationMethods property value. Represents the external MFA registered to a user for authentication using an external identity provider.
 func (m *Authentication) SetExternalAuthenticationMethods(value []ExternalAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("externalAuthenticationMethods", value)
     if err != nil {

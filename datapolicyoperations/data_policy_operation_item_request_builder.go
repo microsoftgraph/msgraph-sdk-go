@@ -24,9 +24,9 @@ type DataPolicyOperationItemRequestBuilderDeleteRequestConfiguration struct {
 // DataPolicyOperationItemRequestBuilderGetQueryParameters retrieve the properties of a dataPolicyOperation object.
 type DataPolicyOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DataPolicyOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DataPolicyOperationItemRequestBuilderGetRequestConfiguration struct {

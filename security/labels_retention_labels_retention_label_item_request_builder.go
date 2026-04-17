@@ -24,9 +24,9 @@ type LabelsRetentionLabelsRetentionLabelItemRequestBuilderDeleteRequestConfigura
 // LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters represents how customers can manage their data, whether and for how long to retain or delete it.
 type LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder
 // ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters the list of names that are associated with the worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderGetRequestConfiguration struct {

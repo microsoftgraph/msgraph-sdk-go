@@ -17,9 +17,9 @@ type InvitedUserRequestBuilder struct {
 // InvitedUserRequestBuilderGetQueryParameters the user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
 type InvitedUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // InvitedUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type InvitedUserRequestBuilderGetRequestConfiguration struct {

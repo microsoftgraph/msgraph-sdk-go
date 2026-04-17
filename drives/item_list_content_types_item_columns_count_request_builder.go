@@ -16,9 +16,9 @@ type ItemListContentTypesItemColumnsCountRequestBuilder struct {
 // ItemListContentTypesItemColumnsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemListContentTypesItemColumnsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemListContentTypesItemColumnsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListContentTypesItemColumnsCountRequestBuilderGetRequestConfiguration struct {

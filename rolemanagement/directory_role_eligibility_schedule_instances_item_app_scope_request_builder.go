@@ -17,9 +17,9 @@ type DirectoryRoleEligibilityScheduleInstancesItemAppScopeRequestBuilder struct 
 // DirectoryRoleEligibilityScheduleInstancesItemAppScopeRequestBuilderGetQueryParameters read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
 type DirectoryRoleEligibilityScheduleInstancesItemAppScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleEligibilityScheduleInstancesItemAppScopeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleEligibilityScheduleInstancesItemAppScopeRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type OnlineMeetingConversationsItemMessagesItemRepliesItemConversationRequestBui
 // OnlineMeetingConversationsItemMessagesItemRepliesItemConversationRequestBuilderGetQueryParameters the Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
 type OnlineMeetingConversationsItemMessagesItemRepliesItemConversationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // OnlineMeetingConversationsItemMessagesItemRepliesItemConversationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OnlineMeetingConversationsItemMessagesItemRepliesItemConversationRequestBuilderGetRequestConfiguration struct {

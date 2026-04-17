@@ -24,9 +24,9 @@ type ItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration s
 // ItemMembersConversationMemberItemRequestBuilderGetQueryParameters get a conversationMember from a team.
 type ItemMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration struct {

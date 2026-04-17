@@ -17,9 +17,9 @@ type RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilder
 // RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetQueryParameters reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
 type RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RiskPreventionWebApplicationFirewallVerificationsItemProviderRequestBuilderGetRequestConfiguration struct {

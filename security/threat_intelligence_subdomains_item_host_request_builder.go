@@ -17,9 +17,9 @@ type ThreatIntelligenceSubdomainsItemHostRequestBuilder struct {
 // ThreatIntelligenceSubdomainsItemHostRequestBuilderGetQueryParameters the host of the subdomain.
 type ThreatIntelligenceSubdomainsItemHostRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceSubdomainsItemHostRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceSubdomainsItemHostRequestBuilderGetRequestConfiguration struct {

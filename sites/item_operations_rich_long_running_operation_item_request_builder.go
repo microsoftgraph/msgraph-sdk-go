@@ -24,9 +24,9 @@ type ItemOperationsRichLongRunningOperationItemRequestBuilderDeleteRequestConfig
 // ItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters get the status of a rich long-running operation on a site or a list.
 type ItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOperationsRichLongRunningOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOperationsRichLongRunningOperationItemRequestBuilderGetRequestConfiguration struct {

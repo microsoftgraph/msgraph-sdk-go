@@ -24,9 +24,9 @@ type ItemOnenoteOperationsOnenoteOperationItemRequestBuilderDeleteRequestConfigu
 // ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetQueryParameters the status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 type ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetRequestConfiguration struct {

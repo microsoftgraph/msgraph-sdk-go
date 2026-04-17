@@ -24,9 +24,9 @@ type PublicKeyInfrastructureRequestBuilderDeleteRequestConfiguration struct {
 // PublicKeyInfrastructureRequestBuilderGetQueryParameters the collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
 type PublicKeyInfrastructureRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PublicKeyInfrastructureRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PublicKeyInfrastructureRequestBuilderGetRequestConfiguration struct {

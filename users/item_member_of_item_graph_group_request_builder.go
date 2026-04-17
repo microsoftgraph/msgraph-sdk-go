@@ -17,9 +17,9 @@ type ItemMemberOfItemGraphGroupRequestBuilder struct {
 // ItemMemberOfItemGraphGroupRequestBuilderGetQueryParameters get groups, directory roles, and administrative units that the user is a direct member of. This operation isn't transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.
 type ItemMemberOfItemGraphGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMemberOfItemGraphGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMemberOfItemGraphGroupRequestBuilderGetRequestConfiguration struct {

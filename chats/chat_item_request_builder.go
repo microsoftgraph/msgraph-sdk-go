@@ -24,9 +24,9 @@ type ChatItemRequestBuilderDeleteRequestConfiguration struct {
 // ChatItemRequestBuilderGetQueryParameters retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
 type ChatItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ChatItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ChatItemRequestBuilderGetRequestConfiguration struct {
@@ -43,6 +43,11 @@ type ChatItemRequestBuilderPatchRequestConfiguration struct {
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CompleteMigration provides operations to call the completeMigration method.
+// returns a *ItemCompleteMigrationRequestBuilder when successful
+func (m *ChatItemRequestBuilder) CompleteMigration()(*ItemCompleteMigrationRequestBuilder) {
+    return NewItemCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewChatItemRequestBuilderInternal instantiates a new ChatItemRequestBuilder and sets the default values.
 func NewChatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatItemRequestBuilder) {
@@ -176,6 +181,11 @@ func (m *ChatItemRequestBuilder) RemoveAllAccessForUser()(*ItemRemoveAllAccessFo
 // returns a *ItemSendActivityNotificationRequestBuilder when successful
 func (m *ChatItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
     return NewItemSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemStartMigrationRequestBuilder when successful
+func (m *ChatItemRequestBuilder) StartMigration()(*ItemStartMigrationRequestBuilder) {
+    return NewItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 // returns a *ItemTabsRequestBuilder when successful

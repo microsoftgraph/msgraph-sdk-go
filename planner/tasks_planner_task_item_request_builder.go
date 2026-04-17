@@ -24,9 +24,9 @@ type TasksPlannerTaskItemRequestBuilderDeleteRequestConfiguration struct {
 // TasksPlannerTaskItemRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerTask object.
 type TasksPlannerTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TasksPlannerTaskItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TasksPlannerTaskItemRequestBuilderGetRequestConfiguration struct {

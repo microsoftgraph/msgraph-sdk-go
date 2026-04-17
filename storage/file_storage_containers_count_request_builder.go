@@ -16,9 +16,9 @@ type FileStorageContainersCountRequestBuilder struct {
 // FileStorageContainersCountRequestBuilderGetQueryParameters get the number of the resource
 type FileStorageContainersCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // FileStorageContainersCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageContainersCountRequestBuilderGetRequestConfiguration struct {

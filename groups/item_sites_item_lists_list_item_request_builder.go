@@ -24,9 +24,9 @@ type ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
 // ItemSitesItemListsListItemRequestBuilderGetQueryParameters the collection of lists under this site.
 type ItemSitesItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration struct {

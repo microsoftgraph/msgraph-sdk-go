@@ -17,9 +17,9 @@ type ItemTeamChannelsItemTabsItemTeamsAppRequestBuilder struct {
 // ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetQueryParameters the application that is linked to the tab. This can't be changed after tab creation.
 type ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetRequestConfiguration struct {

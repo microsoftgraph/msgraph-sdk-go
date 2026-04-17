@@ -17,9 +17,9 @@ type ItemRootDomainRequestBuilder struct {
 // ItemRootDomainRequestBuilderGetQueryParameters get the root domain of a subdomain. This API returns a single object.
 type ItemRootDomainRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRootDomainRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRootDomainRequestBuilderGetRequestConfiguration struct {

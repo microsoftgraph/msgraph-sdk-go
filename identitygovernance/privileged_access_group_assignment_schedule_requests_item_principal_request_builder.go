@@ -17,9 +17,9 @@ type PrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilder 
 // PrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters references the principal that's in the scope of this membership or ownership assignment request through the group that's governed by PIM. Supports $expand and $select nested in $expand for id only.
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration struct {

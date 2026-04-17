@@ -24,9 +24,9 @@ type ItemAuthenticationOperationsLongRunningOperationItemRequestBuilderDeleteReq
 // ItemAuthenticationOperationsLongRunningOperationItemRequestBuilderGetQueryParameters read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
 type ItemAuthenticationOperationsLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationOperationsLongRunningOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationOperationsLongRunningOperationItemRequestBuilderGetRequestConfiguration struct {

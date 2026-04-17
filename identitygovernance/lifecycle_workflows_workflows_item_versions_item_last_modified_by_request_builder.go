@@ -17,9 +17,9 @@ type LifecycleWorkflowsWorkflowsItemVersionsItemLastModifiedByRequestBuilder str
 // LifecycleWorkflowsWorkflowsItemVersionsItemLastModifiedByRequestBuilderGetQueryParameters the unique identifier of the Microsoft Entra identity that last modified the workflow.
 type LifecycleWorkflowsWorkflowsItemVersionsItemLastModifiedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsWorkflowsItemVersionsItemLastModifiedByRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemVersionsItemLastModifiedByRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ItemTermStoreSetsItemTermsItemSetRequestBuilder struct {
 // ItemTermStoreSetsItemTermsItemSetRequestBuilderGetQueryParameters the [set] in which the term is created.
 type ItemTermStoreSetsItemTermsItemSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTermStoreSetsItemTermsItemSetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTermStoreSetsItemTermsItemSetRequestBuilderGetRequestConfiguration struct {

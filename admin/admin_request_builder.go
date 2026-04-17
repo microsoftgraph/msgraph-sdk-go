@@ -17,9 +17,9 @@ type AdminRequestBuilder struct {
 // AdminRequestBuilderGetQueryParameters get admin
 type AdminRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AdminRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdminRequestBuilderGetRequestConfiguration struct {
@@ -36,6 +36,11 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ConfigurationManagement provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
+// returns a *ConfigurationManagementRequestBuilder when successful
+func (m *AdminRequestBuilder) ConfigurationManagement()(*ConfigurationManagementRequestBuilder) {
+    return NewConfigurationManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewAdminRequestBuilderInternal instantiates a new AdminRequestBuilder and sets the default values.
 func NewAdminRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdminRequestBuilder) {

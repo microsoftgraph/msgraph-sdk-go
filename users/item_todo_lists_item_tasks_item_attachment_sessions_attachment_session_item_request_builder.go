@@ -24,9 +24,9 @@ type ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBui
 // ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderGetQueryParameters get attachmentSessions from users
 type ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderGetRequestConfiguration struct {

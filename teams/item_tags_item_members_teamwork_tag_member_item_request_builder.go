@@ -24,9 +24,9 @@ type ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfigur
 // ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters get the properties and relationships of a member of a standard tag in a team.
 type ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration struct {

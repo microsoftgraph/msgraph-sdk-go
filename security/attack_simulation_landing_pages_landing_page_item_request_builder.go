@@ -24,9 +24,9 @@ type AttackSimulationLandingPagesLandingPageItemRequestBuilderDeleteRequestConfi
 // AttackSimulationLandingPagesLandingPageItemRequestBuilderGetQueryParameters get a landingPage associated with an attack simulation campaign for a tenant.
 type AttackSimulationLandingPagesLandingPageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AttackSimulationLandingPagesLandingPageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AttackSimulationLandingPagesLandingPageItemRequestBuilderGetRequestConfiguration struct {

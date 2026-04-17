@@ -17,9 +17,9 @@ type UserExperienceAnalyticsBaselinesItemRebootAnalyticsMetricsRequestBuilder st
 // UserExperienceAnalyticsBaselinesItemRebootAnalyticsMetricsRequestBuilderGetQueryParameters the scores and insights for the reboot analytics metrics.
 type UserExperienceAnalyticsBaselinesItemRebootAnalyticsMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserExperienceAnalyticsBaselinesItemRebootAnalyticsMetricsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserExperienceAnalyticsBaselinesItemRebootAnalyticsMetricsRequestBuilderGetRequestConfiguration struct {

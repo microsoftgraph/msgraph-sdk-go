@@ -47,7 +47,7 @@ func (m *AccessPackageAssignmentRequest) GetAnswers()([]AccessPackageAnswerable)
     }
     return nil
 }
-// GetAssignment gets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+// GetAssignment gets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove, approverRemove, or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 // returns a AccessPackageAssignmentable when successful
 func (m *AccessPackageAssignmentRequest) GetAssignment()(AccessPackageAssignmentable) {
     val, err := m.GetBackingStore().Get("assignment")
@@ -257,7 +257,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable
     }
     return nil
 }
-// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
+// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: approverRemove. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
 // returns a *AccessPackageRequestType when successful
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestType) {
     val, err := m.GetBackingStore().Get("requestType")
@@ -269,7 +269,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestT
     }
     return nil
 }
-// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set, but a new schedule for an assignment can be included in another userUpdate or UserExtend or adminUpdate assignment request.
+// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set, but a new schedule for an assignment can be included in another userUpdate or adminUpdate assignment request.
 // returns a EntitlementManagementScheduleable when successful
 func (m *AccessPackageAssignmentRequest) GetSchedule()(EntitlementManagementScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
@@ -413,7 +413,7 @@ func (m *AccessPackageAssignmentRequest) SetAnswers(value []AccessPackageAnswera
         panic(err)
     }
 }
-// SetAssignment sets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+// SetAssignment sets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove, approverRemove, or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAssignment(value AccessPackageAssignmentable)() {
     err := m.GetBackingStore().Set("assignment", value)
     if err != nil {
@@ -455,14 +455,14 @@ func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubject
         panic(err)
     }
 }
-// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
+// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: approverRemove. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageRequestType)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set, but a new schedule for an assignment can be included in another userUpdate or UserExtend or adminUpdate assignment request.
+// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set, but a new schedule for an assignment can be included in another userUpdate or adminUpdate assignment request.
 func (m *AccessPackageAssignmentRequest) SetSchedule(value EntitlementManagementScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
     if err != nil {

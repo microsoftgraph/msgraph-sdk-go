@@ -24,9 +24,9 @@ type B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration
 // B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a b2xIdentityUserFlow object.
 type B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderGetRequestConfiguration struct {

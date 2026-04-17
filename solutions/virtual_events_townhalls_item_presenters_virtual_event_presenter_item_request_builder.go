@@ -24,9 +24,9 @@ type VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilder
 // VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: - virtualEventTownhall- virtualEventWebinar
 type VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEventsTownhallsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration struct {

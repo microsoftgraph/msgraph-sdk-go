@@ -16,9 +16,9 @@ type Alerts_v2ItemCommentsCountRequestBuilder struct {
 // Alerts_v2ItemCommentsCountRequestBuilderGetQueryParameters get the number of the resource
 type Alerts_v2ItemCommentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // Alerts_v2ItemCommentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type Alerts_v2ItemCommentsCountRequestBuilderGetRequestConfiguration struct {

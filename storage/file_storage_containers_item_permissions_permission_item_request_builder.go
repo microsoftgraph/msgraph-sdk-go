@@ -24,9 +24,9 @@ type FileStorageContainersItemPermissionsPermissionItemRequestBuilderDeleteReque
 // FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetQueryParameters the set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
 type FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration struct {

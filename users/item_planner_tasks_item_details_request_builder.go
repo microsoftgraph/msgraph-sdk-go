@@ -24,9 +24,9 @@ type ItemPlannerTasksItemDetailsRequestBuilderDeleteRequestConfiguration struct 
 // ItemPlannerTasksItemDetailsRequestBuilderGetQueryParameters read-only. Nullable. More details about the task.
 type ItemPlannerTasksItemDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPlannerTasksItemDetailsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerTasksItemDetailsRequestBuilderGetRequestConfiguration struct {

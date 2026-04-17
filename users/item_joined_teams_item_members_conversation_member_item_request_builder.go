@@ -24,9 +24,9 @@ type ItemJoinedTeamsItemMembersConversationMemberItemRequestBuilderDeleteRequest
 // ItemJoinedTeamsItemMembersConversationMemberItemRequestBuilderGetQueryParameters members and owners of the team.
 type ItemJoinedTeamsItemMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemJoinedTeamsItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration struct {

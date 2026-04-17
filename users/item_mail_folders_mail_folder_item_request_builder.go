@@ -24,11 +24,11 @@ type ItemMailFoldersMailFolderItemRequestBuilderDeleteRequestConfiguration struc
 // ItemMailFoldersMailFolderItemRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
 type ItemMailFoldersMailFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Include Hidden Folders
-    IncludeHiddenFolders *string `uriparametername:"includeHiddenFolders"`
+    IncludeHiddenFolders *string "uriparametername:\"includeHiddenFolders\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMailFoldersMailFolderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersMailFolderItemRequestBuilderGetRequestConfiguration struct {

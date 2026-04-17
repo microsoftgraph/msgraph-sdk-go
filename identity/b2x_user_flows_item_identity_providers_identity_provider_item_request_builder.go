@@ -17,9 +17,9 @@ type B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder struct 
 // B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetQueryParameters the identity providers included in the user flow.
 type B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetRequestConfiguration struct {

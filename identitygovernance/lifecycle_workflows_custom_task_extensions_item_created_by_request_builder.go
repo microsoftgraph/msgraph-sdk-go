@@ -17,9 +17,9 @@ type LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder struct {
 // LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetQueryParameters the unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 type LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetRequestConfiguration struct {

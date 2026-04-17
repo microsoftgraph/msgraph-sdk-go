@@ -24,9 +24,9 @@ type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfigu
 // DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
 type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration struct {

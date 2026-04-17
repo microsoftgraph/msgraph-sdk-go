@@ -24,9 +24,9 @@ type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDe
 // AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
 type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type ItemContactFoldersItemContactsCountRequestBuilder struct {
 // ItemContactFoldersItemContactsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemContactFoldersItemContactsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemContactFoldersItemContactsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersItemContactsCountRequestBuilderGetRequestConfiguration struct {

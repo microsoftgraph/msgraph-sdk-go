@@ -24,9 +24,9 @@ type B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder
 // B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderGetQueryParameters get postFederationSignup from identity
 type B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderGetRequestConfiguration struct {

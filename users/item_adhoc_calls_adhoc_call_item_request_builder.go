@@ -24,9 +24,9 @@ type ItemAdhocCallsAdhocCallItemRequestBuilderDeleteRequestConfiguration struct 
 // ItemAdhocCallsAdhocCallItemRequestBuilderGetQueryParameters ad hoc calls associated with the user. Read-only. Nullable.
 type ItemAdhocCallsAdhocCallItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAdhocCallsAdhocCallItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAdhocCallsAdhocCallItemRequestBuilderGetRequestConfiguration struct {

@@ -24,11 +24,11 @@ type ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderDeleteRequestCon
 // ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderGetQueryParameters the collection of child folders in the mailFolder.
 type ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Include Hidden Folders
-    IncludeHiddenFolders *string `uriparametername:"includeHiddenFolders"`
+    IncludeHiddenFolders *string "uriparametername:\"includeHiddenFolders\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderGetRequestConfiguration struct {

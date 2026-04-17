@@ -24,9 +24,9 @@ type ItemPlannerRequestBuilderDeleteRequestConfiguration struct {
 // ItemPlannerRequestBuilderGetQueryParameters entry-point to Planner resource that might exist for a Unified Group.
 type ItemPlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPlannerRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerRequestBuilderGetRequestConfiguration struct {
