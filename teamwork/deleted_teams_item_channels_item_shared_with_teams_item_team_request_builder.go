@@ -17,9 +17,9 @@ type DeletedTeamsItemChannelsItemSharedWithTeamsItemTeamRequestBuilder struct {
 // DeletedTeamsItemChannelsItemSharedWithTeamsItemTeamRequestBuilderGetQueryParameters get team from teamwork
 type DeletedTeamsItemChannelsItemSharedWithTeamsItemTeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedTeamsItemChannelsItemSharedWithTeamsItemTeamRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedTeamsItemChannelsItemSharedWithTeamsItemTeamRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type MobileAppsItemGraphWindowsAppXContentVersionsCountRequestBuilder struct {
 // MobileAppsItemGraphWindowsAppXContentVersionsCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppsItemGraphWindowsAppXContentVersionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppsItemGraphWindowsAppXContentVersionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWindowsAppXContentVersionsCountRequestBuilderGetRequestConfiguration struct {

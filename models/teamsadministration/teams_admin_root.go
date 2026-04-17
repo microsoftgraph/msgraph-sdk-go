@@ -37,6 +37,16 @@ func (m *TeamsAdminRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["telephoneNumberManagement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTelephoneNumberManagementRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTelephoneNumberManagement(val.(TelephoneNumberManagementRootable))
+        }
+        return nil
+    }
     res["userConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsUserConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -67,6 +77,18 @@ func (m *TeamsAdminRoot) GetPolicy()(TeamsPolicyAssignmentable) {
     }
     return nil
 }
+// GetTelephoneNumberManagement gets the telephoneNumberManagement property value. Represents a collection of available telephone number management operations.
+// returns a TelephoneNumberManagementRootable when successful
+func (m *TeamsAdminRoot) GetTelephoneNumberManagement()(TelephoneNumberManagementRootable) {
+    val, err := m.GetBackingStore().Get("telephoneNumberManagement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TelephoneNumberManagementRootable)
+    }
+    return nil
+}
 // GetUserConfigurations gets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams
 // returns a []TeamsUserConfigurationable when successful
 func (m *TeamsAdminRoot) GetUserConfigurations()([]TeamsUserConfigurationable) {
@@ -87,6 +109,12 @@ func (m *TeamsAdminRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err = writer.WriteObjectValue("policy", m.GetPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("telephoneNumberManagement", m.GetTelephoneNumberManagement())
         if err != nil {
             return err
         }
@@ -112,6 +140,13 @@ func (m *TeamsAdminRoot) SetPolicy(value TeamsPolicyAssignmentable)() {
         panic(err)
     }
 }
+// SetTelephoneNumberManagement sets the telephoneNumberManagement property value. Represents a collection of available telephone number management operations.
+func (m *TeamsAdminRoot) SetTelephoneNumberManagement(value TelephoneNumberManagementRootable)() {
+    err := m.GetBackingStore().Set("telephoneNumberManagement", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserConfigurations sets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams
 func (m *TeamsAdminRoot) SetUserConfigurations(value []TeamsUserConfigurationable)() {
     err := m.GetBackingStore().Set("userConfigurations", value)
@@ -123,7 +158,9 @@ type TeamsAdminRootable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetPolicy()(TeamsPolicyAssignmentable)
+    GetTelephoneNumberManagement()(TelephoneNumberManagementRootable)
     GetUserConfigurations()([]TeamsUserConfigurationable)
     SetPolicy(value TeamsPolicyAssignmentable)()
+    SetTelephoneNumberManagement(value TelephoneNumberManagementRootable)()
     SetUserConfigurations(value []TeamsUserConfigurationable)()
 }

@@ -24,9 +24,9 @@ type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderDeleteReq
 // FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters the collection of deleted fileStorageContainer resources.
 type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration struct {
@@ -162,6 +162,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Rec
 // returns a *FileStorageDeletedContainersItemRestoreRequestBuilder when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Restore()(*FileStorageDeletedContainersItemRestoreRequestBuilder) {
     return NewFileStorageDeletedContainersItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SharePointGroups provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageDeletedContainersItemSharePointGroupsRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) SharePointGroups()(*FileStorageDeletedContainersItemSharePointGroupsRequestBuilder) {
+    return NewFileStorageDeletedContainersItemSharePointGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deletedContainers for storage
 // returns a *RequestInformation when successful

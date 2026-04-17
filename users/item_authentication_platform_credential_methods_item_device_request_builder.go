@@ -17,9 +17,9 @@ type ItemAuthenticationPlatformCredentialMethodsItemDeviceRequestBuilder struct 
 // ItemAuthenticationPlatformCredentialMethodsItemDeviceRequestBuilderGetQueryParameters the registered device on which this Platform Credential resides. Supports $expand. When you get a user's Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 type ItemAuthenticationPlatformCredentialMethodsItemDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationPlatformCredentialMethodsItemDeviceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationPlatformCredentialMethodsItemDeviceRequestBuilderGetRequestConfiguration struct {

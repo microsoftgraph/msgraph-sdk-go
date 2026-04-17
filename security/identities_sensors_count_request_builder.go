@@ -16,9 +16,9 @@ type IdentitiesSensorsCountRequestBuilder struct {
 // IdentitiesSensorsCountRequestBuilderGetQueryParameters get the number of the resource
 type IdentitiesSensorsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // IdentitiesSensorsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentitiesSensorsCountRequestBuilderGetRequestConfiguration struct {

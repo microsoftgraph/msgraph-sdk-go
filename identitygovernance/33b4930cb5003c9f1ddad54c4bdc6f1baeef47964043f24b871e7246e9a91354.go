@@ -24,9 +24,9 @@ type AccessReviewsDefinitionsItemInstancesItemDecisionsItemInsightsGovernanceIns
 // AccessReviewsDefinitionsItemInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilderGetQueryParameters insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 type AccessReviewsDefinitionsItemInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AccessReviewsDefinitionsItemInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AccessReviewsDefinitionsItemInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilderGetRequestConfiguration struct {

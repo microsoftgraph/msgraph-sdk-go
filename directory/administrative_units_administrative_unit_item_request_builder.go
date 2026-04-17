@@ -24,9 +24,9 @@ type AdministrativeUnitsAdministrativeUnitItemRequestBuilderDeleteRequestConfigu
 // AdministrativeUnitsAdministrativeUnitItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.
 type AdministrativeUnitsAdministrativeUnitItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AdministrativeUnitsAdministrativeUnitItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdministrativeUnitsAdministrativeUnitItemRequestBuilderGetRequestConfiguration struct {

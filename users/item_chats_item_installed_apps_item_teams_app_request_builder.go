@@ -17,9 +17,9 @@ type ItemChatsItemInstalledAppsItemTeamsAppRequestBuilder struct {
 // ItemChatsItemInstalledAppsItemTeamsAppRequestBuilderGetQueryParameters the app that is installed.
 type ItemChatsItemInstalledAppsItemTeamsAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChatsItemInstalledAppsItemTeamsAppRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChatsItemInstalledAppsItemTeamsAppRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRe
 // ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
 type ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilderDeleteRequestCo
 // ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilderGetQueryParameters the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 type ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilderGetRequestConfiguration struct {

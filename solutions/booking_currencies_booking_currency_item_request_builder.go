@@ -24,9 +24,9 @@ type BookingCurrenciesBookingCurrencyItemRequestBuilderDeleteRequestConfiguratio
 // BookingCurrenciesBookingCurrencyItemRequestBuilderGetQueryParameters get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.
 type BookingCurrenciesBookingCurrencyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BookingCurrenciesBookingCurrencyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BookingCurrenciesBookingCurrencyItemRequestBuilderGetRequestConfiguration struct {

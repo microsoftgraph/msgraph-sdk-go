@@ -24,9 +24,9 @@ type MobileAppsItemGraphAndroidStoreAppAssignmentsMobileAppAssignmentItemRequest
 // MobileAppsItemGraphAndroidStoreAppAssignmentsMobileAppAssignmentItemRequestBuilderGetQueryParameters the list of group assignments for this mobile app.
 type MobileAppsItemGraphAndroidStoreAppAssignmentsMobileAppAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphAndroidStoreAppAssignmentsMobileAppAssignmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphAndroidStoreAppAssignmentsMobileAppAssignmentItemRequestBuilderGetRequestConfiguration struct {

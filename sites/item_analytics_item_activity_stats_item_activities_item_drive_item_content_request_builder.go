@@ -17,7 +17,7 @@ type ItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuil
 // ItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
 type ItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
-    Format *string `uriparametername:"%24format"`
+    Format *string "uriparametername:\"%24format\""
 }
 // ItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration struct {

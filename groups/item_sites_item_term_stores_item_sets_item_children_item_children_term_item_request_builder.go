@@ -24,9 +24,9 @@ type ItemSitesItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuild
 // ItemSitesItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderGetQueryParameters children of current term.
 type ItemSitesItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderGetRequestConfiguration struct {

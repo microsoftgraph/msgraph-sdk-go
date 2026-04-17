@@ -24,9 +24,9 @@ type ConnectionsExternalConnectionItemRequestBuilderDeleteRequestConfiguration s
 // ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of an externalConnection object.
 type ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectionsExternalConnectionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectionsExternalConnectionItemRequestBuilderGetRequestConfiguration struct {

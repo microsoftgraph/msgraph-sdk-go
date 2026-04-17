@@ -17,9 +17,9 @@ type DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder struct 
 // DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetQueryParameters the principal that's getting a role assignment or role eligibility through the request.
 type DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration struct {

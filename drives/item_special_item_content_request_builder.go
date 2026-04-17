@@ -24,7 +24,7 @@ type ItemSpecialItemContentRequestBuilderDeleteRequestConfiguration struct {
 // ItemSpecialItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
 type ItemSpecialItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
-    Format *string `uriparametername:"%24format"`
+    Format *string "uriparametername:\"%24format\""
 }
 // ItemSpecialItemContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSpecialItemContentRequestBuilderGetRequestConfiguration struct {

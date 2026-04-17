@@ -24,9 +24,9 @@ type MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsMobileCo
 // MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsMobileContainedAppItemRequestBuilderGetQueryParameters the collection of contained apps in a MobileLobApp acting as a package.
 type MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsMobileContainedAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsMobileContainedAppItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsMobileContainedAppItemRequestBuilderGetRequestConfiguration struct {

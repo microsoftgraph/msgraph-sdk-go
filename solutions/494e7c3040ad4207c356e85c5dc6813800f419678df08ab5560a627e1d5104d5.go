@@ -17,9 +17,9 @@ type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsD
 // BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsDriveProtectionUnitItemRequestBuilderGetQueryParameters contains the protection units associated with a  OneDrive for Business protection policy.
 type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsDriveProtectionUnitItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsDriveProtectionUnitItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsDriveProtectionUnitItemRequestBuilderGetRequestConfiguration struct {

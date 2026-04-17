@@ -24,9 +24,9 @@ type ClassesItemModulesEducationModuleItemRequestBuilderDeleteRequestConfigurati
 // ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class.
 type ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ClassesItemModulesEducationModuleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemModulesEducationModuleItemRequestBuilderGetRequestConfiguration struct {

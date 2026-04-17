@@ -17,9 +17,9 @@ type PeopleRequestBuilder struct {
 // PeopleRequestBuilderGetQueryParameters retrieve the properties and relationships of a peopleAdminSettings object.
 type PeopleRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PeopleRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PeopleRequestBuilderGetRequestConfiguration struct {
@@ -75,6 +75,21 @@ func (m *PeopleRequestBuilder) ItemInsights()(*PeopleItemInsightsRequestBuilder)
 // returns a *PeopleProfileCardPropertiesRequestBuilder when successful
 func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {
     return NewPeopleProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ProfilePropertySettings provides operations to manage the profilePropertySettings property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfilePropertySettingsRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfilePropertySettings()(*PeopleProfilePropertySettingsRequestBuilder) {
+    return NewPeopleProfilePropertySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ProfileSources provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfileSourcesRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfileSources()(*PeopleProfileSourcesRequestBuilder) {
+    return NewPeopleProfileSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ProfileSourcesWithSourceId provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfileSourcesWithSourceIdRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfileSourcesWithSourceId(sourceId *string)(*PeopleProfileSourcesWithSourceIdRequestBuilder) {
+    return NewPeopleProfileSourcesWithSourceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, sourceId)
 }
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
 // returns a *PeoplePronounsRequestBuilder when successful

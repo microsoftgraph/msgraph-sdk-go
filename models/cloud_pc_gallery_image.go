@@ -102,6 +102,16 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["osVersionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOsVersionNumber(val)
+        }
+        return nil
+    }
     res["publisherName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -158,6 +168,18 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetOfferName()(*string) {
     val, err := m.GetBackingStore().Get("offerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOsVersionNumber gets the osVersionNumber property value. The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.
+// returns a *string when successful
+func (m *CloudPcGalleryImage) GetOsVersionNumber()(*string) {
+    val, err := m.GetBackingStore().Get("osVersionNumber")
     if err != nil {
         panic(err)
     }
@@ -257,6 +279,12 @@ func (m *CloudPcGalleryImage) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("osVersionNumber", m.GetOsVersionNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("publisherName", m.GetPublisherName())
         if err != nil {
             return err
@@ -317,6 +345,13 @@ func (m *CloudPcGalleryImage) SetOfferName(value *string)() {
         panic(err)
     }
 }
+// SetOsVersionNumber sets the osVersionNumber property value. The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.
+func (m *CloudPcGalleryImage) SetOsVersionNumber(value *string)() {
+    err := m.GetBackingStore().Set("osVersionNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublisherName sets the publisherName property value. The publisher name of this gallery image that is passed to Azure Resource Manager (ARM) to retrieve the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetPublisherName(value *string)() {
     err := m.GetBackingStore().Set("publisherName", value)
@@ -359,6 +394,7 @@ type CloudPcGalleryImageable interface {
     GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetOfferName()(*string)
+    GetOsVersionNumber()(*string)
     GetPublisherName()(*string)
     GetSizeInGB()(*int32)
     GetSkuName()(*string)
@@ -368,6 +404,7 @@ type CloudPcGalleryImageable interface {
     SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetOfferName(value *string)()
+    SetOsVersionNumber(value *string)()
     SetPublisherName(value *string)()
     SetSizeInGB(value *int32)()
     SetSkuName(value *string)()

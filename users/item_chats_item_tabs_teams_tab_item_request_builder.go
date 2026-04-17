@@ -24,9 +24,9 @@ type ItemChatsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration struc
 // ItemChatsItemTabsTeamsTabItemRequestBuilderGetQueryParameters a collection of all the tabs in the chat. Nullable.
 type ItemChatsItemTabsTeamsTabItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChatsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChatsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration struct {

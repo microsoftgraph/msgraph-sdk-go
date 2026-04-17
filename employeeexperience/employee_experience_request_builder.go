@@ -17,7 +17,7 @@ type EmployeeExperienceRequestBuilder struct {
 // EmployeeExperienceRequestBuilderGetQueryParameters get employeeExperience
 type EmployeeExperienceRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EmployeeExperienceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EmployeeExperienceRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ItemSitesItemGetByPathWithPathLastModifiedByUserRequestBuilder struct {
 // ItemSitesItemGetByPathWithPathLastModifiedByUserRequestBuilderGetQueryParameters identity of the user who last modified the item. Read-only.
 type ItemSitesItemGetByPathWithPathLastModifiedByUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemGetByPathWithPathLastModifiedByUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemGetByPathWithPathLastModifiedByUserRequestBuilderGetRequestConfiguration struct {

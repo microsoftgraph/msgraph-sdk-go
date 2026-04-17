@@ -24,9 +24,9 @@ type ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderDeleteRequ
 // ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderGetQueryParameters the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 type ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderGetRequestConfiguration struct {

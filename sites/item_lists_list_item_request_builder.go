@@ -24,9 +24,9 @@ type ItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
 // ItemListsListItemRequestBuilderGetQueryParameters returns the metadata for a list.
 type ItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemListsListItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListsListItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemChatsItemLastMessagePreviewRequestBuilderDeleteRequestConfiguration str
 // ItemChatsItemLastMessagePreviewRequestBuilderGetQueryParameters preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.
 type ItemChatsItemLastMessagePreviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChatsItemLastMessagePreviewRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChatsItemLastMessagePreviewRequestBuilderGetRequestConfiguration struct {

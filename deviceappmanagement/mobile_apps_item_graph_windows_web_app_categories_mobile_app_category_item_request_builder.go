@@ -17,9 +17,9 @@ type MobileAppsItemGraphWindowsWebAppCategoriesMobileAppCategoryItemRequestBuild
 // MobileAppsItemGraphWindowsWebAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters the list of categories for this app.
 type MobileAppsItemGraphWindowsWebAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphWindowsWebAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWindowsWebAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration struct {

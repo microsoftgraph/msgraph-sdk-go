@@ -24,9 +24,9 @@ type B2xUserFlowsItemApiConnectorConfigurationPostAttributeCollectionRequestBuil
 // B2xUserFlowsItemApiConnectorConfigurationPostAttributeCollectionRequestBuilderGetQueryParameters get postAttributeCollection from identity
 type B2xUserFlowsItemApiConnectorConfigurationPostAttributeCollectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // B2xUserFlowsItemApiConnectorConfigurationPostAttributeCollectionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsItemApiConnectorConfigurationPostAttributeCollectionRequestBuilderGetRequestConfiguration struct {

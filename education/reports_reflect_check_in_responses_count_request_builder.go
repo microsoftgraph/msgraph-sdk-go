@@ -16,9 +16,9 @@ type ReportsReflectCheckInResponsesCountRequestBuilder struct {
 // ReportsReflectCheckInResponsesCountRequestBuilderGetQueryParameters get the number of the resource
 type ReportsReflectCheckInResponsesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ReportsReflectCheckInResponsesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsReflectCheckInResponsesCountRequestBuilderGetRequestConfiguration struct {

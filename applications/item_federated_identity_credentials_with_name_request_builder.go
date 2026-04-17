@@ -24,9 +24,9 @@ type ItemFederatedIdentityCredentialsWithNameRequestBuilderDeleteRequestConfigur
 // ItemFederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters read the properties and relationships of a federatedIdentityCredential object assigned to an application.
 type ItemFederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemFederatedIdentityCredentialsWithNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemFederatedIdentityCredentialsWithNameRequestBuilderGetRequestConfiguration struct {

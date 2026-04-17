@@ -25,9 +25,9 @@ type LifecycleWorkflowsInsightsRequestBuilderDeleteRequestConfiguration struct {
 // LifecycleWorkflowsInsightsRequestBuilderGetQueryParameters the insight container holding workflow insight summaries for a tenant.
 type LifecycleWorkflowsInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsInsightsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsInsightsRequestBuilderGetRequestConfiguration struct {

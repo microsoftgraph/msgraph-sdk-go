@@ -17,9 +17,9 @@ type ItemItemsItemWorkbookNamesItemRangeWorksheetRequestBuilder struct {
 // ItemItemsItemWorkbookNamesItemRangeWorksheetRequestBuilderGetQueryParameters the worksheet containing the current range. Read-only.
 type ItemItemsItemWorkbookNamesItemRangeWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookNamesItemRangeWorksheetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookNamesItemRangeWorksheetRequestBuilderGetRequestConfiguration struct {

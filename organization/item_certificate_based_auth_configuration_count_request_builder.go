@@ -16,9 +16,9 @@ type ItemCertificateBasedAuthConfigurationCountRequestBuilder struct {
 // ItemCertificateBasedAuthConfigurationCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemCertificateBasedAuthConfigurationCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemCertificateBasedAuthConfigurationCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCertificateBasedAuthConfigurationCountRequestBuilderGetRequestConfiguration struct {

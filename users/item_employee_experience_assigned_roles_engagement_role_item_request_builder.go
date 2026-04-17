@@ -24,9 +24,9 @@ type ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderDeleteRe
 // ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderGetQueryParameters represents the collection of Viva Engage roles assigned to a user.
 type ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderGetRequestConfiguration struct {

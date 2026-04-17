@@ -24,9 +24,9 @@ type DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRe
 // DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetQueryParameters device configuration installation status by device.
 type DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceConfigurationsItemDeviceStatusesDeviceConfigurationDeviceStatusItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ThreatIntelligenceHostComponentsItemHostRequestBuilder struct {
 // ThreatIntelligenceHostComponentsItemHostRequestBuilderGetQueryParameters the host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.
 type ThreatIntelligenceHostComponentsItemHostRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceHostComponentsItemHostRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceHostComponentsItemHostRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemContactsContactItemRequestBuilderDeleteRequestConfiguration struct {
 // ItemContactsContactItemRequestBuilderGetQueryParameters the user's contacts. Read-only. Nullable.
 type ItemContactsContactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemContactsContactItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactsContactItemRequestBuilderGetRequestConfiguration struct {

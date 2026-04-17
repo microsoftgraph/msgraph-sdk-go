@@ -24,9 +24,9 @@ type ItemRemoteDesktopSecurityConfigurationRequestBuilderDeleteRequestConfigurat
 // ItemRemoteDesktopSecurityConfigurationRequestBuilderGetQueryParameters read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal. Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices. Additionally you can view any targetDeviceGroups that have been configured for SSO.
 type ItemRemoteDesktopSecurityConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRemoteDesktopSecurityConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRemoteDesktopSecurityConfigurationRequestBuilderGetRequestConfiguration struct {

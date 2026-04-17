@@ -17,9 +17,9 @@ type ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilder struct {
 // ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilderGetQueryParameters the hostPairs that are associated with this host, where this host is either the parentHost or childHost.
 type ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilderGetRequestConfiguration struct {

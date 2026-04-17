@@ -24,9 +24,9 @@ type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderDeleteRequest
 // ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a countryNamedLocation object.
 type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration struct {
@@ -121,6 +121,11 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Patch(c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationable), nil
+}
+// Restore provides operations to call the restore method.
+// returns a *ConditionalAccessNamedLocationsItemRestoreRequestBuilder when successful
+func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Restore()(*ConditionalAccessNamedLocationsItemRestoreRequestBuilder) {
+    return NewConditionalAccessNamedLocationsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a countryNamedLocation object.
 // returns a *RequestInformation when successful

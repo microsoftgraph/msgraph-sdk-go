@@ -24,11 +24,11 @@ type ItemMessagesMessageItemRequestBuilderDeleteRequestConfiguration struct {
 // ItemMessagesMessageItemRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
 type ItemMessagesMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Include Hidden Messages
-    IncludeHiddenMessages *string `uriparametername:"includeHiddenMessages"`
+    IncludeHiddenMessages *string "uriparametername:\"includeHiddenMessages\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMessagesMessageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMessagesMessageItemRequestBuilderGetRequestConfiguration struct {

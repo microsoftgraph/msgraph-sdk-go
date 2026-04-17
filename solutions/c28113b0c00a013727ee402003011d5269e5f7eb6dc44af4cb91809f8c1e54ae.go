@@ -17,9 +17,9 @@ type BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsItemRestorePo
 // BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsItemRestorePointRequestBuilderGetQueryParameters represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
 type BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsItemRestorePointRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsItemRestorePointRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsItemRestorePointRequestBuilderGetRequestConfiguration struct {

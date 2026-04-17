@@ -24,9 +24,9 @@ type DeletedChatsDeletedChatItemRequestBuilderDeleteRequestConfiguration struct 
 // DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters read the properties and relationships of a deletedChat object.
 type DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedChatsDeletedChatItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedChatsDeletedChatItemRequestBuilderGetRequestConfiguration struct {

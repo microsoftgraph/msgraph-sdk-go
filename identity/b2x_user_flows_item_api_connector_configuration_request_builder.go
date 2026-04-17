@@ -17,9 +17,9 @@ type B2xUserFlowsItemApiConnectorConfigurationRequestBuilder struct {
 // B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetQueryParameters get the apiConnectorConfiguration property in a b2xIdentityUserFlow to detail the API connectors enabled for the user flow.
 type B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetRequestConfiguration struct {

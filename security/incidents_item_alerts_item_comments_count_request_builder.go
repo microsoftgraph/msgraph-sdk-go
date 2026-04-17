@@ -16,9 +16,9 @@ type IncidentsItemAlertsItemCommentsCountRequestBuilder struct {
 // IncidentsItemAlertsItemCommentsCountRequestBuilderGetQueryParameters get the number of the resource
 type IncidentsItemAlertsItemCommentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // IncidentsItemAlertsItemCommentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IncidentsItemAlertsItemCommentsCountRequestBuilderGetRequestConfiguration struct {

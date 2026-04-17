@@ -24,9 +24,9 @@ type ItemConversationsItemThreadsConversationThreadItemRequestBuilderDeleteReque
 // ItemConversationsItemThreadsConversationThreadItemRequestBuilderGetQueryParameters a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
 type ItemConversationsItemThreadsConversationThreadItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemConversationsItemThreadsConversationThreadItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemConversationsItemThreadsConversationThreadItemRequestBuilderGetRequestConfiguration struct {

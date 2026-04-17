@@ -24,9 +24,9 @@ type ItemCalendarsItemEventsItemAttachmentsAttachmentItemRequestBuilderDeleteReq
 // ItemCalendarsItemEventsItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 type ItemCalendarsItemEventsItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemCalendarsItemEventsItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemEventsItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration struct {

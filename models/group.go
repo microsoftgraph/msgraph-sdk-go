@@ -1136,6 +1136,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["welcomeMessageEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWelcomeMessageEnabled(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGroupLifecyclePolicies gets the groupLifecyclePolicies property value. The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -1762,6 +1772,18 @@ func (m *Group) GetVisibility()(*string) {
     }
     return nil
 }
+// GetWelcomeMessageEnabled gets the welcomeMessageEnabled property value. The welcomeMessageEnabled property
+// returns a *bool when successful
+func (m *Group) GetWelcomeMessageEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("welcomeMessageEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.DirectoryObject.Serialize(writer)
@@ -2338,6 +2360,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("welcomeMessageEnabled", m.GetWelcomeMessageEnabled())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcceptedSenders sets the acceptedSenders property value. The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.
@@ -2837,6 +2865,13 @@ func (m *Group) SetVisibility(value *string)() {
         panic(err)
     }
 }
+// SetWelcomeMessageEnabled sets the welcomeMessageEnabled property value. The welcomeMessageEnabled property
+func (m *Group) SetWelcomeMessageEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("welcomeMessageEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Groupable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -2911,6 +2946,7 @@ type Groupable interface {
     GetUniqueName()(*string)
     GetUnseenCount()(*int32)
     GetVisibility()(*string)
+    GetWelcomeMessageEnabled()(*bool)
     SetAcceptedSenders(value []DirectoryObjectable)()
     SetAllowExternalSenders(value *bool)()
     SetAppRoleAssignments(value []AppRoleAssignmentable)()
@@ -2982,4 +3018,5 @@ type Groupable interface {
     SetUniqueName(value *string)()
     SetUnseenCount(value *int32)()
     SetVisibility(value *string)()
+    SetWelcomeMessageEnabled(value *bool)()
 }

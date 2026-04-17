@@ -133,6 +133,26 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["osVersionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOsVersionNumber(val)
+        }
+        return nil
+    }
+    res["sizeInGB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSizeInGB(val)
+        }
+        return nil
+    }
     res["sourceImageResourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -210,6 +230,30 @@ func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
     }
     if val != nil {
         return val.(*CloudPcDeviceImageOsStatus)
+    }
+    return nil
+}
+// GetOsVersionNumber gets the osVersionNumber property value. The operating system version of this image. For example, 10.0.22000.296. Read-only.
+// returns a *string when successful
+func (m *CloudPcDeviceImage) GetOsVersionNumber()(*string) {
+    val, err := m.GetBackingStore().Get("osVersionNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSizeInGB gets the sizeInGB property value. The size of the image in GB. For example, 64. Read-only.
+// returns a *int32 when successful
+func (m *CloudPcDeviceImage) GetSizeInGB()(*int32) {
+    val, err := m.GetBackingStore().Get("sizeInGB")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -300,6 +344,18 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("osVersionNumber", m.GetOsVersionNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("sizeInGB", m.GetSizeInGB())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("sourceImageResourceId", m.GetSourceImageResourceId())
         if err != nil {
             return err
@@ -369,6 +425,20 @@ func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
         panic(err)
     }
 }
+// SetOsVersionNumber sets the osVersionNumber property value. The operating system version of this image. For example, 10.0.22000.296. Read-only.
+func (m *CloudPcDeviceImage) SetOsVersionNumber(value *string)() {
+    err := m.GetBackingStore().Set("osVersionNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSizeInGB sets the sizeInGB property value. The size of the image in GB. For example, 64. Read-only.
+func (m *CloudPcDeviceImage) SetSizeInGB(value *int32)() {
+    err := m.GetBackingStore().Set("sizeInGB", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSourceImageResourceId sets the sourceImageResourceId property value. The unique identifier (ID) of the source image resource on Azure. The required ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
 func (m *CloudPcDeviceImage) SetSourceImageResourceId(value *string)() {
     err := m.GetBackingStore().Set("sourceImageResourceId", value)
@@ -400,6 +470,8 @@ type CloudPcDeviceImageable interface {
     GetOperatingSystem()(*string)
     GetOsBuildNumber()(*string)
     GetOsStatus()(*CloudPcDeviceImageOsStatus)
+    GetOsVersionNumber()(*string)
+    GetSizeInGB()(*int32)
     GetSourceImageResourceId()(*string)
     GetStatus()(*CloudPcDeviceImageStatus)
     GetVersion()(*string)
@@ -410,6 +482,8 @@ type CloudPcDeviceImageable interface {
     SetOperatingSystem(value *string)()
     SetOsBuildNumber(value *string)()
     SetOsStatus(value *CloudPcDeviceImageOsStatus)()
+    SetOsVersionNumber(value *string)()
+    SetSizeInGB(value *int32)()
     SetSourceImageResourceId(value *string)()
     SetStatus(value *CloudPcDeviceImageStatus)()
     SetVersion(value *string)()

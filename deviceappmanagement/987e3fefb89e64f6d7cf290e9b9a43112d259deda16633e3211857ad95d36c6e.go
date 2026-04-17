@@ -24,9 +24,9 @@ type MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsMobileContaine
 // MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsMobileContainedAppItemRequestBuilderGetQueryParameters the collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
 type MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsMobileContainedAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsMobileContainedAppItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWindowsUniversalAppXCommittedContainedAppsMobileContainedAppItemRequestBuilderGetRequestConfiguration struct {

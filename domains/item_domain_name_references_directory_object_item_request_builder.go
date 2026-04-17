@@ -17,9 +17,9 @@ type ItemDomainNameReferencesDirectoryObjectItemRequestBuilder struct {
 // ItemDomainNameReferencesDirectoryObjectItemRequestBuilderGetQueryParameters the objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn't support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 type ItemDomainNameReferencesDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemDomainNameReferencesDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDomainNameReferencesDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

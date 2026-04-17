@@ -17,9 +17,9 @@ type BackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilder stru
 // BackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilderGetQueryParameters get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
 type BackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreProtectionUnitsItemGraphDriveProtectionUnitRequestBuilderGetRequestConfiguration struct {

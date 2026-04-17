@@ -17,9 +17,9 @@ type DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilder struct {
 // DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters the principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
 type DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration struct {

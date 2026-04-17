@@ -16,9 +16,9 @@ type MobileAppsItemGraphManagedAndroidLobAppContentVersionsItemContainedAppsCoun
 // MobileAppsItemGraphManagedAndroidLobAppContentVersionsItemContainedAppsCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppsItemGraphManagedAndroidLobAppContentVersionsItemContainedAppsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppsItemGraphManagedAndroidLobAppContentVersionsItemContainedAppsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphManagedAndroidLobAppContentVersionsItemContainedAppsCountRequestBuilderGetRequestConfiguration struct {

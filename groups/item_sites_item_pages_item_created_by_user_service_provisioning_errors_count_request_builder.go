@@ -16,9 +16,9 @@ type ItemSitesItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBui
 // ItemSitesItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemSitesItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemSitesItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type AttributeSetsAttributeSetItemRequestBuilderDeleteRequestConfiguration struc
 // AttributeSetsAttributeSetItemRequestBuilderGetQueryParameters read the properties and relationships of an attributeSet object.
 type AttributeSetsAttributeSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AttributeSetsAttributeSetItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AttributeSetsAttributeSetItemRequestBuilderGetRequestConfiguration struct {

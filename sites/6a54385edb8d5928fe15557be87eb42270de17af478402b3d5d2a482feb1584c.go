@@ -17,9 +17,9 @@ type ItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelations
 // ItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemFromTermRequestBuilderGetQueryParameters the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 type ItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemFromTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemFromTermRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTermStoresItemSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsItemFromTermRequestBuilderGetRequestConfiguration struct {

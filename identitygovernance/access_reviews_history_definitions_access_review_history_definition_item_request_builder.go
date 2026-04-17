@@ -24,9 +24,9 @@ type AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuil
 // AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetQueryParameters retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.
 type AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderGetRequestConfiguration struct {

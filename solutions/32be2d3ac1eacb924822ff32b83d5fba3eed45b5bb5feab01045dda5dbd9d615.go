@@ -24,9 +24,9 @@ type BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxResto
 // BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderGetQueryParameters a collection of restore points and destination details that can be used to restore Exchange mailboxes.
 type BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderGetRequestConfiguration struct {

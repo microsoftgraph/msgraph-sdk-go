@@ -16,9 +16,9 @@ type ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilder struct {
 // ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderGetQueryParameters get the number of the resource
 type ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderGetRequestConfiguration struct {

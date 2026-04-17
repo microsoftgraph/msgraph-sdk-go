@@ -17,7 +17,7 @@ type ClassesItemMembersRefRequestBuilder struct {
 // ClassesItemMembersRefRequestBuilderDeleteQueryParameters remove an educationUser from an educationClass.
 type ClassesItemMembersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // ClassesItemMembersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemMembersRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type ClassesItemMembersRefRequestBuilderDeleteRequestConfiguration struct {
 // ClassesItemMembersRefRequestBuilderGetQueryParameters retrieves the educationUser members of an educationClass.
 type ClassesItemMembersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ClassesItemMembersRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemMembersRefRequestBuilderGetRequestConfiguration struct {

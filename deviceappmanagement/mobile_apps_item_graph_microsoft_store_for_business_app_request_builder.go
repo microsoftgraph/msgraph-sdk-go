@@ -17,9 +17,9 @@ type MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder struct {
 // MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStoreForBusinessApp
 type MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConfiguration struct {

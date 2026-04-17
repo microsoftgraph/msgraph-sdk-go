@@ -17,9 +17,9 @@ type PrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBui
 // PrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBuilderGetQueryParameters when the request activates a membership or ownership assignment in PIM for Groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemActivatedUsingRequestBuilderGetRequestConfiguration struct {

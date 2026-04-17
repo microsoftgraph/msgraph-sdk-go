@@ -24,9 +24,9 @@ type FileStorageContainersFileStorageContainerItemRequestBuilderDeleteRequestCon
 // FileStorageContainersFileStorageContainerItemRequestBuilderGetQueryParameters the collection of active fileStorageContainer resources.
 type FileStorageContainersFileStorageContainerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration struct {
@@ -162,6 +162,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) RecycleBin
 // returns a *FileStorageContainersItemRestoreRequestBuilder when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Restore()(*FileStorageContainersItemRestoreRequestBuilder) {
     return NewFileStorageContainersItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SharePointGroups provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.
+// returns a *FileStorageContainersItemSharePointGroupsRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) SharePointGroups()(*FileStorageContainersItemSharePointGroupsRequestBuilder) {
+    return NewFileStorageContainersItemSharePointGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property containers for storage
 // returns a *RequestInformation when successful

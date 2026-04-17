@@ -24,9 +24,9 @@ type ItemSitesItemTermStoreGroupsGroupItemRequestBuilderDeleteRequestConfigurati
 // ItemSitesItemTermStoreGroupsGroupItemRequestBuilderGetQueryParameters collection of all groups available in the term store.
 type ItemSitesItemTermStoreGroupsGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemTermStoreGroupsGroupItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemTermStoreGroupsGroupItemRequestBuilderGetRequestConfiguration struct {

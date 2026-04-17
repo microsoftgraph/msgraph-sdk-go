@@ -533,7 +533,7 @@ func (m *Simulation) GetReport()(SimulationReportable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
+// GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, canceled, excluded, unknownFutureValue.
 // returns a *SimulationStatus when successful
 func (m *Simulation) GetStatus()(*SimulationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -867,7 +867,7 @@ func (m *Simulation) SetReport(value SimulationReportable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
+// SetStatus sets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, canceled, excluded, unknownFutureValue.
 func (m *Simulation) SetStatus(value *SimulationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

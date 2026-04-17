@@ -16,11 +16,11 @@ type ItemJoinedTeamsItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTena
 // ItemJoinedTeamsItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetQueryParameters determine whether a user has access to a channel.
 type ItemJoinedTeamsItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetQueryParameters struct {
     // Usage: tenantId='@tenantId'
-    TenantId *string `uriparametername:"tenantId"`
+    TenantId *string "uriparametername:\"tenantId\""
     // Usage: userId='@userId'
-    UserId *string `uriparametername:"userId"`
+    UserId *string "uriparametername:\"userId\""
     // Usage: userPrincipalName='@userPrincipalName'
-    UserPrincipalName *string `uriparametername:"userPrincipalName"`
+    UserPrincipalName *string "uriparametername:\"userPrincipalName\""
 }
 // ItemJoinedTeamsItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetRequestConfiguration struct {

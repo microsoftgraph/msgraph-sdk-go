@@ -16,9 +16,9 @@ type ItemOnenoteResourcesCountRequestBuilder struct {
 // ItemOnenoteResourcesCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemOnenoteResourcesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemOnenoteResourcesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOnenoteResourcesCountRequestBuilderGetRequestConfiguration struct {

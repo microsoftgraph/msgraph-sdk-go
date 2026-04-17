@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilder
 // ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilderGetQueryParameters represents the format of chart data labels, which includes fill and font formatting. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilderGetRequestConfiguration struct {

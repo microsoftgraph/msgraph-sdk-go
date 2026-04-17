@@ -24,9 +24,9 @@ type Alerts_v2AlertItemRequestBuilderDeleteRequestConfiguration struct {
 // Alerts_v2AlertItemRequestBuilderGetQueryParameters get the properties and relationships of an alert object.
 type Alerts_v2AlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // Alerts_v2AlertItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type Alerts_v2AlertItemRequestBuilderGetRequestConfiguration struct {

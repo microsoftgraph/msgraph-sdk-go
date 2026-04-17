@@ -17,9 +17,9 @@ type OnlineMeetingConversationsItemStarterRepliesItemReplyToRequestBuilder struc
 // OnlineMeetingConversationsItemStarterRepliesItemReplyToRequestBuilderGetQueryParameters the parent message to which this message is a reply, if it is part of a reply chain.
 type OnlineMeetingConversationsItemStarterRepliesItemReplyToRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // OnlineMeetingConversationsItemStarterRepliesItemReplyToRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OnlineMeetingConversationsItemStarterRepliesItemReplyToRequestBuilderGetRequestConfiguration struct {

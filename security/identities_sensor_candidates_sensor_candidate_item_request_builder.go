@@ -24,9 +24,9 @@ type IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderDeleteRequestCon
 // IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetQueryParameters represents Microsoft Defender for Identity sensors that are ready to be activated.
 type IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetRequestConfiguration struct {

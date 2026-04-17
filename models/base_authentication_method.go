@@ -18,10 +18,11 @@ const (
     X509CERTIFICATE_BASEAUTHENTICATIONMETHOD
     FEDERATION_BASEAUTHENTICATIONMETHOD
     UNKNOWNFUTUREVALUE_BASEAUTHENTICATIONMETHOD
+    QRCODEPIN_BASEAUTHENTICATIONMETHOD
 )
 
 func (i BaseAuthenticationMethod) String() string {
-    return []string{"password", "voice", "hardwareOath", "softwareOath", "sms", "fido2", "windowsHelloForBusiness", "microsoftAuthenticator", "temporaryAccessPass", "email", "x509Certificate", "federation", "unknownFutureValue"}[i]
+    return []string{"password", "voice", "hardwareOath", "softwareOath", "sms", "fido2", "windowsHelloForBusiness", "microsoftAuthenticator", "temporaryAccessPass", "email", "x509Certificate", "federation", "unknownFutureValue", "qrCodePin"}[i]
 }
 func ParseBaseAuthenticationMethod(v string) (any, error) {
     result := PASSWORD_BASEAUTHENTICATIONMETHOD
@@ -52,6 +53,8 @@ func ParseBaseAuthenticationMethod(v string) (any, error) {
             result = FEDERATION_BASEAUTHENTICATIONMETHOD
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BASEAUTHENTICATIONMETHOD
+        case "qrCodePin":
+            result = QRCODEPIN_BASEAUTHENTICATIONMETHOD
         default:
             return nil, nil
     }

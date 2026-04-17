@@ -24,7 +24,7 @@ type ItemSitesItemListsItemItemsItemDriveItemContentRequestBuilderDeleteRequestC
 // ItemSitesItemListsItemItemsItemDriveItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
 type ItemSitesItemListsItemItemsItemDriveItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
-    Format *string `uriparametername:"%24format"`
+    Format *string "uriparametername:\"%24format\""
 }
 // ItemSitesItemListsItemItemsItemDriveItemContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemListsItemItemsItemDriveItemContentRequestBuilderGetRequestConfiguration struct {

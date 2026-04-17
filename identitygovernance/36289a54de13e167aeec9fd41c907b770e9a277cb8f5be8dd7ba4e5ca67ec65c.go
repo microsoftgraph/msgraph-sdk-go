@@ -24,9 +24,9 @@ type EntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeResourceR
 // EntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeResourceRolesAccessPackageResourceRoleItemRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type EntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeResourceRolesAccessPackageResourceRoleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeResourceRolesAccessPackageResourceRoleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeResourceRolesAccessPackageResourceRoleItemRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type VirtualEventsTownhallsCountRequestBuilder struct {
 // VirtualEventsTownhallsCountRequestBuilderGetQueryParameters get the number of the resource
 type VirtualEventsTownhallsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // VirtualEventsTownhallsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEventsTownhallsCountRequestBuilderGetRequestConfiguration struct {

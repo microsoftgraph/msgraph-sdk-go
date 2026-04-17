@@ -24,9 +24,9 @@ type ResourceOperationsResourceOperationItemRequestBuilderDeleteRequestConfigura
 // ResourceOperationsResourceOperationItemRequestBuilderGetQueryParameters the Resource Operations.
 type ResourceOperationsResourceOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ResourceOperationsResourceOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ResourceOperationsResourceOperationItemRequestBuilderGetRequestConfiguration struct {

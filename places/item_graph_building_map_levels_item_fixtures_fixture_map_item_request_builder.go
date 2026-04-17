@@ -24,9 +24,9 @@ type ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderDeleteReq
 // ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetQueryParameters collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
 type ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetRequestConfiguration struct {

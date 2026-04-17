@@ -24,9 +24,9 @@ type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderDeleteRequestConfigu
 // ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters the list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
 type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetRequestConfiguration struct {

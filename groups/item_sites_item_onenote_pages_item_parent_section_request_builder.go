@@ -17,9 +17,9 @@ type ItemSitesItemOnenotePagesItemParentSectionRequestBuilder struct {
 // ItemSitesItemOnenotePagesItemParentSectionRequestBuilderGetQueryParameters the section that contains the page. Read-only.
 type ItemSitesItemOnenotePagesItemParentSectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemOnenotePagesItemParentSectionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemOnenotePagesItemParentSectionRequestBuilderGetRequestConfiguration struct {

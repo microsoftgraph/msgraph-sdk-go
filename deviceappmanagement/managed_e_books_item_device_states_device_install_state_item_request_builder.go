@@ -24,9 +24,9 @@ type ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderDeleteRequ
 // ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetQueryParameters the list of installation states for this eBook.
 type ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetRequestConfiguration struct {

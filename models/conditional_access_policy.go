@@ -9,13 +9,15 @@ import (
 )
 
 type ConditionalAccessPolicy struct {
-    Entity
+    PolicyDeletableItem
 }
 // NewConditionalAccessPolicy instantiates a new ConditionalAccessPolicy and sets the default values.
 func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     m := &ConditionalAccessPolicy{
-        Entity: *NewEntity(),
+        PolicyDeletableItem: *NewPolicyDeletableItem(),
     }
+    odataTypeValue := "#microsoft.graph.conditionalAccessPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -92,7 +94,7 @@ func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := m.PolicyDeletableItem.GetFieldDeserializers()
     res["conditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessConditionSetFromDiscriminatorValue)
         if err != nil {
@@ -140,6 +142,16 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetGrantControls(val.(ConditionalAccessGrantControlsable))
+        }
+        return nil
+    }
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val)
         }
         return nil
     }
@@ -197,6 +209,18 @@ func (m *ConditionalAccessPolicy) GetGrantControls()(ConditionalAccessGrantContr
     }
     return nil
 }
+// GetId gets the id property value. Specifies the identifier of a conditionalAccessPolicy object. Read-only.
+// returns a *string when successful
+func (m *ConditionalAccessPolicy) GetId()(*string) {
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
 // returns a *Time when successful
 func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -247,7 +271,7 @@ func (m *ConditionalAccessPolicy) GetTemplateId()(*string) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
+    err := m.PolicyDeletableItem.Serialize(writer)
     if err != nil {
         return err
     }
@@ -277,6 +301,12 @@ func (m *ConditionalAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err = writer.WriteObjectValue("grantControls", m.GetGrantControls())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("id", m.GetId())
         if err != nil {
             return err
         }
@@ -343,6 +373,13 @@ func (m *ConditionalAccessPolicy) SetGrantControls(value ConditionalAccessGrantC
         panic(err)
     }
 }
+// SetId sets the id property value. Specifies the identifier of a conditionalAccessPolicy object. Read-only.
+func (m *ConditionalAccessPolicy) SetId(value *string)() {
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
 func (m *ConditionalAccessPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("modifiedDateTime", value)
@@ -372,13 +409,14 @@ func (m *ConditionalAccessPolicy) SetTemplateId(value *string)() {
     }
 }
 type ConditionalAccessPolicyable interface {
-    Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyDeletableItemable
     GetConditions()(ConditionalAccessConditionSetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetGrantControls()(ConditionalAccessGrantControlsable)
+    GetId()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSessionControls()(ConditionalAccessSessionControlsable)
     GetState()(*ConditionalAccessPolicyState)
@@ -388,6 +426,7 @@ type ConditionalAccessPolicyable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetGrantControls(value ConditionalAccessGrantControlsable)()
+    SetId(value *string)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSessionControls(value ConditionalAccessSessionControlsable)()
     SetState(value *ConditionalAccessPolicyState)()

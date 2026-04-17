@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFontRequestBui
 // ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFontRequestBuilderGetQueryParameters represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFontRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFontRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFontRequestBuilderGetRequestConfiguration struct {

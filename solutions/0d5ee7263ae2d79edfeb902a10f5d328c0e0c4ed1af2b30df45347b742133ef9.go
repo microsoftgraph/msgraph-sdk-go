@@ -17,9 +17,9 @@ type BackupRestoreSharePointProtectionPoliciesItemSiteInclusionRulesSiteProtecti
 // BackupRestoreSharePointProtectionPoliciesItemSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetQueryParameters get a protection rule that's associated with a protection policy. You can use this operation to get mailbox, drive, and site protection rules. An inclusion rule indicates that a protection policy should contain protection units that match the specified rule criteria. The initial status of a protection rule upon creation is active. After the rule is applied, the state is either completed or completedWithErrors.
 type BackupRestoreSharePointProtectionPoliciesItemSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreSharePointProtectionPoliciesItemSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreSharePointProtectionPoliciesItemSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetRequestConfiguration struct {

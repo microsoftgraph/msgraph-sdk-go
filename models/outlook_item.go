@@ -45,6 +45,8 @@ func CreateOutlookItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
                         return NewEventMessageRequest(), nil
                     case "#microsoft.graph.eventMessageResponse":
                         return NewEventMessageResponse(), nil
+                    case "#microsoft.graph.mailboxItem":
+                        return NewMailboxItem(), nil
                     case "#microsoft.graph.message":
                         return NewMessage(), nil
                     case "#microsoft.graph.post":

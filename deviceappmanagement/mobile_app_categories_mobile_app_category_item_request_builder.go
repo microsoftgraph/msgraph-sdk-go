@@ -24,9 +24,9 @@ type MobileAppCategoriesMobileAppCategoryItemRequestBuilderDeleteRequestConfigur
 // MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters the mobile app categories.
 type MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration struct {

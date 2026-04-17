@@ -17,9 +17,9 @@ type MobileAppsItemGraphIosStoreAppRequestBuilder struct {
 // MobileAppsItemGraphIosStoreAppRequestBuilderGetQueryParameters get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
 type MobileAppsItemGraphIosStoreAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphIosStoreAppRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphIosStoreAppRequestBuilderGetRequestConfiguration struct {

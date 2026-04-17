@@ -24,9 +24,9 @@ type ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderDeleteReq
 // ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
 type ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderGetRequestConfiguration struct {
