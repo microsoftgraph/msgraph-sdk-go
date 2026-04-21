@@ -43,7 +43,7 @@ func (m *EmployeeOrgData) GetAdditionalData()(map[string]any) {
 func (m *EmployeeOrgData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCostCenter gets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.
+// GetCostCenter gets the costCenter property value. The cost center associated with the user. Requires $select to retrieve. Supports $filter.
 // returns a *string when successful
 func (m *EmployeeOrgData) GetCostCenter()(*string) {
     val, err := m.GetBackingStore().Get("costCenter")
@@ -55,7 +55,7 @@ func (m *EmployeeOrgData) GetCostCenter()(*string) {
     }
     return nil
 }
-// GetDivision gets the division property value. The name of the division in which the user works. Returned only on $select. Supports $filter.
+// GetDivision gets the division property value. The name of the division in which the user works. Requires $select to retrieve. Supports $filter.
 // returns a *string when successful
 func (m *EmployeeOrgData) GetDivision()(*string) {
     val, err := m.GetBackingStore().Get("division")
@@ -154,14 +154,14 @@ func (m *EmployeeOrgData) SetAdditionalData(value map[string]any)() {
 func (m *EmployeeOrgData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCostCenter sets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.
+// SetCostCenter sets the costCenter property value. The cost center associated with the user. Requires $select to retrieve. Supports $filter.
 func (m *EmployeeOrgData) SetCostCenter(value *string)() {
     err := m.GetBackingStore().Set("costCenter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDivision sets the division property value. The name of the division in which the user works. Returned only on $select. Supports $filter.
+// SetDivision sets the division property value. The name of the division in which the user works. Requires $select to retrieve. Supports $filter.
 func (m *EmployeeOrgData) SetDivision(value *string)() {
     err := m.GetBackingStore().Set("division", value)
     if err != nil {

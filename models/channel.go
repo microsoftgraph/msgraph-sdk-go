@@ -201,6 +201,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["layoutType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseChannelLayoutType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLayoutType(val.(*ChannelLayoutType))
+        }
+        return nil
+    }
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
         if err != nil {
@@ -360,6 +370,18 @@ func (m *Channel) GetIsFavoriteByDefault()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetLayoutType gets the layoutType property value. The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.
+// returns a *ChannelLayoutType when successful
+func (m *Channel) GetLayoutType()(*ChannelLayoutType) {
+    val, err := m.GetBackingStore().Get("layoutType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ChannelLayoutType)
     }
     return nil
 }
@@ -555,6 +577,13 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetLayoutType() != nil {
+        cast := (*m.GetLayoutType()).String()
+        err = writer.WriteStringValue("layoutType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
@@ -706,6 +735,13 @@ func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
         panic(err)
     }
 }
+// SetLayoutType sets the layoutType property value. The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.
+func (m *Channel) SetLayoutType(value *ChannelLayoutType)() {
+    err := m.GetBackingStore().Set("layoutType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMembers sets the members property value. A collection of membership records associated with the channel.
 func (m *Channel) SetMembers(value []ConversationMemberable)() {
     err := m.GetBackingStore().Set("members", value)
@@ -788,6 +824,7 @@ type Channelable interface {
     GetFilesFolder()(DriveItemable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
+    GetLayoutType()(*ChannelLayoutType)
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
@@ -807,6 +844,7 @@ type Channelable interface {
     SetFilesFolder(value DriveItemable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
+    SetLayoutType(value *ChannelLayoutType)()
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()

@@ -79,6 +79,16 @@ func (m *AzureADJoinPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["localAdmins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateLocalAdminSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocalAdmins(val.(LocalAdminSettingsable))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -100,6 +110,18 @@ func (m *AzureADJoinPolicy) GetIsAdminConfigurable()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetLocalAdmins gets the localAdmins property value. The localAdmins property
+// returns a LocalAdminSettingsable when successful
+func (m *AzureADJoinPolicy) GetLocalAdmins()(LocalAdminSettingsable) {
+    val, err := m.GetBackingStore().Get("localAdmins")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(LocalAdminSettingsable)
     }
     return nil
 }
@@ -125,6 +147,12 @@ func (m *AzureADJoinPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteBoolValue("isAdminConfigurable", m.GetIsAdminConfigurable())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("localAdmins", m.GetLocalAdmins())
         if err != nil {
             return err
         }
@@ -168,6 +196,13 @@ func (m *AzureADJoinPolicy) SetIsAdminConfigurable(value *bool)() {
         panic(err)
     }
 }
+// SetLocalAdmins sets the localAdmins property value. The localAdmins property
+func (m *AzureADJoinPolicy) SetLocalAdmins(value LocalAdminSettingsable)() {
+    err := m.GetBackingStore().Set("localAdmins", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AzureADJoinPolicy) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -182,9 +217,11 @@ type AzureADJoinPolicyable interface {
     GetAllowedToJoin()(DeviceRegistrationMembershipable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsAdminConfigurable()(*bool)
+    GetLocalAdmins()(LocalAdminSettingsable)
     GetOdataType()(*string)
     SetAllowedToJoin(value DeviceRegistrationMembershipable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsAdminConfigurable(value *bool)()
+    SetLocalAdmins(value LocalAdminSettingsable)()
     SetOdataType(value *string)()
 }

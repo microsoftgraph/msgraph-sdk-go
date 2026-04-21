@@ -35,7 +35,7 @@ func (m *ConfigurationDrift) GetBaselineResourceDisplayName()(*string) {
     }
     return nil
 }
-// GetDriftedProperties gets the driftedProperties property value. Properties within one or more resource instances in which drift is detected. Returned only on $select.
+// GetDriftedProperties gets the driftedProperties property value. Properties within one or more resource instances in which drift is detected. Requires $select to retrieve.
 // returns a []DriftedPropertyable when successful
 func (m *ConfigurationDrift) GetDriftedProperties()([]DriftedPropertyable) {
     val, err := m.GetBackingStore().Get("driftedProperties")
@@ -239,7 +239,7 @@ func (m *ConfigurationDrift) SetBaselineResourceDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDriftedProperties sets the driftedProperties property value. Properties within one or more resource instances in which drift is detected. Returned only on $select.
+// SetDriftedProperties sets the driftedProperties property value. Properties within one or more resource instances in which drift is detected. Requires $select to retrieve.
 func (m *ConfigurationDrift) SetDriftedProperties(value []DriftedPropertyable)() {
     err := m.GetBackingStore().Set("driftedProperties", value)
     if err != nil {

@@ -187,6 +187,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewApproval(), nil
                     case "#microsoft.graph.approvalStage":
                         return NewApprovalStage(), nil
+                    case "#microsoft.graph.approvedClientApp":
+                        return NewApprovedClientApp(), nil
                     case "#microsoft.graph.appScope":
                         return NewAppScope(), nil
                     case "#microsoft.graph.arkoseFraudProtectionProvider":

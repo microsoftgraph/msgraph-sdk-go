@@ -35,7 +35,7 @@ func (m *ConfigurationMonitoringResult) GetDriftsCount()(*int32) {
     }
     return nil
 }
-// GetErrorDetails gets the errorDetails property value. All the error details that prevent the monitor from running successfully. The error details are a contained entity. Returned only on $select.
+// GetErrorDetails gets the errorDetails property value. All the error details that prevent the monitor from running successfully. The error details are a contained entity. Requires $select to retrieve.
 // returns a []ErrorDetailable when successful
 func (m *ConfigurationMonitoringResult) GetErrorDetails()([]ErrorDetailable) {
     val, err := m.GetBackingStore().Get("errorDetails")
@@ -211,7 +211,7 @@ func (m *ConfigurationMonitoringResult) SetDriftsCount(value *int32)() {
         panic(err)
     }
 }
-// SetErrorDetails sets the errorDetails property value. All the error details that prevent the monitor from running successfully. The error details are a contained entity. Returned only on $select.
+// SetErrorDetails sets the errorDetails property value. All the error details that prevent the monitor from running successfully. The error details are a contained entity. Requires $select to retrieve.
 func (m *ConfigurationMonitoringResult) SetErrorDetails(value []ErrorDetailable)() {
     err := m.GetBackingStore().Set("errorDetails", value)
     if err != nil {

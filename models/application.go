@@ -560,6 +560,22 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["managerApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("uuid")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
+            }
+            m.SetManagerApplications(res)
+        }
+        return nil
+    }
     res["nativeAuthenticationApisEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseNativeAuthenticationApisEnabled)
         if err != nil {
@@ -943,6 +959,18 @@ func (m *Application) GetLogo()([]byte) {
     }
     if val != nil {
         return val.([]byte)
+    }
+    return nil
+}
+// GetManagerApplications gets the managerApplications property value. A collection of application IDs for Microsoft first-party applications designated as managers. Manager applications can create service principals, agent identities, and agent users for managed agent blueprints. Limited to a maximum of 10 entries. Not nullable. Only supported on agentIdentityBlueprint objects; attempts to set this property on non-agent-blueprint applications return an error. Not returned by default; must be explicitly requested via $select.
+// returns a []UUID when successful
+func (m *Application) GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("managerApplications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     }
     return nil
 }
@@ -1438,6 +1466,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetManagerApplications() != nil {
+        err = writer.WriteCollectionOfUUIDValues("managerApplications", m.GetManagerApplications())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetNativeAuthenticationApisEnabled() != nil {
         cast := (*m.GetNativeAuthenticationApisEnabled()).String()
         err = writer.WriteStringValue("nativeAuthenticationApisEnabled", &cast)
@@ -1797,6 +1831,13 @@ func (m *Application) SetLogo(value []byte)() {
         panic(err)
     }
 }
+// SetManagerApplications sets the managerApplications property value. A collection of application IDs for Microsoft first-party applications designated as managers. Manager applications can create service principals, agent identities, and agent users for managed agent blueprints. Limited to a maximum of 10 entries. Not nullable. Only supported on agentIdentityBlueprint objects; attempts to set this property on non-agent-blueprint applications return an error. Not returned by default; must be explicitly requested via $select.
+func (m *Application) SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("managerApplications", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNativeAuthenticationApisEnabled sets the nativeAuthenticationApisEnabled property value. Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: none and all. Default is none. For more information, see Native Authentication.
 func (m *Application) SetNativeAuthenticationApisEnabled(value *NativeAuthenticationApisEnabled)() {
     err := m.GetBackingStore().Set("nativeAuthenticationApisEnabled", value)
@@ -1994,6 +2035,7 @@ type Applicationable interface {
     GetIsFallbackPublicClient()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLogo()([]byte)
+    GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetNativeAuthenticationApisEnabled()(*NativeAuthenticationApisEnabled)
     GetNotes()(*string)
     GetOauth2RequirePostResponse()(*bool)
@@ -2044,6 +2086,7 @@ type Applicationable interface {
     SetIsFallbackPublicClient(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLogo(value []byte)()
+    SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetNativeAuthenticationApisEnabled(value *NativeAuthenticationApisEnabled)()
     SetNotes(value *string)()
     SetOauth2RequirePostResponse(value *bool)()
