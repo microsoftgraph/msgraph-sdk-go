@@ -83,7 +83,7 @@ func (m *ConfigurationSnapshotJob) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetErrorDetails gets the errorDetails property value. Details of errors related to the reasons why the snapshot can't complete. Returned only on $select.
+// GetErrorDetails gets the errorDetails property value. Details of errors related to the reasons why the snapshot can't complete. Requires $select to retrieve.
 // returns a []string when successful
 func (m *ConfigurationSnapshotJob) GetErrorDetails()([]string) {
     val, err := m.GetBackingStore().Get("errorDetails")
@@ -213,7 +213,7 @@ func (m *ConfigurationSnapshotJob) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetResourceLocation gets the resourceLocation property value. The URL at which the snapshot file resides. Returned only on $select.
+// GetResourceLocation gets the resourceLocation property value. The URL at which the snapshot file resides. Requires $select to retrieve.
 // returns a *string when successful
 func (m *ConfigurationSnapshotJob) GetResourceLocation()(*string) {
     val, err := m.GetBackingStore().Get("resourceLocation")
@@ -225,7 +225,7 @@ func (m *ConfigurationSnapshotJob) GetResourceLocation()(*string) {
     }
     return nil
 }
-// GetResources gets the resources property value. The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Returned only on $select.
+// GetResources gets the resources property value. The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Requires $select to retrieve.
 // returns a []string when successful
 func (m *ConfigurationSnapshotJob) GetResources()([]string) {
     val, err := m.GetBackingStore().Get("resources")
@@ -335,21 +335,21 @@ func (m *ConfigurationSnapshotJob) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetErrorDetails sets the errorDetails property value. Details of errors related to the reasons why the snapshot can't complete. Returned only on $select.
+// SetErrorDetails sets the errorDetails property value. Details of errors related to the reasons why the snapshot can't complete. Requires $select to retrieve.
 func (m *ConfigurationSnapshotJob) SetErrorDetails(value []string)() {
     err := m.GetBackingStore().Set("errorDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceLocation sets the resourceLocation property value. The URL at which the snapshot file resides. Returned only on $select.
+// SetResourceLocation sets the resourceLocation property value. The URL at which the snapshot file resides. Requires $select to retrieve.
 func (m *ConfigurationSnapshotJob) SetResourceLocation(value *string)() {
     err := m.GetBackingStore().Set("resourceLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Returned only on $select.
+// SetResources sets the resources property value. The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Requires $select to retrieve.
 func (m *ConfigurationSnapshotJob) SetResources(value []string)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {

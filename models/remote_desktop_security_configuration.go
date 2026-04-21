@@ -22,10 +22,38 @@ func NewRemoteDesktopSecurityConfiguration()(*RemoteDesktopSecurityConfiguration
 func CreateRemoteDesktopSecurityConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteDesktopSecurityConfiguration(), nil
 }
+// GetApprovedClientApps gets the approvedClientApps property value. The collection of approved client apps that are associated with the RDS configuration. Supports $expand.
+// returns a []ApprovedClientAppable when successful
+func (m *RemoteDesktopSecurityConfiguration) GetApprovedClientApps()([]ApprovedClientAppable) {
+    val, err := m.GetBackingStore().Get("approvedClientApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ApprovedClientAppable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteDesktopSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["approvedClientApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateApprovedClientAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ApprovedClientAppable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ApprovedClientAppable)
+                }
+            }
+            m.SetApprovedClientApps(res)
+        }
+        return nil
+    }
     res["isRemoteDesktopProtocolEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -66,7 +94,7 @@ func (m *RemoteDesktopSecurityConfiguration) GetIsRemoteDesktopProtocolEnabled()
     }
     return nil
 }
-// GetTargetDeviceGroups gets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
+// GetTargetDeviceGroups gets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
 // returns a []TargetDeviceGroupable when successful
 func (m *RemoteDesktopSecurityConfiguration) GetTargetDeviceGroups()([]TargetDeviceGroupable) {
     val, err := m.GetBackingStore().Get("targetDeviceGroups")
@@ -83,6 +111,18 @@ func (m *RemoteDesktopSecurityConfiguration) Serialize(writer i878a80d2330e89d26
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetApprovedClientApps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApprovedClientApps()))
+        for i, v := range m.GetApprovedClientApps() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("approvedClientApps", cast)
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteBoolValue("isRemoteDesktopProtocolEnabled", m.GetIsRemoteDesktopProtocolEnabled())
@@ -104,6 +144,13 @@ func (m *RemoteDesktopSecurityConfiguration) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
+// SetApprovedClientApps sets the approvedClientApps property value. The collection of approved client apps that are associated with the RDS configuration. Supports $expand.
+func (m *RemoteDesktopSecurityConfiguration) SetApprovedClientApps(value []ApprovedClientAppable)() {
+    err := m.GetBackingStore().Set("approvedClientApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsRemoteDesktopProtocolEnabled sets the isRemoteDesktopProtocolEnabled property value. Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
 func (m *RemoteDesktopSecurityConfiguration) SetIsRemoteDesktopProtocolEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isRemoteDesktopProtocolEnabled", value)
@@ -111,7 +158,7 @@ func (m *RemoteDesktopSecurityConfiguration) SetIsRemoteDesktopProtocolEnabled(v
         panic(err)
     }
 }
-// SetTargetDeviceGroups sets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
+// SetTargetDeviceGroups sets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
 func (m *RemoteDesktopSecurityConfiguration) SetTargetDeviceGroups(value []TargetDeviceGroupable)() {
     err := m.GetBackingStore().Set("targetDeviceGroups", value)
     if err != nil {
@@ -121,8 +168,10 @@ func (m *RemoteDesktopSecurityConfiguration) SetTargetDeviceGroups(value []Targe
 type RemoteDesktopSecurityConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApprovedClientApps()([]ApprovedClientAppable)
     GetIsRemoteDesktopProtocolEnabled()(*bool)
     GetTargetDeviceGroups()([]TargetDeviceGroupable)
+    SetApprovedClientApps(value []ApprovedClientAppable)()
     SetIsRemoteDesktopProtocolEnabled(value *bool)()
     SetTargetDeviceGroups(value []TargetDeviceGroupable)()
 }
