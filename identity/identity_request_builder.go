@@ -164,6 +164,11 @@ func (m *IdentityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserFlowAttributesRequestBuilder) {
     return NewUserFlowAttributesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// VerifiedId provides operations to manage the verifiedId property of the microsoft.graph.identityContainer entity.
+// returns a *VerifiedIdRequestBuilder when successful
+func (m *IdentityRequestBuilder) VerifiedId()(*VerifiedIdRequestBuilder) {
+    return NewVerifiedIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *IdentityRequestBuilder when successful
 func (m *IdentityRequestBuilder) WithUrl(rawUrl string)(*IdentityRequestBuilder) {

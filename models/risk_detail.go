@@ -23,10 +23,11 @@ const (
     USERCHANGEDPASSWORDONPREMISES_RISKDETAIL
     ADMINDISMISSEDRISKFORSIGNIN_RISKDETAIL
     ADMINCONFIRMEDACCOUNTSAFE_RISKDETAIL
+    MICROSOFTREVOKEDSESSIONS_RISKDETAIL
 )
 
 func (i RiskDetail) String() string {
-    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "m365DAdminDismissedDetection", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "userChangedPasswordOnPremises", "adminDismissedRiskForSignIn", "adminConfirmedAccountSafe"}[i]
+    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "m365DAdminDismissedDetection", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "userChangedPasswordOnPremises", "adminDismissedRiskForSignIn", "adminConfirmedAccountSafe", "microsoftRevokedSessions"}[i]
 }
 func ParseRiskDetail(v string) (any, error) {
     result := NONE_RISKDETAIL
@@ -67,6 +68,8 @@ func ParseRiskDetail(v string) (any, error) {
             result = ADMINDISMISSEDRISKFORSIGNIN_RISKDETAIL
         case "adminConfirmedAccountSafe":
             result = ADMINCONFIRMEDACCOUNTSAFE_RISKDETAIL
+        case "microsoftRevokedSessions":
+            result = MICROSOFTREVOKEDSESSIONS_RISKDETAIL
         default:
             return nil, nil
     }

@@ -38,7 +38,7 @@ func (m *AzureADRegistrationPolicy) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowedToRegister gets the allowedToRegister property value. The allowedToRegister property
+// GetAllowedToRegister gets the allowedToRegister property value. Determines if Microsoft Entra registered is allowed.
 // returns a DeviceRegistrationMembershipable when successful
 func (m *AzureADRegistrationPolicy) GetAllowedToRegister()(DeviceRegistrationMembershipable) {
     val, err := m.GetBackingStore().Get("allowedToRegister")
@@ -91,7 +91,7 @@ func (m *AzureADRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetIsAdminConfigurable gets the isAdminConfigurable property value. The isAdminConfigurable property
+// GetIsAdminConfigurable gets the isAdminConfigurable property value. Determines if administrators can modify this policy.
 // returns a *bool when successful
 func (m *AzureADRegistrationPolicy) GetIsAdminConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isAdminConfigurable")
@@ -150,7 +150,7 @@ func (m *AzureADRegistrationPolicy) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowedToRegister sets the allowedToRegister property value. The allowedToRegister property
+// SetAllowedToRegister sets the allowedToRegister property value. Determines if Microsoft Entra registered is allowed.
 func (m *AzureADRegistrationPolicy) SetAllowedToRegister(value DeviceRegistrationMembershipable)() {
     err := m.GetBackingStore().Set("allowedToRegister", value)
     if err != nil {
@@ -161,7 +161,7 @@ func (m *AzureADRegistrationPolicy) SetAllowedToRegister(value DeviceRegistratio
 func (m *AzureADRegistrationPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsAdminConfigurable sets the isAdminConfigurable property value. The isAdminConfigurable property
+// SetIsAdminConfigurable sets the isAdminConfigurable property value. Determines if administrators can modify this policy.
 func (m *AzureADRegistrationPolicy) SetIsAdminConfigurable(value *bool)() {
     err := m.GetBackingStore().Set("isAdminConfigurable", value)
     if err != nil {

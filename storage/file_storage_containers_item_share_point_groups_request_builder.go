@@ -14,7 +14,7 @@ import (
 type FileStorageContainersItemSharePointGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FileStorageContainersItemSharePointGroupsRequestBuilderGetQueryParameters get sharePointGroups from storage
+// FileStorageContainersItemSharePointGroupsRequestBuilderGetQueryParameters the collection of sharePointGroup objects local to the container. Read-write.
 type FileStorageContainersItemSharePointGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewFileStorageContainersItemSharePointGroupsRequestBuilder(rawUrl string, r
 func (m *FileStorageContainersItemSharePointGroupsRequestBuilder) Count()(*FileStorageContainersItemSharePointGroupsCountRequestBuilder) {
     return NewFileStorageContainersItemSharePointGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get sharePointGroups from storage
+// Get the collection of sharePointGroup objects local to the container. Read-write.
 // returns a SharePointGroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageContainersItemSharePointGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainersItemSharePointGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharePointGroupCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *FileStorageContainersItemSharePointGroupsRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharePointGroupable), nil
 }
-// ToGetRequestInformation get sharePointGroups from storage
+// ToGetRequestInformation the collection of sharePointGroup objects local to the container. Read-write.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemSharePointGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemSharePointGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -13,10 +13,11 @@ const (
     COMPLIANTAPPLICATION_CONDITIONALACCESSGRANTCONTROL
     PASSWORDCHANGE_CONDITIONALACCESSGRANTCONTROL
     UNKNOWNFUTUREVALUE_CONDITIONALACCESSGRANTCONTROL
+    RISKREMEDIATION_CONDITIONALACCESSGRANTCONTROL
 )
 
 func (i ConditionalAccessGrantControl) String() string {
-    return []string{"block", "mfa", "compliantDevice", "domainJoinedDevice", "approvedApplication", "compliantApplication", "passwordChange", "unknownFutureValue"}[i]
+    return []string{"block", "mfa", "compliantDevice", "domainJoinedDevice", "approvedApplication", "compliantApplication", "passwordChange", "unknownFutureValue", "riskRemediation"}[i]
 }
 func ParseConditionalAccessGrantControl(v string) (any, error) {
     result := BLOCK_CONDITIONALACCESSGRANTCONTROL
@@ -37,6 +38,8 @@ func ParseConditionalAccessGrantControl(v string) (any, error) {
             result = PASSWORDCHANGE_CONDITIONALACCESSGRANTCONTROL
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSGRANTCONTROL
+        case "riskRemediation":
+            result = RISKREMEDIATION_CONDITIONALACCESSGRANTCONTROL
         default:
             return nil, nil
     }

@@ -145,6 +145,11 @@ func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*HomeRealmDiscover
 func (m *PoliciesRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
     return NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OwnerlessGroupPolicy provides operations to manage the ownerlessGroupPolicy property of the microsoft.graph.policyRoot entity.
+// returns a *OwnerlessGroupPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) OwnerlessGroupPolicy()(*OwnerlessGroupPolicyRequestBuilder) {
+    return NewOwnerlessGroupPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update policies
 // returns a PolicyRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

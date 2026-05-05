@@ -38,7 +38,7 @@ func (m *SharePointGroupMember) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIdentity gets the identity property value. The identity property
+// GetIdentity gets the identity property value. The identity represented by the sharePointGroupMember object.
 // returns a SharePointIdentitySetable when successful
 func (m *SharePointGroupMember) GetIdentity()(SharePointIdentitySetable) {
     val, err := m.GetBackingStore().Get("identity")
@@ -64,7 +64,7 @@ func (m *SharePointGroupMember) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetIdentity sets the identity property value. The identity property
+// SetIdentity sets the identity property value. The identity represented by the sharePointGroupMember object.
 func (m *SharePointGroupMember) SetIdentity(value SharePointIdentitySetable)() {
     err := m.GetBackingStore().Set("identity", value)
     if err != nil {
