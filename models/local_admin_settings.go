@@ -43,7 +43,7 @@ func (m *LocalAdminSettings) GetAdditionalData()(map[string]any) {
 func (m *LocalAdminSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEnableGlobalAdmins gets the enableGlobalAdmins property value. The enableGlobalAdmins property
+// GetEnableGlobalAdmins gets the enableGlobalAdmins property value. Indicates whether global administrators are local administrators on all Microsoft Entra-joined devices. This setting only applies to future registrations. Default is true.
 // returns a *bool when successful
 func (m *LocalAdminSettings) GetEnableGlobalAdmins()(*bool) {
     val, err := m.GetBackingStore().Get("enableGlobalAdmins")
@@ -103,7 +103,7 @@ func (m *LocalAdminSettings) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRegisteringUsers gets the registeringUsers property value. The registeringUsers property
+// GetRegisteringUsers gets the registeringUsers property value. Determines the users and groups that become local administrators on Microsoft Entra joined devices that they register.
 // returns a DeviceRegistrationMembershipable when successful
 func (m *LocalAdminSettings) GetRegisteringUsers()(DeviceRegistrationMembershipable) {
     val, err := m.GetBackingStore().Get("registeringUsers")
@@ -154,7 +154,7 @@ func (m *LocalAdminSettings) SetAdditionalData(value map[string]any)() {
 func (m *LocalAdminSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEnableGlobalAdmins sets the enableGlobalAdmins property value. The enableGlobalAdmins property
+// SetEnableGlobalAdmins sets the enableGlobalAdmins property value. Indicates whether global administrators are local administrators on all Microsoft Entra-joined devices. This setting only applies to future registrations. Default is true.
 func (m *LocalAdminSettings) SetEnableGlobalAdmins(value *bool)() {
     err := m.GetBackingStore().Set("enableGlobalAdmins", value)
     if err != nil {
@@ -168,7 +168,7 @@ func (m *LocalAdminSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRegisteringUsers sets the registeringUsers property value. The registeringUsers property
+// SetRegisteringUsers sets the registeringUsers property value. Determines the users and groups that become local administrators on Microsoft Entra joined devices that they register.
 func (m *LocalAdminSettings) SetRegisteringUsers(value DeviceRegistrationMembershipable)() {
     err := m.GetBackingStore().Set("registeringUsers", value)
     if err != nil {

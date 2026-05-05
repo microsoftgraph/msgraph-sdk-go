@@ -230,6 +230,16 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["verifiedId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityVerifiedIdRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerifiedId(val.(IdentityVerifiedIdRootable))
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. The identityProviders property
@@ -265,6 +275,18 @@ func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributea
     }
     if val != nil {
         return val.([]IdentityUserFlowAttributeable)
+    }
+    return nil
+}
+// GetVerifiedId gets the verifiedId property value. The verifiedId property
+// returns a IdentityVerifiedIdRootable when successful
+func (m *IdentityContainer) GetVerifiedId()(IdentityVerifiedIdRootable) {
+    val, err := m.GetBackingStore().Get("verifiedId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentityVerifiedIdRootable)
     }
     return nil
 }
@@ -370,6 +392,12 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("verifiedId", m.GetVerifiedId())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApiConnectors sets the apiConnectors property value. Represents entry point for API connectors.
@@ -435,6 +463,13 @@ func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttrib
         panic(err)
     }
 }
+// SetVerifiedId sets the verifiedId property value. The verifiedId property
+func (m *IdentityContainer) SetVerifiedId(value IdentityVerifiedIdRootable)() {
+    err := m.GetBackingStore().Set("verifiedId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type IdentityContainerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -447,6 +482,7 @@ type IdentityContainerable interface {
     GetIdentityProviders()([]IdentityProviderBaseable)
     GetRiskPrevention()(RiskPreventionContainerable)
     GetUserFlowAttributes()([]IdentityUserFlowAttributeable)
+    GetVerifiedId()(IdentityVerifiedIdRootable)
     SetApiConnectors(value []IdentityApiConnectorable)()
     SetAuthenticationEventListeners(value []AuthenticationEventListenerable)()
     SetAuthenticationEventsFlows(value []AuthenticationEventsFlowable)()
@@ -456,4 +492,5 @@ type IdentityContainerable interface {
     SetIdentityProviders(value []IdentityProviderBaseable)()
     SetRiskPrevention(value RiskPreventionContainerable)()
     SetUserFlowAttributes(value []IdentityUserFlowAttributeable)()
+    SetVerifiedId(value IdentityVerifiedIdRootable)()
 }

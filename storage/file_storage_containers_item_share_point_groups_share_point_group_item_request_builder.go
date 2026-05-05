@@ -21,7 +21,7 @@ type FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetQueryParameters get sharePointGroups from storage
+// FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetQueryParameters the collection of sharePointGroup objects local to the container. Read-write.
 type FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuil
     }
     return nil
 }
-// Get get sharePointGroups from storage
+// Get the collection of sharePointGroup objects local to the container. Read-write.
 // returns a SharePointGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharePointGroupable, error) {
@@ -129,7 +129,7 @@ func (m *FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get sharePointGroups from storage
+// ToGetRequestInformation the collection of sharePointGroup objects local to the container. Read-write.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -22,7 +22,7 @@ func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
 func CreateDeviceRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceRegistrationPolicy(), nil
 }
-// GetAzureADJoin gets the azureADJoin property value. The azureADJoin property
+// GetAzureADJoin gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
 // returns a AzureADJoinPolicyable when successful
 func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureADJoinPolicyable) {
     val, err := m.GetBackingStore().Get("azureADJoin")
@@ -34,7 +34,7 @@ func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureADJoinPolicyable) {
     }
     return nil
 }
-// GetAzureADRegistration gets the azureADRegistration property value. The azureADRegistration property
+// GetAzureADRegistration gets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
 // returns a AzureADRegistrationPolicyable when successful
 func (m *DeviceRegistrationPolicy) GetAzureADRegistration()(AzureADRegistrationPolicyable) {
     val, err := m.GetBackingStore().Get("azureADRegistration")
@@ -46,7 +46,7 @@ func (m *DeviceRegistrationPolicy) GetAzureADRegistration()(AzureADRegistrationP
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the device registration policy. Always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
 // returns a *string when successful
 func (m *DeviceRegistrationPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -58,7 +58,7 @@ func (m *DeviceRegistrationPolicy) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the device registration policy. Always set to Device Registration Policy. Read-only.
 // returns a *string when successful
 func (m *DeviceRegistrationPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -146,7 +146,7 @@ func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetLocalAdminPassword gets the localAdminPassword property value. The localAdminPassword property
+// GetLocalAdminPassword gets the localAdminPassword property value. Specifies the setting for Local Admin Password Solution (LAPS) within your organization.
 // returns a LocalAdminPasswordSettingsable when successful
 func (m *DeviceRegistrationPolicy) GetLocalAdminPassword()(LocalAdminPasswordSettingsable) {
     val, err := m.GetBackingStore().Get("localAdminPassword")
@@ -170,7 +170,7 @@ func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFacto
     }
     return nil
 }
-// GetUserDeviceQuota gets the userDeviceQuota property value. The userDeviceQuota property
+// GetUserDeviceQuota gets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
 // returns a *int32 when successful
 func (m *DeviceRegistrationPolicy) GetUserDeviceQuota()(*int32) {
     val, err := m.GetBackingStore().Get("userDeviceQuota")
@@ -233,35 +233,35 @@ func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAzureADJoin sets the azureADJoin property value. The azureADJoin property
+// SetAzureADJoin sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) SetAzureADJoin(value AzureADJoinPolicyable)() {
     err := m.GetBackingStore().Set("azureADJoin", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAzureADRegistration sets the azureADRegistration property value. The azureADRegistration property
+// SetAzureADRegistration sets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) SetAzureADRegistration(value AzureADRegistrationPolicyable)() {
     err := m.GetBackingStore().Set("azureADRegistration", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the device registration policy. Always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
 func (m *DeviceRegistrationPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the device registration policy. Always set to Device Registration Policy. Read-only.
 func (m *DeviceRegistrationPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocalAdminPassword sets the localAdminPassword property value. The localAdminPassword property
+// SetLocalAdminPassword sets the localAdminPassword property value. Specifies the setting for Local Admin Password Solution (LAPS) within your organization.
 func (m *DeviceRegistrationPolicy) SetLocalAdminPassword(value LocalAdminPasswordSettingsable)() {
     err := m.GetBackingStore().Set("localAdminPassword", value)
     if err != nil {
@@ -275,7 +275,7 @@ func (m *DeviceRegistrationPolicy) SetMultiFactorAuthConfiguration(value *MultiF
         panic(err)
     }
 }
-// SetUserDeviceQuota sets the userDeviceQuota property value. The userDeviceQuota property
+// SetUserDeviceQuota sets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
 func (m *DeviceRegistrationPolicy) SetUserDeviceQuota(value *int32)() {
     err := m.GetBackingStore().Set("userDeviceQuota", value)
     if err != nil {

@@ -374,6 +374,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["ownerlessGroupPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOwnerlessGroupPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerlessGroupPolicy(val.(OwnerlessGroupPolicyable))
+        }
+        return nil
+    }
     res["permissionGrantPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
         if err != nil {
@@ -477,6 +487,18 @@ func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecu
     }
     if val != nil {
         return val.(IdentitySecurityDefaultsEnforcementPolicyable)
+    }
+    return nil
+}
+// GetOwnerlessGroupPolicy gets the ownerlessGroupPolicy property value. The ownerlessGroupPolicy property
+// returns a OwnerlessGroupPolicyable when successful
+func (m *PolicyRoot) GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable) {
+    val, err := m.GetBackingStore().Get("ownerlessGroupPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OwnerlessGroupPolicyable)
     }
     return nil
 }
@@ -678,6 +700,12 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("ownerlessGroupPolicy", m.GetOwnerlessGroupPolicy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissionGrantPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPolicies()))
         for i, v := range m.GetPermissionGrantPolicies() {
@@ -845,6 +873,13 @@ func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value Identity
         panic(err)
     }
 }
+// SetOwnerlessGroupPolicy sets the ownerlessGroupPolicy property value. The ownerlessGroupPolicy property
+func (m *PolicyRoot) SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)() {
+    err := m.GetBackingStore().Set("ownerlessGroupPolicy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
     err := m.GetBackingStore().Set("permissionGrantPolicies", value)
@@ -898,6 +933,7 @@ type PolicyRootable interface {
     GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
     GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
     GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
+    GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
     GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
     GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable)
@@ -918,6 +954,7 @@ type PolicyRootable interface {
     SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()
     SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
     SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()
+    SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
     SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()
     SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)()

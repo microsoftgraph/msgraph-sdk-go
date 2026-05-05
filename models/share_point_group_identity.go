@@ -50,7 +50,7 @@ func (m *SharePointGroupIdentity) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetPrincipalId gets the principalId property value. The principalId property
+// GetPrincipalId gets the principalId property value. The principal ID of the SharePoint group in the tenant. Read-only.
 // returns a *string when successful
 func (m *SharePointGroupIdentity) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
@@ -62,7 +62,7 @@ func (m *SharePointGroupIdentity) GetPrincipalId()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The title of the SharePoint group. Read-only.
 // returns a *string when successful
 func (m *SharePointGroupIdentity) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -94,14 +94,14 @@ func (m *SharePointGroupIdentity) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetPrincipalId sets the principalId property value. The principalId property
+// SetPrincipalId sets the principalId property value. The principal ID of the SharePoint group in the tenant. Read-only.
 func (m *SharePointGroupIdentity) SetPrincipalId(value *string)() {
     err := m.GetBackingStore().Set("principalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The title of the SharePoint group. Read-only.
 func (m *SharePointGroupIdentity) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

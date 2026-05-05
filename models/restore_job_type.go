@@ -8,10 +8,11 @@ const (
     STANDARD_RESTOREJOBTYPE RestoreJobType = iota
     BULK_RESTOREJOBTYPE
     UNKNOWNFUTUREVALUE_RESTOREJOBTYPE
+    GRANULAR_RESTOREJOBTYPE
 )
 
 func (i RestoreJobType) String() string {
-    return []string{"standard", "bulk", "unknownFutureValue"}[i]
+    return []string{"standard", "bulk", "unknownFutureValue", "granular"}[i]
 }
 func ParseRestoreJobType(v string) (any, error) {
     result := STANDARD_RESTOREJOBTYPE
@@ -22,6 +23,8 @@ func ParseRestoreJobType(v string) (any, error) {
             result = BULK_RESTOREJOBTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RESTOREJOBTYPE
+        case "granular":
+            result = GRANULAR_RESTOREJOBTYPE
         default:
             return nil, nil
     }

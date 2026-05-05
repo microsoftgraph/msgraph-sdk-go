@@ -296,7 +296,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetHealthCheckPaused gets the healthCheckPaused property value. The healthCheckPaused property
+// GetHealthCheckPaused gets the healthCheckPaused property value. Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.
 // returns a *bool when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckPaused()(*bool) {
     val, err := m.GetBackingStore().Get("healthCheckPaused")
@@ -332,7 +332,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetail()(CloudPcOnPrem
     }
     return nil
 }
-// GetInUse gets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.
+// GetInUse gets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.
 // returns a *bool when successful
 func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
     val, err := m.GetBackingStore().Get("inUse")
@@ -344,7 +344,7 @@ func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
     }
     return nil
 }
-// GetInUseByCloudPc gets the inUseByCloudPc property value. The inUseByCloudPc property
+// GetInUseByCloudPc gets the inUseByCloudPc property value. Indicates whether a Cloud PC is using this on-premises network connection. true if at least one Cloud PC is using it. Otherwise, false. Read-only. Default is false.
 // returns a *bool when successful
 func (m *CloudPcOnPremisesConnection) GetInUseByCloudPc()(*bool) {
     val, err := m.GetBackingStore().Get("inUseByCloudPc")
@@ -380,7 +380,7 @@ func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
     }
     return nil
 }
-// GetScopeIds gets the scopeIds property value. The scopeIds property
+// GetScopeIds gets the scopeIds property value. The scope IDs of the corresponding permission. Currently, it's the Intune scope tag ID.
 // returns a []string when successful
 func (m *CloudPcOnPremisesConnection) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
@@ -618,7 +618,7 @@ func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetHealthCheckPaused sets the healthCheckPaused property value. The healthCheckPaused property
+// SetHealthCheckPaused sets the healthCheckPaused property value. Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckPaused(value *bool)() {
     err := m.GetBackingStore().Set("healthCheckPaused", value)
     if err != nil {
@@ -639,14 +639,14 @@ func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetail(value CloudPcOn
         panic(err)
     }
 }
-// SetInUse sets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.
+// SetInUse sets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.
 func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
     err := m.GetBackingStore().Set("inUse", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInUseByCloudPc sets the inUseByCloudPc property value. The inUseByCloudPc property
+// SetInUseByCloudPc sets the inUseByCloudPc property value. Indicates whether a Cloud PC is using this on-premises network connection. true if at least one Cloud PC is using it. Otherwise, false. Read-only. Default is false.
 func (m *CloudPcOnPremisesConnection) SetInUseByCloudPc(value *bool)() {
     err := m.GetBackingStore().Set("inUseByCloudPc", value)
     if err != nil {
@@ -667,7 +667,7 @@ func (m *CloudPcOnPremisesConnection) SetResourceGroupId(value *string)() {
         panic(err)
     }
 }
-// SetScopeIds sets the scopeIds property value. The scopeIds property
+// SetScopeIds sets the scopeIds property value. The scope IDs of the corresponding permission. Currently, it's the Intune scope tag ID.
 func (m *CloudPcOnPremisesConnection) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
     if err != nil {

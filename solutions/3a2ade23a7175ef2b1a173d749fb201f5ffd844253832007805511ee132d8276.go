@@ -103,6 +103,11 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessResto
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OneDriveForBusinessRestoreSessionable), nil
 }
+// GranularDriveRestoreArtifacts provides operations to manage the granularDriveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.
+// returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsRequestBuilder when successful
+func (m *BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilder) GranularDriveRestoreArtifacts()(*BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsRequestBuilder) {
+    return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the properties of a oneDriveForBusinessRestoreSession object.
 // returns a OneDriveForBusinessRestoreSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
