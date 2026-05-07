@@ -84,6 +84,18 @@ func (m *Alert) GetAssignedTo()(*string) {
     }
     return nil
 }
+// GetCategories gets the categories property value. The categories property
+// returns a []string when successful
+func (m *Alert) GetCategories()([]string) {
+    val, err := m.GetBackingStore().Get("categories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetCategory gets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
 // returns a *string when successful
 func (m *Alert) GetCategory()(*string) {
@@ -255,6 +267,22 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetAssignedTo(val)
+        }
+        return nil
+    }
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetCategories(res)
         }
         return nil
     }
@@ -838,6 +866,12 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetCategories() != nil {
+        err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("category", m.GetCategory())
         if err != nil {
@@ -1068,6 +1102,13 @@ func (m *Alert) SetAssignedTo(value *string)() {
         panic(err)
     }
 }
+// SetCategories sets the categories property value. The categories property
+func (m *Alert) SetCategories(value []string)() {
+    err := m.GetBackingStore().Set("categories", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCategory sets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
 func (m *Alert) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
@@ -1279,6 +1320,7 @@ type Alertable interface {
     GetAlertPolicyId()(*string)
     GetAlertWebUrl()(*string)
     GetAssignedTo()(*string)
+    GetCategories()([]string)
     GetCategory()(*string)
     GetClassification()(*AlertClassification)
     GetComments()([]AlertCommentable)
@@ -1313,6 +1355,7 @@ type Alertable interface {
     SetAlertPolicyId(value *string)()
     SetAlertWebUrl(value *string)()
     SetAssignedTo(value *string)()
+    SetCategories(value []string)()
     SetCategory(value *string)()
     SetClassification(value *AlertClassification)()
     SetComments(value []AlertCommentable)()

@@ -14,7 +14,7 @@ import (
 type ItemSponsorsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSponsorsRefRequestBuilderDeleteQueryParameters remove a user's sponsor.
+// ItemSponsorsRefRequestBuilderDeleteQueryParameters remove an agentUser's sponsor.
 type ItemSponsorsRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string "uriparametername:\"%40id\""
@@ -28,7 +28,7 @@ type ItemSponsorsRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSponsorsRefRequestBuilderDeleteQueryParameters
 }
-// ItemSponsorsRefRequestBuilderGetQueryParameters get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+// ItemSponsorsRefRequestBuilderGetQueryParameters get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 type ItemSponsorsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -72,11 +72,11 @@ func NewItemSponsorsRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemSponsorsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user's sponsor.
+// Delete remove an agentUser's sponsor.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentuser-delete-sponsors?view=graph-rest-1.0
 func (m *ItemSponsorsRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSponsorsRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,12 +91,12 @@ func (m *ItemSponsorsRefRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// Get get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+// Get get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-1.0
 func (m *ItemSponsorsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSponsorsRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -114,11 +114,11 @@ func (m *ItemSponsorsRefRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post assign a user a sponsor. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date.
+// Post assign an agentUser a sponsor. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-sponsors?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentuser-post-sponsors?view=graph-rest-1.0
 func (m *ItemSponsorsRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemSponsorsRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -133,7 +133,7 @@ func (m *ItemSponsorsRefRequestBuilder) Post(ctx context.Context, body iadcd8112
     }
     return nil
 }
-// ToDeleteRequestInformation remove a user's sponsor.
+// ToDeleteRequestInformation remove an agentUser's sponsor.
 // returns a *RequestInformation when successful
 func (m *ItemSponsorsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSponsorsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/sponsors/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -147,7 +147,7 @@ func (m *ItemSponsorsRefRequestBuilder) ToDeleteRequestInformation(ctx context.C
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+// ToGetRequestInformation get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 // returns a *RequestInformation when successful
 func (m *ItemSponsorsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSponsorsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/sponsors/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -161,7 +161,7 @@ func (m *ItemSponsorsRefRequestBuilder) ToGetRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation assign a user a sponsor. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date.
+// ToPostRequestInformation assign an agentUser a sponsor. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 // returns a *RequestInformation when successful
 func (m *ItemSponsorsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemSponsorsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/sponsors/$ref", m.BaseRequestBuilder.PathParameters)

@@ -93,6 +93,11 @@ func (m *BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemReque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharePointRestoreSessionable), nil
 }
+// GranularSiteRestoreArtifacts provides operations to manage the granularSiteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.
+// returns a *BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsRequestBuilder when successful
+func (m *BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilder) GranularSiteRestoreArtifacts()(*BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsRequestBuilder) {
+    return NewBackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property sharePointRestoreSessions in solutions
 // returns a SharePointRestoreSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

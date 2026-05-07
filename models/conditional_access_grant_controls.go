@@ -55,7 +55,7 @@ func (m *ConditionalAccessGrantControls) GetAuthenticationStrength()(Authenticat
 func (m *ConditionalAccessGrantControls) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBuiltInControls gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
+// GetBuiltInControls gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue, riskRemediation.  Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: riskRemediation.
 // returns a []ConditionalAccessGrantControl when successful
 func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]ConditionalAccessGrantControl) {
     val, err := m.GetBackingStore().Get("builtInControls")
@@ -263,7 +263,7 @@ func (m *ConditionalAccessGrantControls) SetAuthenticationStrength(value Authent
 func (m *ConditionalAccessGrantControls) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBuiltInControls sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
+// SetBuiltInControls sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue, riskRemediation.  Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: riskRemediation.
 func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []ConditionalAccessGrantControl)() {
     err := m.GetBackingStore().Set("builtInControls", value)
     if err != nil {

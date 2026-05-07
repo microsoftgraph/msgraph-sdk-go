@@ -370,7 +370,7 @@ func (m *FileStorageContainer) GetSettings()(FileStorageContainerSettingsable) {
     }
     return nil
 }
-// GetSharePointGroups gets the sharePointGroups property value. The sharePointGroups property
+// GetSharePointGroups gets the sharePointGroups property value. The collection of sharePointGroup objects local to the container. Read-write.
 // returns a []SharePointGroupable when successful
 func (m *FileStorageContainer) GetSharePointGroups()([]SharePointGroupable) {
     val, err := m.GetBackingStore().Get("sharePointGroups")
@@ -627,7 +627,7 @@ func (m *FileStorageContainer) SetSettings(value FileStorageContainerSettingsabl
         panic(err)
     }
 }
-// SetSharePointGroups sets the sharePointGroups property value. The sharePointGroups property
+// SetSharePointGroups sets the sharePointGroups property value. The collection of sharePointGroup objects local to the container. Read-write.
 func (m *FileStorageContainer) SetSharePointGroups(value []SharePointGroupable)() {
     err := m.GetBackingStore().Set("sharePointGroups", value)
     if err != nil {

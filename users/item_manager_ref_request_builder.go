@@ -48,11 +48,11 @@ func NewItemManagerRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagerRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user's manager.
+// Delete remove an agentUser's manager.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentuser-delete-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,12 +67,12 @@ func (m *ItemManagerRefRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+// Get returns the user or organizational contact assigned as the agentUser's manager.
 // returns a *string when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderGetRequestConfiguration)(*string, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -109,7 +109,7 @@ func (m *ItemManagerRefRequestBuilder) Put(ctx context.Context, body iadcd811244
     }
     return nil
 }
-// ToDeleteRequestInformation remove a user's manager.
+// ToDeleteRequestInformation remove an agentUser's manager.
 // returns a *RequestInformation when successful
 func (m *ItemManagerRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -120,7 +120,7 @@ func (m *ItemManagerRefRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+// ToGetRequestInformation returns the user or organizational contact assigned as the agentUser's manager.
 // returns a *RequestInformation when successful
 func (m *ItemManagerRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

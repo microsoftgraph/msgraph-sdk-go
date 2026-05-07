@@ -94,6 +94,16 @@ func (m *TaskProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["processingInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProcessingInfo(val)
+        }
+        return nil
+    }
     res["processingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLifecycleWorkflowProcessingStatus)
         if err != nil {
@@ -135,6 +145,18 @@ func (m *TaskProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetProcessingInfo gets the processingInfo property value. The processingInfo property
+// returns a *string when successful
+func (m *TaskProcessingResult) GetProcessingInfo()(*string) {
+    val, err := m.GetBackingStore().Get("processingInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProcessingStatus gets the processingStatus property value. The processingStatus property
 // returns a *LifecycleWorkflowProcessingStatus when successful
@@ -208,6 +230,12 @@ func (m *TaskProcessingResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("processingInfo", m.GetProcessingInfo())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProcessingStatus() != nil {
         cast := (*m.GetProcessingStatus()).String()
         err = writer.WriteStringValue("processingStatus", &cast)
@@ -256,6 +284,13 @@ func (m *TaskProcessingResult) SetFailureReason(value *string)() {
         panic(err)
     }
 }
+// SetProcessingInfo sets the processingInfo property value. The processingInfo property
+func (m *TaskProcessingResult) SetProcessingInfo(value *string)() {
+    err := m.GetBackingStore().Set("processingInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProcessingStatus sets the processingStatus property value. The processingStatus property
 func (m *TaskProcessingResult) SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)() {
     err := m.GetBackingStore().Set("processingStatus", value)
@@ -290,6 +325,7 @@ type TaskProcessingResultable interface {
     GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFailureReason()(*string)
+    GetProcessingInfo()(*string)
     GetProcessingStatus()(*LifecycleWorkflowProcessingStatus)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSubject()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)
@@ -297,6 +333,7 @@ type TaskProcessingResultable interface {
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFailureReason(value *string)()
+    SetProcessingInfo(value *string)()
     SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSubject(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)()

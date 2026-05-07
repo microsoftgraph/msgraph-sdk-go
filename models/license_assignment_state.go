@@ -40,7 +40,7 @@ func (m *LicenseAssignmentState) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAssignedByGroup gets the assignedByGroup property value. The assignedByGroup property
+// GetAssignedByGroup gets the assignedByGroup property value. Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
 // returns a *string when successful
 func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
     val, err := m.GetBackingStore().Get("assignedByGroup")
@@ -57,7 +57,7 @@ func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
 func (m *LicenseAssignmentState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisabledPlans gets the disabledPlans property value. The disabledPlans property
+// GetDisabledPlans gets the disabledPlans property value. The service plans that are disabled in this assignment. Read-Only.
 // returns a []UUID when successful
 func (m *LicenseAssignmentState) GetDisabledPlans()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("disabledPlans")
@@ -69,7 +69,7 @@ func (m *LicenseAssignmentState) GetDisabledPlans()([]i561e97a8befe7661a44c8f546
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
 // returns a *string when successful
 func (m *LicenseAssignmentState) GetError()(*string) {
     val, err := m.GetBackingStore().Get("error")
@@ -163,7 +163,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
 // returns a *Time when successful
 func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -187,7 +187,7 @@ func (m *LicenseAssignmentState) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSkuId gets the skuId property value. The skuId property
+// GetSkuId gets the skuId property value. The unique identifier for the SKU. Read-Only.
 // returns a *UUID when successful
 func (m *LicenseAssignmentState) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("skuId")
@@ -199,7 +199,7 @@ func (m *LicenseAssignmentState) GetSkuId()(*i561e97a8befe7661a44c8f54600992b420
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
 // returns a *string when successful
 func (m *LicenseAssignmentState) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
@@ -270,7 +270,7 @@ func (m *LicenseAssignmentState) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAssignedByGroup sets the assignedByGroup property value. The assignedByGroup property
+// SetAssignedByGroup sets the assignedByGroup property value. Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
 func (m *LicenseAssignmentState) SetAssignedByGroup(value *string)() {
     err := m.GetBackingStore().Set("assignedByGroup", value)
     if err != nil {
@@ -281,21 +281,21 @@ func (m *LicenseAssignmentState) SetAssignedByGroup(value *string)() {
 func (m *LicenseAssignmentState) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisabledPlans sets the disabledPlans property value. The disabledPlans property
+// SetDisabledPlans sets the disabledPlans property value. The service plans that are disabled in this assignment. Read-Only.
 func (m *LicenseAssignmentState) SetDisabledPlans(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("disabledPlans", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
 func (m *LicenseAssignmentState) SetError(value *string)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
 func (m *LicenseAssignmentState) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -309,14 +309,14 @@ func (m *LicenseAssignmentState) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSkuId sets the skuId property value. The skuId property
+// SetSkuId sets the skuId property value. The unique identifier for the SKU. Read-Only.
 func (m *LicenseAssignmentState) SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("skuId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
 func (m *LicenseAssignmentState) SetState(value *string)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

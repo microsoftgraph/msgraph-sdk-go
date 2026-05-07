@@ -84,7 +84,35 @@ func (m *OneDriveForBusinessRestoreSession) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["granularDriveRestoreArtifacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGranularDriveRestoreArtifactFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GranularDriveRestoreArtifactable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(GranularDriveRestoreArtifactable)
+                }
+            }
+            m.SetGranularDriveRestoreArtifacts(res)
+        }
+        return nil
+    }
     return res
+}
+// GetGranularDriveRestoreArtifacts gets the granularDriveRestoreArtifacts property value. The granularDriveRestoreArtifacts property
+// returns a []GranularDriveRestoreArtifactable when successful
+func (m *OneDriveForBusinessRestoreSession) GetGranularDriveRestoreArtifacts()([]GranularDriveRestoreArtifactable) {
+    val, err := m.GetBackingStore().Get("granularDriveRestoreArtifacts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GranularDriveRestoreArtifactable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OneDriveForBusinessRestoreSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,6 +144,18 @@ func (m *OneDriveForBusinessRestoreSession) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    if m.GetGranularDriveRestoreArtifacts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGranularDriveRestoreArtifacts()))
+        for i, v := range m.GetGranularDriveRestoreArtifacts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("granularDriveRestoreArtifacts", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDriveRestoreArtifacts sets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
@@ -132,11 +172,20 @@ func (m *OneDriveForBusinessRestoreSession) SetDriveRestoreArtifactsBulkAddition
         panic(err)
     }
 }
+// SetGranularDriveRestoreArtifacts sets the granularDriveRestoreArtifacts property value. The granularDriveRestoreArtifacts property
+func (m *OneDriveForBusinessRestoreSession) SetGranularDriveRestoreArtifacts(value []GranularDriveRestoreArtifactable)() {
+    err := m.GetBackingStore().Set("granularDriveRestoreArtifacts", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type OneDriveForBusinessRestoreSessionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RestoreSessionBaseable
     GetDriveRestoreArtifacts()([]DriveRestoreArtifactable)
     GetDriveRestoreArtifactsBulkAdditionRequests()([]DriveRestoreArtifactsBulkAdditionRequestable)
+    GetGranularDriveRestoreArtifacts()([]GranularDriveRestoreArtifactable)
     SetDriveRestoreArtifacts(value []DriveRestoreArtifactable)()
     SetDriveRestoreArtifactsBulkAdditionRequests(value []DriveRestoreArtifactsBulkAdditionRequestable)()
+    SetGranularDriveRestoreArtifacts(value []GranularDriveRestoreArtifactable)()
 }
