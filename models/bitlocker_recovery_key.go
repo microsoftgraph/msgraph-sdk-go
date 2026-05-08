@@ -93,7 +93,7 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetKey gets the key property value. The BitLocker recovery key. Returned only on $select. Not nullable.
+// GetKey gets the key property value. The BitLocker recovery key. Requires $select to retrieve. Not nullable.
 // returns a *string when successful
 func (m *BitlockerRecoveryKey) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
@@ -164,7 +164,7 @@ func (m *BitlockerRecoveryKey) SetDeviceId(value *string)() {
         panic(err)
     }
 }
-// SetKey sets the key property value. The BitLocker recovery key. Returned only on $select. Not nullable.
+// SetKey sets the key property value. The BitLocker recovery key. Requires $select to retrieve. Not nullable.
 func (m *BitlockerRecoveryKey) SetKey(value *string)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {

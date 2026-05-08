@@ -72,6 +72,11 @@ func NewItemAuthenticationFido2MethodsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) Count()(*ItemAuthenticationFido2MethodsCountRequestBuilder) {
     return NewItemAuthenticationFido2MethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreationOptions provides operations to call the creationOptions method.
+// returns a *ItemAuthenticationFido2MethodsCreationOptionsRequestBuilder when successful
+func (m *ItemAuthenticationFido2MethodsRequestBuilder) CreationOptions()(*ItemAuthenticationFido2MethodsCreationOptionsRequestBuilder) {
+    return NewItemAuthenticationFido2MethodsCreationOptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get represents the FIDO2 security keys registered to a user for authentication.
 // returns a Fido2AuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

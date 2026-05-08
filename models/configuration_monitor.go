@@ -219,7 +219,7 @@ func (m *ConfigurationMonitor) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetInactivationReason gets the inactivationReason property value. The reason for the monitor's inactivation. Returned only on $select.
+// GetInactivationReason gets the inactivationReason property value. The reason for the monitor's inactivation. Requires $select to retrieve.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetInactivationReason()(*string) {
     val, err := m.GetBackingStore().Get("inactivationReason")
@@ -279,7 +279,7 @@ func (m *ConfigurationMonitor) GetMonitorRunFrequencyInHours()(*int32) {
     }
     return nil
 }
-// GetParameters gets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline. Returned only on $select.
+// GetParameters gets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline. Requires $select to retrieve.
 // returns a OpenComplexDictionaryTypeable when successful
 func (m *ConfigurationMonitor) GetParameters()(OpenComplexDictionaryTypeable) {
     val, err := m.GetBackingStore().Get("parameters")
@@ -408,7 +408,7 @@ func (m *ConfigurationMonitor) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetInactivationReason sets the inactivationReason property value. The reason for the monitor's inactivation. Returned only on $select.
+// SetInactivationReason sets the inactivationReason property value. The reason for the monitor's inactivation. Requires $select to retrieve.
 func (m *ConfigurationMonitor) SetInactivationReason(value *string)() {
     err := m.GetBackingStore().Set("inactivationReason", value)
     if err != nil {
@@ -443,7 +443,7 @@ func (m *ConfigurationMonitor) SetMonitorRunFrequencyInHours(value *int32)() {
         panic(err)
     }
 }
-// SetParameters sets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline. Returned only on $select.
+// SetParameters sets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline. Requires $select to retrieve.
 func (m *ConfigurationMonitor) SetParameters(value OpenComplexDictionaryTypeable)() {
     err := m.GetBackingStore().Set("parameters", value)
     if err != nil {

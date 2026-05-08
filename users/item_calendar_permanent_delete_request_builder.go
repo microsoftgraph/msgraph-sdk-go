@@ -33,11 +33,8 @@ func NewItemCalendarPermanentDeleteRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarPermanentDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post permanently delete a calendar folder and the events that it contains and remove them from the mailbox. For more information about item retention, see Configure deleted item retention and recoverable items quotas.
+// Post invoke action permanentDelete
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-permanentdelete?view=graph-rest-1.0
 func (m *ItemCalendarPermanentDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCalendarPermanentDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemCalendarPermanentDeleteRequestBuilder) Post(ctx context.Context, re
     }
     return nil
 }
-// ToPostRequestInformation permanently delete a calendar folder and the events that it contains and remove them from the mailbox. For more information about item retention, see Configure deleted item retention and recoverable items quotas.
+// ToPostRequestInformation invoke action permanentDelete
 // returns a *RequestInformation when successful
 func (m *ItemCalendarPermanentDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarPermanentDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

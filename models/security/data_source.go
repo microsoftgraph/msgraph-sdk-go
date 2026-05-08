@@ -128,7 +128,7 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetHoldStatus gets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
+// GetHoldStatus gets the holdStatus property value. The hold status of the dataSource. The possible values are: notApplied, applied, applying, removing, partial.
 // returns a *DataSourceHoldStatus when successful
 func (m *DataSource) GetHoldStatus()(*DataSourceHoldStatus) {
     val, err := m.GetBackingStore().Get("holdStatus")
@@ -194,7 +194,7 @@ func (m *DataSource) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetHoldStatus sets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
+// SetHoldStatus sets the holdStatus property value. The hold status of the dataSource. The possible values are: notApplied, applied, applying, removing, partial.
 func (m *DataSource) SetHoldStatus(value *DataSourceHoldStatus)() {
     err := m.GetBackingStore().Set("holdStatus", value)
     if err != nil {

@@ -82,7 +82,7 @@ func (m *SharePointIdentitySet) GetGroup()(Identityable) {
     }
     return nil
 }
-// GetSharePointGroup gets the sharePointGroup property value. The sharePointGroup property
+// GetSharePointGroup gets the sharePointGroup property value. The SharePoint group associated with this action, identified by a globally unique ID. Use this property instead of siteGroup when available. Optional.
 // returns a SharePointGroupIdentityable when successful
 func (m *SharePointIdentitySet) GetSharePointGroup()(SharePointGroupIdentityable) {
     val, err := m.GetBackingStore().Get("sharePointGroup")
@@ -94,7 +94,7 @@ func (m *SharePointIdentitySet) GetSharePointGroup()(SharePointGroupIdentityable
     }
     return nil
 }
-// GetSiteGroup gets the siteGroup property value. The SharePoint group associated with this action. Optional.
+// GetSiteGroup gets the siteGroup property value. The SharePoint group associated with this action, identified by a principal ID that is unique only within the site. Optional.
 // returns a SharePointIdentityable when successful
 func (m *SharePointIdentitySet) GetSiteGroup()(SharePointIdentityable) {
     val, err := m.GetBackingStore().Get("siteGroup")
@@ -157,14 +157,14 @@ func (m *SharePointIdentitySet) SetGroup(value Identityable)() {
         panic(err)
     }
 }
-// SetSharePointGroup sets the sharePointGroup property value. The sharePointGroup property
+// SetSharePointGroup sets the sharePointGroup property value. The SharePoint group associated with this action, identified by a globally unique ID. Use this property instead of siteGroup when available. Optional.
 func (m *SharePointIdentitySet) SetSharePointGroup(value SharePointGroupIdentityable)() {
     err := m.GetBackingStore().Set("sharePointGroup", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteGroup sets the siteGroup property value. The SharePoint group associated with this action. Optional.
+// SetSiteGroup sets the siteGroup property value. The SharePoint group associated with this action, identified by a principal ID that is unique only within the site. Optional.
 func (m *SharePointIdentitySet) SetSiteGroup(value SharePointIdentityable)() {
     err := m.GetBackingStore().Set("siteGroup", value)
     if err != nil {

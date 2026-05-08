@@ -17,10 +17,11 @@ const (
     SYSTEMREMOVE_ACCESSPACKAGEREQUESTTYPE
     ONBEHALFADD_ACCESSPACKAGEREQUESTTYPE
     UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTTYPE
+    APPROVERREMOVE_ACCESSPACKAGEREQUESTTYPE
 )
 
 func (i AccessPackageRequestType) String() string {
-    return []string{"notSpecified", "userAdd", "userUpdate", "userRemove", "adminAdd", "adminUpdate", "adminRemove", "systemAdd", "systemUpdate", "systemRemove", "onBehalfAdd", "unknownFutureValue"}[i]
+    return []string{"notSpecified", "userAdd", "userUpdate", "userRemove", "adminAdd", "adminUpdate", "adminRemove", "systemAdd", "systemUpdate", "systemRemove", "onBehalfAdd", "unknownFutureValue", "approverRemove"}[i]
 }
 func ParseAccessPackageRequestType(v string) (any, error) {
     result := NOTSPECIFIED_ACCESSPACKAGEREQUESTTYPE
@@ -49,6 +50,8 @@ func ParseAccessPackageRequestType(v string) (any, error) {
             result = ONBEHALFADD_ACCESSPACKAGEREQUESTTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTTYPE
+        case "approverRemove":
+            result = APPROVERREMOVE_ACCESSPACKAGEREQUESTTYPE
         default:
             return nil, nil
     }

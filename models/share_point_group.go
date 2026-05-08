@@ -22,7 +22,7 @@ func NewSharePointGroup()(*SharePointGroup) {
 func CreateSharePointGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharePointGroup(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The user-visible description of the sharePointGroup. Read-write.
 // returns a *string when successful
 func (m *SharePointGroup) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -86,7 +86,7 @@ func (m *SharePointGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetMembers gets the members property value. The members property
+// GetMembers gets the members property value. The set of members in the sharePointGroup. Read-write.
 // returns a []SharePointGroupMemberable when successful
 func (m *SharePointGroup) GetMembers()([]SharePointGroupMemberable) {
     val, err := m.GetBackingStore().Get("members")
@@ -98,7 +98,7 @@ func (m *SharePointGroup) GetMembers()([]SharePointGroupMemberable) {
     }
     return nil
 }
-// GetPrincipalId gets the principalId property value. The principalId property
+// GetPrincipalId gets the principalId property value. The principal ID of the SharePoint group in the tenant. Read-only.
 // returns a *string when successful
 func (m *SharePointGroup) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
@@ -110,7 +110,7 @@ func (m *SharePointGroup) GetPrincipalId()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The user-visible title of the sharePointGroup. Read-write.
 // returns a *string when successful
 func (m *SharePointGroup) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -160,28 +160,28 @@ func (m *SharePointGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The user-visible description of the sharePointGroup. Read-write.
 func (m *SharePointGroup) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMembers sets the members property value. The members property
+// SetMembers sets the members property value. The set of members in the sharePointGroup. Read-write.
 func (m *SharePointGroup) SetMembers(value []SharePointGroupMemberable)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrincipalId sets the principalId property value. The principalId property
+// SetPrincipalId sets the principalId property value. The principal ID of the SharePoint group in the tenant. Read-only.
 func (m *SharePointGroup) SetPrincipalId(value *string)() {
     err := m.GetBackingStore().Set("principalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The user-visible title of the sharePointGroup. Read-write.
 func (m *SharePointGroup) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

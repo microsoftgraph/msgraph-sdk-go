@@ -38,7 +38,7 @@ func (m *SiteArchivalDetails) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetArchiveStatus gets the archiveStatus property value. Represents the current archive status of the site collection. Returned only on $select. The possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.
+// GetArchiveStatus gets the archiveStatus property value. Represents the current archive status of the site collection. Requires $select to retrieve. The possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.
 // returns a *SiteArchiveStatus when successful
 func (m *SiteArchivalDetails) GetArchiveStatus()(*SiteArchiveStatus) {
     val, err := m.GetBackingStore().Get("archiveStatus")
@@ -123,7 +123,7 @@ func (m *SiteArchivalDetails) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetArchiveStatus sets the archiveStatus property value. Represents the current archive status of the site collection. Returned only on $select. The possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.
+// SetArchiveStatus sets the archiveStatus property value. Represents the current archive status of the site collection. Requires $select to retrieve. The possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.
 func (m *SiteArchivalDetails) SetArchiveStatus(value *SiteArchiveStatus)() {
     err := m.GetBackingStore().Set("archiveStatus", value)
     if err != nil {

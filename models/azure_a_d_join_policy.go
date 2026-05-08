@@ -38,7 +38,7 @@ func (m *AzureADJoinPolicy) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowedToJoin gets the allowedToJoin property value. The allowedToJoin property
+// GetAllowedToJoin gets the allowedToJoin property value. Determines if Microsoft Entra join is allowed.
 // returns a DeviceRegistrationMembershipable when successful
 func (m *AzureADJoinPolicy) GetAllowedToJoin()(DeviceRegistrationMembershipable) {
     val, err := m.GetBackingStore().Get("allowedToJoin")
@@ -79,6 +79,16 @@ func (m *AzureADJoinPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["localAdmins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateLocalAdminSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocalAdmins(val.(LocalAdminSettingsable))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -91,7 +101,7 @@ func (m *AzureADJoinPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetIsAdminConfigurable gets the isAdminConfigurable property value. The isAdminConfigurable property
+// GetIsAdminConfigurable gets the isAdminConfigurable property value. Determines if administrators can modify this policy.
 // returns a *bool when successful
 func (m *AzureADJoinPolicy) GetIsAdminConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isAdminConfigurable")
@@ -100,6 +110,18 @@ func (m *AzureADJoinPolicy) GetIsAdminConfigurable()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetLocalAdmins gets the localAdmins property value. Determines who becomes a local administrator on joined devices.
+// returns a LocalAdminSettingsable when successful
+func (m *AzureADJoinPolicy) GetLocalAdmins()(LocalAdminSettingsable) {
+    val, err := m.GetBackingStore().Get("localAdmins")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(LocalAdminSettingsable)
     }
     return nil
 }
@@ -130,6 +152,12 @@ func (m *AzureADJoinPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err := writer.WriteObjectValue("localAdmins", m.GetLocalAdmins())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -150,7 +178,7 @@ func (m *AzureADJoinPolicy) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowedToJoin sets the allowedToJoin property value. The allowedToJoin property
+// SetAllowedToJoin sets the allowedToJoin property value. Determines if Microsoft Entra join is allowed.
 func (m *AzureADJoinPolicy) SetAllowedToJoin(value DeviceRegistrationMembershipable)() {
     err := m.GetBackingStore().Set("allowedToJoin", value)
     if err != nil {
@@ -161,9 +189,16 @@ func (m *AzureADJoinPolicy) SetAllowedToJoin(value DeviceRegistrationMembershipa
 func (m *AzureADJoinPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsAdminConfigurable sets the isAdminConfigurable property value. The isAdminConfigurable property
+// SetIsAdminConfigurable sets the isAdminConfigurable property value. Determines if administrators can modify this policy.
 func (m *AzureADJoinPolicy) SetIsAdminConfigurable(value *bool)() {
     err := m.GetBackingStore().Set("isAdminConfigurable", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLocalAdmins sets the localAdmins property value. Determines who becomes a local administrator on joined devices.
+func (m *AzureADJoinPolicy) SetLocalAdmins(value LocalAdminSettingsable)() {
+    err := m.GetBackingStore().Set("localAdmins", value)
     if err != nil {
         panic(err)
     }
@@ -182,9 +217,11 @@ type AzureADJoinPolicyable interface {
     GetAllowedToJoin()(DeviceRegistrationMembershipable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsAdminConfigurable()(*bool)
+    GetLocalAdmins()(LocalAdminSettingsable)
     GetOdataType()(*string)
     SetAllowedToJoin(value DeviceRegistrationMembershipable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsAdminConfigurable(value *bool)()
+    SetLocalAdmins(value LocalAdminSettingsable)()
     SetOdataType(value *string)()
 }

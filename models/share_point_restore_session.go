@@ -28,6 +28,22 @@ func CreateSharePointRestoreSessionFromDiscriminatorValue(parseNode i878a80d2330
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharePointRestoreSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RestoreSessionBase.GetFieldDeserializers()
+    res["granularSiteRestoreArtifacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGranularSiteRestoreArtifactFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GranularSiteRestoreArtifactable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(GranularSiteRestoreArtifactable)
+                }
+            }
+            m.SetGranularSiteRestoreArtifacts(res)
+        }
+        return nil
+    }
     res["siteRestoreArtifacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSiteRestoreArtifactFromDiscriminatorValue)
         if err != nil {
@@ -62,6 +78,18 @@ func (m *SharePointRestoreSession) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
+// GetGranularSiteRestoreArtifacts gets the granularSiteRestoreArtifacts property value. The granularSiteRestoreArtifacts property
+// returns a []GranularSiteRestoreArtifactable when successful
+func (m *SharePointRestoreSession) GetGranularSiteRestoreArtifacts()([]GranularSiteRestoreArtifactable) {
+    val, err := m.GetBackingStore().Get("granularSiteRestoreArtifacts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GranularSiteRestoreArtifactable)
+    }
+    return nil
+}
 // GetSiteRestoreArtifacts gets the siteRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore SharePoint sites.
 // returns a []SiteRestoreArtifactable when successful
 func (m *SharePointRestoreSession) GetSiteRestoreArtifacts()([]SiteRestoreArtifactable) {
@@ -92,6 +120,18 @@ func (m *SharePointRestoreSession) Serialize(writer i878a80d2330e89d26896388a3f4
     if err != nil {
         return err
     }
+    if m.GetGranularSiteRestoreArtifacts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGranularSiteRestoreArtifacts()))
+        for i, v := range m.GetGranularSiteRestoreArtifacts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("granularSiteRestoreArtifacts", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSiteRestoreArtifacts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteRestoreArtifacts()))
         for i, v := range m.GetSiteRestoreArtifacts() {
@@ -118,6 +158,13 @@ func (m *SharePointRestoreSession) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
+// SetGranularSiteRestoreArtifacts sets the granularSiteRestoreArtifacts property value. The granularSiteRestoreArtifacts property
+func (m *SharePointRestoreSession) SetGranularSiteRestoreArtifacts(value []GranularSiteRestoreArtifactable)() {
+    err := m.GetBackingStore().Set("granularSiteRestoreArtifacts", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSiteRestoreArtifacts sets the siteRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore SharePoint sites.
 func (m *SharePointRestoreSession) SetSiteRestoreArtifacts(value []SiteRestoreArtifactable)() {
     err := m.GetBackingStore().Set("siteRestoreArtifacts", value)
@@ -135,8 +182,10 @@ func (m *SharePointRestoreSession) SetSiteRestoreArtifactsBulkAdditionRequests(v
 type SharePointRestoreSessionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RestoreSessionBaseable
+    GetGranularSiteRestoreArtifacts()([]GranularSiteRestoreArtifactable)
     GetSiteRestoreArtifacts()([]SiteRestoreArtifactable)
     GetSiteRestoreArtifactsBulkAdditionRequests()([]SiteRestoreArtifactsBulkAdditionRequestable)
+    SetGranularSiteRestoreArtifacts(value []GranularSiteRestoreArtifactable)()
     SetSiteRestoreArtifacts(value []SiteRestoreArtifactable)()
     SetSiteRestoreArtifactsBulkAdditionRequests(value []SiteRestoreArtifactsBulkAdditionRequestable)()
 }

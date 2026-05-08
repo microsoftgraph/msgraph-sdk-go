@@ -22,6 +22,18 @@ func NewBackupRestoreRoot()(*BackupRestoreRoot) {
 func CreateBackupRestoreRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBackupRestoreRoot(), nil
 }
+// GetBrowseSessions gets the browseSessions property value. The browseSessions property
+// returns a []BrowseSessionBaseable when successful
+func (m *BackupRestoreRoot) GetBrowseSessions()([]BrowseSessionBaseable) {
+    val, err := m.GetBackingStore().Get("browseSessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BrowseSessionBaseable)
+    }
+    return nil
+}
 // GetDriveInclusionRules gets the driveInclusionRules property value. The list of drive inclusion rules applied to the tenant.
 // returns a []DriveProtectionRuleable when successful
 func (m *BackupRestoreRoot) GetDriveInclusionRules()([]DriveProtectionRuleable) {
@@ -86,6 +98,22 @@ func (m *BackupRestoreRoot) GetExchangeRestoreSessions()([]ExchangeRestoreSessio
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["browseSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateBrowseSessionBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BrowseSessionBaseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(BrowseSessionBaseable)
+                }
+            }
+            m.SetBrowseSessions(res)
+        }
+        return nil
+    }
     res["driveInclusionRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDriveProtectionRuleFromDiscriminatorValue)
         if err != nil {
@@ -214,6 +242,22 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["oneDriveForBusinessBrowseSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOneDriveForBusinessBrowseSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OneDriveForBusinessBrowseSessionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OneDriveForBusinessBrowseSessionable)
+                }
+            }
+            m.SetOneDriveForBusinessBrowseSessions(res)
+        }
+        return nil
+    }
     res["oneDriveForBusinessProtectionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOneDriveForBusinessProtectionPolicyFromDiscriminatorValue)
         if err != nil {
@@ -336,6 +380,22 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["sharePointBrowseSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSharePointBrowseSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SharePointBrowseSessionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SharePointBrowseSessionable)
+                }
+            }
+            m.SetSharePointBrowseSessions(res)
+        }
+        return nil
+    }
     res["sharePointProtectionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharePointProtectionPolicyFromDiscriminatorValue)
         if err != nil {
@@ -454,6 +514,18 @@ func (m *BackupRestoreRoot) GetMailboxProtectionUnitsBulkAdditionJobs()([]Mailbo
     }
     return nil
 }
+// GetOneDriveForBusinessBrowseSessions gets the oneDriveForBusinessBrowseSessions property value. The oneDriveForBusinessBrowseSessions property
+// returns a []OneDriveForBusinessBrowseSessionable when successful
+func (m *BackupRestoreRoot) GetOneDriveForBusinessBrowseSessions()([]OneDriveForBusinessBrowseSessionable) {
+    val, err := m.GetBackingStore().Get("oneDriveForBusinessBrowseSessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OneDriveForBusinessBrowseSessionable)
+    }
+    return nil
+}
 // GetOneDriveForBusinessProtectionPolicies gets the oneDriveForBusinessProtectionPolicies property value. The list of OneDrive for Business protection policies in the tenant.
 // returns a []OneDriveForBusinessProtectionPolicyable when successful
 func (m *BackupRestoreRoot) GetOneDriveForBusinessProtectionPolicies()([]OneDriveForBusinessProtectionPolicyable) {
@@ -550,6 +622,18 @@ func (m *BackupRestoreRoot) GetServiceStatus()(ServiceStatusable) {
     }
     return nil
 }
+// GetSharePointBrowseSessions gets the sharePointBrowseSessions property value. The sharePointBrowseSessions property
+// returns a []SharePointBrowseSessionable when successful
+func (m *BackupRestoreRoot) GetSharePointBrowseSessions()([]SharePointBrowseSessionable) {
+    val, err := m.GetBackingStore().Get("sharePointBrowseSessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharePointBrowseSessionable)
+    }
+    return nil
+}
 // GetSharePointProtectionPolicies gets the sharePointProtectionPolicies property value. The list of SharePoint protection policies in the tenant.
 // returns a []SharePointProtectionPolicyable when successful
 func (m *BackupRestoreRoot) GetSharePointProtectionPolicies()([]SharePointProtectionPolicyable) {
@@ -615,6 +699,18 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetBrowseSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBrowseSessions()))
+        for i, v := range m.GetBrowseSessions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("browseSessions", cast)
+        if err != nil {
+            return err
+        }
     }
     if m.GetDriveInclusionRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveInclusionRules()))
@@ -712,6 +808,18 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetOneDriveForBusinessBrowseSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOneDriveForBusinessBrowseSessions()))
+        for i, v := range m.GetOneDriveForBusinessBrowseSessions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("oneDriveForBusinessBrowseSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOneDriveForBusinessProtectionPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOneDriveForBusinessProtectionPolicies()))
         for i, v := range m.GetOneDriveForBusinessProtectionPolicies() {
@@ -802,6 +910,18 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetSharePointBrowseSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharePointBrowseSessions()))
+        for i, v := range m.GetSharePointBrowseSessions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sharePointBrowseSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSharePointProtectionPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharePointProtectionPolicies()))
         for i, v := range m.GetSharePointProtectionPolicies() {
@@ -864,6 +984,13 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
+// SetBrowseSessions sets the browseSessions property value. The browseSessions property
+func (m *BackupRestoreRoot) SetBrowseSessions(value []BrowseSessionBaseable)() {
+    err := m.GetBackingStore().Set("browseSessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDriveInclusionRules sets the driveInclusionRules property value. The list of drive inclusion rules applied to the tenant.
 func (m *BackupRestoreRoot) SetDriveInclusionRules(value []DriveProtectionRuleable)() {
     err := m.GetBackingStore().Set("driveInclusionRules", value)
@@ -916,6 +1043,13 @@ func (m *BackupRestoreRoot) SetMailboxProtectionUnits(value []MailboxProtectionU
 // SetMailboxProtectionUnitsBulkAdditionJobs sets the mailboxProtectionUnitsBulkAdditionJobs property value. The mailboxProtectionUnitsBulkAdditionJobs property
 func (m *BackupRestoreRoot) SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)() {
     err := m.GetBackingStore().Set("mailboxProtectionUnitsBulkAdditionJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOneDriveForBusinessBrowseSessions sets the oneDriveForBusinessBrowseSessions property value. The oneDriveForBusinessBrowseSessions property
+func (m *BackupRestoreRoot) SetOneDriveForBusinessBrowseSessions(value []OneDriveForBusinessBrowseSessionable)() {
+    err := m.GetBackingStore().Set("oneDriveForBusinessBrowseSessions", value)
     if err != nil {
         panic(err)
     }
@@ -976,6 +1110,13 @@ func (m *BackupRestoreRoot) SetServiceStatus(value ServiceStatusable)() {
         panic(err)
     }
 }
+// SetSharePointBrowseSessions sets the sharePointBrowseSessions property value. The sharePointBrowseSessions property
+func (m *BackupRestoreRoot) SetSharePointBrowseSessions(value []SharePointBrowseSessionable)() {
+    err := m.GetBackingStore().Set("sharePointBrowseSessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharePointProtectionPolicies sets the sharePointProtectionPolicies property value. The list of SharePoint protection policies in the tenant.
 func (m *BackupRestoreRoot) SetSharePointProtectionPolicies(value []SharePointProtectionPolicyable)() {
     err := m.GetBackingStore().Set("sharePointProtectionPolicies", value)
@@ -1014,6 +1155,7 @@ func (m *BackupRestoreRoot) SetSiteProtectionUnitsBulkAdditionJobs(value []SiteP
 type BackupRestoreRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBrowseSessions()([]BrowseSessionBaseable)
     GetDriveInclusionRules()([]DriveProtectionRuleable)
     GetDriveProtectionUnits()([]DriveProtectionUnitable)
     GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable)
@@ -1022,6 +1164,7 @@ type BackupRestoreRootable interface {
     GetMailboxInclusionRules()([]MailboxProtectionRuleable)
     GetMailboxProtectionUnits()([]MailboxProtectionUnitable)
     GetMailboxProtectionUnitsBulkAdditionJobs()([]MailboxProtectionUnitsBulkAdditionJobable)
+    GetOneDriveForBusinessBrowseSessions()([]OneDriveForBusinessBrowseSessionable)
     GetOneDriveForBusinessProtectionPolicies()([]OneDriveForBusinessProtectionPolicyable)
     GetOneDriveForBusinessRestoreSessions()([]OneDriveForBusinessRestoreSessionable)
     GetProtectionPolicies()([]ProtectionPolicyBaseable)
@@ -1030,11 +1173,13 @@ type BackupRestoreRootable interface {
     GetRestoreSessions()([]RestoreSessionBaseable)
     GetServiceApps()([]ServiceAppable)
     GetServiceStatus()(ServiceStatusable)
+    GetSharePointBrowseSessions()([]SharePointBrowseSessionable)
     GetSharePointProtectionPolicies()([]SharePointProtectionPolicyable)
     GetSharePointRestoreSessions()([]SharePointRestoreSessionable)
     GetSiteInclusionRules()([]SiteProtectionRuleable)
     GetSiteProtectionUnits()([]SiteProtectionUnitable)
     GetSiteProtectionUnitsBulkAdditionJobs()([]SiteProtectionUnitsBulkAdditionJobable)
+    SetBrowseSessions(value []BrowseSessionBaseable)()
     SetDriveInclusionRules(value []DriveProtectionRuleable)()
     SetDriveProtectionUnits(value []DriveProtectionUnitable)()
     SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)()
@@ -1043,6 +1188,7 @@ type BackupRestoreRootable interface {
     SetMailboxInclusionRules(value []MailboxProtectionRuleable)()
     SetMailboxProtectionUnits(value []MailboxProtectionUnitable)()
     SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)()
+    SetOneDriveForBusinessBrowseSessions(value []OneDriveForBusinessBrowseSessionable)()
     SetOneDriveForBusinessProtectionPolicies(value []OneDriveForBusinessProtectionPolicyable)()
     SetOneDriveForBusinessRestoreSessions(value []OneDriveForBusinessRestoreSessionable)()
     SetProtectionPolicies(value []ProtectionPolicyBaseable)()
@@ -1051,6 +1197,7 @@ type BackupRestoreRootable interface {
     SetRestoreSessions(value []RestoreSessionBaseable)()
     SetServiceApps(value []ServiceAppable)()
     SetServiceStatus(value ServiceStatusable)()
+    SetSharePointBrowseSessions(value []SharePointBrowseSessionable)()
     SetSharePointProtectionPolicies(value []SharePointProtectionPolicyable)()
     SetSharePointRestoreSessions(value []SharePointRestoreSessionable)()
     SetSiteInclusionRules(value []SiteProtectionRuleable)()

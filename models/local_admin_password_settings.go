@@ -69,7 +69,7 @@ func (m *LocalAdminPasswordSettings) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Specifies whether LAPS is enabled. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organization.
 // returns a *bool when successful
 func (m *LocalAdminPasswordSettings) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -126,7 +126,7 @@ func (m *LocalAdminPasswordSettings) SetAdditionalData(value map[string]any)() {
 func (m *LocalAdminPasswordSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Specifies whether LAPS is enabled. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organization.
 func (m *LocalAdminPasswordSettings) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

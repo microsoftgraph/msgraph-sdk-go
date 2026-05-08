@@ -142,6 +142,16 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["publicKeyCredential"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWebauthnPublicKeyCredentialFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublicKeyCredential(val.(WebauthnPublicKeyCredentialable))
+        }
+        return nil
+    }
     return res
 }
 // GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 passkey.
@@ -165,6 +175,18 @@ func (m *Fido2AuthenticationMethod) GetPasskeyType()(*PasskeyType) {
     }
     if val != nil {
         return val.(*PasskeyType)
+    }
+    return nil
+}
+// GetPublicKeyCredential gets the publicKeyCredential property value. The publicKeyCredential property
+// returns a WebauthnPublicKeyCredentialable when successful
+func (m *Fido2AuthenticationMethod) GetPublicKeyCredential()(WebauthnPublicKeyCredentialable) {
+    val, err := m.GetBackingStore().Get("publicKeyCredential")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WebauthnPublicKeyCredentialable)
     }
     return nil
 }
@@ -208,6 +230,12 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetPasskeyType() != nil {
         cast := (*m.GetPasskeyType()).String()
         err = writer.WriteStringValue("passkeyType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("publicKeyCredential", m.GetPublicKeyCredential())
         if err != nil {
             return err
         }
@@ -256,6 +284,13 @@ func (m *Fido2AuthenticationMethod) SetPasskeyType(value *PasskeyType)() {
         panic(err)
     }
 }
+// SetPublicKeyCredential sets the publicKeyCredential property value. The publicKeyCredential property
+func (m *Fido2AuthenticationMethod) SetPublicKeyCredential(value WebauthnPublicKeyCredentialable)() {
+    err := m.GetBackingStore().Set("publicKeyCredential", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Fido2AuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -265,10 +300,12 @@ type Fido2AuthenticationMethodable interface {
     GetDisplayName()(*string)
     GetModel()(*string)
     GetPasskeyType()(*PasskeyType)
+    GetPublicKeyCredential()(WebauthnPublicKeyCredentialable)
     SetAaGuid(value *string)()
     SetAttestationCertificates(value []string)()
     SetAttestationLevel(value *AttestationLevel)()
     SetDisplayName(value *string)()
     SetModel(value *string)()
     SetPasskeyType(value *PasskeyType)()
+    SetPublicKeyCredential(value WebauthnPublicKeyCredentialable)()
 }

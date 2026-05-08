@@ -23,7 +23,7 @@ func NewConversationThread()(*ConversationThread) {
 func CreateConversationThreadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConversationThread(), nil
 }
-// GetCcRecipients gets the ccRecipients property value. The Cc: recipients for the thread. Returned only on $select.
+// GetCcRecipients gets the ccRecipients property value. The Cc: recipients for the thread. Requires $select to retrieve.
 // returns a []Recipientable when successful
 func (m *ConversationThread) GetCcRecipients()([]Recipientable) {
     val, err := m.GetBackingStore().Get("ccRecipients")
@@ -227,7 +227,7 @@ func (m *ConversationThread) GetTopic()(*string) {
     }
     return nil
 }
-// GetToRecipients gets the toRecipients property value. The To: recipients for the thread. Returned only on $select.
+// GetToRecipients gets the toRecipients property value. The To: recipients for the thread. Requires $select to retrieve.
 // returns a []Recipientable when successful
 func (m *ConversationThread) GetToRecipients()([]Recipientable) {
     val, err := m.GetBackingStore().Get("toRecipients")
@@ -331,7 +331,7 @@ func (m *ConversationThread) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetCcRecipients sets the ccRecipients property value. The Cc: recipients for the thread. Returned only on $select.
+// SetCcRecipients sets the ccRecipients property value. The Cc: recipients for the thread. Requires $select to retrieve.
 func (m *ConversationThread) SetCcRecipients(value []Recipientable)() {
     err := m.GetBackingStore().Set("ccRecipients", value)
     if err != nil {
@@ -380,7 +380,7 @@ func (m *ConversationThread) SetTopic(value *string)() {
         panic(err)
     }
 }
-// SetToRecipients sets the toRecipients property value. The To: recipients for the thread. Returned only on $select.
+// SetToRecipients sets the toRecipients property value. The To: recipients for the thread. Requires $select to retrieve.
 func (m *ConversationThread) SetToRecipients(value []Recipientable)() {
     err := m.GetBackingStore().Set("toRecipients", value)
     if err != nil {
