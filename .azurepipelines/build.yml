@@ -59,4 +59,4 @@ extends:
 
               - script: go test ./...
                 displayName: Run unit tests
-                workingDirectory: $(Build.SourcesDirectory)/tests
+                workingDirectory: $(Build.SourcesDirectory)
