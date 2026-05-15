@@ -47,7 +47,9 @@ extends:
                 inputs:
                   version: '1.25'
 
-              - script: go install
+              - script: |
+                  go mod download
+                  go mod verify
                 displayName: Install dependencies
                 workingDirectory: $(Build.SourcesDirectory)
 
