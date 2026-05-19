@@ -14,7 +14,7 @@ import (
 type ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetQueryParameters get childFolders from admin
+// ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetQueryParameters the collection of child folders in this folder.
 type ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,7 +43,7 @@ func NewExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get childFolders from admin
+// Get the collection of child folders in this folder.
 // returns a MailboxFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxFolderable, error) {
@@ -68,7 +68,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBui
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilder) Items()(*ExchangeMailboxesItemFoldersItemChildFoldersItemItemsRequestBuilder) {
     return NewExchangeMailboxesItemFoldersItemChildFoldersItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get childFolders from admin
+// ToGetRequestInformation the collection of child folders in this folder.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

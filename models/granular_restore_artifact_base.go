@@ -43,7 +43,7 @@ func CreateGranularRestoreArtifactBaseFromDiscriminatorValue(parseNode i878a80d2
     }
     return NewGranularRestoreArtifactBase(), nil
 }
-// GetBrowseSessionId gets the browseSessionId property value. The browseSessionId property
+// GetBrowseSessionId gets the browseSessionId property value. The unique identifier of the browseSession
 // returns a *string when successful
 func (m *GranularRestoreArtifactBase) GetBrowseSessionId()(*string) {
     val, err := m.GetBackingStore().Get("browseSessionId")
@@ -55,7 +55,7 @@ func (m *GranularRestoreArtifactBase) GetBrowseSessionId()(*string) {
     }
     return nil
 }
-// GetCompletionDateTime gets the completionDateTime property value. The completionDateTime property
+// GetCompletionDateTime gets the completionDateTime property value. Date time when the artifact's restoration completes.
 // returns a *Time when successful
 func (m *GranularRestoreArtifactBase) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
@@ -163,7 +163,7 @@ func (m *GranularRestoreArtifactBase) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetRestoredItemKey gets the restoredItemKey property value. The restoredItemKey property
+// GetRestoredItemKey gets the restoredItemKey property value. The unique identifier for the restored artifact.
 // returns a *string when successful
 func (m *GranularRestoreArtifactBase) GetRestoredItemKey()(*string) {
     val, err := m.GetBackingStore().Get("restoredItemKey")
@@ -175,7 +175,7 @@ func (m *GranularRestoreArtifactBase) GetRestoredItemKey()(*string) {
     }
     return nil
 }
-// GetRestoredItemPath gets the restoredItemPath property value. The restoredItemPath property
+// GetRestoredItemPath gets the restoredItemPath property value. The path of the restored artifact. It's the path of the folder where all the artifacts are restored within a granular restore session.
 // returns a *string when successful
 func (m *GranularRestoreArtifactBase) GetRestoredItemPath()(*string) {
     val, err := m.GetBackingStore().Get("restoredItemPath")
@@ -187,7 +187,7 @@ func (m *GranularRestoreArtifactBase) GetRestoredItemPath()(*string) {
     }
     return nil
 }
-// GetRestoredItemWebUrl gets the restoredItemWebUrl property value. The restoredItemWebUrl property
+// GetRestoredItemWebUrl gets the restoredItemWebUrl property value. The web url of the restored artifact.
 // returns a *string when successful
 func (m *GranularRestoreArtifactBase) GetRestoredItemWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("restoredItemWebUrl")
@@ -199,7 +199,7 @@ func (m *GranularRestoreArtifactBase) GetRestoredItemWebUrl()(*string) {
     }
     return nil
 }
-// GetRestorePointDateTime gets the restorePointDateTime property value. The restorePointDateTime property
+// GetRestorePointDateTime gets the restorePointDateTime property value. The restore point date time to which the artifact is restored.
 // returns a *Time when successful
 func (m *GranularRestoreArtifactBase) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restorePointDateTime")
@@ -211,7 +211,7 @@ func (m *GranularRestoreArtifactBase) GetRestorePointDateTime()(*i336074805fc853
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The start time of the restoration.
 // returns a *Time when successful
 func (m *GranularRestoreArtifactBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -235,7 +235,7 @@ func (m *GranularRestoreArtifactBase) GetStatus()(*ArtifactRestoreStatus) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. The webUrl property
+// GetWebUrl gets the webUrl property value. The original web url of the artifact being restored.
 // returns a *string when successful
 func (m *GranularRestoreArtifactBase) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -310,49 +310,49 @@ func (m *GranularRestoreArtifactBase) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetBrowseSessionId sets the browseSessionId property value. The browseSessionId property
+// SetBrowseSessionId sets the browseSessionId property value. The unique identifier of the browseSession
 func (m *GranularRestoreArtifactBase) SetBrowseSessionId(value *string)() {
     err := m.GetBackingStore().Set("browseSessionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCompletionDateTime sets the completionDateTime property value. The completionDateTime property
+// SetCompletionDateTime sets the completionDateTime property value. Date time when the artifact's restoration completes.
 func (m *GranularRestoreArtifactBase) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completionDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestoredItemKey sets the restoredItemKey property value. The restoredItemKey property
+// SetRestoredItemKey sets the restoredItemKey property value. The unique identifier for the restored artifact.
 func (m *GranularRestoreArtifactBase) SetRestoredItemKey(value *string)() {
     err := m.GetBackingStore().Set("restoredItemKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestoredItemPath sets the restoredItemPath property value. The restoredItemPath property
+// SetRestoredItemPath sets the restoredItemPath property value. The path of the restored artifact. It's the path of the folder where all the artifacts are restored within a granular restore session.
 func (m *GranularRestoreArtifactBase) SetRestoredItemPath(value *string)() {
     err := m.GetBackingStore().Set("restoredItemPath", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestoredItemWebUrl sets the restoredItemWebUrl property value. The restoredItemWebUrl property
+// SetRestoredItemWebUrl sets the restoredItemWebUrl property value. The web url of the restored artifact.
 func (m *GranularRestoreArtifactBase) SetRestoredItemWebUrl(value *string)() {
     err := m.GetBackingStore().Set("restoredItemWebUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestorePointDateTime sets the restorePointDateTime property value. The restorePointDateTime property
+// SetRestorePointDateTime sets the restorePointDateTime property value. The restore point date time to which the artifact is restored.
 func (m *GranularRestoreArtifactBase) SetRestorePointDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restorePointDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The start time of the restoration.
 func (m *GranularRestoreArtifactBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
@@ -366,7 +366,7 @@ func (m *GranularRestoreArtifactBase) SetStatus(value *ArtifactRestoreStatus)() 
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. The webUrl property
+// SetWebUrl sets the webUrl property value. The original web url of the artifact being restored.
 func (m *GranularRestoreArtifactBase) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

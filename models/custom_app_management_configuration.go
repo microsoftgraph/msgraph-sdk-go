@@ -24,10 +24,32 @@ func NewCustomAppManagementConfiguration()(*CustomAppManagementConfiguration) {
 func CreateCustomAppManagementConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomAppManagementConfiguration(), nil
 }
+// GetApplicationRestrictions gets the applicationRestrictions property value. Restrictions that are applicable only to application objects to which the policy is attached.
+// returns a CustomAppManagementApplicationConfigurationable when successful
+func (m *CustomAppManagementConfiguration) GetApplicationRestrictions()(CustomAppManagementApplicationConfigurationable) {
+    val, err := m.GetBackingStore().Get("applicationRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomAppManagementApplicationConfigurationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomAppManagementConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppManagementConfiguration.GetFieldDeserializers()
+    res["applicationRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCustomAppManagementApplicationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplicationRestrictions(val.(CustomAppManagementApplicationConfigurationable))
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -36,9 +58,24 @@ func (m *CustomAppManagementConfiguration) Serialize(writer i878a80d2330e89d2689
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("applicationRestrictions", m.GetApplicationRestrictions())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetApplicationRestrictions sets the applicationRestrictions property value. Restrictions that are applicable only to application objects to which the policy is attached.
+func (m *CustomAppManagementConfiguration) SetApplicationRestrictions(value CustomAppManagementApplicationConfigurationable)() {
+    err := m.GetBackingStore().Set("applicationRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type CustomAppManagementConfigurationable interface {
     AppManagementConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationRestrictions()(CustomAppManagementApplicationConfigurationable)
+    SetApplicationRestrictions(value CustomAppManagementApplicationConfigurationable)()
 }

@@ -33,10 +33,13 @@ func NewExchangeMailboxesItemExportItemsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemExportItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action exportItems
+// Post export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see Overview of the mailbox import and export APIs in Microsoft Graph. You can export up to 20 items in a single export request.
 // Deprecated: This method is obsolete. Use PostAsExportItemsPostResponse instead.
 // returns a ExchangeMailboxesItemExportItemsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailbox-exportitems?view=graph-rest-1.0
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) Post(ctx context.Context, body ExchangeMailboxesItemExportItemsPostRequestBodyable, requestConfiguration *ExchangeMailboxesItemExportItemsRequestBuilderPostRequestConfiguration)(ExchangeMailboxesItemExportItemsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -54,9 +57,12 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) Post(ctx context.Contex
     }
     return res.(ExchangeMailboxesItemExportItemsResponseable), nil
 }
-// PostAsExportItemsPostResponse invoke action exportItems
+// PostAsExportItemsPostResponse export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see Overview of the mailbox import and export APIs in Microsoft Graph. You can export up to 20 items in a single export request.
 // returns a ExchangeMailboxesItemExportItemsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailbox-exportitems?view=graph-rest-1.0
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) PostAsExportItemsPostResponse(ctx context.Context, body ExchangeMailboxesItemExportItemsPostRequestBodyable, requestConfiguration *ExchangeMailboxesItemExportItemsRequestBuilderPostRequestConfiguration)(ExchangeMailboxesItemExportItemsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -74,7 +80,7 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) PostAsExportItemsPostRe
     }
     return res.(ExchangeMailboxesItemExportItemsPostResponseable), nil
 }
-// ToPostRequestInformation invoke action exportItems
+// ToPostRequestInformation export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see Overview of the mailbox import and export APIs in Microsoft Graph. You can export up to 20 items in a single export request.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ExchangeMailboxesItemExportItemsPostRequestBodyable, requestConfiguration *ExchangeMailboxesItemExportItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

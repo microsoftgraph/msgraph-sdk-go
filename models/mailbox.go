@@ -46,7 +46,7 @@ func (m *Mailbox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetFolders gets the folders property value. The folders property
+// GetFolders gets the folders property value. The collection of folders in the mailbox.
 // returns a []MailboxFolderable when successful
 func (m *Mailbox) GetFolders()([]MailboxFolderable) {
     val, err := m.GetBackingStore().Get("folders")
@@ -78,7 +78,7 @@ func (m *Mailbox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetFolders sets the folders property value. The folders property
+// SetFolders sets the folders property value. The collection of folders in the mailbox.
 func (m *Mailbox) SetFolders(value []MailboxFolderable)() {
     err := m.GetBackingStore().Set("folders", value)
     if err != nil {

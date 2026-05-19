@@ -25,7 +25,7 @@ func NewSasTokenEvidence()(*SasTokenEvidence) {
 func CreateSasTokenEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSasTokenEvidence(), nil
 }
-// GetAllowedIpAddresses gets the allowedIpAddresses property value. The allowedIpAddresses property
+// GetAllowedIpAddresses gets the allowedIpAddresses property value. All IP addresses accessible with this SAS. The default value is Allows all IP addresses.
 // returns a *string when successful
 func (m *SasTokenEvidence) GetAllowedIpAddresses()(*string) {
     val, err := m.GetBackingStore().Get("allowedIpAddresses")
@@ -37,7 +37,7 @@ func (m *SasTokenEvidence) GetAllowedIpAddresses()(*string) {
     }
     return nil
 }
-// GetAllowedResourceTypes gets the allowedResourceTypes property value. The allowedResourceTypes property
+// GetAllowedResourceTypes gets the allowedResourceTypes property value. All resource types accessible with this SAS.
 // returns a []string when successful
 func (m *SasTokenEvidence) GetAllowedResourceTypes()([]string) {
     val, err := m.GetBackingStore().Get("allowedResourceTypes")
@@ -49,7 +49,7 @@ func (m *SasTokenEvidence) GetAllowedResourceTypes()([]string) {
     }
     return nil
 }
-// GetAllowedServices gets the allowedServices property value. The allowedServices property
+// GetAllowedServices gets the allowedServices property value. All services accessible with this SAS.
 // returns a []string when successful
 func (m *SasTokenEvidence) GetAllowedServices()([]string) {
     val, err := m.GetBackingStore().Get("allowedServices")
@@ -61,7 +61,7 @@ func (m *SasTokenEvidence) GetAllowedServices()([]string) {
     }
     return nil
 }
-// GetExpiryDateTime gets the expiryDateTime property value. The expiryDateTime property
+// GetExpiryDateTime gets the expiryDateTime property value. The SAS expiration time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SasTokenEvidence) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiryDateTime")
@@ -197,7 +197,7 @@ func (m *SasTokenEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetPermissions gets the permissions property value. The permissions property
+// GetPermissions gets the permissions property value. All permissions granted to this SAS.
 // returns a []string when successful
 func (m *SasTokenEvidence) GetPermissions()([]string) {
     val, err := m.GetBackingStore().Get("permissions")
@@ -209,7 +209,7 @@ func (m *SasTokenEvidence) GetPermissions()([]string) {
     }
     return nil
 }
-// GetProtocol gets the protocol property value. The protocol property
+// GetProtocol gets the protocol property value. The protocol that is allowed with this SAS.
 // returns a *string when successful
 func (m *SasTokenEvidence) GetProtocol()(*string) {
     val, err := m.GetBackingStore().Get("protocol")
@@ -221,7 +221,7 @@ func (m *SasTokenEvidence) GetProtocol()(*string) {
     }
     return nil
 }
-// GetSignatureHash gets the signatureHash property value. The signatureHash property
+// GetSignatureHash gets the signatureHash property value. The SAS signature hash, which is a unique identifier for each SAS.
 // returns a *string when successful
 func (m *SasTokenEvidence) GetSignatureHash()(*string) {
     val, err := m.GetBackingStore().Get("signatureHash")
@@ -233,7 +233,7 @@ func (m *SasTokenEvidence) GetSignatureHash()(*string) {
     }
     return nil
 }
-// GetSignedWith gets the signedWith property value. The signedWith property
+// GetSignedWith gets the signedWith property value. The storage key that was used to generate the SAS.
 // returns a *string when successful
 func (m *SasTokenEvidence) GetSignedWith()(*string) {
     val, err := m.GetBackingStore().Get("signedWith")
@@ -245,7 +245,7 @@ func (m *SasTokenEvidence) GetSignedWith()(*string) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The SAS activation time. This property can be null. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SasTokenEvidence) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -257,7 +257,7 @@ func (m *SasTokenEvidence) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetStorageResource gets the storageResource property value. The storageResource property
+// GetStorageResource gets the storageResource property value. A link to the storage resource for this SAS.
 // returns a AzureResourceEvidenceable when successful
 func (m *SasTokenEvidence) GetStorageResource()(AzureResourceEvidenceable) {
     val, err := m.GetBackingStore().Get("storageResource")
@@ -337,70 +337,70 @@ func (m *SasTokenEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAllowedIpAddresses sets the allowedIpAddresses property value. The allowedIpAddresses property
+// SetAllowedIpAddresses sets the allowedIpAddresses property value. All IP addresses accessible with this SAS. The default value is Allows all IP addresses.
 func (m *SasTokenEvidence) SetAllowedIpAddresses(value *string)() {
     err := m.GetBackingStore().Set("allowedIpAddresses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedResourceTypes sets the allowedResourceTypes property value. The allowedResourceTypes property
+// SetAllowedResourceTypes sets the allowedResourceTypes property value. All resource types accessible with this SAS.
 func (m *SasTokenEvidence) SetAllowedResourceTypes(value []string)() {
     err := m.GetBackingStore().Set("allowedResourceTypes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedServices sets the allowedServices property value. The allowedServices property
+// SetAllowedServices sets the allowedServices property value. All services accessible with this SAS.
 func (m *SasTokenEvidence) SetAllowedServices(value []string)() {
     err := m.GetBackingStore().Set("allowedServices", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpiryDateTime sets the expiryDateTime property value. The expiryDateTime property
+// SetExpiryDateTime sets the expiryDateTime property value. The SAS expiration time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.
 func (m *SasTokenEvidence) SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expiryDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPermissions sets the permissions property value. The permissions property
+// SetPermissions sets the permissions property value. All permissions granted to this SAS.
 func (m *SasTokenEvidence) SetPermissions(value []string)() {
     err := m.GetBackingStore().Set("permissions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProtocol sets the protocol property value. The protocol property
+// SetProtocol sets the protocol property value. The protocol that is allowed with this SAS.
 func (m *SasTokenEvidence) SetProtocol(value *string)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignatureHash sets the signatureHash property value. The signatureHash property
+// SetSignatureHash sets the signatureHash property value. The SAS signature hash, which is a unique identifier for each SAS.
 func (m *SasTokenEvidence) SetSignatureHash(value *string)() {
     err := m.GetBackingStore().Set("signatureHash", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignedWith sets the signedWith property value. The signedWith property
+// SetSignedWith sets the signedWith property value. The storage key that was used to generate the SAS.
 func (m *SasTokenEvidence) SetSignedWith(value *string)() {
     err := m.GetBackingStore().Set("signedWith", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The SAS activation time. This property can be null. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.
 func (m *SasTokenEvidence) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStorageResource sets the storageResource property value. The storageResource property
+// SetStorageResource sets the storageResource property value. A link to the storage resource for this SAS.
 func (m *SasTokenEvidence) SetStorageResource(value AzureResourceEvidenceable)() {
     err := m.GetBackingStore().Set("storageResource", value)
     if err != nil {

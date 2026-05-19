@@ -24,7 +24,7 @@ func NewGitHubOrganizationEvidence()(*GitHubOrganizationEvidence) {
 func CreateGitHubOrganizationEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitHubOrganizationEvidence(), nil
 }
-// GetCompany gets the company property value. The company property
+// GetCompany gets the company property value. The name of the company that owns the organization.
 // returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetCompany()(*string) {
     val, err := m.GetBackingStore().Get("company")
@@ -36,7 +36,7 @@ func (m *GitHubOrganizationEvidence) GetCompany()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the organization.
 // returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -48,7 +48,7 @@ func (m *GitHubOrganizationEvidence) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. The email address of the organization.
 // returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
@@ -126,7 +126,7 @@ func (m *GitHubOrganizationEvidence) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetLogin gets the login property value. The login property
+// GetLogin gets the login property value. The login (name) of the organization.
 // returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetLogin()(*string) {
     val, err := m.GetBackingStore().Get("login")
@@ -138,7 +138,7 @@ func (m *GitHubOrganizationEvidence) GetLogin()(*string) {
     }
     return nil
 }
-// GetOrgId gets the orgId property value. The orgId property
+// GetOrgId gets the orgId property value. The unique and immutable ID of the organization.
 // returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetOrgId()(*string) {
     val, err := m.GetBackingStore().Get("orgId")
@@ -150,7 +150,7 @@ func (m *GitHubOrganizationEvidence) GetOrgId()(*string) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. The webUrl property
+// GetWebUrl gets the webUrl property value. The URL of the web page for the organization.
 // returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -206,42 +206,42 @@ func (m *GitHubOrganizationEvidence) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetCompany sets the company property value. The company property
+// SetCompany sets the company property value. The name of the company that owns the organization.
 func (m *GitHubOrganizationEvidence) SetCompany(value *string)() {
     err := m.GetBackingStore().Set("company", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the organization.
 func (m *GitHubOrganizationEvidence) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. The email address of the organization.
 func (m *GitHubOrganizationEvidence) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLogin sets the login property value. The login property
+// SetLogin sets the login property value. The login (name) of the organization.
 func (m *GitHubOrganizationEvidence) SetLogin(value *string)() {
     err := m.GetBackingStore().Set("login", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOrgId sets the orgId property value. The orgId property
+// SetOrgId sets the orgId property value. The unique and immutable ID of the organization.
 func (m *GitHubOrganizationEvidence) SetOrgId(value *string)() {
     err := m.GetBackingStore().Set("orgId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. The webUrl property
+// SetWebUrl sets the webUrl property value. The URL of the web page for the organization.
 func (m *GitHubOrganizationEvidence) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

@@ -33,8 +33,11 @@ func NewItemPrimaryChannelStartMigrationRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemPrimaryChannelStartMigrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action startMigration
+// Post start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
 func (m *ItemPrimaryChannelStartMigrationRequestBuilder) Post(ctx context.Context, body ItemPrimaryChannelStartMigrationPostRequestBodyable, requestConfiguration *ItemPrimaryChannelStartMigrationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemPrimaryChannelStartMigrationRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation invoke action startMigration
+// ToPostRequestInformation start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.
 // returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelStartMigrationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPrimaryChannelStartMigrationPostRequestBodyable, requestConfiguration *ItemPrimaryChannelStartMigrationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

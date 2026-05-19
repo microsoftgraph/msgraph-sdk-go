@@ -22,7 +22,7 @@ func NewMailboxFolder()(*MailboxFolder) {
 func CreateMailboxFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailboxFolder(), nil
 }
-// GetChildFolderCount gets the childFolderCount property value. The childFolderCount property
+// GetChildFolderCount gets the childFolderCount property value. The number of immediate child folders in the current folder.
 // returns a *int32 when successful
 func (m *MailboxFolder) GetChildFolderCount()(*int32) {
     val, err := m.GetBackingStore().Get("childFolderCount")
@@ -34,7 +34,7 @@ func (m *MailboxFolder) GetChildFolderCount()(*int32) {
     }
     return nil
 }
-// GetChildFolders gets the childFolders property value. The childFolders property
+// GetChildFolders gets the childFolders property value. The collection of child folders in this folder.
 // returns a []MailboxFolderable when successful
 func (m *MailboxFolder) GetChildFolders()([]MailboxFolderable) {
     val, err := m.GetBackingStore().Get("childFolders")
@@ -46,7 +46,7 @@ func (m *MailboxFolder) GetChildFolders()([]MailboxFolderable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the folder.
 // returns a *string when successful
 func (m *MailboxFolder) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -178,7 +178,7 @@ func (m *MailboxFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetItems gets the items property value. The items property
+// GetItems gets the items property value. The collection of items in this folder.
 // returns a []MailboxItemable when successful
 func (m *MailboxFolder) GetItems()([]MailboxItemable) {
     val, err := m.GetBackingStore().Get("items")
@@ -190,7 +190,7 @@ func (m *MailboxFolder) GetItems()([]MailboxItemable) {
     }
     return nil
 }
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailboxFolder.
 // returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *MailboxFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
@@ -202,7 +202,7 @@ func (m *MailboxFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExte
     }
     return nil
 }
-// GetParentFolderId gets the parentFolderId property value. The parentFolderId property
+// GetParentFolderId gets the parentFolderId property value. The unique identifier for the parent folder of this folder.
 // returns a *string when successful
 func (m *MailboxFolder) GetParentFolderId()(*string) {
     val, err := m.GetBackingStore().Get("parentFolderId")
@@ -214,7 +214,7 @@ func (m *MailboxFolder) GetParentFolderId()(*string) {
     }
     return nil
 }
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailboxFolder.
 // returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *MailboxFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
@@ -226,7 +226,7 @@ func (m *MailboxFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyEx
     }
     return nil
 }
-// GetTotalItemCount gets the totalItemCount property value. The totalItemCount property
+// GetTotalItemCount gets the totalItemCount property value. The number of items in the folder.
 // returns a *int32 when successful
 func (m *MailboxFolder) GetTotalItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalItemCount")
@@ -238,7 +238,7 @@ func (m *MailboxFolder) GetTotalItemCount()(*int32) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. Describes the folder class type.
 // returns a *string when successful
 func (m *MailboxFolder) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -336,63 +336,63 @@ func (m *MailboxFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetChildFolderCount sets the childFolderCount property value. The childFolderCount property
+// SetChildFolderCount sets the childFolderCount property value. The number of immediate child folders in the current folder.
 func (m *MailboxFolder) SetChildFolderCount(value *int32)() {
     err := m.GetBackingStore().Set("childFolderCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetChildFolders sets the childFolders property value. The childFolders property
+// SetChildFolders sets the childFolders property value. The collection of child folders in this folder.
 func (m *MailboxFolder) SetChildFolders(value []MailboxFolderable)() {
     err := m.GetBackingStore().Set("childFolders", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the folder.
 func (m *MailboxFolder) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItems sets the items property value. The items property
+// SetItems sets the items property value. The collection of items in this folder.
 func (m *MailboxFolder) SetItems(value []MailboxItemable)() {
     err := m.GetBackingStore().Set("items", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailboxFolder.
 func (m *MailboxFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     err := m.GetBackingStore().Set("multiValueExtendedProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParentFolderId sets the parentFolderId property value. The parentFolderId property
+// SetParentFolderId sets the parentFolderId property value. The unique identifier for the parent folder of this folder.
 func (m *MailboxFolder) SetParentFolderId(value *string)() {
     err := m.GetBackingStore().Set("parentFolderId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailboxFolder.
 func (m *MailboxFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalItemCount sets the totalItemCount property value. The totalItemCount property
+// SetTotalItemCount sets the totalItemCount property value. The number of items in the folder.
 func (m *MailboxFolder) SetTotalItemCount(value *int32)() {
     err := m.GetBackingStore().Set("totalItemCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. Describes the folder class type.
 func (m *MailboxFolder) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

@@ -21,7 +21,7 @@ type ExchangeMailboxesMailboxItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeMailboxesMailboxItemRequestBuilderGetQueryParameters get mailboxes from admin
+// ExchangeMailboxesMailboxItemRequestBuilderGetQueryParameters represents a user's mailboxes.
 type ExchangeMailboxesMailboxItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -88,7 +88,7 @@ func (m *ExchangeMailboxesMailboxItemRequestBuilder) ExportItems()(*ExchangeMail
 func (m *ExchangeMailboxesMailboxItemRequestBuilder) Folders()(*ExchangeMailboxesItemFoldersRequestBuilder) {
     return NewExchangeMailboxesItemFoldersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mailboxes from admin
+// Get represents a user's mailboxes.
 // returns a Mailboxable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMailboxesMailboxItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesMailboxItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Mailboxable, error) {
@@ -139,7 +139,7 @@ func (m *ExchangeMailboxesMailboxItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get mailboxes from admin
+// ToGetRequestInformation represents a user's mailboxes.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesMailboxItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesMailboxItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

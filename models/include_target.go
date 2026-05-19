@@ -79,7 +79,7 @@ func (m *IncludeTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The ID of the entity targeted.
 // returns a *string when successful
 func (m *IncludeTarget) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -155,7 +155,7 @@ func (m *IncludeTarget) SetAdditionalData(value map[string]any)() {
 func (m *IncludeTarget) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The ID of the entity targeted.
 func (m *IncludeTarget) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

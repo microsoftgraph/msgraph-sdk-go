@@ -24,7 +24,7 @@ func NewNetworkConnectionEvidence()(*NetworkConnectionEvidence) {
 func CreateNetworkConnectionEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkConnectionEvidence(), nil
 }
-// GetDestinationAddress gets the destinationAddress property value. The destinationAddress property
+// GetDestinationAddress gets the destinationAddress property value. An entity of type IP that is the destination for this connection.
 // returns a IpEvidenceable when successful
 func (m *NetworkConnectionEvidence) GetDestinationAddress()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("destinationAddress")
@@ -36,7 +36,7 @@ func (m *NetworkConnectionEvidence) GetDestinationAddress()(IpEvidenceable) {
     }
     return nil
 }
-// GetDestinationPort gets the destinationPort property value. The destinationPort property
+// GetDestinationPort gets the destinationPort property value. The destination port number. For example, 80.
 // returns a *int32 when successful
 func (m *NetworkConnectionEvidence) GetDestinationPort()(*int32) {
     val, err := m.GetBackingStore().Get("destinationPort")
@@ -104,7 +104,7 @@ func (m *NetworkConnectionEvidence) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetProtocol gets the protocol property value. The protocol property
+// GetProtocol gets the protocol property value. The protocol type. Possible values are tcp, udp, unknownFutureValue.
 // returns a *ProtocolType when successful
 func (m *NetworkConnectionEvidence) GetProtocol()(*ProtocolType) {
     val, err := m.GetBackingStore().Get("protocol")
@@ -116,7 +116,7 @@ func (m *NetworkConnectionEvidence) GetProtocol()(*ProtocolType) {
     }
     return nil
 }
-// GetSourceAddress gets the sourceAddress property value. The sourceAddress property
+// GetSourceAddress gets the sourceAddress property value. An entity of type IP that is the source for this connection.
 // returns a IpEvidenceable when successful
 func (m *NetworkConnectionEvidence) GetSourceAddress()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("sourceAddress")
@@ -128,7 +128,7 @@ func (m *NetworkConnectionEvidence) GetSourceAddress()(IpEvidenceable) {
     }
     return nil
 }
-// GetSourcePort gets the sourcePort property value. The sourcePort property
+// GetSourcePort gets the sourcePort property value. The source port number. For example, 80.
 // returns a *int32 when successful
 func (m *NetworkConnectionEvidence) GetSourcePort()(*int32) {
     val, err := m.GetBackingStore().Get("sourcePort")
@@ -179,35 +179,35 @@ func (m *NetworkConnectionEvidence) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetDestinationAddress sets the destinationAddress property value. The destinationAddress property
+// SetDestinationAddress sets the destinationAddress property value. An entity of type IP that is the destination for this connection.
 func (m *NetworkConnectionEvidence) SetDestinationAddress(value IpEvidenceable)() {
     err := m.GetBackingStore().Set("destinationAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationPort sets the destinationPort property value. The destinationPort property
+// SetDestinationPort sets the destinationPort property value. The destination port number. For example, 80.
 func (m *NetworkConnectionEvidence) SetDestinationPort(value *int32)() {
     err := m.GetBackingStore().Set("destinationPort", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProtocol sets the protocol property value. The protocol property
+// SetProtocol sets the protocol property value. The protocol type. Possible values are tcp, udp, unknownFutureValue.
 func (m *NetworkConnectionEvidence) SetProtocol(value *ProtocolType)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceAddress sets the sourceAddress property value. The sourceAddress property
+// SetSourceAddress sets the sourceAddress property value. An entity of type IP that is the source for this connection.
 func (m *NetworkConnectionEvidence) SetSourceAddress(value IpEvidenceable)() {
     err := m.GetBackingStore().Set("sourceAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourcePort sets the sourcePort property value. The sourcePort property
+// SetSourcePort sets the sourcePort property value. The source port number. For example, 80.
 func (m *NetworkConnectionEvidence) SetSourcePort(value *int32)() {
     err := m.GetBackingStore().Set("sourcePort", value)
     if err != nil {

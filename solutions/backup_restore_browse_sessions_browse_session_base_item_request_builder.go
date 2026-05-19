@@ -21,7 +21,7 @@ type BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetQueryParameters get browseSessions from solutions
+// BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetQueryParameters the list of browse sessions in the tenant.
 type BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -83,7 +83,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get get browseSessions from solutions
+// Get the list of browse sessions in the tenant.
 // returns a BrowseSessionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowseSessionBaseable, error) {
@@ -134,7 +134,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get browseSessions from solutions
+// ToGetRequestInformation the list of browse sessions in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

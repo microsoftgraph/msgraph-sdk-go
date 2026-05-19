@@ -14,7 +14,7 @@ import (
 type ExchangeMailboxesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeMailboxesRequestBuilderGetQueryParameters get mailboxes from admin
+// ExchangeMailboxesRequestBuilderGetQueryParameters represents a user's mailboxes.
 type ExchangeMailboxesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewExchangeMailboxesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ExchangeMailboxesRequestBuilder) Count()(*ExchangeMailboxesCountRequestBuilder) {
     return NewExchangeMailboxesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mailboxes from admin
+// Get represents a user's mailboxes.
 // returns a MailboxCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMailboxesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ExchangeMailboxesRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Mailboxable), nil
 }
-// ToGetRequestInformation get mailboxes from admin
+// ToGetRequestInformation represents a user's mailboxes.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

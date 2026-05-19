@@ -48,6 +48,8 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
                         return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration":
                         return NewTemporaryAccessPassAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration":
+                        return NewVerifiableCredentialsAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
                         return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":

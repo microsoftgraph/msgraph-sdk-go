@@ -24,7 +24,7 @@ func NewGitHubRepoEvidence()(*GitHubRepoEvidence) {
 func CreateGitHubRepoEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitHubRepoEvidence(), nil
 }
-// GetBaseUrl gets the baseUrl property value. The baseUrl property
+// GetBaseUrl gets the baseUrl property value. The base URL of the web page for the repository.
 // returns a *string when successful
 func (m *GitHubRepoEvidence) GetBaseUrl()(*string) {
     val, err := m.GetBackingStore().Get("baseUrl")
@@ -92,7 +92,7 @@ func (m *GitHubRepoEvidence) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLogin gets the login property value. The login property
+// GetLogin gets the login property value. The login (name) of the repository.
 // returns a *string when successful
 func (m *GitHubRepoEvidence) GetLogin()(*string) {
     val, err := m.GetBackingStore().Get("login")
@@ -104,7 +104,7 @@ func (m *GitHubRepoEvidence) GetLogin()(*string) {
     }
     return nil
 }
-// GetOwner gets the owner property value. The owner property
+// GetOwner gets the owner property value. The login of the owner of the repository.
 // returns a *string when successful
 func (m *GitHubRepoEvidence) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
@@ -116,7 +116,7 @@ func (m *GitHubRepoEvidence) GetOwner()(*string) {
     }
     return nil
 }
-// GetOwnerType gets the ownerType property value. The ownerType property
+// GetOwnerType gets the ownerType property value. The type of owner of the repository, for example, User or Organization.
 // returns a *string when successful
 func (m *GitHubRepoEvidence) GetOwnerType()(*string) {
     val, err := m.GetBackingStore().Get("ownerType")
@@ -128,7 +128,7 @@ func (m *GitHubRepoEvidence) GetOwnerType()(*string) {
     }
     return nil
 }
-// GetRepoId gets the repoId property value. The repoId property
+// GetRepoId gets the repoId property value. The unique and immutable ID of the GitHub repository.
 // returns a *string when successful
 func (m *GitHubRepoEvidence) GetRepoId()(*string) {
     val, err := m.GetBackingStore().Get("repoId")
@@ -178,35 +178,35 @@ func (m *GitHubRepoEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetBaseUrl sets the baseUrl property value. The baseUrl property
+// SetBaseUrl sets the baseUrl property value. The base URL of the web page for the repository.
 func (m *GitHubRepoEvidence) SetBaseUrl(value *string)() {
     err := m.GetBackingStore().Set("baseUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLogin sets the login property value. The login property
+// SetLogin sets the login property value. The login (name) of the repository.
 func (m *GitHubRepoEvidence) SetLogin(value *string)() {
     err := m.GetBackingStore().Set("login", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwner sets the owner property value. The owner property
+// SetOwner sets the owner property value. The login of the owner of the repository.
 func (m *GitHubRepoEvidence) SetOwner(value *string)() {
     err := m.GetBackingStore().Set("owner", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwnerType sets the ownerType property value. The ownerType property
+// SetOwnerType sets the ownerType property value. The type of owner of the repository, for example, User or Organization.
 func (m *GitHubRepoEvidence) SetOwnerType(value *string)() {
     err := m.GetBackingStore().Set("ownerType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRepoId sets the repoId property value. The repoId property
+// SetRepoId sets the repoId property value. The unique and immutable ID of the GitHub repository.
 func (m *GitHubRepoEvidence) SetRepoId(value *string)() {
     err := m.GetBackingStore().Set("repoId", value)
     if err != nil {

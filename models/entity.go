@@ -1771,6 +1771,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserStorage(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
+                    case "#microsoft.graph.verifiableCredentialAuthenticationMethodTarget":
+                        return NewVerifiableCredentialAuthenticationMethodTarget(), nil
+                    case "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration":
+                        return NewVerifiableCredentialsAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.verifiedIdProfile":
                         return NewVerifiedIdProfile(), nil
                     case "#microsoft.graph.verticalSection":

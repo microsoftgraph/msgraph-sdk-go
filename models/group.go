@@ -564,6 +564,22 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["infoCatalogs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetInfoCatalogs(res)
+        }
+        return nil
+    }
     res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1205,6 +1221,18 @@ func (m *Group) GetHideFromOutlookClients()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetInfoCatalogs gets the infoCatalogs property value. The infoCatalogs property
+// returns a []string when successful
+func (m *Group) GetInfoCatalogs()([]string) {
+    val, err := m.GetBackingStore().Get("infoCatalogs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -1994,6 +2022,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetInfoCatalogs() != nil {
+        err = writer.WriteCollectionOfStringValues("infoCatalogs", m.GetInfoCatalogs())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
         if err != nil {
@@ -2536,6 +2570,13 @@ func (m *Group) SetHideFromOutlookClients(value *bool)() {
         panic(err)
     }
 }
+// SetInfoCatalogs sets the infoCatalogs property value. The infoCatalogs property
+func (m *Group) SetInfoCatalogs(value []string)() {
+    err := m.GetBackingStore().Set("infoCatalogs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsArchived sets the isArchived property value. When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
 func (m *Group) SetIsArchived(value *bool)() {
     err := m.GetBackingStore().Set("isArchived", value)
@@ -2899,6 +2940,7 @@ type Groupable interface {
     GetHasMembersWithLicenseErrors()(*bool)
     GetHideFromAddressLists()(*bool)
     GetHideFromOutlookClients()(*bool)
+    GetInfoCatalogs()([]string)
     GetIsArchived()(*bool)
     GetIsAssignableToRole()(*bool)
     GetIsManagementRestricted()(*bool)
@@ -2971,6 +3013,7 @@ type Groupable interface {
     SetHasMembersWithLicenseErrors(value *bool)()
     SetHideFromAddressLists(value *bool)()
     SetHideFromOutlookClients(value *bool)()
+    SetInfoCatalogs(value []string)()
     SetIsArchived(value *bool)()
     SetIsAssignableToRole(value *bool)()
     SetIsManagementRestricted(value *bool)()

@@ -78,7 +78,7 @@ func (m *SharePointRestoreSession) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetGranularSiteRestoreArtifacts gets the granularSiteRestoreArtifacts property value. The granularSiteRestoreArtifacts property
+// GetGranularSiteRestoreArtifacts gets the granularSiteRestoreArtifacts property value. A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
 // returns a []GranularSiteRestoreArtifactable when successful
 func (m *SharePointRestoreSession) GetGranularSiteRestoreArtifacts()([]GranularSiteRestoreArtifactable) {
     val, err := m.GetBackingStore().Get("granularSiteRestoreArtifacts")
@@ -158,7 +158,7 @@ func (m *SharePointRestoreSession) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetGranularSiteRestoreArtifacts sets the granularSiteRestoreArtifacts property value. The granularSiteRestoreArtifacts property
+// SetGranularSiteRestoreArtifacts sets the granularSiteRestoreArtifacts property value. A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
 func (m *SharePointRestoreSession) SetGranularSiteRestoreArtifacts(value []GranularSiteRestoreArtifactable)() {
     err := m.GetBackingStore().Set("granularSiteRestoreArtifacts", value)
     if err != nil {

@@ -24,7 +24,7 @@ func NewOneDriveForBusinessBrowseSession()(*OneDriveForBusinessBrowseSession) {
 func CreateOneDriveForBusinessBrowseSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOneDriveForBusinessBrowseSession(), nil
 }
-// GetDirectoryObjectId gets the directoryObjectId property value. The directoryObjectId property
+// GetDirectoryObjectId gets the directoryObjectId property value. Id of the backed-up OneDrive.
 // returns a *string when successful
 func (m *OneDriveForBusinessBrowseSession) GetDirectoryObjectId()(*string) {
     val, err := m.GetBackingStore().Get("directoryObjectId")
@@ -66,7 +66,7 @@ func (m *OneDriveForBusinessBrowseSession) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetDirectoryObjectId sets the directoryObjectId property value. The directoryObjectId property
+// SetDirectoryObjectId sets the directoryObjectId property value. Id of the backed-up OneDrive.
 func (m *OneDriveForBusinessBrowseSession) SetDirectoryObjectId(value *string)() {
     err := m.GetBackingStore().Set("directoryObjectId", value)
     if err != nil {

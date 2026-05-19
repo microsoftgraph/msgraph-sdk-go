@@ -109,7 +109,7 @@ func (m *TargetOwners) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSecurityGroups gets the securityGroups property value. The securityGroups property
+// GetSecurityGroups gets the securityGroups property value. The collection of IDs for security groups used for allowing or blocking filtering. When notifyMembers is all, all members are eligible for ownership and this collection can be empty. When notifyMembers is allowSelected, only members in these security groups are eligible. When notifyMembers is blockSelected, members in these security groups are excluded.
 // returns a []string when successful
 func (m *TargetOwners) GetSecurityGroups()([]string) {
     val, err := m.GetBackingStore().Get("securityGroups")
@@ -175,7 +175,7 @@ func (m *TargetOwners) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSecurityGroups sets the securityGroups property value. The securityGroups property
+// SetSecurityGroups sets the securityGroups property value. The collection of IDs for security groups used for allowing or blocking filtering. When notifyMembers is all, all members are eligible for ownership and this collection can be empty. When notifyMembers is allowSelected, only members in these security groups are eligible. When notifyMembers is blockSelected, members in these security groups are excluded.
 func (m *TargetOwners) SetSecurityGroups(value []string)() {
     err := m.GetBackingStore().Set("securityGroups", value)
     if err != nil {

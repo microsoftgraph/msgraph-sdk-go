@@ -38,7 +38,7 @@ func (m *ExchangeSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetPrimaryMailboxId gets the primaryMailboxId property value. The primaryMailboxId property
+// GetPrimaryMailboxId gets the primaryMailboxId property value. The unique identifier for the user's primary mailbox.
 // returns a *string when successful
 func (m *ExchangeSettings) GetPrimaryMailboxId()(*string) {
     val, err := m.GetBackingStore().Get("primaryMailboxId")
@@ -64,7 +64,7 @@ func (m *ExchangeSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetPrimaryMailboxId sets the primaryMailboxId property value. The primaryMailboxId property
+// SetPrimaryMailboxId sets the primaryMailboxId property value. The unique identifier for the user's primary mailbox.
 func (m *ExchangeSettings) SetPrimaryMailboxId(value *string)() {
     err := m.GetBackingStore().Set("primaryMailboxId", value)
     if err != nil {

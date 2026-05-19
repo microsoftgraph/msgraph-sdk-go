@@ -119,7 +119,7 @@ func (m *BrowseQueryResponseItem) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetItemKey gets the itemKey property value. The itemKey property
+// GetItemKey gets the itemKey property value. Unique identifier of the returned item.
 // returns a *string when successful
 func (m *BrowseQueryResponseItem) GetItemKey()(*string) {
     val, err := m.GetBackingStore().Get("itemKey")
@@ -131,7 +131,7 @@ func (m *BrowseQueryResponseItem) GetItemKey()(*string) {
     }
     return nil
 }
-// GetItemsCount gets the itemsCount property value. The itemsCount property
+// GetItemsCount gets the itemsCount property value. The count of items present within the items; for example, the count of files in a folder.
 // returns a *int32 when successful
 func (m *BrowseQueryResponseItem) GetItemsCount()(*int32) {
     val, err := m.GetBackingStore().Get("itemsCount")
@@ -143,7 +143,7 @@ func (m *BrowseQueryResponseItem) GetItemsCount()(*int32) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the item.
 // returns a *string when successful
 func (m *BrowseQueryResponseItem) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -167,7 +167,7 @@ func (m *BrowseQueryResponseItem) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSizeInBytes gets the sizeInBytes property value. The sizeInBytes property
+// GetSizeInBytes gets the sizeInBytes property value. The size of the item in bytes.
 // returns a *string when successful
 func (m *BrowseQueryResponseItem) GetSizeInBytes()(*string) {
     val, err := m.GetBackingStore().Get("sizeInBytes")
@@ -191,7 +191,7 @@ func (m *BrowseQueryResponseItem) GetTypeEscaped()(*BrowseQueryResponseItemType)
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. The webUrl property
+// GetWebUrl gets the webUrl property value. The web URL of the item.
 // returns a *string when successful
 func (m *BrowseQueryResponseItem) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -267,21 +267,21 @@ func (m *BrowseQueryResponseItem) SetAdditionalData(value map[string]any)() {
 func (m *BrowseQueryResponseItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetItemKey sets the itemKey property value. The itemKey property
+// SetItemKey sets the itemKey property value. Unique identifier of the returned item.
 func (m *BrowseQueryResponseItem) SetItemKey(value *string)() {
     err := m.GetBackingStore().Set("itemKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItemsCount sets the itemsCount property value. The itemsCount property
+// SetItemsCount sets the itemsCount property value. The count of items present within the items; for example, the count of files in a folder.
 func (m *BrowseQueryResponseItem) SetItemsCount(value *int32)() {
     err := m.GetBackingStore().Set("itemsCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the item.
 func (m *BrowseQueryResponseItem) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -295,7 +295,7 @@ func (m *BrowseQueryResponseItem) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSizeInBytes sets the sizeInBytes property value. The sizeInBytes property
+// SetSizeInBytes sets the sizeInBytes property value. The size of the item in bytes.
 func (m *BrowseQueryResponseItem) SetSizeInBytes(value *string)() {
     err := m.GetBackingStore().Set("sizeInBytes", value)
     if err != nil {
@@ -309,7 +309,7 @@ func (m *BrowseQueryResponseItem) SetTypeEscaped(value *BrowseQueryResponseItemT
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. The webUrl property
+// SetWebUrl sets the webUrl property value. The web URL of the item.
 func (m *BrowseQueryResponseItem) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

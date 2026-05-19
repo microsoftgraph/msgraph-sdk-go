@@ -14,7 +14,7 @@ import (
 type ExchangeMailboxesItemFoldersItemItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeMailboxesItemFoldersItemItemsRequestBuilderGetQueryParameters get items from admin
+// ExchangeMailboxesItemFoldersItemItemsRequestBuilderGetQueryParameters get the mailboxItem collection within a specified mailboxFolder in a mailbox.
 type ExchangeMailboxesItemFoldersItemItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -77,9 +77,12 @@ func (m *ExchangeMailboxesItemFoldersItemItemsRequestBuilder) Count()(*ExchangeM
 func (m *ExchangeMailboxesItemFoldersItemItemsRequestBuilder) Delta()(*ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilder) {
     return NewExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get items from admin
+// Get get the mailboxItem collection within a specified mailboxFolder in a mailbox.
 // returns a MailboxItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxfolder-list-items?view=graph-rest-1.0
 func (m *ExchangeMailboxesItemFoldersItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +100,7 @@ func (m *ExchangeMailboxesItemFoldersItemItemsRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxItemCollectionResponseable), nil
 }
-// ToGetRequestInformation get items from admin
+// ToGetRequestInformation get the mailboxItem collection within a specified mailboxFolder in a mailbox.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersItemItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

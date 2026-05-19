@@ -21,7 +21,7 @@ type BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetQueryParameters get granularSiteRestoreArtifacts from solutions
+// BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetQueryParameters a collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
 type BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsG
     }
     return nil
 }
-// Get get granularSiteRestoreArtifacts from solutions
+// Get a collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
 // returns a GranularSiteRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GranularSiteRestoreArtifactable, error) {
@@ -124,7 +124,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsG
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get granularSiteRestoreArtifacts from solutions
+// ToGetRequestInformation a collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -33,8 +33,11 @@ func NewItemChatsItemCompleteMigrationRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemCompleteMigrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action completeMigration
+// Post complete the migration of external messages by removing migration mode from a chat. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration. This API supportes the following channel types.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-completemigration?view=graph-rest-1.0
 func (m *ItemChatsItemCompleteMigrationRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemChatsItemCompleteMigrationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemChatsItemCompleteMigrationRequestBuilder) Post(ctx context.Context,
     }
     return nil
 }
-// ToPostRequestInformation invoke action completeMigration
+// ToPostRequestInformation complete the migration of external messages by removing migration mode from a chat. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration. This API supportes the following channel types.
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemCompleteMigrationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemCompleteMigrationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

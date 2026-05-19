@@ -54,7 +54,7 @@ func (m *ExchangeAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMailboxes gets the mailboxes property value. The mailboxes property
+// GetMailboxes gets the mailboxes property value. Represents a user's mailboxes.
 // returns a []Mailboxable when successful
 func (m *ExchangeAdmin) GetMailboxes()([]Mailboxable) {
     val, err := m.GetBackingStore().Get("mailboxes")
@@ -104,7 +104,7 @@ func (m *ExchangeAdmin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetMailboxes sets the mailboxes property value. The mailboxes property
+// SetMailboxes sets the mailboxes property value. Represents a user's mailboxes.
 func (m *ExchangeAdmin) SetMailboxes(value []Mailboxable)() {
     err := m.GetBackingStore().Set("mailboxes", value)
     if err != nil {

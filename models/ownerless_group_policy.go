@@ -34,7 +34,7 @@ func (m *OwnerlessGroupPolicy) GetEmailInfo()(EmailDetailsable) {
     }
     return nil
 }
-// GetEnabledGroupIds gets the enabledGroupIds property value. The enabledGroupIds property
+// GetEnabledGroupIds gets the enabledGroupIds property value. The collection of IDs for groups to which the policy is enabled. If empty, the policy is enabled for all groups in the tenant.
 // returns a []string when successful
 func (m *OwnerlessGroupPolicy) GetEnabledGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("enabledGroupIds")
@@ -128,7 +128,7 @@ func (m *OwnerlessGroupPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether the ownerless group policy is enabled in the tenant. Setting this property to false clears the values of all other policy parameters.
 // returns a *bool when successful
 func (m *OwnerlessGroupPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -140,7 +140,7 @@ func (m *OwnerlessGroupPolicy) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetMaxMembersToNotify gets the maxMembersToNotify property value. The maxMembersToNotify property
+// GetMaxMembersToNotify gets the maxMembersToNotify property value. The maximum number of members to notify. Value range is 0-90. Members are prioritized by recent group activity (most active first). If there aren't enough active members to fill the limit, remaining slots are filled with other eligible group members from the directory.
 // returns a *int64 when successful
 func (m *OwnerlessGroupPolicy) GetMaxMembersToNotify()(*int64) {
     val, err := m.GetBackingStore().Get("maxMembersToNotify")
@@ -152,7 +152,7 @@ func (m *OwnerlessGroupPolicy) GetMaxMembersToNotify()(*int64) {
     }
     return nil
 }
-// GetNotificationDurationInWeeks gets the notificationDurationInWeeks property value. The notificationDurationInWeeks property
+// GetNotificationDurationInWeeks gets the notificationDurationInWeeks property value. The number of weeks for the notification duration. Value range is 1-7.
 // returns a *int64 when successful
 func (m *OwnerlessGroupPolicy) GetNotificationDurationInWeeks()(*int64) {
     val, err := m.GetBackingStore().Get("notificationDurationInWeeks")
@@ -164,7 +164,7 @@ func (m *OwnerlessGroupPolicy) GetNotificationDurationInWeeks()(*int64) {
     }
     return nil
 }
-// GetPolicyWebUrl gets the policyWebUrl property value. The policyWebUrl property
+// GetPolicyWebUrl gets the policyWebUrl property value. The URL to the policy documentation.
 // returns a *string when successful
 func (m *OwnerlessGroupPolicy) GetPolicyWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("policyWebUrl")
@@ -245,35 +245,35 @@ func (m *OwnerlessGroupPolicy) SetEmailInfo(value EmailDetailsable)() {
         panic(err)
     }
 }
-// SetEnabledGroupIds sets the enabledGroupIds property value. The enabledGroupIds property
+// SetEnabledGroupIds sets the enabledGroupIds property value. The collection of IDs for groups to which the policy is enabled. If empty, the policy is enabled for all groups in the tenant.
 func (m *OwnerlessGroupPolicy) SetEnabledGroupIds(value []string)() {
     err := m.GetBackingStore().Set("enabledGroupIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether the ownerless group policy is enabled in the tenant. Setting this property to false clears the values of all other policy parameters.
 func (m *OwnerlessGroupPolicy) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMaxMembersToNotify sets the maxMembersToNotify property value. The maxMembersToNotify property
+// SetMaxMembersToNotify sets the maxMembersToNotify property value. The maximum number of members to notify. Value range is 0-90. Members are prioritized by recent group activity (most active first). If there aren't enough active members to fill the limit, remaining slots are filled with other eligible group members from the directory.
 func (m *OwnerlessGroupPolicy) SetMaxMembersToNotify(value *int64)() {
     err := m.GetBackingStore().Set("maxMembersToNotify", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotificationDurationInWeeks sets the notificationDurationInWeeks property value. The notificationDurationInWeeks property
+// SetNotificationDurationInWeeks sets the notificationDurationInWeeks property value. The number of weeks for the notification duration. Value range is 1-7.
 func (m *OwnerlessGroupPolicy) SetNotificationDurationInWeeks(value *int64)() {
     err := m.GetBackingStore().Set("notificationDurationInWeeks", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyWebUrl sets the policyWebUrl property value. The policyWebUrl property
+// SetPolicyWebUrl sets the policyWebUrl property value. The URL to the policy documentation.
 func (m *OwnerlessGroupPolicy) SetPolicyWebUrl(value *string)() {
     err := m.GetBackingStore().Set("policyWebUrl", value)
     if err != nil {

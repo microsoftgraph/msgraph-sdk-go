@@ -14,7 +14,7 @@ import (
 type ItemSettingsExchangeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSettingsExchangeRequestBuilderGetQueryParameters get exchange from users
+// ItemSettingsExchangeRequestBuilderGetQueryParameters get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
 type ItemSettingsExchangeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,9 +43,12 @@ func NewItemSettingsExchangeRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemSettingsExchangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get exchange from users
+// Get get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
 // returns a ExchangeSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/usersettings-list-exchange?view=graph-rest-1.0
 func (m *ItemSettingsExchangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsExchangeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *ItemSettingsExchangeRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeSettingsable), nil
 }
-// ToGetRequestInformation get exchange from users
+// ToGetRequestInformation get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsExchangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsExchangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

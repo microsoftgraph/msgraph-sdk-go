@@ -43,7 +43,7 @@ func (m *ExportItemResponse) GetAdditionalData()(map[string]any) {
 func (m *ExportItemResponse) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetChangeKey gets the changeKey property value. The changeKey property
+// GetChangeKey gets the changeKey property value. The version of the item.
 // returns a *string when successful
 func (m *ExportItemResponse) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
@@ -55,7 +55,7 @@ func (m *ExportItemResponse) GetChangeKey()(*string) {
     }
     return nil
 }
-// GetData gets the data property value. The data property
+// GetData gets the data property value. Data that represents an item in a Base64-encoded opaque stream.
 // returns a []byte when successful
 func (m *ExportItemResponse) GetData()([]byte) {
     val, err := m.GetBackingStore().Get("data")
@@ -67,7 +67,7 @@ func (m *ExportItemResponse) GetData()([]byte) {
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. An error that occurs during an action.
 // returns a MailTipsErrorable when successful
 func (m *ExportItemResponse) GetError()(MailTipsErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -135,7 +135,7 @@ func (m *ExportItemResponse) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetItemId gets the itemId property value. The itemId property
+// GetItemId gets the itemId property value. The unique identifier of the item.
 // returns a *string when successful
 func (m *ExportItemResponse) GetItemId()(*string) {
     val, err := m.GetBackingStore().Get("itemId")
@@ -210,28 +210,28 @@ func (m *ExportItemResponse) SetAdditionalData(value map[string]any)() {
 func (m *ExportItemResponse) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetChangeKey sets the changeKey property value. The changeKey property
+// SetChangeKey sets the changeKey property value. The version of the item.
 func (m *ExportItemResponse) SetChangeKey(value *string)() {
     err := m.GetBackingStore().Set("changeKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetData sets the data property value. The data property
+// SetData sets the data property value. Data that represents an item in a Base64-encoded opaque stream.
 func (m *ExportItemResponse) SetData(value []byte)() {
     err := m.GetBackingStore().Set("data", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. An error that occurs during an action.
 func (m *ExportItemResponse) SetError(value MailTipsErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItemId sets the itemId property value. The itemId property
+// SetItemId sets the itemId property value. The unique identifier of the item.
 func (m *ExportItemResponse) SetItemId(value *string)() {
     err := m.GetBackingStore().Set("itemId", value)
     if err != nil {

@@ -95,7 +95,7 @@ func (m *X509CertificateAuthorityScope) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetIncludeTargets gets the includeTargets property value. The includeTargets property
+// GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to be in scope to use certificates issued by specific certificate authority.
 // returns a []IncludeTargetable when successful
 func (m *X509CertificateAuthorityScope) GetIncludeTargets()([]IncludeTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
@@ -119,7 +119,7 @@ func (m *X509CertificateAuthorityScope) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPublicKeyInfrastructureIdentifier gets the publicKeyInfrastructureIdentifier property value. The publicKeyInfrastructureIdentifier property
+// GetPublicKeyInfrastructureIdentifier gets the publicKeyInfrastructureIdentifier property value. Public Key Infrastructure container object under which the certificate authorities are stored in the Entra PKI based trust store.
 // returns a *string when successful
 func (m *X509CertificateAuthorityScope) GetPublicKeyInfrastructureIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("publicKeyInfrastructureIdentifier")
@@ -131,7 +131,7 @@ func (m *X509CertificateAuthorityScope) GetPublicKeyInfrastructureIdentifier()(*
     }
     return nil
 }
-// GetSubjectKeyIdentifier gets the subjectKeyIdentifier property value. The subjectKeyIdentifier property
+// GetSubjectKeyIdentifier gets the subjectKeyIdentifier property value. Subject Key Identifier that identifies the certificate authority uniquely.
 // returns a *string when successful
 func (m *X509CertificateAuthorityScope) GetSubjectKeyIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("subjectKeyIdentifier")
@@ -194,7 +194,7 @@ func (m *X509CertificateAuthorityScope) SetAdditionalData(value map[string]any)(
 func (m *X509CertificateAuthorityScope) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIncludeTargets sets the includeTargets property value. The includeTargets property
+// SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to be in scope to use certificates issued by specific certificate authority.
 func (m *X509CertificateAuthorityScope) SetIncludeTargets(value []IncludeTargetable)() {
     err := m.GetBackingStore().Set("includeTargets", value)
     if err != nil {
@@ -208,14 +208,14 @@ func (m *X509CertificateAuthorityScope) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPublicKeyInfrastructureIdentifier sets the publicKeyInfrastructureIdentifier property value. The publicKeyInfrastructureIdentifier property
+// SetPublicKeyInfrastructureIdentifier sets the publicKeyInfrastructureIdentifier property value. Public Key Infrastructure container object under which the certificate authorities are stored in the Entra PKI based trust store.
 func (m *X509CertificateAuthorityScope) SetPublicKeyInfrastructureIdentifier(value *string)() {
     err := m.GetBackingStore().Set("publicKeyInfrastructureIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubjectKeyIdentifier sets the subjectKeyIdentifier property value. The subjectKeyIdentifier property
+// SetSubjectKeyIdentifier sets the subjectKeyIdentifier property value. Subject Key Identifier that identifies the certificate authority uniquely.
 func (m *X509CertificateAuthorityScope) SetSubjectKeyIdentifier(value *string)() {
     err := m.GetBackingStore().Set("subjectKeyIdentifier", value)
     if err != nil {
