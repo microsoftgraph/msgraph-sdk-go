@@ -14,7 +14,7 @@ import (
 type ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilderGetQueryParameters get folders from admin
+// ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilderGetQueryParameters read the properties and relationships of a mailboxFolder object.
 type ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -48,9 +48,12 @@ func NewExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get folders from admin
+// Get read the properties and relationships of a mailboxFolder object.
 // returns a MailboxFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxfolder-get?view=graph-rest-1.0
 func (m *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxFolderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder) Get(ctx co
 func (m *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder) Items()(*ExchangeMailboxesItemFoldersItemItemsRequestBuilder) {
     return NewExchangeMailboxesItemFoldersItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get folders from admin
+// ToGetRequestInformation read the properties and relationships of a mailboxFolder object.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

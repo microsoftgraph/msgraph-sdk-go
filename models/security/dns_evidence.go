@@ -24,7 +24,7 @@ func NewDnsEvidence()(*DnsEvidence) {
 func CreateDnsEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDnsEvidence(), nil
 }
-// GetDnsServerIp gets the dnsServerIp property value. The dnsServerIp property
+// GetDnsServerIp gets the dnsServerIp property value. An IP entity that represents the DNS server that resolves the request.
 // returns a IpEvidenceable when successful
 func (m *DnsEvidence) GetDnsServerIp()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("dnsServerIp")
@@ -36,7 +36,7 @@ func (m *DnsEvidence) GetDnsServerIp()(IpEvidenceable) {
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. The name of the DNS record associated with the alert.
 // returns a *string when successful
 func (m *DnsEvidence) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -100,7 +100,7 @@ func (m *DnsEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHostIpAddress gets the hostIpAddress property value. The hostIpAddress property
+// GetHostIpAddress gets the hostIpAddress property value. An IP entity that represents the DNS request client.
 // returns a IpEvidenceable when successful
 func (m *DnsEvidence) GetHostIpAddress()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("hostIpAddress")
@@ -112,7 +112,7 @@ func (m *DnsEvidence) GetHostIpAddress()(IpEvidenceable) {
     }
     return nil
 }
-// GetIpAddresses gets the ipAddresses property value. The ipAddresses property
+// GetIpAddresses gets the ipAddresses property value. IP entities that represent the resolved IP addresses.
 // returns a []IpEvidenceable when successful
 func (m *DnsEvidence) GetIpAddresses()([]IpEvidenceable) {
     val, err := m.GetBackingStore().Get("ipAddresses")
@@ -162,28 +162,28 @@ func (m *DnsEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetDnsServerIp sets the dnsServerIp property value. The dnsServerIp property
+// SetDnsServerIp sets the dnsServerIp property value. An IP entity that represents the DNS server that resolves the request.
 func (m *DnsEvidence) SetDnsServerIp(value IpEvidenceable)() {
     err := m.GetBackingStore().Set("dnsServerIp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. The name of the DNS record associated with the alert.
 func (m *DnsEvidence) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostIpAddress sets the hostIpAddress property value. The hostIpAddress property
+// SetHostIpAddress sets the hostIpAddress property value. An IP entity that represents the DNS request client.
 func (m *DnsEvidence) SetHostIpAddress(value IpEvidenceable)() {
     err := m.GetBackingStore().Set("hostIpAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIpAddresses sets the ipAddresses property value. The ipAddresses property
+// SetIpAddresses sets the ipAddresses property value. IP entities that represent the resolved IP addresses.
 func (m *DnsEvidence) SetIpAddresses(value []IpEvidenceable)() {
     err := m.GetBackingStore().Set("ipAddresses", value)
     if err != nil {

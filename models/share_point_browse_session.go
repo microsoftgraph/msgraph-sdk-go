@@ -40,7 +40,7 @@ func (m *SharePointBrowseSession) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetSiteId gets the siteId property value. The siteId property
+// GetSiteId gets the siteId property value. Id of the backed-up SharePoint site.
 // returns a *string when successful
 func (m *SharePointBrowseSession) GetSiteId()(*string) {
     val, err := m.GetBackingStore().Get("siteId")
@@ -66,7 +66,7 @@ func (m *SharePointBrowseSession) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetSiteId sets the siteId property value. The siteId property
+// SetSiteId sets the siteId property value. Id of the backed-up SharePoint site.
 func (m *SharePointBrowseSession) SetSiteId(value *string)() {
     err := m.GetBackingStore().Set("siteId", value)
     if err != nil {

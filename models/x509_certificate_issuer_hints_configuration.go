@@ -81,7 +81,7 @@ func (m *X509CertificateIssuerHintsConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. The possible values are: disabled, enabled, unknownFutureValue.
 // returns a *X509CertificateIssuerHintsState when successful
 func (m *X509CertificateIssuerHintsConfiguration) GetState()(*X509CertificateIssuerHintsState) {
     val, err := m.GetBackingStore().Get("state")
@@ -134,7 +134,7 @@ func (m *X509CertificateIssuerHintsConfiguration) SetOdataType(value *string)() 
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. The possible values are: disabled, enabled, unknownFutureValue.
 func (m *X509CertificateIssuerHintsConfiguration) SetState(value *X509CertificateIssuerHintsState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

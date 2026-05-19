@@ -33,8 +33,11 @@ func NewItemStartMigrationRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemStartMigrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action startMigration
+// Post start the migration of external messages by enabling migration mode in an existing chat. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. You can define a minimum timestamp for content migration that enables the import of messages from the past. The specified timestamp must be earlier than the current createdDateTime of the chat. Imported content is always limited by the createdDateTime of the target thread. An optional createdDateTime property in the payload allows you to update this value, but with strict rules: This API supportes the following channel types.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-startmigration?view=graph-rest-1.0
 func (m *ItemStartMigrationRequestBuilder) Post(ctx context.Context, body ItemStartMigrationPostRequestBodyable, requestConfiguration *ItemStartMigrationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemStartMigrationRequestBuilder) Post(ctx context.Context, body ItemSt
     }
     return nil
 }
-// ToPostRequestInformation invoke action startMigration
+// ToPostRequestInformation start the migration of external messages by enabling migration mode in an existing chat. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. You can define a minimum timestamp for content migration that enables the import of messages from the past. The specified timestamp must be earlier than the current createdDateTime of the chat. Imported content is always limited by the createdDateTime of the target thread. An optional createdDateTime property in the payload allows you to update this value, but with strict rules: This API supportes the following channel types.
 // returns a *RequestInformation when successful
 func (m *ItemStartMigrationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemStartMigrationPostRequestBodyable, requestConfiguration *ItemStartMigrationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

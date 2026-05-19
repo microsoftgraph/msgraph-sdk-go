@@ -14,7 +14,7 @@ import (
 type ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters get items from admin
+// ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters the collection of items in this folder.
 type ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,7 +43,7 @@ func NewExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequ
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get items from admin
+// Get the collection of items in this folder.
 // returns a MailboxItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxItemable, error) {
@@ -63,7 +63,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemReq
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxItemable), nil
 }
-// ToGetRequestInformation get items from admin
+// ToGetRequestInformation the collection of items in this folder.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsMailboxItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

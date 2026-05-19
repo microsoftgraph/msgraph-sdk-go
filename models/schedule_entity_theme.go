@@ -18,10 +18,33 @@ const (
     DARKPINK_SCHEDULEENTITYTHEME
     DARKYELLOW_SCHEDULEENTITYTHEME
     UNKNOWNFUTUREVALUE_SCHEDULEENTITYTHEME
+    DARKRED_SCHEDULEENTITYTHEME
+    CRANBERRY_SCHEDULEENTITYTHEME
+    DARKORANGE_SCHEDULEENTITYTHEME
+    BRONZE_SCHEDULEENTITYTHEME
+    PEACH_SCHEDULEENTITYTHEME
+    GOLD_SCHEDULEENTITYTHEME
+    LIME_SCHEDULEENTITYTHEME
+    FOREST_SCHEDULEENTITYTHEME
+    LIGHTGREEN_SCHEDULEENTITYTHEME
+    JADE_SCHEDULEENTITYTHEME
+    LIGHTTEAL_SCHEDULEENTITYTHEME
+    DARKTEAL_SCHEDULEENTITYTHEME
+    STEEL_SCHEDULEENTITYTHEME
+    SKYBLUE_SCHEDULEENTITYTHEME
+    BLUEGRAY_SCHEDULEENTITYTHEME
+    LAVENDER_SCHEDULEENTITYTHEME
+    LILAC_SCHEDULEENTITYTHEME
+    PLUM_SCHEDULEENTITYTHEME
+    MAGENTA_SCHEDULEENTITYTHEME
+    DARKBROWN_SCHEDULEENTITYTHEME
+    BEIGE_SCHEDULEENTITYTHEME
+    CHARCOAL_SCHEDULEENTITYTHEME
+    SILVER_SCHEDULEENTITYTHEME
 )
 
 func (i ScheduleEntityTheme) String() string {
-    return []string{"white", "blue", "green", "purple", "pink", "yellow", "gray", "darkBlue", "darkGreen", "darkPurple", "darkPink", "darkYellow", "unknownFutureValue"}[i]
+    return []string{"white", "blue", "green", "purple", "pink", "yellow", "gray", "darkBlue", "darkGreen", "darkPurple", "darkPink", "darkYellow", "unknownFutureValue", "darkRed", "cranberry", "darkOrange", "bronze", "peach", "gold", "lime", "forest", "lightGreen", "jade", "lightTeal", "darkTeal", "steel", "skyBlue", "blueGray", "lavender", "lilac", "plum", "magenta", "darkBrown", "beige", "charcoal", "silver"}[i]
 }
 func ParseScheduleEntityTheme(v string) (any, error) {
     result := WHITE_SCHEDULEENTITYTHEME
@@ -52,6 +75,52 @@ func ParseScheduleEntityTheme(v string) (any, error) {
             result = DARKYELLOW_SCHEDULEENTITYTHEME
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULEENTITYTHEME
+        case "darkRed":
+            result = DARKRED_SCHEDULEENTITYTHEME
+        case "cranberry":
+            result = CRANBERRY_SCHEDULEENTITYTHEME
+        case "darkOrange":
+            result = DARKORANGE_SCHEDULEENTITYTHEME
+        case "bronze":
+            result = BRONZE_SCHEDULEENTITYTHEME
+        case "peach":
+            result = PEACH_SCHEDULEENTITYTHEME
+        case "gold":
+            result = GOLD_SCHEDULEENTITYTHEME
+        case "lime":
+            result = LIME_SCHEDULEENTITYTHEME
+        case "forest":
+            result = FOREST_SCHEDULEENTITYTHEME
+        case "lightGreen":
+            result = LIGHTGREEN_SCHEDULEENTITYTHEME
+        case "jade":
+            result = JADE_SCHEDULEENTITYTHEME
+        case "lightTeal":
+            result = LIGHTTEAL_SCHEDULEENTITYTHEME
+        case "darkTeal":
+            result = DARKTEAL_SCHEDULEENTITYTHEME
+        case "steel":
+            result = STEEL_SCHEDULEENTITYTHEME
+        case "skyBlue":
+            result = SKYBLUE_SCHEDULEENTITYTHEME
+        case "blueGray":
+            result = BLUEGRAY_SCHEDULEENTITYTHEME
+        case "lavender":
+            result = LAVENDER_SCHEDULEENTITYTHEME
+        case "lilac":
+            result = LILAC_SCHEDULEENTITYTHEME
+        case "plum":
+            result = PLUM_SCHEDULEENTITYTHEME
+        case "magenta":
+            result = MAGENTA_SCHEDULEENTITYTHEME
+        case "darkBrown":
+            result = DARKBROWN_SCHEDULEENTITYTHEME
+        case "beige":
+            result = BEIGE_SCHEDULEENTITYTHEME
+        case "charcoal":
+            result = CHARCOAL_SCHEDULEENTITYTHEME
+        case "silver":
+            result = SILVER_SCHEDULEENTITYTHEME
         default:
             return nil, nil
     }

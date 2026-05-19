@@ -43,7 +43,7 @@ func (m *EmailDetails) GetAdditionalData()(map[string]any) {
 func (m *EmailDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBody gets the body property value. The body property
+// GetBody gets the body property value. The body content of the notification email in plain text format.
 // returns a *string when successful
 func (m *EmailDetails) GetBody()(*string) {
     val, err := m.GetBackingStore().Get("body")
@@ -113,7 +113,7 @@ func (m *EmailDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSenderEmailAddress gets the senderEmailAddress property value. The senderEmailAddress property
+// GetSenderEmailAddress gets the senderEmailAddress property value. The email address of the sender for notification emails. Shared mailboxes aren't supported.
 // returns a *string when successful
 func (m *EmailDetails) GetSenderEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("senderEmailAddress")
@@ -125,7 +125,7 @@ func (m *EmailDetails) GetSenderEmailAddress()(*string) {
     }
     return nil
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. The subject line of the notification email.
 // returns a *string when successful
 func (m *EmailDetails) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
@@ -182,7 +182,7 @@ func (m *EmailDetails) SetAdditionalData(value map[string]any)() {
 func (m *EmailDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBody sets the body property value. The body property
+// SetBody sets the body property value. The body content of the notification email in plain text format.
 func (m *EmailDetails) SetBody(value *string)() {
     err := m.GetBackingStore().Set("body", value)
     if err != nil {
@@ -196,14 +196,14 @@ func (m *EmailDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSenderEmailAddress sets the senderEmailAddress property value. The senderEmailAddress property
+// SetSenderEmailAddress sets the senderEmailAddress property value. The email address of the sender for notification emails. Shared mailboxes aren't supported.
 func (m *EmailDetails) SetSenderEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("senderEmailAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. The subject line of the notification email.
 func (m *EmailDetails) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {

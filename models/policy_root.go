@@ -490,7 +490,7 @@ func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecu
     }
     return nil
 }
-// GetOwnerlessGroupPolicy gets the ownerlessGroupPolicy property value. The ownerlessGroupPolicy property
+// GetOwnerlessGroupPolicy gets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
 // returns a OwnerlessGroupPolicyable when successful
 func (m *PolicyRoot) GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable) {
     val, err := m.GetBackingStore().Get("ownerlessGroupPolicy")
@@ -873,7 +873,7 @@ func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value Identity
         panic(err)
     }
 }
-// SetOwnerlessGroupPolicy sets the ownerlessGroupPolicy property value. The ownerlessGroupPolicy property
+// SetOwnerlessGroupPolicy sets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
 func (m *PolicyRoot) SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)() {
     err := m.GetBackingStore().Set("ownerlessGroupPolicy", value)
     if err != nil {

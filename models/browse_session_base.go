@@ -43,7 +43,7 @@ func CreateBrowseSessionBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268
     }
     return NewBrowseSessionBase(), nil
 }
-// GetBackupSizeInBytes gets the backupSizeInBytes property value. The backupSizeInBytes property
+// GetBackupSizeInBytes gets the backupSizeInBytes property value. The size of the backup in bytes.
 // returns a *string when successful
 func (m *BrowseSessionBase) GetBackupSizeInBytes()(*string) {
     val, err := m.GetBackingStore().Get("backupSizeInBytes")
@@ -55,7 +55,7 @@ func (m *BrowseSessionBase) GetBackupSizeInBytes()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the browse session was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *BrowseSessionBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -67,7 +67,7 @@ func (m *BrowseSessionBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. Contains the error details if the browse session creation fails.
 // returns a PublicErrorable when successful
 func (m *BrowseSessionBase) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -79,7 +79,7 @@ func (m *BrowseSessionBase) GetError()(PublicErrorable) {
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The date and time after which the browse session is deleted automatically.
 // returns a *Time when successful
 func (m *BrowseSessionBase) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -167,7 +167,7 @@ func (m *BrowseSessionBase) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetRestorePointDateTime gets the restorePointDateTime property value. The restorePointDateTime property
+// GetRestorePointDateTime gets the restorePointDateTime property value. The date and time of the restore point on which the browse session is created.
 // returns a *Time when successful
 func (m *BrowseSessionBase) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restorePointDateTime")
@@ -254,35 +254,35 @@ func (m *BrowseSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetBackupSizeInBytes sets the backupSizeInBytes property value. The backupSizeInBytes property
+// SetBackupSizeInBytes sets the backupSizeInBytes property value. The size of the backup in bytes.
 func (m *BrowseSessionBase) SetBackupSizeInBytes(value *string)() {
     err := m.GetBackingStore().Set("backupSizeInBytes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the browse session was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *BrowseSessionBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. Contains the error details if the browse session creation fails.
 func (m *BrowseSessionBase) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The date and time after which the browse session is deleted automatically.
 func (m *BrowseSessionBase) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestorePointDateTime sets the restorePointDateTime property value. The restorePointDateTime property
+// SetRestorePointDateTime sets the restorePointDateTime property value. The date and time of the restore point on which the browse session is created.
 func (m *BrowseSessionBase) SetRestorePointDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restorePointDateTime", value)
     if err != nil {

@@ -24,7 +24,7 @@ func NewGitHubUserEvidence()(*GitHubUserEvidence) {
 func CreateGitHubUserEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitHubUserEvidence(), nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. The email address of the user account.
 // returns a *string when successful
 func (m *GitHubUserEvidence) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
@@ -92,7 +92,7 @@ func (m *GitHubUserEvidence) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLogin gets the login property value. The login property
+// GetLogin gets the login property value. The user's login (GitHub handle).
 // returns a *string when successful
 func (m *GitHubUserEvidence) GetLogin()(*string) {
     val, err := m.GetBackingStore().Get("login")
@@ -104,7 +104,7 @@ func (m *GitHubUserEvidence) GetLogin()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The user's name.
 // returns a *string when successful
 func (m *GitHubUserEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -116,7 +116,7 @@ func (m *GitHubUserEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The unique and immutable ID of the user account.
 // returns a *string when successful
 func (m *GitHubUserEvidence) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -128,7 +128,7 @@ func (m *GitHubUserEvidence) GetUserId()(*string) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. The webUrl property
+// GetWebUrl gets the webUrl property value. The URL of the user's profile web page. For example, https://github.com/my-login.
 // returns a *string when successful
 func (m *GitHubUserEvidence) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -178,35 +178,35 @@ func (m *GitHubUserEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. The email address of the user account.
 func (m *GitHubUserEvidence) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLogin sets the login property value. The login property
+// SetLogin sets the login property value. The user's login (GitHub handle).
 func (m *GitHubUserEvidence) SetLogin(value *string)() {
     err := m.GetBackingStore().Set("login", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The user's name.
 func (m *GitHubUserEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The unique and immutable ID of the user account.
 func (m *GitHubUserEvidence) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. The webUrl property
+// SetWebUrl sets the webUrl property value. The URL of the user's profile web page. For example, https://github.com/my-login.
 func (m *GitHubUserEvidence) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

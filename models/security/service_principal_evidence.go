@@ -24,7 +24,7 @@ func NewServicePrincipalEvidence()(*ServicePrincipalEvidence) {
 func CreateServicePrincipalEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalEvidence(), nil
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. The unique identifier for the associated application, represented by its appId property.
 // returns a *string when successful
 func (m *ServicePrincipalEvidence) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -36,7 +36,7 @@ func (m *ServicePrincipalEvidence) GetAppId()(*string) {
     }
     return nil
 }
-// GetAppOwnerTenantId gets the appOwnerTenantId property value. The appOwnerTenantId property
+// GetAppOwnerTenantId gets the appOwnerTenantId property value. The tenant ID where the application is registered.
 // returns a *string when successful
 func (m *ServicePrincipalEvidence) GetAppOwnerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("appOwnerTenantId")
@@ -114,7 +114,7 @@ func (m *ServicePrincipalEvidence) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetServicePrincipalName gets the servicePrincipalName property value. The servicePrincipalName property
+// GetServicePrincipalName gets the servicePrincipalName property value. The display name for the service principal.
 // returns a *string when successful
 func (m *ServicePrincipalEvidence) GetServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalName")
@@ -126,7 +126,7 @@ func (m *ServicePrincipalEvidence) GetServicePrincipalName()(*string) {
     }
     return nil
 }
-// GetServicePrincipalObjectId gets the servicePrincipalObjectId property value. The servicePrincipalObjectId property
+// GetServicePrincipalObjectId gets the servicePrincipalObjectId property value. The unique identifier for the service principal.
 // returns a *string when successful
 func (m *ServicePrincipalEvidence) GetServicePrincipalObjectId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalObjectId")
@@ -138,7 +138,7 @@ func (m *ServicePrincipalEvidence) GetServicePrincipalObjectId()(*string) {
     }
     return nil
 }
-// GetServicePrincipalType gets the servicePrincipalType property value. The servicePrincipalType property
+// GetServicePrincipalType gets the servicePrincipalType property value. The service principal type. Possible values are: unknown, application, managedIdentity, legacy, unknownFutureValue.
 // returns a *ServicePrincipalType when successful
 func (m *ServicePrincipalEvidence) GetServicePrincipalType()(*ServicePrincipalType) {
     val, err := m.GetBackingStore().Get("servicePrincipalType")
@@ -150,7 +150,7 @@ func (m *ServicePrincipalEvidence) GetServicePrincipalType()(*ServicePrincipalTy
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant ID of the service principal.
 // returns a *string when successful
 func (m *ServicePrincipalEvidence) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -207,42 +207,42 @@ func (m *ServicePrincipalEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. The unique identifier for the associated application, represented by its appId property.
 func (m *ServicePrincipalEvidence) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppOwnerTenantId sets the appOwnerTenantId property value. The appOwnerTenantId property
+// SetAppOwnerTenantId sets the appOwnerTenantId property value. The tenant ID where the application is registered.
 func (m *ServicePrincipalEvidence) SetAppOwnerTenantId(value *string)() {
     err := m.GetBackingStore().Set("appOwnerTenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalName sets the servicePrincipalName property value. The servicePrincipalName property
+// SetServicePrincipalName sets the servicePrincipalName property value. The display name for the service principal.
 func (m *ServicePrincipalEvidence) SetServicePrincipalName(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalObjectId sets the servicePrincipalObjectId property value. The servicePrincipalObjectId property
+// SetServicePrincipalObjectId sets the servicePrincipalObjectId property value. The unique identifier for the service principal.
 func (m *ServicePrincipalEvidence) SetServicePrincipalObjectId(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalObjectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalType sets the servicePrincipalType property value. The servicePrincipalType property
+// SetServicePrincipalType sets the servicePrincipalType property value. The service principal type. Possible values are: unknown, application, managedIdentity, legacy, unknownFutureValue.
 func (m *ServicePrincipalEvidence) SetServicePrincipalType(value *ServicePrincipalType)() {
     err := m.GetBackingStore().Set("servicePrincipalType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant ID of the service principal.
 func (m *ServicePrincipalEvidence) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

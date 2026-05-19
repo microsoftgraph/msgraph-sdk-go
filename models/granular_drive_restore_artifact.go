@@ -22,7 +22,7 @@ func NewGranularDriveRestoreArtifact()(*GranularDriveRestoreArtifact) {
 func CreateGranularDriveRestoreArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGranularDriveRestoreArtifact(), nil
 }
-// GetDirectoryObjectId gets the directoryObjectId property value. The directoryObjectId property
+// GetDirectoryObjectId gets the directoryObjectId property value. Id of the drive in which artifact is present.
 // returns a *string when successful
 func (m *GranularDriveRestoreArtifact) GetDirectoryObjectId()(*string) {
     val, err := m.GetBackingStore().Get("directoryObjectId")
@@ -64,7 +64,7 @@ func (m *GranularDriveRestoreArtifact) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetDirectoryObjectId sets the directoryObjectId property value. The directoryObjectId property
+// SetDirectoryObjectId sets the directoryObjectId property value. Id of the drive in which artifact is present.
 func (m *GranularDriveRestoreArtifact) SetDirectoryObjectId(value *string)() {
     err := m.GetBackingStore().Set("directoryObjectId", value)
     if err != nil {

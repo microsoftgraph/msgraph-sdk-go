@@ -62,7 +62,7 @@ func (m *FileHashEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The hash value.
 // returns a *string when successful
 func (m *FileHashEvidence) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -102,7 +102,7 @@ func (m *FileHashEvidence) SetAlgorithm(value *FileHashAlgorithm)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The hash value.
 func (m *FileHashEvidence) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

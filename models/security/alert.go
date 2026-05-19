@@ -84,7 +84,7 @@ func (m *Alert) GetAssignedTo()(*string) {
     }
     return nil
 }
-// GetCategories gets the categories property value. The categories property
+// GetCategories gets the categories property value. The attack kill-chain categories that the alert belongs to. Aligned with the MITRE ATT&CK framework.
 // returns a []string when successful
 func (m *Alert) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
@@ -96,7 +96,7 @@ func (m *Alert) GetCategories()([]string) {
     }
     return nil
 }
-// GetCategory gets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
+// GetCategory gets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework. This property is in the process of being deprecated. Use the categories property instead.
 // returns a *string when successful
 func (m *Alert) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
@@ -1102,14 +1102,14 @@ func (m *Alert) SetAssignedTo(value *string)() {
         panic(err)
     }
 }
-// SetCategories sets the categories property value. The categories property
+// SetCategories sets the categories property value. The attack kill-chain categories that the alert belongs to. Aligned with the MITRE ATT&CK framework.
 func (m *Alert) SetCategories(value []string)() {
     err := m.GetBackingStore().Set("categories", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCategory sets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
+// SetCategory sets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework. This property is in the process of being deprecated. Use the categories property instead.
 func (m *Alert) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {

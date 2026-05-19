@@ -38,6 +38,8 @@ func CreateAuthenticationMethodTargetFromDiscriminatorValue(parseNode i878a80d23
                         return NewPasskeyAuthenticationMethodTarget(), nil
                     case "#microsoft.graph.smsAuthenticationMethodTarget":
                         return NewSmsAuthenticationMethodTarget(), nil
+                    case "#microsoft.graph.verifiableCredentialAuthenticationMethodTarget":
+                        return NewVerifiableCredentialAuthenticationMethodTarget(), nil
                 }
             }
         }

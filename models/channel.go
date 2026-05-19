@@ -421,7 +421,7 @@ func (m *Channel) GetMessages()([]ChatMessageable) {
     }
     return nil
 }
-// GetMigrationMode gets the migrationMode property value. The migrationMode property
+// GetMigrationMode gets the migrationMode property value. Indicates whether a channel is in migration mode. This value is null for channels that never entered migration mode. The possible values are: inProgress, completed, unknownFutureValue.
 // returns a *MigrationMode when successful
 func (m *Channel) GetMigrationMode()(*MigrationMode) {
     val, err := m.GetBackingStore().Get("migrationMode")
@@ -433,7 +433,7 @@ func (m *Channel) GetMigrationMode()(*MigrationMode) {
     }
     return nil
 }
-// GetOriginalCreatedDateTime gets the originalCreatedDateTime property value. The originalCreatedDateTime property
+// GetOriginalCreatedDateTime gets the originalCreatedDateTime property value. Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
 // returns a *Time when successful
 func (m *Channel) GetOriginalCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("originalCreatedDateTime")
@@ -763,14 +763,14 @@ func (m *Channel) SetMessages(value []ChatMessageable)() {
         panic(err)
     }
 }
-// SetMigrationMode sets the migrationMode property value. The migrationMode property
+// SetMigrationMode sets the migrationMode property value. Indicates whether a channel is in migration mode. This value is null for channels that never entered migration mode. The possible values are: inProgress, completed, unknownFutureValue.
 func (m *Channel) SetMigrationMode(value *MigrationMode)() {
     err := m.GetBackingStore().Set("migrationMode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOriginalCreatedDateTime sets the originalCreatedDateTime property value. The originalCreatedDateTime property
+// SetOriginalCreatedDateTime sets the originalCreatedDateTime property value. Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
 func (m *Channel) SetOriginalCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("originalCreatedDateTime", value)
     if err != nil {

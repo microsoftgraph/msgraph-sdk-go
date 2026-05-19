@@ -14,7 +14,7 @@ import (
 type ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters get items from admin
+// ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters read the properties and relationships of a mailboxItem object.
 type ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,9 +43,12 @@ func NewExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get items from admin
+// Get read the properties and relationships of a mailboxItem object.
 // returns a MailboxItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxitem-get?view=graph-rest-1.0
 func (m *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxItemable), nil
 }
-// ToGetRequestInformation get items from admin
+// ToGetRequestInformation read the properties and relationships of a mailboxItem object.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

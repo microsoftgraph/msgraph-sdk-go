@@ -21,7 +21,7 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArti
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters get granularDriveRestoreArtifacts from solutions
+// BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters a collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
 type BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     }
     return nil
 }
-// Get get granularDriveRestoreArtifacts from solutions
+// Get a collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
 // returns a GranularDriveRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GranularDriveRestoreArtifactable, error) {
@@ -124,7 +124,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get granularDriveRestoreArtifacts from solutions
+// ToGetRequestInformation a collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

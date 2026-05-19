@@ -44,7 +44,7 @@ func (m *MailboxItemImportSession) GetAdditionalData()(map[string]any) {
 func (m *MailboxItemImportSession) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The date and time in UTC when the import session expires. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *MailboxItemImportSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -92,7 +92,7 @@ func (m *MailboxItemImportSession) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetImportUrl gets the importUrl property value. The importUrl property
+// GetImportUrl gets the importUrl property value. The URL endpoint that accepts POST requests for uploading a mailbox item exported using exportItems.
 // returns a *string when successful
 func (m *MailboxItemImportSession) GetImportUrl()(*string) {
     val, err := m.GetBackingStore().Get("importUrl")
@@ -155,14 +155,14 @@ func (m *MailboxItemImportSession) SetAdditionalData(value map[string]any)() {
 func (m *MailboxItemImportSession) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The date and time in UTC when the import session expires. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
 func (m *MailboxItemImportSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImportUrl sets the importUrl property value. The importUrl property
+// SetImportUrl sets the importUrl property value. The URL endpoint that accepts POST requests for uploading a mailbox item exported using exportItems.
 func (m *MailboxItemImportSession) SetImportUrl(value *string)() {
     err := m.GetBackingStore().Set("importUrl", value)
     if err != nil {

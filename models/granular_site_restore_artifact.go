@@ -38,7 +38,7 @@ func (m *GranularSiteRestoreArtifact) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetSiteId gets the siteId property value. The siteId property
+// GetSiteId gets the siteId property value. Id of the site in which artifact is present.
 // returns a *string when successful
 func (m *GranularSiteRestoreArtifact) GetSiteId()(*string) {
     val, err := m.GetBackingStore().Get("siteId")
@@ -64,7 +64,7 @@ func (m *GranularSiteRestoreArtifact) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetSiteId sets the siteId property value. The siteId property
+// SetSiteId sets the siteId property value. Id of the site in which artifact is present.
 func (m *GranularSiteRestoreArtifact) SetSiteId(value *string)() {
     err := m.GetBackingStore().Set("siteId", value)
     if err != nil {

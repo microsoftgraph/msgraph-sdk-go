@@ -14,7 +14,7 @@ import (
 type OwnerlessGroupPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OwnerlessGroupPolicyRequestBuilderGetQueryParameters get ownerlessGroupPolicy from policies
+// OwnerlessGroupPolicyRequestBuilderGetQueryParameters read the properties of an ownerlessGroupPolicy object.
 type OwnerlessGroupPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -50,9 +50,12 @@ func NewOwnerlessGroupPolicyRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewOwnerlessGroupPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get ownerlessGroupPolicy from policies
+// Get read the properties of an ownerlessGroupPolicy object.
 // returns a OwnerlessGroupPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ownerlessgrouppolicy-get?view=graph-rest-1.0
 func (m *OwnerlessGroupPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *OwnerlessGroupPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OwnerlessGroupPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *OwnerlessGroupPolicyRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OwnerlessGroupPolicyable), nil
 }
-// Patch update the navigation property ownerlessGroupPolicy in policies
+// Patch create or update the ownerlessGroupPolicy for the tenant. If the policy doesn't exist, it creates a new one; if the policy exists, it updates the existing policy. To disable the policy, set isEnabled to false. Setting isEnabled to false clears the values of all other policy parameters.
 // returns a OwnerlessGroupPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ownerlessgrouppolicy-upsert?view=graph-rest-1.0
 func (m *OwnerlessGroupPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OwnerlessGroupPolicyable, requestConfiguration *OwnerlessGroupPolicyRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OwnerlessGroupPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -90,7 +96,7 @@ func (m *OwnerlessGroupPolicyRequestBuilder) Patch(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OwnerlessGroupPolicyable), nil
 }
-// ToGetRequestInformation get ownerlessGroupPolicy from policies
+// ToGetRequestInformation read the properties of an ownerlessGroupPolicy object.
 // returns a *RequestInformation when successful
 func (m *OwnerlessGroupPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OwnerlessGroupPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,7 +110,7 @@ func (m *OwnerlessGroupPolicyRequestBuilder) ToGetRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property ownerlessGroupPolicy in policies
+// ToPatchRequestInformation create or update the ownerlessGroupPolicy for the tenant. If the policy doesn't exist, it creates a new one; if the policy exists, it updates the existing policy. To disable the policy, set isEnabled to false. Setting isEnabled to false clears the values of all other policy parameters.
 // returns a *RequestInformation when successful
 func (m *OwnerlessGroupPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OwnerlessGroupPolicyable, requestConfiguration *OwnerlessGroupPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

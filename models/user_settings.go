@@ -46,7 +46,7 @@ func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     }
     return nil
 }
-// GetExchange gets the exchange property value. The exchange property
+// GetExchange gets the exchange property value. The Exchange settings for mailbox discovery.
 // returns a ExchangeSettingsable when successful
 func (m *UserSettings) GetExchange()(ExchangeSettingsable) {
     val, err := m.GetBackingStore().Get("exchange")
@@ -286,7 +286,7 @@ func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() 
         panic(err)
     }
 }
-// SetExchange sets the exchange property value. The exchange property
+// SetExchange sets the exchange property value. The Exchange settings for mailbox discovery.
 func (m *UserSettings) SetExchange(value ExchangeSettingsable)() {
     err := m.GetBackingStore().Set("exchange", value)
     if err != nil {

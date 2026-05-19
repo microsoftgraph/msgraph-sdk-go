@@ -102,7 +102,7 @@ func (m *OneDriveForBusinessRestoreSession) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetGranularDriveRestoreArtifacts gets the granularDriveRestoreArtifacts property value. The granularDriveRestoreArtifacts property
+// GetGranularDriveRestoreArtifacts gets the granularDriveRestoreArtifacts property value. A collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
 // returns a []GranularDriveRestoreArtifactable when successful
 func (m *OneDriveForBusinessRestoreSession) GetGranularDriveRestoreArtifacts()([]GranularDriveRestoreArtifactable) {
     val, err := m.GetBackingStore().Get("granularDriveRestoreArtifacts")
@@ -172,7 +172,7 @@ func (m *OneDriveForBusinessRestoreSession) SetDriveRestoreArtifactsBulkAddition
         panic(err)
     }
 }
-// SetGranularDriveRestoreArtifacts sets the granularDriveRestoreArtifacts property value. The granularDriveRestoreArtifacts property
+// SetGranularDriveRestoreArtifacts sets the granularDriveRestoreArtifacts property value. A collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
 func (m *OneDriveForBusinessRestoreSession) SetGranularDriveRestoreArtifacts(value []GranularDriveRestoreArtifactable)() {
     err := m.GetBackingStore().Set("granularDriveRestoreArtifacts", value)
     if err != nil {

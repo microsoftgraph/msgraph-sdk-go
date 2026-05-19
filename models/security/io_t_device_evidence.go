@@ -368,7 +368,7 @@ func (m *IoTDeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetImportance gets the importance property value. The importance level for the IoT device. Possible values are low, normal, high, and unknownFutureValue.
+// GetImportance gets the importance property value. The importance level for the IoT device. The possible values are: unknown, low, normal, high, unknownFutureValue.
 // returns a *IoTDeviceImportanceType when successful
 func (m *IoTDeviceEvidence) GetImportance()(*IoTDeviceImportanceType) {
     val, err := m.GetBackingStore().Get("importance")
@@ -826,7 +826,7 @@ func (m *IoTDeviceEvidence) SetDeviceType(value *string)() {
         panic(err)
     }
 }
-// SetImportance sets the importance property value. The importance level for the IoT device. Possible values are low, normal, high, and unknownFutureValue.
+// SetImportance sets the importance property value. The importance level for the IoT device. The possible values are: unknown, low, normal, high, unknownFutureValue.
 func (m *IoTDeviceEvidence) SetImportance(value *IoTDeviceImportanceType)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {

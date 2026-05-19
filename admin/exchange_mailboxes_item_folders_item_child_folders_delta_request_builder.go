@@ -13,7 +13,7 @@ import (
 type ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderGetQueryParameters invoke function delta
+// ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderGetQueryParameters get a set of mailboxFolder objects that were added, deleted, or removed from the user's mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the folders of that mailbox from the server every time.
 type ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -54,10 +54,13 @@ func NewExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get a set of mailboxFolder objects that were added, deleted, or removed from the user's mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the folders of that mailbox from the server every time.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ExchangeMailboxesItemFoldersItemChildFoldersDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxfolder-delta?view=graph-rest-1.0
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderGetRequestConfiguration)(ExchangeMailboxesItemFoldersItemChildFoldersDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilder) Get(ct
     }
     return res.(ExchangeMailboxesItemFoldersItemChildFoldersDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get a set of mailboxFolder objects that were added, deleted, or removed from the user's mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the folders of that mailbox from the server every time.
 // returns a ExchangeMailboxesItemFoldersItemChildFoldersDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxfolder-delta?view=graph-rest-1.0
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderGetRequestConfiguration)(ExchangeMailboxesItemFoldersItemChildFoldersDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilder) GetAsD
     }
     return res.(ExchangeMailboxesItemFoldersItemChildFoldersDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get a set of mailboxFolder objects that were added, deleted, or removed from the user's mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the folders of that mailbox from the server every time.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

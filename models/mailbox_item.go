@@ -82,7 +82,7 @@ func (m *MailboxItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailboxItem.
 // returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *MailboxItem) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
@@ -94,7 +94,7 @@ func (m *MailboxItem) GetMultiValueExtendedProperties()([]MultiValueLegacyExtend
     }
     return nil
 }
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailboxItem.
 // returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *MailboxItem) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
@@ -106,7 +106,7 @@ func (m *MailboxItem) GetSingleValueExtendedProperties()([]SingleValueLegacyExte
     }
     return nil
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. The length of the item in bytes.
 // returns a *int64 when successful
 func (m *MailboxItem) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
@@ -118,7 +118,7 @@ func (m *MailboxItem) GetSize()(*int64) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The message class ID of the item.
 // returns a *string when successful
 func (m *MailboxItem) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -174,28 +174,28 @@ func (m *MailboxItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailboxItem.
 func (m *MailboxItem) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     err := m.GetBackingStore().Set("multiValueExtendedProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailboxItem.
 func (m *MailboxItem) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. The length of the item in bytes.
 func (m *MailboxItem) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The message class ID of the item.
 func (m *MailboxItem) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

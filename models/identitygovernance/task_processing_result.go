@@ -48,7 +48,7 @@ func (m *TaskProcessingResult) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetFailureReason gets the failureReason property value. Describes why the taskProcessingResult has failed.
+// GetFailureReason gets the failureReason property value. Describes why the taskProcessingResult failed.
 // returns a *string when successful
 func (m *TaskProcessingResult) GetFailureReason()(*string) {
     val, err := m.GetBackingStore().Get("failureReason")
@@ -146,7 +146,7 @@ func (m *TaskProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetProcessingInfo gets the processingInfo property value. The processingInfo property
+// GetProcessingInfo gets the processingInfo property value. Additional human-readable context about the task processing outcome. This property contains information about edge cases where the task completed successfully but the expected action wasn't performed because the target was already in the desired state, such as when the user was already a member of the specified group. Returns null when no additional context is needed. Nullable.
 // returns a *string when successful
 func (m *TaskProcessingResult) GetProcessingInfo()(*string) {
     val, err := m.GetBackingStore().Get("processingInfo")
@@ -170,7 +170,7 @@ func (m *TaskProcessingResult) GetProcessingStatus()(*LifecycleWorkflowProcessin
     }
     return nil
 }
-// GetStartedDateTime gets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution has not yet started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// GetStartedDateTime gets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution hasn't started yet.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 // returns a *Time when successful
 func (m *TaskProcessingResult) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
@@ -277,14 +277,14 @@ func (m *TaskProcessingResult) SetCreatedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetFailureReason sets the failureReason property value. Describes why the taskProcessingResult has failed.
+// SetFailureReason sets the failureReason property value. Describes why the taskProcessingResult failed.
 func (m *TaskProcessingResult) SetFailureReason(value *string)() {
     err := m.GetBackingStore().Set("failureReason", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessingInfo sets the processingInfo property value. The processingInfo property
+// SetProcessingInfo sets the processingInfo property value. Additional human-readable context about the task processing outcome. This property contains information about edge cases where the task completed successfully but the expected action wasn't performed because the target was already in the desired state, such as when the user was already a member of the specified group. Returns null when no additional context is needed. Nullable.
 func (m *TaskProcessingResult) SetProcessingInfo(value *string)() {
     err := m.GetBackingStore().Set("processingInfo", value)
     if err != nil {
@@ -298,7 +298,7 @@ func (m *TaskProcessingResult) SetProcessingStatus(value *LifecycleWorkflowProce
         panic(err)
     }
 }
-// SetStartedDateTime sets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution has not yet started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// SetStartedDateTime sets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution hasn't started yet.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskProcessingResult) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startedDateTime", value)
     if err != nil {
