@@ -47,7 +47,7 @@ type ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmen
 // NewClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderInternal instantiates a new ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilder and sets the default values.
 func NewClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilder) {
     m := &ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/resources/{educationAssignmentResource%2Did}/dependentResources/{educationAssignmentResource%2Did1}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/resources/{educationAssignmentResource%2Did}/dependentResources/{educationAssignmentResource%2Did1}", pathParameters),
     }
     return m
 }

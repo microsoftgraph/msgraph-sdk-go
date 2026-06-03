@@ -47,7 +47,7 @@ type ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder
 // NewItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/names/{workbookNamedItem%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/names/{workbookNamedItem%2Did}", pathParameters),
     }
     return m
 }

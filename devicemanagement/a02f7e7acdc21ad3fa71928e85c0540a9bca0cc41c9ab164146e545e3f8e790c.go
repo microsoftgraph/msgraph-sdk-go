@@ -40,7 +40,7 @@ type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemMail
 // NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemMailboxSettingsRequestBuilderInternal instantiates a new VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemMailboxSettingsRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemMailboxSettingsRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}/assignedUsers/{user%2Did}/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

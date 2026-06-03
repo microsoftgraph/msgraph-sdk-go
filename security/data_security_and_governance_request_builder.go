@@ -47,7 +47,7 @@ type DataSecurityAndGovernanceRequestBuilderPatchRequestConfiguration struct {
 // NewDataSecurityAndGovernanceRequestBuilderInternal instantiates a new DataSecurityAndGovernanceRequestBuilder and sets the default values.
 func NewDataSecurityAndGovernanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataSecurityAndGovernanceRequestBuilder) {
     m := &DataSecurityAndGovernanceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataSecurityAndGovernance{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataSecurityAndGovernance", pathParameters),
     }
     return m
 }

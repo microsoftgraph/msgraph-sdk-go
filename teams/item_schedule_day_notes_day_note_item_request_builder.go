@@ -47,7 +47,7 @@ type ItemScheduleDayNotesDayNoteItemRequestBuilderPatchRequestConfiguration stru
 // NewItemScheduleDayNotesDayNoteItemRequestBuilderInternal instantiates a new ItemScheduleDayNotesDayNoteItemRequestBuilder and sets the default values.
 func NewItemScheduleDayNotesDayNoteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScheduleDayNotesDayNoteItemRequestBuilder) {
     m := &ItemScheduleDayNotesDayNoteItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/dayNotes/{dayNote%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/dayNotes/{dayNote%2Did}", pathParameters),
     }
     return m
 }

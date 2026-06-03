@@ -57,7 +57,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) Classes()(*SchoolsItemClasses
 // NewSchoolsEducationSchoolItemRequestBuilderInternal instantiates a new SchoolsEducationSchoolItemRequestBuilder and sets the default values.
 func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsEducationSchoolItemRequestBuilder) {
     m := &SchoolsEducationSchoolItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}", pathParameters),
     }
     return m
 }

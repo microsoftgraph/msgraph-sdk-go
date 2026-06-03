@@ -64,7 +64,7 @@ func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) ByOnenoteSectionId(
 // NewItemOnenoteSectionGroupsItemSectionsRequestBuilderInternal instantiates a new ItemOnenoteSectionGroupsItemSectionsRequestBuilder and sets the default values.
 func NewItemOnenoteSectionGroupsItemSectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionGroupsItemSectionsRequestBuilder) {
     m := &ItemOnenoteSectionGroupsItemSectionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/sectionGroups/{sectionGroup%2Did}/sections{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizat
 // NewCrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilderInternal instantiates a new CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilder and sets the default values.
 func NewCrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilder) {
     m := &CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization", pathParameters),
     }
     return m
 }

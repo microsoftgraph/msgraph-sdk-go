@@ -45,7 +45,7 @@ type ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRe
 // NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilderInternal instantiates a new ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilder and sets the default values.
 func NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilder) {
     m := &ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics/itemActivityStats/{itemActivityStat%2Did}/activities/{itemActivity%2Did}/driveItem/content{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics/itemActivityStats/{itemActivityStat%2Did}/activities/{itemActivity%2Did}/driveItem/content", pathParameters),
     }
     return m
 }

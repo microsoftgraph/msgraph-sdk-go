@@ -64,7 +64,7 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) ByPrintTaskId(printTaskId strin
 // NewTaskDefinitionsItemTasksRequestBuilderInternal instantiates a new TaskDefinitionsItemTasksRequestBuilder and sets the default values.
 func NewTaskDefinitionsItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksRequestBuilder) {
     m := &TaskDefinitionsItemTasksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

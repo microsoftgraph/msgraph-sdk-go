@@ -40,7 +40,7 @@ type ItemContactFoldersItemContactsItemPhotoRequestBuilderPatchRequestConfigurat
 // NewItemContactFoldersItemContactsItemPhotoRequestBuilderInternal instantiates a new ItemContactFoldersItemContactsItemPhotoRequestBuilder and sets the default values.
 func NewItemContactFoldersItemContactsItemPhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemContactsItemPhotoRequestBuilder) {
     m := &ItemContactFoldersItemContactsItemPhotoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts/{contact%2Did}/photo{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

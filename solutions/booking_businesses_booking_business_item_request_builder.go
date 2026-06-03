@@ -57,7 +57,7 @@ func (m *BookingBusinessesBookingBusinessItemRequestBuilder) CalendarView()(*Boo
 // NewBookingBusinessesBookingBusinessItemRequestBuilderInternal instantiates a new BookingBusinessesBookingBusinessItemRequestBuilder and sets the default values.
 func NewBookingBusinessesBookingBusinessItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesBookingBusinessItemRequestBuilder) {
     m := &BookingBusinessesBookingBusinessItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}", pathParameters),
     }
     return m
 }

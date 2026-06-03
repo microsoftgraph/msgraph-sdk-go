@@ -57,7 +57,7 @@ func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AttendeeReport()(*Online
 // NewOnlineMeetingsOnlineMeetingItemRequestBuilderInternal instantiates a new OnlineMeetingsOnlineMeetingItemRequestBuilder and sets the default values.
 func NewOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsOnlineMeetingItemRequestBuilder) {
     m := &OnlineMeetingsOnlineMeetingItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}", pathParameters),
     }
     return m
 }

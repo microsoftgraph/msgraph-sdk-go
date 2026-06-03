@@ -47,7 +47,7 @@ type ItemDataSecurityAndGovernanceActivitiesRequestBuilderPatchRequestConfigurat
 // NewItemDataSecurityAndGovernanceActivitiesRequestBuilderInternal instantiates a new ItemDataSecurityAndGovernanceActivitiesRequestBuilder and sets the default values.
 func NewItemDataSecurityAndGovernanceActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDataSecurityAndGovernanceActivitiesRequestBuilder) {
     m := &ItemDataSecurityAndGovernanceActivitiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance/activities{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance/activities", pathParameters),
     }
     return m
 }

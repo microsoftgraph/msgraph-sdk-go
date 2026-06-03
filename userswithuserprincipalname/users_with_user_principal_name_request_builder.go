@@ -47,7 +47,7 @@ type UsersWithUserPrincipalNameRequestBuilderPatchRequestConfiguration struct {
 // NewUsersWithUserPrincipalNameRequestBuilderInternal instantiates a new UsersWithUserPrincipalNameRequestBuilder and sets the default values.
 func NewUsersWithUserPrincipalNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userPrincipalName *string)(*UsersWithUserPrincipalNameRequestBuilder) {
     m := &UsersWithUserPrincipalNameRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users(userPrincipalName='{userPrincipalName}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users(userPrincipalName='{userPrincipalName}')", pathParameters),
     }
     if userPrincipalName != nil {
         m.BaseRequestBuilder.PathParameters["userPrincipalName"] = *userPrincipalName

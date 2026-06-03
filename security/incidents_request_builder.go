@@ -64,7 +64,7 @@ func (m *IncidentsRequestBuilder) ByIncidentId(incidentId string)(*IncidentsInci
 // NewIncidentsRequestBuilderInternal instantiates a new IncidentsRequestBuilder and sets the default values.
 func NewIncidentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsRequestBuilder) {
     m := &IncidentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/incidents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -101,6 +101,11 @@ func (m *IncidentsRequestBuilder) Get(ctx context.Context, requestConfiguration 
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IncidentCollectionResponseable), nil
+}
+// MicrosoftGraphSecurityMergeIncidents provides operations to call the mergeIncidents method.
+// returns a *IncidentsMicrosoftGraphSecurityMergeIncidentsRequestBuilder when successful
+func (m *IncidentsRequestBuilder) MicrosoftGraphSecurityMergeIncidents()(*IncidentsMicrosoftGraphSecurityMergeIncidentsRequestBuilder) {
+    return NewIncidentsMicrosoftGraphSecurityMergeIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to incidents for security
 // returns a Incidentable when successful

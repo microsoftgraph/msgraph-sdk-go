@@ -47,7 +47,7 @@ type ItemSitesItemPagesItemGraphSitePageWebPartsWebPartItemRequestBuilderPatchRe
 // NewItemSitesItemPagesItemGraphSitePageWebPartsWebPartItemRequestBuilderInternal instantiates a new ItemSitesItemPagesItemGraphSitePageWebPartsWebPartItemRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemGraphSitePageWebPartsWebPartItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemGraphSitePageWebPartsWebPartItemRequestBuilder) {
     m := &ItemSitesItemPagesItemGraphSitePageWebPartsWebPartItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/webParts/{webPart%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/webParts/{webPart%2Did}", pathParameters),
     }
     return m
 }

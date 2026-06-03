@@ -47,7 +47,7 @@ type PlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilderPatchRequ
 // NewPlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilderInternal instantiates a new PlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilder and sets the default values.
 func NewPlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) {
     m := &PlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat", pathParameters),
     }
     return m
 }

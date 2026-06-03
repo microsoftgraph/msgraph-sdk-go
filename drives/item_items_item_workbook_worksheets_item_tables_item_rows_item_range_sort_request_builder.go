@@ -47,7 +47,7 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeSortRequestBuilde
 // NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeSortRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeSortRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeSortRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeSortRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeSortRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/rows/{workbookTableRow%2Did}/range()/sort{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/rows/{workbookTableRow%2Did}/range()/sort", pathParameters),
     }
     return m
 }

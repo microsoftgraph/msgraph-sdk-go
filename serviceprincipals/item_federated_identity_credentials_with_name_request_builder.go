@@ -47,7 +47,7 @@ type ItemFederatedIdentityCredentialsWithNameRequestBuilderPatchRequestConfigura
 // NewItemFederatedIdentityCredentialsWithNameRequestBuilderInternal instantiates a new ItemFederatedIdentityCredentialsWithNameRequestBuilder and sets the default values.
 func NewItemFederatedIdentityCredentialsWithNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, name *string)(*ItemFederatedIdentityCredentialsWithNameRequestBuilder) {
     m := &ItemFederatedIdentityCredentialsWithNameRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}')", pathParameters),
     }
     if name != nil {
         m.BaseRequestBuilder.PathParameters["name"] = *name

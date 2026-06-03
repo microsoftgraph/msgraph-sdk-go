@@ -47,7 +47,7 @@ type IdentitiesSettingsAutoAuditingConfigurationRequestBuilderPatchRequestConfig
 // NewIdentitiesSettingsAutoAuditingConfigurationRequestBuilderInternal instantiates a new IdentitiesSettingsAutoAuditingConfigurationRequestBuilder and sets the default values.
 func NewIdentitiesSettingsAutoAuditingConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesSettingsAutoAuditingConfigurationRequestBuilder) {
     m := &IdentitiesSettingsAutoAuditingConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/settings/autoAuditingConfiguration{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/settings/autoAuditingConfiguration", pathParameters),
     }
     return m
 }

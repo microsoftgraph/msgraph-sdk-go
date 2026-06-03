@@ -47,7 +47,7 @@ type LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRe
 // NewLearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal instantiates a new LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder and sets the default values.
 func NewLearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, externalcourseActivityId *string)(*LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) {
     m := &LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}')", pathParameters),
     }
     if externalcourseActivityId != nil {
         m.BaseRequestBuilder.PathParameters["externalcourseActivityId"] = *externalcourseActivityId

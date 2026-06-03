@@ -47,7 +47,7 @@ type ItemSynchronizationJobsItemBulkUploadRequestBuilderPatchRequestConfiguratio
 // NewItemSynchronizationJobsItemBulkUploadRequestBuilderInternal instantiates a new ItemSynchronizationJobsItemBulkUploadRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemBulkUploadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemBulkUploadRequestBuilder) {
     m := &ItemSynchronizationJobsItemBulkUploadRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/bulkUpload{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/bulkUpload", pathParameters),
     }
     return m
 }

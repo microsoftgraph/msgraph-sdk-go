@@ -47,7 +47,7 @@ type BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestB
 // NewBackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilderInternal instantiates a new BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilder and sets the default values.
 func NewBackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilder) {
     m := &BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy%2Did}", pathParameters),
     }
     return m
 }

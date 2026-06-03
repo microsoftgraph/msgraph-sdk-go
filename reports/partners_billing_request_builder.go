@@ -47,7 +47,7 @@ type PartnersBillingRequestBuilderPatchRequestConfiguration struct {
 // NewPartnersBillingRequestBuilderInternal instantiates a new PartnersBillingRequestBuilder and sets the default values.
 func NewPartnersBillingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnersBillingRequestBuilder) {
     m := &PartnersBillingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/partners/billing{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/partners/billing", pathParameters),
     }
     return m
 }

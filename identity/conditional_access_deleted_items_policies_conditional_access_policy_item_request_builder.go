@@ -47,7 +47,7 @@ type ConditionalAccessDeletedItemsPoliciesConditionalAccessPolicyItemRequestBuil
 // NewConditionalAccessDeletedItemsPoliciesConditionalAccessPolicyItemRequestBuilderInternal instantiates a new ConditionalAccessDeletedItemsPoliciesConditionalAccessPolicyItemRequestBuilder and sets the default values.
 func NewConditionalAccessDeletedItemsPoliciesConditionalAccessPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessDeletedItemsPoliciesConditionalAccessPolicyItemRequestBuilder) {
     m := &ConditionalAccessDeletedItemsPoliciesConditionalAccessPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/deletedItems/policies/{conditionalAccessPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/deletedItems/policies/{conditionalAccessPolicy%2Did}", pathParameters),
     }
     return m
 }

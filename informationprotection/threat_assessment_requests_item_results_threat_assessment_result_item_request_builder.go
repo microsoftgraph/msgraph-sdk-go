@@ -47,7 +47,7 @@ type ThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder
 // NewThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal instantiates a new ThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder and sets the default values.
 func NewThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
     m := &ThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest%2Did}/results/{threatAssessmentResult%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest%2Did}/results/{threatAssessmentResult%2Did}", pathParameters),
     }
     return m
 }

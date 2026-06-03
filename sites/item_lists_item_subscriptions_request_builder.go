@@ -64,7 +64,7 @@ func (m *ItemListsItemSubscriptionsRequestBuilder) BySubscriptionId(subscription
 // NewItemListsItemSubscriptionsRequestBuilderInternal instantiates a new ItemListsItemSubscriptionsRequestBuilder and sets the default values.
 func NewItemListsItemSubscriptionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemSubscriptionsRequestBuilder) {
     m := &ItemListsItemSubscriptionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/subscriptions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

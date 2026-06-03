@@ -40,7 +40,7 @@ type ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthentication
 // NewItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderInternal instantiates a new ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder and sets the default values.
 func NewItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) {
     m := &ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/platformCredentialMethods/{platformCredentialAuthenticationMethod%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

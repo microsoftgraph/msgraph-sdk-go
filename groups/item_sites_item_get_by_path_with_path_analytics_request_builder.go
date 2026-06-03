@@ -47,7 +47,7 @@ type ItemSitesItemGetByPathWithPathAnalyticsRequestBuilderPatchRequestConfigurat
 // NewItemSitesItemGetByPathWithPathAnalyticsRequestBuilderInternal instantiates a new ItemSitesItemGetByPathWithPathAnalyticsRequestBuilder and sets the default values.
 func NewItemSitesItemGetByPathWithPathAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemGetByPathWithPathAnalyticsRequestBuilder) {
     m := &ItemSitesItemGetByPathWithPathAnalyticsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/analytics{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/analytics", pathParameters),
     }
     return m
 }

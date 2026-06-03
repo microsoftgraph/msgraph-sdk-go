@@ -47,7 +47,7 @@ type ItemJoinedTeamsItemScheduleRequestBuilderPutRequestConfiguration struct {
 // NewItemJoinedTeamsItemScheduleRequestBuilderInternal instantiates a new ItemJoinedTeamsItemScheduleRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleRequestBuilder) {
     m := &ItemJoinedTeamsItemScheduleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule", pathParameters),
     }
     return m
 }

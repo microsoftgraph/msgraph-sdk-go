@@ -52,7 +52,7 @@ func (m *PartnersBillingUsageRequestBuilder) Billed()(*PartnersBillingUsageBille
 // NewPartnersBillingUsageRequestBuilderInternal instantiates a new PartnersBillingUsageRequestBuilder and sets the default values.
 func NewPartnersBillingUsageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnersBillingUsageRequestBuilder) {
     m := &PartnersBillingUsageRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/partners/billing/usage{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/partners/billing/usage", pathParameters),
     }
     return m
 }

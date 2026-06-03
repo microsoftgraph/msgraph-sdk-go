@@ -47,7 +47,7 @@ type BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderPatchRe
 // NewBackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderInternal instantiates a new BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder and sets the default values.
 func NewBackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder) {
     m := &BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteProtectionUnits/{siteProtectionUnit%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteProtectionUnits/{siteProtectionUnit%2Did}", pathParameters),
     }
     return m
 }

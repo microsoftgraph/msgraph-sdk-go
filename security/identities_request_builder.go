@@ -47,7 +47,7 @@ type IdentitiesRequestBuilderPatchRequestConfiguration struct {
 // NewIdentitiesRequestBuilderInternal instantiates a new IdentitiesRequestBuilder and sets the default values.
 func NewIdentitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesRequestBuilder) {
     m := &IdentitiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities", pathParameters),
     }
     return m
 }

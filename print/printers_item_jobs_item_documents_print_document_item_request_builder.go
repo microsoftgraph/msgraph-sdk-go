@@ -47,7 +47,7 @@ type PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilderPatchRequestCon
 // NewPrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilderInternal instantiates a new PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder and sets the default values.
 func NewPrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder) {
     m := &PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/documents/{printDocument%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/documents/{printDocument%2Did}", pathParameters),
     }
     return m
 }

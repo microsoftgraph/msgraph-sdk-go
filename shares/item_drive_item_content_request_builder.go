@@ -45,7 +45,7 @@ type ItemDriveItemContentRequestBuilderPutRequestConfiguration struct {
 // NewItemDriveItemContentRequestBuilderInternal instantiates a new ItemDriveItemContentRequestBuilder and sets the default values.
 func NewItemDriveItemContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDriveItemContentRequestBuilder) {
     m := &ItemDriveItemContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/driveItem/content{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/driveItem/content", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type ItemCloudClipboardRequestBuilderPatchRequestConfiguration struct {
 // NewItemCloudClipboardRequestBuilderInternal instantiates a new ItemCloudClipboardRequestBuilder and sets the default values.
 func NewItemCloudClipboardRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudClipboardRequestBuilder) {
     m := &ItemCloudClipboardRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudClipboard{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudClipboard", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type EntitlementManagementCatalogsItemResourceRolesAccessPackageResourceRoleItem
 // NewEntitlementManagementCatalogsItemResourceRolesAccessPackageResourceRoleItemRequestBuilderInternal instantiates a new EntitlementManagementCatalogsItemResourceRolesAccessPackageResourceRoleItemRequestBuilder and sets the default values.
 func NewEntitlementManagementCatalogsItemResourceRolesAccessPackageResourceRoleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementCatalogsItemResourceRolesAccessPackageResourceRoleItemRequestBuilder) {
     m := &EntitlementManagementCatalogsItemResourceRolesAccessPackageResourceRoleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resourceRoles/{accessPackageResourceRole%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resourceRoles/{accessPackageResourceRole%2Did}", pathParameters),
     }
     return m
 }

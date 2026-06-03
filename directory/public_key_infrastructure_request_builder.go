@@ -52,7 +52,7 @@ func (m *PublicKeyInfrastructureRequestBuilder) CertificateBasedAuthConfiguratio
 // NewPublicKeyInfrastructureRequestBuilderInternal instantiates a new PublicKeyInfrastructureRequestBuilder and sets the default values.
 func NewPublicKeyInfrastructureRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PublicKeyInfrastructureRequestBuilder) {
     m := &PublicKeyInfrastructureRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/publicKeyInfrastructure{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/publicKeyInfrastructure", pathParameters),
     }
     return m
 }

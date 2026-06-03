@@ -47,7 +47,7 @@ type BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtec
 // NewBackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilderInternal instantiates a new BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilder and sets the default values.
 func NewBackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilder) {
     m := &BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy%2Did}", pathParameters),
     }
     return m
 }

@@ -122,6 +122,16 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["subjectLifecycle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAccessPackageSubjectLifecycle)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubjectLifecycle(val.(*AccessPackageSubjectLifecycle))
+        }
+        return nil
+    }
     res["subjectType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessPackageSubjectType)
         if err != nil {
@@ -167,6 +177,18 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSubjectLifecycle gets the subjectLifecycle property value. The subjectLifecycle property
+// returns a *AccessPackageSubjectLifecycle when successful
+func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecycle) {
+    val, err := m.GetBackingStore().Get("subjectLifecycle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessPackageSubjectLifecycle)
     }
     return nil
 }
@@ -224,6 +246,13 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetSubjectLifecycle() != nil {
+        cast := (*m.GetSubjectLifecycle()).String()
+        err = writer.WriteStringValue("subjectLifecycle", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSubjectType() != nil {
         cast := (*m.GetSubjectType()).String()
         err = writer.WriteStringValue("subjectType", &cast)
@@ -275,6 +304,13 @@ func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
         panic(err)
     }
 }
+// SetSubjectLifecycle sets the subjectLifecycle property value. The subjectLifecycle property
+func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)() {
+    err := m.GetBackingStore().Set("subjectLifecycle", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSubjectType sets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
 func (m *AccessPackageSubject) SetSubjectType(value *AccessPackageSubjectType)() {
     err := m.GetBackingStore().Set("subjectType", value)
@@ -291,6 +327,7 @@ type AccessPackageSubjectable interface {
     GetObjectId()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
     GetPrincipalName()(*string)
+    GetSubjectLifecycle()(*AccessPackageSubjectLifecycle)
     GetSubjectType()(*AccessPackageSubjectType)
     SetConnectedOrganization(value ConnectedOrganizationable)()
     SetDisplayName(value *string)()
@@ -298,5 +335,6 @@ type AccessPackageSubjectable interface {
     SetObjectId(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetPrincipalName(value *string)()
+    SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)()
     SetSubjectType(value *AccessPackageSubjectType)()
 }

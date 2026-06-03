@@ -47,7 +47,7 @@ type FileStorageContainersItemRecycleBinRequestBuilderPatchRequestConfiguration 
 // NewFileStorageContainersItemRecycleBinRequestBuilderInternal instantiates a new FileStorageContainersItemRecycleBinRequestBuilder and sets the default values.
 func NewFileStorageContainersItemRecycleBinRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainersItemRecycleBinRequestBuilder) {
     m := &FileStorageContainersItemRecycleBinRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/recycleBin{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/recycleBin", pathParameters),
     }
     return m
 }

@@ -64,7 +64,7 @@ func (m *EntitlementManagementResourceRequestsItemCatalogResourceScopesItemResou
 // NewEntitlementManagementResourceRequestsItemCatalogResourceScopesItemResourceRolesRequestBuilderInternal instantiates a new EntitlementManagementResourceRequestsItemCatalogResourceScopesItemResourceRolesRequestBuilder and sets the default values.
 func NewEntitlementManagementResourceRequestsItemCatalogResourceScopesItemResourceRolesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourceRequestsItemCatalogResourceScopesItemResourceRolesRequestBuilder) {
     m := &EntitlementManagementResourceRequestsItemCatalogResourceScopesItemResourceRolesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest%2Did}/catalog/resourceScopes/{accessPackageResourceScope%2Did}/resource/roles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

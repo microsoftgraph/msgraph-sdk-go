@@ -47,7 +47,7 @@ type LabelsAuthoritiesAuthorityTemplateItemRequestBuilderPatchRequestConfigurati
 // NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal instantiates a new LabelsAuthoritiesAuthorityTemplateItemRequestBuilder and sets the default values.
 func NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) {
     m := &LabelsAuthoritiesAuthorityTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}", pathParameters),
     }
     return m
 }

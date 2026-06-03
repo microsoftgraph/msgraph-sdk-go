@@ -47,7 +47,7 @@ type IdentitiesSensorCandidateActivationConfigurationRequestBuilderPatchRequestC
 // NewIdentitiesSensorCandidateActivationConfigurationRequestBuilderInternal instantiates a new IdentitiesSensorCandidateActivationConfigurationRequestBuilder and sets the default values.
 func NewIdentitiesSensorCandidateActivationConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesSensorCandidateActivationConfigurationRequestBuilder) {
     m := &IdentitiesSensorCandidateActivationConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/sensorCandidateActivationConfiguration{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/sensorCandidateActivationConfiguration", pathParameters),
     }
     return m
 }

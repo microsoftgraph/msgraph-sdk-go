@@ -47,7 +47,7 @@ type SettingsQuotaRequestBuilderPatchRequestConfiguration struct {
 // NewSettingsQuotaRequestBuilderInternal instantiates a new SettingsQuotaRequestBuilder and sets the default values.
 func NewSettingsQuotaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsQuotaRequestBuilder) {
     m := &SettingsQuotaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/settings/quota{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/settings/quota", pathParameters),
     }
     return m
 }

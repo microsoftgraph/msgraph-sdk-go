@@ -40,7 +40,7 @@ type InvitedUserMailboxSettingsRequestBuilderPatchRequestConfiguration struct {
 // NewInvitedUserMailboxSettingsRequestBuilderInternal instantiates a new InvitedUserMailboxSettingsRequestBuilder and sets the default values.
 func NewInvitedUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InvitedUserMailboxSettingsRequestBuilder) {
     m := &InvitedUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/invitations/invitedUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

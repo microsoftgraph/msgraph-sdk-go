@@ -47,7 +47,7 @@ type QnasQnaItemRequestBuilderPatchRequestConfiguration struct {
 // NewQnasQnaItemRequestBuilderInternal instantiates a new QnasQnaItemRequestBuilder and sets the default values.
 func NewQnasQnaItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*QnasQnaItemRequestBuilder) {
     m := &QnasQnaItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/qnas/{qna%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/qnas/{qna%2Did}", pathParameters),
     }
     return m
 }

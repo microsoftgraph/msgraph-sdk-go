@@ -47,7 +47,7 @@ type Microsoft365AppsInstallationOptionsRequestBuilderPatchRequestConfiguration 
 // NewMicrosoft365AppsInstallationOptionsRequestBuilderInternal instantiates a new Microsoft365AppsInstallationOptionsRequestBuilder and sets the default values.
 func NewMicrosoft365AppsInstallationOptionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Microsoft365AppsInstallationOptionsRequestBuilder) {
     m := &Microsoft365AppsInstallationOptionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/microsoft365Apps/installationOptions{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/microsoft365Apps/installationOptions", pathParameters),
     }
     return m
 }

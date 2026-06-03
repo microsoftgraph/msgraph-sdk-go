@@ -64,7 +64,7 @@ func (m *TermsOfUseAgreementsRequestBuilder) ByAgreementId(agreementId string)(*
 // NewTermsOfUseAgreementsRequestBuilderInternal instantiates a new TermsOfUseAgreementsRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsRequestBuilder) {
     m := &TermsOfUseAgreementsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/termsOfUse/agreements{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

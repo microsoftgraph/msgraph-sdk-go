@@ -47,7 +47,7 @@ type ItemItemsItemWorkbookTablesItemHeaderRowRangeFormatRequestBuilderPatchReque
 // NewItemItemsItemWorkbookTablesItemHeaderRowRangeFormatRequestBuilderInternal instantiates a new ItemItemsItemWorkbookTablesItemHeaderRowRangeFormatRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemHeaderRowRangeFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemHeaderRowRangeFormatRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemHeaderRowRangeFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/headerRowRange()/format{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/headerRowRange()/format", pathParameters),
     }
     return m
 }

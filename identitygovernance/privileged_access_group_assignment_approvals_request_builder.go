@@ -64,7 +64,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsRequestBuilder) ByApprovalId(ap
 // NewPrivilegedAccessGroupAssignmentApprovalsRequestBuilderInternal instantiates a new PrivilegedAccessGroupAssignmentApprovalsRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupAssignmentApprovalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupAssignmentApprovalsRequestBuilder) {
     m := &PrivilegedAccessGroupAssignmentApprovalsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/assignmentApprovals{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

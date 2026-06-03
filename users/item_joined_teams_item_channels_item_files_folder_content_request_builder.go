@@ -45,7 +45,7 @@ type ItemJoinedTeamsItemChannelsItemFilesFolderContentRequestBuilderPutRequestCo
 // NewItemJoinedTeamsItemChannelsItemFilesFolderContentRequestBuilderInternal instantiates a new ItemJoinedTeamsItemChannelsItemFilesFolderContentRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemChannelsItemFilesFolderContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemChannelsItemFilesFolderContentRequestBuilder) {
     m := &ItemJoinedTeamsItemChannelsItemFilesFolderContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/filesFolder/content{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/filesFolder/content", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSe
 // NewBackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilderInternal instantiates a new BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilder and sets the default values.
 func NewBackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilder) {
     m := &BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession%2Did}", pathParameters),
     }
     return m
 }

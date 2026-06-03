@@ -38,7 +38,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetAdditionalData()(map[str
     }
     return val.(map[string]any)
 }
-// GetAttestation gets the attestation property value. The attestation property
+// GetAttestation gets the attestation property value. Specifies the relying party's preference for attestation conveyance.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetAttestation()(*string) {
     val, err := m.GetBackingStore().Get("attestation")
@@ -50,7 +50,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetAttestation()(*string) {
     }
     return nil
 }
-// GetAuthenticatorSelection gets the authenticatorSelection property value. The authenticatorSelection property
+// GetAuthenticatorSelection gets the authenticatorSelection property value. Criteria for selecting an appropriate authenticator for credential creation.
 // returns a WebauthnAuthenticatorSelectionCriteriaable when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetAuthenticatorSelection()(WebauthnAuthenticatorSelectionCriteriaable) {
     val, err := m.GetBackingStore().Get("authenticatorSelection")
@@ -67,7 +67,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetAuthenticatorSelection()
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetChallenge gets the challenge property value. The challenge property
+// GetChallenge gets the challenge property value. The challenge that the authenticator must sign to prove possession of the credential. This value is Base64URL-encoded without padding.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetChallenge()(*string) {
     val, err := m.GetBackingStore().Get("challenge")
@@ -79,7 +79,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetChallenge()(*string) {
     }
     return nil
 }
-// GetExcludeCredentials gets the excludeCredentials property value. The excludeCredentials property
+// GetExcludeCredentials gets the excludeCredentials property value. A list of credentials that are already registered for this user, which should be excluded from selection.
 // returns a []WebauthnPublicKeyCredentialDescriptorable when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetExcludeCredentials()([]WebauthnPublicKeyCredentialDescriptorable) {
     val, err := m.GetBackingStore().Get("excludeCredentials")
@@ -91,7 +91,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetExcludeCredentials()([]W
     }
     return nil
 }
-// GetExtensions gets the extensions property value. The extensions property
+// GetExtensions gets the extensions property value. Inputs for requested WebAuthn extensions.
 // returns a WebauthnAuthenticationExtensionsClientInputsable when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetExtensions()(WebauthnAuthenticationExtensionsClientInputsable) {
     val, err := m.GetBackingStore().Get("extensions")
@@ -233,7 +233,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPubKeyCredParams gets the pubKeyCredParams property value. The pubKeyCredParams property
+// GetPubKeyCredParams gets the pubKeyCredParams property value. The cryptographic parameters that the relying party supports, in order of preference.
 // returns a []WebauthnPublicKeyCredentialParametersable when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetPubKeyCredParams()([]WebauthnPublicKeyCredentialParametersable) {
     val, err := m.GetBackingStore().Get("pubKeyCredParams")
@@ -245,7 +245,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetPubKeyCredParams()([]Web
     }
     return nil
 }
-// GetRp gets the rp property value. The rp property
+// GetRp gets the rp property value. Information about the relying party (RP) requesting credential creation.
 // returns a WebauthnPublicKeyCredentialRpEntityable when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetRp()(WebauthnPublicKeyCredentialRpEntityable) {
     val, err := m.GetBackingStore().Get("rp")
@@ -257,7 +257,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetRp()(WebauthnPublicKeyCr
     }
     return nil
 }
-// GetTimeout gets the timeout property value. The timeout property
+// GetTimeout gets the timeout property value. The time, in milliseconds, that the caller is willing to wait for the operation to complete.
 // returns a *int32 when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("timeout")
@@ -269,7 +269,7 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) GetTimeout()(*int32) {
     }
     return nil
 }
-// GetUser gets the user property value. The user property
+// GetUser gets the user property value. Information about the user account for which the credential is being created.
 // returns a WebauthnPublicKeyCredentialUserEntityable when successful
 func (m *WebauthnPublicKeyCredentialCreationOptions) GetUser()(WebauthnPublicKeyCredentialUserEntityable) {
     val, err := m.GetBackingStore().Get("user")
@@ -370,14 +370,14 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) SetAdditionalData(value map
         panic(err)
     }
 }
-// SetAttestation sets the attestation property value. The attestation property
+// SetAttestation sets the attestation property value. Specifies the relying party's preference for attestation conveyance.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetAttestation(value *string)() {
     err := m.GetBackingStore().Set("attestation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticatorSelection sets the authenticatorSelection property value. The authenticatorSelection property
+// SetAuthenticatorSelection sets the authenticatorSelection property value. Criteria for selecting an appropriate authenticator for credential creation.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetAuthenticatorSelection(value WebauthnAuthenticatorSelectionCriteriaable)() {
     err := m.GetBackingStore().Set("authenticatorSelection", value)
     if err != nil {
@@ -388,21 +388,21 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) SetAuthenticatorSelection(v
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetChallenge sets the challenge property value. The challenge property
+// SetChallenge sets the challenge property value. The challenge that the authenticator must sign to prove possession of the credential. This value is Base64URL-encoded without padding.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetChallenge(value *string)() {
     err := m.GetBackingStore().Set("challenge", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludeCredentials sets the excludeCredentials property value. The excludeCredentials property
+// SetExcludeCredentials sets the excludeCredentials property value. A list of credentials that are already registered for this user, which should be excluded from selection.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetExcludeCredentials(value []WebauthnPublicKeyCredentialDescriptorable)() {
     err := m.GetBackingStore().Set("excludeCredentials", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensions sets the extensions property value. The extensions property
+// SetExtensions sets the extensions property value. Inputs for requested WebAuthn extensions.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetExtensions(value WebauthnAuthenticationExtensionsClientInputsable)() {
     err := m.GetBackingStore().Set("extensions", value)
     if err != nil {
@@ -416,28 +416,28 @@ func (m *WebauthnPublicKeyCredentialCreationOptions) SetOdataType(value *string)
         panic(err)
     }
 }
-// SetPubKeyCredParams sets the pubKeyCredParams property value. The pubKeyCredParams property
+// SetPubKeyCredParams sets the pubKeyCredParams property value. The cryptographic parameters that the relying party supports, in order of preference.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetPubKeyCredParams(value []WebauthnPublicKeyCredentialParametersable)() {
     err := m.GetBackingStore().Set("pubKeyCredParams", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRp sets the rp property value. The rp property
+// SetRp sets the rp property value. Information about the relying party (RP) requesting credential creation.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetRp(value WebauthnPublicKeyCredentialRpEntityable)() {
     err := m.GetBackingStore().Set("rp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTimeout sets the timeout property value. The timeout property
+// SetTimeout sets the timeout property value. The time, in milliseconds, that the caller is willing to wait for the operation to complete.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetTimeout(value *int32)() {
     err := m.GetBackingStore().Set("timeout", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUser sets the user property value. The user property
+// SetUser sets the user property value. Information about the user account for which the credential is being created.
 func (m *WebauthnPublicKeyCredentialCreationOptions) SetUser(value WebauthnPublicKeyCredentialUserEntityable)() {
     err := m.GetBackingStore().Set("user", value)
     if err != nil {

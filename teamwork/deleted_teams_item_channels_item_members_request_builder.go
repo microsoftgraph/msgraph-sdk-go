@@ -69,7 +69,7 @@ func (m *DeletedTeamsItemChannelsItemMembersRequestBuilder) ByConversationMember
 // NewDeletedTeamsItemChannelsItemMembersRequestBuilderInternal instantiates a new DeletedTeamsItemChannelsItemMembersRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsItemMembersRequestBuilder) {
     m := &DeletedTeamsItemChannelsItemMembersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/members{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

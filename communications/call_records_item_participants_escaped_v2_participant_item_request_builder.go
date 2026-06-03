@@ -47,7 +47,7 @@ type CallRecordsItemParticipants_v2ParticipantItemRequestBuilderPatchRequestConf
 // NewCallRecordsItemParticipants_v2ParticipantItemRequestBuilderInternal instantiates a new CallRecordsItemParticipants_v2ParticipantItemRequestBuilder and sets the default values.
 func NewCallRecordsItemParticipants_v2ParticipantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemParticipants_v2ParticipantItemRequestBuilder) {
     m := &CallRecordsItemParticipants_v2ParticipantItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2/{participant%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2/{participant%2Did}", pathParameters),
     }
     return m
 }

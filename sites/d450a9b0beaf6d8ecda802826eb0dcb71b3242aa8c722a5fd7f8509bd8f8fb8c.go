@@ -64,7 +64,7 @@ func (m *ItemTermStoreSetsItemParentGroupSetsItemChildrenItemChildrenItemRelatio
 // NewItemTermStoreSetsItemParentGroupSetsItemChildrenItemChildrenItemRelationsRequestBuilderInternal instantiates a new ItemTermStoreSetsItemParentGroupSetsItemChildrenItemChildrenItemRelationsRequestBuilder and sets the default values.
 func NewItemTermStoreSetsItemParentGroupSetsItemChildrenItemChildrenItemRelationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoreSetsItemParentGroupSetsItemChildrenItemChildrenItemRelationsRequestBuilder) {
     m := &ItemTermStoreSetsItemParentGroupSetsItemChildrenItemChildrenItemRelationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/children/{term%2Did}/children/{term%2Did1}/relations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

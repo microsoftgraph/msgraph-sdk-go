@@ -47,7 +47,7 @@ type ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderPatchRequestConfig
 // NewItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderInternal instantiates a new ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder and sets the default values.
 func NewItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) {
     m := &ItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/sections/{onenoteSection%2Did}/pages/{onenotePage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/sections/{onenoteSection%2Did}/pages/{onenotePage%2Did}", pathParameters),
     }
     return m
 }

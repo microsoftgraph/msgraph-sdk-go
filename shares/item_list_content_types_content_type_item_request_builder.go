@@ -77,7 +77,7 @@ func (m *ItemListContentTypesContentTypeItemRequestBuilder) Columns()(*ItemListC
 // NewItemListContentTypesContentTypeItemRequestBuilderInternal instantiates a new ItemListContentTypesContentTypeItemRequestBuilder and sets the default values.
 func NewItemListContentTypesContentTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListContentTypesContentTypeItemRequestBuilder) {
     m := &ItemListContentTypesContentTypeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}", pathParameters),
     }
     return m
 }

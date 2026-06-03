@@ -64,7 +64,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsRequestBuilder) ByOneDriv
 // NewBackupRestoreOneDriveForBusinessBrowseSessionsRequestBuilderInternal instantiates a new BackupRestoreOneDriveForBusinessBrowseSessionsRequestBuilder and sets the default values.
 func NewBackupRestoreOneDriveForBusinessBrowseSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreOneDriveForBusinessBrowseSessionsRequestBuilder) {
     m := &BackupRestoreOneDriveForBusinessBrowseSessionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessBrowseSessions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

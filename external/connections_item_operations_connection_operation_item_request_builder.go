@@ -47,7 +47,7 @@ type ConnectionsItemOperationsConnectionOperationItemRequestBuilderPatchRequestC
 // NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal instantiates a new ConnectionsItemOperationsConnectionOperationItemRequestBuilder and sets the default values.
 func NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemOperationsConnectionOperationItemRequestBuilder) {
     m := &ConnectionsItemOperationsConnectionOperationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/operations/{connectionOperation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/operations/{connectionOperation%2Did}", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationRequestBuilder) ApprovedClientApp
 // NewItemRemoteDesktopSecurityConfigurationRequestBuilderInternal instantiates a new ItemRemoteDesktopSecurityConfigurationRequestBuilder and sets the default values.
 func NewItemRemoteDesktopSecurityConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRemoteDesktopSecurityConfigurationRequestBuilder) {
     m := &ItemRemoteDesktopSecurityConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/remoteDesktopSecurityConfiguration{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/remoteDesktopSecurityConfiguration", pathParameters),
     }
     return m
 }

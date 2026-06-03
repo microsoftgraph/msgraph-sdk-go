@@ -40,7 +40,7 @@ type ItemPagesItemCreatedByUserMailboxSettingsRequestBuilderPatchRequestConfigur
 // NewItemPagesItemCreatedByUserMailboxSettingsRequestBuilderInternal instantiates a new ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder and sets the default values.
 func NewItemPagesItemCreatedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder) {
     m := &ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/createdByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

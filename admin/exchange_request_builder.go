@@ -47,7 +47,7 @@ type ExchangeRequestBuilderPatchRequestConfiguration struct {
 // NewExchangeRequestBuilderInternal instantiates a new ExchangeRequestBuilder and sets the default values.
 func NewExchangeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeRequestBuilder) {
     m := &ExchangeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/exchange{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/exchange", pathParameters),
     }
     return m
 }

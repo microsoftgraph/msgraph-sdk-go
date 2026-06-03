@@ -47,7 +47,7 @@ type ItemSitesItemPagesItemGraphSitePageCanvasLayoutVerticalSectionRequestBuilde
 // NewItemSitesItemPagesItemGraphSitePageCanvasLayoutVerticalSectionRequestBuilderInternal instantiates a new ItemSitesItemPagesItemGraphSitePageCanvasLayoutVerticalSectionRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemGraphSitePageCanvasLayoutVerticalSectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemGraphSitePageCanvasLayoutVerticalSectionRequestBuilder) {
     m := &ItemSitesItemPagesItemGraphSitePageCanvasLayoutVerticalSectionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/verticalSection{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/verticalSection", pathParameters),
     }
     return m
 }

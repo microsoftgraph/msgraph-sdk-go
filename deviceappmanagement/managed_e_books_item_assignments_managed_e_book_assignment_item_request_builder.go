@@ -47,7 +47,7 @@ type ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRe
 // NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal instantiates a new ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder and sets the default values.
 func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     m := &ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}", pathParameters),
     }
     return m
 }

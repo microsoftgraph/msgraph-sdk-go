@@ -47,7 +47,7 @@ type VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderPatchRequestCon
 // NewVirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderInternal instantiates a new VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) {
     m := &VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}", pathParameters),
     }
     return m
 }

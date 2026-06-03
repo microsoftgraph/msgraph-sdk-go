@@ -47,7 +47,7 @@ type VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderP
 // NewVirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderInternal instantiates a new VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder) {
     m := &VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/presenters/{virtualEventPresenter%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/presenters/{virtualEventPresenter%2Did}", pathParameters),
     }
     return m
 }

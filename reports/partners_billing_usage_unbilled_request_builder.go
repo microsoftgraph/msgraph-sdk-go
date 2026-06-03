@@ -47,7 +47,7 @@ type PartnersBillingUsageUnbilledRequestBuilderPatchRequestConfiguration struct 
 // NewPartnersBillingUsageUnbilledRequestBuilderInternal instantiates a new PartnersBillingUsageUnbilledRequestBuilder and sets the default values.
 func NewPartnersBillingUsageUnbilledRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnersBillingUsageUnbilledRequestBuilder) {
     m := &PartnersBillingUsageUnbilledRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/partners/billing/usage/unbilled{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/partners/billing/usage/unbilled", pathParameters),
     }
     return m
 }

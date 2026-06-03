@@ -47,7 +47,7 @@ type OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderPatchRequestConf
 // NewOnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderInternal instantiates a new OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder and sets the default values.
 func NewOnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) {
     m := &OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/recordings/{callRecording%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/recordings/{callRecording%2Did}", pathParameters),
     }
     return m
 }

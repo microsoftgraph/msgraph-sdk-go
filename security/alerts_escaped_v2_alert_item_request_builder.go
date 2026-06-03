@@ -52,7 +52,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) Comments()(*Alerts_v2ItemCommentsRequ
 // NewAlerts_v2AlertItemRequestBuilderInternal instantiates a new Alerts_v2AlertItemRequestBuilder and sets the default values.
 func NewAlerts_v2AlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2AlertItemRequestBuilder) {
     m := &Alerts_v2AlertItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2/{alert%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2/{alert%2Did}", pathParameters),
     }
     return m
 }

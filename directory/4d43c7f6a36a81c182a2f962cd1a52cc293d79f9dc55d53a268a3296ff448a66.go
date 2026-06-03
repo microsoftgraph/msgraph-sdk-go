@@ -52,7 +52,7 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBas
 // NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilderInternal instantiates a new PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilder and sets the default values.
 func NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilder) {
     m := &PublicKeyInfrastructureCertificateBasedAuthConfigurationsCertificateBasedAuthPkiItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki%2Did}", pathParameters),
     }
     return m
 }

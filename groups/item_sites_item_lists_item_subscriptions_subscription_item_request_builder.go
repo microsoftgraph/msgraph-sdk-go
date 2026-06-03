@@ -47,7 +47,7 @@ type ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchReque
 // NewItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal instantiates a new ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
     m := &ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}", pathParameters),
     }
     return m
 }

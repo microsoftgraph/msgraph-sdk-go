@@ -47,7 +47,7 @@ type AdministrativeUnitsItemExtensionsExtensionItemRequestBuilderPatchRequestCon
 // NewAdministrativeUnitsItemExtensionsExtensionItemRequestBuilderInternal instantiates a new AdministrativeUnitsItemExtensionsExtensionItemRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemExtensionsExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemExtensionsExtensionItemRequestBuilder) {
     m := &AdministrativeUnitsItemExtensionsExtensionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/extensions/{extension%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/extensions/{extension%2Did}", pathParameters),
     }
     return m
 }

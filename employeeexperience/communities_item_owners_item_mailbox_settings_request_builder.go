@@ -40,7 +40,7 @@ type CommunitiesItemOwnersItemMailboxSettingsRequestBuilderPatchRequestConfigura
 // NewCommunitiesItemOwnersItemMailboxSettingsRequestBuilderInternal instantiates a new CommunitiesItemOwnersItemMailboxSettingsRequestBuilder and sets the default values.
 func NewCommunitiesItemOwnersItemMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommunitiesItemOwnersItemMailboxSettingsRequestBuilder) {
     m := &CommunitiesItemOwnersItemMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/communities/{community%2Did}/owners/{user%2Did}/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

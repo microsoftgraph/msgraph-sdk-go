@@ -64,7 +64,7 @@ func (m *PrintersItemJobsItemTasksRequestBuilder) ByPrintTaskId(printTaskId stri
 // NewPrintersItemJobsItemTasksRequestBuilderInternal instantiates a new PrintersItemJobsItemTasksRequestBuilder and sets the default values.
 func NewPrintersItemJobsItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemJobsItemTasksRequestBuilder) {
     m := &PrintersItemJobsItemTasksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/tasks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

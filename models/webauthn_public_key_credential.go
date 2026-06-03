@@ -43,7 +43,7 @@ func (m *WebauthnPublicKeyCredential) GetAdditionalData()(map[string]any) {
 func (m *WebauthnPublicKeyCredential) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientExtensionResults gets the clientExtensionResults property value. The clientExtensionResults property
+// GetClientExtensionResults gets the clientExtensionResults property value. The output of the WebAuthn extension processing.
 // returns a WebauthnAuthenticationExtensionsClientOutputsable when successful
 func (m *WebauthnPublicKeyCredential) GetClientExtensionResults()(WebauthnAuthenticationExtensionsClientOutputsable) {
     val, err := m.GetBackingStore().Get("clientExtensionResults")
@@ -101,7 +101,7 @@ func (m *WebauthnPublicKeyCredential) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredential) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -125,7 +125,7 @@ func (m *WebauthnPublicKeyCredential) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResponse gets the response property value. The response property
+// GetResponse gets the response property value. The response from the WebAuthn Authenticator after generating an attestation.
 // returns a WebauthnAuthenticatorAttestationResponseable when successful
 func (m *WebauthnPublicKeyCredential) GetResponse()(WebauthnAuthenticatorAttestationResponseable) {
     val, err := m.GetBackingStore().Get("response")
@@ -182,14 +182,14 @@ func (m *WebauthnPublicKeyCredential) SetAdditionalData(value map[string]any)() 
 func (m *WebauthnPublicKeyCredential) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientExtensionResults sets the clientExtensionResults property value. The clientExtensionResults property
+// SetClientExtensionResults sets the clientExtensionResults property value. The output of the WebAuthn extension processing.
 func (m *WebauthnPublicKeyCredential) SetClientExtensionResults(value WebauthnAuthenticationExtensionsClientOutputsable)() {
     err := m.GetBackingStore().Set("clientExtensionResults", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.
 func (m *WebauthnPublicKeyCredential) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *WebauthnPublicKeyCredential) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResponse sets the response property value. The response property
+// SetResponse sets the response property value. The response from the WebAuthn Authenticator after generating an attestation.
 func (m *WebauthnPublicKeyCredential) SetResponse(value WebauthnAuthenticatorAttestationResponseable)() {
     err := m.GetBackingStore().Set("response", value)
     if err != nil {

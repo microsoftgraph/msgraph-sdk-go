@@ -52,7 +52,7 @@ type ItemGetByPathWithPathListsRequestBuilderPostRequestConfiguration struct {
 // NewItemGetByPathWithPathListsRequestBuilderInternal instantiates a new ItemGetByPathWithPathListsRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathListsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathListsRequestBuilder) {
     m := &ItemGetByPathWithPathListsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/lists{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

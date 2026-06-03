@@ -57,7 +57,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Categories()
 // NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal instantiates a new UsersItemAssignmentsEducationAssignmentItemRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsEducationAssignmentItemRequestBuilder) {
     m := &UsersItemAssignmentsEducationAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}", pathParameters),
     }
     return m
 }

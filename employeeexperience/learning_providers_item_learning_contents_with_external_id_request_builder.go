@@ -47,7 +47,7 @@ type LearningProvidersItemLearningContentsWithExternalIdRequestBuilderPatchReque
 // NewLearningProvidersItemLearningContentsWithExternalIdRequestBuilderInternal instantiates a new LearningProvidersItemLearningContentsWithExternalIdRequestBuilder and sets the default values.
 func NewLearningProvidersItemLearningContentsWithExternalIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, externalId *string)(*LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) {
     m := &LearningProvidersItemLearningContentsWithExternalIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}')", pathParameters),
     }
     if externalId != nil {
         m.BaseRequestBuilder.PathParameters["externalId"] = *externalId

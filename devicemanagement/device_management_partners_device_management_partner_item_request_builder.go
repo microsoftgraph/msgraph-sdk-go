@@ -47,7 +47,7 @@ type DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderPatchReque
 // NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal instantiates a new DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder and sets the default values.
 func NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) {
     m := &DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceManagementPartners/{deviceManagementPartner%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceManagementPartners/{deviceManagementPartner%2Did}", pathParameters),
     }
     return m
 }

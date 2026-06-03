@@ -47,7 +47,7 @@ type EntitlementManagementResourceEnvironmentsItemResourcesAccessPackageResource
 // NewEntitlementManagementResourceEnvironmentsItemResourcesAccessPackageResourceItemRequestBuilderInternal instantiates a new EntitlementManagementResourceEnvironmentsItemResourcesAccessPackageResourceItemRequestBuilder and sets the default values.
 func NewEntitlementManagementResourceEnvironmentsItemResourcesAccessPackageResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourceEnvironmentsItemResourcesAccessPackageResourceItemRequestBuilder) {
     m := &EntitlementManagementResourceEnvironmentsItemResourcesAccessPackageResourceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment%2Did}/resources/{accessPackageResource%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment%2Did}/resources/{accessPackageResource%2Did}", pathParameters),
     }
     return m
 }

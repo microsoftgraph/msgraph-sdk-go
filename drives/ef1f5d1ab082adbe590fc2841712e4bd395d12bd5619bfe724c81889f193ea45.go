@@ -52,7 +52,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMajorGridlin
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMajorGridlinesFormatLineRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMajorGridlinesFormatLineRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMajorGridlinesFormatLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMajorGridlinesFormatLineRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMajorGridlinesFormatLineRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/seriesAxis/majorGridlines/format/line{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/seriesAxis/majorGridlines/format/line", pathParameters),
     }
     return m
 }

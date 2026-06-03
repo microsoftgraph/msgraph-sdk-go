@@ -47,7 +47,7 @@ type CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderPut
 // NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderInternal instantiates a new CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder and sets the default values.
 func NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) {
     m := &CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/identitySynchronization{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/identitySynchronization", pathParameters),
     }
     return m
 }

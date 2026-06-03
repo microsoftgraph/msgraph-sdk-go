@@ -47,7 +47,7 @@ type ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderPatchReq
 // NewItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderInternal instantiates a new ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemColumnsItemRangeFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns/{workbookTableColumn%2Did}/range()/format{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns/{workbookTableColumn%2Did}/range()/format", pathParameters),
     }
     return m
 }

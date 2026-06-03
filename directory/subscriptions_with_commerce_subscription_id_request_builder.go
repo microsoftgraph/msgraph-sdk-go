@@ -47,7 +47,7 @@ type SubscriptionsWithCommerceSubscriptionIdRequestBuilderPatchRequestConfigurat
 // NewSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal instantiates a new SubscriptionsWithCommerceSubscriptionIdRequestBuilder and sets the default values.
 func NewSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, commerceSubscriptionId *string)(*SubscriptionsWithCommerceSubscriptionIdRequestBuilder) {
     m := &SubscriptionsWithCommerceSubscriptionIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')", pathParameters),
     }
     if commerceSubscriptionId != nil {
         m.BaseRequestBuilder.PathParameters["commerceSubscriptionId"] = *commerceSubscriptionId

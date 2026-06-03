@@ -47,7 +47,7 @@ type ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderPatchRequestCon
 // NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal instantiates a new ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder and sets the default values.
 func NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
     m := &ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/masterCategories/{outlookCategory%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/masterCategories/{outlookCategory%2Did}", pathParameters),
     }
     return m
 }

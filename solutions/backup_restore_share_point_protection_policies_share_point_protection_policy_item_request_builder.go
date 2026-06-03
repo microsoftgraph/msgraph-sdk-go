@@ -47,7 +47,7 @@ type BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequ
 // NewBackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilderInternal instantiates a new BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilder and sets the default values.
 func NewBackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilder) {
     m := &BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy%2Did}", pathParameters),
     }
     return m
 }

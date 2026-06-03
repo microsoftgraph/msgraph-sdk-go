@@ -47,7 +47,7 @@ type ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderPatchReq
 // NewItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderInternal instantiates a new ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilder and sets the default values.
 func NewItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilder) {
     m := &ItemEmployeeExperienceAssignedRolesEngagementRoleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/assignedRoles/{engagementRole%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/assignedRoles/{engagementRole%2Did}", pathParameters),
     }
     return m
 }

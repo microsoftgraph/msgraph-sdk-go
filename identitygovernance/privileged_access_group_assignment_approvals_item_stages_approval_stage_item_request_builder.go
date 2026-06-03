@@ -47,7 +47,7 @@ type PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestB
 // NewPrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderInternal instantiates a new PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) {
     m := &PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/assignmentApprovals/{approval%2Did}/stages/{approvalStage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/assignmentApprovals/{approval%2Did}/stages/{approvalStage%2Did}", pathParameters),
     }
     return m
 }

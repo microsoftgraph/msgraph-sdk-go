@@ -43,7 +43,7 @@ func (m *EmployeeExperienceRequestBuilder) Communities()(*CommunitiesRequestBuil
 // NewEmployeeExperienceRequestBuilderInternal instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
 func NewEmployeeExperienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmployeeExperienceRequestBuilder) {
     m := &EmployeeExperienceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

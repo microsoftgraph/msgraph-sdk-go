@@ -47,7 +47,7 @@ type RiskPreventionRequestBuilderPatchRequestConfiguration struct {
 // NewRiskPreventionRequestBuilderInternal instantiates a new RiskPreventionRequestBuilder and sets the default values.
 func NewRiskPreventionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskPreventionRequestBuilder) {
     m := &RiskPreventionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/riskPrevention{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/riskPrevention", pathParameters),
     }
     return m
 }

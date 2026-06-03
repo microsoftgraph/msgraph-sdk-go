@@ -47,7 +47,7 @@ type ItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderPatchRe
 // NewItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderInternal instantiates a new ItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilder and sets the default values.
 func NewItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilder) {
     m := &ItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}", pathParameters),
     }
     return m
 }

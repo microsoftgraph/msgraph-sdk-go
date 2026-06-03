@@ -95,7 +95,7 @@ func (m *WebauthnPublicKeyCredentialDescriptor) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The credential ID of the credential being described. This value is Base64URL-encoded without padding.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialDescriptor) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -119,7 +119,7 @@ func (m *WebauthnPublicKeyCredentialDescriptor) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTransports gets the transports property value. The transports property
+// GetTransports gets the transports property value. A hint about the types of transport that the authenticator supports. Possible values include: usb, nfc, ble, internal.
 // returns a []string when successful
 func (m *WebauthnPublicKeyCredentialDescriptor) GetTransports()([]string) {
     val, err := m.GetBackingStore().Get("transports")
@@ -131,7 +131,7 @@ func (m *WebauthnPublicKeyCredentialDescriptor) GetTransports()([]string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of credential. Currently, the only supported value is public-key.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialDescriptor) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -188,7 +188,7 @@ func (m *WebauthnPublicKeyCredentialDescriptor) SetAdditionalData(value map[stri
 func (m *WebauthnPublicKeyCredentialDescriptor) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The credential ID of the credential being described. This value is Base64URL-encoded without padding.
 func (m *WebauthnPublicKeyCredentialDescriptor) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
@@ -202,14 +202,14 @@ func (m *WebauthnPublicKeyCredentialDescriptor) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTransports sets the transports property value. The transports property
+// SetTransports sets the transports property value. A hint about the types of transport that the authenticator supports. Possible values include: usb, nfc, ble, internal.
 func (m *WebauthnPublicKeyCredentialDescriptor) SetTransports(value []string)() {
     err := m.GetBackingStore().Set("transports", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of credential. Currently, the only supported value is public-key.
 func (m *WebauthnPublicKeyCredentialDescriptor) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

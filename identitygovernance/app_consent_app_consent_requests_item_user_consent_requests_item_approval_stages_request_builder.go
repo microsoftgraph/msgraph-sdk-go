@@ -64,7 +64,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRe
 // NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilderInternal instantiates a new AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilder and sets the default values.
 func NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilder) {
     m := &AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/stages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

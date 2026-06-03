@@ -64,7 +64,7 @@ func (m *B2xUserFlowsItemLanguagesRequestBuilder) ByUserFlowLanguageConfiguratio
 // NewB2xUserFlowsItemLanguagesRequestBuilderInternal instantiates a new B2xUserFlowsItemLanguagesRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemLanguagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemLanguagesRequestBuilder) {
     m := &B2xUserFlowsItemLanguagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

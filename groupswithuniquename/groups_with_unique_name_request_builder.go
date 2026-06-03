@@ -47,7 +47,7 @@ type GroupsWithUniqueNameRequestBuilderPatchRequestConfiguration struct {
 // NewGroupsWithUniqueNameRequestBuilderInternal instantiates a new GroupsWithUniqueNameRequestBuilder and sets the default values.
 func NewGroupsWithUniqueNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, uniqueName *string)(*GroupsWithUniqueNameRequestBuilder) {
     m := &GroupsWithUniqueNameRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}')", pathParameters),
     }
     if uniqueName != nil {
         m.BaseRequestBuilder.PathParameters["uniqueName"] = *uniqueName

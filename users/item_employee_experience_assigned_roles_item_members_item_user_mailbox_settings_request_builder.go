@@ -40,7 +40,7 @@ type ItemEmployeeExperienceAssignedRolesItemMembersItemUserMailboxSettingsReques
 // NewItemEmployeeExperienceAssignedRolesItemMembersItemUserMailboxSettingsRequestBuilderInternal instantiates a new ItemEmployeeExperienceAssignedRolesItemMembersItemUserMailboxSettingsRequestBuilder and sets the default values.
 func NewItemEmployeeExperienceAssignedRolesItemMembersItemUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEmployeeExperienceAssignedRolesItemMembersItemUserMailboxSettingsRequestBuilder) {
     m := &ItemEmployeeExperienceAssignedRolesItemMembersItemUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/assignedRoles/{engagementRole%2Did}/members/{engagementRoleMember%2Did}/user/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ChildHost()(*Thr
 // NewThreatIntelligenceHostPairsHostPairItemRequestBuilderInternal instantiates a new ThreatIntelligenceHostPairsHostPairItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostPairsHostPairItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostPairsHostPairItemRequestBuilder) {
     m := &ThreatIntelligenceHostPairsHostPairItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}", pathParameters),
     }
     return m
 }

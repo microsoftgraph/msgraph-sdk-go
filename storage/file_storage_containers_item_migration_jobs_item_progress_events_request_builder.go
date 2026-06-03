@@ -64,7 +64,7 @@ func (m *FileStorageContainersItemMigrationJobsItemProgressEventsRequestBuilder)
 // NewFileStorageContainersItemMigrationJobsItemProgressEventsRequestBuilderInternal instantiates a new FileStorageContainersItemMigrationJobsItemProgressEventsRequestBuilder and sets the default values.
 func NewFileStorageContainersItemMigrationJobsItemProgressEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainersItemMigrationJobsItemProgressEventsRequestBuilder) {
     m := &FileStorageContainersItemMigrationJobsItemProgressEventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/migrationJobs/{sharePointMigrationJob%2Did}/progressEvents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

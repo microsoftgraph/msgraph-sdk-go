@@ -47,7 +47,7 @@ type OnlineMeetingConversationsItemStarterRequestBuilderPatchRequestConfiguratio
 // NewOnlineMeetingConversationsItemStarterRequestBuilderInternal instantiates a new OnlineMeetingConversationsItemStarterRequestBuilder and sets the default values.
 func NewOnlineMeetingConversationsItemStarterRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingConversationsItemStarterRequestBuilder) {
     m := &OnlineMeetingConversationsItemStarterRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/starter{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/starter", pathParameters),
     }
     return m
 }

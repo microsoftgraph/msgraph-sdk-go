@@ -47,7 +47,7 @@ type ItemDataSecurityAndGovernanceSensitivityLabelsItemSublabelsSensitivityLabel
 // NewItemDataSecurityAndGovernanceSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal instantiates a new ItemDataSecurityAndGovernanceSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder and sets the default values.
 func NewItemDataSecurityAndGovernanceSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDataSecurityAndGovernanceSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
     m := &ItemDataSecurityAndGovernanceSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/{sensitivityLabel%2Did1}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/{sensitivityLabel%2Did1}", pathParameters),
     }
     return m
 }

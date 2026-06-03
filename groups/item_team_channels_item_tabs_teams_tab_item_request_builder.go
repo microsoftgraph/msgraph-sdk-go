@@ -47,7 +47,7 @@ type ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration
 // NewItemTeamChannelsItemTabsTeamsTabItemRequestBuilderInternal instantiates a new ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) {
     m := &ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/tabs/{teamsTab%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/tabs/{teamsTab%2Did}", pathParameters),
     }
     return m
 }

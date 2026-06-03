@@ -64,7 +64,7 @@ func (m *ItemTeamScheduleSchedulingGroupsRequestBuilder) BySchedulingGroupId(sch
 // NewItemTeamScheduleSchedulingGroupsRequestBuilderInternal instantiates a new ItemTeamScheduleSchedulingGroupsRequestBuilder and sets the default values.
 func NewItemTeamScheduleSchedulingGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleSchedulingGroupsRequestBuilder) {
     m := &ItemTeamScheduleSchedulingGroupsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/schedulingGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) AppSco
 // NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal instantiates a new DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
     m := &DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignments/{unifiedRoleAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignments/{unifiedRoleAssignment%2Did}", pathParameters),
     }
     return m
 }

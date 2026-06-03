@@ -47,7 +47,7 @@ type ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderPatchReque
 // NewItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderInternal instantiates a new ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder and sets the default values.
 func NewItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) {
     m := &ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}", pathParameters),
     }
     return m
 }

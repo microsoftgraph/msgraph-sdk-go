@@ -47,7 +47,7 @@ type ItemScheduleTimesOffTimeOffItemRequestBuilderPatchRequestConfiguration stru
 // NewItemScheduleTimesOffTimeOffItemRequestBuilderInternal instantiates a new ItemScheduleTimesOffTimeOffItemRequestBuilder and sets the default values.
 func NewItemScheduleTimesOffTimeOffItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScheduleTimesOffTimeOffItemRequestBuilder) {
     m := &ItemScheduleTimesOffTimeOffItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timesOff/{timeOff%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timesOff/{timeOff%2Did}", pathParameters),
     }
     return m
 }

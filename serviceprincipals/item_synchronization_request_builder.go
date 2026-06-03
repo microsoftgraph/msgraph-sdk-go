@@ -52,7 +52,7 @@ func (m *ItemSynchronizationRequestBuilder) AcquireAccessToken()(*ItemSynchroniz
 // NewItemSynchronizationRequestBuilderInternal instantiates a new ItemSynchronizationRequestBuilder and sets the default values.
 func NewItemSynchronizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationRequestBuilder) {
     m := &ItemSynchronizationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization", pathParameters),
     }
     return m
 }

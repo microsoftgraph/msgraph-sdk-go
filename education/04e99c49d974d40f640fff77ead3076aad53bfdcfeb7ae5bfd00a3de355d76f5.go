@@ -47,7 +47,7 @@ type UsersItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesEduca
 // NewUsersItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesEducationSubmissionResourceItemRequestBuilderInternal instantiates a new UsersItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesEducationSubmissionResourceItemRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesEducationSubmissionResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesEducationSubmissionResourceItemRequestBuilder) {
     m := &UsersItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesEducationSubmissionResourceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/{educationSubmissionResource%2Did}/dependentResources/{educationSubmissionResource%2Did1}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/{educationSubmissionResource%2Did}/dependentResources/{educationSubmissionResource%2Did1}", pathParameters),
     }
     return m
 }

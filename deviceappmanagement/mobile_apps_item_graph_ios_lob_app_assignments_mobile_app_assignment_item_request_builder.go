@@ -47,7 +47,7 @@ type MobileAppsItemGraphIosLobAppAssignmentsMobileAppAssignmentItemRequestBuilde
 // NewMobileAppsItemGraphIosLobAppAssignmentsMobileAppAssignmentItemRequestBuilderInternal instantiates a new MobileAppsItemGraphIosLobAppAssignmentsMobileAppAssignmentItemRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosLobAppAssignmentsMobileAppAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosLobAppAssignmentsMobileAppAssignmentItemRequestBuilder) {
     m := &MobileAppsItemGraphIosLobAppAssignmentsMobileAppAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosLobApp/assignments/{mobileAppAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosLobApp/assignments/{mobileAppAssignment%2Did}", pathParameters),
     }
     return m
 }

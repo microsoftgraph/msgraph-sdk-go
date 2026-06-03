@@ -40,7 +40,7 @@ type ItemPagesItemGraphSitePageLastModifiedByUserMailboxSettingsRequestBuilderPa
 // NewItemPagesItemGraphSitePageLastModifiedByUserMailboxSettingsRequestBuilderInternal instantiates a new ItemPagesItemGraphSitePageLastModifiedByUserMailboxSettingsRequestBuilder and sets the default values.
 func NewItemPagesItemGraphSitePageLastModifiedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemGraphSitePageLastModifiedByUserMailboxSettingsRequestBuilder) {
     m := &ItemPagesItemGraphSitePageLastModifiedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/lastModifiedByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

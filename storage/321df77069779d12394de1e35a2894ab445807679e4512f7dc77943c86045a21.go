@@ -40,7 +40,7 @@ type FileStorageDeletedContainersItemRecycleBinItemsItemLastModifiedByUserMailbo
 // NewFileStorageDeletedContainersItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilderInternal instantiates a new FileStorageDeletedContainersItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilder and sets the default values.
 func NewFileStorageDeletedContainersItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageDeletedContainersItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilder) {
     m := &FileStorageDeletedContainersItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/recycleBin/items/{recycleBinItem%2Did}/lastModifiedByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

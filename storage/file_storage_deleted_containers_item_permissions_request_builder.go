@@ -64,7 +64,7 @@ func (m *FileStorageDeletedContainersItemPermissionsRequestBuilder) ByPermission
 // NewFileStorageDeletedContainersItemPermissionsRequestBuilderInternal instantiates a new FileStorageDeletedContainersItemPermissionsRequestBuilder and sets the default values.
 func NewFileStorageDeletedContainersItemPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageDeletedContainersItemPermissionsRequestBuilder) {
     m := &FileStorageDeletedContainersItemPermissionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/permissions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

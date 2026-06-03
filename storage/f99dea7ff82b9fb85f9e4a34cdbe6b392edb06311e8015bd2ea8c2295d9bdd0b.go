@@ -52,7 +52,7 @@ func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrati
 // NewFileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderInternal instantiates a new FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder and sets the default values.
 func NewFileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder) {
     m := &FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuild
 // NewMultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderInternal instantiates a new MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder and sets the default values.
 func NewMultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder) {
     m := &MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}", pathParameters),
     }
     return m
 }

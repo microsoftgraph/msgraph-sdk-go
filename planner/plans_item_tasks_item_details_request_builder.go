@@ -47,7 +47,7 @@ type PlansItemTasksItemDetailsRequestBuilderPatchRequestConfiguration struct {
 // NewPlansItemTasksItemDetailsRequestBuilderInternal instantiates a new PlansItemTasksItemDetailsRequestBuilder and sets the default values.
 func NewPlansItemTasksItemDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansItemTasksItemDetailsRequestBuilder) {
     m := &PlansItemTasksItemDetailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/details{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/details", pathParameters),
     }
     return m
 }

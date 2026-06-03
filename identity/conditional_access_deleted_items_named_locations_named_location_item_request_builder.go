@@ -47,7 +47,7 @@ type ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderP
 // NewConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderInternal instantiates a new ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder and sets the default values.
 func NewConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder) {
     m := &ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/deletedItems/namedLocations/{namedLocation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/deletedItems/namedLocations/{namedLocation%2Did}", pathParameters),
     }
     return m
 }

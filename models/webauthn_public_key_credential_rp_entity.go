@@ -79,7 +79,7 @@ func (m *WebauthnPublicKeyCredentialRpEntity) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The relying party identifier. For web applications, this value is typically the domain name.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialRpEntity) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -91,7 +91,7 @@ func (m *WebauthnPublicKeyCredentialRpEntity) GetId()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The human-readable name for the relying party.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialRpEntity) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -154,14 +154,14 @@ func (m *WebauthnPublicKeyCredentialRpEntity) SetAdditionalData(value map[string
 func (m *WebauthnPublicKeyCredentialRpEntity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The relying party identifier. For web applications, this value is typically the domain name.
 func (m *WebauthnPublicKeyCredentialRpEntity) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The human-readable name for the relying party.
 func (m *WebauthnPublicKeyCredentialRpEntity) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

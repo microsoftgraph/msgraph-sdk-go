@@ -52,7 +52,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder) Cancel()
 // NewVirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilderInternal instantiates a new VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, email *string)(*VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder) {
     m := &VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(email='{email}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(email='{email}')", pathParameters),
     }
     if email != nil {
         m.BaseRequestBuilder.PathParameters["email"] = *email

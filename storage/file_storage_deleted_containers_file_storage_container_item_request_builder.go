@@ -57,7 +57,7 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Col
 // NewFileStorageDeletedContainersFileStorageContainerItemRequestBuilderInternal instantiates a new FileStorageDeletedContainersFileStorageContainerItemRequestBuilder and sets the default values.
 func NewFileStorageDeletedContainersFileStorageContainerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) {
     m := &FileStorageDeletedContainersFileStorageContainerItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}", pathParameters),
     }
     return m
 }

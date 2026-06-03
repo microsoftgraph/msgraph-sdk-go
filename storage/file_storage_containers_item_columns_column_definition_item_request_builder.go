@@ -47,7 +47,7 @@ type FileStorageContainersItemColumnsColumnDefinitionItemRequestBuilderPatchRequ
 // NewFileStorageContainersItemColumnsColumnDefinitionItemRequestBuilderInternal instantiates a new FileStorageContainersItemColumnsColumnDefinitionItemRequestBuilder and sets the default values.
 func NewFileStorageContainersItemColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainersItemColumnsColumnDefinitionItemRequestBuilder) {
     m := &FileStorageContainersItemColumnsColumnDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/columns/{columnDefinition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/columns/{columnDefinition%2Did}", pathParameters),
     }
     return m
 }

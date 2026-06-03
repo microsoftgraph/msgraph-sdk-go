@@ -47,7 +47,7 @@ type CrossTenantAccessPolicyTemplatesRequestBuilderPatchRequestConfiguration str
 // NewCrossTenantAccessPolicyTemplatesRequestBuilderInternal instantiates a new CrossTenantAccessPolicyTemplatesRequestBuilder and sets the default values.
 func NewCrossTenantAccessPolicyTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CrossTenantAccessPolicyTemplatesRequestBuilder) {
     m := &CrossTenantAccessPolicyTemplatesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates", pathParameters),
     }
     return m
 }

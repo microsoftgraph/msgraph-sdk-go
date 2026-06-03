@@ -52,7 +52,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridline
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridlinesFormatLineRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridlinesFormatLineRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridlinesFormatLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridlinesFormatLineRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMinorGridlinesFormatLineRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/valueAxis/minorGridlines/format/line{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/valueAxis/minorGridlines/format/line", pathParameters),
     }
     return m
 }

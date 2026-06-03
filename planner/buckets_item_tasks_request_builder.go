@@ -64,7 +64,7 @@ func (m *BucketsItemTasksRequestBuilder) ByPlannerTaskId(plannerTaskId string)(*
 // NewBucketsItemTasksRequestBuilderInternal instantiates a new BucketsItemTasksRequestBuilder and sets the default values.
 func NewBucketsItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsItemTasksRequestBuilder) {
     m := &BucketsItemTasksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -40,7 +40,7 @@ type FileStorageContainersItemRecycleBinItemsItemCreatedByUserMailboxSettingsReq
 // NewFileStorageContainersItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilderInternal instantiates a new FileStorageContainersItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilder and sets the default values.
 func NewFileStorageContainersItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainersItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilder) {
     m := &FileStorageContainersItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/recycleBin/items/{recycleBinItem%2Did}/createdByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

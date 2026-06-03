@@ -47,7 +47,7 @@ type IdentitiesHealthIssuesHealthIssueItemRequestBuilderPatchRequestConfiguratio
 // NewIdentitiesHealthIssuesHealthIssueItemRequestBuilderInternal instantiates a new IdentitiesHealthIssuesHealthIssueItemRequestBuilder and sets the default values.
 func NewIdentitiesHealthIssuesHealthIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesHealthIssuesHealthIssueItemRequestBuilder) {
     m := &IdentitiesHealthIssuesHealthIssueItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/healthIssues/{healthIssue%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/healthIssues/{healthIssue%2Did}", pathParameters),
     }
     return m
 }

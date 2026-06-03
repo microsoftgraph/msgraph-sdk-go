@@ -45,7 +45,7 @@ type ItemListItemsItemDriveItemContentRequestBuilderPutRequestConfiguration stru
 // NewItemListItemsItemDriveItemContentRequestBuilderInternal instantiates a new ItemListItemsItemDriveItemContentRequestBuilder and sets the default values.
 func NewItemListItemsItemDriveItemContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemDriveItemContentRequestBuilder) {
     m := &ItemListItemsItemDriveItemContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem/content{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem/content", pathParameters),
     }
     return m
 }

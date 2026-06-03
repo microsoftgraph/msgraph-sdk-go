@@ -40,7 +40,7 @@ type ItemCreatedByUserMailboxSettingsRequestBuilderPatchRequestConfiguration str
 // NewItemCreatedByUserMailboxSettingsRequestBuilderInternal instantiates a new ItemCreatedByUserMailboxSettingsRequestBuilder and sets the default values.
 func NewItemCreatedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCreatedByUserMailboxSettingsRequestBuilder) {
     m := &ItemCreatedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/createdByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

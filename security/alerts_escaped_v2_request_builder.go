@@ -64,7 +64,7 @@ func (m *Alerts_v2RequestBuilder) ByAlertId(alertId string)(*Alerts_v2AlertItemR
 // NewAlerts_v2RequestBuilderInternal instantiates a new Alerts_v2RequestBuilder and sets the default values.
 func NewAlerts_v2RequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2RequestBuilder) {
     m := &Alerts_v2RequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -101,6 +101,11 @@ func (m *Alerts_v2RequestBuilder) Get(ctx context.Context, requestConfiguration 
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AlertCollectionResponseable), nil
+}
+// MicrosoftGraphSecurityMoveAlerts provides operations to call the moveAlerts method.
+// returns a *Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder when successful
+func (m *Alerts_v2RequestBuilder) MicrosoftGraphSecurityMoveAlerts()(*Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder) {
+    return NewAlerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to alerts_v2 for security
 // returns a Alertable when successful

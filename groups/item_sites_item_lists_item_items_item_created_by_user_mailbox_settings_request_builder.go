@@ -40,7 +40,7 @@ type ItemSitesItemListsItemItemsItemCreatedByUserMailboxSettingsRequestBuilderPa
 // NewItemSitesItemListsItemItemsItemCreatedByUserMailboxSettingsRequestBuilderInternal instantiates a new ItemSitesItemListsItemItemsItemCreatedByUserMailboxSettingsRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemItemsItemCreatedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemItemsItemCreatedByUserMailboxSettingsRequestBuilder) {
     m := &ItemSitesItemListsItemItemsItemCreatedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/createdByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

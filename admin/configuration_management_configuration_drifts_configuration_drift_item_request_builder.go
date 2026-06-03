@@ -47,7 +47,7 @@ type ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuil
 // NewConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderInternal instantiates a new ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder and sets the default values.
 func NewConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder) {
     m := &ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationDrifts/{configurationDrift%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationDrifts/{configurationDrift%2Did}", pathParameters),
     }
     return m
 }

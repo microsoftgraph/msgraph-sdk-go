@@ -72,7 +72,7 @@ func (m *ConfigurationManagementRequestBuilder) ConfigurationSnapshots()(*Config
 // NewConfigurationManagementRequestBuilderInternal instantiates a new ConfigurationManagementRequestBuilder and sets the default values.
 func NewConfigurationManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementRequestBuilder) {
     m := &ConfigurationManagementRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement", pathParameters),
     }
     return m
 }

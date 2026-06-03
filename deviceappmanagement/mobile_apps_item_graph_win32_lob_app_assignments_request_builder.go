@@ -64,7 +64,7 @@ func (m *MobileAppsItemGraphWin32LobAppAssignmentsRequestBuilder) ByMobileAppAss
 // NewMobileAppsItemGraphWin32LobAppAssignmentsRequestBuilderInternal instantiates a new MobileAppsItemGraphWin32LobAppAssignmentsRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWin32LobAppAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWin32LobAppAssignmentsRequestBuilder) {
     m := &MobileAppsItemGraphWin32LobAppAssignmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/assignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

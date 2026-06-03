@@ -57,7 +57,7 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Confirm()(*ItemTea
 // NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilderInternal instantiates a new ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder and sets the default values.
 func NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) {
     m := &ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/timeCards/{timeCard%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/timeCards/{timeCard%2Did}", pathParameters),
     }
     return m
 }

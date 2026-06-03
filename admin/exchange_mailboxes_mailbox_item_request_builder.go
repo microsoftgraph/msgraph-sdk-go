@@ -47,7 +47,7 @@ type ExchangeMailboxesMailboxItemRequestBuilderPatchRequestConfiguration struct 
 // NewExchangeMailboxesMailboxItemRequestBuilderInternal instantiates a new ExchangeMailboxesMailboxItemRequestBuilder and sets the default values.
 func NewExchangeMailboxesMailboxItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeMailboxesMailboxItemRequestBuilder) {
     m := &ExchangeMailboxesMailboxItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/exchange/mailboxes/{mailbox%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/exchange/mailboxes/{mailbox%2Did}", pathParameters),
     }
     return m
 }

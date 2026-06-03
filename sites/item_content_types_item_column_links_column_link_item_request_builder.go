@@ -47,7 +47,7 @@ type ItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderPatchRequestConf
 // NewItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal instantiates a new ItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder and sets the default values.
 func NewItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
     m := &ItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/contentTypes/{contentType%2Did}/columnLinks/{columnLink%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/contentTypes/{contentType%2Did}/columnLinks/{columnLink%2Did}", pathParameters),
     }
     return m
 }

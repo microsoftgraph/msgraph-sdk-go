@@ -57,7 +57,7 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
 // NewEntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal instantiates a new EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
     m := &EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentPolicies/{accessPackageAssignmentPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentPolicies/{accessPackageAssignmentPolicy%2Did}", pathParameters),
     }
     return m
 }

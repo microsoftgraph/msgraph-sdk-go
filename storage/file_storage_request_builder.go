@@ -47,7 +47,7 @@ type FileStorageRequestBuilderPatchRequestConfiguration struct {
 // NewFileStorageRequestBuilderInternal instantiates a new FileStorageRequestBuilder and sets the default values.
 func NewFileStorageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageRequestBuilder) {
     m := &FileStorageRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupM
 // NewFileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderInternal instantiates a new FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilder and sets the default values.
 func NewFileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilder) {
     m := &FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}", pathParameters),
     }
     return m
 }

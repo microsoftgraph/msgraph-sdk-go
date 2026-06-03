@@ -47,7 +47,7 @@ type PeopleProfileSourcesWithSourceIdRequestBuilderPatchRequestConfiguration str
 // NewPeopleProfileSourcesWithSourceIdRequestBuilderInternal instantiates a new PeopleProfileSourcesWithSourceIdRequestBuilder and sets the default values.
 func NewPeopleProfileSourcesWithSourceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sourceId *string)(*PeopleProfileSourcesWithSourceIdRequestBuilder) {
     m := &PeopleProfileSourcesWithSourceIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people/profileSources(sourceId='{sourceId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people/profileSources(sourceId='{sourceId}')", pathParameters),
     }
     if sourceId != nil {
         m.BaseRequestBuilder.PathParameters["sourceId"] = *sourceId

@@ -47,7 +47,7 @@ type VirtualEndpointReportRequestBuilderPatchRequestConfiguration struct {
 // NewVirtualEndpointReportRequestBuilderInternal instantiates a new VirtualEndpointReportRequestBuilder and sets the default values.
 func NewVirtualEndpointReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportRequestBuilder) {
     m := &VirtualEndpointReportRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/report{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/report", pathParameters),
     }
     return m
 }

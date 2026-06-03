@@ -64,7 +64,7 @@ func (m *MeAssignmentsItemSubmissionsRequestBuilder) ByEducationSubmissionId(edu
 // NewMeAssignmentsItemSubmissionsRequestBuilderInternal instantiates a new MeAssignmentsItemSubmissionsRequestBuilder and sets the default values.
 func NewMeAssignmentsItemSubmissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemSubmissionsRequestBuilder) {
     m := &MeAssignmentsItemSubmissionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *ItemTeamworkRequestBuilder) AssociatedTeams()(*ItemTeamworkAssociatedTe
 // NewItemTeamworkRequestBuilderInternal instantiates a new ItemTeamworkRequestBuilder and sets the default values.
 func NewItemTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkRequestBuilder) {
     m := &ItemTeamworkRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork", pathParameters),
     }
     return m
 }
@@ -78,6 +78,11 @@ func (m *ItemTeamworkRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
+// DeleteTargetedMessage provides operations to call the deleteTargetedMessage method.
+// returns a *ItemTeamworkDeleteTargetedMessageRequestBuilder when successful
+func (m *ItemTeamworkRequestBuilder) DeleteTargetedMessage()(*ItemTeamworkDeleteTargetedMessageRequestBuilder) {
+    return NewItemTeamworkDeleteTargetedMessageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
 // returns a UserTeamworkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -100,6 +105,16 @@ func (m *ItemTeamworkRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable), nil
+}
+// GetAllRetainedTargetedMessages provides operations to call the getAllRetainedTargetedMessages method.
+// returns a *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder when successful
+func (m *ItemTeamworkRequestBuilder) GetAllRetainedTargetedMessages()(*ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder) {
+    return NewItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetAllTargetedMessages provides operations to call the getAllTargetedMessages method.
+// returns a *ItemTeamworkGetAllTargetedMessagesRequestBuilder when successful
+func (m *ItemTeamworkRequestBuilder) GetAllTargetedMessages()(*ItemTeamworkGetAllTargetedMessagesRequestBuilder) {
+    return NewItemTeamworkGetAllTargetedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
 // returns a *ItemTeamworkInstalledAppsRequestBuilder when successful

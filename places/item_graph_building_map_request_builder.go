@@ -47,7 +47,7 @@ type ItemGraphBuildingMapRequestBuilderPatchRequestConfiguration struct {
 // NewItemGraphBuildingMapRequestBuilderInternal instantiates a new ItemGraphBuildingMapRequestBuilder and sets the default values.
 func NewItemGraphBuildingMapRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphBuildingMapRequestBuilder) {
     m := &ItemGraphBuildingMapRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map", pathParameters),
     }
     return m
 }

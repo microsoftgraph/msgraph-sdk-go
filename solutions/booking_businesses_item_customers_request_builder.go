@@ -64,7 +64,7 @@ func (m *BookingBusinessesItemCustomersRequestBuilder) ByBookingCustomerBaseId(b
 // NewBookingBusinessesItemCustomersRequestBuilderInternal instantiates a new BookingBusinessesItemCustomersRequestBuilder and sets the default values.
 func NewBookingBusinessesItemCustomersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemCustomersRequestBuilder) {
     m := &BookingBusinessesItemCustomersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

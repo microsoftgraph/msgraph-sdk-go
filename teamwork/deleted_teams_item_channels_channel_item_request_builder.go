@@ -62,7 +62,7 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) CompleteMigration()(
 // NewDeletedTeamsItemChannelsChannelItemRequestBuilderInternal instantiates a new DeletedTeamsItemChannelsChannelItemRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
     m := &DeletedTeamsItemChannelsChannelItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}", pathParameters),
     }
     return m
 }

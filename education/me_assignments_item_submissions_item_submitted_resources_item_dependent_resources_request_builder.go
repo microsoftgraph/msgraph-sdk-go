@@ -64,7 +64,7 @@ func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResource
 // NewMeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResourcesRequestBuilderInternal instantiates a new MeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResourcesRequestBuilder and sets the default values.
 func NewMeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResourcesRequestBuilder) {
     m := &MeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResourcesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/submittedResources/{educationSubmissionResource%2Did}/dependentResources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

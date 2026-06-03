@@ -52,7 +52,7 @@ func (m *BackupRestoreRequestBuilder) BrowseSessions()(*BackupRestoreBrowseSessi
 // NewBackupRestoreRequestBuilderInternal instantiates a new BackupRestoreRequestBuilder and sets the default values.
 func NewBackupRestoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreRequestBuilder) {
     m := &BackupRestoreRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore", pathParameters),
     }
     return m
 }

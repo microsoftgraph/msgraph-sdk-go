@@ -45,7 +45,7 @@ type SubscribedSkuItemRequestBuilderPatchRequestConfiguration struct {
 // NewSubscribedSkuItemRequestBuilderInternal instantiates a new SubscribedSkuItemRequestBuilder and sets the default values.
 func NewSubscribedSkuItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubscribedSkuItemRequestBuilder) {
     m := &SubscribedSkuItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}", pathParameters),
     }
     return m
 }

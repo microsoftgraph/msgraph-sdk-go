@@ -47,7 +47,7 @@ type CallRecordsCallRecordItemRequestBuilderPatchRequestConfiguration struct {
 // NewCallRecordsCallRecordItemRequestBuilderInternal instantiates a new CallRecordsCallRecordItemRequestBuilder and sets the default values.
 func NewCallRecordsCallRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsCallRecordItemRequestBuilder) {
     m := &CallRecordsCallRecordItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}", pathParameters),
     }
     return m
 }

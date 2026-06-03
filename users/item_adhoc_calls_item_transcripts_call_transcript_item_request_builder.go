@@ -47,7 +47,7 @@ type ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderPatchRequestCo
 // NewItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderInternal instantiates a new ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder and sets the default values.
 func NewItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder) {
     m := &ItemAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/adhocCalls/{adhocCall%2Did}/transcripts/{callTranscript%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/adhocCalls/{adhocCall%2Did}/transcripts/{callTranscript%2Did}", pathParameters),
     }
     return m
 }

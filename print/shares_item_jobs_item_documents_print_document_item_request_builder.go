@@ -47,7 +47,7 @@ type SharesItemJobsItemDocumentsPrintDocumentItemRequestBuilderPatchRequestConfi
 // NewSharesItemJobsItemDocumentsPrintDocumentItemRequestBuilderInternal instantiates a new SharesItemJobsItemDocumentsPrintDocumentItemRequestBuilder and sets the default values.
 func NewSharesItemJobsItemDocumentsPrintDocumentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsItemDocumentsPrintDocumentItemRequestBuilder) {
     m := &SharesItemJobsItemDocumentsPrintDocumentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/documents/{printDocument%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/documents/{printDocument%2Did}", pathParameters),
     }
     return m
 }

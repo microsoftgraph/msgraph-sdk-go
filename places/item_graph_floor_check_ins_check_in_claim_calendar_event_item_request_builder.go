@@ -47,7 +47,7 @@ type ItemGraphFloorCheckInsCheckInClaimCalendarEventItemRequestBuilderPatchReque
 // NewItemGraphFloorCheckInsCheckInClaimCalendarEventItemRequestBuilderInternal instantiates a new ItemGraphFloorCheckInsCheckInClaimCalendarEventItemRequestBuilder and sets the default values.
 func NewItemGraphFloorCheckInsCheckInClaimCalendarEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphFloorCheckInsCheckInClaimCalendarEventItemRequestBuilder) {
     m := &ItemGraphFloorCheckInsCheckInClaimCalendarEventItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.floor/checkIns/{checkInClaim%2DcalendarEventId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.floor/checkIns/{checkInClaim%2DcalendarEventId}", pathParameters),
     }
     return m
 }

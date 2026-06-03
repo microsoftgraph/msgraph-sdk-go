@@ -40,7 +40,7 @@ type LifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBu
 // NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilderInternal instantiates a new LifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilder) {
     m := &LifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/customTaskExtensions/{customTaskExtension%2Did}/createdBy/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

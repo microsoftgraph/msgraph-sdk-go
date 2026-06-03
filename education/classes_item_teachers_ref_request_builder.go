@@ -62,7 +62,7 @@ type ClassesItemTeachersRefRequestBuilderPostRequestConfiguration struct {
 // NewClassesItemTeachersRefRequestBuilderInternal instantiates a new ClassesItemTeachersRefRequestBuilder and sets the default values.
 func NewClassesItemTeachersRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemTeachersRefRequestBuilder) {
     m := &ClassesItemTeachersRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/teachers/$ref?@id={%40id}{&%24count,%24filter,%24orderby,%24search,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

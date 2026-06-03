@@ -40,7 +40,7 @@ type LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsItemSu
 // NewLifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsItemSubjectMailboxSettingsRequestBuilderInternal instantiates a new LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsItemSubjectMailboxSettingsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsItemSubjectMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsItemSubjectMailboxSettingsRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowTemplatesItemTasksItemTaskProcessingResultsItemSubjectMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflowTemplates/{workflowTemplate%2Did}/tasks/{task%2Did}/taskProcessingResults/{taskProcessingResult%2Did}/subject/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

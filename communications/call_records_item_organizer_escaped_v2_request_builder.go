@@ -47,7 +47,7 @@ type CallRecordsItemOrganizer_v2RequestBuilderPatchRequestConfiguration struct {
 // NewCallRecordsItemOrganizer_v2RequestBuilderInternal instantiates a new CallRecordsItemOrganizer_v2RequestBuilder and sets the default values.
 func NewCallRecordsItemOrganizer_v2RequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemOrganizer_v2RequestBuilder) {
     m := &CallRecordsItemOrganizer_v2RequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/organizer_v2{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/organizer_v2", pathParameters),
     }
     return m
 }

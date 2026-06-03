@@ -47,7 +47,7 @@ type OnlineMeetingConversationsItemMessagesItemReactionsEngagementConversationMe
 // NewOnlineMeetingConversationsItemMessagesItemReactionsEngagementConversationMessageReactionItemRequestBuilderInternal instantiates a new OnlineMeetingConversationsItemMessagesItemReactionsEngagementConversationMessageReactionItemRequestBuilder and sets the default values.
 func NewOnlineMeetingConversationsItemMessagesItemReactionsEngagementConversationMessageReactionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingConversationsItemMessagesItemReactionsEngagementConversationMessageReactionItemRequestBuilder) {
     m := &OnlineMeetingConversationsItemMessagesItemReactionsEngagementConversationMessageReactionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/messages/{engagementConversationMessage%2Did}/reactions/{engagementConversationMessageReaction%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/messages/{engagementConversationMessage%2Did}/reactions/{engagementConversationMessageReaction%2Did}", pathParameters),
     }
     return m
 }

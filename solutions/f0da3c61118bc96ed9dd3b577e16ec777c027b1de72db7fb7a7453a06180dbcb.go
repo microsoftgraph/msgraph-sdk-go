@@ -52,7 +52,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendance
 // NewVirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal instantiates a new VirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     m := &VirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/sessions/{virtualEventSession%2Did}/attendanceReports/{meetingAttendanceReport%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/sessions/{virtualEventSession%2Did}/attendanceReports/{meetingAttendanceReport%2Did}", pathParameters),
     }
     return m
 }

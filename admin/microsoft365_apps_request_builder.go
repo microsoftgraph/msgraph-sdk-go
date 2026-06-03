@@ -47,7 +47,7 @@ type Microsoft365AppsRequestBuilderPatchRequestConfiguration struct {
 // NewMicrosoft365AppsRequestBuilderInternal instantiates a new Microsoft365AppsRequestBuilder and sets the default values.
 func NewMicrosoft365AppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Microsoft365AppsRequestBuilder) {
     m := &Microsoft365AppsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/microsoft365Apps{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/microsoft365Apps", pathParameters),
     }
     return m
 }

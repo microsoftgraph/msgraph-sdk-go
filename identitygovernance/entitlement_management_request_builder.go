@@ -82,7 +82,7 @@ func (m *EntitlementManagementRequestBuilder) ConnectedOrganizations()(*Entitlem
 // NewEntitlementManagementRequestBuilderInternal instantiates a new EntitlementManagementRequestBuilder and sets the default values.
 func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRequestBuilder) {
     m := &EntitlementManagementRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement", pathParameters),
     }
     return m
 }
@@ -172,6 +172,16 @@ func (m *EntitlementManagementRequestBuilder) Resources()(*EntitlementManagement
 // returns a *EntitlementManagementSettingsRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) Settings()(*EntitlementManagementSettingsRequestBuilder) {
     return NewEntitlementManagementSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Subjects provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementSubjectsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) Subjects()(*EntitlementManagementSubjectsRequestBuilder) {
+    return NewEntitlementManagementSubjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SubjectsWithObjectId provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementSubjectsWithObjectIdRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) SubjectsWithObjectId(objectId *string)(*EntitlementManagementSubjectsWithObjectIdRequestBuilder) {
+    return NewEntitlementManagementSubjectsWithObjectIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, objectId)
 }
 // ToDeleteRequestInformation delete navigation property entitlementManagement for identityGovernance
 // returns a *RequestInformation when successful

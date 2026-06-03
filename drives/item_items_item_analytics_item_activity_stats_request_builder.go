@@ -64,7 +64,7 @@ func (m *ItemItemsItemAnalyticsItemActivityStatsRequestBuilder) ByItemActivitySt
 // NewItemItemsItemAnalyticsItemActivityStatsRequestBuilderInternal instantiates a new ItemItemsItemAnalyticsItemActivityStatsRequestBuilder and sets the default values.
 func NewItemItemsItemAnalyticsItemActivityStatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemAnalyticsItemActivityStatsRequestBuilder) {
     m := &ItemItemsItemAnalyticsItemActivityStatsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/analytics/itemActivityStats{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

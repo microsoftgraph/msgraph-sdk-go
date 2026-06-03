@@ -52,7 +52,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Activities()(*ItemItemsItemAct
 // NewItemItemsExternalItemItemRequestBuilderInternal instantiates a new ItemItemsExternalItemItemRequestBuilder and sets the default values.
 func NewItemItemsExternalItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsExternalItemItemRequestBuilder) {
     m := &ItemItemsExternalItemItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/connections/{externalConnection%2Did}/items/{externalItem%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/connections/{externalConnection%2Did}/items/{externalItem%2Did}", pathParameters),
     }
     return m
 }

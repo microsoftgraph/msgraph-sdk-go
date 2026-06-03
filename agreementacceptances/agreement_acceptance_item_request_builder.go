@@ -45,7 +45,7 @@ type AgreementAcceptanceItemRequestBuilderPatchRequestConfiguration struct {
 // NewAgreementAcceptanceItemRequestBuilderInternal instantiates a new AgreementAcceptanceItemRequestBuilder and sets the default values.
 func NewAgreementAcceptanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgreementAcceptanceItemRequestBuilder) {
     m := &AgreementAcceptanceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agreementAcceptances/{agreementAcceptance%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agreementAcceptances/{agreementAcceptance%2Did}", pathParameters),
     }
     return m
 }

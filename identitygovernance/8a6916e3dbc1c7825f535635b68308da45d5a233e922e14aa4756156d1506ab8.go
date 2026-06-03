@@ -47,7 +47,7 @@ type EntitlementManagementResourceRequestsItemCatalogResourcesAccessPackageResou
 // NewEntitlementManagementResourceRequestsItemCatalogResourcesAccessPackageResourceItemRequestBuilderInternal instantiates a new EntitlementManagementResourceRequestsItemCatalogResourcesAccessPackageResourceItemRequestBuilder and sets the default values.
 func NewEntitlementManagementResourceRequestsItemCatalogResourcesAccessPackageResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourceRequestsItemCatalogResourcesAccessPackageResourceItemRequestBuilder) {
     m := &EntitlementManagementResourceRequestsItemCatalogResourcesAccessPackageResourceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest%2Did}/catalog/resources/{accessPackageResource%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest%2Did}/catalog/resources/{accessPackageResource%2Did}", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) A
 // NewVirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderInternal instantiates a new VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder and sets the default values.
 func NewVirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) {
     m := &VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}", pathParameters),
     }
     return m
 }

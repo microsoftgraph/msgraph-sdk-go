@@ -47,7 +47,7 @@ type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfiguration
 // NewCrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderInternal instantiates a new CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilder and sets the default values.
 func NewCrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilder) {
     m := &CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration", pathParameters),
     }
     return m
 }

@@ -64,7 +64,7 @@ func (m *IdentitiesSensorsRequestBuilder) BySensorId(sensorId string)(*Identitie
 // NewIdentitiesSensorsRequestBuilderInternal instantiates a new IdentitiesSensorsRequestBuilder and sets the default values.
 func NewIdentitiesSensorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesSensorsRequestBuilder) {
     m := &IdentitiesSensorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/sensors{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

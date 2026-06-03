@@ -47,7 +47,7 @@ type BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBu
 // NewBackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilderInternal instantiates a new BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilder and sets the default values.
 func NewBackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilder) {
     m := &BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession%2Did}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type BookmarksBookmarkItemRequestBuilderPatchRequestConfiguration struct {
 // NewBookmarksBookmarkItemRequestBuilderInternal instantiates a new BookmarksBookmarkItemRequestBuilder and sets the default values.
 func NewBookmarksBookmarkItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookmarksBookmarkItemRequestBuilder) {
     m := &BookmarksBookmarkItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/bookmarks/{bookmark%2Did}", pathParameters),
     }
     return m
 }

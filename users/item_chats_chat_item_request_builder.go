@@ -52,7 +52,7 @@ func (m *ItemChatsChatItemRequestBuilder) CompleteMigration()(*ItemChatsItemComp
 // NewItemChatsChatItemRequestBuilderInternal instantiates a new ItemChatsChatItemRequestBuilder and sets the default values.
 func NewItemChatsChatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsChatItemRequestBuilder) {
     m := &ItemChatsChatItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}", pathParameters),
     }
     return m
 }
@@ -185,6 +185,11 @@ func (m *ItemChatsChatItemRequestBuilder) StartMigration()(*ItemChatsItemStartMi
 // returns a *ItemChatsItemTabsRequestBuilder when successful
 func (m *ItemChatsChatItemRequestBuilder) Tabs()(*ItemChatsItemTabsRequestBuilder) {
     return NewItemChatsItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TargetedMessages provides operations to manage the targetedMessages property of the microsoft.graph.chat entity.
+// returns a *ItemChatsItemTargetedMessagesRequestBuilder when successful
+func (m *ItemChatsChatItemRequestBuilder) TargetedMessages()(*ItemChatsItemTargetedMessagesRequestBuilder) {
+    return NewItemChatsItemTargetedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property chats for users
 // returns a *RequestInformation when successful

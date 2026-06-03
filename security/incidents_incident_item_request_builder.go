@@ -52,7 +52,7 @@ func (m *IncidentsIncidentItemRequestBuilder) Alerts()(*IncidentsItemAlertsReque
 // NewIncidentsIncidentItemRequestBuilderInternal instantiates a new IncidentsIncidentItemRequestBuilder and sets the default values.
 func NewIncidentsIncidentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsIncidentItemRequestBuilder) {
     m := &IncidentsIncidentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/incidents/{incident%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/incidents/{incident%2Did}", pathParameters),
     }
     return m
 }

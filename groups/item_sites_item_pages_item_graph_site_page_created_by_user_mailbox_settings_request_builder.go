@@ -40,7 +40,7 @@ type ItemSitesItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuild
 // NewItemSitesItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilderInternal instantiates a new ItemSitesItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) {
     m := &ItemSitesItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/createdByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
