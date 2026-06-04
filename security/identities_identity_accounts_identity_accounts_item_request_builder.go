@@ -47,7 +47,7 @@ type IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderPatchRequestCon
 // NewIdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderInternal instantiates a new IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder and sets the default values.
 func NewIdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder) {
     m := &IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/identityAccounts/{identityAccounts%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/identityAccounts/{identityAccounts%2Did}", pathParameters),
     }
     return m
 }
@@ -135,7 +135,7 @@ func (m *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder) ToDeleteR
 // ToGetRequestInformation read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
 // returns a *RequestInformation when successful
 func (m *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/identities/identityAccounts/{identityAccounts%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

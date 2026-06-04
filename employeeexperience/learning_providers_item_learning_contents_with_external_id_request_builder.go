@@ -47,7 +47,7 @@ type LearningProvidersItemLearningContentsWithExternalIdRequestBuilderPatchReque
 // NewLearningProvidersItemLearningContentsWithExternalIdRequestBuilderInternal instantiates a new LearningProvidersItemLearningContentsWithExternalIdRequestBuilder and sets the default values.
 func NewLearningProvidersItemLearningContentsWithExternalIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, externalId *string)(*LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) {
     m := &LearningProvidersItemLearningContentsWithExternalIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}')", pathParameters),
     }
     if externalId != nil {
         m.BaseRequestBuilder.PathParameters["externalId"] = *externalId
@@ -136,7 +136,7 @@ func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) ToDe
 // ToGetRequestInformation get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsWithExternalIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

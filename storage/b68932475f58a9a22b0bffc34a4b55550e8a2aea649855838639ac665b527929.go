@@ -47,7 +47,7 @@ type FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileSto
 // NewFileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileStorageContainerTypeAppPermissionGrantAppItemRequestBuilderInternal instantiates a new FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder and sets the default values.
 func NewFileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileStorageContainerTypeAppPermissionGrantAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder) {
     m := &FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}", pathParameters),
     }
     return m
 }
@@ -136,7 +136,7 @@ func (m *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFil
 // ToGetRequestInformation read a specific app permission grant in a fileStorageContainerTypeRegistration.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsFileStorageContainerTypeAppPermissionGrantAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

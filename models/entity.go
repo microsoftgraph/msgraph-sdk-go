@@ -1551,6 +1551,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSynchronizationTemplate(), nil
                     case "#microsoft.graph.targetDeviceGroup":
                         return NewTargetDeviceGroup(), nil
+                    case "#microsoft.graph.targetedChatMessage":
+                        return NewTargetedChatMessage(), nil
                     case "#microsoft.graph.targetedManagedAppConfiguration":
                         return NewTargetedManagedAppConfiguration(), nil
                     case "#microsoft.graph.targetedManagedAppPolicyAssignment":

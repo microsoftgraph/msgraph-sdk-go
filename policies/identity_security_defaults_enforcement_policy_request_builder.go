@@ -47,7 +47,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfigur
 // NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal instantiates a new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
     m := &IdentitySecurityDefaultsEnforcementPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/identitySecurityDefaultsEnforcementPolicy{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/identitySecurityDefaultsEnforcementPolicy", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToDeleteReques
 // ToGetRequestInformation retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 // returns a *RequestInformation when successful
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/identitySecurityDefaultsEnforcementPolicy{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

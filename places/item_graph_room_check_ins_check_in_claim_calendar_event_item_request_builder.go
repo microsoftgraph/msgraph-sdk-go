@@ -47,7 +47,7 @@ type ItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilderPatchReques
 // NewItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilderInternal instantiates a new ItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilder and sets the default values.
 func NewItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilder) {
     m := &ItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.room/checkIns/{checkInClaim%2DcalendarEventId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.room/checkIns/{checkInClaim%2DcalendarEventId}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilder) ToDel
 // ToGetRequestInformation a subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 // returns a *RequestInformation when successful
 func (m *ItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomCheckInsCheckInClaimCalendarEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/places/{place%2Did}/graph.room/checkIns/{checkInClaim%2DcalendarEventId}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

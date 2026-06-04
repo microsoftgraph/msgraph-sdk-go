@@ -47,7 +47,7 @@ type EntitlementManagementResourcesItemRolesItemResourceRequestBuilderPatchReque
 // NewEntitlementManagementResourcesItemRolesItemResourceRequestBuilderInternal instantiates a new EntitlementManagementResourcesItemRolesItemResourceRequestBuilder and sets the default values.
 func NewEntitlementManagementResourcesItemRolesItemResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourcesItemRolesItemResourceRequestBuilder) {
     m := &EntitlementManagementResourcesItemRolesItemResourceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resources/{accessPackageResource%2Did}/roles/{accessPackageResourceRole%2Did}/resource{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resources/{accessPackageResource%2Did}/roles/{accessPackageResourceRole%2Did}/resource", pathParameters),
     }
     return m
 }
@@ -142,7 +142,7 @@ func (m *EntitlementManagementResourcesItemRolesItemResourceRequestBuilder) ToDe
 // ToGetRequestInformation get resource from identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementResourcesItemRolesItemResourceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourcesItemRolesItemResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/entitlementManagement/resources/{accessPackageResource%2Did}/roles/{accessPackageResourceRole%2Did}/resource{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

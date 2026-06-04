@@ -47,7 +47,7 @@ type BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderPa
 // NewBackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderInternal instantiates a new BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder and sets the default values.
 func NewBackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder) {
     m := &BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxInclusionRules/{mailboxProtectionRule%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxInclusionRules/{mailboxProtectionRule%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuild
 // ToGetRequestInformation the list of mailbox inclusion rules applied to the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/mailboxInclusionRules/{mailboxProtectionRule%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

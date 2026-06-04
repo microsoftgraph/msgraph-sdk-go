@@ -47,7 +47,7 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArti
 // NewBackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderInternal instantiates a new BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder and sets the default values.
 func NewBackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) {
     m := &BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession%2Did}/granularDriveRestoreArtifacts/{granularDriveRestoreArtifact%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession%2Did}/granularDriveRestoreArtifacts/{granularDriveRestoreArtifact%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
 // ToGetRequestInformation a collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession%2Did}/granularDriveRestoreArtifacts/{granularDriveRestoreArtifact%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

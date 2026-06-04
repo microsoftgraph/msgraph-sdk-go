@@ -47,7 +47,7 @@ type DeletedChatsDeletedChatItemRequestBuilderPatchRequestConfiguration struct {
 // NewDeletedChatsDeletedChatItemRequestBuilderInternal instantiates a new DeletedChatsDeletedChatItemRequestBuilder and sets the default values.
 func NewDeletedChatsDeletedChatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedChatsDeletedChatItemRequestBuilder) {
     m := &DeletedChatsDeletedChatItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedChats/{deletedChat%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedChats/{deletedChat%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *DeletedChatsDeletedChatItemRequestBuilder) ToDeleteRequestInformation(c
 // ToGetRequestInformation read the properties and relationships of a deletedChat object.
 // returns a *RequestInformation when successful
 func (m *DeletedChatsDeletedChatItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsDeletedChatItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/teamwork/deletedChats/{deletedChat%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxResto
 // NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderInternal instantiates a new BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder and sets the default values.
 func NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) {
     m := &BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession%2Did}/mailboxRestoreArtifacts/{mailboxRestoreArtifact%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession%2Did}/mailboxRestoreArtifacts/{mailboxRestoreArtifact%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
 // ToGetRequestInformation a collection of restore points and destination details that can be used to restore Exchange mailboxes.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession%2Did}/mailboxRestoreArtifacts/{mailboxRestoreArtifact%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

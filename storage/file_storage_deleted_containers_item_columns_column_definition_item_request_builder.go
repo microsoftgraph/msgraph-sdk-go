@@ -47,7 +47,7 @@ type FileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilderPa
 // NewFileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilderInternal instantiates a new FileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilder and sets the default values.
 func NewFileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilder) {
     m := &FileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/columns/{columnDefinition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/columns/{columnDefinition%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *FileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuild
 // ToGetRequestInformation the set of custom structured metadata supported by the fileStorageContainer. Read-write.
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/columns/{columnDefinition%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

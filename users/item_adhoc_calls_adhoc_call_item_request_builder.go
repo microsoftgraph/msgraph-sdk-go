@@ -47,7 +47,7 @@ type ItemAdhocCallsAdhocCallItemRequestBuilderPatchRequestConfiguration struct {
 // NewItemAdhocCallsAdhocCallItemRequestBuilderInternal instantiates a new ItemAdhocCallsAdhocCallItemRequestBuilder and sets the default values.
 func NewItemAdhocCallsAdhocCallItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAdhocCallsAdhocCallItemRequestBuilder) {
     m := &ItemAdhocCallsAdhocCallItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/adhocCalls/{adhocCall%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/adhocCalls/{adhocCall%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *ItemAdhocCallsAdhocCallItemRequestBuilder) ToDeleteRequestInformation(c
 // ToGetRequestInformation ad hoc calls associated with the user. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemAdhocCallsAdhocCallItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAdhocCallsAdhocCallItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/adhocCalls/{adhocCall%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

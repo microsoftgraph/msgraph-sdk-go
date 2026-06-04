@@ -47,7 +47,7 @@ type EntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackag
 // NewEntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackageResourceRoleItemRequestBuilderInternal instantiates a new EntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackageResourceRoleItemRequestBuilder and sets the default values.
 func NewEntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackageResourceRoleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackageResourceRoleItemRequestBuilder) {
     m := &EntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackageResourceRoleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resourceRoles/{accessPackageResourceRole%2Did}/resource/roles/{accessPackageResourceRole%2Did1}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resourceRoles/{accessPackageResourceRole%2Did}/resource/roles/{accessPackageResourceRole%2Did1}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *EntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPa
 // ToGetRequestInformation read-only. Nullable. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackageResourceRoleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemResourceRolesItemResourceRolesAccessPackageResourceRoleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resourceRoles/{accessPackageResourceRole%2Did}/resource/roles/{accessPackageResourceRole%2Did1}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

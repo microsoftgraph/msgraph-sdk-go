@@ -47,7 +47,7 @@ type SubscriptionsWithCommerceSubscriptionIdRequestBuilderPatchRequestConfigurat
 // NewSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal instantiates a new SubscriptionsWithCommerceSubscriptionIdRequestBuilder and sets the default values.
 func NewSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, commerceSubscriptionId *string)(*SubscriptionsWithCommerceSubscriptionIdRequestBuilder) {
     m := &SubscriptionsWithCommerceSubscriptionIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')", pathParameters),
     }
     if commerceSubscriptionId != nil {
         m.BaseRequestBuilder.PathParameters["commerceSubscriptionId"] = *commerceSubscriptionId
@@ -133,7 +133,7 @@ func (m *SubscriptionsWithCommerceSubscriptionIdRequestBuilder) ToDeleteRequestI
 // ToGetRequestInformation get a specific commercial subscription that an organization acquired.
 // returns a *RequestInformation when successful
 func (m *SubscriptionsWithCommerceSubscriptionIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

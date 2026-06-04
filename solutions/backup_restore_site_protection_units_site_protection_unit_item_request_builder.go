@@ -47,7 +47,7 @@ type BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderPatchRe
 // NewBackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderInternal instantiates a new BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder and sets the default values.
 func NewBackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder) {
     m := &BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteProtectionUnits/{siteProtectionUnit%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteProtectionUnits/{siteProtectionUnit%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder) T
 // ToGetRequestInformation the list of site protection units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/siteProtectionUnits/{siteProtectionUnit%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

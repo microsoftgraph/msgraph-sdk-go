@@ -47,7 +47,7 @@ type DataPolicyOperationItemRequestBuilderPatchRequestConfiguration struct {
 // NewDataPolicyOperationItemRequestBuilderInternal instantiates a new DataPolicyOperationItemRequestBuilder and sets the default values.
 func NewDataPolicyOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataPolicyOperationItemRequestBuilder) {
     m := &DataPolicyOperationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataPolicyOperations/{dataPolicyOperation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataPolicyOperations/{dataPolicyOperation%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *DataPolicyOperationItemRequestBuilder) ToDeleteRequestInformation(ctx c
 // ToGetRequestInformation retrieve the properties of a dataPolicyOperation object.
 // returns a *RequestInformation when successful
 func (m *DataPolicyOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataPolicyOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/dataPolicyOperations/{dataPolicyOperation%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

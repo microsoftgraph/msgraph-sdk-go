@@ -47,7 +47,7 @@ type TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperation
 // NewTeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilderInternal instantiates a new TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilder and sets the default values.
 func NewTeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilder) {
     m := &TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperation%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOpera
 // ToGetRequestInformation read the properties and relationships of microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation object. This method is used to query the status of an assign or unassign number action using Graph API. This link is returned in the Location response header found in assign or unassign operation result.
 // returns a *RequestInformation when successful
 func (m *TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperation%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

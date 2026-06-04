@@ -47,7 +47,7 @@ type TasksItemDetailsRequestBuilderPatchRequestConfiguration struct {
 // NewTasksItemDetailsRequestBuilderInternal instantiates a new TasksItemDetailsRequestBuilder and sets the default values.
 func NewTasksItemDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TasksItemDetailsRequestBuilder) {
     m := &TasksItemDetailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/details{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/details", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *TasksItemDetailsRequestBuilder) ToDeleteRequestInformation(ctx context.
 // ToGetRequestInformation retrieve the properties and relationships of a plannerTaskDetails object.
 // returns a *RequestInformation when successful
 func (m *TasksItemDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksItemDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/planner/tasks/{plannerTask%2Did}/details{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

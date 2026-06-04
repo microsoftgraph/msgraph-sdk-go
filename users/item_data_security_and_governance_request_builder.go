@@ -52,7 +52,7 @@ func (m *ItemDataSecurityAndGovernanceRequestBuilder) Activities()(*ItemDataSecu
 // NewItemDataSecurityAndGovernanceRequestBuilderInternal instantiates a new ItemDataSecurityAndGovernanceRequestBuilder and sets the default values.
 func NewItemDataSecurityAndGovernanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDataSecurityAndGovernanceRequestBuilder) {
     m := &ItemDataSecurityAndGovernanceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance", pathParameters),
     }
     return m
 }
@@ -147,7 +147,7 @@ func (m *ItemDataSecurityAndGovernanceRequestBuilder) ToDeleteRequestInformation
 // ToGetRequestInformation the data security and governance settings for the user. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemDataSecurityAndGovernanceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDataSecurityAndGovernanceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type TeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestB
 // NewTeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestBuilderInternal instantiates a new TeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestBuilder and sets the default values.
 func NewTeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestBuilder) {
     m := &TeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/numberAssignments/{numberAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/numberAssignments/{numberAssignment%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *TeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequ
 // ToGetRequestInformation represents a collection of synchronous telephone number management operations.
 // returns a *RequestInformation when successful
 func (m *TeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsTelephoneNumberManagementNumberAssignmentsNumberAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/teams/telephoneNumberManagement/numberAssignments/{numberAssignment%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

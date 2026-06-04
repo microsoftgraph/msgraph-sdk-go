@@ -45,7 +45,7 @@ type SubscribedSkuItemRequestBuilderPatchRequestConfiguration struct {
 // NewSubscribedSkuItemRequestBuilderInternal instantiates a new SubscribedSkuItemRequestBuilder and sets the default values.
 func NewSubscribedSkuItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubscribedSkuItemRequestBuilder) {
     m := &SubscribedSkuItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}", pathParameters),
     }
     return m
 }
@@ -128,7 +128,7 @@ func (m *SubscribedSkuItemRequestBuilder) ToDeleteRequestInformation(ctx context
 // ToGetRequestInformation get a specific commercial subscription that an organization has acquired.
 // returns a *RequestInformation when successful
 func (m *SubscribedSkuItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscribedSkuItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}{?%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

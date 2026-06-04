@@ -72,7 +72,7 @@ func (m *ConfigurationManagementRequestBuilder) ConfigurationSnapshots()(*Config
 // NewConfigurationManagementRequestBuilderInternal instantiates a new ConfigurationManagementRequestBuilder and sets the default values.
 func NewConfigurationManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementRequestBuilder) {
     m := &ConfigurationManagementRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement", pathParameters),
     }
     return m
 }
@@ -152,7 +152,7 @@ func (m *ConfigurationManagementRequestBuilder) ToDeleteRequestInformation(ctx c
 // ToGetRequestInformation a container for Tenant Configuration Management (TCM) resources. Read-only.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/configurationManagement{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

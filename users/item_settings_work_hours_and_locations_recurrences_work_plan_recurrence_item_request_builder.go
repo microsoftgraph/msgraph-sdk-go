@@ -47,7 +47,7 @@ type ItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBu
 // NewItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBuilderInternal instantiates a new ItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBuilder and sets the default values.
 func NewItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBuilder) {
     m := &ItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/workHoursAndLocations/recurrences/{workPlanRecurrence%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/workHoursAndLocations/recurrences/{workPlanRecurrence%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemReque
 // ToGetRequestInformation collection of recurring work plans defined by the user.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWorkHoursAndLocationsRecurrencesWorkPlanRecurrenceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/settings/workHoursAndLocations/recurrences/{workPlanRecurrence%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

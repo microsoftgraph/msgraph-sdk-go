@@ -47,7 +47,7 @@ type FileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberIt
 // NewFileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderInternal instantiates a new FileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilder and sets the default values.
 func NewFileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilder) {
     m := &FileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *FileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemb
 // ToGetRequestInformation the set of members in the sharePointGroup. Read-write.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type IdentitiesHealthIssuesHealthIssueItemRequestBuilderPatchRequestConfiguratio
 // NewIdentitiesHealthIssuesHealthIssueItemRequestBuilderInternal instantiates a new IdentitiesHealthIssuesHealthIssueItemRequestBuilder and sets the default values.
 func NewIdentitiesHealthIssuesHealthIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesHealthIssuesHealthIssueItemRequestBuilder) {
     m := &IdentitiesHealthIssuesHealthIssueItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/healthIssues/{healthIssue%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/healthIssues/{healthIssue%2Did}", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) ToDeleteRequestInf
 // ToGetRequestInformation read the properties and relationships of a healthIssue object.
 // returns a *RequestInformation when successful
 func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesHealthIssuesHealthIssueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/identities/healthIssues/{healthIssue%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

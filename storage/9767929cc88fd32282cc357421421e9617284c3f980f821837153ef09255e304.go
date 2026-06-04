@@ -47,7 +47,7 @@ type FileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigration
 // NewFileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderInternal instantiates a new FileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilder and sets the default values.
 func NewFileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilder) {
     m := &FileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/migrationJobs/{sharePointMigrationJob%2Did}/progressEvents/{sharePointMigrationEvent%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/migrationJobs/{sharePointMigrationJob%2Did}/progressEvents/{sharePointMigrationEvent%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *FileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigra
 // ToGetRequestInformation a collection of migration events that reflects the job status changes.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/storage/fileStorage/containers/{fileStorageContainer%2Did}/migrationJobs/{sharePointMigrationJob%2Did}/progressEvents/{sharePointMigrationEvent%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

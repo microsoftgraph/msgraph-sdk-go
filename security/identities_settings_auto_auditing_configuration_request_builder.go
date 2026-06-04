@@ -47,7 +47,7 @@ type IdentitiesSettingsAutoAuditingConfigurationRequestBuilderPatchRequestConfig
 // NewIdentitiesSettingsAutoAuditingConfigurationRequestBuilderInternal instantiates a new IdentitiesSettingsAutoAuditingConfigurationRequestBuilder and sets the default values.
 func NewIdentitiesSettingsAutoAuditingConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesSettingsAutoAuditingConfigurationRequestBuilder) {
     m := &IdentitiesSettingsAutoAuditingConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/settings/autoAuditingConfiguration{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/identities/settings/autoAuditingConfiguration", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *IdentitiesSettingsAutoAuditingConfigurationRequestBuilder) ToDeleteRequ
 // ToGetRequestInformation get the properties and relationships of microsoft.graph.security.autoAuditingConfiguration object.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSettingsAutoAuditingConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSettingsAutoAuditingConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/identities/settings/autoAuditingConfiguration{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type ConditionalAccessDeletedItemsRequestBuilderPatchRequestConfiguration struct
 // NewConditionalAccessDeletedItemsRequestBuilderInternal instantiates a new ConditionalAccessDeletedItemsRequestBuilder and sets the default values.
 func NewConditionalAccessDeletedItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessDeletedItemsRequestBuilder) {
     m := &ConditionalAccessDeletedItemsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/deletedItems{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/deletedItems", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *ConditionalAccessDeletedItemsRequestBuilder) ToDeleteRequestInformation
 // ToGetRequestInformation get deletedItems from identity
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessDeletedItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identity/conditionalAccess/deletedItems{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

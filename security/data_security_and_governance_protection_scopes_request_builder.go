@@ -52,7 +52,7 @@ func (m *DataSecurityAndGovernanceProtectionScopesRequestBuilder) Compute()(*Dat
 // NewDataSecurityAndGovernanceProtectionScopesRequestBuilderInternal instantiates a new DataSecurityAndGovernanceProtectionScopesRequestBuilder and sets the default values.
 func NewDataSecurityAndGovernanceProtectionScopesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataSecurityAndGovernanceProtectionScopesRequestBuilder) {
     m := &DataSecurityAndGovernanceProtectionScopesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataSecurityAndGovernance/protectionScopes{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataSecurityAndGovernance/protectionScopes", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *DataSecurityAndGovernanceProtectionScopesRequestBuilder) ToDeleteReques
 // ToGetRequestInformation container for actions related to computing tenant-wide data protection scopes.
 // returns a *RequestInformation when successful
 func (m *DataSecurityAndGovernanceProtectionScopesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataSecurityAndGovernanceProtectionScopesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/dataSecurityAndGovernance/protectionScopes{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

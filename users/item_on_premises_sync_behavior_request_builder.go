@@ -47,7 +47,7 @@ type ItemOnPremisesSyncBehaviorRequestBuilderPatchRequestConfiguration struct {
 // NewItemOnPremisesSyncBehaviorRequestBuilderInternal instantiates a new ItemOnPremisesSyncBehaviorRequestBuilder and sets the default values.
 func NewItemOnPremisesSyncBehaviorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnPremisesSyncBehaviorRequestBuilder) {
     m := &ItemOnPremisesSyncBehaviorRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onPremisesSyncBehavior{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onPremisesSyncBehavior", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemOnPremisesSyncBehaviorRequestBuilder) ToDeleteRequestInformation(ct
 // ToGetRequestInformation get onPremisesSyncBehavior from users
 // returns a *RequestInformation when successful
 func (m *ItemOnPremisesSyncBehaviorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnPremisesSyncBehaviorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/onPremisesSyncBehavior{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

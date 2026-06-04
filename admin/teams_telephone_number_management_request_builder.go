@@ -47,7 +47,7 @@ type TeamsTelephoneNumberManagementRequestBuilderPatchRequestConfiguration struc
 // NewTeamsTelephoneNumberManagementRequestBuilderInternal instantiates a new TeamsTelephoneNumberManagementRequestBuilder and sets the default values.
 func NewTeamsTelephoneNumberManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsTelephoneNumberManagementRequestBuilder) {
     m := &TeamsTelephoneNumberManagementRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *TeamsTelephoneNumberManagementRequestBuilder) ToDeleteRequestInformatio
 // ToGetRequestInformation represents a collection of available telephone number management operations.
 // returns a *RequestInformation when successful
 func (m *TeamsTelephoneNumberManagementRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsTelephoneNumberManagementRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/teams/telephoneNumberManagement{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -38,7 +38,7 @@ func (m *WebauthnAuthenticatorAttestationResponse) GetAdditionalData()(map[strin
     }
     return val.(map[string]any)
 }
-// GetAttestationObject gets the attestationObject property value. The attestationObject property
+// GetAttestationObject gets the attestationObject property value. A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.
 // returns a *string when successful
 func (m *WebauthnAuthenticatorAttestationResponse) GetAttestationObject()(*string) {
     val, err := m.GetBackingStore().Get("attestationObject")
@@ -55,7 +55,7 @@ func (m *WebauthnAuthenticatorAttestationResponse) GetAttestationObject()(*strin
 func (m *WebauthnAuthenticatorAttestationResponse) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientDataJSON gets the clientDataJSON property value. The clientDataJSON property
+// GetClientDataJSON gets the clientDataJSON property value. Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.
 // returns a *string when successful
 func (m *WebauthnAuthenticatorAttestationResponse) GetClientDataJSON()(*string) {
     val, err := m.GetBackingStore().Get("clientDataJSON")
@@ -150,7 +150,7 @@ func (m *WebauthnAuthenticatorAttestationResponse) SetAdditionalData(value map[s
         panic(err)
     }
 }
-// SetAttestationObject sets the attestationObject property value. The attestationObject property
+// SetAttestationObject sets the attestationObject property value. A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.
 func (m *WebauthnAuthenticatorAttestationResponse) SetAttestationObject(value *string)() {
     err := m.GetBackingStore().Set("attestationObject", value)
     if err != nil {
@@ -161,7 +161,7 @@ func (m *WebauthnAuthenticatorAttestationResponse) SetAttestationObject(value *s
 func (m *WebauthnAuthenticatorAttestationResponse) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientDataJSON sets the clientDataJSON property value. The clientDataJSON property
+// SetClientDataJSON sets the clientDataJSON property value. Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.
 func (m *WebauthnAuthenticatorAttestationResponse) SetClientDataJSON(value *string)() {
     err := m.GetBackingStore().Set("clientDataJSON", value)
     if err != nil {

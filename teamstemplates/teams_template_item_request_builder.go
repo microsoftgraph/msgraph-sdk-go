@@ -47,7 +47,7 @@ type TeamsTemplateItemRequestBuilderPatchRequestConfiguration struct {
 // NewTeamsTemplateItemRequestBuilderInternal instantiates a new TeamsTemplateItemRequestBuilder and sets the default values.
 func NewTeamsTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsTemplateItemRequestBuilder) {
     m := &TeamsTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamsTemplates/{teamsTemplate%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamsTemplates/{teamsTemplate%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *TeamsTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context
 // ToGetRequestInformation get entity from teamsTemplates by key
 // returns a *RequestInformation when successful
 func (m *TeamsTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/teamsTemplates/{teamsTemplate%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

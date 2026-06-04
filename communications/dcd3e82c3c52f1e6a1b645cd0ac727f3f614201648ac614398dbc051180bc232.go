@@ -47,7 +47,7 @@ type OnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementCon
 // NewOnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementConversationMessageReactionItemRequestBuilderInternal instantiates a new OnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementConversationMessageReactionItemRequestBuilder and sets the default values.
 func NewOnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementConversationMessageReactionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementConversationMessageReactionItemRequestBuilder) {
     m := &OnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementConversationMessageReactionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/messages/{engagementConversationMessage%2Did}/replies/{engagementConversationMessage%2Did1}/reactions/{engagementConversationMessageReaction%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/messages/{engagementConversationMessage%2Did}/replies/{engagementConversationMessage%2Did1}/reactions/{engagementConversationMessageReaction%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *OnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagemen
 // ToGetRequestInformation a collection of reactions (such as like and smile) that users have applied to this message.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementConversationMessageReactionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingConversationsItemMessagesItemRepliesItemReactionsEngagementConversationMessageReactionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/messages/{engagementConversationMessage%2Did}/replies/{engagementConversationMessage%2Did1}/reactions/{engagementConversationMessageReaction%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

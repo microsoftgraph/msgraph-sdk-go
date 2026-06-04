@@ -47,7 +47,7 @@ type DirectoryRolesWithRoleTemplateIdRequestBuilderPatchRequestConfiguration str
 // NewDirectoryRolesWithRoleTemplateIdRequestBuilderInternal instantiates a new DirectoryRolesWithRoleTemplateIdRequestBuilder and sets the default values.
 func NewDirectoryRolesWithRoleTemplateIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, roleTemplateId *string)(*DirectoryRolesWithRoleTemplateIdRequestBuilder) {
     m := &DirectoryRolesWithRoleTemplateIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}')", pathParameters),
     }
     if roleTemplateId != nil {
         m.BaseRequestBuilder.PathParameters["roleTemplateId"] = *roleTemplateId
@@ -133,7 +133,7 @@ func (m *DirectoryRolesWithRoleTemplateIdRequestBuilder) ToDeleteRequestInformat
 // ToGetRequestInformation retrieve the properties of a directoryRole object. The role must be activated in tenant for a successful response. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 // returns a *RequestInformation when successful
 func (m *DirectoryRolesWithRoleTemplateIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRolesWithRoleTemplateIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

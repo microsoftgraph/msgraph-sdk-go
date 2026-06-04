@@ -47,7 +47,7 @@ type BookingCurrenciesBookingCurrencyItemRequestBuilderPatchRequestConfiguration
 // NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal instantiates a new BookingCurrenciesBookingCurrencyItemRequestBuilder and sets the default values.
 func NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingCurrenciesBookingCurrencyItemRequestBuilder) {
     m := &BookingCurrenciesBookingCurrencyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingCurrencies/{bookingCurrency%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingCurrencies/{bookingCurrency%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *BookingCurrenciesBookingCurrencyItemRequestBuilder) ToDeleteRequestInfo
 // ToGetRequestInformation get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.
 // returns a *RequestInformation when successful
 func (m *BookingCurrenciesBookingCurrencyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingCurrenciesBookingCurrencyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/bookingCurrencies/{bookingCurrency%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

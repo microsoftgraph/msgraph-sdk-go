@@ -47,7 +47,7 @@ type VerifiedIdProfilesVerifiedIdProfileItemRequestBuilderPatchRequestConfigurat
 // NewVerifiedIdProfilesVerifiedIdProfileItemRequestBuilderInternal instantiates a new VerifiedIdProfilesVerifiedIdProfileItemRequestBuilder and sets the default values.
 func NewVerifiedIdProfilesVerifiedIdProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VerifiedIdProfilesVerifiedIdProfileItemRequestBuilder) {
     m := &VerifiedIdProfilesVerifiedIdProfileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/verifiedId/profiles/{verifiedIdProfile%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/verifiedId/profiles/{verifiedIdProfile%2Did}", pathParameters),
     }
     return m
 }
@@ -136,7 +136,7 @@ func (m *VerifiedIdProfilesVerifiedIdProfileItemRequestBuilder) ToDeleteRequestI
 // ToGetRequestInformation read the properties and relationships of verifiedIdProfile object.
 // returns a *RequestInformation when successful
 func (m *VerifiedIdProfilesVerifiedIdProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VerifiedIdProfilesVerifiedIdProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identity/verifiedId/profiles/{verifiedIdProfile%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

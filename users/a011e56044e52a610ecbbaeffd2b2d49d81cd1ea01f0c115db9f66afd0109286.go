@@ -47,7 +47,7 @@ type ItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItem
 // NewItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItemRequestBuilderInternal instantiates a new ItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItemRequestBuilder and sets the default values.
 func NewItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItemRequestBuilder) {
     m := &ItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivity
 // ToGetRequestInformation collection of activity logs related to content processing.
 // returns a *RequestInformation when successful
 func (m *ItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDataSecurityAndGovernanceActivitiesContentActivitiesContentActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

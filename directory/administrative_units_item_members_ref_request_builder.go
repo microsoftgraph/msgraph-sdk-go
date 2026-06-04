@@ -62,7 +62,7 @@ type AdministrativeUnitsItemMembersRefRequestBuilderPostRequestConfiguration str
 // NewAdministrativeUnitsItemMembersRefRequestBuilderInternal instantiates a new AdministrativeUnitsItemMembersRefRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemMembersRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemMembersRefRequestBuilder) {
     m := &AdministrativeUnitsItemMembersRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/$ref?@id={%40id}{&%24count,%24filter,%24orderby,%24search,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

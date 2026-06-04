@@ -47,7 +47,7 @@ type ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderPatchReque
 // NewItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderInternal instantiates a new ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder and sets the default values.
 func NewItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) {
     m := &ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/offerShiftRequests/{offerShiftRequest%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/offerShiftRequests/{offerShiftRequest%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) ToDe
 // ToGetRequestInformation retrieve the properties and relationships of an offerShiftRequest object.
 // returns a *RequestInformation when successful
 func (m *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/teams/{team%2Did}/schedule/offerShiftRequests/{offerShiftRequest%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

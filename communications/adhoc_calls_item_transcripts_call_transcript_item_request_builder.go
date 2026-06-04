@@ -47,7 +47,7 @@ type AdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderPatchRequestConfig
 // NewAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderInternal instantiates a new AdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder and sets the default values.
 func NewAdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder) {
     m := &AdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/adhocCalls/{adhocCall%2Did}/transcripts/{callTranscript%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/adhocCalls/{adhocCall%2Did}/transcripts/{callTranscript%2Did}", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *AdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder) ToDeleteRequ
 // ToGetRequestInformation the transcripts of a call. Read-only.
 // returns a *RequestInformation when successful
 func (m *AdhocCallsItemTranscriptsCallTranscriptItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdhocCallsItemTranscriptsCallTranscriptItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/communications/adhocCalls/{adhocCall%2Did}/transcripts/{callTranscript%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

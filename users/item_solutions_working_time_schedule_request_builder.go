@@ -47,7 +47,7 @@ type ItemSolutionsWorkingTimeScheduleRequestBuilderPatchRequestConfiguration str
 // NewItemSolutionsWorkingTimeScheduleRequestBuilderInternal instantiates a new ItemSolutionsWorkingTimeScheduleRequestBuilder and sets the default values.
 func NewItemSolutionsWorkingTimeScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSolutionsWorkingTimeScheduleRequestBuilder) {
     m := &ItemSolutionsWorkingTimeScheduleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/solutions/workingTimeSchedule{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/solutions/workingTimeSchedule", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) ToDeleteRequestInformat
 // ToGetRequestInformation the working time schedule entity associated with the solution.
 // returns a *RequestInformation when successful
 func (m *ItemSolutionsWorkingTimeScheduleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSolutionsWorkingTimeScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/solutions/workingTimeSchedule{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

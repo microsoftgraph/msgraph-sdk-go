@@ -57,7 +57,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) BrowseW
 // NewBackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderInternal instantiates a new BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder and sets the default values.
 func NewBackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) {
     m := &BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/browseSessions/{browseSessionBase%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/browseSessions/{browseSessionBase%2Did}", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToDelet
 // ToGetRequestInformation the list of browse sessions in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/browseSessions/{browseSessionBase%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderPatchReq
 // NewSettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderInternal instantiates a new SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder and sets the default values.
 func NewSettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) {
     m := &SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/settings/quota/services/{serviceStorageQuotaBreakdown%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/settings/quota/services/{serviceStorageQuotaBreakdown%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) To
 // ToGetRequestInformation get services from storage
 // returns a *RequestInformation when successful
 func (m *SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/storage/settings/quota/services/{serviceStorageQuotaBreakdown%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

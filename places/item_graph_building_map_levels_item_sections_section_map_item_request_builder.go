@@ -47,7 +47,7 @@ type ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderPatchRequ
 // NewItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderInternal instantiates a new ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder and sets the default values.
 func NewItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder) {
     m := &ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/sections/{sectionMap%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/sections/{sectionMap%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder) ToD
 // ToGetRequestInformation collection of sections (such as zones or partitions) on this level. Supports upsert.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemSectionsSectionMapItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/sections/{sectionMap%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

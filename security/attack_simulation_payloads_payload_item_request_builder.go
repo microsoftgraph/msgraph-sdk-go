@@ -47,7 +47,7 @@ type AttackSimulationPayloadsPayloadItemRequestBuilderPatchRequestConfiguration 
 // NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal instantiates a new AttackSimulationPayloadsPayloadItemRequestBuilder and sets the default values.
 func NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
     m := &AttackSimulationPayloadsPayloadItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/payloads/{payload%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/payloads/{payload%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) ToDeleteRequestInfor
 // ToGetRequestInformation get an attack simulation campaign payload for a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationPayloadsPayloadItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/attackSimulation/payloads/{payload%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

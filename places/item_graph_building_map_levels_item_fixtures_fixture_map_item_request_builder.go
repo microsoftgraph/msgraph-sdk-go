@@ -47,7 +47,7 @@ type ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderPatchRequ
 // NewItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderInternal instantiates a new ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder and sets the default values.
 func NewItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) {
     m := &ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/fixtures/{fixtureMap%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/fixtures/{fixtureMap%2Did}", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) ToD
 // ToGetRequestInformation collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
 // returns a *RequestInformation when successful
 func (m *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphBuildingMapLevelsItemFixturesFixtureMapItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/fixtures/{fixtureMap%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -52,7 +52,7 @@ func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemReq
 // NewConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderInternal instantiates a new ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder and sets the default values.
 func NewConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) {
     m := &ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}", pathParameters),
     }
     return m
 }
@@ -141,7 +141,7 @@ func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemReq
 // ToGetRequestInformation get the properties and relationships of a configurationMonitor object.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
