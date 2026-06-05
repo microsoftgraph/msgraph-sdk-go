@@ -186,6 +186,11 @@ func (m *ItemChatsChatItemRequestBuilder) StartMigration()(*ItemChatsItemStartMi
 func (m *ItemChatsChatItemRequestBuilder) Tabs()(*ItemChatsItemTabsRequestBuilder) {
     return NewItemChatsItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// TargetedMessages provides operations to manage the targetedMessages property of the microsoft.graph.chat entity.
+// returns a *ItemChatsItemTargetedMessagesRequestBuilder when successful
+func (m *ItemChatsChatItemRequestBuilder) TargetedMessages()(*ItemChatsItemTargetedMessagesRequestBuilder) {
+    return NewItemChatsItemTargetedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property chats for users
 // returns a *RequestInformation when successful
 func (m *ItemChatsChatItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChatsChatItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

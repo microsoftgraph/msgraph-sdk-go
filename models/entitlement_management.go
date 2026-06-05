@@ -296,6 +296,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["subjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageSubjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageSubjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessPackageSubjectable)
+                }
+            }
+            m.SetSubjects(res)
+        }
+        return nil
+    }
     return res
 }
 // GetResourceEnvironments gets the resourceEnvironments property value. A reference to the geolocation environments in which a resource is located.
@@ -355,6 +371,18 @@ func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable)
     }
     if val != nil {
         return val.(EntitlementManagementSettingsable)
+    }
+    return nil
+}
+// GetSubjects gets the subjects property value. The subjects property
+// returns a []AccessPackageSubjectable when successful
+func (m *EntitlementManagement) GetSubjects()([]AccessPackageSubjectable) {
+    val, err := m.GetBackingStore().Get("subjects")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageSubjectable)
     }
     return nil
 }
@@ -502,6 +530,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetSubjects() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjects()))
+        for i, v := range m.GetSubjects() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subjects", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
@@ -588,6 +628,13 @@ func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsa
         panic(err)
     }
 }
+// SetSubjects sets the subjects property value. The subjects property
+func (m *EntitlementManagement) SetSubjects(value []AccessPackageSubjectable)() {
+    err := m.GetBackingStore().Set("subjects", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type EntitlementManagementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -603,6 +650,7 @@ type EntitlementManagementable interface {
     GetResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
     GetResources()([]AccessPackageResourceable)
     GetSettings()(EntitlementManagementSettingsable)
+    GetSubjects()([]AccessPackageSubjectable)
     SetAccessPackageAssignmentApprovals(value []Approvalable)()
     SetAccessPackages(value []AccessPackageable)()
     SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)()
@@ -615,4 +663,5 @@ type EntitlementManagementable interface {
     SetResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()
     SetResources(value []AccessPackageResourceable)()
     SetSettings(value EntitlementManagementSettingsable)()
+    SetSubjects(value []AccessPackageSubjectable)()
 }

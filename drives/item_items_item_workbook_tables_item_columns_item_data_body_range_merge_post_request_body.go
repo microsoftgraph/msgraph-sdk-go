@@ -17,6 +17,8 @@ func NewItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeMergePostRequestB
     m := &ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeMergePostRequestBody{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    acrossValue := false
+    m.SetAcross(&acrossValue)
     m.SetAdditionalData(make(map[string]any))
     return m
 }
