@@ -19,10 +19,11 @@ const (
     MICROSOFTSENTINEL_SERVICESOURCE
     MICROSOFTINSIDERRISKMANAGEMENT_SERVICESOURCE
     MICROSOFTTHREATINTELLIGENCE_SERVICESOURCE
+    MICROSOFTSECURITYFORAI_SERVICESOURCE
 )
 
 func (i ServiceSource) String() string {
-    return []string{"unknown", "microsoftDefenderForEndpoint", "microsoftDefenderForIdentity", "microsoftDefenderForCloudApps", "microsoftDefenderForOffice365", "microsoft365Defender", "azureAdIdentityProtection", "microsoftAppGovernance", "dataLossPrevention", "unknownFutureValue", "microsoftDefenderForCloud", "microsoftSentinel", "microsoftInsiderRiskManagement", "microsoftThreatIntelligence"}[i]
+    return []string{"unknown", "microsoftDefenderForEndpoint", "microsoftDefenderForIdentity", "microsoftDefenderForCloudApps", "microsoftDefenderForOffice365", "microsoft365Defender", "azureAdIdentityProtection", "microsoftAppGovernance", "dataLossPrevention", "unknownFutureValue", "microsoftDefenderForCloud", "microsoftSentinel", "microsoftInsiderRiskManagement", "microsoftThreatIntelligence", "microsoftSecurityForAI"}[i]
 }
 func ParseServiceSource(v string) (any, error) {
     result := UNKNOWN_SERVICESOURCE
@@ -55,6 +56,8 @@ func ParseServiceSource(v string) (any, error) {
             result = MICROSOFTINSIDERRISKMANAGEMENT_SERVICESOURCE
         case "microsoftThreatIntelligence":
             result = MICROSOFTTHREATINTELLIGENCE_SERVICESOURCE
+        case "microsoftSecurityForAI":
+            result = MICROSOFTSECURITYFORAI_SERVICESOURCE
         default:
             return nil, nil
     }

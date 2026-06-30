@@ -115,6 +115,11 @@ func (m *PoliciesRequestBuilder) DeviceRegistrationPolicy()(*DeviceRegistrationP
 func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPoliciesRequestBuilder) {
     return NewFeatureRolloutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FederatedTokenValidationPolicy provides operations to manage the federatedTokenValidationPolicy property of the microsoft.graph.policyRoot entity.
+// returns a *FederatedTokenValidationPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) FederatedTokenValidationPolicy()(*FederatedTokenValidationPolicyRequestBuilder) {
+    return NewFederatedTokenValidationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get policies
 // returns a PolicyRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

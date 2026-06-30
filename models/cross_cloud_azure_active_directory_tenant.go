@@ -24,7 +24,7 @@ func NewCrossCloudAzureActiveDirectoryTenant()(*CrossCloudAzureActiveDirectoryTe
 func CreateCrossCloudAzureActiveDirectoryTenantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossCloudAzureActiveDirectoryTenant(), nil
 }
-// GetCloudInstance gets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
+// GetCloudInstance gets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read-only.
 // returns a *string when successful
 func (m *CrossCloudAzureActiveDirectoryTenant) GetCloudInstance()(*string) {
     val, err := m.GetBackingStore().Get("cloudInstance")
@@ -36,7 +36,7 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetCloudInstance()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the Microsoft Entra tenant. Read only.
+// GetDisplayName gets the displayName property value. The name of the Microsoft Entra tenant. Read-only.
 // returns a *string when successful
 func (m *CrossCloudAzureActiveDirectoryTenant) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -84,7 +84,7 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant. Read only.
+// GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant. Read-only.
 // returns a *string when successful
 func (m *CrossCloudAzureActiveDirectoryTenant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -122,21 +122,21 @@ func (m *CrossCloudAzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetCloudInstance sets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
+// SetCloudInstance sets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read-only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetCloudInstance(value *string)() {
     err := m.GetBackingStore().Set("cloudInstance", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the Microsoft Entra tenant. Read only.
+// SetDisplayName sets the displayName property value. The name of the Microsoft Entra tenant. Read-only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The ID of the Microsoft Entra tenant. Read only.
+// SetTenantId sets the tenantId property value. The ID of the Microsoft Entra tenant. Read-only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

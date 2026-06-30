@@ -14,7 +14,7 @@ import (
 type ApplicationTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApplicationTemplatesRequestBuilderGetQueryParameters retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
+// ApplicationTemplatesRequestBuilderGetQueryParameters retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license. If a risk property is included in the request without appropriate license, a @microsoft.graph.licenseRequired OData annotation is returned in the response.
 type ApplicationTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -72,7 +72,7 @@ func NewApplicationTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ApplicationTemplatesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
+// Get retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license. If a risk property is included in the request without appropriate license, a @microsoft.graph.licenseRequired OData annotation is returned in the response.
 // returns a ApplicationTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -95,7 +95,7 @@ func (m *ApplicationTemplatesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
+// ToGetRequestInformation retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license. If a risk property is included in the request without appropriate license, a @microsoft.graph.licenseRequired OData annotation is returned in the response.
 // returns a *RequestInformation when successful
 func (m *ApplicationTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

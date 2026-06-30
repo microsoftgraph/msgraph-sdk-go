@@ -19,6 +19,12 @@ func NewItemItemsItemInvitePostRequestBody()(*ItemItemsItemInvitePostRequestBody
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
+    requireSignInValue := false
+    m.SetRequireSignIn(&requireSignInValue)
+    retainInheritedPermissionsValue := false
+    m.SetRetainInheritedPermissions(&retainInheritedPermissionsValue)
+    sendInvitationValue := false
+    m.SetSendInvitation(&sendInvitationValue)
     return m
 }
 // CreateItemItemsItemInvitePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -43,7 +43,7 @@ func (m *WebauthnPublicKeyCredentialUserEntity) GetAdditionalData()(map[string]a
 func (m *WebauthnPublicKeyCredentialUserEntity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. A human-readable name for the user account, intended for display.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialUserEntity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -101,7 +101,7 @@ func (m *WebauthnPublicKeyCredentialUserEntity) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. A user identifier, determined by the relying party. This value is opaque to the authenticator and is Base64URL-encoded without padding.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialUserEntity) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -113,7 +113,7 @@ func (m *WebauthnPublicKeyCredentialUserEntity) GetId()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. A human-readable identifier for the user account, such as a username or email address.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialUserEntity) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -182,21 +182,21 @@ func (m *WebauthnPublicKeyCredentialUserEntity) SetAdditionalData(value map[stri
 func (m *WebauthnPublicKeyCredentialUserEntity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. A human-readable name for the user account, intended for display.
 func (m *WebauthnPublicKeyCredentialUserEntity) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. A user identifier, determined by the relying party. This value is opaque to the authenticator and is Base64URL-encoded without padding.
 func (m *WebauthnPublicKeyCredentialUserEntity) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. A human-readable identifier for the user account, such as a username or email address.
 func (m *WebauthnPublicKeyCredentialUserEntity) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

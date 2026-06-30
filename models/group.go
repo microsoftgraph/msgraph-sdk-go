@@ -38,6 +38,18 @@ func (m *Group) GetAcceptedSenders()([]DirectoryObjectable) {
     }
     return nil
 }
+// GetAccessType gets the accessType property value. Indicates the type of access to the group. The possible values are: none, private, secret, public, unknownFutureValue. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+// returns a *GroupAccessType when successful
+func (m *Group) GetAccessType()(*GroupAccessType) {
+    val, err := m.GetBackingStore().Get("accessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupAccessType)
+    }
+    return nil
+}
 // GetAllowExternalSenders gets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetAllowExternalSenders()(*bool) {
@@ -271,6 +283,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
                 }
             }
             m.SetAcceptedSenders(res)
+        }
+        return nil
+    }
+    res["accessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseGroupAccessType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccessType(val.(*GroupAccessType))
         }
         return nil
     }
@@ -600,6 +622,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["isFavorite"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsFavorite(val)
+        }
+        return nil
+    }
     res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -745,6 +777,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetOnPremisesDomainName(val)
+        }
+        return nil
+    }
+    res["onPremisesExtensionAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesExtensionAttributesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesExtensionAttributes(val.(OnPremisesExtensionAttributesable))
         }
         return nil
     }
@@ -1132,6 +1174,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["unseenConversationsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnseenConversationsCount(val)
+        }
+        return nil
+    }
     res["unseenCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -1139,6 +1191,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetUnseenCount(val)
+        }
+        return nil
+    }
+    res["unseenMessagesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnseenMessagesCount(val)
         }
         return nil
     }
@@ -1252,6 +1314,18 @@ func (m *Group) GetIsArchived()(*bool) {
 // returns a *bool when successful
 func (m *Group) GetIsAssignableToRole()(*bool) {
     val, err := m.GetBackingStore().Get("isAssignableToRole")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsFavorite gets the isFavorite property value. Indicates whether the user marked the group as favorite. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+// returns a *bool when successful
+func (m *Group) GetIsFavorite()(*bool) {
+    val, err := m.GetBackingStore().Get("isFavorite")
     if err != nil {
         panic(err)
     }
@@ -1413,6 +1487,18 @@ func (m *Group) GetOnPremisesDomainName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. The onPremisesExtensionAttributes property
+// returns a OnPremisesExtensionAttributesable when successful
+func (m *Group) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable) {
+    val, err := m.GetBackingStore().Get("onPremisesExtensionAttributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesExtensionAttributesable)
     }
     return nil
 }
@@ -1776,10 +1862,34 @@ func (m *Group) GetUniqueName()(*string) {
     }
     return nil
 }
-// GetUnseenCount gets the unseenCount property value. Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+// GetUnseenConversationsCount gets the unseenConversationsCount property value. Count of conversations that have had one or more new posts delivered since the signed-in user's last visit to the group. This property is the same as unseenCount. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+// returns a *int32 when successful
+func (m *Group) GetUnseenConversationsCount()(*int32) {
+    val, err := m.GetBackingStore().Get("unseenConversationsCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetUnseenCount gets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *int32 when successful
 func (m *Group) GetUnseenCount()(*int32) {
     val, err := m.GetBackingStore().Get("unseenCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetUnseenMessagesCount gets the unseenMessagesCount property value. Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+// returns a *int32 when successful
+func (m *Group) GetUnseenMessagesCount()(*int32) {
+    val, err := m.GetBackingStore().Get("unseenMessagesCount")
     if err != nil {
         panic(err)
     }
@@ -1826,6 +1936,13 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             }
         }
         err = writer.WriteCollectionOfObjectValues("acceptedSenders", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAccessType() != nil {
+        cast := (*m.GetAccessType()).String()
+        err = writer.WriteStringValue("accessType", &cast)
         if err != nil {
             return err
         }
@@ -2041,6 +2158,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteBoolValue("isFavorite", m.GetIsFavorite())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
         if err != nil {
             return err
@@ -2132,6 +2255,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err = writer.WriteStringValue("onPremisesDomainName", m.GetOnPremisesDomainName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("onPremisesExtensionAttributes", m.GetOnPremisesExtensionAttributes())
         if err != nil {
             return err
         }
@@ -2383,7 +2512,19 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteInt32Value("unseenConversationsCount", m.GetUnseenConversationsCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("unseenCount", m.GetUnseenCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("unseenMessagesCount", m.GetUnseenMessagesCount())
         if err != nil {
             return err
         }
@@ -2405,6 +2546,13 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 // SetAcceptedSenders sets the acceptedSenders property value. The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.
 func (m *Group) SetAcceptedSenders(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("acceptedSenders", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAccessType sets the accessType property value. Indicates the type of access to the group. The possible values are: none, private, secret, public, unknownFutureValue. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+func (m *Group) SetAccessType(value *GroupAccessType)() {
+    err := m.GetBackingStore().Set("accessType", value)
     if err != nil {
         panic(err)
     }
@@ -2591,6 +2739,13 @@ func (m *Group) SetIsAssignableToRole(value *bool)() {
         panic(err)
     }
 }
+// SetIsFavorite sets the isFavorite property value. Indicates whether the user marked the group as favorite. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+func (m *Group) SetIsFavorite(value *bool)() {
+    err := m.GetBackingStore().Set("isFavorite", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsManagementRestricted sets the isManagementRestricted property value. Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.
 func (m *Group) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
@@ -2678,6 +2833,13 @@ func (m *Group) SetOnenote(value Onenoteable)() {
 // SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesDomainName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesDomainName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. The onPremisesExtensionAttributes property
+func (m *Group) SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)() {
+    err := m.GetBackingStore().Set("onPremisesExtensionAttributes", value)
     if err != nil {
         panic(err)
     }
@@ -2892,9 +3054,23 @@ func (m *Group) SetUniqueName(value *string)() {
         panic(err)
     }
 }
-// SetUnseenCount sets the unseenCount property value. Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+// SetUnseenConversationsCount sets the unseenConversationsCount property value. Count of conversations that have had one or more new posts delivered since the signed-in user's last visit to the group. This property is the same as unseenCount. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+func (m *Group) SetUnseenConversationsCount(value *int32)() {
+    err := m.GetBackingStore().Set("unseenConversationsCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUnseenCount sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetUnseenCount(value *int32)() {
     err := m.GetBackingStore().Set("unseenCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUnseenMessagesCount sets the unseenMessagesCount property value. Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
+func (m *Group) SetUnseenMessagesCount(value *int32)() {
+    err := m.GetBackingStore().Set("unseenMessagesCount", value)
     if err != nil {
         panic(err)
     }
@@ -2917,6 +3093,7 @@ type Groupable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcceptedSenders()([]DirectoryObjectable)
+    GetAccessType()(*GroupAccessType)
     GetAllowExternalSenders()(*bool)
     GetAppRoleAssignments()([]AppRoleAssignmentable)
     GetAssignedLabels()([]AssignedLabelable)
@@ -2943,6 +3120,7 @@ type Groupable interface {
     GetInfoCatalogs()([]string)
     GetIsArchived()(*bool)
     GetIsAssignableToRole()(*bool)
+    GetIsFavorite()(*bool)
     GetIsManagementRestricted()(*bool)
     GetIsSubscribedByMail()(*bool)
     GetLicenseProcessingState()(LicenseProcessingStateable)
@@ -2956,6 +3134,7 @@ type Groupable interface {
     GetMembersWithLicenseErrors()([]DirectoryObjectable)
     GetOnenote()(Onenoteable)
     GetOnPremisesDomainName()(*string)
+    GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnPremisesNetBiosName()(*string)
     GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable)
@@ -2986,10 +3165,13 @@ type Groupable interface {
     GetTransitiveMemberOf()([]DirectoryObjectable)
     GetTransitiveMembers()([]DirectoryObjectable)
     GetUniqueName()(*string)
+    GetUnseenConversationsCount()(*int32)
     GetUnseenCount()(*int32)
+    GetUnseenMessagesCount()(*int32)
     GetVisibility()(*string)
     GetWelcomeMessageEnabled()(*bool)
     SetAcceptedSenders(value []DirectoryObjectable)()
+    SetAccessType(value *GroupAccessType)()
     SetAllowExternalSenders(value *bool)()
     SetAppRoleAssignments(value []AppRoleAssignmentable)()
     SetAssignedLabels(value []AssignedLabelable)()
@@ -3016,6 +3198,7 @@ type Groupable interface {
     SetInfoCatalogs(value []string)()
     SetIsArchived(value *bool)()
     SetIsAssignableToRole(value *bool)()
+    SetIsFavorite(value *bool)()
     SetIsManagementRestricted(value *bool)()
     SetIsSubscribedByMail(value *bool)()
     SetLicenseProcessingState(value LicenseProcessingStateable)()
@@ -3029,6 +3212,7 @@ type Groupable interface {
     SetMembersWithLicenseErrors(value []DirectoryObjectable)()
     SetOnenote(value Onenoteable)()
     SetOnPremisesDomainName(value *string)()
+    SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnPremisesNetBiosName(value *string)()
     SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)()
@@ -3059,7 +3243,9 @@ type Groupable interface {
     SetTransitiveMemberOf(value []DirectoryObjectable)()
     SetTransitiveMembers(value []DirectoryObjectable)()
     SetUniqueName(value *string)()
+    SetUnseenConversationsCount(value *int32)()
     SetUnseenCount(value *int32)()
+    SetUnseenMessagesCount(value *int32)()
     SetVisibility(value *string)()
     SetWelcomeMessageEnabled(value *bool)()
 }

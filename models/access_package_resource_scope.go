@@ -124,7 +124,7 @@ func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
     }
     return nil
 }
-// GetOriginId gets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
+// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. If a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
 // returns a *string when successful
 func (m *AccessPackageResourceScope) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
@@ -136,7 +136,7 @@ func (m *AccessPackageResourceScope) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The origin system for the scope.
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup, AzureResources, or CustomDataProvidedResource. Supports $filter (eq).
 // returns a *string when successful
 func (m *AccessPackageResourceScope) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
@@ -225,14 +225,14 @@ func (m *AccessPackageResourceScope) SetIsRootScope(value *bool)() {
         panic(err)
     }
 }
-// SetOriginId sets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
+// SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. If a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
 func (m *AccessPackageResourceScope) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The origin system for the scope.
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup, AzureResources, or CustomDataProvidedResource. Supports $filter (eq).
 func (m *AccessPackageResourceScope) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {
