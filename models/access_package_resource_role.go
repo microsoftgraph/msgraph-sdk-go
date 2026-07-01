@@ -100,6 +100,16 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseRoleType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTypeEscaped(val.(*RoleType))
+        }
+        return nil
+    }
     return res
 }
 // GetOriginId gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId is the sequence number of the role in the site.
@@ -114,7 +124,7 @@ func (m *AccessPackageResourceRole) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AzureResources, or AadGroup.
 // returns a *string when successful
 func (m *AccessPackageResourceRole) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
@@ -135,6 +145,18 @@ func (m *AccessPackageResourceRole) GetResource()(AccessPackageResourceable) {
     }
     if val != nil {
         return val.(AccessPackageResourceable)
+    }
+    return nil
+}
+// GetTypeEscaped gets the type property value. The role type for the Azure resource role. The possible values are: active, eligible, application, delegated, unknownFutureValue. The values active and eligible are only supported where originSystem is AzureResources while application and delegated aren't currently implemented.
+// returns a *RoleType when successful
+func (m *AccessPackageResourceRole) GetTypeEscaped()(*RoleType) {
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RoleType)
     }
     return nil
 }
@@ -174,6 +196,13 @@ func (m *AccessPackageResourceRole) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
+        err = writer.WriteStringValue("type", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. A description for the resource role.
@@ -197,7 +226,7 @@ func (m *AccessPackageResourceRole) SetOriginId(value *string)() {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AzureResources, or AadGroup.
 func (m *AccessPackageResourceRole) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {
@@ -211,6 +240,13 @@ func (m *AccessPackageResourceRole) SetResource(value AccessPackageResourceable)
         panic(err)
     }
 }
+// SetTypeEscaped sets the type property value. The role type for the Azure resource role. The possible values are: active, eligible, application, delegated, unknownFutureValue. The values active and eligible are only supported where originSystem is AzureResources while application and delegated aren't currently implemented.
+func (m *AccessPackageResourceRole) SetTypeEscaped(value *RoleType)() {
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AccessPackageResourceRoleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -219,9 +255,11 @@ type AccessPackageResourceRoleable interface {
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetResource()(AccessPackageResourceable)
+    GetTypeEscaped()(*RoleType)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()
     SetResource(value AccessPackageResourceable)()
+    SetTypeEscaped(value *RoleType)()
 }

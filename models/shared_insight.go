@@ -94,7 +94,7 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetLastShared gets the lastShared property value. Details about the shared item. Read only.
+// GetLastShared gets the lastShared property value. Details about the shared item. Read-only.
 // returns a SharingDetailable when successful
 func (m *SharedInsight) GetLastShared()(SharingDetailable) {
     val, err := m.GetBackingStore().Get("lastShared")
@@ -204,7 +204,7 @@ func (m *SharedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetLastShared sets the lastShared property value. Details about the shared item. Read only.
+// SetLastShared sets the lastShared property value. Details about the shared item. Read-only.
 func (m *SharedInsight) SetLastShared(value SharingDetailable)() {
     err := m.GetBackingStore().Set("lastShared", value)
     if err != nil {

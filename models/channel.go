@@ -35,7 +35,7 @@ func (m *Channel) GetAllMembers()([]ConversationMemberable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Read only. Timestamp at which the channel was created.
+// GetCreatedDateTime gets the createdDateTime property value. Read-only. Timestamp at which the channel was created.
 // returns a *Time when successful
 func (m *Channel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -679,7 +679,7 @@ func (m *Channel) SetAllMembers(value []ConversationMemberable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Read only. Timestamp at which the channel was created.
+// SetCreatedDateTime sets the createdDateTime property value. Read-only. Timestamp at which the channel was created.
 func (m *Channel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {

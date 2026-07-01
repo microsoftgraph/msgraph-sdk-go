@@ -21,6 +21,24 @@ func NewChatMessage()(*ChatMessage) {
 // CreateChatMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateChatMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.targetedChatMessage":
+                        return NewTargetedChatMessage(), nil
+                }
+            }
+        }
+    }
     return NewChatMessage(), nil
 }
 // GetAttachments gets the attachments property value. References to attached objects like files, tabs, meetings etc.
@@ -83,7 +101,7 @@ func (m *ChatMessage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetDeletedDateTime gets the deletedDateTime property value. Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+// GetDeletedDateTime gets the deletedDateTime property value. Read-only. Timestamp at which the chat message was deleted, or null if not deleted.
 // returns a *Time when successful
 func (m *ChatMessage) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
@@ -437,7 +455,7 @@ func (m *ChatMessage) GetImportance()(*ChatMessageImportance) {
     }
     return nil
 }
-// GetLastEditedDateTime gets the lastEditedDateTime property value. Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+// GetLastEditedDateTime gets the lastEditedDateTime property value. Read-only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
 // returns a *Time when successful
 func (m *ChatMessage) GetLastEditedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastEditedDateTime")
@@ -449,7 +467,7 @@ func (m *ChatMessage) GetLastEditedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Read-only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
 // returns a *Time when successful
 func (m *ChatMessage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -818,7 +836,7 @@ func (m *ChatMessage) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetDeletedDateTime sets the deletedDateTime property value. Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+// SetDeletedDateTime sets the deletedDateTime property value. Read-only. Timestamp at which the chat message was deleted, or null if not deleted.
 func (m *ChatMessage) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("deletedDateTime", value)
     if err != nil {
@@ -860,14 +878,14 @@ func (m *ChatMessage) SetImportance(value *ChatMessageImportance)() {
         panic(err)
     }
 }
-// SetLastEditedDateTime sets the lastEditedDateTime property value. Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+// SetLastEditedDateTime sets the lastEditedDateTime property value. Read-only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
 func (m *ChatMessage) SetLastEditedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastEditedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Read-only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
 func (m *ChatMessage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

@@ -604,7 +604,7 @@ func (m *Schedule) GetTimesOff()([]TimeOffable) {
     }
     return nil
 }
-// GetTimeZone gets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
+// GetTimeZone gets the timeZone property value. The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.
 // returns a *string when successful
 func (m *Schedule) GetTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("timeZone")
@@ -989,7 +989,7 @@ func (m *Schedule) SetTimesOff(value []TimeOffable)() {
         panic(err)
     }
 }
-// SetTimeZone sets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
+// SetTimeZone sets the timeZone property value. The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.
 func (m *Schedule) SetTimeZone(value *string)() {
     err := m.GetBackingStore().Set("timeZone", value)
     if err != nil {

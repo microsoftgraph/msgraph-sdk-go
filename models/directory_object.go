@@ -75,6 +75,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewEndpoint(), nil
                     case "#microsoft.graph.extensionProperty":
                         return NewExtensionProperty(), nil
+                    case "#microsoft.graph.federatedTokenValidationPolicy":
+                        return NewFederatedTokenValidationPolicy(), nil
                     case "#microsoft.graph.group":
                         return NewGroup(), nil
                     case "#microsoft.graph.groupSettingTemplate":

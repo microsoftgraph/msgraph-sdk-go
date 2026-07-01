@@ -178,7 +178,7 @@ func (m *Fido2AuthenticationMethod) GetPasskeyType()(*PasskeyType) {
     }
     return nil
 }
-// GetPublicKeyCredential gets the publicKeyCredential property value. The publicKeyCredential property
+// GetPublicKeyCredential gets the publicKeyCredential property value. Contains the WebAuthn public key credential information being registered. This property is used only for write requests and isn't returned on read operations.
 // returns a WebauthnPublicKeyCredentialable when successful
 func (m *Fido2AuthenticationMethod) GetPublicKeyCredential()(WebauthnPublicKeyCredentialable) {
     val, err := m.GetBackingStore().Get("publicKeyCredential")
@@ -284,7 +284,7 @@ func (m *Fido2AuthenticationMethod) SetPasskeyType(value *PasskeyType)() {
         panic(err)
     }
 }
-// SetPublicKeyCredential sets the publicKeyCredential property value. The publicKeyCredential property
+// SetPublicKeyCredential sets the publicKeyCredential property value. Contains the WebAuthn public key credential information being registered. This property is used only for write requests and isn't returned on read operations.
 func (m *Fido2AuthenticationMethod) SetPublicKeyCredential(value WebauthnPublicKeyCredentialable)() {
     err := m.GetBackingStore().Set("publicKeyCredential", value)
     if err != nil {

@@ -76,7 +76,7 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetHealthOverviews gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+// GetHealthOverviews gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and read-only.
 // returns a []ServiceHealthable when successful
 func (m *ServiceAnnouncement) GetHealthOverviews()([]ServiceHealthable) {
     val, err := m.GetBackingStore().Get("healthOverviews")
@@ -88,7 +88,7 @@ func (m *ServiceAnnouncement) GetHealthOverviews()([]ServiceHealthable) {
     }
     return nil
 }
-// GetIssues gets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// GetIssues gets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and read-only.
 // returns a []ServiceHealthIssueable when successful
 func (m *ServiceAnnouncement) GetIssues()([]ServiceHealthIssueable) {
     val, err := m.GetBackingStore().Get("issues")
@@ -100,7 +100,7 @@ func (m *ServiceAnnouncement) GetIssues()([]ServiceHealthIssueable) {
     }
     return nil
 }
-// GetMessages gets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// GetMessages gets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and read-only.
 // returns a []ServiceUpdateMessageable when successful
 func (m *ServiceAnnouncement) GetMessages()([]ServiceUpdateMessageable) {
     val, err := m.GetBackingStore().Get("messages")
@@ -156,21 +156,21 @@ func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetHealthOverviews sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+// SetHealthOverviews sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and read-only.
 func (m *ServiceAnnouncement) SetHealthOverviews(value []ServiceHealthable)() {
     err := m.GetBackingStore().Set("healthOverviews", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssues sets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// SetIssues sets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and read-only.
 func (m *ServiceAnnouncement) SetIssues(value []ServiceHealthIssueable)() {
     err := m.GetBackingStore().Set("issues", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessages sets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// SetMessages sets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and read-only.
 func (m *ServiceAnnouncement) SetMessages(value []ServiceUpdateMessageable)() {
     err := m.GetBackingStore().Set("messages", value)
     if err != nil {

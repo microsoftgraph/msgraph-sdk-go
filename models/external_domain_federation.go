@@ -24,7 +24,7 @@ func NewExternalDomainFederation()(*ExternalDomainFederation) {
 func CreateExternalDomainFederationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalDomainFederation(), nil
 }
-// GetDisplayName gets the displayName property value. The name of the identity source, typically also the domain name. Read only.
+// GetDisplayName gets the displayName property value. The name of the identity source, typically also the domain name. Read-only.
 // returns a *string when successful
 func (m *ExternalDomainFederation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -36,7 +36,7 @@ func (m *ExternalDomainFederation) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The domain name. Read only.
+// GetDomainName gets the domainName property value. The domain name. Read-only.
 // returns a *string when successful
 func (m *ExternalDomainFederation) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -84,7 +84,7 @@ func (m *ExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetIssuerUri gets the issuerUri property value. The issuerURI of the incoming federation. Read only.
+// GetIssuerUri gets the issuerUri property value. The issuerURI of the incoming federation. Read-only.
 // returns a *string when successful
 func (m *ExternalDomainFederation) GetIssuerUri()(*string) {
     val, err := m.GetBackingStore().Get("issuerUri")
@@ -122,21 +122,21 @@ func (m *ExternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The name of the identity source, typically also the domain name. Read only.
+// SetDisplayName sets the displayName property value. The name of the identity source, typically also the domain name. Read-only.
 func (m *ExternalDomainFederation) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The domain name. Read only.
+// SetDomainName sets the domainName property value. The domain name. Read-only.
 func (m *ExternalDomainFederation) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuerUri sets the issuerUri property value. The issuerURI of the incoming federation. Read only.
+// SetIssuerUri sets the issuerUri property value. The issuerURI of the incoming federation. Read-only.
 func (m *ExternalDomainFederation) SetIssuerUri(value *string)() {
     err := m.GetBackingStore().Set("issuerUri", value)
     if err != nil {

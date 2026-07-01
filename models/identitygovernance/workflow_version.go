@@ -28,6 +28,16 @@ func CreateWorkflowVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WorkflowBase.GetFieldDeserializers()
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkflowSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(WorkflowSettingable))
+        }
+        return nil
+    }
     res["versionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -39,6 +49,18 @@ func (m *WorkflowVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetSettings gets the settings property value. The settings property
+// returns a WorkflowSettingable when successful
+func (m *WorkflowVersion) GetSettings()(WorkflowSettingable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkflowSettingable)
+    }
+    return nil
 }
 // GetVersionNumber gets the versionNumber property value. The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 // returns a *int32 when successful
@@ -59,12 +81,25 @@ func (m *WorkflowVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("versionNumber", m.GetVersionNumber())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetSettings sets the settings property value. The settings property
+func (m *WorkflowVersion) SetSettings(value WorkflowSettingable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersionNumber sets the versionNumber property value. The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *WorkflowVersion) SetVersionNumber(value *int32)() {
@@ -76,6 +111,8 @@ func (m *WorkflowVersion) SetVersionNumber(value *int32)() {
 type WorkflowVersionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WorkflowBaseable
+    GetSettings()(WorkflowSettingable)
     GetVersionNumber()(*int32)
+    SetSettings(value WorkflowSettingable)()
     SetVersionNumber(value *int32)()
 }
