@@ -184,6 +184,16 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantId(val)
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -227,6 +237,18 @@ func (m *UserAccount) GetResourceAccessEvents()([]ResourceAccessEventable) {
     }
     if val != nil {
         return val.([]ResourceAccessEventable)
+    }
+    return nil
+}
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant ID of the user account.
+// returns a *string when successful
+func (m *UserAccount) GetTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -300,6 +322,12 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             }
         }
         err := writer.WriteCollectionOfObjectValues("resourceAccessEvents", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
         }
@@ -384,6 +412,13 @@ func (m *UserAccount) SetResourceAccessEvents(value []ResourceAccessEventable)()
         panic(err)
     }
 }
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant ID of the user account.
+func (m *UserAccount) SetTenantId(value *string)() {
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name of the account in Microsoft Entra ID.
 func (m *UserAccount) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
@@ -410,6 +445,7 @@ type UserAccountable interface {
     GetDomainName()(*string)
     GetOdataType()(*string)
     GetResourceAccessEvents()([]ResourceAccessEventable)
+    GetTenantId()(*string)
     GetUserPrincipalName()(*string)
     GetUserSid()(*string)
     SetAccountName(value *string)()
@@ -420,6 +456,7 @@ type UserAccountable interface {
     SetDomainName(value *string)()
     SetOdataType(value *string)()
     SetResourceAccessEvents(value []ResourceAccessEventable)()
+    SetTenantId(value *string)()
     SetUserPrincipalName(value *string)()
     SetUserSid(value *string)()
 }

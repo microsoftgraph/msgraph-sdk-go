@@ -21,7 +21,7 @@ type LabelsRetentionLabelsRetentionLabelItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters represents how customers can manage their data, whether and for how long to retain or delete it.
+// LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters read the properties and relationships of a retentionLabel object.
 type LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -86,9 +86,12 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Descriptors()(*L
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStages()(*LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) {
     return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents how customers can manage their data, whether and for how long to retain or delete it.
+// Get read the properties and relationships of a retentionLabel object.
 // returns a RetentionLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionlabel-get?view=graph-rest-1.0
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -145,7 +148,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents how customers can manage their data, whether and for how long to retain or delete it.
+// ToGetRequestInformation read the properties and relationships of a retentionLabel object.
 // returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

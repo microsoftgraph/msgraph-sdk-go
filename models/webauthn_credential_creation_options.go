@@ -44,7 +44,7 @@ func (m *WebauthnCredentialCreationOptions) GetAdditionalData()(map[string]any) 
 func (m *WebauthnCredentialCreationOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetChallengeTimeoutDateTime gets the challengeTimeoutDateTime property value. The challengeTimeoutDateTime property
+// GetChallengeTimeoutDateTime gets the challengeTimeoutDateTime property value. The date and time when the challenge times out and can no longer be used to create a credential.
 // returns a *Time when successful
 func (m *WebauthnCredentialCreationOptions) GetChallengeTimeoutDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("challengeTimeoutDateTime")
@@ -104,7 +104,7 @@ func (m *WebauthnCredentialCreationOptions) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPublicKey gets the publicKey property value. The publicKey property
+// GetPublicKey gets the publicKey property value. The WebAuthn public key creation options.
 // returns a WebauthnPublicKeyCredentialCreationOptionsable when successful
 func (m *WebauthnCredentialCreationOptions) GetPublicKey()(WebauthnPublicKeyCredentialCreationOptionsable) {
     val, err := m.GetBackingStore().Get("publicKey")
@@ -155,7 +155,7 @@ func (m *WebauthnCredentialCreationOptions) SetAdditionalData(value map[string]a
 func (m *WebauthnCredentialCreationOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetChallengeTimeoutDateTime sets the challengeTimeoutDateTime property value. The challengeTimeoutDateTime property
+// SetChallengeTimeoutDateTime sets the challengeTimeoutDateTime property value. The date and time when the challenge times out and can no longer be used to create a credential.
 func (m *WebauthnCredentialCreationOptions) SetChallengeTimeoutDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("challengeTimeoutDateTime", value)
     if err != nil {
@@ -169,7 +169,7 @@ func (m *WebauthnCredentialCreationOptions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPublicKey sets the publicKey property value. The publicKey property
+// SetPublicKey sets the publicKey property value. The WebAuthn public key creation options.
 func (m *WebauthnCredentialCreationOptions) SetPublicKey(value WebauthnPublicKeyCredentialCreationOptionsable)() {
     err := m.GetBackingStore().Set("publicKey", value)
     if err != nil {

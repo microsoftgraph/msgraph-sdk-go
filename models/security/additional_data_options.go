@@ -18,12 +18,13 @@ const (
     MESSAGECONVERSATIONEXPANSION_ADDITIONALDATAOPTIONS = 64
     LOCATIONSWITHOUTHITS_ADDITIONALDATAOPTIONS = 128
     ALLITEMSINFOLDER_ADDITIONALDATAOPTIONS = 256
+    CLOUDNATIVEHTMLCONVERSION_ADDITIONALDATAOPTIONS = 512
 )
 
 func (i AdditionalDataOptions) String() string {
     var values []string
-    options := []string{"allVersions", "linkedFiles", "unknownFutureValue", "advancedIndexing", "listAttachments", "htmlTranscripts", "messageConversationExpansion", "locationsWithoutHits", "allItemsInFolder"}
-    for p := 0; p < 9; p++ {
+    options := []string{"allVersions", "linkedFiles", "unknownFutureValue", "advancedIndexing", "listAttachments", "htmlTranscripts", "messageConversationExpansion", "locationsWithoutHits", "allItemsInFolder", "cloudNativeHtmlConversion"}
+    for p := 0; p < 10; p++ {
         mantis := AdditionalDataOptions(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -54,6 +55,8 @@ func ParseAdditionalDataOptions(v string) (any, error) {
                 result |= LOCATIONSWITHOUTHITS_ADDITIONALDATAOPTIONS
             case "allItemsInFolder":
                 result |= ALLITEMSINFOLDER_ADDITIONALDATAOPTIONS
+            case "cloudNativeHtmlConversion":
+                result |= CLOUDNATIVEHTMLCONVERSION_ADDITIONALDATAOPTIONS
             default:
                 return nil, nil
         }

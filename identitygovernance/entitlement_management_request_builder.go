@@ -54,6 +54,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals()
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*EntitlementManagementAccessPackagesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AccessPackageSuggestions provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAccessPackageSuggestionsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AccessPackageSuggestions()(*EntitlementManagementAccessPackageSuggestionsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageSuggestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // AssignmentPolicies provides operations to manage the assignmentPolicies property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementAssignmentPoliciesRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) AssignmentPolicies()(*EntitlementManagementAssignmentPoliciesRequestBuilder) {
@@ -68,6 +73,11 @@ func (m *EntitlementManagementRequestBuilder) AssignmentRequests()(*EntitlementM
 // returns a *EntitlementManagementAssignmentsRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) Assignments()(*EntitlementManagementAssignmentsRequestBuilder) {
     return NewEntitlementManagementAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AvailableAccessPackages provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAvailableAccessPackagesRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AvailableAccessPackages()(*EntitlementManagementAvailableAccessPackagesRequestBuilder) {
+    return NewEntitlementManagementAvailableAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Catalogs provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementCatalogsRequestBuilder when successful
@@ -91,6 +101,11 @@ func NewEntitlementManagementRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ControlConfigurations provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementControlConfigurationsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) ControlConfigurations()(*EntitlementManagementControlConfigurationsRequestBuilder) {
+    return NewEntitlementManagementControlConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property entitlementManagement for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -172,6 +187,16 @@ func (m *EntitlementManagementRequestBuilder) Resources()(*EntitlementManagement
 // returns a *EntitlementManagementSettingsRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) Settings()(*EntitlementManagementSettingsRequestBuilder) {
     return NewEntitlementManagementSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Subjects provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementSubjectsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) Subjects()(*EntitlementManagementSubjectsRequestBuilder) {
+    return NewEntitlementManagementSubjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SubjectsWithObjectId provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementSubjectsWithObjectIdRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) SubjectsWithObjectId(objectId *string)(*EntitlementManagementSubjectsWithObjectIdRequestBuilder) {
+    return NewEntitlementManagementSubjectsWithObjectIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, objectId)
 }
 // ToDeleteRequestInformation delete navigation property entitlementManagement for identityGovernance
 // returns a *RequestInformation when successful

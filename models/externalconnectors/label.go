@@ -59,10 +59,11 @@ const (
     PERSONLANGUAGES_LABEL
     PERSONPUBLICATIONS_LABEL
     PERSONPATENTS_LABEL
+    PERSONWORKPOSITIONS_LABEL
 )
 
 func (i Label) String() string {
-    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "containerName", "containerUrl", "iconUrl", "assignedToPeople", "closedBy", "closedDate", "priority", "sprintName", "tags", "severity", "state", "dueDate", "itemParentId", "itemPath", "itemType", "numberOfReactions", "parentUrl", "priorityNormalized", "reportedBy", "secondaryId", "personEmails", "personAddresses", "personAnniversaries", "personName", "personNote", "personPhones", "personCurrentPosition", "personWebAccounts", "personWebSite", "personSkills", "personProjects", "personAccount", "personAwards", "personCertifications", "personAssistants", "personColleagues", "personManager", "personAlternateContacts", "personEmergencyContacts", "personEducationalActivities", "personInterests", "personLanguages", "personPublications", "personPatents"}[i]
+    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "containerName", "containerUrl", "iconUrl", "assignedToPeople", "closedBy", "closedDate", "priority", "sprintName", "tags", "severity", "state", "dueDate", "itemParentId", "itemPath", "itemType", "numberOfReactions", "parentUrl", "priorityNormalized", "reportedBy", "secondaryId", "personEmails", "personAddresses", "personAnniversaries", "personName", "personNote", "personPhones", "personCurrentPosition", "personWebAccounts", "personWebSite", "personSkills", "personProjects", "personAccount", "personAwards", "personCertifications", "personAssistants", "personColleagues", "personManager", "personAlternateContacts", "personEmergencyContacts", "personEducationalActivities", "personInterests", "personLanguages", "personPublications", "personPatents", "personWorkPositions"}[i]
 }
 func ParseLabel(v string) (any, error) {
     result := TITLE_LABEL
@@ -175,6 +176,8 @@ func ParseLabel(v string) (any, error) {
             result = PERSONPUBLICATIONS_LABEL
         case "personPatents":
             result = PERSONPATENTS_LABEL
+        case "personWorkPositions":
+            result = PERSONWORKPOSITIONS_LABEL
         default:
             return nil, nil
     }
