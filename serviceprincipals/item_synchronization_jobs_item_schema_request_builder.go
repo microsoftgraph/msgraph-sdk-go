@@ -21,7 +21,7 @@ type ItemSynchronizationJobsItemSchemaRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSynchronizationJobsItemSchemaRequestBuilderGetQueryParameters retrieve the schema for a given synchronization job or template.
+// ItemSynchronizationJobsItemSchemaRequestBuilderGetQueryParameters retrieve the synchronizationSchema for a given synchronization job or template.
 type ItemSynchronizationJobsItemSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -88,7 +88,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) FilterOperators()(*Ite
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Functions()(*ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaFunctionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the schema for a given synchronization job or template.
+// Get retrieve the synchronizationSchema for a given synchronization job or template.
 // returns a SynchronizationSchemaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -116,7 +116,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Get(ctx context.Contex
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ParseExpression()(*ItemSynchronizationJobsItemSchemaParseExpressionRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaParseExpressionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
+// Patch update the synchronizationSchema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
 // returns a SynchronizationSchemaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -150,7 +150,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the schema for a given synchronization job or template.
+// ToGetRequestInformation retrieve the synchronizationSchema for a given synchronization job or template.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,7 +164,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
+// ToPatchRequestInformation update the synchronizationSchema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSchemaable, requestConfiguration *ItemSynchronizationJobsItemSchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

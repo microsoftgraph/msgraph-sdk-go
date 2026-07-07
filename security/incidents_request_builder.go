@@ -102,6 +102,11 @@ func (m *IncidentsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IncidentCollectionResponseable), nil
 }
+// MicrosoftGraphSecurityMergeIncidents provides operations to call the mergeIncidents method.
+// returns a *IncidentsMicrosoftGraphSecurityMergeIncidentsRequestBuilder when successful
+func (m *IncidentsRequestBuilder) MicrosoftGraphSecurityMergeIncidents()(*IncidentsMicrosoftGraphSecurityMergeIncidentsRequestBuilder) {
+    return NewIncidentsMicrosoftGraphSecurityMergeIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to incidents for security
 // returns a Incidentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

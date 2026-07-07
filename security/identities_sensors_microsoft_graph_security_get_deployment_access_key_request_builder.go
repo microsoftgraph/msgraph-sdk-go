@@ -37,6 +37,9 @@ func NewIdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuil
 // Get get the deployment access key for Microsoft Defender for Identity that is required to install sensors associated with the workspace.
 // returns a DeploymentAccessKeyTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentaccesskey?view=graph-rest-1.0
 func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.DeploymentAccessKeyTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

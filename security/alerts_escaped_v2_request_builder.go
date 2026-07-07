@@ -102,6 +102,11 @@ func (m *Alerts_v2RequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AlertCollectionResponseable), nil
 }
+// MicrosoftGraphSecurityMoveAlerts provides operations to call the moveAlerts method.
+// returns a *Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder when successful
+func (m *Alerts_v2RequestBuilder) MicrosoftGraphSecurityMoveAlerts()(*Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder) {
+    return NewAlerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to alerts_v2 for security
 // returns a Alertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

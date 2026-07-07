@@ -69,6 +69,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAccessPackageResourceScope(), nil
                     case "#microsoft.graph.accessPackageSubject":
                         return NewAccessPackageSubject(), nil
+                    case "#microsoft.graph.accessPackageSuggestion":
+                        return NewAccessPackageSuggestion(), nil
                     case "#microsoft.graph.accessPackageTextInputQuestion":
                         return NewAccessPackageTextInputQuestion(), nil
                     case "#microsoft.graph.accessReviewHistoryDefinition":
@@ -249,6 +251,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthoredNote(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.availableAccessPackage":
+                        return NewAvailableAccessPackage(), nil
                     case "#microsoft.graph.azureCommunicationServicesUserConversationMember":
                         return NewAzureCommunicationServicesUserConversationMember(), nil
                     case "#microsoft.graph.b2xIdentityUserFlow":
@@ -415,6 +419,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewContentType(), nil
                     case "#microsoft.graph.contract":
                         return NewContract(), nil
+                    case "#microsoft.graph.controlConfiguration":
+                        return NewControlConfiguration(), nil
                     case "#microsoft.graph.conversation":
                         return NewConversation(), nil
                     case "#microsoft.graph.conversationMember":
@@ -423,10 +429,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConversationThread(), nil
                     case "#microsoft.graph.copilotAdmin":
                         return NewCopilotAdmin(), nil
+                    case "#microsoft.graph.copilotAdminCatalog":
+                        return NewCopilotAdminCatalog(), nil
                     case "#microsoft.graph.copilotAdminLimitedMode":
                         return NewCopilotAdminLimitedMode(), nil
                     case "#microsoft.graph.copilotAdminSetting":
                         return NewCopilotAdminSetting(), nil
+                    case "#microsoft.graph.copilotPackage":
+                        return NewCopilotPackage(), nil
+                    case "#microsoft.graph.copilotPackageDetail":
+                        return NewCopilotPackageDetail(), nil
                     case "#microsoft.graph.copilotReportRoot":
                         return NewCopilotReportRoot(), nil
                     case "#microsoft.graph.crossTenantAccessPolicy":
@@ -655,6 +667,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmailAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.emailFileAssessmentRequest":
                         return NewEmailFileAssessmentRequest(), nil
+                    case "#microsoft.graph.emailNotificationsSetting":
+                        return NewEmailNotificationsSetting(), nil
                     case "#microsoft.graph.emergencyCallEvent":
                         return NewEmergencyCallEvent(), nil
                     case "#microsoft.graph.employeeExperienceUser":
@@ -665,6 +679,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEndUserNotification(), nil
                     case "#microsoft.graph.endUserNotificationDetail":
                         return NewEndUserNotificationDetail(), nil
+                    case "#microsoft.graph.endUserSettings":
+                        return NewEndUserSettings(), nil
                     case "#microsoft.graph.engagementAsyncOperation":
                         return NewEngagementAsyncOperation(), nil
                     case "#microsoft.graph.engagementConversation":
@@ -729,6 +745,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFeatureRolloutPolicy(), nil
                     case "#microsoft.graph.federatedIdentityCredential":
                         return NewFederatedIdentityCredential(), nil
+                    case "#microsoft.graph.federatedTokenValidationPolicy":
+                        return NewFederatedTokenValidationPolicy(), nil
                     case "#microsoft.graph.fido2AuthenticationMethod":
                         return NewFido2AuthenticationMethod(), nil
                     case "#microsoft.graph.fido2AuthenticationMethodConfiguration":
@@ -1551,6 +1569,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSynchronizationTemplate(), nil
                     case "#microsoft.graph.targetDeviceGroup":
                         return NewTargetDeviceGroup(), nil
+                    case "#microsoft.graph.targetedChatMessage":
+                        return NewTargetedChatMessage(), nil
                     case "#microsoft.graph.targetedManagedAppConfiguration":
                         return NewTargetedManagedAppConfiguration(), nil
                     case "#microsoft.graph.targetedManagedAppPolicyAssignment":

@@ -37,6 +37,9 @@ func NewIdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBui
 // Get get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
 // returns a SensorDeploymentPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-1.0
 func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SensorDeploymentPackageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

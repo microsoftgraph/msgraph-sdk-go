@@ -128,7 +128,7 @@ func (m *DirectoryRole) GetMembers()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetRoleTemplateId gets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
+// GetRoleTemplateId gets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read-only. Supports $filter (eq), $select.
 // returns a *string when successful
 func (m *DirectoryRole) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
@@ -223,7 +223,7 @@ func (m *DirectoryRole) SetMembers(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
+// SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read-only. Supports $filter (eq), $select.
 func (m *DirectoryRole) SetRoleTemplateId(value *string)() {
     err := m.GetBackingStore().Set("roleTemplateId", value)
     if err != nil {

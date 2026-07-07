@@ -33,7 +33,7 @@ func NewItemSynchronizationJobsItemPauseRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemPauseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
+// Post temporarily stop a running synchronizationJob. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *ItemSynchronizationJobsItemPauseRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
+// ToPostRequestInformation temporarily stop a running synchronizationJob. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemPauseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemPauseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

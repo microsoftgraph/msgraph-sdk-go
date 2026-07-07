@@ -21,7 +21,7 @@ type ItemSynchronizationJobsSynchronizationJobItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSynchronizationJobsSynchronizationJobItemRequestBuilderGetQueryParameters retrieve the existing synchronization job and its properties.
+// ItemSynchronizationJobsSynchronizationJobItemRequestBuilderGetQueryParameters retrieve an existing synchronizationJob and its properties.
 type ItemSynchronizationJobsSynchronizationJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -62,7 +62,7 @@ func NewItemSynchronizationJobsSynchronizationJobItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
+// Delete stop the synchronizationJob, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -81,7 +81,7 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get retrieve the existing synchronization job and its properties.
+// Get retrieve an existing synchronizationJob and its properties.
 // returns a SynchronizationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -149,7 +149,7 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Schema()(*
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Start()(*ItemSynchronizationJobsItemStartRequestBuilder) {
     return NewItemSynchronizationJobsItemStartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
+// ToDeleteRequestInformation stop the synchronizationJob, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsSynchronizationJobItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,7 +160,7 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the existing synchronization job and its properties.
+// ToGetRequestInformation retrieve an existing synchronizationJob and its properties.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsSynchronizationJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

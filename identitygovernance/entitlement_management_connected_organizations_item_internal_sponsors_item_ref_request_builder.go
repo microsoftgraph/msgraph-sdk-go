@@ -33,7 +33,7 @@ func NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefRe
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// Delete remove a user or a group from the internalSponsors relationship of a connectedOrganization. Internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefR
     }
     return nil
 }
-// ToDeleteRequestInformation remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// ToDeleteRequestInformation remove a user or a group from the internalSponsors relationship of a connectedOrganization. Internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

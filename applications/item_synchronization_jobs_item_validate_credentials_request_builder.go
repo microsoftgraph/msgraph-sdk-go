@@ -33,7 +33,7 @@ func NewItemSynchronizationJobsItemValidateCredentialsRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemValidateCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post validate that the credentials are valid in the tenant.
+// Post validate that the credentials are valid in the tenant for a synchronizationJob.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) Post(ctx 
     }
     return nil
 }
-// ToPostRequestInformation validate that the credentials are valid in the tenant.
+// ToPostRequestInformation validate that the credentials are valid in the tenant for a synchronizationJob.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemValidateCredentialsPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemValidateCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

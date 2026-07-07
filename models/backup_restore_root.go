@@ -70,6 +70,18 @@ func (m *BackupRestoreRoot) GetDriveProtectionUnitsBulkAdditionJobs()([]DrivePro
     }
     return nil
 }
+// GetEmailNotificationsSetting gets the emailNotificationsSetting property value. The email notification settings in the tenant.
+// returns a EmailNotificationsSettingable when successful
+func (m *BackupRestoreRoot) GetEmailNotificationsSetting()(EmailNotificationsSettingable) {
+    val, err := m.GetBackingStore().Get("emailNotificationsSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EmailNotificationsSettingable)
+    }
+    return nil
+}
 // GetExchangeProtectionPolicies gets the exchangeProtectionPolicies property value. The list of Exchange protection policies in the tenant.
 // returns a []ExchangeProtectionPolicyable when successful
 func (m *BackupRestoreRoot) GetExchangeProtectionPolicies()([]ExchangeProtectionPolicyable) {
@@ -159,6 +171,16 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetDriveProtectionUnitsBulkAdditionJobs(res)
+        }
+        return nil
+    }
+    res["emailNotificationsSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEmailNotificationsSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmailNotificationsSetting(val.(EmailNotificationsSettingable))
         }
         return nil
     }
@@ -748,6 +770,12 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("emailNotificationsSetting", m.GetEmailNotificationsSetting())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExchangeProtectionPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExchangeProtectionPolicies()))
         for i, v := range m.GetExchangeProtectionPolicies() {
@@ -1012,6 +1040,13 @@ func (m *BackupRestoreRoot) SetDriveProtectionUnitsBulkAdditionJobs(value []Driv
         panic(err)
     }
 }
+// SetEmailNotificationsSetting sets the emailNotificationsSetting property value. The email notification settings in the tenant.
+func (m *BackupRestoreRoot) SetEmailNotificationsSetting(value EmailNotificationsSettingable)() {
+    err := m.GetBackingStore().Set("emailNotificationsSetting", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExchangeProtectionPolicies sets the exchangeProtectionPolicies property value. The list of Exchange protection policies in the tenant.
 func (m *BackupRestoreRoot) SetExchangeProtectionPolicies(value []ExchangeProtectionPolicyable)() {
     err := m.GetBackingStore().Set("exchangeProtectionPolicies", value)
@@ -1159,6 +1194,7 @@ type BackupRestoreRootable interface {
     GetDriveInclusionRules()([]DriveProtectionRuleable)
     GetDriveProtectionUnits()([]DriveProtectionUnitable)
     GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable)
+    GetEmailNotificationsSetting()(EmailNotificationsSettingable)
     GetExchangeProtectionPolicies()([]ExchangeProtectionPolicyable)
     GetExchangeRestoreSessions()([]ExchangeRestoreSessionable)
     GetMailboxInclusionRules()([]MailboxProtectionRuleable)
@@ -1183,6 +1219,7 @@ type BackupRestoreRootable interface {
     SetDriveInclusionRules(value []DriveProtectionRuleable)()
     SetDriveProtectionUnits(value []DriveProtectionUnitable)()
     SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)()
+    SetEmailNotificationsSetting(value EmailNotificationsSettingable)()
     SetExchangeProtectionPolicies(value []ExchangeProtectionPolicyable)()
     SetExchangeRestoreSessions(value []ExchangeRestoreSessionable)()
     SetMailboxInclusionRules(value []MailboxProtectionRuleable)()
