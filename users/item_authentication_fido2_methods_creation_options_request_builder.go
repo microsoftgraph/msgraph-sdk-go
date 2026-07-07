@@ -34,9 +34,12 @@ func NewItemAuthenticationFido2MethodsCreationOptionsRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationFido2MethodsCreationOptionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function creationOptions
+// Get retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. This function returns WebAuthn credential creation options that include a challenge, relying party information, and user information, which are used by the client to create a new FIDO2 credential. The challenge property and credential IDs in excludeCredentials are Base64URL-encoded without padding. All binary data in the response follows Base64URL encoding as defined in RFC 4648 Section 5.
 // returns a WebauthnCredentialCreationOptionsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/fido2authenticationmethod-creationoptions?view=graph-rest-1.0
 func (m *ItemAuthenticationFido2MethodsCreationOptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsCreationOptionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebauthnCredentialCreationOptionsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +57,7 @@ func (m *ItemAuthenticationFido2MethodsCreationOptionsRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebauthnCredentialCreationOptionsable), nil
 }
-// ToGetRequestInformation invoke function creationOptions
+// ToGetRequestInformation retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. This function returns WebAuthn credential creation options that include a challenge, relying party information, and user information, which are used by the client to create a new FIDO2 credential. The challenge property and credential IDs in excludeCredentials are Base64URL-encoded without padding. All binary data in the response follows Base64URL encoding as defined in RFC 4648 Section 5.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationFido2MethodsCreationOptionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsCreationOptionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

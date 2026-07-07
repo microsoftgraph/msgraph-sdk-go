@@ -52,10 +52,20 @@ func (m *SecurityRequestBuilder) Alerts_v2()(*Alerts_v2RequestBuilder) {
 func (m *SecurityRequestBuilder) AttackSimulation()(*AttackSimulationRequestBuilder) {
     return NewAttackSimulationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AuditLog provides operations to manage the auditLog property of the microsoft.graph.security entity.
+// returns a *AuditLogRequestBuilder when successful
+func (m *SecurityRequestBuilder) AuditLog()(*AuditLogRequestBuilder) {
+    return NewAuditLogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Cases provides operations to manage the cases property of the microsoft.graph.security entity.
 // returns a *CasesRequestBuilder when successful
 func (m *SecurityRequestBuilder) Cases()(*CasesRequestBuilder) {
     return NewCasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Collaboration provides operations to manage the collaboration property of the microsoft.graph.security entity.
+// returns a *CollaborationRequestBuilder when successful
+func (m *SecurityRequestBuilder) Collaboration()(*CollaborationRequestBuilder) {
+    return NewCollaborationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSecurityRequestBuilderInternal instantiates a new SecurityRequestBuilder and sets the default values.
 func NewSecurityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityRequestBuilder) {

@@ -38,7 +38,7 @@ func (m *OnPremisesDirectorySynchronizationFeature) GetAdditionalData()(map[stri
     }
     return val.(map[string]any)
 }
-// GetAllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled gets the allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property value. The allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property
+// GetAllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled gets the allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property value. When true, allows on-premises directory sync clients to update the onPremisesObjectIdentifier property.
 // returns a *bool when successful
 func (m *OnPremisesDirectorySynchronizationFeature) GetAllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled")
@@ -654,7 +654,7 @@ func (m *OnPremisesDirectorySynchronizationFeature) SetAdditionalData(value map[
         panic(err)
     }
 }
-// SetAllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled sets the allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property value. The allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property
+// SetAllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled sets the allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property value. When true, allows on-premises directory sync clients to update the onPremisesObjectIdentifier property.
 func (m *OnPremisesDirectorySynchronizationFeature) SetAllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled(value *bool)() {
     err := m.GetBackingStore().Set("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled", value)
     if err != nil {

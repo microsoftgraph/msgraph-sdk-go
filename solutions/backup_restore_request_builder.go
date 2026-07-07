@@ -93,6 +93,11 @@ func (m *BackupRestoreRequestBuilder) DriveProtectionUnits()(*BackupRestoreDrive
 func (m *BackupRestoreRequestBuilder) DriveProtectionUnitsBulkAdditionJobs()(*BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) {
     return NewBackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EmailNotificationsSetting provides operations to manage the emailNotificationsSetting property of the microsoft.graph.backupRestoreRoot entity.
+// returns a *BackupRestoreEmailNotificationsSettingRequestBuilder when successful
+func (m *BackupRestoreRequestBuilder) EmailNotificationsSetting()(*BackupRestoreEmailNotificationsSettingRequestBuilder) {
+    return NewBackupRestoreEmailNotificationsSettingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Enable provides operations to call the enable method.
 // returns a *BackupRestoreEnableRequestBuilder when successful
 func (m *BackupRestoreRequestBuilder) Enable()(*BackupRestoreEnableRequestBuilder) {

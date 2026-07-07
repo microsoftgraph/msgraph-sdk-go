@@ -113,7 +113,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetOdataType()(
     }
     return nil
 }
-// GetTargetedAuthenticationMethod gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
+// GetTargetedAuthenticationMethod gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value can be Fido2 or microsoftAuthenticator.
 // returns a *string when successful
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetedAuthenticationMethod()(*string) {
     val, err := m.GetBackingStore().Get("targetedAuthenticationMethod")
@@ -197,7 +197,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetOdataType(va
         panic(err)
     }
 }
-// SetTargetedAuthenticationMethod sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
+// SetTargetedAuthenticationMethod sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value can be Fido2 or microsoftAuthenticator.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetedAuthenticationMethod(value *string)() {
     err := m.GetBackingStore().Set("targetedAuthenticationMethod", value)
     if err != nil {

@@ -49,6 +49,16 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["quarantineConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateQuarantineConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQuarantineConfiguration(val.(QuarantineConfigurationable))
+        }
+        return nil
+    }
     res["workflowScheduleIntervalInHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -60,6 +70,18 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetQuarantineConfiguration gets the quarantineConfiguration property value. The tenant-level quarantine configuration that automatically halts a workflow when its threshold conditions are met. Optional.
+// returns a QuarantineConfigurationable when successful
+func (m *LifecycleManagementSettings) GetQuarantineConfiguration()(QuarantineConfigurationable) {
+    val, err := m.GetBackingStore().Get("quarantineConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(QuarantineConfigurationable)
+    }
+    return nil
 }
 // GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
 // returns a *int32 when successful
@@ -86,6 +108,12 @@ func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteObjectValue("quarantineConfiguration", m.GetQuarantineConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("workflowScheduleIntervalInHours", m.GetWorkflowScheduleIntervalInHours())
         if err != nil {
             return err
@@ -96,6 +124,13 @@ func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a
 // SetEmailSettings sets the emailSettings property value. The emailSettings property
 func (m *LifecycleManagementSettings) SetEmailSettings(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailSettingsable)() {
     err := m.GetBackingStore().Set("emailSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetQuarantineConfiguration sets the quarantineConfiguration property value. The tenant-level quarantine configuration that automatically halts a workflow when its threshold conditions are met. Optional.
+func (m *LifecycleManagementSettings) SetQuarantineConfiguration(value QuarantineConfigurationable)() {
+    err := m.GetBackingStore().Set("quarantineConfiguration", value)
     if err != nil {
         panic(err)
     }
@@ -111,7 +146,9 @@ type LifecycleManagementSettingsable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmailSettings()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailSettingsable)
+    GetQuarantineConfiguration()(QuarantineConfigurationable)
     GetWorkflowScheduleIntervalInHours()(*int32)
     SetEmailSettings(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailSettingsable)()
+    SetQuarantineConfiguration(value QuarantineConfigurationable)()
     SetWorkflowScheduleIntervalInHours(value *int32)()
 }

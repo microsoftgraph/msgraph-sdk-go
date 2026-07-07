@@ -67,7 +67,7 @@ func (m *Reminder) GetEventEndTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetEventId gets the eventId property value. The unique ID of the event. Read only.
+// GetEventId gets the eventId property value. The unique ID of the event. Read-only.
 // returns a *string when successful
 func (m *Reminder) GetEventId()(*string) {
     val, err := m.GetBackingStore().Get("eventId")
@@ -336,7 +336,7 @@ func (m *Reminder) SetEventEndTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetEventId sets the eventId property value. The unique ID of the event. Read only.
+// SetEventId sets the eventId property value. The unique ID of the event. Read-only.
 func (m *Reminder) SetEventId(value *string)() {
     err := m.GetBackingStore().Set("eventId", value)
     if err != nil {

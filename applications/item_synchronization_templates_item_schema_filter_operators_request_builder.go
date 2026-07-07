@@ -13,7 +13,7 @@ import (
 type ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetQueryParameters list all operators supported in the scoping filters.
+// ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetQueryParameters list all operators supported in the scoping filters for a synchronizationSchema.
 type ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -54,7 +54,7 @@ func NewItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list all operators supported in the scoping filters.
+// Get list all operators supported in the scoping filters for a synchronizationSchema.
 // Deprecated: This method is obsolete. Use GetAsFilterOperatorsGetResponse instead.
 // returns a ItemSynchronizationTemplatesItemSchemaFilterOperatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -78,7 +78,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) Ge
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFilterOperatorsResponseable), nil
 }
-// GetAsFilterOperatorsGetResponse list all operators supported in the scoping filters.
+// GetAsFilterOperatorsGetResponse list all operators supported in the scoping filters for a synchronizationSchema.
 // returns a ItemSynchronizationTemplatesItemSchemaFilterOperatorsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -101,7 +101,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) Ge
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFilterOperatorsGetResponseable), nil
 }
-// ToGetRequestInformation list all operators supported in the scoping filters.
+// ToGetRequestInformation list all operators supported in the scoping filters for a synchronizationSchema.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
