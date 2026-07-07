@@ -22,10 +22,32 @@ func NewCopilotAdmin()(*CopilotAdmin) {
 func CreateCopilotAdminFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCopilotAdmin(), nil
 }
+// GetCatalog gets the catalog property value. The catalog property
+// returns a CopilotAdminCatalogable when successful
+func (m *CopilotAdmin) GetCatalog()(CopilotAdminCatalogable) {
+    val, err := m.GetBackingStore().Get("catalog")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CopilotAdminCatalogable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CopilotAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["catalog"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCopilotAdminCatalogFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCatalog(val.(CopilotAdminCatalogable))
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCopilotAdminSettingFromDiscriminatorValue)
         if err != nil {
@@ -57,12 +79,25 @@ func (m *CopilotAdmin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         return err
     }
     {
+        err = writer.WriteObjectValue("catalog", m.GetCatalog())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetCatalog sets the catalog property value. The catalog property
+func (m *CopilotAdmin) SetCatalog(value CopilotAdminCatalogable)() {
+    err := m.GetBackingStore().Set("catalog", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings property
 func (m *CopilotAdmin) SetSettings(value CopilotAdminSettingable)() {
@@ -74,6 +109,8 @@ func (m *CopilotAdmin) SetSettings(value CopilotAdminSettingable)() {
 type CopilotAdminable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCatalog()(CopilotAdminCatalogable)
     GetSettings()(CopilotAdminSettingable)
+    SetCatalog(value CopilotAdminCatalogable)()
     SetSettings(value CopilotAdminSettingable)()
 }

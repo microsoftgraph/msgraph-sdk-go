@@ -38,7 +38,7 @@ func (m *WebauthnAuthenticatorSelectionCriteria) GetAdditionalData()(map[string]
     }
     return val.(map[string]any)
 }
-// GetAuthenticatorAttachment gets the authenticatorAttachment property value. The authenticatorAttachment property
+// GetAuthenticatorAttachment gets the authenticatorAttachment property value. Specifies the preferred attachment modality for the authenticator. Possible values: platform (device-bound authenticator, such as Windows Hello), cross-platform (removable authenticator, such as a USB security key), or null (no preference).
 // returns a *string when successful
 func (m *WebauthnAuthenticatorSelectionCriteria) GetAuthenticatorAttachment()(*string) {
     val, err := m.GetBackingStore().Get("authenticatorAttachment")
@@ -113,7 +113,7 @@ func (m *WebauthnAuthenticatorSelectionCriteria) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRequireResidentKey gets the requireResidentKey property value. The requireResidentKey property
+// GetRequireResidentKey gets the requireResidentKey property value. Indicates whether the authenticator must create a client-side-resident credential (also known as a discoverable credential). If true, the credential can be used without providing a credential ID.
 // returns a *bool when successful
 func (m *WebauthnAuthenticatorSelectionCriteria) GetRequireResidentKey()(*bool) {
     val, err := m.GetBackingStore().Get("requireResidentKey")
@@ -125,7 +125,7 @@ func (m *WebauthnAuthenticatorSelectionCriteria) GetRequireResidentKey()(*bool) 
     }
     return nil
 }
-// GetUserVerification gets the userVerification property value. The userVerification property
+// GetUserVerification gets the userVerification property value. Specifies the relying party's preference for user verification during credential creation. Possible values: required, preferred, or discouraged.
 // returns a *string when successful
 func (m *WebauthnAuthenticatorSelectionCriteria) GetUserVerification()(*string) {
     val, err := m.GetBackingStore().Get("userVerification")
@@ -178,7 +178,7 @@ func (m *WebauthnAuthenticatorSelectionCriteria) SetAdditionalData(value map[str
         panic(err)
     }
 }
-// SetAuthenticatorAttachment sets the authenticatorAttachment property value. The authenticatorAttachment property
+// SetAuthenticatorAttachment sets the authenticatorAttachment property value. Specifies the preferred attachment modality for the authenticator. Possible values: platform (device-bound authenticator, such as Windows Hello), cross-platform (removable authenticator, such as a USB security key), or null (no preference).
 func (m *WebauthnAuthenticatorSelectionCriteria) SetAuthenticatorAttachment(value *string)() {
     err := m.GetBackingStore().Set("authenticatorAttachment", value)
     if err != nil {
@@ -196,14 +196,14 @@ func (m *WebauthnAuthenticatorSelectionCriteria) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRequireResidentKey sets the requireResidentKey property value. The requireResidentKey property
+// SetRequireResidentKey sets the requireResidentKey property value. Indicates whether the authenticator must create a client-side-resident credential (also known as a discoverable credential). If true, the credential can be used without providing a credential ID.
 func (m *WebauthnAuthenticatorSelectionCriteria) SetRequireResidentKey(value *bool)() {
     err := m.GetBackingStore().Set("requireResidentKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserVerification sets the userVerification property value. The userVerification property
+// SetUserVerification sets the userVerification property value. Specifies the relying party's preference for user verification during credential creation. Possible values: required, preferred, or discouraged.
 func (m *WebauthnAuthenticatorSelectionCriteria) SetUserVerification(value *string)() {
     err := m.GetBackingStore().Set("userVerification", value)
     if err != nil {

@@ -14,7 +14,7 @@ import (
 type AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetQueryParameters retrieve the stages in a multi-stage access review instance.
+// AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetQueryParameters retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
 type AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -84,7 +84,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Count()(
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve the stages in a multi-stage access review instance.
+// Get retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
 // returns a AccessReviewStageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -127,7 +127,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Post(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable), nil
 }
-// ToGetRequestInformation retrieve the stages in a multi-stage access review instance.
+// ToGetRequestInformation retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -33,7 +33,7 @@ func NewItemSynchronizationJobsItemRestartRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemRestartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+// Post restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *ItemSynchronizationJobsItemRestartRequestBuilder) Post(ctx context.Cont
     }
     return nil
 }
-// ToPostRequestInformation restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+// ToPostRequestInformation restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemRestartRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemRestartPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemRestartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -227,6 +227,22 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["targetedMessages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTargetedChatMessageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TargetedChatMessageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TargetedChatMessageable)
+                }
+            }
+            m.SetTargetedMessages(res)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -413,6 +429,18 @@ func (m *Chat) GetTabs()([]TeamsTabable) {
     }
     return nil
 }
+// GetTargetedMessages gets the targetedMessages property value. The targetedMessages property
+// returns a []TargetedChatMessageable when successful
+func (m *Chat) GetTargetedMessages()([]TargetedChatMessageable) {
+    val, err := m.GetBackingStore().Get("targetedMessages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TargetedChatMessageable)
+    }
+    return nil
+}
 // GetTenantId gets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
 // returns a *string when successful
 func (m *Chat) GetTenantId()(*string) {
@@ -589,6 +617,18 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetTargetedMessages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargetedMessages()))
+        for i, v := range m.GetTargetedMessages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("targetedMessages", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
@@ -713,6 +753,13 @@ func (m *Chat) SetTabs(value []TeamsTabable)() {
         panic(err)
     }
 }
+// SetTargetedMessages sets the targetedMessages property value. The targetedMessages property
+func (m *Chat) SetTargetedMessages(value []TargetedChatMessageable)() {
+    err := m.GetBackingStore().Set("targetedMessages", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
 func (m *Chat) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -758,6 +805,7 @@ type Chatable interface {
     GetPermissionGrants()([]ResourceSpecificPermissionGrantable)
     GetPinnedMessages()([]PinnedChatMessageInfoable)
     GetTabs()([]TeamsTabable)
+    GetTargetedMessages()([]TargetedChatMessageable)
     GetTenantId()(*string)
     GetTopic()(*string)
     GetViewpoint()(ChatViewpointable)
@@ -776,6 +824,7 @@ type Chatable interface {
     SetPermissionGrants(value []ResourceSpecificPermissionGrantable)()
     SetPinnedMessages(value []PinnedChatMessageInfoable)()
     SetTabs(value []TeamsTabable)()
+    SetTargetedMessages(value []TargetedChatMessageable)()
     SetTenantId(value *string)()
     SetTopic(value *string)()
     SetViewpoint(value ChatViewpointable)()

@@ -33,7 +33,7 @@ func NewEntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsRe
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post in Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+// Post in Microsoft Entra entitlement management, this action retrieves accessPackageAssignmentRequestRequirements objects for an accessPackage that the currently signed-in user can use to create an accessPackageAssignmentRequest. Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 // Deprecated: This method is obsolete. Use PostAsGetApplicablePolicyRequirementsPostResponse instead.
 // returns a EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -57,7 +57,7 @@ func (m *EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsR
     }
     return res.(EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsResponseable), nil
 }
-// PostAsGetApplicablePolicyRequirementsPostResponse in Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+// PostAsGetApplicablePolicyRequirementsPostResponse in Microsoft Entra entitlement management, this action retrieves accessPackageAssignmentRequestRequirements objects for an accessPackage that the currently signed-in user can use to create an accessPackageAssignmentRequest. Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 // returns a EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -80,7 +80,7 @@ func (m *EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsR
     }
     return res.(EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsPostResponseable), nil
 }
-// ToPostRequestInformation in Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+// ToPostRequestInformation in Microsoft Entra entitlement management, this action retrieves accessPackageAssignmentRequestRequirements objects for an accessPackage that the currently signed-in user can use to create an accessPackageAssignmentRequest. Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemGetApplicablePolicyRequirementsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

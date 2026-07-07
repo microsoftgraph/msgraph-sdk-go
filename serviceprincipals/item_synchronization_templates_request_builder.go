@@ -14,7 +14,7 @@ import (
 type ItemSynchronizationTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationTemplatesRequestBuilderGetQueryParameters list the synchronization templates associated with a given application or service principal.
+// ItemSynchronizationTemplatesRequestBuilderGetQueryParameters list synchronizationTemplate objects associated with a given application or service principal.
 type ItemSynchronizationTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewItemSynchronizationTemplatesRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSynchronizationTemplatesRequestBuilder) Count()(*ItemSynchronizationTemplatesCountRequestBuilder) {
     return NewItemSynchronizationTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the synchronization templates associated with a given application or service principal.
+// Get list synchronizationTemplate objects associated with a given application or service principal.
 // returns a SynchronizationTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -122,7 +122,7 @@ func (m *ItemSynchronizationTemplatesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationTemplateable), nil
 }
-// ToGetRequestInformation list the synchronization templates associated with a given application or service principal.
+// ToGetRequestInformation list synchronizationTemplate objects associated with a given application or service principal.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

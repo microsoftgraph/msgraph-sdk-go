@@ -38,7 +38,7 @@ func (m *WebauthnPublicKeyCredentialParameters) GetAdditionalData()(map[string]a
     }
     return val.(map[string]any)
 }
-// GetAlg gets the alg property value. The alg property
+// GetAlg gets the alg property value. A COSE algorithm identifier representing the cryptographic algorithm to use for this credential type. For example, -7 represents ES256.
 // returns a *int32 when successful
 func (m *WebauthnPublicKeyCredentialParameters) GetAlg()(*int32) {
     val, err := m.GetBackingStore().Get("alg")
@@ -103,7 +103,7 @@ func (m *WebauthnPublicKeyCredentialParameters) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of credential to create. Currently, the only supported value is public-key.
 // returns a *string when successful
 func (m *WebauthnPublicKeyCredentialParameters) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -150,7 +150,7 @@ func (m *WebauthnPublicKeyCredentialParameters) SetAdditionalData(value map[stri
         panic(err)
     }
 }
-// SetAlg sets the alg property value. The alg property
+// SetAlg sets the alg property value. A COSE algorithm identifier representing the cryptographic algorithm to use for this credential type. For example, -7 represents ES256.
 func (m *WebauthnPublicKeyCredentialParameters) SetAlg(value *int32)() {
     err := m.GetBackingStore().Set("alg", value)
     if err != nil {
@@ -168,7 +168,7 @@ func (m *WebauthnPublicKeyCredentialParameters) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of credential to create. Currently, the only supported value is public-key.
 func (m *WebauthnPublicKeyCredentialParameters) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

@@ -13,7 +13,7 @@ import (
 type ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetQueryParameters list all the functions currently supported in the attributeMappingSource.
+// ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetQueryParameters list all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
 type ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -54,7 +54,7 @@ func NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list all the functions currently supported in the attributeMappingSource.
+// Get list all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
 // Deprecated: This method is obsolete. Use GetAsFunctionsGetResponse instead.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -78,7 +78,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) Get(ctx 
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFunctionsResponseable), nil
 }
-// GetAsFunctionsGetResponse list all the functions currently supported in the attributeMappingSource.
+// GetAsFunctionsGetResponse list all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -101,7 +101,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) GetAsFun
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFunctionsGetResponseable), nil
 }
-// ToGetRequestInformation list all the functions currently supported in the attributeMappingSource.
+// ToGetRequestInformation list all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

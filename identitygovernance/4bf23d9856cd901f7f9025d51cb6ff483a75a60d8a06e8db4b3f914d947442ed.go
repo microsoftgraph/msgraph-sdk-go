@@ -13,7 +13,7 @@ import (
 type AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
+// AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review for which the calling user is the reviewer. The decision items are presented as accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
 type AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -57,7 +57,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurr
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
+// Get retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review for which the calling user is the reviewer. The decision items are presented as accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -81,7 +81,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCur
     }
     return res.(AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnResponseable), nil
 }
-// GetAsFilterByCurrentUserWithOnGetResponse retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
+// GetAsFilterByCurrentUserWithOnGetResponse retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review for which the calling user is the reviewer. The decision items are presented as accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
 // returns a AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -104,7 +104,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCur
     }
     return res.(AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnGetResponseable), nil
 }
-// ToGetRequestInformation retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
+// ToGetRequestInformation retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review for which the calling user is the reviewer. The decision items are presented as accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

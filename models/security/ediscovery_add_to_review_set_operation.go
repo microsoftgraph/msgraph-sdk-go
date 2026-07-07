@@ -22,7 +22,7 @@ func NewEdiscoveryAddToReviewSetOperation()(*EdiscoveryAddToReviewSetOperation) 
 func CreateEdiscoveryAddToReviewSetOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryAddToReviewSetOperation(), nil
 }
-// GetAdditionalDataOptions gets the additionalDataOptions property value. The options to add items to the review set. The possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder.
+// GetAdditionalDataOptions gets the additionalDataOptions property value. The options to add items to the review set. The possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder, cloudNativeHtmlConversion. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder, cloudNativeHtmlConversion.
 // returns a *AdditionalDataOptions when successful
 func (m *EdiscoveryAddToReviewSetOperation) GetAdditionalDataOptions()(*AdditionalDataOptions) {
     val, err := m.GetBackingStore().Get("additionalDataOptions")
@@ -248,7 +248,7 @@ func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetAdditionalDataOptions sets the additionalDataOptions property value. The options to add items to the review set. The possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder.
+// SetAdditionalDataOptions sets the additionalDataOptions property value. The options to add items to the review set. The possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder, cloudNativeHtmlConversion. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder, cloudNativeHtmlConversion.
 func (m *EdiscoveryAddToReviewSetOperation) SetAdditionalDataOptions(value *AdditionalDataOptions)() {
     err := m.GetBackingStore().Set("additionalDataOptions", value)
     if err != nil {

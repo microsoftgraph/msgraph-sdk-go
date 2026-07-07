@@ -67,7 +67,7 @@ func NewLifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder(rawUrl string, req
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) CreatedBy()(*LifecycleWorkflowsWorkflowsItemCreatedByRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemCreatedByRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+// Delete delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -129,10 +129,30 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphId
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceActivateWithScope()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphIdentityGovernanceCancelProcessing provides operations to call the cancelProcessing method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceCancelProcessing()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphIdentityGovernanceClearQuarantine provides operations to call the clearQuarantine method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceClearQuarantine()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphIdentityGovernanceCreateNewVersion provides operations to call the createNewVersion method.
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceCreateNewVersion()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphIdentityGovernancePreviewTaskFailures provides operations to call the previewTaskFailures method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernancePreviewTaskFailures()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphIdentityGovernancePreviewWorkflow provides operations to call the previewWorkflow method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernancePreviewWorkflow()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphIdentityGovernanceRestore provides operations to call the restore method.
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceRestoreRequestBuilder when successful
@@ -162,6 +182,11 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Patch(ctx contex
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Workflowable), nil
 }
+// PreviewScope provides operations to manage the previewScope property of the microsoft.graph.identityGovernance.workflow entity.
+// returns a *LifecycleWorkflowsWorkflowsItemPreviewScopeRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) PreviewScope()(*LifecycleWorkflowsWorkflowsItemPreviewScopeRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemPreviewScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Runs provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
 // returns a *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Runs()(*LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) {
@@ -177,7 +202,7 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) TaskReports()(*L
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Tasks()(*LifecycleWorkflowsWorkflowsItemTasksRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+// ToDeleteRequestInformation delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
