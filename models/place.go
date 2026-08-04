@@ -178,6 +178,16 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["placeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlaceId(val)
+        }
+        return nil
+    }
     res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -248,6 +258,18 @@ func (m *Place) GetParentId()(*string) {
 // returns a *string when successful
 func (m *Place) GetPhone()(*string) {
     val, err := m.GetBackingStore().Get("phone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPlaceId gets the placeId property value. A stable service-level identifier for the place object used by Places workloads.
+// returns a *string when successful
+func (m *Place) GetPlaceId()(*string) {
+    val, err := m.GetBackingStore().Get("placeId")
     if err != nil {
         panic(err)
     }
@@ -328,6 +350,12 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("placeId", m.GetPlaceId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
@@ -392,6 +420,13 @@ func (m *Place) SetPhone(value *string)() {
         panic(err)
     }
 }
+// SetPlaceId sets the placeId property value. A stable service-level identifier for the place object used by Places workloads.
+func (m *Place) SetPlaceId(value *string)() {
+    err := m.GetBackingStore().Set("placeId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTags sets the tags property value. Custom tags that are associated with the place for categorization or filtering.
 func (m *Place) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
@@ -410,6 +445,7 @@ type Placeable interface {
     GetLabel()(*string)
     GetParentId()(*string)
     GetPhone()(*string)
+    GetPlaceId()(*string)
     GetTags()([]string)
     SetAddress(value PhysicalAddressable)()
     SetCheckIns(value []CheckInClaimable)()
@@ -419,5 +455,6 @@ type Placeable interface {
     SetLabel(value *string)()
     SetParentId(value *string)()
     SetPhone(value *string)()
+    SetPlaceId(value *string)()
     SetTags(value []string)()
 }

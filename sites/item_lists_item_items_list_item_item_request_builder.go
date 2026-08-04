@@ -164,6 +164,11 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
+// Permissions provides operations to manage the permissions property of the microsoft.graph.listItem entity.
+// returns a *ItemListsItemItemsItemPermissionsRequestBuilder when successful
+func (m *ItemListsItemItemsListItemItemRequestBuilder) Permissions()(*ItemListsItemItemsItemPermissionsRequestBuilder) {
+    return NewItemListsItemItemsItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation removes an item from a list.
 // returns a *RequestInformation when successful
 func (m *ItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

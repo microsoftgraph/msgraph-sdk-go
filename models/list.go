@@ -170,6 +170,22 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Permissionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Permissionable)
+                }
+            }
+            m.SetPermissions(res)
+        }
+        return nil
+    }
     res["sharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
@@ -241,6 +257,18 @@ func (m *List) GetOperations()([]RichLongRunningOperationable) {
     }
     if val != nil {
         return val.([]RichLongRunningOperationable)
+    }
+    return nil
+}
+// GetPermissions gets the permissions property value. The set of permissions for the item. Read-only. Nullable.
+// returns a []Permissionable when successful
+func (m *List) GetPermissions()([]Permissionable) {
+    val, err := m.GetBackingStore().Get("permissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Permissionable)
     }
     return nil
 }
@@ -352,6 +380,18 @@ func (m *List) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetPermissions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
+        for i, v := range m.GetPermissions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("permissions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("sharepointIds", m.GetSharepointIds())
         if err != nil {
@@ -427,6 +467,13 @@ func (m *List) SetOperations(value []RichLongRunningOperationable)() {
         panic(err)
     }
 }
+// SetPermissions sets the permissions property value. The set of permissions for the item. Read-only. Nullable.
+func (m *List) SetPermissions(value []Permissionable)() {
+    err := m.GetBackingStore().Set("permissions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *List) SetSharepointIds(value SharepointIdsable)() {
     err := m.GetBackingStore().Set("sharepointIds", value)
@@ -458,6 +505,7 @@ type Listable interface {
     GetItems()([]ListItemable)
     GetList()(ListInfoable)
     GetOperations()([]RichLongRunningOperationable)
+    GetPermissions()([]Permissionable)
     GetSharepointIds()(SharepointIdsable)
     GetSubscriptions()([]Subscriptionable)
     GetSystem()(SystemFacetable)
@@ -468,6 +516,7 @@ type Listable interface {
     SetItems(value []ListItemable)()
     SetList(value ListInfoable)()
     SetOperations(value []RichLongRunningOperationable)()
+    SetPermissions(value []Permissionable)()
     SetSharepointIds(value SharepointIdsable)()
     SetSubscriptions(value []Subscriptionable)()
     SetSystem(value SystemFacetable)()

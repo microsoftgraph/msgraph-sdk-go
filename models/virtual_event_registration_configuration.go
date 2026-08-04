@@ -32,6 +32,8 @@ func CreateVirtualEventRegistrationConfigurationFromDiscriminatorValue(parseNode
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.virtualEventTownhallRegistrationConfiguration":
+                        return NewVirtualEventTownhallRegistrationConfiguration(), nil
                     case "#microsoft.graph.virtualEventWebinarRegistrationConfiguration":
                         return NewVirtualEventWebinarRegistrationConfiguration(), nil
                 }
@@ -66,6 +68,26 @@ func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["isManualApprovalEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsManualApprovalEnabled(val)
+        }
+        return nil
+    }
+    res["isWaitlistEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsWaitlistEnabled(val)
+        }
+        return nil
+    }
     res["questions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVirtualEventRegistrationQuestionBaseFromDiscriminatorValue)
         if err != nil {
@@ -93,6 +115,30 @@ func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetIsManualApprovalEnabled gets the isManualApprovalEnabled property value. Indicates whether registrations require organizer approval before a participant is confirmed.
+// returns a *bool when successful
+func (m *VirtualEventRegistrationConfiguration) GetIsManualApprovalEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isManualApprovalEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsWaitlistEnabled gets the isWaitlistEnabled property value. Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.
+// returns a *bool when successful
+func (m *VirtualEventRegistrationConfiguration) GetIsWaitlistEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isWaitlistEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetQuestions gets the questions property value. Registration questions.
 // returns a []VirtualEventRegistrationQuestionBaseable when successful
@@ -130,6 +176,18 @@ func (m *VirtualEventRegistrationConfiguration) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isManualApprovalEnabled", m.GetIsManualApprovalEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isWaitlistEnabled", m.GetIsWaitlistEnabled())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQuestions()))
         for i, v := range m.GetQuestions() {
@@ -157,6 +215,20 @@ func (m *VirtualEventRegistrationConfiguration) SetCapacity(value *int32)() {
         panic(err)
     }
 }
+// SetIsManualApprovalEnabled sets the isManualApprovalEnabled property value. Indicates whether registrations require organizer approval before a participant is confirmed.
+func (m *VirtualEventRegistrationConfiguration) SetIsManualApprovalEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isManualApprovalEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsWaitlistEnabled sets the isWaitlistEnabled property value. Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.
+func (m *VirtualEventRegistrationConfiguration) SetIsWaitlistEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isWaitlistEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetQuestions sets the questions property value. Registration questions.
 func (m *VirtualEventRegistrationConfiguration) SetQuestions(value []VirtualEventRegistrationQuestionBaseable)() {
     err := m.GetBackingStore().Set("questions", value)
@@ -175,9 +247,13 @@ type VirtualEventRegistrationConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCapacity()(*int32)
+    GetIsManualApprovalEnabled()(*bool)
+    GetIsWaitlistEnabled()(*bool)
     GetQuestions()([]VirtualEventRegistrationQuestionBaseable)
     GetRegistrationWebUrl()(*string)
     SetCapacity(value *int32)()
+    SetIsManualApprovalEnabled(value *bool)()
+    SetIsWaitlistEnabled(value *bool)()
     SetQuestions(value []VirtualEventRegistrationQuestionBaseable)()
     SetRegistrationWebUrl(value *string)()
 }

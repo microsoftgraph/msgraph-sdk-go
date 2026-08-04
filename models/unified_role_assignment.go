@@ -156,6 +156,16 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["principalOrganizationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrincipalOrganizationId(val)
+        }
+        return nil
+    }
     res["roleDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -194,6 +204,18 @@ func (m *UnifiedRoleAssignment) GetPrincipal()(DirectoryObjectable) {
 // returns a *string when successful
 func (m *UnifiedRoleAssignment) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPrincipalOrganizationId gets the principalOrganizationId property value. The principalOrganizationId property
+// returns a *string when successful
+func (m *UnifiedRoleAssignment) GetPrincipalOrganizationId()(*string) {
+    val, err := m.GetBackingStore().Get("principalOrganizationId")
     if err != nil {
         panic(err)
     }
@@ -275,6 +297,12 @@ func (m *UnifiedRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("principalOrganizationId", m.GetPrincipalOrganizationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("roleDefinition", m.GetRoleDefinition())
         if err != nil {
             return err
@@ -337,6 +365,13 @@ func (m *UnifiedRoleAssignment) SetPrincipalId(value *string)() {
         panic(err)
     }
 }
+// SetPrincipalOrganizationId sets the principalOrganizationId property value. The principalOrganizationId property
+func (m *UnifiedRoleAssignment) SetPrincipalOrganizationId(value *string)() {
+    err := m.GetBackingStore().Set("principalOrganizationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleDefinition sets the roleDefinition property value. The roleDefinition the assignment is for. Supports $expand.
 func (m *UnifiedRoleAssignment) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinition", value)
@@ -361,6 +396,7 @@ type UnifiedRoleAssignmentable interface {
     GetDirectoryScopeId()(*string)
     GetPrincipal()(DirectoryObjectable)
     GetPrincipalId()(*string)
+    GetPrincipalOrganizationId()(*string)
     GetRoleDefinition()(UnifiedRoleDefinitionable)
     GetRoleDefinitionId()(*string)
     SetAppScope(value AppScopeable)()
@@ -370,6 +406,7 @@ type UnifiedRoleAssignmentable interface {
     SetDirectoryScopeId(value *string)()
     SetPrincipal(value DirectoryObjectable)()
     SetPrincipalId(value *string)()
+    SetPrincipalOrganizationId(value *string)()
     SetRoleDefinition(value UnifiedRoleDefinitionable)()
     SetRoleDefinitionId(value *string)()
 }

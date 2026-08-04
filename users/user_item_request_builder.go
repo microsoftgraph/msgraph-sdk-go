@@ -492,6 +492,11 @@ func (m *UserItemRequestBuilder) Settings()(*ItemSettingsRequestBuilder) {
 func (m *UserItemRequestBuilder) Solutions()(*ItemSolutionsRequestBuilder) {
     return NewItemSolutionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SponsorOf provides operations to manage the sponsorOf property of the microsoft.graph.user entity.
+// returns a *ItemSponsorOfRequestBuilder when successful
+func (m *UserItemRequestBuilder) SponsorOf()(*ItemSponsorOfRequestBuilder) {
+    return NewItemSponsorOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Sponsors provides operations to manage the sponsors property of the microsoft.graph.user entity.
 // returns a *ItemSponsorsRequestBuilder when successful
 func (m *UserItemRequestBuilder) Sponsors()(*ItemSponsorsRequestBuilder) {

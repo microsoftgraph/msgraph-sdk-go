@@ -36,6 +36,18 @@ func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
     }
     return nil
 }
+// GetCapacity gets the capacity property value. Represents the expected number of attendees for the town hall.
+// returns a *int32 when successful
+func (m *VirtualEventTownhall) GetCapacity()(*int32) {
+    val, err := m.GetBackingStore().Get("capacity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetCoOrganizers gets the coOrganizers property value. Identity information of the coorganizers of the town hall.
 // returns a []CommunicationsUserIdentityable when successful
 func (m *VirtualEventTownhall) GetCoOrganizers()([]CommunicationsUserIdentityable) {
@@ -59,6 +71,16 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetAudience(val.(*MeetingAudience))
+        }
+        return nil
+    }
+    res["capacity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCapacity(val)
         }
         return nil
     }
@@ -104,6 +126,32 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["registrationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVirtualEventTownhallRegistrationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrationConfiguration(val.(VirtualEventTownhallRegistrationConfigurationable))
+        }
+        return nil
+    }
+    res["registrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventRegistrationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VirtualEventRegistrationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(VirtualEventRegistrationable)
+                }
+            }
+            m.SetRegistrations(res)
+        }
+        return nil
+    }
     return res
 }
 // GetInvitedAttendees gets the invitedAttendees property value. The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.
@@ -130,6 +178,30 @@ func (m *VirtualEventTownhall) GetIsInviteOnly()(*bool) {
     }
     return nil
 }
+// GetRegistrationConfiguration gets the registrationConfiguration property value. Registration configuration of the town hall.
+// returns a VirtualEventTownhallRegistrationConfigurationable when successful
+func (m *VirtualEventTownhall) GetRegistrationConfiguration()(VirtualEventTownhallRegistrationConfigurationable) {
+    val, err := m.GetBackingStore().Get("registrationConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VirtualEventTownhallRegistrationConfigurationable)
+    }
+    return nil
+}
+// GetRegistrations gets the registrations property value. Registration records of the town hall.
+// returns a []VirtualEventRegistrationable when successful
+func (m *VirtualEventTownhall) GetRegistrations()([]VirtualEventRegistrationable) {
+    val, err := m.GetBackingStore().Get("registrations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VirtualEventRegistrationable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *VirtualEventTownhall) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.VirtualEvent.Serialize(writer)
@@ -139,6 +211,12 @@ func (m *VirtualEventTownhall) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAudience() != nil {
         cast := (*m.GetAudience()).String()
         err = writer.WriteStringValue("audience", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("capacity", m.GetCapacity())
         if err != nil {
             return err
         }
@@ -173,11 +251,36 @@ func (m *VirtualEventTownhall) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("registrationConfiguration", m.GetRegistrationConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRegistrations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrations()))
+        for i, v := range m.GetRegistrations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("registrations", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAudience sets the audience property value. The audience to whom the town hall is visible. The possible values are: everyone, organization, and unknownFutureValue.
 func (m *VirtualEventTownhall) SetAudience(value *MeetingAudience)() {
     err := m.GetBackingStore().Set("audience", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCapacity sets the capacity property value. Represents the expected number of attendees for the town hall.
+func (m *VirtualEventTownhall) SetCapacity(value *int32)() {
+    err := m.GetBackingStore().Set("capacity", value)
     if err != nil {
         panic(err)
     }
@@ -203,15 +306,35 @@ func (m *VirtualEventTownhall) SetIsInviteOnly(value *bool)() {
         panic(err)
     }
 }
+// SetRegistrationConfiguration sets the registrationConfiguration property value. Registration configuration of the town hall.
+func (m *VirtualEventTownhall) SetRegistrationConfiguration(value VirtualEventTownhallRegistrationConfigurationable)() {
+    err := m.GetBackingStore().Set("registrationConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRegistrations sets the registrations property value. Registration records of the town hall.
+func (m *VirtualEventTownhall) SetRegistrations(value []VirtualEventRegistrationable)() {
+    err := m.GetBackingStore().Set("registrations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type VirtualEventTownhallable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventable
     GetAudience()(*MeetingAudience)
+    GetCapacity()(*int32)
     GetCoOrganizers()([]CommunicationsUserIdentityable)
     GetInvitedAttendees()([]Identityable)
     GetIsInviteOnly()(*bool)
+    GetRegistrationConfiguration()(VirtualEventTownhallRegistrationConfigurationable)
+    GetRegistrations()([]VirtualEventRegistrationable)
     SetAudience(value *MeetingAudience)()
+    SetCapacity(value *int32)()
     SetCoOrganizers(value []CommunicationsUserIdentityable)()
     SetInvitedAttendees(value []Identityable)()
     SetIsInviteOnly(value *bool)()
+    SetRegistrationConfiguration(value VirtualEventTownhallRegistrationConfigurationable)()
+    SetRegistrations(value []VirtualEventRegistrationable)()
 }

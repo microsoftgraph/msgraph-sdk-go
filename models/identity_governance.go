@@ -67,6 +67,18 @@ func (m *IdentityGovernance) GetAppConsent()(AppConsentApprovalRouteable) {
 func (m *IdentityGovernance) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCatalogs gets the catalogs property value. The catalogs property
+// returns a []AccessPackageCatalogable when successful
+func (m *IdentityGovernance) GetCatalogs()([]AccessPackageCatalogable) {
+    val, err := m.GetBackingStore().Get("catalogs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageCatalogable)
+    }
+    return nil
+}
 // GetEntitlementManagement gets the entitlementManagement property value. The entitlementManagement property
 // returns a EntitlementManagementable when successful
 func (m *IdentityGovernance) GetEntitlementManagement()(EntitlementManagementable) {
@@ -100,6 +112,22 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetAppConsent(val.(AppConsentApprovalRouteable))
+        }
+        return nil
+    }
+    res["catalogs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageCatalogFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageCatalogable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessPackageCatalogable)
+                }
+            }
+            m.SetCatalogs(res)
         }
         return nil
     }
@@ -195,6 +223,18 @@ func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetCatalogs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCatalogs()))
+        for i, v := range m.GetCatalogs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("catalogs", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("entitlementManagement", m.GetEntitlementManagement())
         if err != nil {
@@ -252,6 +292,13 @@ func (m *IdentityGovernance) SetAppConsent(value AppConsentApprovalRouteable)() 
 func (m *IdentityGovernance) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCatalogs sets the catalogs property value. The catalogs property
+func (m *IdentityGovernance) SetCatalogs(value []AccessPackageCatalogable)() {
+    err := m.GetBackingStore().Set("catalogs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEntitlementManagement sets the entitlementManagement property value. The entitlementManagement property
 func (m *IdentityGovernance) SetEntitlementManagement(value EntitlementManagementable)() {
     err := m.GetBackingStore().Set("entitlementManagement", value)
@@ -287,6 +334,7 @@ type IdentityGovernanceable interface {
     GetAccessReviews()(AccessReviewSetable)
     GetAppConsent()(AppConsentApprovalRouteable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCatalogs()([]AccessPackageCatalogable)
     GetEntitlementManagement()(EntitlementManagementable)
     GetOdataType()(*string)
     GetPrivilegedAccess()(PrivilegedAccessRootable)
@@ -294,6 +342,7 @@ type IdentityGovernanceable interface {
     SetAccessReviews(value AccessReviewSetable)()
     SetAppConsent(value AppConsentApprovalRouteable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCatalogs(value []AccessPackageCatalogable)()
     SetEntitlementManagement(value EntitlementManagementable)()
     SetOdataType(value *string)()
     SetPrivilegedAccess(value PrivilegedAccessRootable)()

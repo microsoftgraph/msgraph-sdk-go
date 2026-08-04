@@ -168,6 +168,22 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcServicePlanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcServicePlanable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcServicePlanable)
+                }
+            }
+            m.SetServicePlans(res)
+        }
+        return nil
+    }
     res["userSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcUserSettingFromDiscriminatorValue)
         if err != nil {
@@ -231,6 +247,18 @@ func (m *VirtualEndpoint) GetReport()(CloudPcReportable) {
     }
     if val != nil {
         return val.(CloudPcReportable)
+    }
+    return nil
+}
+// GetServicePlans gets the servicePlans property value. A collection of Cloud PC service plans.
+// returns a []CloudPcServicePlanable when successful
+func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
+    val, err := m.GetBackingStore().Get("servicePlans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcServicePlanable)
     }
     return nil
 }
@@ -330,6 +358,18 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetServicePlans() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePlans()))
+        for i, v := range m.GetServicePlans() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("servicePlans", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserSettings()))
         for i, v := range m.GetUserSettings() {
@@ -393,6 +433,13 @@ func (m *VirtualEndpoint) SetReport(value CloudPcReportable)() {
         panic(err)
     }
 }
+// SetServicePlans sets the servicePlans property value. A collection of Cloud PC service plans.
+func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {
+    err := m.GetBackingStore().Set("servicePlans", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserSettings sets the userSettings property value. A collection of Cloud PC user settings.
 func (m *VirtualEndpoint) SetUserSettings(value []CloudPcUserSettingable)() {
     err := m.GetBackingStore().Set("userSettings", value)
@@ -410,6 +457,7 @@ type VirtualEndpointable interface {
     GetOnPremisesConnections()([]CloudPcOnPremisesConnectionable)
     GetProvisioningPolicies()([]CloudPcProvisioningPolicyable)
     GetReport()(CloudPcReportable)
+    GetServicePlans()([]CloudPcServicePlanable)
     GetUserSettings()([]CloudPcUserSettingable)
     SetAuditEvents(value []CloudPcAuditEventable)()
     SetCloudPCs(value []CloudPCable)()
@@ -418,5 +466,6 @@ type VirtualEndpointable interface {
     SetOnPremisesConnections(value []CloudPcOnPremisesConnectionable)()
     SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)()
     SetReport(value CloudPcReportable)()
+    SetServicePlans(value []CloudPcServicePlanable)()
     SetUserSettings(value []CloudPcUserSettingable)()
 }

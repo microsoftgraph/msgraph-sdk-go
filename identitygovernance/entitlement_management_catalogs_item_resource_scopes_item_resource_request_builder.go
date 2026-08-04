@@ -173,6 +173,11 @@ func (m *EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuild
     }
     return requestInfo, nil
 }
+// UploadSessions provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.
+// returns a *EntitlementManagementCatalogsItemResourceScopesItemResourceUploadSessionsRequestBuilder when successful
+func (m *EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilder) UploadSessions()(*EntitlementManagementCatalogsItemResourceScopesItemResourceUploadSessionsRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemResourceScopesItemResourceUploadSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilder when successful
 func (m *EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilder) {

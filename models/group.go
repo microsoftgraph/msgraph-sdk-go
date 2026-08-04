@@ -865,6 +865,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["organizationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizationId(val)
+        }
+        return nil
+    }
     res["owners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -1582,6 +1592,18 @@ func (m *Group) GetOnPremisesSyncEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOrganizationId gets the organizationId property value. The organizationId property
+// returns a *string when successful
+func (m *Group) GetOrganizationId()(*string) {
+    val, err := m.GetBackingStore().Get("organizationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -2312,6 +2334,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("organizationId", m.GetOrganizationId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOwners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOwners()))
         for i, v := range m.GetOwners() {
@@ -2892,6 +2920,13 @@ func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOrganizationId sets the organizationId property value. The organizationId property
+func (m *Group) SetOrganizationId(value *string)() {
+    err := m.GetBackingStore().Set("organizationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOwners sets the owners property value. The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can't explicitly add themselves to this collection when they're creating the group. For more information, see the related known issue. For security groups, the admin user isn't automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 func (m *Group) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
@@ -3141,6 +3176,7 @@ type Groupable interface {
     GetOnPremisesSecurityIdentifier()(*string)
     GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable)
     GetOnPremisesSyncEnabled()(*bool)
+    GetOrganizationId()(*string)
     GetOwners()([]DirectoryObjectable)
     GetPermissionGrants()([]ResourceSpecificPermissionGrantable)
     GetPhoto()(ProfilePhotoable)
@@ -3219,6 +3255,7 @@ type Groupable interface {
     SetOnPremisesSecurityIdentifier(value *string)()
     SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)()
     SetOnPremisesSyncEnabled(value *bool)()
+    SetOrganizationId(value *string)()
     SetOwners(value []DirectoryObjectable)()
     SetPermissionGrants(value []ResourceSpecificPermissionGrantable)()
     SetPhoto(value ProfilePhotoable)()

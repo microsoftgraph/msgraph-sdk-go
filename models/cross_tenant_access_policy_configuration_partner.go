@@ -249,6 +249,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["serviceProviderConstraints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateServiceProviderConstraintsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServiceProviderConstraints(val.(ServiceProviderConstraintsable))
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -355,6 +365,18 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetOdataType()(*string) {
     }
     return nil
 }
+// GetServiceProviderConstraints gets the serviceProviderConstraints property value. The serviceProviderConstraints property
+// returns a ServiceProviderConstraintsable when successful
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetServiceProviderConstraints()(ServiceProviderConstraintsable) {
+    val, err := m.GetBackingStore().Get("serviceProviderConstraints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServiceProviderConstraintsable)
+    }
+    return nil
+}
 // GetTenantId gets the tenantId property value. The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.
 // returns a *string when successful
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
@@ -455,6 +477,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("serviceProviderConstraints", m.GetServiceProviderConstraints())
         if err != nil {
             return err
         }
@@ -581,6 +609,13 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetOdataType(value *string
         panic(err)
     }
 }
+// SetServiceProviderConstraints sets the serviceProviderConstraints property value. The serviceProviderConstraints property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetServiceProviderConstraints(value ServiceProviderConstraintsable)() {
+    err := m.GetBackingStore().Set("serviceProviderConstraints", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -613,6 +648,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetM365CollaborationInbound()(CrossTenantAccessPolicyM365CollaborationInboundSettingable)
     GetM365CollaborationOutbound()(CrossTenantAccessPolicyM365CollaborationOutboundSettingable)
     GetOdataType()(*string)
+    GetServiceProviderConstraints()(ServiceProviderConstraintsable)
     GetTenantId()(*string)
     GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
     SetAppServiceConnectInbound(value CrossTenantAccessPolicyAppServiceConnectSettingable)()
@@ -629,6 +665,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     SetM365CollaborationInbound(value CrossTenantAccessPolicyM365CollaborationInboundSettingable)()
     SetM365CollaborationOutbound(value CrossTenantAccessPolicyM365CollaborationOutboundSettingable)()
     SetOdataType(value *string)()
+    SetServiceProviderConstraints(value ServiceProviderConstraintsable)()
     SetTenantId(value *string)()
     SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()
 }
