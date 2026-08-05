@@ -21,6 +21,24 @@ func NewAccessPackageResource()(*AccessPackageResource) {
 // CreateAccessPackageResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateAccessPackageResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.customDataProvidedResource":
+                        return NewCustomDataProvidedResource(), nil
+                }
+            }
+        }
+    }
     return NewAccessPackageResource(), nil
 }
 // GetAttributes gets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
@@ -205,6 +223,22 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["uploadSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomDataProvidedResourceUploadSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomDataProvidedResourceUploadSessionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CustomDataProvidedResourceUploadSessionable)
+                }
+            }
+            m.SetUploadSessions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -264,6 +298,18 @@ func (m *AccessPackageResource) GetScopes()([]AccessPackageResourceScopeable) {
     }
     if val != nil {
         return val.([]AccessPackageResourceScopeable)
+    }
+    return nil
+}
+// GetUploadSessions gets the uploadSessions property value. The upload sessions for uploading external access data to this resource through the Bring Your Own Data (BYOD) flow.
+// returns a []CustomDataProvidedResourceUploadSessionable when successful
+func (m *AccessPackageResource) GetUploadSessions()([]CustomDataProvidedResourceUploadSessionable) {
+    val, err := m.GetBackingStore().Get("uploadSessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomDataProvidedResourceUploadSessionable)
     }
     return nil
 }
@@ -351,6 +397,18 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetUploadSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUploadSessions()))
+        for i, v := range m.GetUploadSessions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("uploadSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAttributes sets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
@@ -423,6 +481,13 @@ func (m *AccessPackageResource) SetScopes(value []AccessPackageResourceScopeable
         panic(err)
     }
 }
+// SetUploadSessions sets the uploadSessions property value. The upload sessions for uploading external access data to this resource through the Bring Your Own Data (BYOD) flow.
+func (m *AccessPackageResource) SetUploadSessions(value []CustomDataProvidedResourceUploadSessionable)() {
+    err := m.GetBackingStore().Set("uploadSessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AccessPackageResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -436,6 +501,7 @@ type AccessPackageResourceable interface {
     GetOriginSystem()(*string)
     GetRoles()([]AccessPackageResourceRoleable)
     GetScopes()([]AccessPackageResourceScopeable)
+    GetUploadSessions()([]CustomDataProvidedResourceUploadSessionable)
     SetAttributes(value []AccessPackageResourceAttributeable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -446,4 +512,5 @@ type AccessPackageResourceable interface {
     SetOriginSystem(value *string)()
     SetRoles(value []AccessPackageResourceRoleable)()
     SetScopes(value []AccessPackageResourceScopeable)()
+    SetUploadSessions(value []CustomDataProvidedResourceUploadSessionable)()
 }

@@ -148,6 +148,11 @@ func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*VirtualEndpointP
 func (m *VirtualEndpointRequestBuilder) Report()(*VirtualEndpointReportRequestBuilder) {
     return NewVirtualEndpointReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServicePlans provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointServicePlansRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) ServicePlans()(*VirtualEndpointServicePlansRequestBuilder) {
+    return NewVirtualEndpointServicePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property virtualEndpoint for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

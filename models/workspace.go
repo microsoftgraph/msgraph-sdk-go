@@ -114,16 +114,6 @@ func (m *Workspace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["placeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlaceId(val)
-        }
-        return nil
-    }
     return res
 }
 // GetMode gets the mode property value. The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms pro management portal.unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.
@@ -142,18 +132,6 @@ func (m *Workspace) GetMode()(PlaceModeable) {
 // returns a *string when successful
 func (m *Workspace) GetNickname()(*string) {
     val, err := m.GetBackingStore().Get("nickname")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetPlaceId gets the placeId property value. An alternative immutable unique identifier of the workspace. Read-only.
-// returns a *string when successful
-func (m *Workspace) GetPlaceId()(*string) {
-    val, err := m.GetBackingStore().Get("placeId")
     if err != nil {
         panic(err)
     }
@@ -198,12 +176,6 @@ func (m *Workspace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("placeId", m.GetPlaceId())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetCapacity sets the capacity property value. The maximum number of individual desks within a workspace.
@@ -241,13 +213,6 @@ func (m *Workspace) SetNickname(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. An alternative immutable unique identifier of the workspace. Read-only.
-func (m *Workspace) SetPlaceId(value *string)() {
-    err := m.GetBackingStore().Set("placeId", value)
-    if err != nil {
-        panic(err)
-    }
-}
 type Workspaceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable
@@ -256,11 +221,9 @@ type Workspaceable interface {
     GetEmailAddress()(*string)
     GetMode()(PlaceModeable)
     GetNickname()(*string)
-    GetPlaceId()(*string)
     SetCapacity(value *int32)()
     SetDisplayDeviceName(value *string)()
     SetEmailAddress(value *string)()
     SetMode(value PlaceModeable)()
     SetNickname(value *string)()
-    SetPlaceId(value *string)()
 }

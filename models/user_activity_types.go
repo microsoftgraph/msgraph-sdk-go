@@ -15,12 +15,16 @@ const (
     DOWNLOADTEXT_USERACTIVITYTYPES = 8
     DOWNLOADFILE_USERACTIVITYTYPES = 16
     UNKNOWNFUTUREVALUE_USERACTIVITYTYPES = 32
+    COPYTOCLIPBOARD_USERACTIVITYTYPES = 64
+    PASTEFROMCLIPBOARD_USERACTIVITYTYPES = 128
+    PRINT_USERACTIVITYTYPES = 256
+    ACCESSDEBUGTOOLS_USERACTIVITYTYPES = 512
 )
 
 func (i UserActivityTypes) String() string {
     var values []string
-    options := []string{"none", "uploadText", "uploadFile", "downloadText", "downloadFile", "unknownFutureValue"}
-    for p := 0; p < 6; p++ {
+    options := []string{"none", "uploadText", "uploadFile", "downloadText", "downloadFile", "unknownFutureValue", "copyToClipboard", "pasteFromClipboard", "print", "accessDebugTools"}
+    for p := 0; p < 10; p++ {
         mantis := UserActivityTypes(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -45,6 +49,14 @@ func ParseUserActivityTypes(v string) (any, error) {
                 result |= DOWNLOADFILE_USERACTIVITYTYPES
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_USERACTIVITYTYPES
+            case "copyToClipboard":
+                result |= COPYTOCLIPBOARD_USERACTIVITYTYPES
+            case "pasteFromClipboard":
+                result |= PASTEFROMCLIPBOARD_USERACTIVITYTYPES
+            case "print":
+                result |= PRINT_USERACTIVITYTYPES
+            case "accessDebugTools":
+                result |= ACCESSDEBUGTOOLS_USERACTIVITYTYPES
             default:
                 return nil, nil
         }

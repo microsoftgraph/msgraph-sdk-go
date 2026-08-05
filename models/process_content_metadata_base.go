@@ -76,6 +76,18 @@ func (m *ProcessContentMetadataBase) GetContent()(ContentBaseable) {
     }
     return nil
 }
+// GetContentCategory gets the contentCategory property value. The contentCategory property
+// returns a *ContentCategory when successful
+func (m *ProcessContentMetadataBase) GetContentCategory()(*ContentCategory) {
+    val, err := m.GetBackingStore().Get("contentCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ContentCategory)
+    }
+    return nil
+}
 // GetCorrelationId gets the correlationId property value. An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
 // returns a *string when successful
 func (m *ProcessContentMetadataBase) GetCorrelationId()(*string) {
@@ -111,6 +123,16 @@ func (m *ProcessContentMetadataBase) GetFieldDeserializers()(map[string]func(i87
         }
         if val != nil {
             m.SetContent(val.(ContentBaseable))
+        }
+        return nil
+    }
+    res["contentCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseContentCategory)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentCategory(val.(*ContentCategory))
         }
         return nil
     }
@@ -298,6 +320,13 @@ func (m *ProcessContentMetadataBase) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    if m.GetContentCategory() != nil {
+        cast := (*m.GetContentCategory()).String()
+        err := writer.WriteStringValue("contentCategory", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("correlationId", m.GetCorrelationId())
         if err != nil {
@@ -378,6 +407,13 @@ func (m *ProcessContentMetadataBase) SetContent(value ContentBaseable)() {
         panic(err)
     }
 }
+// SetContentCategory sets the contentCategory property value. The contentCategory property
+func (m *ProcessContentMetadataBase) SetContentCategory(value *ContentCategory)() {
+    err := m.GetBackingStore().Set("contentCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCorrelationId sets the correlationId property value. An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
 func (m *ProcessContentMetadataBase) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
@@ -447,6 +483,7 @@ type ProcessContentMetadataBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContent()(ContentBaseable)
+    GetContentCategory()(*ContentCategory)
     GetCorrelationId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIdentifier()(*string)
@@ -458,6 +495,7 @@ type ProcessContentMetadataBaseable interface {
     GetSequenceNumber()(*int64)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContent(value ContentBaseable)()
+    SetContentCategory(value *ContentCategory)()
     SetCorrelationId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIdentifier(value *string)()

@@ -59,6 +59,18 @@ func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAcces
     }
     return nil
 }
+// GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. The authenticationAppDeviceDetails property
+// returns a AuthenticationAppDeviceDetailsable when successful
+func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable) {
+    val, err := m.GetBackingStore().Get("authenticationAppDeviceDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationAppDeviceDetailsable)
+    }
+    return nil
+}
 // GetClientAppUsed gets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).
 // returns a *string when successful
 func (m *SignIn) GetClientAppUsed()(*string) {
@@ -159,6 +171,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["authenticationAppDeviceDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationAppDeviceDetails(val.(AuthenticationAppDeviceDetailsable))
+        }
+        return nil
+    }
     res["clientAppUsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -209,6 +231,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["homeTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHomeTenantId(val)
+        }
+        return nil
+    }
     res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -256,6 +288,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetResourceId(val)
+        }
+        return nil
+    }
+    res["resourceTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceTenantId(val)
         }
         return nil
     }
@@ -331,6 +373,26 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["servicePrincipalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePrincipalId(val)
+        }
+        return nil
+    }
+    res["servicePrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePrincipalName(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInStatusFromDiscriminatorValue)
         if err != nil {
@@ -338,6 +400,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetStatus(val.(SignInStatusable))
+        }
+        return nil
+    }
+    res["userAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserAgent(val)
         }
         return nil
     }
@@ -372,6 +444,18 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     return res
+}
+// GetHomeTenantId gets the homeTenantId property value. The homeTenantId property
+// returns a *string when successful
+func (m *SignIn) GetHomeTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("homeTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIpAddress gets the ipAddress property value. IP address of the client used to sign in.  Supports $filter (eq, startsWith).
 // returns a *string when successful
@@ -425,6 +509,18 @@ func (m *SignIn) GetResourceDisplayName()(*string) {
 // returns a *string when successful
 func (m *SignIn) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetResourceTenantId gets the resourceTenantId property value. The resourceTenantId property
+// returns a *string when successful
+func (m *SignIn) GetResourceTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("resourceTenantId")
     if err != nil {
         panic(err)
     }
@@ -505,6 +601,30 @@ func (m *SignIn) GetRiskState()(*RiskState) {
     }
     return nil
 }
+// GetServicePrincipalId gets the servicePrincipalId property value. The servicePrincipalId property
+// returns a *string when successful
+func (m *SignIn) GetServicePrincipalId()(*string) {
+    val, err := m.GetBackingStore().Get("servicePrincipalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetServicePrincipalName gets the servicePrincipalName property value. The servicePrincipalName property
+// returns a *string when successful
+func (m *SignIn) GetServicePrincipalName()(*string) {
+    val, err := m.GetBackingStore().Get("servicePrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetStatus gets the status property value. Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.
 // returns a SignInStatusable when successful
 func (m *SignIn) GetStatus()(SignInStatusable) {
@@ -514,6 +634,18 @@ func (m *SignIn) GetStatus()(SignInStatusable) {
     }
     if val != nil {
         return val.(SignInStatusable)
+    }
+    return nil
+}
+// GetUserAgent gets the userAgent property value. The userAgent property
+// returns a *string when successful
+func (m *SignIn) GetUserAgent()(*string) {
+    val, err := m.GetBackingStore().Get("userAgent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -584,6 +716,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteObjectValue("authenticationAppDeviceDetails", m.GetAuthenticationAppDeviceDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("clientAppUsed", m.GetClientAppUsed())
         if err != nil {
             return err
@@ -615,6 +753,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("homeTenantId", m.GetHomeTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("ipAddress", m.GetIpAddress())
         if err != nil {
             return err
@@ -640,6 +784,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     {
         err = writer.WriteStringValue("resourceId", m.GetResourceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("resourceTenantId", m.GetResourceTenantId())
         if err != nil {
             return err
         }
@@ -685,7 +835,25 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("servicePrincipalId", m.GetServicePrincipalId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("servicePrincipalName", m.GetServicePrincipalName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("status", m.GetStatus())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("userAgent", m.GetUserAgent())
         if err != nil {
             return err
         }
@@ -731,6 +899,13 @@ func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalA
         panic(err)
     }
 }
+// SetAuthenticationAppDeviceDetails sets the authenticationAppDeviceDetails property value. The authenticationAppDeviceDetails property
+func (m *SignIn) SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)() {
+    err := m.GetBackingStore().Set("authenticationAppDeviceDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetClientAppUsed sets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).
 func (m *SignIn) SetClientAppUsed(value *string)() {
     err := m.GetBackingStore().Set("clientAppUsed", value)
@@ -766,6 +941,13 @@ func (m *SignIn) SetDeviceDetail(value DeviceDetailable)() {
         panic(err)
     }
 }
+// SetHomeTenantId sets the homeTenantId property value. The homeTenantId property
+func (m *SignIn) SetHomeTenantId(value *string)() {
+    err := m.GetBackingStore().Set("homeTenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIpAddress sets the ipAddress property value. IP address of the client used to sign in.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
@@ -797,6 +979,13 @@ func (m *SignIn) SetResourceDisplayName(value *string)() {
 // SetResourceId sets the resourceId property value. ID of the resource that the user signed into.  Supports $filter (eq).
 func (m *SignIn) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetResourceTenantId sets the resourceTenantId property value. The resourceTenantId property
+func (m *SignIn) SetResourceTenantId(value *string)() {
+    err := m.GetBackingStore().Set("resourceTenantId", value)
     if err != nil {
         panic(err)
     }
@@ -843,9 +1032,30 @@ func (m *SignIn) SetRiskState(value *RiskState)() {
         panic(err)
     }
 }
+// SetServicePrincipalId sets the servicePrincipalId property value. The servicePrincipalId property
+func (m *SignIn) SetServicePrincipalId(value *string)() {
+    err := m.GetBackingStore().Set("servicePrincipalId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetServicePrincipalName sets the servicePrincipalName property value. The servicePrincipalName property
+func (m *SignIn) SetServicePrincipalName(value *string)() {
+    err := m.GetBackingStore().Set("servicePrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
     err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserAgent sets the userAgent property value. The userAgent property
+func (m *SignIn) SetUserAgent(value *string)() {
+    err := m.GetBackingStore().Set("userAgent", value)
     if err != nil {
         panic(err)
     }
@@ -877,46 +1087,58 @@ type SignInable interface {
     GetAppDisplayName()(*string)
     GetAppId()(*string)
     GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable)
+    GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable)
     GetClientAppUsed()(*string)
     GetConditionalAccessStatus()(*ConditionalAccessStatus)
     GetCorrelationId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeviceDetail()(DeviceDetailable)
+    GetHomeTenantId()(*string)
     GetIpAddress()(*string)
     GetIsInteractive()(*bool)
     GetLocation()(SignInLocationable)
     GetResourceDisplayName()(*string)
     GetResourceId()(*string)
+    GetResourceTenantId()(*string)
     GetRiskDetail()(*RiskDetail)
     GetRiskEventTypes()([]RiskEventType)
     GetRiskEventTypesV2()([]string)
     GetRiskLevelAggregated()(*RiskLevel)
     GetRiskLevelDuringSignIn()(*RiskLevel)
     GetRiskState()(*RiskState)
+    GetServicePrincipalId()(*string)
+    GetServicePrincipalName()(*string)
     GetStatus()(SignInStatusable)
+    GetUserAgent()(*string)
     GetUserDisplayName()(*string)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
     SetAppDisplayName(value *string)()
     SetAppId(value *string)()
     SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)()
+    SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)()
     SetClientAppUsed(value *string)()
     SetConditionalAccessStatus(value *ConditionalAccessStatus)()
     SetCorrelationId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeviceDetail(value DeviceDetailable)()
+    SetHomeTenantId(value *string)()
     SetIpAddress(value *string)()
     SetIsInteractive(value *bool)()
     SetLocation(value SignInLocationable)()
     SetResourceDisplayName(value *string)()
     SetResourceId(value *string)()
+    SetResourceTenantId(value *string)()
     SetRiskDetail(value *RiskDetail)()
     SetRiskEventTypes(value []RiskEventType)()
     SetRiskEventTypesV2(value []string)()
     SetRiskLevelAggregated(value *RiskLevel)()
     SetRiskLevelDuringSignIn(value *RiskLevel)()
     SetRiskState(value *RiskState)()
+    SetServicePrincipalId(value *string)()
+    SetServicePrincipalName(value *string)()
     SetStatus(value SignInStatusable)()
+    SetUserAgent(value *string)()
     SetUserDisplayName(value *string)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()

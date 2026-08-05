@@ -80,6 +80,22 @@ func (m *Desk) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlaceServicePlanInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlaceServicePlanInfoable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PlaceServicePlanInfoable)
+                }
+            }
+            m.SetServicePlans(res)
+        }
+        return nil
+    }
     return res
 }
 // GetHeightAdjustableState gets the heightAdjustableState property value. The heightAdjustableState property
@@ -118,6 +134,18 @@ func (m *Desk) GetMode()(PlaceModeable) {
     }
     return nil
 }
+// GetServicePlans gets the servicePlans property value. The service plans associated with the desk.
+// returns a []PlaceServicePlanInfoable when successful
+func (m *Desk) GetServicePlans()([]PlaceServicePlanInfoable) {
+    val, err := m.GetBackingStore().Get("servicePlans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlaceServicePlanInfoable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Desk) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Place.Serialize(writer)
@@ -145,6 +173,18 @@ func (m *Desk) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err = writer.WriteObjectValue("mode", m.GetMode())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetServicePlans() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePlans()))
+        for i, v := range m.GetServicePlans() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("servicePlans", cast)
         if err != nil {
             return err
         }
@@ -179,6 +219,13 @@ func (m *Desk) SetMode(value PlaceModeable)() {
         panic(err)
     }
 }
+// SetServicePlans sets the servicePlans property value. The service plans associated with the desk.
+func (m *Desk) SetServicePlans(value []PlaceServicePlanInfoable)() {
+    err := m.GetBackingStore().Set("servicePlans", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Deskable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable
@@ -186,8 +233,10 @@ type Deskable interface {
     GetHeightAdjustableState()(*PlaceFeatureEnablement)
     GetMailboxDetails()(MailboxDetailsable)
     GetMode()(PlaceModeable)
+    GetServicePlans()([]PlaceServicePlanInfoable)
     SetDisplayDeviceName(value *string)()
     SetHeightAdjustableState(value *PlaceFeatureEnablement)()
     SetMailboxDetails(value MailboxDetailsable)()
     SetMode(value PlaceModeable)()
+    SetServicePlans(value []PlaceServicePlanInfoable)()
 }

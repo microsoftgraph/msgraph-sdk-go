@@ -162,6 +162,16 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["isRegistrationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsRegistrationRequired(val)
+        }
+        return nil
+    }
     res["presenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVirtualEventPresenterFromDiscriminatorValue)
         if err != nil {
@@ -225,6 +235,18 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetIsRegistrationRequired gets the isRegistrationRequired property value. Indicates whether attendee registration is enabled for the virtual event.
+// returns a *bool when successful
+func (m *VirtualEvent) GetIsRegistrationRequired()(*bool) {
+    val, err := m.GetBackingStore().Get("isRegistrationRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPresenters gets the presenters property value. The virtual event presenters.
 // returns a []VirtualEventPresenterable when successful
@@ -328,6 +350,12 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isRegistrationRequired", m.GetIsRegistrationRequired())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPresenters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPresenters()))
         for i, v := range m.GetPresenters() {
@@ -408,6 +436,13 @@ func (m *VirtualEvent) SetExternalEventInformation(value []VirtualEventExternalI
         panic(err)
     }
 }
+// SetIsRegistrationRequired sets the isRegistrationRequired property value. Indicates whether attendee registration is enabled for the virtual event.
+func (m *VirtualEvent) SetIsRegistrationRequired(value *bool)() {
+    err := m.GetBackingStore().Set("isRegistrationRequired", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPresenters sets the presenters property value. The virtual event presenters.
 func (m *VirtualEvent) SetPresenters(value []VirtualEventPresenterable)() {
     err := m.GetBackingStore().Set("presenters", value)
@@ -451,6 +486,7 @@ type VirtualEventable interface {
     GetDisplayName()(*string)
     GetEndDateTime()(DateTimeTimeZoneable)
     GetExternalEventInformation()([]VirtualEventExternalInformationable)
+    GetIsRegistrationRequired()(*bool)
     GetPresenters()([]VirtualEventPresenterable)
     GetSessions()([]VirtualEventSessionable)
     GetSettings()(VirtualEventSettingsable)
@@ -461,6 +497,7 @@ type VirtualEventable interface {
     SetDisplayName(value *string)()
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetExternalEventInformation(value []VirtualEventExternalInformationable)()
+    SetIsRegistrationRequired(value *bool)()
     SetPresenters(value []VirtualEventPresenterable)()
     SetSessions(value []VirtualEventSessionable)()
     SetSettings(value VirtualEventSettingsable)()

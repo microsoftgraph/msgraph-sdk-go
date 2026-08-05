@@ -14,7 +14,7 @@ import (
 type VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderGetQueryParameters get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+// VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderGetQueryParameters get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
 type VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewVirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilde
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) Count()(*VirtualEventsWebinarsItemRegistrationConfigurationQuestionsCountRequestBuilder) {
     return NewVirtualEventsWebinarsItemRegistrationConfigurationQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+// Get get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
 // returns a VirtualEventRegistrationQuestionBaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +102,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventRegistrationQuestionBaseCollectionResponseable), nil
 }
-// Post create a registration question for a webinar. You can create either a predefined registration question or a custom registration question.
+// Post create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
 // returns a VirtualEventRegistrationQuestionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -125,7 +125,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventRegistrationQuestionBaseable), nil
 }
-// ToGetRequestInformation get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+// ToGetRequestInformation get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +139,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a registration question for a webinar. You can create either a predefined registration question or a custom registration question.
+// ToPostRequestInformation create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventRegistrationQuestionBaseable, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

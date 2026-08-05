@@ -373,6 +373,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcProvisioningPolicyAssignment(), nil
                     case "#microsoft.graph.cloudPcReport":
                         return NewCloudPcReport(), nil
+                    case "#microsoft.graph.cloudPcServicePlan":
+                        return NewCloudPcServicePlan(), nil
                     case "#microsoft.graph.cloudPcUserSetting":
                         return NewCloudPcUserSetting(), nil
                     case "#microsoft.graph.cloudPcUserSettingAssignment":
@@ -449,6 +451,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomAuthenticationExtension(), nil
                     case "#microsoft.graph.customCalloutExtension":
                         return NewCustomCalloutExtension(), nil
+                    case "#microsoft.graph.customDataProvidedResource":
+                        return NewCustomDataProvidedResource(), nil
+                    case "#microsoft.graph.customDataProvidedResourceAccessReviewUploadSession":
+                        return NewCustomDataProvidedResourceAccessReviewUploadSession(), nil
+                    case "#microsoft.graph.customDataProvidedResourceFile":
+                        return NewCustomDataProvidedResourceFile(), nil
+                    case "#microsoft.graph.customDataProvidedResourceUploadSession":
+                        return NewCustomDataProvidedResourceUploadSession(), nil
                     case "#microsoft.graph.customExtensionStageSetting":
                         return NewCustomExtensionStageSetting(), nil
                     case "#microsoft.graph.customSecurityAttributeDefinition":
@@ -473,6 +483,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDelegatedAdminRelationshipRequest(), nil
                     case "#microsoft.graph.delegatedAdminServiceManagementDetail":
                         return NewDelegatedAdminServiceManagementDetail(), nil
+                    case "#microsoft.graph.delegatedAdminServiceProviderConstraints":
+                        return NewDelegatedAdminServiceProviderConstraints(), nil
                     case "#microsoft.graph.delegatedPermissionClassification":
                         return NewDelegatedPermissionClassification(), nil
                     case "#microsoft.graph.deletedChat":
@@ -1355,6 +1367,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRemoteAssistancePartner(), nil
                     case "#microsoft.graph.remoteDesktopSecurityConfiguration":
                         return NewRemoteDesktopSecurityConfiguration(), nil
+                    case "#microsoft.graph.remoteTenantGroup":
+                        return NewRemoteTenantGroup(), nil
                     case "#microsoft.graph.reportsRoot":
                         return NewReportsRoot(), nil
                     case "#microsoft.graph.request":
@@ -1443,6 +1457,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServicePrincipal(), nil
                     case "#microsoft.graph.servicePrincipalRiskDetection":
                         return NewServicePrincipalRiskDetection(), nil
+                    case "#microsoft.graph.serviceProviderConstraints":
+                        return NewServiceProviderConstraints(), nil
                     case "#microsoft.graph.serviceStorageQuotaBreakdown":
                         return NewServiceStorageQuotaBreakdown(), nil
                     case "#microsoft.graph.serviceUpdateMessage":
@@ -1821,6 +1837,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVirtualEventsRoot(), nil
                     case "#microsoft.graph.virtualEventTownhall":
                         return NewVirtualEventTownhall(), nil
+                    case "#microsoft.graph.virtualEventTownhallRegistrationConfiguration":
+                        return NewVirtualEventTownhallRegistrationConfiguration(), nil
                     case "#microsoft.graph.virtualEventWebinar":
                         return NewVirtualEventWebinar(), nil
                     case "#microsoft.graph.virtualEventWebinarRegistrationConfiguration":

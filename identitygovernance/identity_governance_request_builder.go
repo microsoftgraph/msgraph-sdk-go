@@ -47,6 +47,11 @@ func (m *IdentityGovernanceRequestBuilder) AccessReviews()(*AccessReviewsRequest
 func (m *IdentityGovernanceRequestBuilder) AppConsent()(*AppConsentRequestBuilder) {
     return NewAppConsentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Catalogs provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+// returns a *CatalogsRequestBuilder when successful
+func (m *IdentityGovernanceRequestBuilder) Catalogs()(*CatalogsRequestBuilder) {
+    return NewCatalogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIdentityGovernanceRequestBuilderInternal instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
 func NewIdentityGovernanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityGovernanceRequestBuilder) {
     m := &IdentityGovernanceRequestBuilder{

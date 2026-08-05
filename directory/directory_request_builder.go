@@ -135,6 +135,11 @@ func (m *DirectoryRequestBuilder) PublicKeyInfrastructure()(*PublicKeyInfrastruc
 func (m *DirectoryRequestBuilder) Recovery()(*RecoveryRequestBuilder) {
     return NewRecoveryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RemoteTenantGroups provides operations to manage the remoteTenantGroups property of the microsoft.graph.directory entity.
+// returns a *RemoteTenantGroupsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RemoteTenantGroups()(*RemoteTenantGroupsRequestBuilder) {
+    return NewRemoteTenantGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
 // returns a *SubscriptionsRequestBuilder when successful
 func (m *DirectoryRequestBuilder) Subscriptions()(*SubscriptionsRequestBuilder) {

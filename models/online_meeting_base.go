@@ -259,6 +259,18 @@ func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     }
     return nil
 }
+// GetCloudVideoInteropInfo gets the cloudVideoInteropInfo property value. Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.
+// returns a CloudVideoInteropInfoable when successful
+func (m *OnlineMeetingBase) GetCloudVideoInteropInfo()(CloudVideoInteropInfoable) {
+    val, err := m.GetBackingStore().Get("cloudVideoInteropInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudVideoInteropInfoable)
+    }
+    return nil
+}
 // GetExpiryDateTime gets the expiryDateTime property value. Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *OnlineMeetingBase) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -461,6 +473,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["cloudVideoInteropInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudVideoInteropInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCloudVideoInteropInfo(val.(CloudVideoInteropInfoable))
+        }
+        return nil
+    }
     res["expiryDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -548,6 +570,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetMeetingSpokenLanguageTag(val)
+        }
+        return nil
+    }
+    res["meetingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseOnlineMeetingType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingType(val.(*OnlineMeetingType))
         }
         return nil
     }
@@ -706,6 +738,18 @@ func (m *OnlineMeetingBase) GetMeetingSpokenLanguageTag()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetMeetingType gets the meetingType property value. The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.
+// returns a *OnlineMeetingType when successful
+func (m *OnlineMeetingBase) GetMeetingType()(*OnlineMeetingType) {
+    val, err := m.GetBackingStore().Get("meetingType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OnlineMeetingType)
     }
     return nil
 }
@@ -906,6 +950,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteObjectValue("cloudVideoInteropInfo", m.GetCloudVideoInteropInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("expiryDateTime", m.GetExpiryDateTime())
         if err != nil {
             return err
@@ -955,6 +1005,13 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err = writer.WriteStringValue("meetingSpokenLanguageTag", m.GetMeetingSpokenLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMeetingType() != nil {
+        cast := (*m.GetMeetingType()).String()
+        err = writer.WriteStringValue("meetingType", &cast)
         if err != nil {
             return err
         }
@@ -1124,6 +1181,13 @@ func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
         panic(err)
     }
 }
+// SetCloudVideoInteropInfo sets the cloudVideoInteropInfo property value. Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.
+func (m *OnlineMeetingBase) SetCloudVideoInteropInfo(value CloudVideoInteropInfoable)() {
+    err := m.GetBackingStore().Set("cloudVideoInteropInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExpiryDateTime sets the expiryDateTime property value. Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *OnlineMeetingBase) SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expiryDateTime", value)
@@ -1183,6 +1247,13 @@ func (m *OnlineMeetingBase) SetMeetingOptionsWebUrl(value *string)() {
 // SetMeetingSpokenLanguageTag sets the meetingSpokenLanguageTag property value. Specifies the spoken language used during the meeting for recording and transcription purposes.
 func (m *OnlineMeetingBase) SetMeetingSpokenLanguageTag(value *string)() {
     err := m.GetBackingStore().Set("meetingSpokenLanguageTag", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMeetingType sets the meetingType property value. The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.
+func (m *OnlineMeetingBase) SetMeetingType(value *OnlineMeetingType)() {
+    err := m.GetBackingStore().Set("meetingType", value)
     if err != nil {
         panic(err)
     }
@@ -1250,6 +1321,7 @@ type OnlineMeetingBaseable interface {
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
     GetChatRestrictions()(ChatRestrictionsable)
+    GetCloudVideoInteropInfo()(CloudVideoInteropInfoable)
     GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsEndToEndEncryptionEnabled()(*bool)
     GetIsEntryExitAnnounced()(*bool)
@@ -1259,6 +1331,7 @@ type OnlineMeetingBaseable interface {
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
     GetMeetingOptionsWebUrl()(*string)
     GetMeetingSpokenLanguageTag()(*string)
+    GetMeetingType()(*OnlineMeetingType)
     GetRecordAutomatically()(*bool)
     GetSensitivityLabelAssignment()(OnlineMeetingSensitivityLabelAssignmentable)
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
@@ -1283,6 +1356,7 @@ type OnlineMeetingBaseable interface {
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()
     SetChatRestrictions(value ChatRestrictionsable)()
+    SetCloudVideoInteropInfo(value CloudVideoInteropInfoable)()
     SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsEndToEndEncryptionEnabled(value *bool)()
     SetIsEntryExitAnnounced(value *bool)()
@@ -1292,6 +1366,7 @@ type OnlineMeetingBaseable interface {
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()
     SetMeetingOptionsWebUrl(value *string)()
     SetMeetingSpokenLanguageTag(value *string)()
+    SetMeetingType(value *OnlineMeetingType)()
     SetRecordAutomatically(value *bool)()
     SetSensitivityLabelAssignment(value OnlineMeetingSensitivityLabelAssignmentable)()
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
