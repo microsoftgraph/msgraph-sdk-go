@@ -21,7 +21,7 @@ type ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderGetQueryParameters get targetedMessages from users
+// ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderGetQueryParameters a collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 type ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder) Del
     }
     return nil
 }
-// Get get targetedMessages from users
+// Get a collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 // returns a TargetedChatMessageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedChatMessageable, error) {
@@ -134,7 +134,7 @@ func (m *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get targetedMessages from users
+// ToGetRequestInformation a collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
