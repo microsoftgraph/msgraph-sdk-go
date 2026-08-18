@@ -14,7 +14,7 @@ import (
 type RecoverySnapshotsItemRecoveryJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RecoverySnapshotsItemRecoveryJobsRequestBuilderGetQueryParameters get recoveryJobs from directory
+// RecoverySnapshotsItemRecoveryJobsRequestBuilderGetQueryParameters collection of recovery jobs created for this snapshot.
 type RecoverySnapshotsItemRecoveryJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -72,7 +72,7 @@ func NewRecoverySnapshotsItemRecoveryJobsRequestBuilder(rawUrl string, requestAd
 func (m *RecoverySnapshotsItemRecoveryJobsRequestBuilder) Count()(*RecoverySnapshotsItemRecoveryJobsCountRequestBuilder) {
     return NewRecoverySnapshotsItemRecoveryJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get recoveryJobs from directory
+// Get collection of recovery jobs created for this snapshot.
 // returns a RecoveryJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RecoverySnapshotsItemRecoveryJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *RecoverySnapshotsItemRecoveryJobsRequestBuilderGetRequestConfiguration)(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryJobCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *RecoverySnapshotsItemRecoveryJobsRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryJobCollectionResponseable), nil
 }
-// ToGetRequestInformation get recoveryJobs from directory
+// ToGetRequestInformation collection of recovery jobs created for this snapshot.
 // returns a *RequestInformation when successful
 func (m *RecoverySnapshotsItemRecoveryJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecoverySnapshotsItemRecoveryJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

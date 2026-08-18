@@ -25,7 +25,7 @@ func NewAuditLogRecord()(*AuditLogRecord) {
 func CreateAuditLogRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogRecord(), nil
 }
-// GetAdministrativeUnits gets the administrativeUnits property value. The administrative units tagged to an audit log record.
+// GetAdministrativeUnits gets the administrativeUnits property value. The collection of administrative units associated with the record.
 // returns a []string when successful
 func (m *AuditLogRecord) GetAdministrativeUnits()([]string) {
     val, err := m.GetBackingStore().Get("administrativeUnits")
@@ -37,7 +37,7 @@ func (m *AuditLogRecord) GetAdministrativeUnits()([]string) {
     }
     return nil
 }
-// GetAuditData gets the auditData property value. A JSON object that contains the actual audit log data.
+// GetAuditData gets the auditData property value. The audit data associated with the record.
 // returns a AuditDataable when successful
 func (m *AuditLogRecord) GetAuditData()(AuditDataable) {
     val, err := m.GetBackingStore().Get("auditData")
@@ -49,7 +49,7 @@ func (m *AuditLogRecord) GetAuditData()(AuditDataable) {
     }
     return nil
 }
-// GetAuditLogRecordType gets the auditLogRecordType property value. The type of operation indicated by the record. For the list of member values, see auditLogRecordType.
+// GetAuditLogRecordType gets the auditLogRecordType property value. The type of the audit log record.
 // returns a *AuditLogRecordType when successful
 func (m *AuditLogRecord) GetAuditLogRecordType()(*AuditLogRecordType) {
     val, err := m.GetBackingStore().Get("auditLogRecordType")
@@ -61,7 +61,7 @@ func (m *AuditLogRecord) GetAuditLogRecordType()(*AuditLogRecordType) {
     }
     return nil
 }
-// GetClientIp gets the clientIp property value. The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
+// GetClientIp gets the clientIp property value. The IP address of the client that performed the activity.
 // returns a *string when successful
 func (m *AuditLogRecord) GetClientIp()(*string) {
     val, err := m.GetBackingStore().Get("clientIp")
@@ -73,7 +73,7 @@ func (m *AuditLogRecord) GetClientIp()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time in UTC when the user performed the activity.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the activity was performed.
 // returns a *Time when successful
 func (m *AuditLogRecord) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -217,7 +217,7 @@ func (m *AuditLogRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetObjectId gets the objectId property value. For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.
+// GetObjectId gets the objectId property value. The identifier of the object that was affected by the activity.
 // returns a *string when successful
 func (m *AuditLogRecord) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
@@ -229,7 +229,7 @@ func (m *AuditLogRecord) GetObjectId()(*string) {
     }
     return nil
 }
-// GetOperation gets the operation property value. The name of the user or admin activity.
+// GetOperation gets the operation property value. The name of the activity that was performed.
 // returns a *string when successful
 func (m *AuditLogRecord) GetOperation()(*string) {
     val, err := m.GetBackingStore().Get("operation")
@@ -241,7 +241,7 @@ func (m *AuditLogRecord) GetOperation()(*string) {
     }
     return nil
 }
-// GetOrganizationId gets the organizationId property value. The GUID for your organization.
+// GetOrganizationId gets the organizationId property value. The GUID of the organization's Microsoft 365 tenant.
 // returns a *string when successful
 func (m *AuditLogRecord) GetOrganizationId()(*string) {
     val, err := m.GetBackingStore().Get("organizationId")
@@ -265,7 +265,7 @@ func (m *AuditLogRecord) GetService()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the 'user' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.
+// GetUserId gets the userId property value. The identifier of the user, system account, service, or application that performed the activity.
 // returns a *string when successful
 func (m *AuditLogRecord) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -277,7 +277,7 @@ func (m *AuditLogRecord) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. UPN of the user who performed the action.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name of the user who performed the activity.
 // returns a *string when successful
 func (m *AuditLogRecord) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -289,7 +289,7 @@ func (m *AuditLogRecord) GetUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetUserType gets the userType property value. The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.
+// GetUserType gets the userType property value. The type of user who performed the activity. Possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.
 // returns a *AuditLogUserType when successful
 func (m *AuditLogRecord) GetUserType()(*AuditLogUserType) {
     val, err := m.GetBackingStore().Get("userType")
@@ -383,56 +383,56 @@ func (m *AuditLogRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetAdministrativeUnits sets the administrativeUnits property value. The administrative units tagged to an audit log record.
+// SetAdministrativeUnits sets the administrativeUnits property value. The collection of administrative units associated with the record.
 func (m *AuditLogRecord) SetAdministrativeUnits(value []string)() {
     err := m.GetBackingStore().Set("administrativeUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuditData sets the auditData property value. A JSON object that contains the actual audit log data.
+// SetAuditData sets the auditData property value. The audit data associated with the record.
 func (m *AuditLogRecord) SetAuditData(value AuditDataable)() {
     err := m.GetBackingStore().Set("auditData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuditLogRecordType sets the auditLogRecordType property value. The type of operation indicated by the record. For the list of member values, see auditLogRecordType.
+// SetAuditLogRecordType sets the auditLogRecordType property value. The type of the audit log record.
 func (m *AuditLogRecord) SetAuditLogRecordType(value *AuditLogRecordType)() {
     err := m.GetBackingStore().Set("auditLogRecordType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientIp sets the clientIp property value. The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
+// SetClientIp sets the clientIp property value. The IP address of the client that performed the activity.
 func (m *AuditLogRecord) SetClientIp(value *string)() {
     err := m.GetBackingStore().Set("clientIp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time in UTC when the user performed the activity.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the activity was performed.
 func (m *AuditLogRecord) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjectId sets the objectId property value. For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.
+// SetObjectId sets the objectId property value. The identifier of the object that was affected by the activity.
 func (m *AuditLogRecord) SetObjectId(value *string)() {
     err := m.GetBackingStore().Set("objectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperation sets the operation property value. The name of the user or admin activity.
+// SetOperation sets the operation property value. The name of the activity that was performed.
 func (m *AuditLogRecord) SetOperation(value *string)() {
     err := m.GetBackingStore().Set("operation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOrganizationId sets the organizationId property value. The GUID for your organization.
+// SetOrganizationId sets the organizationId property value. The GUID of the organization's Microsoft 365 tenant.
 func (m *AuditLogRecord) SetOrganizationId(value *string)() {
     err := m.GetBackingStore().Set("organizationId", value)
     if err != nil {
@@ -446,21 +446,21 @@ func (m *AuditLogRecord) SetService(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the 'user' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.
+// SetUserId sets the userId property value. The identifier of the user, system account, service, or application that performed the activity.
 func (m *AuditLogRecord) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. UPN of the user who performed the action.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name of the user who performed the activity.
 func (m *AuditLogRecord) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserType sets the userType property value. The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.
+// SetUserType sets the userType property value. The type of user who performed the activity. Possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.
 func (m *AuditLogRecord) SetUserType(value *AuditLogUserType)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {

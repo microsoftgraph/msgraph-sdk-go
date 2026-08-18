@@ -21,7 +21,7 @@ type RecoverySnapshotsSnapshotItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RecoverySnapshotsSnapshotItemRequestBuilderGetQueryParameters get snapshots from directory
+// RecoverySnapshotsSnapshotItemRequestBuilderGetQueryParameters collection of backup snapshots available for the tenant.
 type RecoverySnapshotsSnapshotItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *RecoverySnapshotsSnapshotItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get get snapshots from directory
+// Get collection of backup snapshots available for the tenant.
 // returns a Snapshotable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RecoverySnapshotsSnapshotItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RecoverySnapshotsSnapshotItemRequestBuilderGetRequestConfiguration)(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.Snapshotable, error) {
@@ -134,7 +134,7 @@ func (m *RecoverySnapshotsSnapshotItemRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get snapshots from directory
+// ToGetRequestInformation collection of backup snapshots available for the tenant.
 // returns a *RequestInformation when successful
 func (m *RecoverySnapshotsSnapshotItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecoverySnapshotsSnapshotItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

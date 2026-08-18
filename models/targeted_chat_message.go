@@ -40,7 +40,7 @@ func (m *TargetedChatMessage) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRecipient gets the recipient property value. The recipient property
+// GetRecipient gets the recipient property value. The intended recipient of the targeted message.
 // returns a Identityable when successful
 func (m *TargetedChatMessage) GetRecipient()(Identityable) {
     val, err := m.GetBackingStore().Get("recipient")
@@ -66,7 +66,7 @@ func (m *TargetedChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetRecipient sets the recipient property value. The recipient property
+// SetRecipient sets the recipient property value. The intended recipient of the targeted message.
 func (m *TargetedChatMessage) SetRecipient(value Identityable)() {
     err := m.GetBackingStore().Set("recipient", value)
     if err != nil {

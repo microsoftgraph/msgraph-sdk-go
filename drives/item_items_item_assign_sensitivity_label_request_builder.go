@@ -33,8 +33,11 @@ func NewItemItemsItemAssignSensitivityLabelRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemAssignSensitivityLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action assignSensitivityLabel
+// Post asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator's perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don't apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator's perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-assignsensitivitylabel?view=graph-rest-1.0
 func (m *ItemItemsItemAssignSensitivityLabelRequestBuilder) Post(ctx context.Context, body ItemItemsItemAssignSensitivityLabelPostRequestBodyable, requestConfiguration *ItemItemsItemAssignSensitivityLabelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemItemsItemAssignSensitivityLabelRequestBuilder) Post(ctx context.Con
     }
     return nil
 }
-// ToPostRequestInformation invoke action assignSensitivityLabel
+// ToPostRequestInformation asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator's perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don't apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator's perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemAssignSensitivityLabelRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemAssignSensitivityLabelPostRequestBodyable, requestConfiguration *ItemItemsItemAssignSensitivityLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

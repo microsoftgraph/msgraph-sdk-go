@@ -24,7 +24,7 @@ func NewRecoveryJobEntityNamesFilter()(*RecoveryJobEntityNamesFilter) {
 func CreateRecoveryJobEntityNamesFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecoveryJobEntityNamesFilter(), nil
 }
-// GetEntityTypes gets the entityTypes property value. The entityTypes property
+// GetEntityTypes gets the entityTypes property value. The list of entity types to include in the recovery job.
 // returns a []ResourceTypeName when successful
 func (m *RecoveryJobEntityNamesFilter) GetEntityTypes()([]ResourceTypeName) {
     val, err := m.GetBackingStore().Get("entityTypes")
@@ -72,7 +72,7 @@ func (m *RecoveryJobEntityNamesFilter) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetEntityTypes sets the entityTypes property value. The entityTypes property
+// SetEntityTypes sets the entityTypes property value. The list of entity types to include in the recovery job.
 func (m *RecoveryJobEntityNamesFilter) SetEntityTypes(value []ResourceTypeName)() {
     err := m.GetBackingStore().Set("entityTypes", value)
     if err != nil {

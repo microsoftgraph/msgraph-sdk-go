@@ -24,7 +24,7 @@ func NewSnapshot()(*Snapshot) {
 func CreateSnapshotFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSnapshot(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the snapshot was created.
 // returns a *Time when successful
 func (m *Snapshot) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -94,7 +94,7 @@ func (m *Snapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetRecoveryJobs gets the recoveryJobs property value. The recoveryJobs property
+// GetRecoveryJobs gets the recoveryJobs property value. Collection of recovery jobs created for this snapshot.
 // returns a []RecoveryJobable when successful
 func (m *Snapshot) GetRecoveryJobs()([]RecoveryJobable) {
     val, err := m.GetBackingStore().Get("recoveryJobs")
@@ -106,7 +106,7 @@ func (m *Snapshot) GetRecoveryJobs()([]RecoveryJobable) {
     }
     return nil
 }
-// GetRecoveryPreviewJobs gets the recoveryPreviewJobs property value. The recoveryPreviewJobs property
+// GetRecoveryPreviewJobs gets the recoveryPreviewJobs property value. Collection of preview jobs created for this snapshot.
 // returns a []RecoveryPreviewJobable when successful
 func (m *Snapshot) GetRecoveryPreviewJobs()([]RecoveryPreviewJobable) {
     val, err := m.GetBackingStore().Get("recoveryPreviewJobs")
@@ -118,7 +118,7 @@ func (m *Snapshot) GetRecoveryPreviewJobs()([]RecoveryPreviewJobable) {
     }
     return nil
 }
-// GetTotalChangedObjects gets the totalChangedObjects property value. The totalChangedObjects property
+// GetTotalChangedObjects gets the totalChangedObjects property value. The total number of changed objects identified in this snapshot.
 // returns a *int32 when successful
 func (m *Snapshot) GetTotalChangedObjects()(*int32) {
     val, err := m.GetBackingStore().Get("totalChangedObjects")
@@ -174,28 +174,28 @@ func (m *Snapshot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the snapshot was created.
 func (m *Snapshot) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecoveryJobs sets the recoveryJobs property value. The recoveryJobs property
+// SetRecoveryJobs sets the recoveryJobs property value. Collection of recovery jobs created for this snapshot.
 func (m *Snapshot) SetRecoveryJobs(value []RecoveryJobable)() {
     err := m.GetBackingStore().Set("recoveryJobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecoveryPreviewJobs sets the recoveryPreviewJobs property value. The recoveryPreviewJobs property
+// SetRecoveryPreviewJobs sets the recoveryPreviewJobs property value. Collection of preview jobs created for this snapshot.
 func (m *Snapshot) SetRecoveryPreviewJobs(value []RecoveryPreviewJobable)() {
     err := m.GetBackingStore().Set("recoveryPreviewJobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalChangedObjects sets the totalChangedObjects property value. The totalChangedObjects property
+// SetTotalChangedObjects sets the totalChangedObjects property value. The total number of changed objects identified in this snapshot.
 func (m *Snapshot) SetTotalChangedObjects(value *int32)() {
     err := m.GetBackingStore().Set("totalChangedObjects", value)
     if err != nil {

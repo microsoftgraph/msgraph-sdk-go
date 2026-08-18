@@ -14,7 +14,7 @@ import (
 type AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetQueryParameters an individual audit log record.
+// AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetQueryParameters the collection of audit log records retrieved by the query.
 type AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,7 +43,7 @@ func NewAuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewAuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get an individual audit log record.
+// Get the collection of audit log records retrieved by the query.
 // returns a AuditLogRecordable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AuditLogRecordable, error) {
@@ -63,7 +63,7 @@ func (m *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder) Get(ctx con
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AuditLogRecordable), nil
 }
-// ToGetRequestInformation an individual audit log record.
+// ToGetRequestInformation the collection of audit log records retrieved by the query.
 // returns a *RequestInformation when successful
 func (m *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -46,7 +46,7 @@ func (m *RecoveryJobEntityNameAndIdsFilter) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetFilterValues gets the filterValues property value. The filterValues property
+// GetFilterValues gets the filterValues property value. The list of entity type and ID pairs to include in the recovery job. Duplicate entity types are not allowed and return a 400 Bad Request error.
 // returns a []EntityTypeAndIdsable when successful
 func (m *RecoveryJobEntityNameAndIdsFilter) GetFilterValues()([]EntityTypeAndIdsable) {
     val, err := m.GetBackingStore().Get("filterValues")
@@ -78,7 +78,7 @@ func (m *RecoveryJobEntityNameAndIdsFilter) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetFilterValues sets the filterValues property value. The filterValues property
+// SetFilterValues sets the filterValues property value. The list of entity type and ID pairs to include in the recovery job. Duplicate entity types are not allowed and return a 400 Bad Request error.
 func (m *RecoveryJobEntityNameAndIdsFilter) SetFilterValues(value []EntityTypeAndIdsable)() {
     err := m.GetBackingStore().Set("filterValues", value)
     if err != nil {

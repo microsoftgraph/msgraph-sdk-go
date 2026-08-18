@@ -14,7 +14,7 @@ import (
 type RecoverySnapshotsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RecoverySnapshotsRequestBuilderGetQueryParameters get snapshots from directory
+// RecoverySnapshotsRequestBuilderGetQueryParameters get a list of available backup snapshot objects for the tenant. Snapshots represent points in time to which the tenant can be restored.
 type RecoverySnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,9 +79,12 @@ func NewRecoverySnapshotsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *RecoverySnapshotsRequestBuilder) Count()(*RecoverySnapshotsCountRequestBuilder) {
     return NewRecoverySnapshotsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get snapshots from directory
+// Get get a list of available backup snapshot objects for the tenant. Snapshots represent points in time to which the tenant can be restored.
 // returns a SnapshotCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/entrarecoveryservices-recovery-list-snapshots?view=graph-rest-1.0
 func (m *RecoverySnapshotsRequestBuilder) Get(ctx context.Context, requestConfiguration *RecoverySnapshotsRequestBuilderGetRequestConfiguration)(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.SnapshotCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *RecoverySnapshotsRequestBuilder) Post(ctx context.Context, body ie28ab9
     }
     return res.(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.Snapshotable), nil
 }
-// ToGetRequestInformation get snapshots from directory
+// ToGetRequestInformation get a list of available backup snapshot objects for the tenant. Snapshots represent points in time to which the tenant can be restored.
 // returns a *RequestInformation when successful
 func (m *RecoverySnapshotsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecoverySnapshotsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

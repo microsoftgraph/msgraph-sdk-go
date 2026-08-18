@@ -21,7 +21,7 @@ type RecoveryJobsRecoveryJobBaseItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RecoveryJobsRecoveryJobBaseItemRequestBuilderGetQueryParameters get jobs from directory
+// RecoveryJobsRecoveryJobBaseItemRequestBuilderGetQueryParameters collection of all recovery jobs (both preview and recovery) for the tenant.
 type RecoveryJobsRecoveryJobBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *RecoveryJobsRecoveryJobBaseItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get jobs from directory
+// Get collection of all recovery jobs (both preview and recovery) for the tenant.
 // returns a RecoveryJobBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RecoveryJobsRecoveryJobBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RecoveryJobsRecoveryJobBaseItemRequestBuilderGetRequestConfiguration)(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryJobBaseable, error) {
@@ -129,7 +129,7 @@ func (m *RecoveryJobsRecoveryJobBaseItemRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get jobs from directory
+// ToGetRequestInformation collection of all recovery jobs (both preview and recovery) for the tenant.
 // returns a *RequestInformation when successful
 func (m *RecoveryJobsRecoveryJobBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecoveryJobsRecoveryJobBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -43,7 +43,7 @@ func (m *EntityTypeAndIds) GetAdditionalData()(map[string]any) {
 func (m *EntityTypeAndIds) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEntityIds gets the entityIds property value. The entityIds property
+// GetEntityIds gets the entityIds property value. The list of entity IDs for the specified entity type.
 // returns a []string when successful
 func (m *EntityTypeAndIds) GetEntityIds()([]string) {
     val, err := m.GetBackingStore().Get("entityIds")
@@ -161,7 +161,7 @@ func (m *EntityTypeAndIds) SetAdditionalData(value map[string]any)() {
 func (m *EntityTypeAndIds) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEntityIds sets the entityIds property value. The entityIds property
+// SetEntityIds sets the entityIds property value. The list of entity IDs for the specified entity type.
 func (m *EntityTypeAndIds) SetEntityIds(value []string)() {
     err := m.GetBackingStore().Set("entityIds", value)
     if err != nil {
