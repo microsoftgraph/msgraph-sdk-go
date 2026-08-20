@@ -23,7 +23,7 @@ func NewRecoveryChangeObjectBase()(*RecoveryChangeObjectBase) {
 func CreateRecoveryChangeObjectBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecoveryChangeObjectBase(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the changed object in its current state, used to uniquely identify the object. Supports $filter (eq, ne, startswith).
 // returns a *string when successful
 func (m *RecoveryChangeObjectBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -47,7 +47,7 @@ func (m *RecoveryChangeObjectBase) GetEntityTypeName()(*ResourceTypeName) {
     }
     return nil
 }
-// GetFailureMessage gets the failureMessage property value. The failureMessage property
+// GetFailureMessage gets the failureMessage property value. The error message if the change failed to apply. Only populated in getFailedChanges responses. null otherwise.
 // returns a *string when successful
 func (m *RecoveryChangeObjectBase) GetFailureMessage()(*string) {
     val, err := m.GetBackingStore().Get("failureMessage")
@@ -151,7 +151,7 @@ func (m *RecoveryChangeObjectBase) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the changed object in its current state, used to uniquely identify the object. Supports $filter (eq, ne, startswith).
 func (m *RecoveryChangeObjectBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -165,7 +165,7 @@ func (m *RecoveryChangeObjectBase) SetEntityTypeName(value *ResourceTypeName)() 
         panic(err)
     }
 }
-// SetFailureMessage sets the failureMessage property value. The failureMessage property
+// SetFailureMessage sets the failureMessage property value. The error message if the change failed to apply. Only populated in getFailedChanges responses. null otherwise.
 func (m *RecoveryChangeObjectBase) SetFailureMessage(value *string)() {
     err := m.GetBackingStore().Set("failureMessage", value)
     if err != nil {

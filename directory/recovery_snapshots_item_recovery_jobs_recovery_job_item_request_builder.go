@@ -14,7 +14,7 @@ import (
 type RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilderGetQueryParameters get recoveryJobs from directory
+// RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilderGetQueryParameters collection of recovery jobs created for this snapshot.
 type RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,7 +43,7 @@ func NewRecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewRecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get recoveryJobs from directory
+// Get collection of recovery jobs created for this snapshot.
 // returns a RecoveryJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilderGetRequestConfiguration)(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryJobable, error) {
@@ -63,7 +63,7 @@ func (m *RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilder) Get(ctx
     }
     return res.(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryJobable), nil
 }
-// ToGetRequestInformation get recoveryJobs from directory
+// ToGetRequestInformation collection of recovery jobs created for this snapshot.
 // returns a *RequestInformation when successful
 func (m *RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecoverySnapshotsItemRecoveryJobsRecoveryJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -61,7 +61,7 @@ func (m *Recovery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetJobs gets the jobs property value. The jobs property
+// GetJobs gets the jobs property value. Collection of all recovery jobs (both preview and recovery) for the tenant.
 // returns a []RecoveryJobBaseable when successful
 func (m *Recovery) GetJobs()([]RecoveryJobBaseable) {
     val, err := m.GetBackingStore().Get("jobs")
@@ -73,7 +73,7 @@ func (m *Recovery) GetJobs()([]RecoveryJobBaseable) {
     }
     return nil
 }
-// GetSnapshots gets the snapshots property value. The snapshots property
+// GetSnapshots gets the snapshots property value. Collection of backup snapshots available for the tenant.
 // returns a []Snapshotable when successful
 func (m *Recovery) GetSnapshots()([]Snapshotable) {
     val, err := m.GetBackingStore().Get("snapshots")
@@ -117,14 +117,14 @@ func (m *Recovery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetJobs sets the jobs property value. The jobs property
+// SetJobs sets the jobs property value. Collection of all recovery jobs (both preview and recovery) for the tenant.
 func (m *Recovery) SetJobs(value []RecoveryJobBaseable)() {
     err := m.GetBackingStore().Set("jobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSnapshots sets the snapshots property value. The snapshots property
+// SetSnapshots sets the snapshots property value. Collection of backup snapshots available for the tenant.
 func (m *Recovery) SetSnapshots(value []Snapshotable)() {
     err := m.GetBackingStore().Set("snapshots", value)
     if err != nil {

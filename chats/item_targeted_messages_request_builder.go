@@ -14,7 +14,7 @@ import (
 type ItemTargetedMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTargetedMessagesRequestBuilderGetQueryParameters get targetedMessages from chats
+// ItemTargetedMessagesRequestBuilderGetQueryParameters a collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 type ItemTargetedMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewItemTargetedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemTargetedMessagesRequestBuilder) Count()(*ItemTargetedMessagesCountRequestBuilder) {
     return NewItemTargetedMessagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get targetedMessages from chats
+// Get a collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 // returns a TargetedChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTargetedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTargetedMessagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedChatMessageCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemTargetedMessagesRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedChatMessageable), nil
 }
-// ToGetRequestInformation get targetedMessages from chats
+// ToGetRequestInformation a collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 // returns a *RequestInformation when successful
 func (m *ItemTargetedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTargetedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

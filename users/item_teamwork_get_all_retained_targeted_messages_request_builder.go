@@ -13,7 +13,7 @@ import (
 type ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderGetQueryParameters invoke function getAllRetainedTargetedMessages
+// ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderGetQueryParameters get all retained targeted messages sent to a specific user in group chats and channels.
 type ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -54,10 +54,13 @@ func NewItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAllRetainedTargetedMessages
+// Get get all retained targeted messages sent to a specific user in group chats and channels.
 // Deprecated: This method is obsolete. Use GetAsGetAllRetainedTargetedMessagesGetResponse instead.
 // returns a ItemTeamworkGetAllRetainedTargetedMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-getallretainedtargetedmessages?view=graph-rest-1.0
 func (m *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderGetRequestConfiguration)(ItemTeamworkGetAllRetainedTargetedMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder) Get(ctx conte
     }
     return res.(ItemTeamworkGetAllRetainedTargetedMessagesResponseable), nil
 }
-// GetAsGetAllRetainedTargetedMessagesGetResponse invoke function getAllRetainedTargetedMessages
+// GetAsGetAllRetainedTargetedMessagesGetResponse get all retained targeted messages sent to a specific user in group chats and channels.
 // returns a ItemTeamworkGetAllRetainedTargetedMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-getallretainedtargetedmessages?view=graph-rest-1.0
 func (m *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder) GetAsGetAllRetainedTargetedMessagesGetResponse(ctx context.Context, requestConfiguration *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderGetRequestConfiguration)(ItemTeamworkGetAllRetainedTargetedMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder) GetAsGetAllRe
     }
     return res.(ItemTeamworkGetAllRetainedTargetedMessagesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAllRetainedTargetedMessages
+// ToGetRequestInformation get all retained targeted messages sent to a specific user in group chats and channels.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkGetAllRetainedTargetedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

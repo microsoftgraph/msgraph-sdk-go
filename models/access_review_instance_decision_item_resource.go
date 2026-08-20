@@ -147,7 +147,7 @@ func (m *AccessReviewInstanceDecisionItemResource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
+// GetTypeEscaped gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -225,7 +225,7 @@ func (m *AccessReviewInstanceDecisionItemResource) SetOdataType(value *string)()
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
+// SetTypeEscaped sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy.
 func (m *AccessReviewInstanceDecisionItemResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

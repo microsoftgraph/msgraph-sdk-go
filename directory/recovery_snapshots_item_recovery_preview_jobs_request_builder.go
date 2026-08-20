@@ -14,7 +14,7 @@ import (
 type RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilderGetQueryParameters get recoveryPreviewJobs from directory
+// RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilderGetQueryParameters collection of preview jobs created for this snapshot.
 type RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -72,7 +72,7 @@ func NewRecoverySnapshotsItemRecoveryPreviewJobsRequestBuilder(rawUrl string, re
 func (m *RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilder) Count()(*RecoverySnapshotsItemRecoveryPreviewJobsCountRequestBuilder) {
     return NewRecoverySnapshotsItemRecoveryPreviewJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get recoveryPreviewJobs from directory
+// Get collection of preview jobs created for this snapshot.
 // returns a RecoveryPreviewJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilderGetRequestConfiguration)(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryPreviewJobCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilder) Get(ctx context
     }
     return res.(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryPreviewJobCollectionResponseable), nil
 }
-// ToGetRequestInformation get recoveryPreviewJobs from directory
+// ToGetRequestInformation collection of preview jobs created for this snapshot.
 // returns a *RequestInformation when successful
 func (m *RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecoverySnapshotsItemRecoveryPreviewJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

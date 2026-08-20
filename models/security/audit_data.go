@@ -844,7 +844,7 @@ func (m *AuditData) GetAdditionalData()(map[string]any) {
 func (m *AuditData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDynamicProperties gets the dynamicProperties property value. The dynamicProperties property
+// GetDynamicProperties gets the dynamicProperties property value. An open-type dictionary that contains dynamic audit event properties as name-value pairs.
 // returns a AuditRecordTypeDictionaryable when successful
 func (m *AuditData) GetDynamicProperties()(AuditRecordTypeDictionaryable) {
     val, err := m.GetBackingStore().Get("dynamicProperties")
@@ -927,7 +927,7 @@ func (m *AuditData) SetAdditionalData(value map[string]any)() {
 func (m *AuditData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDynamicProperties sets the dynamicProperties property value. The dynamicProperties property
+// SetDynamicProperties sets the dynamicProperties property value. An open-type dictionary that contains dynamic audit event properties as name-value pairs.
 func (m *AuditData) SetDynamicProperties(value AuditRecordTypeDictionaryable)() {
     err := m.GetBackingStore().Set("dynamicProperties", value)
     if err != nil {

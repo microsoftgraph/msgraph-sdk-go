@@ -120,7 +120,7 @@ func (m *RecoveryJobBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetFilteringCriteria gets the filteringCriteria property value. The filteringCriteria property
+// GetFilteringCriteria gets the filteringCriteria property value. Optional filtering criteria used to scope the job to specific entity types or entity IDs.
 // returns a RecoveryJobFilteringCriteriaBaseable when successful
 func (m *RecoveryJobBase) GetFilteringCriteria()(RecoveryJobFilteringCriteriaBaseable) {
     val, err := m.GetBackingStore().Get("filteringCriteria")
@@ -132,7 +132,7 @@ func (m *RecoveryJobBase) GetFilteringCriteria()(RecoveryJobFilteringCriteriaBas
     }
     return nil
 }
-// GetJobCompletionDateTime gets the jobCompletionDateTime property value. The jobCompletionDateTime property
+// GetJobCompletionDateTime gets the jobCompletionDateTime property value. The date and time when the job completed. Null if the job is still running.
 // returns a *Time when successful
 func (m *RecoveryJobBase) GetJobCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("jobCompletionDateTime")
@@ -144,7 +144,7 @@ func (m *RecoveryJobBase) GetJobCompletionDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetJobStartDateTime gets the jobStartDateTime property value. The jobStartDateTime property
+// GetJobStartDateTime gets the jobStartDateTime property value. The date and time when the job started.
 // returns a *Time when successful
 func (m *RecoveryJobBase) GetJobStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("jobStartDateTime")
@@ -168,7 +168,7 @@ func (m *RecoveryJobBase) GetStatus()(*RecoveryStatus) {
     }
     return nil
 }
-// GetTargetStateDateTime gets the targetStateDateTime property value. The targetStateDateTime property
+// GetTargetStateDateTime gets the targetStateDateTime property value. The target snapshot timestamp to which the tenant is being restored. Supports $filter (eq, ne).
 // returns a *Time when successful
 func (m *RecoveryJobBase) GetTargetStateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("targetStateDateTime")
@@ -180,7 +180,7 @@ func (m *RecoveryJobBase) GetTargetStateDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetTotalChangedLinksCalculated gets the totalChangedLinksCalculated property value. The totalChangedLinksCalculated property
+// GetTotalChangedLinksCalculated gets the totalChangedLinksCalculated property value. The total count of changed directory object links (relationships) calculated by the job. null until the job completes calculation. Not all calculated link changes may be successfully applied; see totalLinksModified on derived types for the count of links that were actually modified.
 // returns a *int32 when successful
 func (m *RecoveryJobBase) GetTotalChangedLinksCalculated()(*int32) {
     val, err := m.GetBackingStore().Get("totalChangedLinksCalculated")
@@ -192,7 +192,7 @@ func (m *RecoveryJobBase) GetTotalChangedLinksCalculated()(*int32) {
     }
     return nil
 }
-// GetTotalChangedObjectsCalculated gets the totalChangedObjectsCalculated property value. The totalChangedObjectsCalculated property
+// GetTotalChangedObjectsCalculated gets the totalChangedObjectsCalculated property value. The total count of changed directory objects calculated by the job. null until the job completes calculation. Not all calculated object changes may be successfully applied; see totalObjectsModified on derived types for the count of objects that were actually modified.
 // returns a *int32 when successful
 func (m *RecoveryJobBase) GetTotalChangedObjectsCalculated()(*int32) {
     val, err := m.GetBackingStore().Get("totalChangedObjectsCalculated")
@@ -255,21 +255,21 @@ func (m *RecoveryJobBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetFilteringCriteria sets the filteringCriteria property value. The filteringCriteria property
+// SetFilteringCriteria sets the filteringCriteria property value. Optional filtering criteria used to scope the job to specific entity types or entity IDs.
 func (m *RecoveryJobBase) SetFilteringCriteria(value RecoveryJobFilteringCriteriaBaseable)() {
     err := m.GetBackingStore().Set("filteringCriteria", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJobCompletionDateTime sets the jobCompletionDateTime property value. The jobCompletionDateTime property
+// SetJobCompletionDateTime sets the jobCompletionDateTime property value. The date and time when the job completed. Null if the job is still running.
 func (m *RecoveryJobBase) SetJobCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("jobCompletionDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJobStartDateTime sets the jobStartDateTime property value. The jobStartDateTime property
+// SetJobStartDateTime sets the jobStartDateTime property value. The date and time when the job started.
 func (m *RecoveryJobBase) SetJobStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("jobStartDateTime", value)
     if err != nil {
@@ -283,21 +283,21 @@ func (m *RecoveryJobBase) SetStatus(value *RecoveryStatus)() {
         panic(err)
     }
 }
-// SetTargetStateDateTime sets the targetStateDateTime property value. The targetStateDateTime property
+// SetTargetStateDateTime sets the targetStateDateTime property value. The target snapshot timestamp to which the tenant is being restored. Supports $filter (eq, ne).
 func (m *RecoveryJobBase) SetTargetStateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("targetStateDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalChangedLinksCalculated sets the totalChangedLinksCalculated property value. The totalChangedLinksCalculated property
+// SetTotalChangedLinksCalculated sets the totalChangedLinksCalculated property value. The total count of changed directory object links (relationships) calculated by the job. null until the job completes calculation. Not all calculated link changes may be successfully applied; see totalLinksModified on derived types for the count of links that were actually modified.
 func (m *RecoveryJobBase) SetTotalChangedLinksCalculated(value *int32)() {
     err := m.GetBackingStore().Set("totalChangedLinksCalculated", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalChangedObjectsCalculated sets the totalChangedObjectsCalculated property value. The totalChangedObjectsCalculated property
+// SetTotalChangedObjectsCalculated sets the totalChangedObjectsCalculated property value. The total count of changed directory objects calculated by the job. null until the job completes calculation. Not all calculated object changes may be successfully applied; see totalObjectsModified on derived types for the count of objects that were actually modified.
 func (m *RecoveryJobBase) SetTotalChangedObjectsCalculated(value *int32)() {
     err := m.GetBackingStore().Set("totalChangedObjectsCalculated", value)
     if err != nil {

@@ -25,7 +25,7 @@ func NewAuditLogQuery()(*AuditLogQuery) {
 func CreateAuditLogQueryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogQuery(), nil
 }
-// GetAdministrativeUnitIdFilters gets the administrativeUnitIdFilters property value. The administrative units tagged to an audit log record.
+// GetAdministrativeUnitIdFilters gets the administrativeUnitIdFilters property value. The collection of administrative unit IDs to filter on.
 // returns a []string when successful
 func (m *AuditLogQuery) GetAdministrativeUnitIdFilters()([]string) {
     val, err := m.GetBackingStore().Get("administrativeUnitIdFilters")
@@ -37,7 +37,7 @@ func (m *AuditLogQuery) GetAdministrativeUnitIdFilters()([]string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the saved audit log query.
+// GetDisplayName gets the displayName property value. The display name of the audit log query.
 // returns a *string when successful
 func (m *AuditLogQuery) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -233,7 +233,7 @@ func (m *AuditLogQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetFilterEndDateTime gets the filterEndDateTime property value. The end date of the date range in the query.
+// GetFilterEndDateTime gets the filterEndDateTime property value. The end date and time of the audit log query filter.
 // returns a *Time when successful
 func (m *AuditLogQuery) GetFilterEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("filterEndDateTime")
@@ -245,7 +245,7 @@ func (m *AuditLogQuery) GetFilterEndDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetFilterStartDateTime gets the filterStartDateTime property value. The start date of the date range in the query.
+// GetFilterStartDateTime gets the filterStartDateTime property value. The start date and time of the audit log query filter.
 // returns a *Time when successful
 func (m *AuditLogQuery) GetFilterStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("filterStartDateTime")
@@ -257,7 +257,7 @@ func (m *AuditLogQuery) GetFilterStartDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetIpAddressFilters gets the ipAddressFilters property value. The IP address of the device that was used when the activity was logged.
+// GetIpAddressFilters gets the ipAddressFilters property value. The collection of IP addresses to filter on.
 // returns a []string when successful
 func (m *AuditLogQuery) GetIpAddressFilters()([]string) {
     val, err := m.GetBackingStore().Get("ipAddressFilters")
@@ -269,7 +269,7 @@ func (m *AuditLogQuery) GetIpAddressFilters()([]string) {
     }
     return nil
 }
-// GetKeywordFilter gets the keywordFilter property value. Free text field to search non-indexed properties of the audit log.
+// GetKeywordFilter gets the keywordFilter property value. The keyword to filter on.
 // returns a *string when successful
 func (m *AuditLogQuery) GetKeywordFilter()(*string) {
     val, err := m.GetBackingStore().Get("keywordFilter")
@@ -281,7 +281,7 @@ func (m *AuditLogQuery) GetKeywordFilter()(*string) {
     }
     return nil
 }
-// GetObjectIdFilters gets the objectIdFilters property value. For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.
+// GetObjectIdFilters gets the objectIdFilters property value. The collection of object IDs to filter on.
 // returns a []string when successful
 func (m *AuditLogQuery) GetObjectIdFilters()([]string) {
     val, err := m.GetBackingStore().Get("objectIdFilters")
@@ -293,7 +293,7 @@ func (m *AuditLogQuery) GetObjectIdFilters()([]string) {
     }
     return nil
 }
-// GetOperationFilters gets the operationFilters property value. The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.
+// GetOperationFilters gets the operationFilters property value. The collection of operations to filter on.
 // returns a []string when successful
 func (m *AuditLogQuery) GetOperationFilters()([]string) {
     val, err := m.GetBackingStore().Get("operationFilters")
@@ -305,7 +305,7 @@ func (m *AuditLogQuery) GetOperationFilters()([]string) {
     }
     return nil
 }
-// GetRecords gets the records property value. An individual audit log record.
+// GetRecords gets the records property value. The collection of audit log records retrieved by the query.
 // returns a []AuditLogRecordable when successful
 func (m *AuditLogQuery) GetRecords()([]AuditLogRecordable) {
     val, err := m.GetBackingStore().Get("records")
@@ -317,7 +317,7 @@ func (m *AuditLogQuery) GetRecords()([]AuditLogRecordable) {
     }
     return nil
 }
-// GetRecordTypeFilters gets the recordTypeFilters property value. The type of operation indicated by the record. For the list of member values, see auditLogRecordType.
+// GetRecordTypeFilters gets the recordTypeFilters property value. The collection of record types to filter on.
 // returns a []AuditLogRecordType when successful
 func (m *AuditLogQuery) GetRecordTypeFilters()([]AuditLogRecordType) {
     val, err := m.GetBackingStore().Get("recordTypeFilters")
@@ -329,7 +329,7 @@ func (m *AuditLogQuery) GetRecordTypeFilters()([]AuditLogRecordType) {
     }
     return nil
 }
-// GetServiceFilters gets the serviceFilters property value. The serviceFilters property
+// GetServiceFilters gets the serviceFilters property value. The collection of services to filter on.
 // returns a []string when successful
 func (m *AuditLogQuery) GetServiceFilters()([]string) {
     val, err := m.GetBackingStore().Get("serviceFilters")
@@ -341,7 +341,7 @@ func (m *AuditLogQuery) GetServiceFilters()([]string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Describes the current status of the query. The possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.
+// GetStatus gets the status property value. The status of the audit log query. Possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.
 // returns a *AuditLogQueryStatus when successful
 func (m *AuditLogQuery) GetStatus()(*AuditLogQueryStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -353,7 +353,7 @@ func (m *AuditLogQuery) GetStatus()(*AuditLogQueryStatus) {
     }
     return nil
 }
-// GetUserPrincipalNameFilters gets the userPrincipalNameFilters property value. The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.
+// GetUserPrincipalNameFilters gets the userPrincipalNameFilters property value. The collection of user principal names to filter on.
 // returns a []string when successful
 func (m *AuditLogQuery) GetUserPrincipalNameFilters()([]string) {
     val, err := m.GetBackingStore().Get("userPrincipalNameFilters")
@@ -458,91 +458,91 @@ func (m *AuditLogQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAdministrativeUnitIdFilters sets the administrativeUnitIdFilters property value. The administrative units tagged to an audit log record.
+// SetAdministrativeUnitIdFilters sets the administrativeUnitIdFilters property value. The collection of administrative unit IDs to filter on.
 func (m *AuditLogQuery) SetAdministrativeUnitIdFilters(value []string)() {
     err := m.GetBackingStore().Set("administrativeUnitIdFilters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the saved audit log query.
+// SetDisplayName sets the displayName property value. The display name of the audit log query.
 func (m *AuditLogQuery) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilterEndDateTime sets the filterEndDateTime property value. The end date of the date range in the query.
+// SetFilterEndDateTime sets the filterEndDateTime property value. The end date and time of the audit log query filter.
 func (m *AuditLogQuery) SetFilterEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("filterEndDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilterStartDateTime sets the filterStartDateTime property value. The start date of the date range in the query.
+// SetFilterStartDateTime sets the filterStartDateTime property value. The start date and time of the audit log query filter.
 func (m *AuditLogQuery) SetFilterStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("filterStartDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIpAddressFilters sets the ipAddressFilters property value. The IP address of the device that was used when the activity was logged.
+// SetIpAddressFilters sets the ipAddressFilters property value. The collection of IP addresses to filter on.
 func (m *AuditLogQuery) SetIpAddressFilters(value []string)() {
     err := m.GetBackingStore().Set("ipAddressFilters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetKeywordFilter sets the keywordFilter property value. Free text field to search non-indexed properties of the audit log.
+// SetKeywordFilter sets the keywordFilter property value. The keyword to filter on.
 func (m *AuditLogQuery) SetKeywordFilter(value *string)() {
     err := m.GetBackingStore().Set("keywordFilter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjectIdFilters sets the objectIdFilters property value. For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.
+// SetObjectIdFilters sets the objectIdFilters property value. The collection of object IDs to filter on.
 func (m *AuditLogQuery) SetObjectIdFilters(value []string)() {
     err := m.GetBackingStore().Set("objectIdFilters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperationFilters sets the operationFilters property value. The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.
+// SetOperationFilters sets the operationFilters property value. The collection of operations to filter on.
 func (m *AuditLogQuery) SetOperationFilters(value []string)() {
     err := m.GetBackingStore().Set("operationFilters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecords sets the records property value. An individual audit log record.
+// SetRecords sets the records property value. The collection of audit log records retrieved by the query.
 func (m *AuditLogQuery) SetRecords(value []AuditLogRecordable)() {
     err := m.GetBackingStore().Set("records", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecordTypeFilters sets the recordTypeFilters property value. The type of operation indicated by the record. For the list of member values, see auditLogRecordType.
+// SetRecordTypeFilters sets the recordTypeFilters property value. The collection of record types to filter on.
 func (m *AuditLogQuery) SetRecordTypeFilters(value []AuditLogRecordType)() {
     err := m.GetBackingStore().Set("recordTypeFilters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServiceFilters sets the serviceFilters property value. The serviceFilters property
+// SetServiceFilters sets the serviceFilters property value. The collection of services to filter on.
 func (m *AuditLogQuery) SetServiceFilters(value []string)() {
     err := m.GetBackingStore().Set("serviceFilters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Describes the current status of the query. The possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.
+// SetStatus sets the status property value. The status of the audit log query. Possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.
 func (m *AuditLogQuery) SetStatus(value *AuditLogQueryStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalNameFilters sets the userPrincipalNameFilters property value. The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.
+// SetUserPrincipalNameFilters sets the userPrincipalNameFilters property value. The collection of user principal names to filter on.
 func (m *AuditLogQuery) SetUserPrincipalNameFilters(value []string)() {
     err := m.GetBackingStore().Set("userPrincipalNameFilters", value)
     if err != nil {

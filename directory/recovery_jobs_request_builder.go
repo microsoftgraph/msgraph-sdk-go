@@ -14,7 +14,7 @@ import (
 type RecoveryJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RecoveryJobsRequestBuilderGetQueryParameters get jobs from directory
+// RecoveryJobsRequestBuilderGetQueryParameters get a list of all recovery recoveryJobBase objects (both preview and recovery jobs) across all snapshots for the tenant.
 type RecoveryJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,9 +79,12 @@ func NewRecoveryJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *RecoveryJobsRequestBuilder) Count()(*RecoveryJobsCountRequestBuilder) {
     return NewRecoveryJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get jobs from directory
+// Get get a list of all recovery recoveryJobBase objects (both preview and recovery jobs) across all snapshots for the tenant.
 // returns a RecoveryJobBaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/entrarecoveryservices-recovery-list-jobs?view=graph-rest-1.0
 func (m *RecoveryJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *RecoveryJobsRequestBuilderGetRequestConfiguration)(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryJobBaseCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *RecoveryJobsRequestBuilder) Post(ctx context.Context, body ie28ab9ee452
     }
     return res.(ie28ab9ee452a7c642fc6fdda156fe61f26850a17367551a25b12128ac3be100f.RecoveryJobBaseable), nil
 }
-// ToGetRequestInformation get jobs from directory
+// ToGetRequestInformation get a list of all recovery recoveryJobBase objects (both preview and recovery jobs) across all snapshots for the tenant.
 // returns a *RequestInformation when successful
 func (m *RecoveryJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecoveryJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

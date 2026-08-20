@@ -46,7 +46,7 @@ func (m *AuditCoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetQueries gets the queries property value. The queries property
+// GetQueries gets the queries property value. The collection of audit log queries.
 // returns a []AuditLogQueryable when successful
 func (m *AuditCoreRoot) GetQueries()([]AuditLogQueryable) {
     val, err := m.GetBackingStore().Get("queries")
@@ -78,7 +78,7 @@ func (m *AuditCoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetQueries sets the queries property value. The queries property
+// SetQueries sets the queries property value. The collection of audit log queries.
 func (m *AuditCoreRoot) SetQueries(value []AuditLogQueryable)() {
     err := m.GetBackingStore().Set("queries", value)
     if err != nil {

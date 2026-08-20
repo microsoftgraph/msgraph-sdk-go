@@ -60,7 +60,7 @@ func (m *RecoveryJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetTotalFailedChanges gets the totalFailedChanges property value. The totalFailedChanges property
+// GetTotalFailedChanges gets the totalFailedChanges property value. The count of changes (including both objects and links) that failed to apply during recovery.
 // returns a *int32 when successful
 func (m *RecoveryJob) GetTotalFailedChanges()(*int32) {
     val, err := m.GetBackingStore().Get("totalFailedChanges")
@@ -72,7 +72,7 @@ func (m *RecoveryJob) GetTotalFailedChanges()(*int32) {
     }
     return nil
 }
-// GetTotalLinksModified gets the totalLinksModified property value. The totalLinksModified property
+// GetTotalLinksModified gets the totalLinksModified property value. The count of directory object links (relationships) that were successfully modified during recovery. This value may be less than totalChangedLinksCalculated if some link changes failed.
 // returns a *int32 when successful
 func (m *RecoveryJob) GetTotalLinksModified()(*int32) {
     val, err := m.GetBackingStore().Get("totalLinksModified")
@@ -84,7 +84,7 @@ func (m *RecoveryJob) GetTotalLinksModified()(*int32) {
     }
     return nil
 }
-// GetTotalObjectsModified gets the totalObjectsModified property value. The totalObjectsModified property
+// GetTotalObjectsModified gets the totalObjectsModified property value. The count of directory objects that were successfully modified during recovery. This value may be less than totalChangedObjectsCalculated if some object changes failed.
 // returns a *int32 when successful
 func (m *RecoveryJob) GetTotalObjectsModified()(*int32) {
     val, err := m.GetBackingStore().Get("totalObjectsModified")
@@ -122,21 +122,21 @@ func (m *RecoveryJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetTotalFailedChanges sets the totalFailedChanges property value. The totalFailedChanges property
+// SetTotalFailedChanges sets the totalFailedChanges property value. The count of changes (including both objects and links) that failed to apply during recovery.
 func (m *RecoveryJob) SetTotalFailedChanges(value *int32)() {
     err := m.GetBackingStore().Set("totalFailedChanges", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalLinksModified sets the totalLinksModified property value. The totalLinksModified property
+// SetTotalLinksModified sets the totalLinksModified property value. The count of directory object links (relationships) that were successfully modified during recovery. This value may be less than totalChangedLinksCalculated if some link changes failed.
 func (m *RecoveryJob) SetTotalLinksModified(value *int32)() {
     err := m.GetBackingStore().Set("totalLinksModified", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalObjectsModified sets the totalObjectsModified property value. The totalObjectsModified property
+// SetTotalObjectsModified sets the totalObjectsModified property value. The count of directory objects that were successfully modified during recovery. This value may be less than totalChangedObjectsCalculated if some object changes failed.
 func (m *RecoveryJob) SetTotalObjectsModified(value *int32)() {
     err := m.GetBackingStore().Set("totalObjectsModified", value)
     if err != nil {
