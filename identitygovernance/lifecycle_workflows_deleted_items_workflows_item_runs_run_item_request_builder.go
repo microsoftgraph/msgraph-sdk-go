@@ -68,6 +68,11 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRunItemRequestBuilder) G
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRunItemRequestBuilder) ReprocessedRuns()(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemReprocessedRunsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemReprocessedRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SubjectProcessingResults provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+// returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder when successful
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRunItemRequestBuilder) SubjectProcessingResults()(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 // returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsRunItemRequestBuilder) TaskProcessingResults()(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) {

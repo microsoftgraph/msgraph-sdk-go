@@ -78,6 +78,11 @@ func (m *CatalogsItemResourcesItemRolesItemResourceRequestBuilder) Delete(ctx co
 func (m *CatalogsItemResourcesItemRolesItemResourceRequestBuilder) Environment()(*CatalogsItemResourcesItemRolesItemResourceEnvironmentRequestBuilder) {
     return NewCatalogsItemResourcesItemRolesItemResourceEnvironmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExternalOriginResourceConnector provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.
+// returns a *CatalogsItemResourcesItemRolesItemResourceExternalOriginResourceConnectorRequestBuilder when successful
+func (m *CatalogsItemResourcesItemRolesItemResourceRequestBuilder) ExternalOriginResourceConnector()(*CatalogsItemResourcesItemRolesItemResourceExternalOriginResourceConnectorRequestBuilder) {
+    return NewCatalogsItemResourcesItemRolesItemResourceExternalOriginResourceConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get resource from identityGovernance
 // returns a AccessPackageResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

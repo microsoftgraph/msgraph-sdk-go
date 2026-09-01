@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -31,6 +32,18 @@ func (m *CopilotPackageDetail) GetAcquireUsersAndGroups()([]PackageAccessEntitya
     }
     if val != nil {
         return val.([]PackageAccessEntityable)
+    }
+    return nil
+}
+// GetActiveUsers gets the activeUsers property value. The number of distinct users who actively used the package during the reporting period.
+// returns a *int32 when successful
+func (m *CopilotPackageDetail) GetActiveUsers()(*int32) {
+    val, err := m.GetBackingStore().Get("activeUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -70,6 +83,18 @@ func (m *CopilotPackageDetail) GetElementDetails()([]PackageElementDetailable) {
     }
     return nil
 }
+// GetExceptionRate gets the exceptionRate property value. The fraction of sessions that resulted in an exception, expressed as a value between 0 and 1.
+// returns a *float64 when successful
+func (m *CopilotPackageDetail) GetExceptionRate()(*float64) {
+    val, err := m.GetBackingStore().Get("exceptionRate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CopilotPackageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -87,6 +112,16 @@ func (m *CopilotPackageDetail) GetFieldDeserializers()(map[string]func(i878a80d2
                 }
             }
             m.SetAcquireUsersAndGroups(res)
+        }
+        return nil
+    }
+    res["activeUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveUsers(val)
         }
         return nil
     }
@@ -138,6 +173,26 @@ func (m *CopilotPackageDetail) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["exceptionRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExceptionRate(val)
+        }
+        return nil
+    }
+    res["lastUsedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUsedDateTime(val)
+        }
+        return nil
+    }
     res["longDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -174,7 +229,39 @@ func (m *CopilotPackageDetail) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["totalRunTimeInHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalRunTimeInHours(val)
+        }
+        return nil
+    }
+    res["totalSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalSessions(val)
+        }
+        return nil
+    }
     return res
+}
+// GetLastUsedDateTime gets the lastUsedDateTime property value. The date and time when the package was last used, in ISO 8601 format and UTC.
+// returns a *Time when successful
+func (m *CopilotPackageDetail) GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUsedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLongDescription gets the longDescription property value. The longDescription property
 // returns a *string when successful
@@ -212,6 +299,30 @@ func (m *CopilotPackageDetail) GetSharedWithUsersAndGroups()([]PackageAccessEnti
     }
     return nil
 }
+// GetTotalRunTimeInHours gets the totalRunTimeInHours property value. Total hours worked by the agent.
+// returns a *float64 when successful
+func (m *CopilotPackageDetail) GetTotalRunTimeInHours()(*float64) {
+    val, err := m.GetBackingStore().Get("totalRunTimeInHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetTotalSessions gets the totalSessions property value. The total number of sessions served by the package during the reporting period.
+// returns a *int32 when successful
+func (m *CopilotPackageDetail) GetTotalSessions()(*int32) {
+    val, err := m.GetBackingStore().Get("totalSessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *CopilotPackageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.CopilotPackage.Serialize(writer)
@@ -226,6 +337,12 @@ func (m *CopilotPackageDetail) Serialize(writer i878a80d2330e89d26896388a3f487ee
             }
         }
         err = writer.WriteCollectionOfObjectValues("acquireUsersAndGroups", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("activeUsers", m.GetActiveUsers())
         if err != nil {
             return err
         }
@@ -261,6 +378,18 @@ func (m *CopilotPackageDetail) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteFloat64Value("exceptionRate", m.GetExceptionRate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUsedDateTime", m.GetLastUsedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("longDescription", m.GetLongDescription())
         if err != nil {
             return err
@@ -284,11 +413,30 @@ func (m *CopilotPackageDetail) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteFloat64Value("totalRunTimeInHours", m.GetTotalRunTimeInHours())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("totalSessions", m.GetTotalSessions())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcquireUsersAndGroups sets the acquireUsersAndGroups property value. The acquireUsersAndGroups property
 func (m *CopilotPackageDetail) SetAcquireUsersAndGroups(value []PackageAccessEntityable)() {
     err := m.GetBackingStore().Set("acquireUsersAndGroups", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetActiveUsers sets the activeUsers property value. The number of distinct users who actively used the package during the reporting period.
+func (m *CopilotPackageDetail) SetActiveUsers(value *int32)() {
+    err := m.GetBackingStore().Set("activeUsers", value)
     if err != nil {
         panic(err)
     }
@@ -314,6 +462,20 @@ func (m *CopilotPackageDetail) SetElementDetails(value []PackageElementDetailabl
         panic(err)
     }
 }
+// SetExceptionRate sets the exceptionRate property value. The fraction of sessions that resulted in an exception, expressed as a value between 0 and 1.
+func (m *CopilotPackageDetail) SetExceptionRate(value *float64)() {
+    err := m.GetBackingStore().Set("exceptionRate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastUsedDateTime sets the lastUsedDateTime property value. The date and time when the package was last used, in ISO 8601 format and UTC.
+func (m *CopilotPackageDetail) SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUsedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLongDescription sets the longDescription property value. The longDescription property
 func (m *CopilotPackageDetail) SetLongDescription(value *string)() {
     err := m.GetBackingStore().Set("longDescription", value)
@@ -335,21 +497,45 @@ func (m *CopilotPackageDetail) SetSharedWithUsersAndGroups(value []PackageAccess
         panic(err)
     }
 }
+// SetTotalRunTimeInHours sets the totalRunTimeInHours property value. Total hours worked by the agent.
+func (m *CopilotPackageDetail) SetTotalRunTimeInHours(value *float64)() {
+    err := m.GetBackingStore().Set("totalRunTimeInHours", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTotalSessions sets the totalSessions property value. The total number of sessions served by the package during the reporting period.
+func (m *CopilotPackageDetail) SetTotalSessions(value *int32)() {
+    err := m.GetBackingStore().Set("totalSessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CopilotPackageDetailable interface {
     CopilotPackageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcquireUsersAndGroups()([]PackageAccessEntityable)
+    GetActiveUsers()(*int32)
     GetAllowedUsersAndGroups()([]PackageAccessEntityable)
     GetCategories()([]string)
     GetElementDetails()([]PackageElementDetailable)
+    GetExceptionRate()(*float64)
+    GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLongDescription()(*string)
     GetSensitivity()(*string)
     GetSharedWithUsersAndGroups()([]PackageAccessEntityable)
+    GetTotalRunTimeInHours()(*float64)
+    GetTotalSessions()(*int32)
     SetAcquireUsersAndGroups(value []PackageAccessEntityable)()
+    SetActiveUsers(value *int32)()
     SetAllowedUsersAndGroups(value []PackageAccessEntityable)()
     SetCategories(value []string)()
     SetElementDetails(value []PackageElementDetailable)()
+    SetExceptionRate(value *float64)()
+    SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLongDescription(value *string)()
     SetSensitivity(value *string)()
     SetSharedWithUsersAndGroups(value []PackageAccessEntityable)()
+    SetTotalRunTimeInHours(value *float64)()
+    SetTotalSessions(value *int32)()
 }

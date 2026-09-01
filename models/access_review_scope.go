@@ -35,10 +35,16 @@ func CreateAccessReviewScopeFromDiscriminatorValue(parseNode i878a80d2330e89d268
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.accessReviewAccessPackageAssignmentPolicyScope":
+                        return NewAccessReviewAccessPackageAssignmentPolicyScope(), nil
                     case "#microsoft.graph.accessReviewInactiveUsersQueryScope":
                         return NewAccessReviewInactiveUsersQueryScope(), nil
+                    case "#microsoft.graph.accessReviewPrincipalScope":
+                        return NewAccessReviewPrincipalScope(), nil
                     case "#microsoft.graph.accessReviewQueryScope":
                         return NewAccessReviewQueryScope(), nil
+                    case "#microsoft.graph.accessReviewResourceScope":
+                        return NewAccessReviewResourceScope(), nil
                     case "#microsoft.graph.principalResourceMembershipsScope":
                         return NewPrincipalResourceMembershipsScope(), nil
                 }

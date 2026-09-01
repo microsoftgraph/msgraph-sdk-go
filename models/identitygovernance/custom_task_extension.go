@@ -116,6 +116,16 @@ func (m *CustomTaskExtension) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["replyMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCustomTaskExtensionReplyMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReplyMode(val.(*CustomTaskExtensionReplyMode))
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
@@ -139,6 +149,18 @@ func (m *CustomTaskExtension) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetReplyMode gets the replyMode property value. The replyMode property
+// returns a *CustomTaskExtensionReplyMode when successful
+func (m *CustomTaskExtension) GetReplyMode()(*CustomTaskExtensionReplyMode) {
+    val, err := m.GetBackingStore().Get("replyMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CustomTaskExtensionReplyMode)
     }
     return nil
 }
@@ -174,6 +196,13 @@ func (m *CustomTaskExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetReplyMode() != nil {
+        cast := (*m.GetReplyMode()).String()
+        err = writer.WriteStringValue("replyMode", &cast)
         if err != nil {
             return err
         }
@@ -215,6 +244,13 @@ func (m *CustomTaskExtension) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
+// SetReplyMode sets the replyMode property value. The replyMode property
+func (m *CustomTaskExtension) SetReplyMode(value *CustomTaskExtensionReplyMode)() {
+    err := m.GetBackingStore().Set("replyMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CustomTaskExtensionable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomCalloutExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -223,9 +259,11 @@ type CustomTaskExtensionable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetReplyMode()(*CustomTaskExtensionReplyMode)
     SetCallbackConfiguration(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionCallbackConfigurationable)()
     SetCreatedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetReplyMode(value *CustomTaskExtensionReplyMode)()
 }

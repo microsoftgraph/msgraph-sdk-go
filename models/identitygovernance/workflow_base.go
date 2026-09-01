@@ -279,6 +279,16 @@ func (m *WorkflowBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["targetSubjectType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSubjectType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetSubjectType(val.(*SubjectType))
+        }
+        return nil
+    }
     res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTaskFromDiscriminatorValue)
         if err != nil {
@@ -354,6 +364,18 @@ func (m *WorkflowBase) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetTargetSubjectType gets the targetSubjectType property value. The targetSubjectType property
+// returns a *SubjectType when successful
+func (m *WorkflowBase) GetTargetSubjectType()(*SubjectType) {
+    val, err := m.GetBackingStore().Get("targetSubjectType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubjectType)
     }
     return nil
 }
@@ -446,6 +468,13 @@ func (m *WorkflowBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTargetSubjectType() != nil {
+        cast := (*m.GetTargetSubjectType()).String()
+        err := writer.WriteStringValue("targetSubjectType", &cast)
         if err != nil {
             return err
         }
@@ -565,6 +594,13 @@ func (m *WorkflowBase) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetTargetSubjectType sets the targetSubjectType property value. The targetSubjectType property
+func (m *WorkflowBase) SetTargetSubjectType(value *SubjectType)() {
+    err := m.GetBackingStore().Set("targetSubjectType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTasks sets the tasks property value. The tasks in the workflow.
 func (m *WorkflowBase) SetTasks(value []Taskable)() {
     err := m.GetBackingStore().Set("tasks", value)
@@ -589,6 +625,7 @@ type WorkflowBaseable interface {
     GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
+    GetTargetSubjectType()(*SubjectType)
     GetTasks()([]Taskable)
     SetAdministrationScopeTargets(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -603,5 +640,6 @@ type WorkflowBaseable interface {
     SetLastModifiedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
+    SetTargetSubjectType(value *SubjectType)()
     SetTasks(value []Taskable)()
 }

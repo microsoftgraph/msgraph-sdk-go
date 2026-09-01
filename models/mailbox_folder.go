@@ -176,6 +176,16 @@ func (m *MailboxFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["wellKnownName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWellKnownName(val)
+        }
+        return nil
+    }
     return res
 }
 // GetItems gets the items property value. The collection of items in this folder.
@@ -242,6 +252,18 @@ func (m *MailboxFolder) GetTotalItemCount()(*int32) {
 // returns a *string when successful
 func (m *MailboxFolder) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetWellKnownName gets the wellKnownName property value. The locale-independent well-known name of the folder for folders created by Outlook, such as inbox, sentitems, drafts, deleteditems, or archive. For user-created folders, the value is null. Read-only.
+// returns a *string when successful
+func (m *MailboxFolder) GetWellKnownName()(*string) {
+    val, err := m.GetBackingStore().Get("wellKnownName")
     if err != nil {
         panic(err)
     }
@@ -334,6 +356,12 @@ func (m *MailboxFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("wellKnownName", m.GetWellKnownName())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetChildFolderCount sets the childFolderCount property value. The number of immediate child folders in the current folder.
@@ -399,6 +427,13 @@ func (m *MailboxFolder) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
+// SetWellKnownName sets the wellKnownName property value. The locale-independent well-known name of the folder for folders created by Outlook, such as inbox, sentitems, drafts, deleteditems, or archive. For user-created folders, the value is null. Read-only.
+func (m *MailboxFolder) SetWellKnownName(value *string)() {
+    err := m.GetBackingStore().Set("wellKnownName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type MailboxFolderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -411,6 +446,7 @@ type MailboxFolderable interface {
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetTotalItemCount()(*int32)
     GetTypeEscaped()(*string)
+    GetWellKnownName()(*string)
     SetChildFolderCount(value *int32)()
     SetChildFolders(value []MailboxFolderable)()
     SetDisplayName(value *string)()
@@ -420,4 +456,5 @@ type MailboxFolderable interface {
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetTotalItemCount(value *int32)()
     SetTypeEscaped(value *string)()
+    SetWellKnownName(value *string)()
 }

@@ -42,13 +42,6 @@ type RolesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *RolesRequestBuilderGetQueryParameters
 }
-// RolesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type RolesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByEngagementRoleId provides operations to manage the roles property of the microsoft.graph.employeeExperience entity.
 // returns a *RolesEngagementRoleItemRequestBuilder when successful
 func (m *RolesRequestBuilder) ByEngagementRoleId(engagementRoleId string)(*RolesEngagementRoleItemRequestBuilder) {
@@ -74,11 +67,6 @@ func NewRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewRolesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
-// returns a *RolesCountRequestBuilder when successful
-func (m *RolesRequestBuilder) Count()(*RolesCountRequestBuilder) {
-    return NewRolesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get a list of all the roles that can be assigned in Viva Engage.
 // returns a EngagementRoleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -102,26 +90,6 @@ func (m *RolesRequestBuilder) Get(ctx context.Context, requestConfiguration *Rol
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EngagementRoleCollectionResponseable), nil
 }
-// Post create new navigation property to roles for employeeExperience
-// returns a EngagementRoleable when successful
-// returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *RolesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EngagementRoleable, requestConfiguration *RolesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EngagementRoleable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEngagementRoleFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EngagementRoleable), nil
-}
 // ToGetRequestInformation get a list of all the roles that can be assigned in Viva Engage.
 // returns a *RequestInformation when successful
 func (m *RolesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -134,21 +102,6 @@ func (m *RolesRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
-}
-// ToPostRequestInformation create new navigation property to roles for employeeExperience
-// returns a *RequestInformation when successful
-func (m *RolesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EngagementRoleable, requestConfiguration *RolesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

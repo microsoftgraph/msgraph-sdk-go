@@ -10,10 +10,11 @@ const (
     UNKNOWNFUTUREVALUE_WORKFLOWEXECUTIONTYPE
     ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
     PREVIEW_WORKFLOWEXECUTIONTYPE
+    EXTENSIBILITYONDEMAND_WORKFLOWEXECUTIONTYPE
 )
 
 func (i WorkflowExecutionType) String() string {
-    return []string{"scheduled", "onDemand", "unknownFutureValue", "activatedWithScope", "preview"}[i]
+    return []string{"scheduled", "onDemand", "unknownFutureValue", "activatedWithScope", "preview", "extensibilityOnDemand"}[i]
 }
 func ParseWorkflowExecutionType(v string) (any, error) {
     result := SCHEDULED_WORKFLOWEXECUTIONTYPE
@@ -28,6 +29,8 @@ func ParseWorkflowExecutionType(v string) (any, error) {
             result = ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
         case "preview":
             result = PREVIEW_WORKFLOWEXECUTIONTYPE
+        case "extensibilityOnDemand":
+            result = EXTENSIBILITYONDEMAND_WORKFLOWEXECUTIONTYPE
         default:
             return nil, nil
     }

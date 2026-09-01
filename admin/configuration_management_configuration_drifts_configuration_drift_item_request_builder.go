@@ -14,13 +14,6 @@ import (
 type ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderGetQueryParameters get the properties and relationships of a configurationDrift object.
 type ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -37,13 +30,6 @@ type ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuil
     // Request query parameters
     QueryParameters *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderGetQueryParameters
 }
-// ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderInternal instantiates a new ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder and sets the default values.
 func NewConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder) {
     m := &ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder{
@@ -56,22 +42,6 @@ func NewConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestB
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Delete delete navigation property configurationDrifts for admin
-// returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Get get the properties and relationships of a configurationDrift object.
 // returns a ConfigurationDriftable when successful
@@ -96,37 +66,6 @@ func (m *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequest
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConfigurationDriftable), nil
 }
-// Patch update the navigation property configurationDrifts in admin
-// returns a ConfigurationDriftable when successful
-// returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConfigurationDriftable, requestConfiguration *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConfigurationDriftable, error) {
-    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateConfigurationDriftFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConfigurationDriftable), nil
-}
-// ToDeleteRequestInformation delete navigation property configurationDrifts for admin
-// returns a *RequestInformation when successful
-func (m *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
-}
 // ToGetRequestInformation get the properties and relationships of a configurationDrift object.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,21 +78,6 @@ func (m *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
-}
-// ToPatchRequestInformation update the navigation property configurationDrifts in admin
-// returns a *RequestInformation when successful
-func (m *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConfigurationDriftable, requestConfiguration *ConfigurationManagementConfigurationDriftsConfigurationDriftItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

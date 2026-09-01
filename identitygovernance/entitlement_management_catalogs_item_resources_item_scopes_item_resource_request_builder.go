@@ -78,6 +78,11 @@ func (m *EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequest
 func (m *EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequestBuilder) Environment()(*EntitlementManagementCatalogsItemResourcesItemScopesItemResourceEnvironmentRequestBuilder) {
     return NewEntitlementManagementCatalogsItemResourcesItemScopesItemResourceEnvironmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExternalOriginResourceConnector provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.
+// returns a *EntitlementManagementCatalogsItemResourcesItemScopesItemResourceExternalOriginResourceConnectorRequestBuilder when successful
+func (m *EntitlementManagementCatalogsItemResourcesItemScopesItemResourceRequestBuilder) ExternalOriginResourceConnector()(*EntitlementManagementCatalogsItemResourcesItemScopesItemResourceExternalOriginResourceConnectorRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemResourcesItemScopesItemResourceExternalOriginResourceConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get resource from identityGovernance
 // returns a AccessPackageResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

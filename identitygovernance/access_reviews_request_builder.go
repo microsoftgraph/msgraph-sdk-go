@@ -163,6 +163,11 @@ func (m *AccessReviewsRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
+// Unified provides operations to manage the unified property of the microsoft.graph.accessReviewSet entity.
+// returns a *AccessReviewsUnifiedRequestBuilder when successful
+func (m *AccessReviewsRequestBuilder) Unified()(*AccessReviewsUnifiedRequestBuilder) {
+    return NewAccessReviewsUnifiedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *AccessReviewsRequestBuilder when successful
 func (m *AccessReviewsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsRequestBuilder) {
