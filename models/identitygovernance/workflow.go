@@ -152,6 +152,22 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["subjectProcessingResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSubjectProcessingResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SubjectProcessingResultable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SubjectProcessingResultable)
+                }
+            }
+            m.SetSubjectProcessingResults(res)
+        }
+        return nil
+    }
     res["taskReports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTaskReportFromDiscriminatorValue)
         if err != nil {
@@ -284,6 +300,18 @@ func (m *Workflow) GetSettings()(WorkflowSettingable) {
     }
     return nil
 }
+// GetSubjectProcessingResults gets the subjectProcessingResults property value. Per-subject workflow execution results.
+// returns a []SubjectProcessingResultable when successful
+func (m *Workflow) GetSubjectProcessingResults()([]SubjectProcessingResultable) {
+    val, err := m.GetBackingStore().Get("subjectProcessingResults")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SubjectProcessingResultable)
+    }
+    return nil
+}
 // GetTaskReports gets the taskReports property value. Represents the aggregation of task execution data for tasks within a workflow object.
 // returns a []TaskReportable when successful
 func (m *Workflow) GetTaskReports()([]TaskReportable) {
@@ -404,6 +432,18 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetSubjectProcessingResults() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjectProcessingResults()))
+        for i, v := range m.GetSubjectProcessingResults() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subjectProcessingResults", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTaskReports() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskReports()))
         for i, v := range m.GetTaskReports() {
@@ -504,6 +544,13 @@ func (m *Workflow) SetSettings(value WorkflowSettingable)() {
         panic(err)
     }
 }
+// SetSubjectProcessingResults sets the subjectProcessingResults property value. Per-subject workflow execution results.
+func (m *Workflow) SetSubjectProcessingResults(value []SubjectProcessingResultable)() {
+    err := m.GetBackingStore().Set("subjectProcessingResults", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTaskReports sets the taskReports property value. Represents the aggregation of task execution data for tasks within a workflow object.
 func (m *Workflow) SetTaskReports(value []TaskReportable)() {
     err := m.GetBackingStore().Set("taskReports", value)
@@ -543,6 +590,7 @@ type Workflowable interface {
     GetQuarantineDetails()(QuarantineDetailsable)
     GetRuns()([]Runable)
     GetSettings()(WorkflowSettingable)
+    GetSubjectProcessingResults()([]SubjectProcessingResultable)
     GetTaskReports()([]TaskReportable)
     GetUserProcessingResults()([]UserProcessingResultable)
     GetVersion()(*int32)
@@ -555,6 +603,7 @@ type Workflowable interface {
     SetQuarantineDetails(value QuarantineDetailsable)()
     SetRuns(value []Runable)()
     SetSettings(value WorkflowSettingable)()
+    SetSubjectProcessingResults(value []SubjectProcessingResultable)()
     SetTaskReports(value []TaskReportable)()
     SetUserProcessingResults(value []UserProcessingResultable)()
     SetVersion(value *int32)()

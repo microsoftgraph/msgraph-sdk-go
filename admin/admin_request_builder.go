@@ -37,7 +37,7 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConfigurationManagement provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
+// ConfigurationManagement the configurationManagement property
 // returns a *ConfigurationManagementRequestBuilder when successful
 func (m *AdminRequestBuilder) ConfigurationManagement()(*ConfigurationManagementRequestBuilder) {
     return NewConfigurationManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

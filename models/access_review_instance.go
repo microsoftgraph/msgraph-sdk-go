@@ -59,6 +59,18 @@ func (m *AccessReviewInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
+// GetErrors gets the errors property value. Collection of errors in an access review instance lifecycle. Read-only.
+// returns a []AccessReviewErrorable when successful
+func (m *AccessReviewInstance) GetErrors()([]AccessReviewErrorable) {
+    val, err := m.GetBackingStore().Get("errors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewErrorable)
+    }
+    return nil
+}
 // GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
 // returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewInstance) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
@@ -114,6 +126,22 @@ func (m *AccessReviewInstance) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetEndDateTime(val)
+        }
+        return nil
+    }
+    res["errors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewErrorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewErrorable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessReviewErrorable)
+                }
+            }
+            m.SetErrors(res)
         }
         return nil
     }
@@ -293,6 +321,18 @@ func (m *AccessReviewInstance) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetErrors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetErrors()))
+        for i, v := range m.GetErrors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("errors", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFallbackReviewers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFallbackReviewers()))
         for i, v := range m.GetFallbackReviewers() {
@@ -370,6 +410,13 @@ func (m *AccessReviewInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
+// SetErrors sets the errors property value. Collection of errors in an access review instance lifecycle. Read-only.
+func (m *AccessReviewInstance) SetErrors(value []AccessReviewErrorable)() {
+    err := m.GetBackingStore().Set("errors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
 func (m *AccessReviewInstance) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     err := m.GetBackingStore().Set("fallbackReviewers", value)
@@ -418,6 +465,7 @@ type AccessReviewInstanceable interface {
     GetContactedReviewers()([]AccessReviewReviewerable)
     GetDecisions()([]AccessReviewInstanceDecisionItemable)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetErrors()([]AccessReviewErrorable)
     GetFallbackReviewers()([]AccessReviewReviewerScopeable)
     GetReviewers()([]AccessReviewReviewerScopeable)
     GetScope()(AccessReviewScopeable)
@@ -427,6 +475,7 @@ type AccessReviewInstanceable interface {
     SetContactedReviewers(value []AccessReviewReviewerable)()
     SetDecisions(value []AccessReviewInstanceDecisionItemable)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetErrors(value []AccessReviewErrorable)()
     SetFallbackReviewers(value []AccessReviewReviewerScopeable)()
     SetReviewers(value []AccessReviewReviewerScopeable)()
     SetScope(value AccessReviewScopeable)()

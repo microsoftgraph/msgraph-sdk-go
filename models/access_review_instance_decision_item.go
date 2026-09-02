@@ -59,6 +59,18 @@ func (m *AccessReviewInstanceDecisionItem) GetAppliedDateTime()(*i336074805fc853
     }
     return nil
 }
+// GetApplyDescription gets the applyDescription property value. The description of the apply result. Read-only.
+// returns a *string when successful
+func (m *AccessReviewInstanceDecisionItem) GetApplyDescription()(*string) {
+    val, err := m.GetBackingStore().Get("applyDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetApplyResult gets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetApplyResult()(*string) {
@@ -114,6 +126,16 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetAppliedDateTime(val)
+        }
+        return nil
+    }
+    res["applyDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplyDescription(val)
         }
         return nil
     }
@@ -368,6 +390,12 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("applyDescription", m.GetApplyDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("applyResult", m.GetApplyResult())
         if err != nil {
             return err
@@ -462,6 +490,13 @@ func (m *AccessReviewInstanceDecisionItem) SetAppliedDateTime(value *i336074805f
         panic(err)
     }
 }
+// SetApplyDescription sets the applyDescription property value. The description of the apply result. Read-only.
+func (m *AccessReviewInstanceDecisionItem) SetApplyDescription(value *string)() {
+    err := m.GetBackingStore().Set("applyDescription", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetApplyResult sets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetApplyResult(value *string)() {
     err := m.GetBackingStore().Set("applyResult", value)
@@ -545,6 +580,7 @@ type AccessReviewInstanceDecisionItemable interface {
     GetAccessReviewId()(*string)
     GetAppliedBy()(UserIdentityable)
     GetAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetApplyDescription()(*string)
     GetApplyResult()(*string)
     GetDecision()(*string)
     GetInsights()([]GovernanceInsightable)
@@ -559,6 +595,7 @@ type AccessReviewInstanceDecisionItemable interface {
     SetAccessReviewId(value *string)()
     SetAppliedBy(value UserIdentityable)()
     SetAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetApplyDescription(value *string)()
     SetApplyResult(value *string)()
     SetDecision(value *string)()
     SetInsights(value []GovernanceInsightable)()

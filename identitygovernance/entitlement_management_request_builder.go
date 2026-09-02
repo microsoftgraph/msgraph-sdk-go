@@ -123,6 +123,11 @@ func (m *EntitlementManagementRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
+// ExternalOriginResourceConnectors provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) ExternalOriginResourceConnectors()(*EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) {
+    return NewEntitlementManagementExternalOriginResourceConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get entitlementManagement from identityGovernance
 // returns a EntitlementManagementable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

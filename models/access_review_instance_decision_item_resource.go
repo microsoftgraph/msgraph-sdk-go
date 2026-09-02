@@ -37,6 +37,8 @@ func CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue(parseN
                 switch *mappingValue {
                     case "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource":
                         return NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(), nil
+                    case "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource":
+                        return NewAccessReviewInstanceDecisionItemAccessPackageResource(), nil
                     case "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource":
                         return NewAccessReviewInstanceDecisionItemAzureRoleResource(), nil
                     case "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource":

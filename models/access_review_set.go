@@ -70,6 +70,16 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["unified"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUnifiedRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnified(val.(UnifiedRootable))
+        }
+        return nil
+    }
     return res
 }
 // GetHistoryDefinitions gets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
@@ -81,6 +91,18 @@ func (m *AccessReviewSet) GetHistoryDefinitions()([]AccessReviewHistoryDefinitio
     }
     if val != nil {
         return val.([]AccessReviewHistoryDefinitionable)
+    }
+    return nil
+}
+// GetUnified gets the unified property value. Entry point for the unified (vNext) access reviews API surface. Requests under this path are routed to the vNext service through the dedicated accessReviews/unified path segment.
+// returns a UnifiedRootable when successful
+func (m *AccessReviewSet) GetUnified()(UnifiedRootable) {
+    val, err := m.GetBackingStore().Get("unified")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UnifiedRootable)
     }
     return nil
 }
@@ -114,6 +136,12 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("unified", m.GetUnified())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDefinitions sets the definitions property value. Represents the template and scheduling for an access review.
@@ -130,11 +158,20 @@ func (m *AccessReviewSet) SetHistoryDefinitions(value []AccessReviewHistoryDefin
         panic(err)
     }
 }
+// SetUnified sets the unified property value. Entry point for the unified (vNext) access reviews API surface. Requests under this path are routed to the vNext service through the dedicated accessReviews/unified path segment.
+func (m *AccessReviewSet) SetUnified(value UnifiedRootable)() {
+    err := m.GetBackingStore().Set("unified", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AccessReviewSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefinitions()([]AccessReviewScheduleDefinitionable)
     GetHistoryDefinitions()([]AccessReviewHistoryDefinitionable)
+    GetUnified()(UnifiedRootable)
     SetDefinitions(value []AccessReviewScheduleDefinitionable)()
     SetHistoryDefinitions(value []AccessReviewHistoryDefinitionable)()
+    SetUnified(value UnifiedRootable)()
 }

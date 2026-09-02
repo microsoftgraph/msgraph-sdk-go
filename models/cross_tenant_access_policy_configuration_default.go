@@ -188,6 +188,22 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["m365Capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateM365CapabilityBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]M365CapabilityBaseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(M365CapabilityBaseable)
+                }
+            }
+            m.SetM365Capabilities(res)
+        }
+        return nil
+    }
     res["m365CollaborationInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyM365CollaborationInboundSettingFromDiscriminatorValue)
         if err != nil {
@@ -253,6 +269,18 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*boo
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetM365Capabilities gets the m365Capabilities property value. Defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.
+// returns a []M365CapabilityBaseable when successful
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetM365Capabilities()([]M365CapabilityBaseable) {
+    val, err := m.GetBackingStore().Get("m365Capabilities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]M365CapabilityBaseable)
     }
     return nil
 }
@@ -352,6 +380,18 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
             return err
         }
     }
+    if m.GetM365Capabilities() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetM365Capabilities()))
+        for i, v := range m.GetM365Capabilities() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("m365Capabilities", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("m365CollaborationInbound", m.GetM365CollaborationInbound())
         if err != nil {
@@ -435,6 +475,13 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) SetIsServiceDefault(value 
         panic(err)
     }
 }
+// SetM365Capabilities sets the m365Capabilities property value. Defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.
+func (m *CrossTenantAccessPolicyConfigurationDefault) SetM365Capabilities(value []M365CapabilityBaseable)() {
+    err := m.GetBackingStore().Set("m365Capabilities", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetM365CollaborationInbound sets the m365CollaborationInbound property value. Defines your default configuration for inbound Microsoft 365 collaboration settings that determine which users from other organizations can collaborate with your organization using Microsoft 365 apps.
 func (m *CrossTenantAccessPolicyConfigurationDefault) SetM365CollaborationInbound(value CrossTenantAccessPolicyM365CollaborationInboundSettingable)() {
     err := m.GetBackingStore().Set("m365CollaborationInbound", value)
@@ -468,6 +515,7 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetInvitationRedemptionIdentityProviderConfiguration()(DefaultInvitationRedemptionIdentityProviderConfigurationable)
     GetIsServiceDefault()(*bool)
+    GetM365Capabilities()([]M365CapabilityBaseable)
     GetM365CollaborationInbound()(CrossTenantAccessPolicyM365CollaborationInboundSettingable)
     GetM365CollaborationOutbound()(CrossTenantAccessPolicyM365CollaborationOutboundSettingable)
     GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
@@ -480,6 +528,7 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetInvitationRedemptionIdentityProviderConfiguration(value DefaultInvitationRedemptionIdentityProviderConfigurationable)()
     SetIsServiceDefault(value *bool)()
+    SetM365Capabilities(value []M365CapabilityBaseable)()
     SetM365CollaborationInbound(value CrossTenantAccessPolicyM365CollaborationInboundSettingable)()
     SetM365CollaborationOutbound(value CrossTenantAccessPolicyM365CollaborationOutboundSettingable)()
     SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()

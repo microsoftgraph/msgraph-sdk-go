@@ -101,6 +101,18 @@ func (m *AccessPackageResource) GetEnvironment()(AccessPackageResourceEnvironmen
     }
     return nil
 }
+// GetExternalOriginResourceConnector gets the externalOriginResourceConnector property value. The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
+// returns a ExternalOriginResourceConnectorable when successful
+func (m *AccessPackageResource) GetExternalOriginResourceConnector()(ExternalOriginResourceConnectorable) {
+    val, err := m.GetBackingStore().Get("externalOriginResourceConnector")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalOriginResourceConnectorable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -158,6 +170,16 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetEnvironment(val.(AccessPackageResourceEnvironmentable))
+        }
+        return nil
+    }
+    res["externalOriginResourceConnector"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExternalOriginResourceConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalOriginResourceConnector(val.(ExternalOriginResourceConnectorable))
         }
         return nil
     }
@@ -356,6 +378,12 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteObjectValue("externalOriginResourceConnector", m.GetExternalOriginResourceConnector())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("modifiedDateTime", m.GetModifiedDateTime())
         if err != nil {
             return err
@@ -446,6 +474,13 @@ func (m *AccessPackageResource) SetEnvironment(value AccessPackageResourceEnviro
         panic(err)
     }
 }
+// SetExternalOriginResourceConnector sets the externalOriginResourceConnector property value. The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
+func (m *AccessPackageResource) SetExternalOriginResourceConnector(value ExternalOriginResourceConnectorable)() {
+    err := m.GetBackingStore().Set("externalOriginResourceConnector", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResource) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("modifiedDateTime", value)
@@ -496,6 +531,7 @@ type AccessPackageResourceable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEnvironment()(AccessPackageResourceEnvironmentable)
+    GetExternalOriginResourceConnector()(ExternalOriginResourceConnectorable)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOriginId()(*string)
     GetOriginSystem()(*string)
@@ -507,6 +543,7 @@ type AccessPackageResourceable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEnvironment(value AccessPackageResourceEnvironmentable)()
+    SetExternalOriginResourceConnector(value ExternalOriginResourceConnectorable)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()

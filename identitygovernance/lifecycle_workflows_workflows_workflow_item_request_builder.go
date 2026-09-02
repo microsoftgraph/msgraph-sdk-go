@@ -124,6 +124,11 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) LastModifiedBy()
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceActivate()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphIdentityGovernanceActivateAndWait provides operations to call the activateAndWait method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceActivateAndWait()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphIdentityGovernanceActivateWithScope provides operations to call the activateWithScope method.
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceActivateWithScope()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder) {
@@ -191,6 +196,11 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) PreviewScope()(*
 // returns a *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Runs()(*LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SubjectProcessingResults provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
+// returns a *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) SubjectProcessingResults()(*LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemSubjectProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskReports provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
 // returns a *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder when successful

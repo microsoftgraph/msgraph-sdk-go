@@ -62,7 +62,7 @@ func (m *PrincipalResourceMembershipsScope) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetPrincipalScopes gets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
+// GetPrincipalScopes gets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review. Use an accessReviewPrincipalScope object to select a well-known population of principals, such as all guest users.
 // returns a []AccessReviewScopeable when successful
 func (m *PrincipalResourceMembershipsScope) GetPrincipalScopes()([]AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("principalScopes")
@@ -74,7 +74,7 @@ func (m *PrincipalResourceMembershipsScope) GetPrincipalScopes()([]AccessReviewS
     }
     return nil
 }
-// GetResourceScopes gets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed.
+// GetResourceScopes gets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed. Use an accessReviewResourceScope object to identify the resource, or an accessReviewAccessPackageAssignmentPolicyScope object when the resource is an access package assignment policy.
 // returns a []AccessReviewScopeable when successful
 func (m *PrincipalResourceMembershipsScope) GetResourceScopes()([]AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("resourceScopes")
@@ -118,14 +118,14 @@ func (m *PrincipalResourceMembershipsScope) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetPrincipalScopes sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
+// SetPrincipalScopes sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review. Use an accessReviewPrincipalScope object to select a well-known population of principals, such as all guest users.
 func (m *PrincipalResourceMembershipsScope) SetPrincipalScopes(value []AccessReviewScopeable)() {
     err := m.GetBackingStore().Set("principalScopes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceScopes sets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed.
+// SetResourceScopes sets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed. Use an accessReviewResourceScope object to identify the resource, or an accessReviewAccessPackageAssignmentPolicyScope object when the resource is an access package assignment policy.
 func (m *PrincipalResourceMembershipsScope) SetResourceScopes(value []AccessReviewScopeable)() {
     err := m.GetBackingStore().Set("resourceScopes", value)
     if err != nil {

@@ -41,6 +41,18 @@ func CreateCopilotPackageFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     }
     return NewCopilotPackage(), nil
 }
+// GetAgentIdentityId gets the agentIdentityId property value. The agentIdentityId property
+// returns a *string when successful
+func (m *CopilotPackage) GetAgentIdentityId()(*string) {
+    val, err := m.GetBackingStore().Get("agentIdentityId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetAppId gets the appId property value. The appId property
 // returns a *string when successful
 func (m *CopilotPackage) GetAppId()(*string) {
@@ -129,6 +141,16 @@ func (m *CopilotPackage) GetElementTypes()([]string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CopilotPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["agentIdentityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentIdentityId(val)
+        }
+        return nil
+    }
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -484,6 +506,12 @@ func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         return err
     }
     {
+        err = writer.WriteStringValue("agentIdentityId", m.GetAgentIdentityId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("appId", m.GetAppId())
         if err != nil {
             return err
@@ -601,6 +629,13 @@ func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     return nil
+}
+// SetAgentIdentityId sets the agentIdentityId property value. The agentIdentityId property
+func (m *CopilotPackage) SetAgentIdentityId(value *string)() {
+    err := m.GetBackingStore().Set("agentIdentityId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppId sets the appId property value. The appId property
 func (m *CopilotPackage) SetAppId(value *string)() {
@@ -738,6 +773,7 @@ func (m *CopilotPackage) SetZipFile(value []byte)() {
 type CopilotPackageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentIdentityId()(*string)
     GetAppId()(*string)
     GetAssetId()(*string)
     GetAvailableTo()(*PackageStatus)
@@ -757,6 +793,7 @@ type CopilotPackageable interface {
     GetTypeEscaped()(*PackageType)
     GetVersion()(*string)
     GetZipFile()([]byte)
+    SetAgentIdentityId(value *string)()
     SetAppId(value *string)()
     SetAssetId(value *string)()
     SetAvailableTo(value *PackageStatus)()

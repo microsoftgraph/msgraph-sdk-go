@@ -144,6 +144,16 @@ func (m *TaskProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["workflowSubject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkflowSubjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkflowSubject(val.(WorkflowSubjectable))
+        }
+        return nil
+    }
     return res
 }
 // GetProcessingInfo gets the processingInfo property value. Additional human-readable context about the task processing outcome. This property contains information about edge cases where the task completed successfully but the expected action wasn't performed because the target was already in the desired state, such as when the user was already a member of the specified group. Returns null when no additional context is needed. Nullable.
@@ -206,6 +216,18 @@ func (m *TaskProcessingResult) GetTask()(Taskable) {
     }
     return nil
 }
+// GetWorkflowSubject gets the workflowSubject property value. The workflow subject associated with this task processing result. Populated for extensibility and provisioning workflows.
+// returns a WorkflowSubjectable when successful
+func (m *TaskProcessingResult) GetWorkflowSubject()(WorkflowSubjectable) {
+    val, err := m.GetBackingStore().Get("workflowSubject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkflowSubjectable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *TaskProcessingResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -257,6 +279,12 @@ func (m *TaskProcessingResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteObjectValue("task", m.GetTask())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("workflowSubject", m.GetWorkflowSubject())
         if err != nil {
             return err
         }
@@ -319,6 +347,13 @@ func (m *TaskProcessingResult) SetTask(value Taskable)() {
         panic(err)
     }
 }
+// SetWorkflowSubject sets the workflowSubject property value. The workflow subject associated with this task processing result. Populated for extensibility and provisioning workflows.
+func (m *TaskProcessingResult) SetWorkflowSubject(value WorkflowSubjectable)() {
+    err := m.GetBackingStore().Set("workflowSubject", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type TaskProcessingResultable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -330,6 +365,7 @@ type TaskProcessingResultable interface {
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSubject()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)
     GetTask()(Taskable)
+    GetWorkflowSubject()(WorkflowSubjectable)
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFailureReason(value *string)()
@@ -338,4 +374,5 @@ type TaskProcessingResultable interface {
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSubject(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)()
     SetTask(value Taskable)()
+    SetWorkflowSubject(value WorkflowSubjectable)()
 }

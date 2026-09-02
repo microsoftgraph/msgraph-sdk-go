@@ -13,12 +13,13 @@ const (
     LEAVER_LIFECYCLETASKCATEGORY = 2
     UNKNOWNFUTUREVALUE_LIFECYCLETASKCATEGORY = 4
     MOVER_LIFECYCLETASKCATEGORY = 8
+    EXTENSIBILITY_LIFECYCLETASKCATEGORY = 16
 )
 
 func (i LifecycleTaskCategory) String() string {
     var values []string
-    options := []string{"joiner", "leaver", "unknownFutureValue", "mover"}
-    for p := 0; p < 4; p++ {
+    options := []string{"joiner", "leaver", "unknownFutureValue", "mover", "extensibility"}
+    for p := 0; p < 5; p++ {
         mantis := LifecycleTaskCategory(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -39,6 +40,8 @@ func ParseLifecycleTaskCategory(v string) (any, error) {
                 result |= UNKNOWNFUTUREVALUE_LIFECYCLETASKCATEGORY
             case "mover":
                 result |= MOVER_LIFECYCLETASKCATEGORY
+            case "extensibility":
+                result |= EXTENSIBILITY_LIFECYCLETASKCATEGORY
             default:
                 return nil, nil
         }

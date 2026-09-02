@@ -132,6 +132,16 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["systemBrowserEnabledOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSystemBrowserEnabledOn)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemBrowserEnabledOn(val.(*SystemBrowserEnabledOn))
+        }
+        return nil
+    }
     return res
 }
 // GetIsSignedAuthenticationRequestRequired gets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren't signed.
@@ -206,6 +216,18 @@ func (m *InternalDomainFederation) GetSignOutUri()(*string) {
     }
     return nil
 }
+// GetSystemBrowserEnabledOn gets the systemBrowserEnabledOn property value. The systemBrowserEnabledOn property
+// returns a *SystemBrowserEnabledOn when successful
+func (m *InternalDomainFederation) GetSystemBrowserEnabledOn()(*SystemBrowserEnabledOn) {
+    val, err := m.GetBackingStore().Get("systemBrowserEnabledOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SystemBrowserEnabledOn)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *InternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.SamlOrWsFedProvider.Serialize(writer)
@@ -258,6 +280,13 @@ func (m *InternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err = writer.WriteStringValue("signOutUri", m.GetSignOutUri())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSystemBrowserEnabledOn() != nil {
+        cast := (*m.GetSystemBrowserEnabledOn()).String()
+        err = writer.WriteStringValue("systemBrowserEnabledOn", &cast)
         if err != nil {
             return err
         }
@@ -320,6 +349,13 @@ func (m *InternalDomainFederation) SetSignOutUri(value *string)() {
         panic(err)
     }
 }
+// SetSystemBrowserEnabledOn sets the systemBrowserEnabledOn property value. The systemBrowserEnabledOn property
+func (m *InternalDomainFederation) SetSystemBrowserEnabledOn(value *SystemBrowserEnabledOn)() {
+    err := m.GetBackingStore().Set("systemBrowserEnabledOn", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type InternalDomainFederationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SamlOrWsFedProviderable
@@ -331,6 +367,7 @@ type InternalDomainFederationable interface {
     GetPromptLoginBehavior()(*PromptLoginBehavior)
     GetSigningCertificateUpdateStatus()(SigningCertificateUpdateStatusable)
     GetSignOutUri()(*string)
+    GetSystemBrowserEnabledOn()(*SystemBrowserEnabledOn)
     SetActiveSignInUri(value *string)()
     SetFederatedIdpMfaBehavior(value *FederatedIdpMfaBehavior)()
     SetIsSignedAuthenticationRequestRequired(value *bool)()
@@ -339,4 +376,5 @@ type InternalDomainFederationable interface {
     SetPromptLoginBehavior(value *PromptLoginBehavior)()
     SetSigningCertificateUpdateStatus(value SigningCertificateUpdateStatusable)()
     SetSignOutUri(value *string)()
+    SetSystemBrowserEnabledOn(value *SystemBrowserEnabledOn)()
 }

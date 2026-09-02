@@ -87,6 +87,26 @@ func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["reviewerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReviewerId(val)
+        }
+        return nil
+    }
+    res["scopeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAccessReviewReviewerScopeType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScopeType(val.(*AccessReviewReviewerScopeType))
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -137,6 +157,30 @@ func (m *AccessReviewReviewerScope) GetQueryType()(*string) {
     }
     return nil
 }
+// GetReviewerId gets the reviewerId property value. The identifier of the reviewer.
+// returns a *string when successful
+func (m *AccessReviewReviewerScope) GetReviewerId()(*string) {
+    val, err := m.GetBackingStore().Get("reviewerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetScopeType gets the scopeType property value. The scopeType property
+// returns a *AccessReviewReviewerScopeType when successful
+func (m *AccessReviewReviewerScope) GetScopeType()(*AccessReviewReviewerScopeType) {
+    val, err := m.GetBackingStore().Get("scopeType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessReviewReviewerScopeType)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *AccessReviewReviewerScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -159,6 +203,19 @@ func (m *AccessReviewReviewerScope) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("queryType", m.GetQueryType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("reviewerId", m.GetReviewerId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetScopeType() != nil {
+        cast := (*m.GetScopeType()).String()
+        err := writer.WriteStringValue("scopeType", &cast)
         if err != nil {
             return err
         }
@@ -210,6 +267,20 @@ func (m *AccessReviewReviewerScope) SetQueryType(value *string)() {
         panic(err)
     }
 }
+// SetReviewerId sets the reviewerId property value. The identifier of the reviewer.
+func (m *AccessReviewReviewerScope) SetReviewerId(value *string)() {
+    err := m.GetBackingStore().Set("reviewerId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetScopeType sets the scopeType property value. The scopeType property
+func (m *AccessReviewReviewerScope) SetScopeType(value *AccessReviewReviewerScopeType)() {
+    err := m.GetBackingStore().Set("scopeType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AccessReviewReviewerScopeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -219,9 +290,13 @@ type AccessReviewReviewerScopeable interface {
     GetQuery()(*string)
     GetQueryRoot()(*string)
     GetQueryType()(*string)
+    GetReviewerId()(*string)
+    GetScopeType()(*AccessReviewReviewerScopeType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetQuery(value *string)()
     SetQueryRoot(value *string)()
     SetQueryType(value *string)()
+    SetReviewerId(value *string)()
+    SetScopeType(value *AccessReviewReviewerScopeType)()
 }

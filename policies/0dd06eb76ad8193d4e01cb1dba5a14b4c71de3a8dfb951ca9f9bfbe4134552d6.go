@@ -104,6 +104,11 @@ func (m *CrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPart
 func (m *CrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) IdentitySynchronization()(*CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) {
     return NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// M365Capabilities provides operations to manage the m365Capabilities property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
+// returns a *CrossTenantAccessPolicyPartnersItemM365CapabilitiesRequestBuilder when successful
+func (m *CrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) M365Capabilities()(*CrossTenantAccessPolicyPartnersItemM365CapabilitiesRequestBuilder) {
+    return NewCrossTenantAccessPolicyPartnersItemM365CapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the properties of a partner-specific configuration.
 // returns a CrossTenantAccessPolicyConfigurationPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

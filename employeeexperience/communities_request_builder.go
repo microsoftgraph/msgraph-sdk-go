@@ -74,11 +74,6 @@ func NewCommunitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewCommunitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
-// returns a *CommunitiesCountRequestBuilder when successful
-func (m *CommunitiesRequestBuilder) Count()(*CommunitiesCountRequestBuilder) {
-    return NewCommunitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get a list of the Viva Engage community objects and their properties.
 // returns a CommunityCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

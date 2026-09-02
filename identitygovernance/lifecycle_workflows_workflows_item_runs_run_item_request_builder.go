@@ -71,6 +71,11 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) Get(ctx conte
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) ReprocessedRuns()(*LifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SubjectProcessingResults provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+// returns a *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) SubjectProcessingResults()(*LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 // returns a *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) TaskProcessingResults()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) {

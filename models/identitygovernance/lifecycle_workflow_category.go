@@ -9,10 +9,11 @@ const (
     LEAVER_LIFECYCLEWORKFLOWCATEGORY
     UNKNOWNFUTUREVALUE_LIFECYCLEWORKFLOWCATEGORY
     MOVER_LIFECYCLEWORKFLOWCATEGORY
+    EXTENSIBILITY_LIFECYCLEWORKFLOWCATEGORY
 )
 
 func (i LifecycleWorkflowCategory) String() string {
-    return []string{"joiner", "leaver", "unknownFutureValue", "mover"}[i]
+    return []string{"joiner", "leaver", "unknownFutureValue", "mover", "extensibility"}[i]
 }
 func ParseLifecycleWorkflowCategory(v string) (any, error) {
     result := JOINER_LIFECYCLEWORKFLOWCATEGORY
@@ -25,6 +26,8 @@ func ParseLifecycleWorkflowCategory(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_LIFECYCLEWORKFLOWCATEGORY
         case "mover":
             result = MOVER_LIFECYCLEWORKFLOWCATEGORY
+        case "extensibility":
+            result = EXTENSIBILITY_LIFECYCLEWORKFLOWCATEGORY
         default:
             return nil, nil
     }

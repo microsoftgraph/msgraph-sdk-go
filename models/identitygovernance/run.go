@@ -172,6 +172,22 @@ func (m *Run) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         }
         return nil
     }
+    res["subjectProcessingResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSubjectProcessingResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SubjectProcessingResultable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SubjectProcessingResultable)
+                }
+            }
+            m.SetSubjectProcessingResults(res)
+        }
+        return nil
+    }
     res["successfulUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -313,6 +329,18 @@ func (m *Run) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetSubjectProcessingResults gets the subjectProcessingResults property value. The processing results for each subject in this workflow run.
+// returns a []SubjectProcessingResultable when successful
+func (m *Run) GetSubjectProcessingResults()([]SubjectProcessingResultable) {
+    val, err := m.GetBackingStore().Get("subjectProcessingResults")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SubjectProcessingResultable)
     }
     return nil
 }
@@ -467,6 +495,18 @@ func (m *Run) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
             return err
         }
     }
+    if m.GetSubjectProcessingResults() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjectProcessingResults()))
+        for i, v := range m.GetSubjectProcessingResults() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subjectProcessingResults", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("successfulUsersCount", m.GetSuccessfulUsersCount())
         if err != nil {
@@ -587,6 +627,13 @@ func (m *Run) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
         panic(err)
     }
 }
+// SetSubjectProcessingResults sets the subjectProcessingResults property value. The processing results for each subject in this workflow run.
+func (m *Run) SetSubjectProcessingResults(value []SubjectProcessingResultable)() {
+    err := m.GetBackingStore().Set("subjectProcessingResults", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSuccessfulUsersCount sets the successfulUsersCount property value. The number of successfully completed users in the run.
 func (m *Run) SetSuccessfulUsersCount(value *int32)() {
     err := m.GetBackingStore().Set("successfulUsersCount", value)
@@ -648,6 +695,7 @@ type Runable interface {
     GetReprocessedRuns()([]Runable)
     GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSubjectProcessingResults()([]SubjectProcessingResultable)
     GetSuccessfulUsersCount()(*int32)
     GetTaskProcessingResults()([]TaskProcessingResultable)
     GetTotalTasksCount()(*int32)
@@ -664,6 +712,7 @@ type Runable interface {
     SetReprocessedRuns(value []Runable)()
     SetScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSubjectProcessingResults(value []SubjectProcessingResultable)()
     SetSuccessfulUsersCount(value *int32)()
     SetTaskProcessingResults(value []TaskProcessingResultable)()
     SetTotalTasksCount(value *int32)()
