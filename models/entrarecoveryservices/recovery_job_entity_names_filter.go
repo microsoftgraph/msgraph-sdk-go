@@ -4,84 +4,91 @@
 package entrarecoveryservices
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type RecoveryJobEntityNamesFilter struct {
-    RecoveryJobFilteringCriteriaBase
+	RecoveryJobFilteringCriteriaBase
 }
+
 // NewRecoveryJobEntityNamesFilter instantiates a new RecoveryJobEntityNamesFilter and sets the default values.
-func NewRecoveryJobEntityNamesFilter()(*RecoveryJobEntityNamesFilter) {
-    m := &RecoveryJobEntityNamesFilter{
-        RecoveryJobFilteringCriteriaBase: *NewRecoveryJobFilteringCriteriaBase(),
-    }
-    odataTypeValue := "#microsoft.graph.entraRecoveryServices.recoveryJobEntityNamesFilter"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewRecoveryJobEntityNamesFilter() *RecoveryJobEntityNamesFilter {
+	m := &RecoveryJobEntityNamesFilter{
+		RecoveryJobFilteringCriteriaBase: *NewRecoveryJobFilteringCriteriaBase(),
+	}
+	odataTypeValue := "#microsoft.graph.entraRecoveryServices.recoveryJobEntityNamesFilter"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateRecoveryJobEntityNamesFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRecoveryJobEntityNamesFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRecoveryJobEntityNamesFilter(), nil
+func CreateRecoveryJobEntityNamesFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewRecoveryJobEntityNamesFilter(), nil
 }
+
 // GetEntityTypes gets the entityTypes property value. The list of entity types to include in the recovery job.
 // returns a []ResourceTypeName when successful
-func (m *RecoveryJobEntityNamesFilter) GetEntityTypes()([]ResourceTypeName) {
-    val, err := m.GetBackingStore().Get("entityTypes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ResourceTypeName)
-    }
-    return nil
+func (m *RecoveryJobEntityNamesFilter) GetEntityTypes() []ResourceTypeName {
+	val, err := m.GetBackingStore().Get("entityTypes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ResourceTypeName)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RecoveryJobEntityNamesFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.RecoveryJobFilteringCriteriaBase.GetFieldDeserializers()
-    res["entityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseResourceTypeName)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ResourceTypeName, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*ResourceTypeName))
-                }
-            }
-            m.SetEntityTypes(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *RecoveryJobEntityNamesFilter) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.RecoveryJobFilteringCriteriaBase.GetFieldDeserializers()
+	res["entityTypes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfEnumValues(ParseResourceTypeName)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ResourceTypeName, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*ResourceTypeName))
+				}
+			}
+			m.SetEntityTypes(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *RecoveryJobEntityNamesFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.RecoveryJobFilteringCriteriaBase.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetEntityTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("entityTypes", SerializeResourceTypeName(m.GetEntityTypes()))
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *RecoveryJobEntityNamesFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.RecoveryJobFilteringCriteriaBase.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetEntityTypes() != nil {
+		err = writer.WriteCollectionOfStringValues("entityTypes", SerializeResourceTypeName(m.GetEntityTypes()))
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetEntityTypes sets the entityTypes property value. The list of entity types to include in the recovery job.
-func (m *RecoveryJobEntityNamesFilter) SetEntityTypes(value []ResourceTypeName)() {
-    err := m.GetBackingStore().Set("entityTypes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RecoveryJobEntityNamesFilter) SetEntityTypes(value []ResourceTypeName) {
+	err := m.GetBackingStore().Set("entityTypes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type RecoveryJobEntityNamesFilterable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    RecoveryJobFilteringCriteriaBaseable
-    GetEntityTypes()([]ResourceTypeName)
-    SetEntityTypes(value []ResourceTypeName)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	RecoveryJobFilteringCriteriaBaseable
+	GetEntityTypes() []ResourceTypeName
+	SetEntityTypes(value []ResourceTypeName)
 }

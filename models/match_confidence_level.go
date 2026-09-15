@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type MatchConfidenceLevel int
 
 const (
-    EXACT_MATCHCONFIDENCELEVEL MatchConfidenceLevel = iota
-    RELAXED_MATCHCONFIDENCELEVEL
-    UNKNOWNFUTUREVALUE_MATCHCONFIDENCELEVEL
+	EXACT_MATCHCONFIDENCELEVEL MatchConfidenceLevel = iota
+	RELAXED_MATCHCONFIDENCELEVEL
+	UNKNOWNFUTUREVALUE_MATCHCONFIDENCELEVEL
 )
 
 func (i MatchConfidenceLevel) String() string {
-    return []string{"exact", "relaxed", "unknownFutureValue"}[i]
+	return []string{"exact", "relaxed", "unknownFutureValue"}[i]
 }
+
 func ParseMatchConfidenceLevel(v string) (any, error) {
-    result := EXACT_MATCHCONFIDENCELEVEL
-    switch v {
-        case "exact":
-            result = EXACT_MATCHCONFIDENCELEVEL
-        case "relaxed":
-            result = RELAXED_MATCHCONFIDENCELEVEL
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_MATCHCONFIDENCELEVEL
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := EXACT_MATCHCONFIDENCELEVEL
+	switch v {
+	case "exact":
+		result = EXACT_MATCHCONFIDENCELEVEL
+	case "relaxed":
+		result = RELAXED_MATCHCONFIDENCELEVEL
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_MATCHCONFIDENCELEVEL
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMatchConfidenceLevel(values []MatchConfidenceLevel) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MatchConfidenceLevel) isMultiValue() bool {
-    return false
+	return false
 }

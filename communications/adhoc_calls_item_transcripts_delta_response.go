@@ -4,27 +4,30 @@
 package communications
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use AdhocCallsItemTranscriptsDeltaGetResponseable instead.
 type AdhocCallsItemTranscriptsDeltaResponse struct {
-    AdhocCallsItemTranscriptsDeltaGetResponse
+	AdhocCallsItemTranscriptsDeltaGetResponse
 }
+
 // NewAdhocCallsItemTranscriptsDeltaResponse instantiates a new AdhocCallsItemTranscriptsDeltaResponse and sets the default values.
-func NewAdhocCallsItemTranscriptsDeltaResponse()(*AdhocCallsItemTranscriptsDeltaResponse) {
-    m := &AdhocCallsItemTranscriptsDeltaResponse{
-        AdhocCallsItemTranscriptsDeltaGetResponse: *NewAdhocCallsItemTranscriptsDeltaGetResponse(),
-    }
-    return m
+func NewAdhocCallsItemTranscriptsDeltaResponse() *AdhocCallsItemTranscriptsDeltaResponse {
+	m := &AdhocCallsItemTranscriptsDeltaResponse{
+		AdhocCallsItemTranscriptsDeltaGetResponse: *NewAdhocCallsItemTranscriptsDeltaGetResponse(),
+	}
+	return m
 }
+
 // CreateAdhocCallsItemTranscriptsDeltaResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAdhocCallsItemTranscriptsDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAdhocCallsItemTranscriptsDeltaResponse(), nil
+func CreateAdhocCallsItemTranscriptsDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAdhocCallsItemTranscriptsDeltaResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use AdhocCallsItemTranscriptsDeltaGetResponseable instead.
 type AdhocCallsItemTranscriptsDeltaResponseable interface {
-    AdhocCallsItemTranscriptsDeltaGetResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AdhocCallsItemTranscriptsDeltaGetResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

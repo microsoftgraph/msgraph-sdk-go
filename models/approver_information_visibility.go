@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ApproverInformationVisibility int
 
 const (
-    DEFAULT_APPROVERINFORMATIONVISIBILITY ApproverInformationVisibility = iota
-    NOTVISIBLE_APPROVERINFORMATIONVISIBILITY
-    VISIBLE_APPROVERINFORMATIONVISIBILITY
-    UNKNOWNFUTUREVALUE_APPROVERINFORMATIONVISIBILITY
+	DEFAULT_APPROVERINFORMATIONVISIBILITY ApproverInformationVisibility = iota
+	NOTVISIBLE_APPROVERINFORMATIONVISIBILITY
+	VISIBLE_APPROVERINFORMATIONVISIBILITY
+	UNKNOWNFUTUREVALUE_APPROVERINFORMATIONVISIBILITY
 )
 
 func (i ApproverInformationVisibility) String() string {
-    return []string{"default", "notVisible", "visible", "unknownFutureValue"}[i]
+	return []string{"default", "notVisible", "visible", "unknownFutureValue"}[i]
 }
+
 func ParseApproverInformationVisibility(v string) (any, error) {
-    result := DEFAULT_APPROVERINFORMATIONVISIBILITY
-    switch v {
-        case "default":
-            result = DEFAULT_APPROVERINFORMATIONVISIBILITY
-        case "notVisible":
-            result = NOTVISIBLE_APPROVERINFORMATIONVISIBILITY
-        case "visible":
-            result = VISIBLE_APPROVERINFORMATIONVISIBILITY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_APPROVERINFORMATIONVISIBILITY
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DEFAULT_APPROVERINFORMATIONVISIBILITY
+	switch v {
+	case "default":
+		result = DEFAULT_APPROVERINFORMATIONVISIBILITY
+	case "notVisible":
+		result = NOTVISIBLE_APPROVERINFORMATIONVISIBILITY
+	case "visible":
+		result = VISIBLE_APPROVERINFORMATIONVISIBILITY
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_APPROVERINFORMATIONVISIBILITY
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeApproverInformationVisibility(values []ApproverInformationVisibility) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ApproverInformationVisibility) isMultiValue() bool {
-    return false
+	return false
 }

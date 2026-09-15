@@ -4,41 +4,46 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type CrossTenantCalendarSharingFreeBusyReviewer struct {
-    M365CapabilityBase
+	M365CapabilityBase
 }
+
 // NewCrossTenantCalendarSharingFreeBusyReviewer instantiates a new CrossTenantCalendarSharingFreeBusyReviewer and sets the default values.
-func NewCrossTenantCalendarSharingFreeBusyReviewer()(*CrossTenantCalendarSharingFreeBusyReviewer) {
-    m := &CrossTenantCalendarSharingFreeBusyReviewer{
-        M365CapabilityBase: *NewM365CapabilityBase(),
-    }
-    odataTypeValue := "#microsoft.graph.crossTenantCalendarSharingFreeBusyReviewer"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewCrossTenantCalendarSharingFreeBusyReviewer() *CrossTenantCalendarSharingFreeBusyReviewer {
+	m := &CrossTenantCalendarSharingFreeBusyReviewer{
+		M365CapabilityBase: *NewM365CapabilityBase(),
+	}
+	odataTypeValue := "#microsoft.graph.crossTenantCalendarSharingFreeBusyReviewer"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateCrossTenantCalendarSharingFreeBusyReviewerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCrossTenantCalendarSharingFreeBusyReviewerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCrossTenantCalendarSharingFreeBusyReviewer(), nil
+func CreateCrossTenantCalendarSharingFreeBusyReviewerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCrossTenantCalendarSharingFreeBusyReviewer(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CrossTenantCalendarSharingFreeBusyReviewer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.M365CapabilityBase.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CrossTenantCalendarSharingFreeBusyReviewer) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.M365CapabilityBase.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *CrossTenantCalendarSharingFreeBusyReviewer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.M365CapabilityBase.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *CrossTenantCalendarSharingFreeBusyReviewer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.M365CapabilityBase.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type CrossTenantCalendarSharingFreeBusyReviewerable interface {
-    M365CapabilityBaseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	M365CapabilityBaseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

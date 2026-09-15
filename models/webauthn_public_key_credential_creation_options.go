@@ -4,470 +4,498 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type WebauthnPublicKeyCredentialCreationOptions struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	// Stores model information.
+	backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+
 // NewWebauthnPublicKeyCredentialCreationOptions instantiates a new WebauthnPublicKeyCredentialCreationOptions and sets the default values.
-func NewWebauthnPublicKeyCredentialCreationOptions()(*WebauthnPublicKeyCredentialCreationOptions) {
-    m := &WebauthnPublicKeyCredentialCreationOptions{
-    }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
-    return m
+func NewWebauthnPublicKeyCredentialCreationOptions() *WebauthnPublicKeyCredentialCreationOptions {
+	m := &WebauthnPublicKeyCredentialCreationOptions{}
+	m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance()
+	m.SetAdditionalData(make(map[string]any))
+	return m
 }
+
 // CreateWebauthnPublicKeyCredentialCreationOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateWebauthnPublicKeyCredentialCreationOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewWebauthnPublicKeyCredentialCreationOptions(), nil
+func CreateWebauthnPublicKeyCredentialCreationOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewWebauthnPublicKeyCredentialCreationOptions(), nil
 }
+
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetAdditionalData() map[string]any {
+	val, err := m.backingStore.Get("additionalData")
+	if err != nil {
+		panic(err)
+	}
+	if val == nil {
+		var value = make(map[string]any)
+		m.SetAdditionalData(value)
+	}
+	return val.(map[string]any)
 }
+
 // GetAttestation gets the attestation property value. Specifies the relying party's preference for attestation conveyance.
 // returns a *string when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetAttestation()(*string) {
-    val, err := m.GetBackingStore().Get("attestation")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetAttestation() *string {
+	val, err := m.GetBackingStore().Get("attestation")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetAuthenticatorSelection gets the authenticatorSelection property value. Criteria for selecting an appropriate authenticator for credential creation.
 // returns a WebauthnAuthenticatorSelectionCriteriaable when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetAuthenticatorSelection()(WebauthnAuthenticatorSelectionCriteriaable) {
-    val, err := m.GetBackingStore().Get("authenticatorSelection")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WebauthnAuthenticatorSelectionCriteriaable)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetAuthenticatorSelection() WebauthnAuthenticatorSelectionCriteriaable {
+	val, err := m.GetBackingStore().Get("authenticatorSelection")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(WebauthnAuthenticatorSelectionCriteriaable)
+	}
+	return nil
 }
+
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore {
+	return m.backingStore
 }
+
 // GetChallenge gets the challenge property value. The challenge that the authenticator must sign to prove possession of the credential. This value is Base64URL-encoded without padding.
 // returns a *string when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetChallenge()(*string) {
-    val, err := m.GetBackingStore().Get("challenge")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetChallenge() *string {
+	val, err := m.GetBackingStore().Get("challenge")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetExcludeCredentials gets the excludeCredentials property value. A list of credentials that are already registered for this user, which should be excluded from selection.
 // returns a []WebauthnPublicKeyCredentialDescriptorable when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetExcludeCredentials()([]WebauthnPublicKeyCredentialDescriptorable) {
-    val, err := m.GetBackingStore().Get("excludeCredentials")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]WebauthnPublicKeyCredentialDescriptorable)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetExcludeCredentials() []WebauthnPublicKeyCredentialDescriptorable {
+	val, err := m.GetBackingStore().Get("excludeCredentials")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]WebauthnPublicKeyCredentialDescriptorable)
+	}
+	return nil
 }
+
 // GetExtensions gets the extensions property value. Inputs for requested WebAuthn extensions.
 // returns a WebauthnAuthenticationExtensionsClientInputsable when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetExtensions()(WebauthnAuthenticationExtensionsClientInputsable) {
-    val, err := m.GetBackingStore().Get("extensions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WebauthnAuthenticationExtensionsClientInputsable)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetExtensions() WebauthnAuthenticationExtensionsClientInputsable {
+	val, err := m.GetBackingStore().Get("extensions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(WebauthnAuthenticationExtensionsClientInputsable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attestation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAttestation(val)
-        }
-        return nil
-    }
-    res["authenticatorSelection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWebauthnAuthenticatorSelectionCriteriaFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticatorSelection(val.(WebauthnAuthenticatorSelectionCriteriaable))
-        }
-        return nil
-    }
-    res["challenge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetChallenge(val)
-        }
-        return nil
-    }
-    res["excludeCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWebauthnPublicKeyCredentialDescriptorFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WebauthnPublicKeyCredentialDescriptorable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(WebauthnPublicKeyCredentialDescriptorable)
-                }
-            }
-            m.SetExcludeCredentials(res)
-        }
-        return nil
-    }
-    res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWebauthnAuthenticationExtensionsClientInputsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExtensions(val.(WebauthnAuthenticationExtensionsClientInputsable))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["pubKeyCredParams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWebauthnPublicKeyCredentialParametersFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WebauthnPublicKeyCredentialParametersable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(WebauthnPublicKeyCredentialParametersable)
-                }
-            }
-            m.SetPubKeyCredParams(res)
-        }
-        return nil
-    }
-    res["rp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWebauthnPublicKeyCredentialRpEntityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRp(val.(WebauthnPublicKeyCredentialRpEntityable))
-        }
-        return nil
-    }
-    res["timeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTimeout(val)
-        }
-        return nil
-    }
-    res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWebauthnPublicKeyCredentialUserEntityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUser(val.(WebauthnPublicKeyCredentialUserEntityable))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["attestation"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAttestation(val)
+		}
+		return nil
+	}
+	res["authenticatorSelection"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateWebauthnAuthenticatorSelectionCriteriaFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAuthenticatorSelection(val.(WebauthnAuthenticatorSelectionCriteriaable))
+		}
+		return nil
+	}
+	res["challenge"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetChallenge(val)
+		}
+		return nil
+	}
+	res["excludeCredentials"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateWebauthnPublicKeyCredentialDescriptorFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]WebauthnPublicKeyCredentialDescriptorable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(WebauthnPublicKeyCredentialDescriptorable)
+				}
+			}
+			m.SetExcludeCredentials(res)
+		}
+		return nil
+	}
+	res["extensions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateWebauthnAuthenticationExtensionsClientInputsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetExtensions(val.(WebauthnAuthenticationExtensionsClientInputsable))
+		}
+		return nil
+	}
+	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOdataType(val)
+		}
+		return nil
+	}
+	res["pubKeyCredParams"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateWebauthnPublicKeyCredentialParametersFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]WebauthnPublicKeyCredentialParametersable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(WebauthnPublicKeyCredentialParametersable)
+				}
+			}
+			m.SetPubKeyCredParams(res)
+		}
+		return nil
+	}
+	res["rp"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateWebauthnPublicKeyCredentialRpEntityFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRp(val.(WebauthnPublicKeyCredentialRpEntityable))
+		}
+		return nil
+	}
+	res["timeout"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTimeout(val)
+		}
+		return nil
+	}
+	res["user"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateWebauthnPublicKeyCredentialUserEntityFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUser(val.(WebauthnPublicKeyCredentialUserEntityable))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetOdataType() *string {
+	val, err := m.GetBackingStore().Get("odataType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetPubKeyCredParams gets the pubKeyCredParams property value. The cryptographic parameters that the relying party supports, in order of preference.
 // returns a []WebauthnPublicKeyCredentialParametersable when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetPubKeyCredParams()([]WebauthnPublicKeyCredentialParametersable) {
-    val, err := m.GetBackingStore().Get("pubKeyCredParams")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]WebauthnPublicKeyCredentialParametersable)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetPubKeyCredParams() []WebauthnPublicKeyCredentialParametersable {
+	val, err := m.GetBackingStore().Get("pubKeyCredParams")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]WebauthnPublicKeyCredentialParametersable)
+	}
+	return nil
 }
+
 // GetRp gets the rp property value. Information about the relying party (RP) requesting credential creation.
 // returns a WebauthnPublicKeyCredentialRpEntityable when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetRp()(WebauthnPublicKeyCredentialRpEntityable) {
-    val, err := m.GetBackingStore().Get("rp")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WebauthnPublicKeyCredentialRpEntityable)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetRp() WebauthnPublicKeyCredentialRpEntityable {
+	val, err := m.GetBackingStore().Get("rp")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(WebauthnPublicKeyCredentialRpEntityable)
+	}
+	return nil
 }
+
 // GetTimeout gets the timeout property value. The time, in milliseconds, that the caller is willing to wait for the operation to complete.
 // returns a *int32 when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetTimeout()(*int32) {
-    val, err := m.GetBackingStore().Get("timeout")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetTimeout() *int32 {
+	val, err := m.GetBackingStore().Get("timeout")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetUser gets the user property value. Information about the user account for which the credential is being created.
 // returns a WebauthnPublicKeyCredentialUserEntityable when successful
-func (m *WebauthnPublicKeyCredentialCreationOptions) GetUser()(WebauthnPublicKeyCredentialUserEntityable) {
-    val, err := m.GetBackingStore().Get("user")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WebauthnPublicKeyCredentialUserEntityable)
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) GetUser() WebauthnPublicKeyCredentialUserEntityable {
+	val, err := m.GetBackingStore().Get("user")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(WebauthnPublicKeyCredentialUserEntityable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *WebauthnPublicKeyCredentialCreationOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteStringValue("attestation", m.GetAttestation())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("authenticatorSelection", m.GetAuthenticatorSelection())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("challenge", m.GetChallenge())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetExcludeCredentials() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludeCredentials()))
-        for i, v := range m.GetExcludeCredentials() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("excludeCredentials", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("extensions", m.GetExtensions())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPubKeyCredParams() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPubKeyCredParams()))
-        for i, v := range m.GetPubKeyCredParams() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("pubKeyCredParams", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("rp", m.GetRp())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteInt32Value("timeout", m.GetTimeout())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("user", m.GetUser())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *WebauthnPublicKeyCredentialCreationOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	{
+		err := writer.WriteStringValue("attestation", m.GetAttestation())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("authenticatorSelection", m.GetAuthenticatorSelection())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("challenge", m.GetChallenge())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetExcludeCredentials() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludeCredentials()))
+		for i, v := range m.GetExcludeCredentials() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("excludeCredentials", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("extensions", m.GetExtensions())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetPubKeyCredParams() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPubKeyCredParams()))
+		for i, v := range m.GetPubKeyCredParams() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("pubKeyCredParams", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("rp", m.GetRp())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteInt32Value("timeout", m.GetTimeout())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("user", m.GetUser())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteAdditionalData(m.GetAdditionalData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetAdditionalData(value map[string]any) {
+	err := m.GetBackingStore().Set("additionalData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAttestation sets the attestation property value. Specifies the relying party's preference for attestation conveyance.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetAttestation(value *string)() {
-    err := m.GetBackingStore().Set("attestation", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetAttestation(value *string) {
+	err := m.GetBackingStore().Set("attestation", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAuthenticatorSelection sets the authenticatorSelection property value. Criteria for selecting an appropriate authenticator for credential creation.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetAuthenticatorSelection(value WebauthnAuthenticatorSelectionCriteriaable)() {
-    err := m.GetBackingStore().Set("authenticatorSelection", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetAuthenticatorSelection(value WebauthnAuthenticatorSelectionCriteriaable) {
+	err := m.GetBackingStore().Set("authenticatorSelection", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+	m.backingStore = value
 }
+
 // SetChallenge sets the challenge property value. The challenge that the authenticator must sign to prove possession of the credential. This value is Base64URL-encoded without padding.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetChallenge(value *string)() {
-    err := m.GetBackingStore().Set("challenge", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetChallenge(value *string) {
+	err := m.GetBackingStore().Set("challenge", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetExcludeCredentials sets the excludeCredentials property value. A list of credentials that are already registered for this user, which should be excluded from selection.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetExcludeCredentials(value []WebauthnPublicKeyCredentialDescriptorable)() {
-    err := m.GetBackingStore().Set("excludeCredentials", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetExcludeCredentials(value []WebauthnPublicKeyCredentialDescriptorable) {
+	err := m.GetBackingStore().Set("excludeCredentials", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetExtensions sets the extensions property value. Inputs for requested WebAuthn extensions.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetExtensions(value WebauthnAuthenticationExtensionsClientInputsable)() {
-    err := m.GetBackingStore().Set("extensions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetExtensions(value WebauthnAuthenticationExtensionsClientInputsable) {
+	err := m.GetBackingStore().Set("extensions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetOdataType(value *string) {
+	err := m.GetBackingStore().Set("odataType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPubKeyCredParams sets the pubKeyCredParams property value. The cryptographic parameters that the relying party supports, in order of preference.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetPubKeyCredParams(value []WebauthnPublicKeyCredentialParametersable)() {
-    err := m.GetBackingStore().Set("pubKeyCredParams", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetPubKeyCredParams(value []WebauthnPublicKeyCredentialParametersable) {
+	err := m.GetBackingStore().Set("pubKeyCredParams", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRp sets the rp property value. Information about the relying party (RP) requesting credential creation.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetRp(value WebauthnPublicKeyCredentialRpEntityable)() {
-    err := m.GetBackingStore().Set("rp", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetRp(value WebauthnPublicKeyCredentialRpEntityable) {
+	err := m.GetBackingStore().Set("rp", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTimeout sets the timeout property value. The time, in milliseconds, that the caller is willing to wait for the operation to complete.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetTimeout(value *int32)() {
-    err := m.GetBackingStore().Set("timeout", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetTimeout(value *int32) {
+	err := m.GetBackingStore().Set("timeout", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetUser sets the user property value. Information about the user account for which the credential is being created.
-func (m *WebauthnPublicKeyCredentialCreationOptions) SetUser(value WebauthnPublicKeyCredentialUserEntityable)() {
-    err := m.GetBackingStore().Set("user", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WebauthnPublicKeyCredentialCreationOptions) SetUser(value WebauthnPublicKeyCredentialUserEntityable) {
+	err := m.GetBackingStore().Set("user", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type WebauthnPublicKeyCredentialCreationOptionsable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAttestation()(*string)
-    GetAuthenticatorSelection()(WebauthnAuthenticatorSelectionCriteriaable)
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetChallenge()(*string)
-    GetExcludeCredentials()([]WebauthnPublicKeyCredentialDescriptorable)
-    GetExtensions()(WebauthnAuthenticationExtensionsClientInputsable)
-    GetOdataType()(*string)
-    GetPubKeyCredParams()([]WebauthnPublicKeyCredentialParametersable)
-    GetRp()(WebauthnPublicKeyCredentialRpEntityable)
-    GetTimeout()(*int32)
-    GetUser()(WebauthnPublicKeyCredentialUserEntityable)
-    SetAttestation(value *string)()
-    SetAuthenticatorSelection(value WebauthnAuthenticatorSelectionCriteriaable)()
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetChallenge(value *string)()
-    SetExcludeCredentials(value []WebauthnPublicKeyCredentialDescriptorable)()
-    SetExtensions(value WebauthnAuthenticationExtensionsClientInputsable)()
-    SetOdataType(value *string)()
-    SetPubKeyCredParams(value []WebauthnPublicKeyCredentialParametersable)()
-    SetRp(value WebauthnPublicKeyCredentialRpEntityable)()
-    SetTimeout(value *int32)()
-    SetUser(value WebauthnPublicKeyCredentialUserEntityable)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAttestation() *string
+	GetAuthenticatorSelection() WebauthnAuthenticatorSelectionCriteriaable
+	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetChallenge() *string
+	GetExcludeCredentials() []WebauthnPublicKeyCredentialDescriptorable
+	GetExtensions() WebauthnAuthenticationExtensionsClientInputsable
+	GetOdataType() *string
+	GetPubKeyCredParams() []WebauthnPublicKeyCredentialParametersable
+	GetRp() WebauthnPublicKeyCredentialRpEntityable
+	GetTimeout() *int32
+	GetUser() WebauthnPublicKeyCredentialUserEntityable
+	SetAttestation(value *string)
+	SetAuthenticatorSelection(value WebauthnAuthenticatorSelectionCriteriaable)
+	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetChallenge(value *string)
+	SetExcludeCredentials(value []WebauthnPublicKeyCredentialDescriptorable)
+	SetExtensions(value WebauthnAuthenticationExtensionsClientInputsable)
+	SetOdataType(value *string)
+	SetPubKeyCredParams(value []WebauthnPublicKeyCredentialParametersable)
+	SetRp(value WebauthnPublicKeyCredentialRpEntityable)
+	SetTimeout(value *int32)
+	SetUser(value WebauthnPublicKeyCredentialUserEntityable)
 }

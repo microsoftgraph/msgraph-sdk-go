@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type BrowseSessionStatus int
 
 const (
-    CREATING_BROWSESESSIONSTATUS BrowseSessionStatus = iota
-    CREATED_BROWSESESSIONSTATUS
-    FAILED_BROWSESESSIONSTATUS
-    UNKNOWNFUTUREVALUE_BROWSESESSIONSTATUS
+	CREATING_BROWSESESSIONSTATUS BrowseSessionStatus = iota
+	CREATED_BROWSESESSIONSTATUS
+	FAILED_BROWSESESSIONSTATUS
+	UNKNOWNFUTUREVALUE_BROWSESESSIONSTATUS
 )
 
 func (i BrowseSessionStatus) String() string {
-    return []string{"creating", "created", "failed", "unknownFutureValue"}[i]
+	return []string{"creating", "created", "failed", "unknownFutureValue"}[i]
 }
+
 func ParseBrowseSessionStatus(v string) (any, error) {
-    result := CREATING_BROWSESESSIONSTATUS
-    switch v {
-        case "creating":
-            result = CREATING_BROWSESESSIONSTATUS
-        case "created":
-            result = CREATED_BROWSESESSIONSTATUS
-        case "failed":
-            result = FAILED_BROWSESESSIONSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_BROWSESESSIONSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CREATING_BROWSESESSIONSTATUS
+	switch v {
+	case "creating":
+		result = CREATING_BROWSESESSIONSTATUS
+	case "created":
+		result = CREATED_BROWSESESSIONSTATUS
+	case "failed":
+		result = FAILED_BROWSESESSIONSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_BROWSESESSIONSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeBrowseSessionStatus(values []BrowseSessionStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i BrowseSessionStatus) isMultiValue() bool {
-    return false
+	return false
 }

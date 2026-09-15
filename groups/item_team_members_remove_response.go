@@ -4,27 +4,30 @@
 package groups
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemTeamMembersRemovePostResponseable instead.
 type ItemTeamMembersRemoveResponse struct {
-    ItemTeamMembersRemovePostResponse
+	ItemTeamMembersRemovePostResponse
 }
+
 // NewItemTeamMembersRemoveResponse instantiates a new ItemTeamMembersRemoveResponse and sets the default values.
-func NewItemTeamMembersRemoveResponse()(*ItemTeamMembersRemoveResponse) {
-    m := &ItemTeamMembersRemoveResponse{
-        ItemTeamMembersRemovePostResponse: *NewItemTeamMembersRemovePostResponse(),
-    }
-    return m
+func NewItemTeamMembersRemoveResponse() *ItemTeamMembersRemoveResponse {
+	m := &ItemTeamMembersRemoveResponse{
+		ItemTeamMembersRemovePostResponse: *NewItemTeamMembersRemovePostResponse(),
+	}
+	return m
 }
+
 // CreateItemTeamMembersRemoveResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemTeamMembersRemoveResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemTeamMembersRemoveResponse(), nil
+func CreateItemTeamMembersRemoveResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemTeamMembersRemoveResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemTeamMembersRemovePostResponseable instead.
 type ItemTeamMembersRemoveResponseable interface {
-    ItemTeamMembersRemovePostResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemTeamMembersRemovePostResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -4,42 +4,47 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // VivaGlintSupportAccessAuditRecord audit data for Viva Glint Support Access events.
 type VivaGlintSupportAccessAuditRecord struct {
-    AuditData
+	AuditData
 }
+
 // NewVivaGlintSupportAccessAuditRecord instantiates a new VivaGlintSupportAccessAuditRecord and sets the default values.
-func NewVivaGlintSupportAccessAuditRecord()(*VivaGlintSupportAccessAuditRecord) {
-    m := &VivaGlintSupportAccessAuditRecord{
-        AuditData: *NewAuditData(),
-    }
-    odataTypeValue := "#microsoft.graph.security.vivaGlintSupportAccessAuditRecord"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewVivaGlintSupportAccessAuditRecord() *VivaGlintSupportAccessAuditRecord {
+	m := &VivaGlintSupportAccessAuditRecord{
+		AuditData: *NewAuditData(),
+	}
+	odataTypeValue := "#microsoft.graph.security.vivaGlintSupportAccessAuditRecord"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateVivaGlintSupportAccessAuditRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateVivaGlintSupportAccessAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewVivaGlintSupportAccessAuditRecord(), nil
+func CreateVivaGlintSupportAccessAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewVivaGlintSupportAccessAuditRecord(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *VivaGlintSupportAccessAuditRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.AuditData.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *VivaGlintSupportAccessAuditRecord) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.AuditData.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *VivaGlintSupportAccessAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.AuditData.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *VivaGlintSupportAccessAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.AuditData.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type VivaGlintSupportAccessAuditRecordable interface {
-    AuditDataable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AuditDataable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

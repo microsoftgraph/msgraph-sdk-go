@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type EducationSpeechType int
 
 const (
-    INFORMATIVE_EDUCATIONSPEECHTYPE EducationSpeechType = iota
-    PERSONAL_EDUCATIONSPEECHTYPE
-    PERSUASIVE_EDUCATIONSPEECHTYPE
-    UNKNOWNFUTUREVALUE_EDUCATIONSPEECHTYPE
+	INFORMATIVE_EDUCATIONSPEECHTYPE EducationSpeechType = iota
+	PERSONAL_EDUCATIONSPEECHTYPE
+	PERSUASIVE_EDUCATIONSPEECHTYPE
+	UNKNOWNFUTUREVALUE_EDUCATIONSPEECHTYPE
 )
 
 func (i EducationSpeechType) String() string {
-    return []string{"informative", "personal", "persuasive", "unknownFutureValue"}[i]
+	return []string{"informative", "personal", "persuasive", "unknownFutureValue"}[i]
 }
+
 func ParseEducationSpeechType(v string) (any, error) {
-    result := INFORMATIVE_EDUCATIONSPEECHTYPE
-    switch v {
-        case "informative":
-            result = INFORMATIVE_EDUCATIONSPEECHTYPE
-        case "personal":
-            result = PERSONAL_EDUCATIONSPEECHTYPE
-        case "persuasive":
-            result = PERSUASIVE_EDUCATIONSPEECHTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_EDUCATIONSPEECHTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := INFORMATIVE_EDUCATIONSPEECHTYPE
+	switch v {
+	case "informative":
+		result = INFORMATIVE_EDUCATIONSPEECHTYPE
+	case "personal":
+		result = PERSONAL_EDUCATIONSPEECHTYPE
+	case "persuasive":
+		result = PERSUASIVE_EDUCATIONSPEECHTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_EDUCATIONSPEECHTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeEducationSpeechType(values []EducationSpeechType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i EducationSpeechType) isMultiValue() bool {
-    return false
+	return false
 }

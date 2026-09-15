@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package identitygovernance
+
 type MatchMode int
 
 const (
-    ANY_MATCHMODE MatchMode = iota
-    ALL_MATCHMODE
-    UNKNOWNFUTUREVALUE_MATCHMODE
+	ANY_MATCHMODE MatchMode = iota
+	ALL_MATCHMODE
+	UNKNOWNFUTUREVALUE_MATCHMODE
 )
 
 func (i MatchMode) String() string {
-    return []string{"any", "all", "unknownFutureValue"}[i]
+	return []string{"any", "all", "unknownFutureValue"}[i]
 }
+
 func ParseMatchMode(v string) (any, error) {
-    result := ANY_MATCHMODE
-    switch v {
-        case "any":
-            result = ANY_MATCHMODE
-        case "all":
-            result = ALL_MATCHMODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_MATCHMODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ANY_MATCHMODE
+	switch v {
+	case "any":
+		result = ANY_MATCHMODE
+	case "all":
+		result = ALL_MATCHMODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_MATCHMODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMatchMode(values []MatchMode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MatchMode) isMultiValue() bool {
-    return false
+	return false
 }

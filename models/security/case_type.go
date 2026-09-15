@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package security
+
 type CaseType int
 
 const (
-    STANDARD_CASETYPE CaseType = iota
-    PREMIUM_CASETYPE
-    UNKNOWNFUTUREVALUE_CASETYPE
+	STANDARD_CASETYPE CaseType = iota
+	PREMIUM_CASETYPE
+	UNKNOWNFUTUREVALUE_CASETYPE
 )
 
 func (i CaseType) String() string {
-    return []string{"standard", "premium", "unknownFutureValue"}[i]
+	return []string{"standard", "premium", "unknownFutureValue"}[i]
 }
+
 func ParseCaseType(v string) (any, error) {
-    result := STANDARD_CASETYPE
-    switch v {
-        case "standard":
-            result = STANDARD_CASETYPE
-        case "premium":
-            result = PREMIUM_CASETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CASETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := STANDARD_CASETYPE
+	switch v {
+	case "standard":
+		result = STANDARD_CASETYPE
+	case "premium":
+		result = PREMIUM_CASETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CASETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCaseType(values []CaseType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CaseType) isMultiValue() bool {
-    return false
+	return false
 }

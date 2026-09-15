@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type NotifyMembers int
 
 const (
-    ALL_NOTIFYMEMBERS NotifyMembers = iota
-    ALLOWSELECTED_NOTIFYMEMBERS
-    BLOCKSELECTED_NOTIFYMEMBERS
-    UNKNOWNFUTUREVALUE_NOTIFYMEMBERS
+	ALL_NOTIFYMEMBERS NotifyMembers = iota
+	ALLOWSELECTED_NOTIFYMEMBERS
+	BLOCKSELECTED_NOTIFYMEMBERS
+	UNKNOWNFUTUREVALUE_NOTIFYMEMBERS
 )
 
 func (i NotifyMembers) String() string {
-    return []string{"all", "allowSelected", "blockSelected", "unknownFutureValue"}[i]
+	return []string{"all", "allowSelected", "blockSelected", "unknownFutureValue"}[i]
 }
+
 func ParseNotifyMembers(v string) (any, error) {
-    result := ALL_NOTIFYMEMBERS
-    switch v {
-        case "all":
-            result = ALL_NOTIFYMEMBERS
-        case "allowSelected":
-            result = ALLOWSELECTED_NOTIFYMEMBERS
-        case "blockSelected":
-            result = BLOCKSELECTED_NOTIFYMEMBERS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_NOTIFYMEMBERS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALL_NOTIFYMEMBERS
+	switch v {
+	case "all":
+		result = ALL_NOTIFYMEMBERS
+	case "allowSelected":
+		result = ALLOWSELECTED_NOTIFYMEMBERS
+	case "blockSelected":
+		result = BLOCKSELECTED_NOTIFYMEMBERS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_NOTIFYMEMBERS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeNotifyMembers(values []NotifyMembers) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i NotifyMembers) isMultiValue() bool {
-    return false
+	return false
 }

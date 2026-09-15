@@ -4,165 +4,216 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type AgentIdentity struct {
-    ServicePrincipal
+	ServicePrincipal
 }
+
 // NewAgentIdentity instantiates a new AgentIdentity and sets the default values.
-func NewAgentIdentity()(*AgentIdentity) {
-    m := &AgentIdentity{
-        ServicePrincipal: *NewServicePrincipal(),
-    }
-    odataTypeValue := "#microsoft.graph.agentIdentity"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewAgentIdentity() *AgentIdentity {
+	m := &AgentIdentity{
+		ServicePrincipal: *NewServicePrincipal(),
+	}
+	odataTypeValue := "#microsoft.graph.agentIdentity"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateAgentIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAgentIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAgentIdentity(), nil
+func CreateAgentIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAgentIdentity(), nil
 }
+
 // GetAgentIdentityBlueprintId gets the agentIdentityBlueprintId property value. The appId of the agent identity blueprint that defines the configuration for this agent identity.
 // returns a *string when successful
-func (m *AgentIdentity) GetAgentIdentityBlueprintId()(*string) {
-    val, err := m.GetBackingStore().Get("agentIdentityBlueprintId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AgentIdentity) GetAgentIdentityBlueprintId() *string {
+	val, err := m.GetBackingStore().Get("agentIdentityBlueprintId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.
 // returns a *Time when successful
-func (m *AgentIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("createdDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *AgentIdentity) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("createdDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AgentIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ServicePrincipal.GetFieldDeserializers()
-    res["agentIdentityBlueprintId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAgentIdentityBlueprintId(val)
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObjectable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(DirectoryObjectable)
-                }
-            }
-            m.SetSponsors(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AgentIdentity) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.ServicePrincipal.GetFieldDeserializers()
+	res["agentIdentityBlueprintId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAgentIdentityBlueprintId(val)
+		}
+		return nil
+	}
+	res["createdDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedDateTime(val)
+		}
+		return nil
+	}
+	res["managerApplications"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("uuid")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+				}
+			}
+			m.SetManagerApplications(res)
+		}
+		return nil
+	}
+	res["sponsors"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]DirectoryObjectable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(DirectoryObjectable)
+				}
+			}
+			m.SetSponsors(res)
+		}
+		return nil
+	}
+	return res
 }
+
+// GetManagerApplications gets the managerApplications property value. The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select.
+// returns a []UUID when successful
+func (m *AgentIdentity) GetManagerApplications() []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID {
+	val, err := m.GetBackingStore().Get("managerApplications")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+	}
+	return nil
+}
+
 // GetSponsors gets the sponsors property value. The sponsors for this agent identity.
 // returns a []DirectoryObjectable when successful
-func (m *AgentIdentity) GetSponsors()([]DirectoryObjectable) {
-    val, err := m.GetBackingStore().Get("sponsors")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]DirectoryObjectable)
-    }
-    return nil
+func (m *AgentIdentity) GetSponsors() []DirectoryObjectable {
+	val, err := m.GetBackingStore().Get("sponsors")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]DirectoryObjectable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AgentIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ServicePrincipal.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("agentIdentityBlueprintId", m.GetAgentIdentityBlueprintId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSponsors() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
-        for i, v := range m.GetSponsors() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("sponsors", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AgentIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.ServicePrincipal.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("agentIdentityBlueprintId", m.GetAgentIdentityBlueprintId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSponsors() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
+		for i, v := range m.GetSponsors() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("sponsors", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAgentIdentityBlueprintId sets the agentIdentityBlueprintId property value. The appId of the agent identity blueprint that defines the configuration for this agent identity.
-func (m *AgentIdentity) SetAgentIdentityBlueprintId(value *string)() {
-    err := m.GetBackingStore().Set("agentIdentityBlueprintId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AgentIdentity) SetAgentIdentityBlueprintId(value *string) {
+	err := m.GetBackingStore().Set("agentIdentityBlueprintId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.
-func (m *AgentIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("createdDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AgentIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("createdDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
+// SetManagerApplications sets the managerApplications property value. The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select.
+func (m *AgentIdentity) SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+	err := m.GetBackingStore().Set("managerApplications", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetSponsors sets the sponsors property value. The sponsors for this agent identity.
-func (m *AgentIdentity) SetSponsors(value []DirectoryObjectable)() {
-    err := m.GetBackingStore().Set("sponsors", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AgentIdentity) SetSponsors(value []DirectoryObjectable) {
+	err := m.GetBackingStore().Set("sponsors", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AgentIdentityable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    ServicePrincipalable
-    GetAgentIdentityBlueprintId()(*string)
-    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSponsors()([]DirectoryObjectable)
-    SetAgentIdentityBlueprintId(value *string)()
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSponsors(value []DirectoryObjectable)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ServicePrincipalable
+	GetAgentIdentityBlueprintId() *string
+	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetManagerApplications() []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
+	GetSponsors() []DirectoryObjectable
+	SetAgentIdentityBlueprintId(value *string)
+	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+	SetSponsors(value []DirectoryObjectable)
 }

@@ -4,48 +4,55 @@
 package admin
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
 // ConfigurationManagementRequestBuilder builds and executes requests for operations under \admin\configurationManagement
 type ConfigurationManagementRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // ConfigurationDrifts provides operations to manage the configurationDrifts property of the microsoft.graph.configurationManagement entity.
 // returns a *ConfigurationManagementConfigurationDriftsRequestBuilder when successful
-func (m *ConfigurationManagementRequestBuilder) ConfigurationDrifts()(*ConfigurationManagementConfigurationDriftsRequestBuilder) {
-    return NewConfigurationManagementConfigurationDriftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ConfigurationManagementRequestBuilder) ConfigurationDrifts() *ConfigurationManagementConfigurationDriftsRequestBuilder {
+	return NewConfigurationManagementConfigurationDriftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // ConfigurationMonitoringResults provides operations to manage the configurationMonitoringResults property of the microsoft.graph.configurationManagement entity.
 // returns a *ConfigurationManagementConfigurationMonitoringResultsRequestBuilder when successful
-func (m *ConfigurationManagementRequestBuilder) ConfigurationMonitoringResults()(*ConfigurationManagementConfigurationMonitoringResultsRequestBuilder) {
-    return NewConfigurationManagementConfigurationMonitoringResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ConfigurationManagementRequestBuilder) ConfigurationMonitoringResults() *ConfigurationManagementConfigurationMonitoringResultsRequestBuilder {
+	return NewConfigurationManagementConfigurationMonitoringResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // ConfigurationMonitors provides operations to manage the configurationMonitors property of the microsoft.graph.configurationManagement entity.
 // returns a *ConfigurationManagementConfigurationMonitorsRequestBuilder when successful
-func (m *ConfigurationManagementRequestBuilder) ConfigurationMonitors()(*ConfigurationManagementConfigurationMonitorsRequestBuilder) {
-    return NewConfigurationManagementConfigurationMonitorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ConfigurationManagementRequestBuilder) ConfigurationMonitors() *ConfigurationManagementConfigurationMonitorsRequestBuilder {
+	return NewConfigurationManagementConfigurationMonitorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // ConfigurationSnapshotJobs provides operations to manage the configurationSnapshotJobs property of the microsoft.graph.configurationManagement entity.
 // returns a *ConfigurationManagementConfigurationSnapshotJobsRequestBuilder when successful
-func (m *ConfigurationManagementRequestBuilder) ConfigurationSnapshotJobs()(*ConfigurationManagementConfigurationSnapshotJobsRequestBuilder) {
-    return NewConfigurationManagementConfigurationSnapshotJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ConfigurationManagementRequestBuilder) ConfigurationSnapshotJobs() *ConfigurationManagementConfigurationSnapshotJobsRequestBuilder {
+	return NewConfigurationManagementConfigurationSnapshotJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // ConfigurationSnapshots provides operations to manage the configurationSnapshots property of the microsoft.graph.configurationManagement entity.
 // returns a *ConfigurationManagementConfigurationSnapshotsRequestBuilder when successful
-func (m *ConfigurationManagementRequestBuilder) ConfigurationSnapshots()(*ConfigurationManagementConfigurationSnapshotsRequestBuilder) {
-    return NewConfigurationManagementConfigurationSnapshotsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ConfigurationManagementRequestBuilder) ConfigurationSnapshots() *ConfigurationManagementConfigurationSnapshotsRequestBuilder {
+	return NewConfigurationManagementConfigurationSnapshotsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // NewConfigurationManagementRequestBuilderInternal instantiates a new ConfigurationManagementRequestBuilder and sets the default values.
-func NewConfigurationManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementRequestBuilder) {
-    m := &ConfigurationManagementRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement", pathParameters),
-    }
-    return m
+func NewConfigurationManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *ConfigurationManagementRequestBuilder {
+	m := &ConfigurationManagementRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/configurationManagement", pathParameters),
+	}
+	return m
 }
+
 // NewConfigurationManagementRequestBuilder instantiates a new ConfigurationManagementRequestBuilder and sets the default values.
-func NewConfigurationManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewConfigurationManagementRequestBuilderInternal(urlParams, requestAdapter)
+func NewConfigurationManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *ConfigurationManagementRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewConfigurationManagementRequestBuilderInternal(urlParams, requestAdapter)
 }

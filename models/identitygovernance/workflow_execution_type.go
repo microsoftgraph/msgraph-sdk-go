@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package identitygovernance
+
 type WorkflowExecutionType int
 
 const (
-    SCHEDULED_WORKFLOWEXECUTIONTYPE WorkflowExecutionType = iota
-    ONDEMAND_WORKFLOWEXECUTIONTYPE
-    UNKNOWNFUTUREVALUE_WORKFLOWEXECUTIONTYPE
-    ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
-    PREVIEW_WORKFLOWEXECUTIONTYPE
-    EXTENSIBILITYONDEMAND_WORKFLOWEXECUTIONTYPE
+	SCHEDULED_WORKFLOWEXECUTIONTYPE WorkflowExecutionType = iota
+	ONDEMAND_WORKFLOWEXECUTIONTYPE
+	UNKNOWNFUTUREVALUE_WORKFLOWEXECUTIONTYPE
+	ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
+	PREVIEW_WORKFLOWEXECUTIONTYPE
+	EXTENSIBILITYONDEMAND_WORKFLOWEXECUTIONTYPE
 )
 
 func (i WorkflowExecutionType) String() string {
-    return []string{"scheduled", "onDemand", "unknownFutureValue", "activatedWithScope", "preview", "extensibilityOnDemand"}[i]
+	return []string{"scheduled", "onDemand", "unknownFutureValue", "activatedWithScope", "preview", "extensibilityOnDemand"}[i]
 }
+
 func ParseWorkflowExecutionType(v string) (any, error) {
-    result := SCHEDULED_WORKFLOWEXECUTIONTYPE
-    switch v {
-        case "scheduled":
-            result = SCHEDULED_WORKFLOWEXECUTIONTYPE
-        case "onDemand":
-            result = ONDEMAND_WORKFLOWEXECUTIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WORKFLOWEXECUTIONTYPE
-        case "activatedWithScope":
-            result = ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
-        case "preview":
-            result = PREVIEW_WORKFLOWEXECUTIONTYPE
-        case "extensibilityOnDemand":
-            result = EXTENSIBILITYONDEMAND_WORKFLOWEXECUTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := SCHEDULED_WORKFLOWEXECUTIONTYPE
+	switch v {
+	case "scheduled":
+		result = SCHEDULED_WORKFLOWEXECUTIONTYPE
+	case "onDemand":
+		result = ONDEMAND_WORKFLOWEXECUTIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WORKFLOWEXECUTIONTYPE
+	case "activatedWithScope":
+		result = ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
+	case "preview":
+		result = PREVIEW_WORKFLOWEXECUTIONTYPE
+	case "extensibilityOnDemand":
+		result = EXTENSIBILITYONDEMAND_WORKFLOWEXECUTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWorkflowExecutionType(values []WorkflowExecutionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WorkflowExecutionType) isMultiValue() bool {
-    return false
+	return false
 }
