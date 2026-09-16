@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type WebApplicationFirewallDnsRecordType int
 
 const (
-    CNAME_WEBAPPLICATIONFIREWALLDNSRECORDTYPE WebApplicationFirewallDnsRecordType = iota
-    UNKNOWNFUTUREVALUE_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
+	CNAME_WEBAPPLICATIONFIREWALLDNSRECORDTYPE WebApplicationFirewallDnsRecordType = iota
+	UNKNOWNFUTUREVALUE_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
 )
 
 func (i WebApplicationFirewallDnsRecordType) String() string {
-    return []string{"cname", "unknownFutureValue"}[i]
+	return []string{"cname", "unknownFutureValue"}[i]
 }
+
 func ParseWebApplicationFirewallDnsRecordType(v string) (any, error) {
-    result := CNAME_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
-    switch v {
-        case "cname":
-            result = CNAME_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CNAME_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
+	switch v {
+	case "cname":
+		result = CNAME_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WEBAPPLICATIONFIREWALLDNSRECORDTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWebApplicationFirewallDnsRecordType(values []WebApplicationFirewallDnsRecordType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WebApplicationFirewallDnsRecordType) isMultiValue() bool {
-    return false
+	return false
 }

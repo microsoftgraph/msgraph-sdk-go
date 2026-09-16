@@ -2,53 +2,58 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 import (
-    "math"
-    "strings"
+	"math"
+	"strings"
 )
+
 type PasskeyTypes int
 
 const (
-    DEVICEBOUND_PASSKEYTYPES = 1
-    SYNCED_PASSKEYTYPES = 2
-    UNKNOWNFUTUREVALUE_PASSKEYTYPES = 4
+	DEVICEBOUND_PASSKEYTYPES        = 1
+	SYNCED_PASSKEYTYPES             = 2
+	UNKNOWNFUTUREVALUE_PASSKEYTYPES = 4
 )
 
 func (i PasskeyTypes) String() string {
-    var values []string
-    options := []string{"deviceBound", "synced", "unknownFutureValue"}
-    for p := 0; p < 3; p++ {
-        mantis := PasskeyTypes(int(math.Pow(2, float64(p))))
-        if i&mantis == mantis {
-            values = append(values, options[p])
-        }
-    }
-    return strings.Join(values, ",")
+	var values []string
+	options := []string{"deviceBound", "synced", "unknownFutureValue"}
+	for p := 0; p < 3; p++ {
+		mantis := PasskeyTypes(int(math.Pow(2, float64(p))))
+		if i&mantis == mantis {
+			values = append(values, options[p])
+		}
+	}
+	return strings.Join(values, ",")
 }
+
 func ParsePasskeyTypes(v string) (any, error) {
-    var result PasskeyTypes
-    values := strings.Split(v, ",")
-    for _, str := range values {
-        switch str {
-            case "deviceBound":
-                result |= DEVICEBOUND_PASSKEYTYPES
-            case "synced":
-                result |= SYNCED_PASSKEYTYPES
-            case "unknownFutureValue":
-                result |= UNKNOWNFUTUREVALUE_PASSKEYTYPES
-            default:
-                return nil, nil
-        }
-    }
-    return &result, nil
+	var result PasskeyTypes
+	values := strings.Split(v, ",")
+	for _, str := range values {
+		switch str {
+		case "deviceBound":
+			result |= DEVICEBOUND_PASSKEYTYPES
+		case "synced":
+			result |= SYNCED_PASSKEYTYPES
+		case "unknownFutureValue":
+			result |= UNKNOWNFUTUREVALUE_PASSKEYTYPES
+		default:
+			return nil, nil
+		}
+	}
+	return &result, nil
 }
+
 func SerializePasskeyTypes(values []PasskeyTypes) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PasskeyTypes) isMultiValue() bool {
-    return true
+	return true
 }

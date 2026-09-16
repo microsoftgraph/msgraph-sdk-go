@@ -2,39 +2,43 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type MonitorStatus int
 
 const (
-    ACTIVE_MONITORSTATUS MonitorStatus = iota
-    INACTIVE_MONITORSTATUS
-    // A marker value for members added after the release of this API.
-    UNKNOWNFUTUREVALUE_MONITORSTATUS
+	ACTIVE_MONITORSTATUS MonitorStatus = iota
+	INACTIVE_MONITORSTATUS
+	// A marker value for members added after the release of this API.
+	UNKNOWNFUTUREVALUE_MONITORSTATUS
 )
 
 func (i MonitorStatus) String() string {
-    return []string{"active", "inactive", "unknownFutureValue"}[i]
+	return []string{"active", "inactive", "unknownFutureValue"}[i]
 }
+
 func ParseMonitorStatus(v string) (any, error) {
-    result := ACTIVE_MONITORSTATUS
-    switch v {
-        case "active":
-            result = ACTIVE_MONITORSTATUS
-        case "inactive":
-            result = INACTIVE_MONITORSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_MONITORSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ACTIVE_MONITORSTATUS
+	switch v {
+	case "active":
+		result = ACTIVE_MONITORSTATUS
+	case "inactive":
+		result = INACTIVE_MONITORSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_MONITORSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMonitorStatus(values []MonitorStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MonitorStatus) isMultiValue() bool {
-    return false
+	return false
 }

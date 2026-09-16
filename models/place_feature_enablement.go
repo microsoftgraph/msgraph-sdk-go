@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PlaceFeatureEnablement int
 
 const (
-    UNKNOWN_PLACEFEATUREENABLEMENT PlaceFeatureEnablement = iota
-    ENABLED_PLACEFEATUREENABLEMENT
-    DISABLED_PLACEFEATUREENABLEMENT
-    UNKNOWNFUTUREVALUE_PLACEFEATUREENABLEMENT
+	UNKNOWN_PLACEFEATUREENABLEMENT PlaceFeatureEnablement = iota
+	ENABLED_PLACEFEATUREENABLEMENT
+	DISABLED_PLACEFEATUREENABLEMENT
+	UNKNOWNFUTUREVALUE_PLACEFEATUREENABLEMENT
 )
 
 func (i PlaceFeatureEnablement) String() string {
-    return []string{"unknown", "enabled", "disabled", "unknownFutureValue"}[i]
+	return []string{"unknown", "enabled", "disabled", "unknownFutureValue"}[i]
 }
+
 func ParsePlaceFeatureEnablement(v string) (any, error) {
-    result := UNKNOWN_PLACEFEATUREENABLEMENT
-    switch v {
-        case "unknown":
-            result = UNKNOWN_PLACEFEATUREENABLEMENT
-        case "enabled":
-            result = ENABLED_PLACEFEATUREENABLEMENT
-        case "disabled":
-            result = DISABLED_PLACEFEATUREENABLEMENT
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLACEFEATUREENABLEMENT
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_PLACEFEATUREENABLEMENT
+	switch v {
+	case "unknown":
+		result = UNKNOWN_PLACEFEATUREENABLEMENT
+	case "enabled":
+		result = ENABLED_PLACEFEATUREENABLEMENT
+	case "disabled":
+		result = DISABLED_PLACEFEATUREENABLEMENT
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLACEFEATUREENABLEMENT
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePlaceFeatureEnablement(values []PlaceFeatureEnablement) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PlaceFeatureEnablement) isMultiValue() bool {
-    return false
+	return false
 }

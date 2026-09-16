@@ -2,59 +2,64 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 import (
-    "math"
-    "strings"
+	"math"
+	"strings"
 )
+
 type SystemBrowserEnabledOn int
 
 const (
-    NONE_SYSTEMBROWSERENABLEDON = 1
-    IOS_SYSTEMBROWSERENABLEDON = 2
-    ANDROID_SYSTEMBROWSERENABLEDON = 4
-    MAC_SYSTEMBROWSERENABLEDON = 8
-    UNKNOWNFUTUREVALUE_SYSTEMBROWSERENABLEDON = 16
+	NONE_SYSTEMBROWSERENABLEDON               = 1
+	IOS_SYSTEMBROWSERENABLEDON                = 2
+	ANDROID_SYSTEMBROWSERENABLEDON            = 4
+	MAC_SYSTEMBROWSERENABLEDON                = 8
+	UNKNOWNFUTUREVALUE_SYSTEMBROWSERENABLEDON = 16
 )
 
 func (i SystemBrowserEnabledOn) String() string {
-    var values []string
-    options := []string{"none", "ios", "android", "mac", "unknownFutureValue"}
-    for p := 0; p < 5; p++ {
-        mantis := SystemBrowserEnabledOn(int(math.Pow(2, float64(p))))
-        if i&mantis == mantis {
-            values = append(values, options[p])
-        }
-    }
-    return strings.Join(values, ",")
+	var values []string
+	options := []string{"none", "ios", "android", "mac", "unknownFutureValue"}
+	for p := 0; p < 5; p++ {
+		mantis := SystemBrowserEnabledOn(int(math.Pow(2, float64(p))))
+		if i&mantis == mantis {
+			values = append(values, options[p])
+		}
+	}
+	return strings.Join(values, ",")
 }
+
 func ParseSystemBrowserEnabledOn(v string) (any, error) {
-    var result SystemBrowserEnabledOn
-    values := strings.Split(v, ",")
-    for _, str := range values {
-        switch str {
-            case "none":
-                result |= NONE_SYSTEMBROWSERENABLEDON
-            case "ios":
-                result |= IOS_SYSTEMBROWSERENABLEDON
-            case "android":
-                result |= ANDROID_SYSTEMBROWSERENABLEDON
-            case "mac":
-                result |= MAC_SYSTEMBROWSERENABLEDON
-            case "unknownFutureValue":
-                result |= UNKNOWNFUTUREVALUE_SYSTEMBROWSERENABLEDON
-            default:
-                return nil, nil
-        }
-    }
-    return &result, nil
+	var result SystemBrowserEnabledOn
+	values := strings.Split(v, ",")
+	for _, str := range values {
+		switch str {
+		case "none":
+			result |= NONE_SYSTEMBROWSERENABLEDON
+		case "ios":
+			result |= IOS_SYSTEMBROWSERENABLEDON
+		case "android":
+			result |= ANDROID_SYSTEMBROWSERENABLEDON
+		case "mac":
+			result |= MAC_SYSTEMBROWSERENABLEDON
+		case "unknownFutureValue":
+			result |= UNKNOWNFUTUREVALUE_SYSTEMBROWSERENABLEDON
+		default:
+			return nil, nil
+		}
+	}
+	return &result, nil
 }
+
 func SerializeSystemBrowserEnabledOn(values []SystemBrowserEnabledOn) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SystemBrowserEnabledOn) isMultiValue() bool {
-    return true
+	return true
 }

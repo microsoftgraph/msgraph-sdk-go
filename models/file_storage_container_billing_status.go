@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type FileStorageContainerBillingStatus int
 
 const (
-    INVALID_FILESTORAGECONTAINERBILLINGSTATUS FileStorageContainerBillingStatus = iota
-    VALID_FILESTORAGECONTAINERBILLINGSTATUS
-    UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGSTATUS
+	INVALID_FILESTORAGECONTAINERBILLINGSTATUS FileStorageContainerBillingStatus = iota
+	VALID_FILESTORAGECONTAINERBILLINGSTATUS
+	UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGSTATUS
 )
 
 func (i FileStorageContainerBillingStatus) String() string {
-    return []string{"invalid", "valid", "unknownFutureValue"}[i]
+	return []string{"invalid", "valid", "unknownFutureValue"}[i]
 }
+
 func ParseFileStorageContainerBillingStatus(v string) (any, error) {
-    result := INVALID_FILESTORAGECONTAINERBILLINGSTATUS
-    switch v {
-        case "invalid":
-            result = INVALID_FILESTORAGECONTAINERBILLINGSTATUS
-        case "valid":
-            result = VALID_FILESTORAGECONTAINERBILLINGSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := INVALID_FILESTORAGECONTAINERBILLINGSTATUS
+	switch v {
+	case "invalid":
+		result = INVALID_FILESTORAGECONTAINERBILLINGSTATUS
+	case "valid":
+		result = VALID_FILESTORAGECONTAINERBILLINGSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeFileStorageContainerBillingStatus(values []FileStorageContainerBillingStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i FileStorageContainerBillingStatus) isMultiValue() bool {
-    return false
+	return false
 }

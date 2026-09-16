@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ContentProcessingErrorType int
 
 const (
-    TRANSIENT_CONTENTPROCESSINGERRORTYPE ContentProcessingErrorType = iota
-    PERMANENT_CONTENTPROCESSINGERRORTYPE
-    UNKNOWNFUTUREVALUE_CONTENTPROCESSINGERRORTYPE
+	TRANSIENT_CONTENTPROCESSINGERRORTYPE ContentProcessingErrorType = iota
+	PERMANENT_CONTENTPROCESSINGERRORTYPE
+	UNKNOWNFUTUREVALUE_CONTENTPROCESSINGERRORTYPE
 )
 
 func (i ContentProcessingErrorType) String() string {
-    return []string{"transient", "permanent", "unknownFutureValue"}[i]
+	return []string{"transient", "permanent", "unknownFutureValue"}[i]
 }
+
 func ParseContentProcessingErrorType(v string) (any, error) {
-    result := TRANSIENT_CONTENTPROCESSINGERRORTYPE
-    switch v {
-        case "transient":
-            result = TRANSIENT_CONTENTPROCESSINGERRORTYPE
-        case "permanent":
-            result = PERMANENT_CONTENTPROCESSINGERRORTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CONTENTPROCESSINGERRORTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := TRANSIENT_CONTENTPROCESSINGERRORTYPE
+	switch v {
+	case "transient":
+		result = TRANSIENT_CONTENTPROCESSINGERRORTYPE
+	case "permanent":
+		result = PERMANENT_CONTENTPROCESSINGERRORTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CONTENTPROCESSINGERRORTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeContentProcessingErrorType(values []ContentProcessingErrorType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ContentProcessingErrorType) isMultiValue() bool {
-    return false
+	return false
 }

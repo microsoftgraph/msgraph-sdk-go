@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ReadingCoachStoryType int
 
 const (
-    AIGENERATED_READINGCOACHSTORYTYPE ReadingCoachStoryType = iota
-    READWORKS_READINGCOACHSTORYTYPE
-    USERPROVIDED_READINGCOACHSTORYTYPE
-    UNKNOWNFUTUREVALUE_READINGCOACHSTORYTYPE
+	AIGENERATED_READINGCOACHSTORYTYPE ReadingCoachStoryType = iota
+	READWORKS_READINGCOACHSTORYTYPE
+	USERPROVIDED_READINGCOACHSTORYTYPE
+	UNKNOWNFUTUREVALUE_READINGCOACHSTORYTYPE
 )
 
 func (i ReadingCoachStoryType) String() string {
-    return []string{"aiGenerated", "readWorks", "userProvided", "unknownFutureValue"}[i]
+	return []string{"aiGenerated", "readWorks", "userProvided", "unknownFutureValue"}[i]
 }
+
 func ParseReadingCoachStoryType(v string) (any, error) {
-    result := AIGENERATED_READINGCOACHSTORYTYPE
-    switch v {
-        case "aiGenerated":
-            result = AIGENERATED_READINGCOACHSTORYTYPE
-        case "readWorks":
-            result = READWORKS_READINGCOACHSTORYTYPE
-        case "userProvided":
-            result = USERPROVIDED_READINGCOACHSTORYTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_READINGCOACHSTORYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AIGENERATED_READINGCOACHSTORYTYPE
+	switch v {
+	case "aiGenerated":
+		result = AIGENERATED_READINGCOACHSTORYTYPE
+	case "readWorks":
+		result = READWORKS_READINGCOACHSTORYTYPE
+	case "userProvided":
+		result = USERPROVIDED_READINGCOACHSTORYTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_READINGCOACHSTORYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeReadingCoachStoryType(values []ReadingCoachStoryType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ReadingCoachStoryType) isMultiValue() bool {
-    return false
+	return false
 }

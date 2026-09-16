@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package teamsadministration
+
 type PortInStatus int
 
 const (
-    COMPLETED_PORTINSTATUS PortInStatus = iota
-    FIRMORDERCOMMITMENTACCEPTED_PORTINSTATUS
-    UNKNOWNFUTUREVALUE_PORTINSTATUS
+	COMPLETED_PORTINSTATUS PortInStatus = iota
+	FIRMORDERCOMMITMENTACCEPTED_PORTINSTATUS
+	UNKNOWNFUTUREVALUE_PORTINSTATUS
 )
 
 func (i PortInStatus) String() string {
-    return []string{"completed", "firmOrderCommitmentAccepted", "unknownFutureValue"}[i]
+	return []string{"completed", "firmOrderCommitmentAccepted", "unknownFutureValue"}[i]
 }
+
 func ParsePortInStatus(v string) (any, error) {
-    result := COMPLETED_PORTINSTATUS
-    switch v {
-        case "completed":
-            result = COMPLETED_PORTINSTATUS
-        case "firmOrderCommitmentAccepted":
-            result = FIRMORDERCOMMITMENTACCEPTED_PORTINSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PORTINSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := COMPLETED_PORTINSTATUS
+	switch v {
+	case "completed":
+		result = COMPLETED_PORTINSTATUS
+	case "firmOrderCommitmentAccepted":
+		result = FIRMORDERCOMMITMENTACCEPTED_PORTINSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PORTINSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePortInStatus(values []PortInStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PortInStatus) isMultiValue() bool {
-    return false
+	return false
 }

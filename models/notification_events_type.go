@@ -2,53 +2,58 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 import (
-    "math"
-    "strings"
+	"math"
+	"strings"
 )
+
 type NotificationEventsType int
 
 const (
-    NONE_NOTIFICATIONEVENTSTYPE = 1
-    RESTOREANDPOLICYUPDATES_NOTIFICATIONEVENTSTYPE = 2
-    UNKNOWNFUTUREVALUE_NOTIFICATIONEVENTSTYPE = 4
+	NONE_NOTIFICATIONEVENTSTYPE                    = 1
+	RESTOREANDPOLICYUPDATES_NOTIFICATIONEVENTSTYPE = 2
+	UNKNOWNFUTUREVALUE_NOTIFICATIONEVENTSTYPE      = 4
 )
 
 func (i NotificationEventsType) String() string {
-    var values []string
-    options := []string{"none", "restoreAndPolicyUpdates", "unknownFutureValue"}
-    for p := 0; p < 3; p++ {
-        mantis := NotificationEventsType(int(math.Pow(2, float64(p))))
-        if i&mantis == mantis {
-            values = append(values, options[p])
-        }
-    }
-    return strings.Join(values, ",")
+	var values []string
+	options := []string{"none", "restoreAndPolicyUpdates", "unknownFutureValue"}
+	for p := 0; p < 3; p++ {
+		mantis := NotificationEventsType(int(math.Pow(2, float64(p))))
+		if i&mantis == mantis {
+			values = append(values, options[p])
+		}
+	}
+	return strings.Join(values, ",")
 }
+
 func ParseNotificationEventsType(v string) (any, error) {
-    var result NotificationEventsType
-    values := strings.Split(v, ",")
-    for _, str := range values {
-        switch str {
-            case "none":
-                result |= NONE_NOTIFICATIONEVENTSTYPE
-            case "restoreAndPolicyUpdates":
-                result |= RESTOREANDPOLICYUPDATES_NOTIFICATIONEVENTSTYPE
-            case "unknownFutureValue":
-                result |= UNKNOWNFUTUREVALUE_NOTIFICATIONEVENTSTYPE
-            default:
-                return nil, nil
-        }
-    }
-    return &result, nil
+	var result NotificationEventsType
+	values := strings.Split(v, ",")
+	for _, str := range values {
+		switch str {
+		case "none":
+			result |= NONE_NOTIFICATIONEVENTSTYPE
+		case "restoreAndPolicyUpdates":
+			result |= RESTOREANDPOLICYUPDATES_NOTIFICATIONEVENTSTYPE
+		case "unknownFutureValue":
+			result |= UNKNOWNFUTUREVALUE_NOTIFICATIONEVENTSTYPE
+		default:
+			return nil, nil
+		}
+	}
+	return &result, nil
 }
+
 func SerializeNotificationEventsType(values []NotificationEventsType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i NotificationEventsType) isMultiValue() bool {
-    return true
+	return true
 }

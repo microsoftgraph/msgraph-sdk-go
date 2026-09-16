@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package teamsadministration
+
 type AssignmentType int
 
 const (
-    DIRECT_ASSIGNMENTTYPE AssignmentType = iota
-    GROUP_ASSIGNMENTTYPE
-    UNKNOWNFUTUREVALUE_ASSIGNMENTTYPE
+	DIRECT_ASSIGNMENTTYPE AssignmentType = iota
+	GROUP_ASSIGNMENTTYPE
+	UNKNOWNFUTUREVALUE_ASSIGNMENTTYPE
 )
 
 func (i AssignmentType) String() string {
-    return []string{"direct", "group", "unknownFutureValue"}[i]
+	return []string{"direct", "group", "unknownFutureValue"}[i]
 }
+
 func ParseAssignmentType(v string) (any, error) {
-    result := DIRECT_ASSIGNMENTTYPE
-    switch v {
-        case "direct":
-            result = DIRECT_ASSIGNMENTTYPE
-        case "group":
-            result = GROUP_ASSIGNMENTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ASSIGNMENTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DIRECT_ASSIGNMENTTYPE
+	switch v {
+	case "direct":
+		result = DIRECT_ASSIGNMENTTYPE
+	case "group":
+		result = GROUP_ASSIGNMENTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ASSIGNMENTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAssignmentType(values []AssignmentType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AssignmentType) isMultiValue() bool {
-    return false
+	return false
 }

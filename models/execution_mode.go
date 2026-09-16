@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ExecutionMode int
 
 const (
-    EVALUATEINLINE_EXECUTIONMODE ExecutionMode = iota
-    EVALUATEOFFLINE_EXECUTIONMODE
-    UNKNOWNFUTUREVALUE_EXECUTIONMODE
+	EVALUATEINLINE_EXECUTIONMODE ExecutionMode = iota
+	EVALUATEOFFLINE_EXECUTIONMODE
+	UNKNOWNFUTUREVALUE_EXECUTIONMODE
 )
 
 func (i ExecutionMode) String() string {
-    return []string{"evaluateInline", "evaluateOffline", "unknownFutureValue"}[i]
+	return []string{"evaluateInline", "evaluateOffline", "unknownFutureValue"}[i]
 }
+
 func ParseExecutionMode(v string) (any, error) {
-    result := EVALUATEINLINE_EXECUTIONMODE
-    switch v {
-        case "evaluateInline":
-            result = EVALUATEINLINE_EXECUTIONMODE
-        case "evaluateOffline":
-            result = EVALUATEOFFLINE_EXECUTIONMODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_EXECUTIONMODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := EVALUATEINLINE_EXECUTIONMODE
+	switch v {
+	case "evaluateInline":
+		result = EVALUATEINLINE_EXECUTIONMODE
+	case "evaluateOffline":
+		result = EVALUATEOFFLINE_EXECUTIONMODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_EXECUTIONMODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeExecutionMode(values []ExecutionMode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ExecutionMode) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type FileStorageContainerBillingClassification int
 
 const (
-    STANDARD_FILESTORAGECONTAINERBILLINGCLASSIFICATION FileStorageContainerBillingClassification = iota
-    TRIAL_FILESTORAGECONTAINERBILLINGCLASSIFICATION
-    DIRECTTOCUSTOMER_FILESTORAGECONTAINERBILLINGCLASSIFICATION
-    UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	STANDARD_FILESTORAGECONTAINERBILLINGCLASSIFICATION FileStorageContainerBillingClassification = iota
+	TRIAL_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	DIRECTTOCUSTOMER_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGCLASSIFICATION
 )
 
 func (i FileStorageContainerBillingClassification) String() string {
-    return []string{"standard", "trial", "directToCustomer", "unknownFutureValue"}[i]
+	return []string{"standard", "trial", "directToCustomer", "unknownFutureValue"}[i]
 }
+
 func ParseFileStorageContainerBillingClassification(v string) (any, error) {
-    result := STANDARD_FILESTORAGECONTAINERBILLINGCLASSIFICATION
-    switch v {
-        case "standard":
-            result = STANDARD_FILESTORAGECONTAINERBILLINGCLASSIFICATION
-        case "trial":
-            result = TRIAL_FILESTORAGECONTAINERBILLINGCLASSIFICATION
-        case "directToCustomer":
-            result = DIRECTTOCUSTOMER_FILESTORAGECONTAINERBILLINGCLASSIFICATION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGCLASSIFICATION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := STANDARD_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	switch v {
+	case "standard":
+		result = STANDARD_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	case "trial":
+		result = TRIAL_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	case "directToCustomer":
+		result = DIRECTTOCUSTOMER_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERBILLINGCLASSIFICATION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeFileStorageContainerBillingClassification(values []FileStorageContainerBillingClassification) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i FileStorageContainerBillingClassification) isMultiValue() bool {
-    return false
+	return false
 }

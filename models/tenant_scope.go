@@ -4,41 +4,46 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type TenantScope struct {
-    ScopeBase
+	ScopeBase
 }
+
 // NewTenantScope instantiates a new TenantScope and sets the default values.
-func NewTenantScope()(*TenantScope) {
-    m := &TenantScope{
-        ScopeBase: *NewScopeBase(),
-    }
-    odataTypeValue := "#microsoft.graph.tenantScope"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewTenantScope() *TenantScope {
+	m := &TenantScope{
+		ScopeBase: *NewScopeBase(),
+	}
+	odataTypeValue := "#microsoft.graph.tenantScope"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateTenantScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateTenantScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewTenantScope(), nil
+func CreateTenantScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewTenantScope(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *TenantScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ScopeBase.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *TenantScope) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.ScopeBase.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *TenantScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ScopeBase.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *TenantScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.ScopeBase.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type TenantScopeable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    ScopeBaseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ScopeBaseable
 }

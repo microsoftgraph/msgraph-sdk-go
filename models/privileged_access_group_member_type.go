@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PrivilegedAccessGroupMemberType int
 
 const (
-    DIRECT_PRIVILEGEDACCESSGROUPMEMBERTYPE PrivilegedAccessGroupMemberType = iota
-    GROUP_PRIVILEGEDACCESSGROUPMEMBERTYPE
-    UNKNOWNFUTUREVALUE_PRIVILEGEDACCESSGROUPMEMBERTYPE
+	DIRECT_PRIVILEGEDACCESSGROUPMEMBERTYPE PrivilegedAccessGroupMemberType = iota
+	GROUP_PRIVILEGEDACCESSGROUPMEMBERTYPE
+	UNKNOWNFUTUREVALUE_PRIVILEGEDACCESSGROUPMEMBERTYPE
 )
 
 func (i PrivilegedAccessGroupMemberType) String() string {
-    return []string{"direct", "group", "unknownFutureValue"}[i]
+	return []string{"direct", "group", "unknownFutureValue"}[i]
 }
+
 func ParsePrivilegedAccessGroupMemberType(v string) (any, error) {
-    result := DIRECT_PRIVILEGEDACCESSGROUPMEMBERTYPE
-    switch v {
-        case "direct":
-            result = DIRECT_PRIVILEGEDACCESSGROUPMEMBERTYPE
-        case "group":
-            result = GROUP_PRIVILEGEDACCESSGROUPMEMBERTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PRIVILEGEDACCESSGROUPMEMBERTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DIRECT_PRIVILEGEDACCESSGROUPMEMBERTYPE
+	switch v {
+	case "direct":
+		result = DIRECT_PRIVILEGEDACCESSGROUPMEMBERTYPE
+	case "group":
+		result = GROUP_PRIVILEGEDACCESSGROUPMEMBERTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PRIVILEGEDACCESSGROUPMEMBERTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePrivilegedAccessGroupMemberType(values []PrivilegedAccessGroupMemberType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PrivilegedAccessGroupMemberType) isMultiValue() bool {
-    return false
+	return false
 }
