@@ -4,42 +4,47 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // CopilotAgentManagementAuditRecord audit data for Copilot Agent Management events.
 type CopilotAgentManagementAuditRecord struct {
-    AuditData
+	AuditData
 }
+
 // NewCopilotAgentManagementAuditRecord instantiates a new CopilotAgentManagementAuditRecord and sets the default values.
-func NewCopilotAgentManagementAuditRecord()(*CopilotAgentManagementAuditRecord) {
-    m := &CopilotAgentManagementAuditRecord{
-        AuditData: *NewAuditData(),
-    }
-    odataTypeValue := "#microsoft.graph.security.copilotAgentManagementAuditRecord"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewCopilotAgentManagementAuditRecord() *CopilotAgentManagementAuditRecord {
+	m := &CopilotAgentManagementAuditRecord{
+		AuditData: *NewAuditData(),
+	}
+	odataTypeValue := "#microsoft.graph.security.copilotAgentManagementAuditRecord"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateCopilotAgentManagementAuditRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCopilotAgentManagementAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCopilotAgentManagementAuditRecord(), nil
+func CreateCopilotAgentManagementAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCopilotAgentManagementAuditRecord(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CopilotAgentManagementAuditRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.AuditData.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CopilotAgentManagementAuditRecord) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.AuditData.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *CopilotAgentManagementAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.AuditData.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *CopilotAgentManagementAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.AuditData.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type CopilotAgentManagementAuditRecordable interface {
-    AuditDataable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AuditDataable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type HoldType int
 
 const (
-    NONE_HOLDTYPE HoldType = iota
-    PRIVATE_HOLDTYPE
-    PUBLIC_HOLDTYPE
-    UNKNOWNFUTUREVALUE_HOLDTYPE
+	NONE_HOLDTYPE HoldType = iota
+	PRIVATE_HOLDTYPE
+	PUBLIC_HOLDTYPE
+	UNKNOWNFUTUREVALUE_HOLDTYPE
 )
 
 func (i HoldType) String() string {
-    return []string{"none", "private", "public", "unknownFutureValue"}[i]
+	return []string{"none", "private", "public", "unknownFutureValue"}[i]
 }
+
 func ParseHoldType(v string) (any, error) {
-    result := NONE_HOLDTYPE
-    switch v {
-        case "none":
-            result = NONE_HOLDTYPE
-        case "private":
-            result = PRIVATE_HOLDTYPE
-        case "public":
-            result = PUBLIC_HOLDTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_HOLDTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_HOLDTYPE
+	switch v {
+	case "none":
+		result = NONE_HOLDTYPE
+	case "private":
+		result = PRIVATE_HOLDTYPE
+	case "public":
+		result = PUBLIC_HOLDTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_HOLDTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeHoldType(values []HoldType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i HoldType) isMultiValue() bool {
-    return false
+	return false
 }

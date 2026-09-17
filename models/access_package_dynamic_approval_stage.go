@@ -4,41 +4,46 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type AccessPackageDynamicApprovalStage struct {
-    AccessPackageApprovalStage
+	AccessPackageApprovalStage
 }
+
 // NewAccessPackageDynamicApprovalStage instantiates a new AccessPackageDynamicApprovalStage and sets the default values.
-func NewAccessPackageDynamicApprovalStage()(*AccessPackageDynamicApprovalStage) {
-    m := &AccessPackageDynamicApprovalStage{
-        AccessPackageApprovalStage: *NewAccessPackageApprovalStage(),
-    }
-    odataTypeValue := "#microsoft.graph.accessPackageDynamicApprovalStage"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewAccessPackageDynamicApprovalStage() *AccessPackageDynamicApprovalStage {
+	m := &AccessPackageDynamicApprovalStage{
+		AccessPackageApprovalStage: *NewAccessPackageApprovalStage(),
+	}
+	odataTypeValue := "#microsoft.graph.accessPackageDynamicApprovalStage"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateAccessPackageDynamicApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAccessPackageDynamicApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAccessPackageDynamicApprovalStage(), nil
+func CreateAccessPackageDynamicApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAccessPackageDynamicApprovalStage(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AccessPackageDynamicApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.AccessPackageApprovalStage.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AccessPackageDynamicApprovalStage) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.AccessPackageApprovalStage.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *AccessPackageDynamicApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.AccessPackageApprovalStage.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *AccessPackageDynamicApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.AccessPackageApprovalStage.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type AccessPackageDynamicApprovalStageable interface {
-    AccessPackageApprovalStageable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AccessPackageApprovalStageable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

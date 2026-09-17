@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package identitygovernance
+
 type CustomTaskExtensionReplyMode int
 
 const (
-    NONE_CUSTOMTASKEXTENSIONREPLYMODE CustomTaskExtensionReplyMode = iota
-    CALLBACK_CUSTOMTASKEXTENSIONREPLYMODE
-    RESPONSE_CUSTOMTASKEXTENSIONREPLYMODE
-    UNKNOWNFUTUREVALUE_CUSTOMTASKEXTENSIONREPLYMODE
+	NONE_CUSTOMTASKEXTENSIONREPLYMODE CustomTaskExtensionReplyMode = iota
+	CALLBACK_CUSTOMTASKEXTENSIONREPLYMODE
+	RESPONSE_CUSTOMTASKEXTENSIONREPLYMODE
+	UNKNOWNFUTUREVALUE_CUSTOMTASKEXTENSIONREPLYMODE
 )
 
 func (i CustomTaskExtensionReplyMode) String() string {
-    return []string{"none", "callback", "response", "unknownFutureValue"}[i]
+	return []string{"none", "callback", "response", "unknownFutureValue"}[i]
 }
+
 func ParseCustomTaskExtensionReplyMode(v string) (any, error) {
-    result := NONE_CUSTOMTASKEXTENSIONREPLYMODE
-    switch v {
-        case "none":
-            result = NONE_CUSTOMTASKEXTENSIONREPLYMODE
-        case "callback":
-            result = CALLBACK_CUSTOMTASKEXTENSIONREPLYMODE
-        case "response":
-            result = RESPONSE_CUSTOMTASKEXTENSIONREPLYMODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CUSTOMTASKEXTENSIONREPLYMODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_CUSTOMTASKEXTENSIONREPLYMODE
+	switch v {
+	case "none":
+		result = NONE_CUSTOMTASKEXTENSIONREPLYMODE
+	case "callback":
+		result = CALLBACK_CUSTOMTASKEXTENSIONREPLYMODE
+	case "response":
+		result = RESPONSE_CUSTOMTASKEXTENSIONREPLYMODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CUSTOMTASKEXTENSIONREPLYMODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCustomTaskExtensionReplyMode(values []CustomTaskExtensionReplyMode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CustomTaskExtensionReplyMode) isMultiValue() bool {
-    return false
+	return false
 }

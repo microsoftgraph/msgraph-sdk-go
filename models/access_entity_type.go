@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type AccessEntityType int
 
 const (
-    USER_ACCESSENTITYTYPE AccessEntityType = iota
-    GROUP_ACCESSENTITYTYPE
-    UNKNOWNFUTUREVALUE_ACCESSENTITYTYPE
+	USER_ACCESSENTITYTYPE AccessEntityType = iota
+	GROUP_ACCESSENTITYTYPE
+	UNKNOWNFUTUREVALUE_ACCESSENTITYTYPE
 )
 
 func (i AccessEntityType) String() string {
-    return []string{"user", "group", "unknownFutureValue"}[i]
+	return []string{"user", "group", "unknownFutureValue"}[i]
 }
+
 func ParseAccessEntityType(v string) (any, error) {
-    result := USER_ACCESSENTITYTYPE
-    switch v {
-        case "user":
-            result = USER_ACCESSENTITYTYPE
-        case "group":
-            result = GROUP_ACCESSENTITYTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ACCESSENTITYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := USER_ACCESSENTITYTYPE
+	switch v {
+	case "user":
+		result = USER_ACCESSENTITYTYPE
+	case "group":
+		result = GROUP_ACCESSENTITYTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ACCESSENTITYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAccessEntityType(values []AccessEntityType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AccessEntityType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package teamsadministration
+
 type NumberSource int
 
 const (
-    ONLINE_NUMBERSOURCE NumberSource = iota
-    ONPREMISES_NUMBERSOURCE
-    UNKNOWNFUTUREVALUE_NUMBERSOURCE
+	ONLINE_NUMBERSOURCE NumberSource = iota
+	ONPREMISES_NUMBERSOURCE
+	UNKNOWNFUTUREVALUE_NUMBERSOURCE
 )
 
 func (i NumberSource) String() string {
-    return []string{"online", "onPremises", "unknownFutureValue"}[i]
+	return []string{"online", "onPremises", "unknownFutureValue"}[i]
 }
+
 func ParseNumberSource(v string) (any, error) {
-    result := ONLINE_NUMBERSOURCE
-    switch v {
-        case "online":
-            result = ONLINE_NUMBERSOURCE
-        case "onPremises":
-            result = ONPREMISES_NUMBERSOURCE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_NUMBERSOURCE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ONLINE_NUMBERSOURCE
+	switch v {
+	case "online":
+		result = ONLINE_NUMBERSOURCE
+	case "onPremises":
+		result = ONPREMISES_NUMBERSOURCE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_NUMBERSOURCE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeNumberSource(values []NumberSource) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i NumberSource) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type AttestationEnforcement int
 
 const (
-    DISABLED_ATTESTATIONENFORCEMENT AttestationEnforcement = iota
-    REGISTRATIONONLY_ATTESTATIONENFORCEMENT
-    UNKNOWNFUTUREVALUE_ATTESTATIONENFORCEMENT
+	DISABLED_ATTESTATIONENFORCEMENT AttestationEnforcement = iota
+	REGISTRATIONONLY_ATTESTATIONENFORCEMENT
+	UNKNOWNFUTUREVALUE_ATTESTATIONENFORCEMENT
 )
 
 func (i AttestationEnforcement) String() string {
-    return []string{"disabled", "registrationOnly", "unknownFutureValue"}[i]
+	return []string{"disabled", "registrationOnly", "unknownFutureValue"}[i]
 }
+
 func ParseAttestationEnforcement(v string) (any, error) {
-    result := DISABLED_ATTESTATIONENFORCEMENT
-    switch v {
-        case "disabled":
-            result = DISABLED_ATTESTATIONENFORCEMENT
-        case "registrationOnly":
-            result = REGISTRATIONONLY_ATTESTATIONENFORCEMENT
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ATTESTATIONENFORCEMENT
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DISABLED_ATTESTATIONENFORCEMENT
+	switch v {
+	case "disabled":
+		result = DISABLED_ATTESTATIONENFORCEMENT
+	case "registrationOnly":
+		result = REGISTRATIONONLY_ATTESTATIONENFORCEMENT
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ATTESTATIONENFORCEMENT
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAttestationEnforcement(values []AttestationEnforcement) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AttestationEnforcement) isMultiValue() bool {
-    return false
+	return false
 }

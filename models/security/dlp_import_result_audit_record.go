@@ -4,42 +4,47 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // DlpImportResultAuditRecord audit data for DLP Import Result events.
 type DlpImportResultAuditRecord struct {
-    AuditData
+	AuditData
 }
+
 // NewDlpImportResultAuditRecord instantiates a new DlpImportResultAuditRecord and sets the default values.
-func NewDlpImportResultAuditRecord()(*DlpImportResultAuditRecord) {
-    m := &DlpImportResultAuditRecord{
-        AuditData: *NewAuditData(),
-    }
-    odataTypeValue := "#microsoft.graph.security.dlpImportResultAuditRecord"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewDlpImportResultAuditRecord() *DlpImportResultAuditRecord {
+	m := &DlpImportResultAuditRecord{
+		AuditData: *NewAuditData(),
+	}
+	odataTypeValue := "#microsoft.graph.security.dlpImportResultAuditRecord"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateDlpImportResultAuditRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDlpImportResultAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDlpImportResultAuditRecord(), nil
+func CreateDlpImportResultAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDlpImportResultAuditRecord(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DlpImportResultAuditRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.AuditData.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DlpImportResultAuditRecord) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.AuditData.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *DlpImportResultAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.AuditData.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *DlpImportResultAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.AuditData.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type DlpImportResultAuditRecordable interface {
-    AuditDataable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AuditDataable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

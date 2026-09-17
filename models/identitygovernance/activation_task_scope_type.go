@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package identitygovernance
+
 type ActivationTaskScopeType int
 
 const (
-    ALLTASKS_ACTIVATIONTASKSCOPETYPE ActivationTaskScopeType = iota
-    FAILEDTASKS_ACTIVATIONTASKSCOPETYPE
-    UNKNOWNFUTUREVALUE_ACTIVATIONTASKSCOPETYPE
+	ALLTASKS_ACTIVATIONTASKSCOPETYPE ActivationTaskScopeType = iota
+	FAILEDTASKS_ACTIVATIONTASKSCOPETYPE
+	UNKNOWNFUTUREVALUE_ACTIVATIONTASKSCOPETYPE
 )
 
 func (i ActivationTaskScopeType) String() string {
-    return []string{"allTasks", "failedTasks", "unknownFutureValue"}[i]
+	return []string{"allTasks", "failedTasks", "unknownFutureValue"}[i]
 }
+
 func ParseActivationTaskScopeType(v string) (any, error) {
-    result := ALLTASKS_ACTIVATIONTASKSCOPETYPE
-    switch v {
-        case "allTasks":
-            result = ALLTASKS_ACTIVATIONTASKSCOPETYPE
-        case "failedTasks":
-            result = FAILEDTASKS_ACTIVATIONTASKSCOPETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ACTIVATIONTASKSCOPETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALLTASKS_ACTIVATIONTASKSCOPETYPE
+	switch v {
+	case "allTasks":
+		result = ALLTASKS_ACTIVATIONTASKSCOPETYPE
+	case "failedTasks":
+		result = FAILEDTASKS_ACTIVATIONTASKSCOPETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ACTIVATIONTASKSCOPETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeActivationTaskScopeType(values []ActivationTaskScopeType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ActivationTaskScopeType) isMultiValue() bool {
-    return false
+	return false
 }

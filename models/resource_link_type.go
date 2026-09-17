@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ResourceLinkType int
 
 const (
-    URL_RESOURCELINKTYPE ResourceLinkType = iota
-    UNKNOWNFUTUREVALUE_RESOURCELINKTYPE
+	URL_RESOURCELINKTYPE ResourceLinkType = iota
+	UNKNOWNFUTUREVALUE_RESOURCELINKTYPE
 )
 
 func (i ResourceLinkType) String() string {
-    return []string{"url", "unknownFutureValue"}[i]
+	return []string{"url", "unknownFutureValue"}[i]
 }
+
 func ParseResourceLinkType(v string) (any, error) {
-    result := URL_RESOURCELINKTYPE
-    switch v {
-        case "url":
-            result = URL_RESOURCELINKTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_RESOURCELINKTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := URL_RESOURCELINKTYPE
+	switch v {
+	case "url":
+		result = URL_RESOURCELINKTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_RESOURCELINKTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeResourceLinkType(values []ResourceLinkType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ResourceLinkType) isMultiValue() bool {
-    return false
+	return false
 }

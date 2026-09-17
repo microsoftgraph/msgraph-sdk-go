@@ -2,74 +2,79 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 import (
-    "math"
-    "strings"
+	"math"
+	"strings"
 )
+
 type UserActivityTypes int
 
 const (
-    NONE_USERACTIVITYTYPES = 1
-    UPLOADTEXT_USERACTIVITYTYPES = 2
-    UPLOADFILE_USERACTIVITYTYPES = 4
-    DOWNLOADTEXT_USERACTIVITYTYPES = 8
-    DOWNLOADFILE_USERACTIVITYTYPES = 16
-    UNKNOWNFUTUREVALUE_USERACTIVITYTYPES = 32
-    COPYTOCLIPBOARD_USERACTIVITYTYPES = 64
-    PASTEFROMCLIPBOARD_USERACTIVITYTYPES = 128
-    PRINT_USERACTIVITYTYPES = 256
-    ACCESSDEBUGTOOLS_USERACTIVITYTYPES = 512
+	NONE_USERACTIVITYTYPES               = 1
+	UPLOADTEXT_USERACTIVITYTYPES         = 2
+	UPLOADFILE_USERACTIVITYTYPES         = 4
+	DOWNLOADTEXT_USERACTIVITYTYPES       = 8
+	DOWNLOADFILE_USERACTIVITYTYPES       = 16
+	UNKNOWNFUTUREVALUE_USERACTIVITYTYPES = 32
+	COPYTOCLIPBOARD_USERACTIVITYTYPES    = 64
+	PASTEFROMCLIPBOARD_USERACTIVITYTYPES = 128
+	PRINT_USERACTIVITYTYPES              = 256
+	ACCESSDEBUGTOOLS_USERACTIVITYTYPES   = 512
 )
 
 func (i UserActivityTypes) String() string {
-    var values []string
-    options := []string{"none", "uploadText", "uploadFile", "downloadText", "downloadFile", "unknownFutureValue", "copyToClipboard", "pasteFromClipboard", "print", "accessDebugTools"}
-    for p := 0; p < 10; p++ {
-        mantis := UserActivityTypes(int(math.Pow(2, float64(p))))
-        if i&mantis == mantis {
-            values = append(values, options[p])
-        }
-    }
-    return strings.Join(values, ",")
+	var values []string
+	options := []string{"none", "uploadText", "uploadFile", "downloadText", "downloadFile", "unknownFutureValue", "copyToClipboard", "pasteFromClipboard", "print", "accessDebugTools"}
+	for p := 0; p < 10; p++ {
+		mantis := UserActivityTypes(int(math.Pow(2, float64(p))))
+		if i&mantis == mantis {
+			values = append(values, options[p])
+		}
+	}
+	return strings.Join(values, ",")
 }
+
 func ParseUserActivityTypes(v string) (any, error) {
-    var result UserActivityTypes
-    values := strings.Split(v, ",")
-    for _, str := range values {
-        switch str {
-            case "none":
-                result |= NONE_USERACTIVITYTYPES
-            case "uploadText":
-                result |= UPLOADTEXT_USERACTIVITYTYPES
-            case "uploadFile":
-                result |= UPLOADFILE_USERACTIVITYTYPES
-            case "downloadText":
-                result |= DOWNLOADTEXT_USERACTIVITYTYPES
-            case "downloadFile":
-                result |= DOWNLOADFILE_USERACTIVITYTYPES
-            case "unknownFutureValue":
-                result |= UNKNOWNFUTUREVALUE_USERACTIVITYTYPES
-            case "copyToClipboard":
-                result |= COPYTOCLIPBOARD_USERACTIVITYTYPES
-            case "pasteFromClipboard":
-                result |= PASTEFROMCLIPBOARD_USERACTIVITYTYPES
-            case "print":
-                result |= PRINT_USERACTIVITYTYPES
-            case "accessDebugTools":
-                result |= ACCESSDEBUGTOOLS_USERACTIVITYTYPES
-            default:
-                return nil, nil
-        }
-    }
-    return &result, nil
+	var result UserActivityTypes
+	values := strings.Split(v, ",")
+	for _, str := range values {
+		switch str {
+		case "none":
+			result |= NONE_USERACTIVITYTYPES
+		case "uploadText":
+			result |= UPLOADTEXT_USERACTIVITYTYPES
+		case "uploadFile":
+			result |= UPLOADFILE_USERACTIVITYTYPES
+		case "downloadText":
+			result |= DOWNLOADTEXT_USERACTIVITYTYPES
+		case "downloadFile":
+			result |= DOWNLOADFILE_USERACTIVITYTYPES
+		case "unknownFutureValue":
+			result |= UNKNOWNFUTUREVALUE_USERACTIVITYTYPES
+		case "copyToClipboard":
+			result |= COPYTOCLIPBOARD_USERACTIVITYTYPES
+		case "pasteFromClipboard":
+			result |= PASTEFROMCLIPBOARD_USERACTIVITYTYPES
+		case "print":
+			result |= PRINT_USERACTIVITYTYPES
+		case "accessDebugTools":
+			result |= ACCESSDEBUGTOOLS_USERACTIVITYTYPES
+		default:
+			return nil, nil
+		}
+	}
+	return &result, nil
 }
+
 func SerializeUserActivityTypes(values []UserActivityTypes) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i UserActivityTypes) isMultiValue() bool {
-    return true
+	return true
 }

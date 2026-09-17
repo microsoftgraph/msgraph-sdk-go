@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PolicyPivotProperty int
 
 const (
-    NONE_POLICYPIVOTPROPERTY PolicyPivotProperty = iota
-    ACTIVITY_POLICYPIVOTPROPERTY
-    LOCATION_POLICYPIVOTPROPERTY
-    UNKNOWNFUTUREVALUE_POLICYPIVOTPROPERTY
+	NONE_POLICYPIVOTPROPERTY PolicyPivotProperty = iota
+	ACTIVITY_POLICYPIVOTPROPERTY
+	LOCATION_POLICYPIVOTPROPERTY
+	UNKNOWNFUTUREVALUE_POLICYPIVOTPROPERTY
 )
 
 func (i PolicyPivotProperty) String() string {
-    return []string{"none", "activity", "location", "unknownFutureValue"}[i]
+	return []string{"none", "activity", "location", "unknownFutureValue"}[i]
 }
+
 func ParsePolicyPivotProperty(v string) (any, error) {
-    result := NONE_POLICYPIVOTPROPERTY
-    switch v {
-        case "none":
-            result = NONE_POLICYPIVOTPROPERTY
-        case "activity":
-            result = ACTIVITY_POLICYPIVOTPROPERTY
-        case "location":
-            result = LOCATION_POLICYPIVOTPROPERTY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_POLICYPIVOTPROPERTY
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_POLICYPIVOTPROPERTY
+	switch v {
+	case "none":
+		result = NONE_POLICYPIVOTPROPERTY
+	case "activity":
+		result = ACTIVITY_POLICYPIVOTPROPERTY
+	case "location":
+		result = LOCATION_POLICYPIVOTPROPERTY
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_POLICYPIVOTPROPERTY
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePolicyPivotProperty(values []PolicyPivotProperty) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PolicyPivotProperty) isMultiValue() bool {
-    return false
+	return false
 }

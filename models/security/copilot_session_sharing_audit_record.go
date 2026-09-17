@@ -4,42 +4,47 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // CopilotSessionSharingAuditRecord audit data for Copilot Session Sharing events.
 type CopilotSessionSharingAuditRecord struct {
-    AuditData
+	AuditData
 }
+
 // NewCopilotSessionSharingAuditRecord instantiates a new CopilotSessionSharingAuditRecord and sets the default values.
-func NewCopilotSessionSharingAuditRecord()(*CopilotSessionSharingAuditRecord) {
-    m := &CopilotSessionSharingAuditRecord{
-        AuditData: *NewAuditData(),
-    }
-    odataTypeValue := "#microsoft.graph.security.copilotSessionSharingAuditRecord"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewCopilotSessionSharingAuditRecord() *CopilotSessionSharingAuditRecord {
+	m := &CopilotSessionSharingAuditRecord{
+		AuditData: *NewAuditData(),
+	}
+	odataTypeValue := "#microsoft.graph.security.copilotSessionSharingAuditRecord"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateCopilotSessionSharingAuditRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCopilotSessionSharingAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCopilotSessionSharingAuditRecord(), nil
+func CreateCopilotSessionSharingAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCopilotSessionSharingAuditRecord(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CopilotSessionSharingAuditRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.AuditData.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CopilotSessionSharingAuditRecord) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.AuditData.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *CopilotSessionSharingAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.AuditData.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *CopilotSessionSharingAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.AuditData.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type CopilotSessionSharingAuditRecordable interface {
-    AuditDataable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AuditDataable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

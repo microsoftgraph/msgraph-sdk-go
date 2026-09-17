@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package identitygovernance
+
 type ActivationUserScopeType int
 
 const (
-    ALLUSERS_ACTIVATIONUSERSCOPETYPE ActivationUserScopeType = iota
-    FAILEDUSERS_ACTIVATIONUSERSCOPETYPE
-    UNKNOWNFUTUREVALUE_ACTIVATIONUSERSCOPETYPE
+	ALLUSERS_ACTIVATIONUSERSCOPETYPE ActivationUserScopeType = iota
+	FAILEDUSERS_ACTIVATIONUSERSCOPETYPE
+	UNKNOWNFUTUREVALUE_ACTIVATIONUSERSCOPETYPE
 )
 
 func (i ActivationUserScopeType) String() string {
-    return []string{"allUsers", "failedUsers", "unknownFutureValue"}[i]
+	return []string{"allUsers", "failedUsers", "unknownFutureValue"}[i]
 }
+
 func ParseActivationUserScopeType(v string) (any, error) {
-    result := ALLUSERS_ACTIVATIONUSERSCOPETYPE
-    switch v {
-        case "allUsers":
-            result = ALLUSERS_ACTIVATIONUSERSCOPETYPE
-        case "failedUsers":
-            result = FAILEDUSERS_ACTIVATIONUSERSCOPETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ACTIVATIONUSERSCOPETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALLUSERS_ACTIVATIONUSERSCOPETYPE
+	switch v {
+	case "allUsers":
+		result = ALLUSERS_ACTIVATIONUSERSCOPETYPE
+	case "failedUsers":
+		result = FAILEDUSERS_ACTIVATIONUSERSCOPETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ACTIVATIONUSERSCOPETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeActivationUserScopeType(values []ActivationUserScopeType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ActivationUserScopeType) isMultiValue() bool {
-    return false
+	return false
 }

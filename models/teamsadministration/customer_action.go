@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package teamsadministration
+
 type CustomerAction int
 
 const (
-    LOCATIONUPDATE_CUSTOMERACTION CustomerAction = iota
-    RELEASE_CUSTOMERACTION
-    UNKNOWNFUTUREVALUE_CUSTOMERACTION
+	LOCATIONUPDATE_CUSTOMERACTION CustomerAction = iota
+	RELEASE_CUSTOMERACTION
+	UNKNOWNFUTUREVALUE_CUSTOMERACTION
 )
 
 func (i CustomerAction) String() string {
-    return []string{"locationUpdate", "release", "unknownFutureValue"}[i]
+	return []string{"locationUpdate", "release", "unknownFutureValue"}[i]
 }
+
 func ParseCustomerAction(v string) (any, error) {
-    result := LOCATIONUPDATE_CUSTOMERACTION
-    switch v {
-        case "locationUpdate":
-            result = LOCATIONUPDATE_CUSTOMERACTION
-        case "release":
-            result = RELEASE_CUSTOMERACTION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CUSTOMERACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := LOCATIONUPDATE_CUSTOMERACTION
+	switch v {
+	case "locationUpdate":
+		result = LOCATIONUPDATE_CUSTOMERACTION
+	case "release":
+		result = RELEASE_CUSTOMERACTION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CUSTOMERACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCustomerAction(values []CustomerAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CustomerAction) isMultiValue() bool {
-    return false
+	return false
 }

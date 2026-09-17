@@ -4,27 +4,30 @@
 package communications
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use AdhocCallsItemRecordingsDeltaGetResponseable instead.
 type AdhocCallsItemRecordingsDeltaResponse struct {
-    AdhocCallsItemRecordingsDeltaGetResponse
+	AdhocCallsItemRecordingsDeltaGetResponse
 }
+
 // NewAdhocCallsItemRecordingsDeltaResponse instantiates a new AdhocCallsItemRecordingsDeltaResponse and sets the default values.
-func NewAdhocCallsItemRecordingsDeltaResponse()(*AdhocCallsItemRecordingsDeltaResponse) {
-    m := &AdhocCallsItemRecordingsDeltaResponse{
-        AdhocCallsItemRecordingsDeltaGetResponse: *NewAdhocCallsItemRecordingsDeltaGetResponse(),
-    }
-    return m
+func NewAdhocCallsItemRecordingsDeltaResponse() *AdhocCallsItemRecordingsDeltaResponse {
+	m := &AdhocCallsItemRecordingsDeltaResponse{
+		AdhocCallsItemRecordingsDeltaGetResponse: *NewAdhocCallsItemRecordingsDeltaGetResponse(),
+	}
+	return m
 }
+
 // CreateAdhocCallsItemRecordingsDeltaResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAdhocCallsItemRecordingsDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAdhocCallsItemRecordingsDeltaResponse(), nil
+func CreateAdhocCallsItemRecordingsDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAdhocCallsItemRecordingsDeltaResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use AdhocCallsItemRecordingsDeltaGetResponseable instead.
 type AdhocCallsItemRecordingsDeltaResponseable interface {
-    AdhocCallsItemRecordingsDeltaGetResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AdhocCallsItemRecordingsDeltaGetResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

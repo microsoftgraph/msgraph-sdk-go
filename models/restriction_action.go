@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type RestrictionAction int
 
 const (
-    WARN_RESTRICTIONACTION RestrictionAction = iota
-    AUDIT_RESTRICTIONACTION
-    BLOCK_RESTRICTIONACTION
+	WARN_RESTRICTIONACTION RestrictionAction = iota
+	AUDIT_RESTRICTIONACTION
+	BLOCK_RESTRICTIONACTION
 )
 
 func (i RestrictionAction) String() string {
-    return []string{"warn", "audit", "block"}[i]
+	return []string{"warn", "audit", "block"}[i]
 }
+
 func ParseRestrictionAction(v string) (any, error) {
-    result := WARN_RESTRICTIONACTION
-    switch v {
-        case "warn":
-            result = WARN_RESTRICTIONACTION
-        case "audit":
-            result = AUDIT_RESTRICTIONACTION
-        case "block":
-            result = BLOCK_RESTRICTIONACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := WARN_RESTRICTIONACTION
+	switch v {
+	case "warn":
+		result = WARN_RESTRICTIONACTION
+	case "audit":
+		result = AUDIT_RESTRICTIONACTION
+	case "block":
+		result = BLOCK_RESTRICTIONACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeRestrictionAction(values []RestrictionAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i RestrictionAction) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,27 +4,30 @@
 package teams
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemChannelsItemMembersRemovePostResponseable instead.
 type ItemChannelsItemMembersRemoveResponse struct {
-    ItemChannelsItemMembersRemovePostResponse
+	ItemChannelsItemMembersRemovePostResponse
 }
+
 // NewItemChannelsItemMembersRemoveResponse instantiates a new ItemChannelsItemMembersRemoveResponse and sets the default values.
-func NewItemChannelsItemMembersRemoveResponse()(*ItemChannelsItemMembersRemoveResponse) {
-    m := &ItemChannelsItemMembersRemoveResponse{
-        ItemChannelsItemMembersRemovePostResponse: *NewItemChannelsItemMembersRemovePostResponse(),
-    }
-    return m
+func NewItemChannelsItemMembersRemoveResponse() *ItemChannelsItemMembersRemoveResponse {
+	m := &ItemChannelsItemMembersRemoveResponse{
+		ItemChannelsItemMembersRemovePostResponse: *NewItemChannelsItemMembersRemovePostResponse(),
+	}
+	return m
 }
+
 // CreateItemChannelsItemMembersRemoveResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemChannelsItemMembersRemoveResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemChannelsItemMembersRemoveResponse(), nil
+func CreateItemChannelsItemMembersRemoveResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemChannelsItemMembersRemoveResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemChannelsItemMembersRemovePostResponseable instead.
 type ItemChannelsItemMembersRemoveResponseable interface {
-    ItemChannelsItemMembersRemovePostResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemChannelsItemMembersRemovePostResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

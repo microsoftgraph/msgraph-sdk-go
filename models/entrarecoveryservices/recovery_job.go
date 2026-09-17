@@ -4,152 +4,163 @@
 package entrarecoveryservices
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type RecoveryJob struct {
-    RecoveryJobBase
+	RecoveryJobBase
 }
+
 // NewRecoveryJob instantiates a new RecoveryJob and sets the default values.
-func NewRecoveryJob()(*RecoveryJob) {
-    m := &RecoveryJob{
-        RecoveryJobBase: *NewRecoveryJobBase(),
-    }
-    odataTypeValue := "#microsoft.graph.entraRecoveryServices.recoveryJob"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewRecoveryJob() *RecoveryJob {
+	m := &RecoveryJob{
+		RecoveryJobBase: *NewRecoveryJobBase(),
+	}
+	odataTypeValue := "#microsoft.graph.entraRecoveryServices.recoveryJob"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateRecoveryJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRecoveryJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRecoveryJob(), nil
+func CreateRecoveryJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewRecoveryJob(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RecoveryJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.RecoveryJobBase.GetFieldDeserializers()
-    res["totalFailedChanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalFailedChanges(val)
-        }
-        return nil
-    }
-    res["totalLinksModified"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalLinksModified(val)
-        }
-        return nil
-    }
-    res["totalObjectsModified"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalObjectsModified(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *RecoveryJob) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.RecoveryJobBase.GetFieldDeserializers()
+	res["totalFailedChanges"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTotalFailedChanges(val)
+		}
+		return nil
+	}
+	res["totalLinksModified"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTotalLinksModified(val)
+		}
+		return nil
+	}
+	res["totalObjectsModified"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTotalObjectsModified(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetTotalFailedChanges gets the totalFailedChanges property value. The count of changes (including both objects and links) that failed to apply during recovery.
 // returns a *int32 when successful
-func (m *RecoveryJob) GetTotalFailedChanges()(*int32) {
-    val, err := m.GetBackingStore().Get("totalFailedChanges")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *RecoveryJob) GetTotalFailedChanges() *int32 {
+	val, err := m.GetBackingStore().Get("totalFailedChanges")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetTotalLinksModified gets the totalLinksModified property value. The count of directory object links (relationships) that were successfully modified during recovery. This value may be less than totalChangedLinksCalculated if some link changes failed.
 // returns a *int32 when successful
-func (m *RecoveryJob) GetTotalLinksModified()(*int32) {
-    val, err := m.GetBackingStore().Get("totalLinksModified")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *RecoveryJob) GetTotalLinksModified() *int32 {
+	val, err := m.GetBackingStore().Get("totalLinksModified")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetTotalObjectsModified gets the totalObjectsModified property value. The count of directory objects that were successfully modified during recovery. This value may be less than totalChangedObjectsCalculated if some object changes failed.
 // returns a *int32 when successful
-func (m *RecoveryJob) GetTotalObjectsModified()(*int32) {
-    val, err := m.GetBackingStore().Get("totalObjectsModified")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *RecoveryJob) GetTotalObjectsModified() *int32 {
+	val, err := m.GetBackingStore().Get("totalObjectsModified")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *RecoveryJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.RecoveryJobBase.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteInt32Value("totalFailedChanges", m.GetTotalFailedChanges())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("totalLinksModified", m.GetTotalLinksModified())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("totalObjectsModified", m.GetTotalObjectsModified())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *RecoveryJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.RecoveryJobBase.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteInt32Value("totalFailedChanges", m.GetTotalFailedChanges())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("totalLinksModified", m.GetTotalLinksModified())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("totalObjectsModified", m.GetTotalObjectsModified())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetTotalFailedChanges sets the totalFailedChanges property value. The count of changes (including both objects and links) that failed to apply during recovery.
-func (m *RecoveryJob) SetTotalFailedChanges(value *int32)() {
-    err := m.GetBackingStore().Set("totalFailedChanges", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RecoveryJob) SetTotalFailedChanges(value *int32) {
+	err := m.GetBackingStore().Set("totalFailedChanges", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTotalLinksModified sets the totalLinksModified property value. The count of directory object links (relationships) that were successfully modified during recovery. This value may be less than totalChangedLinksCalculated if some link changes failed.
-func (m *RecoveryJob) SetTotalLinksModified(value *int32)() {
-    err := m.GetBackingStore().Set("totalLinksModified", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RecoveryJob) SetTotalLinksModified(value *int32) {
+	err := m.GetBackingStore().Set("totalLinksModified", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTotalObjectsModified sets the totalObjectsModified property value. The count of directory objects that were successfully modified during recovery. This value may be less than totalChangedObjectsCalculated if some object changes failed.
-func (m *RecoveryJob) SetTotalObjectsModified(value *int32)() {
-    err := m.GetBackingStore().Set("totalObjectsModified", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RecoveryJob) SetTotalObjectsModified(value *int32) {
+	err := m.GetBackingStore().Set("totalObjectsModified", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type RecoveryJobable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    RecoveryJobBaseable
-    GetTotalFailedChanges()(*int32)
-    GetTotalLinksModified()(*int32)
-    GetTotalObjectsModified()(*int32)
-    SetTotalFailedChanges(value *int32)()
-    SetTotalLinksModified(value *int32)()
-    SetTotalObjectsModified(value *int32)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	RecoveryJobBaseable
+	GetTotalFailedChanges() *int32
+	GetTotalLinksModified() *int32
+	GetTotalObjectsModified() *int32
+	SetTotalFailedChanges(value *int32)
+	SetTotalLinksModified(value *int32)
+	SetTotalObjectsModified(value *int32)
 }

@@ -4,41 +4,46 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type FootprintMap struct {
-    BaseMapFeature
+	BaseMapFeature
 }
+
 // NewFootprintMap instantiates a new FootprintMap and sets the default values.
-func NewFootprintMap()(*FootprintMap) {
-    m := &FootprintMap{
-        BaseMapFeature: *NewBaseMapFeature(),
-    }
-    odataTypeValue := "#microsoft.graph.footprintMap"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewFootprintMap() *FootprintMap {
+	m := &FootprintMap{
+		BaseMapFeature: *NewBaseMapFeature(),
+	}
+	odataTypeValue := "#microsoft.graph.footprintMap"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateFootprintMapFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateFootprintMapFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewFootprintMap(), nil
+func CreateFootprintMapFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewFootprintMap(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *FootprintMap) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseMapFeature.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *FootprintMap) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.BaseMapFeature.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *FootprintMap) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseMapFeature.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *FootprintMap) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.BaseMapFeature.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type FootprintMapable interface {
-    BaseMapFeatureable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	BaseMapFeatureable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

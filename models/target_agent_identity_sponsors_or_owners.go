@@ -4,41 +4,46 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type TargetAgentIdentitySponsorsOrOwners struct {
-    SubjectSet
+	SubjectSet
 }
+
 // NewTargetAgentIdentitySponsorsOrOwners instantiates a new TargetAgentIdentitySponsorsOrOwners and sets the default values.
-func NewTargetAgentIdentitySponsorsOrOwners()(*TargetAgentIdentitySponsorsOrOwners) {
-    m := &TargetAgentIdentitySponsorsOrOwners{
-        SubjectSet: *NewSubjectSet(),
-    }
-    odataTypeValue := "#microsoft.graph.targetAgentIdentitySponsorsOrOwners"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewTargetAgentIdentitySponsorsOrOwners() *TargetAgentIdentitySponsorsOrOwners {
+	m := &TargetAgentIdentitySponsorsOrOwners{
+		SubjectSet: *NewSubjectSet(),
+	}
+	odataTypeValue := "#microsoft.graph.targetAgentIdentitySponsorsOrOwners"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateTargetAgentIdentitySponsorsOrOwnersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateTargetAgentIdentitySponsorsOrOwnersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewTargetAgentIdentitySponsorsOrOwners(), nil
+func CreateTargetAgentIdentitySponsorsOrOwnersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewTargetAgentIdentitySponsorsOrOwners(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *TargetAgentIdentitySponsorsOrOwners) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.SubjectSet.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *TargetAgentIdentitySponsorsOrOwners) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.SubjectSet.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *TargetAgentIdentitySponsorsOrOwners) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.SubjectSet.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *TargetAgentIdentitySponsorsOrOwners) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.SubjectSet.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type TargetAgentIdentitySponsorsOrOwnersable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    SubjectSetable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	SubjectSetable
 }

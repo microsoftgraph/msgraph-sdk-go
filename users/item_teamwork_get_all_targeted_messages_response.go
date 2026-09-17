@@ -4,27 +4,30 @@
 package users
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemTeamworkGetAllTargetedMessagesGetResponseable instead.
 type ItemTeamworkGetAllTargetedMessagesResponse struct {
-    ItemTeamworkGetAllTargetedMessagesGetResponse
+	ItemTeamworkGetAllTargetedMessagesGetResponse
 }
+
 // NewItemTeamworkGetAllTargetedMessagesResponse instantiates a new ItemTeamworkGetAllTargetedMessagesResponse and sets the default values.
-func NewItemTeamworkGetAllTargetedMessagesResponse()(*ItemTeamworkGetAllTargetedMessagesResponse) {
-    m := &ItemTeamworkGetAllTargetedMessagesResponse{
-        ItemTeamworkGetAllTargetedMessagesGetResponse: *NewItemTeamworkGetAllTargetedMessagesGetResponse(),
-    }
-    return m
+func NewItemTeamworkGetAllTargetedMessagesResponse() *ItemTeamworkGetAllTargetedMessagesResponse {
+	m := &ItemTeamworkGetAllTargetedMessagesResponse{
+		ItemTeamworkGetAllTargetedMessagesGetResponse: *NewItemTeamworkGetAllTargetedMessagesGetResponse(),
+	}
+	return m
 }
+
 // CreateItemTeamworkGetAllTargetedMessagesResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemTeamworkGetAllTargetedMessagesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemTeamworkGetAllTargetedMessagesResponse(), nil
+func CreateItemTeamworkGetAllTargetedMessagesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemTeamworkGetAllTargetedMessagesResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemTeamworkGetAllTargetedMessagesGetResponseable instead.
 type ItemTeamworkGetAllTargetedMessagesResponseable interface {
-    ItemTeamworkGetAllTargetedMessagesGetResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemTeamworkGetAllTargetedMessagesGetResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

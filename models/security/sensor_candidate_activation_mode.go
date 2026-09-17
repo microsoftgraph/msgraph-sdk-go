@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package security
+
 type SensorCandidateActivationMode int
 
 const (
-    MANUAL_SENSORCANDIDATEACTIVATIONMODE SensorCandidateActivationMode = iota
-    AUTOMATED_SENSORCANDIDATEACTIVATIONMODE
-    UNKNOWNFUTUREVALUE_SENSORCANDIDATEACTIVATIONMODE
+	MANUAL_SENSORCANDIDATEACTIVATIONMODE SensorCandidateActivationMode = iota
+	AUTOMATED_SENSORCANDIDATEACTIVATIONMODE
+	UNKNOWNFUTUREVALUE_SENSORCANDIDATEACTIVATIONMODE
 )
 
 func (i SensorCandidateActivationMode) String() string {
-    return []string{"manual", "automated", "unknownFutureValue"}[i]
+	return []string{"manual", "automated", "unknownFutureValue"}[i]
 }
+
 func ParseSensorCandidateActivationMode(v string) (any, error) {
-    result := MANUAL_SENSORCANDIDATEACTIVATIONMODE
-    switch v {
-        case "manual":
-            result = MANUAL_SENSORCANDIDATEACTIVATIONMODE
-        case "automated":
-            result = AUTOMATED_SENSORCANDIDATEACTIVATIONMODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SENSORCANDIDATEACTIVATIONMODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := MANUAL_SENSORCANDIDATEACTIVATIONMODE
+	switch v {
+	case "manual":
+		result = MANUAL_SENSORCANDIDATEACTIVATIONMODE
+	case "automated":
+		result = AUTOMATED_SENSORCANDIDATEACTIVATIONMODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SENSORCANDIDATEACTIVATIONMODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSensorCandidateActivationMode(values []SensorCandidateActivationMode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SensorCandidateActivationMode) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,42 +4,47 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // SentinelKQLOnLakeAuditRecord audit data for Sentinel KQL On Lake events.
 type SentinelKQLOnLakeAuditRecord struct {
-    AuditData
+	AuditData
 }
+
 // NewSentinelKQLOnLakeAuditRecord instantiates a new SentinelKQLOnLakeAuditRecord and sets the default values.
-func NewSentinelKQLOnLakeAuditRecord()(*SentinelKQLOnLakeAuditRecord) {
-    m := &SentinelKQLOnLakeAuditRecord{
-        AuditData: *NewAuditData(),
-    }
-    odataTypeValue := "#microsoft.graph.security.sentinelKQLOnLakeAuditRecord"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewSentinelKQLOnLakeAuditRecord() *SentinelKQLOnLakeAuditRecord {
+	m := &SentinelKQLOnLakeAuditRecord{
+		AuditData: *NewAuditData(),
+	}
+	odataTypeValue := "#microsoft.graph.security.sentinelKQLOnLakeAuditRecord"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateSentinelKQLOnLakeAuditRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateSentinelKQLOnLakeAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewSentinelKQLOnLakeAuditRecord(), nil
+func CreateSentinelKQLOnLakeAuditRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewSentinelKQLOnLakeAuditRecord(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *SentinelKQLOnLakeAuditRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.AuditData.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *SentinelKQLOnLakeAuditRecord) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.AuditData.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *SentinelKQLOnLakeAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.AuditData.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *SentinelKQLOnLakeAuditRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.AuditData.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type SentinelKQLOnLakeAuditRecordable interface {
-    AuditDataable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	AuditDataable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }
