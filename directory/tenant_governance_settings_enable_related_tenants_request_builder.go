@@ -37,8 +37,11 @@ func NewTenantGovernanceSettingsEnableRelatedTenantsRequestBuilder(rawUrl string
 	return NewTenantGovernanceSettingsEnableRelatedTenantsRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post invoke action enableRelatedTenants
+// Post enable the related tenants feature for tenant discovery. After calling this action, the isRelatedTenantsEnabled property of tenantGovernanceSetting is set to true, which allows the use of related tenant APIs.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-enablerelatedtenants?view=graph-rest-1.0
 func (m *TenantGovernanceSettingsEnableRelatedTenantsRequestBuilder) Post(ctx context.Context, requestConfiguration *TenantGovernanceSettingsEnableRelatedTenantsRequestBuilderPostRequestConfiguration) error {
 	requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -54,7 +57,7 @@ func (m *TenantGovernanceSettingsEnableRelatedTenantsRequestBuilder) Post(ctx co
 	return nil
 }
 
-// ToPostRequestInformation invoke action enableRelatedTenants
+// ToPostRequestInformation enable the related tenants feature for tenant discovery. After calling this action, the isRelatedTenantsEnabled property of tenantGovernanceSetting is set to true, which allows the use of related tenant APIs.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceSettingsEnableRelatedTenantsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceSettingsEnableRelatedTenantsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

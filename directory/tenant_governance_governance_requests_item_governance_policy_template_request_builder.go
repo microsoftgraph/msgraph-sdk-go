@@ -15,7 +15,7 @@ type TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilde
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilderGetQueryParameters get governancePolicyTemplate from directory
+// TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilderGetQueryParameters the governance policy template associated with this request.
 type TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewTenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBui
 	return NewTenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get get governancePolicyTemplate from directory
+// Get the governance policy template associated with this request.
 // returns a TenantGovernancePolicyTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, error) {
@@ -69,7 +69,7 @@ func (m *TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBu
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable), nil
 }
 
-// ToGetRequestInformation get governancePolicyTemplate from directory
+// ToGetRequestInformation the governance policy template associated with this request.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

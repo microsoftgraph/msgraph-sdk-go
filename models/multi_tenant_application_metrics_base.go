@@ -83,7 +83,7 @@ func (m *MultiTenantApplicationMetricsBase) GetFieldDeserializers() map[string]f
 	return res
 }
 
-// GetInboundMonthlyTotalApplications gets the inboundMonthlyTotalApplications property value. The inboundMonthlyTotalApplications property
+// GetInboundMonthlyTotalApplications gets the inboundMonthlyTotalApplications property value. The total number of inbound multi-tenant applications in the last month.
 // returns a *float64 when successful
 func (m *MultiTenantApplicationMetricsBase) GetInboundMonthlyTotalApplications() *float64 {
 	val, err := m.GetBackingStore().Get("inboundMonthlyTotalApplications")
@@ -96,7 +96,7 @@ func (m *MultiTenantApplicationMetricsBase) GetInboundMonthlyTotalApplications()
 	return nil
 }
 
-// GetOutboundMonthlyTotalApplications gets the outboundMonthlyTotalApplications property value. The outboundMonthlyTotalApplications property
+// GetOutboundMonthlyTotalApplications gets the outboundMonthlyTotalApplications property value. The total number of outbound multi-tenant applications in the last month.
 // returns a *float64 when successful
 func (m *MultiTenantApplicationMetricsBase) GetOutboundMonthlyTotalApplications() *float64 {
 	val, err := m.GetBackingStore().Get("outboundMonthlyTotalApplications")
@@ -109,7 +109,7 @@ func (m *MultiTenantApplicationMetricsBase) GetOutboundMonthlyTotalApplications(
 	return nil
 }
 
-// GetWatermarkDateTime gets the watermarkDateTime property value. The watermarkDateTime property
+// GetWatermarkDateTime gets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 // returns a *Time when successful
 func (m *MultiTenantApplicationMetricsBase) GetWatermarkDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("watermarkDateTime")
@@ -149,7 +149,7 @@ func (m *MultiTenantApplicationMetricsBase) Serialize(writer i878a80d2330e89d268
 	return nil
 }
 
-// SetInboundMonthlyTotalApplications sets the inboundMonthlyTotalApplications property value. The inboundMonthlyTotalApplications property
+// SetInboundMonthlyTotalApplications sets the inboundMonthlyTotalApplications property value. The total number of inbound multi-tenant applications in the last month.
 func (m *MultiTenantApplicationMetricsBase) SetInboundMonthlyTotalApplications(value *float64) {
 	err := m.GetBackingStore().Set("inboundMonthlyTotalApplications", value)
 	if err != nil {
@@ -157,7 +157,7 @@ func (m *MultiTenantApplicationMetricsBase) SetInboundMonthlyTotalApplications(v
 	}
 }
 
-// SetOutboundMonthlyTotalApplications sets the outboundMonthlyTotalApplications property value. The outboundMonthlyTotalApplications property
+// SetOutboundMonthlyTotalApplications sets the outboundMonthlyTotalApplications property value. The total number of outbound multi-tenant applications in the last month.
 func (m *MultiTenantApplicationMetricsBase) SetOutboundMonthlyTotalApplications(value *float64) {
 	err := m.GetBackingStore().Set("outboundMonthlyTotalApplications", value)
 	if err != nil {
@@ -165,7 +165,7 @@ func (m *MultiTenantApplicationMetricsBase) SetOutboundMonthlyTotalApplications(
 	}
 }
 
-// SetWatermarkDateTime sets the watermarkDateTime property value. The watermarkDateTime property
+// SetWatermarkDateTime sets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 func (m *MultiTenantApplicationMetricsBase) SetWatermarkDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("watermarkDateTime", value)
 	if err != nil {

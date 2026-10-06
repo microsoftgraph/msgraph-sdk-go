@@ -37,8 +37,11 @@ func NewTenantGovernanceRelatedTenantsRefreshRequestBuilder(rawUrl string, reque
 	return NewTenantGovernanceRelatedTenantsRefreshRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post invoke action refresh
+// Post refresh the list of related tenants. The list is also automatically refreshed daily.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-refresh?view=graph-rest-1.0
 func (m *TenantGovernanceRelatedTenantsRefreshRequestBuilder) Post(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRefreshRequestBuilderPostRequestConfiguration) error {
 	requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -54,7 +57,7 @@ func (m *TenantGovernanceRelatedTenantsRefreshRequestBuilder) Post(ctx context.C
 	return nil
 }
 
-// ToPostRequestInformation invoke action refresh
+// ToPostRequestInformation refresh the list of related tenants. The list is also automatically refreshed daily.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsRefreshRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRefreshRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

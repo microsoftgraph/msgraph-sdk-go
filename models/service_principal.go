@@ -204,7 +204,7 @@ func (m *ServicePrincipal) GetAppRoleAssignments() []AppRoleAssignmentable {
 	return nil
 }
 
-// GetAppRoles gets the appRoles property value. The roles exposed by the application that's linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable.
+// GetAppRoles gets the appRoles property value. The roles exposed by the application that's linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (oauth2PermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 // returns a []AppRoleable when successful
 func (m *ServicePrincipal) GetAppRoles() []AppRoleable {
 	val, err := m.GetBackingStore().Get("appRoles")
@@ -1199,7 +1199,7 @@ func (m *ServicePrincipal) GetOauth2PermissionGrants() []OAuth2PermissionGrantab
 	return nil
 }
 
-// GetOauth2PermissionScopes gets the oauth2PermissionScopes property value. The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
+// GetOauth2PermissionScopes gets the oauth2PermissionScopes property value. The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 // returns a []PermissionScopeable when successful
 func (m *ServicePrincipal) GetOauth2PermissionScopes() []PermissionScopeable {
 	val, err := m.GetBackingStore().Get("oauth2PermissionScopes")
@@ -2020,7 +2020,7 @@ func (m *ServicePrincipal) SetAppRoleAssignments(value []AppRoleAssignmentable) 
 	}
 }
 
-// SetAppRoles sets the appRoles property value. The roles exposed by the application that's linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable.
+// SetAppRoles sets the appRoles property value. The roles exposed by the application that's linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (oauth2PermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 func (m *ServicePrincipal) SetAppRoles(value []AppRoleable) {
 	err := m.GetBackingStore().Set("appRoles", value)
 	if err != nil {
@@ -2196,7 +2196,7 @@ func (m *ServicePrincipal) SetOauth2PermissionGrants(value []OAuth2PermissionGra
 	}
 }
 
-// SetOauth2PermissionScopes sets the oauth2PermissionScopes property value. The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
+// SetOauth2PermissionScopes sets the oauth2PermissionScopes property value. The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 func (m *ServicePrincipal) SetOauth2PermissionScopes(value []PermissionScopeable) {
 	err := m.GetBackingStore().Set("oauth2PermissionScopes", value)
 	if err != nil {

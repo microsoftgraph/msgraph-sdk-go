@@ -23,7 +23,7 @@ type TenantGovernanceRequestBuilderDeleteRequestConfiguration struct {
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// TenantGovernanceRequestBuilderGetQueryParameters get tenantGovernance from directory
+// TenantGovernanceRequestBuilderGetQueryParameters container for Microsoft Entra Tenant Governance capabilities.
 type TenantGovernanceRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,7 +81,7 @@ func (m *TenantGovernanceRequestBuilder) Delete(ctx context.Context, requestConf
 	return nil
 }
 
-// Get get tenantGovernance from directory
+// Get container for Microsoft Entra Tenant Governance capabilities.
 // returns a TenantGovernanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantGovernanceRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernanceable, error) {
@@ -171,7 +171,7 @@ func (m *TenantGovernanceRequestBuilder) ToDeleteRequestInformation(ctx context.
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get tenantGovernance from directory
+// ToGetRequestInformation container for Microsoft Entra Tenant Governance capabilities.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

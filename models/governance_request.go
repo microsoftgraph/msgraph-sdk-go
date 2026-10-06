@@ -26,7 +26,7 @@ func CreateGovernanceRequestFromDiscriminatorValue(parseNode i878a80d2330e89d268
 	return NewGovernanceRequest(), nil
 }
 
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The date and time when the request expires if not accepted or rejected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *Time when successful
 func (m *GovernanceRequest) GetExpirationDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -136,7 +136,7 @@ func (m *GovernanceRequest) GetFieldDeserializers() map[string]func(i878a80d2330
 	return res
 }
 
-// GetGovernancePolicyTemplate gets the governancePolicyTemplate property value. The governancePolicyTemplate property
+// GetGovernancePolicyTemplate gets the governancePolicyTemplate property value. The governance policy template associated with this request.
 // returns a TenantGovernancePolicyTemplateable when successful
 func (m *GovernanceRequest) GetGovernancePolicyTemplate() TenantGovernancePolicyTemplateable {
 	val, err := m.GetBackingStore().Get("governancePolicyTemplate")
@@ -149,7 +149,7 @@ func (m *GovernanceRequest) GetGovernancePolicyTemplate() TenantGovernancePolicy
 	return nil
 }
 
-// GetGovernedTenantId gets the governedTenantId property value. The governedTenantId property
+// GetGovernedTenantId gets the governedTenantId property value. The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRequest) GetGovernedTenantId() *string {
 	val, err := m.GetBackingStore().Get("governedTenantId")
@@ -162,7 +162,7 @@ func (m *GovernanceRequest) GetGovernedTenantId() *string {
 	return nil
 }
 
-// GetGovernedTenantName gets the governedTenantName property value. The governedTenantName property
+// GetGovernedTenantName gets the governedTenantName property value. The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRequest) GetGovernedTenantName() *string {
 	val, err := m.GetBackingStore().Get("governedTenantName")
@@ -175,7 +175,7 @@ func (m *GovernanceRequest) GetGovernedTenantName() *string {
 	return nil
 }
 
-// GetGoverningTenantId gets the governingTenantId property value. The governingTenantId property
+// GetGoverningTenantId gets the governingTenantId property value. The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRequest) GetGoverningTenantId() *string {
 	val, err := m.GetBackingStore().Get("governingTenantId")
@@ -188,7 +188,7 @@ func (m *GovernanceRequest) GetGoverningTenantId() *string {
 	return nil
 }
 
-// GetGoverningTenantName gets the governingTenantName property value. The governingTenantName property
+// GetGoverningTenantName gets the governingTenantName property value. The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRequest) GetGoverningTenantName() *string {
 	val, err := m.GetBackingStore().Get("governingTenantName")
@@ -214,7 +214,7 @@ func (m *GovernanceRequest) GetPolicySnapshot() RelationshipPolicyable {
 	return nil
 }
 
-// GetRequestDateTime gets the requestDateTime property value. The requestDateTime property
+// GetRequestDateTime gets the requestDateTime property value. The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *Time when successful
 func (m *GovernanceRequest) GetRequestDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("requestDateTime")
@@ -304,7 +304,7 @@ func (m *GovernanceRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 	return nil
 }
 
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The date and time when the request expires if not accepted or rejected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 func (m *GovernanceRequest) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("expirationDateTime", value)
 	if err != nil {
@@ -312,7 +312,7 @@ func (m *GovernanceRequest) SetExpirationDateTime(value *i336074805fc853987abe6f
 	}
 }
 
-// SetGovernancePolicyTemplate sets the governancePolicyTemplate property value. The governancePolicyTemplate property
+// SetGovernancePolicyTemplate sets the governancePolicyTemplate property value. The governance policy template associated with this request.
 func (m *GovernanceRequest) SetGovernancePolicyTemplate(value TenantGovernancePolicyTemplateable) {
 	err := m.GetBackingStore().Set("governancePolicyTemplate", value)
 	if err != nil {
@@ -320,7 +320,7 @@ func (m *GovernanceRequest) SetGovernancePolicyTemplate(value TenantGovernancePo
 	}
 }
 
-// SetGovernedTenantId sets the governedTenantId property value. The governedTenantId property
+// SetGovernedTenantId sets the governedTenantId property value. The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRequest) SetGovernedTenantId(value *string) {
 	err := m.GetBackingStore().Set("governedTenantId", value)
 	if err != nil {
@@ -328,7 +328,7 @@ func (m *GovernanceRequest) SetGovernedTenantId(value *string) {
 	}
 }
 
-// SetGovernedTenantName sets the governedTenantName property value. The governedTenantName property
+// SetGovernedTenantName sets the governedTenantName property value. The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRequest) SetGovernedTenantName(value *string) {
 	err := m.GetBackingStore().Set("governedTenantName", value)
 	if err != nil {
@@ -336,7 +336,7 @@ func (m *GovernanceRequest) SetGovernedTenantName(value *string) {
 	}
 }
 
-// SetGoverningTenantId sets the governingTenantId property value. The governingTenantId property
+// SetGoverningTenantId sets the governingTenantId property value. The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRequest) SetGoverningTenantId(value *string) {
 	err := m.GetBackingStore().Set("governingTenantId", value)
 	if err != nil {
@@ -344,7 +344,7 @@ func (m *GovernanceRequest) SetGoverningTenantId(value *string) {
 	}
 }
 
-// SetGoverningTenantName sets the governingTenantName property value. The governingTenantName property
+// SetGoverningTenantName sets the governingTenantName property value. The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRequest) SetGoverningTenantName(value *string) {
 	err := m.GetBackingStore().Set("governingTenantName", value)
 	if err != nil {
@@ -360,7 +360,7 @@ func (m *GovernanceRequest) SetPolicySnapshot(value RelationshipPolicyable) {
 	}
 }
 
-// SetRequestDateTime sets the requestDateTime property value. The requestDateTime property
+// SetRequestDateTime sets the requestDateTime property value. The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 func (m *GovernanceRequest) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("requestDateTime", value)
 	if err != nil {

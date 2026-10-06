@@ -122,7 +122,7 @@ func (m *TenantGovernance) GetFieldDeserializers() map[string]func(i878a80d2330e
 	return res
 }
 
-// GetGovernanceInvitations gets the governanceInvitations property value. The governanceInvitations property
+// GetGovernanceInvitations gets the governanceInvitations property value. Collection of governance invitations associated with the tenant.
 // returns a []GovernanceInvitationable when successful
 func (m *TenantGovernance) GetGovernanceInvitations() []GovernanceInvitationable {
 	val, err := m.GetBackingStore().Get("governanceInvitations")
@@ -135,7 +135,7 @@ func (m *TenantGovernance) GetGovernanceInvitations() []GovernanceInvitationable
 	return nil
 }
 
-// GetGovernancePolicyTemplates gets the governancePolicyTemplates property value. The governancePolicyTemplates property
+// GetGovernancePolicyTemplates gets the governancePolicyTemplates property value. Collection of governance policy templates associated with the tenant.
 // returns a []TenantGovernancePolicyTemplateable when successful
 func (m *TenantGovernance) GetGovernancePolicyTemplates() []TenantGovernancePolicyTemplateable {
 	val, err := m.GetBackingStore().Get("governancePolicyTemplates")
@@ -148,7 +148,7 @@ func (m *TenantGovernance) GetGovernancePolicyTemplates() []TenantGovernancePoli
 	return nil
 }
 
-// GetGovernanceRelationships gets the governanceRelationships property value. The governanceRelationships property
+// GetGovernanceRelationships gets the governanceRelationships property value. Collection of governance relationships associated with the tenant.
 // returns a []GovernanceRelationshipable when successful
 func (m *TenantGovernance) GetGovernanceRelationships() []GovernanceRelationshipable {
 	val, err := m.GetBackingStore().Get("governanceRelationships")
@@ -161,7 +161,7 @@ func (m *TenantGovernance) GetGovernanceRelationships() []GovernanceRelationship
 	return nil
 }
 
-// GetGovernanceRequests gets the governanceRequests property value. The governanceRequests property
+// GetGovernanceRequests gets the governanceRequests property value. Collection of governance requests associated with the tenant.
 // returns a []GovernanceRequestable when successful
 func (m *TenantGovernance) GetGovernanceRequests() []GovernanceRequestable {
 	val, err := m.GetBackingStore().Get("governanceRequests")
@@ -174,7 +174,7 @@ func (m *TenantGovernance) GetGovernanceRequests() []GovernanceRequestable {
 	return nil
 }
 
-// GetRelatedTenants gets the relatedTenants property value. The relatedTenants property
+// GetRelatedTenants gets the relatedTenants property value. Collection of related tenants associated with the tenant.
 // returns a []RelatedTenantable when successful
 func (m *TenantGovernance) GetRelatedTenants() []RelatedTenantable {
 	val, err := m.GetBackingStore().Get("relatedTenants")
@@ -187,7 +187,7 @@ func (m *TenantGovernance) GetRelatedTenants() []RelatedTenantable {
 	return nil
 }
 
-// GetSettings gets the settings property value. The settings property
+// GetSettings gets the settings property value. Settings for the tenant governance container.
 // returns a TenantGovernanceSettingable when successful
 func (m *TenantGovernance) GetSettings() TenantGovernanceSettingable {
 	val, err := m.GetBackingStore().Get("settings")
@@ -275,7 +275,7 @@ func (m *TenantGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 	return nil
 }
 
-// SetGovernanceInvitations sets the governanceInvitations property value. The governanceInvitations property
+// SetGovernanceInvitations sets the governanceInvitations property value. Collection of governance invitations associated with the tenant.
 func (m *TenantGovernance) SetGovernanceInvitations(value []GovernanceInvitationable) {
 	err := m.GetBackingStore().Set("governanceInvitations", value)
 	if err != nil {
@@ -283,7 +283,7 @@ func (m *TenantGovernance) SetGovernanceInvitations(value []GovernanceInvitation
 	}
 }
 
-// SetGovernancePolicyTemplates sets the governancePolicyTemplates property value. The governancePolicyTemplates property
+// SetGovernancePolicyTemplates sets the governancePolicyTemplates property value. Collection of governance policy templates associated with the tenant.
 func (m *TenantGovernance) SetGovernancePolicyTemplates(value []TenantGovernancePolicyTemplateable) {
 	err := m.GetBackingStore().Set("governancePolicyTemplates", value)
 	if err != nil {
@@ -291,7 +291,7 @@ func (m *TenantGovernance) SetGovernancePolicyTemplates(value []TenantGovernance
 	}
 }
 
-// SetGovernanceRelationships sets the governanceRelationships property value. The governanceRelationships property
+// SetGovernanceRelationships sets the governanceRelationships property value. Collection of governance relationships associated with the tenant.
 func (m *TenantGovernance) SetGovernanceRelationships(value []GovernanceRelationshipable) {
 	err := m.GetBackingStore().Set("governanceRelationships", value)
 	if err != nil {
@@ -299,7 +299,7 @@ func (m *TenantGovernance) SetGovernanceRelationships(value []GovernanceRelation
 	}
 }
 
-// SetGovernanceRequests sets the governanceRequests property value. The governanceRequests property
+// SetGovernanceRequests sets the governanceRequests property value. Collection of governance requests associated with the tenant.
 func (m *TenantGovernance) SetGovernanceRequests(value []GovernanceRequestable) {
 	err := m.GetBackingStore().Set("governanceRequests", value)
 	if err != nil {
@@ -307,7 +307,7 @@ func (m *TenantGovernance) SetGovernanceRequests(value []GovernanceRequestable) 
 	}
 }
 
-// SetRelatedTenants sets the relatedTenants property value. The relatedTenants property
+// SetRelatedTenants sets the relatedTenants property value. Collection of related tenants associated with the tenant.
 func (m *TenantGovernance) SetRelatedTenants(value []RelatedTenantable) {
 	err := m.GetBackingStore().Set("relatedTenants", value)
 	if err != nil {
@@ -315,7 +315,7 @@ func (m *TenantGovernance) SetRelatedTenants(value []RelatedTenantable) {
 	}
 }
 
-// SetSettings sets the settings property value. The settings property
+// SetSettings sets the settings property value. Settings for the tenant governance container.
 func (m *TenantGovernance) SetSettings(value TenantGovernanceSettingable) {
 	err := m.GetBackingStore().Set("settings", value)
 	if err != nil {

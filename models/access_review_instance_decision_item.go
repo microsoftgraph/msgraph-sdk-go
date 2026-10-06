@@ -303,7 +303,7 @@ func (m *AccessReviewInstanceDecisionItem) GetJustification() *string {
 	return nil
 }
 
-// GetPermission gets the permission property value. The permission property
+// GetPermission gets the permission property value. The permission that grants the principal access to a resource. Read-only.
 // returns a AccessReviewInstanceDecisionItemPermissionable when successful
 func (m *AccessReviewInstanceDecisionItem) GetPermission() AccessReviewInstanceDecisionItemPermissionable {
 	val, err := m.GetBackingStore().Get("permission")
@@ -582,7 +582,7 @@ func (m *AccessReviewInstanceDecisionItem) SetJustification(value *string) {
 	}
 }
 
-// SetPermission sets the permission property value. The permission property
+// SetPermission sets the permission property value. The permission that grants the principal access to a resource. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetPermission(value AccessReviewInstanceDecisionItemPermissionable) {
 	err := m.GetBackingStore().Set("permission", value)
 	if err != nil {

@@ -261,6 +261,36 @@ func (m *Subscription) GetFieldDeserializers() map[string]func(i878a80d2330e89d2
 		}
 		return nil
 	}
+	res["vapidPublicKey"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVapidPublicKey(val)
+		}
+		return nil
+	}
+	res["webPushEncryptionP256dhPublicKey"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWebPushEncryptionP256dhPublicKey(val)
+		}
+		return nil
+	}
+	res["webPushEncryptionSecret"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWebPushEncryptionSecret(val)
+		}
+		return nil
+	}
 	return res
 }
 
@@ -346,6 +376,45 @@ func (m *Subscription) GetNotificationUrlAppId() *string {
 // returns a *string when successful
 func (m *Subscription) GetResource() *string {
 	val, err := m.GetBackingStore().Get("resource")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetVapidPublicKey gets the vapidPublicKey property value. Optional. The application server's VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.
+// returns a *string when successful
+func (m *Subscription) GetVapidPublicKey() *string {
+	val, err := m.GetBackingStore().Get("vapidPublicKey")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetWebPushEncryptionP256dhPublicKey gets the webPushEncryptionP256dhPublicKey property value. Optional. The subscriber's ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey('p256dh'). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.
+// returns a *string when successful
+func (m *Subscription) GetWebPushEncryptionP256dhPublicKey() *string {
+	val, err := m.GetBackingStore().Get("webPushEncryptionP256dhPublicKey")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetWebPushEncryptionSecret gets the webPushEncryptionSecret property value. Optional. The subscriber's auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey('auth'). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.
+// returns a *string when successful
+func (m *Subscription) GetWebPushEncryptionSecret() *string {
+	val, err := m.GetBackingStore().Get("webPushEncryptionSecret")
 	if err != nil {
 		panic(err)
 	}
@@ -441,6 +510,24 @@ func (m *Subscription) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 	}
 	{
 		err = writer.WriteStringValue("resource", m.GetResource())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("vapidPublicKey", m.GetVapidPublicKey())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("webPushEncryptionP256dhPublicKey", m.GetWebPushEncryptionP256dhPublicKey())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("webPushEncryptionSecret", m.GetWebPushEncryptionSecret())
 		if err != nil {
 			return err
 		}
@@ -560,6 +647,30 @@ func (m *Subscription) SetResource(value *string) {
 	}
 }
 
+// SetVapidPublicKey sets the vapidPublicKey property value. Optional. The application server's VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.
+func (m *Subscription) SetVapidPublicKey(value *string) {
+	err := m.GetBackingStore().Set("vapidPublicKey", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetWebPushEncryptionP256dhPublicKey sets the webPushEncryptionP256dhPublicKey property value. Optional. The subscriber's ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey('p256dh'). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.
+func (m *Subscription) SetWebPushEncryptionP256dhPublicKey(value *string) {
+	err := m.GetBackingStore().Set("webPushEncryptionP256dhPublicKey", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetWebPushEncryptionSecret sets the webPushEncryptionSecret property value. Optional. The subscriber's auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey('auth'). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.
+func (m *Subscription) SetWebPushEncryptionSecret(value *string) {
+	err := m.GetBackingStore().Set("webPushEncryptionSecret", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type Subscriptionable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -577,6 +688,9 @@ type Subscriptionable interface {
 	GetNotificationUrl() *string
 	GetNotificationUrlAppId() *string
 	GetResource() *string
+	GetVapidPublicKey() *string
+	GetWebPushEncryptionP256dhPublicKey() *string
+	GetWebPushEncryptionSecret() *string
 	SetApplicationId(value *string)
 	SetChangeType(value *string)
 	SetClientState(value *string)
@@ -591,4 +705,7 @@ type Subscriptionable interface {
 	SetNotificationUrl(value *string)
 	SetNotificationUrlAppId(value *string)
 	SetResource(value *string)
+	SetVapidPublicKey(value *string)
+	SetWebPushEncryptionP256dhPublicKey(value *string)
+	SetWebPushEncryptionSecret(value *string)
 }

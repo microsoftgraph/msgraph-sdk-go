@@ -41,7 +41,7 @@ func (m *MultiTenantApplicationsToProvision) GetAdditionalData() map[string]any 
 	return val.(map[string]any)
 }
 
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. The appId (client ID) of the multi-tenant application.
 // returns a *string when successful
 func (m *MultiTenantApplicationsToProvision) GetAppId() *string {
 	val, err := m.GetBackingStore().Get("appId")
@@ -60,7 +60,7 @@ func (m *MultiTenantApplicationsToProvision) GetBackingStore() ie8677ce2c7e1b4c2
 	return m.backingStore
 }
 
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the application.
 // returns a *string when successful
 func (m *MultiTenantApplicationsToProvision) GetDisplayName() *string {
 	val, err := m.GetBackingStore().Get("displayName")
@@ -136,7 +136,7 @@ func (m *MultiTenantApplicationsToProvision) GetFieldDeserializers() map[string]
 	return res
 }
 
-// GetObjectId gets the objectId property value. The objectId property
+// GetObjectId gets the objectId property value. The object ID of the service principal in the governing tenant.
 // returns a *string when successful
 func (m *MultiTenantApplicationsToProvision) GetObjectId() *string {
 	val, err := m.GetBackingStore().Get("objectId")
@@ -162,7 +162,7 @@ func (m *MultiTenantApplicationsToProvision) GetOdataType() *string {
 	return nil
 }
 
-// GetRequiredResourceAccesses gets the requiredResourceAccesses property value. The requiredResourceAccesses property
+// GetRequiredResourceAccesses gets the requiredResourceAccesses property value. The collection of resource accesses (permissions) required by the application.
 // returns a []ApplicationsRequiredResourceAccessable when successful
 func (m *MultiTenantApplicationsToProvision) GetRequiredResourceAccesses() []ApplicationsRequiredResourceAccessable {
 	val, err := m.GetBackingStore().Get("requiredResourceAccesses")
@@ -230,7 +230,7 @@ func (m *MultiTenantApplicationsToProvision) SetAdditionalData(value map[string]
 	}
 }
 
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. The appId (client ID) of the multi-tenant application.
 func (m *MultiTenantApplicationsToProvision) SetAppId(value *string) {
 	err := m.GetBackingStore().Set("appId", value)
 	if err != nil {
@@ -243,7 +243,7 @@ func (m *MultiTenantApplicationsToProvision) SetBackingStore(value ie8677ce2c7e1
 	m.backingStore = value
 }
 
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the application.
 func (m *MultiTenantApplicationsToProvision) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
 	if err != nil {
@@ -251,7 +251,7 @@ func (m *MultiTenantApplicationsToProvision) SetDisplayName(value *string) {
 	}
 }
 
-// SetObjectId sets the objectId property value. The objectId property
+// SetObjectId sets the objectId property value. The object ID of the service principal in the governing tenant.
 func (m *MultiTenantApplicationsToProvision) SetObjectId(value *string) {
 	err := m.GetBackingStore().Set("objectId", value)
 	if err != nil {
@@ -267,7 +267,7 @@ func (m *MultiTenantApplicationsToProvision) SetOdataType(value *string) {
 	}
 }
 
-// SetRequiredResourceAccesses sets the requiredResourceAccesses property value. The requiredResourceAccesses property
+// SetRequiredResourceAccesses sets the requiredResourceAccesses property value. The collection of resource accesses (permissions) required by the application.
 func (m *MultiTenantApplicationsToProvision) SetRequiredResourceAccesses(value []ApplicationsRequiredResourceAccessable) {
 	err := m.GetBackingStore().Set("requiredResourceAccesses", value)
 	if err != nil {

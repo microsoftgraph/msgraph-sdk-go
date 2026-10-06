@@ -37,8 +37,11 @@ func NewAccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProv
 	return NewAccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post invoke action batchApplyCustomDataProvidedResourceDecisions
+// Post enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state. This action is part of the unified access reviews surface and is available only through the /identityGovernance/accessReviews/unified route. For more information, see unifiedRoot.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-batchapplycustomdataprovidedresourcedecisions?view=graph-rest-1.0
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) Post(ctx context.Context, body AccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration) error {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -54,7 +57,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataPro
 	return nil
 }
 
-// ToPostRequestInformation invoke action batchApplyCustomDataProvidedResourceDecisions
+// ToPostRequestInformation enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state. This action is part of the unified access reviews surface and is available only through the /identityGovernance/accessReviews/unified route. For more information, see unifiedRoot.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

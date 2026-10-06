@@ -139,7 +139,7 @@ func (m *BillingMetricsBase) GetFieldDeserializers() map[string]func(i878a80d233
 	return res
 }
 
-// GetForeignAssociatedTenantBillingManagementActiveCount gets the foreignAssociatedTenantBillingManagementActiveCount property value. The foreignAssociatedTenantBillingManagementActiveCount property
+// GetForeignAssociatedTenantBillingManagementActiveCount gets the foreignAssociatedTenantBillingManagementActiveCount property value. The number of foreign associated tenants with active billing management.
 // returns a *float64 when successful
 func (m *BillingMetricsBase) GetForeignAssociatedTenantBillingManagementActiveCount() *float64 {
 	val, err := m.GetBackingStore().Get("foreignAssociatedTenantBillingManagementActiveCount")
@@ -152,7 +152,7 @@ func (m *BillingMetricsBase) GetForeignAssociatedTenantBillingManagementActiveCo
 	return nil
 }
 
-// GetForeignAssociatedTenantCount gets the foreignAssociatedTenantCount property value. The foreignAssociatedTenantCount property
+// GetForeignAssociatedTenantCount gets the foreignAssociatedTenantCount property value. The total number of foreign associated tenants.
 // returns a *float64 when successful
 func (m *BillingMetricsBase) GetForeignAssociatedTenantCount() *float64 {
 	val, err := m.GetBackingStore().Get("foreignAssociatedTenantCount")
@@ -165,7 +165,7 @@ func (m *BillingMetricsBase) GetForeignAssociatedTenantCount() *float64 {
 	return nil
 }
 
-// GetForeignAssociatedTenantProvisioningActiveCount gets the foreignAssociatedTenantProvisioningActiveCount property value. The foreignAssociatedTenantProvisioningActiveCount property
+// GetForeignAssociatedTenantProvisioningActiveCount gets the foreignAssociatedTenantProvisioningActiveCount property value. The number of foreign associated tenants with active provisioning.
 // returns a *float64 when successful
 func (m *BillingMetricsBase) GetForeignAssociatedTenantProvisioningActiveCount() *float64 {
 	val, err := m.GetBackingStore().Get("foreignAssociatedTenantProvisioningActiveCount")
@@ -178,7 +178,7 @@ func (m *BillingMetricsBase) GetForeignAssociatedTenantProvisioningActiveCount()
 	return nil
 }
 
-// GetLocalAssociatedTenantBillingManagementActiveCount gets the localAssociatedTenantBillingManagementActiveCount property value. The localAssociatedTenantBillingManagementActiveCount property
+// GetLocalAssociatedTenantBillingManagementActiveCount gets the localAssociatedTenantBillingManagementActiveCount property value. The number of local associated tenants with active billing management.
 // returns a *float64 when successful
 func (m *BillingMetricsBase) GetLocalAssociatedTenantBillingManagementActiveCount() *float64 {
 	val, err := m.GetBackingStore().Get("localAssociatedTenantBillingManagementActiveCount")
@@ -191,7 +191,7 @@ func (m *BillingMetricsBase) GetLocalAssociatedTenantBillingManagementActiveCoun
 	return nil
 }
 
-// GetLocalAssociatedTenantCount gets the localAssociatedTenantCount property value. The localAssociatedTenantCount property
+// GetLocalAssociatedTenantCount gets the localAssociatedTenantCount property value. The total number of local associated tenants.
 // returns a *float64 when successful
 func (m *BillingMetricsBase) GetLocalAssociatedTenantCount() *float64 {
 	val, err := m.GetBackingStore().Get("localAssociatedTenantCount")
@@ -204,7 +204,7 @@ func (m *BillingMetricsBase) GetLocalAssociatedTenantCount() *float64 {
 	return nil
 }
 
-// GetLocalAssociatedTenantIds gets the localAssociatedTenantIds property value. The localAssociatedTenantIds property
+// GetLocalAssociatedTenantIds gets the localAssociatedTenantIds property value. The list of local associated tenant IDs.
 // returns a []string when successful
 func (m *BillingMetricsBase) GetLocalAssociatedTenantIds() []string {
 	val, err := m.GetBackingStore().Get("localAssociatedTenantIds")
@@ -217,7 +217,7 @@ func (m *BillingMetricsBase) GetLocalAssociatedTenantIds() []string {
 	return nil
 }
 
-// GetLocalAssociatedTenantProvisioningActiveCount gets the localAssociatedTenantProvisioningActiveCount property value. The localAssociatedTenantProvisioningActiveCount property
+// GetLocalAssociatedTenantProvisioningActiveCount gets the localAssociatedTenantProvisioningActiveCount property value. The number of local associated tenants with active provisioning.
 // returns a *float64 when successful
 func (m *BillingMetricsBase) GetLocalAssociatedTenantProvisioningActiveCount() *float64 {
 	val, err := m.GetBackingStore().Get("localAssociatedTenantProvisioningActiveCount")
@@ -230,7 +230,7 @@ func (m *BillingMetricsBase) GetLocalAssociatedTenantProvisioningActiveCount() *
 	return nil
 }
 
-// GetWatermarkDateTime gets the watermarkDateTime property value. The watermarkDateTime property
+// GetWatermarkDateTime gets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 // returns a *Time when successful
 func (m *BillingMetricsBase) GetWatermarkDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("watermarkDateTime")
@@ -300,7 +300,7 @@ func (m *BillingMetricsBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 	return nil
 }
 
-// SetForeignAssociatedTenantBillingManagementActiveCount sets the foreignAssociatedTenantBillingManagementActiveCount property value. The foreignAssociatedTenantBillingManagementActiveCount property
+// SetForeignAssociatedTenantBillingManagementActiveCount sets the foreignAssociatedTenantBillingManagementActiveCount property value. The number of foreign associated tenants with active billing management.
 func (m *BillingMetricsBase) SetForeignAssociatedTenantBillingManagementActiveCount(value *float64) {
 	err := m.GetBackingStore().Set("foreignAssociatedTenantBillingManagementActiveCount", value)
 	if err != nil {
@@ -308,7 +308,7 @@ func (m *BillingMetricsBase) SetForeignAssociatedTenantBillingManagementActiveCo
 	}
 }
 
-// SetForeignAssociatedTenantCount sets the foreignAssociatedTenantCount property value. The foreignAssociatedTenantCount property
+// SetForeignAssociatedTenantCount sets the foreignAssociatedTenantCount property value. The total number of foreign associated tenants.
 func (m *BillingMetricsBase) SetForeignAssociatedTenantCount(value *float64) {
 	err := m.GetBackingStore().Set("foreignAssociatedTenantCount", value)
 	if err != nil {
@@ -316,7 +316,7 @@ func (m *BillingMetricsBase) SetForeignAssociatedTenantCount(value *float64) {
 	}
 }
 
-// SetForeignAssociatedTenantProvisioningActiveCount sets the foreignAssociatedTenantProvisioningActiveCount property value. The foreignAssociatedTenantProvisioningActiveCount property
+// SetForeignAssociatedTenantProvisioningActiveCount sets the foreignAssociatedTenantProvisioningActiveCount property value. The number of foreign associated tenants with active provisioning.
 func (m *BillingMetricsBase) SetForeignAssociatedTenantProvisioningActiveCount(value *float64) {
 	err := m.GetBackingStore().Set("foreignAssociatedTenantProvisioningActiveCount", value)
 	if err != nil {
@@ -324,7 +324,7 @@ func (m *BillingMetricsBase) SetForeignAssociatedTenantProvisioningActiveCount(v
 	}
 }
 
-// SetLocalAssociatedTenantBillingManagementActiveCount sets the localAssociatedTenantBillingManagementActiveCount property value. The localAssociatedTenantBillingManagementActiveCount property
+// SetLocalAssociatedTenantBillingManagementActiveCount sets the localAssociatedTenantBillingManagementActiveCount property value. The number of local associated tenants with active billing management.
 func (m *BillingMetricsBase) SetLocalAssociatedTenantBillingManagementActiveCount(value *float64) {
 	err := m.GetBackingStore().Set("localAssociatedTenantBillingManagementActiveCount", value)
 	if err != nil {
@@ -332,7 +332,7 @@ func (m *BillingMetricsBase) SetLocalAssociatedTenantBillingManagementActiveCoun
 	}
 }
 
-// SetLocalAssociatedTenantCount sets the localAssociatedTenantCount property value. The localAssociatedTenantCount property
+// SetLocalAssociatedTenantCount sets the localAssociatedTenantCount property value. The total number of local associated tenants.
 func (m *BillingMetricsBase) SetLocalAssociatedTenantCount(value *float64) {
 	err := m.GetBackingStore().Set("localAssociatedTenantCount", value)
 	if err != nil {
@@ -340,7 +340,7 @@ func (m *BillingMetricsBase) SetLocalAssociatedTenantCount(value *float64) {
 	}
 }
 
-// SetLocalAssociatedTenantIds sets the localAssociatedTenantIds property value. The localAssociatedTenantIds property
+// SetLocalAssociatedTenantIds sets the localAssociatedTenantIds property value. The list of local associated tenant IDs.
 func (m *BillingMetricsBase) SetLocalAssociatedTenantIds(value []string) {
 	err := m.GetBackingStore().Set("localAssociatedTenantIds", value)
 	if err != nil {
@@ -348,7 +348,7 @@ func (m *BillingMetricsBase) SetLocalAssociatedTenantIds(value []string) {
 	}
 }
 
-// SetLocalAssociatedTenantProvisioningActiveCount sets the localAssociatedTenantProvisioningActiveCount property value. The localAssociatedTenantProvisioningActiveCount property
+// SetLocalAssociatedTenantProvisioningActiveCount sets the localAssociatedTenantProvisioningActiveCount property value. The number of local associated tenants with active provisioning.
 func (m *BillingMetricsBase) SetLocalAssociatedTenantProvisioningActiveCount(value *float64) {
 	err := m.GetBackingStore().Set("localAssociatedTenantProvisioningActiveCount", value)
 	if err != nil {
@@ -356,7 +356,7 @@ func (m *BillingMetricsBase) SetLocalAssociatedTenantProvisioningActiveCount(val
 	}
 }
 
-// SetWatermarkDateTime sets the watermarkDateTime property value. The watermarkDateTime property
+// SetWatermarkDateTime sets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 func (m *BillingMetricsBase) SetWatermarkDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("watermarkDateTime", value)
 	if err != nil {

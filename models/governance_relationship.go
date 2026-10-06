@@ -39,7 +39,7 @@ func (m *GovernanceRelationship) GetCreatedType() *RelationshipCreationType {
 	return nil
 }
 
-// GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
+// GetCreationDateTime gets the creationDateTime property value. The date and time when the relationship was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *Time when successful
 func (m *GovernanceRelationship) GetCreationDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("creationDateTime")
@@ -139,7 +139,7 @@ func (m *GovernanceRelationship) GetFieldDeserializers() map[string]func(i878a80
 	return res
 }
 
-// GetGovernedTenantId gets the governedTenantId property value. The governedTenantId property
+// GetGovernedTenantId gets the governedTenantId property value. The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRelationship) GetGovernedTenantId() *string {
 	val, err := m.GetBackingStore().Get("governedTenantId")
@@ -152,7 +152,7 @@ func (m *GovernanceRelationship) GetGovernedTenantId() *string {
 	return nil
 }
 
-// GetGovernedTenantName gets the governedTenantName property value. The governedTenantName property
+// GetGovernedTenantName gets the governedTenantName property value. The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRelationship) GetGovernedTenantName() *string {
 	val, err := m.GetBackingStore().Get("governedTenantName")
@@ -165,7 +165,7 @@ func (m *GovernanceRelationship) GetGovernedTenantName() *string {
 	return nil
 }
 
-// GetGoverningTenantId gets the governingTenantId property value. The governingTenantId property
+// GetGoverningTenantId gets the governingTenantId property value. The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRelationship) GetGoverningTenantId() *string {
 	val, err := m.GetBackingStore().Get("governingTenantId")
@@ -178,7 +178,7 @@ func (m *GovernanceRelationship) GetGoverningTenantId() *string {
 	return nil
 }
 
-// GetGoverningTenantName gets the governingTenantName property value. The governingTenantName property
+// GetGoverningTenantName gets the governingTenantName property value. The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *GovernanceRelationship) GetGoverningTenantName() *string {
 	val, err := m.GetBackingStore().Get("governingTenantName")
@@ -284,7 +284,7 @@ func (m *GovernanceRelationship) SetCreatedType(value *RelationshipCreationType)
 	}
 }
 
-// SetCreationDateTime sets the creationDateTime property value. The creationDateTime property
+// SetCreationDateTime sets the creationDateTime property value. The date and time when the relationship was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 func (m *GovernanceRelationship) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("creationDateTime", value)
 	if err != nil {
@@ -292,7 +292,7 @@ func (m *GovernanceRelationship) SetCreationDateTime(value *i336074805fc853987ab
 	}
 }
 
-// SetGovernedTenantId sets the governedTenantId property value. The governedTenantId property
+// SetGovernedTenantId sets the governedTenantId property value. The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRelationship) SetGovernedTenantId(value *string) {
 	err := m.GetBackingStore().Set("governedTenantId", value)
 	if err != nil {
@@ -300,7 +300,7 @@ func (m *GovernanceRelationship) SetGovernedTenantId(value *string) {
 	}
 }
 
-// SetGovernedTenantName sets the governedTenantName property value. The governedTenantName property
+// SetGovernedTenantName sets the governedTenantName property value. The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRelationship) SetGovernedTenantName(value *string) {
 	err := m.GetBackingStore().Set("governedTenantName", value)
 	if err != nil {
@@ -308,7 +308,7 @@ func (m *GovernanceRelationship) SetGovernedTenantName(value *string) {
 	}
 }
 
-// SetGoverningTenantId sets the governingTenantId property value. The governingTenantId property
+// SetGoverningTenantId sets the governingTenantId property value. The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRelationship) SetGoverningTenantId(value *string) {
 	err := m.GetBackingStore().Set("governingTenantId", value)
 	if err != nil {
@@ -316,7 +316,7 @@ func (m *GovernanceRelationship) SetGoverningTenantId(value *string) {
 	}
 }
 
-// SetGoverningTenantName sets the governingTenantName property value. The governingTenantName property
+// SetGoverningTenantName sets the governingTenantName property value. The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.
 func (m *GovernanceRelationship) SetGoverningTenantName(value *string) {
 	err := m.GetBackingStore().Set("governingTenantName", value)
 	if err != nil {

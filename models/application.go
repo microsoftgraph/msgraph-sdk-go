@@ -112,7 +112,7 @@ func (m *Application) GetAppManagementPolicies() []AppManagementPolicyable {
 	return nil
 }
 
-// GetAppRoles gets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
+// GetAppRoles gets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. App roles and exposed delegated permission scopes (api.oauth2PermissionScopes) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 // returns a []AppRoleable when successful
 func (m *Application) GetAppRoles() []AppRoleable {
 	val, err := m.GetBackingStore().Get("appRoles")
@@ -1745,7 +1745,7 @@ func (m *Application) SetAppManagementPolicies(value []AppManagementPolicyable) 
 	}
 }
 
-// SetAppRoles sets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
+// SetAppRoles sets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. App roles and exposed delegated permission scopes (api.oauth2PermissionScopes) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 func (m *Application) SetAppRoles(value []AppRoleable) {
 	err := m.GetBackingStore().Set("appRoles", value)
 	if err != nil {

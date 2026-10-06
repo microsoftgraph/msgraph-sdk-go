@@ -37,7 +37,7 @@ func NewItemSettingsWorkHoursAndLocationsOccurrencesSetCurrentLocationRequestBui
 	return NewItemSettingsWorkHoursAndLocationsOccurrencesSetCurrentLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post update your work location for the current day or current active segment. This action allows you to quickly update your work location without modifying individual occurrences.
+// Post update a user's work location for the current day or current active segment. This action quickly updates the user's work location without modifying individual occurrences.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -57,7 +57,7 @@ func (m *ItemSettingsWorkHoursAndLocationsOccurrencesSetCurrentLocationRequestBu
 	return nil
 }
 
-// ToPostRequestInformation update your work location for the current day or current active segment. This action allows you to quickly update your work location without modifying individual occurrences.
+// ToPostRequestInformation update a user's work location for the current day or current active segment. This action quickly updates the user's work location without modifying individual occurrences.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWorkHoursAndLocationsOccurrencesSetCurrentLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSettingsWorkHoursAndLocationsOccurrencesSetCurrentLocationPostRequestBodyable, requestConfiguration *ItemSettingsWorkHoursAndLocationsOccurrencesSetCurrentLocationRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

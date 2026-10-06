@@ -23,7 +23,7 @@ type TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBui
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilderGetQueryParameters get governanceRelationships from directory
+// TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilderGetQueryParameters read the properties of a governanceRelationship object.
 type TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,9 +81,12 @@ func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemReques
 	return nil
 }
 
-// Get get governanceRelationships from directory
+// Get read the properties of a governanceRelationship object.
 // returns a GovernanceRelationshipable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerelationship-get?view=graph-rest-1.0
 func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceRelationshipable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -102,9 +105,12 @@ func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemReques
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceRelationshipable), nil
 }
 
-// Patch update the navigation property governanceRelationships in directory
+// Patch update the status property of a governanceRelationship to initiate the termination process. There are two models for termination:1) Initiated by the governing tenant: After the governing tenant updates the status to terminationRequestedByGoverningTenant, the governed tenant may subsequently update the status to terminated.1) Directly terminated by the governed tenant: The governed tenant updates the status to terminated to immediately terminate the relationship. When the governed tenant updates the status to terminated in either model, the resources that were provisioned in the governed tenant upon relationship creation are deleted.
 // returns a GovernanceRelationshipable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerelationship-update?view=graph-rest-1.0
 func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceRelationshipable, requestConfiguration *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilderPatchRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceRelationshipable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -135,7 +141,7 @@ func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemReques
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get governanceRelationships from directory
+// ToGetRequestInformation read the properties of a governanceRelationship object.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +156,7 @@ func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemReques
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the navigation property governanceRelationships in directory
+// ToPatchRequestInformation update the status property of a governanceRelationship to initiate the termination process. There are two models for termination:1) Initiated by the governing tenant: After the governing tenant updates the status to terminationRequestedByGoverningTenant, the governed tenant may subsequently update the status to terminated.1) Directly terminated by the governed tenant: The governed tenant updates the status to terminated to immediately terminate the relationship. When the governed tenant updates the status to terminated in either model, the resources that were provisioned in the governed tenant upon relationship creation are deleted.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceRelationshipable, requestConfiguration *TenantGovernanceGovernanceRelationshipsGovernanceRelationshipItemRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

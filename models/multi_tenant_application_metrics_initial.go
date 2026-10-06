@@ -26,7 +26,7 @@ func CreateMultiTenantApplicationMetricsInitialFromDiscriminatorValue(parseNode 
 	return NewMultiTenantApplicationMetricsInitial(), nil
 }
 
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp that represents when multitenant application metrics are initially aggregated for the related tenant.
 // returns a *Time when successful
 func (m *MultiTenantApplicationMetricsInitial) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("createdDateTime")
@@ -71,7 +71,7 @@ func (m *MultiTenantApplicationMetricsInitial) Serialize(writer i878a80d2330e89d
 	return nil
 }
 
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp that represents when multitenant application metrics are initially aggregated for the related tenant.
 func (m *MultiTenantApplicationMetricsInitial) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("createdDateTime", value)
 	if err != nil {

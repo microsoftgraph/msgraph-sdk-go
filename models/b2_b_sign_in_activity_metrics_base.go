@@ -103,7 +103,7 @@ func (m *B2BSignInActivityMetricsBase) GetFieldDeserializers() map[string]func(i
 	return res
 }
 
-// GetInboundMonthlyTotalApplications gets the inboundMonthlyTotalApplications property value. The inboundMonthlyTotalApplications property
+// GetInboundMonthlyTotalApplications gets the inboundMonthlyTotalApplications property value. The total number of applications accessed by inbound users in the last month.
 // returns a *float64 when successful
 func (m *B2BSignInActivityMetricsBase) GetInboundMonthlyTotalApplications() *float64 {
 	val, err := m.GetBackingStore().Get("inboundMonthlyTotalApplications")
@@ -116,7 +116,7 @@ func (m *B2BSignInActivityMetricsBase) GetInboundMonthlyTotalApplications() *flo
 	return nil
 }
 
-// GetInboundMonthlyTotalUsers gets the inboundMonthlyTotalUsers property value. The inboundMonthlyTotalUsers property
+// GetInboundMonthlyTotalUsers gets the inboundMonthlyTotalUsers property value. The total number of unique inbound users with sign-in activity in the last month.
 // returns a *float64 when successful
 func (m *B2BSignInActivityMetricsBase) GetInboundMonthlyTotalUsers() *float64 {
 	val, err := m.GetBackingStore().Get("inboundMonthlyTotalUsers")
@@ -129,7 +129,7 @@ func (m *B2BSignInActivityMetricsBase) GetInboundMonthlyTotalUsers() *float64 {
 	return nil
 }
 
-// GetOutboundMonthlyTotalApplications gets the outboundMonthlyTotalApplications property value. The outboundMonthlyTotalApplications property
+// GetOutboundMonthlyTotalApplications gets the outboundMonthlyTotalApplications property value. The total number of applications accessed by outbound users in the last month.
 // returns a *float64 when successful
 func (m *B2BSignInActivityMetricsBase) GetOutboundMonthlyTotalApplications() *float64 {
 	val, err := m.GetBackingStore().Get("outboundMonthlyTotalApplications")
@@ -142,7 +142,7 @@ func (m *B2BSignInActivityMetricsBase) GetOutboundMonthlyTotalApplications() *fl
 	return nil
 }
 
-// GetOutboundMonthlyTotalUsers gets the outboundMonthlyTotalUsers property value. The outboundMonthlyTotalUsers property
+// GetOutboundMonthlyTotalUsers gets the outboundMonthlyTotalUsers property value. The total number of unique outbound users with sign-in activity in the last month.
 // returns a *float64 when successful
 func (m *B2BSignInActivityMetricsBase) GetOutboundMonthlyTotalUsers() *float64 {
 	val, err := m.GetBackingStore().Get("outboundMonthlyTotalUsers")
@@ -155,7 +155,7 @@ func (m *B2BSignInActivityMetricsBase) GetOutboundMonthlyTotalUsers() *float64 {
 	return nil
 }
 
-// GetWatermarkDateTime gets the watermarkDateTime property value. The watermarkDateTime property
+// GetWatermarkDateTime gets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 // returns a *Time when successful
 func (m *B2BSignInActivityMetricsBase) GetWatermarkDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("watermarkDateTime")
@@ -207,7 +207,7 @@ func (m *B2BSignInActivityMetricsBase) Serialize(writer i878a80d2330e89d26896388
 	return nil
 }
 
-// SetInboundMonthlyTotalApplications sets the inboundMonthlyTotalApplications property value. The inboundMonthlyTotalApplications property
+// SetInboundMonthlyTotalApplications sets the inboundMonthlyTotalApplications property value. The total number of applications accessed by inbound users in the last month.
 func (m *B2BSignInActivityMetricsBase) SetInboundMonthlyTotalApplications(value *float64) {
 	err := m.GetBackingStore().Set("inboundMonthlyTotalApplications", value)
 	if err != nil {
@@ -215,7 +215,7 @@ func (m *B2BSignInActivityMetricsBase) SetInboundMonthlyTotalApplications(value 
 	}
 }
 
-// SetInboundMonthlyTotalUsers sets the inboundMonthlyTotalUsers property value. The inboundMonthlyTotalUsers property
+// SetInboundMonthlyTotalUsers sets the inboundMonthlyTotalUsers property value. The total number of unique inbound users with sign-in activity in the last month.
 func (m *B2BSignInActivityMetricsBase) SetInboundMonthlyTotalUsers(value *float64) {
 	err := m.GetBackingStore().Set("inboundMonthlyTotalUsers", value)
 	if err != nil {
@@ -223,7 +223,7 @@ func (m *B2BSignInActivityMetricsBase) SetInboundMonthlyTotalUsers(value *float6
 	}
 }
 
-// SetOutboundMonthlyTotalApplications sets the outboundMonthlyTotalApplications property value. The outboundMonthlyTotalApplications property
+// SetOutboundMonthlyTotalApplications sets the outboundMonthlyTotalApplications property value. The total number of applications accessed by outbound users in the last month.
 func (m *B2BSignInActivityMetricsBase) SetOutboundMonthlyTotalApplications(value *float64) {
 	err := m.GetBackingStore().Set("outboundMonthlyTotalApplications", value)
 	if err != nil {
@@ -231,7 +231,7 @@ func (m *B2BSignInActivityMetricsBase) SetOutboundMonthlyTotalApplications(value
 	}
 }
 
-// SetOutboundMonthlyTotalUsers sets the outboundMonthlyTotalUsers property value. The outboundMonthlyTotalUsers property
+// SetOutboundMonthlyTotalUsers sets the outboundMonthlyTotalUsers property value. The total number of unique outbound users with sign-in activity in the last month.
 func (m *B2BSignInActivityMetricsBase) SetOutboundMonthlyTotalUsers(value *float64) {
 	err := m.GetBackingStore().Set("outboundMonthlyTotalUsers", value)
 	if err != nil {
@@ -239,7 +239,7 @@ func (m *B2BSignInActivityMetricsBase) SetOutboundMonthlyTotalUsers(value *float
 	}
 }
 
-// SetWatermarkDateTime sets the watermarkDateTime property value. The watermarkDateTime property
+// SetWatermarkDateTime sets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 func (m *B2BSignInActivityMetricsBase) SetWatermarkDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("watermarkDateTime", value)
 	if err != nil {

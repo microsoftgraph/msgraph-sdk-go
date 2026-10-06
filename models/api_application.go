@@ -159,7 +159,7 @@ func (m *ApiApplication) GetKnownClientApplications() []i561e97a8befe7661a44c8f5
 	return nil
 }
 
-// GetOauth2PermissionScopes gets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
+// GetOauth2PermissionScopes gets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. These scopes and the application's appRoles share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 // returns a []PermissionScopeable when successful
 func (m *ApiApplication) GetOauth2PermissionScopes() []PermissionScopeable {
 	val, err := m.GetBackingStore().Get("oauth2PermissionScopes")
@@ -299,7 +299,7 @@ func (m *ApiApplication) SetKnownClientApplications(value []i561e97a8befe7661a44
 	}
 }
 
-// SetOauth2PermissionScopes sets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
+// SetOauth2PermissionScopes sets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. These scopes and the application's appRoles share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.
 func (m *ApiApplication) SetOauth2PermissionScopes(value []PermissionScopeable) {
 	err := m.GetBackingStore().Set("oauth2PermissionScopes", value)
 	if err != nil {

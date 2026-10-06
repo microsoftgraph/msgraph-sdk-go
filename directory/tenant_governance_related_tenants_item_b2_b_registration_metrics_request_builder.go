@@ -15,7 +15,7 @@ type TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder stru
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetQueryParameters get b2BRegistrationMetrics from directory
+// TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetQueryParameters b2B registration metrics for this related tenant. Expanded by default.
 type TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewTenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder(r
 	return NewTenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get get b2BRegistrationMetrics from directory
+// Get b2B registration metrics for this related tenant. Expanded by default.
 // returns a B2bRegistrationMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2bRegistrationMetricsable, error) {
@@ -69,7 +69,7 @@ func (m *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder)
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2bRegistrationMetricsable), nil
 }
 
-// ToGetRequestInformation get b2BRegistrationMetrics from directory
+// ToGetRequestInformation b2B registration metrics for this related tenant. Expanded by default.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

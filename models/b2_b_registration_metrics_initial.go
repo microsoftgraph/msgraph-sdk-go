@@ -28,7 +28,7 @@ func CreateB2BRegistrationMetricsInitialFromDiscriminatorValue(parseNode i878a80
 	return NewB2BRegistrationMetricsInitial(), nil
 }
 
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp that represents the date time that B2B registration data was initially aggregated.
 // returns a *Time when successful
 func (m *B2BRegistrationMetricsInitial) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("createdDateTime")
@@ -73,7 +73,7 @@ func (m *B2BRegistrationMetricsInitial) Serialize(writer i878a80d2330e89d2689638
 	return nil
 }
 
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp that represents the date time that B2B registration data was initially aggregated.
 func (m *B2BRegistrationMetricsInitial) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("createdDateTime", value)
 	if err != nil {

@@ -94,7 +94,7 @@ func (m *ApplicationResourcePermission) GetFieldDeserializers() map[string]func(
 	return res
 }
 
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The unique identifier of the permission.
 // returns a *string when successful
 func (m *ApplicationResourcePermission) GetId() *string {
 	val, err := m.GetBackingStore().Get("id")
@@ -107,7 +107,7 @@ func (m *ApplicationResourcePermission) GetId() *string {
 	return nil
 }
 
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the permission.
 // returns a *string when successful
 func (m *ApplicationResourcePermission) GetName() *string {
 	val, err := m.GetBackingStore().Get("name")
@@ -195,7 +195,7 @@ func (m *ApplicationResourcePermission) SetBackingStore(value ie8677ce2c7e1b4c22
 	m.backingStore = value
 }
 
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The unique identifier of the permission.
 func (m *ApplicationResourcePermission) SetId(value *string) {
 	err := m.GetBackingStore().Set("id", value)
 	if err != nil {
@@ -203,7 +203,7 @@ func (m *ApplicationResourcePermission) SetId(value *string) {
 	}
 }
 
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the permission.
 func (m *ApplicationResourcePermission) SetName(value *string) {
 	err := m.GetBackingStore().Set("name", value)
 	if err != nil {

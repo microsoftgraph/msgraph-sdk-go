@@ -45,7 +45,7 @@ func (m *B2BRegistrationMetricsRecent) GetFieldDeserializers() map[string]func(i
 	return res
 }
 
-// GetUpdateDateTime gets the updateDateTime property value. The updateDateTime property
+// GetUpdateDateTime gets the updateDateTime property value. Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.
 // returns a *Time when successful
 func (m *B2BRegistrationMetricsRecent) GetUpdateDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("updateDateTime")
@@ -73,7 +73,7 @@ func (m *B2BRegistrationMetricsRecent) Serialize(writer i878a80d2330e89d26896388
 	return nil
 }
 
-// SetUpdateDateTime sets the updateDateTime property value. The updateDateTime property
+// SetUpdateDateTime sets the updateDateTime property value. Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.
 func (m *B2BRegistrationMetricsRecent) SetUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("updateDateTime", value)
 	if err != nil {

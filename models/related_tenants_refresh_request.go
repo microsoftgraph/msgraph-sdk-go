@@ -42,7 +42,7 @@ func (m *RelatedTenantsRefreshRequest) GetFieldDeserializers() map[string]func(i
 	return res
 }
 
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. The location URL where the status of the refresh request can be retrieved.
 // returns a *string when successful
 func (m *RelatedTenantsRefreshRequest) GetLocation() *string {
 	val, err := m.GetBackingStore().Get("location")
@@ -70,7 +70,7 @@ func (m *RelatedTenantsRefreshRequest) Serialize(writer i878a80d2330e89d26896388
 	return nil
 }
 
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. The location URL where the status of the refresh request can be retrieved.
 func (m *RelatedTenantsRefreshRequest) SetLocation(value *string) {
 	err := m.GetBackingStore().Set("location", value)
 	if err != nil {

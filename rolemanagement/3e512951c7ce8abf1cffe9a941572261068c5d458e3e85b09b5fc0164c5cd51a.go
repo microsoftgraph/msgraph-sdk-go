@@ -211,6 +211,12 @@ func (m *DirectoryRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleReq
 	return requestInfo, nil
 }
 
+// UpdateRequest provides operations to call the updateRequest method.
+// returns a *DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder when successful
+func (m *DirectoryRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder) UpdateRequest() *DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder {
+	return NewDirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *DirectoryRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder when successful
 func (m *DirectoryRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder) WithUrl(rawUrl string) *DirectoryRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder {

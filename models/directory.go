@@ -326,7 +326,7 @@ func (m *Directory) GetSubscriptions() []CompanySubscriptionable {
 	return nil
 }
 
-// GetTenantGovernance gets the tenantGovernance property value. The tenantGovernance property
+// GetTenantGovernance gets the tenantGovernance property value. Container for Microsoft Entra Tenant Governance capabilities.
 // returns a TenantGovernanceable when successful
 func (m *Directory) GetTenantGovernance() TenantGovernanceable {
 	val, err := m.GetBackingStore().Get("tenantGovernance")
@@ -548,7 +548,7 @@ func (m *Directory) SetSubscriptions(value []CompanySubscriptionable) {
 	}
 }
 
-// SetTenantGovernance sets the tenantGovernance property value. The tenantGovernance property
+// SetTenantGovernance sets the tenantGovernance property value. Container for Microsoft Entra Tenant Governance capabilities.
 func (m *Directory) SetTenantGovernance(value TenantGovernanceable) {
 	err := m.GetBackingStore().Set("tenantGovernance", value)
 	if err != nil {
