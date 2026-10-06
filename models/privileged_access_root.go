@@ -25,10 +25,39 @@ func CreatePrivilegedAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d
 	return NewPrivilegedAccessRoot(), nil
 }
 
+// GetCustomExtensions gets the customExtensions property value. The customExtensions property
+// returns a []RoleManagementCustomCalloutExtensionable when successful
+func (m *PrivilegedAccessRoot) GetCustomExtensions() []RoleManagementCustomCalloutExtensionable {
+	val, err := m.GetBackingStore().Get("customExtensions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]RoleManagementCustomCalloutExtensionable)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *PrivilegedAccessRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["customExtensions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateRoleManagementCustomCalloutExtensionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]RoleManagementCustomCalloutExtensionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(RoleManagementCustomCalloutExtensionable)
+				}
+			}
+			m.SetCustomExtensions(res)
+		}
+		return nil
+	}
 	res["group"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreatePrivilegedAccessGroupFromDiscriminatorValue)
 		if err != nil {
@@ -61,6 +90,18 @@ func (m *PrivilegedAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
 	if err != nil {
 		return err
 	}
+	if m.GetCustomExtensions() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomExtensions()))
+		for i, v := range m.GetCustomExtensions() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("customExtensions", cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteObjectValue("group", m.GetGroup())
 		if err != nil {
@@ -68,6 +109,14 @@ func (m *PrivilegedAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
 		}
 	}
 	return nil
+}
+
+// SetCustomExtensions sets the customExtensions property value. The customExtensions property
+func (m *PrivilegedAccessRoot) SetCustomExtensions(value []RoleManagementCustomCalloutExtensionable) {
+	err := m.GetBackingStore().Set("customExtensions", value)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // SetGroup sets the group property value. A group that's governed through Privileged Identity Management (PIM).
@@ -81,6 +130,8 @@ func (m *PrivilegedAccessRoot) SetGroup(value PrivilegedAccessGroupable) {
 type PrivilegedAccessRootable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCustomExtensions() []RoleManagementCustomCalloutExtensionable
 	GetGroup() PrivilegedAccessGroupable
+	SetCustomExtensions(value []RoleManagementCustomCalloutExtensionable)
 	SetGroup(value PrivilegedAccessGroupable)
 }

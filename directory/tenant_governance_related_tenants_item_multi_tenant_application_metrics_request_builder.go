@@ -15,7 +15,7 @@ type TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuild
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetQueryParameters get multiTenantApplicationMetrics from directory
+// TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetQueryParameters multi-tenant application usage metrics for this related tenant. Expanded by default.
 type TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewTenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBu
 	return NewTenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get get multiTenantApplicationMetrics from directory
+// Get multi-tenant application usage metrics for this related tenant. Expanded by default.
 // returns a MultiTenantApplicationMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantApplicationMetricsable, error) {
@@ -69,7 +69,7 @@ func (m *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestB
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiTenantApplicationMetricsable), nil
 }
 
-// ToGetRequestInformation get multiTenantApplicationMetrics from directory
+// ToGetRequestInformation multi-tenant application usage metrics for this related tenant. Expanded by default.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

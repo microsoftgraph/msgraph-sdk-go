@@ -47,7 +47,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) GetBackingStore() ie8677ce2
 	return m.backingStore
 }
 
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the permission.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemPermission) GetDescription() *string {
 	val, err := m.GetBackingStore().Get("description")
@@ -60,7 +60,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) GetDescription() *string {
 	return nil
 }
 
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the permission.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemPermission) GetDisplayName() *string {
 	val, err := m.GetBackingStore().Get("displayName")
@@ -130,7 +130,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) GetFieldDeserializers() map
 	return res
 }
 
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The identifier of the permission.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemPermission) GetId() *string {
 	val, err := m.GetBackingStore().Get("id")
@@ -156,7 +156,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) GetOdataType() *string {
 	return nil
 }
 
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of the permission.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemPermission) GetTypeEscaped() *string {
 	val, err := m.GetBackingStore().Get("typeEscaped")
@@ -223,7 +223,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) SetBackingStore(value ie867
 	m.backingStore = value
 }
 
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the permission.
 func (m *AccessReviewInstanceDecisionItemPermission) SetDescription(value *string) {
 	err := m.GetBackingStore().Set("description", value)
 	if err != nil {
@@ -231,7 +231,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) SetDescription(value *strin
 	}
 }
 
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the permission.
 func (m *AccessReviewInstanceDecisionItemPermission) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
 	if err != nil {
@@ -239,7 +239,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) SetDisplayName(value *strin
 	}
 }
 
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The identifier of the permission.
 func (m *AccessReviewInstanceDecisionItemPermission) SetId(value *string) {
 	err := m.GetBackingStore().Set("id", value)
 	if err != nil {
@@ -255,7 +255,7 @@ func (m *AccessReviewInstanceDecisionItemPermission) SetOdataType(value *string)
 	}
 }
 
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of the permission.
 func (m *AccessReviewInstanceDecisionItemPermission) SetTypeEscaped(value *string) {
 	err := m.GetBackingStore().Set("typeEscaped", value)
 	if err != nil {

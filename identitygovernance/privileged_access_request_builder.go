@@ -64,6 +64,12 @@ func NewPrivilegedAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 	return NewPrivilegedAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
 
+// CustomExtensions provides operations to manage the customExtensions property of the microsoft.graph.privilegedAccessRoot entity.
+// returns a *PrivilegedAccessCustomExtensionsRequestBuilder when successful
+func (m *PrivilegedAccessRequestBuilder) CustomExtensions() *PrivilegedAccessCustomExtensionsRequestBuilder {
+	return NewPrivilegedAccessCustomExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Delete delete navigation property privilegedAccess for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrivilegedAccessRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrivilegedAccessRequestBuilderDeleteRequestConfiguration) error {

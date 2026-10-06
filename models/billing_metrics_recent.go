@@ -43,7 +43,7 @@ func (m *BillingMetricsRecent) GetFieldDeserializers() map[string]func(i878a80d2
 	return res
 }
 
-// GetUpdateDateTime gets the updateDateTime property value. The updateDateTime property
+// GetUpdateDateTime gets the updateDateTime property value. Timestamp that represents when billing metrics are aggregated and have sufficiently changed for the related tenant.
 // returns a *Time when successful
 func (m *BillingMetricsRecent) GetUpdateDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("updateDateTime")
@@ -71,7 +71,7 @@ func (m *BillingMetricsRecent) Serialize(writer i878a80d2330e89d26896388a3f487ee
 	return nil
 }
 
-// SetUpdateDateTime sets the updateDateTime property value. The updateDateTime property
+// SetUpdateDateTime sets the updateDateTime property value. Timestamp that represents when billing metrics are aggregated and have sufficiently changed for the related tenant.
 func (m *BillingMetricsRecent) SetUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("updateDateTime", value)
 	if err != nil {

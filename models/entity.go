@@ -1474,6 +1474,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewRoleAssignment(), nil
 				case "#microsoft.graph.roleDefinition":
 					return NewRoleDefinition(), nil
+				case "#microsoft.graph.roleManagementCustomCalloutExtension":
+					return NewRoleManagementCustomCalloutExtension(), nil
 				case "#microsoft.graph.room":
 					return NewRoom(), nil
 				case "#microsoft.graph.roomList":
@@ -1778,6 +1780,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewUnifiedRoleManagementPolicyAssignment(), nil
 				case "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule":
 					return NewUnifiedRoleManagementPolicyAuthenticationContextRule(), nil
+				case "#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule":
+					return NewUnifiedRoleManagementPolicyCustomExtensionRule(), nil
 				case "#microsoft.graph.unifiedRoleManagementPolicyEnablementRule":
 					return NewUnifiedRoleManagementPolicyEnablementRule(), nil
 				case "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule":

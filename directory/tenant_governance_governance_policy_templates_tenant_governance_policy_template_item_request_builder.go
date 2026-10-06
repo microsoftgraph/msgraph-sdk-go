@@ -23,7 +23,7 @@ type TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItem
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderGetQueryParameters get governancePolicyTemplates from directory
+// TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderGetQueryParameters read the properties of a tenantGovernancePolicyTemplate object.
 type TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -64,8 +64,11 @@ func NewTenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateI
 	return NewTenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete navigation property governancePolicyTemplates for directory
+// Delete delete a tenantGovernancePolicyTemplate object. You can't delete the default template or templates currently used by active relationships.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-delete-governancepolicytemplates?view=graph-rest-1.0
 func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration) error {
 	requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -81,9 +84,12 @@ func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplate
 	return nil
 }
 
-// Get get governancePolicyTemplates from directory
+// Get read the properties of a tenantGovernancePolicyTemplate object.
 // returns a TenantGovernancePolicyTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-get?view=graph-rest-1.0
 func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -102,9 +108,12 @@ func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplate
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable), nil
 }
 
-// Patch update the navigation property governancePolicyTemplates in directory
+// Patch update the properties of a tenantGovernancePolicyTemplate object.
 // returns a TenantGovernancePolicyTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-update?view=graph-rest-1.0
 func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderPatchRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -123,7 +132,7 @@ func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplate
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable), nil
 }
 
-// ToDeleteRequestInformation delete navigation property governancePolicyTemplates for directory
+// ToDeleteRequestInformation delete a tenantGovernancePolicyTemplate object. You can't delete the default template or templates currently used by active relationships.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplate
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get governancePolicyTemplates from directory
+// ToGetRequestInformation read the properties of a tenantGovernancePolicyTemplate object.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +159,7 @@ func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplate
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the navigation property governancePolicyTemplates in directory
+// ToPatchRequestInformation update the properties of a tenantGovernancePolicyTemplate object.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesTenantGovernancePolicyTemplateItemRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

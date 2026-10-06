@@ -83,7 +83,7 @@ func (m *B2BRegistrationMetricsBase) GetFieldDeserializers() map[string]func(i87
 	return res
 }
 
-// GetInboundTotalUsers gets the inboundTotalUsers property value. The inboundTotalUsers property
+// GetInboundTotalUsers gets the inboundTotalUsers property value. The total number of inbound B2B guest users registered.
 // returns a *float64 when successful
 func (m *B2BRegistrationMetricsBase) GetInboundTotalUsers() *float64 {
 	val, err := m.GetBackingStore().Get("inboundTotalUsers")
@@ -96,7 +96,7 @@ func (m *B2BRegistrationMetricsBase) GetInboundTotalUsers() *float64 {
 	return nil
 }
 
-// GetOutboundTotalUsers gets the outboundTotalUsers property value. The outboundTotalUsers property
+// GetOutboundTotalUsers gets the outboundTotalUsers property value. The total number of outbound B2B users from this tenant registered in other tenants.
 // returns a *float64 when successful
 func (m *B2BRegistrationMetricsBase) GetOutboundTotalUsers() *float64 {
 	val, err := m.GetBackingStore().Get("outboundTotalUsers")
@@ -109,7 +109,7 @@ func (m *B2BRegistrationMetricsBase) GetOutboundTotalUsers() *float64 {
 	return nil
 }
 
-// GetWatermarkDateTime gets the watermarkDateTime property value. The watermarkDateTime property
+// GetWatermarkDateTime gets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 // returns a *Time when successful
 func (m *B2BRegistrationMetricsBase) GetWatermarkDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("watermarkDateTime")
@@ -149,7 +149,7 @@ func (m *B2BRegistrationMetricsBase) Serialize(writer i878a80d2330e89d26896388a3
 	return nil
 }
 
-// SetInboundTotalUsers sets the inboundTotalUsers property value. The inboundTotalUsers property
+// SetInboundTotalUsers sets the inboundTotalUsers property value. The total number of inbound B2B guest users registered.
 func (m *B2BRegistrationMetricsBase) SetInboundTotalUsers(value *float64) {
 	err := m.GetBackingStore().Set("inboundTotalUsers", value)
 	if err != nil {
@@ -157,7 +157,7 @@ func (m *B2BRegistrationMetricsBase) SetInboundTotalUsers(value *float64) {
 	}
 }
 
-// SetOutboundTotalUsers sets the outboundTotalUsers property value. The outboundTotalUsers property
+// SetOutboundTotalUsers sets the outboundTotalUsers property value. The total number of outbound B2B users from this tenant registered in other tenants.
 func (m *B2BRegistrationMetricsBase) SetOutboundTotalUsers(value *float64) {
 	err := m.GetBackingStore().Set("outboundTotalUsers", value)
 	if err != nil {
@@ -165,7 +165,7 @@ func (m *B2BRegistrationMetricsBase) SetOutboundTotalUsers(value *float64) {
 	}
 }
 
-// SetWatermarkDateTime sets the watermarkDateTime property value. The watermarkDateTime property
+// SetWatermarkDateTime sets the watermarkDateTime property value. The date and time when the metrics snapshot was taken.
 func (m *B2BRegistrationMetricsBase) SetWatermarkDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("watermarkDateTime", value)
 	if err != nil {

@@ -52,6 +52,8 @@ func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e8
 					return NewOnTokenIssuanceStartCustomExtension(), nil
 				case "#microsoft.graph.onVerifiedIdClaimValidationCustomExtension":
 					return NewOnVerifiedIdClaimValidationCustomExtension(), nil
+				case "#microsoft.graph.roleManagementCustomCalloutExtension":
+					return NewRoleManagementCustomCalloutExtension(), nil
 				}
 			}
 		}

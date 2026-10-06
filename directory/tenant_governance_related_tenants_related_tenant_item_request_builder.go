@@ -23,7 +23,7 @@ type TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderDeleteRequestC
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderGetQueryParameters get relatedTenants from directory
+// TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderGetQueryParameters read the properties and relationships of a relatedTenant object.
 type TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -105,9 +105,12 @@ func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Delete(c
 	return nil
 }
 
-// Get get relatedTenants from directory
+// Get read the properties and relationships of a relatedTenant object.
 // returns a RelatedTenantable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-get?view=graph-rest-1.0
 func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -165,7 +168,7 @@ func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) ToDelete
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get relatedTenants from directory
+// ToGetRequestInformation read the properties and relationships of a relatedTenant object.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

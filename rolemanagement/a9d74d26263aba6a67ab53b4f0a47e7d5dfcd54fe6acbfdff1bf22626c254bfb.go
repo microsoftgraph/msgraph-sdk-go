@@ -208,6 +208,12 @@ func (m *EntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmen
 	return requestInfo, nil
 }
 
+// UpdateRequest provides operations to call the updateRequest method.
+// returns a *EntitlementManagementRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder when successful
+func (m *EntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder) UpdateRequest() *EntitlementManagementRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder {
+	return NewEntitlementManagementRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *EntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder when successful
 func (m *EntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder) WithUrl(rawUrl string) *EntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder {

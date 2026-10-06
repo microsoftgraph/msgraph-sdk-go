@@ -15,7 +15,7 @@ type TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetQueryParameters get appB2BSignInActivityMetrics from directory
+// TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetQueryParameters b2B sign-in activity metrics for this related tenant. Expanded by default.
 type TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuil
 	return NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get get appB2BSignInActivityMetrics from directory
+// Get b2B sign-in activity metrics for this related tenant. Expanded by default.
 // returns a B2BSignInActivityMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2BSignInActivityMetricsable, error) {
@@ -69,7 +69,7 @@ func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBui
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2BSignInActivityMetricsable), nil
 }
 
-// ToGetRequestInformation get appB2BSignInActivityMetrics from directory
+// ToGetRequestInformation b2B sign-in activity metrics for this related tenant. Expanded by default.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

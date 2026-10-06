@@ -47,7 +47,7 @@ func (m *RelationshipPolicy) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d4
 	return m.backingStore
 }
 
-// GetDelegatedAdministrationRoleAssignments gets the delegatedAdministrationRoleAssignments property value. The delegatedAdministrationRoleAssignments property
+// GetDelegatedAdministrationRoleAssignments gets the delegatedAdministrationRoleAssignments property value. A snapshot of the delegated administration role assignments configured in this policy.
 // returns a []DelegatedAdministrationRoleAssignmentSnapshotable when successful
 func (m *RelationshipPolicy) GetDelegatedAdministrationRoleAssignments() []DelegatedAdministrationRoleAssignmentSnapshotable {
 	val, err := m.GetBackingStore().Get("delegatedAdministrationRoleAssignments")
@@ -139,7 +139,7 @@ func (m *RelationshipPolicy) GetFieldDeserializers() map[string]func(i878a80d233
 	return res
 }
 
-// GetGovernedTenantCanTerminate gets the governedTenantCanTerminate property value. The governedTenantCanTerminate property
+// GetGovernedTenantCanTerminate gets the governedTenantCanTerminate property value. Indicates whether the governed tenant can terminate the relationship.
 // returns a *bool when successful
 func (m *RelationshipPolicy) GetGovernedTenantCanTerminate() *bool {
 	val, err := m.GetBackingStore().Get("governedTenantCanTerminate")
@@ -152,7 +152,7 @@ func (m *RelationshipPolicy) GetGovernedTenantCanTerminate() *bool {
 	return nil
 }
 
-// GetMultiTenantApplicationsToProvision gets the multiTenantApplicationsToProvision property value. The multiTenantApplicationsToProvision property
+// GetMultiTenantApplicationsToProvision gets the multiTenantApplicationsToProvision property value. A snapshot of the multi-tenant applications to be provisioned in the governed tenant.
 // returns a []MultiTenantApplicationsToProvisionSnapshotable when successful
 func (m *RelationshipPolicy) GetMultiTenantApplicationsToProvision() []MultiTenantApplicationsToProvisionSnapshotable {
 	val, err := m.GetBackingStore().Get("multiTenantApplicationsToProvision")
@@ -178,7 +178,7 @@ func (m *RelationshipPolicy) GetOdataType() *string {
 	return nil
 }
 
-// GetPolicyId gets the policyId property value. The policyId property
+// GetPolicyId gets the policyId property value. The identifier of the source policy template from which this snapshot was created.
 // returns a *string when successful
 func (m *RelationshipPolicy) GetPolicyId() *string {
 	val, err := m.GetBackingStore().Get("policyId")
@@ -191,7 +191,7 @@ func (m *RelationshipPolicy) GetPolicyId() *string {
 	return nil
 }
 
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version of the source policy template from which this snapshot was created.
 // returns a *int32 when successful
 func (m *RelationshipPolicy) GetVersion() *int32 {
 	val, err := m.GetBackingStore().Get("version")
@@ -270,7 +270,7 @@ func (m *RelationshipPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd0
 	m.backingStore = value
 }
 
-// SetDelegatedAdministrationRoleAssignments sets the delegatedAdministrationRoleAssignments property value. The delegatedAdministrationRoleAssignments property
+// SetDelegatedAdministrationRoleAssignments sets the delegatedAdministrationRoleAssignments property value. A snapshot of the delegated administration role assignments configured in this policy.
 func (m *RelationshipPolicy) SetDelegatedAdministrationRoleAssignments(value []DelegatedAdministrationRoleAssignmentSnapshotable) {
 	err := m.GetBackingStore().Set("delegatedAdministrationRoleAssignments", value)
 	if err != nil {
@@ -278,7 +278,7 @@ func (m *RelationshipPolicy) SetDelegatedAdministrationRoleAssignments(value []D
 	}
 }
 
-// SetGovernedTenantCanTerminate sets the governedTenantCanTerminate property value. The governedTenantCanTerminate property
+// SetGovernedTenantCanTerminate sets the governedTenantCanTerminate property value. Indicates whether the governed tenant can terminate the relationship.
 func (m *RelationshipPolicy) SetGovernedTenantCanTerminate(value *bool) {
 	err := m.GetBackingStore().Set("governedTenantCanTerminate", value)
 	if err != nil {
@@ -286,7 +286,7 @@ func (m *RelationshipPolicy) SetGovernedTenantCanTerminate(value *bool) {
 	}
 }
 
-// SetMultiTenantApplicationsToProvision sets the multiTenantApplicationsToProvision property value. The multiTenantApplicationsToProvision property
+// SetMultiTenantApplicationsToProvision sets the multiTenantApplicationsToProvision property value. A snapshot of the multi-tenant applications to be provisioned in the governed tenant.
 func (m *RelationshipPolicy) SetMultiTenantApplicationsToProvision(value []MultiTenantApplicationsToProvisionSnapshotable) {
 	err := m.GetBackingStore().Set("multiTenantApplicationsToProvision", value)
 	if err != nil {
@@ -302,7 +302,7 @@ func (m *RelationshipPolicy) SetOdataType(value *string) {
 	}
 }
 
-// SetPolicyId sets the policyId property value. The policyId property
+// SetPolicyId sets the policyId property value. The identifier of the source policy template from which this snapshot was created.
 func (m *RelationshipPolicy) SetPolicyId(value *string) {
 	err := m.GetBackingStore().Set("policyId", value)
 	if err != nil {
@@ -310,7 +310,7 @@ func (m *RelationshipPolicy) SetPolicyId(value *string) {
 	}
 }
 
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version of the source policy template from which this snapshot was created.
 func (m *RelationshipPolicy) SetVersion(value *int32) {
 	err := m.GetBackingStore().Set("version", value)
 	if err != nil {

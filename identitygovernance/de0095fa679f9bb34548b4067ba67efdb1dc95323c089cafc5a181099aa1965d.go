@@ -199,6 +199,12 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAss
 	return requestInfo, nil
 }
 
+// UpdateRequest provides operations to call the updateRequest method.
+// returns a *PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilder when successful
+func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) UpdateRequest() *PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilder {
+	return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) WithUrl(rawUrl string) *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder {

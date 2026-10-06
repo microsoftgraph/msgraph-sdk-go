@@ -26,7 +26,7 @@ func CreateTenantGovernancePolicyTemplateFromDiscriminatorValue(parseNode i878a8
 	return NewTenantGovernancePolicyTemplate(), nil
 }
 
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *Time when successful
 func (m *TenantGovernancePolicyTemplate) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("createdDateTime")
@@ -39,7 +39,7 @@ func (m *TenantGovernancePolicyTemplate) GetCreatedDateTime() *i336074805fc85398
 	return nil
 }
 
-// GetDelegatedAdministrationRoleAssignments gets the delegatedAdministrationRoleAssignments property value. The delegatedAdministrationRoleAssignments property
+// GetDelegatedAdministrationRoleAssignments gets the delegatedAdministrationRoleAssignments property value. A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.
 // returns a []DelegatedAdministrationRoleAssignmentable when successful
 func (m *TenantGovernancePolicyTemplate) GetDelegatedAdministrationRoleAssignments() []DelegatedAdministrationRoleAssignmentable {
 	val, err := m.GetBackingStore().Get("delegatedAdministrationRoleAssignments")
@@ -52,7 +52,7 @@ func (m *TenantGovernancePolicyTemplate) GetDelegatedAdministrationRoleAssignmen
 	return nil
 }
 
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A description of the policy template. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *TenantGovernancePolicyTemplate) GetDescription() *string {
 	val, err := m.GetBackingStore().Get("description")
@@ -65,7 +65,7 @@ func (m *TenantGovernancePolicyTemplate) GetDescription() *string {
 	return nil
 }
 
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the policy template. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *TenantGovernancePolicyTemplate) GetDisplayName() *string {
 	val, err := m.GetBackingStore().Get("displayName")
@@ -177,7 +177,7 @@ func (m *TenantGovernancePolicyTemplate) GetFieldDeserializers() map[string]func
 	return res
 }
 
-// GetGovernedTenantCanTerminate gets the governedTenantCanTerminate property value. The governedTenantCanTerminate property
+// GetGovernedTenantCanTerminate gets the governedTenantCanTerminate property value. Not implemented.
 // returns a *bool when successful
 func (m *TenantGovernancePolicyTemplate) GetGovernedTenantCanTerminate() *bool {
 	val, err := m.GetBackingStore().Get("governedTenantCanTerminate")
@@ -190,7 +190,7 @@ func (m *TenantGovernancePolicyTemplate) GetGovernedTenantCanTerminate() *bool {
 	return nil
 }
 
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *Time when successful
 func (m *TenantGovernancePolicyTemplate) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -203,7 +203,7 @@ func (m *TenantGovernancePolicyTemplate) GetLastModifiedDateTime() *i336074805fc
 	return nil
 }
 
-// GetMultiTenantApplicationsToProvision gets the multiTenantApplicationsToProvision property value. The multiTenantApplicationsToProvision property
+// GetMultiTenantApplicationsToProvision gets the multiTenantApplicationsToProvision property value. A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.
 // returns a []MultiTenantApplicationsToProvisionable when successful
 func (m *TenantGovernancePolicyTemplate) GetMultiTenantApplicationsToProvision() []MultiTenantApplicationsToProvisionable {
 	val, err := m.GetBackingStore().Get("multiTenantApplicationsToProvision")
@@ -216,7 +216,7 @@ func (m *TenantGovernancePolicyTemplate) GetMultiTenantApplicationsToProvision()
 	return nil
 }
 
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *string when successful
 func (m *TenantGovernancePolicyTemplate) GetVersion() *string {
 	val, err := m.GetBackingStore().Get("version")
@@ -298,7 +298,7 @@ func (m *TenantGovernancePolicyTemplate) Serialize(writer i878a80d2330e89d268963
 	return nil
 }
 
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 func (m *TenantGovernancePolicyTemplate) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("createdDateTime", value)
 	if err != nil {
@@ -306,7 +306,7 @@ func (m *TenantGovernancePolicyTemplate) SetCreatedDateTime(value *i336074805fc8
 	}
 }
 
-// SetDelegatedAdministrationRoleAssignments sets the delegatedAdministrationRoleAssignments property value. The delegatedAdministrationRoleAssignments property
+// SetDelegatedAdministrationRoleAssignments sets the delegatedAdministrationRoleAssignments property value. A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.
 func (m *TenantGovernancePolicyTemplate) SetDelegatedAdministrationRoleAssignments(value []DelegatedAdministrationRoleAssignmentable) {
 	err := m.GetBackingStore().Set("delegatedAdministrationRoleAssignments", value)
 	if err != nil {
@@ -314,7 +314,7 @@ func (m *TenantGovernancePolicyTemplate) SetDelegatedAdministrationRoleAssignmen
 	}
 }
 
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A description of the policy template. Supports $filter (eq, ne) and $orderBy.
 func (m *TenantGovernancePolicyTemplate) SetDescription(value *string) {
 	err := m.GetBackingStore().Set("description", value)
 	if err != nil {
@@ -322,7 +322,7 @@ func (m *TenantGovernancePolicyTemplate) SetDescription(value *string) {
 	}
 }
 
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the policy template. Supports $filter (eq, ne) and $orderBy.
 func (m *TenantGovernancePolicyTemplate) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
 	if err != nil {
@@ -330,7 +330,7 @@ func (m *TenantGovernancePolicyTemplate) SetDisplayName(value *string) {
 	}
 }
 
-// SetGovernedTenantCanTerminate sets the governedTenantCanTerminate property value. The governedTenantCanTerminate property
+// SetGovernedTenantCanTerminate sets the governedTenantCanTerminate property value. Not implemented.
 func (m *TenantGovernancePolicyTemplate) SetGovernedTenantCanTerminate(value *bool) {
 	err := m.GetBackingStore().Set("governedTenantCanTerminate", value)
 	if err != nil {
@@ -338,7 +338,7 @@ func (m *TenantGovernancePolicyTemplate) SetGovernedTenantCanTerminate(value *bo
 	}
 }
 
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 func (m *TenantGovernancePolicyTemplate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("lastModifiedDateTime", value)
 	if err != nil {
@@ -346,7 +346,7 @@ func (m *TenantGovernancePolicyTemplate) SetLastModifiedDateTime(value *i3360748
 	}
 }
 
-// SetMultiTenantApplicationsToProvision sets the multiTenantApplicationsToProvision property value. The multiTenantApplicationsToProvision property
+// SetMultiTenantApplicationsToProvision sets the multiTenantApplicationsToProvision property value. A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.
 func (m *TenantGovernancePolicyTemplate) SetMultiTenantApplicationsToProvision(value []MultiTenantApplicationsToProvisionable) {
 	err := m.GetBackingStore().Set("multiTenantApplicationsToProvision", value)
 	if err != nil {
@@ -354,7 +354,7 @@ func (m *TenantGovernancePolicyTemplate) SetMultiTenantApplicationsToProvision(v
 	}
 }
 
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 func (m *TenantGovernancePolicyTemplate) SetVersion(value *string) {
 	err := m.GetBackingStore().Set("version", value)
 	if err != nil {

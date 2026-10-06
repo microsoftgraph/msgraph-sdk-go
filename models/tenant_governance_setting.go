@@ -25,7 +25,7 @@ func CreateTenantGovernanceSettingFromDiscriminatorValue(parseNode i878a80d2330e
 	return NewTenantGovernanceSetting(), nil
 }
 
-// GetCanReceiveInvitations gets the canReceiveInvitations property value. The canReceiveInvitations property
+// GetCanReceiveInvitations gets the canReceiveInvitations property value. Indicates whether the tenant can receive governance invitations. When set to false, the tenant cannot receive new governance invitations. When set to true, other tenants can send your tenant invitations by providing your tenant id or domain name. Default value is false.
 // returns a *bool when successful
 func (m *TenantGovernanceSetting) GetCanReceiveInvitations() *bool {
 	val, err := m.GetBackingStore().Get("canReceiveInvitations")
@@ -65,7 +65,7 @@ func (m *TenantGovernanceSetting) GetFieldDeserializers() map[string]func(i878a8
 	return res
 }
 
-// GetIsRelatedTenantsEnabled gets the isRelatedTenantsEnabled property value. The isRelatedTenantsEnabled property
+// GetIsRelatedTenantsEnabled gets the isRelatedTenantsEnabled property value. Indicates whether the related tenants feature is enabled for tenant discovery. When set to false, related tenant APIs don't work. This property can be enabled by calling the enableRelatedTenants action. Default value is false.
 // returns a *bool when successful
 func (m *TenantGovernanceSetting) GetIsRelatedTenantsEnabled() *bool {
 	val, err := m.GetBackingStore().Get("isRelatedTenantsEnabled")
@@ -99,7 +99,7 @@ func (m *TenantGovernanceSetting) Serialize(writer i878a80d2330e89d26896388a3f48
 	return nil
 }
 
-// SetCanReceiveInvitations sets the canReceiveInvitations property value. The canReceiveInvitations property
+// SetCanReceiveInvitations sets the canReceiveInvitations property value. Indicates whether the tenant can receive governance invitations. When set to false, the tenant cannot receive new governance invitations. When set to true, other tenants can send your tenant invitations by providing your tenant id or domain name. Default value is false.
 func (m *TenantGovernanceSetting) SetCanReceiveInvitations(value *bool) {
 	err := m.GetBackingStore().Set("canReceiveInvitations", value)
 	if err != nil {
@@ -107,7 +107,7 @@ func (m *TenantGovernanceSetting) SetCanReceiveInvitations(value *bool) {
 	}
 }
 
-// SetIsRelatedTenantsEnabled sets the isRelatedTenantsEnabled property value. The isRelatedTenantsEnabled property
+// SetIsRelatedTenantsEnabled sets the isRelatedTenantsEnabled property value. Indicates whether the related tenants feature is enabled for tenant discovery. When set to false, related tenant APIs don't work. This property can be enabled by calling the enableRelatedTenants action. Default value is false.
 func (m *TenantGovernanceSetting) SetIsRelatedTenantsEnabled(value *bool) {
 	err := m.GetBackingStore().Set("isRelatedTenantsEnabled", value)
 	if err != nil {

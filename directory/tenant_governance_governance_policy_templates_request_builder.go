@@ -15,7 +15,7 @@ type TenantGovernanceGovernancePolicyTemplatesRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceGovernancePolicyTemplatesRequestBuilderGetQueryParameters get governancePolicyTemplates from directory
+// TenantGovernanceGovernancePolicyTemplatesRequestBuilderGetQueryParameters get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
 type TenantGovernanceGovernancePolicyTemplatesRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,9 +87,12 @@ func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) Count() *Tenan
 	return NewTenantGovernanceGovernancePolicyTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get governancePolicyTemplates from directory
+// Get get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
 // returns a TenantGovernancePolicyTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancepolicytemplates?view=graph-rest-1.0
 func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -108,9 +111,12 @@ func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) Get(ctx contex
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateCollectionResponseable), nil
 }
 
-// Post create new navigation property to governancePolicyTemplates for directory
+// Post create a new tenantGovernancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
 // returns a TenantGovernancePolicyTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governancepolicytemplates?view=graph-rest-1.0
 func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesRequestBuilderPostRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -129,7 +135,7 @@ func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) Post(ctx conte
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable), nil
 }
 
-// ToGetRequestInformation get governancePolicyTemplates from directory
+// ToGetRequestInformation get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +150,7 @@ func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) ToGetRequestIn
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create new navigation property to governancePolicyTemplates for directory
+// ToPostRequestInformation create a new tenantGovernancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernancePolicyTemplatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernancePolicyTemplateable, requestConfiguration *TenantGovernanceGovernancePolicyTemplatesRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

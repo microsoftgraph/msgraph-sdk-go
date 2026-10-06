@@ -15,7 +15,7 @@ type TenantGovernanceRelatedTenantsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceRelatedTenantsRequestBuilderGetQueryParameters get relatedTenants from directory
+// TenantGovernanceRelatedTenantsRequestBuilderGetQueryParameters get a list of relatedTenant objects and their properties, including relationship metrics.
 type TenantGovernanceRelatedTenantsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,9 +87,12 @@ func (m *TenantGovernanceRelatedTenantsRequestBuilder) Count() *TenantGovernance
 	return NewTenantGovernanceRelatedTenantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get relatedTenants from directory
+// Get get a list of relatedTenant objects and their properties, including relationship metrics.
 // returns a RelatedTenantCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-relatedtenants?view=graph-rest-1.0
 func (m *TenantGovernanceRelatedTenantsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -135,7 +138,7 @@ func (m *TenantGovernanceRelatedTenantsRequestBuilder) Refresh() *TenantGovernan
 	return NewTenantGovernanceRelatedTenantsRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// ToGetRequestInformation get relatedTenants from directory
+// ToGetRequestInformation get a list of relatedTenant objects and their properties, including relationship metrics.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

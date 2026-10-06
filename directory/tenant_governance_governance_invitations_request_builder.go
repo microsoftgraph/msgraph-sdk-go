@@ -15,7 +15,7 @@ type TenantGovernanceGovernanceInvitationsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceGovernanceInvitationsRequestBuilderGetQueryParameters get governanceInvitations from directory
+// TenantGovernanceGovernanceInvitationsRequestBuilderGetQueryParameters get a list of the governanceInvitation objects and their properties. This API method returns all governance invitations where the calling tenant is either the governing tenant or the governed tenant.
 type TenantGovernanceGovernanceInvitationsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,9 +87,12 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Count() *TenantGov
 	return NewTenantGovernanceGovernanceInvitationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get governanceInvitations from directory
+// Get get a list of the governanceInvitation objects and their properties. This API method returns all governance invitations where the calling tenant is either the governing tenant or the governed tenant.
 // returns a GovernanceInvitationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governanceinvitations?view=graph-rest-1.0
 func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -108,9 +111,12 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Get(ctx context.Co
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationCollectionResponseable), nil
 }
 
-// Post create new navigation property to governanceInvitations for directory
+// Post create a new governanceInvitation to establish a governance relationship with a governed tenant. Invitations provide an alternative mechanism to governance requests for initiating relationships.
 // returns a GovernanceInvitationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governanceinvitations?view=graph-rest-1.0
 func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationable, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -129,7 +135,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Post(ctx context.C
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationable), nil
 }
 
-// ToGetRequestInformation get governanceInvitations from directory
+// ToGetRequestInformation get a list of the governanceInvitation objects and their properties. This API method returns all governance invitations where the calling tenant is either the governing tenant or the governed tenant.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +150,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToGetRequestInform
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create new navigation property to governanceInvitations for directory
+// ToPostRequestInformation create a new governanceInvitation to establish a governance relationship with a governed tenant. Invitations provide an alternative mechanism to governance requests for initiating relationships.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationable, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

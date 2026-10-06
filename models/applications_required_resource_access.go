@@ -103,7 +103,7 @@ func (m *ApplicationsRequiredResourceAccess) GetOdataType() *string {
 	return nil
 }
 
-// GetPermissions gets the permissions property value. The permissions property
+// GetPermissions gets the permissions property value. The collection of resource permissions required by the application.
 // returns a []ApplicationResourcePermissionable when successful
 func (m *ApplicationsRequiredResourceAccess) GetPermissions() []ApplicationResourcePermissionable {
 	val, err := m.GetBackingStore().Get("permissions")
@@ -116,7 +116,7 @@ func (m *ApplicationsRequiredResourceAccess) GetPermissions() []ApplicationResou
 	return nil
 }
 
-// GetResourceAppId gets the resourceAppId property value. The resourceAppId property
+// GetResourceAppId gets the resourceAppId property value. The appId (client ID) of the resource that the application needs to access.
 // returns a *string when successful
 func (m *ApplicationsRequiredResourceAccess) GetResourceAppId() *string {
 	val, err := m.GetBackingStore().Get("resourceAppId")
@@ -185,7 +185,7 @@ func (m *ApplicationsRequiredResourceAccess) SetOdataType(value *string) {
 	}
 }
 
-// SetPermissions sets the permissions property value. The permissions property
+// SetPermissions sets the permissions property value. The collection of resource permissions required by the application.
 func (m *ApplicationsRequiredResourceAccess) SetPermissions(value []ApplicationResourcePermissionable) {
 	err := m.GetBackingStore().Set("permissions", value)
 	if err != nil {
@@ -193,7 +193,7 @@ func (m *ApplicationsRequiredResourceAccess) SetPermissions(value []ApplicationR
 	}
 }
 
-// SetResourceAppId sets the resourceAppId property value. The resourceAppId property
+// SetResourceAppId sets the resourceAppId property value. The appId (client ID) of the resource that the application needs to access.
 func (m *ApplicationsRequiredResourceAccess) SetResourceAppId(value *string) {
 	err := m.GetBackingStore().Set("resourceAppId", value)
 	if err != nil {

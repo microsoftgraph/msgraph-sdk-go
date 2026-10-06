@@ -105,6 +105,12 @@ func (m *SubscriptionsRequestBuilder) Get(ctx context.Context, requestConfigurat
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscriptionCollectionResponseable), nil
 }
 
+// GetVapidPublicKey provides operations to call the getVapidPublicKey method.
+// returns a *GetVapidPublicKeyRequestBuilder when successful
+func (m *SubscriptionsRequestBuilder) GetVapidPublicKey() *GetVapidPublicKeyRequestBuilder {
+	return NewGetVapidPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Post subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources. Some resources support rich notifications, that is, notifications that include resource data. For more information about these resources, see Set up change notifications that include resource data: Supported resources.
 // returns a Subscriptionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

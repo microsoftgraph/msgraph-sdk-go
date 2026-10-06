@@ -23,7 +23,7 @@ type TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilder
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderGetQueryParameters get governanceInvitations from directory
+// TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderGetQueryParameters read the properties of a governanceInvitation object.
 type TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -64,8 +64,11 @@ func NewTenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuil
 	return NewTenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete navigation property governanceInvitations for directory
+// Delete delete a governanceInvitation object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governanceinvitation-delete?view=graph-rest-1.0
 func (m *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderDeleteRequestConfiguration) error {
 	requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -81,9 +84,12 @@ func (m *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBui
 	return nil
 }
 
-// Get get governanceInvitations from directory
+// Get read the properties of a governanceInvitation object.
 // returns a GovernanceInvitationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governanceinvitation-get?view=graph-rest-1.0
 func (m *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -123,7 +129,7 @@ func (m *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBui
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceInvitationable), nil
 }
 
-// ToDeleteRequestInformation delete navigation property governanceInvitations for directory
+// ToDeleteRequestInformation delete a governanceInvitation object.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBui
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get governanceInvitations from directory
+// ToGetRequestInformation read the properties of a governanceInvitation object.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

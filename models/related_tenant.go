@@ -26,7 +26,7 @@ func CreateRelatedTenantFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 	return NewRelatedTenant(), nil
 }
 
-// GetAppB2BSignInActivityMetrics gets the appB2BSignInActivityMetrics property value. The appB2BSignInActivityMetrics property
+// GetAppB2BSignInActivityMetrics gets the appB2BSignInActivityMetrics property value. B2B sign-in activity metrics for this related tenant. Expanded by default.
 // returns a B2BSignInActivityMetricsable when successful
 func (m *RelatedTenant) GetAppB2BSignInActivityMetrics() B2BSignInActivityMetricsable {
 	val, err := m.GetBackingStore().Get("appB2BSignInActivityMetrics")
@@ -39,7 +39,7 @@ func (m *RelatedTenant) GetAppB2BSignInActivityMetrics() B2BSignInActivityMetric
 	return nil
 }
 
-// GetB2BRegistrationMetrics gets the b2BRegistrationMetrics property value. The b2BRegistrationMetrics property
+// GetB2BRegistrationMetrics gets the b2BRegistrationMetrics property value. B2B registration metrics for this related tenant. Expanded by default.
 // returns a B2bRegistrationMetricsable when successful
 func (m *RelatedTenant) GetB2BRegistrationMetrics() B2bRegistrationMetricsable {
 	val, err := m.GetBackingStore().Get("b2BRegistrationMetrics")
@@ -52,7 +52,7 @@ func (m *RelatedTenant) GetB2BRegistrationMetrics() B2bRegistrationMetricsable {
 	return nil
 }
 
-// GetB2BSignInActivityMetrics gets the b2BSignInActivityMetrics property value. The b2BSignInActivityMetrics property
+// GetB2BSignInActivityMetrics gets the b2BSignInActivityMetrics property value. B2B sign-in activity metrics for this related tenant. Expanded by default.
 // returns a B2BSignInActivityMetricsable when successful
 func (m *RelatedTenant) GetB2BSignInActivityMetrics() B2BSignInActivityMetricsable {
 	val, err := m.GetBackingStore().Get("b2BSignInActivityMetrics")
@@ -65,7 +65,7 @@ func (m *RelatedTenant) GetB2BSignInActivityMetrics() B2BSignInActivityMetricsab
 	return nil
 }
 
-// GetBillingMetrics gets the billingMetrics property value. The billingMetrics property
+// GetBillingMetrics gets the billingMetrics property value. Billing metrics for this related tenant. Expanded by default.
 // returns a BillingMetricsable when successful
 func (m *RelatedTenant) GetBillingMetrics() BillingMetricsable {
 	val, err := m.GetBackingStore().Get("billingMetrics")
@@ -78,7 +78,7 @@ func (m *RelatedTenant) GetBillingMetrics() BillingMetricsable {
 	return nil
 }
 
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the related tenant was discovered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
 // returns a *Time when successful
 func (m *RelatedTenant) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("createdDateTime")
@@ -168,7 +168,7 @@ func (m *RelatedTenant) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 	return res
 }
 
-// GetIsMicrosoftInfrastructure gets the isMicrosoftInfrastructure property value. Indicates whether this tenant is a Microsoft infrastructure tenant.
+// GetIsMicrosoftInfrastructure gets the isMicrosoftInfrastructure property value. Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.
 // returns a *bool when successful
 func (m *RelatedTenant) GetIsMicrosoftInfrastructure() *bool {
 	val, err := m.GetBackingStore().Get("isMicrosoftInfrastructure")
@@ -181,7 +181,7 @@ func (m *RelatedTenant) GetIsMicrosoftInfrastructure() *bool {
 	return nil
 }
 
-// GetMultiTenantApplicationMetrics gets the multiTenantApplicationMetrics property value. The multiTenantApplicationMetrics property
+// GetMultiTenantApplicationMetrics gets the multiTenantApplicationMetrics property value. Multi-tenant application usage metrics for this related tenant. Expanded by default.
 // returns a MultiTenantApplicationMetricsable when successful
 func (m *RelatedTenant) GetMultiTenantApplicationMetrics() MultiTenantApplicationMetricsable {
 	val, err := m.GetBackingStore().Get("multiTenantApplicationMetrics")
@@ -239,7 +239,7 @@ func (m *RelatedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 	return nil
 }
 
-// SetAppB2BSignInActivityMetrics sets the appB2BSignInActivityMetrics property value. The appB2BSignInActivityMetrics property
+// SetAppB2BSignInActivityMetrics sets the appB2BSignInActivityMetrics property value. B2B sign-in activity metrics for this related tenant. Expanded by default.
 func (m *RelatedTenant) SetAppB2BSignInActivityMetrics(value B2BSignInActivityMetricsable) {
 	err := m.GetBackingStore().Set("appB2BSignInActivityMetrics", value)
 	if err != nil {
@@ -247,7 +247,7 @@ func (m *RelatedTenant) SetAppB2BSignInActivityMetrics(value B2BSignInActivityMe
 	}
 }
 
-// SetB2BRegistrationMetrics sets the b2BRegistrationMetrics property value. The b2BRegistrationMetrics property
+// SetB2BRegistrationMetrics sets the b2BRegistrationMetrics property value. B2B registration metrics for this related tenant. Expanded by default.
 func (m *RelatedTenant) SetB2BRegistrationMetrics(value B2bRegistrationMetricsable) {
 	err := m.GetBackingStore().Set("b2BRegistrationMetrics", value)
 	if err != nil {
@@ -255,7 +255,7 @@ func (m *RelatedTenant) SetB2BRegistrationMetrics(value B2bRegistrationMetricsab
 	}
 }
 
-// SetB2BSignInActivityMetrics sets the b2BSignInActivityMetrics property value. The b2BSignInActivityMetrics property
+// SetB2BSignInActivityMetrics sets the b2BSignInActivityMetrics property value. B2B sign-in activity metrics for this related tenant. Expanded by default.
 func (m *RelatedTenant) SetB2BSignInActivityMetrics(value B2BSignInActivityMetricsable) {
 	err := m.GetBackingStore().Set("b2BSignInActivityMetrics", value)
 	if err != nil {
@@ -263,7 +263,7 @@ func (m *RelatedTenant) SetB2BSignInActivityMetrics(value B2BSignInActivityMetri
 	}
 }
 
-// SetBillingMetrics sets the billingMetrics property value. The billingMetrics property
+// SetBillingMetrics sets the billingMetrics property value. Billing metrics for this related tenant. Expanded by default.
 func (m *RelatedTenant) SetBillingMetrics(value BillingMetricsable) {
 	err := m.GetBackingStore().Set("billingMetrics", value)
 	if err != nil {
@@ -271,7 +271,7 @@ func (m *RelatedTenant) SetBillingMetrics(value BillingMetricsable) {
 	}
 }
 
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the related tenant was discovered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
 func (m *RelatedTenant) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("createdDateTime", value)
 	if err != nil {
@@ -279,7 +279,7 @@ func (m *RelatedTenant) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
 	}
 }
 
-// SetIsMicrosoftInfrastructure sets the isMicrosoftInfrastructure property value. Indicates whether this tenant is a Microsoft infrastructure tenant.
+// SetIsMicrosoftInfrastructure sets the isMicrosoftInfrastructure property value. Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.
 func (m *RelatedTenant) SetIsMicrosoftInfrastructure(value *bool) {
 	err := m.GetBackingStore().Set("isMicrosoftInfrastructure", value)
 	if err != nil {
@@ -287,7 +287,7 @@ func (m *RelatedTenant) SetIsMicrosoftInfrastructure(value *bool) {
 	}
 }
 
-// SetMultiTenantApplicationMetrics sets the multiTenantApplicationMetrics property value. The multiTenantApplicationMetrics property
+// SetMultiTenantApplicationMetrics sets the multiTenantApplicationMetrics property value. Multi-tenant application usage metrics for this related tenant. Expanded by default.
 func (m *RelatedTenant) SetMultiTenantApplicationMetrics(value MultiTenantApplicationMetricsable) {
 	err := m.GetBackingStore().Set("multiTenantApplicationMetrics", value)
 	if err != nil {

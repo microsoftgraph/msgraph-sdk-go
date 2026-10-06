@@ -84,7 +84,7 @@ func (m *RoleTemplate) GetFieldDeserializers() map[string]func(i878a80d2330e89d2
 	return res
 }
 
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The template ID of the Microsoft Entra role (e.g., 62e90394-69f5-4237-9190-012177145e10 for Global Administrator).
 // returns a *string when successful
 func (m *RoleTemplate) GetId() *string {
 	val, err := m.GetBackingStore().Get("id")
@@ -97,7 +97,7 @@ func (m *RoleTemplate) GetId() *string {
 	return nil
 }
 
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The display name of the role (e.g., 'Global Administrator', 'Helpdesk Administrator').
 // returns a *string when successful
 func (m *RoleTemplate) GetName() *string {
 	val, err := m.GetBackingStore().Get("name")
@@ -165,7 +165,7 @@ func (m *RoleTemplate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d411
 	m.backingStore = value
 }
 
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The template ID of the Microsoft Entra role (e.g., 62e90394-69f5-4237-9190-012177145e10 for Global Administrator).
 func (m *RoleTemplate) SetId(value *string) {
 	err := m.GetBackingStore().Set("id", value)
 	if err != nil {
@@ -173,7 +173,7 @@ func (m *RoleTemplate) SetId(value *string) {
 	}
 }
 
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The display name of the role (e.g., 'Global Administrator', 'Helpdesk Administrator').
 func (m *RoleTemplate) SetName(value *string) {
 	err := m.GetBackingStore().Set("name", value)
 	if err != nil {

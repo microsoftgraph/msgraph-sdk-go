@@ -100,7 +100,7 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetFieldDeserializers() 
 	return res
 }
 
-// GetGroupDisplayName gets the groupDisplayName property value. The groupDisplayName property
+// GetGroupDisplayName gets the groupDisplayName property value. The display name of the security group identified by groupId at the time the snapshot was created. Read-only.
 // returns a *string when successful
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetGroupDisplayName() *string {
 	val, err := m.GetBackingStore().Get("groupDisplayName")
@@ -113,7 +113,7 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetGroupDisplayName() *s
 	return nil
 }
 
-// GetGroupId gets the groupId property value. The groupId property
+// GetGroupId gets the groupId property value. The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.
 // returns a *string when successful
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetGroupId() *string {
 	val, err := m.GetBackingStore().Get("groupId")
@@ -139,7 +139,7 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetOdataType() *string {
 	return nil
 }
 
-// GetRoleTemplates gets the roleTemplates property value. The roleTemplates property
+// GetRoleTemplates gets the roleTemplates property value. The collection of role templates that define the Microsoft Entra roles to be assigned.
 // returns a []RoleTemplateable when successful
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetRoleTemplates() []RoleTemplateable {
 	val, err := m.GetBackingStore().Get("roleTemplates")
@@ -206,7 +206,7 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetBackingStore(value ie
 	m.backingStore = value
 }
 
-// SetGroupDisplayName sets the groupDisplayName property value. The groupDisplayName property
+// SetGroupDisplayName sets the groupDisplayName property value. The display name of the security group identified by groupId at the time the snapshot was created. Read-only.
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetGroupDisplayName(value *string) {
 	err := m.GetBackingStore().Set("groupDisplayName", value)
 	if err != nil {
@@ -214,7 +214,7 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetGroupDisplayName(valu
 	}
 }
 
-// SetGroupId sets the groupId property value. The groupId property
+// SetGroupId sets the groupId property value. The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetGroupId(value *string) {
 	err := m.GetBackingStore().Set("groupId", value)
 	if err != nil {
@@ -230,7 +230,7 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetOdataType(value *stri
 	}
 }
 
-// SetRoleTemplates sets the roleTemplates property value. The roleTemplates property
+// SetRoleTemplates sets the roleTemplates property value. The collection of role templates that define the Microsoft Entra roles to be assigned.
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetRoleTemplates(value []RoleTemplateable) {
 	err := m.GetBackingStore().Set("roleTemplates", value)
 	if err != nil {

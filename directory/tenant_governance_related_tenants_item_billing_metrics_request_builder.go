@@ -15,7 +15,7 @@ type TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilderGetQueryParameters get billingMetrics from directory
+// TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilderGetQueryParameters billing metrics for this related tenant. Expanded by default.
 type TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewTenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilder(rawUrl st
 	return NewTenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get get billingMetrics from directory
+// Get billing metrics for this related tenant. Expanded by default.
 // returns a BillingMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BillingMetricsable, error) {
@@ -69,7 +69,7 @@ func (m *TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilder) Get(ctx
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BillingMetricsable), nil
 }
 
-// ToGetRequestInformation get billingMetrics from directory
+// ToGetRequestInformation billing metrics for this related tenant. Expanded by default.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

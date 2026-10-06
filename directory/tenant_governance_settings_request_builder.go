@@ -23,7 +23,7 @@ type TenantGovernanceSettingsRequestBuilderDeleteRequestConfiguration struct {
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// TenantGovernanceSettingsRequestBuilderGetQueryParameters get settings from directory
+// TenantGovernanceSettingsRequestBuilderGetQueryParameters read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
 type TenantGovernanceSettingsRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -87,9 +87,12 @@ func (m *TenantGovernanceSettingsRequestBuilder) EnableRelatedTenants() *TenantG
 	return NewTenantGovernanceSettingsEnableRelatedTenantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get settings from directory
+// Get read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
 // returns a TenantGovernanceSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-get?view=graph-rest-1.0
 func (m *TenantGovernanceSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceSettingsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernanceSettingable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -108,9 +111,12 @@ func (m *TenantGovernanceSettingsRequestBuilder) Get(ctx context.Context, reques
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernanceSettingable), nil
 }
 
-// Patch update the navigation property settings in directory
+// Patch update the canReceiveInvitations property of the tenantGovernanceSetting singleton. This property controls whether the tenant can receive governance invitations.
 // returns a TenantGovernanceSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-update?view=graph-rest-1.0
 func (m *TenantGovernanceSettingsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernanceSettingable, requestConfiguration *TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernanceSettingable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -141,7 +147,7 @@ func (m *TenantGovernanceSettingsRequestBuilder) ToDeleteRequestInformation(ctx 
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get settings from directory
+// ToGetRequestInformation read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceSettingsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,7 +162,7 @@ func (m *TenantGovernanceSettingsRequestBuilder) ToGetRequestInformation(ctx con
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the navigation property settings in directory
+// ToPatchRequestInformation update the canReceiveInvitations property of the tenantGovernanceSetting singleton. This property controls whether the tenant can receive governance invitations.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantGovernanceSettingable, requestConfiguration *TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

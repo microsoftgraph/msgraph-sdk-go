@@ -15,7 +15,7 @@ type TenantGovernanceGovernanceRelationshipsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// TenantGovernanceGovernanceRelationshipsRequestBuilderGetQueryParameters get governanceRelationships from directory
+// TenantGovernanceGovernanceRelationshipsRequestBuilderGetQueryParameters get a list of the governanceRelationship objects and their properties. This API method returns all governance relationships where the calling tenant is either the governing tenant or the governed tenant.
 type TenantGovernanceGovernanceRelationshipsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,9 +87,12 @@ func (m *TenantGovernanceGovernanceRelationshipsRequestBuilder) Count() *TenantG
 	return NewTenantGovernanceGovernanceRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get governanceRelationships from directory
+// Get get a list of the governanceRelationship objects and their properties. This API method returns all governance relationships where the calling tenant is either the governing tenant or the governed tenant.
 // returns a GovernanceRelationshipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancerelationships?view=graph-rest-1.0
 func (m *TenantGovernanceGovernanceRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRelationshipsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceRelationshipCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -129,7 +132,7 @@ func (m *TenantGovernanceGovernanceRelationshipsRequestBuilder) Post(ctx context
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GovernanceRelationshipable), nil
 }
 
-// ToGetRequestInformation get governanceRelationships from directory
+// ToGetRequestInformation get a list of the governanceRelationship objects and their properties. This API method returns all governance relationships where the calling tenant is either the governing tenant or the governed tenant.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRelationshipsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

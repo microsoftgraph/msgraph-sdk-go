@@ -113,7 +113,7 @@ func (m *DelegatedAdministrationRoleAssignment) GetGroup() Groupable {
 	return nil
 }
 
-// GetGroupDisplayName gets the groupDisplayName property value. The groupDisplayName property
+// GetGroupDisplayName gets the groupDisplayName property value. The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.
 // returns a *string when successful
 func (m *DelegatedAdministrationRoleAssignment) GetGroupDisplayName() *string {
 	val, err := m.GetBackingStore().Get("groupDisplayName")
@@ -139,7 +139,7 @@ func (m *DelegatedAdministrationRoleAssignment) GetOdataType() *string {
 	return nil
 }
 
-// GetRoleTemplates gets the roleTemplates property value. The roleTemplates property
+// GetRoleTemplates gets the roleTemplates property value. A collection of role templates that define the roles to be assigned to the group in the governed tenant.
 // returns a []RoleTemplateable when successful
 func (m *DelegatedAdministrationRoleAssignment) GetRoleTemplates() []RoleTemplateable {
 	val, err := m.GetBackingStore().Get("roleTemplates")
@@ -214,7 +214,7 @@ func (m *DelegatedAdministrationRoleAssignment) SetGroup(value Groupable) {
 	}
 }
 
-// SetGroupDisplayName sets the groupDisplayName property value. The groupDisplayName property
+// SetGroupDisplayName sets the groupDisplayName property value. The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.
 func (m *DelegatedAdministrationRoleAssignment) SetGroupDisplayName(value *string) {
 	err := m.GetBackingStore().Set("groupDisplayName", value)
 	if err != nil {
@@ -230,7 +230,7 @@ func (m *DelegatedAdministrationRoleAssignment) SetOdataType(value *string) {
 	}
 }
 
-// SetRoleTemplates sets the roleTemplates property value. The roleTemplates property
+// SetRoleTemplates sets the roleTemplates property value. A collection of role templates that define the roles to be assigned to the group in the governed tenant.
 func (m *DelegatedAdministrationRoleAssignment) SetRoleTemplates(value []RoleTemplateable) {
 	err := m.GetBackingStore().Set("roleTemplates", value)
 	if err != nil {

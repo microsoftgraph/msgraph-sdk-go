@@ -14,7 +14,7 @@ type ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDat
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+// ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get work plan occurrences from a user's work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
 type ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -65,7 +65,7 @@ func NewItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEnd
 	return NewItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 
-// Get get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+// Get get work plan occurrences from a user's work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
 // Deprecated: This method is obsolete. Use GetAsOccurrencesViewWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -90,7 +90,7 @@ func (m *ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEn
 	return res.(ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeResponseable), nil
 }
 
-// GetAsOccurrencesViewWithStartDateTimeWithEndDateTimeGetResponse get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+// GetAsOccurrencesViewWithStartDateTimeWithEndDateTimeGetResponse get work plan occurrences from a user's work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
 // returns a ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -114,7 +114,7 @@ func (m *ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEn
 	return res.(ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
 
-// ToGetRequestInformation get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+// ToGetRequestInformation get work plan occurrences from a user's work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWorkHoursAndLocationsOccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
