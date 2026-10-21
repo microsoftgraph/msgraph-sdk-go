@@ -15,7 +15,7 @@ type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder 
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters remove a group from the list of groups that have been marked as incompatible on an accessPackage.
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters struct {
 	// The delete Uri
 	Id *string "uriparametername:\"%40id\""
@@ -31,7 +31,7 @@ type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderD
 	QueryParameters *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteQueryParameters
 }
 
-// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
 type EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -80,7 +80,7 @@ func NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuild
 	return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// Delete remove a group from the list of groups that have been marked as incompatible on an accessPackage.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -100,7 +100,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
 	return nil
 }
 
-// Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -124,7 +124,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
 
-// Post add a group to the list of groups that have been marked as incompatible on an accessPackage.  
+// Post add a group to the list of groups that have been marked as incompatible on an accessPackage.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -144,7 +144,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
 	return nil
 }
 
-// ToDeleteRequestInformation remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// ToDeleteRequestInformation remove a group from the list of groups that have been marked as incompatible on an accessPackage.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -159,7 +159,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// ToGetRequestInformation retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -174,7 +174,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation add a group to the list of groups that have been marked as incompatible on an accessPackage.  
+// ToPostRequestInformation add a group to the list of groups that have been marked as incompatible on an accessPackage.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

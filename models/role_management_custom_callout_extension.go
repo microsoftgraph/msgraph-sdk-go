@@ -27,7 +27,7 @@ func CreateRoleManagementCustomCalloutExtensionFromDiscriminatorValue(parseNode 
 	return NewRoleManagementCustomCalloutExtension(), nil
 }
 
-// GetCustomAttributes gets the customAttributes property value. The customAttributes property
+// GetCustomAttributes gets the customAttributes property value. The custom attribute names to include in the callout payload.
 // returns a []string when successful
 func (m *RoleManagementCustomCalloutExtension) GetCustomAttributes() []string {
 	val, err := m.GetBackingStore().Get("customAttributes")
@@ -138,7 +138,7 @@ func (m *RoleManagementCustomCalloutExtension) Serialize(writer i878a80d2330e89d
 	return nil
 }
 
-// SetCustomAttributes sets the customAttributes property value. The customAttributes property
+// SetCustomAttributes sets the customAttributes property value. The custom attribute names to include in the callout payload.
 func (m *RoleManagementCustomCalloutExtension) SetCustomAttributes(value []string) {
 	err := m.GetBackingStore().Set("customAttributes", value)
 	if err != nil {

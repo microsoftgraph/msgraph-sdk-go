@@ -19,7 +19,7 @@ const (
 	WIPEFAILED_MANAGEMENTSTATE
 	// The device is unhealthy.
 	UNHEALTHY_MANAGEMENTSTATE
-	// A delete command is occuring on the device 
+	// A delete command is occuring on the device
 	DELETEPENDING_MANAGEMENTSTATE
 	// A retire command was issued for the device
 	RETIREISSUED_MANAGEMENTSTATE

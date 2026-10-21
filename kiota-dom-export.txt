@@ -30249,6 +30249,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public
 github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public|getByIds():*GetByIdsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public|Post(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable; ctx:context.Context; requestConfiguration?:*DevicesRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable
+github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public|provision():*ProvisionRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public|requestAdapter:RequestAdapter
 github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*DevicesRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.devices.devicesRequestBuilder::|public|ToPostRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable; ctx:context.Context; requestConfiguration?:*DevicesRequestBuilderPostRequestConfiguration):*RequestInformation
@@ -31462,6 +31463,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.devices.ItemTransitiveMemberOfRequestB
 github.com/microsoftgraph/msgraph-sdk-go/.devices.ItemTransitiveMemberOfRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.devices.ItemTransitiveMemberOfRequestBuilder::|public|urlTemplate:string
 github.com/microsoftgraph/msgraph-sdk-go/.devices.ItemTransitiveMemberOfRequestBuilder::|public|WithUrl(rawUrl:string):*ItemTransitiveMemberOfRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|GetProvisioningBlob():*string
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|public|SetProvisioningBlob(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBodyable::|public|GetProvisioningBlob():*string
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBodyable::|public|SetProvisioningBlob(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionPostRequestBody~~>ProvisionPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder.ProvisionRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder.ProvisionRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|Post(body:ProvisionPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ProvisionRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProvisionResponseable
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|ToPostRequestInformation(body:ProvisionPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ProvisionRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.devices.ProvisionRequestBuilder::|public|WithUrl(rawUrl:string):*ProvisionRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.devices.ValidatePropertiesPostRequestBody::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.devices.ValidatePropertiesPostRequestBody::|public|GetAdditionalData():map[string]any
 github.com/microsoftgraph/msgraph-sdk-go/.devices.ValidatePropertiesPostRequestBody::|public|GetBackingStore():BackingStore
@@ -34198,6 +34226,17 @@ github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenan
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshRequestBuilder::|public|ToPostRequestInformation(ctx:context.Context; requestConfiguration?:*TenantGovernanceRelatedTenantsRefreshRequestBuilderPostRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshRequestBuilder::|public|urlTemplate:string
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshRequestBuilder::|public|WithUrl(rawUrl:string):*TenantGovernanceRelatedTenantsRefreshRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilderGetRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilderGetRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|Get(ctx:context.Context; requestConfiguration?:*TenantGovernanceRelatedTenantsRefreshStatusRequestBuilderGetRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantsRefreshStatusable
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*TenantGovernanceRelatedTenantsRefreshStatusRequestBuilderGetRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder::|public|WithUrl(rawUrl:string):*TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder.TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder.TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -34247,6 +34286,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenan
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRequestBuilder::|public|Post(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantable; ctx:context.Context; requestConfiguration?:*TenantGovernanceRelatedTenantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantable
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRequestBuilder::|public|refresh():*TenantGovernanceRelatedTenantsRefreshRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRequestBuilder::|public|refreshStatus():*TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRequestBuilder::|public|requestAdapter:RequestAdapter
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*TenantGovernanceRelatedTenantsRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.directory.TenantGovernanceRelatedTenantsRequestBuilder::|public|ToPostRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantable; ctx:context.Context; requestConfiguration?:*TenantGovernanceRelatedTenantsRequestBuilderPostRequestConfiguration):*RequestInformation
@@ -37795,6 +37835,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemGra
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemGrantResponseable~~>ItemItemsItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder.ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder.ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -37813,6 +37880,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermiss
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemItemsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -69563,6 +69631,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsIte
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemGrantResponseable~~>ItemListItemsItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder.ItemListItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder.ItemListItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -69581,6 +69676,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPer
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -69961,6 +70057,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemGrantRes
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemGrantResponseable~~>ItemListPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsPostRequestBody~~>ItemListPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder.ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder.ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemListPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemListPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemListPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder.ItemListPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder.ItemListPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -69979,6 +70102,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionIt
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemListPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.drives.ItemListPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -87438,6 +87562,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItem
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemGrantResponseable~~>ItemSitesItemListsItemItemsItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -87456,6 +87607,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItem
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemSitesItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -87835,6 +87987,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissio
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemGrantResponseable~~>ItemSitesItemListsItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemSitesItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -87853,6 +88032,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissio
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemSitesItemListsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemListsItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemSitesItemListsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -91273,6 +91453,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemGra
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemGrantResponseable~~>ItemSitesItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder.ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder.ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -91291,6 +91498,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermiss
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemSitesItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.groups.ItemSitesItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -141832,6 +142040,27 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.androidWorkProfileRequiredPassw
 github.com/microsoftgraph/msgraph-sdk-go/.models.androidWorkProfileRequiredPasswordType::0005-atLeastAlphabetic
 github.com/microsoftgraph/msgraph-sdk-go/.models.androidWorkProfileRequiredPasswordType::0006-atLeastAlphanumeric
 github.com/microsoftgraph/msgraph-sdk-go/.models.androidWorkProfileRequiredPasswordType::0007-alphanumericWithSymbols
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyDetail-->*M365CapabilityBase
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyDetail::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyDetail::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyDetail::|public|OdataType:*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyDetail::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyDetail::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyDetailable~~>M365CapabilityBaseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyReviewer-->*M365CapabilityBase
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyReviewer::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyReviewer::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyReviewer::|public|OdataType:*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyReviewer::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyReviewer::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusyReviewerable~~>M365CapabilityBaseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusySimple-->*M365CapabilityBase
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusySimple::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusySimple::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusySimple::|public|OdataType:*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusySimple::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusySimple::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousCalendarSharingFreeBusySimpleable~~>M365CapabilityBaseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousGuestConversationMember-->*ConversationMember
 github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousGuestConversationMember::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.models.anonymousGuestConversationMember::|public|GetAnonymousGuestId():*string
@@ -145053,6 +145282,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetOper
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetPasswordMethods():[]PasswordAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetPhoneMethods():[]PhoneAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetPlatformCredentialMethods():[]PlatformCredentialAuthenticationMethodable
+github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetResourceAccountKeyAuthenticationMethods():[]ResourceAccountKeyAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetSoftwareOathMethods():[]SoftwareOathAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetTemporaryAccessPassMethods():[]TemporaryAccessPassAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|GetWindowsHelloForBusinessMethods():[]WindowsHelloForBusinessAuthenticationMethodable
@@ -145067,6 +145297,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetOper
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetPasswordMethods(value:[]PasswordAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetPhoneMethods(value:[]PhoneAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetPlatformCredentialMethods(value:[]PlatformCredentialAuthenticationMethodable):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetResourceAccountKeyAuthenticationMethods(value:[]ResourceAccountKeyAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetSoftwareOathMethods(value:[]SoftwareOathAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetTemporaryAccessPassMethods(value:[]TemporaryAccessPassAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authentication::|public|SetWindowsHelloForBusinessMethods(value:[]WindowsHelloForBusinessAuthenticationMethodable):void
@@ -145080,6 +145311,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|Get
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|GetPasswordMethods():[]PasswordAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|GetPhoneMethods():[]PhoneAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|GetPlatformCredentialMethods():[]PlatformCredentialAuthenticationMethodable
+github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|GetResourceAccountKeyAuthenticationMethods():[]ResourceAccountKeyAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|GetSoftwareOathMethods():[]SoftwareOathAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|GetTemporaryAccessPassMethods():[]TemporaryAccessPassAuthenticationMethodable
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|GetWindowsHelloForBusinessMethods():[]WindowsHelloForBusinessAuthenticationMethodable
@@ -145092,6 +145324,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|Set
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|SetPasswordMethods(value:[]PasswordAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|SetPhoneMethods(value:[]PhoneAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|SetPlatformCredentialMethods(value:[]PlatformCredentialAuthenticationMethodable):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|SetResourceAccountKeyAuthenticationMethods(value:[]ResourceAccountKeyAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|SetSoftwareOathMethods(value:[]SoftwareOathAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|SetTemporaryAccessPassMethods(value:[]TemporaryAccessPassAuthenticationMethodable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.authenticationable::|public|SetWindowsHelloForBusinessMethods(value:[]WindowsHelloForBusinessAuthenticationMethodable):void
@@ -168373,6 +168606,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistr
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|GetIsDiscoverabilityEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|GetIsItemVersioningEnabled():*bool
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|GetIsOfficeRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|GetIsSearchEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|GetIsSharingRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|GetItemMajorVersionLimit():*int64
@@ -168385,6 +168619,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistr
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|SetBackingStore(value:BackingStore):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|SetIsDiscoverabilityEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|SetIsItemVersioningEnabled(value:*bool):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|SetIsOfficeRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|SetIsSearchEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|SetIsSharingRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettings::|public|SetItemMajorVersionLimit(value:*int64):void
@@ -168396,6 +168631,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistr
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|GetBackingStore():BackingStore
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|GetIsDiscoverabilityEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|GetIsItemVersioningEnabled():*bool
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|GetIsOfficeRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|GetIsSearchEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|GetIsSharingRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|GetItemMajorVersionLimit():*int64
@@ -168406,6 +168642,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistr
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|SetBackingStore(value:BackingStore):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|SetIsDiscoverabilityEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|SetIsItemVersioningEnabled(value:*bool):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|SetIsOfficeRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|SetIsSearchEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|SetIsSharingRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeRegistrationSettingsable::|public|SetItemMajorVersionLimit(value:*int64):void
@@ -168422,6 +168659,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSetting
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|GetIsDiscoverabilityEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|GetIsItemVersioningEnabled():*bool
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|GetIsOfficeRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|GetIsSearchEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|GetIsSharingRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|GetItemMajorVersionLimit():*int64
@@ -168435,6 +168673,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSetting
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|SetConsumingTenantOverridables(value:*FileStorageContainerTypeSettingsOverride):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|SetIsDiscoverabilityEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|SetIsItemVersioningEnabled(value:*bool):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|SetIsOfficeRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|SetIsSearchEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|SetIsSharingRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings::|public|SetItemMajorVersionLimit(value:*int64):void
@@ -168447,6 +168686,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSetting
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|GetConsumingTenantOverridables():*FileStorageContainerTypeSettingsOverride
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|GetIsDiscoverabilityEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|GetIsItemVersioningEnabled():*bool
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|GetIsOfficeRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|GetIsSearchEnabled():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|GetIsSharingRestricted():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|GetItemMajorVersionLimit():*int64
@@ -168458,6 +168698,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSetting
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|SetConsumingTenantOverridables(value:*FileStorageContainerTypeSettingsOverride):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|SetIsDiscoverabilityEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|SetIsItemVersioningEnabled(value:*bool):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|SetIsOfficeRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|SetIsSearchEnabled(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|SetIsSharingRestricted(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsable::|public|SetItemMajorVersionLimit(value:*int64):void
@@ -168473,6 +168714,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSetting
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsOverride::0004-itemMajorVersionLimit
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsOverride::0005-maxStoragePerContainerInBytes
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsOverride::0006-unknownFutureValue
+github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettingsOverride::0007-isOfficeRestricted
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerTypeSettings~~>FileStorageContainerTypeSettingsable
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerViewpoint::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.models.fileStorageContainerViewpoint::|public|GetAdditionalData():map[string]any
@@ -191283,6 +191525,30 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.provisioningSystem::|static|pub
 github.com/microsoftgraph/msgraph-sdk-go/.models.provisioningSystemable::|public|GetDetails():DetailsInfoable
 github.com/microsoftgraph/msgraph-sdk-go/.models.provisioningSystemable::|public|SetDetails(value:DetailsInfoable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.provisioningSystemable~~>Identityable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|GetChallenge():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|GetDeviceId():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|GetOdataType():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|SetChallenge(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|SetDeviceId(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|public|SetOdataType(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|GetChallenge():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|GetDeviceId():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|GetOdataType():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|SetChallenge(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|SetDeviceId(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable::|public|SetOdataType(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponseable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.provisionResponse~~>ProvisionResponseable
 github.com/microsoftgraph/msgraph-sdk-go/.models.proxiedDomain::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.models.proxiedDomain::|public|GetAdditionalData():map[string]any
 github.com/microsoftgraph/msgraph-sdk-go/.models.proxiedDomain::|public|GetBackingStore():BackingStore
@@ -192642,6 +192908,34 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshRequest::|
 github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshRequestable::|public|GetLocation():*string
 github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshRequestable::|public|SetLocation(value:*string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshRequestable~~>Entityable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|GetIsFirstRefresh():*bool
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|GetMostRecentRefreshDateTime():*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|GetMostRecentRefreshRequestStatus():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|GetOdataType():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|SetIsFirstRefresh(value:*bool):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|SetMostRecentRefreshDateTime(value:*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|SetMostRecentRefreshRequestStatus(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|public|SetOdataType(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|GetIsFirstRefresh():*bool
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|GetMostRecentRefreshDateTime():*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|GetMostRecentRefreshRequestStatus():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|GetOdataType():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|SetIsFirstRefresh(value:*bool):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|SetMostRecentRefreshDateTime(value:*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|SetMostRecentRefreshRequestStatus(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable::|public|SetOdataType(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatusable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.relatedTenantsRefreshStatus~~>RelatedTenantsRefreshStatusable
 github.com/microsoftgraph/msgraph-sdk-go/.models.relationshipCreationType::0000-approvedByAdmin
 github.com/microsoftgraph/msgraph-sdk-go/.models.relationshipCreationType::0001-addOnTenant
 github.com/microsoftgraph/msgraph-sdk-go/.models.relationshipCreationType::0002-unknownFutureValue
@@ -193338,6 +193632,31 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccessType::0002-write
 github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccessType::0003-create
 github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccessType::0004-unknownFutureValue
 github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccess~~>ResourceAccessable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod-->*AuthenticationMethod
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|GetDevice():Deviceable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|GetDisplayName():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|OdataType:*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|SetDevice(value:Deviceable):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|public|SetDisplayName(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethod::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodable::|public|GetDevice():Deviceable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodable::|public|GetDisplayName():*string
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodable::|public|SetDevice(value:Deviceable):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodable::|public|SetDisplayName(value:*string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodable~~>AuthenticationMethodable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponse-->*BaseCollectionPaginationCountResponse
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|GetValue():[]ResourceAccountKeyAuthenticationMethodable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|SetValue(value:[]ResourceAccountKeyAuthenticationMethodable):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponseable::|public|GetValue():[]ResourceAccountKeyAuthenticationMethodable
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponseable::|public|SetValue(value:[]ResourceAccountKeyAuthenticationMethodable):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAccountKeyAuthenticationMethodCollectionResponseable~~>BaseCollectionPaginationCountResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAction::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAction::|public|GetAdditionalData():map[string]any
 github.com/microsoftgraph/msgraph-sdk-go/.models.resourceAction::|public|GetAllowedResourceActions():[]string
@@ -197678,14 +197997,17 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditData~~>AuditDataa
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery-->*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetAdministrativeUnitIdFilters():[]string
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetApproximateReturnedRecordCount():*int64
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetDisplayName():*string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetFilterEndDateTime():*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetFilterStartDateTime():*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetIpAddressFilters():[]string
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetIsRecordCountLimitExceeded():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetKeywordFilter():*string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetObjectIdFilters():[]string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetOperationFilters():[]string
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetRecordCountLimit():*int64
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetRecords():[]AuditLogRecordable
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetRecordTypeFilters():[]AuditLogRecordType
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|GetServiceFilters():[]string
@@ -197694,13 +198016,16 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|OdataType:*string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|Serialize(writer:SerializationWriter):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetAdministrativeUnitIdFilters(value:[]string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetApproximateReturnedRecordCount(value:*int64):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetDisplayName(value:*string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetFilterEndDateTime(value:*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetFilterStartDateTime(value:*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetIpAddressFilters(value:[]string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetIsRecordCountLimitExceeded(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetKeywordFilter(value:*string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetObjectIdFilters(value:[]string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetOperationFilters(value:[]string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetRecordCountLimit(value:*int64):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetRecords(value:[]AuditLogRecordable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetRecordTypeFilters(value:[]AuditLogRecordType):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetServiceFilters(value:[]string):void
@@ -197708,26 +198033,32 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|public|SetUserPrincipalNameFilters(value:[]string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQuery::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetAdministrativeUnitIdFilters():[]string
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetApproximateReturnedRecordCount():*int64
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetDisplayName():*string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetFilterEndDateTime():*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetFilterStartDateTime():*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetIpAddressFilters():[]string
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetIsRecordCountLimitExceeded():*bool
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetKeywordFilter():*string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetObjectIdFilters():[]string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetOperationFilters():[]string
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetRecordCountLimit():*int64
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetRecords():[]AuditLogRecordable
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetRecordTypeFilters():[]AuditLogRecordType
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetServiceFilters():[]string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetStatus():*AuditLogQueryStatus
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|GetUserPrincipalNameFilters():[]string
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetAdministrativeUnitIdFilters(value:[]string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetApproximateReturnedRecordCount(value:*int64):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetDisplayName(value:*string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetFilterEndDateTime(value:*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetFilterStartDateTime(value:*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetIpAddressFilters(value:[]string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetIsRecordCountLimitExceeded(value:*bool):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetKeywordFilter(value:*string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetObjectIdFilters(value:[]string):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetOperationFilters(value:[]string):void
+github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetRecordCountLimit(value:*int64):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetRecords(value:[]AuditLogRecordable):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetRecordTypeFilters(value:[]AuditLogRecordType):void
 github.com/microsoftgraph/msgraph-sdk-go/.models.security.auditLogQueryable::|public|SetServiceFilters(value:[]string):void
@@ -212396,7 +212727,8 @@ github.com/microsoftgraph/msgraph-sdk-go/.models.systemBrowserEnabledOn::0000-no
 github.com/microsoftgraph/msgraph-sdk-go/.models.systemBrowserEnabledOn::0001-ios
 github.com/microsoftgraph/msgraph-sdk-go/.models.systemBrowserEnabledOn::0002-android
 github.com/microsoftgraph/msgraph-sdk-go/.models.systemBrowserEnabledOn::0003-mac
-github.com/microsoftgraph/msgraph-sdk-go/.models.systemBrowserEnabledOn::0004-unknownFutureValue
+github.com/microsoftgraph/msgraph-sdk-go/.models.systemBrowserEnabledOn::0004-linux
+github.com/microsoftgraph/msgraph-sdk-go/.models.systemBrowserEnabledOn::0005-unknownFutureValue
 github.com/microsoftgraph/msgraph-sdk-go/.models.systemFacet::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.models.systemFacet::|public|GetAdditionalData():map[string]any
 github.com/microsoftgraph/msgraph-sdk-go/.models.systemFacet::|public|GetBackingStore():BackingStore
@@ -255096,6 +255428,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsIte
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemGrantResponseable~~>ItemListItemsItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemListItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder.ItemListItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder.ItemListItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -255114,6 +255473,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPer
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemListItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListItemsItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -255493,6 +255853,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemGrantRes
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemGrantResponseable~~>ItemListPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsPostRequestBody~~>ItemListPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder.ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder.ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemListPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemListPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemListPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder.ItemListPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder.ItemListPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -255511,6 +255898,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionIt
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemListPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemListPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -255744,11 +256132,39 @@ github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemPermissionRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|revokeGrants():*ItemPermissionRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemPermissionRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemPermissionRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemPermissionRequestBuilderPatchRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|urlTemplate:string
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRequestBuilder::|public|WithUrl(rawUrl:string):*ItemPermissionRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsPostRequestBody~~>ItemPermissionRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder.ItemPermissionRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder.ItemPermissionRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|Post(body:ItemPermissionRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemPermissionRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemPermissionRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemPermissionRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemPermissionRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemPermissionRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemRootContentRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemRootContentRequestBuilder.ItemRootContentRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.shares.ItemRootContentRequestBuilder.ItemRootContentRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -258967,6 +259383,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermission
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemGrantResponseable~~>ItemListsItemItemsItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemListsItemItemsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -258985,6 +259428,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermission
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListsItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemListsItemItemsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListsItemItemsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListsItemItemsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemItemsItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListsItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -259364,6 +259808,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemGran
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemGrantResponseable~~>ItemListsItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder.ItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemListsItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemListsItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemListsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder.ItemListsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder.ItemListsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -259382,6 +259853,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissi
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemListsItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemListsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemListsItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemListsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -262778,6 +263250,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemGrantResponse
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemGrantResponseable~~>ItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsPostRequestBody~~>ItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder.ItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder.ItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:ItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:ItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*ItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder.ItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder.ItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -262796,6 +263295,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemReq
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*ItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.sites.ItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*ItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -274533,6 +275033,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermi
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemGrantResponseable~~>FileStorageContainersItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBody~~>FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:FileStorageContainersItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder.FileStorageContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder.FileStorageContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -274551,6 +275078,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermi
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*FileStorageContainersItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*FileStorageContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageContainersItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*FileStorageContainersItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -275691,6 +276219,33 @@ github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersIt
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemGrantResponse::|public|constructor():void
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemGrantResponse::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemGrantResponseable~~>FileStorageDeletedContainersItemPermissionsItemGrantPostResponseable; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|constructor():void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetAdditionalData():map[string]any
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|getFieldDeserializers():map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|Serialize(writer:SerializationWriter):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetAdditionalData(value:map[string]any):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:ParseNode):Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetBackingStore():BackingStore
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|GetGrantees():[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetBackingStore(value:BackingStore):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable::|public|SetGrantees(value:[]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable~~>*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder; *ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel; *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBody~~>FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|Post(body:FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:FileStorageDeletedContainersItemPermissionsItemRevokeGrantsPostRequestBodyable; ctx:context.Context; requestConfiguration?:*FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):*FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
@@ -275709,6 +276264,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersIt
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder::|public|Patch(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder::|public|pathParameters:map[string]string
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder::|public|revokeGrants():*FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration):*RequestInformation
 github.com/microsoftgraph/msgraph-sdk-go/.storage.FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable; ctx:context.Context; requestConfiguration?:*FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration):*RequestInformation
@@ -285135,6 +285691,7 @@ github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|phoneMethods():*ItemAuthenticationPhoneMethodsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|platformCredentialMethods():*ItemAuthenticationPlatformCredentialMethodsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|resourceAccountKeyAuthenticationMethods():*ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|softwareOathMethods():*ItemAuthenticationSoftwareOathMethodsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|temporaryAccessPassMethods():*ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemAuthenticationRequestBuilderDeleteRequestConfiguration):*RequestInformation
@@ -285143,6 +285700,75 @@ github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|urlTemplate:string
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|windowsHelloForBusinessMethods():*ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationRequestBuilder::|public|WithUrl(rawUrl:string):*ItemAuthenticationRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetQueryParameters::|public|Filter:*string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetQueryParameters::|public|Search:*string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetRequestConfiguration::|public|queryParameters:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetQueryParameters
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|Get(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetRequestConfiguration):*int32
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilderGetRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder::|public|WithUrl(rawUrl:string):*ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetQueryParameters::|public|Expand:[]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetQueryParameters::|public|Select:[]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetRequestConfiguration::|public|queryParameters:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetQueryParameters
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|Get(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilderGetRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder::|public|WithUrl(rawUrl:string):*ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Count:*bool
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Expand:[]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Filter:*string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Orderby:[]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Search:*string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Select:[]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Skip:*int32
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Top:*int32
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetRequestConfiguration::|public|queryParameters:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|ByResourceAccountKeyAuthenticationMethodId(resourceAccountKeyAuthenticationMethodId:string):*ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|Count():*ItemAuthenticationResourceAccountKeyAuthenticationMethodsCountRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|Get(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceAccountKeyAuthenticationMethodCollectionResponseable
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderGetRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder::|public|WithUrl(rawUrl:string):*ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters::|public|Expand:[]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters::|public|Select:[]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetRequestConfiguration::|public|headers:*RequestHeaders
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetRequestConfiguration::|public|options:[]RequestOption
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetRequestConfiguration::|public|queryParameters:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|constructor(pathParameters:map[string]string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:RequestAdapter):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|Delete(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration):void
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|device():*ItemAuthenticationResourceAccountKeyAuthenticationMethodsItemDeviceRequestBuilder
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|Get(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetRequestConfiguration):iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceAccountKeyAuthenticationMethodable
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|pathParameters:map[string]string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|requestAdapter:RequestAdapter
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|ToDeleteRequestInformation(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|ToGetRequestInformation(ctx:context.Context; requestConfiguration?:*ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilderGetRequestConfiguration):*RequestInformation
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|urlTemplate:string
+github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|WithUrl(rawUrl:string):*ItemAuthenticationResourceAccountKeyAuthenticationMethodsResourceAccountKeyAuthenticationMethodItemRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationSoftwareOathMethodsCountRequestBuilder-->*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationSoftwareOathMethodsCountRequestBuilder.ItemAuthenticationSoftwareOathMethodsCountRequestBuilderGetQueryParameters::|public|Filter:*string
 github.com/microsoftgraph/msgraph-sdk-go/.users.ItemAuthenticationSoftwareOathMethodsCountRequestBuilder.ItemAuthenticationSoftwareOathMethodsCountRequestBuilderGetQueryParameters::|public|Search:*string

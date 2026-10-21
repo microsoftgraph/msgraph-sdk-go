@@ -15,7 +15,7 @@ const (
 	AGESABOVE4_RATINGAPPSTYPE
 	// 9+, age 9 and above
 	AGESABOVE9_RATINGAPPSTYPE
-	// 12+, age 12 and above 
+	// 12+, age 12 and above
 	AGESABOVE12_RATINGAPPSTYPE
 	// 17+, age 17 and above
 	AGESABOVE17_RATINGAPPSTYPE

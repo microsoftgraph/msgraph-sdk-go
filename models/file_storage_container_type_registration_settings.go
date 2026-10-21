@@ -71,6 +71,16 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetFieldDeserializers() m
 		}
 		return nil
 	}
+	res["isOfficeRestricted"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsOfficeRestricted(val)
+		}
+		return nil
+	}
 	res["isSearchEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetBoolValue()
 		if err != nil {
@@ -161,6 +171,19 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetIsDiscoverabilityEnabl
 // returns a *bool when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetIsItemVersioningEnabled() *bool {
 	val, err := m.GetBackingStore().Get("isItemVersioningEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetIsOfficeRestricted gets the isOfficeRestricted property value. Indicates whether Office apps (Word, Excel, and PowerPoint) for desktop and web are restricted for containers of this container type.
+// returns a *bool when successful
+func (m *FileStorageContainerTypeRegistrationSettings) GetIsOfficeRestricted() *bool {
+	val, err := m.GetBackingStore().Get("isOfficeRestricted")
 	if err != nil {
 		panic(err)
 	}
@@ -276,6 +299,12 @@ func (m *FileStorageContainerTypeRegistrationSettings) Serialize(writer i878a80d
 		}
 	}
 	{
+		err := writer.WriteBoolValue("isOfficeRestricted", m.GetIsOfficeRestricted())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err := writer.WriteBoolValue("isSearchEnabled", m.GetIsSearchEnabled())
 		if err != nil {
 			return err
@@ -356,6 +385,14 @@ func (m *FileStorageContainerTypeRegistrationSettings) SetIsItemVersioningEnable
 	}
 }
 
+// SetIsOfficeRestricted sets the isOfficeRestricted property value. Indicates whether Office apps (Word, Excel, and PowerPoint) for desktop and web are restricted for containers of this container type.
+func (m *FileStorageContainerTypeRegistrationSettings) SetIsOfficeRestricted(value *bool) {
+	err := m.GetBackingStore().Set("isOfficeRestricted", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetIsSearchEnabled sets the isSearchEnabled property value. Indicates whether search is enabled.
 func (m *FileStorageContainerTypeRegistrationSettings) SetIsSearchEnabled(value *bool) {
 	err := m.GetBackingStore().Set("isSearchEnabled", value)
@@ -419,6 +456,7 @@ type FileStorageContainerTypeRegistrationSettingsable interface {
 	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 	GetIsDiscoverabilityEnabled() *bool
 	GetIsItemVersioningEnabled() *bool
+	GetIsOfficeRestricted() *bool
 	GetIsSearchEnabled() *bool
 	GetIsSharingRestricted() *bool
 	GetItemMajorVersionLimit() *int64
@@ -429,6 +467,7 @@ type FileStorageContainerTypeRegistrationSettingsable interface {
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
 	SetIsDiscoverabilityEnabled(value *bool)
 	SetIsItemVersioningEnabled(value *bool)
+	SetIsOfficeRestricted(value *bool)
 	SetIsSearchEnabled(value *bool)
 	SetIsSharingRestricted(value *bool)
 	SetItemMajorVersionLimit(value *int64)

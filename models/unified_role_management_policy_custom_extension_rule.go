@@ -27,7 +27,7 @@ func CreateUnifiedRoleManagementPolicyCustomExtensionRuleFromDiscriminatorValue(
 	return NewUnifiedRoleManagementPolicyCustomExtensionRule(), nil
 }
 
-// GetCustomAttributes gets the customAttributes property value. The customAttributes property
+// GetCustomAttributes gets the customAttributes property value. The custom attributes associated with the policy rule. Read-only.
 // returns a []string when successful
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) GetCustomAttributes() []string {
 	val, err := m.GetBackingStore().Get("customAttributes")
@@ -40,7 +40,7 @@ func (m *UnifiedRoleManagementPolicyCustomExtensionRule) GetCustomAttributes() [
 	return nil
 }
 
-// GetCustomExtensionId gets the customExtensionId property value. The customExtensionId property
+// GetCustomExtensionId gets the customExtensionId property value. The unique identifier of the roleManagementCustomCalloutExtension associated with this rule.
 // returns a *string when successful
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) GetCustomExtensionId() *string {
 	val, err := m.GetBackingStore().Get("customExtensionId")
@@ -53,7 +53,7 @@ func (m *UnifiedRoleManagementPolicyCustomExtensionRule) GetCustomExtensionId() 
 	return nil
 }
 
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the policy rule. Read-only.
 // returns a *string when successful
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) GetDisplayName() *string {
 	val, err := m.GetBackingStore().Get("displayName")
@@ -119,7 +119,7 @@ func (m *UnifiedRoleManagementPolicyCustomExtensionRule) GetFieldDeserializers()
 	return res
 }
 
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether the custom extension rule is enabled.
 // returns a *bool when successful
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) GetIsEnabled() *bool {
 	val, err := m.GetBackingStore().Get("isEnabled")
@@ -165,7 +165,7 @@ func (m *UnifiedRoleManagementPolicyCustomExtensionRule) Serialize(writer i878a8
 	return nil
 }
 
-// SetCustomAttributes sets the customAttributes property value. The customAttributes property
+// SetCustomAttributes sets the customAttributes property value. The custom attributes associated with the policy rule. Read-only.
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) SetCustomAttributes(value []string) {
 	err := m.GetBackingStore().Set("customAttributes", value)
 	if err != nil {
@@ -173,7 +173,7 @@ func (m *UnifiedRoleManagementPolicyCustomExtensionRule) SetCustomAttributes(val
 	}
 }
 
-// SetCustomExtensionId sets the customExtensionId property value. The customExtensionId property
+// SetCustomExtensionId sets the customExtensionId property value. The unique identifier of the roleManagementCustomCalloutExtension associated with this rule.
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) SetCustomExtensionId(value *string) {
 	err := m.GetBackingStore().Set("customExtensionId", value)
 	if err != nil {
@@ -181,7 +181,7 @@ func (m *UnifiedRoleManagementPolicyCustomExtensionRule) SetCustomExtensionId(va
 	}
 }
 
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the policy rule. Read-only.
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
 	if err != nil {
@@ -189,7 +189,7 @@ func (m *UnifiedRoleManagementPolicyCustomExtensionRule) SetDisplayName(value *s
 	}
 }
 
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether the custom extension rule is enabled.
 func (m *UnifiedRoleManagementPolicyCustomExtensionRule) SetIsEnabled(value *bool) {
 	err := m.GetBackingStore().Set("isEnabled", value)
 	if err != nil {

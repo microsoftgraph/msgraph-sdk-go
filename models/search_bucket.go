@@ -41,7 +41,7 @@ func (m *SearchBucket) GetAdditionalData() map[string]any {
 	return val.(map[string]any)
 }
 
-// GetAggregationFilterToken gets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
+// GetAggregationFilterToken gets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/”. See an example.
 // returns a *string when successful
 func (m *SearchBucket) GetAggregationFilterToken() *string {
 	val, err := m.GetBackingStore().Get("aggregationFilterToken")
@@ -189,7 +189,7 @@ func (m *SearchBucket) SetAdditionalData(value map[string]any) {
 	}
 }
 
-// SetAggregationFilterToken sets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
+// SetAggregationFilterToken sets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/”. See an example.
 func (m *SearchBucket) SetAggregationFilterToken(value *string) {
 	err := m.GetBackingStore().Set("aggregationFilterToken", value)
 	if err != nil {

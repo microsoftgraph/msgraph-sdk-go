@@ -111,7 +111,7 @@ func (m *PrintersItemTaskTriggersRequestBuilder) Get(ctx context.Context, reques
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskTriggerCollectionResponseable), nil
 }
 
-// Post create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. 
+// Post create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
 // returns a PrintTaskTriggerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -150,7 +150,7 @@ func (m *PrintersItemTaskTriggersRequestBuilder) ToGetRequestInformation(ctx con
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. 
+// ToPostRequestInformation create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
 // returns a *RequestInformation when successful
 func (m *PrintersItemTaskTriggersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskTriggerable, requestConfiguration *PrintersItemTaskTriggersRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

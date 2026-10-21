@@ -51,6 +51,8 @@ func CreateAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d
 					return NewPlatformCredentialAuthenticationMethod(), nil
 				case "#microsoft.graph.qrCodePinAuthenticationMethod":
 					return NewQrCodePinAuthenticationMethod(), nil
+				case "#microsoft.graph.resourceAccountKeyAuthenticationMethod":
+					return NewResourceAccountKeyAuthenticationMethod(), nil
 				case "#microsoft.graph.softwareOathAuthenticationMethod":
 					return NewSoftwareOathAuthenticationMethod(), nil
 				case "#microsoft.graph.temporaryAccessPassAuthenticationMethod":

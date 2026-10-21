@@ -84,7 +84,7 @@ func (m *CustomExtensionClientConfiguration) GetFieldDeserializers() map[string]
 	return res
 }
 
-// GetMaximumRetries gets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
+// GetMaximumRetries gets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. For a roleManagementCustomCalloutExtension, the valid range is from 0 through 5. For other custom extensions, values of 0 or 1 are supported. If null, the default for the service applies.
 // returns a *int32 when successful
 func (m *CustomExtensionClientConfiguration) GetMaximumRetries() *int32 {
 	val, err := m.GetBackingStore().Get("maximumRetries")
@@ -110,7 +110,7 @@ func (m *CustomExtensionClientConfiguration) GetOdataType() *string {
 	return nil
 }
 
-// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. For a roleManagementCustomCalloutExtension, the valid range is from 1000 through 60000 milliseconds. For other custom extensions, the valid range is from 200 through 2000 milliseconds and the default is 1000 milliseconds.
 // returns a *int32 when successful
 func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds() *int32 {
 	val, err := m.GetBackingStore().Get("timeoutInMilliseconds")
@@ -165,7 +165,7 @@ func (m *CustomExtensionClientConfiguration) SetBackingStore(value ie8677ce2c7e1
 	m.backingStore = value
 }
 
-// SetMaximumRetries sets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
+// SetMaximumRetries sets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. For a roleManagementCustomCalloutExtension, the valid range is from 0 through 5. For other custom extensions, values of 0 or 1 are supported. If null, the default for the service applies.
 func (m *CustomExtensionClientConfiguration) SetMaximumRetries(value *int32) {
 	err := m.GetBackingStore().Set("maximumRetries", value)
 	if err != nil {
@@ -181,7 +181,7 @@ func (m *CustomExtensionClientConfiguration) SetOdataType(value *string) {
 	}
 }
 
-// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. For a roleManagementCustomCalloutExtension, the valid range is from 1000 through 60000 milliseconds. For other custom extensions, the valid range is from 200 through 2000 milliseconds and the default is 1000 milliseconds.
 func (m *CustomExtensionClientConfiguration) SetTimeoutInMilliseconds(value *int32) {
 	err := m.GetBackingStore().Set("timeoutInMilliseconds", value)
 	if err != nil {

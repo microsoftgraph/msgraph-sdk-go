@@ -38,7 +38,7 @@ func NewOnlineMeetingsCreateOrGetRequestBuilder(rawUrl string, requestAdapter i2
 	return NewOnlineMeetingsCreateOrGetRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
+// Post create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 // returns a OnlineMeetingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -62,7 +62,7 @@ func (m *OnlineMeetingsCreateOrGetRequestBuilder) Post(ctx context.Context, body
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable), nil
 }
 
-// ToPostRequestInformation create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
+// ToPostRequestInformation create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsCreateOrGetRequestBuilder) ToPostRequestInformation(ctx context.Context, body OnlineMeetingsCreateOrGetPostRequestBodyable, requestConfiguration *OnlineMeetingsCreateOrGetRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

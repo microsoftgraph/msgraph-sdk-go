@@ -15,7 +15,7 @@ type ItemAppManagementPoliciesRefRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ItemAppManagementPoliciesRefRequestBuilderDeleteQueryParameters remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
+// ItemAppManagementPoliciesRefRequestBuilderDeleteQueryParameters remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 type ItemAppManagementPoliciesRefRequestBuilderDeleteQueryParameters struct {
 	// The delete Uri
 	Id *string "uriparametername:\"%40id\""
@@ -80,7 +80,7 @@ func NewItemAppManagementPoliciesRefRequestBuilder(rawUrl string, requestAdapter
 	return NewItemAppManagementPoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
+// Delete remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -141,7 +141,7 @@ func (m *ItemAppManagementPoliciesRefRequestBuilder) Post(ctx context.Context, b
 	return nil
 }
 
-// ToDeleteRequestInformation remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
+// ToDeleteRequestInformation remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 // returns a *RequestInformation when successful
 func (m *ItemAppManagementPoliciesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppManagementPoliciesRefRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/applications/{application%2Did}/appManagementPolicies/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
