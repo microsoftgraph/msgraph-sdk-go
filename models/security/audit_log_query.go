@@ -41,6 +41,19 @@ func (m *AuditLogQuery) GetAdministrativeUnitIdFilters() []string {
 	return nil
 }
 
+// GetApproximateReturnedRecordCount gets the approximateReturnedRecordCount property value. The approximate number of records retrieved by the query. This value can be higher or lower than recordCountLimit due to distributed counting. Read-only.
+// returns a *int64 when successful
+func (m *AuditLogQuery) GetApproximateReturnedRecordCount() *int64 {
+	val, err := m.GetBackingStore().Get("approximateReturnedRecordCount")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int64)
+	}
+	return nil
+}
+
 // GetDisplayName gets the displayName property value. The display name of the audit log query.
 // returns a *string when successful
 func (m *AuditLogQuery) GetDisplayName() *string {
@@ -71,6 +84,16 @@ func (m *AuditLogQuery) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 				}
 			}
 			m.SetAdministrativeUnitIdFilters(res)
+		}
+		return nil
+	}
+	res["approximateReturnedRecordCount"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt64Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetApproximateReturnedRecordCount(val)
 		}
 		return nil
 	}
@@ -120,6 +143,16 @@ func (m *AuditLogQuery) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 		}
 		return nil
 	}
+	res["isRecordCountLimitExceeded"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsRecordCountLimitExceeded(val)
+		}
+		return nil
+	}
 	res["keywordFilter"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -159,6 +192,16 @@ func (m *AuditLogQuery) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 				}
 			}
 			m.SetOperationFilters(res)
+		}
+		return nil
+	}
+	res["recordCountLimit"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt64Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRecordCountLimit(val)
 		}
 		return nil
 	}
@@ -278,7 +321,20 @@ func (m *AuditLogQuery) GetIpAddressFilters() []string {
 	return nil
 }
 
-// GetKeywordFilter gets the keywordFilter property value. The keyword to filter on.
+// GetIsRecordCountLimitExceeded gets the isRecordCountLimitExceeded property value. Indicates whether the query exceeded the per-search record-count limit. The default value is false. A value of true is authoritative and isn't derived from approximateReturnedRecordCount. Read-only.
+// returns a *bool when successful
+func (m *AuditLogQuery) GetIsRecordCountLimitExceeded() *bool {
+	val, err := m.GetBackingStore().Get("isRecordCountLimitExceeded")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetKeywordFilter gets the keywordFilter property value. Free text to match against the non-indexed content of each record: the workload-specific properties inside auditData, including its AppAccessContext object. The indexed common-schema properties, such as the operation name, aren't matched by keyword; use their own filters, such as operationFilters, for those.
 // returns a *string when successful
 func (m *AuditLogQuery) GetKeywordFilter() *string {
 	val, err := m.GetBackingStore().Get("keywordFilter")
@@ -313,6 +369,19 @@ func (m *AuditLogQuery) GetOperationFilters() []string {
 	}
 	if val != nil {
 		return val.([]string)
+	}
+	return nil
+}
+
+// GetRecordCountLimit gets the recordCountLimit property value. The record-count threshold used to limit query result retrieval. Read-only.
+// returns a *int64 when successful
+func (m *AuditLogQuery) GetRecordCountLimit() *int64 {
+	val, err := m.GetBackingStore().Get("recordCountLimit")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int64)
 	}
 	return nil
 }
@@ -484,6 +553,14 @@ func (m *AuditLogQuery) SetAdministrativeUnitIdFilters(value []string) {
 	}
 }
 
+// SetApproximateReturnedRecordCount sets the approximateReturnedRecordCount property value. The approximate number of records retrieved by the query. This value can be higher or lower than recordCountLimit due to distributed counting. Read-only.
+func (m *AuditLogQuery) SetApproximateReturnedRecordCount(value *int64) {
+	err := m.GetBackingStore().Set("approximateReturnedRecordCount", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetDisplayName sets the displayName property value. The display name of the audit log query.
 func (m *AuditLogQuery) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
@@ -516,7 +593,15 @@ func (m *AuditLogQuery) SetIpAddressFilters(value []string) {
 	}
 }
 
-// SetKeywordFilter sets the keywordFilter property value. The keyword to filter on.
+// SetIsRecordCountLimitExceeded sets the isRecordCountLimitExceeded property value. Indicates whether the query exceeded the per-search record-count limit. The default value is false. A value of true is authoritative and isn't derived from approximateReturnedRecordCount. Read-only.
+func (m *AuditLogQuery) SetIsRecordCountLimitExceeded(value *bool) {
+	err := m.GetBackingStore().Set("isRecordCountLimitExceeded", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetKeywordFilter sets the keywordFilter property value. Free text to match against the non-indexed content of each record: the workload-specific properties inside auditData, including its AppAccessContext object. The indexed common-schema properties, such as the operation name, aren't matched by keyword; use their own filters, such as operationFilters, for those.
 func (m *AuditLogQuery) SetKeywordFilter(value *string) {
 	err := m.GetBackingStore().Set("keywordFilter", value)
 	if err != nil {
@@ -535,6 +620,14 @@ func (m *AuditLogQuery) SetObjectIdFilters(value []string) {
 // SetOperationFilters sets the operationFilters property value. The collection of operations to filter on.
 func (m *AuditLogQuery) SetOperationFilters(value []string) {
 	err := m.GetBackingStore().Set("operationFilters", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetRecordCountLimit sets the recordCountLimit property value. The record-count threshold used to limit query result retrieval. Read-only.
+func (m *AuditLogQuery) SetRecordCountLimit(value *int64) {
+	err := m.GetBackingStore().Set("recordCountLimit", value)
 	if err != nil {
 		panic(err)
 	}
@@ -584,26 +677,32 @@ type AuditLogQueryable interface {
 	iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetAdministrativeUnitIdFilters() []string
+	GetApproximateReturnedRecordCount() *int64
 	GetDisplayName() *string
 	GetFilterEndDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetFilterStartDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetIpAddressFilters() []string
+	GetIsRecordCountLimitExceeded() *bool
 	GetKeywordFilter() *string
 	GetObjectIdFilters() []string
 	GetOperationFilters() []string
+	GetRecordCountLimit() *int64
 	GetRecords() []AuditLogRecordable
 	GetRecordTypeFilters() []AuditLogRecordType
 	GetServiceFilters() []string
 	GetStatus() *AuditLogQueryStatus
 	GetUserPrincipalNameFilters() []string
 	SetAdministrativeUnitIdFilters(value []string)
+	SetApproximateReturnedRecordCount(value *int64)
 	SetDisplayName(value *string)
 	SetFilterEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetFilterStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetIpAddressFilters(value []string)
+	SetIsRecordCountLimitExceeded(value *bool)
 	SetKeywordFilter(value *string)
 	SetObjectIdFilters(value []string)
 	SetOperationFilters(value []string)
+	SetRecordCountLimit(value *int64)
 	SetRecords(value []AuditLogRecordable)
 	SetRecordTypeFilters(value []AuditLogRecordType)
 	SetServiceFilters(value []string)

@@ -18,12 +18,13 @@ const (
 	ITEMMAJORVERSIONLIMIT_FILESTORAGECONTAINERTYPESETTINGSOVERRIDE         = 16
 	MAXSTORAGEPERCONTAINERINBYTES_FILESTORAGECONTAINERTYPESETTINGSOVERRIDE = 32
 	UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERTYPESETTINGSOVERRIDE            = 64
+	ISOFFICERESTRICTED_FILESTORAGECONTAINERTYPESETTINGSOVERRIDE            = 128
 )
 
 func (i FileStorageContainerTypeSettingsOverride) String() string {
 	var values []string
-	options := []string{"urlTemplate", "isDiscoverabilityEnabled", "isSearchEnabled", "isItemVersioningEnabled", "itemMajorVersionLimit", "maxStoragePerContainerInBytes", "unknownFutureValue"}
-	for p := 0; p < 7; p++ {
+	options := []string{"urlTemplate", "isDiscoverabilityEnabled", "isSearchEnabled", "isItemVersioningEnabled", "itemMajorVersionLimit", "maxStoragePerContainerInBytes", "unknownFutureValue", "isOfficeRestricted"}
+	for p := 0; p < 8; p++ {
 		mantis := FileStorageContainerTypeSettingsOverride(int(math.Pow(2, float64(p))))
 		if i&mantis == mantis {
 			values = append(values, options[p])
@@ -51,6 +52,8 @@ func ParseFileStorageContainerTypeSettingsOverride(v string) (any, error) {
 			result |= MAXSTORAGEPERCONTAINERINBYTES_FILESTORAGECONTAINERTYPESETTINGSOVERRIDE
 		case "unknownFutureValue":
 			result |= UNKNOWNFUTUREVALUE_FILESTORAGECONTAINERTYPESETTINGSOVERRIDE
+		case "isOfficeRestricted":
+			result |= ISOFFICERESTRICTED_FILESTORAGECONTAINERTYPESETTINGSOVERRIDE
 		default:
 			return nil, nil
 		}

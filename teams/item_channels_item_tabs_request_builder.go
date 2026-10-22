@@ -15,7 +15,7 @@ type ItemChannelsItemTabsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ItemChannelsItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team. 
+// ItemChannelsItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team.
 type ItemChannelsItemTabsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,7 +87,7 @@ func (m *ItemChannelsItemTabsRequestBuilder) Count() *ItemChannelsItemTabsCountR
 	return NewItemChannelsItemTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get retrieve the list of tabs in the specified channel within a team. 
+// Get retrieve the list of tabs in the specified channel within a team.
 // returns a TeamsTabCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -135,7 +135,7 @@ func (m *ItemChannelsItemTabsRequestBuilder) Post(ctx context.Context, body iadc
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
 
-// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team. 
+// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team.
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemTabsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

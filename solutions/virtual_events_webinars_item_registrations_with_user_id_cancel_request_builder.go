@@ -37,7 +37,7 @@ func NewVirtualEventsWebinarsItemRegistrationsWithUserIdCancelRequestBuilder(raw
 	return NewVirtualEventsWebinarsItemRegistrationsWithUserIdCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post cancel a registrant's registration record for a webinar or town hall. 
+// Post cancel a registrant's registration record for a webinar or town hall.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration) error {
 	requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration)
@@ -54,7 +54,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdCancelRequestBuilder) P
 	return nil
 }
 
-// ToPostRequestInformation cancel a registrant's registration record for a webinar or town hall. 
+// ToPostRequestInformation cancel a registrant's registration record for a webinar or town hall.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

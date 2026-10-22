@@ -44,7 +44,7 @@ func (m *HttpRequestEndpoint) GetFieldDeserializers() map[string]func(i878a80d23
 	return res
 }
 
-// GetTargetUrl gets the targetUrl property value. The HTTP endpoint that a custom extension calls.
+// GetTargetUrl gets the targetUrl property value. The URL of the HTTP endpoint that Microsoft Entra ID calls for the custom extension.
 // returns a *string when successful
 func (m *HttpRequestEndpoint) GetTargetUrl() *string {
 	val, err := m.GetBackingStore().Get("targetUrl")
@@ -72,7 +72,7 @@ func (m *HttpRequestEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
 	return nil
 }
 
-// SetTargetUrl sets the targetUrl property value. The HTTP endpoint that a custom extension calls.
+// SetTargetUrl sets the targetUrl property value. The URL of the HTTP endpoint that Microsoft Entra ID calls for the custom extension.
 func (m *HttpRequestEndpoint) SetTargetUrl(value *string) {
 	err := m.GetBackingStore().Set("targetUrl", value)
 	if err != nil {

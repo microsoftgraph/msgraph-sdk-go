@@ -23,7 +23,7 @@ type ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration s
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+// ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
 type ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -84,7 +84,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Con
 	return nil
 }
 
-// Get get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+// Get get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
 // returns a ConversationThreadable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -156,7 +156,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) ToDeleteRequestInforma
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+// ToGetRequestInformation get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
 // returns a *RequestInformation when successful
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

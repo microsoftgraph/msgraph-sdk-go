@@ -15,13 +15,14 @@ const (
 	IOS_SYSTEMBROWSERENABLEDON                = 2
 	ANDROID_SYSTEMBROWSERENABLEDON            = 4
 	MAC_SYSTEMBROWSERENABLEDON                = 8
-	UNKNOWNFUTUREVALUE_SYSTEMBROWSERENABLEDON = 16
+	LINUX_SYSTEMBROWSERENABLEDON              = 16
+	UNKNOWNFUTUREVALUE_SYSTEMBROWSERENABLEDON = 32
 )
 
 func (i SystemBrowserEnabledOn) String() string {
 	var values []string
-	options := []string{"none", "ios", "android", "mac", "unknownFutureValue"}
-	for p := 0; p < 5; p++ {
+	options := []string{"none", "ios", "android", "mac", "linux", "unknownFutureValue"}
+	for p := 0; p < 6; p++ {
 		mantis := SystemBrowserEnabledOn(int(math.Pow(2, float64(p))))
 		if i&mantis == mantis {
 			values = append(values, options[p])
@@ -43,6 +44,8 @@ func ParseSystemBrowserEnabledOn(v string) (any, error) {
 			result |= ANDROID_SYSTEMBROWSERENABLEDON
 		case "mac":
 			result |= MAC_SYSTEMBROWSERENABLEDON
+		case "linux":
+			result |= LINUX_SYSTEMBROWSERENABLEDON
 		case "unknownFutureValue":
 			result |= UNKNOWNFUTUREVALUE_SYSTEMBROWSERENABLEDON
 		default:

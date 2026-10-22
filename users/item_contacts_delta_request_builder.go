@@ -14,7 +14,7 @@ type ItemContactsDeltaRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ItemContactsDeltaRequestBuilderGetQueryParameters get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// ItemContactsDeltaRequestBuilderGetQueryParameters get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.
 type ItemContactsDeltaRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -59,7 +59,7 @@ func NewItemContactsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 	return NewItemContactsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// Get get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemContactsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -84,7 +84,7 @@ func (m *ItemContactsDeltaRequestBuilder) Get(ctx context.Context, requestConfig
 	return res.(ItemContactsDeltaResponseable), nil
 }
 
-// GetAsDeltaGetResponse get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// GetAsDeltaGetResponse get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.
 // returns a ItemContactsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -108,7 +108,7 @@ func (m *ItemContactsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Cont
 	return res.(ItemContactsDeltaGetResponseable), nil
 }
 
-// ToGetRequestInformation get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// ToGetRequestInformation get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.
 // returns a *RequestInformation when successful
 func (m *ItemContactsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactsDeltaRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

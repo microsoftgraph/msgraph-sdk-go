@@ -23,7 +23,7 @@ type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderDeleteRequ
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
 type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,7 +81,7 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Dele
 	return nil
 }
 
-// Get retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// Get retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
 // returns a DeviceLocalCredentialInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -138,7 +138,7 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToDe
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// ToGetRequestInformation retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
 // returns a *RequestInformation when successful
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

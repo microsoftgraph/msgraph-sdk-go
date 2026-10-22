@@ -25,7 +25,7 @@ func CreatePrivilegedAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d
 	return NewPrivilegedAccessRoot(), nil
 }
 
-// GetCustomExtensions gets the customExtensions property value. The customExtensions property
+// GetCustomExtensions gets the customExtensions property value. The custom extensions configured for PIM role management operations.
 // returns a []RoleManagementCustomCalloutExtensionable when successful
 func (m *PrivilegedAccessRoot) GetCustomExtensions() []RoleManagementCustomCalloutExtensionable {
 	val, err := m.GetBackingStore().Get("customExtensions")
@@ -111,7 +111,7 @@ func (m *PrivilegedAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
 	return nil
 }
 
-// SetCustomExtensions sets the customExtensions property value. The customExtensions property
+// SetCustomExtensions sets the customExtensions property value. The custom extensions configured for PIM role management operations.
 func (m *PrivilegedAccessRoot) SetCustomExtensions(value []RoleManagementCustomCalloutExtensionable) {
 	err := m.GetBackingStore().Set("customExtensions", value)
 	if err != nil {

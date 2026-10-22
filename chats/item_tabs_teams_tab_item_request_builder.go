@@ -23,7 +23,7 @@ type ItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration struct {
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// ItemTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a chat. 
+// ItemTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a chat.
 type ItemTabsTeamsTabItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -64,7 +64,7 @@ func NewItemTabsTeamsTabItemRequestBuilder(rawUrl string, requestAdapter i2ae418
 	return NewItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete remove (unpin) a tab from the specified chat. 
+// Delete remove (unpin) a tab from the specified chat.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -84,7 +84,7 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, request
 	return nil
 }
 
-// Get retrieve the properties and relationships of the specified tab in a chat. 
+// Get retrieve the properties and relationships of the specified tab in a chat.
 // returns a TeamsTabable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -138,7 +138,7 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) TeamsApp() *ItemTabsItemTeamsAppReq
 	return NewItemTabsItemTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// ToDeleteRequestInformation remove (unpin) a tab from the specified chat. 
+// ToDeleteRequestInformation remove (unpin) a tab from the specified chat.
 // returns a *RequestInformation when successful
 func (m *ItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +150,7 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx cont
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a chat. 
+// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a chat.
 // returns a *RequestInformation when successful
 func (m *ItemTabsTeamsTabItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
