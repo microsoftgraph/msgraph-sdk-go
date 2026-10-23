@@ -15,7 +15,7 @@ type SubjectRightsRequestsItemNotesRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// SubjectRightsRequestsItemNotesRequestBuilderGetQueryParameters get the list of authored notes assoicated with a subject rights request. 
+// SubjectRightsRequestsItemNotesRequestBuilderGetQueryParameters get the list of authored notes assoicated with a subject rights request.
 type SubjectRightsRequestsItemNotesRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -88,7 +88,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) Count() *SubjectRightsReq
 	return NewSubjectRightsRequestsItemNotesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get the list of authored notes assoicated with a subject rights request. 
+// Get get the list of authored notes assoicated with a subject rights request.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a AuthoredNoteCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -138,7 +138,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) Post(ctx context.Context,
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthoredNoteable), nil
 }
 
-// ToGetRequestInformation get the list of authored notes assoicated with a subject rights request. 
+// ToGetRequestInformation get the list of authored notes assoicated with a subject rights request.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemNotesRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

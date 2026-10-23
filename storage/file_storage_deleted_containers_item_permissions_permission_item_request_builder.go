@@ -129,6 +129,12 @@ func (m *FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
 
+// RevokeGrants provides operations to call the revokeGrants method.
+// returns a *FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder when successful
+func (m *FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder) RevokeGrants() *FileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilder {
+	return NewFileStorageDeletedContainersItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // ToDeleteRequestInformation delete navigation property permissions for storage
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

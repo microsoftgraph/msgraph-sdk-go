@@ -138,6 +138,12 @@ func (m *TenantGovernanceRelatedTenantsRequestBuilder) Refresh() *TenantGovernan
 	return NewTenantGovernanceRelatedTenantsRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// RefreshStatus provides operations to call the refreshStatus method.
+// returns a *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder when successful
+func (m *TenantGovernanceRelatedTenantsRequestBuilder) RefreshStatus() *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder {
+	return NewTenantGovernanceRelatedTenantsRefreshStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // ToGetRequestInformation get a list of relatedTenant objects and their properties, including relationship metrics.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

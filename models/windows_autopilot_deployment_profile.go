@@ -332,7 +332,7 @@ func (m *WindowsAutopilotDeploymentProfile) GetPreprovisioningAllowed() *bool {
 	return nil
 }
 
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of role scope tags for the deployment profile. 
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of role scope tags for the deployment profile.
 // returns a []string when successful
 func (m *WindowsAutopilotDeploymentProfile) GetRoleScopeTagIds() []string {
 	val, err := m.GetBackingStore().Get("roleScopeTagIds")
@@ -535,7 +535,7 @@ func (m *WindowsAutopilotDeploymentProfile) SetPreprovisioningAllowed(value *boo
 	}
 }
 
-// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of role scope tags for the deployment profile. 
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of role scope tags for the deployment profile.
 func (m *WindowsAutopilotDeploymentProfile) SetRoleScopeTagIds(value []string) {
 	err := m.GetBackingStore().Set("roleScopeTagIds", value)
 	if err != nil {

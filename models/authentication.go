@@ -212,6 +212,22 @@ func (m *Authentication) GetFieldDeserializers() map[string]func(i878a80d2330e89
 		}
 		return nil
 	}
+	res["resourceAccountKeyAuthenticationMethods"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateResourceAccountKeyAuthenticationMethodFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ResourceAccountKeyAuthenticationMethodable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ResourceAccountKeyAuthenticationMethodable)
+				}
+			}
+			m.SetResourceAccountKeyAuthenticationMethods(res)
+		}
+		return nil
+	}
 	res["softwareOathMethods"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue)
 		if err != nil {
@@ -337,6 +353,19 @@ func (m *Authentication) GetPlatformCredentialMethods() []PlatformCredentialAuth
 	}
 	if val != nil {
 		return val.([]PlatformCredentialAuthenticationMethodable)
+	}
+	return nil
+}
+
+// GetResourceAccountKeyAuthenticationMethods gets the resourceAccountKeyAuthenticationMethods property value. Represents the resource account key credentials registered to a user for authentication on shared devices.
+// returns a []ResourceAccountKeyAuthenticationMethodable when successful
+func (m *Authentication) GetResourceAccountKeyAuthenticationMethods() []ResourceAccountKeyAuthenticationMethodable {
+	val, err := m.GetBackingStore().Get("resourceAccountKeyAuthenticationMethods")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ResourceAccountKeyAuthenticationMethodable)
 	}
 	return nil
 }
@@ -494,6 +523,18 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 			return err
 		}
 	}
+	if m.GetResourceAccountKeyAuthenticationMethods() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceAccountKeyAuthenticationMethods()))
+		for i, v := range m.GetResourceAccountKeyAuthenticationMethods() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("resourceAccountKeyAuthenticationMethods", cast)
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetSoftwareOathMethods() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSoftwareOathMethods()))
 		for i, v := range m.GetSoftwareOathMethods() {
@@ -605,6 +646,14 @@ func (m *Authentication) SetPlatformCredentialMethods(value []PlatformCredential
 	}
 }
 
+// SetResourceAccountKeyAuthenticationMethods sets the resourceAccountKeyAuthenticationMethods property value. Represents the resource account key credentials registered to a user for authentication on shared devices.
+func (m *Authentication) SetResourceAccountKeyAuthenticationMethods(value []ResourceAccountKeyAuthenticationMethodable) {
+	err := m.GetBackingStore().Set("resourceAccountKeyAuthenticationMethods", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetSoftwareOathMethods sets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
 func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable) {
 	err := m.GetBackingStore().Set("softwareOathMethods", value)
@@ -641,6 +690,7 @@ type Authenticationable interface {
 	GetPasswordMethods() []PasswordAuthenticationMethodable
 	GetPhoneMethods() []PhoneAuthenticationMethodable
 	GetPlatformCredentialMethods() []PlatformCredentialAuthenticationMethodable
+	GetResourceAccountKeyAuthenticationMethods() []ResourceAccountKeyAuthenticationMethodable
 	GetSoftwareOathMethods() []SoftwareOathAuthenticationMethodable
 	GetTemporaryAccessPassMethods() []TemporaryAccessPassAuthenticationMethodable
 	GetWindowsHelloForBusinessMethods() []WindowsHelloForBusinessAuthenticationMethodable
@@ -653,6 +703,7 @@ type Authenticationable interface {
 	SetPasswordMethods(value []PasswordAuthenticationMethodable)
 	SetPhoneMethods(value []PhoneAuthenticationMethodable)
 	SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)
+	SetResourceAccountKeyAuthenticationMethods(value []ResourceAccountKeyAuthenticationMethodable)
 	SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)
 	SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)
 	SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethodable)

@@ -25,7 +25,7 @@ func CreatePresenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 	return NewPresence(), nil
 }
 
-// GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.
+// GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.
 // returns a *string when successful
 func (m *Presence) GetActivity() *string {
 	val, err := m.GetBackingStore().Get("activity")
@@ -38,7 +38,7 @@ func (m *Presence) GetActivity() *string {
 	return nil
 }
 
-// GetAvailability gets the availability property value. The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.
+// GetAvailability gets the availability property value. The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.
 // returns a *string when successful
 func (m *Presence) GetAvailability() *string {
 	val, err := m.GetBackingStore().Get("availability")
@@ -209,7 +209,7 @@ func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 	return nil
 }
 
-// SetActivity sets the activity property value. The supplemental information to a user's availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.
+// SetActivity sets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.
 func (m *Presence) SetActivity(value *string) {
 	err := m.GetBackingStore().Set("activity", value)
 	if err != nil {
@@ -217,7 +217,7 @@ func (m *Presence) SetActivity(value *string) {
 	}
 }
 
-// SetAvailability sets the availability property value. The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.
+// SetAvailability sets the availability property value. The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.
 func (m *Presence) SetAvailability(value *string) {
 	err := m.GetBackingStore().Set("availability", value)
 	if err != nil {

@@ -162,6 +162,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewAndroidWorkProfileCustomConfiguration(), nil
 				case "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration":
 					return NewAndroidWorkProfileGeneralDeviceConfiguration(), nil
+				case "#microsoft.graph.anonymousCalendarSharingFreeBusyDetail":
+					return NewAnonymousCalendarSharingFreeBusyDetail(), nil
+				case "#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer":
+					return NewAnonymousCalendarSharingFreeBusyReviewer(), nil
+				case "#microsoft.graph.anonymousCalendarSharingFreeBusySimple":
+					return NewAnonymousCalendarSharingFreeBusySimple(), nil
 				case "#microsoft.graph.anonymousGuestConversationMember":
 					return NewAnonymousGuestConversationMember(), nil
 				case "#microsoft.graph.appCatalogs":
@@ -1446,6 +1452,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewRequest(), nil
 				case "#microsoft.graph.resellerDelegatedAdminRelationship":
 					return NewResellerDelegatedAdminRelationship(), nil
+				case "#microsoft.graph.resourceAccountKeyAuthenticationMethod":
+					return NewResourceAccountKeyAuthenticationMethod(), nil
 				case "#microsoft.graph.resourceOperation":
 					return NewResourceOperation(), nil
 				case "#microsoft.graph.resourceSpecificPermissionGrant":

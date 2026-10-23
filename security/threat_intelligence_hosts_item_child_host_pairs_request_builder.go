@@ -15,7 +15,7 @@ type ThreatIntelligenceHostsItemChildHostPairsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetQueryParameters get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
+// ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetQueryParameters get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.
 type ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func (m *ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) Count() *Threa
 	return NewThreatIntelligenceHostsItemChildHostPairsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
+// Get get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.
 // returns a HostPairCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,7 +103,7 @@ func (m *ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) Get(ctx contex
 	return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPairCollectionResponseable), nil
 }
 
-// ToGetRequestInformation get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
+// ToGetRequestInformation get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

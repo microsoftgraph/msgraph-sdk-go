@@ -177,6 +177,12 @@ func (m *ItemAuthenticationRequestBuilder) PlatformCredentialMethods() *ItemAuth
 	return NewItemAuthenticationPlatformCredentialMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// ResourceAccountKeyAuthenticationMethods provides operations to manage the resourceAccountKeyAuthenticationMethods property of the microsoft.graph.authentication entity.
+// returns a *ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) ResourceAccountKeyAuthenticationMethods() *ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder {
+	return NewItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // SoftwareOathMethods provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
 // returns a *ItemAuthenticationSoftwareOathMethodsRequestBuilder when successful
 func (m *ItemAuthenticationRequestBuilder) SoftwareOathMethods() *ItemAuthenticationSoftwareOathMethodsRequestBuilder {

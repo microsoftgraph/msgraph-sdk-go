@@ -38,9 +38,12 @@ func NewDirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder(r
 	return NewDirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post invoke action updateRequest
+// Post update a unifiedRoleAssignmentScheduleRequest object with the result of a custom extension evaluation. This action is used to submit the result of a custom extension evaluation for a role assignment request.
 // returns a UnifiedRoleAssignmentScheduleRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-updaterequest?view=graph-rest-1.0
 func (m *DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder) Post(ctx context.Context, body DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestPostRequestBodyable, requestConfiguration *DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilderPostRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -59,7 +62,7 @@ func (m *DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder)
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable), nil
 }
 
-// ToPostRequestInformation invoke action updateRequest
+// ToPostRequestInformation update a unifiedRoleAssignmentScheduleRequest object with the result of a custom extension evaluation. This action is used to submit the result of a custom extension evaluation for a role assignment request.
 // returns a *RequestInformation when successful
 func (m *DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder) ToPostRequestInformation(ctx context.Context, body DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestPostRequestBodyable, requestConfiguration *DirectoryRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -38,9 +38,12 @@ func NewPrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestB
 	return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post invoke action updateRequest
+// Post update a privilegedAccessGroupAssignmentScheduleRequest object with the result of a custom extension evaluation. This action is used to submit the result of a custom extension evaluation for a role assignment request.
 // returns a PrivilegedAccessGroupAssignmentScheduleRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-updaterequest?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilder) Post(ctx context.Context, body PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestPostRequestBodyable, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilderPostRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupAssignmentScheduleRequestable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -59,7 +62,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequest
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupAssignmentScheduleRequestable), nil
 }
 
-// ToPostRequestInformation invoke action updateRequest
+// ToPostRequestInformation update a privilegedAccessGroupAssignmentScheduleRequest object with the result of a custom extension evaluation. This action is used to submit the result of a custom extension evaluation for a role assignment request.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilder) ToPostRequestInformation(ctx context.Context, body PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestPostRequestBodyable, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsItemUpdateRequestRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

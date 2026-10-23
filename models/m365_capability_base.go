@@ -35,6 +35,12 @@ func CreateM365CapabilityBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26
 			}
 			if mappingValue != nil {
 				switch *mappingValue {
+				case "#microsoft.graph.anonymousCalendarSharingFreeBusyDetail":
+					return NewAnonymousCalendarSharingFreeBusyDetail(), nil
+				case "#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer":
+					return NewAnonymousCalendarSharingFreeBusyReviewer(), nil
+				case "#microsoft.graph.anonymousCalendarSharingFreeBusySimple":
+					return NewAnonymousCalendarSharingFreeBusySimple(), nil
 				case "#microsoft.graph.crossTenantCalendarAvailabilityBasic":
 					return NewCrossTenantCalendarAvailabilityBasic(), nil
 				case "#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails":

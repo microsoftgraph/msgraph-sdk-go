@@ -114,7 +114,7 @@ func (m *ItemPermissionsPermissionItemRequestBuilder) Grant() *ItemPermissionsIt
 	return NewItemPermissionsItemGrantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Patch update an application permission object on a site. 
+// Patch update an application permission object on a site.
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -136,6 +136,12 @@ func (m *ItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context,
 		return nil, nil
 	}
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
+}
+
+// RevokeGrants provides operations to call the revokeGrants method.
+// returns a *ItemPermissionsItemRevokeGrantsRequestBuilder when successful
+func (m *ItemPermissionsPermissionItemRequestBuilder) RevokeGrants() *ItemPermissionsItemRevokeGrantsRequestBuilder {
+	return NewItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
 // ToDeleteRequestInformation delete a permission object on a site.
@@ -165,7 +171,7 @@ func (m *ItemPermissionsPermissionItemRequestBuilder) ToGetRequestInformation(ct
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update an application permission object on a site. 
+// ToPatchRequestInformation update an application permission object on a site.
 // returns a *RequestInformation when successful
 func (m *ItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

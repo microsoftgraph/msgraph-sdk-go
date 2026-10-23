@@ -153,6 +153,12 @@ func (m *DevicesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable), nil
 }
 
+// Provision provides operations to call the provision method.
+// returns a *ProvisionRequestBuilder when successful
+func (m *DevicesRequestBuilder) Provision() *ProvisionRequestBuilder {
+	return NewProvisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // ToGetRequestInformation retrieve a list of device objects registered in the organization.
 // returns a *RequestInformation when successful
 func (m *DevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

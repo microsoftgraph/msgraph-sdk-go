@@ -15,7 +15,7 @@ type PrivilegedAccessCustomExtensionsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// PrivilegedAccessCustomExtensionsRequestBuilderGetQueryParameters get customExtensions from identityGovernance
+// PrivilegedAccessCustomExtensionsRequestBuilderGetQueryParameters get a list of roleManagementCustomCalloutExtension objects configured for Privileged Identity Management (PIM).
 type PrivilegedAccessCustomExtensionsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,9 +87,12 @@ func (m *PrivilegedAccessCustomExtensionsRequestBuilder) Count() *PrivilegedAcce
 	return NewPrivilegedAccessCustomExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get customExtensions from identityGovernance
+// Get get a list of roleManagementCustomCalloutExtension objects configured for Privileged Identity Management (PIM).
 // returns a RoleManagementCustomCalloutExtensionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessroot-list-customextensions?view=graph-rest-1.0
 func (m *PrivilegedAccessCustomExtensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessCustomExtensionsRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleManagementCustomCalloutExtensionCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -108,9 +111,12 @@ func (m *PrivilegedAccessCustomExtensionsRequestBuilder) Get(ctx context.Context
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleManagementCustomCalloutExtensionCollectionResponseable), nil
 }
 
-// Post create new navigation property to customExtensions for identityGovernance
+// Post create a new roleManagementCustomCalloutExtension object for Privileged Identity Management (PIM).
 // returns a RoleManagementCustomCalloutExtensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessroot-post-customextensions?view=graph-rest-1.0
 func (m *PrivilegedAccessCustomExtensionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleManagementCustomCalloutExtensionable, requestConfiguration *PrivilegedAccessCustomExtensionsRequestBuilderPostRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleManagementCustomCalloutExtensionable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -129,7 +135,7 @@ func (m *PrivilegedAccessCustomExtensionsRequestBuilder) Post(ctx context.Contex
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleManagementCustomCalloutExtensionable), nil
 }
 
-// ToGetRequestInformation get customExtensions from identityGovernance
+// ToGetRequestInformation get a list of roleManagementCustomCalloutExtension objects configured for Privileged Identity Management (PIM).
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessCustomExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessCustomExtensionsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +150,7 @@ func (m *PrivilegedAccessCustomExtensionsRequestBuilder) ToGetRequestInformation
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create new navigation property to customExtensions for identityGovernance
+// ToPostRequestInformation create a new roleManagementCustomCalloutExtension object for Privileged Identity Management (PIM).
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessCustomExtensionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleManagementCustomCalloutExtensionable, requestConfiguration *PrivilegedAccessCustomExtensionsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
