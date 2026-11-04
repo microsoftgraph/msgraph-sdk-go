@@ -164,6 +164,16 @@ func (m *RestoreSessionBase) GetFieldDeserializers() map[string]func(i878a80d233
 		}
 		return nil
 	}
+	res["policyId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPolicyId(val)
+		}
+		return nil
+	}
 	res["restoreJobType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetEnumValue(ParseRestoreJobType)
 		if err != nil {
@@ -219,6 +229,19 @@ func (m *RestoreSessionBase) GetLastModifiedDateTime() *i336074805fc853987abe6f7
 	}
 	if val != nil {
 		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
+}
+
+// GetPolicyId gets the policyId property value. The identifier of the protection policy that scopes the restore session. When supplied during creation or update, the service validates that the referenced protection units belong to the specified policy.
+// returns a *string when successful
+func (m *RestoreSessionBase) GetPolicyId() *string {
+	val, err := m.GetBackingStore().Get("policyId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
 	}
 	return nil
 }
@@ -304,6 +327,12 @@ func (m *RestoreSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 			return err
 		}
 	}
+	{
+		err = writer.WriteStringValue("policyId", m.GetPolicyId())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetRestoreJobType() != nil {
 		cast := (*m.GetRestoreJobType()).String()
 		err = writer.WriteStringValue("restoreJobType", &cast)
@@ -375,6 +404,14 @@ func (m *RestoreSessionBase) SetLastModifiedDateTime(value *i336074805fc853987ab
 	}
 }
 
+// SetPolicyId sets the policyId property value. The identifier of the protection policy that scopes the restore session. When supplied during creation or update, the service validates that the referenced protection units belong to the specified policy.
+func (m *RestoreSessionBase) SetPolicyId(value *string) {
+	err := m.GetBackingStore().Set("policyId", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetRestoreJobType sets the restoreJobType property value. Indicates whether the restore session was created normally or by a bulk job.
 func (m *RestoreSessionBase) SetRestoreJobType(value *RestoreJobType) {
 	err := m.GetBackingStore().Set("restoreJobType", value)
@@ -408,6 +445,7 @@ type RestoreSessionBaseable interface {
 	GetError() PublicErrorable
 	GetLastModifiedBy() IdentitySetable
 	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetPolicyId() *string
 	GetRestoreJobType() *RestoreJobType
 	GetRestoreSessionArtifactCount() RestoreSessionArtifactCountable
 	GetStatus() *RestoreSessionStatus
@@ -417,6 +455,7 @@ type RestoreSessionBaseable interface {
 	SetError(value PublicErrorable)
 	SetLastModifiedBy(value IdentitySetable)
 	SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetPolicyId(value *string)
 	SetRestoreJobType(value *RestoreJobType)
 	SetRestoreSessionArtifactCount(value RestoreSessionArtifactCountable)
 	SetStatus(value *RestoreSessionStatus)

@@ -222,6 +222,12 @@ func (m *BackupRestoreRequestBuilder) ProtectionUnits() *BackupRestoreProtection
 	return NewBackupRestoreProtectionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// Reports provides operations to manage the reports property of the microsoft.graph.backupRestoreRoot entity.
+// returns a *BackupRestoreReportsRequestBuilder when successful
+func (m *BackupRestoreRequestBuilder) Reports() *BackupRestoreReportsRequestBuilder {
+	return NewBackupRestoreReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // RestorePoints provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.
 // returns a *BackupRestoreRestorePointsRequestBuilder when successful
 func (m *BackupRestoreRequestBuilder) RestorePoints() *BackupRestoreRestorePointsRequestBuilder {

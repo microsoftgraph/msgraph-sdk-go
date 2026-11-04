@@ -60,6 +60,16 @@ func (m *RoleManagementCustomCalloutExtension) GetFieldDeserializers() map[strin
 		}
 		return nil
 	}
+	res["isEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsEnabled(val)
+		}
+		return nil
+	}
 	res["resourceType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetEnumValue(ParseCustomExtensionResourceType)
 		if err != nil {
@@ -81,6 +91,19 @@ func (m *RoleManagementCustomCalloutExtension) GetFieldDeserializers() map[strin
 		return nil
 	}
 	return res
+}
+
+// GetIsEnabled gets the isEnabled property value. When true, enables the custom extension. When false, disables it. Nullable.
+// returns a *bool when successful
+func (m *RoleManagementCustomCalloutExtension) GetIsEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
 
 // GetResourceType gets the resourceType property value. The resourceType property
@@ -121,6 +144,12 @@ func (m *RoleManagementCustomCalloutExtension) Serialize(writer i878a80d2330e89d
 			return err
 		}
 	}
+	{
+		err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetResourceType() != nil {
 		cast := (*m.GetResourceType()).String()
 		err = writer.WriteStringValue("resourceType", &cast)
@@ -146,6 +175,14 @@ func (m *RoleManagementCustomCalloutExtension) SetCustomAttributes(value []strin
 	}
 }
 
+// SetIsEnabled sets the isEnabled property value. When true, enables the custom extension. When false, disables it. Nullable.
+func (m *RoleManagementCustomCalloutExtension) SetIsEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isEnabled", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetResourceType sets the resourceType property value. The resourceType property
 func (m *RoleManagementCustomCalloutExtension) SetResourceType(value *CustomExtensionResourceType) {
 	err := m.GetBackingStore().Set("resourceType", value)
@@ -166,9 +203,11 @@ type RoleManagementCustomCalloutExtensionable interface {
 	CustomCalloutExtensionable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetCustomAttributes() []string
+	GetIsEnabled() *bool
 	GetResourceType() *CustomExtensionResourceType
 	GetTypeEscaped() *CustomCalloutExtensionType
 	SetCustomAttributes(value []string)
+	SetIsEnabled(value *bool)
 	SetResourceType(value *CustomExtensionResourceType)
 	SetTypeEscaped(value *CustomCalloutExtensionType)
 }

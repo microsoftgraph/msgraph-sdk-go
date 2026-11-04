@@ -75,6 +75,16 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetFieldDeserializers(
 		}
 		return nil
 	}
+	res["policyId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPolicyId(val)
+		}
+		return nil
+	}
 	res["protectionTimePeriod"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTimePeriodFromDiscriminatorValue)
 		if err != nil {
@@ -122,6 +132,19 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetFieldDeserializers(
 		return nil
 	}
 	return res
+}
+
+// GetPolicyId gets the policyId property value. The policyId property
+// returns a *string when successful
+func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetPolicyId() *string {
+	val, err := m.GetBackingStore().Get("policyId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
 
 // GetProtectionTimePeriod gets the protectionTimePeriod property value. The protectionTimePeriod property
@@ -185,6 +208,12 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) Serialize(writer i878a
 		}
 	}
 	{
+		err := writer.WriteStringValue("policyId", m.GetPolicyId())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err := writer.WriteObjectValue("protectionTimePeriod", m.GetProtectionTimePeriod())
 		if err != nil {
 			return err
@@ -240,6 +269,14 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) SetBackingStore(value 
 	m.backingStore = value
 }
 
+// SetPolicyId sets the policyId property value. The policyId property
+func (m *BackupRestoreRestorePointsSearchPostRequestBody) SetPolicyId(value *string) {
+	err := m.GetBackingStore().Set("policyId", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetProtectionTimePeriod sets the protectionTimePeriod property value. The protectionTimePeriod property
 func (m *BackupRestoreRestorePointsSearchPostRequestBody) SetProtectionTimePeriod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimePeriodable) {
 	err := m.GetBackingStore().Set("protectionTimePeriod", value)
@@ -278,12 +315,14 @@ type BackupRestoreRestorePointsSearchPostRequestBodyable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetArtifactQuery() iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArtifactQueryable
 	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetPolicyId() *string
 	GetProtectionTimePeriod() iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimePeriodable
 	GetProtectionUnitIds() []string
 	GetRestorePointPreference() *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestorePointPreference
 	GetTags() *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestorePointTags
 	SetArtifactQuery(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArtifactQueryable)
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetPolicyId(value *string)
 	SetProtectionTimePeriod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimePeriodable)
 	SetProtectionUnitIds(value []string)
 	SetRestorePointPreference(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RestorePointPreference)

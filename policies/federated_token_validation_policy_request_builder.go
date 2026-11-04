@@ -23,7 +23,7 @@ type FederatedTokenValidationPolicyRequestBuilderDeleteRequestConfiguration stru
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// FederatedTokenValidationPolicyRequestBuilderGetQueryParameters get federatedTokenValidationPolicy from policies
+// FederatedTokenValidationPolicyRequestBuilderGetQueryParameters read the properties and relationships of a federatedTokenValidationPolicy object.
 type FederatedTokenValidationPolicyRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,9 +81,12 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) Delete(ctx context.Contex
 	return nil
 }
 
-// Get get federatedTokenValidationPolicy from policies
+// Get read the properties and relationships of a federatedTokenValidationPolicy object.
 // returns a FederatedTokenValidationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-1.0
 func (m *FederatedTokenValidationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedTokenValidationPolicyable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -102,9 +105,12 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) Get(ctx context.Context, 
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedTokenValidationPolicyable), nil
 }
 
-// Patch update the navigation property federatedTokenValidationPolicy in policies
+// Patch update the properties of a federatedTokenValidationPolicy object.
 // returns a FederatedTokenValidationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-update?view=graph-rest-1.0
 func (m *FederatedTokenValidationPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedTokenValidationPolicyable, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderPatchRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedTokenValidationPolicyable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -135,7 +141,7 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) ToDeleteRequestInformatio
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get federatedTokenValidationPolicy from policies
+// ToGetRequestInformation read the properties and relationships of a federatedTokenValidationPolicy object.
 // returns a *RequestInformation when successful
 func (m *FederatedTokenValidationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +156,7 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) ToGetRequestInformation(c
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the navigation property federatedTokenValidationPolicy in policies
+// ToPatchRequestInformation update the properties of a federatedTokenValidationPolicy object.
 // returns a *RequestInformation when successful
 func (m *FederatedTokenValidationPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedTokenValidationPolicyable, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

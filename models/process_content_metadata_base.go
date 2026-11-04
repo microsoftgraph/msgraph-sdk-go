@@ -224,6 +224,22 @@ func (m *ProcessContentMetadataBase) GetFieldDeserializers() map[string]func(i87
 		}
 		return nil
 	}
+	res["sensitivityLabels"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateCurrentLabelFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]CurrentLabelable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(CurrentLabelable)
+				}
+			}
+			m.SetSensitivityLabels(res)
+		}
+		return nil
+	}
 	res["sequenceNumber"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetInt64Value()
 		if err != nil {
@@ -315,6 +331,19 @@ func (m *ProcessContentMetadataBase) GetOdataType() *string {
 	return nil
 }
 
+// GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
+// returns a []CurrentLabelable when successful
+func (m *ProcessContentMetadataBase) GetSensitivityLabels() []CurrentLabelable {
+	val, err := m.GetBackingStore().Get("sensitivityLabels")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]CurrentLabelable)
+	}
+	return nil
+}
+
 // GetSequenceNumber gets the sequenceNumber property value. A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.
 // returns a *int64 when successful
 func (m *ProcessContentMetadataBase) GetSequenceNumber() *int64 {
@@ -387,6 +416,18 @@ func (m *ProcessContentMetadataBase) Serialize(writer i878a80d2330e89d26896388a3
 	}
 	{
 		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSensitivityLabels() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensitivityLabels()))
+		for i, v := range m.GetSensitivityLabels() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("sensitivityLabels", cast)
 		if err != nil {
 			return err
 		}
@@ -499,6 +540,14 @@ func (m *ProcessContentMetadataBase) SetOdataType(value *string) {
 	}
 }
 
+// SetSensitivityLabels sets the sensitivityLabels property value. The sensitivityLabels property
+func (m *ProcessContentMetadataBase) SetSensitivityLabels(value []CurrentLabelable) {
+	err := m.GetBackingStore().Set("sensitivityLabels", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetSequenceNumber sets the sequenceNumber property value. A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.
 func (m *ProcessContentMetadataBase) SetSequenceNumber(value *int64) {
 	err := m.GetBackingStore().Set("sequenceNumber", value)
@@ -522,6 +571,7 @@ type ProcessContentMetadataBaseable interface {
 	GetModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetName() *string
 	GetOdataType() *string
+	GetSensitivityLabels() []CurrentLabelable
 	GetSequenceNumber() *int64
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
 	SetContent(value ContentBaseable)
@@ -534,5 +584,6 @@ type ProcessContentMetadataBaseable interface {
 	SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetName(value *string)
 	SetOdataType(value *string)
+	SetSensitivityLabels(value []CurrentLabelable)
 	SetSequenceNumber(value *int64)
 }

@@ -96,6 +96,22 @@ func (m *OptionalClaims) GetFieldDeserializers() map[string]func(i878a80d2330e89
 		}
 		return nil
 	}
+	res["kerberosTicket"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateOptionalClaimFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]OptionalClaimable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(OptionalClaimable)
+				}
+			}
+			m.SetKerberosTicket(res)
+		}
+		return nil
+	}
 	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -129,6 +145,19 @@ func (m *OptionalClaims) GetFieldDeserializers() map[string]func(i878a80d2330e89
 // returns a []OptionalClaimable when successful
 func (m *OptionalClaims) GetIdToken() []OptionalClaimable {
 	val, err := m.GetBackingStore().Get("idToken")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]OptionalClaimable)
+	}
+	return nil
+}
+
+// GetKerberosTicket gets the kerberosTicket property value. The kerberosTicket property
+// returns a []OptionalClaimable when successful
+func (m *OptionalClaims) GetKerberosTicket() []OptionalClaimable {
+	val, err := m.GetBackingStore().Get("kerberosTicket")
 	if err != nil {
 		panic(err)
 	}
@@ -190,6 +219,18 @@ func (m *OptionalClaims) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 			return err
 		}
 	}
+	if m.GetKerberosTicket() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKerberosTicket()))
+		for i, v := range m.GetKerberosTicket() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("kerberosTicket", cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
 		if err != nil {
@@ -246,6 +287,14 @@ func (m *OptionalClaims) SetIdToken(value []OptionalClaimable) {
 	}
 }
 
+// SetKerberosTicket sets the kerberosTicket property value. The kerberosTicket property
+func (m *OptionalClaims) SetKerberosTicket(value []OptionalClaimable) {
+	err := m.GetBackingStore().Set("kerberosTicket", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OptionalClaims) SetOdataType(value *string) {
 	err := m.GetBackingStore().Set("odataType", value)
@@ -269,11 +318,13 @@ type OptionalClaimsable interface {
 	GetAccessToken() []OptionalClaimable
 	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 	GetIdToken() []OptionalClaimable
+	GetKerberosTicket() []OptionalClaimable
 	GetOdataType() *string
 	GetSaml2Token() []OptionalClaimable
 	SetAccessToken(value []OptionalClaimable)
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
 	SetIdToken(value []OptionalClaimable)
+	SetKerberosTicket(value []OptionalClaimable)
 	SetOdataType(value *string)
 	SetSaml2Token(value []OptionalClaimable)
 }

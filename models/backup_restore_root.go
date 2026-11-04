@@ -354,6 +354,16 @@ func (m *BackupRestoreRoot) GetFieldDeserializers() map[string]func(i878a80d2330
 		}
 		return nil
 	}
+	res["reports"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateBackupReportFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetReports(val.(BackupReportable))
+		}
+		return nil
+	}
 	res["restorePoints"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateRestorePointFromDiscriminatorValue)
 		if err != nil {
@@ -611,6 +621,19 @@ func (m *BackupRestoreRoot) GetProtectionUnits() []ProtectionUnitBaseable {
 	}
 	if val != nil {
 		return val.([]ProtectionUnitBaseable)
+	}
+	return nil
+}
+
+// GetReports gets the reports property value. The backup reports available in the tenant.
+// returns a BackupReportable when successful
+func (m *BackupRestoreRoot) GetReports() BackupReportable {
+	val, err := m.GetBackingStore().Get("reports")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(BackupReportable)
 	}
 	return nil
 }
@@ -925,6 +948,12 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 			return err
 		}
 	}
+	{
+		err = writer.WriteObjectValue("reports", m.GetReports())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetRestorePoints() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRestorePoints()))
 		for i, v := range m.GetRestorePoints() {
@@ -1162,6 +1191,14 @@ func (m *BackupRestoreRoot) SetProtectionUnits(value []ProtectionUnitBaseable) {
 	}
 }
 
+// SetReports sets the reports property value. The backup reports available in the tenant.
+func (m *BackupRestoreRoot) SetReports(value BackupReportable) {
+	err := m.GetBackingStore().Set("reports", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetRestorePoints sets the restorePoints property value. List of restore points in the tenant.
 func (m *BackupRestoreRoot) SetRestorePoints(value []RestorePointable) {
 	err := m.GetBackingStore().Set("restorePoints", value)
@@ -1260,6 +1297,7 @@ type BackupRestoreRootable interface {
 	GetOneDriveForBusinessRestoreSessions() []OneDriveForBusinessRestoreSessionable
 	GetProtectionPolicies() []ProtectionPolicyBaseable
 	GetProtectionUnits() []ProtectionUnitBaseable
+	GetReports() BackupReportable
 	GetRestorePoints() []RestorePointable
 	GetRestoreSessions() []RestoreSessionBaseable
 	GetServiceApps() []ServiceAppable
@@ -1285,6 +1323,7 @@ type BackupRestoreRootable interface {
 	SetOneDriveForBusinessRestoreSessions(value []OneDriveForBusinessRestoreSessionable)
 	SetProtectionPolicies(value []ProtectionPolicyBaseable)
 	SetProtectionUnits(value []ProtectionUnitBaseable)
+	SetReports(value BackupReportable)
 	SetRestorePoints(value []RestorePointable)
 	SetRestoreSessions(value []RestoreSessionBaseable)
 	SetServiceApps(value []ServiceAppable)

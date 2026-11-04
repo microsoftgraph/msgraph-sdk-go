@@ -266,7 +266,7 @@ func (m *AccessPackageAssignmentRequest) GetJustification() *string {
 	return nil
 }
 
-// GetParameters gets the parameters property value. The parameters property
+// GetParameters gets the parameters property value. Additional parameters that control how the request is processed, such as bypassing the approval requirement configured on the access package policy.
 // returns a AccessPackageAssignmentRequestParametersable when successful
 func (m *AccessPackageAssignmentRequest) GetParameters() AccessPackageAssignmentRequestParametersable {
 	val, err := m.GetBackingStore().Get("parameters")
@@ -501,7 +501,7 @@ func (m *AccessPackageAssignmentRequest) SetJustification(value *string) {
 	}
 }
 
-// SetParameters sets the parameters property value. The parameters property
+// SetParameters sets the parameters property value. Additional parameters that control how the request is processed, such as bypassing the approval requirement configured on the access package policy.
 func (m *AccessPackageAssignmentRequest) SetParameters(value AccessPackageAssignmentRequestParametersable) {
 	err := m.GetBackingStore().Set("parameters", value)
 	if err != nil {

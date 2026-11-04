@@ -47,7 +47,7 @@ func (m *AccessPackageAssignmentRequestParameters) GetBackingStore() ie8677ce2c7
 	return m.backingStore
 }
 
-// GetBypassApproval gets the bypassApproval property value. The bypassApproval property
+// GetBypassApproval gets the bypassApproval property value. When true, bypasses the approval requirement configured on the access package policy for this request.
 // returns a *bool when successful
 func (m *AccessPackageAssignmentRequestParameters) GetBypassApproval() *bool {
 	val, err := m.GetBackingStore().Get("bypassApproval")
@@ -136,7 +136,7 @@ func (m *AccessPackageAssignmentRequestParameters) SetBackingStore(value ie8677c
 	m.backingStore = value
 }
 
-// SetBypassApproval sets the bypassApproval property value. The bypassApproval property
+// SetBypassApproval sets the bypassApproval property value. When true, bypasses the approval requirement configured on the access package policy for this request.
 func (m *AccessPackageAssignmentRequestParameters) SetBypassApproval(value *bool) {
 	err := m.GetBackingStore().Set("bypassApproval", value)
 	if err != nil {

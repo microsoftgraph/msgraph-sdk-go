@@ -96,7 +96,7 @@ func (m *RelatedTenantsRefreshStatus) GetFieldDeserializers() map[string]func(i8
 	return res
 }
 
-// GetIsFirstRefresh gets the isFirstRefresh property value. The isFirstRefresh property
+// GetIsFirstRefresh gets the isFirstRefresh property value. Indicates whether the operation is the first refresh of the related tenants list.
 // returns a *bool when successful
 func (m *RelatedTenantsRefreshStatus) GetIsFirstRefresh() *bool {
 	val, err := m.GetBackingStore().Get("isFirstRefresh")
@@ -109,7 +109,7 @@ func (m *RelatedTenantsRefreshStatus) GetIsFirstRefresh() *bool {
 	return nil
 }
 
-// GetMostRecentRefreshDateTime gets the mostRecentRefreshDateTime property value. The mostRecentRefreshDateTime property
+// GetMostRecentRefreshDateTime gets the mostRecentRefreshDateTime property value. The date and time of the most recent refresh operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *RelatedTenantsRefreshStatus) GetMostRecentRefreshDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("mostRecentRefreshDateTime")
@@ -122,7 +122,7 @@ func (m *RelatedTenantsRefreshStatus) GetMostRecentRefreshDateTime() *i336074805
 	return nil
 }
 
-// GetMostRecentRefreshRequestStatus gets the mostRecentRefreshRequestStatus property value. The mostRecentRefreshRequestStatus property
+// GetMostRecentRefreshRequestStatus gets the mostRecentRefreshRequestStatus property value. The status of the most recent refresh operation.
 // returns a *string when successful
 func (m *RelatedTenantsRefreshStatus) GetMostRecentRefreshRequestStatus() *string {
 	val, err := m.GetBackingStore().Get("mostRecentRefreshRequestStatus")
@@ -196,7 +196,7 @@ func (m *RelatedTenantsRefreshStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9
 	m.backingStore = value
 }
 
-// SetIsFirstRefresh sets the isFirstRefresh property value. The isFirstRefresh property
+// SetIsFirstRefresh sets the isFirstRefresh property value. Indicates whether the operation is the first refresh of the related tenants list.
 func (m *RelatedTenantsRefreshStatus) SetIsFirstRefresh(value *bool) {
 	err := m.GetBackingStore().Set("isFirstRefresh", value)
 	if err != nil {
@@ -204,7 +204,7 @@ func (m *RelatedTenantsRefreshStatus) SetIsFirstRefresh(value *bool) {
 	}
 }
 
-// SetMostRecentRefreshDateTime sets the mostRecentRefreshDateTime property value. The mostRecentRefreshDateTime property
+// SetMostRecentRefreshDateTime sets the mostRecentRefreshDateTime property value. The date and time of the most recent refresh operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *RelatedTenantsRefreshStatus) SetMostRecentRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("mostRecentRefreshDateTime", value)
 	if err != nil {
@@ -212,7 +212,7 @@ func (m *RelatedTenantsRefreshStatus) SetMostRecentRefreshDateTime(value *i33607
 	}
 }
 
-// SetMostRecentRefreshRequestStatus sets the mostRecentRefreshRequestStatus property value. The mostRecentRefreshRequestStatus property
+// SetMostRecentRefreshRequestStatus sets the mostRecentRefreshRequestStatus property value. The status of the most recent refresh operation.
 func (m *RelatedTenantsRefreshStatus) SetMostRecentRefreshRequestStatus(value *string) {
 	err := m.GetBackingStore().Set("mostRecentRefreshRequestStatus", value)
 	if err != nil {

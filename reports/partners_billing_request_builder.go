@@ -49,6 +49,12 @@ type PartnersBillingRequestBuilderPatchRequestConfiguration struct {
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
+// AggregatedUsage provides operations to manage the aggregatedUsage property of the microsoft.graph.partners.billing.billing entity.
+// returns a *PartnersBillingAggregatedUsageRequestBuilder when successful
+func (m *PartnersBillingRequestBuilder) AggregatedUsage() *PartnersBillingAggregatedUsageRequestBuilder {
+	return NewPartnersBillingAggregatedUsageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // NewPartnersBillingRequestBuilderInternal instantiates a new PartnersBillingRequestBuilder and sets the default values.
 func NewPartnersBillingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *PartnersBillingRequestBuilder {
 	m := &PartnersBillingRequestBuilder{

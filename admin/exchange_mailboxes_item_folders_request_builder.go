@@ -45,6 +45,14 @@ type ExchangeMailboxesItemFoldersRequestBuilderGetRequestConfiguration struct {
 	QueryParameters *ExchangeMailboxesItemFoldersRequestBuilderGetQueryParameters
 }
 
+// ExchangeMailboxesItemFoldersRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ExchangeMailboxesItemFoldersRequestBuilderPostRequestConfiguration struct {
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+
 // ByMailboxFolderId provides operations to manage the folders property of the microsoft.graph.mailbox entity.
 // returns a *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder when successful
 func (m *ExchangeMailboxesItemFoldersRequestBuilder) ByMailboxFolderId(mailboxFolderId string) *ExchangeMailboxesItemFoldersMailboxFolderItemRequestBuilder {
@@ -109,6 +117,30 @@ func (m *ExchangeMailboxesItemFoldersRequestBuilder) Get(ctx context.Context, re
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxFolderCollectionResponseable), nil
 }
 
+// Post create a new mailboxFolder or child mailboxFolder in a user's mailbox.
+// returns a MailboxFolderable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailbox-post-folders?view=graph-rest-1.0
+func (m *ExchangeMailboxesItemFoldersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxFolderable, requestConfiguration *ExchangeMailboxesItemFoldersRequestBuilderPostRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxFolderable, error) {
+	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMailboxFolderFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxFolderable), nil
+}
+
 // ToGetRequestInformation get all the mailboxFolder objects in the specified mailbox, including any search folders.
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -121,6 +153,22 @@ func (m *ExchangeMailboxesItemFoldersRequestBuilder) ToGetRequestInformation(ctx
 		requestInfo.AddRequestOptions(requestConfiguration.Options)
 	}
 	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
+}
+
+// ToPostRequestInformation create a new mailboxFolder or child mailboxFolder in a user's mailbox.
+// returns a *RequestInformation when successful
+func (m *ExchangeMailboxesItemFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailboxFolderable, requestConfiguration *ExchangeMailboxesItemFoldersRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+	if err != nil {
+		return nil, err
+	}
 	return requestInfo, nil
 }
 

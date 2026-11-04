@@ -5,6 +5,7 @@ package models
 
 import (
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type Place struct {
@@ -81,6 +82,19 @@ func (m *Place) GetCheckIns() []CheckInClaimable {
 	return nil
 }
 
+// GetCustomProperties gets the customProperties property value. Custom properties for the place. Each property has a string key and a string value. Nullable.
+// returns a StringDictionaryable when successful
+func (m *Place) GetCustomProperties() StringDictionaryable {
+	val, err := m.GetBackingStore().Get("customProperties")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(StringDictionaryable)
+	}
+	return nil
+}
+
 // GetDisplayName gets the displayName property value. The name that is associated with the place.
 // returns a *string when successful
 func (m *Place) GetDisplayName() *string {
@@ -124,6 +138,16 @@ func (m *Place) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388
 		}
 		return nil
 	}
+	res["customProperties"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateStringDictionaryFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCustomProperties(val.(StringDictionaryable))
+		}
+		return nil
+	}
 	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -161,6 +185,16 @@ func (m *Place) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388
 		}
 		if val != nil {
 			m.SetLabel(val)
+		}
+		return nil
+	}
+	res["lastUpdatedTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastUpdatedTime(val)
 		}
 		return nil
 	}
@@ -252,6 +286,19 @@ func (m *Place) GetLabel() *string {
 	return nil
 }
 
+// GetLastUpdatedTime gets the lastUpdatedTime property value. The date and time when the place was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable.
+// returns a *Time when successful
+func (m *Place) GetLastUpdatedTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastUpdatedTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
+}
+
 // GetParentId gets the parentId property value. The ID of a parent place.
 // returns a *string when successful
 func (m *Place) GetParentId() *string {
@@ -329,6 +376,12 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 		}
 	}
 	{
+		err = writer.WriteObjectValue("customProperties", m.GetCustomProperties())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteStringValue("displayName", m.GetDisplayName())
 		if err != nil {
 			return err
@@ -395,6 +448,14 @@ func (m *Place) SetCheckIns(value []CheckInClaimable) {
 	}
 }
 
+// SetCustomProperties sets the customProperties property value. Custom properties for the place. Each property has a string key and a string value. Nullable.
+func (m *Place) SetCustomProperties(value StringDictionaryable) {
+	err := m.GetBackingStore().Set("customProperties", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetDisplayName sets the displayName property value. The name that is associated with the place.
 func (m *Place) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
@@ -422,6 +483,14 @@ func (m *Place) SetIsWheelChairAccessible(value *bool) {
 // SetLabel sets the label property value. User-defined description of the place.
 func (m *Place) SetLabel(value *string) {
 	err := m.GetBackingStore().Set("label", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetLastUpdatedTime sets the lastUpdatedTime property value. The date and time when the place was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable.
+func (m *Place) SetLastUpdatedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastUpdatedTime", value)
 	if err != nil {
 		panic(err)
 	}
@@ -464,20 +533,24 @@ type Placeable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetAddress() PhysicalAddressable
 	GetCheckIns() []CheckInClaimable
+	GetCustomProperties() StringDictionaryable
 	GetDisplayName() *string
 	GetGeoCoordinates() OutlookGeoCoordinatesable
 	GetIsWheelChairAccessible() *bool
 	GetLabel() *string
+	GetLastUpdatedTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetParentId() *string
 	GetPhone() *string
 	GetPlaceId() *string
 	GetTags() []string
 	SetAddress(value PhysicalAddressable)
 	SetCheckIns(value []CheckInClaimable)
+	SetCustomProperties(value StringDictionaryable)
 	SetDisplayName(value *string)
 	SetGeoCoordinates(value OutlookGeoCoordinatesable)
 	SetIsWheelChairAccessible(value *bool)
 	SetLabel(value *string)
+	SetLastUpdatedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetParentId(value *string)
 	SetPhone(value *string)
 	SetPlaceId(value *string)

@@ -10,10 +10,12 @@ const (
 	AZURERESOURCES_CUSTOMEXTENSIONRESOURCETYPE
 	ENTRAGROUPS_CUSTOMEXTENSIONRESOURCETYPE
 	UNKNOWNFUTUREVALUE_CUSTOMEXTENSIONRESOURCETYPE
+	APPLICATIONAUTHORIZATION_CUSTOMEXTENSIONRESOURCETYPE
+	APPROLES_CUSTOMEXTENSIONRESOURCETYPE
 )
 
 func (i CustomExtensionResourceType) String() string {
-	return []string{"entraRoles", "azureResources", "entraGroups", "unknownFutureValue"}[i]
+	return []string{"entraRoles", "azureResources", "entraGroups", "unknownFutureValue", "applicationAuthorization", "appRoles"}[i]
 }
 
 func ParseCustomExtensionResourceType(v string) (any, error) {
@@ -27,6 +29,10 @@ func ParseCustomExtensionResourceType(v string) (any, error) {
 		result = ENTRAGROUPS_CUSTOMEXTENSIONRESOURCETYPE
 	case "unknownFutureValue":
 		result = UNKNOWNFUTUREVALUE_CUSTOMEXTENSIONRESOURCETYPE
+	case "applicationAuthorization":
+		result = APPLICATIONAUTHORIZATION_CUSTOMEXTENSIONRESOURCETYPE
+	case "appRoles":
+		result = APPROLES_CUSTOMEXTENSIONRESOURCETYPE
 	default:
 		return nil, nil
 	}

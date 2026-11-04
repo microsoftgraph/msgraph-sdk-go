@@ -164,6 +164,12 @@ func (m *SecurityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable), nil
 }
 
+// Rules provides operations to manage the rules property of the microsoft.graph.security entity.
+// returns a *RulesRequestBuilder when successful
+func (m *SecurityRequestBuilder) Rules() *RulesRequestBuilder {
+	return NewRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // SecureScoreControlProfiles provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
 // returns a *SecureScoreControlProfilesRequestBuilder when successful
 func (m *SecurityRequestBuilder) SecureScoreControlProfiles() *SecureScoreControlProfilesRequestBuilder {

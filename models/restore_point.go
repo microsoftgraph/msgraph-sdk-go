@@ -99,7 +99,7 @@ func (m *RestorePoint) GetProtectionDateTime() *i336074805fc853987abe6f7fe3ad97a
 	return nil
 }
 
-// GetProtectionUnit gets the protectionUnit property value. The site, drive, or mailbox units that are protected under a protection policy.
+// GetProtectionUnit gets the protectionUnit property value. The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
 // returns a ProtectionUnitBaseable when successful
 func (m *RestorePoint) GetProtectionUnit() ProtectionUnitBaseable {
 	val, err := m.GetBackingStore().Get("protectionUnit")
@@ -175,7 +175,7 @@ func (m *RestorePoint) SetProtectionDateTime(value *i336074805fc853987abe6f7fe3a
 	}
 }
 
-// SetProtectionUnit sets the protectionUnit property value. The site, drive, or mailbox units that are protected under a protection policy.
+// SetProtectionUnit sets the protectionUnit property value. The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
 func (m *RestorePoint) SetProtectionUnit(value ProtectionUnitBaseable) {
 	err := m.GetBackingStore().Set("protectionUnit", value)
 	if err != nil {

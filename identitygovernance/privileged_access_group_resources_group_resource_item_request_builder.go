@@ -23,7 +23,7 @@ type PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilderDeleteRequestC
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilderGetQueryParameters get resources from identityGovernance
+// PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilderGetQueryParameters read the properties and relationships of a groupResource object.
 type PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,9 +81,12 @@ func (m *PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilder) Delete(c
 	return nil
 }
 
-// Get get resources from identityGovernance
+// Get read the properties and relationships of a groupResource object.
 // returns a GroupResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupresource-get?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupResourceable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -135,7 +138,7 @@ func (m *PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilder) ToDelete
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation get resources from identityGovernance
+// ToGetRequestInformation read the properties and relationships of a groupResource object.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupResourcesGroupResourceItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

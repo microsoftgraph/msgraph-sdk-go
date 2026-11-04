@@ -313,6 +313,16 @@ func (m *Calendar) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896
 		}
 		return nil
 	}
+	res["isSharedWithMe"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsSharedWithMe(val)
+		}
+		return nil
+	}
 	res["isTallyingResponses"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetBoolValue()
 		if err != nil {
@@ -408,6 +418,19 @@ func (m *Calendar) GetIsDefaultCalendar() *bool {
 // returns a *bool when successful
 func (m *Calendar) GetIsRemovable() *bool {
 	val, err := m.GetBackingStore().Get("isRemovable")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetIsSharedWithMe gets the isSharedWithMe property value. true if someone shared this calendar with the user; false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client and can be reset when sharing is canceled through the client or the corresponding calendarPermission resource. Read-only.
+// returns a *bool when successful
+func (m *Calendar) GetIsSharedWithMe() *bool {
+	val, err := m.GetBackingStore().Get("isSharedWithMe")
 	if err != nil {
 		panic(err)
 	}
@@ -587,6 +610,12 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 		}
 	}
 	{
+		err = writer.WriteBoolValue("isSharedWithMe", m.GetIsSharedWithMe())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteBoolValue("isTallyingResponses", m.GetIsTallyingResponses())
 		if err != nil {
 			return err
@@ -735,6 +764,14 @@ func (m *Calendar) SetIsRemovable(value *bool) {
 	}
 }
 
+// SetIsSharedWithMe sets the isSharedWithMe property value. true if someone shared this calendar with the user; false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client and can be reset when sharing is canceled through the client or the corresponding calendarPermission resource. Read-only.
+func (m *Calendar) SetIsSharedWithMe(value *bool) {
+	err := m.GetBackingStore().Set("isSharedWithMe", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetIsTallyingResponses sets the isTallyingResponses property value. Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
 func (m *Calendar) SetIsTallyingResponses(value *bool) {
 	err := m.GetBackingStore().Set("isTallyingResponses", value)
@@ -791,6 +828,7 @@ type Calendarable interface {
 	GetHexColor() *string
 	GetIsDefaultCalendar() *bool
 	GetIsRemovable() *bool
+	GetIsSharedWithMe() *bool
 	GetIsTallyingResponses() *bool
 	GetMultiValueExtendedProperties() []MultiValueLegacyExtendedPropertyable
 	GetName() *string
@@ -809,6 +847,7 @@ type Calendarable interface {
 	SetHexColor(value *string)
 	SetIsDefaultCalendar(value *bool)
 	SetIsRemovable(value *bool)
+	SetIsSharedWithMe(value *bool)
 	SetIsTallyingResponses(value *bool)
 	SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)
 	SetName(value *string)

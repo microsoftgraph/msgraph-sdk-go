@@ -87,6 +87,12 @@ func (m *ItemCalendarsRequestBuilder) Count() *ItemCalendarsCountRequestBuilder 
 	return NewItemCalendarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// Delta provides operations to call the delta method.
+// returns a *ItemCalendarsDeltaRequestBuilder when successful
+func (m *ItemCalendarsRequestBuilder) Delta() *ItemCalendarsDeltaRequestBuilder {
+	return NewItemCalendarsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Get the user's calendars. Read-only. Nullable.
 // returns a CalendarCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

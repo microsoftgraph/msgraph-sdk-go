@@ -95,6 +95,12 @@ func (m *SolutionsRequestBuilder) Get(ctx context.Context, requestConfiguration 
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SolutionsRootable), nil
 }
 
+// Migrations provides operations to manage the migrations property of the microsoft.graph.solutionsRoot entity.
+// returns a *MigrationsRequestBuilder when successful
+func (m *SolutionsRequestBuilder) Migrations() *MigrationsRequestBuilder {
+	return NewMigrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Patch update solutions
 // returns a SolutionsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

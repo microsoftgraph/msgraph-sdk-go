@@ -38,6 +38,19 @@ func (m *SensitivityLabel) GetActionSource() *LabelActionSource {
 	return nil
 }
 
+// GetApplicationMode gets the applicationMode property value. The applicationMode property
+// returns a *ApplicationMode when successful
+func (m *SensitivityLabel) GetApplicationMode() *ApplicationMode {
+	val, err := m.GetBackingStore().Get("applicationMode")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ApplicationMode)
+	}
+	return nil
+}
+
 // GetAutoTooltip gets the autoTooltip property value. The autoTooltip property
 // returns a *string when successful
 func (m *SensitivityLabel) GetAutoTooltip() *string {
@@ -88,6 +101,16 @@ func (m *SensitivityLabel) GetFieldDeserializers() map[string]func(i878a80d2330e
 		}
 		if val != nil {
 			m.SetActionSource(val.(*LabelActionSource))
+		}
+		return nil
+	}
+	res["applicationMode"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseApplicationMode)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetApplicationMode(val.(*ApplicationMode))
 		}
 		return nil
 	}
@@ -373,6 +396,13 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 			return err
 		}
 	}
+	if m.GetApplicationMode() != nil {
+		cast := (*m.GetApplicationMode()).String()
+		err = writer.WriteStringValue("applicationMode", &cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteStringValue("autoTooltip", m.GetAutoTooltip())
 		if err != nil {
@@ -463,6 +493,14 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetActionSource sets the actionSource property value. The actionSource property
 func (m *SensitivityLabel) SetActionSource(value *LabelActionSource) {
 	err := m.GetBackingStore().Set("actionSource", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetApplicationMode sets the applicationMode property value. The applicationMode property
+func (m *SensitivityLabel) SetApplicationMode(value *ApplicationMode) {
+	err := m.GetBackingStore().Set("applicationMode", value)
 	if err != nil {
 		panic(err)
 	}
@@ -576,6 +614,7 @@ type SensitivityLabelable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetActionSource() *LabelActionSource
+	GetApplicationMode() *ApplicationMode
 	GetAutoTooltip() *string
 	GetDescription() *string
 	GetDisplayName() *string
@@ -590,6 +629,7 @@ type SensitivityLabelable interface {
 	GetSublabels() []SensitivityLabelable
 	GetToolTip() *string
 	SetActionSource(value *LabelActionSource)
+	SetApplicationMode(value *ApplicationMode)
 	SetAutoTooltip(value *string)
 	SetDescription(value *string)
 	SetDisplayName(value *string)
