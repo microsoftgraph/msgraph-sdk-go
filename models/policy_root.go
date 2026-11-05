@@ -194,7 +194,7 @@ func (m *PolicyRoot) GetFeatureRolloutPolicies() []FeatureRolloutPolicyable {
 	return nil
 }
 
-// GetFederatedTokenValidationPolicy gets the federatedTokenValidationPolicy property value. The federatedTokenValidationPolicy property
+// GetFederatedTokenValidationPolicy gets the federatedTokenValidationPolicy property value. Represents a policy to control enabling or disabling validation of federation authentication tokens.
 // returns a FederatedTokenValidationPolicyable when successful
 func (m *PolicyRoot) GetFederatedTokenValidationPolicy() FederatedTokenValidationPolicyable {
 	val, err := m.GetBackingStore().Get("federatedTokenValidationPolicy")
@@ -927,7 +927,7 @@ func (m *PolicyRoot) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)
 	}
 }
 
-// SetFederatedTokenValidationPolicy sets the federatedTokenValidationPolicy property value. The federatedTokenValidationPolicy property
+// SetFederatedTokenValidationPolicy sets the federatedTokenValidationPolicy property value. Represents a policy to control enabling or disabling validation of federation authentication tokens.
 func (m *PolicyRoot) SetFederatedTokenValidationPolicy(value FederatedTokenValidationPolicyable) {
 	err := m.GetBackingStore().Set("federatedTokenValidationPolicy", value)
 	if err != nil {

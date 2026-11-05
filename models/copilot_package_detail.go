@@ -212,6 +212,16 @@ func (m *CopilotPackageDetail) GetFieldDeserializers() map[string]func(i878a80d2
 		}
 		return nil
 	}
+	res["requestMetadata"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCopilotPackageRequestMetadataFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRequestMetadata(val.(CopilotPackageRequestMetadataable))
+		}
+		return nil
+	}
 	res["sensitivity"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -283,6 +293,19 @@ func (m *CopilotPackageDetail) GetLongDescription() *string {
 	}
 	if val != nil {
 		return val.(*string)
+	}
+	return nil
+}
+
+// GetRequestMetadata gets the requestMetadata property value. Request metadata returned by an explicit opt-in package detail read. Null when not loaded.
+// returns a CopilotPackageRequestMetadataable when successful
+func (m *CopilotPackageDetail) GetRequestMetadata() CopilotPackageRequestMetadataable {
+	val, err := m.GetBackingStore().Get("requestMetadata")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CopilotPackageRequestMetadataable)
 	}
 	return nil
 }
@@ -508,6 +531,14 @@ func (m *CopilotPackageDetail) SetLongDescription(value *string) {
 	}
 }
 
+// SetRequestMetadata sets the requestMetadata property value. Request metadata returned by an explicit opt-in package detail read. Null when not loaded.
+func (m *CopilotPackageDetail) SetRequestMetadata(value CopilotPackageRequestMetadataable) {
+	err := m.GetBackingStore().Set("requestMetadata", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetSensitivity sets the sensitivity property value. The sensitivity property
 func (m *CopilotPackageDetail) SetSensitivity(value *string) {
 	err := m.GetBackingStore().Set("sensitivity", value)
@@ -551,6 +582,7 @@ type CopilotPackageDetailable interface {
 	GetExceptionRate() *float64
 	GetLastUsedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetLongDescription() *string
+	GetRequestMetadata() CopilotPackageRequestMetadataable
 	GetSensitivity() *string
 	GetSharedWithUsersAndGroups() []PackageAccessEntityable
 	GetTotalRunTimeInHours() *float64
@@ -563,6 +595,7 @@ type CopilotPackageDetailable interface {
 	SetExceptionRate(value *float64)
 	SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetLongDescription(value *string)
+	SetRequestMetadata(value CopilotPackageRequestMetadataable)
 	SetSensitivity(value *string)
 	SetSharedWithUsersAndGroups(value []PackageAccessEntityable)
 	SetTotalRunTimeInHours(value *float64)

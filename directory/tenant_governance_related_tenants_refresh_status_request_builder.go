@@ -38,9 +38,12 @@ func NewTenantGovernanceRelatedTenantsRefreshStatusRequestBuilder(rawUrl string,
 	return NewTenantGovernanceRelatedTenantsRefreshStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get invoke function refreshStatus
+// Get get the status of the most recent related tenants refresh operation.
 // returns a RelatedTenantsRefreshStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-refreshstatus?view=graph-rest-1.0
 func (m *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantsRefreshStatusable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -59,7 +62,7 @@ func (m *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder) Get(ctx cont
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RelatedTenantsRefreshStatusable), nil
 }
 
-// ToGetRequestInformation invoke function refreshStatus
+// ToGetRequestInformation get the status of the most recent related tenants refresh operation.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -81,6 +81,12 @@ func (m *EntitlementManagementRequestBuilder) Delete(ctx context.Context, reques
 	return nil
 }
 
+// DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.rbacApplication entity.
+// returns a *EntitlementManagementDeletedItemsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) DeletedItems() *EntitlementManagementDeletedItemsRequestBuilder {
+	return NewEntitlementManagementDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Get container for roles and assignments for entitlement management resources.
 // returns a RbacApplicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

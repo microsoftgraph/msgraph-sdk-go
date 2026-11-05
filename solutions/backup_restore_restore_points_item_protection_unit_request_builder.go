@@ -15,7 +15,7 @@ type BackupRestoreRestorePointsItemProtectionUnitRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetQueryParameters the site, drive, or mailbox units that are protected under a protection policy.
+// BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetQueryParameters the site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
 type BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewBackupRestoreRestorePointsItemProtectionUnitRequestBuilder(rawUrl string
 	return NewBackupRestoreRestorePointsItemProtectionUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get the site, drive, or mailbox units that are protected under a protection policy.
+// Get the site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
 // returns a ProtectionUnitBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreRestorePointsItemProtectionUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetRequestConfiguration) (iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProtectionUnitBaseable, error) {
@@ -69,7 +69,7 @@ func (m *BackupRestoreRestorePointsItemProtectionUnitRequestBuilder) Get(ctx con
 	return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProtectionUnitBaseable), nil
 }
 
-// ToGetRequestInformation the site, drive, or mailbox units that are protected under a protection policy.
+// ToGetRequestInformation the site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreRestorePointsItemProtectionUnitRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreRestorePointsItemProtectionUnitRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

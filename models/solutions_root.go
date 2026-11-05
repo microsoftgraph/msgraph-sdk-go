@@ -132,6 +132,16 @@ func (m *SolutionsRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 		}
 		return nil
 	}
+	res["migrations"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateMigrationsRootFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetMigrations(val.(MigrationsRootable))
+		}
+		return nil
+	}
 	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -153,6 +163,19 @@ func (m *SolutionsRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 		return nil
 	}
 	return res
+}
+
+// GetMigrations gets the migrations property value. The entry point for cross-tenant migration operations.
+// returns a MigrationsRootable when successful
+func (m *SolutionsRoot) GetMigrations() MigrationsRootable {
+	val, err := m.GetBackingStore().Get("migrations")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(MigrationsRootable)
+	}
+	return nil
 }
 
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -209,6 +232,12 @@ func (m *SolutionsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 			}
 		}
 		err := writer.WriteCollectionOfObjectValues("bookingCurrencies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("migrations", m.GetMigrations())
 		if err != nil {
 			return err
 		}
@@ -271,6 +300,14 @@ func (m *SolutionsRoot) SetBookingCurrencies(value []BookingCurrencyable) {
 	}
 }
 
+// SetMigrations sets the migrations property value. The entry point for cross-tenant migration operations.
+func (m *SolutionsRoot) SetMigrations(value MigrationsRootable) {
+	err := m.GetBackingStore().Set("migrations", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SolutionsRoot) SetOdataType(value *string) {
 	err := m.GetBackingStore().Set("odataType", value)
@@ -295,12 +332,14 @@ type SolutionsRootable interface {
 	GetBackupRestore() BackupRestoreRootable
 	GetBookingBusinesses() []BookingBusinessable
 	GetBookingCurrencies() []BookingCurrencyable
+	GetMigrations() MigrationsRootable
 	GetOdataType() *string
 	GetVirtualEvents() VirtualEventsRootable
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
 	SetBackupRestore(value BackupRestoreRootable)
 	SetBookingBusinesses(value []BookingBusinessable)
 	SetBookingCurrencies(value []BookingCurrencyable)
+	SetMigrations(value MigrationsRootable)
 	SetOdataType(value *string)
 	SetVirtualEvents(value VirtualEventsRootable)
 }

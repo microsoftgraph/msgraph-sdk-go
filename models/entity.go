@@ -280,6 +280,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewB2BSignInActivityMetricsRecent(), nil
 				case "#microsoft.graph.b2xIdentityUserFlow":
 					return NewB2xIdentityUserFlow(), nil
+				case "#microsoft.graph.backupReport":
+					return NewBackupReport(), nil
 				case "#microsoft.graph.backupRestoreRoot":
 					return NewBackupRestoreRoot(), nil
 				case "#microsoft.graph.baseItem":
@@ -494,6 +496,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewCrossTenantMailTipsLimited(), nil
 				case "#microsoft.graph.crossTenantMigration":
 					return NewCrossTenantMigration(), nil
+				case "#microsoft.graph.crossTenantMigrationJob":
+					return NewCrossTenantMigrationJob(), nil
+				case "#microsoft.graph.crossTenantMigrationTask":
+					return NewCrossTenantMigrationTask(), nil
 				case "#microsoft.graph.crossTenantOpenProfileCard":
 					return NewCrossTenantOpenProfileCard(), nil
 				case "#microsoft.graph.crossTenantPlacesDeskBooking":
@@ -642,6 +648,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewDirectoryObjectPartnerReference(), nil
 				case "#microsoft.graph.directoryRole":
 					return NewDirectoryRole(), nil
+				case "#microsoft.graph.directoryRoleManagementDeletedItemContainer":
+					return NewDirectoryRoleManagementDeletedItemContainer(), nil
 				case "#microsoft.graph.directoryRoleTemplate":
 					return NewDirectoryRoleTemplate(), nil
 				case "#microsoft.graph.documentSetVersion":
@@ -1114,6 +1122,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewMicrosoftAuthenticatorAuthenticationMethodTarget(), nil
 				case "#microsoft.graph.microsoftStoreForBusinessApp":
 					return NewMicrosoftStoreForBusinessApp(), nil
+				case "#microsoft.graph.migrationsRoot":
+					return NewMigrationsRoot(), nil
 				case "#microsoft.graph.mobileApp":
 					return NewMobileApp(), nil
 				case "#microsoft.graph.mobileAppAssignment":
@@ -1600,6 +1610,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewSimulationAutomation(), nil
 				case "#microsoft.graph.simulationAutomationRun":
 					return NewSimulationAutomationRun(), nil
+				case "#microsoft.graph.singleValueExtendedProperty":
+					return NewSingleValueExtendedProperty(), nil
 				case "#microsoft.graph.singleValueLegacyExtendedProperty":
 					return NewSingleValueLegacyExtendedProperty(), nil
 				case "#microsoft.graph.site":

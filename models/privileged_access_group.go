@@ -251,7 +251,7 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers() map[string]func(i878a80d
 	return res
 }
 
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. The groups managed through PIM for groups.
 // returns a []GroupResourceable when successful
 func (m *PrivilegedAccessGroup) GetResources() []GroupResourceable {
 	val, err := m.GetBackingStore().Get("resources")
@@ -425,7 +425,7 @@ func (m *PrivilegedAccessGroup) SetEligibilitySchedules(value []PrivilegedAccess
 	}
 }
 
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. The groups managed through PIM for groups.
 func (m *PrivilegedAccessGroup) SetResources(value []GroupResourceable) {
 	err := m.GetBackingStore().Set("resources", value)
 	if err != nil {

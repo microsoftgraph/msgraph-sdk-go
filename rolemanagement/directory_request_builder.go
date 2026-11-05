@@ -81,6 +81,12 @@ func (m *DirectoryRequestBuilder) Delete(ctx context.Context, requestConfigurati
 	return nil
 }
 
+// DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.rbacApplication entity.
+// returns a *DirectoryDeletedItemsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) DeletedItems() *DirectoryDeletedItemsRequestBuilder {
+	return NewDirectoryDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Get get directory from roleManagement
 // returns a RbacApplicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

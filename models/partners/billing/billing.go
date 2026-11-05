@@ -26,10 +26,33 @@ func CreateBillingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 	return NewBilling(), nil
 }
 
+// GetAggregatedUsage gets the aggregatedUsage property value. The aggregatedUsage property
+// returns a AzureAggregatedUsageable when successful
+func (m *Billing) GetAggregatedUsage() AzureAggregatedUsageable {
+	val, err := m.GetBackingStore().Get("aggregatedUsage")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AzureAggregatedUsageable)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *Billing) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["aggregatedUsage"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAzureAggregatedUsageFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAggregatedUsage(val.(AzureAggregatedUsageable))
+		}
+		return nil
+	}
 	res["manifests"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateManifestFromDiscriminatorValue)
 		if err != nil {
@@ -143,6 +166,12 @@ func (m *Billing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 	if err != nil {
 		return err
 	}
+	{
+		err = writer.WriteObjectValue("aggregatedUsage", m.GetAggregatedUsage())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetManifests() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManifests()))
 		for i, v := range m.GetManifests() {
@@ -182,6 +211,14 @@ func (m *Billing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 	return nil
 }
 
+// SetAggregatedUsage sets the aggregatedUsage property value. The aggregatedUsage property
+func (m *Billing) SetAggregatedUsage(value AzureAggregatedUsageable) {
+	err := m.GetBackingStore().Set("aggregatedUsage", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetManifests sets the manifests property value. Represents metadata for the exported data.
 func (m *Billing) SetManifests(value []Manifestable) {
 	err := m.GetBackingStore().Set("manifests", value)
@@ -217,10 +254,12 @@ func (m *Billing) SetUsage(value AzureUsageable) {
 type Billingable interface {
 	iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAggregatedUsage() AzureAggregatedUsageable
 	GetManifests() []Manifestable
 	GetOperations() []Operationable
 	GetReconciliation() BillingReconciliationable
 	GetUsage() AzureUsageable
+	SetAggregatedUsage(value AzureAggregatedUsageable)
 	SetManifests(value []Manifestable)
 	SetOperations(value []Operationable)
 	SetReconciliation(value BillingReconciliationable)

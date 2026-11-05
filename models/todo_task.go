@@ -366,6 +366,22 @@ func (m *TodoTask) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896
 		}
 		return nil
 	}
+	res["singleValueExtendedProperties"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateSingleValueExtendedPropertyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]SingleValueExtendedPropertyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(SingleValueExtendedPropertyable)
+				}
+			}
+			m.SetSingleValueExtendedProperties(res)
+		}
+		return nil
+	}
 	res["startDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
 		if err != nil {
@@ -486,6 +502,19 @@ func (m *TodoTask) GetReminderDateTime() DateTimeTimeZoneable {
 	}
 	if val != nil {
 		return val.(DateTimeTimeZoneable)
+	}
+	return nil
+}
+
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. A collection of custom fields linked to the task.
+// returns a []SingleValueExtendedPropertyable when successful
+func (m *TodoTask) GetSingleValueExtendedProperties() []SingleValueExtendedPropertyable {
+	val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]SingleValueExtendedPropertyable)
 	}
 	return nil
 }
@@ -668,6 +697,18 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 			return err
 		}
 	}
+	if m.GetSingleValueExtendedProperties() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSingleValueExtendedProperties()))
+		for i, v := range m.GetSingleValueExtendedProperties() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteObjectValue("startDateTime", m.GetStartDateTime())
 		if err != nil {
@@ -826,6 +867,14 @@ func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable) {
 	}
 }
 
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. A collection of custom fields linked to the task.
+func (m *TodoTask) SetSingleValueExtendedProperties(value []SingleValueExtendedPropertyable) {
+	err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetStartDateTime sets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
 func (m *TodoTask) SetStartDateTime(value DateTimeTimeZoneable) {
 	err := m.GetBackingStore().Set("startDateTime", value)
@@ -870,6 +919,7 @@ type TodoTaskable interface {
 	GetLinkedResources() []LinkedResourceable
 	GetRecurrence() PatternedRecurrenceable
 	GetReminderDateTime() DateTimeTimeZoneable
+	GetSingleValueExtendedProperties() []SingleValueExtendedPropertyable
 	GetStartDateTime() DateTimeTimeZoneable
 	GetStatus() *TaskStatus
 	GetTitle() *string
@@ -890,6 +940,7 @@ type TodoTaskable interface {
 	SetLinkedResources(value []LinkedResourceable)
 	SetRecurrence(value PatternedRecurrenceable)
 	SetReminderDateTime(value DateTimeTimeZoneable)
+	SetSingleValueExtendedProperties(value []SingleValueExtendedPropertyable)
 	SetStartDateTime(value DateTimeTimeZoneable)
 	SetStatus(value *TaskStatus)
 	SetTitle(value *string)

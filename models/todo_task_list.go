@@ -101,6 +101,22 @@ func (m *TodoTaskList) GetFieldDeserializers() map[string]func(i878a80d2330e89d2
 		}
 		return nil
 	}
+	res["singleValueExtendedProperties"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateSingleValueExtendedPropertyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]SingleValueExtendedPropertyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(SingleValueExtendedPropertyable)
+				}
+			}
+			m.SetSingleValueExtendedProperties(res)
+		}
+		return nil
+	}
 	res["tasks"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateTodoTaskFromDiscriminatorValue)
 		if err != nil {
@@ -152,6 +168,19 @@ func (m *TodoTaskList) GetIsShared() *bool {
 	}
 	if val != nil {
 		return val.(*bool)
+	}
+	return nil
+}
+
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task list. Nullable.
+// returns a []SingleValueExtendedPropertyable when successful
+func (m *TodoTaskList) GetSingleValueExtendedProperties() []SingleValueExtendedPropertyable {
+	val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]SingleValueExtendedPropertyable)
 	}
 	return nil
 }
@@ -218,6 +247,18 @@ func (m *TodoTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 			return err
 		}
 	}
+	if m.GetSingleValueExtendedProperties() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSingleValueExtendedProperties()))
+		for i, v := range m.GetSingleValueExtendedProperties() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetTasks() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
 		for i, v := range m.GetTasks() {
@@ -272,6 +313,14 @@ func (m *TodoTaskList) SetIsShared(value *bool) {
 	}
 }
 
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task list. Nullable.
+func (m *TodoTaskList) SetSingleValueExtendedProperties(value []SingleValueExtendedPropertyable) {
+	err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetTasks sets the tasks property value. The tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskList) SetTasks(value []TodoTaskable) {
 	err := m.GetBackingStore().Set("tasks", value)
@@ -295,12 +344,14 @@ type TodoTaskListable interface {
 	GetExtensions() []Extensionable
 	GetIsOwner() *bool
 	GetIsShared() *bool
+	GetSingleValueExtendedProperties() []SingleValueExtendedPropertyable
 	GetTasks() []TodoTaskable
 	GetWellknownListName() *WellknownListName
 	SetDisplayName(value *string)
 	SetExtensions(value []Extensionable)
 	SetIsOwner(value *bool)
 	SetIsShared(value *bool)
+	SetSingleValueExtendedProperties(value []SingleValueExtendedPropertyable)
 	SetTasks(value []TodoTaskable)
 	SetWellknownListName(value *WellknownListName)
 }

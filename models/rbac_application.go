@@ -25,10 +25,33 @@ func CreateRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 	return NewRbacApplication(), nil
 }
 
+// GetDeletedItems gets the deletedItems property value. Container for custom role definitions that have been soft-deleted from Microsoft Entra directory role management.
+// returns a DirectoryRoleManagementDeletedItemContainerable when successful
+func (m *RbacApplication) GetDeletedItems() DirectoryRoleManagementDeletedItemContainerable {
+	val, err := m.GetBackingStore().Get("deletedItems")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(DirectoryRoleManagementDeletedItemContainerable)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *RbacApplication) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["deletedItems"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateDirectoryRoleManagementDeletedItemContainerFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeletedItems(val.(DirectoryRoleManagementDeletedItemContainerable))
+		}
+		return nil
+	}
 	res["resourceNamespaces"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
 		if err != nil {
@@ -299,6 +322,12 @@ func (m *RbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 	if err != nil {
 		return err
 	}
+	{
+		err = writer.WriteObjectValue("deletedItems", m.GetDeletedItems())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetResourceNamespaces() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceNamespaces()))
 		for i, v := range m.GetResourceNamespaces() {
@@ -410,6 +439,14 @@ func (m *RbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 	return nil
 }
 
+// SetDeletedItems sets the deletedItems property value. Container for custom role definitions that have been soft-deleted from Microsoft Entra directory role management.
+func (m *RbacApplication) SetDeletedItems(value DirectoryRoleManagementDeletedItemContainerable) {
+	err := m.GetBackingStore().Set("deletedItems", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetResourceNamespaces sets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable) {
 	err := m.GetBackingStore().Set("resourceNamespaces", value)
@@ -485,6 +522,7 @@ func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibi
 type RbacApplicationable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetDeletedItems() DirectoryRoleManagementDeletedItemContainerable
 	GetResourceNamespaces() []UnifiedRbacResourceNamespaceable
 	GetRoleAssignments() []UnifiedRoleAssignmentable
 	GetRoleAssignmentScheduleInstances() []UnifiedRoleAssignmentScheduleInstanceable
@@ -494,6 +532,7 @@ type RbacApplicationable interface {
 	GetRoleEligibilityScheduleInstances() []UnifiedRoleEligibilityScheduleInstanceable
 	GetRoleEligibilityScheduleRequests() []UnifiedRoleEligibilityScheduleRequestable
 	GetRoleEligibilitySchedules() []UnifiedRoleEligibilityScheduleable
+	SetDeletedItems(value DirectoryRoleManagementDeletedItemContainerable)
 	SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)
 	SetRoleAssignments(value []UnifiedRoleAssignmentable)
 	SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstanceable)
