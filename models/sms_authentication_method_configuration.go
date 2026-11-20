@@ -47,6 +47,16 @@ func (m *SmsAuthenticationMethodConfiguration) GetFieldDeserializers() map[strin
 		}
 		return nil
 	}
+	res["telecomProviderSettings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateTelecomProviderSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTelecomProviderSettings(val.(TelecomProviderSettingsable))
+		}
+		return nil
+	}
 	return res
 }
 
@@ -59,6 +69,19 @@ func (m *SmsAuthenticationMethodConfiguration) GetIncludeTargets() []SmsAuthenti
 	}
 	if val != nil {
 		return val.([]SmsAuthenticationMethodTargetable)
+	}
+	return nil
+}
+
+// GetTelecomProviderSettings gets the telecomProviderSettings property value. Settings for routing SMS authentication traffic through a telecom provider integration.
+// returns a TelecomProviderSettingsable when successful
+func (m *SmsAuthenticationMethodConfiguration) GetTelecomProviderSettings() TelecomProviderSettingsable {
+	val, err := m.GetBackingStore().Get("telecomProviderSettings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(TelecomProviderSettingsable)
 	}
 	return nil
 }
@@ -81,6 +104,12 @@ func (m *SmsAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d
 			return err
 		}
 	}
+	{
+		err = writer.WriteObjectValue("telecomProviderSettings", m.GetTelecomProviderSettings())
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 }
 
@@ -92,9 +121,19 @@ func (m *SmsAuthenticationMethodConfiguration) SetIncludeTargets(value []SmsAuth
 	}
 }
 
+// SetTelecomProviderSettings sets the telecomProviderSettings property value. Settings for routing SMS authentication traffic through a telecom provider integration.
+func (m *SmsAuthenticationMethodConfiguration) SetTelecomProviderSettings(value TelecomProviderSettingsable) {
+	err := m.GetBackingStore().Set("telecomProviderSettings", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type SmsAuthenticationMethodConfigurationable interface {
 	AuthenticationMethodConfigurationable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetIncludeTargets() []SmsAuthenticationMethodTargetable
+	GetTelecomProviderSettings() TelecomProviderSettingsable
 	SetIncludeTargets(value []SmsAuthenticationMethodTargetable)
+	SetTelecomProviderSettings(value TelecomProviderSettingsable)
 }

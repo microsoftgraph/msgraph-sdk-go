@@ -39,6 +39,8 @@ func CreateOutlookItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 					return NewCalendarSharingMessage(), nil
 				case "#microsoft.graph.contact":
 					return NewContact(), nil
+				case "#microsoft.graph.distributionList":
+					return NewDistributionList(), nil
 				case "#microsoft.graph.event":
 					return NewEvent(), nil
 				case "#microsoft.graph.eventMessage":

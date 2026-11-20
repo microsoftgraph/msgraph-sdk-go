@@ -652,6 +652,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewDirectoryRoleManagementDeletedItemContainer(), nil
 				case "#microsoft.graph.directoryRoleTemplate":
 					return NewDirectoryRoleTemplate(), nil
+				case "#microsoft.graph.distributionList":
+					return NewDistributionList(), nil
+				case "#microsoft.graph.distributionListMember":
+					return NewDistributionListMember(), nil
 				case "#microsoft.graph.documentSetVersion":
 					return NewDocumentSetVersion(), nil
 				case "#microsoft.graph.domain":
@@ -1134,6 +1138,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewMobileAppContent(), nil
 				case "#microsoft.graph.mobileAppContentFile":
 					return NewMobileAppContentFile(), nil
+				case "#microsoft.graph.mobileAppContentScript":
+					return NewMobileAppContentScript(), nil
 				case "#microsoft.graph.mobileAppRelationship":
 					return NewMobileAppRelationship(), nil
 				case "#microsoft.graph.mobileAppTroubleshootingEvent":
@@ -1960,6 +1966,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewWebPart(), nil
 				case "#microsoft.graph.win32LobApp":
 					return NewWin32LobApp(), nil
+				case "#microsoft.graph.win32LobAppInstallPowerShellScript":
+					return NewWin32LobAppInstallPowerShellScript(), nil
+				case "#microsoft.graph.win32LobAppScript":
+					return NewWin32LobAppScript(), nil
+				case "#microsoft.graph.win32LobAppUninstallPowerShellScript":
+					return NewWin32LobAppUninstallPowerShellScript(), nil
 				case "#microsoft.graph.windows10CompliancePolicy":
 					return NewWindows10CompliancePolicy(), nil
 				case "#microsoft.graph.windows10CustomConfiguration":

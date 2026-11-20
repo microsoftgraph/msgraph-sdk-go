@@ -48,6 +48,19 @@ func CreateProtectionUnitBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26
 	return NewProtectionUnitBase(), nil
 }
 
+// GetBackupRetentionPeriodInDays gets the backupRetentionPeriodInDays property value. The policy-configured retention period of the backup, in days. Not nullable.
+// returns a *int32 when successful
+func (m *ProtectionUnitBase) GetBackupRetentionPeriodInDays() *int32 {
+	val, err := m.GetBackingStore().Get("backupRetentionPeriodInDays")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
+}
+
 // GetCreatedBy gets the createdBy property value. The identity of the person who created the protection unit.
 // returns a IdentitySetable when successful
 func (m *ProtectionUnitBase) GetCreatedBy() IdentitySetable {
@@ -91,6 +104,16 @@ func (m *ProtectionUnitBase) GetError() PublicErrorable {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *ProtectionUnitBase) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["backupRetentionPeriodInDays"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetBackupRetentionPeriodInDays(val)
+		}
+		return nil
+	}
 	res["createdBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
 		if err != nil {
@@ -148,6 +171,16 @@ func (m *ProtectionUnitBase) GetFieldDeserializers() map[string]func(i878a80d233
 		}
 		if val != nil {
 			m.SetOffboardRequestedDateTime(val)
+		}
+		return nil
+	}
+	res["pendingRetentionPeriodChange"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateRetentionPeriodChangeFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPendingRetentionPeriodChange(val.(RetentionPeriodChangeable))
 		}
 		return nil
 	}
@@ -223,6 +256,19 @@ func (m *ProtectionUnitBase) GetOffboardRequestedDateTime() *i336074805fc853987a
 	return nil
 }
 
+// GetPendingRetentionPeriodChange gets the pendingRetentionPeriodChange property value. The retention period change to be applied to the protection unit when it moves between policies with different retention periods. Read-only. null when no change is pending.
+// returns a RetentionPeriodChangeable when successful
+func (m *ProtectionUnitBase) GetPendingRetentionPeriodChange() RetentionPeriodChangeable {
+	val, err := m.GetBackingStore().Get("pendingRetentionPeriodChange")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(RetentionPeriodChangeable)
+	}
+	return nil
+}
+
 // GetPolicyId gets the policyId property value. The unique identifier of the protection policy based on which protection unit was created.
 // returns a *string when successful
 func (m *ProtectionUnitBase) GetPolicyId() *string {
@@ -267,6 +313,12 @@ func (m *ProtectionUnitBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 	err := m.Entity.Serialize(writer)
 	if err != nil {
 		return err
+	}
+	{
+		err = writer.WriteInt32Value("backupRetentionPeriodInDays", m.GetBackupRetentionPeriodInDays())
+		if err != nil {
+			return err
+		}
 	}
 	{
 		err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
@@ -327,6 +379,14 @@ func (m *ProtectionUnitBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 	return nil
 }
 
+// SetBackupRetentionPeriodInDays sets the backupRetentionPeriodInDays property value. The policy-configured retention period of the backup, in days. Not nullable.
+func (m *ProtectionUnitBase) SetBackupRetentionPeriodInDays(value *int32) {
+	err := m.GetBackingStore().Set("backupRetentionPeriodInDays", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetCreatedBy sets the createdBy property value. The identity of the person who created the protection unit.
 func (m *ProtectionUnitBase) SetCreatedBy(value IdentitySetable) {
 	err := m.GetBackingStore().Set("createdBy", value)
@@ -375,6 +435,14 @@ func (m *ProtectionUnitBase) SetOffboardRequestedDateTime(value *i336074805fc853
 	}
 }
 
+// SetPendingRetentionPeriodChange sets the pendingRetentionPeriodChange property value. The retention period change to be applied to the protection unit when it moves between policies with different retention periods. Read-only. null when no change is pending.
+func (m *ProtectionUnitBase) SetPendingRetentionPeriodChange(value RetentionPeriodChangeable) {
+	err := m.GetBackingStore().Set("pendingRetentionPeriodChange", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetPolicyId sets the policyId property value. The unique identifier of the protection policy based on which protection unit was created.
 func (m *ProtectionUnitBase) SetPolicyId(value *string) {
 	err := m.GetBackingStore().Set("policyId", value)
@@ -402,21 +470,25 @@ func (m *ProtectionUnitBase) SetStatus(value *ProtectionUnitStatus) {
 type ProtectionUnitBaseable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetBackupRetentionPeriodInDays() *int32
 	GetCreatedBy() IdentitySetable
 	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetError() PublicErrorable
 	GetLastModifiedBy() IdentitySetable
 	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetOffboardRequestedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetPendingRetentionPeriodChange() RetentionPeriodChangeable
 	GetPolicyId() *string
 	GetProtectionSources() *ProtectionSource
 	GetStatus() *ProtectionUnitStatus
+	SetBackupRetentionPeriodInDays(value *int32)
 	SetCreatedBy(value IdentitySetable)
 	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetError(value PublicErrorable)
 	SetLastModifiedBy(value IdentitySetable)
 	SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetPendingRetentionPeriodChange(value RetentionPeriodChangeable)
 	SetPolicyId(value *string)
 	SetProtectionSources(value *ProtectionSource)
 	SetStatus(value *ProtectionUnitStatus)

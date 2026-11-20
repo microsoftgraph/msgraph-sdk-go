@@ -104,6 +104,16 @@ func (m *MailboxFolder) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 		}
 		return nil
 	}
+	res["isHidden"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsHidden(val)
+		}
+		return nil
+	}
 	res["items"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateMailboxItemFromDiscriminatorValue)
 		if err != nil {
@@ -193,6 +203,19 @@ func (m *MailboxFolder) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 		return nil
 	}
 	return res
+}
+
+// GetIsHidden gets the isHidden property value. Indicates whether the folder is hidden. The default value is false. This property can be set only when you create the folder; it can't be updated using PATCH. By default, listing folders or listing child folders returns only folders that aren't hidden. To include hidden folders in the response, use the optional query parameter includeHiddenFolders=true. The response includes both hidden and nonhidden folders. If you use $select to limit the returned properties, include isHidden in the selection.
+// returns a *bool when successful
+func (m *MailboxFolder) GetIsHidden() *bool {
+	val, err := m.GetBackingStore().Get("isHidden")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
 
 // GetItems gets the items property value. The collection of items in this folder.
@@ -316,6 +339,12 @@ func (m *MailboxFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 			return err
 		}
 	}
+	{
+		err = writer.WriteBoolValue("isHidden", m.GetIsHidden())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetItems() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
 		for i, v := range m.GetItems() {
@@ -403,6 +432,14 @@ func (m *MailboxFolder) SetDisplayName(value *string) {
 	}
 }
 
+// SetIsHidden sets the isHidden property value. Indicates whether the folder is hidden. The default value is false. This property can be set only when you create the folder; it can't be updated using PATCH. By default, listing folders or listing child folders returns only folders that aren't hidden. To include hidden folders in the response, use the optional query parameter includeHiddenFolders=true. The response includes both hidden and nonhidden folders. If you use $select to limit the returned properties, include isHidden in the selection.
+func (m *MailboxFolder) SetIsHidden(value *bool) {
+	err := m.GetBackingStore().Set("isHidden", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetItems sets the items property value. The collection of items in this folder.
 func (m *MailboxFolder) SetItems(value []MailboxItemable) {
 	err := m.GetBackingStore().Set("items", value)
@@ -465,6 +502,7 @@ type MailboxFolderable interface {
 	GetChildFolderCount() *int32
 	GetChildFolders() []MailboxFolderable
 	GetDisplayName() *string
+	GetIsHidden() *bool
 	GetItems() []MailboxItemable
 	GetMultiValueExtendedProperties() []MultiValueLegacyExtendedPropertyable
 	GetParentFolderId() *string
@@ -475,6 +513,7 @@ type MailboxFolderable interface {
 	SetChildFolderCount(value *int32)
 	SetChildFolders(value []MailboxFolderable)
 	SetDisplayName(value *string)
+	SetIsHidden(value *bool)
 	SetItems(value []MailboxItemable)
 	SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)
 	SetParentFolderId(value *string)

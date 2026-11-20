@@ -39,7 +39,7 @@ func (m *LifecycleWorkflowsContainer) GetCustomTaskExtensions() []CustomTaskExte
 	return nil
 }
 
-// GetDeletedItems gets the deletedItems property value. Deleted workflows in your lifecycle workflows instance.
+// GetDeletedItems gets the deletedItems property value. Deleted workflows and lifecycle policies in your lifecycle workflows instance.
 // returns a DeletedItemContainerable when successful
 func (m *LifecycleWorkflowsContainer) GetDeletedItems() iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedItemContainerable {
 	val, err := m.GetBackingStore().Get("deletedItems")
@@ -301,7 +301,7 @@ func (m *LifecycleWorkflowsContainer) SetCustomTaskExtensions(value []CustomTask
 	}
 }
 
-// SetDeletedItems sets the deletedItems property value. Deleted workflows in your lifecycle workflows instance.
+// SetDeletedItems sets the deletedItems property value. Deleted workflows and lifecycle policies in your lifecycle workflows instance.
 func (m *LifecycleWorkflowsContainer) SetDeletedItems(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedItemContainerable) {
 	err := m.GetBackingStore().Set("deletedItems", value)
 	if err != nil {

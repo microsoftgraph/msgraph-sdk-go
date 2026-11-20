@@ -75,6 +75,22 @@ func (m *MobileAppContent) GetFieldDeserializers() map[string]func(i878a80d2330e
 		}
 		return nil
 	}
+	res["scripts"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMobileAppContentScriptFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MobileAppContentScriptable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MobileAppContentScriptable)
+				}
+			}
+			m.SetScripts(res)
+		}
+		return nil
+	}
 	return res
 }
 
@@ -87,6 +103,19 @@ func (m *MobileAppContent) GetFiles() []MobileAppContentFileable {
 	}
 	if val != nil {
 		return val.([]MobileAppContentFileable)
+	}
+	return nil
+}
+
+// GetScripts gets the scripts property value. The list of scripts for this app content version.
+// returns a []MobileAppContentScriptable when successful
+func (m *MobileAppContent) GetScripts() []MobileAppContentScriptable {
+	val, err := m.GetBackingStore().Get("scripts")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MobileAppContentScriptable)
 	}
 	return nil
 }
@@ -121,6 +150,18 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 			return err
 		}
 	}
+	if m.GetScripts() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScripts()))
+		for i, v := range m.GetScripts() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("scripts", cast)
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 }
 
@@ -140,11 +181,21 @@ func (m *MobileAppContent) SetFiles(value []MobileAppContentFileable) {
 	}
 }
 
+// SetScripts sets the scripts property value. The list of scripts for this app content version.
+func (m *MobileAppContent) SetScripts(value []MobileAppContentScriptable) {
+	err := m.GetBackingStore().Set("scripts", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type MobileAppContentable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetContainedApps() []MobileContainedAppable
 	GetFiles() []MobileAppContentFileable
+	GetScripts() []MobileAppContentScriptable
 	SetContainedApps(value []MobileContainedAppable)
 	SetFiles(value []MobileAppContentFileable)
+	SetScripts(value []MobileAppContentScriptable)
 }
