@@ -331,7 +331,7 @@ func (m *ProcessContentMetadataBase) GetOdataType() *string {
 	return nil
 }
 
-// GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
+// GetSensitivityLabels gets the sensitivityLabels property value. Caller-supplied sensitivity labels describing the content.
 // returns a []CurrentLabelable when successful
 func (m *ProcessContentMetadataBase) GetSensitivityLabels() []CurrentLabelable {
 	val, err := m.GetBackingStore().Get("sensitivityLabels")
@@ -540,7 +540,7 @@ func (m *ProcessContentMetadataBase) SetOdataType(value *string) {
 	}
 }
 
-// SetSensitivityLabels sets the sensitivityLabels property value. The sensitivityLabels property
+// SetSensitivityLabels sets the sensitivityLabels property value. Caller-supplied sensitivity labels describing the content.
 func (m *ProcessContentMetadataBase) SetSensitivityLabels(value []CurrentLabelable) {
 	err := m.GetBackingStore().Set("sensitivityLabels", value)
 	if err != nil {

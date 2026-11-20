@@ -4,6 +4,7 @@
 package models
 
 import (
+	i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -31,7 +32,36 @@ func CreateAgentUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *AgentUser) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.User.GetFieldDeserializers()
+	res["managerApplications"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("uuid")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+				}
+			}
+			m.SetManagerApplications(res)
+		}
+		return nil
+	}
 	return res
+}
+
+// GetManagerApplications gets the managerApplications property value. The application IDs (appId values) authorized to manage the agent user's backing agent blueprint. Read-only. Not nullable. Returns an empty collection when no manager applications are configured. Returned only with $select and the microsoft.graph.agentUser type cast; see Get agentUser. Doesn't support $filter.
+// returns a []UUID when successful
+func (m *AgentUser) GetManagerApplications() []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID {
+	val, err := m.GetBackingStore().Get("managerApplications")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+	}
+	return nil
 }
 
 // Serialize serializes information the current object
@@ -43,7 +73,17 @@ func (m *AgentUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 	return nil
 }
 
+// SetManagerApplications sets the managerApplications property value. The application IDs (appId values) authorized to manage the agent user's backing agent blueprint. Read-only. Not nullable. Returns an empty collection when no manager applications are configured. Returned only with $select and the microsoft.graph.agentUser type cast; see Get agentUser. Doesn't support $filter.
+func (m *AgentUser) SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+	err := m.GetBackingStore().Set("managerApplications", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type AgentUserable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	Userable
+	GetManagerApplications() []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
+	SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
 }

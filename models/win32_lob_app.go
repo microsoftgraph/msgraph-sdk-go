@@ -28,6 +28,32 @@ func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 	return NewWin32LobApp(), nil
 }
 
+// GetActiveInstallScript gets the activeInstallScript property value. Contains the unique identifier of the associated install script for this Win32 app to be used instead of the install command line by the managed device during app installation. When null, the install command line is used instead.
+// returns a MobileAppScriptReferenceable when successful
+func (m *Win32LobApp) GetActiveInstallScript() MobileAppScriptReferenceable {
+	val, err := m.GetBackingStore().Get("activeInstallScript")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(MobileAppScriptReferenceable)
+	}
+	return nil
+}
+
+// GetActiveUninstallScript gets the activeUninstallScript property value. Contains the unique identifier of the associated uninstall script for this Win32 app to be used instead of the uninstall command line by the managed device during app uninstallation. When null, the uninstall command line is used instead.
+// returns a MobileAppScriptReferenceable when successful
+func (m *Win32LobApp) GetActiveUninstallScript() MobileAppScriptReferenceable {
+	val, err := m.GetBackingStore().Get("activeUninstallScript")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(MobileAppScriptReferenceable)
+	}
+	return nil
+}
+
 // GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. The possible values are: null, x86, x64, arm64. The possible values are: none, x86, x64, arm, neutral.
 // returns a *WindowsArchitecture when successful
 func (m *Win32LobApp) GetAllowedArchitectures() *WindowsArchitecture {
@@ -58,6 +84,26 @@ func (m *Win32LobApp) GetApplicableArchitectures() *WindowsArchitecture {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *Win32LobApp) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.MobileLobApp.GetFieldDeserializers()
+	res["activeInstallScript"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateMobileAppScriptReferenceFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetActiveInstallScript(val.(MobileAppScriptReferenceable))
+		}
+		return nil
+	}
+	res["activeUninstallScript"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateMobileAppScriptReferenceFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetActiveUninstallScript(val.(MobileAppScriptReferenceable))
+		}
+		return nil
+	}
 	res["allowedArchitectures"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetEnumValue(ParseWindowsArchitecture)
 		if err != nil {
@@ -375,6 +421,18 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 	if err != nil {
 		return err
 	}
+	{
+		err = writer.WriteObjectValue("activeInstallScript", m.GetActiveInstallScript())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("activeUninstallScript", m.GetActiveUninstallScript())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetAllowedArchitectures() != nil {
 		cast := (*m.GetAllowedArchitectures()).String()
 		err = writer.WriteStringValue("allowedArchitectures", &cast)
@@ -474,6 +532,22 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 		}
 	}
 	return nil
+}
+
+// SetActiveInstallScript sets the activeInstallScript property value. Contains the unique identifier of the associated install script for this Win32 app to be used instead of the install command line by the managed device during app installation. When null, the install command line is used instead.
+func (m *Win32LobApp) SetActiveInstallScript(value MobileAppScriptReferenceable) {
+	err := m.GetBackingStore().Set("activeInstallScript", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetActiveUninstallScript sets the activeUninstallScript property value. Contains the unique identifier of the associated uninstall script for this Win32 app to be used instead of the uninstall command line by the managed device during app uninstallation. When null, the uninstall command line is used instead.
+func (m *Win32LobApp) SetActiveUninstallScript(value MobileAppScriptReferenceable) {
+	err := m.GetBackingStore().Set("activeUninstallScript", value)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. The possible values are: null, x86, x64, arm64. The possible values are: none, x86, x64, arm, neutral.
@@ -591,6 +665,8 @@ func (m *Win32LobApp) SetUninstallCommandLine(value *string) {
 type Win32LobAppable interface {
 	MobileLobAppable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetActiveInstallScript() MobileAppScriptReferenceable
+	GetActiveUninstallScript() MobileAppScriptReferenceable
 	GetAllowedArchitectures() *WindowsArchitecture
 	GetApplicableArchitectures() *WindowsArchitecture
 	GetInstallCommandLine() *string
@@ -605,6 +681,8 @@ type Win32LobAppable interface {
 	GetRules() []Win32LobAppRuleable
 	GetSetupFilePath() *string
 	GetUninstallCommandLine() *string
+	SetActiveInstallScript(value MobileAppScriptReferenceable)
+	SetActiveUninstallScript(value MobileAppScriptReferenceable)
 	SetAllowedArchitectures(value *WindowsArchitecture)
 	SetApplicableArchitectures(value *WindowsArchitecture)
 	SetInstallCommandLine(value *string)

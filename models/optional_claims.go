@@ -154,7 +154,7 @@ func (m *OptionalClaims) GetIdToken() []OptionalClaimable {
 	return nil
 }
 
-// GetKerberosTicket gets the kerberosTicket property value. The kerberosTicket property
+// GetKerberosTicket gets the kerberosTicket property value. Optional claims that control group SID resolution for Kerberos tickets. The supported claim name is groups.
 // returns a []OptionalClaimable when successful
 func (m *OptionalClaims) GetKerberosTicket() []OptionalClaimable {
 	val, err := m.GetBackingStore().Get("kerberosTicket")
@@ -287,7 +287,7 @@ func (m *OptionalClaims) SetIdToken(value []OptionalClaimable) {
 	}
 }
 
-// SetKerberosTicket sets the kerberosTicket property value. The kerberosTicket property
+// SetKerberosTicket sets the kerberosTicket property value. Optional claims that control group SID resolution for Kerberos tickets. The supported claim name is groups.
 func (m *OptionalClaims) SetKerberosTicket(value []OptionalClaimable) {
 	err := m.GetBackingStore().Set("kerberosTicket", value)
 	if err != nil {

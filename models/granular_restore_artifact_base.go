@@ -72,6 +72,19 @@ func (m *GranularRestoreArtifactBase) GetCompletionDateTime() *i336074805fc85398
 	return nil
 }
 
+// GetError gets the error property value. Contains error details if the restoration fails or completes with an error.
+// returns a PublicErrorable when successful
+func (m *GranularRestoreArtifactBase) GetError() PublicErrorable {
+	val, err := m.GetBackingStore().Get("error")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PublicErrorable)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *GranularRestoreArtifactBase) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -93,6 +106,16 @@ func (m *GranularRestoreArtifactBase) GetFieldDeserializers() map[string]func(i8
 		}
 		if val != nil {
 			m.SetCompletionDateTime(val)
+		}
+		return nil
+	}
+	res["error"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePublicErrorFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetError(val.(PublicErrorable))
 		}
 		return nil
 	}
@@ -279,6 +302,12 @@ func (m *GranularRestoreArtifactBase) Serialize(writer i878a80d2330e89d26896388a
 		}
 	}
 	{
+		err = writer.WriteObjectValue("error", m.GetError())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteStringValue("restoredItemKey", m.GetRestoredItemKey())
 		if err != nil {
 			return err
@@ -335,6 +364,14 @@ func (m *GranularRestoreArtifactBase) SetBrowseSessionId(value *string) {
 // SetCompletionDateTime sets the completionDateTime property value. Date time when the artifact's restoration completes.
 func (m *GranularRestoreArtifactBase) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("completionDateTime", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetError sets the error property value. Contains error details if the restoration fails or completes with an error.
+func (m *GranularRestoreArtifactBase) SetError(value PublicErrorable) {
+	err := m.GetBackingStore().Set("error", value)
 	if err != nil {
 		panic(err)
 	}
@@ -401,6 +438,7 @@ type GranularRestoreArtifactBaseable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetBrowseSessionId() *string
 	GetCompletionDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetError() PublicErrorable
 	GetRestoredItemKey() *string
 	GetRestoredItemPath() *string
 	GetRestoredItemWebUrl() *string
@@ -410,6 +448,7 @@ type GranularRestoreArtifactBaseable interface {
 	GetWebUrl() *string
 	SetBrowseSessionId(value *string)
 	SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetError(value PublicErrorable)
 	SetRestoredItemKey(value *string)
 	SetRestoredItemPath(value *string)
 	SetRestoredItemWebUrl(value *string)

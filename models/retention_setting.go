@@ -84,7 +84,7 @@ func (m *RetentionSetting) GetFieldDeserializers() map[string]func(i878a80d2330e
 	return res
 }
 
-// GetInterval gets the interval property value. The frequency of the backup.
+// GetInterval gets the interval property value. The backup frequency, expressed as an ISO 8601 repeating interval. The service defines the backup intervals: R/PT10M for 10-minute copies and R/P1W for weekly copies. Use R/P1W when specifying the policy retention period in a create or update request.
 // returns a *string when successful
 func (m *RetentionSetting) GetInterval() *string {
 	val, err := m.GetBackingStore().Get("interval")
@@ -110,7 +110,7 @@ func (m *RetentionSetting) GetOdataType() *string {
 	return nil
 }
 
-// GetPeriod gets the period property value. The period of time to retain the protected data for a single Microsoft 365 service.
+// GetPeriod gets the period property value. The period of time to retain the protected data for a single Microsoft 365 service, expressed as an ISO 8601 duration. The supported policy retention periods in create and update requests are: P90D, P180D, P365D, P730D, P1095D, P1460D, P1825D, P2190D, P2555D, P2920D, P3285D, and P3650D. Other policy retention periods aren't supported.
 // returns a *ISODuration when successful
 func (m *RetentionSetting) GetPeriod() *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration {
 	val, err := m.GetBackingStore().Get("period")
@@ -165,7 +165,7 @@ func (m *RetentionSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
 	m.backingStore = value
 }
 
-// SetInterval sets the interval property value. The frequency of the backup.
+// SetInterval sets the interval property value. The backup frequency, expressed as an ISO 8601 repeating interval. The service defines the backup intervals: R/PT10M for 10-minute copies and R/P1W for weekly copies. Use R/P1W when specifying the policy retention period in a create or update request.
 func (m *RetentionSetting) SetInterval(value *string) {
 	err := m.GetBackingStore().Set("interval", value)
 	if err != nil {
@@ -181,7 +181,7 @@ func (m *RetentionSetting) SetOdataType(value *string) {
 	}
 }
 
-// SetPeriod sets the period property value. The period of time to retain the protected data for a single Microsoft 365 service.
+// SetPeriod sets the period property value. The period of time to retain the protected data for a single Microsoft 365 service, expressed as an ISO 8601 duration. The supported policy retention periods in create and update requests are: P90D, P180D, P365D, P730D, P1095D, P1460D, P1825D, P2190D, P2555D, P2920D, P3285D, and P3650D. Other policy retention periods aren't supported.
 func (m *RetentionSetting) SetPeriod(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
 	err := m.GetBackingStore().Set("period", value)
 	if err != nil {

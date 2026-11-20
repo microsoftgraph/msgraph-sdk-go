@@ -57,6 +57,16 @@ func (m *VoiceAuthenticationMethodConfiguration) GetFieldDeserializers() map[str
 		}
 		return nil
 	}
+	res["telecomProviderSettings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateTelecomProviderSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTelecomProviderSettings(val.(TelecomProviderSettingsable))
+		}
+		return nil
+	}
 	return res
 }
 
@@ -86,6 +96,19 @@ func (m *VoiceAuthenticationMethodConfiguration) GetIsOfficePhoneAllowed() *bool
 	return nil
 }
 
+// GetTelecomProviderSettings gets the telecomProviderSettings property value. Settings for routing voice authentication traffic through a telecom provider integration.
+// returns a TelecomProviderSettingsable when successful
+func (m *VoiceAuthenticationMethodConfiguration) GetTelecomProviderSettings() TelecomProviderSettingsable {
+	val, err := m.GetBackingStore().Get("telecomProviderSettings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(TelecomProviderSettingsable)
+	}
+	return nil
+}
+
 // Serialize serializes information the current object
 func (m *VoiceAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
 	err := m.AuthenticationMethodConfiguration.Serialize(writer)
@@ -110,6 +133,12 @@ func (m *VoiceAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
 			return err
 		}
 	}
+	{
+		err = writer.WriteObjectValue("telecomProviderSettings", m.GetTelecomProviderSettings())
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 }
 
@@ -129,11 +158,21 @@ func (m *VoiceAuthenticationMethodConfiguration) SetIsOfficePhoneAllowed(value *
 	}
 }
 
+// SetTelecomProviderSettings sets the telecomProviderSettings property value. Settings for routing voice authentication traffic through a telecom provider integration.
+func (m *VoiceAuthenticationMethodConfiguration) SetTelecomProviderSettings(value TelecomProviderSettingsable) {
+	err := m.GetBackingStore().Set("telecomProviderSettings", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type VoiceAuthenticationMethodConfigurationable interface {
 	AuthenticationMethodConfigurationable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetIncludeTargets() []AuthenticationMethodTargetable
 	GetIsOfficePhoneAllowed() *bool
+	GetTelecomProviderSettings() TelecomProviderSettingsable
 	SetIncludeTargets(value []AuthenticationMethodTargetable)
 	SetIsOfficePhoneAllowed(value *bool)
+	SetTelecomProviderSettings(value TelecomProviderSettingsable)
 }

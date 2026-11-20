@@ -216,6 +216,12 @@ func (m *UserItemRequestBuilder) DirectReports() *ItemDirectReportsRequestBuilde
 	return NewItemDirectReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// DistributionLists provides operations to manage the distributionLists property of the microsoft.graph.user entity.
+// returns a *ItemDistributionListsRequestBuilder when successful
+func (m *UserItemRequestBuilder) DistributionLists() *ItemDistributionListsRequestBuilder {
+	return NewItemDistributionListsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Drive provides operations to manage the drive property of the microsoft.graph.user entity.
 // returns a *ItemDriveRequestBuilder when successful
 func (m *UserItemRequestBuilder) Drive() *ItemDriveRequestBuilder {

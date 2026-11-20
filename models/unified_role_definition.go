@@ -5,6 +5,7 @@ package models
 
 import (
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type UnifiedRoleDefinition struct {
@@ -23,6 +24,19 @@ func NewUnifiedRoleDefinition() *UnifiedRoleDefinition {
 // returns a Parsable when successful
 func CreateUnifiedRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
 	return NewUnifiedRoleDefinition(), nil
+}
+
+// GetDeletedDateTime gets the deletedDateTime property value. The date and time when the custom role definition was deleted. The value is null for active and restored role definitions. Read-only.
+// returns a *Time when successful
+func (m *UnifiedRoleDefinition) GetDeletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("deletedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
 
 // GetDescription gets the description property value. The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
@@ -55,6 +69,16 @@ func (m *UnifiedRoleDefinition) GetDisplayName() *string {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *UnifiedRoleDefinition) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["deletedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeletedDateTime(val)
+		}
+		return nil
+	}
 	res["description"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -108,6 +132,16 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers() map[string]func(i878a80d
 		}
 		if val != nil {
 			m.SetIsEnabled(val)
+		}
+		return nil
+	}
+	res["isPrivileged"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsPrivileged(val)
 		}
 		return nil
 	}
@@ -205,6 +239,19 @@ func (m *UnifiedRoleDefinition) GetIsEnabled() *bool {
 	return nil
 }
 
+// GetIsPrivileged gets the isPrivileged property value. Flag indicating whether the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the allowedResourceActions collection of rolePermissions. Applies only to actions in the microsoft.directory resource namespace. Nullable. A value of null indicates that the privileged classification is unavailable, not that the role is nonprivileged. Read-only. Supports $filter (eq).
+// returns a *bool when successful
+func (m *UnifiedRoleDefinition) GetIsPrivileged() *bool {
+	val, err := m.GetBackingStore().Get("isPrivileged")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
 // GetResourceScopes gets the resourceScopes property value. List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
 // returns a []string when successful
 func (m *UnifiedRoleDefinition) GetResourceScopes() []string {
@@ -264,6 +311,12 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
 		return err
 	}
 	{
+		err = writer.WriteTimeValue("deletedDateTime", m.GetDeletedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteStringValue("description", m.GetDescription())
 		if err != nil {
 			return err
@@ -299,6 +352,12 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
 			return err
 		}
 	}
+	{
+		err = writer.WriteBoolValue("isPrivileged", m.GetIsPrivileged())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetResourceScopes() != nil {
 		err = writer.WriteCollectionOfStringValues("resourceScopes", m.GetResourceScopes())
 		if err != nil {
@@ -330,6 +389,14 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
 		}
 	}
 	return nil
+}
+
+// SetDeletedDateTime sets the deletedDateTime property value. The date and time when the custom role definition was deleted. The value is null for active and restored role definitions. Read-only.
+func (m *UnifiedRoleDefinition) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("deletedDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // SetDescription sets the description property value. The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
@@ -372,6 +439,14 @@ func (m *UnifiedRoleDefinition) SetIsEnabled(value *bool) {
 	}
 }
 
+// SetIsPrivileged sets the isPrivileged property value. Flag indicating whether the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the allowedResourceActions collection of rolePermissions. Applies only to actions in the microsoft.directory resource namespace. Nullable. A value of null indicates that the privileged classification is unavailable, not that the role is nonprivileged. Read-only. Supports $filter (eq).
+func (m *UnifiedRoleDefinition) SetIsPrivileged(value *bool) {
+	err := m.GetBackingStore().Set("isPrivileged", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetResourceScopes sets the resourceScopes property value. List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
 func (m *UnifiedRoleDefinition) SetResourceScopes(value []string) {
 	err := m.GetBackingStore().Set("resourceScopes", value)
@@ -407,20 +482,24 @@ func (m *UnifiedRoleDefinition) SetVersion(value *string) {
 type UnifiedRoleDefinitionable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetDeletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetDescription() *string
 	GetDisplayName() *string
 	GetInheritsPermissionsFrom() []UnifiedRoleDefinitionable
 	GetIsBuiltIn() *bool
 	GetIsEnabled() *bool
+	GetIsPrivileged() *bool
 	GetResourceScopes() []string
 	GetRolePermissions() []UnifiedRolePermissionable
 	GetTemplateId() *string
 	GetVersion() *string
+	SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetDescription(value *string)
 	SetDisplayName(value *string)
 	SetInheritsPermissionsFrom(value []UnifiedRoleDefinitionable)
 	SetIsBuiltIn(value *bool)
 	SetIsEnabled(value *bool)
+	SetIsPrivileged(value *bool)
 	SetResourceScopes(value []string)
 	SetRolePermissions(value []UnifiedRolePermissionable)
 	SetTemplateId(value *string)

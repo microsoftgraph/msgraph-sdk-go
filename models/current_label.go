@@ -41,7 +41,7 @@ func (m *CurrentLabel) GetAdditionalData() map[string]any {
 	return val.(map[string]any)
 }
 
-// GetApplicationMode gets the applicationMode property value. The applicationMode property
+// GetApplicationMode gets the applicationMode property value. The application mode associated with the sensitivity label. The possible values are: manual, automatic, recommended, unknownFutureValue.
 // returns a *ApplicationMode when successful
 func (m *CurrentLabel) GetApplicationMode() *ApplicationMode {
 	val, err := m.GetBackingStore().Get("applicationMode")
@@ -97,7 +97,7 @@ func (m *CurrentLabel) GetFieldDeserializers() map[string]func(i878a80d2330e89d2
 	return res
 }
 
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The GUID that identifies the sensitivity label.
 // returns a *string when successful
 func (m *CurrentLabel) GetId() *string {
 	val, err := m.GetBackingStore().Get("id")
@@ -161,7 +161,7 @@ func (m *CurrentLabel) SetAdditionalData(value map[string]any) {
 	}
 }
 
-// SetApplicationMode sets the applicationMode property value. The applicationMode property
+// SetApplicationMode sets the applicationMode property value. The application mode associated with the sensitivity label. The possible values are: manual, automatic, recommended, unknownFutureValue.
 func (m *CurrentLabel) SetApplicationMode(value *ApplicationMode) {
 	err := m.GetBackingStore().Set("applicationMode", value)
 	if err != nil {
@@ -174,7 +174,7 @@ func (m *CurrentLabel) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d411
 	m.backingStore = value
 }
 
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The GUID that identifies the sensitivity label.
 func (m *CurrentLabel) SetId(value *string) {
 	err := m.GetBackingStore().Set("id", value)
 	if err != nil {

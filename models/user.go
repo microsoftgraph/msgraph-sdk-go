@@ -514,6 +514,19 @@ func (m *User) GetDisplayName() *string {
 	return nil
 }
 
+// GetDistributionLists gets the distributionLists property value. The personal distribution lists in the user's mailbox. Read-only. Nullable.
+// returns a []DistributionListable when successful
+func (m *User) GetDistributionLists() []DistributionListable {
+	val, err := m.GetBackingStore().Get("distributionLists")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]DistributionListable)
+	}
+	return nil
+}
+
 // GetDrive gets the drive property value. The user's OneDrive. Read-only.
 // returns a Driveable when successful
 func (m *User) GetDrive() Driveable {
@@ -1146,6 +1159,22 @@ func (m *User) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a
 		}
 		if val != nil {
 			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["distributionLists"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateDistributionListFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]DistributionListable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(DistributionListable)
+				}
+			}
+			m.SetDistributionLists(res)
 		}
 		return nil
 	}
@@ -3823,6 +3852,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 			return err
 		}
 	}
+	if m.GetDistributionLists() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDistributionLists()))
+		for i, v := range m.GetDistributionLists() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("distributionLists", cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteObjectValue("drive", m.GetDrive())
 		if err != nil {
@@ -4888,6 +4929,14 @@ func (m *User) SetDisplayName(value *string) {
 	}
 }
 
+// SetDistributionLists sets the distributionLists property value. The personal distribution lists in the user's mailbox. Read-only. Nullable.
+func (m *User) SetDistributionLists(value []DistributionListable) {
+	err := m.GetBackingStore().Set("distributionLists", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetDrive sets the drive property value. The user's OneDrive. Read-only.
 func (m *User) SetDrive(value Driveable) {
 	err := m.GetBackingStore().Set("drive", value)
@@ -5727,6 +5776,7 @@ type Userable interface {
 	GetDeviceManagementTroubleshootingEvents() []DeviceManagementTroubleshootingEventable
 	GetDirectReports() []DirectoryObjectable
 	GetDisplayName() *string
+	GetDistributionLists() []DistributionListable
 	GetDrive() Driveable
 	GetDrives() []Driveable
 	GetEmployeeExperience() EmployeeExperienceUserable
@@ -5863,6 +5913,7 @@ type Userable interface {
 	SetDeviceManagementTroubleshootingEvents(value []DeviceManagementTroubleshootingEventable)
 	SetDirectReports(value []DirectoryObjectable)
 	SetDisplayName(value *string)
+	SetDistributionLists(value []DistributionListable)
 	SetDrive(value Driveable)
 	SetDrives(value []Driveable)
 	SetEmployeeExperience(value EmployeeExperienceUserable)

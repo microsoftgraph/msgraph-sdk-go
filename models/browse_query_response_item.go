@@ -6,6 +6,7 @@ package models
 import (
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type BrowseQueryResponseItem struct {
@@ -47,10 +48,56 @@ func (m *BrowseQueryResponseItem) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd
 	return m.backingStore
 }
 
+// GetCreatedBy gets the createdBy property value. The identity of the user or application that created the item. Returned only when type is file or folder.
+// returns a IdentitySetable when successful
+func (m *BrowseQueryResponseItem) GetCreatedBy() IdentitySetable {
+	val, err := m.GetBackingStore().Get("createdBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentitySetable)
+	}
+	return nil
+}
+
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the item was created. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
+// returns a *Time when successful
+func (m *BrowseQueryResponseItem) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("createdDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *BrowseQueryResponseItem) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["createdBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedBy(val.(IdentitySetable))
+		}
+		return nil
+	}
+	res["createdDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedDateTime(val)
+		}
+		return nil
+	}
 	res["itemKey"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -68,6 +115,26 @@ func (m *BrowseQueryResponseItem) GetFieldDeserializers() map[string]func(i878a8
 		}
 		if val != nil {
 			m.SetItemsCount(val)
+		}
+		return nil
+	}
+	res["lastModifiedBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastModifiedBy(val.(IdentitySetable))
+		}
+		return nil
+	}
+	res["lastModifiedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastModifiedDateTime(val)
 		}
 		return nil
 	}
@@ -150,6 +217,32 @@ func (m *BrowseQueryResponseItem) GetItemsCount() *int32 {
 	return nil
 }
 
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity of the user or application that last modified the item. Returned only when type is file or folder.
+// returns a IdentitySetable when successful
+func (m *BrowseQueryResponseItem) GetLastModifiedBy() IdentitySetable {
+	val, err := m.GetBackingStore().Get("lastModifiedBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentitySetable)
+	}
+	return nil
+}
+
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the item was last modified. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
+// returns a *Time when successful
+func (m *BrowseQueryResponseItem) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
+}
+
 // GetName gets the name property value. The name of the item.
 // returns a *string when successful
 func (m *BrowseQueryResponseItem) GetName() *string {
@@ -218,6 +311,18 @@ func (m *BrowseQueryResponseItem) GetWebUrl() *string {
 // Serialize serializes information the current object
 func (m *BrowseQueryResponseItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
 	{
+		err := writer.WriteObjectValue("createdBy", m.GetCreatedBy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err := writer.WriteStringValue("itemKey", m.GetItemKey())
 		if err != nil {
 			return err
@@ -225,6 +330,18 @@ func (m *BrowseQueryResponseItem) Serialize(writer i878a80d2330e89d26896388a3f48
 	}
 	{
 		err := writer.WriteInt32Value("itemsCount", m.GetItemsCount())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
 		if err != nil {
 			return err
 		}
@@ -282,6 +399,22 @@ func (m *BrowseQueryResponseItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c382
 	m.backingStore = value
 }
 
+// SetCreatedBy sets the createdBy property value. The identity of the user or application that created the item. Returned only when type is file or folder.
+func (m *BrowseQueryResponseItem) SetCreatedBy(value IdentitySetable) {
+	err := m.GetBackingStore().Set("createdBy", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the item was created. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
+func (m *BrowseQueryResponseItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("createdDateTime", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetItemKey sets the itemKey property value. Unique identifier of the returned item.
 func (m *BrowseQueryResponseItem) SetItemKey(value *string) {
 	err := m.GetBackingStore().Set("itemKey", value)
@@ -293,6 +426,22 @@ func (m *BrowseQueryResponseItem) SetItemKey(value *string) {
 // SetItemsCount sets the itemsCount property value. The count of items present within the items; for example, the count of files in a folder.
 func (m *BrowseQueryResponseItem) SetItemsCount(value *int32) {
 	err := m.GetBackingStore().Set("itemsCount", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity of the user or application that last modified the item. Returned only when type is file or folder.
+func (m *BrowseQueryResponseItem) SetLastModifiedBy(value IdentitySetable) {
+	err := m.GetBackingStore().Set("lastModifiedBy", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the item was last modified. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
+func (m *BrowseQueryResponseItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastModifiedDateTime", value)
 	if err != nil {
 		panic(err)
 	}
@@ -343,16 +492,24 @@ type BrowseQueryResponseItemable interface {
 	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetCreatedBy() IdentitySetable
+	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetItemKey() *string
 	GetItemsCount() *int32
+	GetLastModifiedBy() IdentitySetable
+	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetName() *string
 	GetOdataType() *string
 	GetSizeInBytes() *string
 	GetTypeEscaped() *BrowseQueryResponseItemType
 	GetWebUrl() *string
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetCreatedBy(value IdentitySetable)
+	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetItemKey(value *string)
 	SetItemsCount(value *int32)
+	SetLastModifiedBy(value IdentitySetable)
+	SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetName(value *string)
 	SetOdataType(value *string)
 	SetSizeInBytes(value *string)
